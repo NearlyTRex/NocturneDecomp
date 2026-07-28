@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(undefined4 param_1)
+; CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -39,40 +41,40 @@ section .text
     ADD EAX,0x150                       ; 00423f50
     PUSH EAX                            ; 00423f55
     CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660 ; 00423f56
-        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660()
+        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00423f5b
     ADD EAX,0x293c                      ; 00423f5e
     PUSH EAX                            ; 00423f63
     CALL core_cloth.cpp_CClothList_ctor_FUN_00438210 ; 00423f64
-        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_ctor_FUN_00438210()
+        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_ctor_FUN_00438210(CClothList * this_ptr)
     ADD ESP,0x4                         ; 00423f69
     PUSH 0x5993b0                       ; 00423f6c | g_CVectorTypeInfo_005993b0
     PUSH 0xf                            ; 00423f71
     ADD EAX,0x1c8                       ; 00423f73
     PUSH EAX                            ; 00423f78
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423f79
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00423f7e
     PUSH 0x5993b0                       ; 00423f81 | g_CVectorTypeInfo_005993b0
     PUSH 0xf                            ; 00423f86
     ADD EAX,0xb4                        ; 00423f88
     PUSH EAX                            ; 00423f8d
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423f8e
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00423f93
     PUSH 0x599960                       ; 00423f96 | g_SFireTypeInfo_00599960
     PUSH 0x32                           ; 00423f9b
     ADD EAX,0x20c                       ; 00423f9d
     PUSH EAX                            ; 00423fa2
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423fa3
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00423fa8
     PUSH 0x599940                       ; 00423fab | g_CFlameTypeInfo_00599940
     PUSH 0x32                           ; 00423fb0
     ADD EAX,0x4b0                       ; 00423fb2
     PUSH EAX                            ; 00423fb7
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423fb8
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xffffcc3c]          ; 00423fbd
     MOV dword ptr [EDX + 0x14c],0x59b0a4 ; 00423fc3 | PTR_core_charactr.cpp_CCharacter_setup_FUN_00424260_0059b0a4
     LEA EAX,[EDX + 0x2420]              ; 00423fcd

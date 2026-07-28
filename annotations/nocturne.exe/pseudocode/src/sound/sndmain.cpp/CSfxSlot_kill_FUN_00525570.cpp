@@ -2,62 +2,63 @@
 // Address: 00525570
 // Address Range: [[00525570, 005256ec]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(int param_1)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(int param_1)
+void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
 
 {
   int *piVar1;
-  int iVar2;
-  char *pcVar3;
+  CSfxSample *this_ptr;
+  char *pcVar2;
   
   if (_DAT_02dc84bc < 1) {
     PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     INT_01cc4804 = 0xb14;
     core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
-  if (*(int *)(param_1 + 0x114) != 0) {
-    pcVar3 = "[NULLsamplePtr]";
-    if (*(char **)(param_1 + 0x74) != (char *)0x0) {
-      pcVar3 = *(char **)(param_1 + 0x74);
+  if (slot->stop_after_fade != 0.0) {
+    pcVar2 = "[NULLsamplePtr]";
+    if ((char *)slot->playback_state != (char *)0x0) {
+      pcVar2 = (char *)slot->playback_state;
     }
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"Killing sfx %s\n",pcVar3);
+              (PTR_DAT_005ad350,"Killing sfx %s\n",pcVar2);
   }
-  if (*(int *)(param_1 + 0x6c) != 0) {
+  if ((slot->options).dead != 0) {
     if (_DAT_02dc8318 != (int *)0x0) {
-      (**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,param_1);
+      (**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,slot);
     }
-    *(uint *)(param_1 + 0x6c) = 0;
+    (slot->options).dead = 0;
   }
-  *(uint *)(param_1 + 0x114) = 0;
-  *(uint *)(param_1 + 0x70) = 0;
-  if (*(int *)(param_1 + 0x74) != 0) {
-    if (*(int *)(*(int *)(param_1 + 0x74) + 300) < 1) {
+  slot->stop_after_fade = 0.0;
+  slot->hardware_buffer_handle = 0;
+  if (slot->playback_state != 0) {
+    if (*(int *)(slot->playback_state + 300) < 1) {
       PTR_01cc4800 = "..\\sound\\sndmain.cpp";
       INT_01cc4804 = 0xb33;
       core_main_c_FUN_004c8440("SfxSlot::kill - ref count out of balance!");
     }
-    piVar1 = (int *)(*(int *)(param_1 + 0x74) + 300);
+    piVar1 = (int *)(slot->playback_state + 300);
     *piVar1 = *piVar1 + -1;
-    iVar2 = *(int *)(param_1 + 0x74);
-    *(uint *)(param_1 + 0x74) = 0;
-    if (-1 < *(int *)(iVar2 + 0x134)) {
-      if (*(int *)(iVar2 + 300) != 0) {
+    this_ptr = (CSfxSample *)slot->playback_state;
+    slot->playback_state = 0;
+    if (-1 < this_ptr->loop_endpoints[3]) {
+      if (this_ptr->loop_endpoints[1] != 0) {
         PTR_01cc4800 = "..\\sound\\sndmain.cpp";
         INT_01cc4804 = 0xb42;
-        core_main_c_FUN_004c8440("refCount for streaming Sfx %s > 1",iVar2);
+        core_main_c_FUN_004c8440("refCount for streaming Sfx %s > 1",this_ptr);
       }
-      if ((param_1 + -0x2dbd374) / 0x120 != *(int *)(iVar2 + 0x134)) {
+      if ((int)(slot[-0x278ef].channel_current_buffer_offsets + 1) / 0x120 !=
+          this_ptr->loop_endpoints[3]) {
         PTR_01cc4800 = "..\\sound\\sndmain.cpp";
         INT_01cc4804 = 0xb43;
-        core_main_c_FUN_004c8440("streaming sample sfx index mismatch on %s",iVar2);
+        core_main_c_FUN_004c8440("streaming sample sfx index mismatch on %s",this_ptr);
       }
-      sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(iVar2);
+      sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);
     }
     sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(0);
   }

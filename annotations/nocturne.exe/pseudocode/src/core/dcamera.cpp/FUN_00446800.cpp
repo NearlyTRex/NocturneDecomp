@@ -9,6 +9,6 @@
 void core_dcamera_cpp_FUN_00446800(void)
 
 {
-  core_dcamera_cpp_generateFogGrid_FUN_0043fa50(0x140d784);
+  core_dcamera_cpp_generateFogGrid_FUN_0043fa50((SFogGrid *)0x140d784);
   return;
 }

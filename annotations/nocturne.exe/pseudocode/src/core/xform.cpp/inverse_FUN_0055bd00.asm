@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * core_xform_cpp_inverse_FUN_0055bd00(float *param_1)
+; float * core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x98]:8  local_98
@@ -32,11 +32,11 @@
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 004290f3
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 004293db
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580 at 004365d0
-;   core_mirror.cpp_FUN_004d6650 at 004d6a37
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 at 004d6a37
 ;   core_tentacle.cpp_FUN_00543c50 at 00543f2e
-;   core_xform.cpp_FUN_0055bc30 at 0055bc47
-;   core_xform.cpp_FUN_0055bc80 at 0055bc8e
-;   core_xform.cpp_FUN_0055caf0 at 0055cb95
+;   core_xform.cpp_buildMirrorTransform_FUN_0055caf0 at 0055cb95
+;   core_xform.cpp_inverseInPlace_FUN_0055bc80 at 0055bc8e
+;   core_xform.cpp_invertAndGetTranslation_FUN_0055bc30 at 0055bc47
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005982fa
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [ESP + 0x88],ESI      ; 0055bd11
     PUSH EBX                            ; 0055bd18
     CALL core_xform.cpp_determinant_FUN_0055bcb0 ; 0055bd19
-        ;   XREF to: 0055bcb0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_determinant_FUN_0055bcb0()
+        ;   XREF to: 0055bcb0 (UNCONDITIONAL_CALL)  ; double core_xform.cpp_determinant_FUN_0055bcb0(CMatrix3x4f * matrix)
     MOV dword ptr [ESP + 0x7c],EAX      ; 0055bd1e
     MOV dword ptr [ESP + 0x80],EDX      ; 0055bd22
     FLD double ptr [ESP + 0x7c]         ; 0055bd29

@@ -1,0 +1,305 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 136,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051e860",
+    "address_range": [
+      [
+        "0051e860",
+        "0051e8b7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860",
+    "signature": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(undefined4 param_1,undefined4 param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "00416d40",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40"
+    },
+    {
+      "addr": "00415b30",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00415b30"
+    },
+    {
+      "addr": "0051e8c0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5348837209302326,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 43,
+      "INT_ADD": 19,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 18,
+      "LOAD": 16,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 152
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "CBodyPart * core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860(uint param_1,uint param_2,CVector3f *param_3,UOrientationVector *param_4,CVector3f *param_5,CDemonActor *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "this_ptr = core_bodypart_cpp_createBodyPart_FUN_00415b30(param_3,param_4,param_5,param_6,0,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "this_ptr = core_bodypart_cpp_createBodyPart_FUN_00415b30(param_3,param_4,param_5,param_6,0,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "this_ptr = core_bodypart_cpp_createBodyPart_FUN_00415b30(param_3,param_4,param_5,param_6,0,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "this_ptr = core_bodypart_cpp_createBodyPart_FUN_00415b30(param_3,param_4,param_5,param_6,0,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(param_1,this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(param_1,this_ptr,param_2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

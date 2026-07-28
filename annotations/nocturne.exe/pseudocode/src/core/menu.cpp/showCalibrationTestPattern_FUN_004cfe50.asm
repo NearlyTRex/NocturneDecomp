@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004cfe50(char *param_1)
+; void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004cfe50(char *message_text)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   message_text
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110
 ; undefined1       Stack[-0x10f]:1  local_10f
@@ -56,7 +58,7 @@ section .text
         ;   Label: LAB_004cfe7c
     PUSH 0x58854b                       ; 004cfe7d | = "  Press any key to continue."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004cfe82
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004cfe87
     MOV EDI,ESP                         ; 004cfe8a
     MOV ESI,EAX                         ; 004cfe8c
@@ -85,7 +87,7 @@ section .text
     MOV EDX,dword ptr [0x014b9904]      ; 004cfeb2 | DAT_014b9904
     PUSH EDX                            ; 004cfeb8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004cfeb9
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004cfebe
     MOV EDI,EAX                         ; 004cfec1
     MOV EAX,ESP                         ; 004cfec3
@@ -97,13 +99,13 @@ section .text
     ADD ESP,0x8                         ; 004cfed2
     MOV ESI,EAX                         ; 004cfed5
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004cfed7
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 004cfedc
     PUSH 0x0                            ; 004cfee1
     PUSH 0x0                            ; 004cfee3
     PUSH 0x1cc5b6c                      ; 004cfee5
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710 ; 004cfeea
-        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710()
+        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     MOV EAX,EDI                         ; 004cfeef
     ADD ESP,0x10                        ; 004cfef1
     LEA EDX,[EAX*0x4 + 0x0]             ; 004cfef4
@@ -126,11 +128,11 @@ section .text
     MOV EBX,dword ptr [0x014b9904]      ; 004cff24 | DAT_014b9904
     PUSH EBX                            ; 004cff2a
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cff2b
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004cff30
     PUSH 0x588568                       ; 004cff33 | = "Monitor calibration"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004cff38
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004cff3d
     PUSH EAX                            ; 004cff40
     MOV EBP,dword ptr [0x014b9904]      ; 004cff41 | DAT_014b9904
@@ -154,14 +156,14 @@ section .text
     MOV EAX,[0x014b9904]                ; 004cff6e | DAT_014b9904
     PUSH EAX                            ; 004cff73
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cff74
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004cff79
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cff7c
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004cff81
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00558b00 ; 004cff86
-        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
+        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     ADD ESP,0x100                       ; 004cff8b
     POP EBP                             ; 004cff91
     POP EDI                             ; 004cff92

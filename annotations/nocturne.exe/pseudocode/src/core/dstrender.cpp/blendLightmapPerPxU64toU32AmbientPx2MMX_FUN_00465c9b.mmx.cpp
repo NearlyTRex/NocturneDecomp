@@ -2,13 +2,13 @@
 // Address: 00465c9b
 // Address Range: [[00465c9b, 00465f4f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b(undefined4 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b(uint *param_1,ulonglong *param_2,byte *param_3,byte *param_4,int param_5)
+void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
         mov ECX,dword ptr [EBP + 0x18]

@@ -14,12 +14,10 @@ int sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(uint param_1,
   int *piVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  uint error_code;
+  char *pcVar4;
   int iVar5;
   int *piStack_1d8;
-  uint *puStack_1d4;
-  byte *puStack_1d0;
-  uint uStack_1cc;
   uint local_38;
   uint local_34;
   int local_30;
@@ -42,41 +40,32 @@ int sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60(uint param_1,
       iVar2 = iVar2 + 4;
     }
     if (iVar5 < 0x19) {
-      uStack_1cc = 0x12;
-      puStack_1d0 = (byte *)0x0;
-      puStack_1d4 = (uint *)&local_24;
       piStack_1d8 = (int *)0x52abc3;
-      memset();
+      memset(&local_24,0,0x12);
       local_24 = 1;
       local_22 = (short)param_3;
       local_20 = param_4;
       iVar3 = (int)((param_2 + (param_2 >> 0x1f) * -8) - (uint)((param_2 >> 0x1f) << 2 < 0)) >> 3;
       local_18 = local_22 * (short)iVar3;
       local_1c = param_4 * (uint)local_18;
-      uStack_1cc = 0x14;
-      puStack_1d0 = (byte *)0x0;
-      puStack_1d4 = &local_38;
       local_16 = (ushort)param_2;
       piStack_1d8 = (int *)0x52ac45;
-      memset();
+      memset(&local_38,0,0x14);
       local_28 = &local_24;
       local_30 = param_3 * iVar3 * param_5;
-      uStack_1cc = 0;
       local_38 = 0x14;
-      puStack_1d0 = &DAT_02dc9244 + iVar5 * 4;
-      puStack_1d4 = &local_38;
       local_34 = 0xb0;
       piStack_1d8 = _DAT_02dc9214;
-      iVar3 = (**(code **)(*_DAT_02dc9214 + 0xc))();
-      if (iVar3 == 0) {
+      error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();
+      if (error_code == 0) {
         if (*(int *)(&DAT_02dc9244 + iVar5 * 4) != 0) {
           return iVar5;
         }
       }
       else {
-        uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar3);
+        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
         _sprintf(&piStack_1d8,"DirectSux: Unable to %s.  (%s)",
-                   "Create secondary buffer",uVar4);
+                   "Create secondary buffer",pcVar4);
         sound_sndmain_cpp_FUN_00529980(&piStack_1d8);
       }
       sound_sndmain_cpp_FUN_00529980("DirectSoundDevice::allocateSample - access failed\n");

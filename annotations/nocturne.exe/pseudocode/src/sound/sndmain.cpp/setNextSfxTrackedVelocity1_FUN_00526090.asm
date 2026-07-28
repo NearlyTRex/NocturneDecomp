@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090(CVector3f *velocity_source_ptr)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   velocity_source_ptr
 ;
 ; XREF[4]:
 ;   core_dracbrid.cpp_FUN_0045ab40 at 0045afbf

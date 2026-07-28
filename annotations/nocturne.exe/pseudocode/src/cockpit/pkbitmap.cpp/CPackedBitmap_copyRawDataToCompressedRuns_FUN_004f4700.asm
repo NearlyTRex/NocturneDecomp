@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46d8
-;   cockpit_pkbmpset.cpp_FUN_004f5740 at 004f58f4
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740 at 004f58f4
 ;
 ; *****************************************************************************
 

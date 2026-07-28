@@ -2,13 +2,13 @@
 // Address: 00548ee0
 // Address Range: [[00548ee0, 00548ef1]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(undefined4 param_1)
+// Signature: _SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(_SOCKET *socket_handle,int flags)
 
 #include "nocturne.h"
 
-uint __cdecl support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(uint param_1)
+_SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_00548ee0(_SOCKET *socket_handle,int flags)
 
 {
-  support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(param_1);
-  return param_1;
+  support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(socket_handle);
+  return socket_handle;
 }

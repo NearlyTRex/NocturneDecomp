@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(undefined4 param_1)
+; CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap *this_ptr,uint flags)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a69fb
@@ -24,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0040e341
     PUSH EBX                            ; 0040e345
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360 ; 0040e346
-        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360()
+        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0040e34b
     MOV EAX,EBX                         ; 0040e34e
     POP EBX                             ; 0040e350

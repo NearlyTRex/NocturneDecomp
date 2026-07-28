@@ -1,22 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_stdio_c_freopen_FUN_00565724(undefined4 param_1,undefined1 *param_2,int param_3)
+; _FILE * __cdecl crt_stdio_c_freopen_FUN_00565724(char *filename,char *mode,_FILE *stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; char *           Stack[0x8]:4   mode
+; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c85f0 at 004c86a8
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;   undefined4 DAT_005c1d58
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005653e0
-;   crt_unknown.c_FUN_0056551c
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_005656a4
-;   FUN_005671e4
+;   crt_unknown.c_OpenFileAndInitialize_FUN_0056551c
+;   crt_unknown.c_OpenModeStringParser_FUN_005653e0
 ;
 ; *****************************************************************************
 
@@ -33,8 +37,8 @@ section .text
     PUSH EAX                            ; 00565731
     MOV EDX,dword ptr [ESP + 0x20]      ; 00565732
     PUSH EDX                            ; 00565736
-    CALL crt_unknown.c_FUN_005653e0     ; 00565737
-        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005653e0()
+    CALL crt_unknown.c_OpenModeStringParser_FUN_005653e0 ; 00565737
+        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_OpenModeStringParser_FUN_005653e0()
     ADD ESP,0x8                         ; 0056573c
     MOV EDI,EAX                         ; 0056573f
     TEST EAX,EAX                        ; 00565741
@@ -42,7 +46,7 @@ section .text
         ;   XREF to: 005657ae (CONDITIONAL_JUMP)  ; LAB_005657ae
     MOV EBX,dword ptr [ESI + 0x10]      ; 00565745
     PUSH EBX                            ; 00565748
-    CALL dword ptr [0x005c1ac0]         ; 00565749 | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 00565749 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV ECX,dword ptr [0x005c1d58]      ; 0056574f | DAT_005c1d58
     ADD ESP,0x4                         ; 00565755
     TEST ECX,ECX                        ; 00565758
@@ -74,13 +78,13 @@ section .text
     PUSH EAX                            ; 00565792
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00565793
     PUSH EAX                            ; 00565797
-    CALL crt_unknown.c_FUN_0056551c     ; 00565798
-        ;   XREF to: 0056551c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056551c()
+    CALL crt_unknown.c_OpenFileAndInitialize_FUN_0056551c ; 00565798
+        ;   XREF to: 0056551c (UNCONDITIONAL_CALL)  ; _FILE * crt_unknown.c_OpenFileAndInitialize_FUN_0056551c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
     ADD ESP,0x18                        ; 0056579d
     MOV ESI,EAX                         ; 005657a0
     PUSH EBX                            ; 005657a2
         ;   Label: LAB_005657a2
-    CALL dword ptr [0x005c1ac4]         ; 005657a3 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 005657a3 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 005657a9
     MOV EAX,ESI                         ; 005657ac
     ADD ESP,0x4                         ; 005657ae

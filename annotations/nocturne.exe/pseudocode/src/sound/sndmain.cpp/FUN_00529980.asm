@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_00529980(undefined4 param_1)
+; void sound_sndmain_cpp_FUN_00529980(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x408]:1  local_408
@@ -11,13 +11,13 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 at 0052acc6
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 at 0052b145
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b976
+;   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280 at 0052a3d8
 ;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0 at 0052b86e
 ;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0 at 0052bb02
 ;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0 at 0052ae73
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052aa19
 ;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0 at 0052a1c3
 ;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 at 0052a848
-;   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 at 0052b59f
 ;   ... and 22 more
 ;
 ; Referenced Globals:
@@ -45,7 +45,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005299a5
     PUSH EAX                            ; 005299a9
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 005299aa
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005299af
     MOV EAX,ESP                         ; 005299b2
     PUSH EAX                            ; 005299b4

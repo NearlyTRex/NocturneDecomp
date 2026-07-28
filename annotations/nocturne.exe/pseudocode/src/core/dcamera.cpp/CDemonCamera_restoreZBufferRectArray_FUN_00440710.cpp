@@ -2,150 +2,149 @@
 // Address: 00440710
 // Address Range: [[00440710, 00440a1c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(int param_1)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(int param_1)
+void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(CDemonCamera *this_ptr)
 
 {
   int *piVar1;
   int *piVar2;
   int *piVar3;
-  bool bVar4;
-  int iVar5;
-  int *piVar6;
+  int *piVar4;
+  bool bVar5;
+  CRect *pCVar6;
   int iVar7;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int *local_2c;
+  int iVar8;
+  CRect local_3c;
+  CRect *local_2c;
   int local_28;
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
+  float local_18;
   int local_14;
   
   if (_DAT_01c02594 != 0) {
     engine_special_cpp_restoreZBuffer_FUN_00532c90(0,0,0,DAT_005b761c + -1,DAT_005b7620 + -1);
     return;
   }
-  if (0x100 < *(int *)(param_1 + 0x1d0)) {
-    local_3c = _DAT_01c02594;
-    local_34 = _DAT_01c02594;
-    local_38 = *(int *)(param_1 + 0x13c) + -1;
-    local_30 = *(int *)(param_1 + 0x140) + -1;
-    core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(param_1,&local_3c);
+  if (0x100 < this_ptr->rect_array_count) {
+    local_3c.x_min = _DAT_01c02594;
+    local_3c.y_min = _DAT_01c02594;
+    local_3c.x_max = *(int *)(this_ptr->camera_name + 0xfc) + -1;
+    local_3c.y_max = (int)this_ptr->max_distance + -1;
+    core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(this_ptr,&local_3c);
     return;
   }
-  iVar7 = 0;
-  if (0 < *(int *)(param_1 + 0x1d0)) {
-    piVar6 = (int *)(param_1 + 0x1d4);
+  iVar8 = 0;
+  if (0 < this_ptr->rect_array_count) {
+    pCVar6 = this_ptr->rect_array;
     do {
-      if (*piVar6 < *(int *)(param_1 + 0x144)) {
-        *piVar6 = *(int *)(param_1 + 0x144);
+      if (pCVar6->x_min < this_ptr->framebuffer_width) {
+        pCVar6->x_min = this_ptr->framebuffer_width;
       }
-      iVar5 = *(int *)(param_1 + 0x144) + *(int *)(param_1 + 0x13c);
-      if (iVar5 <= piVar6[1]) {
-        piVar6[1] = iVar5 + -1;
+      iVar7 = this_ptr->framebuffer_width + *(int *)(this_ptr->camera_name + 0xfc);
+      if (iVar7 <= pCVar6->x_max) {
+        pCVar6->x_max = iVar7 + -1;
       }
-      if (piVar6[2] < *(int *)(param_1 + 0x148)) {
-        piVar6[2] = *(int *)(param_1 + 0x148);
+      if (pCVar6->y_min < this_ptr->framebuffer_height) {
+        pCVar6->y_min = this_ptr->framebuffer_height;
       }
-      iVar5 = *(int *)(param_1 + 0x148) + *(int *)(param_1 + 0x140);
-      if (iVar5 <= piVar6[3]) {
-        piVar6[3] = iVar5 + -1;
+      iVar7 = this_ptr->framebuffer_height + (int)this_ptr->max_distance;
+      if (iVar7 <= pCVar6->y_max) {
+        pCVar6->y_max = iVar7 + -1;
       }
-      iVar7 = iVar7 + 1;
-      piVar6 = piVar6 + 4;
-    } while (iVar7 < *(int *)(param_1 + 0x1d0));
+      iVar8 = iVar8 + 1;
+      pCVar6 = pCVar6 + 1;
+    } while (iVar8 < this_ptr->rect_array_count);
   }
-  local_18 = *(int *)(param_1 + 0x140);
-  iVar7 = 0;
+  local_18 = this_ptr->max_distance;
+  iVar8 = 0;
   local_24 = 0;
-  if (0 < *(int *)(param_1 + 0x1d0)) {
-    iVar5 = param_1 + 0x1d4;
+  if (0 < this_ptr->rect_array_count) {
+    pCVar6 = this_ptr->rect_array;
     do {
-      if (*(int *)(iVar5 + 8) < local_18) {
-        local_18 = *(int *)(iVar5 + 8);
+      if (pCVar6->y_min < (int)local_18) {
+        local_18 = (float)pCVar6->y_min;
       }
-      if (local_24 < *(int *)(iVar5 + 0xc)) {
-        local_24 = *(int *)(iVar5 + 0xc);
+      if (local_24 < pCVar6->y_max) {
+        local_24 = pCVar6->y_max;
       }
-      iVar7 = iVar7 + 1;
-      iVar5 = iVar5 + 0x10;
-    } while (iVar7 < *(int *)(param_1 + 0x1d0));
+      iVar8 = iVar8 + 1;
+      pCVar6 = pCVar6 + 1;
+    } while (iVar8 < this_ptr->rect_array_count);
   }
-  if (local_18 <= local_24) {
-    local_28 = local_18 << 2;
-    local_2c = (int *)(param_1 + 0x1d4);
+  if ((int)local_18 <= local_24) {
+    local_28 = (int)local_18 << 2;
+    local_2c = this_ptr->rect_array;
     do {
       local_1c = 0;
       _DAT_0140e7a4 = 0;
-      if (0 < *(int *)(param_1 + 0x1d0)) {
+      if (0 < this_ptr->rect_array_count) {
         local_14 = 0;
-        piVar6 = local_2c;
+        pCVar6 = local_2c;
         do {
-          if ((piVar6[2] <= local_18) && (local_18 <= piVar6[3])) {
-            bVar4 = false;
+          if ((pCVar6->y_min <= (int)local_18) && ((int)local_18 <= pCVar6->y_max)) {
+            bVar5 = false;
             if (0 < _DAT_0140e7a4) {
-              iVar7 = _DAT_0140e7a4 * 4;
-              iVar5 = 0;
+              iVar8 = _DAT_0140e7a4 * 4;
+              iVar7 = 0;
               do {
-                if ((*(int *)(iVar5 + 0x140e7a8) <= piVar6[1]) &&
-                   (*piVar6 <= *(int *)(iVar5 + 0x140eba8))) {
-                  if ((*(int *)(iVar5 + 0x140e7a8) <= *piVar6) &&
-                     (piVar6[1] <= *(int *)(iVar5 + 0x140eba8))) goto LAB_0044089a;
-                  if (*piVar6 < *(int *)(iVar5 + 0x140e7a8)) {
-                    bVar4 = true;
-                    *(int *)(iVar5 + 0x140e7a8) = *piVar6;
+                if ((*(int *)(iVar7 + 0x140e7a8) <= pCVar6->x_max) &&
+                   (pCVar6->x_min <= *(int *)(iVar7 + 0x140eba8))) {
+                  if ((*(int *)(iVar7 + 0x140e7a8) <= pCVar6->x_min) &&
+                     (pCVar6->x_max <= *(int *)(iVar7 + 0x140eba8))) goto LAB_0044089a;
+                  if (pCVar6->x_min < *(int *)(iVar7 + 0x140e7a8)) {
+                    bVar5 = true;
+                    *(int *)(iVar7 + 0x140e7a8) = pCVar6->x_min;
                   }
-                  if (*(int *)(iVar5 + 0x140eba8) < piVar6[1]) {
-                    *(int *)(iVar5 + 0x140eba8) = piVar6[1];
+                  if (*(int *)(iVar7 + 0x140eba8) < pCVar6->x_max) {
+                    *(int *)(iVar7 + 0x140eba8) = pCVar6->x_max;
                     goto LAB_0044089a;
                   }
-                  if (bVar4) break;
+                  if (bVar5) break;
                 }
-                iVar5 = iVar5 + 4;
-              } while (iVar5 < iVar7);
+                iVar7 = iVar7 + 4;
+              } while (iVar7 < iVar8);
             }
-            if (!bVar4) {
-              *(int *)(local_14 + 0x140e7a8) = *piVar6;
-              *(int *)(local_14 + 0x140eba8) = piVar6[1];
+            if (!bVar5) {
+              *(int *)(local_14 + 0x140e7a8) = pCVar6->x_min;
+              *(int *)(local_14 + 0x140eba8) = pCVar6->x_max;
               _DAT_0140e7a4 = _DAT_0140e7a4 + 1;
               local_14 = local_14 + 4;
             }
           }
 LAB_0044089a:
-          piVar6 = piVar6 + 4;
+          pCVar6 = pCVar6 + 1;
           local_1c = local_1c + 1;
-        } while (local_1c < *(int *)(param_1 + 0x1d0));
+        } while (local_1c < this_ptr->rect_array_count);
       }
-      iVar7 = 0;
+      iVar8 = 0;
       if (0 < _DAT_0140e7a4) {
-        iVar5 = 0;
+        iVar7 = 0;
         local_20 = local_28;
         do {
-          piVar6 = (int *)(iVar5 + 0x140e7a8);
-          piVar1 = (int *)(iVar5 + 0x140e7a8);
-          piVar2 = (int *)(iVar5 + 0x140e7a8);
-          piVar3 = (int *)(iVar5 + 0x140eba8);
-          iVar5 = iVar5 + 4;
-          iVar7 = iVar7 + 1;
+          piVar1 = (int *)(iVar7 + 0x140e7a8);
+          piVar2 = (int *)(iVar7 + 0x140e7a8);
+          piVar3 = (int *)(iVar7 + 0x140e7a8);
+          piVar4 = (int *)(iVar7 + 0x140eba8);
+          iVar7 = iVar7 + 4;
+          iVar8 = iVar8 + 1;
           core_dstrender_cpp_memcpyMMX_FUN_00465341
-                    (*(int *)(&DAT_01bd4260 + local_20) + *piVar6 * 4,
-                     *(int *)(param_1 + 0x15c) +
-                     (((local_18 - *(int *)(param_1 + 0x148)) * *(int *)(param_1 + 0x13c) + *piVar1)
-                     - *(int *)(param_1 + 0x144)) * 4,(*piVar3 - *piVar2) * 4 + 4);
-        } while (iVar7 < _DAT_0140e7a4);
+                    (*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4,
+                     (void *)((int)this_ptr->zbuffer_aligned +
+                             ((((int)local_18 - this_ptr->framebuffer_height) *
+                               *(int *)(this_ptr->camera_name + 0xfc) + *piVar2) -
+                             this_ptr->framebuffer_width) * 4),(*piVar4 - *piVar3) * 4 + 4);
+        } while (iVar8 < _DAT_0140e7a4);
       }
       local_28 = local_28 + 4;
-      local_18 = local_18 + 1;
-    } while (local_18 <= local_24);
+      local_18 = (float)((int)local_18 + 1);
+    } while ((int)local_18 <= local_24);
   }
   return;
 }

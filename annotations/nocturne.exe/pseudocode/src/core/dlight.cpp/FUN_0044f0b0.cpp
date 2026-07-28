@@ -2,42 +2,38 @@
 // Address: 0044f0b0
 // Address Range: [[0044f0b0, 0044f426]]
 // Convention: unknown
-// Signature: void core_dlight_cpp_FUN_0044f0b0(int param_1)
+// Signature: void core_dlight_cpp_FUN_0044f0b0(CDemonLight *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dlight_cpp_FUN_0044f0b0(int param_1)
+void core_dlight_cpp_FUN_0044f0b0(CDemonLight *param_1)
 
 {
-  int *piVar1;
-  float *pfVar2;
-  bool bVar3;
-  int iVar4;
+  CDemonRenderer *pCVar1;
+  CVector3f *pCVar2;
+  float *pfVar3;
+  bool bVar4;
   int iVar5;
-  float10 fVar6;
+  int iVar6;
   float10 fVar7;
-  uint uVar8;
-  float local_a8;
-  byte local_a4 [4];
-  uint local_a0;
-  uint local_9c;
-  uint local_98;
-  int local_94;
+  float10 fVar8;
+  double dVar9;
+  byte local_a8 [8];
+  UIntegerFloat local_a0;
+  UIntegerFloat local_9c;
+  UIntegerFloat local_98;
+  UIntegerFloat local_94;
   uint local_90;
   int local_8c;
   int local_88;
   uint local_84;
-  int local_7c;
-  int local_78;
-  int local_74;
+  CVector3i local_7c;
   byte local_70 [12];
-  int local_64;
-  int local_60;
-  int local_5c;
-  byte local_58 [12];
-  byte local_4c [12];
+  CVector3i local_64;
+  CVector3f local_58;
+  CVector3f local_4c;
   float local_40;
   float local_3c;
   float local_38;
@@ -48,99 +44,109 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,param_1 + 0x104);
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(param_1 + 0x110,local_4c);
-  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,local_4c,0);
-  local_a8 = ((float)18 / *(float *)(param_1 + 0x138)) * *(float *)(param_1 + 0x100);
+            (DAT_005ae704,(CVector3f *)((param_1->base).camera_name + 0xc4));
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
+            ((CMatrix3x3f *)((param_1->base).camera_name + 0xd0),&local_4c);
+  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+            (DAT_005ae704,&local_4c,(CVector3f *)0x0);
+  local_a8._0_4_ =
+       ((float)18 / *(float *)((param_1->base).camera_name + 0xf8)) *
+       *(float *)((param_1->base).camera_name + 0xc0);
+  iVar6 = 0;
+  local_38 = *(float *)((param_1->base).camera_name + 0xc0);
   iVar5 = 0;
-  local_38 = *(float *)(param_1 + 0x100);
-  iVar4 = 0;
   do {
-    fVar6 = (float10)iVar5 * (float10)6.2831853070000001 * (float10)0.0625;
-    fVar7 = (float10)fcos(fVar6);
-    fVar6 = (float10)fsin(fVar6);
-    local_40 = (float)(fVar7 * (float10)local_a8);
-    local_3c = (float)(fVar6 * (float10)local_a8);
-    local_64 = (int)ROUND(local_40 * _DAT_0059c030);
-    local_60 = (int)ROUND(local_3c * _DAT_0059c030);
-    local_5c = (int)ROUND(local_38 * _DAT_0059c030);
-    local_14 = iVar5;
-    engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar4,&local_64);
-    piVar1 = DAT_005ae704;
-    iVar5 = iVar5 + 1;
-    *(uint *)(iVar4 + 0x20 + *DAT_005ae704) = 0;
-    iVar4 = iVar4 + 0x30;
-  } while (iVar5 < 0x10);
-  local_7c = (int)ROUND(_DAT_01abb4b8 * _DAT_0059c030);
-  local_78 = (int)ROUND(_DAT_01abb4bc * _DAT_0059c030);
-  local_74 = (int)ROUND(_DAT_01abb4c0 * _DAT_0059c030);
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*piVar1 + 0x300,&local_7c);
-  piVar1 = DAT_005ae704;
-  *(uint *)(*DAT_005ae704 + 800) = 0xffff;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(piVar1,1);
-  pfVar2 = (float *)engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
-                              (DAT_005ae704,local_58);
-  local_34 = *pfVar2 - *(float *)(param_1 + 0x104);
-  local_30 = pfVar2[1] - *(float *)(param_1 + 0x108);
-  bVar3 = false;
-  local_2c = pfVar2[2] - *(float *)(param_1 + 0x10c);
-  pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                              (param_1 + 0x110,local_70,&local_34);
-  if (&local_34 != pfVar2) {
-    local_34 = *pfVar2;
-    local_30 = pfVar2[1];
-    local_2c = pfVar2[2];
+    fVar7 = (float10)iVar6 * (float10)6.2831853070000001 * (float10)0.0625;
+    fVar8 = (float10)fcos(fVar7);
+    fVar7 = (float10)fsin(fVar7);
+    local_40 = (float)(fVar8 * (float10)(float)local_a8._0_4_);
+    local_3c = (float)(fVar7 * (float10)(float)local_a8._0_4_);
+    local_64.x = (int)ROUND(local_40 * _DAT_0059c030);
+    local_64.y = (int)ROUND(local_3c * _DAT_0059c030);
+    local_64.z = (int)ROUND(local_38 * _DAT_0059c030);
+    local_14 = iVar6;
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+              ((SProjectedVertex *)
+               ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar5),
+               &local_64);
+    pCVar1 = DAT_005ae704;
+    iVar6 = iVar6 + 1;
+    *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar5) = 0;
+    iVar5 = iVar5 + 0x30;
+  } while (iVar6 < 0x10);
+  local_7c.x = (int)ROUND(_DAT_01abb4b8 * _DAT_0059c030);
+  local_7c.y = (int)ROUND(_DAT_01abb4bc * _DAT_0059c030);
+  local_7c.z = (int)ROUND(_DAT_01abb4c0 * _DAT_0059c030);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
+  pCVar1 = DAT_005ae704;
+  DAT_005ae704->vertex_buffer_ptr[0x10].r = 0xffff;
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(pCVar1,1);
+  pCVar2 = engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
+                     (DAT_005ae704,&local_58);
+  local_34 = pCVar2->x - *(float *)((param_1->base).camera_name + 0xc4);
+  local_30 = pCVar2->y - *(float *)((param_1->base).camera_name + 200);
+  bVar4 = false;
+  local_2c = pCVar2->z - *(float *)((param_1->base).camera_name + 0xcc);
+  pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                              ((param_1->base).camera_name + 0xd0,local_70,&local_34);
+  if (&local_34 != pfVar3) {
+    local_34 = *pfVar3;
+    local_30 = pfVar3[1];
+    local_2c = pfVar3[2];
   }
-  local_34 = *(float *)(param_1 + 0x138) * (float)0.055555555555555601 * local_34;
-  local_30 = (float)0.055555555555555601 * *(float *)(param_1 + 0x138) * local_30;
+  local_34 = *(float *)((param_1->base).camera_name + 0xf8) * (float)0.055555555555555601 * local_34;
+  local_30 = (float)0.055555555555555601 * *(float *)((param_1->base).camera_name + 0xf8) * local_30;
   if ((((local_34 < local_2c) && (local_18 = -local_2c, local_18 < local_34)) &&
-      (local_30 < local_2c)) && ((local_18 < local_30 && (local_2c < *(float *)(param_1 + 0x100)))))
-  {
-    bVar3 = true;
+      (local_30 < local_2c)) &&
+     ((local_18 < local_30 && (local_2c < *(float *)((param_1->base).camera_name + 0xc0))))) {
+    bVar4 = true;
   }
   local_90 = 0;
-  local_94 = 0;
-  local_98 = 0;
-  local_9c = 0;
-  local_a0 = 3;
-  if (bVar3) {
+  local_94.i = 0;
+  local_98.i = 0;
+  local_9c.i = 0;
+  local_a0.i = 3;
+  if (bVar4) {
     core_dcamera_cpp_initializeCoronaBuffers_FUN_00444140();
   }
   else {
     local_84 = 0x10;
-    iVar4 = 0;
+    iVar5 = 0;
     do {
-      if (iVar4 == 0xf) {
+      if (iVar5 == 0xf) {
         local_8c = 0;
       }
       else {
-        local_8c = iVar4 + 1;
+        local_8c = iVar5 + 1;
       }
-      iVar5 = iVar4 + 1;
-      local_88 = iVar4;
+      iVar6 = iVar5 + 1;
+      local_88 = iVar5;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                (DAT_005ae704,local_a4,core_dcamera_cpp_FUN_00444180);
-      iVar4 = iVar5;
-    } while (iVar5 < 0x10);
+                (DAT_005ae704,(SMRGLHeaderPrimitive *)(local_a8 + 4),
+                 core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180);
+      iVar5 = iVar6;
+    } while (iVar6 < 0x10);
   }
-  local_9c = 0;
-  local_98 = 0;
-  local_94 = 0xffff;
-  uVar8 = 0x44f39a;
-  fVar6 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x100) * (float10)256);
-  local_94 = (int)ROUND(fVar6);
-  iVar4 = 0;
+  local_9c.i = 0;
+  local_98.i = 0;
+  local_94.i = 0xffff;
+  dVar9 = round
+                    ((double)(*(float *)((param_1->base).camera_name + 0xc0) *
+                             (float)256));
+  local_94.i = (int)ROUND(dVar9);
+  iVar5 = 0;
   do {
-    iVar5 = iVar4 + 1;
+    iVar6 = iVar5 + 1;
     local_90 = 0;
-    local_8c = iVar4;
-    local_88 = iVar5;
+    local_8c = iVar5;
+    local_88 = iVar6;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-              (DAT_005ae704,&local_a8,core_dcamera_cpp_FUN_00444180,uVar8);
-    iVar4 = iVar5;
-  } while (iVar5 < 0xe);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
+              (DAT_005ae704,(SMRGLHeaderPrimitive *)local_a8,
+               core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180);
+    iVar5 = iVar6;
+  } while (iVar6 < 0xe);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350(param_1);
   return;

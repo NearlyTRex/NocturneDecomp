@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0(undefined4 param_1)
+; void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0(CBitFont *font_ptr)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   font_ptr
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e4e5
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e4e5
 ;   core_script.cpp_FUN_004fe9d0 at 004fea2f
 ;
 ; Referenced Globals:

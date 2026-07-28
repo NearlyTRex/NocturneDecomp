@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_2d_c_getInputWithPrompt_FUN_00403fb0(undefined1 *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; uint engine_2d_c_getInputWithPrompt_FUN_00403fb0(undefined1 *param_1,int param_2,int param_3,int param_4,undefined4 param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
@@ -32,7 +32,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x124]     ; 00403fc8
     MOV byte ptr [ESI],0x0              ; 00403fcf
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00403fd2
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     XOR EBX,EBX                         ; 00403fd7
     PUSH ESI                            ; 00403fd9
         ;   Label: LAB_00403fd9
@@ -49,12 +49,12 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00403ff6
     PUSH EAX                            ; 00403ffa
     CALL engine_2d.c_drawText_FUN_00402600 ; 00403ffb
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 00404000
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00404003
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00558b00 ; 00404008
-        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
+        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     AND EAX,0xff                        ; 0040400d
     MOV dword ptr [ESP + 0x100],EAX     ; 00404012
     CMP EAX,0xd                         ; 00404019
@@ -94,10 +94,10 @@ section .text
     MOV byte ptr [ESI],0x0              ; 00404068
         ;   Label: LAB_00404068
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0040406b
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_0040406b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00404070
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EAX,dword ptr [ESP + 0x100]     ; 00404075
     ADD ESP,0x104                       ; 0040407c
     POP EBP                             ; 00404082

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_00438dc0(byte *param_1,int param_2,int *param_3,int *param_4)
+; int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining)
 ;
+; Parameters:
+; SBitBuffer *     Stack[0x4]:4   bit_state
+; int              Stack[0x8]:4   bit_count
+; char * *         Stack[0xc]:4   output_pos
+; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

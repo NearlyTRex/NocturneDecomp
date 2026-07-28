@@ -34,7 +34,7 @@ section .text
     JZ 0x005325eb                       ; 005325e4
         ;   XREF to: 005325eb (CONDITIONAL_JUMP)  ; LAB_005325eb
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005325e6
-        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
+        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
     MOV EAX,EBX                         ; 005325eb
         ;   Label: LAB_005325eb
     POP EBX                             ; 005325ed

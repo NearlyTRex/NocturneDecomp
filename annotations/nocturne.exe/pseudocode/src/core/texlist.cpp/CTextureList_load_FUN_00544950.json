@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,23 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 490,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 31,
+    "pseudocode_lines": 144,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param",
+      "shadow_pointer_walk",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 408
+    "total_lines": 407
   },
   "cross_references": [
     {
@@ -158,7 +155,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_texlist.cpp_CTextureList_load_FUN_00544950",
-    "signature": "void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(int *param_1,char *param_2)"
+    "signature": "void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(CTextureList *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -293,11 +290,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.572815533980583,
@@ -331,10 +328,10 @@
     "pcode_op_count": 942
   },
   "stack_frame": {
-    "frame_size": 304,
+    "frame_size": 312,
     "local_size": 304,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -406,6 +403,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureList *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -449,208 +460,8 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(local_2c,\"%d\\n\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 < 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar5 = param_1 + iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1 + 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(char *)((int)piVar5",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 122,
-      "match": "(int *)((int)piVar5",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(char *)((int)local_14",
-      "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)local_14 + iVar4 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(byte *)((int)param_1",
-      "severity": "moderate",
-      "text": "uVar3 = toupper(*(byte *)((int)param_1 + iVar2));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar3 = toupper(*(byte *)((int)param_1 + iVar2));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(byte *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(byte *)((int)param_1 + uVar7 + iVar4 + 0xb) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)((int)param_1 + uVar7 + iVar4 + 0xb) = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 <= local_1c) goto LAB_00544bac;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 120,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 128,
-      "match": "(int)local_14",
-      "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)local_14 + iVar4 + 8);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -658,15 +469,39 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 112,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 140,
+      "match": "local_18 = (T *)local_18->ARRAY",
+      "severity": "moderate",
+      "text": "local_18 = (CTextureList *)local_18->texture_entries;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 142,
+      "match": "local_24 = (T *)(local_24->FIELD[N].SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "local_24 = (CTextureList *)(local_24->texture_entries[0].texture_name + 0xc);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 129,
+      "line": 127,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -674,7 +509,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -682,22 +517,11 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

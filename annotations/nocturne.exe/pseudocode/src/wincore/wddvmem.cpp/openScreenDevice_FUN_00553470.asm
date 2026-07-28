@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_0049cc10 at 0049cce5
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cce5
 ;   core_game.cpp_FUN_004a57c0 at 004a597f
 ;   engine_special.cpp_FUN_00532ba0 at 00532be7
-;   engine_texture.cpp_FUN_00545aa0 at 00545aab
+;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545aab
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e
 ;
 ; Referenced Globals:
@@ -57,7 +57,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00553499
     PUSH EAX                            ; 0055349d
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0055349e
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005534a3
     PUSH 0x0                            ; 005534a6
     PUSH 0x1                            ; 005534a8

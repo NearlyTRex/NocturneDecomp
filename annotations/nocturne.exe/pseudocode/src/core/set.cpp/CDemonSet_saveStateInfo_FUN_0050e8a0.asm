@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(int *param_1,undefined4 param_2)
+; void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3dfa

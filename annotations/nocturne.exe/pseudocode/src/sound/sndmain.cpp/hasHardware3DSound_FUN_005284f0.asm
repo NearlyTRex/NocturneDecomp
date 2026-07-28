@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0(void)
+; uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_005284f0(void)
 ;
 ;
 ; XREF[7]:
@@ -24,7 +24,7 @@
 section .text
 
     CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00528480 ; 005284f0
-        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
+        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
         ;   Label: sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
     TEST EAX,EAX                        ; 005284f5
     JZ 0x005284fe                       ; 005284f7

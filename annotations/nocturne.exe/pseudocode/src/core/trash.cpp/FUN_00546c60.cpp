@@ -9,12 +9,12 @@
 void core_trash_cpp_FUN_00546c60(void)
 
 {
-  int iVar1;
+  CTrash *this_ptr;
   
-  iVar1 = FUN_0056497c(800);
-  if (iVar1 == 0) {
+  this_ptr = (CTrash *)FUN_0056497c(800);
+  if (this_ptr == (CTrash *)0x0) {
     return;
   }
-  core_trash_cpp_CTrash_ctor_FUN_00546c90(iVar1);
+  core_trash_cpp_CTrash_ctor_FUN_00546c90(this_ptr);
   return;
 }

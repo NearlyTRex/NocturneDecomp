@@ -2,13 +2,13 @@
 // Address: 0048f3c0
 // Address Range: [[0048f3c0, 0048f446]]
 // Convention: __cdecl
-// Signature: void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,uint param_3)
+// Signature: void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,uint param_3)
+void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 
 {
   uint uVar1;
@@ -24,9 +24,9 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,ui
   ushort uVar11;
   uint5 uVar12;
   
-  if ((*(uint *)(*(int *)(&DAT_01bd4260 + param_2 * 4) + param_1 * 4) < param_3) &&
+  if ((*(uint *)(*(int *)(&DAT_01bd4260 + screen_y * 4) + screen_x * 4) < (uint)z_depth) &&
      (DAT_005b7624 == 0x20)) {
-    puVar3 = (uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4);
+    puVar3 = (uint *)(*(int *)(&DAT_01bd2fa0 + screen_y * 4) + screen_x * 4);
     uVar1 = *puVar3;
     uVar9 = (ushort)(((uint7)(byte)((uint)_DAT_01c00c70 >> 0x18) << 0x30) >> 0x28);
     uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>

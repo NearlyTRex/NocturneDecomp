@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(int param_1)
+; void core_flamecan_cpp_CFlameCan_setup_FUN_0048e410(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
@@ -26,12 +26,12 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 0048e41a
     PUSH EBX                            ; 0048e41d
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0048e41e
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048e423
     LEA EAX,[EBX + 0x150]               ; 0048e426
     PUSH EAX                            ; 0048e42c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0048e42d
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048e432
     LEA EAX,[ESP + 0x10]                ; 0048e435
     PUSH EAX                            ; 0048e439

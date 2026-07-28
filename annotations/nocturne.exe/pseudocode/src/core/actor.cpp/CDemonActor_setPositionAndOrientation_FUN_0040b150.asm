@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(int param_1,undefined4 *param_2,undefined4 *param_3)
+; void core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150(CDemonActor *param_1,float *param_2,float *param_3)
 ;
 ;
 ; XREF[1]:
@@ -40,7 +40,7 @@ section .text
     PUSH ECX                            ; 0040b188
         ;   Label: LAB_0040b188
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0040b189
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040b18e
     POP ESI                             ; 0040b191
     POP EBX                             ; 0040b192

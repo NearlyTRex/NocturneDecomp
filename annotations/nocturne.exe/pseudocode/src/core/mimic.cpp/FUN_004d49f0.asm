@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_FUN_004d49f0(int param_1,undefined4 param_2)
+; void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -75,7 +75,7 @@ section .text
     PUSH EBX                            ; 004d4a7a
         ;   Label: LAB_004d4a7a
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 004d4a7b
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d4a80
     POP EDI                             ; 004d4a83
         ;   Label: LAB_004d4a83
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_004d4ab0
     PUSH EBX                            ; 004d4ab4
     CALL core_mimic.cpp_CMimic_processMorph_FUN_004d5e20 ; 004d4ab5
-        ;   XREF to: 004d5e20 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_processMorph_FUN_004d5e20()
+        ;   XREF to: 004d5e20 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_004d5e20(CMimic * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d4aba
     POP EDI                             ; 004d4abd
     POP EBX                             ; 004d4abe
@@ -111,7 +111,7 @@ section .text
     MOV EAX,[0x005b7650]                ; 004d4ac9 | DAT_005b7650
     PUSH EAX                            ; 004d4ace
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004d4acf
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004d4ad4
     TEST EAX,EAX                        ; 004d4ad7
     JZ 0x004d4ae5                       ; 004d4ad9
@@ -123,7 +123,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 004d4aec | DAT_005b7650
     PUSH EDX                            ; 004d4af2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004d4af3
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004d4af8
     TEST EAX,EAX                        ; 004d4afb
     JZ 0x004d4a7a                       ; 004d4afd
@@ -141,7 +141,7 @@ section .text
     ADD EAX,0x150                       ; 004d4b27
     PUSH EAX                            ; 004d4b2c
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004d4b2d
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d4b32
     ADD ESP,0x4                         ; 004d4b35
     CMP EAX,0x3                         ; 004d4b38
@@ -156,11 +156,11 @@ section .text
     PUSH EBX                            ; 004d4b4a
         ;   Label: LAB_004d4b4a
     CALL core_mimic.cpp_CMimic_setupCloth_FUN_004d5770 ; 004d4b4b
-        ;   XREF to: 004d5770 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_setupCloth_FUN_004d5770()
+        ;   XREF to: 004d5770 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_setupCloth_FUN_004d5770(CMimic * this_ptr)
     ADD ESP,0x4                         ; 004d4b50
     PUSH EBX                            ; 004d4b53
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 004d4b54
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d4b59
     POP EDI                             ; 004d4b5c
     POP EBX                             ; 004d4b5d
@@ -176,7 +176,7 @@ section .text
         ;   XREF to: 004d4b4a (CONDITIONAL_JUMP)  ; LAB_004d4b4a
     PUSH EBX                            ; 004d4b6b
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 004d4b6c
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d4b71
     POP EDI                             ; 004d4b74
     POP EBX                             ; 004d4b75
@@ -194,7 +194,7 @@ section .text
         ;   XREF to: 004d4b4a (CONDITIONAL_JUMP)  ; LAB_004d4b4a
     PUSH EBX                            ; 004d4b89
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 004d4b8a
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d4b8f
     POP EDI                             ; 004d4b92
     POP EBX                             ; 004d4b93

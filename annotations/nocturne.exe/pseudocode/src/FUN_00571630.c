@@ -9,12 +9,12 @@
 uint FUN_00571630(void)
 
 {
-  int iVar1;
-  int iVar2;
+  SIGNAL_HANDLER_TYPE SVar1;
+  SIGNAL_HANDLER_TYPE SVar2;
   
-  iVar1 = FUN_00571564(4);
-  iVar2 = FUN_00571564(7);
-  if (((iVar1 == 2) || (iVar1 == 3)) && ((iVar2 == 2 || (iVar2 == 3)))) {
+  SVar1 = getSignalHandler(4);
+  SVar2 = getSignalHandler(7);
+  if (((SVar1 == 2) || (SVar1 == 3)) && ((SVar2 == 2 || (SVar2 == 3)))) {
     return 0;
   }
   return 1;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_00410bb0(int param_1,int param_2)
+; void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_00410bb0(CBaron *this_ptr,CDemonActor *target)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0 at 00411521
@@ -35,7 +38,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00410bcd
     PUSH EAX                            ; 00410bd3
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00410bd4
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00410bd9
     MOV dword ptr [EBX + 0x1fb14],0x0   ; 00410bdc
     POP EBX                             ; 00410be6

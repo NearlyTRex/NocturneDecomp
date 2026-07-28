@@ -10,7 +10,7 @@ void __cdecl core_level_cpp_staticInit_FUN_004c5600(void)
 
 {
   core_larva_cpp_FUN_004c5630(0x1cc3160);
-  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(0x1cc3290);
-  FUN_00564bb0(0x5bac90);
+  core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590((CKeyFramedModel *)0x1cc3290);
+  _atexit((WatcomStaticDestructorNode *)0x5bac90);
   return;
 }

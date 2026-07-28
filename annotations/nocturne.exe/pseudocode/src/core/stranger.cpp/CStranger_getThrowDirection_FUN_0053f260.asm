@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(int param_1,undefined4 param_2)
+; CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger *this_ptr,CVector3f *out_direction)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_direction
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x20]:4  local_20
@@ -40,7 +43,7 @@ section .text
     MOV dword ptr [ESP + 0x38],EDX      ; 0053f283
     MOV dword ptr [ESP + 0x34],EDX      ; 0053f287
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0053f28b
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0053f290
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0053f293
     MOV EAX,dword ptr [EAX + 0x1fa4c]   ; 0053f297

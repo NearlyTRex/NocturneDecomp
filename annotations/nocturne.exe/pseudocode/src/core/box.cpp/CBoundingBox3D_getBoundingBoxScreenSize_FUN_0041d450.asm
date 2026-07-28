@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(float *param_1)
+; float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(CBoundingBox3D *this_ptr)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -86,7 +88,7 @@ section .text
     ADD EAX,0xea5d0                     ; 0041d4d9
     PUSH EAX                            ; 0041d4de
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041d4df
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 0041d4e4 | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 0041d4e9 | DAT_01b4d738
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 0041d4eb

@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00570410 at 00570421
-;   FUN_00571d9f at 00571dbb
-;   FUN_00571df8 at 00571e37
+;   crt_iostream.cpp_ios_freeBufferChain_FUN_00570410 at 00570421
+;   crt_iostream.cpp_setBuffer_FUN_00571df8 at 00571e37
+;   crt_iostream.cpp_streambuf_destructor_FUN_00571d9f at 00571dbb
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005638d0

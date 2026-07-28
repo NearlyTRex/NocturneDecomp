@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_time_c__mktime_FUN_00565fb0(int *param_1)
+; time_t __cdecl crt_time_c__mktime_FUN_00565fb0(_tm *timeptr)
 ;
+; Parameters:
+; _tm *            Stack[0x4]:4   timeptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   FUN_0056ced8 at 0056cf59
-;   FUN_005709b0 at 00570a15
-;   FUN_00570a30 at 00570a50
+;   crt_time.c__time_FUN_00570a30 at 00570a50
+;   crt_time.c_dos_datetime_to_time_t_FUN_005709b0 at 00570a15
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 at 00456ed0
 ;
 ; Referenced Globals:
@@ -19,10 +21,10 @@
 ;   undefined4 DAT_005c1f1c
 ;
 ; Called Functions:
-;   FUN_0056cea0
-;   FUN_0056d034
-;   FUN_0056d340
-;   FUN_0056d608
+;   crt_time.c_determine_dst_status_FUN_0056d034
+;   crt_time.c_gmtime_r_FUN_0056d340
+;   crt_time.c_is_leap_year_FUN_0056cea0
+;   crt_time.c_tzset_FUN_0056d608
 ;
 ; *****************************************************************************
 
@@ -79,8 +81,8 @@ section .text
     LEA EAX,[ESI + 0x76c]               ; 00566014
         ;   Label: LAB_00566014
     PUSH EAX                            ; 0056601a
-    CALL FUN_0056cea0                   ; 0056601b
-        ;   XREF to: 0056cea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056cea0()
+    CALL crt_time.c_is_leap_year_FUN_0056cea0 ; 0056601b
+        ;   XREF to: 0056cea0 (UNCONDITIONAL_CALL)  ; int crt_time.c_is_leap_year_FUN_0056cea0(int year)
     ADD ESP,0x4                         ; 00566020
     TEST EAX,EAX                        ; 00566023
     JZ 0x0056602c                       ; 00566025
@@ -148,11 +150,11 @@ section .text
     PUSH 0x0                            ; 005660bf
     PUSH EBX                            ; 005660c1
     PUSH ESI                            ; 005660c2
-    CALL FUN_0056d340                   ; 005660c3
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d340()
+    CALL crt_time.c_gmtime_r_FUN_0056d340 ; 005660c3
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_gmtime_r_FUN_0056d340()
     ADD ESP,0x10                        ; 005660c8
-    CALL FUN_0056d608                   ; 005660cb
-        ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d608()
+    CALL crt_time.c_tzset_FUN_0056d608  ; 005660cb
+        ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; void crt_time.c_tzset_FUN_0056d608()
     MOV ECX,dword ptr [0x005c1f14]      ; 005660d0 | DAT_005c1f14
     MOV EBP,dword ptr [EDI + 0x20]      ; 005660d6
     ADD EBX,ECX                         ; 005660d9
@@ -160,8 +162,8 @@ section .text
     JGE 0x005660e8                      ; 005660dd
         ;   XREF to: 005660e8 (CONDITIONAL_JUMP)  ; LAB_005660e8
     PUSH EDI                            ; 005660df
-    CALL FUN_0056d034                   ; 005660e0
-        ;   XREF to: 0056d034 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d034()
+    CALL crt_time.c_determine_dst_status_FUN_0056d034 ; 005660e0
+        ;   XREF to: 0056d034 (UNCONDITIONAL_CALL)  ; int crt_time.c_determine_dst_status_FUN_0056d034(_tm * timeptr)
     ADD ESP,0x4                         ; 005660e5
     CMP dword ptr [EDI + 0x20],0x0      ; 005660e8
         ;   Label: LAB_005660e8

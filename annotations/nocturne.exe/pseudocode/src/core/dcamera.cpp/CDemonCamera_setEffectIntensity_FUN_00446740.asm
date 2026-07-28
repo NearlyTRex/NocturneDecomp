@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(int param_1,float param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera *this_ptr,float intensity)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   intensity
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a284a
@@ -27,7 +30,7 @@ section .text
     FMUL double ptr [0x0057b9eb]        ; 00446744 | DOUBLE_0057b9eb
     MOV EAX,dword ptr [ESP + 0x4]       ; 0044674a
     CALL crt_math.c_round_FUN_00563a30  ; 0044674e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EAX + 0x11e8]      ; 00446753
     RET                                 ; 00446759
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float param_1)
+; void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float latency)
 ;
+; Parameters:
+; float            Stack[0x4]:4   latency
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_FUN_005289f0 at 00528b41
@@ -25,7 +27,7 @@
 section .text
 
     CALL sound_sndmain.cpp_isSoundBusy_FUN_00528490 ; 00528980
-        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundBusy_FUN_00528490()
+        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00528490()
         ;   Label: sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00528980
     TEST EAX,EAX                        ; 00528985
     JNZ 0x005289b9                      ; 00528987

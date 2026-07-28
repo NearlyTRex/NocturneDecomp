@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
+; CVector3f *      Stack[0xc]:4   in_point
 ;
 ; XREF[4]:
 ;   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200 at 0041e213

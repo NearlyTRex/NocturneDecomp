@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_getRandomInt_FUN_0040de00(int param_1,int param_2)
+; int __cdecl core_actor_cpp_getRandomInt_FUN_0040de00(int min_value,int max_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   min_value
+; int              Stack[0x8]:4   max_value
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -16,9 +19,9 @@
 ;   core_boneguy.cpp_FUN_00418630 at 0041871e
 ;   core_boneguy.cpp_FUN_004196b0 at 00419b8b
 ;   core_boxactor.cpp_FUN_0041f3d0 at 0041f443
+;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480 at 0042365b
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 004239cb
 ;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 0042133f
-;   core_bugs.cpp_FUN_00423480 at 0042365b
-;   core_bugs.cpp_FUN_00423790 at 004239cb
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 at 0042a435
 ;   ... and 27 more
 ;
@@ -59,7 +62,7 @@ section .text
     JNZ 0x0040de7a                      ; 0040de33
         ;   XREF to: 0040de7a (CONDITIONAL_JUMP)  ; LAB_0040de7a
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0040de35
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de3a
     FILD dword ptr [ESP + 0x10]         ; 0040de3e
     FMUL float ptr [0x00578059]         ; 0040de42 | FLOAT_00578059
@@ -71,7 +74,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 0040de57
     FADDP                               ; 0040de5b
     CALL crt_math.c_round_FUN_00563a30  ; 0040de5d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0040de62
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040de66
     CMP EBX,ECX                         ; 0040de6a
@@ -88,7 +91,7 @@ section .text
     POP EBX                             ; 0040de78
     RET                                 ; 0040de79
     CALL core_actor.cpp_generateRandomValue_FUN_0040dd30 ; 0040de7a
-        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_generateRandomValue_FUN_0040dd30()
+        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040dd30()
         ;   Label: LAB_0040de7a
     MOV dword ptr [ESP + 0x10],EAX      ; 0040de7f
     FILD dword ptr [ESP + 0x10]         ; 0040de83

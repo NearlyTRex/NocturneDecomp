@@ -41,7 +41,7 @@ section .text
     PUSH ECX                            ; 00401e18
     PUSH EBX                            ; 00401e19
     CALL engine_2d.c_project3DPointToScreen_FUN_00401da0 ; 00401e1a
-        ;   XREF to: 00401da0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_project3DPointToScreen_FUN_00401da0()
+        ;   XREF to: 00401da0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_project3DPointToScreen_FUN_00401da0(int x_3d, int y_3d, int z_depth)
     ADD ESP,0xc                         ; 00401e1f
     POP EBX                             ; 00401e22
     RET                                 ; 00401e23

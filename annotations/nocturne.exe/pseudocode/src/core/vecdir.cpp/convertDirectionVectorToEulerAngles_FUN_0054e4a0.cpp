@@ -27,12 +27,12 @@ float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(float *
     *param_1 = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));
     return param_1;
   }
-  fVar1 = (float10)atan2((float10)*param_2,(float10)param_2[2]);
+  fVar1 = atan2((float10)*param_2,(float10)param_2[2]);
   *(float *)(extraout_ECX + 4) = (float)fVar1;
-  fVar1 = (float10)atan2
-                             ((float10)extraout_EDX[1],
-                              SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +
-                                   (float10)extraout_EDX[2] * (float10)extraout_EDX[2]));
+  fVar1 = atan2
+                    ((float10)extraout_EDX[1],
+                     SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +
+                          (float10)extraout_EDX[2] * (float10)extraout_EDX[2]));
   *extraout_ECX_00 = (float)-fVar1;
   return extraout_ECX_00;
 }

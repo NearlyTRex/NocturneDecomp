@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 004e9699
     MOV dword ptr [0x01d06610],EDI      ; 004e969a | DAT_01d06610
     CALL crt_string.c_memmove_FUN_00566170 ; 004e96a0
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004e96a5
     POP EDI                             ; 004e96a8
     POP EBX                             ; 004e96a9

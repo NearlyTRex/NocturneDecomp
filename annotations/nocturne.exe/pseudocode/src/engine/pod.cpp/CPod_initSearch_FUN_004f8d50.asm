@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_pod_cpp_CPod_initSearch_FUN_004f8d50(undefined4 param_1,char *param_2,int param_3)
+; void __cdecl engine_pod_cpp_CPod_initSearch_FUN_004f8d50(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   search_pattern
+; CPodSearchContext * Stack[0xc]:4   search_context
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 00474711
@@ -43,7 +47,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f8d8f
     PUSH EDX                            ; 004f8d93
     CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 ; 004f8d94
-        ;   XREF to: 004f8da0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0()
+        ;   XREF to: 004f8da0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod * this_ptr, CPodSearchContext * search_context)
     ADD ESP,0x8                         ; 004f8d99
     POP EDI                             ; 004f8d9c
     POP ESI                             ; 004f8d9d

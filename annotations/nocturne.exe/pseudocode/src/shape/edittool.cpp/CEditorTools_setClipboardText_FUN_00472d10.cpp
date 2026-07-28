@@ -2,13 +2,13 @@
 // Address: 00472d10
 // Address Range: [[00472d10, 00472dda]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(undefined4 param_1,char *param_2)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools *this_ptr,char *text_data)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uint param_1,char *param_2)
+void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools *this_ptr,char *text_data)
 
 {
   char cVar1;
@@ -21,11 +21,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uint 
   byte bVar7;
   
   bVar7 = 0;
-  if (param_2 == (char *)0x0) {
-    param_2 = &CHAR_00h_0057ea92;
+  if (text_data == (char *)0x0) {
+    text_data = &CHAR_00h_0057ea92;
   }
   uVar4 = 0xffffffff;
-  pcVar3 = param_2;
+  pcVar3 = text_data;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
@@ -42,7 +42,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uint 
         GlobalFree(hMem);
       }
       else {
-        pcVar6 = param_2;
+        pcVar6 = text_data;
         for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
           *(uint *)pcVar3 = *(uint *)pcVar6;
           pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
@@ -59,19 +59,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uint 
     }
     CloseClipboard();
   }
-  _DAT_01bcd078 = (char *)realloc(_DAT_01bcd078,uVar4);
+  _DAT_01bcd078 = realloc(_DAT_01bcd078,uVar4);
   if (_DAT_01bcd078 == (char *)0x0) {
     return;
   }
   pcVar3 = _DAT_01bcd078;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(uint *)pcVar3 = *(uint *)param_2;
-    param_2 = param_2 + (uint)bVar7 * -8 + 4;
+    *(uint *)pcVar3 = *(uint *)text_data;
+    text_data = text_data + (uint)bVar7 * -8 + 4;
     pcVar3 = pcVar3 + (uint)bVar7 * -8 + 4;
   }
   for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar3 = *param_2;
-    param_2 = param_2 + (uint)bVar7 * -2 + 1;
+    *pcVar3 = *text_data;
+    text_data = text_data + (uint)bVar7 * -2 + 1;
     pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
   }
   return;

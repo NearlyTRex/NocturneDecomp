@@ -2,22 +2,20 @@
 // Address: 004280b0
 // Address Range: [[004280b0, 004280df]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(int param_1)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacter *this_ptr)
 
 {
-  int iVar1;
-  uint in_EAX;
-  uint uVar2;
+  CCharacter *this_ptr_00;
   
-  iVar1 = *(int *)(param_1 + 0x2590);
-  if (iVar1 == 0) {
-    return in_EAX;
+  this_ptr_00 = (CCharacter *)this_ptr->grabbed_by;
+  if (this_ptr_00 == (CCharacter *)0x0) {
+    return;
   }
-  *(uint *)(param_1 + 0x2590) = 0;
-  uVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0xf4))(iVar1,param_1);
-  return uVar2;
+  this_ptr->grabbed_by = (CDemonActor *)0x0;
+  (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
+  return;
 }

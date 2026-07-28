@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 004d7de5
         ;   Label: LAB_004d7de5
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004d7de6
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004d7deb
     TEST EAX,EAX                        ; 004d7dee
     JL 0x004d7df7                       ; 004d7df0

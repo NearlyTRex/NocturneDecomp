@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
+; void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x38]:4  local_38
@@ -35,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
 ;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-;   core_xform.cpp_FUN_0055d610
+;   core_xform.cpp_eulerToQuaternion_FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -50,7 +52,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4c]      ; 0041a0f7
     PUSH EDX                            ; 0041a0fb
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0 ; 0041a0fc
-        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0()
+        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041a101
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0041a104
     ADD EAX,0x150                       ; 0041a108
@@ -58,7 +60,7 @@ section .text
     PUSH EAX                            ; 0041a117
     MOV dword ptr [EAX + 0xc1f8],0x0    ; 0041a118
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0041a122
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041a127
     MOV EBX,dword ptr [ESP + 0x4c]      ; 0041a12a
     MOV dword ptr [ESP + 0x24],EAX      ; 0041a12e
@@ -125,7 +127,7 @@ section .text
     PUSH EDI                            ; 0041a1fd
     FSTP float ptr [ESP + 0x34]         ; 0041a1fe
     CALL core_bodypart.cpp_createBodyPart_FUN_00415b30 ; 0041a202
-        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_createBodyPart_FUN_00415b30()
+        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00415b30(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 0041a207
     MOV EBX,EAX                         ; 0041a20a
     PUSH 0x0                            ; 0041a20c
@@ -136,12 +138,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58]      ; 0041a216
     PUSH EDX                            ; 0041a21a
     CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 ; 0041a21b
-        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0()
+        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 0041a220
     PUSH EBX                            ; 0041a223
     MOV dword ptr [EBX + 0xcac],0x1     ; 0041a224
     CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 ; 0041a22e
-        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40()
+        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0041a233
     IMUL EAX,dword ptr [ESP + 0x30],0x48 ; 0041a236
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0041a23b
@@ -174,8 +176,8 @@ section .text
     PUSH ESI                            ; 0041a27d
     LEA ESI,[ESP + 0x4]                 ; 0041a27e
     ADD EBP,0x48                        ; 0041a282
-    CALL core_xform.cpp_FUN_0055d610    ; 0041a285
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 0041a285
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
     ADD ESP,0x4                         ; 0041a28a
     MOV ESI,ESP                         ; 0041a28d
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0041a28f

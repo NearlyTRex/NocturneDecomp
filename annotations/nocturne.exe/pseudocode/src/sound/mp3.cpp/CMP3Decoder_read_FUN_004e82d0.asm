@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0(char *param_1,undefined4 *param_2,int param_3)
+; int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; short *          Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   samples_requested
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005243e3
-;   sound_sndmain.cpp_FUN_00522480 at 005228f2
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005228f2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cd8b28
@@ -119,7 +123,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 004e83af
     PUSH ECX                            ; 004e83b3
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 ; 004e83b4
-        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0()
+        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 004e83b9
     TEST EAX,EAX                        ; 004e83bc
     JLE 0x004e83a2                      ; 004e83be
@@ -141,7 +145,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 004e83e3
     PUSH EAX                            ; 004e83e7
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 ; 004e83e8
-        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0()
+        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 004e83ed
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004e83f0
     MOV dword ptr [EDX + 0x108],EAX     ; 004e83f4

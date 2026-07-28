@@ -19,7 +19,7 @@ struct CHighPriestOfGardath_ptr_13260 {
     template<typename T> CHighPriestOfGardath_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CHighPriestOfGardath_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CHighPriestOfGardath* operator->() const { return (CHighPriestOfGardath*)_raw; }
-    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)((char*)_raw - offsetof(CHighPriestOfGardath, base.base.flames)); }
+    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)((char*)_raw - offsetof(CHighPriestOfGardath, base.base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

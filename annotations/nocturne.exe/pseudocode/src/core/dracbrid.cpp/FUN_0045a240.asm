@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dracbrid_cpp_FUN_0045a240(int param_1,undefined4 param_2)
+; ECollisionType core_dracbrid_cpp_FUN_0045a240(CCharacter *param_1,SCollisionInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     PUSH ECX                            ; 0045a254
     PUSH EAX                            ; 0045a255
     CALL core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0 ; 0045a256
-        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0()
+        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; ECollisionType core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 0045a25b
     RET                                 ; 0045a25e
 

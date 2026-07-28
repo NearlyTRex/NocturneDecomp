@@ -2,42 +2,43 @@
 // Address: 004c07b0
 // Address Range: [[004c07b0, 004c0846]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(int param_1,int param_2,int param_3)
+void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
-  int iVar3;
+  CInventory *pCVar3;
+  int iVar4;
   
-  if (param_2 == *(int *)(param_1 + 0x330)) {
-    *(uint *)(param_1 + 0x330) = 0;
+  if ((CWeapon *)item_to_remove == this_ptr->selected_weapon) {
+    this_ptr->selected_weapon = (CWeapon *)0x0;
   }
-  if (param_2 == *(int *)(param_1 + 0x334)) {
-    *(uint *)(param_1 + 0x334) = 0;
+  if (item_to_remove == this_ptr->selected_item) {
+    this_ptr->selected_item = (CDemonActor *)0x0;
   }
   iVar2 = 0;
-  iVar3 = param_1;
-  if (0 < *(int *)(param_1 + 8)) {
+  pCVar3 = this_ptr;
+  if (0 < this_ptr->item_count) {
     do {
-      iVar1 = *(int *)(iVar3 + 0xc);
-      if (param_2 == iVar1) {
-        iVar3 = *(int *)(param_1 + 8) + -1;
-        *(int *)(param_1 + 8) = iVar3;
+      pCVar1 = pCVar3->items[0];
+      if (item_to_remove == pCVar1) {
+        iVar4 = this_ptr->item_count + -1;
+        this_ptr->item_count = iVar4;
         memmove
-                  (param_1 + 0xc + iVar2 * 4,iVar2 * 4 + 4 + param_1 + 0xc,(iVar3 - iVar2) * 4);
-        if (param_3 == 0) {
+                  (this_ptr->items + iVar2,this_ptr->items + iVar2 + 1,(iVar4 - iVar2) * 4);
+        if (should_delete_actor == 0) {
           return;
         }
-        core_actor_cpp_FUN_00409cd0(iVar1);
+        core_actor_cpp_FUN_00409cd0(pCVar1);
         return;
       }
       iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 4;
-    } while (iVar2 < *(int *)(param_1 + 8));
+      pCVar3 = (CInventory *)&pCVar3->owner;
+    } while (iVar2 < this_ptr->item_count);
   }
   return;
 }

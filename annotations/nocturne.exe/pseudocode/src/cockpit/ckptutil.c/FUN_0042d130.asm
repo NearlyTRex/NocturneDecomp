@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[11]:
-;   cockpit_ckptutil.c_FUN_0042d6c0 at 0042d717
-;   cockpit_ckptutil.c_FUN_0042d900 at 0042d95f
-;   cockpit_ckptutil.c_FUN_0042db50 at 0042db98
-;   cockpit_ckptutil.c_FUN_0042dcc0 at 0042dcfc
-;   cockpit_ckptutil.c_FUN_0042df00 at 0042df38
-;   cockpit_ckptutil.c_FUN_0042e060 at 0042e088
-;   cockpit_ckptutil.c_FUN_0042e290 at 0042e2d8
-;   cockpit_ckptutil.c_FUN_0042e3d0 at 0042e408
+;   cockpit_ckptutil.c_blitDualModeSprite_FUN_0042e060 at 0042e088
+;   cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_0042e290 at 0042e2d8
+;   cockpit_ckptutil.c_blitRectangleClipped_FUN_0042db50 at 0042db98
+;   cockpit_ckptutil.c_blitSimpleSprite_FUN_0042df00 at 0042df38
+;   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042d900 at 0042d95f
 ;   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520 at 0042e52b
-;   cockpit_pkbitmap.cpp_FUN_004f4050 at 004f4094
+;   cockpit_ckptutil.c_blitSpanBasedSprite_FUN_0042d6c0 at 0042d717
+;   cockpit_ckptutil.c_blitUnifiedSprite_FUN_0042dcc0 at 0042dcfc
+;   cockpit_ckptutil.c_blitVerticalColumn_FUN_0042e3d0 at 0042e408
+;   cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170 at 004f41bf
 ;   ... and 1 more
 ;
 ; Referenced Globals:

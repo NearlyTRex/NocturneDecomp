@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(undefined4 param_1)
+; CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(CDraculaBride *this_ptr)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dracbrid.cpp_FUN_00458610 at 00458623
@@ -27,7 +29,7 @@ section .text
     PUSH EBX                            ; 00458645
     PUSH ESI                            ; 00458646
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00458647
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0045864c
     MOV EBX,EAX                         ; 0045864f
     PUSH 0x57d4ac                       ; 00458651 | = "nbride2.dfm"

@@ -2,16 +2,16 @@
 // Address: 00548580
 // Address Range: [[00548580, 00548598]]
 // Convention: __cdecl
-// Signature: void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(int param_1)
+// Signature: void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(CTrigger *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(int param_1)
+void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(CTrigger *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x16c) != 4) {
+  if (this_ptr->hero_triggers_me != 4) {
     return;
   }
-  *(uint *)(param_1 + 0x2e8) = 1;
+  this_ptr->event_flag = 1;
   return;
 }

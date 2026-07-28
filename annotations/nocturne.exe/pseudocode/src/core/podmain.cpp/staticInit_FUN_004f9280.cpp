@@ -11,8 +11,8 @@
 void __cdecl core_podmain_cpp_staticInit_FUN_004f9280(void)
 
 {
-  engine_pod_cpp_CPod_ctor_FUN_004f8810(0x1e528d0);
+  engine_pod_cpp_CPod_ctor_FUN_004f8810((CPod *)0x1e528d0);
   _DAT_01e52a64 = &PTR_core_podmain_cpp_FUN_004f93e0_005a14f4;
-  FUN_00564bb0(0x5be1bc);
+  _atexit((WatcomStaticDestructorNode *)0x5be1bc);
   return;
 }

@@ -13,6 +13,6 @@ void pureVirtual(void)
     return;
   }
   DAT_005c1f4c = 1;
-  FUN_0056af76("pure virtual function called!",1);
+  reportPureVirtualError("pure virtual function called!",1);
   return;
 }

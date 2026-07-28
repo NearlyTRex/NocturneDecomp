@@ -2,14 +2,14 @@
 // Address: 00438a90
 // Address Range: [[00438a90, 00438aa1]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(undefined4 *param_1)
+// Signature: void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(SBitBuffer *bit_buffer)
 
 #include "nocturne.h"
 
-void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(uint *param_1)
+void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(SBitBuffer *bit_buffer)
 
 {
-  param_1[1] = 0;
-  *param_1 = 0;
+  bit_buffer->accumulated_bits = 0;
+  bit_buffer->bits_available = 0;
   return;
 }

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0056f4f0
+;   crt_stdlib.c_utoa_FUN_0056f4f0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   Label: LAB_0056f564
     PUSH EDX                            ; 0056f565
     PUSH EAX                            ; 0056f566
-    CALL FUN_0056f4f0                   ; 0056f567
-        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f4f0()
+    CALL crt_stdlib.c_utoa_FUN_0056f4f0 ; 0056f567
+        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_utoa_FUN_0056f4f0()
     ADD ESP,0xc                         ; 0056f56c
     MOV EAX,EBX                         ; 0056f56f
     POP EBX                             ; 0056f571

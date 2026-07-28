@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(int *param_1)
+; void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFx *this_ptr)
 ;
+; Parameters:
+; CFilterFx *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -33,7 +35,7 @@ section .text
     MOV EDX,dword ptr [0x005ad54c]      ; 0044c4ae | DAT_005ad54c
     PUSH EDX                            ; 0044c4b4
     CALL core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 ; 0044c4b5
-        ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60()
+        ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache * this_ptr, char * filter_name)
     ADD ESP,0x8                         ; 0044c4ba
     MOV EDI,EAX                         ; 0044c4bd
     TEST EAX,EAX                        ; 0044c4bf
@@ -60,7 +62,7 @@ section .text
         ;   Label: LAB_0044c4f4
     MOV ECX,0x2000                      ; 0044c4f7
     CALL crt_math.c_round_FUN_00563a30  ; 0044c4fc
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EDI,dword ptr [EDI + 0x48]      ; 0044c501
     FISTP dword ptr [ESP + 0xc]         ; 0044c504
     MOV EAX,dword ptr [ESP + 0xc]       ; 0044c508

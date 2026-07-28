@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(int *param_1,char *param_2,char *param_3)
+; void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0(CStrList *this_ptr,char *directory_path,char *file_pattern)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   directory_path
+; char *           Stack[0xc]:4   file_pattern
 ; Local Variables:
 ; undefined1       Stack[-0x844]:1  local_844
 ; undefined        Stack[-0x528]:1  local_528
@@ -15,7 +19,7 @@
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20 at 0052dd38
-;   core_sound.cpp_FUN_0052c900 at 0052c90f
+;   core_sound.cpp_populateSoundFiles_FUN_0052c900 at 0052c90f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0057ee19
@@ -76,7 +80,7 @@ section .text
     PUSH EAX                            ; 0047490f
     PUSH EDX                            ; 00474910
     CALL engine_pod.cpp_CPod_initSearch_FUN_004f8d50 ; 00474911
-        ;   XREF to: 004f8d50 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPod_initSearch_FUN_004f8d50()
+        ;   XREF to: 004f8d50 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_initSearch_FUN_004f8d50(CPod * this_ptr, char * search_pattern, CPodSearchContext * search_context)
     ADD ESP,0xc                         ; 00474916
     CMP byte ptr [ESP],0x0              ; 00474919
     JZ 0x004749d1                       ; 0047491d
@@ -91,7 +95,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00474937
     PUSH EAX                            ; 0047493b
     CALL crt_string.c_splitpath_FUN_00566498 ; 0047493c
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 00474941
     CMP byte ptr [ESP + 0x534],0x2e     ; 00474944
     JNZ 0x00474978                      ; 0047494c
@@ -109,7 +113,7 @@ section .text
     LEA EAX,[ESP + 0x53c]               ; 00474968
     PUSH EAX                            ; 0047496f
     CALL crt_string.c_memmove_FUN_00566170 ; 00474970
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00474975
     LEA EAX,[ESP + 0x534]               ; 00474978
         ;   Label: LAB_00474978
@@ -121,13 +125,13 @@ section .text
     LEA EAX,[ESP + 0x440]               ; 0047498c
     PUSH EAX                            ; 00474993
     CALL crt_file.c_makepath_FUN_0056626c ; 00474994
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00474999
     LEA EAX,[ESP + 0x430]               ; 0047499c
     PUSH EAX                            ; 004749a3
     PUSH EBP                            ; 004749a4
     CALL shape_edittool.cpp_CStrList_findString_FUN_00474140 ; 004749a5
-        ;   XREF to: 00474140 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_findString_FUN_00474140()
+        ;   XREF to: 00474140 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_findString_FUN_00474140(CStrList * this_ptr, char * search_string)
     ADD ESP,0x8                         ; 004749aa
     TEST EAX,EAX                        ; 004749ad
     JL 0x00474aa2                       ; 004749af
@@ -138,7 +142,7 @@ section .text
     MOV EBX,dword ptr [0x005be1cc]      ; 004749b8 | DAT_005be1cc
     PUSH EBX                            ; 004749be
     CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 ; 004749bf
-        ;   XREF to: 004f8da0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0()
+        ;   XREF to: 004f8da0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod * this_ptr, CPodSearchContext * search_context)
     ADD ESP,0x8                         ; 004749c4
     CMP byte ptr [ESP],0x0              ; 004749c7
     JNZ 0x00474923                      ; 004749cb
@@ -148,14 +152,14 @@ section .text
     PUSH EAX                            ; 004749d8
     MOV ESI,dword ptr [EBP]             ; 004749d9
     CALL engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00 ; 004749dc
-        ;   XREF to: 00456c00 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00()
+        ;   XREF to: 00456c00 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004749e1
     LEA EAX,[ESP + 0x734]               ; 004749e4
     PUSH EAX                            ; 004749eb
     LEA EAX,[ESP + 0x320]               ; 004749ec
     PUSH EAX                            ; 004749f3
     CALL engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40 ; 004749f4
-        ;   XREF to: 00456c40 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40()
+        ;   XREF to: 00456c40 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 004749f9
     CMP byte ptr [ESP + 0x31c],0x0      ; 004749fc
     JZ 0x00474a4f                       ; 00474a04
@@ -172,11 +176,11 @@ section .text
     PUSH EBX                            ; 00474a1a
     PUSH EBP                            ; 00474a1b
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00474a1c
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00474a21
     PUSH EAX                            ; 00474a24
     CALL crt_string.c__stricmp_FUN_00564520 ; 00474a25
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00474a2a
     TEST EAX,EAX                        ; 00474a2d
     JNZ 0x00474ab8                      ; 00474a2f
@@ -185,7 +189,7 @@ section .text
         ;   Label: LAB_00474a35
     PUSH EAX                            ; 00474a3c
     CALL engine_dosio.cpp_CFileFinder_findNext_FUN_00456cc0 ; 00474a3d
-        ;   XREF to: 00456cc0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_findNext_FUN_00456cc0()
+        ;   XREF to: 00456cc0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_findNext_FUN_00456cc0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00474a42
     CMP byte ptr [ESP + 0x31c],0x0      ; 00474a45
     JNZ 0x00474a06                      ; 00474a4d
@@ -194,13 +198,13 @@ section .text
         ;   Label: LAB_00474a4f
     PUSH EAX                            ; 00474a56
     CALL engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40 ; 00474a57
-        ;   XREF to: 00456d40 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40()
+        ;   XREF to: 00456d40 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00474a5c
     PUSH 0x0                            ; 00474a5f
     LEA EAX,[ESP + 0x320]               ; 00474a61
     PUSH EAX                            ; 00474a68
     CALL engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20 ; 00474a69
-        ;   XREF to: 00456c20 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20()
+        ;   XREF to: 00456c20 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00474a6e
     ADD ESP,0x834                       ; 00474a71
     POP EBP                             ; 00474a77
@@ -233,7 +237,7 @@ section .text
     PUSH EAX                            ; 00474aa9
     PUSH EBP                            ; 00474aaa
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 00474aab
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00474ab0
     JMP 0x004749b5                      ; 00474ab3
         ;   XREF to: 004749b5 (UNCONDITIONAL_JUMP)  ; LAB_004749b5
@@ -250,7 +254,7 @@ section .text
     PUSH EAX                            ; 00474ad0
     PUSH EBP                            ; 00474ad1
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 00474ad2
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00474ad7
     JMP 0x00474a35                      ; 00474ada
         ;   XREF to: 00474a35 (UNCONDITIONAL_JUMP)  ; LAB_00474a35

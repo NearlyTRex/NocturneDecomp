@@ -12,16 +12,17 @@ void core_set_cpp_FUN_0050dd60(void)
 
 {
   int iVar1;
-  uint in_stack_00000004;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
-  uint in_stack_00000010;
+  CDemonSet *in_stack_00000004;
+  SMRGLPrimitiveTriangle *in_stack_00000008;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   
   if (*(int *)(0x01C775EC + 0x1f0) == 0) {
     if (*(int *)(0x01C775EC + 500) != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
       if (iVar1 == 0) {
-        core_set_cpp_FUN_0050d640(in_stack_00000004,in_stack_00000008,in_stack_0000000c,0xffff);
+        core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640
+                  (in_stack_00000004,&in_stack_00000008->base,in_stack_0000000c,0xffff);
         return;
       }
     }

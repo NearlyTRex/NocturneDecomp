@@ -176,7 +176,7 @@ section .text
     SUB ESP,0x8                         ; 0052cb05
     FSTP double ptr [ESP]               ; 0052cb08
     CALL sound_sndmain.cpp_set3DListenerPos_FUN_00527610 ; 0052cb0b
-        ;   XREF to: 00527610 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerPos_FUN_00527610()
+        ;   XREF to: 00527610 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerPos_FUN_00527610(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 0052cb10
     LEA EAX,[ESP + 0x98]                ; 0052cb13
     XOR EBX,EBX                         ; 0052cb1a
@@ -246,7 +246,7 @@ section .text
     SUB ESP,0x8                         ; 0052cc29
     FSTP double ptr [ESP]               ; 0052cc2c
     CALL sound_sndmain.cpp_set3DListenerOrient_FUN_00527690 ; 0052cc2f
-        ;   XREF to: 00527690 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerOrient_FUN_00527690()
+        ;   XREF to: 00527690 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_00527690(double front_x, double front_y, double front_z, double up_x, ...)
     MOV EAX,[0x005b9354]                ; 0052cc34 | DAT_005b9354
     ADD ESP,0x48                        ; 0052cc39
     MOV EDX,dword ptr [EAX + 0x240]     ; 0052cc3c | DAT_01c7782c
@@ -303,7 +303,7 @@ section .text
     ADD EAX,0x14cd08                    ; 0052ccfd
     PUSH EAX                            ; 0052cd02
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0052cd03
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0052cd08
     TEST EAX,EAX                        ; 0052cd0b
     JNZ 0x0052ce20                      ; 0052cd0d

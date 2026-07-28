@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+; void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   origin
+; CVector3f *      Stack[0xc]:4   hit_position
+; float            Stack[0x10]:4   beam_width
+; int              Stack[0x14]:4   red
+; int              Stack[0x18]:4   green
+; int              Stack[0x1c]:4   blue
+; float            Stack[0x20]:4   cone_angle
 ;
 ; XREF[3]:
 ;   core_elephant.cpp_FUN_00478120 at 00478294

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_FUN_004219f0(int param_1,int param_2,undefined2 *param_3)
+; void core_bugs_cpp_FUN_004219f0(CBugs *param_1,int param_2,ushort *param_3)
 ;
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00423790 at 004238a9
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 004238a9
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0
@@ -28,7 +28,7 @@ section .text
     MOV dword ptr [EDI + 0x1299c],0x0   ; 00421a09
     XOR ESI,ESI                         ; 00421a13
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00421a15
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00421a1a
     TEST EBP,EBP                        ; 00421a1d
     JLE 0x00421ac3                      ; 00421a1f
@@ -45,7 +45,7 @@ section .text
     PUSH EAX                            ; 00421a37
     PUSH EDI                            ; 00421a38
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a39
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421a3e
     XOR EAX,EAX                         ; 00421a41
     PUSH ESI                            ; 00421a43
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 00421a4f
     PUSH EDI                            ; 00421a50
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a51
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421a56
     XOR EAX,EAX                         ; 00421a59
     PUSH ESI                            ; 00421a5b
@@ -67,7 +67,7 @@ section .text
     PUSH EAX                            ; 00421a66
     PUSH EDI                            ; 00421a67
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a68
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421a6d
     XOR EAX,EAX                         ; 00421a70
     PUSH ESI                            ; 00421a72
@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 00421a7d
     PUSH EDI                            ; 00421a7e
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a7f
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421a84
     XOR EAX,EAX                         ; 00421a87
     PUSH ESI                            ; 00421a89
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 00421a95
     PUSH EDI                            ; 00421a96
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421a97
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421a9c
     XOR EAX,EAX                         ; 00421a9f
     PUSH ESI                            ; 00421aa1
@@ -102,7 +102,7 @@ section .text
     ADD EBX,0x12                        ; 00421aae
     INC ESI                             ; 00421ab1
     CALL core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0 ; 00421ab2
-        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0()
+        ;   XREF to: 00421ad0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs * this_ptr, int vertex_index, int neighbor_index, int first_edge_data)
     ADD ESP,0x10                        ; 00421ab7
     CMP ESI,EBP                         ; 00421aba
     JL 0x00421a2a                       ; 00421abc

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(float *param_1)
+; void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle *triangle)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   triangle
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30
@@ -12,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 at 0046c5f5
-;   core_dtri.cpp_FUN_0046c300 at 0046c339
+;   core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0046c300 at 0046c339
 ;
 ; *****************************************************************************
 

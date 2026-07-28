@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(int param_1,int param_2)
+; void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet *this_ptr,int ray_type)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   ray_type
 ;
 ; XREF[14]:
 ;   core_actor.cpp_FUN_0040b300 at 0040b7ca
@@ -13,7 +16,7 @@
 ;   core_gabriela.cpp_FUN_00498de0 at 00499015
 ;   core_gun.cpp_FUN_004b27c0 at 004b2944
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c7343
-;   core_scat.cpp_FUN_004fda20 at 004fdc55
+;   core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 at 004fdc55
 ;   core_shotgun.cpp_FUN_00515ea0 at 005160d8
 ;   ... and 4 more
 ;

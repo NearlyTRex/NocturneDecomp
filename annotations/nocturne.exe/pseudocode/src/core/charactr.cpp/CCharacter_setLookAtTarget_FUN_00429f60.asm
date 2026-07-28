@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429f60(int param_1,undefined4 param_2)
+; void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429f60(CCharacter *this_ptr,CDemonActor *target)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502697

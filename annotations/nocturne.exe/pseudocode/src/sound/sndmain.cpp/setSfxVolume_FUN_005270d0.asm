@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005270d0(undefined4 param_1,undefined4 param_2)
+; int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005270d0(uint sfx_handle,float volume)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; float            Stack[0x8]:4   volume
 ;
 ; XREF[7]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426b55
@@ -66,7 +69,7 @@ section .text
     ADD ESP,0xc                         ; 0052711b
     MOV ESI,EAX                         ; 0052711e
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00527120
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00527120
     MOV EAX,ESI                         ; 00527125
     POP ESI                             ; 00527127

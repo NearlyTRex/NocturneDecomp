@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bugs_cpp_CBugs_ctor_FUN_00421040(undefined4 param_1)
+; CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_FUN_00421010 at 00421023
@@ -43,21 +45,21 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00421043
     PUSH EBX                            ; 00421047
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00421048
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0042104d
     PUSH 0x59b010                       ; 00421050 | g_SBugsTypeInfo_0059b010
     PUSH 0x190                          ; 00421055
     ADD EAX,0xbd2c                      ; 0042105a
     PUSH EAX                            ; 0042105f
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00421060
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00421065
     PUSH 0x59b030                       ; 00421068 | g_CKeyFramedModelInstanceTypeInfo_0059b030
     PUSH 0x4                            ; 0042106d
     ADD EAX,0x6404                      ; 0042106f
     PUSH EAX                            ; 00421074
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00421075
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0042107a
     LEA EBX,[EAX + 0xfffeded0]          ; 0042107d
     PUSH 0x6400                         ; 00421083
@@ -68,26 +70,26 @@ section .text
     PUSH EAX                            ; 004210a4
     MOV dword ptr [EBX + 0xbd28],0x32   ; 004210a5
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004210af
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004210b4
     PUSH 0x579c09                       ; 004210b7 | = "roach.kfm"
     LEA EAX,[EBX + 0x12130]             ; 004210bc
     PUSH EAX                            ; 004210c2
     MOV dword ptr [EBX + 0x1212c],0x3   ; 004210c3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004210cd
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004210d2
     PUSH 0x579c13                       ; 004210d5 | = "hroach.kfm"
     LEA EAX,[EBX + 0x122ac]             ; 004210da
     PUSH EAX                            ; 004210e0
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004210e1
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004210e6
     PUSH 0x579c1e                       ; 004210e9 | = "mroach.kfm"
     LEA EAX,[EBX + 0x12428]             ; 004210ee
     PUSH EAX                            ; 004210f4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004210f5
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004210fa
     PUSH 0x579c29                       ; 004210fd | = "guul.dfm"
     LEA EAX,[EBX + 0x150]               ; 00421102

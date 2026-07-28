@@ -1,18 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(undefined4 param_1)
+; char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(char *key)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   key
 ;
 ; XREF[41]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 004564d8
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a67bd
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a7e
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05ac
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d4dc
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570 at 004a6615
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df0a
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b54c
-;   core_game.cpp_FUN_0049cc10 at 0049d4dc
 ;   core_game.cpp_FUN_0049f930 at 0049ffbe
 ;   core_game.cpp_FUN_004a3b90 at 004a3e62
 ;   ... and 31 more
@@ -66,7 +68,7 @@ section .text
     PUSH ECX                            ; 004ee3b2
     PUSH EDI                            ; 004ee3b3
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004ee3b4
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ee3b9
     TEST EAX,EAX                        ; 004ee3bc
     JL 0x004ee3cd                       ; 004ee3be
@@ -85,7 +87,7 @@ section .text
     PUSH 0x0                            ; 004ee3cf
     PUSH EDI                            ; 004ee3d1
     CALL support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 ; 004ee3d2
-        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_findLocalizedString_FUN_004ee2f0()
+        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_004ee2f0(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 004ee3d7
     POP EBX                             ; 004ee3da
     POP ESI                             ; 004ee3db
@@ -98,7 +100,7 @@ section .text
     PUSH ESI                            ; 004ee3e1
     PUSH EDI                            ; 004ee3e2
     CALL support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 ; 004ee3e3
-        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_findLocalizedString_FUN_004ee2f0()
+        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_004ee2f0(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 004ee3e8
     POP EBX                             ; 004ee3eb
     POP ESI                             ; 004ee3ec

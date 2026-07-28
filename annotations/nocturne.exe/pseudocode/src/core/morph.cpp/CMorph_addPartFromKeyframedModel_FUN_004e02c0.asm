@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
+; CKeyFramedModel * Stack[0xc]:4   model_ptr
+; int              Stack[0x10]:4   frame_index
 ;
 ; XREF[2]:
 ;   core_succubus.cpp_FUN_00540c20 at 00540eaf
@@ -31,7 +36,7 @@ section .text
     ADD EAX,EBX                         ; 004e02e4
     PUSH EAX                            ; 004e02e6
     CALL core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610 ; 004e02e7
-        ;   XREF to: 004df610 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610()
+        ;   XREF to: 004df610 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610(CMorphModel * this_ptr, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0xc                         ; 004e02ec
     POP EBX                             ; 004e02ef
     RET                                 ; 004e02f0

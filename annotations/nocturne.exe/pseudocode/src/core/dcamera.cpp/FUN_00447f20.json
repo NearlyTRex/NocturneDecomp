@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 667,
+    "complexity_score": 682,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 157,
-    "suspect_count": 47,
+    "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -137,6 +137,7 @@
       "stack_ref",
       "undefined_data",
       "unnamed_param",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 456
@@ -145,7 +146,7 @@
     {
       "addr": "00507f80",
       "from_addr": "00508092",
-      "name": "core_set.cpp_FUN_00507f80",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,7 +160,7 @@
     ],
     "convention": "unknown",
     "name": "core_dcamera.cpp_FUN_00447f20",
-    "signature": "undefined4 * core_dcamera_cpp_FUN_00447f20(int param_1,undefined4 *param_2)"
+    "signature": "CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)"
   },
   "function_calls": [
     {
@@ -215,7 +216,7 @@
       {
         "call_addr": "00508092",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00507f80",
+        "caller": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -348,7 +349,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint * core_dcamera_cpp_FUN_00447f20(int param_1,uint *param_2)",
+      "text": "CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -356,7 +357,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint * core_dcamera_cpp_FUN_00447f20(int param_1,uint *param_2)",
+      "text": "CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -372,7 +373,7 @@
       "line": 47,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1 = param_2 + 3;",
+      "text": "pCVar1 = &param_2->max;",
       "type": "unnamed_param"
     },
     {
@@ -380,7 +381,7 @@
       "line": 48,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_02dd1184) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_02dd1184) {",
       "type": "undefined_data"
     },
     {
@@ -388,7 +389,7 @@
       "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[4] = _DAT_02dd1188;",
+      "text": "(param_2->max).y = _DAT_02dd1188;",
       "type": "unnamed_param"
     },
     {
@@ -396,7 +397,7 @@
       "line": 51,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[5] = _DAT_02dd118c;",
+      "text": "(param_2->max).z = _DAT_02dd118c;",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +405,7 @@
       "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (puVar1 != param_2) {",
+      "text": "if ((CBoundingBox3D *)pCVar1 != param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -412,7 +413,7 @@
       "line": 54,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = *puVar1;",
+      "text": "(param_2->min).x = pCVar1->x;",
       "type": "unnamed_param"
     },
     {
@@ -420,7 +421,7 @@
       "line": 55,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = param_2[4];",
+      "text": "(param_2->min).y = (param_2->max).y;",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +429,7 @@
       "line": 55,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = param_2[4];",
+      "text": "(param_2->min).y = (param_2->max).y;",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +437,7 @@
       "line": 56,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = param_2[5];",
+      "text": "(param_2->min).z = (param_2->max).z;",
       "type": "unnamed_param"
     },
     {
@@ -444,7 +445,7 @@
       "line": 56,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[2] = param_2[5];",
+      "text": "(param_2->min).z = (param_2->max).z;",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +541,7 @@
       "line": 92,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,auStack_50);",
+      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,&CStack_50);",
       "type": "unnamed_param"
     },
     {
@@ -686,6 +687,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff58 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 54,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(param_2->min).x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

@@ -16,7 +16,7 @@ struct CPlatform;
 #include "types/unions/UOrientationVector.h"
 
 // Structure: CDemonActor
-// Ghidra size: 0x158 (344 bytes)
+// Ghidra size: 0x150 (336 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonActor {
     char actor_name[32]; // 0x0
@@ -44,11 +44,9 @@ typedef struct CDemonActor {
     int dead1; // 0x120
     int dead2; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
-    int render_needs_update; // 0x144
-    int is_editor_hidden; // 0x148
-    struct CDemonActor* next_actor; // 0x14c
-    struct CDemonActor* prev_actor; // 0x150
-    UActorVTable vtable; // 0x154
+    struct CDemonActor* next_actor; // 0x144
+    struct CDemonActor* prev_actor; // 0x148
+    UActorVTable vtable; // 0x14c
 } CDemonActor;
 #pragma pack(pop)
 

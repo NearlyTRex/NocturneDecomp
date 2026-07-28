@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(undefined4 *param_1)
+; CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController *this_ptr)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[27]:
 ;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00429660 at 00429680

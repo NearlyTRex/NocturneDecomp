@@ -11,17 +11,18 @@
 void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,int param_2)
 
 {
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  float *pfVar4;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
-  bool bVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
+  float fVar1;
+  float fVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  float *pfVar6;
+  uint *puVar7;
+  uint *puVar8;
+  byte bVar9;
+  bool bVar10;
+  double dVar11;
+  double dVar12;
   int aiStackY_1050 [1016];
   int iStack_68;
   int iStack_64;
@@ -41,44 +42,44 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
   int local_20;
   char *local_1c;
   
-  bVar7 = 0;
+  bVar9 = 0;
   _DAT_012b0634 = param_2;
-  puVar5 = (uint *)(param_2 + 0x110);
-  puVar6 = (uint *)&DAT_012b0638;
-  for (iVar3 = 10; iVar2 = 0, iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar6 = puVar6 + 1;
+  puVar7 = (uint *)(param_2 + 0x110);
+  puVar8 = (uint *)&DAT_012b0638;
+  for (iVar5 = 10; iVar4 = 0, iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar8 = *puVar7;
+    puVar7 = puVar7 + 1;
+    puVar8 = puVar8 + 1;
   }
   do {
-    iVar3 = iVar2 + 4;
+    iVar5 = iVar4 + 4;
     iStack_64 = 0x444952;
-    uVar1 = rand();
-    *(uint *)(iVar2 + 0x12b0234) = uVar1 & 0xff;
-    iVar2 = iVar3;
-  } while (iVar3 != 0x400);
-  iVar3 = 0;
+    uVar3 = rand();
+    *(uint *)(iVar4 + 0x12b0234) = uVar3 & 0xff;
+    iVar4 = iVar5;
+  } while (iVar5 != 0x400);
+  iVar5 = 0;
   if (0 < *(int *)(param_1 + 0x154)) {
-    iVar2 = 0;
+    iVar4 = 0;
     do {
-      *(uint *)(iVar2 + 0x146b290) = *(uint *)(param_1 + 0x150);
-      *(uint *)(iVar2 + 0x146b650) = 0;
-      iVar3 = iVar3 + 1;
-      iVar2 = iVar2 + 4;
-    } while (iVar3 < *(int *)(param_1 + 0x154));
+      *(uint *)(iVar4 + 0x146b290) = *(uint *)(param_1 + 0x150);
+      *(uint *)(iVar4 + 0x146b650) = 0;
+      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 4;
+    } while (iVar5 < *(int *)(param_1 + 0x154));
   }
   iStack_64 = param_2;
   iStack_68 = 0x4449a9;
   core_dlight_cpp_FUN_0044f0b0();
-  fVar9 = (float10)*(float *)(param_2 + 0x100) * (float10)256;
-  fVar11 = (float10)3.3219280948900001;
+  fVar1 = *(float *)(param_2 + 0x100) * (float)256;
+  fVar2 = (float)3.3219280948900001;
   iStack_64 = 0x4449cd;
-  fVar10 = (float10)round(fVar9);
+  dVar11 = round((double)fVar1);
   iStack_68 = 0x4449d6;
-  fVar11 = (float10)round((float10)0.3010299956639812 * fVar9 * fVar11);
+  dVar12 = round((double)(fVar1 * 0.30103 * fVar2));
   local_38 = 0;
-  _DAT_00b0e600 = (int)ROUND(fVar11);
-  _DAT_00b0e5fc = (int)ROUND(fVar10);
+  _DAT_00b0e600 = (int)ROUND(dVar12);
+  _DAT_00b0e5fc = (int)ROUND(dVar11);
   _DAT_00b0e600 = _DAT_00b0e600 + -1;
   if (0 < *(int *)(param_1 + 0x154)) {
     local_34 = 0;
@@ -95,28 +96,28 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
         local_2c = (uint *)(iStack_44 + local_20 * 4);
         local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +
                            (local_20 << (DAT_012b0660 & 0x1f)) * 4);
-        pfVar4 = (float *)(local_20 * 0xc + local_40);
-        iVar3 = local_20 - local_30;
-        bVar8 = SBORROW4(local_20,local_30);
-        while (bVar8 != iVar3 < 0) {
+        pfVar6 = (float *)(local_20 * 0xc + local_40);
+        iVar5 = local_20 - local_30;
+        bVar10 = SBORROW4(local_20,local_30);
+        while (bVar10 != iVar5 < 0) {
           if ((*local_28 < *local_2c) &&
-             (0.0 <= pfVar4[2] * _DAT_012b0658 + *pfVar4 * _DAT_012b0640 + pfVar4[1] * _DAT_012b064c
+             (0.0 <= pfVar6[2] * _DAT_012b0658 + *pfVar6 * _DAT_012b0640 + pfVar6[1] * _DAT_012b064c
              )) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
                       (_DAT_012b0634,local_24);
             iStack_5c = iStack_68;
-            *(uint *)((int)&stack0xffffffa8 + (uint)bVar7 * -8) =
-                 *(uint *)((int)&stack0xffffff9c + (uint)bVar7 * -8);
-            *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-                 *(uint *)(&stack0xffffffa0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+            *(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =
+                 *(uint *)((int)&stack0xffffff9c + (uint)bVar9 * -8);
+            *(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+                 *(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
             if ((0 < local_54) &&
-               ((uVar1 = (uint)*(ushort *)
+               ((uVar3 = (uint)*(ushort *)
                                 (*(int *)(_DAT_012b0634 + 0x2f94) +
                                 ((iStack_58 >> 0x10) * *(int *)(_DAT_012b0634 + 0x1cc0) +
-                                (iStack_5c >> 0x10)) * 2), (int)uVar1 < _DAT_00b0e5fc &&
-                (local_54 < (int)(uVar1 + 0x80))))) {
+                                (iStack_5c >> 0x10)) * 2), (int)uVar3 < _DAT_00b0e5fc &&
+                (local_54 < (int)(uVar3 + 0x80))))) {
               *local_1c = *local_1c +
-                          (char)((int)((_DAT_00b0e5fc - uVar1) *
+                          (char)((int)((_DAT_00b0e5fc - uVar3) *
                                       (uint)*(byte *)(*(int *)(_DAT_012b0634 + 0x1c54) +
                                                      ((*(uint *)(_DAT_012b0634 + 0x1c68) &
                                                       iStack_58 >>
@@ -128,14 +129,14 @@ void core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(int param_1,i
                                 (DAT_00b0e600 & 0x1f));
             }
           }
-          pfVar4 = pfVar4 + 3;
+          pfVar6 = pfVar6 + 3;
           local_2c = local_2c + 1;
           local_24 = local_24 + 0xc;
           local_20 = local_20 + 1;
           local_28 = local_28 + (1 << (DAT_012b0660 & 0x1f));
           local_1c = local_1c + 1;
-          iVar3 = local_20 - local_30;
-          bVar8 = SBORROW4(local_20,local_30);
+          iVar5 = local_20 - local_30;
+          bVar10 = SBORROW4(local_20,local_30);
         }
       }
       local_34 = local_34 + 4;

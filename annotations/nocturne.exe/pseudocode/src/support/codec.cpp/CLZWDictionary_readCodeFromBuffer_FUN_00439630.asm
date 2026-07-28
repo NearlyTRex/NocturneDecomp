@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_00439630(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_00439630(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,char **input_buffer,int *bytes_remaining)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; SBitBuffer *     Stack[0x8]:4   bit_buffer
+; char * *         Stack[0xc]:4   input_buffer
+; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -46,7 +51,7 @@ section .text
     PUSH 0x1                            ; 00439666
     PUSH EDI                            ; 00439668
     CALL support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0 ; 00439669
-        ;   XREF to: 00438dc0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0()
+        ;   XREF to: 00438dc0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer * bit_state, int bit_count, char * * output_pos, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043966e
     TEST EAX,EAX                        ; 00439671
     JL 0x00439687                       ; 00439673
@@ -95,7 +100,7 @@ section .text
     PUSH 0x1                            ; 004396aa
     PUSH EDI                            ; 004396ac
     CALL support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0 ; 004396ad
-        ;   XREF to: 00438dc0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0()
+        ;   XREF to: 00438dc0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0(SBitBuffer * bit_state, int bit_count, char * * output_pos, int * bytes_remaining)
     ADD ESP,0x10                        ; 004396b2
     TEST EAX,EAX                        ; 004396b5
     JL 0x00439687                       ; 004396b7

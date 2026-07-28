@@ -19,7 +19,7 @@ struct CHiram_ptr_10900 {
     template<typename T> CHiram_ptr_10900(T* p) : _raw((void*)p) {}
     template<typename T> CHiram_ptr_10900& operator=(T* p) { _raw = (void*)p; return *this; }
     CHiram* operator->() const { return (CHiram*)_raw; }
-    CHiram* adj() const { return (CHiram*)((char*)_raw - offsetof(CHiram, base.base.cloth_list)); }
+    CHiram* adj() const { return (CHiram*)((char*)_raw - offsetof(CHiram, base.base.cloth_list.filenames[0][4])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

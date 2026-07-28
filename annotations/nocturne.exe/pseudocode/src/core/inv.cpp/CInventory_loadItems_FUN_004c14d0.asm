@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(int param_1)
+; void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d83ee

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0043b032
         ;   Label: LAB_0043b032
     CALL core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 ; 0043b033
-        ;   XREF to: 0043b050 (UNCONDITIONAL_CALL)  ; undefined core_conveyor.cpp_CConveyor_ctor_FUN_0043b050()
+        ;   XREF to: 0043b050 (UNCONDITIONAL_CALL)  ; CConveyor * core_conveyor.cpp_CConveyor_ctor_FUN_0043b050(CConveyor * this_ptr)
     ADD ESP,0x4                         ; 0043b038
     RET                                 ; 0043b03b
 

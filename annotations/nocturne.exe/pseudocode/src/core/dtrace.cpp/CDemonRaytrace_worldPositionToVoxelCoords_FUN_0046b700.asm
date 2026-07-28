@@ -11,13 +11,13 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[7]:
-;   core_dtrace.cpp_FUN_0046bfe0 at 0046c044
-;   core_dtrace.cpp_FUN_0046c100 at 0046c165
+;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100 at 0046c165
+;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0046bfe0 at 0046c044
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef1de
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f0c4c
-;   core_path.cpp_FUN_004f0360 at 004f040e
-;   core_path.cpp_FUN_004f1f80 at 004f1f9d
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360 at 004f040e
 ;   core_path.cpp_getOrCreatePathMap_FUN_004f1c90 at 004f1cd0
+;   core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80 at 004f1f9d
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005648c0
@@ -49,7 +49,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0046b733
     ADD ESP,0x8                         ; 0046b737
     CALL crt_math.c_round_FUN_00563a30  ; 0046b73a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 0046b73f
     SUB ESP,0x8                         ; 0046b742
     FSTP double ptr [ESP]               ; 0046b745
@@ -63,7 +63,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0046b75e
     ADD ESP,0x8                         ; 0046b762
     CALL crt_math.c_round_FUN_00563a30  ; 0046b765
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0046b76a
     SUB ESP,0x8                         ; 0046b76e
     FSTP double ptr [ESP]               ; 0046b771
@@ -76,7 +76,7 @@ section .text
     FLD double ptr [ESP + 0x14]         ; 0046b787
     ADD ESP,0x8                         ; 0046b78b
     CALL crt_math.c_round_FUN_00563a30  ; 0046b78e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0046b793
     MOVSD ES:EDI,ESI                    ; 0046b797
     MOVSD ES:EDI,ESI                    ; 0046b798

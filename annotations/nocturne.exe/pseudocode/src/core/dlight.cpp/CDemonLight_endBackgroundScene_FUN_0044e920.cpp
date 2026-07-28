@@ -2,13 +2,13 @@
 // Address: 0044e920
 // Address Range: [[0044e920, 0044e96d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(int param_1)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(int param_1)
+void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(CDemonLight *this_ptr)
 
 {
   uint uVar1;
@@ -23,7 +23,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044e920(int par
   _DAT_01ab99f0 = 0;
   puVar3 = (uint *)&DAT_01ab99f4;
   puVar4 = (uint *)&DAT_01bd2fa0;
-  for (uVar1 = *(uint *)(param_1 + 0x1cc4) & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
+  for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
     *puVar4 = *puVar3;
     puVar3 = puVar3 + 1;
     puVar4 = puVar4 + 1;

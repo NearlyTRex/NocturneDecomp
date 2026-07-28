@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(int param_1,undefined4 param_2)
+; void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; CDemonCube *     Stack[0x4]:4   this_ptr
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0 at 00468c6a
@@ -45,7 +48,7 @@ section .text
     ADD EAX,ESI                         ; 0044b450
     PUSH EAX                            ; 0044b452
     CALL core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00449720 ; 0044b453
-        ;   XREF to: 00449720 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00449720()
+        ;   XREF to: 00449720 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00449720(STriangleRef * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 0044b458
     TEST EAX,EAX                        ; 0044b45b
     JZ 0x0044b461                       ; 0044b45d

@@ -1,0 +1,161 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 51,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "0056af76",
+      "from_addr": "0056af84",
+      "name": "crt_cpp.c_reportPureVirtualError_FUN_0056af76",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ddc0",
+      "from_addr": "0056ddce",
+      "name": "crt_startup.c_HandleRuntimeError_FUN_0056ddc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056fca0",
+    "address_range": [
+      [
+        "0056fca0",
+        "0056fcb6"
+      ],
+      [
+        "0056fcc8",
+        "0056fcca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_debug.c_TriggerDebuggerBreak_FUN_0056fca0",
+    "signature": "int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0056fca0(char *error_message,ushort flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005c2050",
+      "name": "DAT_005c2050",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0056ddce",
+        "call_type": "direct",
+        "caller": "crt_startup.c_HandleRuntimeError_FUN_0056ddc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056af84",
+        "call_type": "direct",
+        "caller": "crt_cpp.c_reportPureVirtualError_FUN_0056af76",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CALLOTHER": 1,
+      "CBRANCH": 1,
+      "COPY": 9,
+      "INT_ADD": 3,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 47
+  },
+  "stack_frame": {
+    "frame_size": 10,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 6,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "error_message",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 2,
+        "type": "ushort"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 5,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005c2050",
+      "severity": "mild",
+      "text": "if (DAT_005c2050 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcVar1 = (code *)swi(3);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

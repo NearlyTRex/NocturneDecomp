@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_setup_FUN_00416500(int param_1)
+; void core_bodypart_cpp_CBodyPart_setup_FUN_00416500(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00416503
     PUSH EDI                            ; 00416507
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00416508
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     XOR EBX,EBX                         ; 0041650d
     MOV EDX,dword ptr [EDI + 0x184]     ; 0041650f
     ADD ESP,0x4                         ; 00416515
@@ -38,7 +38,7 @@ section .text
     PUSH ECX                            ; 0041652a | DAT_01b4d738
     INC EBX                             ; 0041652b
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0041652c
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x18                        ; 00416531
     MOV EBP,dword ptr [EDI + 0x184]     ; 00416534
     ADD ESP,0x8                         ; 0041653a

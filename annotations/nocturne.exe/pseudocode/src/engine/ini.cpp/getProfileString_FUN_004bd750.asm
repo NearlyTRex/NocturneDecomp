@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_ini_cpp_getProfileString_FUN_004bd750(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl engine_ini_cpp_getProfileString_FUN_004bd750(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   section
+; char *           Stack[0x8]:4   key
+; char *           Stack[0xc]:4   default_value
+; char *           Stack[0x10]:4   output_buffer
+; int              Stack[0x14]:4   buffer_size
+; char *           Stack[0x18]:4   filename
 ;
 ; XREF[1]:
 ;   engine_ini.cpp_CIniFile_getString_FUN_004bd910 at 004bd93c
@@ -33,7 +40,7 @@ section .text
     PUSH EBP                            ; 004bd771
     PUSH 0x1cae378                      ; 004bd772
     CALL engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0 ; 004bd777
-        ;   XREF to: 004bd0a0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0()
+        ;   XREF to: 004bd0a0 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0(CIni * this_ptr, char * section, char * key, char * default_value, ...)
     ADD ESP,0x1c                        ; 004bd77c
     POP EBP                             ; 004bd77f
     POP EDI                             ; 004bd780

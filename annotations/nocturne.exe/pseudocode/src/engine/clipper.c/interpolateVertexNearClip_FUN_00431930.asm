@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(int *param_1,int *param_2,int *param_3)
+; void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v1
+; SRenderVertex *  Stack[0x8]:4   v2
+; SRenderVertex *  Stack[0xc]:4   output
 ;
 ; XREF[5]:
 ;   engine_clipper.c_FUN_00432057 at 004320bf

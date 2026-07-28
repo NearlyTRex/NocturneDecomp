@@ -2,102 +2,99 @@
 // Address: 004211e0
 // Address Range: [[004211e0, 00421462]]
 // Convention: unknown
-// Signature: void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
+// Signature: void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
+void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
 
 {
   float fVar1;
   float fVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
+  float fVar3;
+  float fVar4;
+  float fVar5;
   int iVar6;
-  uint *puVar7;
-  uint *puVar8;
-  char *pcVar9;
-  uint *puVar10;
-  float fVar11;
-  float fVar12;
-  uint *local_2c;
+  int iVar7;
+  CVector3f *pCVar8;
+  SBug *pSVar9;
+  char *pcVar10;
+  CVector3f *pCVar11;
+  CVector3f *local_2c;
   int local_28;
-  int local_20;
-  int local_1c;
+  CKeyFramedModelInstance *local_20;
+  char *local_1c;
   
-  *(uint *)(param_1 + 0x38) = 0;
-  *(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x38);
-  *(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x34);
-  core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
-  *(uint *)(param_1 + 0x1212c) = 4;
-  iVar6 = 0;
-  if (0 < *(int *)(param_1 + 0x1212c)) {
-    iVar3 = param_1 + 0x12130;
-    pcVar9 = (char *)(param_1 + 0x121a8);
+  (param_1->base).base.base.orient.vec.z = 0.0;
+  (param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;
+  (param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;
+  core_enemy_cpp_CEnemy_setup_FUN_004796b0(&param_1->base);
+  param_1->model_count = 4;
+  iVar7 = 0;
+  if (0 < param_1->model_count) {
+    pcVar10 = param_1->models[0].model_name;
     do {
-      if (*pcVar9 == '\0') {
-        iVar5 = *(int *)(param_1 + 0x1212c) + -1;
-        *(int *)(param_1 + 0x1212c) = iVar5;
-        if (iVar6 < iVar5) {
-          local_20 = iVar3 + iVar6 * 0x17c;
-          local_1c = iVar6 * 0x17c + 500 + iVar3;
-          iVar5 = iVar6;
+      if (*pcVar10 == '\0') {
+        iVar6 = param_1->model_count + -1;
+        param_1->model_count = iVar6;
+        if (iVar7 < iVar6) {
+          local_20 = param_1->models + iVar7;
+          local_1c = param_1->models[iVar7 + 1].model_name;
+          iVar6 = iVar7;
           do {
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(local_20,local_1c);
-            iVar5 = iVar5 + 1;
-            local_20 = local_20 + 0x17c;
+            iVar6 = iVar6 + 1;
+            local_20 = local_20 + 1;
             local_1c = local_1c + 0x17c;
-          } while (iVar5 < *(int *)(param_1 + 0x1212c));
+          } while (iVar6 < param_1->model_count);
         }
       }
       else {
-        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar6 * 0x17c + iVar3);
-        pcVar9 = pcVar9 + 0x17c;
-        iVar6 = iVar6 + 1;
+        core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar7);
+        pcVar10 = pcVar10 + 0x17c;
+        iVar7 = iVar7 + 1;
       }
-    } while (iVar6 < *(int *)(param_1 + 0x1212c));
+    } while (iVar7 < param_1->model_count);
   }
   local_28 = 0;
-  if (0 < *(int *)(param_1 + 0xbd28)) {
-    fVar11 = 0.5f * 12.0f;
-    fVar12 = 0.5f * -12.0f;
-    puVar10 = (uint *)(param_1 + 0xbd4c);
-    puVar7 = (uint *)(param_1 + 0xbd40);
-    local_2c = (uint *)(param_1 + 0xbd34);
+  if (0 < param_1->count) {
+    fVar1 = 0.5f * 12.0f;
+    fVar2 = 0.5f * -12.0f;
+    pCVar11 = &param_1->bugs[0].dest_position;
+    pCVar8 = &param_1->bugs[0].orientation;
+    local_2c = &param_1->bugs[0].position;
     do {
-      puVar8 = (uint *)(local_28 * 0x40 + param_1 + 0xbd2c);
-      *puVar8 = 0;
-      uVar4 = core_actor_cpp_getRandomInt_FUN_0040de00
-                        (0,*(int *)(param_1 + 0x1212c) + -1,fVar11,fVar12);
-      fVar1 = fVar11 * (float)0.5;
-      fVar2 = fVar12 * (float)0.5;
-      puVar8[1] = uVar4;
-      uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar2,fVar1);
-      puVar8[3] = 0;
-      puVar8[2] = uVar4;
-      uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar2,fVar1);
-      puVar8[4] = uVar4;
-      puVar7[2] = 0;
-      puVar7[1] = puVar7[2];
-      *puVar7 = puVar7[1];
-      uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-      puVar8[6] = uVar4;
-      if (puVar10 != local_2c) {
-        *puVar10 = puVar7[-3];
-        puVar10[1] = puVar7[-2];
-        puVar10[2] = puVar7[-1];
+      pSVar9 = param_1->bugs + local_28;
+      pSVar9->state = 0;
+      iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);
+      fVar5 = fVar1 * (float)0.5;
+      fVar3 = fVar2 * (float)0.5;
+      pSVar9->model_index = iVar7;
+      fVar4 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar3,fVar5);
+      (pSVar9->position).y = 0.0;
+      (pSVar9->position).x = fVar4;
+      fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar3,fVar5);
+      (pSVar9->position).z = fVar5;
+      pCVar8->z = 0.0;
+      pCVar8->y = pCVar8->z;
+      pCVar8->x = pCVar8->y;
+      fVar5 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
+      (pSVar9->orientation).y = fVar5;
+      if (pCVar11 != local_2c) {
+        pCVar11->x = pCVar8[-1].x;
+        pCVar11->y = pCVar8[-1].y;
+        pCVar11->z = pCVar8[-1].z;
       }
-      puVar10 = puVar10 + 0x10;
-      puVar7 = puVar7 + 0x10;
-      local_2c = local_2c + 0x10;
+      pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);
+      pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);
+      local_2c = (CVector3f *)((int)(local_2c + 5) + 4);
       local_28 = local_28 + 1;
-    } while (local_28 < *(int *)(param_1 + 0xbd28));
+    } while (local_28 < param_1->count);
   }
   core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(param_1);
-  *(uint *)(param_1 + 0x1984c) = 0xffffd8f1;
-  *(uint *)(param_1 + 0x19850) = 0xffffd8f1;
-  *(uint *)(param_1 + 0x100) = 1;
-  *(uint *)(param_1 + 0x1985c) = 0;
+  param_1->grid_cell_x = -9999;
+  param_1->grid_cell_z = -9999;
+  (param_1->base).base.base.collision_disabled = 1;
+  param_1->damage_timer = 0.0;
   return;
 }

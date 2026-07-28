@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)
+; void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
+; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x138]:4  local_138
 ; undefined4       Stack[-0x134]:4  local_134

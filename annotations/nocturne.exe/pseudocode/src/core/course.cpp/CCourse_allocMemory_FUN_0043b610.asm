@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int param_2)
+; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(CCourse *this_ptr,int count)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   count
 ;
 ; XREF[1]:
 ;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b71b
@@ -28,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0043b612
     PUSH EBX                            ; 0043b616
     CALL core_course.cpp_CCourse_free_FUN_0043b7c0 ; 0043b617
-        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_free_FUN_0043b7c0()
+        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_0043b7c0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 0043b61c
     MOV EAX,dword ptr [ESP + 0x10]      ; 0043b61f
     MOV ESI,EAX                         ; 0043b623
@@ -40,7 +43,7 @@ section .text
     ADD EAX,0x4                         ; 0043b631
     PUSH EAX                            ; 0043b634
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0043b635
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 0043b63a
     TEST EAX,EAX                        ; 0043b63d
     JNZ 0x0043b64b                      ; 0043b63f

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(undefined4 param_1)
+; CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(char *model_filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   model_filename
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaronWeapon_setup_FUN_004113b0 at 004113c2
@@ -46,7 +48,7 @@ section .text
     PUSH ESI                            ; 0051f59c
     ADD EDI,EAX                         ; 0051f59d
     CALL crt_string.c__stricmp_FUN_00564520 ; 0051f59f
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051f5a4
     TEST EAX,EAX                        ; 0051f5a7
     JZ 0x0051f641                       ; 0051f5a9
@@ -91,11 +93,11 @@ section .text
     PUSH EBX                            ; 0051f622
     MOV dword ptr [0x0268cef0],ECX      ; 0051f623 | DAT_0268cef0
     CALL core_skeleton.cpp_CDeformableModel_load_FUN_005191f0 ; 0051f629
-        ;   XREF to: 005191f0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_load_FUN_005191f0()
+        ;   XREF to: 005191f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_005191f0(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0051f62e
     PUSH EBX                            ; 0051f631
     CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0 ; 0051f632
-        ;   XREF to: 005180a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0()
+        ;   XREF to: 005180a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0051f637
     MOV EAX,EBX                         ; 0051f63a
     POP EBP                             ; 0051f63c

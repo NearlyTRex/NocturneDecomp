@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(int param_1,float param_2)
+; void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(CCharacter *param_1,float param_2)
 ;
 ;
 ; XREF[1]:
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 004bb2e5
     PUSH ESI                            ; 004bb2e6
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 004bb2e7
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     MOV EDX,EAX                         ; 004bb2ec
     SUB EAX,0x64                        ; 004bb2ee
     ADD ESP,0x8                         ; 004bb2f1
@@ -88,7 +88,7 @@ section .text
     JMP 0x004bb320                      ; 004bb355
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320
     CALL crt_stdlib.c_rand_FUN_0056488c ; 004bb357
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: caseD_67
     TEST AL,0x3                         ; 004bb35c
     JNZ 0x004bb320                      ; 004bb35e
@@ -97,7 +97,7 @@ section .text
     PUSH 0x15                           ; 004bb362
     PUSH ESI                            ; 004bb364
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004bb365
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004bb36a
     JMP 0x004bb320                      ; 004bb36d
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320
@@ -112,7 +112,7 @@ section .text
     PUSH EBX                            ; 004bb381
     MOV dword ptr [EBX + 0x1fa60],0x0   ; 004bb382
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40 ; 004bb38c
-        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40()
+        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 004bb391
     JMP 0x004bb320                      ; 004bb394
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320
@@ -129,7 +129,7 @@ section .text
         ;   Label: default
     PUSH EBX                            ; 004bb3b0
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 004bb3b1
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004bb3b6
     JMP 0x004bb320                      ; 004bb3b9
         ;   XREF to: 004bb320 (UNCONDITIONAL_JUMP)  ; LAB_004bb320

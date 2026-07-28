@@ -2,30 +2,35 @@
 // Address: 00428710
 // Address Range: [[00428710, 00428770]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(int param_1)
+// Signature: EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(int param_1)
+EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCharacter *this_ptr)
 
 {
-  uint uVar1;
+  char *pcVar1;
+  float *str2;
   int iVar2;
+  char *str2_00;
   
-  if (*(int *)(param_1 + 0x70) == 2) {
-    return 2;
+  if ((this_ptr->base).lifecycle_state == ACTOR_DESTROYED) {
+    return DEATH_STATE_DEAD;
   }
-  uVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0
-                    (param_1 + 0x150,&FLOAT_0057a04a,3);
-  iVar2 = _strnicmp(uVar1);
+  iVar2 = 3;
+  str2 = &FLOAT_0057a04a;
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0
+                     (&(this_ptr->model).motion_controller);
+  iVar2 = _strnicmp(pcVar1,(char *)str2,iVar2);
   if (iVar2 == 0) {
-    return 1;
+    return DEATH_STATE_DYING;
   }
-  uVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0
-                    (param_1 + 0x150,"DEAD");
-  iVar2 = _stricmp(uVar1);
+  str2_00 = "DEAD";
+  pcVar1 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0
+                     (&(this_ptr->model).motion_controller);
+  iVar2 = _stricmp(pcVar1,str2_00);
   if (iVar2 == 0) {
-    return 2;
+    return DEATH_STATE_DEAD;
   }
-  return 0;
+  return DEATH_STATE_ALIVE;
 }

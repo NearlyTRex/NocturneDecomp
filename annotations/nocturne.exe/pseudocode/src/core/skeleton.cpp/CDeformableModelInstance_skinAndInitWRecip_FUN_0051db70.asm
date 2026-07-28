@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70(int param_1,int param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70(CDeformableModelInstance *this_ptr,int lod_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_index
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 at 0051da42
@@ -31,11 +34,11 @@ section .text
     PUSH ESI                            ; 0051db8f
     PUSH EBX                            ; 0051db90
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051db91
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051db96
     PUSH EAX                            ; 0051db99
     CALL core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_005184b0 ; 0051db9a
-        ;   XREF to: 005184b0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_005184b0()
+        ;   XREF to: 005184b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(CDeformableModel * this_ptr, int lod_index, CVector3i * lod_vertices)
     ADD ESP,0xc                         ; 0051db9f
     POP ESI                             ; 0051dba2
     POP EBX                             ; 0051dba3
@@ -44,7 +47,7 @@ section .text
         ;   Label: LAB_0051dba5
     PUSH EBX                            ; 0051dba6
     CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 ; 0051dba7
-        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50()
+        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051dbac
     JMP 0x0051db82                      ; 0051dbaf
         ;   XREF to: 0051db82 (UNCONDITIONAL_JUMP)  ; LAB_0051db82

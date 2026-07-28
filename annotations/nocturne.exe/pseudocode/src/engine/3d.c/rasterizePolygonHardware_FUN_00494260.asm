@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_00494260(int *param_1,int param_2)
+; void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_00494260(SRenderVertex **vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -328,7 +331,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 00494557
     MOV EBX,dword ptr [ESP + 0x8]       ; 0049455b
     CALL engine_special.cpp_renderScanline_FUN_00530710 ; 0049455f
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00530710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0xc]       ; 00494564
     MOV EDX,dword ptr [ESP + 0xc]       ; 00494568
     MOV EAX,dword ptr [EAX + 0xc]       ; 0049456c

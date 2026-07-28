@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(int param_1)
+; void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de2e
@@ -57,7 +59,7 @@ section .text
     PUSH ESI                            ; 0049e7f8
         ;   Label: LAB_0049e7f8
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 0049e7f9
-        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0()
+        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049e7fe
     POP EBP                             ; 0049e801
     POP ESI                             ; 0049e802
@@ -66,7 +68,7 @@ section .text
         ;   Label: LAB_0049e804
     PUSH ESI                            ; 0049e805
     CALL core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 ; 0049e806
-        ;   XREF to: 0049ee30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30()
+        ;   XREF to: 0049ee30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame * this_ptr, SPlayerInput * player_control)
     ADD ESP,0x8                         ; 0049e80b
         ;   Label: LAB_0049e80b
     MOV ECX,0x258                       ; 0049e80e
@@ -94,14 +96,14 @@ section .text
         ;   Label: LAB_0049e84b
     PUSH ESI                            ; 0049e84c
     CALL core_game.cpp_CGame_processJoystickControls_FUN_0049ec80 ; 0049e84d
-        ;   XREF to: 0049ec80 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_processJoystickControls_FUN_0049ec80()
+        ;   XREF to: 0049ec80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processJoystickControls_FUN_0049ec80(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x0049e80b                      ; 0049e852
         ;   XREF to: 0049e80b (UNCONDITIONAL_JUMP)  ; LAB_0049e80b
     PUSH EDX                            ; 0049e854
         ;   Label: LAB_0049e854
     PUSH ESI                            ; 0049e855
     CALL core_game.cpp_CGame_processMouseControls_FUN_0049f710 ; 0049e856
-        ;   XREF to: 0049f710 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_processMouseControls_FUN_0049f710()
+        ;   XREF to: 0049f710 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processMouseControls_FUN_0049f710(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x0049e80b                      ; 0049e85b
         ;   XREF to: 0049e80b (UNCONDITIONAL_JUMP)  ; LAB_0049e80b
     PUSH EDI                            ; 0049e85d
@@ -109,7 +111,7 @@ section .text
     MOV EDI,dword ptr [0x005bdee0]      ; 0049e85e | DAT_005bdee0
     PUSH EDI                            ; 0049e864 | DAT_01cea280
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40 ; 0049e865
-        ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40()
+        ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; SPlayerInput * core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame * this_ptr)
     MOV EDX,EAX                         ; 0049e86a
     MOV EAX,dword ptr [ESI + 0xbc]      ; 0049e86c
     ADD ESP,0x4                         ; 0049e872

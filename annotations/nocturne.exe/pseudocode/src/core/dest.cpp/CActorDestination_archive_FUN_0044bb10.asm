@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(int param_1)
+; void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(CActorDestination *this_ptr)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;
@@ -33,7 +35,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x108]     ; 0044bb17
     PUSH EBX                            ; 0044bb1e
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 0044bb1f
-        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
+        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
     MOV EDX,dword ptr [0x005ad4bc]      ; 0044bb24 | g_INT_005ad4bc
     ADD ESP,0x4                         ; 0044bb2a
     CMP EDX,0x2                         ; 0044bb2d
@@ -44,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x180]               ; 0044bb37
     PUSH EAX                            ; 0044bb3d
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0044bb3e
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     MOV ECX,dword ptr [0x005ad4bc]      ; 0044bb43 | g_INT_005ad4bc
     ADD ESP,0x8                         ; 0044bb49
     CMP ECX,0x2                         ; 0044bb4c
@@ -54,7 +56,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0044bb56
     PUSH EAX                            ; 0044bb5c
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0044bb5d
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0044bb62
     CMP dword ptr [0x005ad4bc],0x3      ; 0044bb65 | g_INT_005ad4bc
         ;   Label: LAB_0044bb65
@@ -64,7 +66,7 @@ section .text
     LEA EAX,[EBX + 0x154]               ; 0044bb73
     PUSH EAX                            ; 0044bb79
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0044bb7a
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0044bb7f
     CMP dword ptr [0x005ad4bc],0x4      ; 0044bb82 | g_INT_005ad4bc
         ;   Label: LAB_0044bb82
@@ -78,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0044bb98
     PUSH EAX                            ; 0044bb9c
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0044bb9d
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0044bba2
     MOV dword ptr [EBX + 0x150],0x0     ; 0044bba5
     JMP 0x0044bb32                      ; 0044bbaf
@@ -88,7 +90,7 @@ section .text
     ADD EBX,0x1e4                       ; 0044bbb6
     PUSH EBX                            ; 0044bbbc
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0044bbbd
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 0044bbc2
     ADD ESP,0x100                       ; 0044bbc5
     POP EBX                             ; 0044bbcb

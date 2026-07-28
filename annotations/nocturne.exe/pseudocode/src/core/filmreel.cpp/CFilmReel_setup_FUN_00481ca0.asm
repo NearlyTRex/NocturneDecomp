@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmReel_setup_FUN_00481ca0(int param_1)
+; void core_filmreel_cpp_CFilmReel_setup_FUN_00481ca0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -21,12 +21,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 00481ca4
     PUSH EBX                            ; 00481ca8
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00481ca9
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00481cae
     LEA EAX,[EBX + 0x150]               ; 00481cb1
     PUSH EAX                            ; 00481cb7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00481cb8
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00481cbd
     MOV EAX,ESP                         ; 00481cc0
     PUSH EAX                            ; 00481cc2

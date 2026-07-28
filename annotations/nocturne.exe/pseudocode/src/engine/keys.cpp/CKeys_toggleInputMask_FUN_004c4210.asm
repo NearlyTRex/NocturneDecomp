@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(undefined4 param_1,int param_2)
+; void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(CKeys *this_ptr,int enable_extended)
 ;
+; Parameters:
+; CKeys *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   enable_extended
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049ddfe

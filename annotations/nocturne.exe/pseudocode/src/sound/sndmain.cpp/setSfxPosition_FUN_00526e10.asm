@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00526e10(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00526e10(uint sfx_handle,double pos_x,double pos_y,double pos_z)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; double           Stack[0x8]:8   pos_x
+; double           Stack[0x10]:8   pos_y
+; double           Stack[0x18]:8   pos_z
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004caf7b
@@ -72,7 +77,7 @@ section .text
     ADD ESP,0xc                         ; 00526e8c
     MOV ESI,EAX                         ; 00526e8f
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526e91
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00526e91
     MOV EAX,ESI                         ; 00526e96
     POP ESI                             ; 00526e98

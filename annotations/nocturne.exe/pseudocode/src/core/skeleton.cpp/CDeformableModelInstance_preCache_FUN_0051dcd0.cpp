@@ -2,16 +2,16 @@
 // Address: 0051dcd0
 // Address Range: [[0051dcd0, 0051dcf0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance *this_ptr)
 
 {
-  uint uVar1;
+  CDeformableModel *model_ptr;
   
-  uVar1 = core_skeleton_cpp_getDeformableModel_FUN_0051f570(param_1 + 0x2260);
-  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00(param_1,uVar1);
+  model_ptr = core_skeleton_cpp_getDeformableModel_FUN_0051f570(this_ptr->model_name);
+  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00(this_ptr,model_ptr);
   return;
 }

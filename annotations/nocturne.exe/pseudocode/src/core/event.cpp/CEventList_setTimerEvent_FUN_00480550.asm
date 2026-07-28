@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(int param_1,char *param_2,float param_3)
+; void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(CEventList *this_ptr,char *name,float duration)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; float            Stack[0xc]:4   duration
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -64,7 +68,7 @@ section .text
     PUSH EDX                            ; 004805a5
     PUSH EBX                            ; 004805a6
     CALL core_event.cpp_CEventList_findTimer_FUN_004808b0 ; 004805a7
-        ;   XREF to: 004808b0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findTimer_FUN_004808b0()
+        ;   XREF to: 004808b0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findTimer_FUN_004808b0(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004805ac
     ADD ESP,0x8                         ; 004805ae
     TEST EAX,EAX                        ; 004805b1
@@ -106,7 +110,7 @@ section .text
     ADD EAX,EDX                         ; 0048060b
     PUSH EAX                            ; 0048060d
     CALL crt_string.c_memmove_FUN_00566170 ; 0048060e
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x3210]    ; 00480613
     SUB EAX,ESI                         ; 00480619
     ADD ESP,0xc                         ; 0048061b
@@ -119,7 +123,7 @@ section .text
     ADD EBX,EDI                         ; 0048062e
     PUSH EBX                            ; 00480630
     CALL crt_string.c_memmove_FUN_00566170 ; 00480631
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00480636
     MOV ESP,EBP                         ; 00480639
     POP EBP                             ; 0048063b

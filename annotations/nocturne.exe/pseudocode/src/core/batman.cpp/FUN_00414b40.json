@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 311,
+    "complexity_score": 343,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 26,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 29,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memcpy"
     ],
-    "total_lines": 146
+    "total_lines": 143
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_batman.cpp_FUN_00414b40",
-    "signature": "int core_batman_cpp_FUN_00414b40(int param_1,undefined4 *param_2)"
+    "signature": "int core_batman_cpp_FUN_00414b40(int param_1,CVector3f *param_2)"
   },
   "function_calls": [
     {
@@ -250,7 +251,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_batman_cpp_FUN_00414b40(int param_1,uint *param_2)",
+      "text": "int core_batman_cpp_FUN_00414b40(int param_1,CVector3f *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -258,31 +259,39 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int core_batman_cpp_FUN_00414b40(int param_1,uint *param_2)",
+      "text": "int core_batman_cpp_FUN_00414b40(int param_1,CVector3f *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_1c,DAT_00764608);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_1c,DAT_00764608);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_00764608",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_1c,DAT_00764608);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_1c,DAT_00764608);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != pCVar1) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 != puVar1) {",
+      "text": "param_2->x = pCVar1->x;",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +299,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = *puVar1;",
+      "text": "param_2->y = pCVar1->y;",
       "type": "unnamed_param"
     },
     {
@@ -298,20 +307,12 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = puVar1[1];",
+      "text": "param_2->z = pCVar1->z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = puVar1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbda0) * 4) != 0) {",
@@ -319,7 +320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbda0) * 4) != 0) {",
@@ -327,26 +328,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_28,DAT_0076462c);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_28,DAT_0076462c);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 21,
       "match": "DAT_0076462c",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_28,DAT_0076462c);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_28,DAT_0076462c);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 + 1 != pCVar1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1].x = pCVar1->x;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 + 3 != puVar1) {",
+      "text": "param_2[1].y = pCVar1->y;",
       "type": "unnamed_param"
     },
     {
@@ -354,28 +371,12 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[3] = *puVar1;",
+      "text": "param_2[1].z = pCVar1->z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[4] = puVar1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[5] = puVar1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd8c) * 4) == 0) {",
@@ -383,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd8c) * 4) == 0) {",
@@ -391,26 +392,50 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_34,DAT_00764634);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_34,DAT_00764634);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 33,
       "match": "DAT_00764634",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_34,DAT_00764634);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),&local_34,DAT_00764634);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 = param_2 + iVar2 * 3;",
+      "text": "param_2 = param_2 + iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != pCVar1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->x = pCVar1->x;",
       "type": "unnamed_param"
     },
     {
@@ -418,7 +443,7 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 = param_2 + iVar2 * 3;",
+      "text": "param_2->y = pCVar1->y;",
       "type": "unnamed_param"
     },
     {
@@ -426,32 +451,32 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 != puVar1) {",
+      "text": "param_2->z = pCVar1->z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *puVar1;",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 15,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "param_2->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = puVar1[1];",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 23,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "param_2[1].x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = puVar1[2];",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 36,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "param_2->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

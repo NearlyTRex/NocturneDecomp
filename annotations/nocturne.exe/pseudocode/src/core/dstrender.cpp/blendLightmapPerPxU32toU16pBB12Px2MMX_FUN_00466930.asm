@@ -1,11 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930(uint *param_1,undefined4 *param_2,byte *param_3,byte *param_4,int param_5)
+; void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   output_buffer
+; uint *           Stack[0x8]:4   texture_buffer
+; byte *           Stack[0xc]:4   texture_indices
+; byte *           Stack[0x10]:4   lightmap_indices
+; int              Stack[0x14]:4   pixel_count
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_004470f0 at 0044727d
+;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 0044727d
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_005b4788

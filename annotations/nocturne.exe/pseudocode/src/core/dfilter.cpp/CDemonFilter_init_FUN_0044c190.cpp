@@ -2,54 +2,56 @@
 // Address: 0044c190
 // Address Range: [[0044c190, 0044c2aa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(int *param_1,float param_2,int param_3)
+// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(CDemonFilter *this_ptr,float init_value,int flags)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(int *param_1,float param_2,int param_3)
+void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(CDemonFilter *this_ptr,float init_value,int flags)
 
 {
   float fVar1;
   float fVar2;
   int iVar3;
   int iVar4;
-  float10 fVar5;
+  int iVar5;
+  double dVar6;
   float local_28;
   byte bStack_20;
   
-  if (param_3 == 0) {
-    core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(param_1);
+  if (flags == 0) {
+    core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(this_ptr);
   }
-  iVar4 = 0;
-  if (0 < param_1[1]) {
+  iVar5 = 0;
+  if (0 < this_ptr->count) {
     do {
-      iVar3 = 0;
-      if (0 < *param_1) {
+      iVar4 = 0;
+      if (0 < this_ptr->size) {
         do {
-          fVar1 = (float)(*param_1 / 2 - iVar3);
-          fVar2 = (float)(param_1[1] / 2 - iVar4);
-          local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)(*param_1 / 2);
+          iVar3 = this_ptr->size / 2;
+          fVar1 = (float)(iVar3 - iVar4);
+          fVar2 = (float)(this_ptr->count / 2 - iVar5);
+          local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)iVar3;
           if (1.0 < local_28) {
             local_28 = 1.0;
           }
-          fVar1 = (1.0 - local_28) * param_2;
-          if (param_3 == 0) {
-            fVar5 = (float10)fVar1 * (float10)256 * (float10)0.25;
+          fVar1 = (1.0 - local_28) * init_value;
+          if (flags == 0) {
+            fVar1 = fVar1 * (float)256 * (float)0.25;
           }
           else {
-            fVar5 = (float10)*(byte *)(param_1[0x12] + *param_1 * iVar4 + iVar3) * (float10)fVar1;
+            fVar1 = (float)this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] * fVar1;
           }
-          fVar5 = (float10)round(fVar5);
-          bStack_20 = (byte)(int)ROUND(fVar5);
+          dVar6 = round((double)fVar1);
+          bStack_20 = (byte)(int)ROUND(dVar6);
           if (0x3f < bStack_20) {
             bStack_20 = 0x3f;
           }
-          *(byte *)(*param_1 * iVar4 + iVar3 + param_1[0x12]) = bStack_20;
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < *param_1);
+          this_ptr->data_buffer[this_ptr->size * iVar5 + iVar4] = bStack_20;
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < this_ptr->size);
       }
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < param_1[1]);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < this_ptr->count);
   }
   return;
 }

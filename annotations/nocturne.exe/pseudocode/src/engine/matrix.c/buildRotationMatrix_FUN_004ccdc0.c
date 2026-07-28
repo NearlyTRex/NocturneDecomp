@@ -2,13 +2,13 @@
 // Address: 004ccdc0
 // Address Range: [[004ccdc0, 004cd0d4]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,int roll)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(uint param_1,uint param_2,uint param_3)
+void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,int roll)
 
 {
   longlong lVar1;
@@ -24,12 +24,12 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(uint param_1,uint 
   int iVar11;
   int iVar12;
   
-  iVar6 = engine_matrix_c_interpolatedSin_FUN_004cca60(param_1);
-  iVar7 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(param_1);
-  iVar8 = engine_matrix_c_interpolatedSin_FUN_004cca60(param_2);
-  iVar9 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(param_2);
-  iVar10 = engine_matrix_c_interpolatedSin_FUN_004cca60(param_3);
-  iVar11 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(param_3);
+  iVar6 = engine_matrix_c_interpolatedSin_FUN_004cca60(pitch);
+  iVar7 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(pitch);
+  iVar8 = engine_matrix_c_interpolatedSin_FUN_004cca60(yaw);
+  iVar9 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(yaw);
+  iVar10 = engine_matrix_c_interpolatedSin_FUN_004cca60(roll);
+  iVar11 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(roll);
   lVar1 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *

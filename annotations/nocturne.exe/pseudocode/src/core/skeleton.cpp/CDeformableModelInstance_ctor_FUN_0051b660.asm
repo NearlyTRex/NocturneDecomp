@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(undefined4 param_1)
+; CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00423f40 at 00423f56
@@ -28,14 +30,14 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
     PUSH EAX                            ; 0051b664
     CALL core_motion.cpp_CMotionController_ctor_FUN_004e1120 ; 0051b665
-        ;   XREF to: 004e1120 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_ctor_FUN_004e1120()
+        ;   XREF to: 004e1120 (UNCONDITIONAL_CALL)  ; CMotionController * core_motion.cpp_CMotionController_ctor_FUN_004e1120(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0051b66a
     PUSH 0x5993b0                       ; 0051b66d | g_CVectorTypeInfo_005993b0
     PUSH 0x64                           ; 0051b672
     ADD EAX,0x58                        ; 0051b674
     PUSH EAX                            ; 0051b677
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0051b678
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0x58                        ; 0051b67d
     MOV dword ptr [EAX + 0x50],0x5a1ed4 ; 0051b680 | PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4
     MOV byte ptr [EAX + 0x2260],0x0     ; 0051b687

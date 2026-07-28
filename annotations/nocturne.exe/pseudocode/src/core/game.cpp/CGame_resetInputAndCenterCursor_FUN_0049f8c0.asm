@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(void)
+; void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0 at 0049e7f9
@@ -36,17 +38,17 @@ section .text
     MOV EDX,dword ptr [0x005bdee0]      ; 0049f8c4 | DAT_005bdee0
     PUSH EDX                            ; 0049f8ca
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40 ; 0049f8cb
-        ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40()
+        ;   XREF to: 004eda40 (UNCONDITIONAL_CALL)  ; SPlayerInput * core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0049f8d0
     PUSH EAX                            ; 0049f8d3
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0049f8d4
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0049f8d9
     PUSH 0x258                          ; 0049f8dc
     PUSH 0x0                            ; 0049f8e1
     PUSH 0x1c781c0                      ; 0049f8e3
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0049f8e8
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EAX,[0x005b7620]                ; 0049f8ed | DAT_005b7620
     MOV EDX,EAX                         ; 0049f8f2
     SAR EDX,0x1f                        ; 0049f8f4

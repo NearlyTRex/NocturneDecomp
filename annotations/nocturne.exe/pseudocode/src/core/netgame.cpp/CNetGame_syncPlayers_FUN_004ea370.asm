@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int param_2)
+; int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_ptr,int sync_stage)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   sync_stage
 ; Local Variables:
 ; undefined4       Stack[-0x198]:4  local_198
 ; undefined        Stack[-0x194]:1  local_194
@@ -64,7 +67,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004ea37c
     MOV ESI,dword ptr [EBP + 0x14]      ; 004ea37f
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004ea382
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CMP dword ptr [EBP + 0x18],0x1      ; 004ea387
     JL 0x004ea5e3                       ; 004ea38b
         ;   XREF to: 004ea5e3 (CONDITIONAL_JUMP)  ; LAB_004ea5e3
@@ -74,7 +77,7 @@ section .text
         ;   XREF to: 004ea60b (CONDITIONAL_JUMP)  ; LAB_004ea60b
     MOV dword ptr [ESI + 0x4],0x2       ; 004ea39a
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ea3a1
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ea3a6
     MOV EBX,0x12                        ; 004ea3a8
     SAR EDX,0x1f                        ; 004ea3ad
@@ -110,7 +113,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004ea413
     MOV dword ptr [ESP + 0x178],EAX     ; 004ea416
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004ea41d
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004ea41d
     MOV EBX,dword ptr [EBP + 0x18]      ; 004ea422
     PUSH EBX                            ; 004ea425
@@ -125,14 +128,14 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea43c
     PUSH EAX                            ; 004ea440
     CALL engine_2d.c_drawText_FUN_00402600 ; 004ea441
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004ea446
     PUSH 0x16                           ; 004ea449
     PUSH 0x0                            ; 004ea44b
     PUSH 0x58bd88                       ; 004ea44d | = "Waiting on:"
     MOV EDI,0x1                         ; 004ea452
     CALL engine_2d.c_drawText_FUN_00402600 ; 004ea457
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     MOV EAX,0x21                        ; 004ea45c
     ADD ESP,0xc                         ; 004ea461
     MOV EDX,dword ptr [ESI + 0x1c]      ; 004ea464
@@ -157,7 +160,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0x180]     ; 004ea49a
     PUSH EAX                            ; 004ea4a1
     CALL engine_2d.c_drawText_FUN_00402600 ; 004ea4a2
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004ea4a7
     MOV ECX,dword ptr [EBX + 0x5c]      ; 004ea4aa
     PUSH ECX                            ; 004ea4ad
@@ -173,7 +176,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea4cd
     PUSH EAX                            ; 004ea4d1
     CALL engine_2d.c_drawText_FUN_00402600 ; 004ea4d2
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004ea4d7
     ADD dword ptr [ESP + 0x180],0xb     ; 004ea4da
     INC EDI                             ; 004ea4e2
@@ -189,10 +192,10 @@ section .text
     JNZ 0x004ea6cf                      ; 004ea4f6
         ;   XREF to: 004ea6cf (CONDITIONAL_JUMP)  ; LAB_004ea6cf
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004ea4fc
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH ESI                            ; 004ea501
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea502
-        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740()
+        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004ea507
     MOV EAX,[0x01cea3f8]                ; 004ea50a | DAT_01cea3f8
     MOV EDI,dword ptr [ESP + 0x174]     ; 004ea50f
@@ -247,7 +250,7 @@ section .text
     PUSH EBX                            ; 004ea5a8
     PUSH ESI                            ; 004ea5a9
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004ea5aa
-        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_004eb350()
+        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 004ea5af
         ;   Label: LAB_004ea5af
     INC EBX                             ; 004ea5b2
@@ -267,7 +270,7 @@ section .text
     JZ 0x004ea41d                       ; 004ea5cf
         ;   XREF to: 004ea41d (CONDITIONAL_JUMP)  ; LAB_004ea41d
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004ea5d5
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     XOR EAX,EAX                         ; 004ea5da
     MOV ESP,EBP                         ; 004ea5dc
         ;   Label: caseD_0
@@ -304,7 +307,7 @@ section .text
     PUSH EBX                            ; 004ea623
     PUSH ESI                            ; 004ea624
     CALL core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10 ; 004ea625
-        ;   XREF to: 004ebe10 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10()
+        ;   XREF to: 004ebe10 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10(CNetGame * this_ptr, int player_index, float max_ping)
     JMP 0x004ea5af                      ; 004ea62a
         ;   XREF to: 004ea5af (UNCONDITIONAL_JUMP)  ; LAB_004ea5af
     CMP EDI,0x2                         ; 004ea62c
@@ -321,7 +324,7 @@ section .text
     JLE 0x004ea6cf                      ; 004ea645
         ;   XREF to: 004ea6cf (CONDITIONAL_JUMP)  ; LAB_004ea6cf
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004ea64b
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     MOV ECX,dword ptr [EBP + 0x18]      ; 004ea650
     PUSH ECX                            ; 004ea653
     PUSH 0x58bdd5                       ; 004ea654 | = "Waiting on sync code %d from server..."
@@ -335,13 +338,13 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004ea66c
     PUSH EAX                            ; 004ea673
     CALL engine_2d.c_drawText_FUN_00402600 ; 004ea674
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004ea679
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004ea67c
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH ESI                            ; 004ea681
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea682
-        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740()
+        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004ea687
     MOV EAX,[0x005bac64]                ; 004ea68a | INT_005bac64
     PUSH 0x1                            ; 004ea68f
@@ -353,7 +356,7 @@ section .text
     JZ 0x004ea63c                       ; 004ea69c
         ;   XREF to: 004ea63c (CONDITIONAL_JUMP)  ; LAB_004ea63c
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004ea69e
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     XOR EAX,EAX                         ; 004ea6a3
     MOV ESP,EBP                         ; 004ea6a5
     POP EBP                             ; 004ea6a7

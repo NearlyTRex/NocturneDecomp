@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_0049cc10 at 0049d5ba
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5ba
 ;   core_game.cpp_FUN_004a57c0 at 004a5993
 ;   engine_special.cpp_FUN_00532ba0 at 00532c45
-;   engine_texture.cpp_FUN_00545aa0 at 00545ac4
+;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545ac4
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539a1
 ;
 ; Referenced Globals:

@@ -17,27 +17,27 @@ CDemonActorType * FUN_004b69e0(void);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004b69f0
 // Address: 004b69f0
-int CHostage::ctor(undefined4 param_1);
+CHostage * __cdecl CHostage::ctor(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_setup_FUN_004b6b20
 // Address: 004b6b20
-void CHostage::setup(int param_1);
+void CHostage::setup(CNPC *param_1);
 
 // Original: core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0
 // Address: 004b6cf0
-undefined4 CHostage::renderOpaque(int param_1);
+int CHostage::renderOpaque(CCharacter *param_1);
 
 // Original: core_hostage.cpp_FUN_004b6d80
 // Address: 004b6d80
-void FUN_004b6d80(int param_1,float param_2);
+void FUN_004b6d80(CHostage *param_1,float param_2);
 
 // Original: core_hostage.cpp_CHostage_processGrabberFlee_FUN_004b81a0
 // Address: 004b81a0
-undefined4 __cdecl CHostage::processGrabberFlee(int param_1,float param_2);
+int __cdecl CHostage::processGrabberFlee(CHostage *this_ptr,float delta_time);
 
 // Original: core_hostage.cpp_CHostage_renderBackground_FUN_004b82d0
 // Address: 004b82d0
-void CHostage::renderBackground(int param_1,int param_2);
+void CHostage::renderBackground(char *param_1,int param_2);
 
 // Original: core_hostage.cpp_CHostage_archive_FUN_004b8320
 // Address: 004b8320
@@ -63,6 +63,6 @@ void FUN_004b8600(int param_1,int param_2);
 // Address: 004b8700
 void FUN_004b8700(int param_1,int param_2);
 
-// Original: core_hostage.cpp_FUN_004b8b70
+// Original: core_hostage.cpp_CHostage_dtor_FUN_004b8b70
 // Address: 004b8b70
-int FUN_004b8b70(int param_1,byte param_2);
+CDemonActor * CHostage::dtor(CDemonActor *param_1,byte param_2);

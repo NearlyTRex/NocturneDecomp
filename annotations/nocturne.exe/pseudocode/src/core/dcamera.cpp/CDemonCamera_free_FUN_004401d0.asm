@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(int param_1)
+; void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 0044001d

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_0052c290(int *param_1)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_0052c290(CWavOutDevice *this_ptr)
 ;
+; Parameters:
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   sound_sndwav.cpp_getWavOutDevice_FUN_0052c760 at 0052c768

@@ -19,7 +19,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f49d9
     PUSH EAX                            ; 004f49dc
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004f49dd
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004f49e2
     MOV dword ptr [EBP + 0x14],EAX      ; 004f49e5
     ADD ESP,0x144                       ; 004f49e8

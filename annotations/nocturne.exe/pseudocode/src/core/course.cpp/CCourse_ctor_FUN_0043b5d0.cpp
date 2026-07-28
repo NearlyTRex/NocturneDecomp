@@ -2,15 +2,15 @@
 // Address: 0043b5d0
 // Address Range: [[0043b5d0, 0043b5e8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(undefined4 *param_1)
+// Signature: CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(CCourse *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(uint *param_1)
+CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(CCourse *this_ptr)
 
 {
-  param_1[1] = 0;
-  param_1[2] = 1;
-  *param_1 = 0;
-  return;
+  this_ptr->frames = (CCourseFrame *)0x0;
+  this_ptr->loop = 1;
+  this_ptr->len = 0;
+  return this_ptr;
 }

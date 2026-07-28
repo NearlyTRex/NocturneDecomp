@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)
+; undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -44,23 +44,23 @@ section .text
     PUSH EDI                            ; 0041646f
     MOV dword ptr [EBX + 0x15a8a0],EAX  ; 00416470 | DAT_01fb1b24
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00416476
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 0041647b
     MOV EBP,dword ptr [EDI + 0xca8]     ; 0041647e
     PUSH EBP                            ; 00416484
     MOV EAX,[0x005ae704]                ; 00416485 | DAT_005ae704
     PUSH EAX                            ; 0041648a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0041648b
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00416490
     PUSH 0x2e7                          ; 00416493
     PUSH EDI                            ; 00416498
     CALL core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 ; 00416499
-        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030()
+        ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart * this_ptr, int render_flags)
     ADD ESP,0x8                         ; 0041649e
     PUSH EDI                            ; 004164a1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004164a2
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     MOV EAX,[0x005be368]                ; 004164a7 | DAT_005be368
     ADD ESP,0x4                         ; 004164ac
     MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004164af | DAT_01fb1b24

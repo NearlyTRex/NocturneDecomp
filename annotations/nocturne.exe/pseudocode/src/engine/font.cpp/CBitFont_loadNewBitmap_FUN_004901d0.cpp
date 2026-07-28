@@ -2,15 +2,15 @@
 // Address: 004901d0
 // Address Range: [[004901d0, 0049020a]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004901d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+// Signature: void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004901d0(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004901d0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7)
+void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004901d0(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags)
 
 {
-  engine_font_cpp_CBitFont_free_FUN_00490420(param_1);
-  *(uint *)(param_1 + 0x3188) = param_7;
-  engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(param_1,param_2,param_3,param_4,param_5);
+  engine_font_cpp_CBitFont_free_FUN_00490420(this_ptr);
+  this_ptr->load_flags = load_flags;
+  engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(this_ptr,filename,width,height,first_char);
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508624

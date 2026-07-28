@@ -1,0 +1,253 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "0050d2d0",
+      "from_addr": "0050d3a9",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0050d2a0",
+    "address_range": [
+      [
+        "0050d2a0",
+        "0050d2cc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_qsortByDisplayListEntry_FUN_0050d2a0",
+    "signature": "undefined4 core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.722222222222222,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "CBRANCH": 2,
+      "COPY": 46,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 9,
+      "INT_AND": 12,
+      "INT_EQUAL": 2,
+      "INT_LEFT": 8,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 9,
+      "POPCOUNT": 1,
+      "RETURN": 3
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_set_cpp_qsortByDisplayListEntry_FUN_0050d2a0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(float *)(param_2 + 4) < *(float *)(param_1 + 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_2 + 4) < *(float *)(param_1 + 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 4) < *(float *)(param_2 + 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 4) < *(float *)(param_2 + 4)) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056d034 at 0056d05e
+;   crt_time.c_determine_dst_status_FUN_0056d034 at 0056d05e
 ;
 ; Called Functions:
 ;   FUN_0056ced8

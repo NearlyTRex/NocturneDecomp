@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+; void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; int              Stack[0x14]:4   x_min
+; int              Stack[0x18]:4   y_min
+; int              Stack[0x1c]:4   x_max
+; int              Stack[0x20]:4   y_max
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -46,7 +55,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 004039b0
     PUSH EDX                            ; 004039b4
     CALL engine_2d.c_computeOutcode_FUN_00403900 ; 004039b5
-        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_computeOutcode_FUN_00403900()
+        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; int engine_2d.c_computeOutcode_FUN_00403900(int x, int y, int x_min, int y_min, ...)
     ADD ESP,0x18                        ; 004039ba
     MOV ECX,dword ptr [ESP + 0x40]      ; 004039bd
     PUSH ECX                            ; 004039c1
@@ -62,7 +71,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x40]      ; 004039da
     PUSH ESI                            ; 004039de
     CALL engine_2d.c_computeOutcode_FUN_00403900 ; 004039df
-        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_computeOutcode_FUN_00403900()
+        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; int engine_2d.c_computeOutcode_FUN_00403900(int x, int y, int x_min, int y_min, ...)
     ADD ESP,0x18                        ; 004039e4
     MOV dword ptr [ESP + 0x8],EAX       ; 004039e7
     XOR EAX,EAX                         ; 004039eb
@@ -154,7 +163,7 @@ section .text
     PUSH EBX                            ; 00403ab5
     MOV dword ptr [ESP + 0x3c],EBX      ; 00403ab6
     CALL engine_2d.c_computeOutcode_FUN_00403900 ; 00403aba
-        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_computeOutcode_FUN_00403900()
+        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; int engine_2d.c_computeOutcode_FUN_00403900(int x, int y, int x_min, int y_min, ...)
     ADD ESP,0x18                        ; 00403abf
     MOV EBP,EDI                         ; 00403ac2
     MOV dword ptr [ESP + 0xc],EAX       ; 00403ac4
@@ -244,7 +253,7 @@ section .text
     MOV dword ptr [ESP + 0x44],EBX      ; 00403b7a
     MOV dword ptr [ESP + 0x48],EDI      ; 00403b7e
     CALL engine_2d.c_computeOutcode_FUN_00403900 ; 00403b82
-        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_computeOutcode_FUN_00403900()
+        ;   XREF to: 00403900 (UNCONDITIONAL_CALL)  ; int engine_2d.c_computeOutcode_FUN_00403900(int x, int y, int x_min, int y_min, ...)
     ADD ESP,0x18                        ; 00403b87
     MOV dword ptr [ESP + 0x8],EAX       ; 00403b8a
     MOV EAX,dword ptr [ESP + 0x4]       ; 00403b8e
@@ -265,7 +274,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 00403bb0
     PUSH EBX                            ; 00403bb4
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00403bb5
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00403bba
     ADD ESP,0x10                        ; 00403bbd
     POP EBP                             ; 00403bc0

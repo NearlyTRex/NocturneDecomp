@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045c050(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void cockpit_drawsurf_cpp_FUN_0045c050(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 0045c0af
     PUSH EBX                            ; 0045c0b0
     CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440 ; 0045c0b1
-        ;   XREF to: 0045c440 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440()
+        ;   XREF to: 0045c440 (UNCONDITIONAL_CALL)  ; int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, ...)
     ADD ESP,0x24                        ; 0045c0b6
     TEST EAX,EAX                        ; 0045c0b9
     JNZ 0x0045c0c2                      ; 0045c0bb
@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 0045c0d5
     PUSH EBX                            ; 0045c0d6
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 ; 0045c0d7
-        ;   XREF to: 0045c1e0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0()
+        ;   XREF to: 0045c1e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045c0dc
     POP EBP                             ; 0045c0df
     POP EDI                             ; 0045c0e0

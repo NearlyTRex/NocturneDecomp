@@ -1,63 +1,79 @@
 // Name: core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920
 // Address: 0054f920
 // Address Range: [[0054f920, 0054fa77]]
-// Convention: unknown
-// Signature: int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVessel *this_ptr)
 
 #include "nocturne.h"
 
-int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(uint param_1)
+CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVessel *this_ptr)
 
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
+  CKeyFramedModelInstance *pCVar3;
+  CFlame *pCVar4;
+  char *pcVar5;
+  char *pcVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  iVar2 = core_flame_cpp_CFlame_ctor_FUN_0048cf60(iVar2 + 0x26c);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x2a0);
-  pcVar3 = "none";
-  *(byte ***)(iVar2 + -0x510) = &PTR_core_vessel_cpp_FUN_0054fa80_005a3d84;
+  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar3[1].model_name + 0x78));
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));
+  pcVar5 = "none";
+  *(byte ***)(pCVar3[-4].model_name + 0x68) = &PTR_core_vessel_cpp_FUN_0054fa80_005a3d84;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x50c,"vsslbase.kfm");
-  *(uint *)(iVar2 + -0x390) = 0;
-  *(uint *)(iVar2 + -0x38c) = 0;
-  pcVar4 = (char *)(iVar2 + -900);
-  *(uint *)(iVar2 + -0x388) = 0;
+            ((CKeyFramedModelInstance *)(pCVar3[-4].model_name + 0x6c),"vsslbase.kfm");
+  pCVar3[-0xffffffff00000003].model_name[0x6c] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6d] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6e] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6f] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x70] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x71] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x72] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x73] = '\0';
+  pcVar6 = pCVar3[-3].model_name + 0x78;
+  pCVar3[-0xffffffff00000003].model_name[0x74] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x75] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x76] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x77] = '\0';
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + -700) = 0;
-  *(uint *)(iVar2 + -0x2b8) = 0;
-  pcVar3 = "none";
-  *(uint *)(iVar2 + -0x2a8) = 0;
-  pcVar4 = (char *)(iVar2 + -800);
-  *(uint *)(iVar2 + -0x2ac) = 0;
+  pCVar3[-2].part_visibility_flags[0xf] = 0;
+  pCVar3[-2].part_visibility_flags[0x10] = 0;
+  pcVar5 = "none";
+  pCVar3[-2].part_visibility_flags[0x14] = 0;
+  pcVar6 = pCVar3[-3].model_name + 0xdc;
+  pCVar3[-2].part_visibility_flags[0x13] = 0;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + -0x2b4) = 0x41200000;
-  *(uint *)(iVar2 + -0x2a4) = 1;
-  *(uint *)(iVar2 + -0x2b0) = 0;
-  *(uint *)(iVar2 + -4) = 0;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"vsslorb.kfm");
-  *(uint *)(iVar2 + 0x17c) = 1;
-  *(uint *)(iVar2 + -0x560) = 1;
-  *(uint *)(iVar2 + 0x180) = 0;
-  *(uint *)(iVar2 + 0x184) = 0;
-  return iVar2 + -0x65c;
+  pCVar3[-2].part_visibility_flags[0x11] = 0x41200000;
+  pCVar3[-2].part_visibility_flags[0x15] = 1;
+  pCVar3[-2].part_visibility_flags[0x12] = 0;
+  pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(pCVar3,"vsslorb.kfm");
+  pCVar3[1].part_visibility_flags[0] = 1;
+  pCVar3[-0xffffffff00000004].model_name[0x18] = '\x01';
+  pCVar3[-0xffffffff00000004].model_name[0x19] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x1a] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x1b] = '\0';
+  pCVar3[1].part_visibility_flags[1] = 0;
+  pCVar3[1].part_visibility_flags[2] = 0;
+  return (CCryptVessel *)(pCVar3[-5].model_name + 0x98);
 }

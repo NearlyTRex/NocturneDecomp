@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_script_cpp_CScript_processTimer_FUN_00504b70(int param_1,float param_2,float *param_3)
+; int __cdecl core_script_cpp_CScript_processTimer_FUN_00504b70(CScript *this_ptr,float delta_time,float *timer_value)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; float *          Stack[0xc]:4   timer_value
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500f8d

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(int param_1,float *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 param_6)
+; void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004850d0(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 ;
+; Parameters:
+; CGlassParticle * Stack[0x4]:4   this_ptr
+; STriangleVertices * Stack[0x8]:4   triangle_vertices
+; CVector3i *      Stack[0xc]:4   uv_u_per_vertex
+; CVector3i *      Stack[0x10]:4   uv_v_per_vertex
+; SMRGLTextureBasic * Stack[0x14]:4   texture
+; int              Stack[0x18]:4   lifetime
 ; Local Variables:
 ; undefined4       Stack[-0xa4]:4  local_a4
 ; undefined4       Stack[-0xa0]:4  local_a0
@@ -269,7 +276,7 @@ section .text
     PUSH EBX                            ; 0048539b
     FSTP float ptr [ESP + 0x50]         ; 0048539c
     CALL core_particle.cpp_CParticle_setup_FUN_004ef040 ; 004853a0
-        ;   XREF to: 004ef040 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_setup_FUN_004ef040()
+        ;   XREF to: 004ef040 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_setup_FUN_004ef040(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 004853a5
     ADD ESP,0x98                        ; 004853a8
     POP EDI                             ; 004853ae

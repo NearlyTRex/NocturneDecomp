@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_tentacle_cpp_FUN_00544440(int param_1)
+; int core_tentacle_cpp_FUN_00544440(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 00544465
         ;   Label: LAB_00544465
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 00544466
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0054446b
     POP EBX                             ; 0054446e
     RET                                 ; 0054446f

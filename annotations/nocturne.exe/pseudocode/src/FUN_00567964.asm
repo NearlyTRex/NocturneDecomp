@@ -15,8 +15,8 @@
 ;   undefined4 DAT_02de5c30
 ;
 ; Called Functions:
+;   crt_locale.c_mbtowc_FUN_0056f040
 ;   FUN_00567540
-;   FUN_0056f040
 ;
 ; *****************************************************************************
 
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 00567a1d
     LEA EAX,[ESP + 0x8]                 ; 00567a1e
     PUSH EAX                            ; 00567a22
-    CALL FUN_0056f040                   ; 00567a23
-        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f040()
+    CALL crt_locale.c_mbtowc_FUN_0056f040 ; 00567a23
+        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mbtowc_FUN_0056f040(wchar_t * wide_char, char * mb_string, SIZE_T max_bytes)
     ADD ESP,0xc                         ; 00567a28
     CMP EAX,-0x1                        ; 00567a2b
     JNZ 0x00567a34                      ; 00567a2e

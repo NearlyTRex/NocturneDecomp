@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 561,
+    "complexity_score": 353,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 34,
+    "pseudocode_lines": 188,
+    "suspect_count": 15,
     "suspect_types": [
-      "param_count_too_few",
       "self_copy_guard",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 550
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -156,7 +154,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005570b0",
-    "signature": "void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,float *param_2)"
+    "signature": "void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *this_ptr,CVector3f *eye_position)"
   },
   "function_calls": [
     {
@@ -244,11 +242,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.154302670623146,
@@ -281,10 +279,10 @@
     "pcode_op_count": 1737
   },
   "stack_frame": {
-    "frame_size": 284,
+    "frame_size": 292,
     "local_size": 284,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -748,6 +746,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      },
+      {
+        "is_param": true,
+        "name": "eye_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -758,15 +770,15 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 25,
-          "line": 102,
+          "column": 27,
+          "line": 89,
           "message": "Uninitialized variable: local_54",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 25,
-          "line": 103,
+          "column": 27,
+          "line": 90,
           "message": "Uninitialized variable: local_50",
           "severity": "warning"
         }
@@ -785,208 +797,64 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e8 = *param_2 + 0.2f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e4 = param_2[1] + 0.2f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e0 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1 + 0x2614);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_64 = *param_2 + local_a0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_60 = param_2[1] + 0.2f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_5c = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1 + 0x2614);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_7c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_40 = *param_2 + local_b8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 123,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_3c = param_2[1] + local_b4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_38 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1 + 0x2614);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_34);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_f4 = *param_2 + 0.2f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 145,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_f0 = param_2[1] + local_d8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_ec = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 147,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_1 + 0x2614);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_c4);",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 107,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "piVar2 = DAT_005ae704;",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_7c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 129,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "*(uint *)(*DAT_005ae704 + 0x20) = 0xffff;",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_34);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 195,
+      "line": 151,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "this_ptr_00 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 153,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "DAT_005ae704->vertex_buffer_ptr->r = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 187,
       "match": "DAT_005c1618",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(piVar2,&DAT_005c1618);",
+      "text": "(this_ptr_00,(SMRGLTextureBasic *)&DAT_005c1618);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 188,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);",
@@ -994,15 +862,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 197,
+      "line": 189,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(DAT_005ae704,auStack_11c);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(DAT_005ae704,&SStack_11c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 198,
+      "line": 190,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
@@ -1010,7 +878,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_58 != &local_d0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 89,
+      "line": 76,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_58 != &local_d0) {",
@@ -1018,7 +886,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_58 != &local_70)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 109,
+      "line": 97,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_58 != &local_70) {",
@@ -1026,7 +894,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_58 != &local_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 129,
+      "line": 118,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_58 != &local_94) {",
@@ -1034,37 +902,26 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_58 != &local_88)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 151,
+      "line": 141,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_58 != &local_88) {",
       "type": "self_copy_guard"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    },
-    {
       "description": "Uninitialized variable: local_54",
-      "line": 102,
+      "line": 89,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_48 = (int)ROUND(local_54 * _DAT_005a42d0);",
+      "text": "local_4c.y = (int)ROUND(local_54 * _DAT_005a42d0);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_50",
-      "line": 103,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_44 = (int)ROUND(local_50 * _DAT_005a42d0);",
+      "text": "local_4c.z = (int)ROUND(local_50 * _DAT_005a42d0);",
       "type": "static_uninitvar"
     }
   ]

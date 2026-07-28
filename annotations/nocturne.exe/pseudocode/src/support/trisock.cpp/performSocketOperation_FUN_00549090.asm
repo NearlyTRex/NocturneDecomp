@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; char *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   length
+; SNetworkAddr *   Stack[0x10]:4   dest_addr
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined        Stack[-0x1c]:1  local_1c

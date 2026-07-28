@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(int *param_1)
+; undefined4 shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(CPickList *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@ section .text
     PUSH EDX                            ; 00474ec5
     PUSH EBX                            ; 00474ec6
     CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 00474ec7
-        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040()
+        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040(CPickList * this_ptr, int item_index)
     ADD ESP,0x8                         ; 00474ecc
     TEST EAX,EAX                        ; 00474ecf
     JNZ 0x0047509f                      ; 00474ed1
@@ -70,7 +70,7 @@ section .text
     LEA EBP,[EBX + 0xa8]                ; 00474f06
         ;   Label: LAB_00474f06
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_00558b70 ; 00474f0c
-        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_wasKeyPressed_FUN_00558b70()
+        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_00558b70()
         ;   Label: LAB_00474f0c
     TEST EAX,EAX                        ; 00474f11
     JNZ 0x00475103                      ; 00474f13
@@ -232,7 +232,7 @@ section .text
         ;   XREF to: 004750dd (CONDITIONAL_JUMP)  ; LAB_004750dd
     PUSH EBX                            ; 004750d4
     CALL shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380 ; 004750d5
-        ;   XREF to: 00474380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380()
+        ;   XREF to: 00474380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004750da
     PUSH 0x2e                           ; 004750dd
         ;   Label: LAB_004750dd
@@ -246,7 +246,7 @@ section .text
         ;   XREF to: 00474f06 (CONDITIONAL_JUMP)  ; LAB_00474f06
     PUSH EBX                            ; 004750f5
     CALL shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380 ; 004750f6
-        ;   XREF to: 00474380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380()
+        ;   XREF to: 00474380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004750fb
     JMP 0x00474f06                      ; 004750fe
         ;   XREF to: 00474f06 (UNCONDITIONAL_JUMP)  ; LAB_00474f06
@@ -254,7 +254,7 @@ section .text
         ;   Label: LAB_00475103
     PUSH EAX                            ; 00475108 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0 ; 00475109
-        ;   XREF to: 004c41d0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0()
+        ;   XREF to: 004c41d0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0047510e
     MOV dword ptr [ESP],EAX             ; 00475111
     CMP EAX,0x8                         ; 00475114
@@ -294,12 +294,12 @@ section .text
     PUSH EDX                            ; 00475176
     PUSH EBX                            ; 00475177
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00475178
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0047517d
     PUSH EAX                            ; 00475180
     PUSH EBP                            ; 00475181
     CALL crt_string.c__stricmp_FUN_00564520 ; 00475182
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00475187
     TEST EAX,EAX                        ; 0047518a
     JLE 0x004751c2                      ; 0047518c
@@ -313,12 +313,12 @@ section .text
     PUSH EAX                            ; 0047519e
     PUSH EBX                            ; 0047519f
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004751a0
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004751a5
     PUSH EAX                            ; 004751a8
     PUSH EBP                            ; 004751a9
     CALL crt_string.c__stricmp_FUN_00564520 ; 004751aa
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004751af
     TEST EAX,EAX                        ; 004751b2
     JLE 0x00474f0c                      ; 004751b4
@@ -344,7 +344,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x14]        ; 004751e4
     PUSH EAX                            ; 004751e7
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004751e8
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004751ed
     CMP EAX,dword ptr [ESP]             ; 004751f0
     JNZ 0x0047521c                      ; 004751f3
@@ -358,7 +358,7 @@ section .text
     PUSH ECX                            ; 0047520a
     PUSH EBX                            ; 0047520b
     CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 0047520c
-        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040()
+        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040(CPickList * this_ptr, int item_index)
     ADD ESP,0x8                         ; 00475211
     TEST EAX,EAX                        ; 00475214
     JNZ 0x0047509f                      ; 00475216

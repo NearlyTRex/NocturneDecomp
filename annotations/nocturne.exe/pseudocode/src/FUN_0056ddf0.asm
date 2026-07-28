@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
-;   crt_unknown.c_FUN_005635c0
-;   FUN_0056ddc0
+;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0
+;   crt_unknown.c_InternalHeapAlloc_FUN_005635c0
 ;
 ; *****************************************************************************
 
@@ -36,15 +36,15 @@ section .text
         ;   XREF to: 0056de81 (CONDITIONAL_JUMP)  ; LAB_0056de81
     PUSH 0x1d                           ; 0056de1b
         ;   Label: LAB_0056de1b
-    CALL crt_unknown.c_FUN_005635c0     ; 0056de1d
-        ;   XREF to: 005635c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005635c0()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005635c0 ; 0056de1d
+        ;   XREF to: 005635c0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005635c0(ulong size)
     ADD ESP,0x4                         ; 0056de22
     TEST EAX,EAX                        ; 0056de25
     JNZ 0x0056de4a                      ; 0056de27
         ;   XREF to: 0056de4a (CONDITIONAL_JUMP)  ; LAB_0056de4a
     PUSH 0x1d                           ; 0056de29
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0056de2b
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0056de30
     MOV ESI,EAX                         ; 0056de33
     TEST EAX,EAX                        ; 0056de35
@@ -52,8 +52,8 @@ section .text
         ;   XREF to: 0056de4c (CONDITIONAL_JUMP)  ; LAB_0056de4c
     PUSH 0x1                            ; 0056de39
     PUSH 0x598bec                       ; 0056de3b | = "Not enough memory to allocate file st..."
-    CALL FUN_0056ddc0                   ; 0056de40
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0056de40
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 0056de45
     JMP 0x0056de4c                      ; 0056de48
         ;   XREF to: 0056de4c (UNCONDITIONAL_JUMP)  ; LAB_0056de4c

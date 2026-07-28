@@ -2,25 +2,25 @@
 // Address: 004c14d0
 // Address Range: [[004c14d0, 004c150f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(int param_1)
+// Signature: void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(int param_1)
+void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(CInventory *this_ptr)
 
 {
   int iVar1;
-  int iVar2;
+  CInventory *pCVar2;
   
   iVar1 = 0;
-  iVar2 = param_1;
-  if (0 < *(int *)(param_1 + 8)) {
+  pCVar2 = this_ptr;
+  if (0 < this_ptr->item_count) {
     do {
       iVar1 = iVar1 + 1;
-      core_mission_cpp_FUN_004d8cd0(0x01CC9450,*(uint *)(iVar2 + 0xc));
-      iVar2 = iVar2 + 4;
-    } while (iVar1 < *(int *)(param_1 + 8));
+      core_mission_cpp_FUN_004d8cd0(0x01CC9450,pCVar2->items[0]);
+      pCVar2 = (CInventory *)&pCVar2->owner;
+    } while (iVar1 < this_ptr->item_count);
   }
-  *(uint *)(param_1 + 0x450) = 0;
+  this_ptr->preserve_items = 0;
   return;
 }

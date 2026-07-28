@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdlib_c_rand_FUN_0056488c(void)
+; int __cdecl crt_stdlib_c_rand_FUN_0056488c(void)
 ;
 ;
 ; XREF[39]:
@@ -18,14 +18,14 @@
 ;   ... and 29 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564880
+;   crt_unknown.c_GetRandomSeedPointer_FUN_00564880
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL crt_unknown.c_FUN_00564880     ; 0056488c
-        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564880()
+    CALL crt_unknown.c_GetRandomSeedPointer_FUN_00564880 ; 0056488c
+        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; uint * crt_unknown.c_GetRandomSeedPointer_FUN_00564880()
         ;   Label: crt_stdlib.c_rand_FUN_0056488c
     TEST EAX,EAX                        ; 00564891
     JNZ 0x00564896                      ; 00564893

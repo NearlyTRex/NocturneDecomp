@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005650f0(int param_1,undefined4 param_2)
+; void crt_unknown_c_FUN_005650f0(int param_1,uint param_2)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     SUB EAX,0x44                        ; 005650f9
     PUSH EAX                            ; 005650fc
     CALL crt_fstream.cpp_ifstream_dtor_FUN_00565264 ; 005650fd
-        ;   XREF to: 00565264 (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_ifstream_dtor_FUN_00565264()
+        ;   XREF to: 00565264 (UNCONDITIONAL_CALL)  ; ifstream * crt_fstream.cpp_ifstream_dtor_FUN_00565264(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00565102
     RET                                 ; 00565105
 

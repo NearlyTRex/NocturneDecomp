@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl engine_2d_c_drawVLine_FUN_00403ce0(int param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_drawVLine_FUN_00403ce0(int x,int y1,int y2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   y2
 ;
 ; XREF[3]:
 ;   engine_2d.c_drawRect_FUN_00403e10 at 00403e3d

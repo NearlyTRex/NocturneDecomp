@@ -72,7 +72,7 @@ section .text
     PUSH 0x42480000                     ; 0048802c
     PUSH EAX                            ; 00488031
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 ; 00488032
-        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0()
+        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 00488037
     TEST EAX,EAX                        ; 0048803a
     JZ 0x0048805c                       ; 0048803c
@@ -107,7 +107,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00488090 | DAT_01fa3ff4
     PUSH EDX                            ; 00488097
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00488098
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0048809d
     TEST EAX,EAX                        ; 004880a0
     JZ 0x004880c2                       ; 004880a2

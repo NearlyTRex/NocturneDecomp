@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveLocation_FUN_0040c590(float *param_1)
+; void __cdecl core_actor_cpp_archiveLocation_FUN_0040c590(CLocation *location_ptr,char *property_name)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
@@ -58,7 +61,7 @@ section .text
     PUSH EBP                            ; 0040c5ca
     PUSH 0x5acc38                       ; 0040c5cb | = "4D location"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c5d0
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c5d5
     POP EBP                             ; 0040c5d8
     POP EDI                             ; 0040c5d9
@@ -69,7 +72,7 @@ section .text
     PUSH EDI                            ; 0040c5e0
     PUSH 0x5acc38                       ; 0040c5e1 | = "4D location"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c5e6
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c5eb
     JMP 0x0040c5c6                      ; 0040c5ee
         ;   XREF to: 0040c5c6 (UNCONDITIONAL_JUMP)  ; LAB_0040c5c6

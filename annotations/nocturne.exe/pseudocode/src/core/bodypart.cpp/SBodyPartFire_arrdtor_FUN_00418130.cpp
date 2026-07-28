@@ -2,13 +2,15 @@
 // Address: 00418130
 // Address Range: [[00418130, 00418144]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(undefined4 param_1)
+// Signature: SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire *objs,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(uint param_1)
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire *objs,uint flags)
 
 {
-  __arrfini(param_1,2,&g_SBodyPartFireTypeInfo_0059a840);
-  return;
+  SBodyPartFire *pSVar1;
+  
+  pSVar1 = (SBodyPartFire *)__arrfini(objs,2,&g_SBodyPartFireTypeInfo_0059a840);
+  return pSVar1;
 }

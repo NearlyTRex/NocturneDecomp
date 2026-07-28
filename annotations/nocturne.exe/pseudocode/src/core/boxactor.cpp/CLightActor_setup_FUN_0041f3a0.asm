@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(int param_1)
+; void core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CBoxActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -22,12 +22,12 @@ section .text
     ADD ESP,0x4                         ; 0041f3ab
     PUSH EBX                            ; 0041f3ae
     CALL core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 ; 0041f3af
-        ;   XREF to: 0041e430 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_setup_FUN_0041e430()
+        ;   XREF to: 0041e430 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setup_FUN_0041e430(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f3b4
     LEA EAX,[EBX + 0x668]               ; 0041f3b7
     PUSH EAX                            ; 0041f3bd
     CALL core_dlight.cpp_CDemonLight_init_FUN_0044e1e0 ; 0041f3be
-        ;   XREF to: 0044e1e0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_init_FUN_0044e1e0()
+        ;   XREF to: 0044e1e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0041f3c3
     POP EBX                             ; 0041f3c6
     RET                                 ; 0041f3c7

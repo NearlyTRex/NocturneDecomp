@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(int param_1,int param_2,int param_3,int param_4)
+; int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap *this_ptr,int grid_z,int grid_x,int current_height)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   grid_z
+; int              Stack[0xc]:4   grid_x
+; int              Stack[0x10]:4   current_height
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -80,7 +85,7 @@ section .text
     PUSH EAX                            ; 004f0517
     PUSH 0x1fba938                      ; 004f0518 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0 ; 004f051d
-        ;   XREF to: 0046b8d0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0()
+        ;   XREF to: 0046b8d0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
     MOV dword ptr [EBX + 0x30],EAX      ; 004f0522
     ADD ESP,0x8                         ; 004f0525
     MOV dword ptr [EBX + 0x9c70],ESI    ; 004f0528

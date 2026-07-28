@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int param_1,int param_2,uint param_3)
+; void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int x_coord,int y_coord,uint depth_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_coord
+; int              Stack[0x8]:4   y_coord
+; uint             Stack[0xc]:4   depth_value
 ;
 ; XREF[1]:
 ;   engine_2d.c_drawLine3D_FUN_00401710 at 0040179a

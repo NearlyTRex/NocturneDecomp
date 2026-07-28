@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_free_FUN_00564486(undefined4 param_1)
+; void __cdecl shape_memdbg_cpp_free_FUN_00564486(void *ptr)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[151]:
-;   FUN_0056b538 at 0056b586
-;   FUN_0056b5ad at 0056b60c
-;   FUN_0056b633 at 0056b669
-;   FUN_0056b6e8 at 0056b736
-;   FUN_0056b810 at 0056b86f
-;   FUN_005701cf at 005701fd
-;   FUN_00570272 at 00570365
-;   FUN_00570449 at 005704ad
 ;   cockpit_pkbitmap.cpp_FUN_004f3f50 at 004f3f61
 ;   cockpit_pkbitmap.cpp_FUN_004f5320 at 004f5337
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 at 00409ee0
+;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040efc5
+;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4e5
+;   core_anvil.cpp_FUN_0040f8b0 at 0040f8e5
+;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd90
+;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdf5
+;   core_armour.cpp_FUN_0040fc30 at 0040fcd0
+;   core_backgnd.cpp_FUN_004100f0 at 00410125
 ;   ... and 141 more
 ;
 ; Called Functions:

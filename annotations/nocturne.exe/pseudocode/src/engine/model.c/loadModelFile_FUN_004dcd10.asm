@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *param_1)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ;
 ; XREF[2]:
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3bf2
-;   engine_model.c_FUN_004dcf60 at 004dd374
+;   engine_model.c_getMRGLBounds_FUN_004dcf60 at 004dd374
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_models_0058a4f4
@@ -78,7 +80,7 @@ section .text
     PUSH EBX                            ; 004dcd3f
     PUSH 0x58a4f4                       ; 004dcd40 | = "models"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004dcd45
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004dcd4a
     MOV EDI,EAX                         ; 004dcd4d
     TEST EAX,EAX                        ; 004dcd4f
@@ -105,7 +107,7 @@ section .text
     PUSH EBX                            ; 004dcd8e
     PUSH 0x58a52c                       ; 004dcd8f | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004dcd94
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dcd99
     MOV EBP,EAX                         ; 004dcd9c
     TEST EAX,EAX                        ; 004dcd9e
@@ -130,7 +132,7 @@ section .text
     PUSH EDI                            ; 004dcdd7
         ;   Label: LAB_004dcdd7
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004dcdd8
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004dcddd
     MOV ESI,EAX                         ; 004dcde0
     TEST EAX,EAX                        ; 004dcde2
@@ -158,7 +160,7 @@ section .text
     PUSH 0x1                            ; 004dce1e
     PUSH ESI                            ; 004dce20
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004dce21
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004dce26
     CMP EAX,EDI                         ; 004dce29
     JZ 0x004dce62                       ; 004dce2b
@@ -182,7 +184,7 @@ section .text
     PUSH EBP                            ; 004dce62
         ;   Label: LAB_004dce62
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004dce63
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV AH,byte ptr [ESI]               ; 004dce68
     ADD ESP,0x4                         ; 004dce6a
     CMP AH,0x14                         ; 004dce6d
@@ -220,14 +222,14 @@ section .text
     MOV AL,byte ptr [ESI + 0x1]         ; 004dceb9
     PUSH EAX                            ; 004dcebc
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004dcebd
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004dcec2
     CMP EAX,0x54                        ; 004dcec5
     JNZ 0x004dcd3e                      ; 004dcec8
         ;   XREF to: 004dcd3e (CONDITIONAL_JUMP)  ; LAB_004dcd3e
     PUSH EBX                            ; 004dcece
     CALL engine_boss.c_modelStructNotSupported2_FUN_0041a540 ; 004dcecf
-        ;   XREF to: 0041a540 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported2_FUN_0041a540()
+        ;   XREF to: 0041a540 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported2_FUN_0041a540(char * filename)
     ADD ESP,0x4                         ; 004dced4
     ADD ESP,0x50                        ; 004dced7
     POP EBP                             ; 004dceda

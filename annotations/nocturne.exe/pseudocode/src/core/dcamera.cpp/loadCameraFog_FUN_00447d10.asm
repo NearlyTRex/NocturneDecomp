@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00447d10(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00447d10(SFog *fog,_FILE *file_handle,int file_version)
 ;
+; Parameters:
+; SFog *           Stack[0x4]:4   fog
+; _FILE *          Stack[0x8]:4   file_handle
+; int              Stack[0xc]:4   file_version
 ; Local Variables:
 ; undefined        Stack[-0x108]:1  local_108
 ;
@@ -35,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00447d2c
     PUSH EAX                            ; 00447d30
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00447d31
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00447d36
     LEA EAX,[EBX + 0x8]                 ; 00447d39
     PUSH EAX                            ; 00447d3c
@@ -52,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00447d56
     PUSH EAX                            ; 00447d5a
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00447d5b
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00447d60
     LEA EAX,[EBX + 0x14]                ; 00447d63
     PUSH EAX                            ; 00447d66

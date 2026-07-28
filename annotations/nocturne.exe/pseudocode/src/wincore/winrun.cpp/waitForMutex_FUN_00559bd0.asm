@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE param_1)
+; int __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE mutex_handle)
 ;
+; Parameters:
+; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_lockSound_FUN_00528800 at 00528845

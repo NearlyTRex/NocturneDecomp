@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,22 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 315,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 22,
+    "pseudocode_lines": 61,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 200
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -157,7 +158,7 @@
     ],
     "convention": "unknown",
     "name": "core_setdir.cpp_FUN_00513720",
-    "signature": "void core_setdir_cpp_FUN_00513720(int *param_1)"
+    "signature": "void core_setdir_cpp_FUN_00513720(CDemonSet *param_1)"
   },
   "function_calls": [
     {
@@ -368,28 +369,28 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_setdir_cpp_FUN_00513720(int *param_1)",
+      "text": "void core_setdir_cpp_FUN_00513720(CDemonSet *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 20,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "uVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0,uVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);",
@@ -397,31 +398,31 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1->camera_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_1c = &param_1->cameras[0].orientation;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar11 = param_1 + 0x44;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = param_1 + 0x41;",
+      "text": "local_14 = &param_1->cameras[0].position;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_020875f8",
       "severity": "mild",
       "text": "local_18 = (uint *)&DAT_020875f8;",
@@ -429,55 +430,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar9 = param_1 + 1;",
+      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + iVar4 * 0x1a0 + 0x28));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,0x461c3f9a,0);",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,9999.9,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 40,
       "match": "DAT_01bd4260",
       "severity": "mild",
-      "text": "puVar6 = *(uint **)(&DAT_01bd4260 + iVar4);",
+      "text": "puVar5 = *(uint **)(&DAT_01bd4260 + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(uint *)((int)puVar6",
+      "line": 49,
+      "match": "(uint *)((int)puVar5",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)puVar7",
+      "line": 50,
+      "match": "(uint *)((int)puVar6",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar5 < *param_1);",
+      "text": "} while (iVar4 < param_1->camera_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 61,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);",
@@ -485,43 +486,75 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 62,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,uVar1);",
+      "text": "engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,value);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `&param_1->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)&param_1->cameras[0].rotation_matrix",
+      "severity": "moderate",
+      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + iVar4 * 0x1a0 + 0x28));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)puVar6",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
-      "match": "(int)puVar7",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 42,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 50,
+      "line": 47,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&param_1->cameras[0].rotation_matrix + iVar4 * 0x1a0 + 0x28));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_1c) + offsetof(subfield)` equals the real array stride. Replace `local_1c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 56,
+      "match": "local_1c = (T *)&local_1c[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_1c = (CVector3f *)&local_1c[0x22].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_14) + offsetof(subfield)` equals the real array stride. Replace `local_14->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 58,
+      "match": "local_14 = (T *)&local_14[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_14 = (CVector3f *)&local_14[0x22].z;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0051382a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -141,19 +141,19 @@
     {
       "addr": "00468d00",
       "from_addr": "00469126",
-      "name": "core_dtrace.cpp_FUN_00468d00",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0046e9f0",
       "from_addr": "0046eb2d",
-      "name": "core_dtri.cpp_FUN_0046e9f0",
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050dfe0",
       "from_addr": "0050e04f",
-      "name": "core_set.cpp_FUN_0050dfe0",
+      "name": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -191,7 +191,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -276,7 +276,7 @@
       {
         "call_addr": "0050e04f",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050dfe0",
+        "caller": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,7 +287,7 @@
       {
         "call_addr": "00469126",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,7 +298,7 @@
       {
         "call_addr": "0046915c",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,7 +309,7 @@
       {
         "call_addr": "00469197",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -320,7 +320,7 @@
       {
         "call_addr": "004691bd",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -331,7 +331,7 @@
       {
         "call_addr": "004691e4",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -342,7 +342,7 @@
       {
         "call_addr": "00469212",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00468d00",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -407,7 +407,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)",
+      "text": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -415,7 +415,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)",
+      "text": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -423,7 +423,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc) == 0) ||",
+      "text": "if ((param_1->plane_culling_enabled == 0) ||",
       "type": "unnamed_param"
     },
     {
@@ -431,7 +431,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "(iVar3 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8), iVar3 != 0)) {",
+      "text": "(iVar3 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_2 + 8)), iVar3 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -471,7 +471,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 0) {",
+      "text": "if (param_1->face_count == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -479,7 +479,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01b4d76c);",
       "type": "unnamed_param"
     },
     {
@@ -487,7 +487,7 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01b4d76c);",
       "type": "unnamed_param"
     },
     {
@@ -495,7 +495,7 @@
       "line": 35,
       "match": "DAT_01b4d76c",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01b4d76c);",
       "type": "undefined_data"
     },
     {

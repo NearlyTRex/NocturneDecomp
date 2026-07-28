@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2)
+; undefined4 core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -191,7 +191,7 @@ section .text
     PUSH ESI                            ; 005611b7
     FSTP float ptr [ESI + 0xbd30]       ; 005611b8
     CALL core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0 ; 005611be
-        ;   XREF to: 005617e0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0()
+        ;   XREF to: 005617e0 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 005611c3
     MOV EDI,EAX                         ; 005611c6
     TEST EAX,EAX                        ; 005611c8
@@ -217,7 +217,7 @@ section .text
     PUSH EDX                            ; 00561206
     PUSH ESI                            ; 00561207
     CALL core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880 ; 00561208
-        ;   XREF to: 00561880 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880()
+        ;   XREF to: 00561880 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0056120d
     TEST EAX,EAX                        ; 00561210
     JZ 0x005613d0                       ; 00561212
@@ -250,11 +250,11 @@ section .text
     LEA EAX,[ESP + 0x98]                ; 00561277
     PUSH EAX                            ; 0056127e
     CALL core_bodypart.cpp_addVector_FUN_00417fc0 ; 0056127f
-        ;   XREF to: 00417fc0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_addVector_FUN_00417fc0()
+        ;   XREF to: 00417fc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_00417fc0(CVector3f * a, CVector3f * dst, CVector3f * b)
     ADD ESP,0xc                         ; 00561284
     PUSH EAX                            ; 00561287
     CALL core_bodypart.cpp_scaleVector_FUN_00417f60 ; 00561288
-        ;   XREF to: 00417f60 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_scaleVector_FUN_00417f60()
+        ;   XREF to: 00417f60 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_00417f60(CVector3f * src, CVector3f * dst, float * scalar)
     ADD ESP,0xc                         ; 0056128d
     LEA EAX,[ESP + 0xe8]                ; 00561290
     PUSH EAX                            ; 00561297
@@ -265,7 +265,7 @@ section .text
     PUSH EBX                            ; 005612ad
     FSTP float ptr [ESP + 0xfc]         ; 005612ae
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005612b5
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EAX,[ESP + 0x130]               ; 005612ba
     LEA EDX,[ESP + 0xd0]                ; 005612c1
     ADD ESP,0xc                         ; 005612c8
@@ -329,7 +329,7 @@ section .text
     PUSH EAX                            ; 005613c4
     PUSH ESI                            ; 005613c5
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 005613c6
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 005613cb
     MOV EBX,EAX                         ; 005613ce
     TEST EBX,EBX                        ; 005613d0
@@ -359,7 +359,7 @@ section .text
     PUSH ESI                            ; 0056140c
     MOV dword ptr [ESI + 0xbd30],EBX    ; 0056140d
     CALL core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0 ; 00561413
-        ;   XREF to: 005624e0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0()
+        ;   XREF to: 005624e0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00561418
     XOR EAX,EAX                         ; 0056141b
     MOV ESP,EBP                         ; 0056141d
@@ -389,11 +389,11 @@ section .text
     PUSH EAX                            ; 00561468
     MOV dword ptr [ESP + 0x14c],ECX     ; 00561469
     CALL core_bodypart.cpp_addVector_FUN_00417fc0 ; 00561470
-        ;   XREF to: 00417fc0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_addVector_FUN_00417fc0()
+        ;   XREF to: 00417fc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_00417fc0(CVector3f * a, CVector3f * dst, CVector3f * b)
     ADD ESP,0xc                         ; 00561475
     PUSH EAX                            ; 00561478
     CALL core_bodypart.cpp_scaleVector_FUN_00417f60 ; 00561479
-        ;   XREF to: 00417f60 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_scaleVector_FUN_00417f60()
+        ;   XREF to: 00417f60 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_00417f60(CVector3f * src, CVector3f * dst, float * scalar)
     ADD ESP,0xc                         ; 0056147e
     LEA EAX,[ESP + 0xac]                ; 00561481
     PUSH EAX                            ; 00561488
@@ -404,7 +404,7 @@ section .text
     PUSH EBX                            ; 0056149b
     FSTP float ptr [ESP + 0xc0]         ; 0056149c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005614a3
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[ESP + 0x124]               ; 005614a8
     LEA EAX,[ESP + 0xd0]                ; 005614af
     ADD ESP,0xc                         ; 005614b6
@@ -452,7 +452,7 @@ section .text
     PUSH ESI                            ; 00561551
     MOV dword ptr [ESI + 0xbd30],0x41a00000 ; 00561552
     CALL core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0 ; 0056155c
-        ;   XREF to: 005624e0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0()
+        ;   XREF to: 005624e0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0(CZombie * this_ptr)
     ADD ESP,0x4                         ; 00561561
     XOR EAX,EAX                         ; 00561564
     MOV ESP,EBP                         ; 00561566
@@ -468,7 +468,7 @@ section .text
         ;   Label: LAB_00561571
     PUSH ESI                            ; 00561577
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00561578
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0056157d
     MOV EAX,0x1                         ; 00561580
     MOV ESP,EBP                         ; 00561585
@@ -551,7 +551,7 @@ section .text
     PUSH EAX                            ; 00561646
     FSTP float ptr [ESP + 0x118]        ; 00561647
     CALL core_zombie.cpp_classifyObjectShape_FUN_0055e940 ; 0056164e
-        ;   XREF to: 0055e940 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_classifyObjectShape_FUN_0055e940()
+        ;   XREF to: 0055e940 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_classifyObjectShape_FUN_0055e940(CVector3f * dimensions)
     ADD ESP,0x4                         ; 00561653
     MOV dword ptr [ESP + 0x140],EAX     ; 00561656
     TEST EAX,EAX                        ; 0056165d
@@ -560,7 +560,7 @@ section .text
     PUSH EAX                            ; 00561665
     PUSH ESI                            ; 00561666
     CALL core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880 ; 00561667
-        ;   XREF to: 00561880 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880()
+        ;   XREF to: 00561880 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 0056166c
     TEST EAX,EAX                        ; 0056166f
     JZ 0x0056112d                       ; 00561671
@@ -568,7 +568,7 @@ section .text
     PUSH 0x59882b                       ; 00561677 | = "CBodyPart"
     PUSH EBX                            ; 0056167c
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0056167d
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00561682
     TEST EAX,EAX                        ; 00561685
     JZ 0x005616a0                       ; 00561687
@@ -637,7 +637,7 @@ section .text
     PUSH EAX                            ; 00561775
     PUSH 0x0                            ; 00561776
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00561778
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 0056177d
     MOV EDX,dword ptr [ESP + EAX*0x4 + 0x8] ; 00561780
     MOV dword ptr [ESI + 0xbd34],EDX    ; 00561784

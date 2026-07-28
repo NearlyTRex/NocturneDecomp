@@ -1,11 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(int param_1,int param_2,undefined4 param_3,float *param_4)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
+; SIntersectXZCylinder * Stack[0xc]:4   cylinder
+; CVector3f *      Stack[0x10]:4   transform_vector
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_00510a40 at 00510e27
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510e27
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ccf6
@@ -52,7 +57,7 @@ section .text
         ;   Label: LAB_00453e4c
     PUSH EDI                            ; 00453e4d
     CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100 ; 00453e4e
-        ;   XREF to: 00454100 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100()
+        ;   XREF to: 00454100 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 00453e53
     CMP dword ptr [EDI + 0x358],0x0     ; 00453e56
         ;   Label: LAB_00453e56
@@ -86,7 +91,7 @@ section .text
     PUSH ESI                            ; 00453eaa
     INC EBX                             ; 00453eab
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0 ; 00453eac
-        ;   XREF to: 0046cba0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0()
+        ;   XREF to: 0046cba0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00453eb1
     MOV EAX,dword ptr [EDI + 0x354]     ; 00453eb4
     ADD ESI,0x38                        ; 00453eba

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_io_c_getFileStat_FUN_00565dc0(LPCSTR param_1,int *param_2)
+; int __cdecl crt_io_c_getFileStat_FUN_00565dc0(char *filename,_stat *file_info)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; _stat *          Stack[0x8]:4   file_info
 ; Local Variables:
 ; undefined4       Stack[-0x368]:4  local_368
 ; undefined        Stack[-0x364]:1  local_364

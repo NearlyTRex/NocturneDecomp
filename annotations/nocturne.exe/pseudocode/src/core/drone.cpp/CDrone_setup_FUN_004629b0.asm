@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_CDrone_setup_FUN_004629b0(int param_1)
+; void core_drone_cpp_CDrone_setup_FUN_004629b0(CEnemy *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -25,11 +25,11 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004629b6
     PUSH ESI                            ; 004629bc
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004629bd
-        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0()
+        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004629c2
     PUSH ESI                            ; 004629c5
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004629c6
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004629cb
     PUSH 0x1                            ; 004629ce
     PUSH 0x57de95                       ; 004629d0 | = "Bipn04"
@@ -37,19 +37,19 @@ section .text
     MOV ESI,EAX                         ; 004629d6
     MOV dword ptr [EBX + 0xbd24],0x0    ; 004629d8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 004629e2
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004629e7
     PUSH 0x1                            ; 004629ea
     PUSH 0x57de9c                       ; 004629ec | = "Bipn09"
     PUSH ESI                            ; 004629f1
     MOV dword ptr [EBX + 0xbd28],EAX    ; 004629f2
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 004629f8
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004629fd
     PUSH EBX                            ; 00462a00
     MOV dword ptr [EBX + 0xbd2c],EAX    ; 00462a01
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 00462a07
-        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_setup_FUN_004796b0()
+        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004796b0(CEnemy * this_ptr)
     MOV dword ptr [EBX + 0xbd30],0x0    ; 00462a0c
     MOV dword ptr [EBX + 0xbd34],0x0    ; 00462a16
     ADD ESP,0x4                         ; 00462a20

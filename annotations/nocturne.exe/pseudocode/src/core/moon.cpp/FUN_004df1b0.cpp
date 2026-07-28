@@ -11,6 +11,8 @@
 void core_moon_cpp_FUN_004df1b0(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,0x1e,&g_SBatTypeInfo_005a0ca0);
   return;
 }

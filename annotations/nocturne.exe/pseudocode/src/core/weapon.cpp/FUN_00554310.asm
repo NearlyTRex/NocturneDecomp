@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_FUN_00554310(int param_1,undefined4 *param_2)
+; void core_weapon_cpp_FUN_00554310(CWeapon *param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 0055431d
     MOV dword ptr [EBX + 0x2fc],0x0     ; 0055431e
     CALL core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660 ; 00554328
-        ;   XREF to: 00554660 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660()
+        ;   XREF to: 00554660 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0055432d
     TEST ESI,ESI                        ; 00554330
     JNZ 0x00554356                      ; 00554332

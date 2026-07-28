@@ -9,12 +9,12 @@
 void core_mimic_cpp_FUN_004d4420(void)
 
 {
-  int iVar1;
+  CMimic *this_ptr;
   
-  iVar1 = FUN_0056497c(0x47580);
-  if (iVar1 == 0) {
+  this_ptr = (CMimic *)FUN_0056497c(0x47580);
+  if (this_ptr == (CMimic *)0x0) {
     return;
   }
-  core_mimic_cpp_CMimic_ctor_FUN_004d4450(iVar1);
+  core_mimic_cpp_CMimic_ctor_FUN_004d4450(this_ptr);
   return;
 }

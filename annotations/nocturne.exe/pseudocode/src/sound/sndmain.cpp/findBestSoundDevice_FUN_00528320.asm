@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 00528321
     SUB ESP,0x460                       ; 00528322
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 00528328
-        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
+        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
     MOV EBX,EAX                         ; 0052832d
     CMP EAX,0x1                         ; 0052832f
     JL 0x005283fa                       ; 00528332
@@ -45,7 +45,7 @@ section .text
     PUSH EAX                            ; 00528345
     PUSH ESI                            ; 00528346
     CALL sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 ; 00528347
-        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0()
+        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0(int device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 0052834c
     CMP dword ptr [ESP + 0x338],0x0     ; 0052834f
     JNZ 0x005283ef                      ; 00528357
@@ -64,7 +64,7 @@ section .text
     PUSH EAX                            ; 0052836a
     PUSH ESI                            ; 0052836b
     CALL sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 ; 0052836c
-        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0()
+        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0(int device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00528371
     CMP dword ptr [ESP + 0x100],0x1     ; 00528374
     JNZ 0x00528392                      ; 0052837c
@@ -90,7 +90,7 @@ section .text
     PUSH EAX                            ; 005283a4
     PUSH ESI                            ; 005283a5
     CALL sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 ; 005283a6
-        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0()
+        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0(int device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 005283ab
     CMP dword ptr [ESP + 0x448],0x1     ; 005283ae
     JNZ 0x005283c2                      ; 005283b6
@@ -113,7 +113,7 @@ section .text
     PUSH EAX                            ; 005283d4
     PUSH ESI                            ; 005283d5
     CALL sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0 ; 005283d6
-        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0()
+        ;   XREF to: 005282c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getSoundDeviceInfo_FUN_005282c0(int device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 005283db
     CMP dword ptr [ESP + 0x218],0x0     ; 005283de
     JZ 0x005283ef                       ; 005283e6

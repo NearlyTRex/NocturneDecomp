@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_setFogColor_FUN_00532af0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl engine_special_cpp_setFogColor_FUN_00532af0(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70 at 00447b1d

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004e2de0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004e2de0(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   byte_value
+; uint             Stack[0xc]:4   bits_per_byte
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8ebf

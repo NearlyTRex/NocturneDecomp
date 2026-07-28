@@ -13,9 +13,9 @@ void FUN_0057189c(void)
   
   iVar1 = FUN_00571630();
   if (iVar1 != 0) {
-    FUN_00571694();
-    FUN_00571510(4,2);
-    FUN_00571510(7,2);
+    unregisterConsoleHandler();
+    setSignalHandler(4,2);
+    setSignalHandler(7,2);
   }
   return;
 }

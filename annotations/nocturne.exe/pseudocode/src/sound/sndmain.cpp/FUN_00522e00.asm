@@ -89,7 +89,7 @@ section .text
     ADD EDX,0x2dc1edc                   ; 00522e82
     PUSH EDX                            ; 00522e88
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 00522e89
-        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60()
+        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00522e8e
     JMP 0x00522e57                      ; 00522e91
         ;   XREF to: 00522e57 (UNCONDITIONAL_JUMP)  ; LAB_00522e57

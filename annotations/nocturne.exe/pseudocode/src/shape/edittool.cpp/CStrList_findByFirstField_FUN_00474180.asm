@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_CStrList_findByFirstField_FUN_00474180(int *param_1,char *param_2)
+; int shape_edittool_cpp_CStrList_findByFirstField_FUN_00474180(CStrList *param_1,char *param_2)
 ;
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_004741b6
     PUSH EDI                            ; 004741b7
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004741b8
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     LEA EDX,[ESP + 0x8]                 ; 004741bd
     MOV BL,byte ptr [EAX]               ; 004741c1
     ADD ESP,0x8                         ; 004741c3
@@ -58,7 +58,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004741da
     PUSH EAX                            ; 004741de
     CALL crt_string.c__stricmp_FUN_00564520 ; 004741df
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004741e4
     TEST EAX,EAX                        ; 004741e7
     JZ 0x0047421b                       ; 004741e9

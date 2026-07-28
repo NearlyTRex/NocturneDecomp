@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(undefined4 param_1)
+; CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(CCrossbow *this_ptr)
 ;
+; Parameters:
+; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_crossbow.cpp_FUN_0043cee0 at 0043cef3
@@ -25,12 +27,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043cf11
     PUSH EBX                            ; 0043cf15
     CALL core_weapon.cpp_CWeapon_ctor_FUN_00553d90 ; 0043cf16
-        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_ctor_FUN_00553d90()
+        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_00553d90(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0043cf1b
     ADD EAX,0x574                       ; 0043cf1e
     PUSH EAX                            ; 0043cf23
     CALL core_flame.cpp_CFlame_ctor_FUN_0048cf60 ; 0043cf24
-        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_ctor_FUN_0048cf60()
+        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; CFlame * core_flame.cpp_CFlame_ctor_FUN_0048cf60(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0043cf29
     LEA EBX,[EAX + 0xfffffa8c]          ; 0043cf2c
     PUSH 0x57b478                       ; 0043cf32 | = "crossbow.kfm"
@@ -38,7 +40,7 @@ section .text
     PUSH EAX                            ; 0043cf3d
     MOV dword ptr [EBX + 0x14c],0x59bb54 ; 0043cf3e | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059bb54
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0043cf48
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2f8],0x0     ; 0043cf4d
     MOV dword ptr [EBX + 0x570],0x0     ; 0043cf57
     MOV dword ptr [EBX + 0x6c4],0x3ee66666 ; 0043cf61

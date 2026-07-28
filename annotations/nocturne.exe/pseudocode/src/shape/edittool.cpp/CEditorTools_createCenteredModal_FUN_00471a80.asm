@@ -1,18 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(undefined4 param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,uint window_flags)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   min_width
+; int              Stack[0xc]:4   min_height
+; char *           Stack[0x10]:4   text_content
+; uint             Stack[0x14]:4   window_flags
 ;
 ; XREF[9]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfbf8
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 004716e4
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 00470f40
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f888
 ;   shape_edittool.cpp_FUN_0046fb40 at 0046fc26
 ;   shape_edittool.cpp_FUN_0046fcd0 at 0046fdb6
 ;   shape_edittool.cpp_FUN_0046fe60 at 0046ff46
 ;   shape_edittool.cpp_FUN_004701a0 at 004701ef
-;   shape_edittool.cpp_FUN_00470eb0 at 00470f40
 ;   shape_edittool.cpp_FUN_00475470 at 00475806
 ;
 ; Referenced Globals:
@@ -61,7 +67,7 @@ section .text
     PUSH EAX                            ; 00471ac5
     MOV dword ptr [0x01bcd9b8],EDX      ; 00471ac6 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00471acc
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00471ad1
     MOV [0x01bcd9bc],EAX                ; 00471ad4 | DAT_01bcd9bc
     TEST ESI,ESI                        ; 00471ad9
@@ -96,7 +102,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x2c]      ; 00471b1f
     PUSH EBP                            ; 00471b23
     CALL shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 ; 00471b24
-        ;   XREF to: 00471b50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50()
+        ;   XREF to: 00471b50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50(CEditorTools * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x1c                        ; 00471b29
     POP EBP                             ; 00471b2c
     POP EDI                             ; 00471b2d

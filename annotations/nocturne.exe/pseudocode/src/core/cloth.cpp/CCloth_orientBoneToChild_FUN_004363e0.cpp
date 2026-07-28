@@ -2,53 +2,50 @@
 // Address: 004363e0
 // Address Range: [[004363e0, 0043657f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,int param_2,int param_3)
+void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
+  CSkeleton *this_ptr_00;
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
-  float *pfVar5;
-  uint *puVar6;
-  uint *puVar7;
-  byte bVar8;
-  byte local_94 [48];
-  uint local_64 [12];
-  byte local_34 [12];
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  int local_1c;
+  int *bone_name;
+  CVector3f *pCVar2;
+  float *pfVar3;
+  float *pfVar4;
+  byte bVar5;
+  CMatrix3x4f local_94;
+  float local_64 [12];
+  CVector3f local_34;
+  CVector3f local_28;
+  CSkeleton *local_1c;
   int local_18;
   float local_14;
   
-  bVar8 = 0;
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_3);
-  iVar4 = param_1 + 0x37b50 + param_2 * 0xac;
-  local_1c = iVar1;
-  uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(iVar1,iVar4,1);
-  *(uint *)(iVar4 + 0x44) = 0;
+  bVar5 = 0;
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(model_ptr);
+  bone_name = this_ptr->vertices[0x2d5].connected_indices + bone_index * 0x2b + -2;
+  local_1c = this_ptr_00;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,(char *)bone_name,1);
+  bone_name[0x11] = 0;
   local_18 = -1;
-  *(uint *)(iVar4 + 0x40) = uVar2;
-  iVar3 = 0;
-  if (0 < *(int *)(iVar1 + 0x28558)) {
-    pfVar5 = (float *)(param_3 + 0x58);
+  bone_name[0x10] = iVar1;
+  iVar1 = 0;
+  if (0 < this_ptr_00->bone_count) {
+    pCVar2 = model_ptr->transformed_vertices;
     do {
-      if ((*(int *)(iVar4 + 0x40) == *(int *)(iVar1 + 0x2857c)) &&
-         (local_14 = SQRT(pfVar5[2] * pfVar5[2] + *pfVar5 * *pfVar5 + pfVar5[1] * pfVar5[1]),
-         *(float *)(iVar4 + 0x44) < local_14)) {
-        *(float *)(iVar4 + 0x44) = local_14;
-        local_18 = iVar3;
+      if ((bone_name[0x10] == this_ptr_00->bone_list[0].parent_index) &&
+         (local_14 = SQRT(pCVar2->z * pCVar2->z + pCVar2->x * pCVar2->x + pCVar2->y * pCVar2->y),
+         (float)bone_name[0x11] < local_14)) {
+        bone_name[0x11] = (int)local_14;
+        local_18 = iVar1;
       }
-      iVar1 = iVar1 + 0x24;
-      iVar3 = iVar3 + 1;
-      pfVar5 = pfVar5 + 3;
-    } while (iVar3 < *(int *)(local_1c + 0x28558));
+      this_ptr_00 = (CSkeleton *)((this_ptr_00->motion_list).state_names[1] + 2);
+      iVar1 = iVar1 + 1;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar1 < local_1c->bone_count);
   }
   if (local_18 < 0) {
     PTR_01cc4800 = "..\\core\\cloth.cpp";
@@ -56,25 +53,27 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,in
     core_main_c_FUN_004c8440("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-            (local_34,local_18 * 0xc + param_3 + 0x58);
-  local_28 = 0;
-  local_24 = 0;
-  local_20 = 0;
-  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(iVar4 + 0x48,&local_28,local_34);
-  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(local_94,iVar4 + 0x1c,iVar4 + 0x28);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(iVar4 + 0x48,local_94);
-  puVar6 = local_64;
-  puVar7 = (uint *)(iVar4 + 0x48);
+            (&local_34,model_ptr->transformed_vertices + local_18);
+  local_28.x = 0.0;
+  local_28.y = 0.0;
+  local_28.z = 0.0;
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
+            ((CMatrix3x4f *)(bone_name + 0x12),&local_28,&local_34);
+  core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
+            (&local_94,(CVector3f *)(bone_name + 7),(CVector3f *)(bone_name + 10));
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(bone_name + 0x12,&local_94);
+  pfVar3 = local_64;
+  pfVar4 = (float *)(bone_name + 0x12);
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar7 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-    puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+    *pfVar4 = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
-  *(float *)(iVar4 + 0x38) = 1.0 / *(float *)(iVar4 + 0x14);
-  *(float *)(iVar4 + 0x3c) = 1.0 / *(float *)(iVar4 + 0x18);
-  if (*(float *)(iVar4 + 0x34) <= 0.0) {
+  bone_name[0xe] = (int)(1.0 / (float)bone_name[5]);
+  bone_name[0xf] = (int)(1.0 / (float)bone_name[6]);
+  if ((float)bone_name[0xd] <= 0.0) {
     return;
   }
-  *(uint *)(iVar4 + 0x44) = *(uint *)(iVar4 + 0x34);
+  bone_name[0x11] = bone_name[0xd];
   return;
 }

@@ -9,12 +9,12 @@
 void core_hotdemon_cpp_FUN_004b8c70(void)
 
 {
-  int iVar1;
+  CHotDemon *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd58);
-  if (iVar1 == 0) {
+  this_ptr = (CHotDemon *)FUN_0056497c(0xbd58);
+  if (this_ptr == (CHotDemon *)0x0) {
     return;
   }
-  core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(iVar1);
+  core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(this_ptr);
   return;
 }

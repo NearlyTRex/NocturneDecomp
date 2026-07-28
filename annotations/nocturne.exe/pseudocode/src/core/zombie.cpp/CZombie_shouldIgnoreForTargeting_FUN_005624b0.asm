@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x150                       ; 005624b4
     PUSH EAX                            ; 005624b9
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 005624ba
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 005624bf
     ADD ESP,0x4                         ; 005624c2
     CMP EAX,0xe                         ; 005624c5

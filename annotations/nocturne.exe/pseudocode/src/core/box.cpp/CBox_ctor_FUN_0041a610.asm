@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_ctor_FUN_0041a610(int param_1)
+; CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041a610(CBox *this_ptr)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 at 00415d5d
@@ -29,7 +31,7 @@ section .text
     ADD EAX,0xb4                        ; 0041a61b
     PUSH EAX                            ; 0041a620
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0041a621
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0xb4                        ; 0041a626
     MOV dword ptr [EAX + 0x8],0x0       ; 0041a62b
     FLD float ptr [EAX + 0x8]           ; 0041a632

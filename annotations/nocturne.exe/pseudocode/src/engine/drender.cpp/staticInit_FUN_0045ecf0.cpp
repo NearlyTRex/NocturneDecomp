@@ -9,6 +9,6 @@
 void __cdecl engine_drender_cpp_staticInit_FUN_0045ecf0(void)
 
 {
-  engine_drender_cpp_FUN_0045ed00(&DAT_01b4d738);
+  engine_drender_cpp_CDemonRenderer_ctor_FUN_0045ed00((CDemonRenderer *)&DAT_01b4d738);
   return;
 }

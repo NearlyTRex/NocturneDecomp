@@ -53,7 +53,7 @@ section .text
     JL 0x00553301                       ; 005531b4
         ;   XREF to: 00553301 (CONDITIONAL_JUMP)  ; LAB_00553301
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 005531ba
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_005531ba
     MOV EBP,dword ptr [0x02ddf55c]      ; 005531bf | DAT_02ddf55c
     TEST EBP,EBP                        ; 005531c5
@@ -107,7 +107,7 @@ section .text
     MOV ECX,dword ptr [0x005b761c]      ; 00553239 | DAT_005b761c
     PUSH ECX                            ; 0055323f
     CALL engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553240
-        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setResolutionAndColorTable_FUN_005324a0()
+        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005324a0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553245
     TEST EAX,EAX                        ; 00553248
     JNZ 0x005532fc                      ; 0055324a
@@ -176,7 +176,7 @@ section .text
     MOV ECX,dword ptr [0x005b761c]      ; 005532ed | DAT_005b761c
     PUSH ECX                            ; 005532f3
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 005532f4
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005532f9
     POP EBP                             ; 005532fc
         ;   Label: LAB_005532fc
@@ -191,44 +191,44 @@ section .text
     MOV EDI,dword ptr [0x005b761c]      ; 0055330a | DAT_005b761c
     PUSH EDI                            ; 00553310
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553311
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553316
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 00553319
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0x0                            ; 0055331e
     PUSH 0x0                            ; 00553320
     PUSH 0x59788f                       ; 00553322 | = "You have hit a kludge in the program."
     CALL engine_2d.c_drawText_FUN_00402600 ; 00553327
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0055332c
     PUSH 0x16                           ; 0055332f
     PUSH 0x0                            ; 00553331
     PUSH 0x5978b5                       ; 00553333 | = "You are setting acceleration mode wit..."
     CALL engine_2d.c_drawText_FUN_00402600 ; 00553338
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0055333d
     PUSH 0x21                           ; 00553340
     PUSH 0x0                            ; 00553342
     PUSH 0x5978e7                       ; 00553344 | = "the appropriate bit depth first."
     CALL engine_2d.c_drawText_FUN_00402600 ; 00553349
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0055334e
     PUSH 0x2c                           ; 00553351
     PUSH 0x0                            ; 00553353
     PUSH 0x597908                       ; 00553355 | = "I am forcing the screen to switch to ..."
     CALL engine_2d.c_drawText_FUN_00402600 ; 0055335a
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0055335f
     PUSH 0x42                           ; 00553362
     PUSH 0x0                            ; 00553364
     PUSH 0x597939                       ; 00553366 | = "Press any key to continue."
     CALL engine_2d.c_drawText_FUN_00402600 ; 0055336b
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 00553370
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00553373
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00558b00 ; 00553378
-        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
+        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     JMP 0x005531ba                      ; 0055337d
         ;   XREF to: 005531ba (UNCONDITIONAL_JUMP)  ; LAB_005531ba
     PUSH EDI                            ; 00553382

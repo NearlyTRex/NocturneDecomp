@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 004adeda | DAT_005b7650
     PUSH EDX                            ; 004adee0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004adee1
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004adee6
     RET                                 ; 004adee9
 

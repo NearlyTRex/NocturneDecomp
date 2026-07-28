@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList *this_ptr,char *motion_name,int error_on_not_found)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   motion_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[18]:
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 at 0042a888
@@ -48,7 +52,7 @@ section .text
         ;   Label: LAB_004e102e
     PUSH ESI                            ; 004e102f
     CALL crt_string.c__stricmp_FUN_00564520 ; 004e1030
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e1035
     TEST EAX,EAX                        ; 004e1038
     JZ 0x004e105e                       ; 004e103a

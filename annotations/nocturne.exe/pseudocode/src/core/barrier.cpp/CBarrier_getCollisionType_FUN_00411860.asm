@@ -38,7 +38,7 @@ section .text
     MOV EBX,dword ptr [0x00763e44]      ; 00411888 | DAT_00763e44
     PUSH EBX                            ; 0041188e
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0041188f
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00411894
     TEST EAX,EAX                        ; 00411897
     JNZ 0x00411877                      ; 00411899

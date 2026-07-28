@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_memory_c_memset_FUN_00563cc0(undefined4 param_1)
+; void * __cdecl crt_memory_c_memset_FUN_00563cc0(void *dest,int value,ulong count)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest
+; int              Stack[0x8]:4   value
+; ulong            Stack[0xc]:4   count
 ;
 ; XREF[96]:
 ;   FUN_00567c2c at 00567c3c
-;   FUN_00568560 at 005685de
 ;   FUN_0056aa38 at 0056ab05
-;   FUN_0056c864 at 0056c977
 ;   FUN_00570ce0 at 00570d3a
 ;   FUN_00570f60 at 00571020
-;   FUN_00572f40 at 00572fae
-;   FUN_00573afc at 00573c26
 ;   FUN_00573e30 at 00573e6a
 ;   FUN_00574264 at 0057438d
+;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 at 0045c7ac
+;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 at 0045d1ba
+;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90 at 004f3ea3
+;   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_004f3eb0 at 004f3ec6
 ;   ... and 86 more
 ;
 ; Called Functions:

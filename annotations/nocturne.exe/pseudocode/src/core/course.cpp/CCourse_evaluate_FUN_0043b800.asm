@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+; void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   time
+; CVector3f *      Stack[0xc]:4   out_pos
+; CVector3f *      Stack[0x10]:4   out_euler
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
 ; undefined        Stack[-0x58]:1  local_58
@@ -41,7 +46,7 @@ section .text
     PUSH dword ptr [ESP + 0x98]         ; 0043b821
     PUSH ECX                            ; 0043b828
     CALL core_course.cpp_CCourse_interpolate_FUN_0043b890 ; 0043b829
-        ;   XREF to: 0043b890 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_interpolate_FUN_0043b890()
+        ;   XREF to: 0043b890 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_0043b890(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 0043b82e
     LEA EAX,[ESP + 0x70]                ; 0043b831
     PUSH EAX                            ; 0043b835
@@ -58,7 +63,7 @@ section .text
     PUSH EAX                            ; 0043b858
     MOVSD.REP ES:EDI,ESI                ; 0043b859
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 0043b85b
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0043b860
     CMP EBX,EAX                         ; 0043b863
     JNZ 0x0043b86e                      ; 0043b865

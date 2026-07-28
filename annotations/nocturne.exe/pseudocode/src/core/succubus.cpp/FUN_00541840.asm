@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_FUN_00541840(undefined4 param_1,undefined4 param_2)
+; void core_succubus_cpp_FUN_00541840(CCharacter *param_1,SCollisionInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 00541845
     PUSH ECX                            ; 00541849
     CALL core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0 ; 0054184a
-        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0()
+        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; ECollisionType core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 0054184f
     RET                                 ; 00541852
 

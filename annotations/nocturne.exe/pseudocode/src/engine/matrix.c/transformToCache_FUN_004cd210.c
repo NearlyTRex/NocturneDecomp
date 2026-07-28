@@ -2,13 +2,14 @@
 // Address: 004cd210
 // Address Range: [[004cd210, 004cd235]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int param_1,undefined4 param_2)
+// Signature: void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int cacheIndex,CVector3i *inputPoint)
 
 #include "nocturne.h"
 
-void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int param_1,uint param_2)
+void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int cacheIndex,CVector3i *inputPoint)
 
 {
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(&DAT_005c5014 + param_1 * 0xc,param_2);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            ((SProjectedVertex *)(&DAT_005c5014 + cacheIndex * 0xc),inputPoint);
   return;
 }

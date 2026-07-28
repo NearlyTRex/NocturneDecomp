@@ -1,16 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *param_1,char *param_2,char *param_3)
+; void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *dest_path,char *directory,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest_path
+; char *           Stack[0x8]:4   directory
+; char *           Stack[0xc]:4   filename
 ;
 ; XREF[6]:
-;   engine_dosio.cpp_FUN_004569a0 at 004569bc
-;   engine_dosio.cpp_FUN_00456b20 at 00456b60
+;   engine_dosio.cpp_getFileSizeWithFinder_FUN_004569a0 at 004569bc
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0 at 004568db
 ;   engine_dosio.cpp_getFileTimestamp_FUN_00456910 at 0045692b
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456a87
-;   engine_pod.cpp_FUN_004f9170 at 004f9198
+;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b60
+;   engine_pod.cpp_CPod_locateFile_FUN_004f9170 at 004f9198
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0057d2b1

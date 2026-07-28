@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(int param_1)
+; void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d98a2

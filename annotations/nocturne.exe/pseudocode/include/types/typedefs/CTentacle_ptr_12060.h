@@ -19,7 +19,7 @@ struct CTentacle_ptr_12060 {
     template<typename T> CTentacle_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CTentacle_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CTentacle* operator->() const { return (CTentacle*)_raw; }
-    CTentacle* adj() const { return (CTentacle*)((char*)_raw - offsetof(CTentacle, base.base.fires)); }
+    CTentacle* adj() const { return (CTentacle*)((char*)_raw - offsetof(CTentacle, base.base.fires[0].offset)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

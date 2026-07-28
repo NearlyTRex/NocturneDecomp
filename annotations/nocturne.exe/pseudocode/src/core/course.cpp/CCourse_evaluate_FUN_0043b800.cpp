@@ -2,38 +2,40 @@
 // Address: 0043b800
 // Address Range: [[0043b800, 0043b884]]
 // Convention: __cdecl
-// Signature: void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+// Signature: void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler)
 
 #include "nocturne.h"
 
-void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(uint param_1,uint param_2,uint param_3,uint *param_4)
+void __cdecl core_course_cpp_CCourse_evaluate_FUN_0043b800(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler)
 
 {
-  uint *puVar1;
+  CVector3f *pCVar1;
   int iVar2;
-  uint *puVar3;
-  byte bVar4;
-  uint local_88 [12];
-  uint local_58 [12];
-  byte local_28 [16];
-  byte local_18 [12];
+  float *pfVar3;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
+  CMatrix3x4f local_88;
+  float local_58 [12];
+  CQuaternion4f local_28;
+  CVector3f local_18;
   
-  bVar4 = 0;
-  core_course_cpp_CCourse_interpolate_FUN_0043b890(param_1,param_2,param_3,local_28);
-  core_xform_cpp_quaternionToMatrix3x4_FUN_0055ced0(local_28,local_18);
-  puVar1 = local_58;
-  puVar3 = local_88;
+  bVar5 = 0;
+  core_course_cpp_CCourse_interpolate_FUN_0043b890(this_ptr,time,out_pos,&local_28);
+  pCVar1 = &local_18;
+  core_xform_cpp_quaternionToMatrix3x4_FUN_0055ced0(&local_28);
+  pfVar3 = local_58;
+  pCVar4 = &local_88;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = *puVar1;
-    puVar1 = puVar1 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar4->m[0].w = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  puVar1 = (uint *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_88);
-  if (param_4 == puVar1) {
+  pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_88,pCVar1);
+  if (out_euler == pCVar1) {
     return;
   }
-  *param_4 = *puVar1;
-  param_4[1] = puVar1[1];
-  param_4[2] = puVar1[2];
+  out_euler->x = pCVar1->x;
+  out_euler->y = pCVar1->y;
+  out_euler->z = pCVar1->z;
   return;
 }

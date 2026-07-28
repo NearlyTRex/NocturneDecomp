@@ -2,75 +2,76 @@
 // Address: 0040a540
 // Address Range: [[0040a540, 0040a6be]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(int param_1,float *param_2,int param_3,uint param_4)
+// Signature: CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)
 
 #include "nocturne.h"
 
-float * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(int param_1,float *param_2,int param_3,uint param_4)
+CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)
 
 {
-  uint uVar1;
-  float *pfVar2;
-  int iVar3;
-  byte auStack_54 [24];
-  byte auStack_3c [12];
-  byte auStack_30 [12];
+  CVector3f *pCVar1;
+  CBoundingBox3D *pCVar2;
+  uint corner_index;
+  CBoundingBox3D CStack_54;
+  CVector3f CStack_3c;
+  CVector3f CStack_30;
   byte auStack_24 [12];
   byte auStack_18 [12];
   
-  if (param_4 < 2) {
-    if (param_4 != 1) {
+  if ((uint)bounding_box_type < 2) {
+    if (bounding_box_type != 1) {
 LAB_0040a68d:
-      param_2[2] = 1e+08;
-      param_2[1] = param_2[2];
-      *param_2 = param_2[1];
-      if (param_2 + 3 == param_2) {
-        return param_2;
+      (output_bbox->min).z = 1e+08;
+      (output_bbox->min).y = (output_bbox->min).z;
+      (output_bbox->min).x = (output_bbox->min).y;
+      if ((CBoundingBox3D *)&output_bbox->max == output_bbox) {
+        return output_bbox;
       }
-      param_2[3] = *param_2;
-      param_2[4] = param_2[1];
-      param_2[5] = param_2[2];
-      return param_2;
+      (output_bbox->max).x = (output_bbox->min).x;
+      (output_bbox->max).y = (output_bbox->min).y;
+      (output_bbox->max).z = (output_bbox->min).z;
+      return output_bbox;
     }
   }
   else {
-    if (param_4 < 3) {
-      *param_2 = *(float *)(param_1 + 0x20) - *(float *)(param_3 + 0x1c);
-      param_2[1] = *(float *)(param_1 + 0x24) + *(float *)(param_3 + 0x14);
-      param_2[2] = *(float *)(param_1 + 0x28) - *(float *)(param_3 + 0x1c);
-      param_2[3] = *(float *)(param_1 + 0x20) + *(float *)(param_3 + 0x1c);
-      param_2[4] = *(float *)(param_1 + 0x24) + *(float *)(param_3 + 0x18);
-      param_2[5] = *(float *)(param_1 + 0x28) + *(float *)(param_3 + 0x1c);
-      return param_2;
+    if ((uint)bounding_box_type < 3) {
+      (output_bbox->min).x = (this_ptr->location).position.x - collision_info->cylinder_radius;
+      (output_bbox->min).y = (this_ptr->location).position.y + collision_info->cylinder_bottom_y;
+      (output_bbox->min).z = (this_ptr->location).position.z - collision_info->cylinder_radius;
+      (output_bbox->max).x = (this_ptr->location).position.x + collision_info->cylinder_radius;
+      (output_bbox->max).y = (this_ptr->location).position.y + collision_info->cylinder_top_y;
+      (output_bbox->max).z = (this_ptr->location).position.z + collision_info->cylinder_radius;
+      return output_bbox;
     }
-    if (param_4 != 3) goto LAB_0040a68d;
+    if (bounding_box_type != 3) goto LAB_0040a68d;
   }
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_54);
-  uVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(auStack_54,auStack_3c,0);
-  pfVar2 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                              (param_1,auStack_18,uVar1);
-  if (param_2 != pfVar2) {
-    *param_2 = *pfVar2;
-    param_2[1] = pfVar2[1];
-    param_2[2] = pfVar2[2];
+  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&CStack_54);
+  pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&CStack_54,&CStack_3c,0);
+  pCVar2 = (CBoundingBox3D *)
+           core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,auStack_18,pCVar1);
+  if (output_bbox != pCVar2) {
+    (output_bbox->min).x = (pCVar2->min).x;
+    (output_bbox->min).y = (pCVar2->min).y;
+    (output_bbox->min).z = (pCVar2->min).z;
   }
-  if (param_2 + 3 != pfVar2) {
-    param_2[3] = *pfVar2;
-    param_2[4] = pfVar2[1];
-    param_2[5] = pfVar2[2];
+  if ((CBoundingBox3D *)&output_bbox->max != pCVar2) {
+    (output_bbox->max).x = (pCVar2->min).x;
+    (output_bbox->max).y = (pCVar2->min).y;
+    (output_bbox->max).z = (pCVar2->min).z;
   }
-  iVar3 = 1;
+  corner_index = 1;
   do {
-    uVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(auStack_54,auStack_30,iVar3);
-    uVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,auStack_24,uVar1);
-    iVar3 = iVar3 + 1;
-    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,uVar1);
-  } while (iVar3 < 8);
-  *param_2 = *(float *)(param_1 + 0x20) + *param_2;
-  param_2[1] = *(float *)(param_1 + 0x24) + param_2[1];
-  param_2[2] = *(float *)(param_1 + 0x28) + param_2[2];
-  param_2[3] = *(float *)(param_1 + 0x20) + param_2[3];
-  param_2[4] = *(float *)(param_1 + 0x24) + param_2[4];
-  param_2[5] = *(float *)(param_1 + 0x28) + param_2[5];
-  return param_2;
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(&CStack_54,&CStack_30,corner_index);
+    pCVar1 = (CVector3f *)
+             core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(this_ptr,auStack_24,pCVar1);
+    corner_index = corner_index + 1;
+    core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(output_bbox,pCVar1);
+  } while ((int)corner_index < 8);
+  (output_bbox->min).x = (this_ptr->location).position.x + (output_bbox->min).x;
+  (output_bbox->min).y = (this_ptr->location).position.y + (output_bbox->min).y;
+  (output_bbox->min).z = (this_ptr->location).position.z + (output_bbox->min).z;
+  (output_bbox->max).x = (this_ptr->location).position.x + (output_bbox->max).x;
+  (output_bbox->max).y = (this_ptr->location).position.y + (output_bbox->max).y;
+  (output_bbox->max).z = (this_ptr->location).position.z + (output_bbox->max).z;
+  return output_bbox;
 }

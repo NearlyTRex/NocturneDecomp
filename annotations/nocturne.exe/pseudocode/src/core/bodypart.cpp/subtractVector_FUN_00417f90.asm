@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_subtractVector_FUN_00417f90(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_bodypart_cpp_subtractVector_FUN_00417f90(CVector3f *a,CVector3f *dst,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   dst
+; CVector3f *      Stack[0xc]:4   b
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00504042

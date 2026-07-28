@@ -16,7 +16,7 @@ void engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(int param_1,uint pa
   int iVar3;
   int iVar4;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
   if (iVar2 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
@@ -36,8 +36,7 @@ void engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(int param_1,uint pa
     if ((param_2 & 0x10) != 0) {
       _DAT_01c00c74 =
            engine_light_cpp_calculateLighting_FUN_004c6cc0
-                     (*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
-                      *(uint *)(param_1 + 0x10));
+                     (*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));
     }
     _DAT_01c039a4 = param_3;
     if (param_3 == 0) {
@@ -63,8 +62,7 @@ void engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(int param_1,uint pa
       } while (iVar2 < *(int *)(param_1 + 4));
     }
     if (_DAT_01c00c78 == 0) {
-      engine_clipper_c_clipPolygonToViewport_FUN_004349a0
-                (*(uint *)(param_1 + 4),&DAT_006b029c);
+      engine_clipper_c_clipPolygonToViewport_FUN_004349a0(*(int *)(param_1 + 4),&DAT_006b029c);
       return;
     }
     engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);

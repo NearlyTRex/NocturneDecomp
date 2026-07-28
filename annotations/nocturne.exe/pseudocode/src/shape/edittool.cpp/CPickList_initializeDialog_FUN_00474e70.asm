@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   dialog_title
+; int              Stack[0xc]:4   initial_selected_index
+; uint             Stack[0x10]:4   window_flags
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e482

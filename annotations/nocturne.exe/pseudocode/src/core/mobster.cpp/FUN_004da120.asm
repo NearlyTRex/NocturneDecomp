@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004da132
         ;   Label: LAB_004da132
     CALL core_mobster.cpp_CMobster_ctor_FUN_004da150 ; 004da133
-        ;   XREF to: 004da150 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_CMobster_ctor_FUN_004da150()
+        ;   XREF to: 004da150 (UNCONDITIONAL_CALL)  ; CMobster * core_mobster.cpp_CMobster_ctor_FUN_004da150(CMobster * this_ptr)
     ADD ESP,0x4                         ; 004da138
     RET                                 ; 004da13b
 

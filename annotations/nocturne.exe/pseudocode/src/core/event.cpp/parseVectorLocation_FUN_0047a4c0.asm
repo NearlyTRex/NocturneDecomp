@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *param_2,undefined4 *param_3)
+; int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *offset,CVector3f *out_position)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; int *            Stack[0x8]:4   offset
+; CVector3f *      Stack[0xc]:4   out_position
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined4       Stack[-0x14]:4  local_14
@@ -90,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047a559
     PUSH EAX                            ; 0047a55d
     CALL core_event.cpp_resolveActorByName_FUN_0047a390 ; 0047a55e
-        ;   XREF to: 0047a390 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_0047a390()
+        ;   XREF to: 0047a390 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_0047a390(char * name, uint class_hash, char * class_name)
     MOV EDX,EAX                         ; 0047a563
     ADD ESP,0xc                         ; 0047a565
     TEST EAX,EAX                        ; 0047a568

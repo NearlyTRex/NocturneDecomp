@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
+; undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x80]:8  local_80
@@ -141,7 +141,7 @@ section .text
     PUSH ESI                            ; 005248f3
         ;   Label: LAB_005248f3
     CALL sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410 ; 005248f4
-        ;   XREF to: 00524410 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410()
+        ;   XREF to: 00524410 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(CSfxSlot * this_ptr)
     FLD double ptr [ESI + 0x4c]         ; 005248f9
     ADD ESP,0x4                         ; 005248fc
     FCOMP double ptr [0x005a2148]       ; 005248ff | DAT_005a2148
@@ -195,11 +195,11 @@ section .text
     PUSH ESI                            ; 00524988
         ;   Label: LAB_00524988
     CALL sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0 ; 00524989
-        ;   XREF to: 005244b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0()
+        ;   XREF to: 005244b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 0052498e
     PUSH ESI                            ; 00524991
     CALL sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520 ; 00524992
-        ;   XREF to: 00524520 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520()
+        ;   XREF to: 00524520 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520(CSfxSlot * this_ptr)
     MOV EBX,dword ptr [ESI + 0x114]     ; 00524997
     ADD ESP,0x4                         ; 0052499d
     CMP EBX,0x1                         ; 005249a0
@@ -217,7 +217,7 @@ section .text
     PUSH ESI                            ; 005249c2
         ;   Label: LAB_005249c2
     CALL sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630 ; 005249c3
-        ;   XREF to: 00524630 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630()
+        ;   XREF to: 00524630 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxSlot * this_ptr)
     MOV EAX,dword ptr [ESI + 0x114]     ; 005249c8
     ADD ESP,0x4                         ; 005249ce
     CMP EAX,0x1                         ; 005249d1
@@ -346,7 +346,7 @@ section .text
     PUSH ESI                            ; 00524b03
         ;   Label: LAB_00524b03
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00524b04
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 00524b09
     XOR EAX,EAX                         ; 00524b0c
     MOV ESP,EBP                         ; 00524b0e
@@ -376,7 +376,7 @@ section .text
     PUSH ESI                            ; 00524b4c
         ;   Label: LAB_00524b4c
     CALL sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0 ; 00524b4d
-        ;   XREF to: 005247a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0()
+        ;   XREF to: 005247a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00524b52
     JMP 0x0052490e                      ; 00524b55
         ;   XREF to: 0052490e (UNCONDITIONAL_JUMP)  ; LAB_0052490e

@@ -22,7 +22,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 00473ffb
     PUSH ECX                            ; 00473ffd
     CALL crt_string.c__stricmp_FUN_00564520 ; 00473ffe
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00474003
     RET                                 ; 00474006
 

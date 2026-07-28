@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0054f902
         ;   Label: LAB_0054f902
     CALL core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920 ; 0054f903
-        ;   XREF to: 0054f920 (UNCONDITIONAL_CALL)  ; undefined core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920()
+        ;   XREF to: 0054f920 (UNCONDITIONAL_CALL)  ; CCryptVessel * core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVessel * this_ptr)
     ADD ESP,0x4                         ; 0054f908
     RET                                 ; 0054f90b
 

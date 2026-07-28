@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(int param_1)
+; void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(CEnemy *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -22,11 +22,11 @@ section .text
     LEA EAX,[EBX + 0xbd28]              ; 0054b2a8
     PUSH EAX                            ; 0054b2ae
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054b2af
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054b2b4
     PUSH EBX                            ; 0054b2b7
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 0054b2b8
-        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_setup_FUN_004796b0()
+        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004796b0(CEnemy * this_ptr)
     MOV dword ptr [EBX + 0x2434],0x41200000 ; 0054b2bd
     ADD ESP,0x4                         ; 0054b2c7
     MOV dword ptr [EBX + 0xbf58],0x0    ; 0054b2ca

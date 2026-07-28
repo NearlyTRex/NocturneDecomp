@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004796c0(int param_1)
+; void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004796c0(CEnemy *this_ptr)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[27]:
 ;   core_armour.cpp_FUN_0040fb60 at 0040fb67
@@ -54,7 +56,7 @@ section .text
         ;   XREF to: 00479730 (CONDITIONAL_JUMP)  ; LAB_00479730
     PUSH EBX                            ; 004796d7
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004796d8
-        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
+        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
     MOV ECX,dword ptr [0x005b7604]      ; 004796dd | INT_005b7604
     ADD ESP,0x4                         ; 004796e3
     CMP ECX,0x2                         ; 004796e6
@@ -63,7 +65,7 @@ section .text
     PUSH 0x57f2c2                       ; 004796eb | = "speed"
     PUSH ESI                            ; 004796f0
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004796f1
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004796f6
     CMP dword ptr [0x005b7604],0x3      ; 004796f9 | INT_005b7604
         ;   Label: LAB_004796f9
@@ -78,13 +80,13 @@ section .text
     LEA ESI,[EBX + 0x2434]              ; 0047970a
     PUSH ESI                            ; 00479710
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 00479711
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479716
     PUSH 0x57f2d2                       ; 00479719 | = "poolMe"
     ADD EBX,0xbc90                      ; 0047971e
     PUSH EBX                            ; 00479724
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00479725
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 0047972a
     POP ESI                             ; 0047972d
     POP EBX                             ; 0047972e
@@ -92,18 +94,18 @@ section .text
     PUSH EBX                            ; 00479730
         ;   Label: LAB_00479730
     CALL core_charactr.cpp_CCharacter_archive_FUN_004244b0 ; 00479731
-        ;   XREF to: 004244b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_archive_FUN_004244b0()
+        ;   XREF to: 004244b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_archive_FUN_004244b0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00479736
     PUSH 0x57f2d9                       ; 00479739 | = "speed"
     PUSH ESI                            ; 0047973e
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0047973f
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479744
     PUSH 0x57f2df                       ; 00479747 | = "poolMe"
     LEA ESI,[EBX + 0xbc90]              ; 0047974c
     PUSH ESI                            ; 00479752
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00479753
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     MOV ECX,dword ptr [0x005b7604]      ; 00479758 | INT_005b7604
     ADD ESP,0x8                         ; 0047975e
     CMP ECX,0x5                         ; 00479761
@@ -113,7 +115,7 @@ section .text
     LEA ESI,[EBX + 0xbc94]              ; 0047976b
     PUSH ESI                            ; 00479771
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 00479772
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479777
     CMP dword ptr [0x005b7604],0x6      ; 0047977a | INT_005b7604
         ;   Label: LAB_0047977a
@@ -123,7 +125,7 @@ section .text
     LEA ESI,[EBX + 0xbd1c]              ; 00479788
     PUSH ESI                            ; 0047978e
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0047978f
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00479794
     CMP dword ptr [0x005b7604],0x7      ; 00479797 | INT_005b7604
         ;   Label: LAB_00479797
@@ -133,7 +135,7 @@ section .text
     LEA ESI,[EBX + 0xbcb0]              ; 004797a5
     PUSH ESI                            ; 004797ab
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004797ac
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004797b1
     CMP dword ptr [0x005b7604],0x8      ; 004797b4 | INT_005b7604
         ;   Label: LAB_004797b4
@@ -143,7 +145,7 @@ section .text
     LEA ESI,[EBX + 0xbc9c]              ; 004797c2
     PUSH ESI                            ; 004797c8
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004797c9
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004797ce
     CMP dword ptr [0x005b7604],0x9      ; 004797d1 | INT_005b7604
         ;   Label: LAB_004797d1
@@ -153,7 +155,7 @@ section .text
     LEA ESI,[EBX + 0xbd18]              ; 004797df
     PUSH ESI                            ; 004797e5
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004797e6
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004797eb
     CMP dword ptr [0x005b7604],0xa      ; 004797ee | INT_005b7604
         ;   Label: LAB_004797ee
@@ -163,7 +165,7 @@ section .text
     ADD EBX,0xbca4                      ; 00479800
     PUSH EBX                            ; 00479806
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00479807
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0047980c
     POP ESI                             ; 0047980f
     POP EBX                             ; 00479810

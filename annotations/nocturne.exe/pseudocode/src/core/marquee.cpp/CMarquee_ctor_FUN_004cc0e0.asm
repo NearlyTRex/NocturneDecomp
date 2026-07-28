@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(undefined4 param_1)
+; CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(CMarquee *this_ptr)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_marquee.cpp_FUN_004cc0b0 at 004cc0c3
@@ -33,7 +35,7 @@ section .text
     ADD EAX,0x19c                       ; 004cc0ef
     PUSH EAX                            ; 004cc0f4
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 004cc0f5
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_ctor_FUN_0043b5d0(CCourse * this_ptr)
     LEA EDX,[EAX + 0xfffffe64]          ; 004cc0fa
     MOV ESI,0x588193                    ; 004cc100 | = "menu1.pth"
     ADD ESP,0x4                         ; 004cc105

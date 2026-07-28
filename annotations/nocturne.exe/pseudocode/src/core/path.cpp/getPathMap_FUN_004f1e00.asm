@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_path_cpp_getPathMap_FUN_004f1e00(undefined4 param_1)
+; CPathMap * __cdecl core_path_cpp_getPathMap_FUN_004f1e00(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ;
 ; XREF[10]:
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 0042261d
@@ -27,7 +29,7 @@ section .text
         ;   Label: core_path.cpp_getPathMap_FUN_004f1e00
     PUSH EDX                            ; 004f1e04
     CALL core_path.cpp_getOrCreatePathMap_FUN_004f1c90 ; 004f1e05
-        ;   XREF to: 004f1c90 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getOrCreatePathMap_FUN_004f1c90()
+        ;   XREF to: 004f1c90 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getOrCreatePathMap_FUN_004f1c90(CLocation * location)
     ADD ESP,0x4                         ; 004f1e0a
     RET                                 ; 004f1e0d
 

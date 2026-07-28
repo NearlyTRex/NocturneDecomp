@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
+; void engine_clipper_c_FUN_00432cd0(uint param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x150]:4  local_150
@@ -26,16 +26,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[53]:
-;   engine_3d.c_FUN_00405340 at 00405413
-;   engine_3d.c_FUN_00406920 at 004069a9
 ;   engine_3d.c_FUN_00406a00 at 00406a8c
-;   engine_3d.c_FUN_00406ae0 at 00406b3b
 ;   engine_3d.c_FUN_00406b80 at 00406c0c
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 00406140
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407c8d
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405fe5
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 00408579
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 00408439
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60 at 00406cbd
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80 at 00406ddd
+;   engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00406ae0 at 00406b3b
 ;   ... and 43 more
 ;
 ; Referenced Globals:
@@ -161,7 +161,7 @@ section .text
     MOV ECX,dword ptr [0x00767274]      ; 00432dbd | DAT_00767274
     PUSH ECX                            ; 00432dc3
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 00432dc4
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 00432dc9
     TEST EAX,EAX                        ; 00432dcc
     JZ 0x00432e01                       ; 00432dce
@@ -207,7 +207,7 @@ section .text
     MOV EBX,dword ptr [0x00767274]      ; 00432e12 | DAT_00767274
     PUSH EBX                            ; 00432e18
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 00432e19
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 00432e1e
     TEST EAX,EAX                        ; 00432e21
     JZ 0x00432de0                       ; 00432e23
@@ -221,7 +221,7 @@ section .text
     PUSH 0x767274                       ; 00432e34 | DAT_00767274
     MOV dword ptr [0x01e52ef8],ESI      ; 00432e39 | DAT_01e52ef8
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 00432e3f
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00432e44
     ADD ESP,0x140                       ; 00432e47
     POP EBP                             ; 00432e4d
@@ -1010,7 +1010,7 @@ section .text
     PUSH EBX                            ; 004336a5 | DAT_00767328
     PUSH EDX                            ; 004336a6
     CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 004336a7
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EBX,dword ptr [0x00766c70]      ; 004336ac | DAT_00766c70
     INC EBX                             ; 004336b2
     ADD ESP,0xc                         ; 004336b3
@@ -1058,7 +1058,7 @@ section .text
     PUSH EDX                            ; 00433713
     PUSH EBX                            ; 00433714 | DAT_00767328
     CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 00433715
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00766c70]      ; 0043371a | DAT_00766c70
     INC EDI                             ; 00433720
     ADD ESP,0xc                         ; 00433721

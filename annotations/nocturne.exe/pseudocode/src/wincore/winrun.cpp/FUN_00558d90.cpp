@@ -91,7 +91,7 @@ LRESULT wincore_winrun_cpp_FUN_00558d90(HWND param_1,uint param_2,HWND param_3,u
             if (param_2 < 0x311) goto LAB_00558ddf;
             if (0x311 < param_2) {
               if (param_2 == 0x3b9) {
-                wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(_DAT_02de2098);
+                wincore_winvideo_cpp_closeMovie_FUN_0055a1c0((HWND)_DAT_02de2098);
               }
               goto LAB_00558ddf;
             }

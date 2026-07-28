@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CSpark_process_FUN_004836e0(int param_1)
+; void core_fire_cpp_CSpark_process_FUN_004836e0(CParticle *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -49,17 +49,17 @@ section .text
     FSTP float ptr [ESP]                ; 0048372b
     PUSH EDI                            ; 0048372e | DAT_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0048372f
-        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_slamDT_FUN_004a5f00()
+        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00483734
     PUSH EBX                            ; 00483737
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 00483738
-        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_process_FUN_004ef120()
+        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
     ADD ESP,0x4                         ; 0048373d
     MOV EBP,dword ptr [0x005b9354]      ; 00483740 | DAT_005b9354
     PUSH dword ptr [ESP]                ; 00483746
     PUSH EBP                            ; 00483749 | DAT_01c775ec
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 0048374a
-        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_slamDT_FUN_004a5f00()
+        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0048374f
     ADD ESP,0x8                         ; 00483752
     POP EBP                             ; 00483755

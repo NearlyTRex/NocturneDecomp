@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(int *param_1)
+; void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(CCrater *this_ptr)
 ;
+; Parameters:
+; CCrater *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -73,7 +75,7 @@ section .text
     MOV EBP,dword ptr [0x005b80f0]      ; 00487a9a | DAT_005b80f0
     PUSH EBP                            ; 00487aa0
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00487aa1
-        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0()
+        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD EBX,0xc                         ; 00487aa6
     ADD ESP,0x14                        ; 00487aa9
     CMP EBX,ESI                         ; 00487aac

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(float *param_1)
+; void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(CGunFlame *this_ptr)
 ;
+; Parameters:
+; CGunFlame *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -112,7 +114,7 @@ section .text
     FSTP float ptr [EBX + 0x14]         ; 004884f1
     FSTP float ptr [ESP]                ; 004884f4
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004884f7
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 004884fc
     TEST EAX,EAX                        ; 004884ff
     JZ 0x0048851f                       ; 00488501
@@ -124,7 +126,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 00488510 | DAT_005b80f0
     PUSH EDX                            ; 00488516
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 00488517
-        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0()
+        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 0048851c
     CMP dword ptr [EBX + 0x20],0x0      ; 0048851f
         ;   Label: LAB_0048851f
@@ -132,14 +134,14 @@ section .text
         ;   XREF to: 0048853e (CONDITIONAL_JUMP)  ; LAB_0048853e
     PUSH dword ptr [ESP + 0x20]         ; 00488525
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00488529
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 0048852e
     TEST EAX,EAX                        ; 00488531
     JZ 0x0048853e                       ; 00488533
         ;   XREF to: 0048853e (CONDITIONAL_JUMP)  ; LAB_0048853e
     PUSH EBX                            ; 00488535
     CALL core_fire.cpp_CGunFlame_init_FUN_004880d0 ; 00488536
-        ;   XREF to: 004880d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CGunFlame_init_FUN_004880d0()
+        ;   XREF to: 004880d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_init_FUN_004880d0(CGunFlame * this_ptr)
     ADD ESP,0x4                         ; 0048853b
     FLD float ptr [ESP + 0x20]          ; 0048853e
         ;   Label: LAB_0048853e

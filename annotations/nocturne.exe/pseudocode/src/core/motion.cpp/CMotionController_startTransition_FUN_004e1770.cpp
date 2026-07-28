@@ -2,44 +2,45 @@
 // Address: 004e1770
 // Address Range: [[004e1770, 004e1826]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(int param_1,int param_2)
+// Signature: void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(CMotionController *this_ptr,SMotionTransition *transition)
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(int param_1,int param_2)
+void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(CMotionController *this_ptr,SMotionTransition *transition)
 
 {
   float fVar1;
-  uint uVar2;
+  EMotionTransitionCmd EVar2;
   int iVar3;
-  uint local_18;
+  SMotion *pSVar4;
+  float local_18;
   
-  local_18 = *(float *)(param_2 + 0xc);
+  local_18 = transition->to_frame_number;
   if (local_18 == -1.0f) {
-    iVar3 = (**(code **)(*(int *)(param_1 + 0x50) + 4))
-                      (param_1,*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
-                       *(uint *)(param_2 + 8));
+    iVar3 = (*this_ptr->vtable->findPatchToFrame)
+                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                       transition->to_motion_number);
     local_18 = (float)iVar3;
   }
-  if (*(float *)(param_2 + 0x10) <= 0.0) {
+  if (transition->tween_time <= 0.0) {
     core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
-              (param_1,*(uint *)(param_2 + 8),local_18);
-    if (*(int *)(param_2 + 0x14) != 0) {
-      iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1);
-      *(uint *)(param_1 + 0x28) = *(uint *)(iVar3 + 0x24);
+              (this_ptr,transition->to_motion_number,local_18);
+    if (transition->set_new_state_as_desired != 0) {
+      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
+      this_ptr->state_index = pSVar4->state_index;
       return;
     }
   }
   else {
-    *(uint *)(param_1 + 0x18) = *(uint *)(param_2 + 8);
-    *(float *)(param_1 + 0x1c) = local_18;
-    uVar2 = *(uint *)(param_2 + 4);
-    *(uint *)(param_1 + 0x14) = 0x3a83126f;
-    *(uint *)(param_1 + 0xc) = uVar2;
-    fVar1 = *(float *)(param_2 + 0x10);
-    *(uint *)(param_1 + 0x20) = 0;
-    *(float *)(param_1 + 0x10) = 1.0 / fVar1;
-    *(uint *)(param_1 + 0x24) = *(uint *)(param_2 + 0x14);
+    this_ptr->tween_target_motion = transition->to_motion_number;
+    this_ptr->tween_target_frame = local_18;
+    EVar2 = transition->cmd;
+    this_ptr->tween_progress = 0.001;
+    this_ptr->tween_type = EVar2;
+    fVar1 = transition->tween_time;
+    this_ptr->tween_direction = 0;
+    this_ptr->tween_speed = 1.0 / fVar1;
+    this_ptr->tween_set_new_state = transition->set_new_state_as_desired;
   }
   return;
 }

@@ -1,15 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(int *param_1,int param_2,int *param_3,int param_4,int param_5)
+; void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; CVector3i *      Stack[0xc]:4   vertex_buffer
+; int              Stack[0x10]:4   start_offset
+; int              Stack[0x14]:4   vertex_count
 ;
 ; XREF[5]:
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 at 004df3f5
 ;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460 at 004df53b
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004df770 at 004df7b1
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0 at 004df7e8
-;   core_morph.cpp_FUN_004df740 at 004df75d
+;   core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_004df740 at 004df75d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ab5a

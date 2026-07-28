@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(undefined4 param_1)
+; CWeapon * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(CWeapon *param_1)
 ;
 ;
 ; XREF[1]:
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0048ed61
     PUSH EDX                            ; 0048ed65
     CALL core_weapon.cpp_CWeapon_ctor_FUN_00553d90 ; 0048ed66
-        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_ctor_FUN_00553d90()
+        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_00553d90(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0048ed6b
     PUSH 0x5816c2                       ; 0048ed6e | = "flashlit.kfm"
     MOV EBX,EAX                         ; 0048ed73
@@ -33,7 +33,7 @@ section .text
     PUSH EAX                            ; 0048ed7a
     MOV dword ptr [EAX + -0x4],0x59d8f4 ; 0048ed7b | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d8f4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0048ed82
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 0048ed87
     MOV dword ptr [EBX + 0x2d4],0x0     ; 0048ed91
     MOV dword ptr [EBX + 0x2d8],0x5     ; 0048ed9b

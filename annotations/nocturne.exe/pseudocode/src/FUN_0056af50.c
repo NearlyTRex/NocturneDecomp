@@ -10,12 +10,15 @@ int FUN_0056af50(void)
 
 {
   int iVar1;
-  int iVar2;
+  byte uVar2;
+  undefined3 extraout_var;
+  int character;
   
   iVar1 = DAT_005c1cf8;
-  iVar2 = FUN_0056fb98();
-  if ((iVar2 != -1) && (iVar1 == 0)) {
-    FUN_0056fc30(iVar2);
+  uVar2 = DrainConsoleInputAndSetup();
+  character = CONCAT31(extraout_var,uVar2);
+  if ((character != -1) && (iVar1 == 0)) {
+    WriteConsoleChar(character);
   }
-  return iVar2;
+  return character;
 }

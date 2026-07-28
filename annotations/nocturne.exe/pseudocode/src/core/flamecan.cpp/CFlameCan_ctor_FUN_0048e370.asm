@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(undefined4 param_1)
+; CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(CFlameCan *this_ptr)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_flamecan.cpp_FUN_0048e340 at 0048e353
@@ -37,12 +39,12 @@ section .text
     ADD EAX,0x150                       ; 0048e380
     PUSH EAX                            ; 0048e385
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0048e386
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048e38b
     ADD EAX,0x1e8                       ; 0048e38e
     PUSH EAX                            ; 0048e393
     CALL core_flame.cpp_CFlame_ctor_FUN_0048cf60 ; 0048e394
-        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_ctor_FUN_0048cf60()
+        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; CFlame * core_flame.cpp_CFlame_ctor_FUN_0048cf60(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0048e399
     LEA EBX,[EAX + 0xfffffcc8]          ; 0048e39c
     PUSH 0x581639                       ; 0048e3a2 | = "question.kfm"
@@ -51,7 +53,7 @@ section .text
     MOV ESI,0x581646                    ; 0048e3ae | = "none"
     MOV dword ptr [EBX + 0x14c],0x59d684 ; 0048e3b3 | PTR_core_flamecan.cpp_CFlameCan_setup_FUN_0048e410_0059d684
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0048e3bd
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0048e3c2
     MOV dword ptr [EBX + 0x2cc],0x0     ; 0048e3c5
     LEA EDI,[EBX + 0x2d4]               ; 0048e3cf

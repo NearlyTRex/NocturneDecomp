@@ -2,23 +2,25 @@
 // Address: 00474c90
 // Address Range: [[00474c90, 00474cea]]
 // Convention: unknown
-// Signature: int shape_edittool_cpp_FUN_00474c90(undefined4 param_1)
+// Signature: CEdScrollBar * shape_edittool_cpp_FUN_00474c90(CStrList *param_1)
 
 #include "nocturne.h"
 
-int shape_edittool_cpp_FUN_00474c90(uint param_1)
+CEdScrollBar * shape_edittool_cpp_FUN_00474c90(CStrList *param_1)
 
 {
-  int iVar1;
+  CStrList *pCVar1;
+  CEdScrollBar *pCVar2;
   
-  iVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60(param_1);
-  iVar1 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_00476450(iVar1 + 0x138);
-  *(byte ***)(iVar1 + -300) = &PTR_shape_edittool_cpp_CPickList_dtor_FUN_00474cf0_0059ca94;
-  *(uint *)(iVar1 + -0x128) = 0;
-  *(byte *)(iVar1 + -0x124) = 0;
-  *(uint *)(iVar1 + 0x34) = 0;
-  *(uint *)(iVar1 + -0xc0) = 0;
-  *(uint *)(iVar1 + -8) = 0;
-  *(uint *)(iVar1 + -4) = 0;
-  return iVar1 + -0x138;
+  pCVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00473b60(param_1);
+  pCVar2 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_00476450
+                     ((CEdScrollBar *)&pCVar1[0x13].data_array);
+  pCVar2[-6].scroll_increment = (int)&PTR_shape_edittool_cpp_CPickList_dtor_FUN_00474cf0_0059ca94;
+  pCVar2[-6].orientation = 0;
+  *(byte *)&pCVar2[-6].bounds_left = 0;
+  pCVar2[1].scroll_position = 0;
+  pCVar2[-4].orientation = 0;
+  pCVar2[-1].thumb_start = 0;
+  pCVar2[-1].thumb_end = 0;
+  return pCVar2 + -6;
 }

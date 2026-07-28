@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(int param_1)
+; void core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -254,7 +254,7 @@ section .text
     PUSH EAX                            ; 0044eba5
     PUSH EBP                            ; 0044eba6
     CALL core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044e660 ; 0044eba7
-        ;   XREF to: 0044e660 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044e660()
+        ;   XREF to: 0044e660 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044e660(CDemonLight * this_ptr, CRect * source_rect)
     ADD ESP,0x8                         ; 0044ebac
     MOV dword ptr [EBP + 0x1d0],0x0     ; 0044ebaf
     ADD ESP,0x24                        ; 0044ebb9

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005696e8(undefined4 param_1,char *param_2,int param_3)
+; void FUN_005696e8(int param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[1]:
 ;   FUN_00569928 at 00569e35
 ;
 ; Called Functions:
-;   FUN_0056dc68
+;   crt_stdio.c_IntegerToString_FUN_0056dc68
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EBP                            ; 005696f2
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005696f3
     PUSH EDX                            ; 005696f7
-    CALL FUN_0056dc68                   ; 005696f8
-        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc68()
+    CALL crt_stdio.c_IntegerToString_FUN_0056dc68 ; 005696f8
+        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_0056dc68(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005696fd
     MOV EDI,EBP                         ; 00569700
     PUSH ES                             ; 00569702

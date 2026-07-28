@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(int param_1)
+; undefined4 core_stranger_cpp_CStranger_renderTransparent_FUN_0053d6c0(CCharacter *param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0053d6c1
     PUSH EBX                            ; 0053d6c5
     CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260 ; 0053d6c6
-        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260()
+        ;   XREF to: 00427260 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_00427260(CCharacter * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1fa94]   ; 0053d6cb
     ADD ESP,0x4                         ; 0053d6d1
     TEST EDX,EDX                        ; 0053d6d4

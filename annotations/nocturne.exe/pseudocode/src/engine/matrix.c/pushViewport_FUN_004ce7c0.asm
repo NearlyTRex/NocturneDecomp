@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40 at 00460e56
@@ -91,7 +96,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 004ce8d7
     PUSH EDX                            ; 004ce8db
     CALL engine_2d.c_setupViewportAndClipping_FUN_00401e30 ; 004ce8dc
-        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_setupViewportAndClipping_FUN_00401e30()
+        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401e30(int left, int top, int right, int bottom)
     MOV ECX,0x10000                     ; 004ce8e1
     ADD ESP,0x10                        ; 004ce8e6
     MOV dword ptr [0x005b7648],ECX      ; 004ce8e9 | DAT_005b7648

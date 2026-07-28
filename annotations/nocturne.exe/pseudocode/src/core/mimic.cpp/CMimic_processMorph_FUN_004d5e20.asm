@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(int param_1,float param_2)
+; void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(CMimic *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
@@ -69,7 +72,7 @@ section .text
     PUSH EAX                            ; 004d5e74
     PUSH ESI                            ; 004d5e75
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 004d5e76
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 004d5e7b
     JMP 0x004d5e62                      ; 004d5e7e
         ;   XREF to: 004d5e62 (UNCONDITIONAL_JUMP)  ; LAB_004d5e62
@@ -90,14 +93,14 @@ section .text
     MOV EAX,[0x005baf90]                ; 004d5eac | DAT_005baf90
     PUSH EAX                            ; 004d5eb1 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004d5eb2
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d5eb7
     MOV EDX,dword ptr [EBX + 0x4757c]   ; 004d5eba
     PUSH EDX                            ; 004d5ec0
     MOV ECX,dword ptr [0x005baf90]      ; 004d5ec1 | DAT_005baf90
     PUSH ECX                            ; 004d5ec7 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004d5ec8
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d5ecd
     PUSH 0x1                            ; 004d5ed0
     PUSH EBX                            ; 004d5ed2
@@ -132,7 +135,7 @@ section .text
     ADD EAX,0x150                       ; 004d5f12
     PUSH EAX                            ; 004d5f17
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 004d5f18
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 004d5f1d
     JMP 0x004d5efd                      ; 004d5f20
         ;   XREF to: 004d5efd (UNCONDITIONAL_JUMP)  ; LAB_004d5efd
@@ -144,7 +147,7 @@ section .text
     LEA ESI,[EBX + 0x4694c]             ; 004d5f2d
     PUSH ESI                            ; 004d5f33
     CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340 ; 004d5f34
-        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340()
+        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 004d5f39
     MOV EAX,dword ptr [EBX + 0x4757c]   ; 004d5f3c
     PUSH 0x0                            ; 004d5f42
@@ -153,7 +156,7 @@ section .text
     PUSH 0x1                            ; 004d5f4a
     PUSH ESI                            ; 004d5f4c
     CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340 ; 004d5f4d
-        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340()
+        ;   XREF to: 004e0340 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 004d5f52
     MOV ESI,dword ptr [EBX + 0x469a0]   ; 004d5f55
     XOR EAX,EAX                         ; 004d5f5b

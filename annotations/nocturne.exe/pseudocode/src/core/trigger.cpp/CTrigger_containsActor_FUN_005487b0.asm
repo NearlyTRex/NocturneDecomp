@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,int param_2)
+; int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
@@ -82,7 +85,7 @@ section .text
     PUSH ESI                            ; 00548830
     FSTP float ptr [ESP + 0x5c]         ; 00548831
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00548835
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,dword ptr [EBX + 0x210]     ; 0054883a
     ADD ESP,0xc                         ; 00548840
     TEST EDX,EDX                        ; 00548843
@@ -117,7 +120,7 @@ section .text
     PUSH EAX                            ; 00548892
     PUSH EBX                            ; 00548893
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00548894
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     MOV EDX,EAX                         ; 00548899
     LEA EAX,[ESP + 0x60]                ; 0054889b
     ADD ESP,0xc                         ; 0054889f
@@ -180,7 +183,7 @@ section .text
     PUSH ECX                            ; 00548940
     PUSH ESI                            ; 00548941
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00548942
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00548947
     TEST EAX,EAX                        ; 0054894a
     JZ 0x0054895b                       ; 0054894c

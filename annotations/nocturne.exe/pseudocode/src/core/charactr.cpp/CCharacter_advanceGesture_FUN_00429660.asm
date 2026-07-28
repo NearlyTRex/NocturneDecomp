@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00429660(int param_1,float param_2)
+; void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_00429660(CCharacter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_FUN_004259f0 at 00425a2f
@@ -31,7 +34,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00429679
     PUSH EAX                            ; 0042967f
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 00429680
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00429685
     FLD float ptr [ESP + 0x10]          ; 00429688
     FMUL float ptr [ESI + EAX*0x1 + 0x988] ; 0042968c

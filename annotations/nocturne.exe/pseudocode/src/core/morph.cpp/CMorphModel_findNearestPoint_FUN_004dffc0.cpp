@@ -2,14 +2,14 @@
 // Address: 004dffc0
 // Address Range: [[004dffc0, 004e004c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(int param_1,float *param_2)
+// Signature: int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(CMorphModel *this_ptr,CVector3f *position)
 
 #include "nocturne.h"
 
-int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(int param_1,float *param_2)
+int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(CMorphModel *this_ptr,CVector3f *position)
 
 {
-  int iVar1;
+  SMorphPoint *pSVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -21,13 +21,13 @@ int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(int param_1
   iVar7 = 0;
   local_18 = 1e+30;
   iVar6 = 0;
-  if (0 < *(int *)(param_1 + 0x54)) {
+  if (0 < this_ptr->num_points) {
     iVar5 = 0;
     do {
-      iVar1 = *(int *)(param_1 + 0x58);
-      fVar2 = *param_2 - *(float *)(iVar5 + 4 + iVar1);
-      fVar3 = param_2[1] - *(float *)(iVar5 + 8 + iVar1);
-      fVar4 = param_2[2] - *(float *)(iVar5 + 0xc + iVar1);
+      pSVar1 = this_ptr->points;
+      fVar2 = position->x - *(float *)((int)&(pSVar1->position).x + iVar5);
+      fVar3 = position->y - *(float *)((int)&(pSVar1->position).y + iVar5);
+      fVar4 = position->z - *(float *)((int)&(pSVar1->position).z + iVar5);
       fVar2 = fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3;
       if (fVar2 < local_18) {
         iVar7 = iVar6;
@@ -35,7 +35,7 @@ int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(int param_1
       }
       iVar6 = iVar6 + 1;
       iVar5 = iVar5 + 0x10;
-    } while (iVar6 < *(int *)(param_1 + 0x54));
+    } while (iVar6 < this_ptr->num_points);
   }
   return iVar7;
 }

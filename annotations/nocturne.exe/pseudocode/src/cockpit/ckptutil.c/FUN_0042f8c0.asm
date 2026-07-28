@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   cockpit_ckptutil.c_FUN_0042f330 at 0042f4b3
+;   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_0042f330 at 0042f4b3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
@@ -182,13 +182,13 @@ section .text
     MOV CL,byte ptr [0x01c0062c]        ; 0042fa92 | DAT_01c0062c
     FXCH ST2                            ; 0042fa98
     CALL crt_math.c_round_FUN_00563a30  ; 0042fa9a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0042fa9f
     CALL crt_math.c_round_FUN_00563a30  ; 0042faa1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 0042faa6
     CALL crt_math.c_round_FUN_00563a30  ; 0042faa8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0042faad
     FISTP qword ptr [ESP + 0x18]        ; 0042faaf
     FXCH                                ; 0042fab3
@@ -270,7 +270,7 @@ section .text
     FSTP ST2                            ; 0042fba5
     FXCH                                ; 0042fba7
     CALL crt_math.c_round_FUN_00563a30  ; 0042fba9
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0042fbae
     MOV EAX,dword ptr [ESP + 0x30]      ; 0042fbb2
     MOV EDX,EAX                         ; 0042fbb6
@@ -286,7 +286,7 @@ section .text
     FXCH                                ; 0042fbd1
     FSTP ST1                            ; 0042fbd3
     CALL crt_math.c_round_FUN_00563a30  ; 0042fbd5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0042fbda
     MOV ECX,EAX                         ; 0042fbde
     MOV EAX,dword ptr [ESP + 0x30]      ; 0042fbe0
@@ -301,7 +301,7 @@ section .text
     FMULP ST2                           ; 0042fbfb
     FADDP                               ; 0042fbfd
     CALL crt_math.c_round_FUN_00563a30  ; 0042fbff
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     SHL ECX,0xa                         ; 0042fc04
     SHL EAX,0x5                         ; 0042fc07
     FISTP dword ptr [ESP + 0x30]        ; 0042fc0a
@@ -376,13 +376,13 @@ section .text
     FLD float ptr [ESP + 0x4]           ; 0042fcf2
     FXCH ST2                            ; 0042fcf6
     CALL crt_math.c_round_FUN_00563a30  ; 0042fcf8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0042fcfd
     CALL crt_math.c_round_FUN_00563a30  ; 0042fcff
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 0042fd04
     CALL crt_math.c_round_FUN_00563a30  ; 0042fd06
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     LEA ECX,[EAX*0x4 + 0x0]             ; 0042fd0b
     FXCH                                ; 0042fd12
     FISTP qword ptr [ESP + 0x10]        ; 0042fd14

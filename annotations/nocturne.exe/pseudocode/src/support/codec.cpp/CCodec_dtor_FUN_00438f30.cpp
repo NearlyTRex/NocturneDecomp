@@ -2,24 +2,24 @@
 // Address: 00438f30
 // Address Range: [[00438f30, 00438f4f] [00438f51, 00438f78]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(undefined4 *param_1,uint param_2)
+// Signature: CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(uint *param_1,uint param_2)
+CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags)
 
 {
-  uint uVar1;
+  void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&g_CCodecTypeInfo_0059b470);
-    shape_memdbg_cpp_free_FUN_00564486(uVar1);
-    return param_1;
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CCodecTypeInfo_0059b470);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    return this_ptr;
   }
-  *param_1 = &PTR_support_codec_cpp_CCodec_dtor_FUN_00438f30_0059b3e4;
-  if ((param_2 & 2) == 0) {
-    return param_1;
+  this_ptr->vtable = (CCodec_vtable *)&PTR_support_codec_cpp_CCodec_dtor_FUN_00438f30_0059b3e4;
+  if ((flags & 2) == 0) {
+    return this_ptr;
   }
-  FUN_00564494(param_1);
-  return param_1;
+  FUN_00564494(this_ptr);
+  return this_ptr;
 }

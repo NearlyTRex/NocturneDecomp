@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(CIniFile *param_1,char *param_2,undefined4 param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
@@ -40,7 +40,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x74]      ; 004bdaa3
     PUSH EBX                            ; 004bdaa7
     CALL engine_ini.cpp_CIniFile_setString_FUN_004bd9a0 ; 004bdaa8
-        ;   XREF to: 004bd9a0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_setString_FUN_004bd9a0()
+        ;   XREF to: 004bd9a0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004bd9a0(CIniFile * this_ptr, char * key, char * value)
     ADD ESP,0xc                         ; 004bdaad
     ADD ESP,0x64                        ; 004bdab0
     POP EBX                             ; 004bdab3

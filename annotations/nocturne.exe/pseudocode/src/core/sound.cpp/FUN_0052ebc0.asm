@@ -31,7 +31,7 @@ section .text
     MOV EAX,ESP                         ; 0052ebce
     PUSH EAX                            ; 0052ebd0
     CALL sound_sndmain.cpp_CSfxSample_init_FUN_00525b70 ; 0052ebd1
-        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_init_FUN_00525b70()
+        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_00525b70(CSfxSample * this_ptr)
     LEA EAX,[ESP + 0x4]                 ; 0052ebd6
     MOV DL,byte ptr [EBX]               ; 0052ebda
     ADD ESP,0x4                         ; 0052ebdc
@@ -51,7 +51,7 @@ section .text
     MOV EAX,ESP                         ; 0052ebf2
     PUSH EAX                            ; 0052ebf4
     CALL sound_sndmain.cpp_getSampleInfo_FUN_005279e0 ; 0052ebf5
-        ;   XREF to: 005279e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSampleInfo_FUN_005279e0()
+        ;   XREF to: 005279e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSampleInfo_FUN_005279e0(CSfxSample * out_sample)
     ADD ESP,0x4                         ; 0052ebfa
     TEST EAX,EAX                        ; 0052ebfd
     JNZ 0x0052ec3c                      ; 0052ebff
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_0052ec3c
     PUSH EAX                            ; 0052ec3e
     CALL sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_00525bc0 ; 0052ec3f
-        ;   XREF to: 00525bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_00525bc0()
+        ;   XREF to: 00525bc0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_00525bc0(CSampleInfo * this_ptr)
     MOV dword ptr [ESP + 0x12c],EAX     ; 0052ec44
     MOV dword ptr [ESP + 0x130],EDX     ; 0052ec4b
     FLD double ptr [ESP + 0x12c]        ; 0052ec52

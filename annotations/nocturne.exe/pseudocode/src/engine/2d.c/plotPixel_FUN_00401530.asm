@@ -1,20 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_plotPixel_FUN_00401530(int param_1,int param_2)
+; void __cdecl engine_2d_c_plotPixel_FUN_00401530(int x,int y)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ;
 ; XREF[11]:
-;   core_actor.cpp_FUN_0040ab70 at 0040ace8
 ;   core_actor.cpp_FUN_0040add0 at 0040afaa
+;   core_actor.cpp_draw3DPointMarker_FUN_0040ab70 at 0040ace8
 ;   core_setdir.cpp_FUN_005138e0 at 00513ac9
 ;   engine_2d.c_FUN_00403780 at 00403821
 ;   engine_2d.c_drawLine_FUN_004015a0 at 004015f6
 ;   engine_2d.c_project3DPointToScreen_FUN_00401da0 at 00401ddc
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 at 004725f3
-;   shape_edittool.cpp_FUN_0046efa0 at 0046efea
-;   shape_edittool.cpp_FUN_004737a0 at 0047388f
-;   wincore_winrun.cpp_FUN_00558c00 at 00558c2b
+;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004737a0 at 0047388f
+;   shape_edittool.cpp_plotPixelWithClipping_FUN_0046efa0 at 0046efea
+;   wincore_winrun.cpp_FUN_00558c40 at 00558d16
 ;   ... and 1 more
 ;
 ; Referenced Globals:

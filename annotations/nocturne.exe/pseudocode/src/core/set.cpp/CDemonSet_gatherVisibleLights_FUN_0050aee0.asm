@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5,undefined4 param_6)
+; int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   orientation
+; CVector3f *      Stack[0x10]:4   aabb_min
+; CVector3f *      Stack[0x14]:4   aabb_max
+; CMatrix3x3f *    Stack[0x18]:4   rotation_matrix
 ; Local Variables:
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
@@ -196,7 +203,7 @@ section .text
     PUSH ESI                            ; 0050b02a
     PUSH EAX                            ; 0050b02b
     CALL core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0 ; 0050b02c
-        ;   XREF to: 00445fe0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0()
+        ;   XREF to: 00445fe0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDemonCamera * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * bbox_min, ...)
     ADD ESP,0x14                        ; 0050b031
     TEST EAX,EAX                        ; 0050b034
     JZ 0x0050b054                       ; 0050b036
@@ -237,7 +244,7 @@ section .text
     PUSH ESI                            ; 0050b0a2
     PUSH EAX                            ; 0050b0a3
     CALL core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0 ; 0050b0a4
-        ;   XREF to: 00445fe0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0()
+        ;   XREF to: 00445fe0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDemonCamera * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * bbox_min, ...)
     ADD ESP,0x14                        ; 0050b0a9
     TEST EAX,EAX                        ; 0050b0ac
     JZ 0x0050b0cb                       ; 0050b0ae
@@ -337,7 +344,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1fba2f0] ; 0050b1d7
     PUSH ECX                            ; 0050b1dd
     CALL core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0 ; 0050b1de
-        ;   XREF to: 0044d1f0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0()
+        ;   XREF to: 0044d1f0 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, ...)
     ADD ESP,0x14                        ; 0050b1e3
     TEST EAX,EAX                        ; 0050b1e6
     JZ 0x0050b205                       ; 0050b1e8
@@ -374,7 +381,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1fba7a8] ; 0050b240 | DAT_01fba7a8
     PUSH EAX                            ; 0050b246
     CALL core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0 ; 0050b247
-        ;   XREF to: 0044d1f0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0()
+        ;   XREF to: 0044d1f0 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, ...)
     ADD ESP,0x14                        ; 0050b24c
     TEST EAX,EAX                        ; 0050b24f
     JZ 0x0050b26d                       ; 0050b251

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 at 00524989

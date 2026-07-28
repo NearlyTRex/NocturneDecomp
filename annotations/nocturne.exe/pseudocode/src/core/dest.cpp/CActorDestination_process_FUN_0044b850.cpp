@@ -2,16 +2,17 @@
 // Address: 0044b850
 // Address Range: [[0044b850, 0044ba09]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
+// Signature: void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(CActorDestination *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
+void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(CActorDestination *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   float local_38;
   float local_34;
   float local_30;
@@ -22,26 +23,26 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
   float local_1c;
   float local_18;
   
-  if ((*(int *)(param_1 + 0x1e8) != 0) && (*(int *)(param_1 + 0x150) == 0)) {
-    iVar2 = 0;
-    for (iVar3 = 0; iVar3 < *(int *)(0x01E57284 + 0x14cd6c); iVar3 = iVar3 + 1) {
-      iVar1 = *(int *)(0x01E57284 + iVar2 + 0x14cd70);
-      local_2c = *(float *)(param_1 + 0x20) - *(float *)(iVar1 + 0x20);
-      local_28 = *(float *)(param_1 + 0x24) - *(float *)(iVar1 + 0x24);
-      local_24 = *(float *)(param_1 + 0x28) - *(float *)(iVar1 + 0x28);
+  if ((this_ptr->needs_actor_search != 0) && (this_ptr->dest_actor == (CDemonActor *)0x0)) {
+    iVar3 = 0;
+    for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+      iVar2 = *(int *)(0x01E57284 + iVar3 + 0x14cd70);
+      local_2c = (this_ptr->base).location.position.x - *(float *)(iVar2 + 0x20);
+      local_28 = (this_ptr->base).location.position.y - *(float *)(iVar2 + 0x24);
+      local_24 = (this_ptr->base).location.position.z - *(float *)(iVar2 + 0x28);
       if ((SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28) <
            (float)0.10000000000000001) &&
-         (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
-                            (param_1,*(uint *)(0x01E57284 + iVar2 + 0x14cd70)), iVar1 != 0))
-      break;
-      iVar2 = iVar2 + 4;
+         (iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0
+                            (this_ptr,*(CDemonActor **)(0x01E57284 + iVar3 + 0x14cd70)),
+         iVar2 != 0)) break;
+      iVar3 = iVar3 + 4;
     }
   }
-  iVar2 = *(int *)(param_1 + 0x150);
-  if (iVar2 != 0) {
-    local_38 = *(float *)(iVar2 + 0x20) - *(float *)(param_1 + 0x20);
-    local_34 = *(float *)(iVar2 + 0x24) - *(float *)(param_1 + 0x24);
-    local_30 = *(float *)(iVar2 + 0x28) - *(float *)(param_1 + 0x28);
+  pCVar1 = this_ptr->dest_actor;
+  if (pCVar1 != (CDemonActor *)0x0) {
+    local_38 = (pCVar1->location).position.x - (this_ptr->base).location.position.x;
+    local_34 = (pCVar1->location).position.y - (this_ptr->base).location.position.y;
+    local_30 = (pCVar1->location).position.z - (this_ptr->base).location.position.z;
     if (&local_20 != &local_38) {
       local_20 = local_38;
       local_1c = local_34;
@@ -49,16 +50,16 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
     }
     if ((((float)0.25 <= ABS(local_20)) || ((float)0.25 <= ABS(local_1c))) ||
        ((float)0.25 <= ABS(local_18))) {
-      *(uint *)(param_1 + 0x17c) = 0;
-      *(uint *)(param_1 + 0x1e8) = 0;
+      this_ptr->triggered = 0;
+      this_ptr->needs_actor_search = 0;
       return;
     }
-    if ((*(int *)(param_1 + 0x1e4) != 0) ||
-       ((*(int *)(param_1 + 0x17c) == 0 && (*(int *)(param_1 + 0x1e8) == 0)))) {
-      core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x180);
+    if ((this_ptr->persistent_event_flag != 0) ||
+       ((this_ptr->triggered == 0 && (this_ptr->needs_actor_search == 0)))) {
+      core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,this_ptr->what_event);
     }
-    *(uint *)(param_1 + 0x17c) = 1;
+    this_ptr->triggered = 1;
   }
-  *(uint *)(param_1 + 0x1e8) = 0;
+  this_ptr->needs_actor_search = 0;
   return;
 }

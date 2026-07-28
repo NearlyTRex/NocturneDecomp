@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setutil_cpp_FUN_005148b0(char *param_1,char *param_2)
+; void core_setutil_cpp_FUN_005148b0(char *param_1,CDemonCamera *param_2)
 ;
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508030
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508a45
-;   core_set.cpp_FUN_00507f80 at 00508030
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Ambient_set_low_by_scrip_00590d03
@@ -70,7 +70,7 @@ section .text
     PUSH dword ptr [EBX + 0x144]        ; 00514918
     PUSH EDX                            ; 0051491e
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 0051491f
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     MOV EAX,[0x005be368]                ; 00514924 | DAT_005be368
     FLD float ptr [EBX + 0x144]         ; 00514929
     ADD ESP,0x8                         ; 0051492f

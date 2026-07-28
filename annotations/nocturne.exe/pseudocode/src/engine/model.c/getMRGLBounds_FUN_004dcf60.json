@@ -1,0 +1,738 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 339,
+    "complexity_score": 308,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 193,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 532
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004dcf60",
+    "address_range": [
+      [
+        "004dcf60",
+        "004dd40a"
+      ]
+    ],
+    "convention": "__stack_esi",
+    "name": "engine_model.c_getMRGLBounds_FUN_004dcf60",
+    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_004dcf60(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "0041a5a0",
+      "is_variadic": false,
+      "name": "engine_boss.c_modelStructNotSupported4_FUN_0041a5a0"
+    },
+    {
+      "addr": "004dcee0",
+      "is_variadic": false,
+      "name": "engine_model.c_freeMRGLData_FUN_004dcee0"
+    },
+    {
+      "addr": "004dcd10",
+      "is_variadic": false,
+      "name": "engine_model.c_loadModelFile_FUN_004dcd10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058a5d8",
+      "name": "s_engine_model_c_0058a5d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058a5ea",
+      "name": "s_Unable_to_read_magnify_0058a5ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058a602",
+      "name": "s_Unable_to_read_verticies_0058a602",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058a625",
+      "name": "s_engine_model_c_0058a625",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "PTR_01cc4800",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "INT_01cc4804",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.140410958904109,
+    "instruction_count": 292,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 51,
+      "BOOL_OR": 4,
+      "BRANCH": 6,
+      "CALL": 11,
+      "CBRANCH": 18,
+      "COPY": 509,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 8,
+      "INT_ADD": 130,
+      "INT_AND": 234,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 133,
+      "INT_LEFT": 10,
+      "INT_LESS": 24,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 44,
+      "INT_OR": 59,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 12,
+      "INT_SDIV": 1,
+      "INT_SEXT": 37,
+      "INT_SLESS": 75,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 74,
+      "INT_XOR": 19,
+      "INT_ZEXT": 8,
+      "LOAD": 68,
+      "POPCOUNT": 57,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 64,
+      "SUBPIECE": 29,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 1793
+  },
+  "stack_frame": {
+    "frame_size": 360,
+    "local_size": 356,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "mrgl_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderBasic *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "getMRGLBounds_FUN_004dcf60.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 10,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 36,
+          "line": 165,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 24,
+          "line": 166,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 170,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 27,
+          "line": 171,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 175,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 27,
+          "line": 176,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 33,
+          "line": 162,
+          "message": "Uninitialized variable: local_38",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 191,
+          "message": "Uninitialized variable: *puVar10",
+          "severity": "warning"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 18,
+          "line": 171,
+          "message": "Uninitialized variable: local_b0",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 18,
+          "line": 176,
+          "message": "Uninitialized variable: local_ac",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(SMRGLModelBounds *)((int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(SMRGLModelBounds *)((int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 151,
+      "match": "(int)local_34",
+      "severity": "moderate",
+      "text": "local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x10 |",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 152,
+      "match": "(int)local_34",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)local_18) >> 0x20) << 0x10",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 193,
+      "match": "(int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SMRGLModelBounds *)((int)pSVar12 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 56,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 183,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 190,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004dd35d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 286,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004dd35d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 165,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "local_8c = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 166,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar3 = (int)uVar4 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 170,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "local_88 = (local_a4 ^ (int)local_a4 >> 0x1f) - ((int)local_a4 >> 0x1f);",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 171,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar3 = (int)local_b0 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 175,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "local_84 = (local_a0 ^ (int)local_a0 >> 0x1f) - ((int)local_a0 >> 0x1f);",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 176,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar3 = (int)local_ac >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Uninitialized variable: local_38",
+      "line": 162,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_94 = (uint)((longlong)local_38 * (longlong)(int)ROUND(dVar15)) >> 0x10 |",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: *puVar10",
+      "line": 191,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*puVar11 = *puVar10;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b0",
+      "line": 171,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "uVar3 = (int)local_b0 >> 0x1f;",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_ac",
+      "line": 176,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "uVar3 = (int)local_ac >> 0x1f;",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

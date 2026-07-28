@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x150                       ; 004baa14
     PUSH EAX                            ; 004baa19
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004baa1a
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004baa1f
     ADD ESP,0xc                         ; 004baa24
     RET                                 ; 004baa27

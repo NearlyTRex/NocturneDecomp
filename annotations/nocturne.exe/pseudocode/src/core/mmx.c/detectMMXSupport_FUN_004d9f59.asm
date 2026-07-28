@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_mmx_c_detectMMXSupport_FUN_004d9f59(void)
+; void __cdecl core_mmx_c_detectMMXSupport_FUN_004d9f59(void)
 ;
 ;
 ; XREF[2]:

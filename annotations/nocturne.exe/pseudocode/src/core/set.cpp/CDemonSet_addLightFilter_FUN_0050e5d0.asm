@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4)
+; void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_2,undefined4 *param_3,undefined4 *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -69,7 +69,7 @@ section .text
     ADD EAX,0x4                         ; 0050e637
     PUSH EAX                            ; 0050e63a
     CALL crt_string.c__stricmp_FUN_00564520 ; 0050e63b
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0050e640
     TEST EAX,EAX                        ; 0050e643
     JZ 0x0050e64a                       ; 0050e645

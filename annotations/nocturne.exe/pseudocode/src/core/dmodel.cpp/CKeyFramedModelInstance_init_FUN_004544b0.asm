@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(undefined4 *param_1)
+; CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(CKeyFramedModelInstance *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 at 004544a4

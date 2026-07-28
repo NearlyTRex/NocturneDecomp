@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   assert_if_not_found
 ;
 ; XREF[39]:
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102e8
@@ -48,7 +52,7 @@ section .text
         ;   Label: LAB_005179ee
     PUSH ESI                            ; 005179ef
     CALL crt_string.c__stricmp_FUN_00564520 ; 005179f0
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005179f5
     TEST EAX,EAX                        ; 005179f8
     JZ 0x00517a1b                       ; 005179fa

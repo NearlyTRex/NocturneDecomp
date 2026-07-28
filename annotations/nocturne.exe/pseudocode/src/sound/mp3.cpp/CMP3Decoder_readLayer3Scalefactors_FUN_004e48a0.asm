@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule_index,SMpegFrame *frame)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   scalefactor_dest
+; SMpegLayer3SideInfo * Stack[0xc]:4   side_info
+; int              Stack[0x10]:4   channel
+; int              Stack[0x14]:4   granule_index
+; SMpegFrame *     Stack[0x18]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
@@ -121,7 +128,7 @@ section .text
     PUSH ECX                            ; 004e497a
     PUSH EDI                            ; 004e497b
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e497c
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     ADD ESP,0x8                         ; 004e4981
     MOV dword ptr [EBP],EAX             ; 004e4984
     MOV EAX,dword ptr [ESP + 0x38]      ; 004e4987
@@ -178,7 +185,7 @@ section .text
     PUSH EDI                            ; 004e4a11
     ADD EBX,0x4                         ; 004e4a12
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e4a15
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     ADD ESP,0x8                         ; 004e4a1a
     MOV dword ptr [EBX + -0x4],EAX      ; 004e4a1d
     CMP EBX,EBP                         ; 004e4a20
@@ -212,7 +219,7 @@ section .text
     PUSH EDI                            ; 004e4a74
     ADD EBX,0x34                        ; 004e4a75
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e4a78
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     ADD ESP,0x8                         ; 004e4a7d
     MOV dword ptr [EBX + 0x28],EAX      ; 004e4a80
     CMP EBX,EBP                         ; 004e4a83
@@ -255,7 +262,7 @@ section .text
     PUSH EDI                            ; 004e4af1
     ADD EBX,0x34                        ; 004e4af2
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e4af5
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     ADD ESP,0x8                         ; 004e4afa
     MOV dword ptr [EBX + 0x28],EAX      ; 004e4afd
     CMP EBX,EBP                         ; 004e4b00
@@ -330,7 +337,7 @@ section .text
     PUSH EDI                            ; 004e4bc6
     ADD EBX,0x34                        ; 004e4bc7
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e4bca
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     ADD ESP,0x8                         ; 004e4bcf
     MOV dword ptr [EBX + 0x28],EAX      ; 004e4bd2
     CMP EBX,EBP                         ; 004e4bd5

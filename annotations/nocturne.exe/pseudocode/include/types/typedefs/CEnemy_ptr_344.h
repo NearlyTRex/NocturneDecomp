@@ -19,7 +19,7 @@ struct CEnemy_ptr_344 {
     template<typename T> CEnemy_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CEnemy_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CEnemy* operator->() const { return (CEnemy*)_raw; }
-    CEnemy* adj() const { return (CEnemy*)((char*)_raw - offsetof(CEnemy, base.model)); }
+    CEnemy* adj() const { return (CEnemy*)((char*)_raw - offsetof(CEnemy, base.model.motion_controller.current_frame_number)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

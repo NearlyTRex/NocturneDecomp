@@ -2,14 +2,14 @@
 // Address: 004e0900
 // Address Range: [[004e0900, 004e0914]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(undefined4 *param_1)
+// Signature: CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(uint *param_1)
+CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr)
 
 {
-  param_1[0x259] = 0;
-  *param_1 = 0;
-  return;
+  this_ptr->motion_count = 0;
+  this_ptr->state_count = 0;
+  return this_ptr;
 }

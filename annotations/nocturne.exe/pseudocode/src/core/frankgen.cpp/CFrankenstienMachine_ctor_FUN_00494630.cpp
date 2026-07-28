@@ -1,25 +1,35 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630
 // Address: 00494630
 // Address Range: [[00494630, 00494699]]
-// Convention: unknown
-// Signature: int core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(CFrankenstienMachine *this_ptr)
 
 #include "nocturne.h"
 
-int core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(uint param_1)
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;
+  CKeyFramedModelInstance *pCVar2;
+  CCourse *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x17c);
-  iVar1 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar1 + 0x17c);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0xc);
-  *(byte ***)(iVar1 + -0x1b8) =
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar1 + 0x17c));
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)(pCVar2 + 1));
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(pCVar3 + 1));
+  *(byte ***)(pCVar2[-2].model_name + 200) =
        &PTR_core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0_0059db84;
-  *(uint *)(iVar1 + -0x1b0) = 0;
-  *(byte *)(iVar1 + -0x1ac) = 0;
-  *(uint *)(iVar1 + -0x18c) = 0;
-  *(uint *)(iVar1 + 0x180) = 0;
-  return iVar1 + -0x304;
+  pCVar2[-0xffffffff00000002].model_name[0xd0] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd1] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd2] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd3] = '\0';
+  pCVar2[-2].model_name[0xd4] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf4] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf5] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf6] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf7] = '\0';
+  pCVar2[1].part_visibility_flags[1] = 0;
+  return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf8);
 }

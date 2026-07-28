@@ -2,24 +2,24 @@
 // Address: 004cba40
 // Address Range: [[004cba40, 004cbacf]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(int param_1,int param_2)
+// Signature: int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 #include "nocturne.h"
 
-uint __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(int param_1,int param_2)
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
   int iVar1;
   
-  if ((param_2 < 0) || (0xb < param_2)) {
+  if ((panel_index < 0) || (0xb < panel_index)) {
     PTR_01cc4800 = "..\\core\\manpuz.cpp";
     INT_01cc4804 = 0x5e6;
-    core_main_c_FUN_004c8440("CMansionPuzzleCircle::panelOccupied - invalid index: %d",param_2);
+    core_main_c_FUN_004c8440("CMansionPuzzleCircle::panelOccupied - invalid index: %d",panel_index);
   }
-  if (*(int *)(param_1 + 0x5e8 + param_2 * 100) == 0) {
-    iVar1 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);
-    param_1 = iVar1 * 100 + param_1;
-    if ((*(int *)(param_1 + 0x5e8) == 0) || ((*(uint *)(param_1 + 0x5f0) & 0x7fffffff) == 0)) {
+  if (this_ptr->panels[panel_index].exists == 0) {
+    iVar1 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0
+                      (this_ptr,panel_index);
+    if ((this_ptr->panels[iVar1].exists == 0) || (ABS(this_ptr->panels[iVar1].anim_speed) == 0.0)) {
       return 0;
     }
   }

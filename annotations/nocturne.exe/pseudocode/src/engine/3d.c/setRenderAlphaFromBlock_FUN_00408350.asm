@@ -16,7 +16,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00408354
     PUSH EDX                            ; 00408357
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00408358
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0040835d
     MOV EAX,dword ptr [ESP + 0x4]       ; 00408360
     ADD EAX,0x8                         ; 00408364

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(int param_1,undefined4 param_2)
+; void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507773
@@ -43,7 +46,7 @@ section .text
     MOV EDX,dword ptr [EDI + 0x194]     ; 0051482a
     PUSH EDX                            ; 00514830
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00514831
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00514836
     MOV ECX,dword ptr [EDI + 0x190]     ; 00514839
     MOV dword ptr [EDI + 0x194],EAX     ; 0051483f

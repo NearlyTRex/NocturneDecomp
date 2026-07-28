@@ -2,18 +2,18 @@
 // Address: 0040d890
 // Address Range: [[0040d890, 0040d8b2]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(int param_1,undefined4 param_2)
+// Signature: CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *actor_ptr,uint class_name_hash)
 
 #include "nocturne.h"
 
-int __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(int param_1,uint param_2)
+CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *actor_ptr,uint class_name_hash)
 
 {
   int iVar1;
   
-  if ((param_1 != 0) &&
-     (iVar1 = core_actor_cpp_isOfClassHash_FUN_0040d860(param_1,param_2), iVar1 != 0)) {
-    return param_1;
+  if ((actor_ptr != (CDemonActor *)0x0) &&
+     (iVar1 = core_actor_cpp_isOfClassHash_FUN_0040d860(actor_ptr,class_name_hash), iVar1 != 0)) {
+    return actor_ptr;
   }
-  return 0;
+  return (CDemonActor *)0x0;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_baron_cpp_CBaron_ctor_FUN_004101d0(undefined4 param_1)
+; CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_004101d0(CBaron *this_ptr)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_baron.cpp_FUN_004101a0 at 004101b3
@@ -97,7 +99,7 @@ section .text
     PUSH 0x578520                       ; 00410290 | = "baronshell.kfm"
     PUSH 0x76436c                       ; 00410295 | DAT_0076436c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041029a
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041029f
     MOV EAX,EBX                         ; 004102a2
     MOV dword ptr [EBX + 0x1fb38],0x0   ; 004102a4

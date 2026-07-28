@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004cb010(int param_1,int param_2,float param_3)
+; void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
@@ -65,7 +65,7 @@ section .text
     PUSH ESI                            ; 004cb055
     FSTP float ptr [ESP + 0x34]         ; 004cb056
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cb05a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004cb05f
     MOV EAX,ESP                         ; 004cb062
     PUSH EAX                            ; 004cb064
@@ -77,7 +77,7 @@ section .text
     PUSH dword ptr [EBX + 0x18]         ; 004cb078
     PUSH EAX                            ; 004cb07b
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb07c
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004caef0(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004cb081
     MOV EBP,EAX                         ; 004cb084
     MOV EAX,ESP                         ; 004cb086
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 004cb09f
     AND EBP,0x1                         ; 004cb0a0
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb0a3
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004caef0(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004cb0a8
     AND EBP,EAX                         ; 004cb0ab
     MOV EAX,ESP                         ; 004cb0ad
@@ -104,7 +104,7 @@ section .text
     PUSH dword ptr [EBX + 0x20]         ; 004cb0c3
     PUSH EAX                            ; 004cb0c6
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 ; 004cb0c7
-        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004caef0()
+        ;   XREF to: 004caef0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004caef0(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004cb0cc
     AND EBP,EAX                         ; 004cb0cf
     LEA EAX,[ESP + 0x18]                ; 004cb0d1
@@ -282,12 +282,12 @@ section .text
     PUSH EDI                            ; 004cb26d
     PUSH ESI                            ; 004cb26e
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0 ; 004cb26f
-        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0()
+        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb274
     PUSH EAX                            ; 004cb277
     PUSH ESI                            ; 004cb278
     CALL core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 ; 004cb279
-        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40()
+        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb27e
     TEST EAX,EAX                        ; 004cb281
     JZ 0x004cb2b3                       ; 004cb283
@@ -300,7 +300,7 @@ section .text
     PUSH EAX                            ; 004cb28f
     PUSH ESI                            ; 004cb290
     CALL core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 ; 004cb291
-        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40()
+        ;   XREF to: 004cba40 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb296
     TEST EAX,EAX                        ; 004cb299
     JNZ 0x004cb1e3                      ; 004cb29b
@@ -308,7 +308,7 @@ section .text
     PUSH EDI                            ; 004cb2a1
     PUSH ESI                            ; 004cb2a2
     CALL core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740 ; 004cb2a3
-        ;   XREF to: 004cb740 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740()
+        ;   XREF to: 004cb740 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb2a8
     ADD ESP,0x2c                        ; 004cb2ab
     POP EBP                             ; 004cb2ae
@@ -320,7 +320,7 @@ section .text
         ;   Label: LAB_004cb2b3
     PUSH ESI                            ; 004cb2b4
     CALL core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 ; 004cb2b5
-        ;   XREF to: 004cb5a0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0()
+        ;   XREF to: 004cb5a0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb2ba
     ADD ESP,0x2c                        ; 004cb2bd
     POP EBP                             ; 004cb2c0

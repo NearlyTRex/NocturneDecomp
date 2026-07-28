@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(int param_1,undefined4 param_2)
+; void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(CBox *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x144]:1  local_144
 ; undefined        Stack[-0x44]:1  local_44
@@ -19,7 +22,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040ce80 at 0040ceb9
+;   core_actor.cpp_archiveBox_FUN_0040ce80 at 0040ceb9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00579705
@@ -53,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0041c86d
     PUSH EAX                            ; 0041c871
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0041c872
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0041c877
     LEA EAX,[ESP + 0x134]               ; 0041c87a
     PUSH EAX                            ; 0041c881
@@ -67,7 +70,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0041c896
     PUSH EAX                            ; 0041c89a
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0041c89b
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0041c8a0
     LEA EAX,[ESP + 0x12c]               ; 0041c8a3
     PUSH EAX                            ; 0041c8aa
@@ -118,7 +121,7 @@ section .text
     PUSH EAX                            ; 0041c949
     PUSH ESI                            ; 0041c94a
     CALL core_box.cpp_CBox_setupCorners_FUN_0041a6e0 ; 0041c94b
-        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupCorners_FUN_0041a6e0()
+        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041a6e0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 0041c950
     LEA EAX,[ESI + 0x54]                ; 0041c953
     PUSH EAX                            ; 0041c956

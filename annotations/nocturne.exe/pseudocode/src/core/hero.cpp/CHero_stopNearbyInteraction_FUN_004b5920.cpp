@@ -2,20 +2,20 @@
 // Address: 004b5920
 // Address Range: [[004b5920, 004b594f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(int param_1)
+// Signature: void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(CHero *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(int param_1)
+void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(CHero *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *this_ptr_00;
   
-  iVar1 = *(int *)(param_1 + 0x1fa18);
-  if (iVar1 == 0) {
+  this_ptr_00 = this_ptr->nearby_interactive_actor;
+  if (this_ptr_00 == (CDemonActor *)0x0) {
     return;
   }
-  (**(code **)(*(int *)(iVar1 + 0x14c) + 0x9c))(iVar1,param_1);
-  *(uint *)(param_1 + 0x1fa18) = 0;
+  (*((this_ptr_00->vtable)._ub)->stopInteraction)(this_ptr_00,(CDemonActor *)this_ptr);
+  this_ptr->nearby_interactive_actor = (CDemonActor *)0x0;
   return;
 }

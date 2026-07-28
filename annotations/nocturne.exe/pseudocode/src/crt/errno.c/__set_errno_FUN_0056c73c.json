@@ -2,23 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 7,
+    "complexity_score": 8,
     "cross_reference_count": 18,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 14
+    "total_lines": 15
   },
   "cross_references": [
-    {
-      "addr": "005689c0",
-      "from_addr": "00568a3f",
-      "name": "FUN_005689c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00568f70",
       "from_addr": "00569017",
@@ -32,40 +26,10 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056b960",
-      "from_addr": "0056baf0",
-      "name": "FUN_0056b960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056bbf0",
       "from_addr": "0056bbfe",
       "name": "FUN_0056bbf0",
       "type": "CONDITIONAL_JUMP"
-    },
-    {
-      "addr": "0056bc10",
-      "from_addr": "0056bc66",
-      "name": "FUN_0056bc10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c5f0",
-      "from_addr": "0056c61c",
-      "name": "FUN_0056c5f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c864",
-      "from_addr": "0056c999",
-      "name": "FUN_0056c864",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056cb60",
-      "from_addr": "0056cb8e",
-      "name": "FUN_0056cb60",
-      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056f170",
@@ -74,21 +38,45 @@
       "type": "CONDITIONAL_JUMP"
     },
     {
-      "addr": "0056f1c0",
-      "from_addr": "0056f204",
-      "name": "FUN_0056f1c0",
+      "addr": "0056cb60",
+      "from_addr": "0056cb8e",
+      "name": "crt_io.c__utime_FUN_0056cb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c864",
+      "from_addr": "0056c999",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056bc10",
+      "from_addr": "0056bc66",
+      "name": "crt_io.c_tell_FUN_0056bc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057301c",
       "from_addr": "005730c2",
-      "name": "FUN_0057301c",
+      "name": "crt_io.c_write_FUN_0057301c",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005733e0",
-      "from_addr": "005734ea",
-      "name": "FUN_005733e0",
+      "addr": "0056b960",
+      "from_addr": "0056baf0",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_0056b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f1c0",
+      "from_addr": "0056f204",
+      "name": "crt_stdio.c_flushFileBuffers_FUN_0056f1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005689c0",
+      "from_addr": "00568a3f",
+      "name": "crt_stdio.c_lseek_FUN_005689c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,10 +98,22 @@
       "type": "CONDITIONAL_JUMP"
     },
     {
+      "addr": "005733e0",
+      "from_addr": "005734ea",
+      "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00565e40",
       "from_addr": "00565e50",
       "name": "crt_watcom.c__mkdir_FUN_00565e40",
       "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "0056c5f0",
+      "from_addr": "0056c61c",
+      "name": "crt_watcom.c_getcwd_FUN_0056c5f0",
+      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00565dd0",
@@ -132,13 +132,13 @@
     ],
     "convention": "__cdecl",
     "name": "crt_errno.c___set_errno_FUN_0056c73c",
-    "signature": "void __cdecl crt_errno_c___set_errno_FUN_0056c73c(void)"
+    "signature": "DWORD __cdecl crt_errno_c___set_errno_FUN_0056c73c(void)"
   },
   "function_calls": [
     {
       "addr": "0056c6d0",
       "is_variadic": false,
-      "name": "FUN_0056c6d0"
+      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0"
     },
     {
       "addr": "EXTERNAL:00000064",

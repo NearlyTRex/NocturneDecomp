@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fire_cpp_CFireball_onCollision_FUN_00484b60(float *param_1)
+; undefined4 core_fire_cpp_CFireball_onCollision_FUN_00484b60(CVector3f *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x58]      ; 00484b68
     PUSH EDX                            ; 00484b6b
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00484b6c
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     MOV ECX,dword ptr [EBX + 0x44]      ; 00484b71
     ADD ESP,0x4                         ; 00484b74
     TEST ECX,ECX                        ; 00484b77
@@ -55,7 +55,7 @@ section .text
     MOV EAX,[0x005b80f0]                ; 00484b88 | DAT_005b80f0
     PUSH EAX                            ; 00484b8d
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 ; 00484b8e
-        ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createFireball_FUN_0048b270()
+        ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)
     ADD ESP,0x14                        ; 00484b93
     PUSH 0xffff                         ; 00484b96
     PUSH EDI                            ; 00484b9b
@@ -67,7 +67,7 @@ section .text
     PUSH EDX                            ; 00484bae
     INC ESI                             ; 00484baf
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00484bb0
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 00484bb5
     CMP ESI,0x8                         ; 00484bb8
     JL 0x00484b83                       ; 00484bbb
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
     ADD ESP,0x14                        ; 00484bd7
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 00484bda
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     SUB ESP,0x8                         ; 00484bdf
     FLD float ptr [EBX + 0x8]           ; 00484be2
     FSTP double ptr [ESP]               ; 00484be5
@@ -93,15 +93,15 @@ section .text
     FLD float ptr [EBX]                 ; 00484bf4
     FSTP double ptr [ESP]               ; 00484bf6
     CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50 ; 00484bf9
-        ;   XREF to: 00525f50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50()
+        ;   XREF to: 00525f50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 00484bfe
     PUSH 0x58111c                       ; 00484c01 | = "rock-x.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 00484c06
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
         ;   Label: LAB_00484c06
     ADD ESP,0x4                         ; 00484c0b
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 00484c0e
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     MOV EAX,0x1                         ; 00484c13
     POP EBP                             ; 00484c18
     POP EDI                             ; 00484c19
@@ -125,13 +125,13 @@ section .text
     PUSH EBP                            ; 00484c3b
     INC ESI                             ; 00484c3c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00484c3d
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 00484c42
     CMP ESI,0x8                         ; 00484c45
     JL 0x00484c29                       ; 00484c48
         ;   XREF to: 00484c29 (CONDITIONAL_JUMP)  ; LAB_00484c29
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 00484c4a
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     SUB ESP,0x8                         ; 00484c4f
     FLD float ptr [EBX + 0x8]           ; 00484c52
     FSTP double ptr [ESP]               ; 00484c55
@@ -142,11 +142,11 @@ section .text
     FLD float ptr [EBX]                 ; 00484c64
     FSTP double ptr [ESP]               ; 00484c66
     CALL sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50 ; 00484c69
-        ;   XREF to: 00525f50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50()
+        ;   XREF to: 00525f50 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 00484c6e
     PUSH 0x3f4ccccd                     ; 00484c71
     CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0 ; 00484c76
-        ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0()
+        ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0(float volume)
     ADD ESP,0x4                         ; 00484c7b
     PUSH 0x581127                       ; 00484c7e | = "rock-x.wav"
     JMP 0x00484c06                      ; 00484c83

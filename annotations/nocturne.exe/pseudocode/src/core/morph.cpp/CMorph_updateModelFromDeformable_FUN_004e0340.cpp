@@ -2,14 +2,14 @@
 // Address: 004e0340
 // Address Range: [[004e0340, 004e0370]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(int param_1,int param_2,uint param_3,uint param_4)
+void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index)
 
 {
   core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004df770
-            (param_2 * 0x608 + param_1,param_4,param_3);
+            (this_ptr->models + model_index,part_index,model_ptr);
   return;
 }

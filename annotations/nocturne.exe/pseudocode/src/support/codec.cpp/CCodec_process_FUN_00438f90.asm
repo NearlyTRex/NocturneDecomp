@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CCodec_process_FUN_00438f90(undefined4 param_1,int *param_2,int *param_3,undefined4 param_4)
+; undefined4 support_codec_cpp_CCodec_process_FUN_00438f90(undefined4 param_1,_istream *param_2,int *param_3,_ostream *param_4)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 00438fc6
     PUSH ESI                            ; 00438fc7
     CALL crt_iostream.cpp_istream_get_FUN_00564c53 ; 00438fc8
-        ;   XREF to: 00564c53 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_istream_get_FUN_00564c53()
+        ;   XREF to: 00564c53 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_get_FUN_00564c53(_istream * this_ptr, char * c)
     MOV EAX,dword ptr [ESI]             ; 00438fcd
     MOV EAX,dword ptr [EAX + 0x4]       ; 00438fcf
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x10] ; 00438fd2
@@ -67,7 +67,7 @@ section .text
     PUSH EAX                            ; 00438fea
     PUSH EBP                            ; 00438feb
     CALL crt_iostream.cpp_ostream_put_FUN_00564ce5 ; 00438fec
-        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_put_FUN_00564ce5()
+        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_00564ce5(_ostream * this_ptr, int character)
     ADD ESP,0x8                         ; 00438ff1
     JMP 0x00438fa3                      ; 00438ff4
         ;   XREF to: 00438fa3 (UNCONDITIONAL_JUMP)  ; LAB_00438fa3

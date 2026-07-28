@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(int param_1)
+; void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 0053827e
@@ -38,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1fa08]   ; 0053bed1
     PUSH EAX                            ; 0053bed7
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0053bed8
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0053bedd
     TEST EAX,EAX                        ; 0053bee0
     JZ 0x0053bef4                       ; 0053bee2

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
+; CKeyFramedModel * Stack[0xc]:4   model_ptr
+; int              Stack[0x10]:4   frame_index
+; int              Stack[0x14]:4   part_index
 ;
 ; XREF[3]:
 ;   core_biggs.cpp_FUN_00415760 at 004157f5
@@ -35,7 +41,7 @@ section .text
     ADD EAX,ESI                         ; 004e03aa
     PUSH EAX                            ; 004e03ac
     CALL core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0 ; 004e03ad
-        ;   XREF to: 004df7c0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0()
+        ;   XREF to: 004df7c0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0(CMorphModel * this_ptr, int part_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 004e03b2
     POP ESI                             ; 004e03b5
     POP EBX                             ; 004e03b6

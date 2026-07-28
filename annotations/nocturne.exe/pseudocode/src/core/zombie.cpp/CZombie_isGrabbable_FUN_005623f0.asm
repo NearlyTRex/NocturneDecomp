@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(undefined4 param_1,undefined4 param_2)
+; int core_zombie_cpp_CZombie_isGrabbable_FUN_005623f0(CCharacter *param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005623f5
     PUSH EDX                            ; 005623f9
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 005623fa
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 005623ff
     TEST EAX,EAX                        ; 00562402
     JZ 0x0056240c                       ; 00562404
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00562412
     PUSH EBX                            ; 00562416
     CALL core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0 ; 00562417
-        ;   XREF to: 004280a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0()
+        ;   XREF to: 004280a0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0(CCharacter * this_ptr, CDemonActor * grabber)
     ADD ESP,0x8                         ; 0056241c
     POP EBX                             ; 0056241f
     RET                                 ; 00562420

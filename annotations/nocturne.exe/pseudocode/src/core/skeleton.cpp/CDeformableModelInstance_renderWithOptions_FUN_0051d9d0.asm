@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0(int param_1,int param_2,uint param_3,int param_4,undefined4 param_5)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0(CDeformableModelInstance *this_ptr,int lod_index,uint render_flags,int lighting_mode ,int render_pass)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_index
+; uint             Stack[0xc]:4   render_flags
+; int              Stack[0x10]:4   lighting_mode
+; int              Stack[0x14]:4   render_pass
 ;
 ; XREF[9]:
 ;   core_baron.cpp_FUN_004110f0 at 0041125e
@@ -41,7 +47,7 @@ section .text
         ;   Label: LAB_0051d9e1
     PUSH EBX                            ; 0051d9e2
     CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0 ; 0051d9e3
-        ;   XREF to: 0051dad0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0()
+        ;   XREF to: 0051dad0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051d9e8
     CMP dword ptr [ESP + 0x1c],0x0      ; 0051d9eb
     JNZ 0x0051da34                      ; 0051d9f0
@@ -70,11 +76,11 @@ section .text
     PUSH EAX                            ; 0051da1d
     PUSH EBX                            ; 0051da1e
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051da1f
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051da24
     PUSH EAX                            ; 0051da27
     CALL core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700 ; 0051da28
-        ;   XREF to: 0051a700 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700()
+        ;   XREF to: 0051a700 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
     ADD ESP,0x8                         ; 0051da2d
     MOV ESI,EAX                         ; 0051da30
     JMP 0x0051d9e1                      ; 0051da32
@@ -83,7 +89,7 @@ section .text
         ;   Label: LAB_0051da34
     PUSH EBX                            ; 0051da35
     CALL core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0051db20 ; 0051da36
-        ;   XREF to: 0051db20 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0051db20()
+        ;   XREF to: 0051db20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0051db20(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051da3b
     JMP 0x0051da00                      ; 0051da3e
         ;   XREF to: 0051da00 (UNCONDITIONAL_JUMP)  ; LAB_0051da00
@@ -91,7 +97,7 @@ section .text
         ;   Label: LAB_0051da40
     PUSH EBX                            ; 0051da41
     CALL core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70 ; 0051da42
-        ;   XREF to: 0051db70 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70()
+        ;   XREF to: 0051db70 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051da47
     JMP 0x0051da00                      ; 0051da4a
         ;   XREF to: 0051da00 (UNCONDITIONAL_JUMP)  ; LAB_0051da00

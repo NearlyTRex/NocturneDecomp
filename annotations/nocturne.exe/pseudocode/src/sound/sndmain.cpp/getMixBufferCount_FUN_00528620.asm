@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00528620(void)
+; int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_00528620(void)
 ;
 ;
 ; XREF[1]:

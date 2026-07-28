@@ -110,7 +110,7 @@ section .text
     PUSH EBX                            ; 00549fbe
         ;   Label: LAB_00549fbe
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00549fbf
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x100]     ; 00549fc4
     ADD ESP,0x4                         ; 00549fca
     DEC EAX                             ; 00549fcd

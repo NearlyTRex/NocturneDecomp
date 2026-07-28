@@ -20,7 +20,8 @@ void core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(void)
   _DAT_01c08d2c = 0;
   _DAT_01c08d34 = 0;
   _DAT_01c08d30 = 0xffff;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005b84b4);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b84b4);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
   return;
 }

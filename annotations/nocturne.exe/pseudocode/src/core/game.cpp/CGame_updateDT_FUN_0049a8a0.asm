@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_updateDT_FUN_0049a8a0(int param_1)
+; void __cdecl core_game_cpp_CGame_updateDT_FUN_0049a8a0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6abb
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049ccd2
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7127
-;   core_game.cpp_FUN_0049cc10 at 0049ccd2
 ;   core_menu.cpp_FUN_004d23d0 at 004d24a7
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d0d64
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0163
@@ -35,7 +37,7 @@ section .text
     PUSH EDI                            ; 0049a8a2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0049a8a3
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 0049a8a7
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,dword ptr [EBX + 0x25c]     ; 0049a8ac
     MOV ESI,EAX                         ; 0049a8b2
     SUB EAX,EDX                         ; 0049a8b4
@@ -57,7 +59,7 @@ section .text
     FMUL float ptr [EBX + 0x1ec]        ; 0049a8e4
     MOV EDI,dword ptr [0x01c78acc]      ; 0049a8ea | DAT_01c78acc
     CALL crt_math.c_round_FUN_00563a30  ; 0049a8f0
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x260]       ; 0049a8f5
     TEST EDI,EDI                        ; 0049a8fb
     JNZ 0x0049a938                      ; 0049a8fd
@@ -85,7 +87,7 @@ section .text
     FDIV float ptr [0x005b9360]         ; 0049a93e | DAT_005b9360
     FMUL float ptr [EBX + 0x1ec]        ; 0049a944
     CALL crt_math.c_round_FUN_00563a30  ; 0049a94a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x260]       ; 0049a94f
     JMP 0x0049a8ff                      ; 0049a955
         ;   XREF to: 0049a8ff (UNCONDITIONAL_JUMP)  ; LAB_0049a8ff

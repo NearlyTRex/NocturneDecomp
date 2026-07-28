@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonDepthWritePass_FUN_00406f30(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWritePass_FUN_00406f30(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[2]:
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 00408636
@@ -32,7 +34,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00406f3a
     PUSH EAX                            ; 00406f3d
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00406f3e
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00406f43
     TEST EAX,EAX                        ; 00406f46
     JZ 0x00406f8b                       ; 00406f48

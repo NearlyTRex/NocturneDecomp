@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0055eaa2
         ;   Label: LAB_0055eaa2
     CALL core_zombie.cpp_CZombie_ctor_FUN_0055eac0 ; 0055eaa3
-        ;   XREF to: 0055eac0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_ctor_FUN_0055eac0()
+        ;   XREF to: 0055eac0 (UNCONDITIONAL_CALL)  ; CZombie * core_zombie.cpp_CZombie_ctor_FUN_0055eac0(CZombie * this_ptr)
     ADD ESP,0x4                         ; 0055eaa8
     RET                                 ; 0055eaab
 

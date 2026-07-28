@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(int param_1,float param_2)
+; void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
@@ -55,7 +58,7 @@ section .text
     MOV dword ptr [ESP + 0x78],ECX      ; 004de1de
     MOV ESI,dword ptr [ESI*0x4 + 0x1cae0d8] ; 004de1e2
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004de1e9
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDI,dword ptr [EBX + 0x1fa38]   ; 004de1ee
     ADD ESP,0xc                         ; 004de1f4
     TEST EDI,EDI                        ; 004de1f7
@@ -122,7 +125,7 @@ section .text
     PUSH EDX                            ; 004de2bf
     PUSH EAX                            ; 004de2c0
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 004de2c1
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 004de2c6
     TEST EAX,EAX                        ; 004de2c9
     JZ 0x004de33c                       ; 004de2cb

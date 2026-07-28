@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0045cc70
+;   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH 0x0                            ; 0045cced
     PUSH 0x0                            ; 0045ccef
     PUSH EDX                            ; 0045ccf1
-    CALL cockpit_drawsurf.cpp_FUN_0045cc70 ; 0045ccf2
-        ;   XREF to: 0045cc70 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045cc70()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70 ; 0045ccf2
+        ;   XREF to: 0045cc70 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045ccf7
     RET                                 ; 0045ccfa
 

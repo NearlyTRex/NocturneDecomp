@@ -10,15 +10,16 @@ float core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float param_1,float pa
 
 {
   float fVar1;
-  int iVar2;
+  uint uVar2;
+  int iVar3;
   
   if (*(int *)(0x01C775EC + 0x23c) == 0) {
-    iVar2 = rand();
-    fVar1 = (float)iVar2 * 3.051851e-05f;
+    iVar3 = rand();
+    fVar1 = (float)iVar3 * 3.051851e-05f;
   }
   else {
-    iVar2 = core_actor_cpp_generateRandomValue_FUN_0040dd30();
-    fVar1 = (float)iVar2 * 5.960465e-08f;
+    uVar2 = core_actor_cpp_generateRandomValue_FUN_0040dd30();
+    fVar1 = (float)(int)uVar2 * 5.960465e-08f;
   }
   return fVar1 * (param_2 - param_1) + param_1;
 }

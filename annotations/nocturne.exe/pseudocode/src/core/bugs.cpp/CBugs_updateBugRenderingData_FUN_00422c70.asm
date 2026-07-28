@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(int param_1,int param_2,float param_3)
+; void core_bugs_cpp_CBugs_updateBugRenderingData_FUN_00422c70(CBugs *param_1,SBug *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118
@@ -73,8 +73,8 @@
 ;   float FLOAT_0059aeac = 1
 ;
 ; Called Functions:
+;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
-;   core_bugs.cpp_FUN_00423480
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
@@ -225,7 +225,7 @@ section .text
     FSTP float ptr [ESP + 0xec]         ; 00422e50
     FSTP float ptr [ESP + 0xf0]         ; 00422e57
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00422e5e
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 00422e63
     CMP EBX,EAX                         ; 00422e66
     JZ 0x00422e7a                       ; 00422e68
@@ -263,7 +263,7 @@ section .text
     ADD EBX,EDX                         ; 00422ee4
     MOV dword ptr [ESP + 0x104],EAX     ; 00422ee6
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 00422eed
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00422ef2
     ADD EAX,dword ptr [ESP + 0x100]     ; 00422ef5
     ADD EBX,EBX                         ; 00422efc
@@ -541,7 +541,7 @@ section .text
     PUSH EAX                            ; 00423310
     ADD ESI,0x14                        ; 00423311
     CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 ; 00423314
-        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0()
+        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00423319
     CMP ESI,EAX                         ; 0042331c
     JNZ 0x00423468                      ; 0042331e
@@ -576,7 +576,7 @@ section .text
     LEA EAX,[ESP + 0xb0]                ; 0042337c
     PUSH EAX                            ; 00423383
     CALL core_xform.cpp_transformVector3x4InPlace_FUN_0055a910 ; 00423384
-        ;   XREF to: 0055a910 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4InPlace_FUN_0055a910()
+        ;   XREF to: 0055a910 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4InPlace_FUN_0055a910(CVector3f * input_output_vector, CMatrix3x4f * matrix)
     ADD ESP,0x8                         ; 00423389
     LEA EAX,[ESP + 0xac]                ; 0042338c
     PUSH EAX                            ; 00423393
@@ -591,8 +591,8 @@ section .text
         ;   XREF to: 00423324 (CONDITIONAL_JUMP)  ; LAB_00423324
     PUSH ESI                            ; 004233aa
     PUSH EDI                            ; 004233ab
-    CALL core_bugs.cpp_FUN_00423480     ; 004233ac
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480 ; 004233ac
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 004233b1
     MOV dword ptr [ESI + 0x34],0x0      ; 004233b4
     MOV ESP,EBP                         ; 004233bb
@@ -604,8 +604,8 @@ section .text
     PUSH ESI                            ; 004233c2
         ;   Label: LAB_004233c2
     PUSH EDI                            ; 004233c3
-    CALL core_bugs.cpp_FUN_00423480     ; 004233c4
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480 ; 004233c4
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 004233c9
     MOV dword ptr [ESI + 0x34],0x0      ; 004233cc
     JMP 0x00422cfc                      ; 004233d3
@@ -613,8 +613,8 @@ section .text
     PUSH ESI                            ; 004233d8
         ;   Label: LAB_004233d8
     PUSH EDI                            ; 004233d9
-    CALL core_bugs.cpp_FUN_00423480     ; 004233da
-        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00423480()
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480 ; 004233da
+        ;   XREF to: 00423480 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 004233df
     FLD float ptr [ESP + 0xc]           ; 004233e2
     FLD1                                ; 004233e6

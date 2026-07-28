@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_podmain_cpp_FUN_004f93e0(undefined4 param_1,byte param_2)
+; CPod * core_podmain_cpp_FUN_004f93e0(CPod *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     PUSH 0x1                            ; 004f93ec
     PUSH EBX                            ; 004f93ee
     CALL engine_pod.cpp_CPod_dtor_FUN_004f8840 ; 004f93ef
-        ;   XREF to: 004f8840 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPod_dtor_FUN_004f8840()
+        ;   XREF to: 004f8840 (UNCONDITIONAL_CALL)  ; CPod * engine_pod.cpp_CPod_dtor_FUN_004f8840(CPod * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f93f4
     MOV DL,byte ptr [ESP + 0xc]         ; 004f93f7
     MOV EBX,EAX                         ; 004f93fb
@@ -40,11 +40,11 @@ section .text
         ;   Label: LAB_004f9406
     PUSH EBX                            ; 004f940b
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004f940c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004f9411
     PUSH EAX                            ; 004f9414
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004f9415
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004f941a
     MOV EAX,EBX                         ; 004f941d
     POP EBX                             ; 004f941f

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sample,int channels,int sample_rate)
 ;
+; Parameters:
+; int              Stack[0x4]:4   bits_per_sample
+; int              Stack[0x8]:4   channels
+; int              Stack[0xc]:4   sample_rate
 ;
 ; XREF[7]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2158
@@ -38,7 +42,7 @@ section .text
     PUSH EBP                            ; 005280c2
     SUB ESP,0x4                         ; 005280c3
     CALL sound_sndmain.cpp_isSoundBusy_FUN_00528490 ; 005280c6
-        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundBusy_FUN_00528490()
+        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00528490()
     TEST EAX,EAX                        ; 005280cb
     JNZ 0x00528100                      ; 005280cd
         ;   XREF to: 00528100 (CONDITIONAL_JUMP)  ; LAB_00528100
@@ -94,7 +98,7 @@ section .text
     PUSH 0x4                            ; 00528147
     PUSH EAX                            ; 00528149
     CALL sound_sndmain.cpp_allocMixBuffers_FUN_00522f10 ; 0052814a
-        ;   XREF to: 00522f10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_allocMixBuffers_FUN_00522f10()
+        ;   XREF to: 00522f10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_allocMixBuffers_FUN_00522f10(int requested_size, int num_buffers)
     ADD ESP,0x8                         ; 0052814f
     MOV EAX,0x1                         ; 00528152
     ADD ESP,0x4                         ; 00528157

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 598,
+    "complexity_score": 573,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 51,
+    "pseudocode_lines": 88,
+    "suspect_count": 47,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "unnamed_param"
+      "pointer_truncation",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 215
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -146,7 +146,7 @@
     {
       "addr": "0051f3f0",
       "from_addr": "0051f54a",
-      "name": "core_skeleton.cpp_FUN_0051f3f0",
+      "name": "core_skeleton.cpp_blendBoneTransformData_FUN_0051f3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +160,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0",
-    "signature": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(float *param_1,int param_2)"
+    "signature": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr)"
   },
   "function_calls": [
     {
@@ -208,7 +208,7 @@
       {
         "call_addr": "0051f54a",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0051f3f0",
+        "caller": "core_skeleton.cpp_blendBoneTransformData_FUN_0051f3f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,10 +218,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.261904761904762,
@@ -258,10 +258,10 @@
     "pcode_op_count": 789
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 72,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -340,460 +340,399 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "bone_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SPose *"
+      },
+      {
+        "is_param": true,
+        "name": "instance_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "computeBoneWorldMatrices_FUN_0051f1d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 70,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 71,
-          "message": "Uninitialized variable: local_34",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(float *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(float *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_2c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = param_1 + 0x1f7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1 + 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_30 = param_2 + 0x58;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(float *)((int)param_1",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].w",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7dc) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7dc) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].w",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7dc);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7dc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 37,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7e0) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7e0) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7e0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7e0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 39,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].x",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7e4) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7e4) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 40,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].y",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7e4);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7e4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7ec) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7ec) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 42,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[0].y",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7ec);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 43,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].w",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7f0) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7f0) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7f0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 45,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].w",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7f4) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7f4) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].x",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7f4);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7f4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7fc) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x7fc) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 48,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].x",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7fc);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x7fc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 49,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].y",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x800) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x800) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(float *)((int)param_1",
-      "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x800);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x800);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 51,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[1].y",
       "severity": "moderate",
-      "text": "*(float *)((int)param_1 + local_24 + 0x804) =",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)((int)param_1 + local_24 + 0x804) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 52,
-      "match": "(float *)((int)param_1",
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].w",
       "severity": "moderate",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x804);",
-      "type": "pointer_cast"
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar1[0x193] * *(float *)((int)param_1 + local_24 + 0x804);",
-      "type": "unnamed_param"
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].w",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[0x1fa] = *(float *)(param_2 + 0x58 + iVar2) + *param_1;",
-      "type": "unnamed_param"
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].x",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar3[0x1fa] = *(float *)(param_2 + 0x58 + iVar2) + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[0x1fe] = *(float *)(param_2 + 0x5c + iVar2) + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar3[0x1fe] = *(float *)(param_2 + 0x5c + iVar2) + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar3[0x202] = *(float *)(param_2 + 0x60 + iVar2) + param_1[2];",
-      "type": "unnamed_param"
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].x",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar3[0x202] = *(float *)(param_2 + 0x60 + iVar2) + param_1[2];",
-      "type": "unnamed_param"
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =",
+      "type": "pointer_truncation"
     },
     {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Pointer value `&bone_data->bone_world_matrices[0].m[2].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)&bone_data->bone_world_matrices[0].m[2].y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Uninitialized variable: local_38",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pfVar3[0x1fe] = local_38;",
-      "type": "static_uninitvar"
+      "description": "Pointer value `&instance_ptr->transformed_vertices[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)&instance_ptr->transformed_vertices[0].x",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Uninitialized variable: local_34",
+      "description": "Pointer value `&instance_ptr->transformed_vertices[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)&instance_ptr->transformed_vertices[0].y",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&instance_ptr->transformed_vertices[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pfVar3[0x202] = local_34;",
-      "type": "static_uninitvar"
+      "match": "(int)&instance_ptr->transformed_vertices[0].z",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_30->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)&local_30->x",
+      "severity": "moderate",
+      "text": "(&local_3c,(CVector3f *)((int)&local_30->x + iVar3),local_28 + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 54,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 55,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 57,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 58,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 68,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 76,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(&local_3c,(CVector3f *)((int)&local_30->x + iVar3),local_28 + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 81,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SPose *)&(pSVar2->pose_data).root_position.y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar4 = (SPose *)&(pSVar4->pose_data).bone_rotations[2].x;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_20->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 86,
+      "match": "local_20 = (T *)((local_20->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

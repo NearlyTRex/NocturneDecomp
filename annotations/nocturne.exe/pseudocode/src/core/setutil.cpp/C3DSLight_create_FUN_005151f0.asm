@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(int param_1)
+; CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -59,7 +61,7 @@ section .text
         ;   Label: LAB_0051523a
     PUSH EDI                            ; 0051523d
     CALL core_dlight.cpp_CDemonLight_init_FUN_0044e1e0 ; 0051523e
-        ;   XREF to: 0044e1e0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_init_FUN_0044e1e0()
+        ;   XREF to: 0044e1e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight * this_ptr)
     MOV EAX,dword ptr [EBP + 0x11ec]    ; 00515243
     ADD ESP,0x4                         ; 00515249
     TEST EAX,EAX                        ; 0051524c
@@ -87,7 +89,7 @@ section .text
     ADD EAX,0x110                       ; 0051528e
     PUSH EAX                            ; 00515293
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00515294
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00515299
     MOV EAX,dword ptr [ESP]             ; 0051529c
     MOV EDX,dword ptr [EBP + 0x11c]     ; 0051529f
@@ -150,7 +152,7 @@ section .text
     PUSH ECX                            ; 00515327
     PUSH EAX                            ; 00515328
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_0044e110 ; 00515329
-        ;   XREF to: 0044e110 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_ctor_FUN_0044e110()
+        ;   XREF to: 0044e110 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     ADD ESP,0xc                         ; 0051532e
     JMP 0x00515210                      ; 00515331
         ;   XREF to: 00515210 (UNCONDITIONAL_JUMP)  ; LAB_00515210

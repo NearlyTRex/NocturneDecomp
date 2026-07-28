@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CTrail_process_FUN_00489310(int param_1)
+; void __cdecl core_fire_cpp_CTrail_process_FUN_00489310(CTrail *this_ptr)
 ;
+; Parameters:
+; CTrail *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a5be

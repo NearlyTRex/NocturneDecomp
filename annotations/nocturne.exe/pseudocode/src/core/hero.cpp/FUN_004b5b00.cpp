@@ -2,22 +2,26 @@
 // Address: 004b5b00
 // Address Range: [[004b5b00, 004b5b6e]]
 // Convention: unknown
-// Signature: undefined4 core_hero_cpp_FUN_004b5b00(int param_1)
+// Signature: int core_hero_cpp_FUN_004b5b00(CHero *param_1)
 
 #include "nocturne.h"
 
-uint core_hero_cpp_FUN_004b5b00(int param_1)
+int core_hero_cpp_FUN_004b5b00(CHero *param_1)
 
 {
+  CDemonActor *actor_ptr;
   int iVar1;
-  uint uVar2;
+  int unaff_EBP;
+  CMatrix3x4f *unaff_ESI;
   
-  if (*(int *)(param_1 + 0x1f8d4) == 0) {
+  actor_ptr = (param_1->inventory).selected_item;
+  if (actor_ptr == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(int *)(param_1 + 0x1f8d4),"CHealthItem");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(actor_ptr,"CHealthItem");
   if (iVar1 == 0) {
-    iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x140))(param_1);
+    iVar1 = (*(((param_1->base).base.vtable._uc)->_uc).getCarryObjToBodyXForm)
+                      (&param_1->base,unaff_EBP,unaff_ESI);
     if (iVar1 != 0) {
       return 0;
     }
@@ -26,7 +30,7 @@ uint core_hero_cpp_FUN_004b5b00(int param_1)
       return 0;
     }
   }
-  uVar2 = core_inv_cpp_CInventory_select_FUN_004c1580
-                    (param_1 + 0x1f5a0,*(uint *)(param_1 + 0x1f8d4));
-  return uVar2;
+  iVar1 = core_inv_cpp_CInventory_select_FUN_004c1580
+                    (&param_1->inventory,(param_1->inventory).selected_item);
+  return iVar1;
 }

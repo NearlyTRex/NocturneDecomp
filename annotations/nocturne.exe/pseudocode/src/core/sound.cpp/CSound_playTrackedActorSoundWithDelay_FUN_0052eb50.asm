@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0052eb50(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5 )
+; uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0052eb50(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; char *           Stack[0xc]:4   sound_name
+; CVector3f *      Stack[0x10]:4   position_tracker
+; float            Stack[0x14]:4   delay
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c
 ;
@@ -22,12 +28,12 @@ section .text
     PUSH EBX                            ; 0052eb50
         ;   Label: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0052eb50
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 0052eb51
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     FLD float ptr [ESP + 0x18]          ; 0052eb56
     SUB ESP,0x8                         ; 0052eb5a
     FSTP double ptr [ESP]               ; 0052eb5d
     CALL sound_sndmain.cpp_setNextSfxDelay_FUN_00526210 ; 0052eb60
-        ;   XREF to: 00526210 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxDelay_FUN_00526210()
+        ;   XREF to: 00526210 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxDelay_FUN_00526210(double delay_seconds)
     ADD ESP,0x8                         ; 0052eb65
     PUSH 0x0                            ; 0052eb68
     MOV EDX,dword ptr [ESP + 0x18]      ; 0052eb6a
@@ -40,11 +46,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0052eb7a
     PUSH EBX                            ; 0052eb7e
     CALL core_sound.cpp_playSfxInternal_FUN_0052d120 ; 0052eb7f
-        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_playSfxInternal_FUN_0052d120()
+        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_0052d120(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 0052eb84
     MOV EBX,EAX                         ; 0052eb87
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 0052eb89
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     MOV EAX,EBX                         ; 0052eb8e
     POP EBX                             ; 0052eb90
     RET                                 ; 0052eb91

@@ -19,7 +19,7 @@ struct CGargoyle_ptr_13260 {
     template<typename T> CGargoyle_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CGargoyle_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CGargoyle* operator->() const { return (CGargoyle*)_raw; }
-    CGargoyle* adj() const { return (CGargoyle*)((char*)_raw - offsetof(CGargoyle, base.base.flames)); }
+    CGargoyle* adj() const { return (CGargoyle*)((char*)_raw - offsetof(CGargoyle, base.base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

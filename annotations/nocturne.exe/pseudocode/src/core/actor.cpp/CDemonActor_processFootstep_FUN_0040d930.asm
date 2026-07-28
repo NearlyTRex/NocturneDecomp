@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(int param_1,undefined4 param_2)
+; int core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -70,7 +70,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0040d992 | DAT_005be368
     PUSH EDX                            ; 0040d998 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0040d999
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040d99e
     PUSH 0x0                            ; 0040d9a1
     PUSH EBX                            ; 0040d9a3
@@ -82,7 +82,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0040d9b3 | DAT_005be368
     PUSH EDI                            ; 0040d9b9 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0040d9ba
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     MOV EAX,[0x005be368]                ; 0040d9bf | DAT_005be368
     ADD ESP,0x4                         ; 0040d9c4
     MOV EBP,dword ptr [EAX + 0x14cd4c]  ; 0040d9c7 | DAT_01fa3fd0

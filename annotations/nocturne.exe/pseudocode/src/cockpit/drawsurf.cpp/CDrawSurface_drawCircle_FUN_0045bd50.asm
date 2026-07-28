@@ -1,15 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(CDrawSurface *this_ptr,int center_x,int center_y,int radius)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   center_x
+; int              Stack[0xc]:4   center_y
+; int              Stack[0x10]:4   radius
 ;
 ; XREF[5]:
-;   cockpit_drawsurf.cpp_FUN_0045be40 at 0045be58
-;   cockpit_drawsurf.cpp_FUN_0045be70 at 0045be88
-;   cockpit_drawsurf.cpp_FUN_0045bea0 at 0045beb8
-;   cockpit_drawsurf.cpp_FUN_0045bed0 at 0045bee8
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e469
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_0045bea0 at 0045beb8
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_0045bed0 at 0045bee8
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_0045be40 at 0045be58
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopRight_FUN_0045be70 at 0045be88
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e469
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00
@@ -90,7 +95,7 @@ section .text
     SUB EDI,EBP                         ; 0045bdef
     MOV EBX,EBP                         ; 0045bdf1
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 ; 0045bdf3
-        ;   XREF to: 0045bf00 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00()
+        ;   XREF to: 0045bf00 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0045bdf8
     TEST EBP,EBP                        ; 0045bdfb
     JLE 0x0045bdb4                      ; 0045bdfd
@@ -118,7 +123,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0045be22
     PUSH ECX                            ; 0045be26
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 ; 0045be27
-        ;   XREF to: 0045bf00 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00()
+        ;   XREF to: 0045bf00 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0045be2c
     CMP ESI,EBX                         ; 0045be2f
     JGE 0x0045bdb4                      ; 0045be31

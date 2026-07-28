@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_event_cpp_CEventList_findCounter_FUN_00480900(int param_1,undefined4 param_2)
+; int core_event_cpp_CEventList_findCounter_FUN_00480900(int param_1,char *param_2)
 ;
 ;
 ; XREF[2]:
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_0048091e
     PUSH ESI                            ; 0048091f
     CALL crt_string.c__stricmp_FUN_00564520 ; 00480920
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00480925
     TEST EAX,EAX                        ; 00480928
     JZ 0x00480944                       ; 0048092a

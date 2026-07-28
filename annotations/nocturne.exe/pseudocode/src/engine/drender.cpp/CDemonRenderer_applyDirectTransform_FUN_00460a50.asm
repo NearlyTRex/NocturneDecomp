@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
+; void engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(undefined4 param_1,int *param_2,int *param_3)
 ;
 ;
 ; XREF[8]:
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 004843e7
+;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 00489a42
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489db8
 ;   core_fire.cpp_CRock_render_FUN_00484d40 at 00484d66
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482a33
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483e20
-;   core_fire.cpp_FUN_00489990 at 00489a42
 ;   core_flame.cpp_FUN_0048d5d0 at 0048d6f0
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae21a
 ;
@@ -40,7 +40,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 00460a6a
     PUSH ESI                            ; 00460a6c
     CALL engine_matrix.c_matrixPushAndTransform_FUN_004cd380 ; 00460a6d
-        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_matrixPushAndTransform_FUN_004cd380()
+        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_004cd380(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 00460a72
     POP EBP                             ; 00460a75
     POP ESI                             ; 00460a76
@@ -61,7 +61,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00460a8d
     PUSH EDX                            ; 00460a8f
     CALL engine_matrix.c_matrixPushAndTransform_FUN_004cd380 ; 00460a90
-        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_matrixPushAndTransform_FUN_004cd380()
+        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_004cd380(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 00460a95
     POP EDI                             ; 00460a98
     POP EBP                             ; 00460a99

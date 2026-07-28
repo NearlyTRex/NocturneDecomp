@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(int param_1,undefined4 param_2,undefined4 param_3)
+; int core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CHero *param_1,CDemonActor *param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     PUSH EAX                            ; 005407a9
     PUSH EBX                            ; 005407aa
     CALL core_hero.cpp_CHero_getGrabbed_FUN_004b4c70 ; 005407ab
-        ;   XREF to: 004b4c70 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHero_getGrabbed_FUN_004b4c70()
+        ;   XREF to: 004b4c70 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_getGrabbed_FUN_004b4c70(CHero * this_ptr, CDemonActor * grabber, int grab_type)
     ADD ESP,0xc                         ; 005407b0
     MOV ESI,EAX                         ; 005407b3
     TEST EAX,EAX                        ; 005407b5

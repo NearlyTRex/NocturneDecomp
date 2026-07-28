@@ -1,12 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(int param_1,uint param_2,int param_3)
+; int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(CInventory *this_ptr,uint key_mask,int show_message)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   key_mask
+; int              Stack[0xc]:4   show_message
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047ec93
-;   core_hero.cpp_FUN_004b5270 at 004b5299
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270 at 004b5299
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_used_a_key_005874f9
@@ -47,7 +51,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc]       ; 004c31d9
     PUSH EDX                            ; 004c31dc
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c31dd
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c31e2
     TEST EAX,EAX                        ; 004c31e5
     JZ 0x004c323d                       ; 004c31e7
@@ -61,13 +65,13 @@ section .text
     PUSH 0x40a00000                     ; 004c31f8
     PUSH 0x5874f9                       ; 004c31fd | = "You used a key."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c3202
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c3207
     PUSH EAX                            ; 004c320a
     MOV ESI,dword ptr [0x005b9354]      ; 004c320b | DAT_005b9354
     PUSH ESI                            ; 004c3211 | DAT_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c3212
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     MOV EBP,dword ptr [EDI + 0x4]       ; 004c3217
     ADD ESP,0xc                         ; 004c321a
     TEST EBP,EBP                        ; 004c321d
@@ -99,13 +103,13 @@ section .text
     PUSH 0x40a00000                     ; 004c324f
     PUSH 0x587518                       ; 004c3254 | = "You need the right key"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c3259
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c325e
     PUSH EAX                            ; 004c3261
     MOV ESI,dword ptr [0x005b9354]      ; 004c3262 | DAT_005b9354
     PUSH ESI                            ; 004c3268 | DAT_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c3269
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004c326e
     XOR EAX,EAX                         ; 004c3271
         ;   Label: LAB_004c3271

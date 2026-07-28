@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(int param_1)
+; void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004ada20 at 004add27
+;   core_glass.cpp_CGlass_shatter_FUN_004ada20 at 004add27
 ;
 ; *****************************************************************************
 

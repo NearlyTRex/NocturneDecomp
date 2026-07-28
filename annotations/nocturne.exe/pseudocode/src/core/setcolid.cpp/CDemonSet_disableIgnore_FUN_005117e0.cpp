@@ -2,13 +2,13 @@
 // Address: 005117e0
 // Address Range: [[005117e0, 005117ee]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(int param_1)
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(int param_1)
+void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x15f2ac) = 0xffffffff;
+  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[1].z = -NAN;
   return;
 }

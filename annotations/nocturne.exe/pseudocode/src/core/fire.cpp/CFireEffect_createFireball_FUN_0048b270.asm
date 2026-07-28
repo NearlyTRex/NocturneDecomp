@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; int              Stack[0x10]:4   lighting_active
+; uint             Stack[0x14]:4   sfx_handle
 ;
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 at 00478757
@@ -54,7 +60,7 @@ section .text
     PUSH 0xffff                         ; 0048b2ba
     PUSH 0xc000                         ; 0048b2bf
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0048b2c4
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 0048b2c9
     MOV dword ptr [EBX + 0x38],EAX      ; 0048b2cc
     CMP dword ptr [ESP + 0x1c],0x0      ; 0048b2cf
@@ -70,14 +76,14 @@ section .text
     PUSH EAX                            ; 0048b2f0
     MOV dword ptr [EBX + 0x58],EAX      ; 0048b2f1
     CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0 ; 0048b2f4
-        ;   XREF to: 00526ea0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0()
+        ;   XREF to: 00526ea0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0(uint sfx_handle, CVector3f * position_source_ptr)
     ADD ESP,0x8                         ; 0048b2f9
     LEA EAX,[EBX + 0xc]                 ; 0048b2fc
     PUSH EAX                            ; 0048b2ff
     MOV ECX,dword ptr [EBX + 0x58]      ; 0048b300
     PUSH ECX                            ; 0048b303
     CALL sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0 ; 0048b304
-        ;   XREF to: 00526ff0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0()
+        ;   XREF to: 00526ff0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0(uint sfx_handle, CVector3f * velocity_source_ptr)
     ADD ESP,0x8                         ; 0048b309
     POP EBP                             ; 0048b30c
     POP EDI                             ; 0048b30d

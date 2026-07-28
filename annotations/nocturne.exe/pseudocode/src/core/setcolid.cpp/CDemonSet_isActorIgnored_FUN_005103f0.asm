@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(int param_1,int param_2)
+; int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(CDemonSet *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050eead
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 00510195
-;   core_setcolid.cpp_FUN_00510a40 at 00510c1a
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510c1a
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash
@@ -58,7 +61,7 @@ section .text
     PUSH ECX                            ; 00510436
     PUSH ESI                            ; 00510437
     CALL core_actor.cpp_isOfClassHash_FUN_0040d860 ; 00510438
-        ;   XREF to: 0040d860 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClassHash_FUN_0040d860()
+        ;   XREF to: 0040d860 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040d860(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051043d
     TEST EAX,EAX                        ; 00510440
     JZ 0x00510405                       ; 00510442

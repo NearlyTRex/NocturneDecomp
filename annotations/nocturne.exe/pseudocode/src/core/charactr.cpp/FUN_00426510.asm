@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00426510(int param_1)
+; void core_charactr_cpp_FUN_00426510(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -33,7 +33,7 @@ section .text
     PUSH EBX                            ; 00426526
         ;   Label: LAB_00426526
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00426527
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 0042652c
     PUSH 0x0                            ; 0042652f
     LEA EDX,[ESP + 0x4]                 ; 00426531
@@ -44,19 +44,19 @@ section .text
     ADD ESP,0x8                         ; 00426540
     PUSH EAX                            ; 00426543
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 00426544
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 00426549
     TEST EAX,EAX                        ; 0042654c
     JZ 0x00426559                       ; 0042654e
         ;   XREF to: 00426559 (CONDITIONAL_JUMP)  ; LAB_00426559
     PUSH EBX                            ; 00426550
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 ; 00426551
-        ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20()
+        ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00426556
     PUSH EBX                            ; 00426559
         ;   Label: LAB_00426559
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0042655a
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042655f
     ADD ESP,0x18                        ; 00426562
     POP EBX                             ; 00426565

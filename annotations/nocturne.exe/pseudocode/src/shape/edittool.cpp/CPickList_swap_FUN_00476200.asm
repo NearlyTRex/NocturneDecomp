@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CPickList_swap_FUN_00476200(int param_1,undefined4 param_2,undefined4 param_3)
+; void shape_edittool_cpp_CPickList_swap_FUN_00476200(CStrList *param_1,int param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 0047621a
     PUSH EBP                            ; 0047621e
     CALL shape_edittool.cpp_CStrList_swap_FUN_00474300 ; 0047621f
-        ;   XREF to: 00474300 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_swap_FUN_00474300()
+        ;   XREF to: 00474300 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_swap_FUN_00474300(CStrList * this_ptr, int index1, int index2)
     ADD ESP,0xc                         ; 00476224
     POP EBP                             ; 00476227
     POP EDI                             ; 00476228

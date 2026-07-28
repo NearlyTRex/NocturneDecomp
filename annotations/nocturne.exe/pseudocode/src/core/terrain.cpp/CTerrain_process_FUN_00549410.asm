@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_terrain_cpp_CTerrain_process_FUN_00549410(int *param_1)
+; void __cdecl core_terrain_cpp_CTerrain_process_FUN_00549410(CTerrain *this_ptr)
 ;
+; Parameters:
+; CTerrain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a63cf

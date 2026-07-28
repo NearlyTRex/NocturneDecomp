@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(int param_1,uint *param_2)
+; void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame *this_ptr,SPlayerInput *player_control)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; SPlayerInput *   Stack[0x8]:4   player_control
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -282,7 +285,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f105
     PUSH EAX                            ; 0049f10a
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f10b
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f110
     MOV ESI,dword ptr [EBX + 0x80]      ; 0049f113
         ;   Label: LAB_0049f113
@@ -303,7 +306,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f13e
     PUSH EAX                            ; 0049f143
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f144
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f149
     MOV EDI,dword ptr [EBX + 0x84]      ; 0049f14c
         ;   Label: LAB_0049f14c
@@ -322,7 +325,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f173
     PUSH EAX                            ; 0049f178
     CALL core_inv.cpp_CInventory_selectItem_FUN_004c0950 ; 0049f179
-        ;   XREF to: 004c0950 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectItem_FUN_004c0950()
+        ;   XREF to: 004c0950 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004c0950(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 0049f17e
     MOV EBP,dword ptr [EBX + 0x88]      ; 0049f181
         ;   Label: LAB_0049f181
@@ -341,7 +344,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f1a8
     PUSH EAX                            ; 0049f1ad
     CALL core_inv.cpp_CInventory_selectItem_FUN_004c0950 ; 0049f1ae
-        ;   XREF to: 004c0950 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectItem_FUN_004c0950()
+        ;   XREF to: 004c0950 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004c0950(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 0049f1b3
     MOV ECX,dword ptr [EBX + 0x90]      ; 0049f1b6
         ;   Label: LAB_0049f1b6
@@ -360,7 +363,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f1dd
     PUSH EAX                            ; 0049f1e2
     CALL core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50 ; 0049f1e3
-        ;   XREF to: 004c0a50 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50()
+        ;   XREF to: 004c0a50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 0049f1e8
     MOV ESI,dword ptr [EBX + 0x8c]      ; 0049f1eb
         ;   Label: LAB_0049f1eb
@@ -378,7 +381,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f210
     PUSH EAX                            ; 0049f215
     CALL core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0 ; 0049f216
-        ;   XREF to: 004c32e0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0()
+        ;   XREF to: 004c32e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0049f21b
     MOV EDI,dword ptr [EBX + 0x68]      ; 0049f21e
         ;   Label: LAB_0049f21e
@@ -399,7 +402,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f246
     PUSH EAX                            ; 0049f24b
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f24c
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f251
     MOV EBP,dword ptr [EBX + 0x6c]      ; 0049f254
         ;   Label: LAB_0049f254
@@ -420,7 +423,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f27c
     PUSH EAX                            ; 0049f281
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f282
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f287
     MOV ECX,dword ptr [EBX + 0x70]      ; 0049f28a
         ;   Label: LAB_0049f28a
@@ -441,7 +444,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f2b3
     PUSH EAX                            ; 0049f2b8
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f2b9
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f2be
     MOV ESI,dword ptr [EBX + 0x74]      ; 0049f2c1
         ;   Label: LAB_0049f2c1
@@ -462,7 +465,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f2e9
     PUSH EAX                            ; 0049f2ee
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f2ef
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f2f4
     MOV EDI,dword ptr [EBX + 0x78]      ; 0049f2f7
         ;   Label: LAB_0049f2f7
@@ -483,7 +486,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 0049f31f
     PUSH EAX                            ; 0049f324
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 0049f325
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0049f32a
     MOV EBP,dword ptr [EBX + 0x54]      ; 0049f32d
         ;   Label: LAB_0049f32d
@@ -798,7 +801,7 @@ section .text
         ;   Label: LAB_0049f6f3
     PUSH EAX                            ; 0049f6f4 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049f6f5
-        ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setCameraView_FUN_005088f0()
+        ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0049f6fa
     ADD ESP,0x14                        ; 0049f6fd
     POP EBP                             ; 0049f700

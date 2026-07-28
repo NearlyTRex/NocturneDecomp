@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 497,
+    "complexity_score": 152,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 42,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -216,7 +215,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 *param_6)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)"
   },
   "function_calls": [],
   "globals": [
@@ -468,10 +467,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
     "estimated_params": 6,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.75,
@@ -499,12 +498,55 @@
     "pcode_op_count": 342
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_min",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_max",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_matrix",
+        "offset": 24,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -516,276 +558,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(uint param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == (uint *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != (uint *)&DAT_01fff54c) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_01fff54c",
       "severity": "mild",
-      "text": "if (param_2 != (uint *)&DAT_01fff54c) {",
+      "text": "if (position != (CVector3f *)&DAT_01fff54c) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_01fff54c = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_01fff554 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_01fff550 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != (uint *)&DAT_01fff558) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_01fff558",
       "severity": "mild",
-      "text": "if (param_3 != (uint *)&DAT_01fff558) {",
+      "text": "if (orientation != (UOrientationVector *)&DAT_01fff558) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "_DAT_01fff558 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "_DAT_01fff560 = param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "_DAT_01fff55c = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (param_4 != (uint *)&DAT_01fff564) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_01fff564",
       "severity": "mild",
-      "text": "if (param_4 != (uint *)&DAT_01fff564) {",
+      "text": "if (aabb_min != (CVector3f *)&DAT_01fff564) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_DAT_01fff564 = *param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_DAT_01fff56c = param_4[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_DAT_01fff568 = param_4[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 != (uint *)&DAT_01fff570) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_01fff570",
       "severity": "mild",
-      "text": "if (param_5 != (uint *)&DAT_01fff570) {",
+      "text": "if (aabb_max != (CVector3f *)&DAT_01fff570) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "_DAT_01fff570 = *param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "_DAT_01fff578 = param_5[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "_DAT_01fff574 = param_5[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == (uint *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff580 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff584 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff588 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff590 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff594 = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_DAT_01fff598 = param_6;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -796,36 +598,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "*puVar2 = *param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 50,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(CMatrix3x3f *)((int)rotation_matrix",
       "severity": "moderate",
-      "text": "for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0050ae5b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -834,17 +612,6 @@
       "severity": "moderate",
       "text": "// 0050ae5b: MOVSD.REP ES:EDI,ESI  ; DAT_01fff57c | DAT_01fff580",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 11,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

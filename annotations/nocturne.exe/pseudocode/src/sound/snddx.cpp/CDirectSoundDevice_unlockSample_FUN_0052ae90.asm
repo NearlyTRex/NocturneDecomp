@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 0052af19
         ;   Label: LAB_0052af19
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052af1a
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052af1f
     PUSH EAX                            ; 0052af22
     PUSH 0x594353                       ; 0052af23 | = "Unlock hw sample buffer"

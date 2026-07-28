@@ -2,13 +2,13 @@
 // Address: 00528780
 // Address Range: [[00528780, 005287fc]]
 // Convention: __cdecl
-// Signature: bool __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
+// Signature: int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-bool __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
+int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
 
 {
   int iVar1;
@@ -18,11 +18,11 @@ bool __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
   do {
     if (_DAT_02dc84b0 == 0) break;
     iVar1 = iVar1 + 1;
-    wincore_winrun_cpp_sleep_FUN_00559cc0(0x47ae147b,0x3f847ae1);
+    wincore_winrun_cpp_sleep_FUN_00559cc0(0.01);
   } while (iVar1 < 100);
   if (_DAT_02dc84b0 == 0) {
-    return true;
+    return 1;
   }
   sound_sndmain_cpp_FUN_00529980("killSoundThread - failed!\n");
-  return _DAT_02dc84b0 == 0;
+  return (uint)(_DAT_02dc84b0 == 0);
 }

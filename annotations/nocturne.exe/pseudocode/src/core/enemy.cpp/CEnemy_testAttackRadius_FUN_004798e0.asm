@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+; int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   point
+; float            Stack[0xc]:4   radius
+; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
 ; XREF[17]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004127c4
@@ -78,7 +83,7 @@ section .text
     PUSH 0x0                            ; 00479948
     MOV EAX,dword ptr [EAX]             ; 0047994a
     CALL crt_math.c_round_FUN_00563a30  ; 0047994c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV dword ptr [ESP + 0x10],EAX      ; 00479951
     LEA EAX,[EBX + 0x8]                 ; 00479955
     FISTP dword ptr [ESP + 0x18]        ; 00479958
@@ -92,7 +97,7 @@ section .text
     MOV ESI,dword ptr [0x005b96c4]      ; 0047996e | INT_005b96c4
     PUSH ESI                            ; 00479974
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 00479975
-        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
+        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     MOV EAX,0x1                         ; 0047997a
     ADD ESP,0x14                        ; 0047997f
     MOV ESP,EBP                         ; 00479982

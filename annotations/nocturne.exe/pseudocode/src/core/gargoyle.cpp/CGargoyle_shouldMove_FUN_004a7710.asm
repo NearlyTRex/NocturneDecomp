@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(int param_1)
+; int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004a7710(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined8       Stack[-0x38]:8  local_38

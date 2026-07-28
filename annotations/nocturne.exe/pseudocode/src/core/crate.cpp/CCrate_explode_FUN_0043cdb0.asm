@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(int param_1)
+; void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(CCrate *this_ptr)
 ;
+; Parameters:
+; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_actor.cpp_FUN_0040b300 at 0040bc87

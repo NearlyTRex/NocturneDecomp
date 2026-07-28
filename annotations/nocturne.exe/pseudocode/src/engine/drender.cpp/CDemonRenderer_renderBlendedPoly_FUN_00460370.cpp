@@ -2,13 +2,13 @@
 // Address: 00460370
 // Address Range: [[00460370, 004604b4]]
 // Convention: unknown
-// Signature: int engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(int *param_1,int param_2)
+// Signature: void engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer *param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(int *param_1,int param_2)
+void engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(CDemonRenderer *param_1,int param_2)
 
 {
   int iVar1;
@@ -17,54 +17,53 @@ int engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(int *param_
   int iVar4;
   uint local_14;
   
-  if ((param_1[3] != 0) &&
-     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8), iVar2 == 0)) {
-    return 0;
-  }
-  iVar4 = 0;
-  local_14 = 0xffffffff;
-  iVar2 = param_2;
-  if (0 < *(int *)(param_2 + 4)) {
-    iVar3 = 0;
-    do {
-      iVar1 = *(int *)(iVar2 + 0x18);
-      *(int *)(&DAT_01b4d76c + iVar3) = iVar1;
-      iVar3 = iVar3 + 4;
-      local_14 = local_14 & *(uint *)(*param_1 + 0x10 + iVar1 * 0x30);
-      iVar2 = iVar2 + 0xc;
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < *(int *)(param_2 + 4));
-  }
-  if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-    if (param_1[1] == 0) {
-      if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+  if ((param_1->plane_culling_enabled == 0) ||
+     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_2 + 8)), iVar4 != 0)) {
+    iVar4 = 0;
+    local_14 = 0xffffffff;
+    if (0 < *(int *)(param_2 + 4)) {
+      iVar3 = 0;
+      iVar2 = param_2;
+      do {
+        iVar1 = *(int *)(iVar2 + 0x18);
+        *(int *)(&DAT_01b4d76c + iVar3) = iVar1;
+        iVar3 = iVar3 + 4;
+        local_14 = local_14 & param_1->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+        iVar2 = iVar2 + 0xc;
+        iVar4 = iVar4 + 1;
+      } while (iVar4 < *(int *)(param_2 + 4));
+    }
+    if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
+      if (param_1->face_count == 0) {
+        if (DAT_005b7624 == 0x20) {
+          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        }
+        else {
+          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+        }
+        _DAT_01c039a4 = 6;
+        _DAT_01c039a0 = 0x267;
+        if ((param_1->skip_uv_extraction == 0) && (iVar4 = 0, 0 < *(int *)(param_2 + 4))) {
+          iVar3 = 0;
+          iVar2 = param_2;
+          do {
+            iVar1 = *(int *)(&DAT_01b4d76c + iVar3);
+            param_1->vertex_buffer_ptr[iVar1].u = *(int *)(iVar2 + 0x1c);
+            param_1->vertex_buffer_ptr[iVar1].v = *(int *)(iVar2 + 0x20);
+            iVar2 = iVar2 + 0xc;
+            iVar4 = iVar4 + 1;
+            iVar3 = iVar3 + 4;
+          } while (iVar4 < *(int *)(param_2 + 4));
+        }
       }
       else {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+        _DAT_01c039a0 = 0;
+        _DAT_01c039a4 = 0;
+        _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
       }
-      _DAT_01c039a4 = 6;
-      _DAT_01c039a0 = 0x267;
-      if ((param_1[8] == 0) && (iVar2 = 0, 0 < *(int *)(param_2 + 4))) {
-        iVar3 = 0;
-        iVar4 = param_2;
-        do {
-          iVar1 = *(int *)(&DAT_01b4d76c + iVar3);
-          *(uint *)(*param_1 + 0x18 + iVar1 * 0x30) = *(uint *)(iVar4 + 0x1c);
-          *(uint *)(*param_1 + iVar1 * 0x30 + 0x1c) = *(uint *)(iVar4 + 0x20);
-          iVar4 = iVar4 + 0xc;
-          iVar2 = iVar2 + 1;
-          iVar3 = iVar3 + 4;
-        } while (iVar2 < *(int *)(param_2 + 4));
-      }
+      engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
+                (param_1,*(int *)(param_2 + 4),(int *)&DAT_01b4d76c);
     }
-    else {
-      _DAT_01c039a0 = 0;
-      _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
-    }
-    iVar2 = engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-                      (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);
   }
-  return iVar2;
+  return;
 }

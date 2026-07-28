@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(undefined4 param_1,undefined4 *param_2,undefined4 param_3,char *param_4,char *param_5)
+; void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *this_ptr,SNetworkAddr *sender_addr,int message_id,char *sender_name,char *message)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   sender_addr
+; int              Stack[0xc]:4   message_id
+; char *           Stack[0x10]:4   sender_name
+; char *           Stack[0x14]:4   message
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0 at 004ec0fc
@@ -92,7 +98,7 @@ section .text
     PUSH EBX                            ; 004ec5b2 | DAT_01c775ec
     MOV dword ptr [0x01cea40c],ESI      ; 004ec5b3 | DAT_01cea40c
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004ec5b9
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ec5be
     POP EDI                             ; 004ec5c1
     POP ESI                             ; 004ec5c2
@@ -108,7 +114,7 @@ section .text
     PUSH 0x1cea530                      ; 004ec5db
     PUSH 0x1cea410                      ; 004ec5e0
     CALL crt_string.c_memmove_FUN_00566170 ; 004ec5e5
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004ec5ea
     JMP 0x004ec519                      ; 004ec5ed
         ;   XREF to: 004ec519 (UNCONDITIONAL_JUMP)  ; LAB_004ec519

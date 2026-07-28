@@ -2,13 +2,13 @@
 // Address: 00456220
 // Address Range: [[00456220, 0045622e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(CDoor *this_ptr,float swing_range)
 
 #include "nocturne.h"
 
-void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(int param_1,uint param_2)
+void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(CDoor *this_ptr,float swing_range)
 
 {
-  *(uint *)(param_1 + 0x9c4) = param_2;
+  this_ptr->swing_range = swing_range;
   return;
 }

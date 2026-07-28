@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_CDemonActor_save_FUN_0040c040(char *param_1,int param_2)
+; void core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -45,10 +45,10 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0040c047
     MOV EDI,dword ptr [ESP + 0x20]      ; 0040c04b
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0 ; 0040c04f
-        ;   XREF to: 0040d8c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0()
+        ;   XREF to: 0040d8c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0()
     PUSH EBX                            ; 0040c054
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 0040c055
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040c05a
     MOV DL,byte ptr [EBX]               ; 0040c05d
     MOV ESI,EAX                         ; 0040c05f
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [0x00763e8c],EBX      ; 0040c0c3 | DAT_00763e8c
     MOV [0x00763e88],EAX                ; 0040c0c9 | DAT_00763e88
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040c0ce
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040c0d3
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0040c0d6
     PUSH EBX                            ; 0040c0dc
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x4                         ; 0040c0e3
     PUSH -0x1                           ; 0040c0e6
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040c0e8
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040c0ed
     PUSH EBX                            ; 0040c0f0
     PUSH ESI                            ; 0040c0f1

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
+; void core_path_cpp_CPathMap_previewPathfinding_FUN_004f1500(void)
 ;
 ;
 ; Referenced Globals:
@@ -79,7 +79,7 @@ section .text
     INC EBX                             ; 004f15a3
     ADD ESI,0xe                         ; 004f15a4
     CALL engine_2d.c_drawText_FUN_00402600 ; 004f15a7
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004f15ac
     CMP EBX,0x64                        ; 004f15af
     JL 0x004f1538                       ; 004f15b2

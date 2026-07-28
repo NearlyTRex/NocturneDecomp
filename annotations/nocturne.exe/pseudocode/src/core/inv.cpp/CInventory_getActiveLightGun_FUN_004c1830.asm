@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(int param_1)
+; CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_0053f310 at 0053f60d

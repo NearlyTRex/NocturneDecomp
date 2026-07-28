@@ -1,0 +1,178 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 105,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 110
+  },
+  "cross_references": [
+    {
+      "addr": "00571858",
+      "from_addr": "00571886",
+      "name": "FUN_00571858",
+      "type": "DATA"
+    },
+    {
+      "addr": "005715d0",
+      "from_addr": "005715f2",
+      "name": "crt_signal.c_consoleCtrlHandler_FUN_005715d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005717d8",
+    "address_range": [
+      [
+        "005717d8",
+        "00571854"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_signal.c_processSignal_FUN_005717d8",
+    "signature": "int __watcallStack crt_signal_c_processSignal_FUN_005717d8(int signal_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571564",
+      "is_variadic": false,
+      "name": "crt_signal.c_getSignalHandler_FUN_00571564"
+    },
+    {
+      "addr": "005716d8",
+      "is_variadic": false,
+      "name": "crt_signal.c_raiseFPE_FUN_005716d8"
+    },
+    {
+      "addr": "00571510",
+      "is_variadic": false,
+      "name": "crt_signal.c_setSignalHandler_FUN_00571510"
+    },
+    {
+      "addr": "00571694",
+      "is_variadic": false,
+      "name": "crt_signal.c_unregisterConsoleHandler_FUN_00571694"
+    },
+    {
+      "addr": "00566f98",
+      "is_variadic": false,
+      "name": "crt_unknown.c_reportAbnormalTermination_FUN_00566f98"
+    },
+    {
+      "addr": "00571630",
+      "is_variadic": false,
+      "name": "FUN_00571630"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005717a8",
+      "name": "switchdataD_005717a8",
+      "type": "undefined1*",
+      "value": "0057180b"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 41,
+      "INT_ADD": 19,
+      "INT_AND": 27,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 26,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 19,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 13,
+      "RETURN": 4,
+      "STORE": 14
+    },
+    "pcode_op_count": 230
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "signal_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 5,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcVar1 = (code *)getSignalHandler(signal_number);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 29,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (pcVar1 == (code *)0x2) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

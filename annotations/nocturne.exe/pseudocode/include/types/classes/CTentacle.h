@@ -9,16 +9,16 @@ struct CDemonActor;
 #include "types/classes/CMatrix3x4f.h"
 
 // Structure: CTentacle
-// Ghidra size: 0xbf2c (48940 bytes)
+// Ghidra size: 0xbd94 (48532 bytes)
 #pragma pack(push, 1)
 typedef struct CTentacle {
     CEnemy base; // 0x0
-    float wait_timer; // 0xbebc
-    float chase_timer; // 0xbec0
-    struct CDemonActor* grave_actor; // 0xbec4
-    float target_blend; // 0xbec8
-    CMatrix3x4f target_matrix; // 0xbecc
-    CMatrix3x4f prev_target_matrix; // 0xbefc
+    float wait_timer; // 0xbd24
+    float chase_timer; // 0xbd28
+    struct CDemonActor* grave_actor; // 0xbd2c
+    float target_blend; // 0xbd30
+    CMatrix3x4f target_matrix; // 0xbd34
+    CMatrix3x4f prev_target_matrix; // 0xbd64
 } CTentacle;
 #pragma pack(pop)
 

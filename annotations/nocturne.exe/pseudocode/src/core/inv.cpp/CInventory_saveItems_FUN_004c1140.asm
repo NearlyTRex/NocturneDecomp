@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004c1140(int param_1,undefined4 param_2)
+; void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004c1140(CInventory *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10b8
@@ -38,7 +41,7 @@ section .text
     PUSH ECX                            ; 004c115a
     PUSH ECX                            ; 004c115b
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004c115c
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c1161
     PUSH EAX                            ; 004c1164
     PUSH 0x5acc90                       ; 004c1165 | DAT_005acc90

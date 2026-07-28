@@ -2,55 +2,55 @@
 // Address: 00416b00
 // Address Range: [[00416b00, 00416c31]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(int param_1,float param_2)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(int param_1,float param_2)
+void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart *this_ptr,float delta_time)
 
 {
   float fVar1;
-  uint *puVar2;
-  int iVar3;
-  uint *puVar4;
-  int iVar5;
+  CVector3f *pCVar2;
+  CVector3f *input_local_point;
+  CLocation *pCVar3;
+  int iVar4;
   float local_30;
-  byte local_2c [20];
+  CVector3f local_2c;
   float local_18;
-  int local_14;
+  SBodyPartFire *local_14;
   
-  if (*(int *)(param_1 + 0x744) != 0) {
-    fVar1 = *(float *)(param_1 + 0xcb0) - param_2;
-    *(float *)(param_1 + 0xcb0) = fVar1;
+  if (this_ptr->fire_count != 0) {
+    fVar1 = (float)this_ptr->fire_time_remaining - delta_time;
+    this_ptr->fire_time_remaining = (int)fVar1;
     if (fVar1 < 0.0) {
-      *(uint *)(param_1 + 0x744) = 0;
-      *(uint *)(param_1 + 0xcb0) = 0;
+      this_ptr->fire_count = 0;
+      this_ptr->fire_time_remaining = 0;
       return;
     }
-    iVar5 = 0;
-    if (0 < *(int *)(param_1 + 0x744)) {
-      local_14 = param_1 + 0x748;
-      puVar4 = (uint *)(param_1 + 0x774);
+    iVar4 = 0;
+    if (0 < this_ptr->fire_count) {
+      local_14 = this_ptr->fires;
+      pCVar3 = &this_ptr->fires[0].flame.base.location;
       do {
-        iVar3 = iVar5 * 0x2a8 + local_14;
-        puVar2 = (uint *)
-                 core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_2c,iVar3);
-        *puVar4 = *puVar2;
+        input_local_point = &local_14[iVar4].local_position;
+        pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                           (&this_ptr->base,&local_2c,input_local_point);
+        (pCVar3->position).x = pCVar2->x;
         local_30 = 1.0;
-        puVar4[1] = puVar2[1];
-        puVar4[2] = puVar2[2];
-        if (*(float *)(param_1 + 0xcb0) < (float)5) {
-          local_30 = *(float *)(param_1 + 0xcb0) * (float)0.20000000000000001;
+        (pCVar3->position).y = pCVar2->y;
+        (pCVar3->position).z = pCVar2->z;
+        if ((float)this_ptr->fire_time_remaining < (float)5) {
+          local_30 = (float)this_ptr->fire_time_remaining * (float)0.20000000000000001;
         }
         local_18 = local_30 * (float)1.5;
         fVar1 = (float)3;
-        *(float *)(iVar3 + 0x15c) = local_18;
-        *(float *)(iVar3 + 0x160) = local_30 * fVar1;
-        *(float *)(iVar3 + 0x164) = local_18;
-        core_flame_cpp_CFlame_process_FUN_0048d0c0(iVar3 + 0xc,param_2);
-        iVar5 = iVar5 + 1;
-        puVar4 = puVar4 + 0xaa;
-      } while (iVar5 < *(int *)(param_1 + 0x744));
+        input_local_point[0x1d].x = local_18;
+        input_local_point[0x1d].y = local_30 * fVar1;
+        input_local_point[0x1d].z = local_18;
+        core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(input_local_point + 1),delta_time);
+        iVar4 = iVar4 + 1;
+        pCVar3 = (CLocation *)((int)(pCVar3 + 0x2a) + 8);
+      } while (iVar4 < this_ptr->fire_count);
     }
   }
   return;

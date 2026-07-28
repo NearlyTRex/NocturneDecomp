@@ -27,7 +27,7 @@ section .text
         ;   Label: LAB_00527214
     MOV dword ptr [EAX + 0x114],EDX     ; 00527218
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052721e
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 00527223
     RET                                 ; 00527228
 

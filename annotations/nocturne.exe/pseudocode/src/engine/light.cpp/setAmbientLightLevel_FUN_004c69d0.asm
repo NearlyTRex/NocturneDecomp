@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004c69d0(int param_1)
+; void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004c69d0(int light_level)
 ;
+; Parameters:
+; int              Stack[0x4]:4   light_level
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40 at 00460c59

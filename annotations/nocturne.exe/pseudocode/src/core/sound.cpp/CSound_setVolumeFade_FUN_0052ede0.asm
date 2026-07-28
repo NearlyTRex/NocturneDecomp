@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(CSound *this_ptr,float target_volume,float fade_time)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   target_volume
+; float            Stack[0xc]:4   fade_time
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b4d5

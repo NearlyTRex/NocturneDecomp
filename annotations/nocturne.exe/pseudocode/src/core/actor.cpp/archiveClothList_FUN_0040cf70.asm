@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(int *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(CClothList *cloth_list,char *property_name)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   cloth_list
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_004244b0 at 004245ba
@@ -52,7 +55,7 @@ section .text
         ;   Label: LAB_0040cf89
     PUSH ESI                            ; 0040cf8f
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040cf90
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040cf95
     MOV ESI,EAX                         ; 0040cf98
     TEST EAX,EAX                        ; 0040cf9a
@@ -75,14 +78,14 @@ section .text
     PUSH EBX                            ; 0040cfc1
     PUSH 0x577df5                       ; 0040cfc2 | = "cloth count"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cfc7
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040cfcc
     PUSH EBX                            ; 0040cfcf
         ;   Label: LAB_0040cfcf
     PUSH 0x577e01                       ; 0040cfd0 | = "clothCount"
     XOR EDI,EDI                         ; 0040cfd5
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040cfd7
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     MOV EAX,dword ptr [EBP]             ; 0040cfdc
     ADD ESP,0x8                         ; 0040cfdf
     TEST EAX,EAX                        ; 0040cfe2
@@ -103,7 +106,7 @@ section .text
     PUSH EBX                            ; 0040d003
     PUSH 0x577e16                       ; 0040d004 | = "cloth filename entry"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d009
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d00e
     INC EDI                             ; 0040d011
         ;   Label: LAB_0040d011
@@ -116,7 +119,7 @@ section .text
         ;   Label: LAB_0040d01c
     PUSH ESI                            ; 0040d022
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040d023
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040d028
     MOV ESI,EAX                         ; 0040d02b
     TEST EAX,EAX                        ; 0040d02d
@@ -134,7 +137,7 @@ section .text
         ;   Label: LAB_0040d03b
     PUSH 0x577dd9                       ; 0040d03c | = "Cloth list opening brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d041
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d046
     JMP 0x0040cfa2                      ; 0040d049
         ;   XREF to: 0040cfa2 (UNCONDITIONAL_JUMP)  ; LAB_0040cfa2
@@ -142,7 +145,7 @@ section .text
         ;   Label: LAB_0040d04e
     PUSH 0x577e2b                       ; 0040d04f | = "Cloth list closing brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d054
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d059
     CMP ESI,0xa                         ; 0040d05c
     JNZ 0x0040d01c                      ; 0040d05f
@@ -163,7 +166,7 @@ section .text
     ADD ESP,0x10                        ; 0040d07d
     PUSH 0x1                            ; 0040d080
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040d082
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040d087
     MOV EBX,dword ptr [EBP]             ; 0040d08a
     PUSH EBX                            ; 0040d08d
@@ -200,7 +203,7 @@ section .text
     PUSH -0x1                           ; 0040d0e0
         ;   Label: LAB_0040d0e0
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040d0e2
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040d0e7
     PUSH 0x5acc90                       ; 0040d0ea | DAT_005acc90
     PUSH 0x577e6b                       ; 0040d0ef | = "%s}\n"

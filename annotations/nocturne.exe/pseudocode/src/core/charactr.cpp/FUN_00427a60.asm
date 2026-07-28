@@ -43,7 +43,7 @@ section .text
     PUSH EAX                            ; 00427a9b
     PUSH EDX                            ; 00427a9c
     CALL core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30 ; 00427a9d
-        ;   XREF to: 0051ed30 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30()
+        ;   XREF to: 0051ed30 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0051ed30(CDeformableModelInstance * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int desired_lod_index)
     ADD ESP,0x10                        ; 00427aa2
     MOV dword ptr [EBX + 0x70],0x2      ; 00427aa5
     POP EBX                             ; 00427aac

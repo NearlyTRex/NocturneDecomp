@@ -25,7 +25,7 @@ section .text
     ADD EAX,0x2dc1b78                   ; 00526329
     PUSH EAX                            ; 0052632e
     CALL sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0 ; 0052632f
-        ;   XREF to: 00525eb0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0()
+        ;   XREF to: 00525eb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0(CSfxOptions * this_ptr)
     ADD ESP,0x4                         ; 00526334
     RET                                 ; 00526337
 

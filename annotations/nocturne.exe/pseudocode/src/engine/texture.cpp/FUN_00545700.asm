@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[1]:
-;   engine_texture.cpp_FUN_00545aa0 at 00545ab7
+;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545ab7
 ;
 ; Called Functions:
 ;   engine_special.cpp_drawPolygon_FUN_00532620
@@ -105,7 +105,7 @@ section .text
     MOV dword ptr [ESP + 0x54],ECX      ; 005457d9
     MOV dword ptr [ESP + 0xb0],ECX      ; 005457dd
     CALL engine_special.cpp_drawPolygon_FUN_00532620 ; 005457e4
-        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00532620()
+        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00532620(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EAX,dword ptr [ESI + 0xd3008]   ; 005457e9
     ADD ESP,0xc                         ; 005457ef
     CMP EBX,EAX                         ; 005457f2

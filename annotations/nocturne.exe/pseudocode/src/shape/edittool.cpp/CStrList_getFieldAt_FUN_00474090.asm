@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(undefined4 param_1,char *param_2,undefined4 param_3,int param_4)
+; void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_00474090(CStrList *this_ptr,char *output_buffer,int string_index,int field_number)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   string_index
+; int              Stack[0x10]:4   field_number
 ; Local Variables:
 ; undefined1       Stack[-0x134]:1  local_134
 ;
@@ -27,7 +32,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x13c]     ; 004740a7
     PUSH ECX                            ; 004740ae
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004740af
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004740b4
     MOV ECX,EAX                         ; 004740b7
     TEST EAX,EAX                        ; 004740b9

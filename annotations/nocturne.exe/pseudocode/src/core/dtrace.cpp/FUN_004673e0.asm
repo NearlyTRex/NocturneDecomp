@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dtrace_cpp_FUN_004673e0(int param_1)
+; void core_dtrace_cpp_FUN_004673e0(CDemonRaytrace *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -16,7 +16,7 @@
 ;   undefined4 DAT_005b6d50
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00467560
+;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560
 ;   core_dtrace.cpp_FUN_004675e0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
@@ -38,7 +38,7 @@ section .text
     MOV EDX,dword ptr [0x005b6d50]      ; 004673f0 | DAT_005b6d50
     PUSH EDX                            ; 004673f6
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004673f7
-        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660()
+        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004673fc
     PUSH EBX                            ; 004673ff
     CALL core_dtrace.cpp_FUN_004675e0   ; 00467400
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 00467413 (UNCONDITIONAL_JUMP)  ; LAB_00467413
     PUSH EBX                            ; 00467438
         ;   Label: LAB_00467438
-    CALL core_dtrace.cpp_FUN_00467560   ; 00467439
-        ;   XREF to: 00467560 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00467560()
+    CALL core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560 ; 00467439
+        ;   XREF to: 00467560 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560(CDemonRaytrace * this_ptr)
     XOR EDI,EDI                         ; 0046743e
     ADD ESP,0x4                         ; 00467440
     MOV dword ptr [ESP + 0x8],EDI       ; 00467443
@@ -121,13 +121,13 @@ section .text
     SUB EAX,0x4                         ; 004674be
     PUSH EAX                            ; 004674c1
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004674c2
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004674c7
     MOV ECX,dword ptr [EBP + 0x54]      ; 004674ca
         ;   Label: LAB_004674ca
     PUSH ECX                            ; 004674cd
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004674ce
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004674d3
     MOV ESI,dword ptr [ESP + 0x8]       ; 004674d6
     IMUL EDX,ESI,0x38                   ; 004674da
@@ -158,7 +158,7 @@ section .text
     FSTP float ptr [ESP]                ; 00467529
     PUSH ECX                            ; 0046752c
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 0046752d
-        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760()
+        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 00467532
     MOV ESI,dword ptr [ESP]             ; 00467535
     ADD ESI,0x58                        ; 00467538

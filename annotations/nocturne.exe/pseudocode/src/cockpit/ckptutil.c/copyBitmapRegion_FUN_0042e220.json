@@ -1,0 +1,418 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 286,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 25,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042e220",
+    "address_range": [
+      [
+        "0042e220",
+        "0042e28d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_ckptutil.c_copyBitmapRegion_FUN_0042e220",
+    "signature": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,undefined4 param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d150",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042d150"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.938775510204081,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 45,
+      "INT_ADD": 28,
+      "INT_AND": 31,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 22,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 242
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_8",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_copyBitmapRegion_FUN_0042e220(int param_1,int param_2,uint param_3,void *param_4,int param_5,int param_6,int param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((param_4 != (void *)0x0) && (param_1 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_4 != (void *)0x0) && (param_1 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)(param_1 + param_8 * param_2 + param_7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_8",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)(param_1 + param_8 * param_2 + param_7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)(param_1 + param_8 * param_2 + param_7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)(param_1 + param_8 * param_2 + param_7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (0 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(*pOVar1)(dest_buffer,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(*pOVar1)(dest_buffer,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)param_4",
+      "severity": "moderate",
+      "text": "param_4 = (void *)((int)param_4 + param_5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = (void *)((int)param_4 + param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = (void *)((int)param_4 + param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_4 = (void *)((int)param_4 + param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(void *)((int)dest_buffer",
+      "severity": "moderate",
+      "text": "dest_buffer = (void *)((int)dest_buffer + param_2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "dest_buffer = (void *)((int)dest_buffer + param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "} while (iVar2 < param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `dest_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)dest_buffer",
+      "severity": "moderate",
+      "text": "dest_buffer = (void *)((int)dest_buffer + param_2);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_CChain_process_FUN_0042bca0(int param_1,float param_2)
+; void core_chain_cpp_CChain_process_FUN_0042bca0(CChain *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xf0]:4  local_f0
@@ -159,7 +159,7 @@ section .text
     PUSH EAX                            ; 0042bda5
     PUSH ESI                            ; 0042bda6
     CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 ; 0042bda7
-        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890()
+        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain * this_ptr, CVector3f * out_point)
     MOV EBX,dword ptr [ESI + 0x150]     ; 0042bdac
     DEC EBX                             ; 0042bdb2
     MOV EDX,EAX                         ; 0042bdb3
@@ -238,7 +238,7 @@ section .text
     PUSH EAX                            ; 0042bee6
     PUSH ESI                            ; 0042bee7
     CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 ; 0042bee8
-        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890()
+        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain * this_ptr, CVector3f * out_point)
     MOV EBX,dword ptr [ESI + 0x150]     ; 0042beed
     DEC EBX                             ; 0042bef3
     IMUL EBX,EBX,0x24                   ; 0042bef4
@@ -293,14 +293,14 @@ section .text
     PUSH EBX                            ; 0042bfa9
     PUSH ESI                            ; 0042bfaa
     CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0 ; 0042bfab
-        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0()
+        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 0042bfb0
     PUSH EDI                            ; 0042bfb3
     PUSH EBX                            ; 0042bfb4
     PUSH ESI                            ; 0042bfb5
     ADD EDI,0x24                        ; 0042bfb6
     CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0 ; 0042bfb9
-        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0()
+        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 0042bfbe
     ADD EBX,0x24                        ; 0042bfc1
     MOV EDX,dword ptr [ESP + 0xd0]      ; 0042bfc4
@@ -412,14 +412,14 @@ section .text
     PUSH ESI                            ; 0042c118
     FSTP float ptr [EBX + 0x8]          ; 0042c119
     CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0 ; 0042c11c
-        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0()
+        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 0042c121
     MOV EAX,dword ptr [ESP + 0xbc]      ; 0042c124
     PUSH EAX                            ; 0042c12b
     PUSH EBX                            ; 0042c12c
     PUSH ESI                            ; 0042c12d
     CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0 ; 0042c12e
-        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0()
+        ;   XREF to: 0042baa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 0042c133
     ADD EDI,0x24                        ; 0042c136
     MOV EDX,dword ptr [ESP + 0xbc]      ; 0042c139
@@ -448,7 +448,7 @@ section .text
     PUSH EAX                            ; 0042c18a
     PUSH ESI                            ; 0042c18b
     CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 ; 0042c18c
-        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890()
+        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain * this_ptr, CVector3f * out_point)
     MOV EBX,dword ptr [ESI + 0x150]     ; 0042c191
     DEC EBX                             ; 0042c197
     IMUL EBX,EBX,0x24                   ; 0042c198
@@ -624,12 +624,12 @@ section .text
     MOV EBX,dword ptr [ESI + 0x278]     ; 0042c3a3
     PUSH EBX                            ; 0042c3a9
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0042c3aa
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0042c3af
     MOV EDI,dword ptr [ESI + 0x210]     ; 0042c3b2
     PUSH EDI                            ; 0042c3b8
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0042c3b9
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0042c3be
     TEST EAX,EAX                        ; 0042c3c1
     JZ 0x0042c3f9                       ; 0042c3c3
@@ -670,7 +670,7 @@ section .text
     MOV EAX,[0x005bed68]                ; 0042c41d | DAT_005bed68
     PUSH EAX                            ; 0042c422
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0042c423
-        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90()
+        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
     ADD ESP,0x10                        ; 0042c428
     MOV dword ptr [ESI + 0x278],EAX     ; 0042c42b
     JMP 0x0042c3c5                      ; 0042c431
@@ -679,7 +679,7 @@ section .text
         ;   Label: LAB_0042c433
     PUSH EBX                            ; 0042c439
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0042c43a
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0042c43f
     TEST EAX,EAX                        ; 0042c442
     JNZ 0x0042c491                      ; 0042c444
@@ -687,7 +687,7 @@ section .text
     MOV EDI,dword ptr [ESI + 0x278]     ; 0042c446
     PUSH EDI                            ; 0042c44c
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0042c44d
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0042c452
     TEST EAX,EAX                        ; 0042c455
     JNZ 0x0042c491                      ; 0042c457
@@ -706,7 +706,7 @@ section .text
     MOV EAX,[0x005bed68]                ; 0042c47d | DAT_005bed68
     PUSH EAX                            ; 0042c482
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 0042c483
-        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90()
+        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
     ADD ESP,0x10                        ; 0042c488
     MOV dword ptr [ESI + 0x278],EAX     ; 0042c48b
     MOV dword ptr [ESI + 0x27c],0x3f000000 ; 0042c491
@@ -722,7 +722,7 @@ section .text
     PUSH ECX                            ; 0042c4a8
     MOV dword ptr [ESI + 0x27c],EDX     ; 0042c4a9
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0042c4af
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0042c4b4
     MOV ESP,EBP                         ; 0042c4b7
     POP EBP                             ; 0042c4b9

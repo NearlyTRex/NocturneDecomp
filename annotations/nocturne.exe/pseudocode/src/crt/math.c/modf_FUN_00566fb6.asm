@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   crt_math.c_floor_FUN_005648c0 at 005648d3
 ;   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070 at 004e429e
-;   sound_mp3.cpp_FUN_004e3f80 at 004e3ff1
+;   sound_mp3.cpp_initializeSynthesisDctTable_FUN_004e3f80 at 004e3ff1
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -23,7 +23,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 00566fb7
     FLD ST0                             ; 00566fbb
     CALL crt_math.c_round_FUN_00563a30  ; 00566fbd
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FSUB ST1,ST0                        ; 00566fc2
     MOV EAX,dword ptr [ESP + 0x10]      ; 00566fc4
     FSTP double ptr [EAX]               ; 00566fc8

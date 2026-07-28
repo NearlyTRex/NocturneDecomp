@@ -1,0 +1,130 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
+  },
+  "cross_references": [
+    {
+      "addr": "0056b810",
+      "from_addr": "0056b841",
+      "name": "crt_fstream.cpp_fstreambase_dtor_FUN_0056b810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570449",
+    "address_range": [
+      [
+        "00570449",
+        "005704c0"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_fstream.cpp_filebuf_dtor_FUN_00570449",
+    "signature": "filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_00570449(filebuf *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005723ae",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_filebuf_sync_FUN_005723ae"
+    },
+    {
+      "addr": "00571d9f",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_streambuf_destructor_FUN_00571d9f"
+    },
+    {
+      "addr": "0056445f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_0056445f"
+    },
+    {
+      "addr": "00564494",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00564494"
+    },
+    {
+      "addr": "0056cd52",
+      "is_variadic": false,
+      "name": "FUN_0056cd52"
+    },
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a4b0c",
+      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4b0c",
+      "type": "undefined1*",
+      "value": "0056ff82"
+    },
+    {
+      "addr": "005a4b60",
+      "name": "g_filebufTypeInfo_005a4b60",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.3023255813953485,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 5,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 23,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "LOAD": 13,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 185
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "filebuf *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

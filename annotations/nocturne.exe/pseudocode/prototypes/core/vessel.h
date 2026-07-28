@@ -17,15 +17,15 @@ CDemonActorType * FUN_0054f910(void);
 
 // Original: core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920
 // Address: 0054f920
-int CCryptVessel::ctor(undefined4 param_1);
+CCryptVessel * __cdecl CCryptVessel::ctor(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_FUN_0054fa80
 // Address: 0054fa80
-void FUN_0054fa80(int param_1);
+void FUN_0054fa80(CDemonActor *param_1);
 
 // Original: core_vessel.cpp_CCryptVessel_canPickup_FUN_0054fbc0
 // Address: 0054fbc0
-undefined4 CCryptVessel::canPickup(int param_1,undefined4 param_2);
+undefined4 CCryptVessel::canPickup(int param_1,CDemonActor *param_2);
 
 // Original: core_vessel.cpp_FUN_0054fc00
 // Address: 0054fc00
@@ -61,7 +61,7 @@ void FUN_005504c0(void);
 
 // Original: core_vessel.cpp_CCryptVessel_archive_FUN_00550540
 // Address: 00550540
-void CCryptVessel::archive(int param_1);
+void CCryptVessel::archive(CDemonActor *param_1);
 
 // Original: core_vessel.cpp_FUN_00550650
 // Address: 00550650
@@ -73,4 +73,4 @@ undefined4 * FUN_00550670(int param_1,undefined4 *param_2);
 
 // Original: core_vessel.cpp_FUN_005506c0
 // Address: 005506c0
-int FUN_005506c0(int param_1,byte param_2);
+CDemonActor * FUN_005506c0(CDemonActor *param_1,byte param_2);

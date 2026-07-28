@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00473b60(undefined4 *param_1)
+; CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00473b60(CStrList *this_ptr)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_script.cpp_FUN_004fe490 at 004fe498

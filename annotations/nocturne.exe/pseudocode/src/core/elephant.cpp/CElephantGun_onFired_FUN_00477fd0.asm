@@ -68,7 +68,7 @@ section .text
     FSTP float ptr [ESP + 0x4c]         ; 0047803a
     MOV dword ptr [ESP + 0x50],EDI      ; 0047803e
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00478042
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00478047
     LEA EAX,[ESP + 0x34]                ; 0047804a
     PUSH EAX                            ; 0047804e
@@ -100,7 +100,7 @@ section .text
     PUSH 0x57f164                       ; 0047808e | = "shell.kfm"
         ;   Label: LAB_0047808e
     CALL core_dmodel.cpp_loadModel_FUN_004543b0 ; 00478093
-        ;   XREF to: 004543b0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_004543b0()
+        ;   XREF to: 004543b0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_004543b0(char * filename)
     ADD ESP,0x4                         ; 00478098
     PUSH EAX                            ; 0047809b
     LEA EAX,[ESP + 0x38]                ; 0047809c
@@ -112,7 +112,7 @@ section .text
     MOV EBP,dword ptr [0x005b80f0]      ; 004780a9 | DAT_005b80f0
     PUSH EBP                            ; 004780af
     CALL core_fire.cpp_CFireEffect_createShell_FUN_0048c6b0 ; 004780b0
-        ;   XREF to: 0048c6b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createShell_FUN_0048c6b0()
+        ;   XREF to: 0048c6b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_0048c6b0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
     ADD ESP,0x14                        ; 004780b5
     PUSH 0x57f16e                       ; 004780b8 | = "sh-cock.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004780bd

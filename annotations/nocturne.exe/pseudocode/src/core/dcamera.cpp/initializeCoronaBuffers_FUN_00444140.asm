@@ -20,7 +20,7 @@ section .text
     PUSH 0x7f                           ; 00444145
     PUSH 0x146ba10                      ; 00444147
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0044414c
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ECX,0x13f                       ; 00444151
     ADD ESP,0xc                         ; 00444156
     XOR EAX,EAX                         ; 00444159

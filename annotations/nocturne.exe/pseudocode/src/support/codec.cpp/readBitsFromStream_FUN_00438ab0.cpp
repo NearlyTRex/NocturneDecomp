@@ -2,87 +2,79 @@
 // Address: 00438ab0
 // Address Range: [[00438ab0, 00438c38]]
 // Convention: __cdecl
-// Signature: uint __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(byte *param_1,int param_2,int *param_3,int *param_4)
+// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(byte *param_1,int param_2,int *param_3,int *param_4)
+int __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 {
-  byte bVar1;
+  int iVar1;
   uint uVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
+  uint uVar5;
   byte local_18 [4];
   byte local_14 [4];
   
-  if (param_2 < *(int *)param_1) {
-    uVar4 = *(uint *)(param_1 + 4);
-    *(uint *)(param_1 + 4) = uVar4 >> ((byte)param_2 & 0x1f);
-    uVar4 = ~(-1 << ((byte)param_2 & 0x1f)) & uVar4;
-    *(int *)param_1 = *(int *)param_1 - param_2;
+  if (bit_count < bit_buffer->bits_available) {
+    uVar5 = bit_buffer->accumulated_bits;
+    bit_buffer->accumulated_bits = uVar5 >> ((byte)bit_count & 0x1f);
+    uVar5 = ~(-1 << ((byte)bit_count & 0x1f)) & uVar5;
+    bit_buffer->bits_available = bit_buffer->bits_available - bit_count;
   }
-  else if (param_2 == *(int *)param_1) {
-    param_1[0] = 0;
-    param_1[1] = 0;
-    param_1[2] = 0;
-    param_1[3] = 0;
-    uVar4 = *(uint *)(param_1 + 4);
-    param_1[4] = 0;
-    param_1[5] = 0;
-    param_1[6] = 0;
-    param_1[7] = 0;
+  else if (bit_count == bit_buffer->bits_available) {
+    bit_buffer->bits_available = 0;
+    uVar5 = bit_buffer->accumulated_bits;
+    bit_buffer->accumulated_bits = 0;
   }
   else {
-    bVar1 = *param_1;
-    uVar4 = *(uint *)(param_1 + 4);
-    iVar3 = *(int *)param_1;
-    param_1[0] = 0;
-    param_1[1] = 0;
-    param_1[2] = 0;
-    param_1[3] = 0;
-    param_1[4] = 0;
-    param_1[5] = 0;
-    param_1[6] = 0;
-    param_1[7] = 0;
-    param_2 = param_2 - iVar3;
-    uVar4 = ~(-1 << (bVar1 & 0x1f)) & uVar4;
+    iVar1 = bit_buffer->bits_available;
+    uVar5 = bit_buffer->accumulated_bits;
+    iVar4 = bit_buffer->bits_available;
+    bit_buffer->bits_available = 0;
+    bit_buffer->accumulated_bits = 0;
+    iVar3 = bit_count - iVar4;
+    uVar5 = ~(-1 << ((byte)iVar1 & 0x1f)) & uVar5;
     while( true ) {
-      if (param_2 < 8) {
-        if (0 < param_2) {
-          if ((*param_4 < 1) ||
-             (crt_iostream_cpp_istream_get_FUN_00564c53(param_3,local_18),
-             *(int *)((int)param_3 + *(int *)(*param_3 + 4) + 0x10) != 0)) {
+      if (iVar3 < 8) {
+        if (0 < iVar3) {
+          if ((*bytes_remaining < 1) ||
+             (crt_iostream_cpp_istream_get_FUN_00564c53(istream,(char *)local_18),
+             *(int *)((istream->_ios).padding +
+                     ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) {
             uVar2 = 0xffffffff;
           }
           else {
-            *param_4 = *param_4 + -1;
+            *bytes_remaining = *bytes_remaining + -1;
             uVar2 = (uint)local_18[0];
           }
-          *(uint *)(param_1 + 4) = uVar2;
+          bit_buffer->accumulated_bits = uVar2;
           if ((int)uVar2 < 0) {
-            *(uint *)(param_1 + 4) = uVar4;
-            *(int *)param_1 = iVar3;
-            return 0xffffffff;
+            bit_buffer->accumulated_bits = uVar5;
+            bit_buffer->bits_available = iVar4;
+            return -1;
           }
-          uVar4 = uVar4 | (~(-1 << ((byte)param_2 & 0x1f)) & *(uint *)(param_1 + 4)) <<
-                          ((byte)iVar3 & 0x1f);
-          *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) >> ((byte)param_2 & 0x1f);
-          *(int *)param_1 = 8 - param_2;
+          bit_count._0_1_ = (byte)iVar3;
+          uVar5 = uVar5 | (~(-1 << ((byte)bit_count & 0x1f)) & bit_buffer->accumulated_bits) <<
+                          ((byte)iVar4 & 0x1f);
+          bit_buffer->accumulated_bits = bit_buffer->accumulated_bits >> ((byte)bit_count & 0x1f);
+          bit_buffer->bits_available = 8 - iVar3;
         }
-        return uVar4;
+        return uVar5;
       }
-      if ((*param_4 < 1) ||
-         (crt_iostream_cpp_istream_get_FUN_00564c53(param_3,local_14),
-         *(int *)((int)param_3 + *(int *)(*param_3 + 4) + 0x10) != 0)) break;
-      *param_4 = *param_4 + -1;
-      uVar4 = uVar4 | (uint)local_14[0] << ((byte)iVar3 & 0x1f);
-      param_2 = param_2 + -8;
-      iVar3 = iVar3 + 8;
+      if ((*bytes_remaining < 1) ||
+         (crt_iostream_cpp_istream_get_FUN_00564c53(istream,(char *)local_14),
+         *(int *)((istream->_ios).padding +
+                 ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) break;
+      *bytes_remaining = *bytes_remaining + -1;
+      uVar5 = uVar5 | (uint)local_14[0] << ((byte)iVar4 & 0x1f);
+      iVar3 = iVar3 + -8;
+      iVar4 = iVar4 + 8;
     }
-    *(uint *)(param_1 + 4) = uVar4;
-    *(int *)param_1 = iVar3;
-    uVar4 = 0xffffffff;
+    bit_buffer->accumulated_bits = uVar5;
+    bit_buffer->bits_available = iVar4;
+    uVar5 = 0xffffffff;
   }
-  return uVar4;
+  return uVar5;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(int param_1)
+; void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00411f20(CBat *this_ptr)
 ;
+; Parameters:
+; CBat *           Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
@@ -80,7 +82,7 @@ section .text
     PUSH dword ptr [EBX + 0x18c]        ; 00411fb8
     PUSH EBX                            ; 00411fbe
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 00411fbf
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 00411fc4
     MOV ESP,EBP                         ; 00411fc7
     POP EBP                             ; 00411fc9

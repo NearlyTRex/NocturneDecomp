@@ -15,20 +15,18 @@ void engine_2d_c_FUN_004031a0(int param_1)
   byte bVar1;
   float fVar2;
   float fVar3;
-  byte uVar4;
+  int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
-  float10 fVar9;
-  float10 fVar10;
-  uint uVar11;
-  int iVar12;
-  uint uVar13;
-  uint uVar14;
-  uint uVar15;
-  uint uVar16;
+  double dVar9;
+  double dVar10;
+  int blue;
+  int end_index;
+  float local_58;
   float local_40;
+  float local_2c;
   float local_28;
   float local_24;
   int local_18;
@@ -49,25 +47,25 @@ void engine_2d_c_FUN_004031a0(int param_1)
     local_40 = (float)(byte)(&DAT_01c00648)[iVar8];
     fVar2 = (255.0f - local_40) * 0.0625f;
     local_28 = (float)*(byte *)(iVar8 + 0x1c00649);
+    local_2c = (float)*(byte *)(iVar8 + 0x1c0064a);
     fVar3 = (255.0f - local_28) * 0.0625f;
+    local_58 = (255.0f - local_2c) * 0.0625f;
     iVar5 = local_18;
     do {
-      uVar16 = 0xf5;
-      uVar15 = 10;
       local_40 = local_40 + fVar2;
       local_28 = local_28 + fVar3;
-      uVar14 = 0x4033e4;
-      fVar9 = (float10)round();
-      uVar13 = 0x4033eb;
-      fVar10 = (float10)round((float10)local_28);
-      iVar12 = (int)ROUND(fVar9);
-      uVar11 = 0x403403;
-      fVar9 = (float10)round((float10)local_40);
+      local_2c = local_2c + local_58;
+      dVar9 = round((double)local_2c);
+      end_index = 0x4033eb;
+      dVar10 = round((double)local_28);
+      iVar4 = (int)ROUND(dVar9);
+      local_58 = (float)(int)ROUND(dVar10);
+      blue = 0x403403;
+      dVar9 = round((double)local_40);
       iVar6 = iVar5 + 0x100;
-      uVar4 = engine_2d_c_findBestPaletteMatch_FUN_00401850
-                        ((int)ROUND(fVar9),(int)ROUND(fVar10),uVar11,iVar12,uVar13,uVar14,uVar15,
-                         uVar16);
-      *(byte *)(iVar5 + 0x1bf6620) = uVar4;
+      iVar4 = engine_2d_c_findBestPaletteMatch_FUN_00401850
+                        ((int)ROUND(dVar9),(int)local_58,blue,iVar4,end_index);
+      *(char *)(iVar5 + 0x1bf6620) = (char)iVar4;
       iVar5 = iVar6;
     } while (iVar6 != iVar7);
     iVar8 = iVar8 + 3;

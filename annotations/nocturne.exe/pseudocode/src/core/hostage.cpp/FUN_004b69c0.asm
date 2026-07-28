@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004b69d2
         ;   Label: LAB_004b69d2
     CALL core_hostage.cpp_CHostage_ctor_FUN_004b69f0 ; 004b69d3
-        ;   XREF to: 004b69f0 (UNCONDITIONAL_CALL)  ; undefined core_hostage.cpp_CHostage_ctor_FUN_004b69f0()
+        ;   XREF to: 004b69f0 (UNCONDITIONAL_CALL)  ; CHostage * core_hostage.cpp_CHostage_ctor_FUN_004b69f0(CHostage * this_ptr)
     ADD ESP,0x4                         ; 004b69d8
     RET                                 ; 004b69db
 

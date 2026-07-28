@@ -9,13 +9,17 @@
 void __cdecl core_fire_cpp_loadFireBallAssets_FUN_00483ff0(void)
 
 {
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(0x1c08ec4,"fball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c08ec4);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c09040,"smfball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c09040);
+            ((CKeyFramedModelInstance *)0x1c08ec4,"fball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c08ec4);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c091bc,"grnball.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c091bc);
+            ((CKeyFramedModelInstance *)0x1c09040,"smfball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c09040);
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            ((CKeyFramedModelInstance *)0x1c091bc,"grnball.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c091bc);
   return;
 }

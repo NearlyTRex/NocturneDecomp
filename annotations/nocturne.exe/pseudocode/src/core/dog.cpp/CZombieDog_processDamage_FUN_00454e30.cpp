@@ -2,38 +2,44 @@
 // Address: 00454e30
 // Address Range: [[00454e30, 00454ede]]
 // Convention: unknown
-// Signature: void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(int param_1,int param_2)
+// Signature: void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)
 
 #include "nocturne.h"
 
-void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(int param_1,int param_2)
+void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)
 
 {
+  CDeformableModelInstance *this_ptr;
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   uint uVar3;
+  int iVar4;
   
-  fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
-  *(float *)(param_1 + 0x2434) = fVar1;
+  fVar1 = (param_1->base).hit_points - param_2->damage_amount;
+  this_ptr = &(param_1->base).model;
+  (param_1->base).hit_points = fVar1;
   if (fVar1 <= 0.0) {
-    *(uint *)(param_1 + 0x2434) = 0;
-    iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-    if ((*(int *)(iVar2 + 0x24) == 7) || (*(int *)(iVar2 + 0x24) == 6)) goto LAB_00454e65;
-    uVar3 = 6;
+    (param_1->base).hit_points = 0.0;
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                       (&this_ptr->motion_controller);
+    if ((pSVar2->state_index == 7) || (pSVar2->state_index == 6)) goto LAB_00454e65;
+    iVar4 = 6;
   }
   else {
-    uVar3 = 5;
+    iVar4 = 5;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar3,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+            (&this_ptr->motion_controller,iVar4,1);
 LAB_00454e65:
-  iVar2 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
-                    (0x02DC9450,*(uint *)(param_1 + 0xbd2c));
-  if (iVar2 != 0) {
+  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
+                    (0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));
+  if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
     return;
   }
-  uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"dog2.wav");
-  *(uint *)(param_1 + 0xbd2c) = uVar3;
+  uVar3 = (*((param_1->base).base.vtable._ub)->playSound)
+                    ((CDemonActor *)param_1,"dog2.wav");
+  *(uint *)(param_1[1].base.base.actor_name + 8) = uVar3;
   core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
   return;
 }

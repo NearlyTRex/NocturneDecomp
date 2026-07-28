@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_string_c_splitpath_FUN_00566498(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5 )
+; void __cdecl crt_string_c_splitpath_FUN_00566498(char *path,char *drive,char *dir,char *fname,char *ext)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   path
+; char *           Stack[0x8]:4   drive
+; char *           Stack[0xc]:4   dir
+; char *           Stack[0x10]:4   fname
+; char *           Stack[0x14]:4   ext
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -20,9 +26,9 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00566450
-;   FUN_0056d9f0
-;   FUN_0056da80
+;   crt_string.c_mbtowc_next_FUN_0056da80
+;   crt_string.c_mbtowc_peek_FUN_0056d9f0
+;   crt_unknown.c_strncpy_safe_FUN_00566450
 ;
 ; *****************************************************************************
 
@@ -69,8 +75,8 @@ section .text
         ;   XREF to: 0056650e (CONDITIONAL_JUMP)  ; LAB_0056650e
     PUSH EBX                            ; 005664db
         ;   Label: LAB_005664db
-    CALL FUN_0056d9f0                   ; 005664dc
-        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
+    CALL crt_string.c_mbtowc_peek_FUN_0056d9f0 ; 005664dc
+        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_0056d9f0(char * str)
     MOV ESI,EAX                         ; 005664e1
     ADD ESP,0x4                         ; 005664e3
     CMP EAX,0x2e                        ; 005664e6
@@ -82,8 +88,8 @@ section .text
         ;   XREF to: 00566509 (UNCONDITIONAL_JUMP)  ; LAB_00566509
     PUSH EBX                            ; 005664f0
         ;   Label: LAB_005664f0
-    CALL FUN_0056da80                   ; 005664f1
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005664f1
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     MOV EBX,EAX                         ; 005664f6
     ADD ESP,0x4                         ; 005664f8
     CMP ESI,0x5c                        ; 005664fb
@@ -108,8 +114,8 @@ section .text
     PUSH EDX                            ; 0056651b
     MOV ESI,dword ptr [ESP + 0x2c]      ; 0056651c
     PUSH ESI                            ; 00566520
-    CALL crt_unknown.c_FUN_00566450     ; 00566521
-        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566450()
+    CALL crt_unknown.c_strncpy_safe_FUN_00566450 ; 00566521
+        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_strncpy_safe_FUN_00566450(char * dest, char * src, int length, int maxlen)
     ADD ESP,0x10                        ; 00566526
     TEST EDI,EDI                        ; 00566529
     JNZ 0x0056652f                      ; 0056652b
@@ -123,8 +129,8 @@ section .text
     PUSH EBP                            ; 00566539
     MOV EBP,dword ptr [ESP + 0x30]      ; 0056653a
     PUSH EBP                            ; 0056653e
-    CALL crt_unknown.c_FUN_00566450     ; 0056653f
-        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566450()
+    CALL crt_unknown.c_strncpy_safe_FUN_00566450 ; 0056653f
+        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_strncpy_safe_FUN_00566450(char * dest, char * src, int length, int maxlen)
     ADD ESP,0x10                        ; 00566544
     PUSH 0xff                           ; 00566547
     SUB EBX,EDI                         ; 0056654c
@@ -132,8 +138,8 @@ section .text
     PUSH EDI                            ; 0056654f
     MOV EAX,dword ptr [ESP + 0x34]      ; 00566550
     PUSH EAX                            ; 00566554
-    CALL crt_unknown.c_FUN_00566450     ; 00566555
-        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566450()
+    CALL crt_unknown.c_strncpy_safe_FUN_00566450 ; 00566555
+        ;   XREF to: 00566450 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_strncpy_safe_FUN_00566450(char * dest, char * src, int length, int maxlen)
     ADD ESP,0x10                        ; 0056655a
     ADD ESP,0x4                         ; 0056655d
     POP EBP                             ; 00566560

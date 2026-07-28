@@ -1,30 +1,32 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_ftell_FUN_00566e70(int param_1)
+; long __cdecl crt_stdio_c_ftell_FUN_00566e70(_FILE *file_handle)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[12]:
 ;   core_game.cpp_FUN_004a4170 at 004a42fc
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504ed6
 ;   core_script.cpp_FUN_004febd0 at 004fecb4
-;   crt_unknown.c_FUN_005634b0 at 005634f4
+;   crt_unknown.c_fclose_FUN_005634b0 at 005634f4
 ;   sound_mp3.cpp_FUN_004e28a0 at 004e28d2
 ;   sound_mp3.cpp_FUN_004e7ed0 at 004e7f31
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521f28
-;   sound_sndmain.cpp_FUN_00522480 at 0052262a
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522c52
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527aea
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 0052262a
 ;   ... and 2 more
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_005671e4
-;   FUN_0056bc10
-;   FUN_0056dd60
+;   crt_io.c_tell_FUN_0056bc10
+;   crt_stdio.c_fflush_FUN_0056dd60
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;
 ; *****************************************************************************
 
@@ -43,14 +45,14 @@ section .text
     JZ 0x00566e8d                       ; 00566e82
         ;   XREF to: 00566e8d (CONDITIONAL_JUMP)  ; LAB_00566e8d
     PUSH EBX                            ; 00566e84
-    CALL FUN_0056dd60                   ; 00566e85
-        ;   XREF to: 0056dd60 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dd60()
+    CALL crt_stdio.c_fflush_FUN_0056dd60 ; 00566e85
+        ;   XREF to: 0056dd60 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_0056dd60(_FILE * stream)
     ADD ESP,0x4                         ; 00566e8a
     MOV EDX,dword ptr [EBX + 0x10]      ; 00566e8d
         ;   Label: LAB_00566e8d
     PUSH EDX                            ; 00566e90
-    CALL FUN_0056bc10                   ; 00566e91
-        ;   XREF to: 0056bc10 (UNCONDITIONAL_CALL)  ; undefined FUN_0056bc10()
+    CALL crt_io.c_tell_FUN_0056bc10     ; 00566e91
+        ;   XREF to: 0056bc10 (UNCONDITIONAL_CALL)  ; long crt_io.c_tell_FUN_0056bc10(int file_handle_index)
     MOV ESI,EAX                         ; 00566e96
     ADD ESP,0x4                         ; 00566e98
     MOV EDI,EAX                         ; 00566e9b
@@ -59,7 +61,7 @@ section .text
         ;   XREF to: 00566ed0 (CONDITIONAL_JUMP)  ; LAB_00566ed0
     MOV ECX,dword ptr [EBX + 0x10]      ; 00566ea2
     PUSH ECX                            ; 00566ea5
-    CALL dword ptr [0x005c1ac0]         ; 00566ea6 | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 00566ea6 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV EBP,dword ptr [EBX + 0x4]       ; 00566eac
     ADD ESP,0x4                         ; 00566eaf
     TEST EBP,EBP                        ; 00566eb2
@@ -76,7 +78,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10]      ; 00566ec3
         ;   Label: LAB_00566ec3
     PUSH EDX                            ; 00566ec6
-    CALL dword ptr [0x005c1ac4]         ; 00566ec7 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00566ec7 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 00566ecd
     MOV EAX,EDI                         ; 00566ed0
         ;   Label: LAB_00566ed0

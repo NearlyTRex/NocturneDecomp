@@ -2,40 +2,41 @@
 // Address: 00429560
 // Address Range: [[00429560, 0042965d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
-  int iVar3;
-  int iVar4;
+  float fVar3;
+  CMotionList *pCVar4;
   float local_8;
   
-  if (-1 < *(int *)(param_1 + 0x25c0)) {
-    if (*(int *)(param_1 + 0x25bc) < -1) {
+  if (-1 < this_ptr->gesture_motion_index) {
+    if (this_ptr->gesture_branch_root < -1) {
       PTR_01cc4800 = "..\\core\\charactr.cpp";
       INT_01cc4804 = 0xcdb;
-      core_main_c_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",param_1);
+      core_main_c_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
-    iVar4 = *(int *)(param_1 + 0x25c0) * 0x54c;
-    iVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1 + 0x150);
-    fVar1 = 1.0 / (*(float *)(iVar4 + 0x988 + iVar3) * 0.3f);
-    fVar2 = *(float *)(param_1 + 0x25c4) * fVar1;
-    fVar1 = ((float)*(int *)(iVar4 + 0x9cc + iVar3) - *(float *)(param_1 + 0x25c4)) * fVar1;
+    iVar1 = this_ptr->gesture_motion_index;
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
+                       (&(this_ptr->model).motion_controller);
+    fVar2 = 1.0 / (pCVar4->motions[iVar1].fps * 0.3f);
+    fVar3 = this_ptr->gesture_frame * fVar2;
+    fVar2 = ((float)pCVar4->motions[iVar1].frame_count - this_ptr->gesture_frame) * fVar2;
     local_8 = 0.85;
-    if (fVar2 < 0.85f) {
+    if (fVar3 < 0.85f) {
+      local_8 = fVar3;
+    }
+    if (fVar2 < local_8) {
       local_8 = fVar2;
     }
-    if (fVar1 < local_8) {
-      local_8 = fVar1;
-    }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (param_1 + 0x150,*(uint *)(param_1 + 0x25c0),*(uint *)(param_1 + 0x25c4),
-               local_8,*(uint *)(param_1 + 0x25bc),core_skeleton_cpp_FUN_0051b650);
+              (&this_ptr->model,this_ptr->gesture_motion_index,this_ptr->gesture_frame,local_8,
+               this_ptr->gesture_branch_root,core_skeleton_cpp_FUN_0051b650);
   }
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)
+; void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -20,7 +20,7 @@
 ;   core_charactr.cpp_FUN_004259f0
 ;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_glass.cpp_FUN_004ada20
+;   core_glass.cpp_CGlass_shatter_FUN_004ada20
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
 ;   core_mission.cpp_FUN_004d9110
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_004b6796
     PUSH ESI                            ; 004b679c
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004b679d
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b67a2
     ADD ESP,0x4                         ; 004b67a5
     CMP EAX,0x1                         ; 004b67a8
@@ -87,7 +87,7 @@ section .text
     PUSH EAX                            ; 004b67e3
     PUSH ESI                            ; 004b67e4
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 004b67e5
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 004b67ea
     CMP EAX,0x29a                       ; 004b67ed
     JNZ 0x004b6871                      ; 004b67f2
@@ -107,7 +107,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 004b6813 | DAT_005b7650
     PUSH EDX                            ; 004b6819
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004b681a
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004b681f
     TEST EAX,EAX                        ; 004b6822
     JZ 0x004b67ad                       ; 004b6824
@@ -116,7 +116,7 @@ section .text
     PUSH 0x1                            ; 004b6828
     PUSH ESI                            ; 004b682a
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b682b
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b6830
     MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | g_CGlassActorType_01c78c40.name_hash
     PUSH ECX                            ; 004b6839
@@ -124,11 +124,11 @@ section .text
     MOV ESI,dword ptr [0x005baf90]      ; 004b683f | DAT_005baf90
     PUSH ESI                            ; 004b6845 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 004b6846
-        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0()
+        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004b684b
     PUSH EAX                            ; 004b684e
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b684f
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b6854
     TEST EAX,EAX                        ; 004b6857
     JZ 0x004b67ad                       ; 004b6859
@@ -136,8 +136,8 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 004b685f
     PUSH ESI                            ; 004b6862
     PUSH EAX                            ; 004b6863
-    CALL core_glass.cpp_FUN_004ada20    ; 004b6864
-        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ada20()
+    CALL core_glass.cpp_CGlass_shatter_FUN_004ada20 ; 004b6864
+        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004ada20(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004b6869
     JMP 0x004b67ad                      ; 004b686c
         ;   XREF to: 004b67ad (UNCONDITIONAL_JUMP)  ; LAB_004b67ad
@@ -145,22 +145,22 @@ section .text
         ;   Label: LAB_004b6871
     PUSH EBX                            ; 004b6872
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 004b6873
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004b6878
     JMP 0x004b67d1                      ; 004b687b
         ;   XREF to: 004b67d1 (UNCONDITIONAL_JUMP)  ; LAB_004b67d1
     PUSH ESI                            ; 004b6880
         ;   Label: LAB_004b6880
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 004b6881
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b6886
     PUSH EBX                            ; 004b6889
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004b688a
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004b688f
     PUSH ESI                            ; 004b6892
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 004b6893
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b6898
     PUSH dword ptr [EBP + 0x18]         ; 004b689b
     PUSH EBX                            ; 004b689e

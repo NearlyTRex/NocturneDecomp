@@ -2,17 +2,18 @@
 // Address: 00453040
 // Address Range: [[00453040, 0045307e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(int param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)
 
 {
-  if (*(int *)(param_1 + 0x110) < 1) {
+  if (this_ptr->poly_count < 1) {
     return;
   }
-  core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(param_1,param_2,param_3);
-  core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(param_1,param_3,param_4);
+  core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(this_ptr,frame_index,instance)
+  ;
+  core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(this_ptr,instance,render_flags);
   return;
 }

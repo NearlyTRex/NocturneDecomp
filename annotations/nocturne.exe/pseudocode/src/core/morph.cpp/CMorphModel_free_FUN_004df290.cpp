@@ -2,24 +2,24 @@
 // Address: 004df290
 // Address Range: [[004df290, 004df2e5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(undefined4 *param_1)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(CMorphModel *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(uint *param_1)
+void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(CMorphModel *this_ptr)
 
 {
-  if (param_1[0x16] != 0) {
-    FUN_005638d0(param_1[0x16]);
-    param_1[0x16] = 0;
+  if (this_ptr->points != (SMorphPoint *)0x0) {
+    FUN_005638d0(this_ptr->points);
+    this_ptr->points = (SMorphPoint *)0x0;
   }
-  if (param_1[0x18] != 0) {
-    FUN_005638d0(param_1[0x18]);
-    param_1[0x18] = 0;
+  if (this_ptr->faces != (SMRGLPrimitiveTriangle *)0x0) {
+    FUN_005638d0(this_ptr->faces);
+    this_ptr->faces = (SMRGLPrimitiveTriangle *)0x0;
   }
-  param_1[0x17] = 0;
-  param_1[0x19] = 0;
-  *param_1 = 0;
-  param_1[0x15] = 0;
+  this_ptr->num_faces = 0;
+  this_ptr->num_textures = 0;
+  this_ptr->part_count = 0;
+  this_ptr->num_points = 0;
   return;
 }

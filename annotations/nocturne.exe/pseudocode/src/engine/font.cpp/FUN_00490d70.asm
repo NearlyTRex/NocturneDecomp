@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_00490d70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; void engine_font_cpp_FUN_00490d70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,char *param_6,va_list_t param_7)
 ;
 ;
 ; XREF[1]:
@@ -28,7 +28,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490d8a
     PUSH EAX                            ; 00490d8e
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00490d8f
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00490d94
     MOV EAX,ESP                         ; 00490d97
     PUSH EAX                            ; 00490d99

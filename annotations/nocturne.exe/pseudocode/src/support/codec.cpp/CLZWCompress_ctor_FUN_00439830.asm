@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00439830(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00439830(CLZWCompress *this_ptr,int buffer_size,int num_bits)
 ;
+; Parameters:
+; CLZWCompress *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   buffer_size
+; int              Stack[0xc]:4   num_bits
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_FUN_00446810 at 004469bc
@@ -23,12 +27,12 @@ section .text
         ;   Label: support_codec.cpp_CLZWCompress_ctor_FUN_00439830
     PUSH EAX                            ; 00439834
     CALL support_codec.cpp_CCodec_ctor_FUN_00438f20 ; 00439835
-        ;   XREF to: 00438f20 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CCodec_ctor_FUN_00438f20()
+        ;   XREF to: 00438f20 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_ctor_FUN_00438f20(CCodec * this_ptr)
     ADD ESP,0x4                         ; 0043983a
     ADD EAX,0x4                         ; 0043983d
     PUSH EAX                            ; 00439840
     CALL support_codec.cpp_CLZWDictionary_ctor_FUN_00439350 ; 00439841
-        ;   XREF to: 00439350 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_ctor_FUN_00439350()
+        ;   XREF to: 00439350 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_ctor_FUN_00439350(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 00439846
     SUB EAX,0x4                         ; 00439849
     MOV EDX,dword ptr [ESP + 0x8]       ; 0043984c

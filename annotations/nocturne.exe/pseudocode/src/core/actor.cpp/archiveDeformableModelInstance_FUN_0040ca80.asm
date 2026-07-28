@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,undefined4 param_2)
+; void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
@@ -44,7 +44,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0040caa0
     PUSH ESI                            ; 0040caa4
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0040caa5
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040caaa
     MOV ESI,ESP                         ; 0040caad
     PUSH ESI                            ; 0040caaf
@@ -79,7 +79,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0040cae5
     PUSH ESI                            ; 0040cae9
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0040caea
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040caef
     ADD ESP,0xc8                        ; 0040caf2
     POP EDI                             ; 0040caf8

@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0046f390(int param_1)
+; void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0046f390(CInputString *this_ptr)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 0047110e
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8d6
-;   shape_edittool.cpp_FUN_00470eb0 at 0047110e
 ;
 ; Referenced Globals:
 ;   int INT_005bac64 = 0x1cc30e4
@@ -112,11 +114,11 @@ section .text
         ;   XREF to: 0046f47f (CONDITIONAL_JUMP)  ; LAB_0046f47f
     PUSH EBX                            ; 0046f46d
     CALL shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0 ; 0046f46e
-        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0()
+        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f473
     PUSH EBX                            ; 0046f476
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f477
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f47c
     PUSH 0x52                           ; 0046f47f
         ;   Label: LAB_0046f47f
@@ -130,7 +132,7 @@ section .text
         ;   XREF to: 0046f49c (CONDITIONAL_JUMP)  ; LAB_0046f49c
     PUSH EBX                            ; 0046f493
     CALL shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0 ; 0046f494
-        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0()
+        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f499
     PUSH 0x2e                           ; 0046f49c
         ;   Label: LAB_0046f49c
@@ -144,7 +146,7 @@ section .text
         ;   XREF to: 0046f4b9 (CONDITIONAL_JUMP)  ; LAB_0046f4b9
     PUSH EBX                            ; 0046f4b0
     CALL shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0 ; 0046f4b1
-        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0()
+        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f4b6
     PUSH 0x2f                           ; 0046f4b9
         ;   Label: LAB_0046f4b9
@@ -158,11 +160,11 @@ section .text
         ;   XREF to: 0046f4df (CONDITIONAL_JUMP)  ; LAB_0046f4df
     PUSH EBX                            ; 0046f4cd
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f4ce
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f4d3
     PUSH EBX                            ; 0046f4d6
     CALL shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330 ; 0046f4d7
-        ;   XREF to: 0046f330 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330()
+        ;   XREF to: 0046f330 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f4dc
     PUSH 0x53                           ; 0046f4df
         ;   Label: LAB_0046f4df
@@ -176,10 +178,10 @@ section .text
         ;   XREF to: 0046f4fd (CONDITIONAL_JUMP)  ; LAB_0046f4fd
     PUSH EBX                            ; 0046f4f4
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f4f5
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f4fa
     CALL wincore_winrun.cpp_clearKeypresses_FUN_00558ae0 ; 0046f4fd
-        ;   XREF to: 00558ae0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_clearKeypresses_FUN_00558ae0()
+        ;   XREF to: 00558ae0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_00558ae0()
         ;   Label: LAB_0046f4fd
     POP EBP                             ; 0046f502
         ;   Label: LAB_0046f502
@@ -208,11 +210,11 @@ section .text
         ;   XREF to: 0046f540 (CONDITIONAL_JUMP)  ; LAB_0046f540
     PUSH EBX                            ; 0046f52e
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f52f
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f534
     PUSH EBX                            ; 0046f537
     CALL shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330 ; 0046f538
-        ;   XREF to: 0046f330 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330()
+        ;   XREF to: 0046f330 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f53d
     PUSH 0x53                           ; 0046f540
         ;   Label: LAB_0046f540
@@ -226,11 +228,11 @@ section .text
         ;   XREF to: 0046f502 (CONDITIONAL_JUMP)  ; LAB_0046f502
     PUSH EBX                            ; 0046f554
     CALL shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0 ; 0046f555
-        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0()
+        ;   XREF to: 0046f2e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f55a
     PUSH EBX                            ; 0046f55d
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f55e
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f563
     POP EBP                             ; 0046f566
     POP EDI                             ; 0046f567
@@ -243,7 +245,7 @@ section .text
         ;   XREF to: 0046f578 (CONDITIONAL_JUMP)  ; LAB_0046f578
     PUSH EBX                            ; 0046f56f
     CALL shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130 ; 0046f570
-        ;   XREF to: 0046f130 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130()
+        ;   XREF to: 0046f130 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f575
     PUSH 0x53                           ; 0046f578
         ;   Label: LAB_0046f578
@@ -261,7 +263,7 @@ section .text
         ;   XREF to: 0046f5ad (CONDITIONAL_JUMP)  ; LAB_0046f5ad
     PUSH EBX                            ; 0046f59f
     CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250 ; 0046f5a0
-        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250()
+        ;   XREF to: 0046f250 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f5a5
     POP EBP                             ; 0046f5a8
     POP EDI                             ; 0046f5a9
@@ -274,7 +276,7 @@ section .text
     PUSH EDX                            ; 0046f5b1
     PUSH EBX                            ; 0046f5b2
     CALL shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0 ; 0046f5b3
-        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0()
+        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString * this_ptr, int start_pos, int end_pos)
     ADD ESP,0xc                         ; 0046f5b8
     POP EBP                             ; 0046f5bb
     POP EDI                             ; 0046f5bc

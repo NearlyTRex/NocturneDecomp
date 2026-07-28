@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(void)
+; void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d08a
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d08a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c
@@ -50,7 +52,7 @@ section .text
     JL 0x004a3a21                       ; 004a3997
         ;   XREF to: 004a3a21 (CONDITIONAL_JUMP)  ; LAB_004a3a21
     CALL core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 ; 004a399d
-        ;   XREF to: 004a3860 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_calculateIrisFadeCenter_FUN_004a3860()
+        ;   XREF to: 004a3860 (UNCONDITIONAL_CALL)  ; void core_game.cpp_calculateIrisFadeCenter_FUN_004a3860()
     CMP dword ptr [0x005b7624],0x20     ; 004a39a2 | DAT_005b7624
     JNZ 0x004a3a13                      ; 004a39a9
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
@@ -59,7 +61,7 @@ section .text
     MOV EAX,[0x005b7620]                ; 004a39b3 | DAT_005b7620
     XOR ESI,ESI                         ; 004a39b8
     CALL crt_math.c_round_FUN_00563a30  ; 004a39ba
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 004a39bf
     TEST EAX,EAX                        ; 004a39c2
     JLE 0x004a3a13                      ; 004a39c4
@@ -116,7 +118,7 @@ section .text
     PUSH 0x0                            ; 004a3a34
     PUSH 0x0                            ; 004a3a36
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004a3a38
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     MOV EDI,dword ptr [0x005b761c]      ; 004a3a3d | DAT_005b761c
     ADD ESP,0x14                        ; 004a3a43
     JMP 0x004a3a13                      ; 004a3a46

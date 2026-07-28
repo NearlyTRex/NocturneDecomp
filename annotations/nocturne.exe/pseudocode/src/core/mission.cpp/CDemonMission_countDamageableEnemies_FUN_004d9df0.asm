@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(int param_1)
+; int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df8a
@@ -31,7 +33,7 @@ section .text
     PUSH EDX                            ; 004d9e08
     PUSH EBX                            ; 004d9e09
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004d9e0a
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d9e0f
     TEST EAX,EAX                        ; 004d9e12
     JNZ 0x004d9e25                      ; 004d9e14

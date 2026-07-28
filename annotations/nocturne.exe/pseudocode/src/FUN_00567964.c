@@ -19,7 +19,7 @@ int FUN_00567964(int param_1,int *param_2)
   byte *unaff_EBX;
   int iVar6;
   int iVar7;
-  byte local_1c [4];
+  wchar_t local_1c [2];
   byte local_18;
   byte local_17;
   
@@ -67,11 +67,11 @@ int FUN_00567964(int param_1,int *param_2)
         if ((_DAT_02de5c30 != 0) && ((*(byte *)(bVar4 + 0x2de5c41) & 1) != 0)) {
           local_17 = FUN_00567540(param_1);
         }
-        iVar5 = FUN_0056f040(local_1c,&local_18,2);
+        iVar5 = mbtowc(local_1c,(char *)&local_18,2);
         if (iVar5 == -1) {
           return 0;
         }
-        *(short *)unaff_EBX = local_1c._0_2_;
+        *(short *)unaff_EBX = local_1c[0];
         unaff_EBX = unaff_EBX + 2;
       }
     }

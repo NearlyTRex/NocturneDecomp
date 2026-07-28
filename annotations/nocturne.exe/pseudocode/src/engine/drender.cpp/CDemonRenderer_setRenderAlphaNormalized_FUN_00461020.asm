@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020(undefined4 param_1,float param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020(CDemonRenderer *this_ptr,float render_alpha)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   render_alpha
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -27,12 +30,12 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 00461023
     FMUL double ptr [0x0057dc95]        ; 00461027 | DOUBLE_0057dc95
     CALL crt_math.c_round_FUN_00563a30  ; 0046102d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 00461032
     MOV EDX,dword ptr [ESP]             ; 00461035
     PUSH EDX                            ; 00461038
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00461039
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0046103e
     ADD ESP,0x4                         ; 00461041
     RET                                 ; 00461044

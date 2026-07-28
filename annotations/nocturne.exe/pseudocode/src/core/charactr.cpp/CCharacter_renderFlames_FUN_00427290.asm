@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_00427290(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_00427290(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -27,7 +29,7 @@ section .text
     PUSH EAX                            ; 004272a1
     XOR EDI,EDI                         ; 004272a2
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004272a4
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004272a9
     MOV EDX,dword ptr [EBP + 0x2f08]    ; 004272ac
     MOV dword ptr [ESP],EAX             ; 004272b2

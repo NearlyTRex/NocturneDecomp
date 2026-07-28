@@ -1,32 +1,34 @@
 // Name: core_batman.cpp_CBatman_ctor_FUN_004133e0
 // Address: 004133e0
 // Address Range: [[004133e0, 00413490]]
-// Convention: unknown
-// Signature: int core_batman_cpp_CBatman_ctor_FUN_004133e0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_004133e0(CBatman *this_ptr)
 
 #include "nocturne.h"
 
-int core_batman_cpp_CBatman_ctor_FUN_004133e0(uint param_1)
+CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_004133e0(CBatman *this_ptr)
 
 {
   char cVar1;
   float fVar2;
   float fVar3;
-  int iVar4;
+  CBatman *pCVar4;
   char *pcVar5;
   char *pcVar6;
   
-  iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
+  pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
   pcVar5 = "none";
-  *(byte ***)(iVar4 + 0x14c) = &PTR_core_batman_cpp_CBatman_setup_FUN_004134a0_0059a164;
-  pcVar6 = (char *)(iVar4 + 0xbd24);
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar4 + 0x150,"batman.dfm");
+  (pCVar4->base).base.base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_batman_cpp_CBatman_setup_FUN_004134a0_0059a164;
+  pcVar6 = pCVar4->fall_event;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (&(pCVar4->base).base.model,"batman.dfm");
   fVar2 = 50.0f;
-  *(uint *)(iVar4 + 0x2dd4) = 0x3f19999a;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
   fVar3 = 100.0f;
-  *(uint *)(iVar4 + 0x2dd8) = 0x40000000;
-  *(float *)(iVar4 + 0x2ddc) = fVar2;
-  *(float *)(iVar4 + 0x2de0) = fVar3;
+  (pCVar4->base).base.collision_cylinder_radius = 2.0;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -36,10 +38,10 @@ int core_batman_cpp_CBatman_ctor_FUN_004133e0(uint param_1)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar4 + 0xbdc0) = 0;
-  *(uint *)(iVar4 + 0xbdc4) = 0;
-  *(uint *)(iVar4 + 0xbdd0) = 0;
-  *(uint *)(iVar4 + 0xbdcc) = *(uint *)(iVar4 + 0xbdd0);
-  *(uint *)(iVar4 + 0xbdc8) = *(uint *)(iVar4 + 0xbdcc);
-  return iVar4;
+  pCVar4->mist_state = 0;
+  pCVar4->vanish_timer = 0.0;
+  (pCVar4->new_pos).z = 0.0;
+  (pCVar4->new_pos).y = (pCVar4->new_pos).z;
+  (pCVar4->new_pos).x = (pCVar4->new_pos).y;
+  return pCVar4;
 }

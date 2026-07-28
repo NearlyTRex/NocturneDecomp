@@ -24,11 +24,11 @@ section .text
     ADD EAX,0x150                       ; 0054472b
     PUSH EAX                            ; 00544730
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00544731
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00544736
     PUSH EAX                            ; 00544739
     CALL crt_string.c__stricmp_FUN_00564520 ; 0054473a
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054473f
     TEST EAX,EAX                        ; 00544742
     JNZ 0x0054474d                      ; 00544744

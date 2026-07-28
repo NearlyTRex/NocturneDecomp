@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0(LPCSTR param_1,LPCSTR param_2,BYTE *param_3)
+; void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0(char *key_path,char *value_name,char *value_data)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   key_path
+; char *           Stack[0x8]:4   value_name
+; char *           Stack[0xc]:4   value_data
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined        Stack[-0x8]:1  local_8

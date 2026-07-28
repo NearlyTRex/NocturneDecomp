@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_getSocketName_FUN_005491e0(undefined4 *param_1)
+; int __cdecl support_trisock_cpp_getSocketName_FUN_005491e0(_SOCKET *socket_handle,SNetworkAddr *out_address)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; SNetworkAddr *   Stack[0x8]:4   out_address
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9dce

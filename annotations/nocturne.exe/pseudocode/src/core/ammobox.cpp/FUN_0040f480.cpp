@@ -2,11 +2,11 @@
 // Address: 0040f480
 // Address Range: [[0040f480, 0040f4ab]]
 // Convention: unknown
-// Signature: undefined4 core_ammobox_cpp_FUN_0040f480(int param_1,undefined4 param_2)
+// Signature: undefined4 core_ammobox_cpp_FUN_0040f480(int param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_ammobox_cpp_FUN_0040f480(int param_1,uint param_2)
+uint core_ammobox_cpp_FUN_0040f480(int param_1,CDemonActor *param_2)
 
 {
   int iVar1;

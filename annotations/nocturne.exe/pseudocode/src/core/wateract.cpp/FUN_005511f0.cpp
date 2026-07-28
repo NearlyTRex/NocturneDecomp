@@ -9,12 +9,12 @@
 void core_wateract_cpp_FUN_005511f0(void)
 
 {
-  int iVar1;
+  CWaterActor *this_ptr;
   
-  iVar1 = FUN_0056497c(0x2b230);
-  if (iVar1 == 0) {
+  this_ptr = (CWaterActor *)FUN_0056497c(0x2b230);
+  if (this_ptr == (CWaterActor *)0x0) {
     return;
   }
-  core_wateract_cpp_CWaterActor_ctor_FUN_00551220(iVar1);
+  core_wateract_cpp_CWaterActor_ctor_FUN_00551220(this_ptr);
   return;
 }

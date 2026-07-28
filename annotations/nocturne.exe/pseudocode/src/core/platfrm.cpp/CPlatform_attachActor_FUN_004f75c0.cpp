@@ -2,63 +2,63 @@
 // Address: 004f75c0
 // Address Range: [[004f75c0, 004f76b5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(int param_1,int param_2)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(int param_1,int param_2)
+void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
-  int iVar2;
+  CDemonActor *pCVar1;
+  CPlatform *pCVar2;
   int iVar3;
-  uint *puVar4;
-  uint *puVar5;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
   byte local_a0 [48];
-  uint local_70 [12];
-  byte local_40 [48];
+  float local_70 [12];
+  CMatrix3x4f local_40;
   
   bVar6 = 0;
-  if (param_2 != 0) {
-    iVar2 = 0;
-    iVar3 = *(int *)(param_1 + 0x514);
-    iVar1 = param_1;
-    while (param_2 != iVar3) {
-      iVar2 = iVar2 + 1;
-      if (9 < iVar2) {
-        iVar3 = *(int *)(param_1 + 0x514);
-        iVar2 = 0;
-        iVar1 = param_1;
+  if (actor != (CDemonActor *)0x0) {
+    iVar3 = 0;
+    pCVar1 = this_ptr->attach_actors[0].actor;
+    pCVar2 = this_ptr;
+    while (actor != pCVar1) {
+      iVar3 = iVar3 + 1;
+      if (9 < iVar3) {
+        pCVar1 = this_ptr->attach_actors[0].actor;
+        iVar3 = 0;
+        pCVar2 = this_ptr;
         while( true ) {
-          if (iVar3 == 0) {
+          if (pCVar1 == (CDemonActor *)0x0) {
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                      (local_a0,param_2 + 0x20,param_2 + 0x30);
+                      (local_a0,&actor->location,&actor->orient);
             core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
-                      (local_40,param_1 + 0x20,param_1 + 0x30);
-            *(int *)(iVar1 + 0x514) = param_2;
-            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_a0,local_40);
-            puVar4 = local_70;
-            puVar5 = (uint *)(iVar1 + 0x518);
+                      (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
+            pCVar2->attach_actors[0].actor = actor;
+            core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_a0,&local_40);
+            pfVar4 = local_70;
+            pCVar5 = &pCVar2->attach_actors[0].matrix;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-              *puVar5 = *puVar4;
-              puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-              puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+              pCVar5->m[0].w = *pfVar4;
+              pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+              pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
             }
             return;
           }
-          iVar2 = iVar2 + 1;
-          if (9 < iVar2) break;
-          iVar3 = *(int *)(iVar1 + 0x548);
-          iVar1 = iVar1 + 0x34;
+          iVar3 = iVar3 + 1;
+          if (9 < iVar3) break;
+          pCVar1 = pCVar2->attach_actors[1].actor;
+          pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
         }
         PTR_01cc4800 = "..\\core\\platfrm.cpp";
         INT_01cc4804 = 0x3d0;
         core_main_c_FUN_004c8440("CPlatform::attachActor - too many!");
         return;
       }
-      iVar3 = *(int *)(iVar1 + 0x548);
-      iVar1 = iVar1 + 0x34;
+      pCVar1 = pCVar2->attach_actors[1].actor;
+      pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
     }
   }
   return;

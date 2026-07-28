@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int param_2,int param_3)
+; void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *input_samples,float *output_samples,int mpeg_block_type)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input_samples
+; float *          Stack[0x8]:4   output_samples
+; int              Stack[0xc]:4   mpeg_block_type
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
@@ -391,7 +395,7 @@ section .text
     PUSH ESI                            ; 004e75ca
     MOV EBX,dword ptr [EBP + 0x14]      ; 004e75cb
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004e75ce
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004e75d3
     MOV EDX,ESI                         ; 004e75d6
     XOR ECX,ECX                         ; 004e75d8

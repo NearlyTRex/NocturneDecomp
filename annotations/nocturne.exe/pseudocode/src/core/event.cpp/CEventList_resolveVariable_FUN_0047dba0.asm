@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_CEventList_resolveVariable_FUN_0047dba0(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_0047dba0(CEventList *this_ptr,char *identifier)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   identifier
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e2b7
@@ -30,7 +33,7 @@ section .text
     PUSH 0x580227                       ; 0047dbac | = "TRUE"
     PUSH EBP                            ; 0047dbb1
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047dbb2
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047dbb7
     TEST EAX,EAX                        ; 0047dbba
     JZ 0x0047dbfa                       ; 0047dbbc
@@ -45,7 +48,7 @@ section .text
         ;   Label: LAB_0047dbd0
     PUSH EBX                            ; 0047dbd1
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047dbd2
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047dbd7
     TEST EAX,EAX                        ; 0047dbda
     JZ 0x0047dbfa                       ; 0047dbdc
@@ -60,7 +63,7 @@ section .text
         ;   Label: LAB_0047dbec
     PUSH EDI                            ; 0047dbed
     CALL core_event.cpp_CEventList_findPersistentEvent_FUN_00480810 ; 0047dbee
-        ;   XREF to: 00480810 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findPersistentEvent_FUN_00480810()
+        ;   XREF to: 00480810 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findPersistentEvent_FUN_00480810(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 0047dbf3
     TEST EAX,EAX                        ; 0047dbf6
     JL 0x0047dc04                       ; 0047dbf8
@@ -76,7 +79,7 @@ section .text
         ;   Label: LAB_0047dc04
     PUSH EDI                            ; 0047dc05
     CALL core_event.cpp_CEventList_findGameFlag_FUN_00480860 ; 0047dc06
-        ;   XREF to: 00480860 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findGameFlag_FUN_00480860()
+        ;   XREF to: 00480860 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findGameFlag_FUN_00480860(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 0047dc0b
     TEST EAX,EAX                        ; 0047dc0e
     JGE 0x0047dbfa                      ; 0047dc10
@@ -84,7 +87,7 @@ section .text
     PUSH EBP                            ; 0047dc12
     PUSH EDI                            ; 0047dc13
     CALL core_event.cpp_CEventList_findTimer_FUN_004808b0 ; 0047dc14
-        ;   XREF to: 004808b0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findTimer_FUN_004808b0()
+        ;   XREF to: 004808b0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findTimer_FUN_004808b0(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 0047dc19
     TEST EAX,EAX                        ; 0047dc1c
     JGE 0x0047dbfa                      ; 0047dc1e

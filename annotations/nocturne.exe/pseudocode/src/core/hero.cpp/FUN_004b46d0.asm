@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_FUN_004b46d0(undefined4 param_1)
+; CDemonActor * core_hero_cpp_FUN_004b46d0(CCharacter *param_1)
 ;
 ;
 ; XREF[9]:
@@ -34,17 +34,17 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004b46d1
     PUSH EBX                            ; 004b46d5
     CALL core_charactr.cpp_CCharacter_ctor_FUN_00423f40 ; 004b46d6
-        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_ctor_FUN_00423f40()
+        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00423f40(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004b46db
     ADD EAX,0xbcc0                      ; 004b46de
     PUSH EAX                            ; 004b46e3
     CALL core_path.cpp_CPathMap_ctor_FUN_004efd50 ; 004b46e4
-        ;   XREF to: 004efd50 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_ctor_FUN_004efd50()
+        ;   XREF to: 004efd50 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_ctor_FUN_004efd50(CPathMap * this_ptr)
     ADD ESP,0x4                         ; 004b46e9
     ADD EAX,0x138e0                     ; 004b46ec
     PUSH EAX                            ; 004b46f1
     CALL core_inv.cpp_CInventory_ctor_FUN_004bedc0 ; 004b46f2
-        ;   XREF to: 004bedc0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_ctor_FUN_004bedc0()
+        ;   XREF to: 004bedc0 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_ctor_FUN_004bedc0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004b46f7
     PUSH 0x2c                           ; 004b46fa
     LEA EBX,[EAX + 0xfffe0a60]          ; 004b46fc
@@ -54,7 +54,7 @@ section .text
     PUSH EAX                            ; 004b4710
     MOV dword ptr [EBX + 0x14c],0x59eb34 ; 004b4711 | PTR_core_hero.cpp_FUN_004b48d0_0059eb34
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004b471b
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xbc8c],0x0    ; 004b4720
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004b472a
     MOV dword ptr [EBX + 0x2dd8],0x3f666666 ; 004b4734

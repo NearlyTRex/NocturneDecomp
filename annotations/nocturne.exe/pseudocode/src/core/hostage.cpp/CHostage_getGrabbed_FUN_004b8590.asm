@@ -38,14 +38,14 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004b85cc
     PUSH EAX                            ; 004b85d2
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b85d3
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b85d8
     LEA EAX,[EBX + 0x1f724]             ; 004b85db
     PUSH EAX                            ; 004b85e1
     MOV EDX,dword ptr [0x005b7650]      ; 004b85e2 | DAT_005b7650
     PUSH EDX                            ; 004b85e8
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004b85e9
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004b85ee
     JMP 0x004b85ad                      ; 004b85f1
         ;   XREF to: 004b85ad (UNCONDITIONAL_JUMP)  ; LAB_004b85ad

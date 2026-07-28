@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_teleport_cpp_CTeleport_process_FUN_00543910(int param_1)
+; void core_teleport_cpp_CTeleport_process_FUN_00543910(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 0054393d
     PUSH ESI                            ; 0054393e
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0054393f
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00543944
     MOV EDX,ESP                         ; 00543947
     PUSH EDX                            ; 00543949

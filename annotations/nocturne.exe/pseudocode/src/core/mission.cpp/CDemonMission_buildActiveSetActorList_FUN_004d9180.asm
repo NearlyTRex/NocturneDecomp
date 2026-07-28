@@ -57,12 +57,12 @@ section .text
         ;   Label: LAB_004d91b1
     PUSH EAX                            ; 004d91b6 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0 ; 004d91b7
-        ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0()
+        ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d91bc
     MOV EDX,dword ptr [0x005be368]      ; 004d91bf | DAT_005be368
     PUSH EDX                            ; 004d91c5 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 ; 004d91c6
-        ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0()
+        ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d91cb
     POP EDI                             ; 004d91ce
     POP ESI                             ; 004d91cf
@@ -78,7 +78,7 @@ section .text
     PUSH dword ptr [EBX + 0x74]         ; 004d91e2
         ;   Label: LAB_004d91e2
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004d91e5
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 004d91ea
     TEST EAX,EAX                        ; 004d91ed
     JZ 0x004d9289                       ; 004d91ef
@@ -109,7 +109,7 @@ section .text
     LEA ESI,[EBX + 0x78]                ; 004d9252
     PUSH ESI                            ; 004d9255
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d9256
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d925b
     TEST EAX,EAX                        ; 004d925e
     JZ 0x004d91e2                       ; 004d9260
@@ -118,7 +118,7 @@ section .text
     MOV ESI,dword ptr [0x005b7650]      ; 004d9263 | DAT_005b7650
     PUSH ESI                            ; 004d9269
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004d926a
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004d926f
     TEST EAX,EAX                        ; 004d9272
     JNZ 0x004d91e2                      ; 004d9274

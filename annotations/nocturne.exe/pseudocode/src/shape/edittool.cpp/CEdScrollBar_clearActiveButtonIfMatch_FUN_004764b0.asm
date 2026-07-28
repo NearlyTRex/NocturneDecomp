@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(int param_1)
+; void __cdecl shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(CEdScrollBar *this_ptr)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_FUN_00476490 at 00476496

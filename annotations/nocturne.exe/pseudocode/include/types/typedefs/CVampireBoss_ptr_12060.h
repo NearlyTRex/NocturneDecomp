@@ -19,7 +19,7 @@ struct CVampireBoss_ptr_12060 {
     template<typename T> CVampireBoss_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CVampireBoss_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CVampireBoss* operator->() const { return (CVampireBoss*)_raw; }
-    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - offsetof(CVampireBoss, base.base.fires)); }
+    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - offsetof(CVampireBoss, base.base.fires[0].offset)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

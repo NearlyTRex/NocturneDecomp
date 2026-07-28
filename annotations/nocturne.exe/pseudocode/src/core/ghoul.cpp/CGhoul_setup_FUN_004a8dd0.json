@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 313,
+    "complexity_score": 318,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 33,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 78,
     "suspect_count": 23,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 263
+    "total_lines": 268
   },
   "cross_references": [],
   "function": {
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0",
-    "signature": "void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(int param_1)"
+    "signature": "void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(CEnemy *param_1)"
   },
   "function_calls": [
     {
@@ -431,111 +431,87 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(int param_1)",
+      "text": "void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1 + 0x150;",
+      "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd48) = uVar3;",
+      "text": "param_1[1].base.base.location.position.y = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd4c) = uVar3;",
+      "text": "param_1[1].base.base.location.position.z = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd50) = uVar3;",
+      "text": "param_1[1].base.base.location.area_id = iVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd54) = uVar3;",
+      "text": "param_1[1].base.base.orient.vec.x = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd58) = uVar3;",
+      "text": "param_1[1].base.base.orient.vec.y = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd5c) = uVar3;",
+      "text": "param_1[1].base.base.orient.vec.z = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd60) = uVar3;",
+      "text": "param_1[1].base.base.orient_matrix.m[0].x = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd64) = uVar3;",
+      "text": "param_1[1].base.base.orient_matrix.m[0].y = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd68) = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd6c) = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd70) = uVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
+      "text": "param_1[1].base.base.orient_matrix.m[0].z = fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -543,23 +519,7 @@
       "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd80) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd84) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd88) = 0;",
+      "text": "param_1[1].base.base.orient_matrix.m[1].x = fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -567,7 +527,7 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd8c) = 0;",
+      "text": "param_1[1].base.base.orient_matrix.m[1].y = fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -575,7 +535,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd90) = 0;",
+      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -583,7 +543,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd74) = 0;",
+      "text": "param_1[1].base.base.orient_matrix.m[2].z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -591,7 +551,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd78) = 0;",
+      "text": "param_1[1].base.base.runtime_state = 0;",
       "type": "unnamed_param"
     },
     {
@@ -599,7 +559,47 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd7c) = 0;",
+      "text": "param_1[1].base.base.health = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.validation_magic = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.direction_hint = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[1].z = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[2].x = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.base.orient_matrix.m[2].y = 0.0;",
       "type": "unnamed_param"
     }
   ],

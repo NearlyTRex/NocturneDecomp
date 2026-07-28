@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402d30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_2d_c_FUN_00402d30(int param_1,int param_2,int param_3,char *param_4)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 00402d41
     PUSH ESI                            ; 00402d45
     CALL engine_2d.c_drawTextCenteredColor_FUN_00402cf0 ; 00402d46
-        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredColor_FUN_00402cf0()
+        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_00402cf0(char * text, int left_x, int right_x, int y)
     ADD ESP,0x10                        ; 00402d4b
     POP ESI                             ; 00402d4e
     POP EBX                             ; 00402d4f

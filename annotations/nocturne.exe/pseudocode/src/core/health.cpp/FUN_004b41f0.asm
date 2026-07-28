@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_health_cpp_FUN_004b41f0(undefined4 param_1)
+; int * core_health_cpp_FUN_004b41f0(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -30,7 +30,7 @@ section .text
     ADD EAX,0x150                       ; 004b41fe
     PUSH EAX                            ; 004b4203
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004b4204
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b4209
     LEA EBX,[EAX + 0xfffffeb0]          ; 004b420c
     PUSH 0x585637                       ; 004b4212 | = "bullet.kfm"
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 004b421d
     MOV dword ptr [EBX + 0x14c],0x59ea14 ; 004b421e | PTR_core_health.cpp_FUN_004b4250_0059ea14
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004b4228
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004b422d
     MOV dword ptr [EBX + 0x2cc],0x1     ; 004b4230
     MOV EAX,EBX                         ; 004b423a

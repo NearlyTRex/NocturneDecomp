@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(int param_1,uint param_2)
+; int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(CCharacter *this_ptr,int bone_index)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x30]:1  local_30
@@ -65,11 +68,11 @@ section .text
     PUSH 0x57a49a                       ; 0042ae04 | = "Bip01 L Foot"
     PUSH ESI                            ; 0042ae09
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ae0a
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ae0f
     PUSH EAX                            ; 0042ae12
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042ae13
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ae18
     TEST EAX,EAX                        ; 0042ae1b
     JL 0x0042adfb                       ; 0042ae1d
@@ -81,7 +84,7 @@ section .text
     PUSH ESI                            ; 0042ae2a
     MOV EDI,dword ptr [EBX + 0x14c]     ; 0042ae2b
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0042ae31
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0042ae36
     PUSH EAX                            ; 0042ae39
     PUSH EBX                            ; 0042ae3a
@@ -100,11 +103,11 @@ section .text
     PUSH 0x57a4a7                       ; 0042ae53 | = "Bip01 R Foot"
     PUSH ESI                            ; 0042ae58
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ae59
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ae5e
     PUSH EAX                            ; 0042ae61
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042ae62
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ae67
     TEST EAX,EAX                        ; 0042ae6a
     JL 0x0042adfb                       ; 0042ae6c
@@ -116,7 +119,7 @@ section .text
     PUSH ESI                            ; 0042ae79
     MOV EDI,dword ptr [EBX + 0x14c]     ; 0042ae7a
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0042ae80
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0042ae85
     PUSH EAX                            ; 0042ae88
     PUSH EBX                            ; 0042ae89
@@ -135,11 +138,11 @@ section .text
     PUSH 0x57a4b4                       ; 0042aea6 | = "Bip01 L Foot"
     PUSH ESI                            ; 0042aeab
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042aeac
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042aeb1
     PUSH EAX                            ; 0042aeb4
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042aeb5
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042aeba
     TEST EAX,EAX                        ; 0042aebd
     JL 0x0042adfb                       ; 0042aebf
@@ -151,7 +154,7 @@ section .text
     PUSH ESI                            ; 0042aed0
     MOV EDI,dword ptr [EBX + 0x14c]     ; 0042aed1
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0042aed7
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0042aedc
     PUSH EAX                            ; 0042aedf
     PUSH EBX                            ; 0042aee0
@@ -170,11 +173,11 @@ section .text
     PUSH 0x57a4c1                       ; 0042aefd | = "Bip01 R Foot"
     PUSH ESI                            ; 0042af02
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042af03
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042af08
     PUSH EAX                            ; 0042af0b
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042af0c
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042af11
     TEST EAX,EAX                        ; 0042af14
     JL 0x0042adfb                       ; 0042af16
@@ -186,7 +189,7 @@ section .text
     PUSH ESI                            ; 0042af27
     MOV EDI,dword ptr [EBX + 0x14c]     ; 0042af28
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0042af2e
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0042af33
     PUSH EAX                            ; 0042af36
     PUSH EBX                            ; 0042af37

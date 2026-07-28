@@ -73,7 +73,7 @@ section .text
     ADD EAX,EBX                         ; 0042177c
     PUSH EAX                            ; 0042177e
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0042177f
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00421784
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00421787
     ADD EDI,0x4                         ; 0042178b
@@ -97,7 +97,7 @@ section .text
     PUSH ESI                            ; 004217c6
     MOV EDI,0xc                         ; 004217c7
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10 ; 004217cc
-        ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10()
+        ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(CDemonRenderer * this_ptr, int color)
     ADD ESP,0x8                         ; 004217d1
     MOV dword ptr [ESP + 0x24],EDI      ; 004217d4
     MOV EAX,dword ptr [ESP + 0x24]      ; 004217d8
@@ -115,7 +115,7 @@ section .text
     PUSH EDX                            ; 004217f8
     MOV dword ptr [ESP + 0x24],EAX      ; 004217f9
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 004217fd
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0()
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
     ADD ESP,0xc                         ; 00421802
     PUSH EDI                            ; 00421805
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00421806
@@ -126,7 +126,7 @@ section .text
     INC ESI                             ; 00421812
     INC EDI                             ; 00421813
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 00421814
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0()
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
     ADD ESP,0xc                         ; 00421819
     CMP ESI,0xc                         ; 0042181c
     JL 0x004217ea                       ; 0042181f

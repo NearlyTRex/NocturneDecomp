@@ -2,11 +2,11 @@
 // Address: 004e7030
 // Address Range: [[004e7030, 004e7204]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,float *param_2,int param_3)
+// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,float *param_2,int param_3)
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 {
   double *pdVar1;
@@ -49,11 +49,11 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,flo
     DAT_005bbbfc = 0;
   }
   iVar12 = 0;
-  local_24 = param_2;
-  pfVar10 = param_1;
+  local_24 = output_samples;
+  pfVar10 = input_samples;
   do {
     pfVar10 = pfVar10 + 0x12;
-    pfVar7 = param_1 + iVar12 * 0x12;
+    pfVar7 = input_samples + iVar12 * 0x12;
     pfVar9 = local_24;
     do {
       fVar3 = *pfVar7;
@@ -64,10 +64,10 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,flo
     iVar12 = iVar12 + 1;
     local_24 = local_24 + 0x12;
   } while (iVar12 < 0x20);
-  if (((*(int *)(param_3 + 0x10) == 0) || (*(int *)(param_3 + 0x14) != 2)) ||
-     (*(int *)(param_3 + 0x18) != 0)) {
-    if (((*(int *)(param_3 + 0x10) == 0) || (*(int *)(param_3 + 0x18) == 0)) ||
-       (*(int *)(param_3 + 0x14) != 2)) {
+  if (((granule->window_switching_flag == 0) || (granule->block_type != 2)) ||
+     (granule->mixed_block_flag != 0)) {
+    if (((granule->window_switching_flag == 0) || (granule->mixed_block_flag == 0)) ||
+       (granule->block_type != 2)) {
       local_14 = 0x1f;
     }
     else {
@@ -75,15 +75,15 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,flo
     }
     local_1c = 0;
     if (local_14 != 0) {
-      local_2c = param_2 + 0x1a;
-      local_28 = param_2;
-      local_30 = param_1;
+      local_2c = output_samples + 0x1a;
+      local_28 = output_samples;
+      local_30 = input_samples;
       do {
-        local_20 = param_1 + 0x12;
+        local_20 = input_samples + 0x12;
         pfVar13 = local_28 + 0x11;
         pfVar7 = local_30 + 0x11;
         iVar12 = 0;
-        pfVar10 = param_2 + (local_1c + 1) * 0x12;
+        pfVar10 = output_samples + (local_1c + 1) * 0x12;
         pfVar9 = local_20;
         do {
           fVar3 = *pfVar7;
@@ -104,7 +104,7 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,flo
         local_28 = local_28 + 0x12;
         local_30 = local_30 + 0x12;
         local_1c = local_1c + 1;
-        param_1 = local_20;
+        input_samples = local_20;
       } while (local_1c < local_14);
     }
   }

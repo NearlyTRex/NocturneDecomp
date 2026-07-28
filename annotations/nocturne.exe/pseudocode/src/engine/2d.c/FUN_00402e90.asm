@@ -127,10 +127,10 @@ section .text
     FLD float ptr [ESP + 0x34]          ; 00402fb8
     FXCH ST2                            ; 00402fbc
     CALL crt_math.c_round_FUN_00563a30  ; 00402fbe
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00402fc3
     CALL crt_math.c_round_FUN_00563a30  ; 00402fc5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00402fca
     FISTP dword ptr [ESP + 0xc]         ; 00402fcc
     FISTP dword ptr [ESP + 0x10]        ; 00402fd0
@@ -138,14 +138,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00402fd8
     PUSH ECX                            ; 00402fdc
     CALL crt_math.c_round_FUN_00563a30  ; 00402fdd
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EAX                            ; 00402fe2
     FISTP dword ptr [ESP + 0x18]        ; 00402fe3
     MOV EDX,dword ptr [ESP + 0x18]      ; 00402fe7
     PUSH EDX                            ; 00402feb
     ADD EBX,0x100                       ; 00402fec
     CALL engine_2d.c_findBestPaletteMatch_FUN_00401850 ; 00402ff2
-        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_findBestPaletteMatch_FUN_00401850()
+        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; int engine_2d.c_findBestPaletteMatch_FUN_00401850(int red, int green, int blue, int start_index, ...)
     ADD ESP,0x14                        ; 00402ff7
     MOV byte ptr [EBX + 0x1bd1da0],AL   ; 00402ffa
     CMP EBX,ESI                         ; 00403000

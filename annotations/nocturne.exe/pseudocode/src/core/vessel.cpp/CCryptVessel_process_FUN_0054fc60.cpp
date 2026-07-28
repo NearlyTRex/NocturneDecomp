@@ -34,7 +34,7 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
       *(uint *)(param_1 + 0x3f0) = *(uint *)(param_1 + 0x34);
       *(uint *)(param_1 + 0x3f4) = *(uint *)(param_1 + 0x38);
     }
-    core_flame_cpp_CFlame_process_FUN_0048d0c0(param_1 + 0x3bc,param_2);
+    core_flame_cpp_CFlame_process_FUN_0048d0c0((CFlame *)(param_1 + 0x3bc),param_2);
   }
   else if (*(int *)(param_1 + 0x3ac) == 0) {
     *(float *)(param_1 + 0x658) = param_2 * (float)3.1415926535000001 + *(float *)(param_1 + 0x658);
@@ -182,13 +182,14 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
         *(uint *)(iVar9 + 0x3b0) = 1;
         *(uint *)(*(int *)(param_1 + 0x2d0) + 0x3b4) = 0;
         core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                  (0x01C03A10,*(int *)(param_1 + 0x2d0) + 0x2d8);
+                  (0x01C03A10,(char *)(*(int *)(param_1 + 0x2d0) + 0x2d8));
       }
       if (((*(int *)(param_1 + 0x2d0) != 0) && (*(int *)(param_1 + 0x2d4) != 0)) &&
          ((*(int *)(*(int *)(param_1 + 0x3a4) + 0x17c) != 0 &&
           ((*(int *)(*(int *)(*(int *)(param_1 + 0x2d0) + 0x3a4) + 0x17c) != 0 &&
            (*(int *)(*(int *)(*(int *)(param_1 + 0x2d4) + 0x3a4) + 0x17c) != 0)))))) {
-        core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x33c);
+        core_event_cpp_CEventList_executeCommands_FUN_0047ab70
+                  (0x01C03A10,(char *)(param_1 + 0x33c));
         *(uint *)(*(int *)(param_1 + 0x2d0) + 0x7e0) = 1;
         *(uint *)(*(int *)(param_1 + 0x2d4) + 0x7e0) = 1;
         *(uint *)(param_1 + 0x7e0) = 1;

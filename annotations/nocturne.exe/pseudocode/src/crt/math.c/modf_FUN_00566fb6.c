@@ -9,9 +9,9 @@
 double modf(uint param_1,double *param_2)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));
-  *param_2 = (double)fVar1;
-  return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);
+  dVar1 = round(__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));
+  *param_2 = dVar1;
+  return __BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - dVar1;
 }

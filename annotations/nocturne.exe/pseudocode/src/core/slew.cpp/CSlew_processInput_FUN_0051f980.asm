@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_slew_cpp_CSlew_processInput_FUN_0051f980(float *param_1)
+; void __cdecl core_slew_cpp_CSlew_processInput_FUN_0051f980(CSlew *this_ptr)
 ;
+; Parameters:
+; CSlew *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049cda9
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cda9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00591ead = 10

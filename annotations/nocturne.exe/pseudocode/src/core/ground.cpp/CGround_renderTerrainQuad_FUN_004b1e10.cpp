@@ -2,72 +2,72 @@
 // Address: 004b1e10
 // Address Range: [[004b1e10, 004b1fe0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(int param_1,uint param_2,uint param_3)
+// Signature: void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround *this_ptr,int world_column,int world_row)
 
 #include "nocturne.h"
 
-void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(int param_1,uint param_2,uint param_3)
+void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround *this_ptr,int world_column,int world_row)
 
 {
-  uint uVar1;
+  int iVar1;
   uint uVar2;
+  uint row;
   int iVar3;
-  int iVar4;
-  byte auStack_84 [4];
-  uint local_80;
-  uint local_6c;
-  uint local_68;
-  uint local_64;
-  byte local_4c [4];
-  uint local_48;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
+  int row_00;
+  uint column;
+  SMRGLHeaderPrimitive SStack_84;
+  int local_6c;
+  int local_68;
+  int local_64;
+  SMRGLHeaderPrimitive local_4c;
+  int local_34;
+  int local_30;
+  int local_2c;
   int local_14;
   
-  iVar4 = (param_2 - *(int *)(param_1 + 0x2c)) + *(int *)(param_1 + 0x10);
-  iVar3 = (param_3 - *(int *)(param_1 + 0x30)) + *(int *)(param_1 + 0x14);
-  param_3 = param_3 & *(uint *)(param_1 + 0xc);
-  param_2 = param_2 & *(uint *)(param_1 + 8);
-  uVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(param_1,iVar3,iVar4);
-  *(uint *)(param_1 + 0x4c) = uVar1;
-  local_14 = iVar4 + 1;
-  uVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(param_1,iVar3,local_14);
-  *(uint *)(param_1 + 0x50) = uVar1;
-  uVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(param_1,iVar3 + 1,local_14);
-  *(uint *)(param_1 + 0x54) = uVar1;
-  uVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(param_1,iVar3 + 1,iVar4);
-  *(uint *)(param_1 + 0x58) = uVar1;
-  uVar2 = (&DAT_005c5024)[*(int *)(param_1 + 0x58) * 0xc] &
-          (&DAT_005c5024)[*(int *)(param_1 + 0x4c) * 0xc] &
-          (&DAT_005c5024)[*(int *)(param_1 + 0x50) * 0xc] &
-          (&DAT_005c5024)[*(int *)(param_1 + 0x54) * 0xc];
+  row_00 = (world_column - this_ptr->camera_x) + this_ptr->grid_width;
+  iVar3 = (world_row - this_ptr->camera_y) + this_ptr->grid_height;
+  row = world_row & this_ptr->height_minus_1;
+  column = world_column & this_ptr->width_minus_1;
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(this_ptr,iVar3,row_00);
+  this_ptr->vertex_indices[0] = iVar1;
+  local_14 = row_00 + 1;
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(this_ptr,iVar3,local_14);
+  this_ptr->vertex_indices[1] = iVar1;
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(this_ptr,iVar3 + 1,local_14);
+  this_ptr->vertex_indices[2] = iVar1;
+  iVar3 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(this_ptr,iVar3 + 1,row_00);
+  iVar1 = this_ptr->vertex_indices[0];
+  this_ptr->vertex_indices[3] = iVar3;
+  uVar2 = (&DAT_005c5024)[this_ptr->vertex_indices[3] * 0xc] &
+          (&DAT_005c5024)[iVar1 * 0xc] & (&DAT_005c5024)[this_ptr->vertex_indices[1] * 0xc] &
+          (&DAT_005c5024)[this_ptr->vertex_indices[2] * 0xc];
   if (((uVar2 & 0x80000000) != 0) && ((char)uVar2 != '\0')) {
     return;
   }
-  core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(param_1,param_2,param_3);
-  if ((param_2 & 1) == (param_3 & 1)) {
-    local_80 = 3;
-    local_64 = *(uint *)(param_1 + 0x4c);
-    local_68 = *(uint *)(param_1 + 0x50);
-    local_6c = *(uint *)(param_1 + 0x54);
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(param_1,auStack_84);
-    local_48 = 3;
-    local_2c = *(uint *)(param_1 + 0x4c);
-    local_30 = *(uint *)(param_1 + 0x54);
-    local_34 = *(uint *)(param_1 + 0x58);
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(param_1,local_4c);
+  core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(this_ptr,column,row);
+  if ((column & 1) == (row & 1)) {
+    SStack_84.base.count = 3;
+    local_64 = this_ptr->vertex_indices[0];
+    local_68 = this_ptr->vertex_indices[1];
+    local_6c = this_ptr->vertex_indices[2];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(this_ptr,&SStack_84);
+    local_4c.base.count = 3;
+    local_2c = this_ptr->vertex_indices[0];
+    local_30 = this_ptr->vertex_indices[2];
+    local_34 = this_ptr->vertex_indices[3];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(this_ptr,&local_4c);
     return;
   }
-  local_80 = 3;
-  local_64 = *(uint *)(param_1 + 0x4c);
-  local_68 = *(uint *)(param_1 + 0x50);
-  local_6c = *(uint *)(param_1 + 0x58);
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(param_1,auStack_84);
-  local_48 = 3;
-  local_2c = *(uint *)(param_1 + 0x50);
-  local_30 = *(uint *)(param_1 + 0x54);
-  local_34 = *(uint *)(param_1 + 0x58);
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(param_1,local_4c);
+  SStack_84.base.count = 3;
+  local_64 = this_ptr->vertex_indices[0];
+  local_68 = this_ptr->vertex_indices[1];
+  local_6c = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(this_ptr,&SStack_84);
+  local_4c.base.count = 3;
+  local_2c = this_ptr->vertex_indices[1];
+  local_30 = this_ptr->vertex_indices[2];
+  local_34 = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(this_ptr,&local_4c);
   return;
 }

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 828,
-    "complexity_score": 782,
+    "complexity_score": 691,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 110,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 377,
-    "suspect_count": 38,
+    "pseudocode_lines": 376,
+    "suspect_count": 30,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1205
+    "total_lines": 1204
   },
   "cross_references": [
     {
@@ -174,7 +172,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_loadExternalRenderer_FUN_00531780",
-    "signature": "undefined4 __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(int param_1)"
+    "signature": "int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)"
   },
   "function_calls": [
     {
@@ -908,10 +906,10 @@
     "pcode_op_count": 2250
   },
   "stack_frame": {
-    "frame_size": 7784,
+    "frame_size": 7788,
     "local_size": 7784,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -920,6 +918,13 @@
         "offset": -7780,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "window_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "HWND"
       }
     ]
   },
@@ -933,80 +938,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar1;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_005c0e80",
       "severity": "mild",
-      "text": "_DAT_02dc9e08 = wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);",
+      "text": "_DAT_02dc9e08 = (HMODULE)wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pcVar1 = (code *)wincore_wddvmem_cpp_getProcAddress_FUN_00553d40",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (pcVar1 != (code *)0x0) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(code *)wincore_wddvmem_cpp_getProcAddress_FUN_00553d40",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (_DAT_02dc9d74 == (code *)0x0) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 334,
+      "line": 333,
       "match": "DAT_01c00624",
       "severity": "mild",
       "text": "puStack_9c = &DAT_01c00624;",
@@ -1014,7 +955,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 335,
+      "line": 334,
       "match": "DAT_01c00628",
       "severity": "mild",
       "text": "puStack_98 = &DAT_01c00628;",
@@ -1022,7 +963,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 336,
+      "line": 335,
       "match": "DAT_01c0062c",
       "severity": "mild",
       "text": "puStack_94 = &DAT_01c0062c;",
@@ -1030,7 +971,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 336,
       "match": "DAT_01c00630",
       "severity": "mild",
       "text": "puStack_90 = &DAT_01c00630;",
@@ -1038,7 +979,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 338,
+      "line": 337,
       "match": "DAT_01c00634",
       "severity": "mild",
       "text": "puStack_8c = &DAT_01c00634;",
@@ -1046,7 +987,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 339,
+      "line": 338,
       "match": "DAT_01c00638",
       "severity": "mild",
       "text": "puStack_88 = &DAT_01c00638;",
@@ -1054,7 +995,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 340,
+      "line": 339,
       "match": "DAT_01c0063c",
       "severity": "mild",
       "text": "puStack_84 = &DAT_01c0063c;",
@@ -1062,7 +1003,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 341,
+      "line": 340,
       "match": "DAT_01c00640",
       "severity": "mild",
       "text": "puStack_80 = &DAT_01c00640;",
@@ -1070,7 +1011,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 342,
+      "line": 341,
       "match": "DAT_01c00644",
       "severity": "mild",
       "text": "puStack_7c = &DAT_01c00644;",
@@ -1078,7 +1019,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 343,
+      "line": 342,
       "match": "DAT_01c03998",
       "severity": "mild",
       "text": "puStack_78 = &DAT_01c03998;",
@@ -1086,7 +1027,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 344,
+      "line": 343,
       "match": "DAT_01c00c74",
       "severity": "mild",
       "text": "puStack_74 = &DAT_01c00c74;",
@@ -1094,7 +1035,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 345,
+      "line": 344,
       "match": "DAT_005b763c",
       "severity": "mild",
       "text": "puStack_70 = &DAT_005b763c;",
@@ -1102,7 +1043,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 346,
+      "line": 345,
       "match": "DAT_01c00c70",
       "severity": "mild",
       "text": "puStack_6c = &DAT_01c00c70;",
@@ -1110,7 +1051,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 347,
+      "line": 346,
       "match": "DAT_01c00c58",
       "severity": "mild",
       "text": "puStack_68 = &DAT_01c00c58;",
@@ -1118,7 +1059,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 348,
+      "line": 347,
       "match": "DAT_01c00c5c",
       "severity": "mild",
       "text": "puStack_64 = &DAT_01c00c5c;",
@@ -1126,7 +1067,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 349,
+      "line": 348,
       "match": "DAT_01c00c60",
       "severity": "mild",
       "text": "puStack_60 = &DAT_01c00c60;",
@@ -1134,7 +1075,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 350,
+      "line": 349,
       "match": "DAT_01c00c64",
       "severity": "mild",
       "text": "puStack_5c = &DAT_01c00c64;",
@@ -1142,7 +1083,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 351,
+      "line": 350,
       "match": "DAT_005b7628",
       "severity": "mild",
       "text": "puStack_58 = &DAT_005b7628;",
@@ -1150,7 +1091,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 352,
+      "line": 351,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "puStack_54 = &DAT_005b762c;",
@@ -1158,7 +1099,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 353,
+      "line": 352,
       "match": "DAT_01c02590",
       "severity": "mild",
       "text": "puStack_50 = &DAT_01c02590;",
@@ -1166,7 +1107,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 354,
+      "line": 353,
       "match": "DAT_005c0f8c",
       "severity": "mild",
       "text": "puStack_4c = &DAT_005c0f8c;",
@@ -1174,7 +1115,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 355,
+      "line": 354,
       "match": "DAT_005c0f84",
       "severity": "mild",
       "text": "puStack_48 = &DAT_005c0f84;",
@@ -1182,7 +1123,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 356,
+      "line": 355,
       "match": "DAT_005c0f88",
       "severity": "mild",
       "text": "puStack_44 = &DAT_005c0f88;",
@@ -1190,7 +1131,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 358,
+      "line": 357,
       "match": "DAT_005c0f80",
       "severity": "mild",
       "text": "puStack_3c = &DAT_005c0f80;",
@@ -1198,7 +1139,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 359,
+      "line": 358,
       "match": "DAT_02dc9d6c",
       "severity": "mild",
       "text": "puStack_38 = &DAT_02dc9d6c;",
@@ -1206,7 +1147,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 360,
+      "line": 359,
       "match": "DAT_01c0399c",
       "severity": "mild",
       "text": "puStack_34 = &DAT_01c0399c;",
@@ -1214,7 +1155,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 361,
+      "line": 360,
       "match": "DAT_005b7640",
       "severity": "mild",
       "text": "puStack_30 = &DAT_005b7640;",
@@ -1222,7 +1163,7 @@
     },
     {
       "description": "Raw hex address 0x2dc9d68 assigned to bare local `uStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 357,
+      "line": 356,
       "match": "0x2dc9d68",
       "severity": "moderate",
       "text": "uStack_40 = 0x2dc9d68;",

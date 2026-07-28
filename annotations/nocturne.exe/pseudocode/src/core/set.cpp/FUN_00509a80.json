@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,28 +122,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 795,
-    "complexity_score": 679,
+    "complexity_score": 731,
     "cross_reference_count": 1,
     "function_call_count": 35,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 259,
-    "suspect_count": 39,
+    "pseudocode_lines": 261,
+    "suspect_count": 44,
     "suspect_types": [
       "param_count_too_few",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1054
+    "total_lines": 1056
   },
   "cross_references": [
     {
       "addr": "0049cc10",
       "from_addr": "0049cd21",
-      "name": "core_game.cpp_FUN_0049cc10",
+      "name": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,7 +158,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_set.cpp_FUN_00509a80",
-    "signature": "void core_set_cpp_FUN_00509a80(int param_1,int param_2)"
+    "signature": "void core_set_cpp_FUN_00509a80(CDemonSet *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -202,6 +202,11 @@
       "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90"
     },
     {
+      "addr": "00445750",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750"
+    },
+    {
       "addr": "00444920",
       "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920"
@@ -215,11 +220,6 @@
       "addr": "00447670",
       "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670"
-    },
-    {
-      "addr": "00445750",
-      "is_variadic": false,
-      "name": "core_dcamera.cpp_FUN_00445750"
     },
     {
       "addr": "0044f430",
@@ -244,17 +244,17 @@
     {
       "addr": "0048a970",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0048a970"
+      "name": "core_fire.cpp_CFireEffect_renderDecals_FUN_0048a970"
+    },
+    {
+      "addr": "004afe80",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_renderDecals_FUN_004afe80"
     },
     {
       "addr": "004afe00",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_renderParticles_FUN_004afe00"
-    },
-    {
-      "addr": "004afe80",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004afe80"
     },
     {
       "addr": "004c2150",
@@ -525,7 +525,7 @@
       {
         "call_addr": "0049cd21",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -735,7 +735,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_00509a80(int param_1,int param_2)",
+      "text": "void core_set_cpp_FUN_00509a80(CDemonSet *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -743,31 +743,23 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_00509a80(int param_1,int param_2)",
+      "text": "void core_set_cpp_FUN_00509a80(CDemonSet *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_2 != 0) && (*(int *)(param_1 + 0x15aa64) != 0)) {",
+      "text": "if ((param_2 != 0) && (param_1->renderable_actors[0x75d] != (CDemonActor *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_2 != 0) && (*(int *)(param_1 + 0x15aa64) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
+      "text": "if ((param_2 != 0) && (param_1->renderable_actors[0x75d] != (CDemonActor *)0x0)) {",
       "type": "unnamed_param"
     },
     {
@@ -775,7 +767,7 @@
       "line": 32,
       "match": "param_2",
       "severity": "mild",
-      "text": "_DAT_01fba2d8 = param_2;",
+      "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -783,31 +775,47 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
+      "text": "_DAT_01fba2d8 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "severity": "mild",
       "text": "_DAT_01fba2ec = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(param_1,&DAT_01c74640);",
+      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(param_1,(CDemonLight *)&DAT_01c74640);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_01c74640",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(param_1,&DAT_01c74640);",
+      "text": "core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(param_1,(CDemonLight *)&DAT_01c74640);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x16126c) != 0) {",
+      "text": "core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->sorted_render_actors[0x6e1] != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -815,31 +823,39 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x16126c) = 0;",
+      "text": "core_set_cpp_CDemonSet_restoreCameraView_FUN_0050e310(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->sorted_render_actors[0x6e1] = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(&DAT_01fb9b58 + iVar5) + 0x1cb4) != 0) {",
+      "text": "if ((*(CDemonLight **)(&DAT_01fb9b58 + iVar5))->light_enabled_flag != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "(0x1fb8508,*(int *)(&DAT_01fb9b58 + iVar5));",
+      "text": "((CDemonCamera *)0x1fb8508,*(CDemonLight **)(&DAT_01fb9b58 + iVar5));",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
       "type": "unnamed_param"
     },
     {
@@ -847,7 +863,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x15a8cc));",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
       "type": "unnamed_param"
     },
     {
@@ -855,7 +871,7 @@
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
       "type": "unnamed_param"
     },
     {
@@ -863,7 +879,7 @@
       "line": 91,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x15a8cc));",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
       "type": "unnamed_param"
     },
     {
@@ -884,10 +900,18 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
       "type": "unnamed_param"
     },
     {
@@ -895,7 +919,15 @@
       "line": 136,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x15a8cc));",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 141,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -903,7 +935,7 @@
       "line": 142,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x15a8c0) != 0) {",
+      "text": "if (param_1->renderable_actors[0x6f4] != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -911,7 +943,7 @@
       "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
       "type": "unnamed_param"
     },
     {
@@ -919,7 +951,7 @@
       "line": 153,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x15a8cc));",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
       "type": "unnamed_param"
     },
     {
@@ -927,7 +959,7 @@
       "line": 164,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
       "type": "unnamed_param"
     },
     {
@@ -935,7 +967,7 @@
       "line": 170,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x15a8cc));",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
       "type": "unnamed_param"
     },
     {
@@ -943,7 +975,7 @@
       "line": 184,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1;",
+      "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -951,80 +983,88 @@
       "line": 185,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x14cd6c)) {",
+      "text": "if (0 < *(int *)param_1->lights[199].filter_names[0x14]) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 190,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x14c) + 0x10))();",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 195,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)param_1->lights[199].filter_names[0x14]);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 206,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < (int)param_1->renderable_actors[0x6f7]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 212,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < (int)param_1->renderable_actors[0x6f7]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 246,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 247,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)param_1->lights[199].filter_names[0x14]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 262,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)param_1->lights[199].filter_names[0x14]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 251,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar5 + 0x128) = *(uint *)(iVar5 + 0x20);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 256,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar5 + 0x134) = *(uint *)(iVar5 + 0x30);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x14cd6c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 205,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 211,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)(param_1 + 0x15a8cc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 244,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x14cd6c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 260,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x14cd6c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 249,
-      "match": "raw-offset struct copy",
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
-      "text": "*(uint *)(iVar3 + 0x128) = *(uint *)(iVar3 + 0x20);",
-      "type": "unrolled_memcpy"
+      "text": "pCVar3 = (CDemonSet *)pCVar3->cameras;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 254,
-      "match": "raw-offset struct copy",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 261,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
-      "text": "*(uint *)(iVar3 + 0x134) = *(uint *)(iVar3 + 0x30);",
-      "type": "unrolled_memcpy"
+      "text": "pCVar3 = (CDemonSet *)pCVar3->cameras;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 1,

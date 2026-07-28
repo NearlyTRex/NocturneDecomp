@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004c9580(int param_1)
+; void core_manpuz_cpp_FUN_004c9580(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1dc]:1  local_1dc
@@ -97,24 +97,24 @@ section .text
     PUSH EDX                            ; 004c9595
     MOV EBX,dword ptr [EBP + 0x92]      ; 004c9596
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 004c959c
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c95a1
     ADD EBX,0x150                       ; 004c95a4
     PUSH EBX                            ; 004c95aa
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004c95ab
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c95b0
     ADD ESP,0x4                         ; 004c95b6
     ADD EAX,0x2cc                       ; 004c95b9
     PUSH EAX                            ; 004c95be
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004c95bf
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c95c4
     ADD ESP,0x4                         ; 004c95ca
     ADD EAX,0x448                       ; 004c95cd
     PUSH EAX                            ; 004c95d2
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004c95d3
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c95d8
     ADD ESP,0x4                         ; 004c95de
     ADD EAX,0x14b8                      ; 004c95e1
@@ -122,11 +122,11 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004c95e7 | DAT_005ae704
     PUSH ECX                            ; 004c95ed | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c95ee
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004c95f3
     PUSH EBX                            ; 004c95f6
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c95f7
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0x338]               ; 004c95fc
     MOV EAX,dword ptr [EBX]             ; 004c9602
     MOV dword ptr [EBP + -0x36],EAX     ; 004c9604
@@ -215,7 +215,7 @@ section .text
     ADD EAX,0x2cc                       ; 004c9726
     PUSH EAX                            ; 004c972b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c972c
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0x338]               ; 004c9731
     MOV EAX,dword ptr [EBX]             ; 004c9737
     MOV dword ptr [EBP + -0x1e],EAX     ; 004c9739
@@ -302,7 +302,7 @@ section .text
     PUSH EAX                            ; 004c9849
     FSTP float ptr [EBP + -0x2]         ; 004c984a
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c984d
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c9852
     LEA EAX,[EBP + -0x6]                ; 004c9855
     PUSH EAX                            ; 004c9858
@@ -345,7 +345,7 @@ section .text
     PUSH EAX                            ; 004c98cd
     MOV EDI,dword ptr [EBP + 0x66]      ; 004c98ce
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 004c98d1
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 004c98d6
     CMP EAX,EDI                         ; 004c98d9
     JZ 0x004c98ed                       ; 004c98db
@@ -364,7 +364,7 @@ section .text
     PUSH EAX                            ; 004c98fa
     ADD EBX,0x30                        ; 004c98fb
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 004c98fe
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 004c9903
     CMP EBX,EAX                         ; 004c9906
     JNZ 0x004c9ba3                      ; 004c9908
@@ -377,7 +377,7 @@ section .text
     LEA EBX,[EBP + 0xffffff42]          ; 004c991c
     XOR ESI,ESI                         ; 004c9922
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c9924
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9929
     XOR EAX,EAX                         ; 004c992c
         ;   Label: LAB_004c992c
@@ -405,7 +405,7 @@ section .text
     LEA EAX,[EBP + 0x36]                ; 004c996a
     PUSH EAX                            ; 004c996d
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 004c996e
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 004c9973
     CMP EBX,EAX                         ; 004c9976
     JZ 0x004c998a                       ; 004c9978
@@ -432,7 +432,7 @@ section .text
     ADD EAX,0x3c                        ; 004c99ab
     PUSH EAX                            ; 004c99ae
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 004c99af
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 004c99b4
     LEA EAX,[EBP + 0xffffff4e]          ; 004c99b7
     PUSH EAX                            ; 004c99bd
@@ -450,7 +450,7 @@ section .text
     MOV dword ptr [EBP + 0x5e],EBX      ; 004c99e0
     MOV dword ptr [EBP + 0x56],ESI      ; 004c99e3
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 004c99e6
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     MOV EDX,dword ptr [EBP + 0x66]      ; 004c99eb
     MOV ECX,dword ptr [EBP + 0x62]      ; 004c99ee
     ADD ESP,0x10                        ; 004c99f1
@@ -508,7 +508,7 @@ section .text
     ADD EAX,0x136c                      ; 004c9ab6
     PUSH EAX                            ; 004c9abb
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9abc
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004c9ac1
     ADD ESP,0x8                         ; 004c9ac7
     FLD float ptr [EAX + 0x133c]        ; 004c9aca
@@ -548,7 +548,7 @@ section .text
     PUSH EAX                            ; 004c9b49
     XOR EBX,EBX                         ; 004c9b4a
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9b4c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c9b51
     PUSH EBX                            ; 004c9b54
         ;   Label: LAB_004c9b54

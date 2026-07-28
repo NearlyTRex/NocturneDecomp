@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_004df740
+;   core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_004df740
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 004e0323
     ADD EAX,EBX                         ; 004e0324
     PUSH EAX                            ; 004e0326
-    CALL core_morph.cpp_FUN_004df740    ; 004e0327
-        ;   XREF to: 004df740 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_004df740()
+    CALL core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_004df740 ; 004e0327
+        ;   XREF to: 004df740 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_004df740(CMorphModel * this_ptr, int part_index, CVector3i * vertex_buffer)
     ADD ESP,0xc                         ; 004e032c
     POP EBX                             ; 004e032f
     RET                                 ; 004e0330

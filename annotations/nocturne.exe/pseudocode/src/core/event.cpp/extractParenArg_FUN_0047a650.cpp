@@ -2,83 +2,84 @@
 // Address: 0047a650
 // Address Range: [[0047a650, 0047a75d]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(int *param_1,char *param_2,int param_3)
+// Signature: char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(char **cursor,char *out_buf,int max_len)
 
 #include "nocturne.h"
 
-char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(int *param_1,char *param_2,int param_3)
+char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(char **cursor,char *out_buf,int max_len)
 
 {
   char cVar1;
-  int iVar2;
-  char *pcVar3;
-  int iVar4;
-  uint uVar5;
+  char *pcVar2;
+  int iVar3;
+  uint uVar4;
+  SIZE_T n;
+  char *pcVar5;
   int iVar6;
   
-  pcVar3 = (char *)*param_1;
-  while (((&DAT_005c168c)[(byte)(*pcVar3 + 1)] & 2) != 0) {
-    pcVar3 = pcVar3 + 1;
+  pcVar2 = *cursor;
+  while (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+    pcVar2 = pcVar2 + 1;
   }
-  *param_1 = (int)pcVar3;
-  if (*pcVar3 != '(') {
+  *cursor = pcVar2;
+  if (*pcVar2 != '(') {
     return "No opening parenthesis";
   }
   iVar6 = 0;
-  iVar4 = 0;
-  if (0 < param_3) {
+  iVar3 = 0;
+  if (0 < max_len) {
     do {
-      iVar2 = *param_1;
-      pcVar3 = (char *)(iVar2 + 1);
-      *param_1 = (int)pcVar3;
-      if (*pcVar3 == '\0') {
+      pcVar2 = *cursor;
+      pcVar5 = pcVar2 + 1;
+      *cursor = pcVar5;
+      if (*pcVar5 == '\0') {
         return "Can't find closing parenthesis";
       }
-      if (*pcVar3 == '(') {
+      if (*pcVar5 == '(') {
         iVar6 = iVar6 + 1;
       }
-      else if (*pcVar3 == ')') {
+      else if (*pcVar5 == ')') {
         if (iVar6 == 0) {
-          *param_1 = iVar2 + 2;
-          param_2[iVar4] = '\0';
-          uVar5 = 0xffffffff;
-          pcVar3 = param_2;
+          *cursor = pcVar2 + 2;
+          out_buf[iVar3] = '\0';
+          uVar4 = 0xffffffff;
+          pcVar2 = out_buf;
           goto code_r0x0047a6e9;
         }
         iVar6 = iVar6 + -1;
       }
-      pcVar3 = param_2 + iVar4;
-      iVar4 = iVar4 + 1;
-      *pcVar3 = *(char *)*param_1;
-    } while (iVar4 < param_3);
+      pcVar2 = out_buf + iVar3;
+      iVar3 = iVar3 + 1;
+      *pcVar2 = **cursor;
+    } while (iVar3 < max_len);
   }
   return "Argument too long";
   while( true ) {
-    uVar5 = uVar5 - 1;
-    cVar1 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
+    uVar4 = uVar4 - 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + 1;
     if (cVar1 == '\0') break;
 code_r0x0047a6e9:
-    if (uVar5 == 0) break;
+    if (uVar4 == 0) break;
   }
-  iVar4 = ~uVar5 - 1;
-  if (0 < iVar4) {
-    pcVar3 = param_2 + iVar4;
+  n = ~uVar4 - 1;
+  if (0 < (int)n) {
+    pcVar2 = out_buf + n;
     do {
-      if (((&DAT_005c168c)[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
-      iVar4 = iVar4 + -1;
-      pcVar3 = pcVar3 + -1;
-    } while (0 < iVar4);
+      if (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      n = n - 1;
+      pcVar2 = pcVar2 + -1;
+    } while (0 < (int)n);
   }
-  param_2[iVar4] = '\0';
-  while (((&DAT_005c168c)[(byte)(*param_2 + 1)] & 2) != 0) {
-    memmove(param_2,param_2 + 1,iVar4);
-    iVar4 = iVar4 + -1;
+  out_buf[n] = '\0';
+  while (((&DAT_005c168c)[(byte)(*out_buf + 1)] & 2) != 0) {
+    memmove(out_buf,out_buf + 1,n);
+    n = n - 1;
   }
-  pcVar3 = (char *)*param_1;
-  while (((&DAT_005c168c)[(byte)(*pcVar3 + 1)] & 2) != 0) {
-    pcVar3 = pcVar3 + 1;
+  pcVar2 = *cursor;
+  while (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+    pcVar2 = pcVar2 + 1;
   }
-  *param_1 = (int)pcVar3;
+  *cursor = pcVar2;
   return (char *)0x0;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float param_2,int param_3)
+; void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; int              Stack[0xc]:4   is_holstered
 ; Local Variables:
 ; undefined4       Stack[-0x144]:4  local_144
 ; undefined4       Stack[-0x140]:4  local_140
@@ -41,7 +45,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   core_scat.cpp_FUN_004fda20
+;   core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -187,7 +191,7 @@ section .text
         ;   Label: LAB_004fd646
     PUSH EAX                            ; 004fd64c
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004fd64d
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004fd652
     ADD ESP,0x4                         ; 004fd655
     CMP EAX,0x2                         ; 004fd658
@@ -256,8 +260,8 @@ section .text
     PUSH EAX                            ; 004fd744
     PUSH EBX                            ; 004fd745
     PUSH ESI                            ; 004fd746
-    CALL core_scat.cpp_FUN_004fda20     ; 004fd747
-        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_004fda20()
+    CALL core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 ; 004fd747
+        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20(CScat * this_ptr, CDemonActor * target, int hand_index)
     MOV dword ptr [ESP + 0x134],EAX     ; 004fd74c
     FLD float ptr [ESP + 0x134]         ; 004fd753
     ADD ESP,0xc                         ; 004fd75a
@@ -301,7 +305,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004fd7c5
     PUSH EAX                            ; 004fd7c9
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004fd7ca
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004fd7cf
     LEA EDI,[ESP + 0x8]                 ; 004fd7d2
     MOV EAX,dword ptr [ESI + 0x1fa60]   ; 004fd7d6
@@ -333,14 +337,14 @@ section .text
     MOV EDX,dword ptr [ESI + 0x1fa60]   ; 004fd832
     PUSH EDX                            ; 004fd838
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004fd839
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004fd83e
     PUSH EAX                            ; 004fd841
     LEA EAX,[ESP + 0xa8]                ; 004fd842
     PUSH EAX                            ; 004fd849
     PUSH ESI                            ; 004fd84a
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004fd84b
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 004fd850
     MOV ECX,dword ptr [0x01e533a0]      ; 004fd853 | DAT_01e533a0
     PUSH ECX                            ; 004fd859
@@ -349,7 +353,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 004fd862
     PUSH EAX                            ; 004fd868
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 004fd869
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004fd86e
     FLD float ptr [ESP + 0xa4]          ; 004fd871
     FSUB float ptr [EAX]                ; 004fd878

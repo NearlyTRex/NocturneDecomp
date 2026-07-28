@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,uint param_3)
+; void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 ;
+; Parameters:
+; int              Stack[0x4]:4   screen_x
+; int              Stack[0x8]:4   screen_y
+; int              Stack[0xc]:4   z_depth
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

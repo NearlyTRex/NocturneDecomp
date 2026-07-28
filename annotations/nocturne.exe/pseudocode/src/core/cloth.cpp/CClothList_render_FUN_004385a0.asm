@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(int *param_1,int param_2)
+; void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; CDeformableModelInstance * Stack[0x8]:4   model_ptr
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425ca5
@@ -61,7 +64,7 @@ section .text
     ADD EBX,0x4                         ; 004385f2
     INC ESI                             ; 004385f5
     CALL core_cloth.cpp_CCloth_render_FUN_00437db0 ; 004385f6
-        ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_render_FUN_00437db0()
+        ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_00437db0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     MOV EAX,dword ptr [EDI]             ; 004385fb
     ADD ESP,0x8                         ; 004385fd
     CMP ESI,EAX                         ; 00438600

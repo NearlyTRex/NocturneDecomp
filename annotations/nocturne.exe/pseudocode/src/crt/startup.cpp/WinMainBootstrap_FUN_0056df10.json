@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 245,
+    "complexity_score": 267,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 5,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 60,
-    "suspect_count": 15,
+    "pseudocode_lines": 62,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,7 @@
       "warning_overlapping_globals",
       "warning_spacebase"
     ],
-    "total_lines": 131
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -43,34 +43,34 @@
   },
   "function_calls": [
     {
+      "addr": "0056ef60",
+      "is_variadic": false,
+      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0056ef60"
+    },
+    {
       "addr": "00563cc0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_00563cc0"
     },
     {
-      "addr": "005670ed",
+      "addr": "00571150",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005670ed"
-    },
-    {
-      "addr": "00567458",
-      "is_variadic": false,
-      "name": "FUN_00567458"
-    },
-    {
-      "addr": "0056ef60",
-      "is_variadic": false,
-      "name": "FUN_0056ef60"
+      "name": "crt_stack.c_GetStackUsage_FUN_00571150"
     },
     {
       "addr": "0056fcd4",
       "is_variadic": false,
-      "name": "FUN_0056fcd4"
+      "name": "crt_startup.c_ExitApplication_FUN_0056fcd4"
     },
     {
-      "addr": "00571150",
+      "addr": "00567458",
       "is_variadic": false,
-      "name": "FUN_00571150"
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458"
+    },
+    {
+      "addr": "005670ed",
+      "is_variadic": false,
+      "name": "crt_unknown.c_ProbeStackSpace_FUN_005670ed"
     },
     {
       "addr": "00571160",
@@ -230,8 +230,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(void **)((int)aiStack_1c",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)aiStack_1c",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 31,
       "match": "&stack0x000000e0",
       "severity": "moderate",
       "text": "*(int *)(&stack0x000000e0 + iVar1) = 0x000000F4;",
@@ -239,7 +255,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 32,
       "match": "(byte **)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(byte **)((int)aiStack_1c + iVar1 + 4) = local_10;",
@@ -247,7 +263,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 33,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStack_1c + iVar1) = 0x56df56;",
@@ -255,7 +271,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 36,
       "match": "DAT_005c1cf0",
       "severity": "mild",
       "text": "uVar6 = DAT_005c1cf0 + 3U & 0xfffffffc;",
@@ -263,7 +279,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 41,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStack_1c + iVar1 + 4) = 0x56df74;",
@@ -271,7 +287,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_005c1cf0",
       "severity": "mild",
       "text": "iVar2 = -(DAT_005c1cf0 + 3U & 0xfffffffc);",
@@ -279,7 +295,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_005c1cf0",
       "severity": "mild",
       "text": "_DAT_005c1cf4 = _DAT_005c1cf4 + DAT_005c1cf0;",
@@ -287,7 +303,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 54,
       "match": "DAT_005c1ccc",
       "severity": "mild",
       "text": "*(uint *)(puVar7 + -8) = DAT_005c1ccc;",

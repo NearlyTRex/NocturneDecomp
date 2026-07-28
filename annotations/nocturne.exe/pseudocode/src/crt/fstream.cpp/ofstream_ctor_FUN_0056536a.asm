@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056536a(undefined4 *param_1,byte param_2)
+; ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056536a(void *this_ptr,int c1)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   c1
 ;
 ; XREF[2]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3e55
@@ -16,9 +19,9 @@
 ;   void* PTR_crt_unknown.c_FUN_005651b2_005a4834 = 005651b2
 ;
 ; Called Functions:
-;   FUN_0056b4a9
-;   FUN_0056b503
-;   FUN_0056b896
+;   crt_fstream.cpp_fstreambase_ctor_FUN_0056b896
+;   crt_iostream.cpp_ios_ctor_FUN_0056b503
+;   crt_iostream.cpp_ostream_ctor_FUN_0056b4a9
 ;
 ; *****************************************************************************
 
@@ -32,14 +35,14 @@ section .text
     PUSH 0x1                            ; 00565375
         ;   Label: LAB_00565375
     PUSH EAX                            ; 00565377
-    CALL FUN_0056b896                   ; 00565378
-        ;   XREF to: 0056b896 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b896()
+    CALL crt_fstream.cpp_fstreambase_ctor_FUN_0056b896 ; 00565378
+        ;   XREF to: 0056b896 (UNCONDITIONAL_CALL)  ; fstreambase * crt_fstream.cpp_fstreambase_ctor_FUN_0056b896(fstreambase * this_ptr, uint c1)
     ADD ESP,0x8                         ; 0056537d
     PUSH 0x1                            ; 00565380
     ADD EAX,0x44                        ; 00565382
     PUSH EAX                            ; 00565385
-    CALL FUN_0056b4a9                   ; 00565386
-        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b4a9()
+    CALL crt_iostream.cpp_ostream_ctor_FUN_0056b4a9 ; 00565386
+        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_ctor_FUN_0056b4a9()
     SUB EAX,0x44                        ; 0056538b
     MOV EDX,dword ptr [EAX]             ; 0056538e
     MOV EDX,dword ptr [EDX + 0x4]       ; 00565390
@@ -57,8 +60,8 @@ section .text
     ADD EAX,0x50                        ; 005653be
     PUSH EAX                            ; 005653c1
     MOV dword ptr [EAX + -0xc],0x5a4818 ; 005653c2 | DAT_005a4818
-    CALL FUN_0056b503                   ; 005653c9
-        ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b503()
+    CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 005653c9
+        ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 005653ce
     SUB EAX,0x50                        ; 005653d1
     JMP 0x00565375                      ; 005653d4

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(int param_1)
+; CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435cef
@@ -11,8 +13,8 @@
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280 at 0051b28c
 ;   core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480 at 0051b48c
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 at 0051ad75
-;   core_skeleton.cpp_FUN_00518f60 at 00518f6c
-;   core_skeleton.cpp_FUN_00519120 at 0051912e
+;   core_skeleton.cpp_CDeformableModel_renderBones_FUN_00519120 at 0051912e
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 00518f6c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591629

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40(int param_1,undefined4 param_2)
+; CBoundingBox3D * __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   output_bbox
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x30]:1  local_30
@@ -38,18 +41,18 @@ section .text
     MOV EBP,dword ptr [ESP + 0x44]      ; 0051ef4b
     PUSH ESI                            ; 0051ef4f
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051ef50
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051ef55
     PUSH EAX                            ; 0051ef58
     MOV EBX,EAX                         ; 0051ef59
     CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130 ; 0051ef5b
-        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130()
+        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0051ef60
     MOV EAX,dword ptr [EAX + 0x28558]   ; 0051ef63
     PUSH EBP                            ; 0051ef69
     MOV dword ptr [ESP + 0x1c],EAX      ; 0051ef6a
     CALL core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0 ; 0051ef6e
-        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0()
+        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0051ef73
     XOR EDX,EDX                         ; 0051ef76
     MOV ECX,dword ptr [ESP + 0x18]      ; 0051ef78
@@ -77,19 +80,19 @@ section .text
     PUSH EAX                            ; 0051efbd
     PUSH ESI                            ; 0051efbe
     CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70 ; 0051efbf
-        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70()
+        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0051efc4
     PUSH EAX                            ; 0051efc7
     LEA EAX,[ESP + 0x14]                ; 0051efc8
     PUSH EAX                            ; 0051efcc
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0051efcd
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0051efd2
     PUSH EAX                            ; 0051efd5
     PUSH EBP                            ; 0051efd6
     INC EBX                             ; 0051efd7
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 0051efd8
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0051efdd
     CMP EBX,0x8                         ; 0051efe0
     JL 0x0051efb7                       ; 0051efe3

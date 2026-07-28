@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(int param_1)
+; void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory *this_ptr,int ammo_type)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   ammo_type
 ;
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50 at 004c0b2f
@@ -40,13 +43,13 @@ section .text
     MOV ECX,dword ptr [EBX + 0x330]     ; 004c1bce
     PUSH ECX                            ; 004c1bd4
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004c1bd5
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c1bda
     PUSH EAX                            ; 004c1bdd
     MOV ESI,dword ptr [EBX + 0x458]     ; 004c1bde
     PUSH ESI                            ; 004c1be4
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004c1be5
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004c1bea
     POP ESI                             ; 004c1bed
     POP EBX                             ; 004c1bee

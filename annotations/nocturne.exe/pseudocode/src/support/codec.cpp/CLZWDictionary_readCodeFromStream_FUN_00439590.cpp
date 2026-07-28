@@ -2,11 +2,11 @@
 // Address: 00439590
 // Address Range: [[00439590, 0043962c]]
 // Convention: __cdecl
-// Signature: uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(int param_1,uint param_2,uint param_3,uint param_4)
+int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining)
 
 {
   int iVar1;
@@ -15,14 +15,15 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(in
   uint uVar4;
   
   uVar4 = 0;
-  iVar2 = *(int *)(param_1 + 0xc);
-  uVar3 = 1 << ((char)*(uint *)(param_1 + 8) - 1U & 0x1f);
+  iVar2 = this_ptr->entry_count;
+  uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);
   if (uVar3 == 0) goto LAB_004395d9;
   do {
     if ((iVar2 - 1U & uVar3) != 0) {
-      iVar1 = support_codec_cpp_readBitsFromStream_FUN_00438ab0(param_2,1,param_3,param_4);
+      iVar1 = support_codec_cpp_readBitsFromStream_FUN_00438ab0
+                        (bit_buffer,1,istream,bytes_remaining);
       if (iVar1 < 0) {
-        return 0xffffffff;
+        return -1;
       }
       if (iVar1 == 0) {
         while( true ) {
@@ -30,9 +31,10 @@ uint __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(in
 LAB_004395d9:
           if (uVar3 == 0) break;
           while( true ) {
-            iVar2 = support_codec_cpp_readBitsFromStream_FUN_00438ab0(param_2,1,param_3,param_4);
+            iVar2 = support_codec_cpp_readBitsFromStream_FUN_00438ab0
+                              (bit_buffer,1,istream,bytes_remaining);
             if (iVar2 < 0) {
-              return 0xffffffff;
+              return -1;
             }
             if (iVar2 == 0) break;
             uVar4 = uVar4 | uVar3;

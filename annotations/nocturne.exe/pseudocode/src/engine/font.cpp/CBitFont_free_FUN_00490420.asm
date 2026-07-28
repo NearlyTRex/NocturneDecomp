@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_free_FUN_00490420(int param_1)
+; void __cdecl engine_font_cpp_CBitFont_free_FUN_00490420(CBitFont *this_ptr)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0 at 004901d8
@@ -28,7 +30,7 @@ section .text
     PUSH EDX                            ; 00490432
     ADD EBX,0x4                         ; 00490433
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00490436
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0049043b
     MOV dword ptr [EBX + 0x140],0x0     ; 0049043e
     CMP EBX,ESI                         ; 00490448
@@ -36,7 +38,7 @@ section .text
         ;   XREF to: 0049042c (CONDITIONAL_JUMP)  ; LAB_0049042c
     PUSH EDI                            ; 0049044c
     CALL engine_font.cpp_CBitFont_reset_FUN_0048fe50 ; 0049044d
-        ;   XREF to: 0048fe50 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_reset_FUN_0048fe50()
+        ;   XREF to: 0048fe50 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_reset_FUN_0048fe50(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00490452
     POP EDI                             ; 00490455
     POP ESI                             ; 00490456

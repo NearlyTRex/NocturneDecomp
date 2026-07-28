@@ -9,12 +9,12 @@
 void core_gargoyle_cpp_FUN_004a7320(void)
 
 {
-  int iVar1;
+  CGargoyle *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd80);
-  if (iVar1 == 0) {
+  this_ptr = (CGargoyle *)FUN_0056497c(0xbd80);
+  if (this_ptr == (CGargoyle *)0x0) {
     return;
   }
-  core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(iVar1);
+  core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(this_ptr);
   return;
 }

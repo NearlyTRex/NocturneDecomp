@@ -11,22 +11,19 @@
 void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 
 {
-  int iVar1;
+  int *piVar1;
   int iVar2;
-  byte *puVar3;
+  int iVar3;
   byte *puVar4;
-  int iVar5;
-  uint *puVar6;
+  byte *puVar5;
+  int iVar6;
   int iVar7;
+  ulong count;
   uint *puVar8;
-  byte bVar9;
+  uint *puVar9;
+  byte bVar10;
   uint auStack_98 [5];
   uint uStack_84;
-  int iStack_80;
-  uint uStack_7c;
-  int iStack_78;
-  byte *puStack_74;
-  char *pcStack_70;
   uint local_6c [8];
   int local_4c;
   int local_48;
@@ -36,132 +33,116 @@ void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int p
   byte *local_18;
   float local_14;
   
-  bVar9 = 0;
+  bVar10 = 0;
   if (_DAT_02dc84bc < 1) {
-    pcStack_70 = "pollSfx - must be locked!";
     PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     INT_01cc4804 = 0x1442;
-    puStack_74 = (byte *)0x5297cb;
     core_main_c_FUN_004c8440();
   }
   if (0 < param_3) {
-    iVar1 = 0;
+    iVar2 = 0;
     do {
-      if (*(int *)(iVar1 + 0x2dc8360) == 0) {
+      if (*(int *)(iVar2 + 0x2dc8360) == 0) {
         return;
       }
-      iVar1 = iVar1 + 4;
-    } while (iVar1 < param_3 * 4);
+      iVar2 = iVar2 + 4;
+    } while (iVar2 < param_3 * 4);
   }
   if (((param_2 == DAT_005bea64) && (param_3 == DAT_005bea68)) && (param_4 == DAT_005bea6c)) {
-    pcStack_70 = (char *)0x52955e;
     sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10();
-    iVar1 = 0;
+    iVar2 = 0;
     if (0 < param_3) {
       do {
-        iVar1 = iVar1 + 1;
-        local_44[iVar1] = *param_1;
+        iVar2 = iVar2 + 1;
+        local_44[iVar2] = *param_1;
         param_1 = param_1 + 1;
-      } while (iVar1 < param_3);
+      } while (iVar2 < param_3);
     }
     local_20 = param_3 << 2;
     local_18 = &DAT_02dc1b74;
     local_1c = &DAT_02dc1b74;
-    for (; 0 < param_5; param_5 = param_5 - iVar7) {
+    for (; 0 < param_5; param_5 = param_5 - iVar3) {
       if (_DAT_02dc8328 < 1) {
         if (_DAT_02dc84bc < 1) {
-          pcStack_70 = "SfxSlot::kill - must be locked!";
           PTR_01cc4800 = "..\\sound\\sndmain.cpp";
           INT_01cc4804 = 0x4e0;
-          puStack_74 = (byte *)0x5297f3;
           core_main_c_FUN_004c8440();
         }
         if (0 < _DAT_02dc8328) {
-          pcStack_70 = "nextMixingBuffer - shouldn't have any data pending!";
           PTR_01cc4800 = "..\\sound\\sndmain.cpp";
           INT_01cc4804 = 0x4e4;
-          puStack_74 = (byte *)0x5295ee;
           core_main_c_FUN_004c8440();
         }
-        iVar7 = 0;
-        iVar1 = _DAT_02dc8330 * 4;
+        iVar2 = 0;
+        count = _DAT_02dc8330 * 4;
         if (0 < DAT_005bea68) {
-          iVar2 = 0;
+          iVar3 = 0;
           do {
-            pcStack_70 = (char *)((_DAT_02dc8334 + -1) * iVar1);
-            iStack_78 = *(int *)(iVar2 + 0x2dc8360);
-            puStack_74 = (byte *)(_DAT_02dc8330 * 4 + iStack_78);
-            uStack_7c = 0x52962a;
-            memmove();
-            puStack_74 = (byte *)0x0;
-            iStack_78 = (_DAT_02dc8334 + -1) * _DAT_02dc8330 * 4 + *(int *)(iVar2 + 0x2dc8360);
-            iVar2 = iVar2 + 4;
-            iVar7 = iVar7 + 1;
-            uStack_7c = 0x529654;
-            pcStack_70 = (char *)iVar1;
-            memset();
-          } while (iVar7 < DAT_005bea68);
+            memmove
+                      (*(void **)(iVar3 + 0x2dc8360),
+                       (void *)(_DAT_02dc8330 * 4 + (int)*(void **)(iVar3 + 0x2dc8360)),
+                       (_DAT_02dc8334 + -1) * count);
+            piVar1 = (int *)(iVar3 + 0x2dc8360);
+            iVar3 = iVar3 + 4;
+            iVar2 = iVar2 + 1;
+            memset
+                      ((void *)((_DAT_02dc8334 + -1) * _DAT_02dc8330 * 4 + *piVar1),0,count);
+          } while (iVar2 < DAT_005bea68);
         }
         local_4c = _DAT_02dc8330;
         local_48 = DAT_005bea68;
         local_44[0] = DAT_005bea6c;
         if (0 < DAT_005bea68) {
-          iVar1 = 0;
+          iVar2 = 0;
           do {
-            iVar7 = iVar1 + 4;
-            *(uint *)((int)local_6c + iVar1) = *(uint *)(iVar1 + 0x2dc8360);
-            iVar1 = iVar7;
-          } while (iVar7 < DAT_005bea68 * 4);
+            iVar3 = iVar2 + 4;
+            *(uint *)((int)local_6c + iVar2) = *(uint *)(iVar2 + 0x2dc8360);
+            iVar2 = iVar3;
+          } while (iVar3 < DAT_005bea68 * 4);
         }
-        puVar4 = local_1c;
+        puVar5 = local_1c;
         local_14 = (float)_DAT_02dc8330 / (float)DAT_005bea6c;
-        puVar3 = (byte *)0x2dbd374;
-        do {
-          pcStack_70 = (char *)local_14;
-          iStack_78 = 0x5296bf;
-          puStack_74 = puVar3;
-          sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830();
-          puVar3 = puVar3 + 0x120;
-        } while (puVar3 != puVar4);
         puVar4 = (byte *)0x2dbd374;
         do {
-          puVar6 = local_6c;
-          puVar8 = auStack_98;
-          for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *puVar8 = *puVar6;
-            puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
-            puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
-          }
-          sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(puVar4);
+          sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830();
           puVar4 = puVar4 + 0x120;
-        } while (puVar4 != local_18);
+        } while (puVar4 != puVar5);
+        puVar5 = (byte *)0x2dbd374;
+        do {
+          puVar8 = local_6c;
+          puVar9 = auStack_98;
+          for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
+            *puVar9 = *puVar8;
+            puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+            puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+          }
+          sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(puVar5);
+          puVar5 = puVar5 + 0x120;
+        } while (puVar5 != local_18);
         _DAT_02dc8328 = _DAT_02dc8330;
         _DAT_02dc83d0 = _DAT_02dc83d0 + 1;
         _DAT_02dc832c = 0;
       }
-      iVar1 = local_20;
-      iVar7 = _DAT_02dc8328;
+      iVar2 = local_20;
+      iVar3 = _DAT_02dc8328;
       if (param_5 < _DAT_02dc8328) {
-        iVar7 = param_5;
+        iVar3 = param_5;
       }
       if (0 < param_3) {
-        iVar2 = 0;
+        iVar6 = 0;
         do {
-          pcStack_70 = (char *)param_6;
-          uStack_7c = *(uint *)((int)local_44 + iVar2 + 4);
-          iStack_78 = param_2;
-          iStack_80 = _DAT_02dc832c * 4 + *(int *)(iVar2 + 0x2dc8360);
           uStack_84 = 0x529766;
-          puStack_74 = (byte *)iVar7;
-          sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330();
-          iVar5 = iVar2 + 4;
-          *(int *)((int)local_44 + iVar2 + 4) =
-               *(int *)((int)local_44 + iVar2 + 4) + param_6 * iVar7;
-          iVar2 = iVar5;
-        } while (iVar5 < iVar1);
+          sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330
+                    ((float *)(_DAT_02dc832c * 4 + *(int *)(iVar6 + 0x2dc8360)),
+                     *(ushort **)((int)local_44 + iVar6 + 4),param_2,iVar3,param_6);
+          iVar7 = iVar6 + 4;
+          *(int *)((int)local_44 + iVar6 + 4) =
+               *(int *)((int)local_44 + iVar6 + 4) + param_6 * iVar3;
+          iVar6 = iVar7;
+        } while (iVar7 < iVar2);
       }
-      _DAT_02dc8328 = _DAT_02dc8328 - iVar7;
-      _DAT_02dc832c = _DAT_02dc832c + iVar7;
+      _DAT_02dc8328 = _DAT_02dc8328 - iVar3;
+      _DAT_02dc832c = _DAT_02dc832c + iVar3;
     }
   }
   return;

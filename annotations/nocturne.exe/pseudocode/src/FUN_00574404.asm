@@ -97,7 +97,7 @@ section .text
     PUSH EDX                            ; 005744b1
     PUSH EBX                            ; 005744b2
     CALL crt_string.c_memmove_FUN_00566170 ; 005744b3
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 005744b8
     MOV dword ptr [0x02de54a0],EBX      ; 005744bb | DAT_02de54a0
     CMP ESI,EBP                         ; 005744c1

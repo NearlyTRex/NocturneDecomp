@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gore_cpp_CGore_process_FUN_004b0030(void)
+; void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6234
@@ -54,7 +56,7 @@ section .text
     PUSH ESI                            ; 004b006c
         ;   Label: LAB_004b006c
     CALL core_gore.cpp_CBloodSplat_processAge_FUN_004af130 ; 004b006d
-        ;   XREF to: 004af130 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodSplat_processAge_FUN_004af130()
+        ;   XREF to: 004af130 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_processAge_FUN_004af130(CBloodSplat * this_ptr)
     INC EBX                             ; 004b0072
     MOV ECX,dword ptr [0x01c7ccf0]      ; 004b0073 | DAT_01c7ccf0
     ADD ESP,0x4                         ; 004b0079
@@ -68,7 +70,7 @@ section .text
     PUSH 0x1c9e03c                      ; 004b0090
         ;   Label: LAB_004b0090
     CALL core_gore.cpp_CBloodPool_setupRenderState_FUN_004af2a0 ; 004b0095
-        ;   XREF to: 004af2a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodPool_setupRenderState_FUN_004af2a0()
+        ;   XREF to: 004af2a0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_setupRenderState_FUN_004af2a0(CBloodPool * this_ptr)
     XOR ESI,ESI                         ; 004b009a
     MOV EBX,dword ptr [0x01c9e038]      ; 004b009c | DAT_01c9e038
     ADD ESP,0x4                         ; 004b00a2
@@ -79,7 +81,7 @@ section .text
     PUSH EBX                            ; 004b00ae
         ;   Label: LAB_004b00ae
     CALL core_gore.cpp_CBloodPool_processAge_FUN_004af700 ; 004b00af
-        ;   XREF to: 004af700 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CBloodPool_processAge_FUN_004af700()
+        ;   XREF to: 004af700 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_processAge_FUN_004af700(CBloodPool * this_ptr)
     INC ESI                             ; 004b00b4
     MOV EDI,dword ptr [0x01c9e038]      ; 004b00b5 | DAT_01c9e038
     ADD ESP,0x4                         ; 004b00bb

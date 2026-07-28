@@ -41,7 +41,7 @@ section .text
     PUSH EDX                            ; 004a5e68
     MOVSD.REP ES:EDI,ESI                ; 004a5e69
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004a5e6b
-        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600()
+        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004a5e70
     TEST EAX,EAX                        ; 004a5e73
     JNZ 0x004a5e7e                      ; 004a5e75
@@ -57,13 +57,13 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 004a5e81
     PUSH EAX                            ; 004a5e85
     CALL support_trisock.cpp_parseIPAddress_FUN_00548af0 ; 004a5e86
-        ;   XREF to: 00548af0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_parseIPAddress_FUN_00548af0()
+        ;   XREF to: 00548af0 (UNCONDITIONAL_CALL)  ; uint * support_trisock.cpp_parseIPAddress_FUN_00548af0(uint * result_ptr, char * dotted_decimal_string)
     ADD ESP,0x8                         ; 004a5e8b
     PUSH EAX                            ; 004a5e8e
     MOV ECX,dword ptr [0x005bdee0]      ; 004a5e8f | DAT_005bdee0
     PUSH ECX                            ; 004a5e95
     CALL core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 ; 004a5e96
-        ;   XREF to: 004e9a90 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90()
+        ;   XREF to: 004e9a90 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetGame * this_ptr, uint32_t * server_ip)
     ADD ESP,0x8                         ; 004a5e9b
     TEST EAX,EAX                        ; 004a5e9e
     JZ 0x004a5ece                       ; 004a5ea0
@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_004a5eaa
     PUSH ESI                            ; 004a5eb0
     CALL core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 ; 004a5eb1
-        ;   XREF to: 004eb520 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_runLobby_FUN_004eb520()
+        ;   XREF to: 004eb520 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_runLobby_FUN_004eb520(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004a5eb6
     TEST EAX,EAX                        ; 004a5eb9
     JZ 0x004a5ee7                       ; 004a5ebb
@@ -82,7 +82,7 @@ section .text
     MOV EBP,dword ptr [0x005baf90]      ; 004a5ebd | DAT_005baf90
     PUSH EBP                            ; 004a5ec3
     CALL core_mission.cpp_CDemonMission_run_FUN_004d9440 ; 004a5ec4
-        ;   XREF to: 004d9440 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_run_FUN_004d9440()
+        ;   XREF to: 004d9440 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_run_FUN_004d9440(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004a5ec9
     JMP 0x004a5eaa                      ; 004a5ecc
         ;   XREF to: 004a5eaa (UNCONDITIONAL_JUMP)  ; LAB_004a5eaa
@@ -92,7 +92,7 @@ section .text
     MOV EBX,dword ptr [0x005bdee0]      ; 004a5ed0 | DAT_005bdee0
     PUSH EBX                            ; 004a5ed6
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004a5ed7
-        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90()
+        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004a5edc
     POP EBX                             ; 004a5edf
     ADD ESP,0x68                        ; 004a5ee0
@@ -105,7 +105,7 @@ section .text
     MOV EDI,dword ptr [0x005bdee0]      ; 004a5ee9 | DAT_005bdee0
     PUSH EDI                            ; 004a5eef
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004a5ef0
-        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90()
+        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004a5ef5
     ADD ESP,0x68                        ; 004a5ef8
     POP EBP                             ; 004a5efb

@@ -2,30 +2,33 @@
 // Address: 004cf0c0
 // Address Range: [[004cf0c0, 004cf172]]
 // Convention: unknown
-// Signature: void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
+// Signature: void core_melee_cpp_CMelee_process_FUN_004cf0c0(CWeapon *param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
+void core_melee_cpp_CMelee_process_FUN_004cf0c0(CWeapon *param_1,float param_2)
 
 {
-  float fVar1;
-  uint uVar2;
-  byte local_24 [12];
-  byte auStack_18 [20];
+  CDemonActor_vtable *pCVar1;
+  float fVar2;
+  CVector3f *input_local_point;
+  CVector3f CStack_18;
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(param_1,param_2);
-  if ((0 < *(int *)(param_1 + 0x588)) &&
-     (param_2 = *(float *)(param_1 + 0x58c) - param_2, *(float *)(param_1 + 0x58c) = param_2,
-     param_2 <= 0.0)) {
-    fVar1 = *(float *)(param_1 + 0x590) * (float)1.1499999999999999;
-    *(int *)(param_1 + 0x588) = *(int *)(param_1 + 0x588) + -1;
-    *(float *)(param_1 + 0x590) = fVar1;
-    *(float *)(param_1 + 0x58c) = fVar1;
-    uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_24);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_18,uVar2);
+  if ((0 < *(int *)(param_1[1].base.actor_name + 0x18)) &&
+     (param_2 = *(float *)(param_1[1].base.actor_name + 0x1c) - param_2,
+     *(float *)(param_1[1].base.actor_name + 0x1c) = param_2, param_2 <= 0.0)) {
+    fVar2 = param_1[1].base.location.position.x * (float)1.1499999999999999;
+    pCVar1 = (param_1->base).vtable._ub;
+    *(int *)(param_1[1].base.actor_name + 0x18) = *(int *)(param_1[1].base.actor_name + 0x18) + -1;
+    param_1[1].base.location.position.x = fVar2;
+    *(float *)(param_1[1].base.actor_name + 0x1c) = fVar2;
+    input_local_point = (CVector3f *)(*pCVar1->initializeInEditor)(&param_1->base);
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+              (&param_1->base,&CStack_18,input_local_point);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-              (INT_005b96c4,auStack_18,&DAT_02dd1184,*(uint *)(param_1 + 0x584));
+              ((CGore *)INT_005b96c4,&CStack_18,(CVector3f *)&DAT_02dd1184,
+               *(int *)(param_1[1].base.actor_name + 0x14));
     return;
   }
   return;

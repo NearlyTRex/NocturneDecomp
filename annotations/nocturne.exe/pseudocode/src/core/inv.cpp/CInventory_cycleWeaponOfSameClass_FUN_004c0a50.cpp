@@ -2,64 +2,68 @@
 // Address: 004c0a50
 // Address Range: [[004c0a50, 004c0b3e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(int param_1,int param_2)
+// Signature: void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(CInventory *this_ptr,int direction)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(int param_1,int param_2)
+void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(CInventory *this_ptr,int direction)
 
 {
+  CWeapon *this_ptr_00;
+  CWeapon *this_ptr_01;
+  char *str2;
+  char *str1;
   int iVar1;
-  uint uVar2;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
+  CInventory *pCVar4;
   
-  core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(param_1,1);
-  if (*(int *)(param_1 + 0x330) != 0) {
-    iVar4 = 0;
-    iVar5 = param_1;
-    if (0 < *(int *)(param_1 + 8)) {
+  core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(this_ptr,1);
+  if (this_ptr->selected_weapon != (CWeapon *)0x0) {
+    iVar2 = 0;
+    pCVar4 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        if (*(int *)(param_1 + 0x330) == *(int *)(iVar5 + 0xc)) break;
-        iVar4 = iVar4 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar4 < *(int *)(param_1 + 8));
+        if (this_ptr->selected_weapon == (CWeapon *)pCVar4->items[0]) break;
+        iVar2 = iVar2 + 1;
+        pCVar4 = (CInventory *)&pCVar4->owner;
+      } while (iVar2 < this_ptr->item_count);
     }
-    iVar5 = 0;
+    iVar3 = 0;
     do {
-      iVar4 = iVar4 + param_2;
-      if (iVar4 < *(int *)(param_1 + 8)) {
-        if (iVar4 < 0) {
-          iVar4 = *(int *)(param_1 + 8) + -1;
+      iVar2 = iVar2 + direction;
+      if (iVar2 < this_ptr->item_count) {
+        if (iVar2 < 0) {
+          iVar2 = this_ptr->item_count + -1;
         }
       }
       else {
-        iVar4 = 0;
+        iVar2 = 0;
       }
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0xc + iVar4 * 4),
-                         g_CWeaponActorType_02ddf970.name_hash);
-      if (iVar1 != 0) {
-        uVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0
-                          (*(uint *)(param_1 + 0x330));
-        uVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar1,uVar2);
-        iVar3 = _strcmp(uVar2);
-        if (iVar3 == 0) {
-          iVar4 = *(int *)(param_1 + 0x330);
-          if (iVar1 == iVar4) {
+      this_ptr_01 = (CWeapon *)
+                    core_actor_cpp_castToClassHash_FUN_0040d890
+                              (this_ptr->items[iVar2],g_CWeaponActorType_02ddf970.name_hash);
+      if (this_ptr_01 != (CWeapon *)0x0) {
+        str2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0
+                         (&this_ptr->selected_weapon->base);
+        str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0((CDemonActor *)this_ptr_01)
+        ;
+        iVar1 = _strcmp(str1,str2);
+        if (iVar1 == 0) {
+          this_ptr_00 = this_ptr->selected_weapon;
+          if (this_ptr_01 == this_ptr_00) {
             return;
           }
-          if (iVar4 != 0) {
-            (**(code **)(*(int *)(iVar4 + 0x14c) + 4))(iVar4,0x3dcccccd);
+          if (this_ptr_00 != (CWeapon *)0x0) {
+            (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
           }
-          *(int *)(param_1 + 0x330) = iVar1;
-          core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(param_1,999);
+          this_ptr->selected_weapon = this_ptr_01;
+          core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(this_ptr,999);
           return;
         }
       }
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < 100);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 100);
   }
   return;
 }

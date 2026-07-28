@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(int param_1)
+; void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -66,7 +68,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0xbd48]    ; 004da6d3
     PUSH ECX                            ; 004da6d9
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004da6da
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x20]                ; 004da6df
     FLD float ptr [EAX]                 ; 004da6e2
     ADD ESP,0xc                         ; 004da6e4
@@ -81,7 +83,7 @@ section .text
     FSTP float ptr [EDX + 0x8]          ; 004da6fd
     MOV dword ptr [EBX + 0xbbf8],0x0    ; 004da700
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004da70a
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004da70f
     ADD ESP,0x30                        ; 004da712
     POP EDI                             ; 004da715

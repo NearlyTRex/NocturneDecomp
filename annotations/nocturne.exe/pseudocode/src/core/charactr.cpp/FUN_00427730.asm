@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00427730(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,int param_4,float param_5,int param_6)
 ;
 ;
 ; XREF[8]:
@@ -55,7 +55,7 @@ section .text
         ;   Label: LAB_0042775e
     PUSH EBX                            ; 00427763
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 00427764
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00427769
     TEST EAX,EAX                        ; 0042776c
     JNZ 0x00427759                      ; 0042776e
@@ -67,7 +67,7 @@ section .text
     PUSH ESI                            ; 00427776
     PUSH EDX                            ; 00427777
     CALL core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0 ; 00427778
-        ;   XREF to: 0051e9e0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0()
+        ;   XREF to: 0051e9e0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(CDeformableModelInstance * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042777d
     MOV ECX,EAX                         ; 00427780
     MOV EDI,dword ptr [EBX + 0x2f08]    ; 00427782
@@ -95,12 +95,12 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004277bb
     PUSH EAX                            ; 004277c1
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004277c2
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004277c7
     PUSH EAX                            ; 004277ca
     PUSH EBX                            ; 004277cb
     CALL core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0 ; 004277cc
-        ;   XREF to: 004266a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0()
+        ;   XREF to: 004266a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     ADD ESP,0xc                         ; 004277d1
     MOV dword ptr [EBX + 0xfc],0x1      ; 004277d4
     POP EBP                             ; 004277de

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_isOfClassHash_FUN_0040d860(int param_1,undefined4 param_2)
+; int __cdecl core_actor_cpp_isOfClassHash_FUN_0040d860(CDemonActor *actor_ptr,uint class_name_hash)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
+; uint             Stack[0x8]:4   class_name_hash
 ;
 ; XREF[4]:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890 at 0040d8a3
@@ -32,7 +35,7 @@ section .text
     ADD ESP,0x4                         ; 0040d87b
     PUSH EAX                            ; 0040d87e
     CALL core_actor.cpp_checkNameHash_FUN_0040d810 ; 0040d87f
-        ;   XREF to: 0040d810 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_checkNameHash_FUN_0040d810()
+        ;   XREF to: 0040d810 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040d810(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040d884
     RET                                 ; 0040d887
 

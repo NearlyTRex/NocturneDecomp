@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00533002
         ;   Label: LAB_00533002
     CALL core_spike.cpp_CSpike_ctor_FUN_00533020 ; 00533003
-        ;   XREF to: 00533020 (UNCONDITIONAL_CALL)  ; undefined core_spike.cpp_CSpike_ctor_FUN_00533020()
+        ;   XREF to: 00533020 (UNCONDITIONAL_CALL)  ; CSpike * core_spike.cpp_CSpike_ctor_FUN_00533020(CSpike * this_ptr)
     ADD ESP,0x4                         ; 00533008
     RET                                 ; 0053300b
 

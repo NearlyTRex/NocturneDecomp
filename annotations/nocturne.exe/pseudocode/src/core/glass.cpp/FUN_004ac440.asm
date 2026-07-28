@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_glass_cpp_FUN_004ac440(int param_1)
+; int core_glass_cpp_FUN_004ac440(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_004ac47b
     PUSH EDI                            ; 004ac481 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004ac482
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004ac487
     TEST EAX,EAX                        ; 004ac48a
     JNZ 0x004ac472                      ; 004ac48c
@@ -67,7 +67,7 @@ section .text
     PUSH EBX                            ; 004ac48e
     PUSH EBP                            ; 004ac48f
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004ac490
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 004ac495
     PUSH ESI                            ; 004ac498
     LEA EAX,[ESP + 0x8]                 ; 004ac499
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0x8                         ; 004ac4a8
     PUSH EAX                            ; 004ac4ab
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 004ac4ac
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 004ac4b1
     MOV dword ptr [ESP + 0x1c],EAX      ; 004ac4b4
     LEA EAX,[EBP + 0x15c]               ; 004ac4b8
@@ -86,7 +86,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 004ac4bf | DAT_005ae704
     PUSH EAX                            ; 004ac4c4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004ac4c5
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA EDX,[EBP + 0x384]               ; 004ac4ca
     ADD ESP,0x8                         ; 004ac4d0
     LEA EDI,[EBP + 0x4b0]               ; 004ac4d3
@@ -134,7 +134,7 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 004ac551 | DAT_005ae704
     PUSH ESI                            ; 004ac557 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004ac558
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004ac55d
     PUSH 0x0                            ; 004ac560
     PUSH 0x4                            ; 004ac562
@@ -149,7 +149,7 @@ section .text
     PUSH ECX                            ; 004ac580 | DAT_01e57284
     XOR ESI,ESI                         ; 004ac581
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 004ac583
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EBX,dword ptr [EBP + 0xb30]     ; 004ac588
     ADD ESP,0x1c                        ; 004ac58e
     TEST EBX,EBX                        ; 004ac591
@@ -178,7 +178,7 @@ section .text
     PUSH EBP                            ; 004ac5e0
         ;   Label: LAB_004ac5e0
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004ac5e1
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004ac5e6
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004ac5e9
     POP EBX                             ; 004ac5ed

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_process_FUN_00455640(int param_1,float param_2)
+; void core_door_cpp_CDoor_process_FUN_00455640(CDoor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8
@@ -65,7 +65,7 @@ section .text
     MOV EBX,dword ptr [0x005b7650]      ; 004556a1 | DAT_005b7650
     PUSH EBX                            ; 004556a7
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004556a8
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004556ad
     TEST EAX,EAX                        ; 004556b0
     JZ 0x004556ec                       ; 004556b2
@@ -106,13 +106,13 @@ section .text
     MOV EBP,dword ptr [0x005b7650]      ; 00455719 | DAT_005b7650
     PUSH EBP                            ; 0045571f
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 00455720
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
         ;   Label: LAB_00455720
     ADD ESP,0x8                         ; 00455725
     PUSH ESI                            ; 00455728
         ;   Label: LAB_00455728
     CALL core_door.cpp_CDoor_reposition_FUN_004552a0 ; 00455729
-        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_reposition_FUN_004552a0()
+        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_004552a0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0045572e
     FLD float ptr [ESI + 0x9a4]         ; 00455731
     FCOMP float ptr [ESP + 0x80]        ; 00455737
@@ -158,7 +158,7 @@ section .text
     MOV EAX,[0x005b7650]                ; 004557af | DAT_005b7650
     PUSH EAX                            ; 004557b4
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004557b5
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004557ba
     TEST EAX,EAX                        ; 004557bd
     JZ 0x004557e9                       ; 004557bf
@@ -311,7 +311,7 @@ section .text
     MOV EAX,ESP                         ; 004559cd
     PUSH EAX                            ; 004559cf
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 004559d0
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 004559d5
     MOV EAX,ESP                         ; 004559d8
     PUSH EAX                            ; 004559da
@@ -438,7 +438,7 @@ section .text
     PUSH ESI                            ; 00455b3b
     MOV dword ptr [ESI + 0x9a4],EAX     ; 00455b3c
     CALL core_door.cpp_CDoor_reposition_FUN_004552a0 ; 00455b42
-        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_reposition_FUN_004552a0()
+        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_004552a0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00455b47
     ADD ESP,0xc0                        ; 00455b4a
     POP EBP                             ; 00455b50

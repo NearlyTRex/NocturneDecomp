@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,int enable_camera_shake,float end_width,float end_spread)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_position
+; CVector3f *      Stack[0xc]:4   end_position
+; int              Stack[0x10]:4   enable_camera_shake
+; float            Stack[0x14]:4   end_width
+; float            Stack[0x18]:4   end_spread
 ;
 ; XREF[2]:
 ;   core_baron.cpp_FUN_00410cc0 at 00410fc3

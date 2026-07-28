@@ -17,6 +17,7 @@ void core_tbplayer_cpp_CDrummer_processDamage_FUN_005435f0(int param_1,int param
     return;
   }
   *(uint *)(param_1 + 0x2434) = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,3,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+            ((CMotionController *)(param_1 + 0x150),3,1);
   return;
 }

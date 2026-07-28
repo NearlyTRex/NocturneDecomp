@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(undefined4 param_1,int param_2,byte param_3)
+; bool sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270(undefined4 param_1,int *param_2,byte param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xcd0]:4  local_cd0
@@ -93,7 +93,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0052b307
     PUSH EAX                            ; 0052b309
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00527380 ; 0052b30a
-        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00527380()
+        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00527380(int channel_index)
     MOV dword ptr [ESP + 0xcac],EAX     ; 0052b30f
     FLD float ptr [ESP + 0xcac]         ; 0052b316
     ADD ESP,0x4                         ; 0052b31d
@@ -181,7 +181,7 @@ section .text
     FILD dword ptr [EDX + 0x10c]        ; 0052b400
     FMUL float ptr [EBX + 0x48]         ; 0052b406
     CALL crt_math.c_round_FUN_00563a30  ; 0052b409
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [ESP + 0xc8c]       ; 0052b40e
     MOV EDX,dword ptr [ESP + 0xc8c]     ; 0052b415
     MOV EAX,dword ptr [ESP + 0xca0]     ; 0052b41c
@@ -314,7 +314,7 @@ section .text
     PUSH EAX                            ; 0052b571
         ;   Label: LAB_0052b571
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b572
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b577
     PUSH EAX                            ; 0052b57a
     PUSH 0x5944c9                       ; 0052b57b | = "Set hardware sfx 3d buffer position"
@@ -335,7 +335,7 @@ section .text
     PUSH EAX                            ; 0052b5ac
         ;   Label: LAB_0052b5ac
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b5ad
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b5b2
     PUSH EAX                            ; 0052b5b5
     PUSH 0x5944ed                       ; 0052b5b6 | = "Set hardware sfx 3d buffer velocity"
@@ -379,7 +379,7 @@ section .text
     FLD double ptr [ESP + 0xc94]        ; 0052b627
     ADD ESP,0x8                         ; 0052b62e
     CALL crt_math.c_round_FUN_00563a30  ; 0052b631
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xca4]       ; 0052b636
     MOV EAX,dword ptr [ESP + 0xca4]     ; 0052b63d
     TEST EAX,EAX                        ; 0052b644
@@ -398,7 +398,7 @@ section .text
     PUSH EAX                            ; 0052b666
         ;   Label: LAB_0052b666
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b667
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b66c
     PUSH EAX                            ; 0052b66f
     PUSH 0x594511                       ; 0052b670 | = "Set hardware sfx secondary buffer volume"
@@ -419,7 +419,7 @@ section .text
     PUSH EAX                            ; 0052b6a1
         ;   Label: LAB_0052b6a1
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b6a2
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b6a7
     PUSH EAX                            ; 0052b6aa
     PUSH 0x59453a                       ; 0052b6ab | = "Set hardware sfx secondary buffer fre..."
@@ -440,7 +440,7 @@ section .text
     PUSH EAX                            ; 0052b6dc
         ;   Label: LAB_0052b6dc
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b6dd
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b6e2
     PUSH EAX                            ; 0052b6e5
     PUSH 0x594566                       ; 0052b6e6 | = "Set hardware sfx 3d buffer mode"
@@ -461,7 +461,7 @@ section .text
     PUSH EAX                            ; 0052b717
         ;   Label: LAB_0052b717
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b718
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b71d
     PUSH EAX                            ; 0052b720
     PUSH 0x594586                       ; 0052b721 | = "Set hardware sfx 3d buffer minimum di..."
@@ -482,7 +482,7 @@ section .text
     PUSH EAX                            ; 0052b752
         ;   Label: LAB_0052b752
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b753
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b758
     PUSH EAX                            ; 0052b75b
     PUSH 0x5945b2                       ; 0052b75c | = "Set hardware sfx 3d buffer maximum di..."
@@ -509,7 +509,7 @@ section .text
     PUSH EAX                            ; 0052b79a
         ;   Label: LAB_0052b79a
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b79b
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b7a0
     PUSH EAX                            ; 0052b7a3
     PUSH 0x59462b                       ; 0052b7a4 | = "Commit hardware sfx 3d buffer settings"

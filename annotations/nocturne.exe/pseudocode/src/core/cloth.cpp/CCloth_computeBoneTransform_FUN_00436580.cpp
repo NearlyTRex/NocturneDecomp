@@ -2,77 +2,82 @@
 // Address: 00436580
 // Address Range: [[00436580, 004366ec]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)
+void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
   int iVar1;
-  int iVar2;
-  uint *puVar3;
+  int *piVar2;
+  float *pfVar3;
   uint *puVar4;
-  byte bVar5;
-  uint local_138;
-  uint local_134;
-  uint local_130;
-  uint local_128;
-  uint local_124;
-  uint local_120;
-  uint local_118;
-  uint local_114;
-  uint local_110;
+  float *pfVar5;
+  uint *puVar6;
+  byte bVar7;
+  float local_138;
+  float local_134;
+  int local_130;
+  float local_128;
+  float local_124;
+  int local_120;
+  float local_118;
+  int local_114;
+  int local_110;
   uint local_108 [12];
   uint local_d8 [12];
   uint local_a8 [3];
-  uint local_9c;
-  uint local_8c;
-  uint local_7c;
+  int local_9c;
+  int local_8c;
+  int local_7c;
   uint local_78 [12];
   uint local_48 [12];
   uint local_18 [3];
   
-  bVar5 = 0;
-  iVar2 = param_2 * 0xac + param_1 + 0x37b50;
-  core_xform_cpp_inverse_FUN_0055bd00(param_3 + 0xe80 + *(int *)(iVar2 + 0x40) * 0x30);
-  puVar3 = local_48;
-  puVar4 = local_78;
+  bVar7 = 0;
+  core_xform_cpp_inverse_FUN_0055bd00
+            ((model_ptr->bone_transform).bone_world_matrices +
+             this_ptr->vertices[0x2d5].connected_indices[bone_index * 0x2b + 0xe]);
+  puVar4 = local_48;
+  puVar6 = local_78;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *puVar6 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_78,iVar2 + 0x48);
-  puVar3 = local_d8;
-  puVar4 = &local_138;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+            (local_78,this_ptr->vertices[0x2d5].rest_lengths + bone_index * 0x2b + -1);
+  pfVar3 = (float *)local_d8;
+  pfVar5 = &local_138;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *pfVar5 = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
+    pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
   }
-  *(uint *)(iVar2 + 0x78) = local_138;
-  *(uint *)(iVar2 + 0x7c) = local_128;
-  *(uint *)(iVar2 + 0x80) = local_118;
-  *(uint *)(iVar2 + 0x84) = local_134;
-  *(uint *)(iVar2 + 0x88) = local_124;
-  *(uint *)(iVar2 + 0x8c) = local_114;
-  *(uint *)(iVar2 + 0x90) = local_130;
-  *(uint *)(iVar2 + 0x94) = local_120;
-  *(uint *)(iVar2 + 0x98) = local_110;
+  this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xb] = local_138;
+  this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xc] = local_128;
+  this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xd] = local_118;
+  this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xe] = local_134;
+  this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xf] = local_124;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -10] = local_114;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -9] = local_130;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -8] = local_120;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -7] = local_110;
   core_xform_cpp_inverse_FUN_0055bd00(&local_138);
-  puVar3 = local_108;
-  puVar4 = local_a8;
+  puVar4 = local_108;
+  puVar6 = local_a8;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *puVar6 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
   }
-  if ((uint *)(iVar2 + 0xa0) == local_18) {
+  piVar2 = this_ptr->vertices[0x2d5].bone_index + bone_index * 0x2b + -5;
+  if (piVar2 == local_18) {
     return;
   }
-  *(uint *)(iVar2 + 0xa0) = local_9c;
-  *(uint *)(iVar2 + 0xa4) = local_8c;
-  *(uint *)(iVar2 + 0xa8) = local_7c;
+  *piVar2 = local_9c;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -4] = local_8c;
+  this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -3] = local_7c;
   return;
 }

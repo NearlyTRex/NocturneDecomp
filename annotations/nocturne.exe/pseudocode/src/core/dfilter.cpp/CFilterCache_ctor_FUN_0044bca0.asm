@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(undefined4 *param_1)
+; CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(CFilterCache *this_ptr)
 ;
+; Parameters:
+; CFilterCache *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dfilter.cpp_staticInit_FUN_0044bc20 at 0044bc67

@@ -1,0 +1,465 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 510,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 46,
+    "suspect_types": [
+      "register_param",
+      "unnamed_param"
+    ],
+    "total_lines": 153
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005700d0",
+    "address_range": [
+      [
+        "005700d0",
+        "005701ae"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "crt_strstream.cpp_strstreambuf_seekoff_FUN_005700d0",
+    "signature": "int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571e75",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_validateBufferSeek_FUN_00571e75"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.888888888888889,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 82,
+      "INT_ADD": 46,
+      "INT_AND": 34,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 30,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 15,
+      "INT_SUB": 25,
+      "LOAD": 35,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 25
+    },
+    "pcode_op_count": 350
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "int crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(int param_1,int param_2,int param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (((param_4 & 3) != 0) && ((param_3 != 1 || ((param_4 & 3) != 3)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_4 & 3) != 0) && ((param_3 != 1 || ((param_4 & 3) != 3)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (((param_4 & 3) != 0) && ((param_3 != 1 || ((param_4 & 3) != 3)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((param_4 & 1) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "buffer_end2 = *(char **)(param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((buffer_end2 == (char *)0x0) || (buffer_end2 < *(char **)(param_1 + 0x10))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "buffer_end2 = *(char **)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_00571e75",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0xc),*(char **)(param_1 + 0x14),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0xc),*(char **)(param_1 + 0x14),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0xc),*(char **)(param_1 + 0x14),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0xc),*(char **)(param_1 + 0x14),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char **)(param_1 + 0x10),buffer_end2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (in_ECX != -1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "uVar1 = in_ECX + *(int *)(param_1 + 0xc);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = in_ECX + *(int *)(param_1 + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(param_1 + 0x1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x14) = uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x10) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (((param_4 & 2) != 0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "(in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_00571e75",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0x18),*(char **)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0x18),*(char **)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0x18),*(char **)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2,param_3,*(char **)(param_1 + 0x18),*(char **)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 32,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(char **)(param_1 + 0x1c),*(char **)(param_1 + 0x1c)), in_ECX != -1)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char **)(param_1 + 0x1c),*(char **)(param_1 + 0x1c)), in_ECX != -1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char **)(param_1 + 0x1c),*(char **)(param_1 + 0x1c)), in_ECX != -1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1c) = *(uint *)(param_1 + 0x1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + in_ECX;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + in_ECX;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x38) < in_ECX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x38) < in_ECX) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x38) = in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x38) = in_ECX;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 40,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "return in_ECX;",
+      "type": "register_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005a4884"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

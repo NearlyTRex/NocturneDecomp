@@ -11,6 +11,8 @@
 void core_dtri_cpp_FUN_0046eb40(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,8,&g_CDemonTriangleTypeInfo_0059c080);
   return;
 }

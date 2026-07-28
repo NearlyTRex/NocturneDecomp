@@ -2,24 +2,24 @@
 // Address: 00473c00
 // Address Range: [[00473c00, 00473c4c]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(int param_1,int *param_2)
+// Signature: CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *dest_ptr,CStrList *source_ptr)
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(int param_1,int *param_2)
+CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *dest_ptr,CStrList *source_ptr)
 
 {
-  uint uVar1;
-  int iVar2;
+  char *string_data;
+  int index;
   
-  (**(code **)(*(int *)(param_1 + 0xc) + 0x14))(param_1);
-  if (*param_2 < 1) {
-    return param_1;
+  (*dest_ptr->vtable->clear)(dest_ptr);
+  if (source_ptr->item_count < 1) {
+    return dest_ptr;
   }
-  shape_edittool_cpp_CStrList_allocate_FUN_00473de0(param_1,*param_2);
-  for (iVar2 = 0; iVar2 < *param_2; iVar2 = iVar2 + 1) {
-    uVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_2,iVar2);
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,uVar1);
+  shape_edittool_cpp_CStrList_allocate_FUN_00473de0(dest_ptr,source_ptr->item_count);
+  for (index = 0; index < source_ptr->item_count; index = index + 1) {
+    string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(source_ptr,index);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0(dest_ptr,string_data);
   }
-  return param_1;
+  return dest_ptr;
 }

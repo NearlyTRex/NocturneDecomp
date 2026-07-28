@@ -1,32 +1,45 @@
 // Name: core_dynamite.cpp_CDynamite_ctor_FUN_0046ebd0
 // Address: 0046ebd0
 // Address Range: [[0046ebd0, 0046ec79]]
-// Convention: unknown
-// Signature: int core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CWeapon * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CWeapon *param_1)
 
 #include "nocturne.h"
 
-int core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(uint param_1)
+CWeapon * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CWeapon *param_1)
 
 {
-  int iVar1;
+  CWeapon *pCVar1;
+  CWeapon *pCVar2;
   
-  iVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059c924;
+  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  (pCVar2->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059c924;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar1 + 0x150,"dynamitestick.kfm");
-  *(uint *)(iVar1 + 0x55c) = 0x3f800000;
-  *(uint *)(iVar1 + 0x57c) = 0;
-  *(uint *)(iVar1 + 0x578) = *(uint *)(iVar1 + 0x57c);
-  *(uint *)(iVar1 + 0x574) = *(uint *)(iVar1 + 0x578);
-  *(uint *)(iVar1 + 0x570) = 0xbf800000;
-  *(uint *)(iVar1 + 0x2d0) = 0;
-  *(uint *)(iVar1 + 0x2d4) = 0;
-  *(uint *)(iVar1 + 0x2d8) = 3;
-  *(uint *)(iVar1 + 0x2dc) = 0;
-  *(uint *)(iVar1 + 0x2e0) = 0x43480000;
-  *(uint *)(iVar1 + 0x2e4) = 0;
-  *(uint *)(iVar1 + 0x2e8) = 0;
-  *(uint *)(iVar1 + 0x580) = 0;
-  return iVar1;
+            (&pCVar2->model,"dynamitestick.kfm");
+  pCVar2->weight = 1.0;
+  pCVar1 = pCVar2 + 1;
+  (pCVar1->base).actor_name[0xc] = '\0';
+  (pCVar1->base).actor_name[0xd] = '\0';
+  (pCVar1->base).actor_name[0xe] = '\0';
+  (pCVar1->base).actor_name[0xf] = '\0';
+  *(uint *)(pCVar2[1].base.actor_name + 8) = *(uint *)(pCVar2[1].base.actor_name + 0xc);
+  *(uint *)(pCVar2[1].base.actor_name + 4) = *(uint *)(pCVar2[1].base.actor_name + 8);
+  pCVar2[1].base.actor_name[0] = '\0';
+  pCVar2[1].base.actor_name[1] = '\0';
+  pCVar2[1].base.actor_name[2] = -0x80;
+  pCVar2[1].base.actor_name[3] = -0x41;
+  pCVar2->is_spread_weapon = 0;
+  pCVar2->fire_mode = 0;
+  pCVar2->weapon_type = 3;
+  pCVar2->can_penetrate = 0;
+  pCVar2->bolt_velocity = 200.0;
+  pCVar2->fire_cooldown = 0;
+  pCVar2->can_attach_light = 0;
+  pCVar1 = pCVar2 + 1;
+  (pCVar1->base).actor_name[0x10] = '\0';
+  (pCVar1->base).actor_name[0x11] = '\0';
+  (pCVar1->base).actor_name[0x12] = '\0';
+  (pCVar1->base).actor_name[0x13] = '\0';
+  return pCVar2;
 }

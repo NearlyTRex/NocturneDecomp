@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004d9020(int *param_1,int param_2)
+; void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission *this_ptr,int set_index)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   set_index
 ;
 ; XREF[4]:
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d9396
@@ -47,11 +50,11 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004d9041 | DAT_005be368
     PUSH ECX                            ; 004d9047 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_load_FUN_00506f10 ; 004d9048
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_load_FUN_00506f10()
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_load_FUN_00506f10(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004d904d
     PUSH EBX                            ; 004d9050
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 ; 004d9051
-        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0()
+        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemonMission * this_ptr)
     MOV ESI,dword ptr [EBX + 0x850]     ; 004d9056
     ADD ESP,0x4                         ; 004d905c
     TEST ESI,ESI                        ; 004d905f
@@ -77,7 +80,7 @@ section .text
     PUSH EBX                            ; 004d908e
         ;   Label: LAB_004d908e
     CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0 ; 004d908f
-        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0()
+        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d9094
     JMP 0x004d9063                      ; 004d9097
         ;   XREF to: 004d9063 (UNCONDITIONAL_JUMP)  ; LAB_004d9063

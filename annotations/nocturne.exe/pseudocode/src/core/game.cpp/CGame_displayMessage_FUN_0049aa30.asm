@@ -1,14 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_displayMessage_FUN_0049aa30(int param_1,char *param_2,undefined4 param_3)
+; void __cdecl core_game_cpp_CGame_displayMessage_FUN_0049aa30(CGame *this_ptr,char *message,float duration)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   message
+; float            Stack[0xc]:4   duration
 ;
 ; XREF[9]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 0045651a
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05b9
 ;   core_game.cpp_FUN_0049f930 at 0049fc97
-;   core_game.cpp_FUN_004a0430 at 004a04b5
+;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004a0430 at 004a04b5
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bfed3
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0 at 004c3212
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c174d

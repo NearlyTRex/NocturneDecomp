@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(undefined4 param_1)
+; CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(CLightActor *this_ptr)
 ;
+; Parameters:
+; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_boxactor.cpp_FUN_0041f2e0 at 0041f2f3
@@ -22,14 +24,14 @@ section .text
         ;   Label: core_boxactor.cpp_CLightActor_ctor_FUN_0041f310
     PUSH EAX                            ; 0041f314
     CALL core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300 ; 0041f315
-        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300()
+        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; CBoxActor * core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f31a
     PUSH 0x100                          ; 0041f31d
     PUSH 0x100                          ; 0041f322
     ADD EAX,0x668                       ; 0041f327
     PUSH EAX                            ; 0041f32c
     CALL core_dlight.cpp_CDemonLight_ctor_FUN_0044e110 ; 0041f32d
-        ;   XREF to: 0044e110 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_ctor_FUN_0044e110()
+        ;   XREF to: 0044e110 (UNCONDITIONAL_CALL)  ; CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight * this_ptr, int shadow_map_width, int shadow_map_height)
     SUB EAX,0x668                       ; 0041f332
     MOV dword ptr [EAX + 0x14c],0x59abb4 ; 0041f337 | PTR_core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0_0059abb4
     LEA EDX,[EAX + 0x3614]              ; 0041f341

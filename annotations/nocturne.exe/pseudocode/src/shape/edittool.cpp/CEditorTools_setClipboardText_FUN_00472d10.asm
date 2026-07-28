@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(undefined4 param_1,char *param_2)
+; void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools *this_ptr,char *text_data)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text_data
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0 at 0046f319
@@ -94,7 +97,7 @@ section .text
     MOV EDI,dword ptr [0x01bcd078]      ; 00472d97 | DAT_01bcd078
     PUSH EDI                            ; 00472d9d
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00472d9e
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00472da3
     MOV [0x01bcd078],EAX                ; 00472da6 | DAT_01bcd078
     TEST EAX,EAX                        ; 00472dab

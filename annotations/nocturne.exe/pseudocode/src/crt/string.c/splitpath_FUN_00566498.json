@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 355,
+    "complexity_score": 105,
     "cross_reference_count": 20,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
     "total_lines": 163
   },
@@ -108,12 +106,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00522480",
-      "from_addr": "0052258b",
-      "name": "sound_sndmain.cpp_FUN_00522480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005229f0",
       "from_addr": "00522a78",
       "name": "sound_sndmain.cpp_FUN_005229f0",
@@ -123,6 +115,12 @@
       "addr": "005279e0",
       "from_addr": "00527a69",
       "name": "sound_sndmain.cpp_getSampleInfo_FUN_005279e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522480",
+      "from_addr": "0052258b",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -148,23 +146,23 @@
     ],
     "convention": "__cdecl",
     "name": "crt_string.c_splitpath_FUN_00566498",
-    "signature": "void __cdecl crt_string_c_splitpath_FUN_00566498(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5 )"
+    "signature": "void __cdecl crt_string_c_splitpath_FUN_00566498(char *path,char *drive,char *dir,char *fname,char *ext)"
   },
   "function_calls": [
     {
-      "addr": "00566450",
+      "addr": "0056da80",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00566450"
+      "name": "crt_string.c_mbtowc_next_FUN_0056da80"
     },
     {
       "addr": "0056d9f0",
       "is_variadic": false,
-      "name": "FUN_0056d9f0"
+      "name": "crt_string.c_mbtowc_peek_FUN_0056d9f0"
     },
     {
-      "addr": "0056da80",
+      "addr": "00566450",
       "is_variadic": false,
-      "name": "FUN_0056da80"
+      "name": "crt_unknown.c_strncpy_safe_FUN_00566450"
     }
   ],
   "globals": [],
@@ -283,10 +281,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.3023255813953485,
@@ -315,10 +313,10 @@
     "pcode_op_count": 370
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 44,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -327,244 +325,84 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "drive",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "dir",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "fname",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "ext",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((cVar1 == '\\0') || (param_1[1] != ':')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != (char *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != (char *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = cVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = ':';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar5 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `src` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 46,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_00566450(param_3,param_1,(int)pcVar5 - (int)param_1,0xff);",
-      "type": "unnamed_param"
+      "match": "(int)src",
+      "severity": "moderate",
+      "text": "strncpy_safe(dir,path,(int)src - (int)path,0xff);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00566450(param_3,param_1,(int)pcVar5 - (int)param_1,0xff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00566450(param_3,param_1,(int)pcVar5 - (int)param_1,0xff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `src_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 50,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "FUN_00566450(param_4,pcVar5,(int)pcVar6 - (int)pcVar5,0xff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "FUN_00566450(param_5,pcVar6,(int)pcVar2 - (int)pcVar6,0xff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)pcVar5",
+      "match": "(int)src_00",
       "severity": "moderate",
-      "text": "FUN_00566450(param_3,param_1,(int)pcVar5 - (int)param_1,0xff);",
+      "text": "strncpy_safe(fname,src,(int)src_00 - (int)src,0xff);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `src` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 50,
-      "match": "(int)pcVar6",
+      "match": "(int)src",
       "severity": "moderate",
-      "text": "FUN_00566450(param_4,pcVar5,(int)pcVar6 - (int)pcVar5,0xff);",
+      "text": "strncpy_safe(fname,src,(int)src_00 - (int)src,0xff);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
-      "match": "(int)pcVar5",
-      "severity": "moderate",
-      "text": "FUN_00566450(param_4,pcVar5,(int)pcVar6 - (int)pcVar5,0xff);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `str` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 51,
-      "match": "(int)pcVar2",
+      "match": "(int)str",
       "severity": "moderate",
-      "text": "FUN_00566450(param_5,pcVar6,(int)pcVar2 - (int)pcVar6,0xff);",
+      "text": "strncpy_safe(ext,src_00,(int)str - (int)src_00,0xff);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `src_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 51,
-      "match": "(int)pcVar6",
+      "match": "(int)src_00",
       "severity": "moderate",
-      "text": "FUN_00566450(param_5,pcVar6,(int)pcVar2 - (int)pcVar6,0xff);",
+      "text": "strncpy_safe(ext,src_00,(int)str - (int)src_00,0xff);",
       "type": "pointer_truncation"
-    },
-    {
-      "call_site_count": 28,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

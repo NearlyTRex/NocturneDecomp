@@ -2,37 +2,39 @@
 // Address: 00525eb0
 // Address Range: [[00525eb0, 00525f4c]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(undefined4 *param_1)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(CSfxOptions *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(uint *param_1)
+void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(CSfxOptions *this_ptr)
 
 {
-  ulonglong uVar1;
+  double dVar1;
   
-  *param_1 = 0;
-  param_1[5] = 0;
-  param_1[6] = 0;
-  param_1[7] = 0;
-  param_1[8] = 0;
-  param_1[0xd] = 0;
-  param_1[0xe] = 0;
-  param_1[0xf] = 0;
-  param_1[0x10] = 0;
-  param_1[0x11] = 0x3f800000;
-  param_1[0x12] = 0x3f800000;
-  *(ulonglong *)(param_1 + 3) = *(ulonglong *)(param_1 + 5);
-  *(ulonglong *)(param_1 + 0xb) = *(ulonglong *)(param_1 + 0xd);
-  *(ulonglong *)(param_1 + 1) = *(ulonglong *)(param_1 + 3);
-  *(ulonglong *)(param_1 + 9) = *(ulonglong *)(param_1 + 0xb);
-  memset(param_1 + 0x15,0,8);
-  param_1[0x18] = 0;
-  param_1[0x19] = 0;
-  uVar1 = _DAT_005a2148;
-  param_1[0x1a] = 0;
-  *(ulonglong *)(param_1 + 0x13) = uVar1;
+  this_ptr->channel_index = 0;
+  *(uint *)&(this_ptr->position).z = 0;
+  *(uint *)((int)&(this_ptr->position).z + 4) = 0;
+  this_ptr->position_source_ptr = (void *)0x0;
+  this_ptr->position_format = 0;
+  *(uint *)&(this_ptr->velocity).z = 0;
+  *(uint *)((int)&(this_ptr->velocity).z + 4) = 0;
+  this_ptr->velocity_source_ptr = (void *)0x0;
+  this_ptr->velocity_format = 0;
+  this_ptr->current_volume = 1.0;
+  this_ptr->base_frequency = 1.0;
+  dVar1 = (this_ptr->velocity).z;
+  (this_ptr->position).y = (this_ptr->position).z;
+  (this_ptr->velocity).y = dVar1;
+  dVar1 = (this_ptr->velocity).y;
+  (this_ptr->position).x = (this_ptr->position).y;
+  (this_ptr->velocity).x = dVar1;
+  memset(this_ptr->userdata,0,8);
+  *(uint *)&this_ptr->trigger_time = 0;
+  *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
+  dVar1 = _DAT_005a2148;
+  this_ptr->trigger_id = 0;
+  this_ptr->delay_remaining = dVar1;
   return;
 }

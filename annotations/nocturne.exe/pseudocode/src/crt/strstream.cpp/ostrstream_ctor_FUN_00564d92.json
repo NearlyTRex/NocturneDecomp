@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 305,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 23,
+    "pseudocode_lines": 51,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
+      "negative_offset",
       "pointer_cast",
-      "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strlen"
     ],
-    "total_lines": 119
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -43,23 +41,23 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_ostrstream_ctor_FUN_00564d92",
-    "signature": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(undefined4 *param_1,byte param_2,char *param_3,undefined4 param_4,byte param_5)"
+    "signature": "_ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(void *this_ptr,int flags,char *buffer,int buffer_size,int mode)"
   },
   "function_calls": [
     {
-      "addr": "0056b405",
+      "addr": "0056b503",
       "is_variadic": false,
-      "name": "FUN_0056b405"
+      "name": "crt_iostream.cpp_ios_ctor_FUN_0056b503"
     },
     {
       "addr": "0056b4a9",
       "is_variadic": false,
-      "name": "FUN_0056b4a9"
+      "name": "crt_iostream.cpp_ostream_ctor_FUN_0056b4a9"
     },
     {
-      "addr": "0056b503",
+      "addr": "0056b405",
       "is_variadic": false,
-      "name": "FUN_0056b503"
+      "name": "crt_strstream.cpp_strstreambase_ctor_FUN_0056b405"
     }
   ],
   "globals": [
@@ -120,11 +118,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.551724137931035,
@@ -156,200 +154,113 @@
     "pcode_op_count": 264
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 1) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = &DAT_005a46b8;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 18,
       "match": "DAT_005a46b8",
       "severity": "mild",
-      "text": "*param_1 = &DAT_005a46b8;",
+      "text": "*(byte **)this_ptr = &DAT_005a46b8;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x12] = &DAT_005a46c0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005a46c0",
-      "severity": "mild",
-      "text": "param_1[0x12] = &DAT_005a46c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = FUN_0056b503(param_1 + 0x15);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (uint *)(iVar5 + -0x54);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == (char *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((param_5 & 0xc) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar3 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar3 = param_3 + iVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = FUN_0056b405(param_1,1,param_3,param_4,pcVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar5 = FUN_0056b405(param_1,1,param_3,param_4,pcVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar5 = FUN_0056b405(param_1,1,param_3,param_4,pcVar3);",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)piVar1",
+      "line": 19,
+      "match": "(byte **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)piVar1 + *(int *)(*piVar1 + 4) + -4) = *(int *)(*piVar1 + 4);",
+      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a46c0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
-      "match": "(int)piVar1",
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005a46c0",
+      "severity": "mild",
+      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a46c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)piVar1 + *(int *)(*piVar1 + 4) + -4) = *(int *)(*piVar1 + 4);",
-      "type": "pointer_truncation"
+      "text": "piVar7 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "piVar7[-2].",
+      "severity": "mild",
+      "text": "this_ptr = &piVar7[-2].__tied_stream;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 19,
+      "match": "(byte **)((int)this_ptr + 0x48)",
+      "severity": "moderate",
+      "text": "*(byte **)((int)this_ptr + 0x48) = &DAT_005a46c0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 20,
+      "match": "(ios *)((int)this_ptr + 0x54)",
+      "severity": "moderate",
+      "text": "piVar7 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 29,
+      "line": 33,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

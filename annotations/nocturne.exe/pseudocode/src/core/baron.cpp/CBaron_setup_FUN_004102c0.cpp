@@ -11,43 +11,50 @@
 void core_baron_cpp_CBaron_setup_FUN_004102c0(int param_1)
 
 {
-  uint uVar1;
+  CSkeleton *this_ptr;
+  int iVar1;
   
   core_hero_cpp_FUN_004b48d0(param_1);
-  uVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1 + 0x150);
-  DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 head",1);
+  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
+                       ((CDeformableModelInstance *)(param_1 + 0x150));
+  DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 head",1)
+  ;
   _DAT_007642ec =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Clavicle",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L Clavicle",1);
   _DAT_007642f0 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R Clavicle",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R Clavicle",1);
   _DAT_007642f4 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L UpperArm",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L UpperArm",1);
   _DAT_007642f8 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R UpperArm",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R UpperArm",1);
   _DAT_007642fc =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L ForeArm",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L ForeArm",1);
   _DAT_00764300 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R ForeArm",1);
-  _DAT_00764304 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Foot",1)
-  ;
-  _DAT_00764308 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R Foot",1)
-  ;
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R ForeArm",1);
+  _DAT_00764304 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L Foot",1);
+  _DAT_00764308 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R Foot",1);
   _DAT_0076430c =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Thigh",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L Thigh",1);
   _DAT_00764310 =
-       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R Thigh",1);
-  _DAT_00764314 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Calf",1)
-  ;
-  _DAT_00764318 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R Calf",1)
-  ;
-  DAT_0076431c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Hand",1);
-  DAT_00764320 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 R Hand",1);
-  _DAT_00764324 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 Spine2",1)
-  ;
-  _DAT_00764328 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 Spine",1);
-  uVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 Spine1",1);
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R Thigh",1);
+  _DAT_00764314 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 L Calf",1);
+  _DAT_00764318 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 R Calf",1);
+  DAT_0076431c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
+                           (this_ptr,"Bip01 L Hand",1);
+  DAT_00764320 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
+                           (this_ptr,"Bip01 R Hand",1);
+  _DAT_00764324 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine2",1);
+  _DAT_00764328 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine",1);
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr,"Bip01 Spine1",1);
   *(uint *)(param_1 + 0x1fb14) = 0;
-  *(uint *)(param_1 + 0x25bc) = uVar1;
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&DAT_0076436c);
+  *(int *)(param_1 + 0x25bc) = iVar1;
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)&DAT_0076436c);
   return;
 }

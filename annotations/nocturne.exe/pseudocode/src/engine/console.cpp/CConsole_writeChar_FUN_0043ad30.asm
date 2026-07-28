@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(int param_1,char param_2)
+; void engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *param_1,char param_2)
 ;
 ;
 ; XREF[1]:
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0043adc5
     MOV dword ptr [EAX + 0xfa8],EDX     ; 0043adc6
     CALL engine_console.cpp_CConsole_scrollUp_FUN_0043ae40 ; 0043adcc
-        ;   XREF to: 0043ae40 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_scrollUp_FUN_0043ae40()
+        ;   XREF to: 0043ae40 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_scrollUp_FUN_0043ae40(CConsole * this_ptr)
     ADD ESP,0x4                         ; 0043add1
     POP EDI                             ; 0043add4
     POP EBX                             ; 0043add5

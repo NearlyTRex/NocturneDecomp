@@ -2,30 +2,36 @@
 // Address: 0046cb00
 // Address Range: [[0046cb00, 0046cb96]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+// Signature: void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
 
 #include "nocturne.h"
 
-void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(uint *param_1,uint *param_2,uint *param_3)
+void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
 
 {
   float fVar1;
-  int iVar2;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
   
-  param_1[0xf] = *param_2;
-  param_1[0x10] = param_2[2];
-  param_1[0x11] = *param_3;
-  param_1[0x12] = param_3[2];
-  iVar2 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(param_1);
-  if (((iVar2 != 0) &&
-      (fVar1 = ((float)param_3[1] - (float)param_2[1]) * (float)param_1[0x14] + (float)param_2[1],
-      (float)param_1[10] < fVar1)) && (fVar1 < (float)param_1[9])) {
-    param_1[2] = 0;
-    *param_1 = param_1[0x13];
-    param_1[3] = ((float)param_1[7] * (float)param_1[0x13] + (float)param_1[5]) -
-                 (float)param_1[0x16];
-    param_1[1] = ((float)param_1[6] * (float)param_1[0x13] + (float)param_1[4]) -
-                 (float)param_1[0x15];
+  cylinder->edge_x1 = vertex1->x;
+  cylinder->edge_z1 = vertex1->z;
+  cylinder->edge_x2 = vertex2->x;
+  cylinder->edge_z2 = vertex2->z;
+  iVar5 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(cylinder);
+  if (((iVar5 != 0) &&
+      (fVar1 = (vertex2->y - vertex1->y) * cylinder->param_clamped + vertex1->y,
+      cylinder->bottom_y < fVar1)) && (fVar1 < cylinder->top_y)) {
+    (cylinder->push_normal).y = 0.0;
+    fVar1 = cylinder->dir_x;
+    fVar2 = cylinder->param_t;
+    cylinder->closest_t = cylinder->param_t;
+    fVar3 = cylinder->center_x;
+    fVar4 = cylinder->intersect_x;
+    (cylinder->push_normal).z =
+         (cylinder->dir_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
+    (cylinder->push_normal).x = (fVar1 * fVar2 + fVar3) - fVar4;
     return;
   }
   return;

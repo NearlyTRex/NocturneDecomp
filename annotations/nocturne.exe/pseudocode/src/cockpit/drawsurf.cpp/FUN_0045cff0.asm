@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045cff0(undefined4 param_1,int param_2,int param_3,uint param_4,uint param_5)
+; void cockpit_drawsurf_cpp_FUN_0045cff0(CDrawSurface *param_1,int param_2,int param_3,uint param_4,uint param_5)
 ;
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0045cde0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH ECX                            ; 0045d04a
     MOV EBP,dword ptr [ESP + 0x20]      ; 0045d04b
     PUSH EBP                            ; 0045d04f
-    CALL cockpit_drawsurf.cpp_FUN_0045cde0 ; 0045d050
-        ;   XREF to: 0045cde0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045cde0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 ; 0045d050
+        ;   XREF to: 0045cde0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0045d055
     POP EBP                             ; 0045d058
     POP ESI                             ; 0045d059

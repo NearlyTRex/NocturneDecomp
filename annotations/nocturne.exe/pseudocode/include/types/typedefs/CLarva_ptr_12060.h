@@ -19,7 +19,7 @@ struct CLarva_ptr_12060 {
     template<typename T> CLarva_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CLarva_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CLarva* operator->() const { return (CLarva*)_raw; }
-    CLarva* adj() const { return (CLarva*)((char*)_raw - offsetof(CLarva, base.base.fires)); }
+    CLarva* adj() const { return (CLarva*)((char*)_raw - offsetof(CLarva, base.base.fires[0].offset)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

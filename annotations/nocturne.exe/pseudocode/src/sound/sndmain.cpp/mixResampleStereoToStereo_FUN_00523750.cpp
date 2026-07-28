@@ -22,29 +22,28 @@ double sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(int param_1,int 
   int iVar9;
   int iVar10;
   bool bVar11;
-  float10 fVar12;
+  double dVar12;
   double local_34;
   
   if (0 < param_8) {
     local_34 = (double)floor();
-    fVar12 = (float10)round((float10)local_34);
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    dVar12 = round(local_34);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar10 = local_34._0_4_;
-    local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
-    fVar12 = (float10)round
-                                (((float10)_param_4 - (float10)(longlong)local_34) *
-                                 (float10)4294967296);
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    local_34 = (double)((longlong)ROUND(dVar12) & 0xffffffff);
+    dVar12 = round
+                       ((_param_4 - (double)(longlong)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     uVar8 = local_34._0_4_;
     local_34 = (double)floor();
-    fVar12 = (float10)round((float10)local_34);
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    dVar12 = round(local_34);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar7 = local_34._0_4_;
-    local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
-    fVar12 = (float10)round
-                                (((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) -
-                                 (float10)(longlong)local_34) * (float10)4294967296);
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    local_34 = (double)((longlong)ROUND(dVar12) & 0xffffffff);
+    dVar12 = round
+                       ((__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (double)(longlong)local_34) *
+                        4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     fVar3 = *param_3;
     fVar4 = param_3[1];
     iVar5 = param_2[1];

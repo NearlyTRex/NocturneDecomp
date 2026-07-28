@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(int param_1)
+; void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(CConsole *this_ptr)
 ;
+; Parameters:
+; CConsole *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -12,7 +14,7 @@
 ; undefined1       Stack[-0x13]:1  local_13
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d56d
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d56d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70
@@ -70,7 +72,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0043af2d
     PUSH EAX                            ; 0043af31
     CALL engine_2d.c_drawString_FUN_004026b0 ; 0043af32
-        ;   XREF to: 004026b0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawString_FUN_004026b0()
+        ;   XREF to: 004026b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawString_FUN_004026b0(char * text, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 0043af37
     INC ESI                             ; 0043af3a
         ;   Label: LAB_0043af3a
@@ -115,7 +117,7 @@ section .text
     PUSH ESI                            ; 0043afb2
     MOV dword ptr [0x01c00c70],ECX      ; 0043afb3 | DAT_01c00c70
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0043afb9
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0043afbe
     INC EBX                             ; 0043afc1
     PUSH EBX                            ; 0043afc2
@@ -123,7 +125,7 @@ section .text
     PUSH EBX                            ; 0043afc4
     PUSH ESI                            ; 0043afc5
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0043afc6
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0043afcb
     PUSH EBX                            ; 0043afce
     DEC ESI                             ; 0043afcf
@@ -131,7 +133,7 @@ section .text
     PUSH EDI                            ; 0043afd1
     PUSH ESI                            ; 0043afd2
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0043afd3
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0043afd8
     PUSH EBX                            ; 0043afdb
     INC EBP                             ; 0043afdc
@@ -139,7 +141,7 @@ section .text
     PUSH EDI                            ; 0043afde
     PUSH EBP                            ; 0043afdf
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0043afe0
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0043afe5
     ADD ESP,0x14                        ; 0043afe8
     POP EBP                             ; 0043afeb

@@ -24,7 +24,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 004a3a7e
     PUSH EAX                            ; 004a3a83
     CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20 ; 004a3a84
-        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20()
+        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory * this_ptr, int reset_both)
     ADD ESP,0x8                         ; 004a3a89
     RET                                 ; 004a3a8c
 

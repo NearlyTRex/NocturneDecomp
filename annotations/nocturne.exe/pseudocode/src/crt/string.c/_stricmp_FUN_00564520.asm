@@ -1,20 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c__stricmp_FUN_00564520(byte *param_1,byte *param_2)
+; int __cdecl crt_string_c__stricmp_FUN_00564520(char *str1,char *str2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str1
+; char *           Stack[0x8]:4   str2
 ;
 ; XREF[93]:
-;   FUN_0056b960 at 0056b9ef
-;   FUN_0056c750 at 0056c783
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0 at 004f4aef
-;   cockpit_pkbmpset.cpp_FUN_004f5a50 at 004f5adc
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_004f5a50 at 004f5adc
 ;   core_actor.cpp_CDemonActor_load_FUN_0040c160 at 0040c1aa
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90 at 00417cb0
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 0042875a
 ;   core_dmodel.cpp_loadModel_FUN_004543b0 at 004543cc
 ;   core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730 at 0045875f
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e2df
+;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 at 0047dc48
+;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ac89
 ;   ... and 83 more
 ;
 ; *****************************************************************************

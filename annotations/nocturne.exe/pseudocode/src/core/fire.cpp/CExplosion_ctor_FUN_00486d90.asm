@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(int param_1)
+; CExplosion * __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(CExplosion *this_ptr)
 ;
+; Parameters:
+; CExplosion *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_init_FUN_0048a150 at 0048a265

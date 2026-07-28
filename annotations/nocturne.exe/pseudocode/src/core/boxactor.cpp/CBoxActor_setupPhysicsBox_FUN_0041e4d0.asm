@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(int param_1)
+; void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_0041f0f0 at 0041f103
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041f08f
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240 at 0041f2b7
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 at 0041e4b3
-;   core_boxactor.cpp_FUN_0041ef90 at 0041f08f
 ;
 ; Referenced Globals:
 ;   float FLOAT_00579809 = 0.5
@@ -81,7 +83,7 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 0041e572
     FSTP float ptr [ESP + 0x38]         ; 0041e576
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0041e57a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0041e57f
     LEA EAX,[ESP + 0x3c]                ; 0041e582
     FLD float ptr [ESP + 0xc]           ; 0041e586
@@ -107,7 +109,7 @@ section .text
     ADD EBX,0x38c                       ; 0041e5c3
     PUSH EBX                            ; 0041e5c9
     CALL core_box.cpp_CBox_setupCorners_FUN_0041a6e0 ; 0041e5ca
-        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupCorners_FUN_0041a6e0()
+        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041a6e0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 0041e5cf
     ADD ESP,0x48                        ; 0041e5d2
     POP EBX                             ; 0041e5d5

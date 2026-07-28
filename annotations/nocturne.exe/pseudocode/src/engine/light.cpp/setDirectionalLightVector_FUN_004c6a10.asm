@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x,int dir_y,int dir_z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   dir_x
+; int              Stack[0x8]:4   dir_y
+; int              Stack[0xc]:4   dir_z
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70 at 00460c80

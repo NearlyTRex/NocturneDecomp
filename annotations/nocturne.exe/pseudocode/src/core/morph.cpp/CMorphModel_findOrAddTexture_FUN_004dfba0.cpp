@@ -2,48 +2,47 @@
 // Address: 004dfba0
 // Address Range: [[004dfba0, 004dfc62]]
 // Convention: __cdecl
-// Signature: int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(int param_1,char *param_2)
+// Signature: int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(CMorphModel *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(int param_1,char *param_2)
+int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(CMorphModel *this_ptr,char *filename)
 
 {
   char cVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
+  char *pcVar4;
   
   iVar3 = 0;
-  if (0 < *(int *)(param_1 + 100)) {
-    iVar4 = param_1 + 0x70;
+  if (0 < this_ptr->num_textures) {
+    pcVar4 = this_ptr->textures[0].textures[0].texture_name;
     do {
-      iVar2 = _stricmp(iVar4,param_2);
+      iVar2 = _stricmp(pcVar4,filename);
       if (iVar2 == 0) {
         return iVar3;
       }
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x48;
-    } while (iVar3 < *(int *)(param_1 + 100));
+      pcVar4 = pcVar4 + 0x48;
+    } while (iVar3 < this_ptr->num_textures);
   }
-  if (0x13 < *(int *)(param_1 + 100)) {
+  if (0x13 < this_ptr->num_textures) {
     PTR_01cc4800 = "..\\core\\morph.cpp";
     INT_01cc4804 = 0x1d0;
     core_main_c_FUN_004c8440("CMorphModel::findOrAddTexture - too many textures!");
   }
-  memset(*(int *)(param_1 + 100) * 0x48 + param_1 + 0x68,0,0x48);
-  pcVar5 = (char *)(param_1 + 0x68 + *(int *)(param_1 + 100) * 0x48 + 8);
+  memset(this_ptr->textures + this_ptr->num_textures,0,0x48);
+  pcVar4 = this_ptr->textures[this_ptr->num_textures].textures[0].texture_name;
   do {
-    cVar1 = *param_2;
-    *pcVar5 = cVar1;
+    cVar1 = *filename;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar3 = *(int *)(param_1 + 100);
-  *(int *)(param_1 + 100) = iVar3 + 1;
+  iVar3 = this_ptr->num_textures;
+  this_ptr->num_textures = iVar3 + 1;
   return iVar3;
 }

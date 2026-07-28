@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(int *param_1,char *param_2)
+; int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,CPodSearchContext *search_context)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
+; CPodSearchContext * Stack[0x8]:4   search_context
 ;
 ; XREF[3]:
 ;   engine_pod.cpp_CPod_initSearch_FUN_004f8d50 at 004f8d94
@@ -83,7 +86,7 @@ section .text
     PUSH ECX                            ; 004f8e46
     PUSH EDI                            ; 004f8e47
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 004f8e48
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004775b0(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 004f8e4d
     TEST EAX,EAX                        ; 004f8e50
     JNZ 0x004f8e5f                      ; 004f8e52

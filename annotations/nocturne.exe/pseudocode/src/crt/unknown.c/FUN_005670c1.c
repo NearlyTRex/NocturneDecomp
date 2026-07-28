@@ -11,28 +11,30 @@ uint FUN_005670c1(void)
 {
   bool bVar1;
   byte *in_EAX;
-  uint *puVar2;
-  uint uVar3;
+  int iVar2;
+  uint *puVar3;
+  uint extraout_EAX;
+  uint extraout_EAX_00;
   int iVar4;
   int iVar5;
-  int iStack_4;
   
-  if (in_EAX < &iStack_4) {
-    puVar2 = (uint *)(*(code *)PTR_FUN_005c1abc)();
-    if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {
-      uVar3 = FUN_005670ed();
-      return uVar3;
+  if (in_EAX < &stack0xfffffffc) {
+    iVar2 = (int)in_EAX - (int)&stack0xfffffffc;
+    puVar3 = (uint *)(*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
+    if (*puVar3 < (uint)-iVar2) {
+      ProbeStackSpace((uint)in_EAX);
+      return extraout_EAX;
     }
   }
-  iStack_4 = 1;
-  uVar3 = FUN_0056ddc0();
+  iVar2 = 1;
+  HandleRuntimeError("Stack Overflow!\r\n",1);
   iVar5 = -4;
   do {
     *(int *)(&stack0xfffffff0 + iVar5) = iVar5;
     iVar5 = iVar5 + -0x1000;
-    iVar4 = iStack_4 + -0x1000;
-    bVar1 = 0xfff < iStack_4;
-    iStack_4 = iVar4;
+    iVar4 = iVar2 + -0x1000;
+    bVar1 = 0xfff < iVar2;
+    iVar2 = iVar4;
   } while (iVar4 != 0 && bVar1);
-  return uVar3;
+  return extraout_EAX_00;
 }

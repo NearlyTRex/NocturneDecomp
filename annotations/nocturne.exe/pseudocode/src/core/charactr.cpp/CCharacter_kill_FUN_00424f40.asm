@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00424f40(int param_1,undefined4 param_2,undefined4 *param_3,float param_4)
+; void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00424f40(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   damage_type
+; CVector3f *      Stack[0xc]:4   damage_direction
+; float            Stack[0x10]:4   impact_force
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_kill_FUN_004b5e90 at 004b5ead
@@ -37,12 +42,12 @@ section .text
         ;   Label: LAB_00424f67
     PUSH EDX                            ; 00424f6d
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00424f6e
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00424f73
     MOV EAX,ESP                         ; 00424f76
     PUSH EAX                            ; 00424f78
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00424f79
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00424f7e
     MOV ECX,0x461c3c00                  ; 00424f81
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00424f86
@@ -80,7 +85,7 @@ section .text
     ADD ESP,0x8                         ; 00424fd7
     PUSH EBX                            ; 00424fda
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0 ; 00424fdb
-        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0()
+        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00424fe0
     ADD ESP,0x3c                        ; 00424fe3
     POP ESI                             ; 00424fe6

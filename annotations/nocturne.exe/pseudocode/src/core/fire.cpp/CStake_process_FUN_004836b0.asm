@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CStake_process_FUN_004836b0(int param_1)
+; void __cdecl core_fire_cpp_CStake_process_FUN_004836b0(CStake *this_ptr)
 ;
+; Parameters:
+; CStake *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -29,7 +31,7 @@ section .text
     FSTP float ptr [ESP]                ; 004836c5
     PUSH EAX                            ; 004836c8
     CALL core_box.cpp_CBox_processPhysics_FUN_0041ad10 ; 004836c9
-        ;   XREF to: 0041ad10 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_processPhysics_FUN_0041ad10()
+        ;   XREF to: 0041ad10 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_processPhysics_FUN_0041ad10(CBox * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004836ce
     RET                                 ; 004836d1
 

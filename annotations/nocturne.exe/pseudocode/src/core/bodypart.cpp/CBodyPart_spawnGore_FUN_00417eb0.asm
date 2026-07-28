@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_00417eb0(int param_1)
+; void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_00417eb0(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416913
@@ -22,7 +24,7 @@ section .text
     PUSH 0x3da3d70a                     ; 00417eb0
         ;   Label: core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00417eb5
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 00417eba
     TEST EAX,EAX                        ; 00417ebd
     JNZ 0x00417ec2                      ; 00417ebf
@@ -38,7 +40,7 @@ section .text
     MOV ECX,dword ptr [0x005b96c4]      ; 00417ed6 | INT_005b96c4
     PUSH ECX                            ; 00417edc
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00417edd
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 00417ee2
     RET                                 ; 00417ee5
 

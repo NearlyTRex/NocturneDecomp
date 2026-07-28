@@ -57,7 +57,7 @@ section .text
     PUSH EDX                            ; 00433e6e | DAT_00767b4c
     PUSH EBP                            ; 00433e6f
     CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 ; 00433e70
-        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0()
+        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b44]      ; 00433e75 | DAT_00767b44
     INC ESI                             ; 00433e7b
     ADD ESP,0xc                         ; 00433e7c

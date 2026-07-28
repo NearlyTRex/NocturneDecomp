@@ -2,25 +2,27 @@
 // Address: 0040a390
 // Address Range: [[0040a390, 0040a418]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(int param_1,float *param_2,float param_3)
+// Signature: int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 
 #include "nocturne.h"
 
-uint __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(int param_1,float *param_2,float param_3)
+int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 
 {
-  int iVar1;
-  uint local_30 [5];
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  float fVar1;
+  float fVar2;
+  ECollisionType EVar3;
+  SCollisionInfo local_30;
   
-  core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(local_30);
-  local_30[0] = 0;
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x34))(param_1,local_30);
-  if ((((iVar1 == 2) && (fStack_1c - param_3 <= param_2[1])) && (param_2[1] <= fStack_18 + param_3))
-     && (*param_2 * *param_2 + param_2[2] * param_2[2] <=
-         (fStack_14 + param_3) * (fStack_14 + param_3))) {
+  core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&local_30);
+  local_30.ray_query.ray_type = 0;
+  EVar3 = (*((this_ptr->vtable)._ub)->getCollisionType)(this_ptr,&local_30);
+  if ((((EVar3 == COLLISION_TYPE_CYLINDER) &&
+       (local_30.cylinder_bottom_y - tolerance <= (collision_info->position).y)) &&
+      ((collision_info->position).y <= local_30.cylinder_top_y + tolerance)) &&
+     (fVar1 = (collision_info->position).z, fVar2 = (collision_info->position).x,
+     fVar2 * fVar2 + fVar1 * fVar1 <=
+     (local_30.cylinder_radius + tolerance) * (local_30.cylinder_radius + tolerance))) {
     return 1;
   }
   return 0;

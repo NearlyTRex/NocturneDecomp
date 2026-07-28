@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(int param_1)
+; void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr)
 ;
+; Parameters:
+; CMouse *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x2c]:1  local_2c
@@ -48,7 +50,7 @@ section .text
     PUSH EAX                            ; 004ee5ca
     PUSH ESI                            ; 004ee5cb
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004ee5cc
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004ee5d1
     ADD ESI,0x14                        ; 004ee5d4
     CMP EBX,0x8                         ; 004ee5d7
@@ -71,7 +73,7 @@ section .text
     PUSH EAX                            ; 004ee600
     PUSH ESI                            ; 004ee601
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004ee602
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004ee607
     ADD ESI,0x14                        ; 004ee60a
     CMP EBX,0x7                         ; 004ee60d
@@ -94,7 +96,7 @@ section .text
     PUSH EAX                            ; 004ee636
     PUSH ESI                            ; 004ee637
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004ee638
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004ee63d
     ADD ESI,0x14                        ; 004ee640
     CMP EBX,0x7                         ; 004ee643
@@ -108,7 +110,7 @@ section .text
     PUSH 0x58cab1                       ; 004ee658 | = "crsrskll7"
     PUSH EBX                            ; 004ee65d
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004ee65e
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD EBX,0x14                        ; 004ee663
     ADD ESP,0x10                        ; 004ee666
     CMP EBX,ESI                         ; 004ee669

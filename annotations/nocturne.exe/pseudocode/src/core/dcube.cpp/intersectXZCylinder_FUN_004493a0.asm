@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcube_cpp_intersectXZCylinder_FUN_004493a0(float *param_1)
+; int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_004493a0(SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   cylinder
 ; Local Variables:
 ; undefined8       Stack[-0x60]:8  local_60
 ; undefined8       Stack[-0x58]:8  local_58

@@ -2,11 +2,11 @@
 // Address: 004396d0
 // Address Range: [[004396d0, 00439752]]
 // Convention: unknown
-// Signature: void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
 
 #include "nocturne.h"
 
-void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,uint param_3,uint param_4)
+void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
 
 {
   int iVar1;
@@ -31,7 +31,7 @@ void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uin
     do {
       uVar2 = uVar3 & param_2;
       uVar3 = (int)uVar3 >> 1;
-      support_codec_cpp_writeBitsToStream_FUN_00438c40(param_3,1,uVar2 != 0,param_4);
+      support_codec_cpp_writeBitsToStream_FUN_00438c40(param_3,1,(uint)(uVar2 != 0),param_4);
     } while (uVar3 != 0);
     return;
   }

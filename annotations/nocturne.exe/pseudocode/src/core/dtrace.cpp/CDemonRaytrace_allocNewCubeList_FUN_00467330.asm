@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(int param_1)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(CDemonRaytrace *this_ptr)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_FUN_004676c0 at 004677d7
@@ -40,11 +42,11 @@ section .text
     ADD EAX,0x4                         ; 00467359
     PUSH EAX                            ; 0046735c
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0046735d
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 00467362
     PUSH EAX                            ; 00467365
     CALL crt_memory.c___vec_new_FUN_00566234 ; 00467366
-        ;   XREF to: 00566234 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_00566234()
+        ;   XREF to: 00566234 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00566234(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0046736b
     MOV dword ptr [EBX + 0x50],EAX      ; 0046736e
     TEST EAX,EAX                        ; 00467371

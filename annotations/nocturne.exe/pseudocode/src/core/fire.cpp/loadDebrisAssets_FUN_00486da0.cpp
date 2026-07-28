@@ -10,19 +10,24 @@ void __cdecl core_fire_cpp_loadDebrisAssets_FUN_00486da0(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c094bc,"debris01.kfm");
+            ((CKeyFramedModelInstance *)0x1c094bc,"debris01.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c09638,"debris02.kfm");
+            ((CKeyFramedModelInstance *)0x1c09638,"debris02.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c097b4,"debris03.kfm");
+            ((CKeyFramedModelInstance *)0x1c097b4,"debris03.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c09930,"debris04.kfm");
+            ((CKeyFramedModelInstance *)0x1c09930,"debris04.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (0x1c09aac,"debris05.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c094bc);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c09638);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c097b4);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c09930);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(0x1c09aac);
+            ((CKeyFramedModelInstance *)0x1c09aac,"debris05.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c094bc);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c09638);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c097b4);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c09930);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)0x1c09aac);
   return;
 }

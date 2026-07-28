@@ -226,7 +226,7 @@ section .text
     MOV EDI,dword ptr [0x005b7650]      ; 0054fea9 | DAT_005b7650
     PUSH EDI                            ; 0054feaf
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 0054feb0
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 0054feb5
     MOV EBP,dword ptr [EBX + 0x2d0]     ; 0054feb8
         ;   Label: LAB_0054feb8
@@ -286,7 +286,7 @@ section .text
     PUSH dword ptr [ESP + 0x50]         ; 0054ff5e
     PUSH EAX                            ; 0054ff62
     CALL core_flame.cpp_CFlame_process_FUN_0048d0c0 ; 0054ff63
-        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_process_FUN_0048d0c0()
+        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_process_FUN_0048d0c0(CFlame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0054ff68
     JMP 0x0054fc98                      ; 0054ff6b
         ;   XREF to: 0054fc98 (UNCONDITIONAL_JUMP)  ; LAB_0054fc98
@@ -484,7 +484,7 @@ section .text
     MOV EDI,dword ptr [0x005b7650]      ; 005501cd | DAT_005b7650
     PUSH EDI                            ; 005501d3
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 005501d4
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     MOV EAX,dword ptr [EBX + 0x2d0]     ; 005501d9
     MOV dword ptr [EAX + 0x7e0],0x1     ; 005501df
     MOV EAX,dword ptr [EBX + 0x2d4]     ; 005501e9

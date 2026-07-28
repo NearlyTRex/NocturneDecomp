@@ -2,11 +2,11 @@
 // Address: 0040c7f0
 // Address Range: [[0040c7f0, 0040c875]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(undefined4 param_1,char *param_2)
+// Signature: void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(char *string_buffer,char *localization_key)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(uint param_1,char *param_2)
+void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(char *string_buffer,char *localization_key)
 
 {
   char cVar1;
@@ -25,13 +25,13 @@ void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(uint param_1,cha
     puVar3 = puVar3 + 1;
     pcVar5 = (char *)((int)pcVar5 + 4);
   }
-  if (param_2 != (char *)0x0) {
+  if (localization_key != (char *)0x0) {
     do {
-      cVar1 = *param_2;
+      cVar1 = *localization_key;
       *pcVar4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = param_2[1];
-      param_2 = param_2 + 2;
+      cVar1 = localization_key[1];
+      localization_key = localization_key + 2;
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
@@ -57,6 +57,6 @@ void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(uint param_1,cha
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1,local_134);
+  core_actor_cpp_archiveString_FUN_0040c6d0(string_buffer,local_134);
   return;
 }

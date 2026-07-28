@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(int param_1,int param_2)
+; int __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(CDemonActorType *type_ptr,uint name_hash)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; uint             Stack[0x8]:4   name_hash
 ;
 ; XREF[2]:
 ;   core_actor.cpp_isOfClassHash_FUN_0040d860 at 0040d87f

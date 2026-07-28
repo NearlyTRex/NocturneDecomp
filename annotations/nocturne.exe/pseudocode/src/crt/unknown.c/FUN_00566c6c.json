@@ -2,7 +2,7 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 66,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
@@ -11,8 +11,7 @@
     "suspect_count": 4,
     "suspect_types": [
       "fpu_register_input",
-      "undefined_data",
-      "unknown_type"
+      "undefined_data"
     ],
     "total_lines": 24
   },
@@ -40,7 +39,7 @@
     {
       "addr": "0056dc98",
       "is_variadic": false,
-      "name": "FUN_0056dc98"
+      "name": "crt_math.c_atan2_FUN_0056dc98"
     }
   ],
   "globals": [
@@ -105,19 +104,11 @@
   },
   "suspects": [
     {
-      "description": "Unknown/unresolved type",
-      "line": 5,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 in_ST0;",
-      "type": "unknown_type"
-    },
-    {
       "description": "FPU register input (calling convention issue)",
       "line": 5,
       "match": "in_ST0",
       "severity": "mild",
-      "text": "unkbyte10 in_ST0;",
+      "text": "float10 in_ST0;",
       "type": "fpu_register_input"
     },
     {
@@ -134,6 +125,14 @@
       "match": "in_ST0",
       "severity": "mild",
       "text": "fpatan(in_ST0,(float10)1);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 11,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "atan2((float10)1,in_ST0);",
       "type": "fpu_register_input"
     }
   ]

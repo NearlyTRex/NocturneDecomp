@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(int param_1,float param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined4       Stack[-0x30]:4  local_30
@@ -67,7 +70,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00416b6d
     PUSH EDX                            ; 00416b70
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00416b71
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EAX]                 ; 00416b76
     MOV ECX,0x3f800000                  ; 00416b78
     ADD ESP,0xc                         ; 00416b7d
@@ -104,7 +107,7 @@ section .text
     FSTP float ptr [EBX + 0x154]        ; 00416be1
     MOV dword ptr [EBX + 0x158],EAX     ; 00416be7
     CALL core_flame.cpp_CFlame_process_FUN_0048d0c0 ; 00416bed
-        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_process_FUN_0048d0c0()
+        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_process_FUN_0048d0c0(CFlame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00416bf2
     MOV EAX,dword ptr [EBP + 0x14]      ; 00416bf5
     INC EDI                             ; 00416bf8

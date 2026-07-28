@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 103,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 4,
+    "pseudocode_lines": 69,
+    "suspect_count": 16,
     "suspect_types": [
-      "unnamed_param",
+      "negative_offset",
+      "pointer_cast",
       "unrolled_strcpy"
     ],
-    "total_lines": 147
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -151,9 +152,9 @@
         "0054fa77"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920",
-    "signature": "int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(undefined4 param_1)"
+    "signature": "CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVessel *this_ptr)"
   },
   "function_calls": [
     {
@@ -260,11 +261,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0886075949367084,
@@ -291,33 +292,129 @@
     "pcode_op_count": 323
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "pCVar3[-4].",
       "severity": "mild",
-      "text": "int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(uint param_1)",
-      "type": "unnamed_param"
+      "text": "*(byte ***)(pCVar3[-4].model_name + 0x68) = &PTR_core_vessel_cpp_FUN_0054fa80_005a3d84;",
+      "type": "negative_offset"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar3[-4].",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_00409d30(param_1);",
-      "type": "unnamed_param"
+      "text": "((CKeyFramedModelInstance *)(pCVar3[-4].model_name + 0x6c),\"vsslbase.kfm\");",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar3[-3].",
+      "severity": "mild",
+      "text": "pcVar6 = pCVar3[-3].model_name + 0x78;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0xf] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 45,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x10] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x14] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pCVar3[-3].",
+      "severity": "mild",
+      "text": "pcVar6 = pCVar3[-3].model_name + 0xdc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 49,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x13] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 59,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x11] = 0x41200000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x15] = 1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 61,
+      "match": "pCVar3[-2].",
+      "severity": "mild",
+      "text": "pCVar3[-2].part_visibility_flags[0x12] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 62,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 71,
+      "match": "pCVar3[-5].",
+      "severity": "mild",
+      "text": "return (CCryptVessel *)(pCVar3[-5].model_name + 0x98);",
+      "type": "negative_offset"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -325,11 +422,19 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 15,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0048cf60((CFlame *)(pCVar3[1].model_name + 0x78));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

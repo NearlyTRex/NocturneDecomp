@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(int param_1)
+; void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_selectTexture_FUN_00532400(undefined4 param_1,undefined4 param_2)
+; int __cdecl engine_special_cpp_selectTexture_FUN_00532400(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 ;
+; Parameters:
+; SMRGLTextureBasic * Stack[0x4]:4   tex
+; SRGBColorPalette * Stack[0x8]:4   palette_data
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 005459a4

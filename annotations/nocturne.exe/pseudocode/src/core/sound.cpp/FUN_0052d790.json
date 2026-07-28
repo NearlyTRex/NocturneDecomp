@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,23 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 322,
+    "complexity_score": 328,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 187,
-    "suspect_count": 10,
+    "pseudocode_lines": 183,
+    "suspect_count": 11,
     "suspect_types": [
-      "concat_reconstruction",
       "extra_output",
       "nan_function_artifact",
+      "shadow_pointer_walk",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 539
+    "total_lines": 535
   },
   "cross_references": [],
   "function": {
@@ -160,7 +160,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_sound.cpp_FUN_0052d790",
-    "signature": "int core_sound_cpp_FUN_0052d790(void)"
+    "signature": "uint core_sound_cpp_FUN_0052d790(void)"
   },
   "function_calls": [
     {
@@ -498,55 +498,63 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_var",
+      "line": 11,
+      "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "ushort extraout_var;",
+      "text": "uint extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 99,
       "match": "DAT_02dc9ca4",
       "severity": "mild",
-      "text": "pfVar5 = (float *)&DAT_02dc9ca4;",
+      "text": "pCVar6 = (CVector3f *)&DAT_02dc9ca4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 118,
       "match": "DAT_02dc9cac",
       "severity": "mild",
-      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {",
+      "text": "if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 124,
-      "match": "extraout_var",
-      "severity": "moderate",
-      "text": "uVar4 = extraout_var;",
-      "type": "extra_output"
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 131,
+      "line": 128,
       "match": "NAN(",
       "severity": "severe",
-      "text": "iVar2 = CONCAT22(uVar4,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
+      "text": "uVar5 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
       "type": "nan_function_artifact"
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 134,
       "match": "DAT_005bef88",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005bef88;",
+      "text": "puVar8 = &DAT_005bef88;",
       "type": "undefined_data"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 177,
+      "match": "DAT_02dc9d44",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 183,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 161,
+      "line": 157,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -554,19 +562,19 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 141,
+      "line": 137,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 131,
-      "match": "CONCAT22",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar6) + offsetof(subfield)` equals the real array stride. Replace `pCVar6->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 125,
+      "match": "pCVar6 = (T *)&pCVar6[N].SUBFIELD",
       "severity": "moderate",
-      "text": "iVar2 = CONCAT22(uVar4,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
-      "type": "concat_reconstruction"
+      "text": "pCVar6 = (CVector3f *)&pCVar6[1].y;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

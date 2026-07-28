@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005586a0(int param_1)
+; void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005586a0(CWinFont *this_ptr)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0 at 00558548

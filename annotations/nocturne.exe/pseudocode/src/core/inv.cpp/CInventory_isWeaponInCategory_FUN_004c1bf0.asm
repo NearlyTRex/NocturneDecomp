@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0(undefined4 param_1,undefined4 param_2,int param_3)
+; int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   weapon_actor
+; int              Stack[0xc]:4   weapon_category
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 at 004c08ec
@@ -67,7 +71,7 @@ section .text
         ;   Label: LAB_004c1c30
     PUSH EBX                            ; 004c1c35
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1c36
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1c3b
     TEST EAX,EAX                        ; 004c1c3e
     JZ 0x004c1c03                       ; 004c1c40
@@ -80,7 +84,7 @@ section .text
         ;   Label: LAB_004c1c4a
     PUSH EBX                            ; 004c1c4f
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1c50
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1c55
     TEST EAX,EAX                        ; 004c1c58
     JZ 0x004c1c61                       ; 004c1c5a
@@ -93,7 +97,7 @@ section .text
         ;   Label: LAB_004c1c61
     PUSH EBX                            ; 004c1c66
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1c67
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1c6c
     TEST EAX,EAX                        ; 004c1c6f
     JZ 0x004c1c78                       ; 004c1c71
@@ -106,7 +110,7 @@ section .text
         ;   Label: LAB_004c1c78
     PUSH EBX                            ; 004c1c7d
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1c7e
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1c83
     TEST EAX,EAX                        ; 004c1c86
     JZ 0x004c1c8f                       ; 004c1c88
@@ -119,7 +123,7 @@ section .text
         ;   Label: LAB_004c1c8f
     PUSH EBX                            ; 004c1c94
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1c95
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1c9a
     TEST EAX,EAX                        ; 004c1c9d
     JZ 0x004c1c25                       ; 004c1c9f
@@ -132,7 +136,7 @@ section .text
         ;   Label: LAB_004c1ca6
     PUSH EBX                            ; 004c1cab
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1cac
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1cb1
     TEST EAX,EAX                        ; 004c1cb4
     JZ 0x004c1cc0                       ; 004c1cb6
@@ -145,7 +149,7 @@ section .text
         ;   Label: LAB_004c1cc0
     PUSH EBX                            ; 004c1cc5
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1cc6
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1ccb
     TEST EAX,EAX                        ; 004c1cce
     JZ 0x004c1c11                       ; 004c1cd0
@@ -158,7 +162,7 @@ section .text
         ;   Label: LAB_004c1cde
     PUSH EBX                            ; 004c1ce3
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1ce4
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1ce9
     TEST EAX,EAX                        ; 004c1cec
     JZ 0x004c1c1a                       ; 004c1cee
@@ -171,7 +175,7 @@ section .text
         ;   Label: LAB_004c1cfc
     PUSH EBX                            ; 004c1d01
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1d02
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1d07
     TEST EAX,EAX                        ; 004c1d0a
     JZ 0x004c1c23                       ; 004c1d0c

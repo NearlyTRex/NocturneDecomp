@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_beast_cpp_FUN_004151e0(int param_1,undefined4 *param_2)
+; undefined4 core_beast_cpp_FUN_004151e0(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -24,7 +24,7 @@ section .text
     ADD EAX,0x150                       ; 004151f3
     PUSH EAX                            ; 004151f8
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004151f9
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004151fe
     CMP EBX,EAX                         ; 00415201
     JNZ 0x0041520f                      ; 00415203

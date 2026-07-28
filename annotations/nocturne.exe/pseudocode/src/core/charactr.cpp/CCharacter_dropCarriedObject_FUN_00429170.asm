@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(int param_1,int param_2,int param_3)
+; void __cdecl core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00429170(CCharacter *this_ptr,int hand_index,CVector3f *drop_direction)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; CVector3f *      Stack[0xc]:4   drop_direction
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ; undefined4       Stack[-0x10]:4  local_10

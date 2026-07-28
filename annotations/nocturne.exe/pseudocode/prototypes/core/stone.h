@@ -17,16 +17,16 @@ CDemonActorType * FUN_00534cf0(void);
 
 // Original: core_stone.cpp_FUN_00534d00
 // Address: 00534d00
-void FUN_00534d00(undefined4 param_1);
+void FUN_00534d00(CBoxActor *param_1);
 
 // Original: core_stone.cpp_FUN_00534d30
 // Address: 00534d30
-void FUN_00534d30(int param_1);
+void FUN_00534d30(CBoxActor *param_1);
 
 // Original: core_stone.cpp_CTempleStone_canPickup_FUN_00534d60
 // Address: 00534d60
-undefined4 CTempleStone::canPickup(int param_1,undefined4 param_2);
+undefined4 CTempleStone::canPickup(int param_1,CDemonActor *param_2);
 
 // Original: core_stone.cpp_FUN_00534dc0
 // Address: 00534dc0
-int FUN_00534dc0(int param_1,byte param_2);
+CDemonActor * FUN_00534dc0(CDemonActor *param_1,byte param_2);

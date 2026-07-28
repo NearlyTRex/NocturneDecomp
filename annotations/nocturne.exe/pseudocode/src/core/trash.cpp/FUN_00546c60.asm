@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00546c72
         ;   Label: LAB_00546c72
     CALL core_trash.cpp_CTrash_ctor_FUN_00546c90 ; 00546c73
-        ;   XREF to: 00546c90 (UNCONDITIONAL_CALL)  ; undefined core_trash.cpp_CTrash_ctor_FUN_00546c90()
+        ;   XREF to: 00546c90 (UNCONDITIONAL_CALL)  ; CTrash * core_trash.cpp_CTrash_ctor_FUN_00546c90(CTrash * this_ptr)
     ADD ESP,0x4                         ; 00546c78
     RET                                 ; 00546c7b
 

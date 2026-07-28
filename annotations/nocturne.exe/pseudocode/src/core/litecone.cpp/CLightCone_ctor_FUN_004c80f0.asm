@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
+; int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
 ;
 ;
 ; XREF[1]:

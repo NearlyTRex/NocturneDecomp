@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   FUN_005710a0 at 0057110e
-;   FUN_00572a90 at 00572ac9
+;   crt_string.c_char_in_set_FUN_00572a90 at 00572ac9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,undefined4 param_2)
+; int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDemonActor *picker)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; XREF[1]:
 ;   core_turret.cpp_CTurret_canPickup_FUN_0054b030 at 0054b04c
@@ -61,7 +64,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 005542b9
     PUSH EBP                            ; 005542bd
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 005542be
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 005542c3
     TEST EAX,EAX                        ; 005542c6
     JZ 0x005542d2                       ; 005542c8
@@ -75,7 +78,7 @@ section .text
         ;   Label: LAB_005542d2
     PUSH EBP                            ; 005542d7
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 005542d8
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 005542dd
     TEST EAX,EAX                        ; 005542e0
     JNZ 0x005542f6                      ; 005542e2

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __fpureg crt_math_c_atan2_FUN_00566c81(unkbyte10 param_1,unkbyte10 param_2)
+; float10 __fpureg crt_math_c_atan2_FUN_00566c81(float10 y,float10 x)
 ;
 ;
 ; XREF[16]:
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_005c1d98
 ;
 ; Called Functions:
-;   FUN_0056dc98
+;   crt_math.c_atan2_FUN_0056dc98
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     FPATAN                              ; 00566c8c
     JMP 0x00566c95                      ; 00566c8e
         ;   XREF to: 00566c95 (UNCONDITIONAL_JUMP)  ; LAB_00566c95
-    CALL FUN_0056dc98                   ; 00566c90
-        ;   XREF to: 0056dc98 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc98()
+    CALL crt_math.c_atan2_FUN_0056dc98  ; 00566c90
+        ;   XREF to: 0056dc98 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_0056dc98(float10 y, float10 x)
         ;   Label: LAB_00566c90
     RET                                 ; 00566c95
         ;   Label: LAB_00566c95

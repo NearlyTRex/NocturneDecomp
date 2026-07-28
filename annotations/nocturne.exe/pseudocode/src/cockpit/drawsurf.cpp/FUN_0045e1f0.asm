@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045e1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void cockpit_drawsurf_cpp_FUN_0045e1f0(CDrawSurface *param_1,int param_2,char *param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x100c]:1  local_100c
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0045e1a0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_0045e1a0
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;
 ; *****************************************************************************
@@ -28,7 +28,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0045e216
     PUSH EAX                            ; 0045e21a
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0045e21b
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0045e220
     MOV EBX,dword ptr [ESP + 0x1014]    ; 0045e223
     PUSH EBX                            ; 0045e22a
@@ -38,8 +38,8 @@ section .text
     XOR ECX,ECX                         ; 0045e237
     PUSH ESI                            ; 0045e239
     MOV dword ptr [ESP + 0x100c],ECX    ; 0045e23a
-    CALL cockpit_drawsurf.cpp_FUN_0045e1a0 ; 0045e241
-        ;   XREF to: 0045e1a0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045e1a0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_0045e1a0 ; 0045e241
+        ;   XREF to: 0045e1a0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_0045e1a0(CDrawSurface * this_ptr, char * text, int x)
     ADD ESP,0xc                         ; 0045e246
     ADD ESP,0x1004                      ; 0045e249
     POP ESI                             ; 0045e24f

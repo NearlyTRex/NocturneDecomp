@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bodypart_cpp_SBodyPartFire_dtor_FUN_004180c0(int param_1)
+; CDemonActor ** core_bodypart_cpp_SBodyPartFire_dtor_FUN_004180c0(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0xc                         ; 004180c6
     PUSH EAX                            ; 004180c9
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004180ca
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004180cf
     SUB EAX,0xc                         ; 004180d2
     RET                                 ; 004180d5

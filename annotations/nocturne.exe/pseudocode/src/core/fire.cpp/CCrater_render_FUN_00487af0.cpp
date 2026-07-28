@@ -2,59 +2,47 @@
 // Address: 00487af0
 // Address Range: [[00487af0, 00487d44]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(int *param_1)
+// Signature: void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(CCrater *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(int *param_1)
+void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(CCrater *this_ptr)
 
 {
-  byte local_6c [4];
-  uint local_68;
-  uint local_64;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
+  SMRGLHeaderPrimitive local_6c;
   uint local_54;
   uint local_50;
   uint local_4c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
-  int local_10;
-  int local_c;
+  CVector3i local_38;
+  CVector3i local_2c;
+  CVector3i local_20;
+  CVector3i local_14;
   
-  if (*param_1 == 0) {
+  if (this_ptr->active == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,param_1 + 3);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005b8afc);
-  local_20 = (int)ROUND((float)param_1[0x10] * 256.0f);
-  local_1c = (int)ROUND((float)param_1[0x11] * 256.0f);
-  local_18 = (int)ROUND((float)param_1[0x12] * 256.0f);
-  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c5014,&local_20);
-  local_2c = (int)ROUND((float)param_1[0x13] * 256.0f);
-  local_28 = (int)ROUND((float)param_1[0x14] * 256.0f);
-  local_24 = (int)ROUND((float)param_1[0x15] * 256.0f);
-  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c5044,&local_2c);
-  local_38 = (int)ROUND((float)param_1[0x16] * 256.0f);
-  local_34 = (int)ROUND((float)param_1[0x17] * 256.0f);
-  local_30 = (int)ROUND((float)param_1[0x18] * 256.0f);
-  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c5074,&local_38);
-  local_14 = (int)ROUND((float)param_1[0x19] * 256.0f);
-  local_10 = (int)ROUND((float)param_1[0x1a] * 256.0f);
-  local_c = (int)ROUND((float)param_1[0x1b] * 256.0f);
-  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c50a4,&local_14);
+            (DAT_005ae704,&this_ptr->center_position);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b8afc);
+  local_20.x = (int)ROUND(this_ptr->corner_positions[0].x * 256.0f);
+  local_20.y = (int)ROUND(this_ptr->corner_positions[0].y * 256.0f);
+  local_20.z = (int)ROUND(this_ptr->corner_positions[0].z * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25((SProjectedVertex *)&DAT_005c5014,&local_20);
+  local_2c.x = (int)ROUND(this_ptr->corner_positions[1].x * 256.0f);
+  local_2c.y = (int)ROUND(this_ptr->corner_positions[1].y * 256.0f);
+  local_2c.z = (int)ROUND(this_ptr->corner_positions[1].z * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25((SProjectedVertex *)&DAT_005c5044,&local_2c);
+  local_38.x = (int)ROUND(this_ptr->corner_positions[2].x * 256.0f);
+  local_38.y = (int)ROUND(this_ptr->corner_positions[2].y * 256.0f);
+  local_38.z = (int)ROUND(this_ptr->corner_positions[2].z * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25((SProjectedVertex *)&DAT_005c5074,&local_38);
+  local_14.x = (int)ROUND(this_ptr->corner_positions[3].x * 256.0f);
+  local_14.y = (int)ROUND(this_ptr->corner_positions[3].y * 256.0f);
+  local_14.z = (int)ROUND(this_ptr->corner_positions[3].z * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25((SProjectedVertex *)&DAT_005c50a4,&local_14);
   DAT_005c5034 = 0xffff;
   DAT_005c5038 = 0xffff;
   DAT_005c503c = 0xffff;
@@ -75,20 +63,20 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(int *param_1)
   _DAT_005c5090 = 0x80000;
   _DAT_005c50bc = 0x80000;
   _DAT_005c50c0 = 0x80000;
-  local_60 = 0xffff;
-  local_64 = 0;
-  local_5c = 0;
-  local_68 = 3;
-  local_58 = 0;
+  local_6c.surface_normal.B.i = 0xffff;
+  local_6c.surface_normal.A.i = 0;
+  local_6c.surface_normal.C.i = 0;
+  local_6c.base.count = 3;
+  local_6c.surface_normal.D.i = 0;
   local_54 = 0;
   local_50 = 1;
   local_4c = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,local_6c);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_6c);
   local_54 = 0;
   local_50 = 2;
   local_4c = 3;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,local_6c);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_6c);
   return;
 }

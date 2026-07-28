@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(int *param_1,char *param_2,int param_3)
+; char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(char **cursor,char *out_buf,int max_len)
 ;
+; Parameters:
+; char * *         Stack[0x4]:4   cursor
+; char *           Stack[0x8]:4   out_buf
+; int              Stack[0xc]:4   max_len
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047ae76
@@ -146,7 +150,7 @@ section .text
     PUSH EBP                            ; 0047a72b
     DEC EBX                             ; 0047a72c
     CALL crt_string.c_memmove_FUN_00566170 ; 0047a72d
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0047a732
     JMP 0x0047a716                      ; 0047a735
         ;   XREF to: 0047a716 (UNCONDITIONAL_JUMP)  ; LAB_0047a716

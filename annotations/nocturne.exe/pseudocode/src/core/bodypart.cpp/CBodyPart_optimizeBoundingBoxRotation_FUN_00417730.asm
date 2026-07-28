@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(int param_1)
+; void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   out_bbox_min
+; CVector3i *      Stack[0xc]:4   out_bbox_max
 ; Local Variables:
 ; undefined4       Stack[-0xc0]:4  local_c0
 ; undefined4       Stack[-0xbc]:4  local_bc
@@ -103,7 +107,7 @@ section .text
     PUSH EAX                            ; 004177ad
     FSTP float ptr [ESP + 0x78]         ; 004177ae
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004177b2
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004177b7
     FLD float ptr [ESP + 0x8]           ; 004177ba
     FMUL float ptr [0x005790da]         ; 004177be | FLOAT_005790da
@@ -121,13 +125,13 @@ section .text
     FMUL float ptr [0x005790da]         ; 004177fa | FLOAT_005790da
     FXCH ST6                            ; 00417800
     CALL crt_math.c_round_FUN_00563a30  ; 00417802
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x98]        ; 00417807
     FLD float ptr [ESP + 0x24]          ; 0041780e
     FMUL float ptr [0x005790da]         ; 00417812 | FLOAT_005790da
     FXCH ST5                            ; 00417818
     CALL crt_math.c_round_FUN_00563a30  ; 0041781a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x9c]        ; 0041781f
     FLD float ptr [ESP + 0x28]          ; 00417826
     FMUL float ptr [0x005790da]         ; 0041782a | FLOAT_005790da
@@ -144,25 +148,25 @@ section .text
     XOR EDI,EDI                         ; 0041785b
     FXCH ST4                            ; 0041785d
     CALL crt_math.c_round_FUN_00563a30  ; 0041785f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 00417864
     CALL crt_math.c_round_FUN_00563a30  ; 00417866
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 0041786b
     CALL crt_math.c_round_FUN_00563a30  ; 0041786d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00417872
     CALL crt_math.c_round_FUN_00563a30  ; 00417874
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST6                            ; 00417879
     CALL crt_math.c_round_FUN_00563a30  ; 0041787b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST5                            ; 00417880
     CALL crt_math.c_round_FUN_00563a30  ; 00417882
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST4                            ; 00417887
     CALL crt_math.c_round_FUN_00563a30  ; 00417889
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 0041788e
     FISTP dword ptr [ESP + 0x84]        ; 00417890
     FXCH                                ; 00417897
@@ -336,7 +340,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00417aa0
     PUSH ESI                            ; 00417aa3
     CALL core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 ; 00417aa4
-        ;   XREF to: 00417320 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320()
+        ;   XREF to: 00417320 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320(CBodyPart * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00417aa9
     MOV ESP,EBP                         ; 00417aac
     POP EBP                             ; 00417aae

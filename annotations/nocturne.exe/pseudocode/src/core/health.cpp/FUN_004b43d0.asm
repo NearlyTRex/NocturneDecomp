@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_health_cpp_FUN_004b43d0(undefined4 param_1,undefined4 param_2)
+; undefined4 core_health_cpp_FUN_004b43d0(undefined4 param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004b43d5
     PUSH EDX                            ; 004b43d9
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b43da
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004b43df
     TEST EAX,EAX                        ; 004b43e2
     JZ 0x004b43eb                       ; 004b43e4

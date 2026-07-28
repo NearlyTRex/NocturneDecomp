@@ -11,7 +11,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char 
 {
   char cVar1;
   int iVar2;
-  int iVar3;
+  _FILE *p_Var3;
   
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_2);
   if (iVar2 < 1) {
@@ -19,13 +19,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char 
     INT_01cc4804 = 0xe0a;
     core_main_c_FUN_004c8440("Can't open %s",param_2);
   }
-  iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,"rb");
-  if (iVar3 == 0) {
+  p_Var3 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\sound\\mp3.cpp";
     INT_01cc4804 = 0xe0f;
     core_main_c_FUN_004c8440("Can't open %s",param_2);
   }
-  iVar2 = sound_mp3_cpp_FUN_004e7ed0(param_1,iVar3,iVar2);
+  iVar2 = sound_mp3_cpp_FUN_004e7ed0(param_1,p_Var3,iVar2);
   if (iVar2 == 0) {
     PTR_01cc4800 = "..\\sound\\mp3.cpp";
     INT_01cc4804 = 0xe14;

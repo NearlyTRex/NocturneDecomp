@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(int param_1,float *param_2,int param_3,float *param_4,float param_5,float param_6)
+; int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   target_pos
+; CPathMap *       Stack[0xc]:4   path_map
+; CVector3f *      Stack[0x10]:4   direction
+; float            Stack[0x14]:4   min_distance
+; float            Stack[0x18]:4   max_distance
 ; Local Variables:
 ; undefined4       Stack[-0x11c]:4  local_11c
 ; undefined8       Stack[-0x118]:8  local_118
@@ -133,7 +140,7 @@ section .text
     PUSH EAX                            ; 0042484a
     PUSH EBX                            ; 0042484b
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0042484c
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00424851
     FLD float ptr [ESP + 0x64]          ; 00424854
     FMUL ST0                            ; 00424858
@@ -226,7 +233,7 @@ section .text
         ;   XREF to: 00424964 (CONDITIONAL_JUMP)  ; LAB_00424964
     PUSH EDI                            ; 00424958
     CALL core_path.cpp_getPathMap_FUN_004f1e00 ; 00424959
-        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getPathMap_FUN_004f1e00()
+        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_004f1e00(CLocation * location)
     ADD ESP,0x4                         ; 0042495e
     MOV dword ptr [EBP + 0x1c],EAX      ; 00424961
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00424964
@@ -239,7 +246,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x1c]      ; 00424974
     PUSH EDI                            ; 00424977
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 00424978
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 0042497d
     TEST EAX,EAX                        ; 00424980
     JNZ 0x00424ba2                      ; 00424982
@@ -531,7 +538,7 @@ section .text
     PUSH EBX                            ; 00424d3b
     FSTP float ptr [EDX]                ; 00424d3c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00424d3e
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00424d43
     PUSH ESI                            ; 00424d46
     LEA EAX,[ESP + 0x24]                ; 00424d47

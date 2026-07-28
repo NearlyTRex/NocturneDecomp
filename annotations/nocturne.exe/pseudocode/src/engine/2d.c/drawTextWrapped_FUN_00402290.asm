@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(byte *param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(char *text,int x_start,int y_start,int x_max,int y_max)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x_start
+; int              Stack[0xc]:4   y_start
+; int              Stack[0x10]:4   x_max
+; int              Stack[0x14]:4   y_max
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -61,7 +67,7 @@ section .text
     PUSH ESI                            ; 004022df
     PUSH EAX                            ; 004022e0
     CALL engine_2d.c_drawCharacter_FUN_00401c40 ; 004022e1
-        ;   XREF to: 00401c40 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacter_FUN_00401c40()
+        ;   XREF to: 00401c40 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401c40(int char_code, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 004022e6
     ADD ESI,EAX                         ; 004022e9
     CMP ESI,dword ptr [ESP + 0x24]      ; 004022eb

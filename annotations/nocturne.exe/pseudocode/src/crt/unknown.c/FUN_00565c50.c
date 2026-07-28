@@ -9,11 +9,11 @@
 void FUN_00565c50(int param_1,int param_2)
 
 {
-  int iVar1;
+  void *dest;
   
-  iVar1 = malloc(param_1 * param_2);
-  if (iVar1 != 0) {
-    memset(iVar1,0,param_1 * param_2);
+  dest = malloc(param_1 * param_2);
+  if (dest != (void *)0x0) {
+    memset(dest,0,param_1 * param_2);
   }
   return;
 }

@@ -9,12 +9,12 @@
 void core_bodypart_cpp_FUN_00415cf0(void)
 
 {
-  int iVar1;
+  CBodyPart *this_ptr;
   
-  iVar1 = FUN_0056497c(0xf18);
-  if (iVar1 == 0) {
+  this_ptr = (CBodyPart *)FUN_0056497c(0xf18);
+  if (this_ptr == (CBodyPart *)0x0) {
     return;
   }
-  core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(iVar1);
+  core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(this_ptr);
   return;
 }

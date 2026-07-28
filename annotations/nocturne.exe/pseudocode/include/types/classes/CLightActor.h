@@ -10,16 +10,16 @@
 #include "types/unions/UOrientationVector.h"
 
 // Structure: CLightActor
-// Ghidra size: 0x3678 (13944 bytes)
+// Ghidra size: 0x3670 (13936 bytes)
 #pragma pack(push, 1)
 typedef struct CLightActor {
     CBoxActor base; // 0x0
-    ELightActorType light_actor_type; // 0x66c
-    CDemonLight light; // 0x670
-    CVector3f blight_pos; // 0x361c
-    UOrientationVector light_orient; // 0x3628
-    float flicker_timer; // 0x3634
-    CDemonGlobe globe; // 0x3638
+    ELightActorType light_actor_type; // 0x664
+    CDemonLight light; // 0x668
+    CVector3f blight_pos; // 0x3614
+    UOrientationVector light_orient; // 0x3620
+    float flicker_timer; // 0x362c
+    CDemonGlobe globe; // 0x3630
 } CLightActor;
 #pragma pack(pop)
 

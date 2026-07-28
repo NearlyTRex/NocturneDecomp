@@ -2,16 +2,16 @@
 // Address: 00408370
 // Address Range: [[00408370, 004083b4]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int param_1)
+// Signature: int __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int alpha_color_value)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int param_1)
+int __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int alpha_color_value)
 
 {
-  DAT_005b763c = param_1 >> 8;
+  DAT_005b763c = alpha_color_value >> 8;
   if ((int)DAT_005b763c < 0) {
     DAT_005b763c = 0;
   }
@@ -20,5 +20,5 @@ void __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int param_1)
   }
   DAT_005acab4 = DAT_005b763c | DAT_005b763c << 8 | DAT_005b763c << 0x10;
   _DAT_006b0284 = DAT_005acab4 ^ 0xffffff;
-  return;
+  return _DAT_006b0284;
 }

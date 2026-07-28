@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_FUN_0040fa20(int param_1,float param_2)
+; void core_armour_cpp_FUN_0040fa20(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -69,7 +69,7 @@ section .text
     FSTP float ptr [ESI + 0x242c]       ; 0040fa95
     FSTP float ptr [ESI + 0x2430]       ; 0040fa9b
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 0040faa1
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0040faa6
     PUSH dword ptr [EBP + 0x18]         ; 0040faa9
     PUSH ESI                            ; 0040faac
@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_0040fad1
     PUSH EAX                            ; 0040fad7
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 0040fad8
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040fadd
     PUSH dword ptr [EBP + 0x18]         ; 0040fae0
     PUSH ESI                            ; 0040fae3
@@ -101,7 +101,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 0040faf3 | DAT_005b7650
     PUSH EDX                            ; 0040faf9
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0040fafa
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0040faff
     TEST EAX,EAX                        ; 0040fb02
     JNZ 0x0040fb1e                      ; 0040fb04
@@ -118,7 +118,7 @@ section .text
     PUSH EAX                            ; 0040fb0f
     PUSH EBX                            ; 0040fb10
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 0040fb11
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 0040fb16
     JMP 0x0040fa6d                      ; 0040fb19
         ;   XREF to: 0040fa6d (UNCONDITIONAL_JUMP)  ; LAB_0040fa6d
@@ -139,7 +139,7 @@ section .text
     MOV dword ptr [ESP + 0x18],ECX      ; 0040fb48
     MOV dword ptr [ESP + 0x1c],EDI      ; 0040fb4c
     CALL core_charactr.cpp_CCharacter_dismember_FUN_00427b60 ; 0040fb50
-        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismember_FUN_00427b60()
+        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_00427b60(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 0040fb55
     MOV ESP,EBP                         ; 0040fb58
     POP EBP                             ; 0040fb5a

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(int param_1)
+; void core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCamera *param_1)
 ;
 ;
 ; XREF[1]:
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 00444ff4
     PUSH EBX                            ; 00444ff5
     CALL core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0 ; 00444ff6
-        ;   XREF to: 00446fe0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0()
+        ;   XREF to: 00446fe0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCamera * this_ptr, int plane_index, uint blend_alpha)
     ADD ESP,0xc                         ; 00444ffb
     POP ESI                             ; 00444ffe
     POP EDI                             ; 00444fff

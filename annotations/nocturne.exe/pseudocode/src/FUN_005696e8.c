@@ -2,11 +2,11 @@
 // Address: 005696e8
 // Address Range: [[005696e8, 0056974a]]
 // Convention: unknown
-// Signature: void FUN_005696e8(undefined4 param_1,char *param_2,int param_3)
+// Signature: void FUN_005696e8(int param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
-void FUN_005696e8(uint param_1,char *param_2,int param_3)
+void FUN_005696e8(int param_1,char *param_2,int param_3)
 
 {
   char *pcVar1;
@@ -18,7 +18,7 @@ void FUN_005696e8(uint param_1,char *param_2,int param_3)
   byte bVar7;
   
   bVar7 = 0;
-  FUN_0056dc68(param_1,param_2,0x10);
+  IntegerToString(param_1,param_2,0x10);
   uVar4 = 0xffffffff;
   pcVar5 = param_2;
   do {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041a310(int param_1)
+; void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041a310(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined4       Stack[-0x14]:4  local_14
@@ -14,7 +16,7 @@
 ;   TerminatedCString s_boneguy_comeback_wav_00579561
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_0055d610
+;   core_xform.cpp_eulerToQuaternion_FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -40,8 +42,8 @@ section .text
     ADD EAX,0x30                        ; 0041a33d
     PUSH EAX                            ; 0041a340
     LEA ESI,[ESP + 0x4]                 ; 0041a341
-    CALL core_xform.cpp_FUN_0055d610    ; 0041a345
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 0041a345
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
     LEA ESI,[ESP + 0x4]                 ; 0041a34a
     LEA EDI,[EBX + 0xbdbc]              ; 0041a34e
     ADD ESP,0x4                         ; 0041a354

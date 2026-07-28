@@ -2,15 +2,20 @@
 // Address: 00410a80
 // Address Range: [[00410a80, 00410bab]]
 // Convention: __cdecl
-// Signature: void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(int param_1,int param_2)
+// Signature: void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,CDemonActor *target)
 
 #include "nocturne.h"
 
-void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(int param_1,int param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,CDemonActor *target)
 
 {
-  int iVar1;
-  float *pfVar2;
+  UOrientationVector *pUVar1;
+  CDemonActor *pCVar2;
+  CCharacter *this_ptr_00;
+  float *pfVar3;
+  int iVar4;
   byte local_34 [12];
   float local_28;
   float local_24;
@@ -19,34 +24,39 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(int param_1,int pa
   uint local_18;
   uint local_14;
   
-  if ((((param_2 != 0) && (param_2 != *(int *)(param_1 + 0x1fb14))) &&
-      (*(int *)(param_1 + 0x1fb14) == 0)) &&
-     ((iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (param_2,g_CCharacterActorType_00765a60.name_hash), iVar1 == 0 ||
-      (iVar1 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1), iVar1 < 1)))) {
-    *(int *)(param_1 + 0x1fb14) = param_2;
+  if ((((target != (CDemonActor *)0x0) && (target != this_ptr->target_actor)) &&
+      (this_ptr->target_actor == (CDemonActor *)0x0)) &&
+     ((this_ptr_00 = (CCharacter *)
+                     core_actor_cpp_castToClassHash_FUN_0040d890
+                               (target,g_CCharacterActorType_00765a60.name_hash),
+      this_ptr_00 == (CCharacter *)0x0 ||
+      (iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00), iVar4 < 1)))
+     ) {
+    this_ptr->target_actor = target;
     local_1c = 0;
     local_18 = 0;
     local_14 = 0xc0000000;
-    pfVar2 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                (*(uint *)(param_1 + 0x1fb14),local_34,&local_1c);
-    iVar1 = *(int *)(param_1 + 0x1fb14);
-    local_28 = *(float *)(iVar1 + 0x20) + *pfVar2;
-    local_24 = *(float *)(iVar1 + 0x24) + pfVar2[1];
-    local_20 = *(float *)(iVar1 + 0x28) + pfVar2[2];
-    *(float *)(param_1 + 0x20) = local_28;
-    *(float *)(param_1 + 0x24) = local_24;
-    *(float *)(param_1 + 0x28) = local_20;
-    iVar1 = *(int *)(param_1 + 0x1fb14);
-    if ((uint *)(param_1 + 0x30) != (uint *)(iVar1 + 0x30)) {
-      *(uint *)(param_1 + 0x30) = *(uint *)(iVar1 + 0x30);
-      *(uint *)(param_1 + 0x34) = *(uint *)(iVar1 + 0x34);
-      *(uint *)(param_1 + 0x38) = *(uint *)(iVar1 + 0x38);
+    pfVar3 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                                (this_ptr->target_actor,local_34,&local_1c);
+    pCVar2 = this_ptr->target_actor;
+    local_28 = (pCVar2->location).position.x + *pfVar3;
+    local_24 = (pCVar2->location).position.y + pfVar3[1];
+    local_20 = (pCVar2->location).position.z + pfVar3[2];
+    (this_ptr->base).base.base.location.position.x = local_28;
+    (this_ptr->base).base.base.location.position.y = local_24;
+    (this_ptr->base).base.base.location.position.z = local_20;
+    pCVar2 = this_ptr->target_actor;
+    pUVar1 = &(this_ptr->base).base.base.orient;
+    if (pUVar1 != &pCVar2->orient) {
+      (pUVar1->vec).x = (pCVar2->orient).vec.x;
+      (this_ptr->base).base.base.orient.vec.y = (pCVar2->orient).vec.y;
+      (this_ptr->base).base.base.orient.vec.z = (pCVar2->orient).vec.z;
     }
-    memset(param_1 + 0xbc94,0,0x2c);
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);
-    *(uint *)(param_1 + 0x1fb34) = 1;
-    *(uint *)(param_1 + 0x1fb38) = 0;
+    memset(&(this_ptr->base).player_input,0,0x2c);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+              (&(this_ptr->base).base.model.motion_controller,6,1);
+    this_ptr->summoned = 1;
+    this_ptr->shell_visible = 0;
     return;
   }
   return;

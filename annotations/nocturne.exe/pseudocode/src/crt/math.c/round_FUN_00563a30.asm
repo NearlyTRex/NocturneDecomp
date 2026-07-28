@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float10 __fpureg_safe crt_math_c_round_FUN_00563a30(float10 param_1)
+; double __fpureg_safe crt_math_c_round_FUN_00563a30(double value)
 ;
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
@@ -12,9 +12,9 @@
 ; XREF[195]:
 ;   cockpit_ckptutil.c_FUN_0042f8c0 at 0042fa9a
 ;   cockpit_ckptutil.c_FUN_0042fd60 at 0042fecf
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 at 0045ce0f
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c218
-;   cockpit_drawsurf.cpp_FUN_0045cc70 at 0045ccc5
-;   cockpit_drawsurf.cpp_FUN_0045cde0 at 0045ce0f
+;   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70 at 0045ccc5
 ;   core_actor.cpp_FUN_0040b300 at 0040b5be
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de5d
 ;   core_baron.cpp_FUN_004110f0 at 00411160

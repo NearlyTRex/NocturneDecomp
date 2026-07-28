@@ -27,9 +27,9 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
   int iVar14;
   uint *puVar15;
   uint uVar16;
-  float10 fVar17;
-  float10 fVar18;
-  float10 fVar19;
+  double dVar17;
+  double dVar18;
+  double dVar19;
   uint local_54;
   uint uStack_50;
   uint local_4c;
@@ -43,25 +43,25 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
     if (DAT_005b7624 == 8) {
       iVar5 = *(int *)(&DAT_01bd2fa0 + iVar1);
       iVar1 = (uint)*(byte *)(iVar5 + param_1) * 3;
-      fVar17 = (float10)param_3;
       bVar2 = *(byte *)(iVar1 + 0x1c00649);
       bVar3 = *(byte *)(iVar1 + 0x1c0064a);
-      fVar18 = (float10)round();
-      iVar1 = (int)ROUND(fVar18);
-      fVar18 = (float10)round
-                                  ((float10)bVar2 * ((float10)1 - fVar17) + (float10)bVar3 * fVar17)
-      ;
-      iVar13 = (int)ROUND(fVar18) >> 0x1f;
+      fVar6 = 1.0 - param_3;
+      dVar17 = round
+                         ((double)((float)(byte)(&DAT_01c00648)[param_4 * 3] * fVar6 +
+                                  (float)(byte)(&DAT_01c00648)[iVar1] * param_3));
+      iVar1 = (int)ROUND(dVar17);
+      dVar17 = round
+                         ((double)((float)bVar2 * fVar6 + (float)bVar3 * param_3));
+      iVar13 = (int)ROUND(dVar17) >> 0x1f;
       local_2c = (short)iVar1;
-      fVar17 = (float10)round
-                                  ((float10)bVar2 * ((float10)1 - fVar17) +
-                                   (float10)local_2c * fVar17);
-      iVar14 = (int)ROUND(fVar17) >> 0x1f;
+      dVar18 = round
+                         ((double)((float)bVar2 * fVar6 + (float)local_2c * param_3));
+      iVar14 = (int)ROUND(dVar18) >> 0x1f;
       *(byte *)(iVar5 + param_1) =
            (&DAT_01bf7720)
-           [((int)(((int)ROUND(fVar17) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) +
+           [((int)(((int)ROUND(dVar18) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) +
             ((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400
-            + ((int)(((int)ROUND(fVar18) + iVar13 * -8) - (uint)(iVar13 << 2 < 0)) >> 3) * 0x20];
+            + ((int)(((int)ROUND(dVar17) + iVar13 * -8) - (uint)(iVar13 << 2 < 0)) >> 3) * 0x20];
       return;
     }
     if (DAT_005b7624 == 0x10) {
@@ -93,24 +93,24 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
     fVar7 = (float)(uVar16 & 0xff) * fVar6 + (float)(uVar10 & 0xff) * param_3;
     fVar6 = (float)(uVar12 & 0xff) * fVar6 + (float)(uVar11 & 0xff) * param_3;
     if (DAT_005b7624 != 0x10) {
-      fVar17 = (float10)round((float10)fVar8);
-      fVar18 = (float10)round((float10)fVar7);
-      fVar19 = (float10)round((float10)fVar6);
-      iStack_44 = (int)(longlong)ROUND(fVar18);
-      local_4c = (uint)(longlong)ROUND(fVar19);
-      local_54 = (uint)(longlong)ROUND(fVar17);
+      dVar17 = round((double)fVar8);
+      dVar18 = round((double)fVar7);
+      dVar19 = round((double)fVar6);
+      iStack_44 = (int)(longlong)ROUND(dVar18);
+      local_4c = (uint)(longlong)ROUND(dVar19);
+      local_54 = (uint)(longlong)ROUND(dVar17);
       *(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =
            iStack_44 << (DAT_01c00630 & 0x1f) | local_54 << (DAT_01c00624 & 0x1f) |
            local_4c << (DAT_01c0063c & 0x1f);
       return;
     }
-    fVar17 = (float10)round((float10)fVar8);
-    fVar18 = (float10)round((float10)fVar7);
-    fVar19 = (float10)round((float10)fVar6);
-    local_4c = (uint)(longlong)ROUND(fVar17);
-    local_54 = (uint)(longlong)ROUND(fVar18);
+    dVar17 = round((double)fVar8);
+    dVar18 = round((double)fVar7);
+    dVar19 = round((double)fVar6);
+    local_4c = (uint)(longlong)ROUND(dVar17);
+    local_54 = (uint)(longlong)ROUND(dVar18);
     uVar10 = local_54 >> (DAT_01c00638 & 0x1f);
-    local_54 = (uint)(longlong)ROUND(fVar19);
+    local_54 = (uint)(longlong)ROUND(dVar19);
     *(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =
          (ushort)(uVar10 << (DAT_01c00630 & 0x1f)) |
          (ushort)((local_4c >> (bVar2 & 0x1f)) << (DAT_01c00624 & 0x1f)) |

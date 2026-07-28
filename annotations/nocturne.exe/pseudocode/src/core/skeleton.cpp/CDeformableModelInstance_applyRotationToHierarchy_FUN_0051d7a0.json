@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,29 +122,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 494,
+    "complexity_score": 179,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 37,
+    "pseudocode_lines": 84,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "stack_alignment_array",
-      "unnamed_param",
-      "unresolved_funcptr",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "unrolled_memcpy"
     ],
-    "total_lines": 248
+    "total_lines": 243
   },
   "cross_references": [
     {
       "addr": "00497900",
       "from_addr": "00498003",
-      "name": "core_gabriela.cpp_FUN_00497900",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -189,7 +187,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,undefined4 param_2,float param_3,int param_4,code *param_5)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
   },
   "function_calls": [
     {
@@ -203,14 +201,14 @@
       "name": "core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10"
     },
     {
-      "addr": "0055d560",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_0055d560"
-    },
-    {
       "addr": "0055d130",
       "is_variadic": false,
       "name": "core_xform.cpp_multiplyQuaternion_FUN_0055d130"
+    },
+    {
+      "addr": "0055d560",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAxisAngle_FUN_0055d560"
     },
     {
       "addr": "0055d220",
@@ -242,7 +240,7 @@
       {
         "call_addr": "00498003",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_00497900",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -351,10 +349,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.223021582733813,
@@ -395,10 +393,10 @@
     "pcode_op_count": 726
   },
   "stack_frame": {
-    "frame_size": 244,
+    "frame_size": 264,
     "local_size": 244,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -470,6 +468,41 @@
         "offset": -28,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_quat",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_weight",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_callback",
+        "offset": 20,
+        "size": 4,
+        "type": "CDeformableModel_MotionBlendWeightFunc *"
       }
     ]
   },
@@ -490,305 +523,184 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 21,
+          "line": 53,
+          "message": "Array 'auStack_80[7]' accessed at index 8, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 56,
+          "line": 53,
+          "message": "Array 'auStack_80[7]' accessed at index 16, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 21,
+          "line": 54,
+          "message": "Array 'auStack_80[7]' accessed at index 9, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 26,
+          "line": 55,
+          "message": "Array 'auStack_80[7]' accessed at index 17, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 13,
+          "line": 78,
+          "message": "Array 'auStack_80[7]' accessed at index 12, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 13,
+          "line": 79,
+          "message": "Array 'auStack_80[7]' accessed at index 13, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "pointerOutOfBounds",
+          "column": 64,
+          "line": 83,
+          "message": "Undefined behaviour, pointer arithmetic 'auStack_80+0xb' is out of bounds.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 70,
+          "line": 60,
+          "message": "Uninitialized variable: fStack_84",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 4,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0(int param_1,uint param_2,float param_3,int param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 13,
       "match": "afStackY_1860",
       "severity": "moderate",
       "text": "float afStackY_1860 [1497];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_xform_cpp_quaternionToAxisAngle_FUN_0055d220(param_2,&local_28,local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1 + 0x6b0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar1 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(local_24,iVar2,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_18 = (float)(*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)auStack_60",
+      "line": 52,
+      "match": "(uint *)((int)local_20",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_60 + (uint)bVar5 * 0xfffffff8) =",
+      "text": "puVar4 = (uint *)((int)local_20 + (uint)bVar7 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)auStack_50",
+      "line": 82,
+      "match": "(CMatrix3x4f *)((int)pCVar6",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + 4) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)auStack_60",
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)local_20",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_60 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
-      "type": "pointer_cast"
+      "text": "puVar4 = (uint *)((int)local_20 + (uint)bVar7 * -8 + 0x6b4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)auStack_50",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)auStack_60",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_60 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(uint *)((int)auStack_80",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)((int)auStack_80 + (uint)bVar5 * 0xfffffff8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(uint *)((int)auStack_60",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_60 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (-1 < param_4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_0055d560(local_28 * param_3,local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + (uint)bVar5 * 0xfffffff8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + -8) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)auStack_50",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_50 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(param_1 + 0x6a4,local_e4);",
-      "type": "unnamed_param"
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 86,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 58,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 61,
+      "match": "local_20 = (T *)&(local_20->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "*puVar4 = *(uint *)",
-      "type": "pointer_cast"
+      "text": "local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "call_site_count": 25,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Array 'auStack_80[7]' accessed at index 8, which is out of bounds.",
+      "line": 53,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + 8] = auStack_80[(uint)bVar7 * -2 + 0x10];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'auStack_80[7]' accessed at index 16, which is out of bounds.",
+      "line": 53,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + 8] = auStack_80[(uint)bVar7 * -2 + 0x10];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'auStack_80[7]' accessed at index 9, which is out of bounds.",
+      "line": 54,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 9] =",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'auStack_80[7]' accessed at index 17, which is out of bounds.",
+      "line": 55,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x11];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'auStack_80[7]' accessed at index 12, which is out of bounds.",
+      "line": 78,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + 0xc] = auStack_80[(uint)bVar7 * -2 + 4];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'auStack_80[7]' accessed at index 13, which is out of bounds.",
+      "line": 79,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "auStack_80[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Uninitialized variable: fStack_84",
+      "line": 60,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(local_20->bone_transform).pose_data.bone_rotations[0].w = fStack_84;",
+      "type": "static_uninitvar"
     }
   ]
 }

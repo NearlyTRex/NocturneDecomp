@@ -2,109 +2,112 @@
 // Address: 0051b280
 // Address Range: [[0051b280, 0051b470]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(CDeformableModel *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(CDeformableModel *this_ptr)
 
 {
-  byte *pbVar1;
-  int iVar2;
+  uchar *puVar1;
+  char *pcVar2;
   int iVar3;
-  int iVar4;
-  byte *pbVar5;
-  byte *pbVar6;
-  int iVar7;
+  CSkeleton *pCVar4;
+  uchar *puVar5;
+  CDeformableModel *pCVar6;
+  uchar *puVar7;
   int iVar8;
-  byte *pbVar9;
+  CVector3f *point;
+  CSkeleton *pCVar9;
   int iVar10;
-  int local_34;
+  CBoundingBox3D *this_ptr_00;
+  CSkeleton *local_34;
   int local_30;
   int local_2c;
-  int local_28;
+  CDeformableModel *local_28;
   int local_18;
   
-  iVar3 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(param_1);
-  iVar2 = *(int *)(iVar3 + 0x28558);
+  pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(this_ptr);
+  iVar3 = pCVar4->bone_count;
   iVar8 = 0;
-  iVar4 = iVar2;
-  if (0 < iVar2) {
-    iVar10 = param_1 + 0x1c0c;
-    iVar7 = param_1;
+  if (0 < iVar3) {
+    this_ptr_00 = (CBoundingBox3D *)&this_ptr->texture_sets[1].textures[0x11].textures[0].base.count
+    ;
+    pCVar6 = this_ptr;
     do {
-      iVar4 = core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(iVar10);
+      core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(this_ptr_00);
       iVar8 = iVar8 + 1;
-      iVar10 = iVar10 + 0x18;
-      *(uint *)(iVar7 + 0x256c) = 0;
-      iVar7 = iVar7 + 4;
-    } while (iVar8 < iVar2);
+      this_ptr_00 = this_ptr_00 + 1;
+      pCVar6->texture_sets[1].textures[0x32].textures[1].base.count = 0;
+      pCVar6 = (CDeformableModel *)pCVar6->lod_info;
+    } while (iVar8 < iVar3);
   }
   local_2c = 0;
-  if (0 < *(int *)(param_1 + 0x2c)) {
+  if (0 < this_ptr->vertex_count[0]) {
     local_30 = 0;
     do {
-      pbVar5 = (byte *)(local_30 + *(int *)(param_1 + 0x40));
-      pbVar9 = pbVar5 + 0x10;
-      pbVar6 = pbVar5;
-      for (iVar4 = 0; iVar4 < (int)(uint)*pbVar5; iVar4 = iVar4 + 1) {
-        pbVar1 = pbVar6 + 1;
-        pbVar6 = pbVar6 + 1;
+      puVar5 = this_ptr->vertex_data_ptr[0]->bone_indices + local_30 + -1;
+      point = (CVector3f *)(puVar5 + 0x10);
+      puVar7 = puVar5;
+      for (iVar8 = 0; iVar8 < (int)(uint)*puVar5; iVar8 = iVar8 + 1) {
+        puVar1 = puVar7 + 1;
+        puVar7 = puVar7 + 1;
         core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00
-                  ((uint)*pbVar1 * 0x18 + param_1 + 0x1c0c,pbVar9);
-        pbVar9 = pbVar9 + 0xc;
-        *(uint *)(param_1 + 0x256c + (uint)*pbVar6 * 4) = 1;
+                  ((CBoundingBox3D *)
+                   &this_ptr->texture_sets[1].textures[0x11].textures[*puVar1].base.count,point);
+        point = point + 1;
+        pcVar2 = this_ptr->texture_sets[1].textures[0x32].textures[1].texture_name +
+                 (uint)*puVar7 * 4 + -4;
+        pcVar2[0] = '\x01';
+        pcVar2[1] = '\0';
+        pcVar2[2] = '\0';
+        pcVar2[3] = '\0';
       }
       local_30 = local_30 + 0x34;
-      iVar4 = local_2c + 1;
-      local_2c = iVar4;
-    } while (iVar4 < *(int *)(param_1 + 0x2c));
+      local_2c = local_2c + 1;
+    } while (local_2c < this_ptr->vertex_count[0]);
   }
   local_18 = 0;
-  if (0 < iVar2) {
-    local_28 = param_1;
-    local_34 = iVar3;
+  if (0 < iVar3) {
+    local_28 = this_ptr;
+    local_34 = pCVar4;
     do {
-      iVar4 = local_28;
-      if (*(int *)(local_28 + 0x256c) == 1) {
-        if (-1 < *(int *)(local_34 + 0x2857c)) {
-          iVar7 = 0;
-          iVar4 = local_34;
-          iVar8 = iVar3;
-          iVar10 = param_1;
-          if (0 < iVar2) {
+      if (local_28->texture_sets[1].textures[0x32].textures[1].base.count == 1) {
+        if (-1 < local_34->bone_list[0].parent_index) {
+          iVar8 = 0;
+          pCVar9 = pCVar4;
+          pCVar6 = this_ptr;
+          if (0 < iVar3) {
             do {
-              if ((local_18 == *(int *)(iVar8 + 0x2857c)) && (*(int *)(iVar10 + 0x256c) != 0))
-              break;
-              iVar7 = iVar7 + 1;
-              iVar4 = iVar2;
-              iVar8 = iVar8 + 0x24;
-              iVar10 = iVar10 + 4;
-            } while (iVar7 < iVar2);
+              if ((local_18 == pCVar9->bone_list[0].parent_index) &&
+                 (pCVar6->texture_sets[1].textures[0x32].textures[1].base.count != 0)) break;
+              iVar8 = iVar8 + 1;
+              pCVar9 = (CSkeleton *)((pCVar9->motion_list).state_names[1] + 2);
+              pCVar6 = (CDeformableModel *)pCVar6->lod_info;
+            } while (iVar8 < iVar3);
           }
-          if (iVar7 < iVar2) {
+          if (iVar8 < iVar3) {
             iVar10 = 0;
             iVar8 = local_18;
             do {
-              iVar8 = *(int *)(iVar8 * 0x24 + iVar3 + 0x2857c);
+              iVar8 = pCVar4->bone_list[iVar8].parent_index;
               if (iVar8 < 0) {
                 PTR_01cc4800 = "..\\core\\skeleton.cpp";
                 INT_01cc4804 = 0x86b;
-                iVar4 = core_main_c_FUN_004c8440("Bug!");
+                core_main_c_FUN_004c8440("Bug!");
               }
-            } while ((*(int *)(param_1 + 0x256c + iVar8 * 4) != 2) &&
-                    (iVar10 = iVar10 + 1, iVar10 < 2));
+            } while ((*(int *)(this_ptr->texture_sets[1].textures[0x32].textures[1].texture_name +
+                              iVar8 * 4 + -4) != 2) && (iVar10 = iVar10 + 1, iVar10 < 2));
             if (iVar10 < 2) goto LAB_0051b360;
           }
         }
-        *(uint *)(local_28 + 0x256c) = 2;
-        iVar4 = local_28;
+        local_28->texture_sets[1].textures[0x32].textures[1].base.count = 2;
       }
 LAB_0051b360:
-      local_34 = local_34 + 0x24;
-      local_28 = local_28 + 4;
+      local_34 = (CSkeleton *)((local_34->motion_list).state_names[1] + 2);
+      local_28 = (CDeformableModel *)local_28->lod_info;
       local_18 = local_18 + 1;
-    } while (local_18 < iVar2);
+    } while (local_18 < iVar3);
   }
-  return iVar4;
+  return;
 }

@@ -5,7 +5,7 @@
 #include "types/classes/CDemonActor.h"
 
 // Structure: CTeleportDest
-// Ghidra size: 0x158 (344 bytes)
+// Ghidra size: 0x150 (336 bytes)
 #pragma pack(push, 1)
 typedef struct CTeleportDest {
     CDemonActor base; // 0x0

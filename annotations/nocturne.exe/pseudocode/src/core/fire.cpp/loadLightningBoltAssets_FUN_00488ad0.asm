@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00488ade | DAT_005ae704
     PUSH EDX                            ; 00488ae4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00488ae5
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 00488aea
     ADD ESP,0x8                         ; 00488aed
     CMP EBX,ESI                         ; 00488af0

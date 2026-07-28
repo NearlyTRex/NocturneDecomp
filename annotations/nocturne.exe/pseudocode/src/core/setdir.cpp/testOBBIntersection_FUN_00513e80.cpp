@@ -2,11 +2,11 @@
 // Address: 00513e80
 // Address Range: [[00513e80, 005141ee]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(float *param_1,float *param_2)
+// Signature: int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(SVDBox *obb_a,SVDBox *obb_b)
 
 #include "nocturne.h"
 
-uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(float *param_1,float *param_2)
+int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(SVDBox *obb_a,SVDBox *obb_b)
 
 {
   float *pfVar1;
@@ -47,62 +47,62 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(float *param_1,flo
   double local_3c;
   double local_34;
   float local_2c;
-  float *local_28;
-  float *local_24;
+  CMatrix3x3f *local_28;
+  CMatrix3x3f *local_24;
   float local_20;
   float local_1c;
   float local_18;
   float local_14;
   
-  local_74 = -param_2[3];
-  local_70 = -param_2[4];
-  local_6c = -param_2[5];
+  local_74 = -(obb_b->extents).x;
+  local_70 = -(obb_b->extents).y;
+  local_6c = -(obb_b->extents).z;
   if (&local_c8 != &local_74) {
     local_c8 = local_74;
     local_c4 = local_70;
     local_c0 = local_6c;
   }
-  if (&local_bc != param_2 + 3) {
-    local_bc = param_2[3];
-    local_b8 = param_2[4];
-    local_b4 = param_2[5];
+  if ((CVector3f *)&local_bc != &obb_b->extents) {
+    local_bc = (obb_b->extents).x;
+    local_b8 = (obb_b->extents).y;
+    local_b4 = (obb_b->extents).z;
   }
   __arrinit(local_128,8,&g_CVectorTypeInfo_005993b0);
-  local_28 = param_2 + 6;
+  local_28 = &obb_b->rotation_matrix;
   uVar3 = 0;
-  local_24 = param_1 + 6;
+  local_24 = &obb_a->rotation_matrix;
   do {
-    local_20 = param_1[3];
+    local_20 = (obb_a->extents).x;
     pfVar4 = local_128 + uVar3 * 3;
     while( true ) {
       local_68 = local_20;
       if ((uVar3 & 2) == 0) {
-        local_1c = param_1[4];
+        local_1c = (obb_a->extents).y;
       }
       else {
-        local_1c = -param_1[4];
+        local_1c = -(obb_a->extents).y;
       }
       local_64 = local_1c;
       if ((uVar3 & 4) == 0) {
-        local_18 = param_1[5];
+        local_18 = (obb_a->extents).z;
       }
       else {
-        local_18 = -param_1[5];
+        local_18 = -(obb_a->extents).z;
       }
       local_60 = local_18;
       pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                                   (local_24,local_5c,&local_68);
-      local_8c = *pfVar1 + *param_1;
-      local_88 = pfVar1[1] + param_1[1];
-      local_84 = pfVar1[2] + param_1[2];
+      local_8c = *pfVar1 + (obb_a->position).x;
+      local_88 = pfVar1[1] + (obb_a->position).y;
+      local_84 = pfVar1[2] + (obb_a->position).z;
       if (&local_68 != &local_8c) {
         local_68 = local_8c;
         local_64 = local_88;
         local_60 = local_84;
       }
-      local_80 = local_68 - *param_2;
-      local_7c = local_64 - param_2[1];
-      local_78 = local_60 - param_2[2];
+      local_80 = local_68 - (obb_b->position).x;
+      local_7c = local_64 - (obb_b->position).y;
+      local_78 = local_60 - (obb_b->position).z;
       pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                                   (local_28,local_98,&local_80);
       if (&local_68 != pfVar1) {
@@ -163,7 +163,7 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(float *param_1,flo
         return 1;
       }
       if ((uVar3 & 1) == 0) break;
-      local_20 = -param_1[3];
+      local_20 = -(obb_a->extents).x;
     }
   } while( true );
 }

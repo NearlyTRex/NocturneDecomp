@@ -9,12 +9,12 @@
 void core_frankgen_cpp_FUN_00494600(void)
 
 {
-  int iVar1;
+  CFrankenstienMachine *this_ptr;
   
-  iVar1 = FUN_0056497c(0x494);
-  if (iVar1 == 0) {
+  this_ptr = (CFrankenstienMachine *)FUN_0056497c(0x494);
+  if (this_ptr == (CFrankenstienMachine *)0x0) {
     return;
   }
-  core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(iVar1);
+  core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(this_ptr);
   return;
 }

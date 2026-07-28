@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(int param_1)
+; void core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CDemonActor *param_1)
 ;
 ;
 ; XREF[1]:
@@ -28,7 +28,7 @@ section .text
     PUSH EDX                            ; 00498b6d | DAT_01e57284
     LEA EBX,[ESI + 0x1f5a0]             ; 00498b6e
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00498b74
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00498b79
     MOV EAX,dword ptr [EBX + 0x330]     ; 00498b7c
     PUSH EAX                            ; 00498b82
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_00498baf
     PUSH EBX                            ; 00498bb5 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00498bb6
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00498bbb
     MOV dword ptr [ESI + 0x1fa54],0x0   ; 00498bbe
     POP ESI                             ; 00498bc8

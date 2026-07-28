@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(int *param_1,float param_2,int param_3)
+; void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(CDemonFilter *this_ptr,float init_value,int flags)
 ;
+; Parameters:
+; CDemonFilter *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   init_value
+; int              Stack[0xc]:4   flags
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -96,7 +100,7 @@ section .text
     FMUL double ptr [0x0057c05d]        ; 0044c22a | DOUBLE_0057c05d
     FMUL double ptr [0x0057c065]        ; 0044c230 | DOUBLE_0057c065
     CALL crt_math.c_round_FUN_00563a30  ; 0044c236
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
         ;   Label: LAB_0044c236
     FISTP dword ptr [ESP + 0xc]         ; 0044c23b
     MOV AL,byte ptr [ESP + 0xc]         ; 0044c23f
@@ -132,7 +136,7 @@ section .text
     PUSH EBX                            ; 0044c277
         ;   Label: LAB_0044c277
     CALL core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20 ; 0044c278
-        ;   XREF to: 0044bf20 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20()
+        ;   XREF to: 0044bf20 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter * this_ptr)
     ADD ESP,0x4                         ; 0044c27d
     JMP 0x0044c1a9                      ; 0044c280
         ;   XREF to: 0044c1a9 (UNCONDITIONAL_JUMP)  ; LAB_0044c1a9

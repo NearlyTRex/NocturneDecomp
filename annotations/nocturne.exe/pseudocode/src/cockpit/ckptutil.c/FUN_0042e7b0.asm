@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0042e7e3
     PUSH EAX                            ; 0042e7ea
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0042e7eb
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 0042e7f0
     MOV dword ptr [ESP + 0x20],EAX      ; 0042e7f3
     TEST EAX,EAX                        ; 0042e7f7

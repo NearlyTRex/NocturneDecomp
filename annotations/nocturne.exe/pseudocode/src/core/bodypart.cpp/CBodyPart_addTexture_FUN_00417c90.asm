@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(int param_1,char *param_2)
+; int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(CBodyPart *this_ptr,char *texture_name)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   texture_name
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 at 0051a2b0
@@ -39,7 +42,7 @@ section .text
         ;   Label: LAB_00417cae
     PUSH EDI                            ; 00417caf
     CALL crt_string.c__stricmp_FUN_00564520 ; 00417cb0
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00417cb5
     TEST EAX,EAX                        ; 00417cb8
     JZ 0x00417d67                       ; 00417cba
@@ -73,7 +76,7 @@ section .text
     ADD EAX,EDI                         ; 00417d15
     PUSH EAX                            ; 00417d17
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00417d18
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ESI,dword ptr [EBX + 0x184]     ; 00417d1d
     LEA EAX,[ESI*0x4 + 0x0]             ; 00417d23
     SUB EAX,ESI                         ; 00417d2a

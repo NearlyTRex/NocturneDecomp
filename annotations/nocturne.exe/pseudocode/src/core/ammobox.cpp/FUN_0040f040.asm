@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_ammobox_cpp_FUN_0040f040(undefined4 param_1)
+; int * core_ammobox_cpp_FUN_0040f040(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -36,7 +36,7 @@ section .text
     ADD EAX,0x150                       ; 0040f050
     PUSH EAX                            ; 0040f055
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0040f056
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040f05b
     LEA EBX,[EAX + 0xfffffeb0]          ; 0040f05e
     PUSH 0x57834d                       ; 0040f064 | = "ammobag.kfm"
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 0040f06f
     MOV dword ptr [EBX + 0x14c],0x599574 ; 0040f070 | PTR_core_ammobox.cpp_FUN_0040f0f0_00599574
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040f07a
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040f07f
     MOV ESI,0x578359                    ; 0040f082 | = "CGun"
     LEA EDI,[EBX + 0x2cc]               ; 0040f087

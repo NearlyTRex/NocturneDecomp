@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,undefined4 param_2)
+; undefined4 core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x664]     ; 00534d6d
     PUSH ECX                            ; 00534d73
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00534d74
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00534d79
     TEST EAX,EAX                        ; 00534d7c
     JZ 0x00534d89                       ; 00534d7e
@@ -52,7 +52,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 00534da5
     PUSH EBP                            ; 00534da9
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 00534daa
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00534daf
     TEST EAX,EAX                        ; 00534db2
     JNZ 0x00534d92                      ; 00534db4

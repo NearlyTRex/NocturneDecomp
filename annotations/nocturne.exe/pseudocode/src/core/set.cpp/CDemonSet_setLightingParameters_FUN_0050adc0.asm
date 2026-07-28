@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 *param_6)
+; void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; UOrientationVector * Stack[0xc]:4   orientation
+; CVector3f *      Stack[0x10]:4   aabb_min
+; CVector3f *      Stack[0x14]:4   aabb_max
+; CMatrix3x3f *    Stack[0x18]:4   rotation_matrix
 ;
 ; XREF[11]:
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a723

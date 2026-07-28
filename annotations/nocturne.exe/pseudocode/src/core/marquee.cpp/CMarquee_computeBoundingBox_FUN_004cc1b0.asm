@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_004cc1b0(int param_1)
+; void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_004cc1b0(CMarquee *this_ptr)
 ;
+; Parameters:
+; CMarquee *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -54,7 +56,7 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 004cc21f
     PUSH EDI                            ; 004cc223
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004cc224
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004cc229
     FLD float ptr [ESP + 0xc]           ; 004cc22c
     FCOMP float ptr [EBX + 0x17c]       ; 004cc230

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(int param_1,float param_2)
+; void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined8       Stack[-0x80]:8  local_80
@@ -45,7 +48,7 @@ section .text
     PUSH EAX                            ; 0054d9e5
     PUSH ESI                            ; 0054d9e6
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 0054d9e7
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 0054d9ec
     CMP EAX,0x66                        ; 0054d9ef
     JNC 0x0054daa1                      ; 0054d9f2

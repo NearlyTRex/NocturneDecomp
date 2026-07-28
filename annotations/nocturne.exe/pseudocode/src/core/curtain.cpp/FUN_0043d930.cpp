@@ -9,12 +9,12 @@
 void core_curtain_cpp_FUN_0043d930(void)
 
 {
-  int iVar1;
+  CCurtain *this_ptr;
   
-  iVar1 = FUN_0056497c(0x65b30);
-  if (iVar1 == 0) {
+  this_ptr = (CCurtain *)FUN_0056497c(0x65b30);
+  if (this_ptr == (CCurtain *)0x0) {
     return;
   }
-  core_curtain_cpp_CCurtain_ctor_FUN_0043d960(iVar1);
+  core_curtain_cpp_CCurtain_ctor_FUN_0043d960(this_ptr);
   return;
 }

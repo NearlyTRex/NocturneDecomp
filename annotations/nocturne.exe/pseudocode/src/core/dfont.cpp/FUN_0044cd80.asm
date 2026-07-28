@@ -18,7 +18,7 @@ section .text
         ;   Label: core_dfont.cpp_FUN_0044cd80
     PUSH EDX                            ; 0044cd86
     CALL engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 ; 0044cd87
-        ;   XREF to: 004931b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_remapPalette_FUN_004931b0()
+        ;   XREF to: 004931b0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_remapPalette_FUN_004931b0(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 0044cd8c
     RET                                 ; 0044cd8f
 

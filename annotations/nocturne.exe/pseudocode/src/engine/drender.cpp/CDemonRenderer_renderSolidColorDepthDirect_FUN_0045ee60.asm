@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(int param_1,int param_2)
+; void engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer *param_1,int param_2)
 ;
 ;
 ; XREF[5]:
+;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760 at 004d77dc
 ;   core_mirror.cpp_FUN_004d76e0 at 004d7709
-;   core_mirror.cpp_FUN_004d7760 at 004d77dc
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 at 0050dfaf
 ;   core_setdir.cpp_FUN_00511d80 at 0051248c
 ;   core_setdir.cpp_FUN_005125a0 at 0051340b
@@ -49,7 +49,7 @@ section .text
     PUSH EBP                            ; 0045ee97
     PUSH EBX                            ; 0045ee98
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045ee99
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045ee9e
     POP EBP                             ; 0045eea1
         ;   Label: LAB_0045eea1
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_0045eea5
     PUSH EAX                            ; 0045eea8
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0045eea9
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0045eeae
     TEST EAX,EAX                        ; 0045eeb1
     JZ 0x0045eea1                       ; 0045eeb3

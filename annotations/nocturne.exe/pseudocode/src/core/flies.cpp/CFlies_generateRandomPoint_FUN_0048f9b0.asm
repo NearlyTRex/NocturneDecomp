@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point)
 ;
+; Parameters:
+; CFlies *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
+; CVector3f *      Stack[0xc]:4   reference_point
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  local_84

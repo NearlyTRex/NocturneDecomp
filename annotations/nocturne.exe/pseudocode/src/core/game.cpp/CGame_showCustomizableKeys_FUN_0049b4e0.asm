@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_0049b4e0(int param_1)
+; void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_0049b4e0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x1c10]:1  local_1c10
 ; undefined        Stack[-0x1b10]:1  local_1b10
@@ -34,7 +36,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d54f
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d54f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_00582402
@@ -77,20 +79,20 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c14]    ; 0049b4f0
     PUSH 0xffff                         ; 0049b4f7
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0049b4fc
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0049b501
     PUSH 0x58                           ; 0049b504
     MOV EDX,dword ptr [0x014b9900]      ; 0049b506 | DAT_014b9900
     PUSH EDX                            ; 0049b50c
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0049b50d
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049b512
     PUSH 0x58                           ; 0049b515
     MOV ECX,dword ptr [0x014b9900]      ; 0049b517 | DAT_014b9900
     PUSH ECX                            ; 0049b51d
     MOV [0x01c78ae4],EAX                ; 0049b51e | DAT_01c78ae4
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0 ; 0049b523
-        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0()
+        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * font, int char_code)
     ADD ESP,0x8                         ; 0049b528
     MOV EDX,dword ptr [0x01c78ae4]      ; 0049b52b | DAT_01c78ae4
     MOV [0x01c78ae8],EAX                ; 0049b531 | DAT_01c78ae8
@@ -100,7 +102,7 @@ section .text
     MOV dword ptr [0x01c78ae0],EDX      ; 0049b541 | DAT_01c78ae0
     MOV [0x01c78adc],EAX                ; 0049b547 | DAT_01c78adc
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b54c
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b551
     PUSH -0x1                           ; 0049b554
     PUSH 0x7                            ; 0049b556
@@ -112,7 +114,7 @@ section .text
     MOV EAX,[0x014b9900]                ; 0049b567 | DAT_014b9900
     PUSH EAX                            ; 0049b56c
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b56d
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b572 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b577 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b57d
@@ -142,7 +144,7 @@ section .text
     PUSH 0x582415                       ; 0049b5d2 | = "F1 = Toggle help"
     MOV dword ptr [0x01c78ae0],EBP      ; 0049b5d7 | DAT_01c78ae0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b5dd
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b5e2
     PUSH -0x1                           ; 0049b5e5
     PUSH 0x7                            ; 0049b5e7
@@ -154,7 +156,7 @@ section .text
     MOV EDI,dword ptr [0x014b9900]      ; 0049b5f8 | DAT_014b9900
     PUSH EDI                            ; 0049b5fe
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b5ff
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b604 | DAT_01c78ae4
     MOV EBP,dword ptr [0x01c78ae0]      ; 0049b609 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049b60f | DAT_005b7620
@@ -181,7 +183,7 @@ section .text
     PUSH 0x582426                       ; 0049b659 | = "F2 = Save game"
         ;   Label: LAB_0049b659
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b65e
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b663
     PUSH -0x1                           ; 0049b666
     PUSH 0x7                            ; 0049b668
@@ -193,7 +195,7 @@ section .text
     MOV EAX,[0x014b9900]                ; 0049b679 | DAT_014b9900
     PUSH EAX                            ; 0049b67e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b67f
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b684 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b689 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b68f
@@ -219,7 +221,7 @@ section .text
     PUSH 0x582435                       ; 0049b6d7 | = "F3 = Restore game"
         ;   Label: LAB_0049b6d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b6dc
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b6e1
     PUSH -0x1                           ; 0049b6e4
     PUSH 0x7                            ; 0049b6e6
@@ -231,7 +233,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049b6f7 | DAT_014b9900
     PUSH ECX                            ; 0049b6fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b6fe
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b703 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b708 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049b70e | DAT_005b7620
@@ -258,7 +260,7 @@ section .text
     PUSH 0x582447                       ; 0049b758 | = "F5 = Toggle mute"
         ;   Label: LAB_0049b758
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b75d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b762
     PUSH -0x1                           ; 0049b765
     PUSH 0x7                            ; 0049b767
@@ -270,7 +272,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049b778 | DAT_014b9900
     PUSH EBP                            ; 0049b77e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b77f
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b784 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b789 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b78f
@@ -296,7 +298,7 @@ section .text
     PUSH 0x582458                       ; 0049b7d7 | = "F6 = Quick save"
         ;   Label: LAB_0049b7d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b7dc
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b7e1
     PUSH -0x1                           ; 0049b7e4
     PUSH 0x7                            ; 0049b7e6
@@ -308,7 +310,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049b7f7 | DAT_014b9900
     PUSH ECX                            ; 0049b7fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b7fe
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b803 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b808 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049b80e | DAT_005b7620
@@ -335,7 +337,7 @@ section .text
     PUSH 0x582468                       ; 0049b858 | = "F9 = Quick load"
         ;   Label: LAB_0049b858
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b85d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b862
     PUSH -0x1                           ; 0049b865
     PUSH 0x7                            ; 0049b867
@@ -347,7 +349,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049b878 | DAT_014b9900
     PUSH EBP                            ; 0049b87e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b87f
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b884 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b889 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b88f
@@ -373,7 +375,7 @@ section .text
     PUSH 0x582478                       ; 0049b8d7 | = "ESC = Pause game"
         ;   Label: LAB_0049b8d7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b8dc
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b8e1
     PUSH -0x1                           ; 0049b8e4
     PUSH 0x7                            ; 0049b8e6
@@ -385,7 +387,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049b8f7 | DAT_014b9900
     PUSH ECX                            ; 0049b8fd
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b8fe
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b903 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b908 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049b90e | DAT_005b7620
@@ -416,13 +418,13 @@ section .text
     PUSH 0x582489                       ; 0049b965 | = "Forward"
     MOV dword ptr [0x01c78ae0],ECX      ; 0049b96a | DAT_01c78ae0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049b970
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049b975
     PUSH EAX                            ; 0049b978
     MOV EDX,dword ptr [ESI + 0x28]      ; 0049b979
     PUSH EDX                            ; 0049b97c
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049b97d
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049b982
     PUSH EAX                            ; 0049b985
     PUSH 0x582402                       ; 0049b986 | = "%s = %s"
@@ -442,7 +444,7 @@ section .text
     MOV EAX,[0x014b9900]                ; 0049b9b5 | DAT_014b9900
     PUSH EAX                            ; 0049b9ba
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049b9bb
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b9c0 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b9c5 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b9cb
@@ -468,13 +470,13 @@ section .text
     PUSH 0x582491                       ; 0049ba13 | = "Back"
         ;   Label: LAB_0049ba13
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049ba18
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049ba1d
     PUSH EAX                            ; 0049ba20
     MOV EDX,dword ptr [ESI + 0x2c]      ; 0049ba21
     PUSH EDX                            ; 0049ba24
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049ba25
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049ba2a
     PUSH EAX                            ; 0049ba2d
     PUSH 0x582402                       ; 0049ba2e | = "%s = %s"
@@ -494,7 +496,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049ba5c | DAT_014b9900
     PUSH EDX                            ; 0049ba62
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049ba63
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049ba68 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049ba6d | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049ba73 | DAT_005b7620
@@ -525,13 +527,13 @@ section .text
         ;   XREF to: 0049cb4f (CONDITIONAL_JUMP)  ; LAB_0049cb4f
     PUSH 0x582496                       ; 0049bacf | = "Walk"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bad4
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bad9
     PUSH EAX                            ; 0049badc
     MOV EDX,dword ptr [ESI + 0x30]      ; 0049badd
     PUSH EDX                            ; 0049bae0
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bae1
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bae6
     PUSH EAX                            ; 0049bae9
     PUSH 0x582402                       ; 0049baea | = "%s = %s"
@@ -551,7 +553,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049bb18 | DAT_014b9900
     PUSH EDX                            ; 0049bb1e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bb1f
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bb24 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bb29 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bb2f | DAT_005b7620
@@ -579,13 +581,13 @@ section .text
     PUSH 0x58249f                       ; 0049bb79 | = "Strafe on"
         ;   Label: LAB_0049bb79
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bb7e
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bb83
     PUSH EAX                            ; 0049bb86
     MOV EDX,dword ptr [ESI + 0x34]      ; 0049bb87
     PUSH EDX                            ; 0049bb8a
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bb8b
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bb90
     PUSH EAX                            ; 0049bb93
     PUSH 0x582402                       ; 0049bb94 | = "%s = %s"
@@ -605,7 +607,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049bbc2 | DAT_014b9900
     PUSH ECX                            ; 0049bbc8
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bbc9
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bbce | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bbd3 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bbd9 | DAT_005b7620
@@ -632,13 +634,13 @@ section .text
     PUSH 0x5824a9                       ; 0049bc23 | = "Strafe left"
         ;   Label: LAB_0049bc23
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bc28
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bc2d
     PUSH EAX                            ; 0049bc30
     MOV EDX,dword ptr [ESI + 0x38]      ; 0049bc31
     PUSH EDX                            ; 0049bc34
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bc35
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bc3a
     PUSH EAX                            ; 0049bc3d
     PUSH 0x582402                       ; 0049bc3e | = "%s = %s"
@@ -658,7 +660,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049bc6d | DAT_014b9900
     PUSH EBP                            ; 0049bc73
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bc74
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bc79 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049bc7e | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049bc84
@@ -684,13 +686,13 @@ section .text
     PUSH 0x5824b5                       ; 0049bccc | = "Strafe right"
         ;   Label: LAB_0049bccc
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bcd1
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bcd6
     PUSH EAX                            ; 0049bcd9
     MOV EDX,dword ptr [ESI + 0x3c]      ; 0049bcda
     PUSH EDX                            ; 0049bcdd
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bcde
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bce3
     PUSH EAX                            ; 0049bce6
     PUSH 0x582402                       ; 0049bce7 | = "%s = %s"
@@ -710,7 +712,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049bd15 | DAT_014b9900
     PUSH EDX                            ; 0049bd1b
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bd1c
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bd21 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bd26 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bd2c | DAT_005b7620
@@ -737,13 +739,13 @@ section .text
     PUSH 0x5824c2                       ; 0049bd76 | = "Turn left"
         ;   Label: LAB_0049bd76
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bd7b
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bd80
     PUSH EAX                            ; 0049bd83
     MOV EDX,dword ptr [ESI + 0x44]      ; 0049bd84
     PUSH EDX                            ; 0049bd87
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bd88
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bd8d
     PUSH EAX                            ; 0049bd90
     PUSH 0x582402                       ; 0049bd91 | = "%s = %s"
@@ -763,7 +765,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049bdbf | DAT_014b9900
     PUSH ECX                            ; 0049bdc5
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bdc6
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bdcb | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bdd0 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bdd6 | DAT_005b7620
@@ -790,13 +792,13 @@ section .text
     PUSH 0x5824cc                       ; 0049be20 | = "Turn right"
         ;   Label: LAB_0049be20
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049be25
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049be2a
     PUSH EAX                            ; 0049be2d
     MOV EDX,dword ptr [ESI + 0x40]      ; 0049be2e
     PUSH EDX                            ; 0049be31
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049be32
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049be37
     PUSH EAX                            ; 0049be3a
     PUSH 0x582402                       ; 0049be3b | = "%s = %s"
@@ -816,7 +818,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049be6a | DAT_014b9900
     PUSH EBP                            ; 0049be70
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049be71
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049be76 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049be7b | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049be81
@@ -842,13 +844,13 @@ section .text
     PUSH 0x5824d7                       ; 0049bec9 | = "Fire / Action"
         ;   Label: LAB_0049bec9
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bece
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bed3
     PUSH EAX                            ; 0049bed6
     MOV EDX,dword ptr [ESI + 0x48]      ; 0049bed7
     PUSH EDX                            ; 0049beda
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bedb
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bee0
     PUSH EAX                            ; 0049bee3
     PUSH 0x582402                       ; 0049bee4 | = "%s = %s"
@@ -868,7 +870,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049bf12 | DAT_014b9900
     PUSH EDX                            ; 0049bf18
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bf19
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bf1e | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bf23 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bf29 | DAT_005b7620
@@ -895,13 +897,13 @@ section .text
     PUSH 0x5824e5                       ; 0049bf73 | = "Use item"
         ;   Label: LAB_0049bf73
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049bf78
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049bf7d
     PUSH EAX                            ; 0049bf80
     MOV EDX,dword ptr [ESI + 0x4c]      ; 0049bf81
     PUSH EDX                            ; 0049bf84
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049bf85
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049bf8a
     PUSH EAX                            ; 0049bf8d
     PUSH 0x582402                       ; 0049bf8e | = "%s = %s"
@@ -921,7 +923,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049bfbc | DAT_014b9900
     PUSH ECX                            ; 0049bfc2
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049bfc3
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bfc8 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bfcd | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049bfd3 | DAT_005b7620
@@ -948,13 +950,13 @@ section .text
     PUSH 0x5824ee                       ; 0049c01d | = "Light"
         ;   Label: LAB_0049c01d
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c022
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c027
     PUSH EAX                            ; 0049c02a
     MOV EDX,dword ptr [ESI + 0x50]      ; 0049c02b
     PUSH EDX                            ; 0049c02e
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c02f
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c034
     PUSH EAX                            ; 0049c037
     PUSH 0x582402                       ; 0049c038 | = "%s = %s"
@@ -974,7 +976,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049c067 | DAT_014b9900
     PUSH EBP                            ; 0049c06d
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c06e
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c073 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c078 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c07e
@@ -1000,13 +1002,13 @@ section .text
     PUSH 0x5824f4                       ; 0049c0c6 | = "Night Vision"
         ;   Label: LAB_0049c0c6
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c0cb
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c0d0
     PUSH EAX                            ; 0049c0d3
     MOV EDX,dword ptr [ESI + 0x54]      ; 0049c0d4
     PUSH EDX                            ; 0049c0d7
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c0d8
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c0dd
     PUSH EAX                            ; 0049c0e0
     PUSH 0x582402                       ; 0049c0e1 | = "%s = %s"
@@ -1026,7 +1028,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049c10f | DAT_014b9900
     PUSH EDX                            ; 0049c115
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c116
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c11b | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c120 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c126 | DAT_005b7620
@@ -1053,13 +1055,13 @@ section .text
     PUSH 0x582501                       ; 0049c170 | = "Draw"
         ;   Label: LAB_0049c170
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c175
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c17a
     PUSH EAX                            ; 0049c17d
     MOV EDX,dword ptr [ESI + 0x58]      ; 0049c17e
     PUSH EDX                            ; 0049c181
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c182
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c187
     PUSH EAX                            ; 0049c18a
     PUSH 0x582402                       ; 0049c18b | = "%s = %s"
@@ -1079,7 +1081,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049c1b9 | DAT_014b9900
     PUSH ECX                            ; 0049c1bf
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c1c0
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c1c5 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c1ca | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c1d0 | DAT_005b7620
@@ -1106,13 +1108,13 @@ section .text
     PUSH 0x582506                       ; 0049c21a | = "Point up"
         ;   Label: LAB_0049c21a
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c21f
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c224
     PUSH EAX                            ; 0049c227
     MOV EDX,dword ptr [ESI + 0x60]      ; 0049c228
     PUSH EDX                            ; 0049c22b
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c22c
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c231
     PUSH EAX                            ; 0049c234
     PUSH 0x582402                       ; 0049c235 | = "%s = %s"
@@ -1132,7 +1134,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049c264 | DAT_014b9900
     PUSH EBP                            ; 0049c26a
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c26b
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c270 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c275 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c27b
@@ -1158,13 +1160,13 @@ section .text
     PUSH 0x58250f                       ; 0049c2c3 | = "Point down"
         ;   Label: LAB_0049c2c3
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c2c8
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c2cd
     PUSH EAX                            ; 0049c2d0
     MOV EDX,dword ptr [ESI + 0x64]      ; 0049c2d1
     PUSH EDX                            ; 0049c2d4
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c2d5
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c2da
     PUSH EAX                            ; 0049c2dd
     PUSH 0x582402                       ; 0049c2de | = "%s = %s"
@@ -1184,7 +1186,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049c30c | DAT_014b9900
     PUSH EDX                            ; 0049c312
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c313
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c318 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c31d | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c323 | DAT_005b7620
@@ -1211,13 +1213,13 @@ section .text
     PUSH 0x58251a                       ; 0049c36d | = "Jump"
         ;   Label: LAB_0049c36d
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c372
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c377
     PUSH EAX                            ; 0049c37a
     MOV EDX,dword ptr [ESI + 0x5c]      ; 0049c37b
     PUSH EDX                            ; 0049c37e
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c37f
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c384
     PUSH EAX                            ; 0049c387
     PUSH 0x582402                       ; 0049c388 | = "%s = %s"
@@ -1237,7 +1239,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049c3b6 | DAT_014b9900
     PUSH ECX                            ; 0049c3bc
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c3bd
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c3c2 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c3c7 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c3cd | DAT_005b7620
@@ -1264,13 +1266,13 @@ section .text
     PUSH 0x58251f                       ; 0049c417 | = "Cycle pistol weapons"
         ;   Label: LAB_0049c417
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c41c
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c421
     PUSH EAX                            ; 0049c424
     MOV EDX,dword ptr [ESI + 0x68]      ; 0049c425
     PUSH EDX                            ; 0049c428
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c429
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c42e
     PUSH EAX                            ; 0049c431
     PUSH 0x582402                       ; 0049c432 | = "%s = %s"
@@ -1290,7 +1292,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049c461 | DAT_014b9900
     PUSH EBP                            ; 0049c467
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c468
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c46d | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c472 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c478
@@ -1316,13 +1318,13 @@ section .text
     PUSH 0x582534                       ; 0049c4c0 | = "Cycle assault weapons"
         ;   Label: LAB_0049c4c0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c4c5
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c4ca
     PUSH EAX                            ; 0049c4cd
     MOV EDX,dword ptr [ESI + 0x6c]      ; 0049c4ce
     PUSH EDX                            ; 0049c4d1
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c4d2
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c4d7
     PUSH EAX                            ; 0049c4da
     PUSH 0x582402                       ; 0049c4db | = "%s = %s"
@@ -1342,7 +1344,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049c509 | DAT_014b9900
     PUSH EDX                            ; 0049c50f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c510
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c515 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c51a | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c520 | DAT_005b7620
@@ -1369,13 +1371,13 @@ section .text
     PUSH 0x58254a                       ; 0049c56a | = "Cycle flame weapons"
         ;   Label: LAB_0049c56a
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c56f
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c574
     PUSH EAX                            ; 0049c577
     MOV EDX,dword ptr [ESI + 0x70]      ; 0049c578
     PUSH EDX                            ; 0049c57b
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c57c
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c581
     PUSH EAX                            ; 0049c584
     PUSH 0x582402                       ; 0049c585 | = "%s = %s"
@@ -1395,7 +1397,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049c5b3 | DAT_014b9900
     PUSH ECX                            ; 0049c5b9
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c5ba
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c5bf | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c5c4 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c5ca | DAT_005b7620
@@ -1422,13 +1424,13 @@ section .text
     PUSH 0x58255e                       ; 0049c614 | = "Cycle grenade weapons"
         ;   Label: LAB_0049c614
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c619
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c61e
     PUSH EAX                            ; 0049c621
     MOV EDX,dword ptr [ESI + 0x74]      ; 0049c622
     PUSH EDX                            ; 0049c625
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c626
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c62b
     PUSH EAX                            ; 0049c62e
     PUSH 0x582402                       ; 0049c62f | = "%s = %s"
@@ -1448,7 +1450,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049c65e | DAT_014b9900
     PUSH EBP                            ; 0049c664
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c665
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c66a | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c66f | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c675
@@ -1474,13 +1476,13 @@ section .text
     PUSH 0x582574                       ; 0049c6bd | = "Cycle melee weapons"
         ;   Label: LAB_0049c6bd
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c6c2
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c6c7
     PUSH EAX                            ; 0049c6ca
     MOV EDX,dword ptr [ESI + 0x78]      ; 0049c6cb
     PUSH EDX                            ; 0049c6ce
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c6cf
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c6d4
     PUSH EAX                            ; 0049c6d7
     PUSH 0x582402                       ; 0049c6d8 | = "%s = %s"
@@ -1500,7 +1502,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049c706 | DAT_014b9900
     PUSH EDX                            ; 0049c70c
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c70d
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c712 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c717 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c71d | DAT_005b7620
@@ -1527,13 +1529,13 @@ section .text
     PUSH 0x582588                       ; 0049c767 | = "Next weapon"
         ;   Label: LAB_0049c767
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c76c
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c771
     PUSH EAX                            ; 0049c774
     MOV EDX,dword ptr [ESI + 0x7c]      ; 0049c775
     PUSH EDX                            ; 0049c778
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c779
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c77e
     PUSH EAX                            ; 0049c781
     PUSH 0x582402                       ; 0049c782 | = "%s = %s"
@@ -1553,7 +1555,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049c7aa | DAT_014b9900
     PUSH ECX                            ; 0049c7b0
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c7b1
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c7b6 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c7bb | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c7c1 | DAT_005b7620
@@ -1580,13 +1582,13 @@ section .text
     PUSH 0x582594                       ; 0049c80b | = "Previous weapon"
         ;   Label: LAB_0049c80b
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c810
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c815
     PUSH EAX                            ; 0049c818
     MOV EDX,dword ptr [ESI + 0x80]      ; 0049c819
     PUSH EDX                            ; 0049c81f
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c820
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c825
     PUSH EAX                            ; 0049c828
     PUSH 0x582402                       ; 0049c829 | = "%s = %s"
@@ -1606,7 +1608,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049c858 | DAT_014b9900
     PUSH EBP                            ; 0049c85e
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c85f
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c864 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c869 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c86f
@@ -1632,13 +1634,13 @@ section .text
     PUSH 0x5825a4                       ; 0049c8b7 | = "Next item"
         ;   Label: LAB_0049c8b7
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c8bc
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c8c1
     PUSH EAX                            ; 0049c8c4
     MOV EDX,dword ptr [ESI + 0x84]      ; 0049c8c5
     PUSH EDX                            ; 0049c8cb
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c8cc
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c8d1
     PUSH EAX                            ; 0049c8d4
     PUSH 0x582402                       ; 0049c8d5 | = "%s = %s"
@@ -1658,7 +1660,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049c903 | DAT_014b9900
     PUSH EDX                            ; 0049c909
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c90a
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c90f | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c914 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c91a | DAT_005b7620
@@ -1685,13 +1687,13 @@ section .text
     PUSH 0x5825ae                       ; 0049c964 | = "Previous item"
         ;   Label: LAB_0049c964
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049c969
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049c96e
     PUSH EAX                            ; 0049c971
     MOV EDX,dword ptr [ESI + 0x88]      ; 0049c972
     PUSH EDX                            ; 0049c978
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049c979
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049c97e
     PUSH EAX                            ; 0049c981
     PUSH 0x582402                       ; 0049c982 | = "%s = %s"
@@ -1711,7 +1713,7 @@ section .text
     MOV ECX,dword ptr [0x014b9900]      ; 0049c9b0 | DAT_014b9900
     PUSH ECX                            ; 0049c9b6
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049c9b7
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c9bc | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c9c1 | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049c9c7 | DAT_005b7620
@@ -1738,13 +1740,13 @@ section .text
     PUSH 0x5825bc                       ; 0049ca11 | = "Item description"
         ;   Label: LAB_0049ca11
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049ca16
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049ca1b
     PUSH EAX                            ; 0049ca1e
     MOV EDX,dword ptr [ESI + 0x8c]      ; 0049ca1f
     PUSH EDX                            ; 0049ca25
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049ca26
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049ca2b
     PUSH EAX                            ; 0049ca2e
     PUSH 0x582402                       ; 0049ca2f | = "%s = %s"
@@ -1764,7 +1766,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049ca5e | DAT_014b9900
     PUSH EBP                            ; 0049ca64
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049ca65
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049ca6a | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049ca6f | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049ca75
@@ -1790,13 +1792,13 @@ section .text
     PUSH 0x5825cd                       ; 0049cabd | = "Next ammo"
         ;   Label: LAB_0049cabd
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049cac2
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049cac7
     PUSH EAX                            ; 0049caca
     MOV EDX,dword ptr [ESI + 0x90]      ; 0049cacb
     PUSH EDX                            ; 0049cad1
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049cad2
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049cad7
     PUSH EAX                            ; 0049cada
     PUSH 0x582402                       ; 0049cadb | = "%s = %s"
@@ -1816,7 +1818,7 @@ section .text
     MOV EDX,dword ptr [0x014b9900]      ; 0049cb09 | DAT_014b9900
     PUSH EDX                            ; 0049cb0f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049cb10
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049cb15 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb1a | DAT_01c78ae0
     MOV EDX,dword ptr [0x005b7620]      ; 0049cb20 | DAT_005b7620
@@ -1838,13 +1840,13 @@ section .text
     PUSH 0x58249b                       ; 0049cb4f | = "Run"
         ;   Label: LAB_0049cb4f
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0049cb54
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0049cb59
     PUSH EAX                            ; 0049cb5c
     MOV EDX,dword ptr [ESI + 0x30]      ; 0049cb5d
     PUSH EDX                            ; 0049cb60
     CALL core_menu.cpp_getKeyDisplayName_FUN_004d2900 ; 0049cb61
-        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004d2900()
+        ;   XREF to: 004d2900 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0049cb66
     PUSH EAX                            ; 0049cb69
     PUSH 0x582402                       ; 0049cb6a | = "%s = %s"
@@ -1864,7 +1866,7 @@ section .text
     MOV EBP,dword ptr [0x014b9900]      ; 0049cb99 | DAT_014b9900
     PUSH EBP                            ; 0049cb9f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049cba0
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049cba5 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049cbaa | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049cbb0

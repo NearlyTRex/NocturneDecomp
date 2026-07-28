@@ -20,13 +20,13 @@ LPCRITICAL_SECTION FUN_0056e254(void)
   else {
     lpCriticalSection = (LPCRITICAL_SECTION)FUN_00565c50(1,0x18);
     if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
-      FUN_0056ddc0("Unable to allocate semaphore data\r\n",1);
+      HandleRuntimeError("Unable to allocate semaphore data\r\n",1);
     }
     _DAT_02de5c18 = realloc(_DAT_02de5c18,(_DAT_02de5c14 + 1) * 4);
-    if (_DAT_02de5c18 == 0) {
-      FUN_0056ddc0("Unable to allocate semaphore data\r\n",1);
+    if (_DAT_02de5c18 == (void *)0x0) {
+      HandleRuntimeError("Unable to allocate semaphore data\r\n",1);
     }
-    *(LPCRITICAL_SECTION *)(_DAT_02de5c18 + _DAT_02de5c14 * 4) = lpCriticalSection;
+    *(LPCRITICAL_SECTION *)((int)_DAT_02de5c18 + _DAT_02de5c14 * 4) = lpCriticalSection;
     _DAT_02de5c14 = _DAT_02de5c14 + 1;
   }
   InitializeCriticalSection(lpCriticalSection);

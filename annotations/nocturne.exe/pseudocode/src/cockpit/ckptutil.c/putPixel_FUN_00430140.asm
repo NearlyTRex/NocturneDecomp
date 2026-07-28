@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_putPixel_FUN_00430140(int param_1,int param_2,int param_3)
+; void __cdecl cockpit_ckptutil_c_putPixel_FUN_00430140(int x,int y,int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   color
 ;
 ; XREF[2]:
-;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3f3
+;   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_0042f330 at 0042f3f3
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042f600 at 0042f680
 ;
 ; Referenced Globals:

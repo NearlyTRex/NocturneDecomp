@@ -2,27 +2,28 @@
 // Address: 004952b0
 // Address Range: [[004952b0, 00495336]]
 // Convention: __cdecl
-// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(int param_1,float param_2,float param_3)
+// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 #include "nocturne.h"
 
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(int param_1,float param_2,float param_3)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 {
-  float fVar1;
-  int iVar2;
+  int iVar1;
+  float fVar2;
+  CKeyFramedModel *pCVar3;
   
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x17c);
-  iVar2 = *(int *)(iVar2 + 0x100);
-  fVar1 = ((float)iVar2 * (*(float *)(param_1 + 0x154) - param_2)) / (param_3 - param_2);
-  *(float *)(param_1 + 0x178) = fVar1;
-  if (fVar1 < 0.0) {
-    *(uint *)(param_1 + 0x178) = 0;
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->bed_model);
+  iVar1 = pCVar3->frame_count;
+  fVar2 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);
+  this_ptr->part_frame = fVar2;
+  if (fVar2 < 0.0) {
+    this_ptr->part_frame = 0.0;
   }
-  fVar1 = (float)(iVar2 + -1);
-  if (*(float *)(param_1 + 0x178) <= fVar1) {
+  fVar2 = (float)(iVar1 + -1);
+  if (this_ptr->part_frame <= fVar2) {
     return;
   }
-  *(float *)(param_1 + 0x178) = fVar1;
+  this_ptr->part_frame = fVar2;
   return;
 }

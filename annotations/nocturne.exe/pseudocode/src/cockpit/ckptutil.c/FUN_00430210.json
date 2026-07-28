@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 341,
+    "complexity_score": 356,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
+      "pointer_cast",
       "unnamed_param"
     ],
     "total_lines": 230
@@ -145,13 +146,13 @@
     ],
     "convention": "unknown",
     "name": "cockpit_ckptutil.c_FUN_00430210",
-    "signature": "int cockpit_ckptutil_c_FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)"
+    "signature": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)"
   },
   "function_calls": [
     {
       "addr": "0042d370",
       "is_variadic": false,
-      "name": "cockpit_ckptutil.c_FUN_0042d370"
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_0042d370"
     },
     {
       "addr": "004c8440",
@@ -323,30 +324,13 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00430210.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "AssignmentAddressToInteger",
-          "column": 13,
-          "line": 22,
-          "message": "Assigning a pointer to an integer is not portable.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -354,7 +338,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -362,7 +346,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -370,7 +354,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -378,7 +362,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -386,7 +370,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)",
+      "text": "void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -410,7 +394,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == 0) {",
+      "text": "if (param_2 == (void *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -426,7 +410,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == 0) {",
+      "text": "if (param_2 == (void *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -442,7 +426,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"rb\");",
+      "text": "file = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"rb\");",
       "type": "unnamed_param"
     },
     {
@@ -462,11 +446,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(byte *)((int)param_2",
+      "severity": "moderate",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - local_18) + -1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar3 = (byte *)(param_2 + (param_4 - local_18) + -1);",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - local_18) + -1);",
       "type": "unnamed_param"
     },
     {
@@ -474,7 +466,7 @@
       "line": 34,
       "match": "param_4",
       "severity": "mild",
-      "text": "puVar3 = (byte *)(param_2 + (param_4 - local_18) + -1);",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - local_18) + -1);",
       "type": "unnamed_param"
     },
     {
@@ -498,7 +490,7 @@
       "line": 47,
       "match": "param_4",
       "severity": "mild",
-      "text": "puVar3 = puVar3 + param_4;",
+      "text": "puVar2 = puVar2 + param_4;",
       "type": "unnamed_param"
     },
     {
@@ -506,7 +498,7 @@
       "line": 48,
       "match": "param_3",
       "severity": "mild",
-      "text": "} while (uVar2 < param_3);",
+      "text": "} while (uVar1 < param_3);",
       "type": "unnamed_param"
     },
     {
@@ -538,7 +530,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "cockpit_ckptutil_c_FUN_0042d370(param_1,param_2,local_1c,param_6);",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042d370(param_1,param_2,local_1c,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -546,7 +538,7 @@
       "line": 57,
       "match": "param_2",
       "severity": "mild",
-      "text": "cockpit_ckptutil_c_FUN_0042d370(param_1,param_2,local_1c,param_6);",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042d370(param_1,param_2,local_1c,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -554,7 +546,7 @@
       "line": 57,
       "match": "param_6",
       "severity": "mild",
-      "text": "cockpit_ckptutil_c_FUN_0042d370(param_1,param_2,local_1c,param_6);",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_0042d370(param_1,param_2,local_1c,param_6);",
       "type": "unnamed_param"
     },
     {

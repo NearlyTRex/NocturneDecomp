@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(int param_1)
+; void core_pendulum_cpp_CPendulum_setup_FUN_004f2d40(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
@@ -26,11 +26,11 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004f2d48
     PUSH EAX                            ; 004f2d4e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004f2d4f
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f2d54
     PUSH EBX                            ; 004f2d57
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 004f2d58
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f2d5d
     LEA EAX,[ESP + 0x18]                ; 004f2d60
     PUSH EAX                            ; 004f2d64

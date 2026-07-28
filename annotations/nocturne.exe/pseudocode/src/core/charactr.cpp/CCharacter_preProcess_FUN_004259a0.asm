@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -48,7 +50,7 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 004259cf
     MOV dword ptr [ECX + 0x2410],0x0    ; 004259d3
     CALL core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060 ; 004259dd
-        ;   XREF to: 0042a060 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060()
+        ;   XREF to: 0042a060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter * this_ptr, UOrientationVector * orientation)
     ADD ESP,0x8                         ; 004259e2
     ADD ESP,0xc                         ; 004259e5
     RET                                 ; 004259e8

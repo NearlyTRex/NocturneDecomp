@@ -6,7 +6,7 @@
 #include "types/classes/CVector3f.h"
 
 // Structure: SBodyPartFire
-// Ghidra size: 0x2b0 (688 bytes)
+// Ghidra size: 0x2a8 (680 bytes)
 #pragma pack(push, 1)
 typedef struct SBodyPartFire {
     CVector3f local_position; // 0x0

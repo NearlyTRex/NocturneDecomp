@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(int param_1,int param_2,undefined4 param_3)
+; void core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CCharacter *param_1,int param_2,undefined4 param_3,undefined4 param_4,int param_5,CVector3f *param_6)
 ;
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     PUSH ESI                            ; 005408e9
     PUSH EBX                            ; 005408ea
     CALL core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170 ; 005408eb
-        ;   XREF to: 00429170 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170()
+        ;   XREF to: 00429170 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170(CCharacter * this_ptr, int hand_index, CVector3f * drop_direction)
     ADD ESP,0xc                         ; 005408f0
     POP ESI                             ; 005408f3
     POP EBX                             ; 005408f4

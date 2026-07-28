@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_anvil_cpp_FUN_0040f560(undefined4 param_1)
+; int * core_anvil_cpp_FUN_0040f560(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -36,7 +36,7 @@ section .text
     ADD EAX,0x150                       ; 0040f570
     PUSH EAX                            ; 0040f575
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0040f576
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040f57b
     LEA EBX,[EAX + 0xfffffeb0]          ; 0040f57e
     PUSH 0x5783ef                       ; 0040f584 | = "question.kfm"
@@ -45,7 +45,7 @@ section .text
     MOV ESI,0x5783fc                    ; 0040f590 | = "acmeanvilinc"
     MOV dword ptr [EBX + 0x14c],0x599694 ; 0040f595 | PTR_core_anvil.cpp_FUN_0040f5f0_00599694
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040f59f
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x330],0x41c80000 ; 0040f5a4
     ADD ESP,0x8                         ; 0040f5ae
     MOV dword ptr [EBX + 0x334],0x0     ; 0040f5b1

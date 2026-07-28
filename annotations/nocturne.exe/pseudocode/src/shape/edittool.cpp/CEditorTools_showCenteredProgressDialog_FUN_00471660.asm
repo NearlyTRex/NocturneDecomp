@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(undefined4 param_1,int param_2)
+; void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools *this_ptr,char *message_text)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   message_text
 ;
 ; XREF[3]:
 ;   core_dtrace.cpp_FUN_004673e0 at 004673f7
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f11
-;   engine_pod.cpp_FUN_004f8240 at 004f8416
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8416
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -56,7 +59,7 @@ section .text
     PUSH EAX                            ; 004716a1
     MOV dword ptr [0x01bcd9b8],EBX      ; 004716a2 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004716a8
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV [0x01bcd9bc],EAX                ; 004716ad | DAT_01bcd9bc
     MOV EAX,[0x005b761c]                ; 004716b2 | DAT_005b761c
     MOV EDX,EAX                         ; 004716b7
@@ -80,10 +83,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 004716df
     PUSH EAX                            ; 004716e3
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 004716e4
-        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
+        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 004716e9
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004716ec
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EBX,dword ptr [0x01bcd07c]      ; 004716f1 | DAT_01bcd07c
     DEC EBX                             ; 004716f7
     MOV ESI,EAX                         ; 004716f8
@@ -100,7 +103,7 @@ section .text
     PUSH ECX                            ; 0047171d
     MOV dword ptr [EAX*0x8 + 0x1bcd250],EDX ; 0047171e
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 00471725
-        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760()
+        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 0047172a
     POP EBP                             ; 0047172d
     POP EDI                             ; 0047172e

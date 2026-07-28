@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_004e7720(int param_1,undefined4 param_2,float *param_3,int param_4,int param_5,int param_6)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_004e7720(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; float *          Stack[0x8]:4   input_samples
+; float *          Stack[0xc]:4   output_buffer
+; int              Stack[0x10]:4   subband_index
+; int              Stack[0x14]:4   channel
+; SMpegLayer3GranuleInfo * Stack[0x18]:4   granule
+; SMpegFrameHeader * Stack[0x1c]:4   header
 ; Local Variables:
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -40,7 +48,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xa8]      ; 004e7757
     PUSH ESI                            ; 004e775e
     CALL sound_mp3.cpp_applyPolyphaseWindow_FUN_004e7210 ; 004e775f
-        ;   XREF to: 004e7210 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_applyPolyphaseWindow_FUN_004e7210()
+        ;   XREF to: 004e7210 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_applyPolyphaseWindow_FUN_004e7210(float * input_samples, float * output_samples, int mpeg_block_type)
     ADD ESP,0xc                         ; 004e7764
     MOV EDX,dword ptr [ESP + 0xac]      ; 004e7767
     LEA EAX,[EDX*0x8 + 0x0]             ; 004e776e

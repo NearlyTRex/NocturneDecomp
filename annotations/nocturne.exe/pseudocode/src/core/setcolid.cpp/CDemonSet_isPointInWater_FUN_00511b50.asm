@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1,int param_2)
+; int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *this_ptr,CVector3f *point)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   point
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
@@ -55,7 +58,7 @@ section .text
     MOV EDX,dword ptr [EDI + 0x14cd70]  ; 00511b8c
     PUSH EDX                            ; 00511b92
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00511b93
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 00511b98
     ADD ESP,0x8                         ; 00511b9a
     TEST EAX,EAX                        ; 00511b9d
@@ -88,7 +91,7 @@ section .text
     PUSH EAX                            ; 00511bc9
     PUSH EBX                            ; 00511bca
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00511bcb
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00511bd0
     MOV EAX,ESP                         ; 00511bd3
     PUSH EAX                            ; 00511bd5

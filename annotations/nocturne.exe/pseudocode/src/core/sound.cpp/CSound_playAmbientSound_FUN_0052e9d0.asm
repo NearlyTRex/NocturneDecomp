@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(undefined4 param_1,char *param_2)
+; void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound *this_ptr,char *sound_name)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050353d
@@ -34,7 +37,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0052e9d9
     PUSH ECX                            ; 0052e9dd
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0052e9de
-        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_killSound_FUN_0052ebb0()
+        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0052ebb0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0052e9e3
     MOV EDI,0x2dc9c68                   ; 0052e9e6
     MOV ESI,dword ptr [ESP + 0x10]      ; 0052e9eb
@@ -67,7 +70,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 0052ea1d
     PUSH EDI                            ; 0052ea21
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 0052ea22
-        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playSound_FUN_0052ea40()
+        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 0052ea27
     MOV [0x02dc9c90],EAX                ; 0052ea2a | DAT_02dc9c90
     POP EDI                             ; 0052ea2f

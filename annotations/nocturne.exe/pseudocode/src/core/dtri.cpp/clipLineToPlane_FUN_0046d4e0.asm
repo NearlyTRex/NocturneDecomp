@@ -13,7 +13,7 @@
 ;   core_dtri.cpp_FUN_0046dab0 at 0046db90
 ;   core_dtri.cpp_FUN_0046dc10 at 0046dcf2
 ;   core_dtri.cpp_FUN_0046dd80 at 0046de62
-;   core_dtri.cpp_FUN_0046df40 at 0046e553
+;   core_dtri.cpp_clipTriangleToBounds_FUN_0046df40 at 0046e553
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtri_cpp_0057e48e

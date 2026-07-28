@@ -9,12 +9,12 @@
 void core_mobster_cpp_FUN_004da120(void)
 
 {
-  int iVar1;
+  CMobster *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbdfc);
-  if (iVar1 == 0) {
+  this_ptr = (CMobster *)FUN_0056497c(0xbdfc);
+  if (this_ptr == (CMobster *)0x0) {
     return;
   }
-  core_mobster_cpp_CMobster_ctor_FUN_004da150(iVar1);
+  core_mobster_cpp_CMobster_ctor_FUN_004da150(this_ptr);
   return;
 }

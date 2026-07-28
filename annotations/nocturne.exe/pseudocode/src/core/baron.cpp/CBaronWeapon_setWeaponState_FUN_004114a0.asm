@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(int param_1,undefined4 param_2)
+; void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CWeapon *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     PUSH EDX                            ; 004114ab
     PUSH EBX                            ; 004114ac
     CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560 ; 004114ad
-        ;   XREF to: 00554560 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560()
+        ;   XREF to: 00554560 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560(CWeapon * this_ptr, int weapon_state)
     ADD ESP,0x8                         ; 004114b2
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004114b5
     PUSH EBX                            ; 004114bb
@@ -61,7 +61,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x570]     ; 00411502
     PUSH EDX                            ; 00411508
     CALL core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 ; 00411509
-        ;   XREF to: 00410a80 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaron_attachToOwner_FUN_00410a80()
+        ;   XREF to: 00410a80 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_attachToOwner_FUN_00410a80(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 0041150e
     POP EBP                             ; 00411511
         ;   Label: LAB_00411511
@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 0041151f
     PUSH ESI                            ; 00411520
     CALL core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0 ; 00411521
-        ;   XREF to: 00410bb0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0()
+        ;   XREF to: 00410bb0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00411526
     POP EBP                             ; 00411529
     POP ESI                             ; 0041152a

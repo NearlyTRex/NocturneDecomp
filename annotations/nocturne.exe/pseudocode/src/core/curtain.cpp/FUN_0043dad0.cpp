@@ -2,33 +2,39 @@
 // Address: 0043dad0
 // Address Range: [[0043dad0, 0043e10a]]
 // Convention: unknown
-// Signature: void core_curtain_cpp_FUN_0043dad0(int param_1)
+// Signature: void core_curtain_cpp_FUN_0043dad0(CCurtain *param_1)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_FUN_0043dad0(int param_1)
+void core_curtain_cpp_FUN_0043dad0(CCurtain *param_1)
 
 {
   float fVar1;
   float fVar2;
-  uint uVar3;
-  int iVar4;
-  int iVar5;
+  float fVar3;
+  UIntegerFloat UVar4;
+  float fVar5;
   float fVar6;
-  uint *puVar7;
-  int iVar8;
+  int iVar7;
+  CVector3f *pCVar8;
+  SMRGLPrimitiveQuad *pSVar9;
+  SMRGLPrimitiveQuad *pSVar10;
+  float fVar11;
+  SCurtainVertex *pSVar12;
+  SCurtainVertex *pSVar13;
+  SMRGLPrimitiveQuad *pSVar14;
+  SMRGLPrimitiveQuad *pSVar15;
   int unaff_EBP;
-  uint *puVar9;
-  int iVar10;
-  byte bVar11;
-  float10 fVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float fVar15;
-  uint uStack_7c;
+  int iVar16;
+  uint *puVar17;
+  int iVar18;
+  uint *puVar19;
+  byte bVar20;
+  double dVar21;
+  int iStack_7c;
   int local_70;
   int local_68;
-  int local_60;
+  SCurtainVertex *local_60;
   int local_44;
   float local_40;
   int local_30;
@@ -38,234 +44,238 @@ void core_curtain_cpp_FUN_0043dad0(int param_1)
   int local_18;
   int local_14;
   
-  bVar11 = 0;
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x15c);
+  bVar20 = 0;
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,&param_1->curtain_texture);
   while( true ) {
-    fVar12 = (float10)1 / (float10)*(float *)(param_1 + 500);
-    fVar1 = *(float *)(param_1 + 0x154);
-    fVar13 = (float10)round((float10)*(float *)(param_1 + 0x150) * fVar12);
-    iVar10 = (int)ROUND(fVar13);
-    fVar15 = 6.231602e-39;
-    fVar12 = (float10)round((float10)fVar1 * fVar12);
-    fVar1 = (float)(int)ROUND(fVar12);
-    *(uint *)(param_1 + 0x1c724) = uStack_7c;
-    *(float *)(param_1 + 0x1c728) = fVar1;
-    iVar4 = (iVar10 + 1) * ((int)fVar1 + 1);
-    *(int *)(param_1 + 0x1fc) = iVar4;
-    if (iVar4 < 0x3e9) break;
-    *(float *)(param_1 + 500) = *(float *)(param_1 + 500) * (float)2;
+    fVar2 = 1.0 / param_1->patch_size;
+    fVar1 = (param_1->curtain_size).y;
+    dVar21 = round((double)((param_1->curtain_size).x * fVar2));
+    iVar18 = (int)ROUND(dVar21);
+    dVar21 = round((double)(fVar1 * fVar2));
+    fVar1 = (float)(int)ROUND(dVar21);
+    (param_1->mesh).grid_cols = iStack_7c;
+    (param_1->mesh).grid_rows = (int)fVar1;
+    iVar7 = (iVar18 + 1) * ((int)fVar1 + 1);
+    param_1->vertex_count = iVar7;
+    if (iVar7 < 0x3e9) break;
+    param_1->patch_size = param_1->patch_size * (float)2;
   }
-  fVar2 = *(float *)(param_1 + 0x150);
-  iVar4 = 0;
+  fVar2 = (param_1->curtain_size).x;
+  iVar7 = 0;
   if (0 < (int)fVar1 + 1) {
     do {
-      fVar6 = 0.0;
+      fVar11 = 0.0;
       if (0 < local_30) {
         local_18 = (int)local_20 * 0x74 + local_70;
-        iVar5 = unaff_EBP;
+        iVar16 = unaff_EBP;
         do {
-          *(uint *)(iVar5 + 0x14) = 0;
-          *(int *)(iVar5 + 0xc) = iVar10;
-          *(int *)(iVar5 + 0x10) = local_2c;
-          if (((((iVar4 == 0) && (*(int *)(param_1 + 0x178) != 0)) ||
-               ((iVar4 == iVar10 && (*(int *)(param_1 + 0x184) != 0)))) ||
-              ((fVar6 == 0.0 && (*(int *)(param_1 + 0x17c) != 0)))) ||
-             ((fVar6 == fVar2 / (float)iVar10 && (*(int *)(param_1 + 0x180) != 0)))) {
-            *(uint *)(iVar5 + 0x68) = 1;
+          *(uint *)(iVar16 + 0x14) = 0;
+          *(int *)(iVar16 + 0xc) = iVar18;
+          *(int *)(iVar16 + 0x10) = local_2c;
+          if (((((iVar7 == 0) && (param_1->cinched_top != 0)) ||
+               ((iVar7 == iVar18 && (param_1->cinched_bottom != 0)))) ||
+              ((fVar11 == 0.0 && (param_1->cinched_left != 0)))) ||
+             ((fVar11 == fVar2 / (float)iVar18 && (param_1->cinched_right != 0)))) {
+            *(uint *)(iVar16 + 0x68) = 1;
           }
           else {
-            *(uint *)(iVar5 + 0x68) = 0;
+            *(uint *)(iVar16 + 0x68) = 0;
           }
-          *(uint *)(iVar5 + 0x70) = 0;
-          if ((fVar6 == 0.0) && (iVar4 == 0)) {
-            *(uint *)(iVar5 + 0x70) = 1;
+          *(uint *)(iVar16 + 0x70) = 0;
+          if ((fVar11 == 0.0) && (iVar7 == 0)) {
+            *(uint *)(iVar16 + 0x70) = 1;
           }
-          if ((fVar6 == 0.0) && (iVar4 == iVar10)) {
-            *(uint *)(iVar5 + 0x70) = 1;
+          if ((fVar11 == 0.0) && (iVar7 == iVar18)) {
+            *(uint *)(iVar16 + 0x70) = 1;
           }
-          if ((fVar6 == local_40) && (iVar4 == 0)) {
-            *(uint *)(iVar5 + 0x70) = 1;
+          if ((fVar11 == local_40) && (iVar7 == 0)) {
+            *(uint *)(iVar16 + 0x70) = 1;
           }
-          if ((fVar6 == fVar1) && (iVar4 == local_44)) {
-            *(uint *)(iVar5 + 0x70) = 1;
+          if ((fVar11 == fVar1) && (iVar7 == local_44)) {
+            *(uint *)(iVar16 + 0x70) = 1;
           }
-          *(uint *)(iVar5 + 0x44) = 0;
-          if (0 < iVar4) {
-            *(float *)(iVar5 + 0x48 + *(int *)(iVar5 + 0x44) * 4) = local_20;
-            *(int *)(iVar5 + 0x44) = *(int *)(iVar5 + 0x44) + 1;
+          *(uint *)(iVar16 + 0x44) = 0;
+          if (0 < iVar7) {
+            *(float *)(iVar16 + 0x48 + *(int *)(iVar16 + 0x44) * 4) = local_20;
+            *(int *)(iVar16 + 0x44) = *(int *)(iVar16 + 0x44) + 1;
           }
-          if (0 < (int)fVar6) {
-            *(int *)(iVar5 + 0x48 + *(int *)(iVar5 + 0x44) * 4) = local_18 + -1;
-            *(int *)(iVar5 + 0x44) = *(int *)(iVar5 + 0x44) + 1;
+          if (0 < (int)fVar11) {
+            *(int *)(iVar16 + 0x48 + *(int *)(iVar16 + 0x44) * 4) = local_18 + -1;
+            *(int *)(iVar16 + 0x44) = *(int *)(iVar16 + 0x44) + 1;
           }
-          if ((int)fVar6 < iVar10 + 1) {
-            *(int *)(iVar5 + 0x48 + *(int *)(iVar5 + 0x44) * 4) = local_18 + 1;
-            *(int *)(iVar5 + 0x44) = *(int *)(iVar5 + 0x44) + 1;
+          if ((int)fVar11 < iVar18 + 1) {
+            *(int *)(iVar16 + 0x48 + *(int *)(iVar16 + 0x44) * 4) = local_18 + 1;
+            *(int *)(iVar16 + 0x44) = *(int *)(iVar16 + 0x44) + 1;
           }
-          fVar12 = (float10)252;
-          fVar13 = (float10)65536;
-          fVar14 = (float10)round
-                                      ((((float10)*(float *)(param_1 + 0x150) *
-                                         (float10)0.5 + (float10)*(float *)(iVar5 + 0xc)
-                                        ) / (float10)*(float *)(param_1 + 0x150)) * fVar12 * fVar13)
-          ;
-          unaff_EBP = (int)ROUND(fVar14);
-          *(int *)(iVar5 + 0x18) = unaff_EBP + 0x20000;
-          fVar6 = (float)((int)fVar6 + 1);
+          fVar3 = (param_1->curtain_size).x;
+          fVar6 = (float)252;
+          fVar5 = (float)65536;
+          dVar21 = round
+                             ((double)(((fVar3 * (float)0.5 + *(float *)(iVar16 + 0xc))
+                                       / fVar3) * fVar6 * fVar5));
+          unaff_EBP = (int)ROUND(dVar21);
+          *(int *)(iVar16 + 0x18) = unaff_EBP + 0x20000;
+          fVar11 = (float)((int)fVar11 + 1);
           local_18 = local_14 + 0x74;
-          fVar15 = 6.232355e-39;
-          fVar12 = (float10)round
-                                      (fVar13 * ((float10)1 -
-                                                (float10)*(float *)(iVar5 + 0x10) /
-                                                (float10)*(float *)(param_1 + 0x154)) * fVar12);
-          local_14 = (int)ROUND(fVar12);
-          *(int *)(iVar5 + 0x1c) = local_14 + 0x20000;
+          dVar21 = round
+                             ((double)(fVar5 * (1.0 - *(float *)(iVar16 + 0x10) /
+                                                      (param_1->curtain_size).y) * fVar6));
+          local_14 = (int)ROUND(dVar21);
+          *(int *)(iVar16 + 0x1c) = local_14 + 0x20000;
           local_20 = (float)((int)(local_20 + local_40) + 1);
-          iVar5 = unaff_EBP;
-        } while ((int)fVar6 < local_30);
+          iVar16 = unaff_EBP;
+        } while ((int)fVar11 < local_30);
       }
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < iVar10);
+      iVar7 = iVar7 + 1;
+    } while (iVar7 < iVar18);
   }
   local_68 = 0;
-  if (0 < *(int *)(param_1 + 0x1fc)) {
-    local_60 = param_1 + 0x200;
+  if (0 < param_1->vertex_count) {
+    pSVar13 = param_1->vertices;
+    local_60 = pSVar13;
     do {
-      iVar10 = 0;
-      if (0 < *(int *)(local_60 + 0x44)) {
-        iVar4 = local_60;
+      iVar18 = 0;
+      if (0 < local_60->neighbor_count) {
+        pSVar12 = local_60;
         do {
-          iVar5 = *(int *)(iVar4 + 0x48) * 0x74 + param_1 + 0x200;
-          fVar15 = *(float *)(local_60 + 0xc) - *(float *)(iVar5 + 0xc);
-          fVar1 = *(float *)(local_60 + 0x10) - *(float *)(iVar5 + 0x10);
-          fVar2 = *(float *)(local_60 + 0x14) - *(float *)(iVar5 + 0x14);
-          iVar10 = iVar10 + 1;
-          *(float *)(iVar4 + 0x58) = SQRT(fVar2 * fVar2 + fVar15 * fVar15 + fVar1 * fVar1);
-          iVar4 = iVar4 + 4;
-        } while (iVar10 < *(int *)(local_60 + 0x44));
+          iVar7 = pSVar12->neighbor_indices[0];
+          fVar1 = (local_60->initial_position).x - pSVar13[iVar7].initial_position.x;
+          fVar2 = (local_60->initial_position).y - pSVar13[iVar7].initial_position.y;
+          fVar11 = (local_60->initial_position).z - pSVar13[iVar7].initial_position.z;
+          iVar18 = iVar18 + 1;
+          pSVar12->rest_distances[0] = SQRT(fVar11 * fVar11 + fVar1 * fVar1 + fVar2 * fVar2);
+          pSVar12 = (SCurtainVertex *)&(pSVar12->local_position).y;
+        } while (iVar18 < local_60->neighbor_count);
       }
-      local_60 = local_60 + 0x74;
+      local_60 = local_60 + 1;
       local_68 = local_68 + 1;
-    } while (local_68 < *(int *)(param_1 + 0x1fc));
+    } while (local_68 < param_1->vertex_count);
   }
-  iVar10 = 0;
-  if (0 < *(int *)(param_1 + 0x1fc)) {
-    puVar9 = (uint *)(param_1 + 0x20c);
+  iVar18 = 0;
+  if (0 < param_1->vertex_count) {
+    pCVar8 = &param_1->vertices[0].initial_position;
     do {
-      puVar7 = (uint *)(iVar10 * 0x74 + param_1 + 0x200);
-      if (puVar7 != puVar9) {
-        *puVar7 = *puVar9;
-        puVar7[1] = puVar9[1];
-        puVar7[2] = puVar9[2];
+      pSVar13 = param_1->vertices + iVar18;
+      if (pSVar13 != (SCurtainVertex *)pCVar8) {
+        (pSVar13->local_position).x = pCVar8->x;
+        (pSVar13->local_position).y = pCVar8->y;
+        (pSVar13->local_position).z = pCVar8->z;
       }
-      puVar7[0xd] = 0;
-      iVar10 = iVar10 + 1;
-      puVar7[0xc] = puVar7[0xd];
-      puVar7[0xb] = puVar7[0xc];
-      puVar9 = puVar9 + 0x1d;
-    } while (iVar10 < *(int *)(param_1 + 0x1fc));
+      (pSVar13->velocity).z = 0.0;
+      iVar18 = iVar18 + 1;
+      (pSVar13->velocity).y = (pSVar13->velocity).z;
+      (pSVar13->velocity).x = (pSVar13->velocity).y;
+      pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);
+    } while (iVar18 < param_1->vertex_count);
   }
-  iVar10 = param_1 + 0x1f60c;
-  iVar4 = param_1 + 0x4288c;
+  pSVar10 = (param_1->mesh).front_faces;
+  pSVar15 = (param_1->mesh).back_faces;
   local_2c = 0;
-  if (0 < *(int *)(param_1 + 0x1c728)) {
+  if (0 < (param_1->mesh).grid_rows) {
     do {
       local_1c = 0;
-      iVar5 = iVar10;
-      iVar8 = iVar4;
-      if (0 < *(int *)(param_1 + 0x1c724)) {
+      pSVar9 = pSVar10;
+      pSVar14 = pSVar15;
+      if (0 < (param_1->mesh).grid_cols) {
         do {
-          *(uint *)(iVar5 + 0x14) = 0;
-          *(uint *)(iVar5 + 4) = 3;
-          uVar3 = *(uint *)(iVar5 + 0x14);
-          *(uint *)(iVar5 + 0x10) = uVar3;
-          *(uint *)(iVar5 + 0xc) = uVar3;
-          *(uint *)(iVar5 + 8) = uVar3;
-          *(uint *)(iVar8 + 4) = 3;
-          *(uint *)(iVar8 + 0x14) = 0;
-          uVar3 = *(uint *)(iVar8 + 0x14);
-          *(uint *)(iVar8 + 0x10) = uVar3;
-          *(uint *)(iVar8 + 0xc) = uVar3;
-          *(uint *)(iVar8 + 8) = uVar3;
-          iVar4 = local_1c + (*(int *)(param_1 + 0x1c724) + 1) * local_2c;
-          *(int *)(iVar5 + 0x18) = iVar4;
-          *(uint *)(iVar5 + 0x1c) = *(uint *)(iVar4 * 0x74 + 0x218 + param_1);
-          iVar10 = iVar4 + 1;
-          *(uint *)(iVar5 + 0x20) = *(uint *)(iVar4 * 0x74 + 0x21c + param_1);
-          *(int *)(iVar5 + 0x24) = iVar10;
-          *(uint *)(iVar5 + 0x28) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);
-          *(uint *)(iVar5 + 0x2c) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);
-          iVar10 = iVar10 + *(int *)(param_1 + 0x1c724) + 1;
-          *(int *)(iVar5 + 0x30) = iVar10;
-          iVar10 = iVar10 * 0x74;
-          *(uint *)(iVar5 + 0x34) = *(uint *)(iVar10 + 0x218 + param_1);
-          *(uint *)(iVar5 + 0x38) = *(uint *)(iVar10 + 0x21c + param_1);
-          puVar7 = (uint *)(iVar8 + 0x1c + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 0x34 + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x18) = *(uint *)(iVar5 + 0x30);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
-          puVar7 = (uint *)(iVar8 + 0x28 + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 0x28 + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x24) = *(uint *)(iVar5 + 0x24);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
-          puVar7 = (uint *)(iVar8 + 0x34 + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 0x1c + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x30) = *(uint *)(iVar5 + 0x18);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
-          *(uint *)(iVar5 + 0x4c) = 3;
-          *(uint *)(iVar5 + 0x5c) = 0;
-          uVar3 = *(uint *)(iVar5 + 0x5c);
-          *(uint *)(iVar5 + 0x58) = uVar3;
-          *(uint *)(iVar5 + 0x54) = uVar3;
-          *(uint *)(iVar5 + 0x50) = uVar3;
-          *(uint *)(iVar8 + 0x4c) = 3;
-          *(uint *)(iVar8 + 0x5c) = 0;
-          uVar3 = *(uint *)(iVar8 + 0x5c);
-          *(uint *)(iVar8 + 0x58) = uVar3;
-          *(uint *)(iVar8 + 0x54) = uVar3;
-          *(uint *)(iVar8 + 0x50) = uVar3;
-          iVar10 = local_1c + (*(int *)(param_1 + 0x1c724) + 1) * local_2c;
-          *(int *)(iVar5 + 0x60) = iVar10;
-          *(uint *)(iVar5 + 100) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);
-          *(uint *)(iVar5 + 0x68) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);
-          iVar10 = iVar10 + *(int *)(param_1 + 0x1c724) + 2;
-          *(int *)(iVar5 + 0x6c) = iVar10;
-          *(uint *)(iVar5 + 0x70) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);
-          *(uint *)(iVar5 + 0x74) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);
-          *(int *)(iVar5 + 0x78) = iVar10 + -1;
-          iVar10 = (iVar10 + -1) * 0x74;
-          *(uint *)(iVar5 + 0x7c) = *(uint *)(iVar10 + 0x218 + param_1);
-          *(uint *)(iVar5 + 0x80) = *(uint *)(iVar10 + 0x21c + param_1);
-          puVar7 = (uint *)(iVar8 + 100 + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 0x7c + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x60) = *(uint *)(iVar5 + 0x78);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
-          puVar7 = (uint *)(iVar8 + 0x70 + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 0x70 + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x6c) = *(uint *)(iVar5 + 0x6c);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
-          iVar10 = iVar5 + 0x90;
-          iVar4 = iVar8 + 0x90;
-          puVar7 = (uint *)(iVar8 + 0x7c + (uint)bVar11 * -8);
-          puVar9 = (uint *)(iVar5 + 100 + (uint)bVar11 * -8);
-          *(uint *)(iVar8 + 0x78) = *(uint *)(iVar5 + 0x60);
-          *puVar7 = *puVar9;
-          puVar7[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
+          (pSVar9->base).surface_normal.D.i = 0;
+          (pSVar9->base).base.count = 3;
+          UVar4 = (pSVar9->base).surface_normal.D;
+          (pSVar9->base).surface_normal.C = UVar4;
+          (pSVar9->base).surface_normal.B = UVar4;
+          (pSVar9->base).surface_normal.A = UVar4;
+          (pSVar14->base).base.count = 3;
+          (pSVar14->base).surface_normal.D.i = 0;
+          UVar4 = (pSVar14->base).surface_normal.D;
+          (pSVar14->base).surface_normal.C = UVar4;
+          (pSVar14->base).surface_normal.B = UVar4;
+          (pSVar14->base).surface_normal.A = UVar4;
+          iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;
+          iVar16 = local_1c + iVar7;
+          pSVar9->vertices[0].vertex_index = iVar16;
+          pSVar9->vertices[0].texture_u = param_1->vertices[iVar16].texture_u;
+          pSVar9->vertices[0].texture_v = param_1->vertices[iVar16].texture_v;
+          pSVar9->vertices[1].vertex_index = iVar16 + 1;
+          pSVar9->vertices[1].texture_u = param_1->vertices[iVar16 + 1].texture_u;
+          pSVar9->vertices[1].texture_v = param_1->vertices[iVar16 + 1].texture_v;
+          iVar18 = (param_1->mesh).grid_cols;
+          pSVar9->vertices[2].vertex_index = iVar16 + 1 + iVar18 + 1;
+          pSVar9->vertices[2].texture_u = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u
+          ;
+          pSVar9->vertices[2].texture_v = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v
+          ;
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x1c);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x34);
+          pSVar14->vertices[0].vertex_index = pSVar9->vertices[2].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x28);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x28);
+          pSVar14->vertices[1].vertex_index = pSVar9->vertices[1].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x34);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x1c);
+          pSVar14->vertices[2].vertex_index = pSVar9->vertices[0].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
+          pSVar9[1].base.base.count = 3;
+          pSVar9[1].base.surface_normal.D.i = 0;
+          UVar4 = pSVar9[1].base.surface_normal.D;
+          pSVar9[1].base.surface_normal.C = UVar4;
+          pSVar9[1].base.surface_normal.B = UVar4;
+          pSVar9[1].base.surface_normal.A = UVar4;
+          pSVar14[1].base.base.count = 3;
+          pSVar14[1].base.surface_normal.D.i = 0;
+          UVar4 = pSVar14[1].base.surface_normal.D;
+          pSVar14[1].base.surface_normal.C = UVar4;
+          pSVar14[1].base.surface_normal.B = UVar4;
+          pSVar14[1].base.surface_normal.A = UVar4;
+          iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;
+          iVar16 = local_1c + iVar7;
+          pSVar9[1].vertices[0].vertex_index = iVar16;
+          pSVar9[1].vertices[0].texture_u = param_1->vertices[iVar16].texture_u;
+          pSVar9[1].vertices[0].texture_v = param_1->vertices[iVar16].texture_v;
+          iVar18 = (param_1->mesh).grid_cols;
+          iVar16 = iVar16 + iVar18 + 2;
+          pSVar9[1].vertices[1].vertex_index = iVar16;
+          pSVar9[1].vertices[1].texture_u =
+               param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;
+          pSVar9[1].vertices[1].texture_v =
+               param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;
+          pSVar9[1].vertices[2].vertex_index = iVar16 + -1;
+          pSVar9[1].vertices[2].texture_u =
+               param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_u;
+          pSVar9[1].vertices[2].texture_v =
+               param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_v;
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 100);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x7c);
+          pSVar14[1].vertices[0].vertex_index = pSVar9[1].vertices[2].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x70);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x70);
+          pSVar14[1].vertices[1].vertex_index = pSVar9[1].vertices[1].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
+          pSVar10 = pSVar9 + 2;
+          pSVar15 = pSVar14 + 2;
+          puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x7c);
+          puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 100);
+          pSVar14[1].vertices[2].vertex_index = pSVar9[1].vertices[0].vertex_index;
+          *puVar19 = *puVar17;
+          puVar19[(uint)bVar20 * -2 + 1] = puVar17[(uint)bVar20 * -2 + 1];
           local_1c = local_1c + 1;
-          iVar5 = iVar10;
-          iVar8 = iVar4;
-        } while (local_1c < *(int *)(param_1 + 0x1c724));
+          pSVar9 = pSVar10;
+          pSVar14 = pSVar15;
+        } while (local_1c < (param_1->mesh).grid_cols);
       }
       local_2c = local_2c + 1;
-    } while (local_2c < *(int *)(param_1 + 0x1c728));
+    } while (local_2c < (param_1->mesh).grid_rows);
   }
-  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1,fVar15);
-  *(uint *)(param_1 + 0xfc) = (uint)(*(int *)(param_1 + 0x174) < 0xfde9);
+  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1);
+  (param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);
   return;
 }

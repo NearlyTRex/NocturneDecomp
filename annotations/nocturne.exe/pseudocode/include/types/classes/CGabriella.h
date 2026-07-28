@@ -9,28 +9,28 @@ struct CDemonActor;
 #include "types/classes/CHero.h"
 
 // Structure: CGabriella
-// Ghidra size: 0x5fa88 (391816 bytes)
+// Ghidra size: 0x5f8f0 (391408 bytes)
 #pragma pack(push, 1)
 typedef struct CGabriella {
     CHero base; // 0x0
-    int weapon_state_flags; // 0x1fbd4
-    float holster_blend; // 0x1fbd8
-    float draw_blend; // 0x1fbdc
-    float aim_blend; // 0x1fbe0
-    float light_aim_blend; // 0x1fbe4
-    float flashlight_angle; // 0x1fbe8
-    int fire_state; // 0x1fbec
-    float left_clavicle_blend; // 0x1fbf0
-    float right_clavicle_blend; // 0x1fbf4
-    struct CDemonActor* aim_target; // 0x1fbf8
-    float target_aim_pitch; // 0x1fbfc
-    float target_aim_yaw; // 0x1fc00
-    float aim_pitch; // 0x1fc04
-    float aim_yaw; // 0x1fc08
-    float fire_cooldown_timer; // 0x1fc0c
-    float aim_weight; // 0x1fc10
-    CCloth coat_cloth; // 0x1fc14
-    float dynamite_charge_power; // 0x5fa84
+    int weapon_state_flags; // 0x1fa3c
+    float holster_blend; // 0x1fa40
+    float draw_blend; // 0x1fa44
+    float aim_blend; // 0x1fa48
+    float light_aim_blend; // 0x1fa4c
+    float flashlight_angle; // 0x1fa50
+    int fire_state; // 0x1fa54
+    float left_clavicle_blend; // 0x1fa58
+    float right_clavicle_blend; // 0x1fa5c
+    struct CDemonActor* aim_target; // 0x1fa60
+    float target_aim_pitch; // 0x1fa64
+    float target_aim_yaw; // 0x1fa68
+    float aim_pitch; // 0x1fa6c
+    float aim_yaw; // 0x1fa70
+    float fire_cooldown_timer; // 0x1fa74
+    float aim_weight; // 0x1fa78
+    CCloth coat_cloth; // 0x1fa7c
+    float dynamite_charge_power; // 0x5f8ec
 } CGabriella;
 #pragma pack(pop)
 

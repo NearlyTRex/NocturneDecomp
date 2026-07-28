@@ -25,7 +25,7 @@
 ;   core_gun.cpp_FUN_004b27c0 at 004b298a
 ;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0 at 004c7137
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c73a0
-;   core_scat.cpp_FUN_004fda20 at 004fdc84
+;   core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 at 004fdc84
 ;   ... and 7 more
 ;
 ; Referenced Globals:

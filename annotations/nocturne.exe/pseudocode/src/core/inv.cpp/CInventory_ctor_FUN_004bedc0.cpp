@@ -2,28 +2,28 @@
 // Address: 004bedc0
 // Address Range: [[004bedc0, 004bee57]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(undefined4 *param_1)
+// Signature: CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(uint *param_1)
+CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(CInventory *this_ptr)
 
 {
-  param_1[0xcb] = 0;
-  param_1[0xcc] = 0;
-  param_1[0xcd] = 0;
-  *param_1 = 0x42c80000;
-  param_1[1] = 0;
-  param_1[0xce] = 0;
-  param_1[0xcf] = 0;
-  param_1[0xd0] = 0;
-  param_1[0x113] = 0;
-  param_1[0x114] = 0;
-  param_1[0x115] = 0;
-  param_1[0xd1] = 0;
-  *(byte *)(param_1 + 0xd3) = 0;
-  param_1[0x116] = 0;
-  param_1[0x117] = 0;
-  param_1[2] = 0;
-  return;
+  this_ptr->save_version = 0;
+  this_ptr->selected_weapon = (CWeapon *)0x0;
+  this_ptr->selected_item = (CDemonActor *)0x0;
+  this_ptr->battery_charge = 100.0;
+  this_ptr->owner = (CDemonActor *)0x0;
+  this_ptr->weapon_highlight_timer = 0.0;
+  this_ptr->item_highlight_timer = 0.0;
+  this_ptr->inventory_display_timer = 0.0;
+  this_ptr->render_mode_flag = 0;
+  this_ptr->preserve_items = 0;
+  this_ptr->light_gun_ptr = (CLightGun *)0x0;
+  this_ptr->message_display_timer = 0.0;
+  this_ptr->message_text[0] = '\0';
+  this_ptr->ammo_ptr = (CAmmo *)0x0;
+  this_ptr->cached_ammo_count = 0;
+  this_ptr->item_count = 0;
+  return this_ptr;
 }

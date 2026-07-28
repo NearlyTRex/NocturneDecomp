@@ -25,26 +25,28 @@ void crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
   byte local_10 [8];
   
   uStack_14 = 0x56df21;
-  FUN_0056ef60();
+  ProcessInitTermHandlers(1);
   iVar1 = -(0x000000F4 + 3U & 0xfffffffc);
   *(int *)(local_10 + iVar1 + -4) = 0x000000F4;
   *(uint *)((int)aiStack_1c + iVar1 + 4) = 0;
   *(byte **)((int)aiStack_1c + iVar1) = local_10 + iVar1;
   *(uint *)((int)&uStack_20 + iVar1) = 0x56df3e;
-  memset();
+  memset
+            (*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),
+             *(ulong *)(local_10 + iVar1 + -4));
   *(byte **)(local_10 + iVar1 + -4) = local_10 + iVar1;
   *(int *)(&stack0x000000e0 + iVar1) = 0x000000F4;
   *(byte **)((int)aiStack_1c + iVar1 + 4) = local_10;
   *(uint *)((int)aiStack_1c + iVar1) = 0x56df56;
-  FUN_00567458();
+  crt_startup_cpp_InitializeWinAppRuntime_FUN_00567458(local_10);
   puVar7 = local_10 + iVar1;
   uVar6 = DAT_005c1cf0 + 3U & 0xfffffffc;
   *(uint *)(local_10 + iVar1 + -4) = 0x56df6a;
-  uVar3 = FUN_00571150();
+  uVar3 = GetStackUsage();
   if (uVar6 < uVar3) {
     *(uint *)(local_10 + iVar1 + -4) = uVar6;
     *(uint *)((int)aiStack_1c + iVar1 + 4) = 0x56df74;
-    FUN_005670ed();
+    ProbeStackSpace(*(uint *)(local_10 + iVar1 + -4));
     iVar2 = -(DAT_005c1cf0 + 3U & 0xfffffffc);
     puVar7 = local_10 + iVar2 + iVar1;
     _DAT_005c1cf4 = local_10 + iVar2 + iVar1;
@@ -66,6 +68,6 @@ void crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
   uVar5 = wincore_winrun_cpp_FUN_00559260();
   *(uint *)(puVar7 + -4) = uVar5;
   *(uint *)(puVar7 + -8) = 0x56dfb8;
-  FUN_0056fcd4();
+  ExitApplication(*(int *)(puVar7 + -4));
   return;
 }

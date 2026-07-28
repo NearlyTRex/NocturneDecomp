@@ -65,7 +65,7 @@ section .text
     PUSH ESI                            ; 0052c696
         ;   Label: LAB_0052c696
     CALL sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130 ; 0052c697
-        ;   XREF to: 0052c130 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130()
+        ;   XREF to: 0052c130 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130(int buffer_index)
     ADD ESP,0x4                         ; 0052c69c
     TEST EAX,EAX                        ; 0052c69f
     JNZ 0x0052c670                      ; 0052c6a1

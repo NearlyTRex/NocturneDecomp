@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(int *param_1)
+; SMotion * __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController *this_ptr)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[100]:
 ;   core_armour.cpp_FUN_0040fa20 at 0040faa1

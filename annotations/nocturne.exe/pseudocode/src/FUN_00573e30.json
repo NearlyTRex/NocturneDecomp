@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 418,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 39,
     "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
       "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
@@ -141,7 +140,7 @@
       "warning_overlapping_globals",
       "warning_spacebase"
     ],
-    "total_lines": 105
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -166,29 +165,29 @@
   },
   "function_calls": [
     {
+      "addr": "0056eed8",
+      "is_variadic": false,
+      "name": "crt_exception.c_installExceptionHandler_FUN_0056eed8"
+    },
+    {
       "addr": "00563cc0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_00563cc0"
     },
     {
-      "addr": "005671dc",
-      "is_variadic": false,
-      "name": "FUN_005671dc"
-    },
-    {
       "addr": "00567208",
       "is_variadic": false,
-      "name": "FUN_00567208"
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00567208"
+    },
+    {
+      "addr": "005671dc",
+      "is_variadic": false,
+      "name": "crt_thread.c_GetTLS_FUN_005671dc"
     },
     {
       "addr": "0056e608",
       "is_variadic": false,
       "name": "FUN_0056e608"
-    },
-    {
-      "addr": "0056eed8",
-      "is_variadic": false,
-      "name": "FUN_0056eed8"
     },
     {
       "addr": "00572e88",
@@ -210,13 +209,13 @@
     },
     {
       "addr": "005c1abc",
-      "name": "PTR_FUN_005c1abc",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc",
       "type": "void*",
       "value": "005671dc"
     },
     {
       "addr": "005c1afc",
-      "name": "PTR_FUN_005c1afc",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_00567208_005c1afc",
       "type": "void*",
       "value": "00567208"
     },
@@ -310,26 +309,19 @@
   "static_analysis": {
     "analyzed_file": "FUN_00573e30.c",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "pointerOutOfBounds",
-          "column": 28,
-          "line": 27,
-          "message": "Undefined behaviour, pointer arithmetic 'auStackY_34+iVar1' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 48,
-          "line": 27,
+          "column": 53,
+          "line": 26,
           "message": "Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 53,
-          "line": 30,
+          "line": 31,
           "message": "Undefined behaviour, pointer arithmetic 'local_28+iVar1' is out of bounds.",
           "severity": "portability"
         }
@@ -374,22 +366,14 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_34",
+      "match": "aiStackY_34",
       "severity": "moderate",
-      "text": "byte auStackY_34 [4];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "uStackY_30",
-      "severity": "moderate",
-      "text": "uint uStackY_30;",
+      "text": "int aiStackY_34 [2];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
+      "line": 12,
       "match": "code *",
       "severity": "moderate",
       "text": "code *local_20;",
@@ -397,7 +381,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
       "text": "local_20 = (code *)*param_1;",
@@ -405,7 +389,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "local_20 = (code *)*param_1;",
@@ -413,39 +397,95 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 17,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(int *)(&stack0xffffffd4 + iVar1) = 0x000000F4;",
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)aiStackY_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(byte **)((int)aiStackY_34",
+      "severity": "moderate",
+      "text": "*(byte **)((int)aiStackY_34 + iVar1) = local_28 + iVar1;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 19,
-      "match": "uStackY_30",
+      "match": "aiStackY_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0;",
+      "text": "*(byte **)((int)aiStackY_34 + iVar1) = local_28 + iVar1;",
       "type": "stack_alignment_array"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 20,
-      "match": "auStackY_34",
-      "severity": "moderate",
-      "text": "*(byte **)(auStackY_34 + iVar1) = local_28 + iVar1;",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
       "match": "uStackY_38",
       "severity": "moderate",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x573e6f;",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(void **)((int)aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 23,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(ulong *)(&stack0xffffffd4 + iVar1));",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(byte **)(&stack0xffffffd4 + iVar1) = local_28 + iVar1;",
@@ -453,7 +493,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 23,
+      "line": 24,
       "match": "*(byte **)(&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(byte **)(&stack0xffffffd4 + iVar1) = local_28 + iVar1;",
@@ -461,31 +501,39 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 25,
       "match": "&stack0x000000c8",
       "severity": "moderate",
       "text": "*(int *)(&stack0x000000c8 + iVar1) = 0x000000F4;",
       "type": "stack_ref"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
-      "match": "uStackY_30",
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)aiStackY_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0x573e83;",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x573e83;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 26,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x573e83;",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 32,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)PTR_FUN_005c1abc)();",
+      "text": "iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[4] = iVar1 + 0xde;",
@@ -493,15 +541,15 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 33,
-      "match": "uStackY_30",
+      "line": 34,
+      "match": "aiStackY_34",
       "severity": "moderate",
-      "text": "uStackY_30 = 0x573ea3;",
+      "text": "aiStackY_34[1] = 0x573ea3;",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "SetEvent((HANDLE)param_1[3]);",
@@ -509,98 +557,42 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 35,
-      "match": "uStackY_30",
+      "line": 36,
+      "match": "aiStackY_34",
       "severity": "moderate",
-      "text": "uStackY_30 = 0x573eac;",
+      "text": "aiStackY_34[1] = 0x573eac;",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1afc)();",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00567208_005c1afc)();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 38,
-      "match": "uStackY_30",
+      "line": 39,
+      "match": "aiStackY_34",
       "severity": "moderate",
-      "text": "uStackY_30 = 0x573eb9;",
+      "text": "aiStackY_34[1] = 0x573eb9;",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Pointer value `&uStackY_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
-      "match": "(int)&uStackY_30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0;",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `&uStackY_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)&uStackY_38",
       "severity": "moderate",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x573e6f;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&uStackY_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
-      "match": "(int)&uStackY_30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0x573e83;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex address 0x573ea3 assigned to bare local `uStackY_30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 33,
-      "match": "0x573ea3",
-      "severity": "moderate",
-      "text": "uStackY_30 = 0x573ea3;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x573eac assigned to bare local `uStackY_30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 35,
-      "match": "0x573eac",
-      "severity": "moderate",
-      "text": "uStackY_30 = 0x573eac;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x573eb9 assigned to bare local `uStackY_30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 38,
-      "match": "0x573eb9",
-      "severity": "moderate",
-      "text": "uStackY_30 = 0x573eb9;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
+      "line": 20,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x573e6f;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStackY_30 + iVar1) = 0x573e83;",
       "type": "pointer_cast"
     }
   ]

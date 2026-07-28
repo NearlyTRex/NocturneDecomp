@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(undefined4 param_1,int param_2)
+; int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[4]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 at 004cba9b

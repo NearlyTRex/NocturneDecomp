@@ -2,11 +2,11 @@
 // Address: 00403990
 // Address Range: [[00403990, 00403bc4]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+// Signature: void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max)
 
 {
   longlong lVar1;
@@ -20,14 +20,12 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,in
   uint local_18;
   uint local_14;
   
-  local_14 = engine_2d_c_computeOutcode_FUN_00403900
-                       (param_1,param_2,param_5,param_6,param_7,param_8);
-  local_18 = engine_2d_c_computeOutcode_FUN_00403900
-                       (param_3,param_4,param_5,param_6,param_7,param_8);
+  local_14 = engine_2d_c_computeOutcode_FUN_00403900(x1,y1,x_min,y_min,x_max,y_max);
+  local_18 = engine_2d_c_computeOutcode_FUN_00403900(x2,y2,x_min,y_min,x_max,y_max);
   local_1c = 0;
   do {
-    iVar4 = param_4 - param_2;
-    iVar3 = param_3 - param_1;
+    iVar4 = y2 - y1;
+    iVar3 = x2 - x1;
     if ((local_14 == 0) && (local_18 == 0)) {
       local_20 = 1;
       break;
@@ -43,61 +41,61 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,in
     if ((uVar2 & 1) == 0) {
       if ((uVar2 & 2) == 0) {
         if ((uVar2 & 4) == 0) {
-          if (((uVar2 & 8) != 0) && (unaff_EBX = param_5, iVar3 != 0)) {
+          if (((uVar2 & 8) != 0) && (unaff_EBX = x_min, iVar3 != 0)) {
             lVar1 = (longlong)
                     (int)((longlong)
-                          ((((longlong)(param_5 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                          (longlong)(param_5 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)
-                    * (longlong)iVar4;
-            unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;
+                          ((((longlong)(x_min - x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(x_min - x1) * 0x10000 & 0xffffffffU) / (longlong)iVar3) *
+                    (longlong)iVar4;
+            unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + y1;
           }
         }
         else {
-          unaff_EBX = param_7;
+          unaff_EBX = x_max;
           if (iVar3 != 0) {
             lVar1 = (longlong)
                     (int)((longlong)
-                          ((((longlong)(param_7 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                          (longlong)(param_7 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)
-                    * (longlong)iVar4;
-            unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;
+                          ((((longlong)(x_max - x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(x_max - x1) * 0x10000 & 0xffffffffU) / (longlong)iVar3) *
+                    (longlong)iVar4;
+            unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + y1;
           }
         }
       }
       else {
-        unaff_EDI = param_6;
+        unaff_EDI = y_min;
         if (iVar4 != 0) {
           lVar1 = (longlong)
                   (int)((longlong)
-                        ((((longlong)(param_6 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                        (longlong)(param_6 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
+                        ((((longlong)(y_min - y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                        (longlong)(y_min - y1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                   (longlong)iVar3;
-          unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          unaff_EBX = x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         }
       }
     }
     else {
-      unaff_EDI = param_8;
+      unaff_EDI = y_max;
       if (iVar4 != 0) {
         lVar1 = (longlong)
                 (int)((longlong)
-                      ((((longlong)(param_8 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                      (longlong)(param_8 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
+                      ((((longlong)(y_max - y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                      (longlong)(y_max - y1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                 (longlong)iVar3;
-        unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        unaff_EBX = x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
     }
     if (local_14 == 0) {
       local_18 = engine_2d_c_computeOutcode_FUN_00403900
-                           (unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);
-      param_3 = unaff_EBX;
-      param_4 = unaff_EDI;
+                           (unaff_EBX,unaff_EDI,x_min,y_min,x_max,y_max);
+      x2 = unaff_EBX;
+      y2 = unaff_EDI;
     }
     else {
       local_14 = engine_2d_c_computeOutcode_FUN_00403900
-                           (unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);
-      param_2 = unaff_EDI;
-      param_1 = unaff_EBX;
+                           (unaff_EBX,unaff_EDI,x_min,y_min,x_max,y_max);
+      y1 = unaff_EDI;
+      x1 = unaff_EBX;
     }
     local_1c = local_1c + 1;
   } while (local_1c < 100);
@@ -107,7 +105,7 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,in
     core_main_c_FUN_004c8440("2d line clipping exceeded max iterations");
   }
   if (local_20 != 0) {
-    engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);
+    engine_2d_c_drawLine_FUN_004015a0(x1,y1,x2,y2);
     return;
   }
   return;

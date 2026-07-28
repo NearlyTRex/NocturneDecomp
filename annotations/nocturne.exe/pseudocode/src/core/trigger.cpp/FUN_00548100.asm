@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_trigger.cpp_FUN_005485a0 at 005485aa
+;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0 at 005485aa
 ;
 ; *****************************************************************************
 

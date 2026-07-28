@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(int param_1,int param_2,int param_3)
+; void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   playback_position
+; int              Stack[0xc]:4   dest_buffer_offset
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x1c]:8  local_1c
@@ -63,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EDX      ; 00523d4a
     FLD double ptr [ESP + 0x10]         ; 00523d4e
     CALL crt_math.c_round_FUN_00563a30  ; 00523d52
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x13c]       ; 00523d57
     MOV EBP,dword ptr [EBX + 0x13c]     ; 00523d5d
     ADD ESP,0x10                        ; 00523d63
@@ -98,7 +102,7 @@ section .text
     PUSH ESI                            ; 00523dba
     PUSH EBX                            ; 00523dbb
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00523dbc
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,dword ptr [EBX + 0x13c]    ; 00523dc1
     MOV ECX,dword ptr [EBX + 0x148]     ; 00523dc8
     ADD ESP,0x4                         ; 00523dce
@@ -107,7 +111,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x14c]     ; 00523dd4
     PUSH ESI                            ; 00523dda
     CALL crt_stdio.c_fseek_FUN_0056582c ; 00523ddb
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00523de0
     ADD ESP,0xc                         ; 00523de3
         ;   Label: LAB_00523de3
@@ -137,7 +141,7 @@ section .text
     PUSH EDI                            ; 00523e29
     PUSH ESI                            ; 00523e2a
     CALL sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410 ; 00523e2b
-        ;   XREF to: 004e8410 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410()
+        ;   XREF to: 004e8410 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410(CMP3Decoder * this_ptr, int sample_offset)
     ADD ESP,0x8                         ; 00523e30
     TEST EAX,EAX                        ; 00523e33
     JNZ 0x00523de3                      ; 00523e35

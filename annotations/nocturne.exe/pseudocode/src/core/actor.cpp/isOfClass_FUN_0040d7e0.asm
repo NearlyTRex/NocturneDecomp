@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_isOfClass_FUN_0040d7e0(int param_1,undefined4 param_2)
+; int __cdecl core_actor_cpp_isOfClass_FUN_0040d7e0(CDemonActor *actor_ptr,char *class_name)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
+; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[56]:
 ;   core_actor.cpp_FUN_0040b300 at 0040b533
@@ -39,7 +42,7 @@ section .text
     ADD ESP,0x4                         ; 0040d7fb
     PUSH EAX                            ; 0040d7fe
     CALL core_actor.cpp_matchesClassName_FUN_0040d840 ; 0040d7ff
-        ;   XREF to: 0040d840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchesClassName_FUN_0040d840()
+        ;   XREF to: 0040d840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchesClassName_FUN_0040d840(CDemonActorType * type_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040d804
     RET                                 ; 0040d807
 

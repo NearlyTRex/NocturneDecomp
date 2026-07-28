@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(int param_1)
+; void __cdecl core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_werewolf.cpp_CWerewolf_processDamage_FUN_00557940 at 00557a5b
@@ -25,7 +27,7 @@ section .text
     PUSH EDX                            ; 0055706b
     MOV dword ptr [EBX + 0xbd44],0x41200000 ; 0055706c
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 00557076
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0055707b
     TEST EAX,EAX                        ; 0055707e
     JZ 0x00557084                       ; 00557080

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamegun_cpp_FUN_0048eb30(int param_1,float param_2)
+; void core_flamegun_cpp_FUN_0048eb30(CWeapon *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
@@ -35,7 +35,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0048eb3f
     PUSH EBX                            ; 0048eb42
     CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 0048eb43
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00554030(CWeapon * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x570]     ; 0048eb48
     ADD ESP,0x8                         ; 0048eb4e
     TEST EDX,EDX                        ; 0048eb51
@@ -49,7 +49,7 @@ section .text
     MOV EDI,dword ptr [0x005bed68]      ; 0048eb60 | DAT_005bed68
     PUSH EDI                            ; 0048eb66
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0048eb67
-        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_killSound_FUN_0052ebb0()
+        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0052ebb0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0048eb6c
     MOV dword ptr [EBX + 0x574],0x0     ; 0048eb6f
     PUSH EBX                            ; 0048eb79
@@ -78,7 +78,7 @@ section .text
     MOV EAX,[0x005bed68]                ; 0048ebc2 | DAT_005bed68
     PUSH EAX                            ; 0048ebc7
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 0048ebc8
-        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0()
+        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0048ebcd
     TEST EAX,EAX                        ; 0048ebd0
     JZ 0x0048ec25                       ; 0048ebd2

@@ -1,0 +1,125 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "0056626c",
+      "from_addr": "00566303",
+      "name": "crt_file.c_makepath_FUN_0056626c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566250",
+    "address_range": [
+      [
+        "00566250",
+        "0056626b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_normalize_path_separator_FUN_00566250",
+    "signature": "int __cdecl crt_unknown_c_normalize_path_separator_FUN_00566250(int ch,int *preferred_separator)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00566303",
+        "call_type": "direct",
+        "caller": "crt_file.c_makepath_FUN_0056626c",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056639a",
+        "call_type": "direct",
+        "caller": "crt_file.c_makepath_FUN_0056626c",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005663cd",
+        "call_type": "direct",
+        "caller": "crt_file.c_makepath_FUN_0056626c",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.454545454545454,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 3,
+      "COPY": 7,
+      "INT_ADD": 3,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "preferred_separator",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
+}

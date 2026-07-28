@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(undefined4 *param_1)
+; CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004bedc0(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_hero.cpp_FUN_004b46d0 at 004b46f2

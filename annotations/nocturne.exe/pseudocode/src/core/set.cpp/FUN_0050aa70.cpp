@@ -17,7 +17,7 @@ void core_set_cpp_FUN_0050aa70(void)
   int iVar4;
   int iVar5;
   int iVar6;
-  byte local_110 [256];
+  char local_110 [256];
   
   iVar5 = 0;
   if (0 < _DAT_01fb9b54) {

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_005715ac(undefined4 param_1,int param_2)
+; SIGNAL_HANDLER_TYPE FUN_005715ac(int param_1,int param_2)
 ;
 ;
 ; XREF[1]:
 ;   FUN_00571858 at 00571881
 ;
 ; Called Functions:
-;   FUN_00571564
+;   crt_signal.c_getSignalHandler_FUN_00571564
 ;   FUN_00571588
 ;
 ; *****************************************************************************
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 005715cd (CONDITIONAL_JUMP)  ; LAB_005715cd
     MOV ECX,dword ptr [ESP + 0x4]       ; 005715bf
     PUSH ECX                            ; 005715c3
-    CALL FUN_00571564                   ; 005715c4
-        ;   XREF to: 00571564 (UNCONDITIONAL_CALL)  ; undefined FUN_00571564()
+    CALL crt_signal.c_getSignalHandler_FUN_00571564 ; 005715c4
+        ;   XREF to: 00571564 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_00571564(int signal_number)
     ADD ESP,0x4                         ; 005715c9
     RET                                 ; 005715cc
     XOR EAX,EAX                         ; 005715cd

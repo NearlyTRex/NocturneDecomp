@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_lever_cpp_FUN_004c6560(int param_1)
+; int core_lever_cpp_FUN_004c6560(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
@@ -28,7 +28,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004c6569
     PUSH EBX                            ; 004c656c
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004c656d
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c6572
     PUSH 0x0                            ; 004c6575
     LEA ESI,[EBP + -0x1c]               ; 004c6577
@@ -39,7 +39,7 @@ section .text
     ADD ESP,0x8                         ; 004c6585
     PUSH EAX                            ; 004c6588
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 004c6589
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 004c658e
     MOV EDI,EAX                         ; 004c6591
     TEST EAX,EAX                        ; 004c6593
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 004c65a9 (CONDITIONAL_JUMP)  ; LAB_004c65a9
     PUSH EBX                            ; 004c6597
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004c6598
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c659d
     MOV EAX,EDI                         ; 004c65a0
     MOV ESP,EBP                         ; 004c65a2
@@ -61,7 +61,7 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004c65ab
     PUSH ESI                            ; 004c65b1
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c65b2
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x100]     ; 004c65b7
     DEC EAX                             ; 004c65bd
     MOV dword ptr [EBP + -0x4],EAX      ; 004c65be
@@ -72,11 +72,11 @@ section .text
     FSTP float ptr [ESP]                ; 004c65d0
     PUSH ESI                            ; 004c65d3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 004c65d4
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004c65d9
     PUSH EBX                            ; 004c65dc
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004c65dd
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c65e2
     MOV EAX,EDI                         ; 004c65e5
     MOV ESP,EBP                         ; 004c65e7

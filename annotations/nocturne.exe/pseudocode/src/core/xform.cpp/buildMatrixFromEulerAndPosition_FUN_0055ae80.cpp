@@ -2,11 +2,11 @@
 // Address: 0055ae80
 // Address Range: [[0055ae80, 0055afad]]
 // Convention: __cdecl
-// Signature: void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(float *param_1,float *param_2,float *param_3)
+// Signature: void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 
 #include "nocturne.h"
 
-void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(float *param_1,float *param_2,float *param_3)
+void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 
 {
   double dVar1;
@@ -21,28 +21,38 @@ void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(float *
   float10 fVar10;
   float10 fVar11;
   
-  fVar6 = (float10)fsin((float10)*param_3);
-  fVar7 = (float10)fcos((float10)*param_3);
-  fVar8 = (float10)fsin((float10)param_3[2]);
-  fVar9 = (float10)fcos((float10)param_3[2]);
-  fVar10 = (float10)fsin((float10)param_3[1]);
-  fVar11 = (float10)fcos((float10)param_3[1]);
+  fVar6 = (float10)fsin((float10)euler_angles->x);
+  fVar7 = (float10)fcos((float10)euler_angles->x);
+  fVar8 = (float10)fsin((float10)euler_angles->z);
+  fVar9 = (float10)fcos((float10)euler_angles->z);
+  fVar10 = (float10)fsin((float10)euler_angles->y);
+  fVar11 = (float10)fcos((float10)euler_angles->y);
   dVar1 = (double)fVar10;
   dVar2 = (double)fVar7;
   dVar3 = (double)fVar8;
   dVar4 = (double)fVar9;
   dVar5 = (double)fVar11;
-  param_1[9] = (float)-fVar6;
-  param_1[8] = (float)((float10)dVar1 * (float10)dVar2);
-  param_1[1] = (float)(fVar8 * (float10)dVar2);
-  param_1[5] = (float)(fVar9 * (float10)dVar2);
-  param_1[10] = (float)((float10)dVar5 * (float10)dVar2);
-  *param_1 = (float)((float10)dVar5 * (float10)dVar4 + fVar10 * fVar6 * (float10)dVar3);
-  param_1[6] = (float)((float10)dVar3 * (float10)dVar1 + fVar11 * fVar6 * (float10)dVar4);
-  param_1[4] = (float)(-(float10)dVar5 * (float10)dVar3 + fVar10 * fVar6 * (float10)dVar4);
-  param_1[2] = (float)(-(float10)dVar1 * (float10)dVar4 + fVar11 * fVar6 * (float10)dVar3);
-  param_1[3] = -(param_2[2] * param_1[2] + *param_2 * *param_1 + param_2[1] * param_1[1]);
-  param_1[7] = -(param_2[2] * param_1[6] + *param_2 * param_1[4] + param_2[1] * param_1[5]);
-  param_1[0xb] = -(param_2[2] * param_1[10] + *param_2 * param_1[8] + param_2[1] * param_1[9]);
+  output_matrix->m[2].x = (float)-fVar6;
+  output_matrix->m[2].w = (float)((float10)dVar1 * (float10)dVar2);
+  output_matrix->m[0].x = (float)(fVar8 * (float10)dVar2);
+  output_matrix->m[1].x = (float)(fVar9 * (float10)dVar2);
+  output_matrix->m[2].y = (float)((float10)dVar5 * (float10)dVar2);
+  output_matrix->m[0].w = (float)((float10)dVar5 * (float10)dVar4 + fVar10 * fVar6 * (float10)dVar3)
+  ;
+  output_matrix->m[1].y = (float)((float10)dVar3 * (float10)dVar1 + fVar11 * fVar6 * (float10)dVar4)
+  ;
+  output_matrix->m[1].w =
+       (float)(-(float10)dVar5 * (float10)dVar3 + fVar10 * fVar6 * (float10)dVar4);
+  output_matrix->m[0].y =
+       (float)(-(float10)dVar1 * (float10)dVar4 + fVar11 * fVar6 * (float10)dVar3);
+  output_matrix->m[0].z =
+       -(position->z * output_matrix->m[0].y +
+        position->x * output_matrix->m[0].w + position->y * output_matrix->m[0].x);
+  output_matrix->m[1].z =
+       -(position->z * output_matrix->m[1].y +
+        position->x * output_matrix->m[1].w + position->y * output_matrix->m[1].x);
+  output_matrix->m[2].z =
+       -(position->z * output_matrix->m[2].y +
+        position->x * output_matrix->m[2].w + position->y * output_matrix->m[2].x);
   return;
 }

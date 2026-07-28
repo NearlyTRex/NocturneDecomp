@@ -2,16 +2,19 @@
 // Address: 0048af70
 // Address Range: [[0048af70, 0048afd6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0048af70(void)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0048af70(CFireEffect *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0048af70(void)
+void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0048af70(CFireEffect *this_ptr)
 
 {
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005b84b4);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005b84cc);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005b84e4);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b84b4);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b84cc);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b84e4);
   core_fire_cpp_loadStakeAssets_FUN_00483290();
   core_fire_cpp_loadFireBallAssets_FUN_00483ff0();
   core_fire_cpp_loadRockAssets_FUN_00484cb0();

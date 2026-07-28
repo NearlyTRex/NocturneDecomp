@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_pod_cpp_findFilesByExtension_FUN_004f8b90(int *param_1,char *param_2,int param_3,int param_4,int param_5)
+; int engine_pod_cpp_findFilesByExtension_FUN_004f8b90(int *param_1,byte *param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 004f8bbb
     INC EBX                             ; 004f8bbc
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004f8bbd
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004f8bc2
     INC ESI                             ; 004f8bc5
     MOV ECX,dword ptr [ESP + 0x2c]      ; 004f8bc6
@@ -144,7 +144,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f8cb9
     PUSH EAX                            ; 004f8cbd
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004f8cbe
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004f8cc3
     TEST EAX,EAX                        ; 004f8cc6
     JNZ 0x004f8d22                      ; 004f8cc8
@@ -160,7 +160,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x4]       ; 004f8cd9
     PUSH ECX                            ; 004f8cdc
     CALL engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150 ; 004f8cdd
-        ;   XREF to: 004f8150 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150()
+        ;   XREF to: 004f8150 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f8ce2
     TEST EAX,EAX                        ; 004f8ce5
     JL 0x004f8d3b                       ; 004f8ce7
@@ -175,7 +175,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x3c]      ; 004f8cf5
     PUSH EBP                            ; 004f8cf9
     CALL crt_string.c__strncpy_FUN_00565f70 ; 004f8cfa
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 004f8cff
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f8d02
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004f8d06

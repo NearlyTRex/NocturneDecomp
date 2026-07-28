@@ -2,45 +2,46 @@
 // Address: 004febd0
 // Address Range: [[004febd0, 004fee22]]
 // Convention: unknown
-// Signature: undefined4 core_script_cpp_FUN_004febd0(int param_1,undefined4 param_2,int param_3)
+// Signature: undefined4 core_script_cpp_FUN_004febd0(CScript *param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
-uint core_script_cpp_FUN_004febd0(int param_1,uint param_2,int param_3)
+uint core_script_cpp_FUN_004febd0(CScript *param_1,char *param_2,int param_3)
 
 {
   char cVar1;
   bool bVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
+  _FILE *file_handle;
+  long lVar4;
+  long lVar5;
   int iVar6;
   int iVar7;
   char *pcVar8;
   char *pcVar9;
   byte bVar11;
-  byte local_31c [512];
+  char local_31c [512];
   char local_11c [260];
   int local_18;
-  int local_14;
+  CStrList *local_14;
   char *pcVar10;
   
   bVar11 = 0;
-  local_14 = param_1 + 0x30;
+  local_14 = (CStrList *)&param_1->parsed_line_count;
   do {
     core_script_cpp_FUN_004fe500(param_1);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("world",param_2);
     if (iVar3 < 1) {
       return 1;
     }
-    splitpath(param_2,0,0,local_11c,0);
+    splitpath(param_2,(char *)0x0,(char *)0x0,local_11c,(char *)0x0);
     pcVar8 = ".txt";
-    iVar6 = -1;
+    iVar7 = -1;
     pcVar10 = local_11c;
     do {
       pcVar9 = pcVar10;
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
       pcVar9 = pcVar10 + (uint)bVar11 * -2 + 1;
       cVar1 = *pcVar10;
       pcVar10 = pcVar9;
@@ -56,37 +57,38 @@ uint core_script_cpp_FUN_004febd0(int param_1,uint param_2,int param_3)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_00504e70(param_1,local_11c);
-    iVar6 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
-    if (iVar6 == 0) {
+    file_handle = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
+    if (file_handle == (_FILE *)0x0) {
       return 1;
     }
     bVar2 = true;
-    iVar4 = _ftell(iVar6);
+    lVar4 = _ftell(file_handle);
     do {
       iVar7 = 0;
-      while (iVar5 = _ftell(iVar6), iVar5 < iVar3 + iVar4) {
-        iVar5 = _fgetc(iVar6);
-        if (iVar5 == -1) goto LAB_004fecd4;
-        if (iVar5 != 0xd) {
-          if (iVar5 == 10) goto LAB_004fecd4;
-          if (iVar5 == 0) {
-            _fclose(iVar6);
-            iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(param_1 + 0x30);
+      while (lVar5 = _ftell(file_handle), lVar5 < iVar3 + lVar4) {
+        iVar6 = _fgetc(file_handle);
+        if (iVar6 == -1) goto LAB_004fecd4;
+        if (iVar6 != 0xd) {
+          if (iVar6 == 10) goto LAB_004fecd4;
+          if (iVar6 == 0) {
+            _fclose(file_handle);
+            iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660
+                              ((CStrList *)&param_1->parsed_line_count);
             shape_edittool_cpp_FUN_0046fcd0
                       (0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
             core_script_cpp_FUN_004fe500(param_1);
             return 0;
           }
-          local_31c[iVar7] = (char)iVar5;
+          local_31c[iVar7] = (char)iVar6;
           iVar7 = iVar7 + 1;
         }
       }
       bVar2 = false;
 LAB_004fecd4:
-      local_31c[iVar7] = 0;
+      local_31c[iVar7] = '\0';
       shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_14,local_31c);
     } while (bVar2);
-    _fclose(iVar6);
+    _fclose(file_handle);
     core_script_cpp_FUN_004fee30(param_1);
     if (param_3 != 0) {
 LAB_004fee03:

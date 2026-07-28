@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_FUN_004b5110(int param_1)
+; int core_hero_cpp_FUN_004b5110(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -78,7 +78,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004b5163 | DAT_01fa3ff4
     PUSH ECX                            ; 004b5169
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b516a
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004b516f
     ADD ESP,0x8                         ; 004b5171
     TEST EAX,EAX                        ; 004b5174
@@ -104,7 +104,7 @@ section .text
     PUSH EDX                            ; 004b51aa
     FSTP float ptr [ESP + 0x14]         ; 004b51ab
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004b51af
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLD float ptr [EAX + 0x8]           ; 004b51b4
     FLDZ                                ; 004b51b7
     ADD ESP,0xc                         ; 004b51b9
@@ -136,7 +136,7 @@ section .text
     LEA EAX,[EBX + 0x470]               ; 004b51fc
     PUSH EAX                            ; 004b5202
     CALL core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890 ; 004b5203
-        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890()
+        ;   XREF to: 00481890 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 004b5208
     TEST EAX,EAX                        ; 004b520b
     JZ 0x004b521b                       ; 004b520d
@@ -153,7 +153,7 @@ section .text
     PUSH EAX                            ; 004b521e
     PUSH EBX                            ; 004b521f
     CALL core_door.cpp_CDoor_getMoveType_FUN_004564b0 ; 004b5220
-        ;   XREF to: 004564b0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_getMoveType_FUN_004564b0()
+        ;   XREF to: 004564b0 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_getMoveType_FUN_004564b0(CDoor * this_ptr, CDemonActor * opener)
     ADD ESP,0x8                         ; 004b5225
     MOV dword ptr [ESP + 0x18],EAX      ; 004b5228
     TEST EAX,EAX                        ; 004b522c
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 004b524d (CONDITIONAL_JUMP)  ; LAB_004b524d
     PUSH EBX                            ; 004b5239
     CALL core_door.cpp_CDoor_onOpened_FUN_00455270 ; 004b523a
-        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_onOpened_FUN_00455270()
+        ;   XREF to: 00455270 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_00455270(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004b523f
     MOV EAX,dword ptr [ESP + 0x18]      ; 004b5242
     MOV ESP,EBP                         ; 004b5246

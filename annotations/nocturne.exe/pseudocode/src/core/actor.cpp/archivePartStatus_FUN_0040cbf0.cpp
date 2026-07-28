@@ -2,90 +2,91 @@
 // Address: 0040cbf0
 // Address Range: [[0040cbf0, 0040ce7e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInstance *model_ptr,char *property_name)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(int param_1,uint param_2)
+void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
-  uint *puVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
+  CDeformableModelInstance *pCVar3;
+  SPartInstanceData *pSVar4;
+  int *piVar5;
   int local_14;
   
   if (DAT_00763e88 != 1) {
-    _fprintf(DAT_00763e84,"%s{ // %s\n",&DAT_005acc90,param_2);
+    _fprintf(DAT_00763e84,"%s{ // %s\n",&DAT_005acc90,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(1);
     _fprintf(DAT_00763e84,"%s%d\n",&DAT_005acc90,0x1e);
     _fprintf(DAT_00763e84,"%s",&DAT_005acc90);
-    iVar2 = param_1;
+    pCVar3 = model_ptr;
     do {
-      puVar1 = (uint *)(iVar2 + 0x2140);
-      iVar2 = iVar2 + 4;
-      _fprintf(DAT_00763e84,"%d ",*puVar1);
-    } while (iVar2 != param_1 + 0x78);
+      pSVar4 = &pCVar3->part_data;
+      pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;
+      _fprintf(DAT_00763e84,"%d ",pSVar4->visibility_flags[0]);
+    } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->transformed_vertices[2].z);
     _fprintf(DAT_00763e84,"\n");
-    iVar2 = 0;
+    iVar1 = 0;
     _fprintf(DAT_00763e84,"%s",&DAT_005acc90);
     do {
-      puVar1 = (uint *)(param_1 + 0x21b8);
-      param_1 = param_1 + 4;
-      iVar2 = iVar2 + 1;
-      _fprintf(DAT_00763e84,"%d ",*puVar1);
-    } while (iVar2 < 0x1e);
+      pSVar4 = &model_ptr->part_data;
+      model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;
+      iVar1 = iVar1 + 1;
+      _fprintf(DAT_00763e84,"%d ",pSVar4->texture_set_indices[0]);
+    } while (iVar1 < 0x1e);
     _fprintf(DAT_00763e84,"\n");
-    core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(0xffffffff);
+    core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(-1);
     _fprintf(DAT_00763e84,"%s}\n",&DAT_005acc90);
     return;
   }
   do {
-    iVar2 = _fgetc(DAT_00763e84);
-    if (iVar2 < 0) {
+    iVar1 = _fgetc(DAT_00763e84);
+    if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
-                ("part status opening brace",param_2);
+                ("part status opening brace",property_name);
     }
-  } while (iVar2 != 10);
+  } while (iVar1 != 10);
   _fscanf(DAT_00763e84,"%d",&local_14);
-  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(param_1);
-  iVar2 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(model_ptr);
+  iVar1 = 0;
   if (0 < local_14) {
-    iVar4 = param_1 + 0x2140;
+    pSVar4 = &model_ptr->part_data;
     do {
-      iVar3 = _fscanf(DAT_00763e84,"%d",iVar4);
-      if (iVar3 != 1) {
+      iVar2 = _fscanf(DAT_00763e84,"%d",pSVar4);
+      if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                   ("part status entry","description");
       }
-      iVar2 = iVar2 + 1;
-      iVar4 = iVar4 + 4;
-    } while (iVar2 < local_14);
+      iVar1 = iVar1 + 1;
+      pSVar4 = (SPartInstanceData *)(pSVar4->visibility_flags + 1);
+    } while (iVar1 < local_14);
   }
   _fscanf(DAT_00763e84," ");
-  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0(param_1);
-  iVar2 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0(model_ptr);
+  iVar1 = 0;
   if (0 < local_14) {
-    param_1 = param_1 + 0x21b8;
+    piVar5 = (model_ptr->part_data).texture_set_indices;
     do {
-      iVar4 = _fscanf(DAT_00763e84,"%d",param_1);
-      if (iVar4 != 1) {
+      iVar2 = _fscanf(DAT_00763e84,"%d",piVar5);
+      if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                   ("part texture entry","description");
       }
-      iVar2 = iVar2 + 1;
-      param_1 = param_1 + 4;
-    } while (iVar2 < local_14);
+      iVar1 = iVar1 + 1;
+      piVar5 = piVar5 + 1;
+    } while (iVar1 < local_14);
   }
   _fscanf(DAT_00763e84," ");
   do {
-    while (iVar2 = _fgetc(DAT_00763e84), -1 < iVar2) {
-      if (iVar2 == 10) {
+    while (iVar1 = _fgetc(DAT_00763e84), -1 < iVar1) {
+      if (iVar1 == 10) {
         return;
       }
     }
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
-              ("part status info closing brace",param_2);
-  } while (iVar2 != 10);
+              ("part status info closing brace",property_name);
+  } while (iVar1 != 10);
   return;
 }

@@ -2,15 +2,15 @@
 // Address: 0048ca90
 // Address Range: [[0048ca90, 0048caa9]]
 // Convention: unknown
-// Signature: int core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
+// Signature: float * core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
 
 #include "nocturne.h"
 
-int core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
+float * core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
 
 {
-  int iVar1;
+  CBox *pCVar1;
   
-  iVar1 = core_box_cpp_CBox_dtor_FUN_0041a6c0(param_1 + 0x180,0);
-  return iVar1 + -0x180;
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041a6c0((CBox *)(param_1 + 0x180),0);
+  return &pCVar1[-1].scrape_points[0].raytrace_intersection;
 }

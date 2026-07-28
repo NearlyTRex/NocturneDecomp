@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 373,
+    "complexity_score": 376,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 91,
     "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
@@ -136,13 +136,13 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 310
+    "total_lines": 313
   },
   "cross_references": [
     {
       "addr": "0049cc10",
       "from_addr": "0049cc79",
-      "name": "core_game.cpp_FUN_0049cc10",
+      "name": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,7 +157,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720",
-    "signature": "void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(int *param_1)"
+    "signature": "void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(CNetGame *param_1)"
   },
   "function_calls": [
     {
@@ -265,7 +265,7 @@
       {
         "call_addr": "0049cc79",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -281,7 +281,7 @@
       {
         "call_addr": "0049cd2f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -406,7 +406,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(int *param_1)",
+      "text": "void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(CNetGame *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -414,23 +414,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x44])) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x44])) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x44])) {",
+      "text": "if (((param_1->connection_type == CONNECTION_CLIENT) &&",
       "type": "unnamed_param"
     },
     {
@@ -438,23 +422,23 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x45] < 0) {",
+      "text": "(param_1->network_mode == NET_MODE_PLAYING)) && (-1 < param_1->server_player_index)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,param_1[0x44],0x41200000);",
+      "text": "(param_1->network_mode == NET_MODE_PLAYING)) && (-1 < param_1->server_player_index)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,param_1[0x44],0x41200000);",
+      "text": "if (param_1->local_player_index < 0) {",
       "type": "unnamed_param"
     },
     {
@@ -462,7 +446,15 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,param_1->server_player_index,10.0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,param_1->server_player_index,10.0);",
       "type": "unnamed_param"
     },
     {
@@ -470,36 +462,44 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 == 2) {",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[param_1[0x45] * 0x1e + 0x1a] == *(int *)(iVar1 + 0x1d09c04)) {",
+      "text": "if (param_1->connection_type == CONNECTION_CLIENT) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[param_1[0x45] * 0x1e + 0x1a] == *(int *)(iVar1 + 0x1d09c04)) {",
+      "text": "if (param_1->players[param_1->local_player_index].sim_frame_index ==",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(param_1,iVar1 + 0x1d09c04)",
+      "text": "if (param_1->players[param_1->local_player_index].sim_frame_index ==",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(SSimFrame *)(iVar1 + 0x1d09c04));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(param_1);",
@@ -507,23 +507,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1[param_1[0x45] * 0x1e + 0x1a];",
+      "text": "iVar2 = param_1->players[param_1->local_player_index].sim_frame_index;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1[param_1[0x45] * 0x1e + 0x1a];",
+      "text": "iVar2 = param_1->players[param_1->local_player_index].sim_frame_index;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 38,
       "match": "DAT_01d09c68",
       "severity": "mild",
       "text": "local_18 = &DAT_01d09c68;",
@@ -531,39 +531,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5a] = 0;",
+      "text": "param_1->has_pending_sim_frame = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (param_1[param_1[0x45] * 0x1e + 0x1a] != *(int *)(iVar1 + 0x1d09c04)) {",
+      "text": "while (param_1->players[param_1->local_player_index].sim_frame_index !=",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (param_1[param_1[0x45] * 0x1e + 0x1a] != *(int *)(iVar1 + 0x1d09c04)) {",
+      "text": "while (param_1->players[param_1->local_player_index].sim_frame_index !=",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5a] = 1;",
+      "text": "param_1->has_pending_sim_frame = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);",
@@ -571,15 +571,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 == 2) {",
+      "text": "if (param_1->connection_type == CONNECTION_CLIENT) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
       "text": "core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(param_1);",
@@ -587,7 +587,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((_DAT_01d09c00 - iVar1) * 100) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 40,
+      "line": 42,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

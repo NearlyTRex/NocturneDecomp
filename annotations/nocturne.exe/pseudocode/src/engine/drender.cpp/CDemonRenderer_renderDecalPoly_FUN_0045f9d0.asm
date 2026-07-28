@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(int *param_1,int param_2)
+; void engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(CDemonRenderer *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -75,7 +75,7 @@ section .text
     PUSH EDX                            ; 0045fa4f
     PUSH EBX                            ; 0045fa50
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045fa51
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045fa56
     POP ESI                             ; 0045fa59
     POP EDI                             ; 0045fa5a
@@ -89,7 +89,7 @@ section .text
     ADD EAX,0x8                         ; 0045fa65
     PUSH EAX                            ; 0045fa68
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0045fa69
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0045fa6e
     TEST EAX,EAX                        ; 0045fa71
     JZ 0x0045fa5b                       ; 0045fa73

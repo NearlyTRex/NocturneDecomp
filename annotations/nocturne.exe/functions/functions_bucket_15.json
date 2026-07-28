@@ -8,12 +8,38 @@
         "start":"00564915"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00564915",
-    "ret":"undefined1",
+    "name":"crt_unknown.c___arrdtor_FUN_00564915",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"destroy_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomTypeArrayInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -26,13 +52,29 @@
         "start":"0056b215"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056b215",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c_atexitRegisterNode_FUN_0056b215",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"node_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomStaticDestructorNode*"
+        }
+      ]
     }
   },
   {

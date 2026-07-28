@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_createMutex_FUN_00559bc0(void)
+; HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_00559bc0(void)
 ;
 ;
 ; XREF[1]:

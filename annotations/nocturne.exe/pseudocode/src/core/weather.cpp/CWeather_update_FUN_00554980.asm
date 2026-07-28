@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(int *param_1)
+; void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined8       Stack[-0x38]:8  local_38
@@ -113,7 +115,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 00554a39 | DAT_005b80f0
     PUSH ECX                            ; 00554a3f
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a40
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760()
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 00554a45
     PUSH 0x0                            ; 00554a48
     LEA EAX,[ESP + 0x14]                ; 00554a4a
@@ -121,7 +123,7 @@ section .text
     MOV EAX,[0x005b80f0]                ; 00554a4f | DAT_005b80f0
     PUSH EAX                            ; 00554a54
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a55
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760()
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 00554a5a
     PUSH 0x0                            ; 00554a5d
     LEA EAX,[ESP + 0x14]                ; 00554a5f
@@ -129,7 +131,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 00554a64 | DAT_005b80f0
     PUSH EDX                            ; 00554a6a
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a6b
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760()
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 00554a70
     PUSH 0x0                            ; 00554a73
     LEA EAX,[ESP + 0x14]                ; 00554a75
@@ -137,7 +139,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 00554a7a | DAT_005b80f0
     PUSH ECX                            ; 00554a80
     CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760 ; 00554a81
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760()
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 00554a86
     ADD EBX,0xc                         ; 00554a89
         ;   Label: LAB_00554a89
@@ -184,7 +186,7 @@ section .text
     PUSH ESI                            ; 00554b00
     FSTP float ptr [EAX + 0x2c]         ; 00554b01
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00554b04
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00554b09
     TEST EAX,EAX                        ; 00554b0c
     JZ 0x00554c71                       ; 00554b0e
@@ -220,7 +222,7 @@ section .text
         ;   Label: LAB_00554b59
     PUSH ECX                            ; 00554b5f
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 00554b60
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 00554b65
     TEST EAX,EAX                        ; 00554b68
     JZ 0x00554d1b                       ; 00554b6a
@@ -246,7 +248,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 00554b8f | DAT_005b7650
     PUSH ECX                            ; 00554b95
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00554b96
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00554b9b
     TEST EAX,EAX                        ; 00554b9e
     JNZ 0x00554bf9                      ; 00554ba0
@@ -273,7 +275,7 @@ section .text
         ;   Label: LAB_00554be3
     PUSH 0x1fb8508                      ; 00554be7
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 00554bec
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00554bf1
     JMP 0x005549ac                      ; 00554bf4
         ;   XREF to: 005549ac (UNCONDITIONAL_JUMP)  ; LAB_005549ac
@@ -282,7 +284,7 @@ section .text
     PUSH dword ptr [EAX + 0x30]         ; 00554bfc
     PUSH 0x1fb8508                      ; 00554bff
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 00554c04
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00554c09
     MOV EAX,dword ptr [EBP + 0x14]      ; 00554c0c
     MOV dword ptr [EAX + 0x24],0x0      ; 00554c0f
@@ -293,7 +295,7 @@ section .text
         ;   Label: LAB_00554c22
     PUSH ESI                            ; 00554c28
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00554c29
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00554c2e
     MOV ESP,EBP                         ; 00554c31
     POP EBP                             ; 00554c33
@@ -304,7 +306,7 @@ section .text
     PUSH 0x3ecccccd                     ; 00554c38
         ;   Label: LAB_00554c38
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00554c3d
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 00554c42
     TEST EAX,EAX                        ; 00554c45
     JZ 0x00554c60                       ; 00554c47
@@ -314,7 +316,7 @@ section .text
     PUSH 0x3dcccccd                     ; 00554c4d
     PUSH EDX                            ; 00554c52
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 ; 00554c53
-        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40()
+        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 00554c58
     JMP 0x00554b14                      ; 00554c5b
         ;   XREF to: 00554b14 (UNCONDITIONAL_JUMP)  ; LAB_00554b14
@@ -322,7 +324,7 @@ section .text
         ;   Label: LAB_00554c60
     PUSH EAX                            ; 00554c63
     CALL core_weather.cpp_CWeather_createThunder_FUN_00554fd0 ; 00554c64
-        ;   XREF to: 00554fd0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_createThunder_FUN_00554fd0()
+        ;   XREF to: 00554fd0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createThunder_FUN_00554fd0(CWeather * this_ptr)
     ADD ESP,0x4                         ; 00554c69
     JMP 0x00554b14                      ; 00554c6c
         ;   XREF to: 00554b14 (UNCONDITIONAL_JUMP)  ; LAB_00554b14
@@ -369,7 +371,7 @@ section .text
     PUSH 0x1fb8508                      ; 00554cf7
     FSTP float ptr [EAX + 0x28]         ; 00554cfc
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 00554cff
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00554d04
     JMP 0x00554b14                      ; 00554d07
         ;   XREF to: 00554b14 (UNCONDITIONAL_JUMP)  ; LAB_00554b14
@@ -385,7 +387,7 @@ section .text
     MOV ESI,dword ptr [0x005bed68]      ; 00554d24 | DAT_005bed68
     PUSH ESI                            ; 00554d2a
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 00554d2b
-        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playSound_FUN_0052ea40()
+        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 00554d30
     MOV [0x02de0770],EAX                ; 00554d33 | DAT_02de0770
     MOV ESP,EBP                         ; 00554d38

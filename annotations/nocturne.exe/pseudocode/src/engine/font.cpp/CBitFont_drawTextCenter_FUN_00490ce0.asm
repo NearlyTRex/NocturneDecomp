@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)
 ;
 ;
 ; XREF[3]:
@@ -43,7 +43,7 @@ section .text
     PUSH EDX                            ; 00490d13
     PUSH ESI                            ; 00490d14
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 00490d15
-        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0()
+        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490d1a
     POP ESI                             ; 00490d1d
     POP EBX                             ; 00490d1e

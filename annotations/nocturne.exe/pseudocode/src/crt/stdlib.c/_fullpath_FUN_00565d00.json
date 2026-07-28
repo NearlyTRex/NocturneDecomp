@@ -2,31 +2,29 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 283,
+    "complexity_score": 73,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 23,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unaffected_reg",
-      "unnamed_param"
+      "unaffected_reg"
     ],
     "total_lines": 147
   },
   "cross_references": [
     {
-      "addr": "005687bc",
-      "from_addr": "00568807",
-      "name": "FUN_005687bc",
+      "addr": "0056c864",
+      "from_addr": "0056c8cd",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056c864",
-      "from_addr": "0056c8cd",
-      "name": "FUN_0056c864",
+      "addr": "005687bc",
+      "from_addr": "00568807",
+      "name": "crt_io.c_getTempDirectory_FUN_005687bc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,13 +56,18 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdlib.c__fullpath_FUN_00565d00",
-    "signature": "__cdecl char(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3)"
+    "signature": "char * __cdecl crt_stdlib_c__fullpath_FUN_00565d00(char *buffer,char *path,SIZE_T buffer_size)"
   },
   "function_calls": [
     {
       "addr": "0056c73c",
       "is_variadic": false,
       "name": "crt_errno.c___set_errno_FUN_0056c73c"
+    },
+    {
+      "addr": "00568e80",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
     },
     {
       "addr": "005635b0",
@@ -82,14 +85,9 @@
       "name": "crt_unknown.c_FUN_005638d0"
     },
     {
-      "addr": "00568e80",
-      "is_variadic": false,
-      "name": "FUN_00568e80"
-    },
-    {
       "addr": "0056c5f0",
       "is_variadic": false,
-      "name": "FUN_0056c5f0"
+      "name": "crt_watcom.c_getcwd_FUN_0056c5f0"
     },
     {
       "addr": "EXTERNAL:00000063",
@@ -134,7 +132,7 @@
       {
         "call_addr": "0056c8cd",
         "call_type": "direct",
-        "caller": "FUN_0056c864",
+        "caller": "crt_io.c_getFileStat_FUN_0056c864",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +143,7 @@
       {
         "call_addr": "00568807",
         "call_type": "direct",
-        "caller": "FUN_005687bc",
+        "caller": "crt_io.c_getTempDirectory_FUN_005687bc",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,10 +175,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.440476190476191,
@@ -210,38 +208,36 @@
     "pcode_op_count": 373
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "__cdecl char(*) [4] _fullpath(char(*param_1) [4],LPCSTR param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Unaffected register variable",
       "line": 8,
@@ -251,84 +247,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == (char (*) [4])0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = 0x104;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (char (*) [4])malloc(0x104);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 14,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "unaff_EBP = param_1;",
+      "text": "unaff_EBP = (char (*) [4])buffer;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "unaff_EBP = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == (char (*) [4])0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (LPCSTR)0x0) && (*param_2 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (LPCSTR)0x0) && (*param_2 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_2,\"con\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 4) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
@@ -337,73 +261,6 @@
       "severity": "moderate",
       "text": "FUN_005638d0(unaff_EBP);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = \"con\";",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DVar3 = GetFullPathNameA(param_2,param_3,*param_1,&pCStack_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pacVar1 = (char (*) [4])FUN_0056c5f0(param_1,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pacVar1 = (char (*) [4])FUN_0056c5f0(param_1,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

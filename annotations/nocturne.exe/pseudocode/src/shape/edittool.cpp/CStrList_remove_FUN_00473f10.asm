@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(int *param_1,int param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(CStrList *this_ptr,int start_index,int end_index)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   start_index
+; int              Stack[0xc]:4   end_index
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_remove_FUN_00476100 at 0047611f
@@ -89,7 +93,7 @@ section .text
     ADD EAX,EBP                         ; 00473fa8
     PUSH EAX                            ; 00473faa
     CALL crt_string.c_memmove_FUN_00566170 ; 00473fab
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00473fb0
     POP EBP                             ; 00473fb3
     POP EDI                             ; 00473fb4

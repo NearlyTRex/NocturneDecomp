@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_0048c760(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
 ;
 ; XREF[1]:
 ;   core_weather.cpp_CWeather_update_FUN_00554980 at 00554a40

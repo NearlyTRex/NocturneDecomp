@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   cockpit_pkbmpset.cpp_FUN_004f5920 at 004f59b1
-;   cockpit_pkbmpset.cpp_FUN_004f59d0 at 004f5a0d
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_004f59d0 at 004f5a0d
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920 at 004f59b1
 ;
 ; *****************************************************************************
 

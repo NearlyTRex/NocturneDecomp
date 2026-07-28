@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_readActorReference_FUN_00505200(undefined4 param_1,undefined4 *param_2)
+; void __cdecl core_script_cpp_readActorReference_FUN_00505200(_FILE *file_handle,CDemonActor *actor_out)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor *    Stack[0x8]:4   actor_out
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ;
@@ -45,7 +48,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00505235
     PUSH EAX                            ; 00505239
     CALL crt_string.c__stricmp_FUN_00564520 ; 0050523a
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0050523f
     TEST EAX,EAX                        ; 00505242
     JNZ 0x0050525c                      ; 00505244
@@ -62,7 +65,7 @@ section .text
     MOV ECX,dword ptr [0x005baf90]      ; 0050525f | DAT_005baf90
     PUSH ECX                            ; 00505265
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 00505266
-        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0()
+        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0050526b
     MOV EDX,dword ptr [ESP + 0xd8]      ; 0050526e
     MOV dword ptr [EDX],EAX             ; 00505275

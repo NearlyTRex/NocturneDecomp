@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00458622
         ;   Label: LAB_00458622
     CALL core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640 ; 00458623
-        ;   XREF to: 00458640 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640()
+        ;   XREF to: 00458640 (UNCONDITIONAL_CALL)  ; CDraculaBride * core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640(CDraculaBride * this_ptr)
     ADD ESP,0x4                         ; 00458628
     RET                                 ; 0045862b
 

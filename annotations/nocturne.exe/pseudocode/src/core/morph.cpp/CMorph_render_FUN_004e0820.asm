@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(int param_1,float param_2)
+; void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(CMorph *this_ptr,float morph_t)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   morph_t
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -51,7 +54,7 @@ section .text
     FSTP float ptr [ESP]                ; 004e0859
     PUSH EBX                            ; 004e085c
     CALL core_morph.cpp_CMorphModel_render_FUN_004dfc70 ; 004e085d
-        ;   XREF to: 004dfc70 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_render_FUN_004dfc70()
+        ;   XREF to: 004dfc70 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_004dfc70(CMorphModel * this_ptr, float morph_t, SMorphPoint * ref_points)
     ADD ESP,0xc                         ; 004e0862
     MOV EDI,dword ptr [EBX + 0x58]      ; 004e0865
     PUSH EDI                            ; 004e0868
@@ -59,7 +62,7 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 004e086f
     PUSH EBX                            ; 004e0873
     CALL core_morph.cpp_CMorphModel_render_FUN_004dfc70 ; 004e0874
-        ;   XREF to: 004dfc70 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_render_FUN_004dfc70()
+        ;   XREF to: 004dfc70 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_004dfc70(CMorphModel * this_ptr, float morph_t, SMorphPoint * ref_points)
     ADD ESP,0xc                         ; 004e0879
     POP EDI                             ; 004e087c
     POP ESI                             ; 004e087d

@@ -13,4 +13,4 @@ undefined8 FUN_0051f930(undefined4 *param_1);
 
 // Original: core_slew.cpp_CSlew_processInput_FUN_0051f980
 // Address: 0051f980
-void __cdecl CSlew::processInput(float *param_1);
+void __cdecl CSlew::processInput(CSlew *this_ptr);

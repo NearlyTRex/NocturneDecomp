@@ -17,11 +17,11 @@ CDemonActorType * FUN_004b2750(void);
 
 // Original: core_gun.cpp_FUN_004b2760
 // Address: 004b2760
-int FUN_004b2760(undefined4 param_1);
+CWeapon * FUN_004b2760(CWeapon *param_1);
 
 // Original: core_gun.cpp_FUN_004b27c0
 // Address: 004b27c0
-undefined4 FUN_004b27c0(int param_1);
+undefined4 FUN_004b27c0(CWeapon *param_1);
 
 // Original: core_gun.cpp_FUN_004b2fc0
 // Address: 004b2fc0
@@ -29,4 +29,4 @@ undefined4 FUN_004b2fc0(void);
 
 // Original: core_gun.cpp_FUN_004b2ff0
 // Address: 004b2ff0
-undefined4 FUN_004b2ff0(undefined4 param_1,byte param_2);
+CWeapon * FUN_004b2ff0(CWeapon *param_1,byte param_2);

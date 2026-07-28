@@ -2,11 +2,11 @@
 // Address: 004391b0
 // Address Range: [[004391b0, 004392c1]]
 // Convention: unknown
-// Signature: int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,undefined4 param_2,undefined4 param_3)
+// Signature: int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,char *param_2,char *param_3)
 
 #include "nocturne.h"
 
-int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,uint param_2,uint param_3)
+int support_codec_cpp_CCodec_processFiles_FUN_004391b0(int *param_1,char *param_2,char *param_3)
 
 {
   int iVar1;

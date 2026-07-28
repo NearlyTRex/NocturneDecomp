@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(float param_1,float param_2)
+; undefined4 sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -48,7 +48,7 @@
 ;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
-;   sound_sndmain.cpp_FUN_005257e0
+;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
 ;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
     JZ 0x00523f40                       ; 00523f20
         ;   XREF to: 00523f40 (CONDITIONAL_JUMP)  ; LAB_00523f40
     PUSH EAX                            ; 00523f22
-    CALL sound_sndmain.cpp_FUN_005257e0 ; 00523f23
-        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005257e0()
+    CALL sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0 ; 00523f23
+        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00523f28
     TEST EAX,EAX                        ; 00523f2b
     JZ 0x0052416c                       ; 00523f2d
@@ -112,7 +112,7 @@ section .text
     FMUL float ptr [ESP + 0x3c]         ; 00523f46
     MOV ESI,dword ptr [EBX + 0x138]     ; 00523f4a
     CALL crt_math.c_round_FUN_00563a30  ; 00523f50
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x4]         ; 00523f55
     CMP ESI,dword ptr [ESP + 0x4]       ; 00523f59
     JGE 0x00523f63                      ; 00523f5d
@@ -123,7 +123,7 @@ section .text
     FILD dword ptr [EBX + 0x140]        ; 00523f67
     FSUB double ptr [EAX + 0x118]       ; 00523f6d
     CALL crt_math.c_round_FUN_00563a30  ; 00523f73
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00523f78
     MOV EDI,dword ptr [ESP + 0x8]       ; 00523f7c
     TEST EDI,EDI                        ; 00523f80
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 00523fc4 (CONDITIONAL_JUMP)  ; LAB_00523fc4
     PUSH EBX                            ; 00523fa9
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00523faa
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     MOV ECX,EAX                         ; 00523faf
     MOV EAX,0x3c00                      ; 00523fb1
     MOV EDX,EAX                         ; 00523fb6
@@ -156,7 +156,7 @@ section .text
     FMUL float ptr [ESP + 0x40]         ; 00523fd0
     DEC EAX                             ; 00523fd4
     CALL crt_math.c_round_FUN_00563a30  ; 00523fd5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 00523fda
     CMP EAX,dword ptr [ESP]             ; 00523fdd
     JGE 0x00523fe5                      ; 00523fe0
@@ -230,7 +230,7 @@ section .text
     PUSH 0x0                            ; 005240a8
     PUSH EAX                            ; 005240aa
     CALL sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10 ; 005240ab
-        ;   XREF to: 00523d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10()
+        ;   XREF to: 00523d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)
     ADD ESP,0xc                         ; 005240b0
     MOV ESI,0x2db1118                   ; 005240b3
         ;   Label: LAB_005240b3
@@ -262,11 +262,11 @@ section .text
         ;   Label: LAB_005240fa
     PUSH ECX                            ; 005240fe
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005240ff
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 00524104
     PUSH EBX                            ; 00524107
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 00524108
-        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60()
+        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0052410d
     XOR EAX,EAX                         ; 00524110
     ADD ESP,0x24                        ; 00524112
@@ -396,7 +396,7 @@ section .text
         ;   XREF to: 005243f4 (CONDITIONAL_JUMP)  ; LAB_005243f4
     PUSH EBX                            ; 0052426f
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00524270
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     MOV ECX,ESI                         ; 00524275
     IMUL ECX,EAX                        ; 00524277
     ADD ESP,0x4                         ; 0052427a
@@ -412,7 +412,7 @@ section .text
     PUSH EBX                            ; 00524292
         ;   Label: LAB_00524292
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 00524293
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0()
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
     ADD ESP,0x4                         ; 00524298
     MOV ECX,dword ptr [ESP + 0x20]      ; 0052429b
         ;   Label: LAB_0052429b
@@ -470,7 +470,7 @@ section .text
     PUSH 0x80                           ; 00524335
     PUSH ESI                            ; 0052433a
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052433b
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00524340
     JMP 0x0052423c                      ; 00524343
         ;   XREF to: 0052423c (UNCONDITIONAL_JUMP)  ; LAB_0052423c
@@ -480,7 +480,7 @@ section .text
     PUSH 0x0                            ; 0052434b
     PUSH ESI                            ; 0052434d
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052434e
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00524353
     JMP 0x0052423c                      ; 00524356
         ;   XREF to: 0052423c (UNCONDITIONAL_JUMP)  ; LAB_0052423c
@@ -514,12 +514,12 @@ section .text
     PUSH EBP                            ; 005243a4
     PUSH EBX                            ; 005243a5
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 005243a6
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005243ab
     PUSH EAX                            ; 005243ae
     PUSH ESI                            ; 005243af
     CALL crt_stdio.c_fread_FUN_005636d0 ; 005243b0
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005243b5
     MOV dword ptr [ESP + 0x20],EAX      ; 005243b8
     MOV EAX,dword ptr [EBX + 0x14c]     ; 005243bc
@@ -528,7 +528,7 @@ section .text
         ;   XREF to: 00524240 (CONDITIONAL_JUMP)  ; LAB_00524240
     PUSH EBX                            ; 005243cc
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 005243cd
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0()
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
     ADD ESP,0x4                         ; 005243d2
     PUSH EBX                            ; 005243d5
     PUSH 0x592cc4                       ; 005243d6 | = "Error reading %s while streaming\n"
@@ -539,7 +539,7 @@ section .text
     PUSH ESI                            ; 005243e1
     PUSH EDX                            ; 005243e2
     CALL sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0 ; 005243e3
-        ;   XREF to: 004e82d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0()
+        ;   XREF to: 004e82d0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0(CMP3Decoder * this_ptr, short * output_buffer, int samples_requested)
     ADD ESP,0xc                         ; 005243e8
     MOV dword ptr [ESP + 0x20],EAX      ; 005243eb
     JMP 0x00524240                      ; 005243ef

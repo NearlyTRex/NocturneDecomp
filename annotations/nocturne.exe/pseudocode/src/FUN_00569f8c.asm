@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00569f8c(char *param_1)
+; void FUN_00569f8c(byte *param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     PUSH EAX                            ; 00569f9a
     INC EBX                             ; 00569f9b
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 00569f9c
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     MOV byte ptr [EBX + -0x1],AL        ; 00569fa1
     MOV DL,byte ptr [EBX]               ; 00569fa4
     ADD ESP,0x4                         ; 00569fa6

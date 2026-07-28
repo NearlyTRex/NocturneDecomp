@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(undefined4 param_1,float *param_2,float *param_3,int param_4)
+; void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   vertex_position
+; CVector3f *      Stack[0xc]:4   position_offset
+; int              Stack[0x10]:4   vertex_index
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -120,17 +125,17 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 0050bf02
     FXCH ST2                            ; 0050bf06
     CALL crt_math.c_round_FUN_00563a30  ; 0050bf08
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x28]        ; 0050bf0d
     MOV EAX,dword ptr [ESP + 0x28]      ; 0050bf11
     CALL crt_math.c_round_FUN_00563a30  ; 0050bf15
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     SHL EAX,0x8                         ; 0050bf1a
     FISTP dword ptr [ESP + 0x28]        ; 0050bf1d
     MOV dword ptr [EBX + 0x20],EAX      ; 0050bf21 | DAT_005c5034
     MOV EAX,dword ptr [ESP + 0x28]      ; 0050bf24
     CALL crt_math.c_round_FUN_00563a30  ; 0050bf28
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     SHL EAX,0x8                         ; 0050bf2d
     FISTP dword ptr [ESP + 0x28]        ; 0050bf30
     MOV dword ptr [EBX + 0x24],EAX      ; 0050bf34 | DAT_005c5038

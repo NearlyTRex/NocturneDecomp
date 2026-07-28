@@ -9,12 +9,12 @@
 void core_ghoul_cpp_FUN_004a8c70(void)
 
 {
-  int iVar1;
+  CGhoul *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbda0);
-  if (iVar1 == 0) {
+  this_ptr = (CGhoul *)FUN_0056497c(0xbda0);
+  if (this_ptr == (CGhoul *)0x0) {
     return;
   }
-  core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(iVar1);
+  core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(this_ptr);
   return;
 }

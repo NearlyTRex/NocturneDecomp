@@ -2,40 +2,42 @@
 // Address: 0051a700
 // Address Range: [[0051a700, 0051a77c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0051a700(int *param_1,undefined4 param_2)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0051a700(CDeformableModel *this_ptr,CBoundingBox3D *bounding_box)
 
 #include "nocturne.h"
 
-int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0051a700(int *param_1,uint param_2)
+int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0051a700(CDeformableModel *this_ptr,CBoundingBox3D *bounding_box)
 
 {
   int iVar1;
   float fVar2;
-  float10 fVar3;
+  int iVar3;
+  int *piVar4;
+  double dVar5;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar1 == 0) {
     iVar1 = 0;
-    if (1 < *param_1) {
-      fVar2 = (float)core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(param_2);
-      iVar1 = *param_1;
-      fVar3 = (float10)round((float10)fVar2);
-      iVar1 = iVar1 + -1;
-      if (0 < iVar1) {
-        param_1 = param_1 + iVar1 * 2;
+    if (1 < this_ptr->num_lods) {
+      fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(bounding_box);
+      iVar1 = this_ptr->num_lods;
+      dVar5 = round((double)fVar2);
+      iVar3 = iVar1 + -1;
+      if (0 < iVar3) {
+        piVar4 = &this_ptr->lod_info[iVar1 + -2].shadow_only_flag;
         do {
-          if ((param_1[2] == 0) && ((int)ROUND(fVar3) < param_1[1])) {
-            return iVar1;
+          if ((piVar4[2] == 0) && ((int)ROUND(dVar5) < piVar4[1])) {
+            return iVar3;
           }
-          iVar1 = iVar1 + -1;
-          param_1 = param_1 + -2;
-        } while (0 < iVar1);
+          iVar3 = iVar3 + -1;
+          piVar4 = piVar4 + -2;
+        } while (0 < iVar3);
       }
-      return iVar1;
+      return iVar3;
     }
   }
   else {
-    iVar1 = *param_1 + -1;
+    iVar1 = this_ptr->num_lods + -1;
   }
   return iVar1;
 }

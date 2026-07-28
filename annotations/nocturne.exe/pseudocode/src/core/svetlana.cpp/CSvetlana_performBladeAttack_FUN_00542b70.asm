@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(int param_1,int param_2)
+; void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetlana *this_ptr,int bone_index)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined        Stack[-0x84]:1  local_84
 ; undefined4       Stack[-0x80]:4  local_80
@@ -55,7 +58,7 @@ section .text
     PUSH EAX                            ; 00542b8b
     XOR EBX,EBX                         ; 00542b8c
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 00542b8e
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     MOV EDX,0xffffffff                  ; 00542b93
     MOV ESI,EAX                         ; 00542b98
     ADD ESP,0x4                         ; 00542b9a
@@ -85,14 +88,14 @@ section .text
     LEA EBX,[EBP + 0x150]               ; 00542bd6
     PUSH EBX                            ; 00542bdc
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00542bdd
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00542be2
     PUSH EAX                            ; 00542be5
     LEA EAX,[ESP + 0x64]                ; 00542be6
     PUSH EAX                            ; 00542bea
     PUSH EBP                            ; 00542beb
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00542bec
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00542bf1
     MOV EDX,dword ptr [ESP + 0x6c]      ; 00542bf4
     PUSH EDX                            ; 00542bf8
@@ -100,7 +103,7 @@ section .text
     PUSH EAX                            ; 00542bfd
     PUSH EBX                            ; 00542bfe
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00542bff
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00542c04
     PUSH EAX                            ; 00542c07
     LEA EAX,[ESP + 0x4c]                ; 00542c08
@@ -108,7 +111,7 @@ section .text
     PUSH EBP                            ; 00542c0d
     XOR ESI,ESI                         ; 00542c0e
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00542c10
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00542c15
     XOR ECX,ECX                         ; 00542c18
     XOR EDI,EDI                         ; 00542c1a
@@ -146,7 +149,7 @@ section .text
         ;   Label: LAB_00542c72
     PUSH EAX                            ; 00542c74
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00542c75
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     MOV EAX,0x41700000                  ; 00542c7a
     ADD ESP,0x4                         ; 00542c7f
     MOV EDX,0x3f333333                  ; 00542c82

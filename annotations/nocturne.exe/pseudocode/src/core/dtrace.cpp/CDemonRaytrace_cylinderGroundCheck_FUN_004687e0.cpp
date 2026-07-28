@@ -2,38 +2,37 @@
 // Address: 004687e0
 // Address Range: [[004687e0, 00468a11]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)
+// Signature: float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out)
 
 #include "nocturne.h"
 
-uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int param_1,float *param_2,float param_3)
+float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out)
 
 {
-  bool bVar1;
-  int iVar2;
-  uint *unaff_EBX;
+  float fVar1;
+  float fVar2;
   float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  bool bVar7;
+  CDemonCube *this_ptr_00;
+  int iVar8;
+  CVector3f *unaff_EBX;
+  float fVar9;
   float *unaff_ESI;
-  int iVar4;
-  uint unaff_EDI;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
-  float10 fVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
-  float10 fVar12;
-  uint uVar13;
-  uint uStack_70;
-  uint uStack_6c;
-  uint uStack_68;
-  float local_64;
-  float local_60;
-  float local_5c;
+  int grid_x;
+  float unaff_EDI;
+  double dVar10;
+  double dVar11;
+  double dVar12;
+  double dVar13;
+  double dVar14;
+  double dVar15;
+  CVector3f CStack_70;
+  CVector3f local_64;
   int local_58;
-  uint local_54 [2];
-  float local_4c;
+  CVector3f local_54;
   float local_48;
   float local_44;
   int local_3c;
@@ -43,73 +42,73 @@ uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int
   float local_2c;
   int local_20;
   
-  local_4c = *param_2;
-  local_44 = param_2[2];
-  local_64 = *param_2;
-  local_48 = param_2[1] + 2.0f;
-  local_5c = param_2[2];
-  local_60 = param_2[1] + 131072.094299316._0_4_;
-  local_38 = local_4c - *(float *)(param_1 + 0x10);
-  fVar3 = *(float *)(param_1 + 0x28);
-  fVar5 = (float10)local_44 - (float10)*(float *)(param_1 + 0x18);
-  local_34 = (float)fVar5;
-  local_2c = 1.0 / *(float *)(param_1 + 0x30);
-  fVar11 = (float10)local_2c;
-  fVar6 = (float10)local_38;
-  fVar7 = (float10)local_34;
-  fVar12 = (float10)local_2c;
-  bVar1 = false;
-  uStack_68 = 0x4688b5;
-  fVar8 = (float10)round();
-  uStack_6c = 0x4688bc;
-  fVar9 = (float10)round();
+  local_54.z = pos->x;
+  local_44 = pos->z;
+  local_64.x = pos->x;
+  local_48 = pos->y + 2.0f;
+  local_64.z = pos->z;
+  local_64.y = pos->y + 131072.094299316._0_4_;
+  fVar9 = 1.0 / (this_ptr->cell_size).y;
+  local_38 = local_54.z - (this_ptr->bbox_min).x;
+  fVar1 = local_38 - radius;
+  fVar3 = 1.0 / (this_ptr->cell_size).x;
+  local_34 = local_44 - (this_ptr->bbox_min).z;
+  local_2c = 1.0 / (this_ptr->cell_size).z;
+  fVar5 = local_64.y - (this_ptr->bbox_min).y;
+  fVar4 = (local_34 - radius) * local_2c;
+  fVar2 = local_38 + radius;
+  fVar6 = (local_34 + radius) * local_2c;
+  bVar7 = false;
+  CStack_70.z = 6.477526e-39;
+  dVar10 = round((double)((local_48 - (this_ptr->bbox_min).y) * fVar9));
+  CStack_70.y = 6.477536e-39;
+  dVar11 = round((double)(fVar5 * fVar9));
   local_44 = -1e+30;
-  uStack_70 = 0x4688db;
-  local_2c = (float)(int)ROUND(fVar9);
-  local_20 = (int)ROUND(fVar8);
-  fVar10 = (float10)round();
-  fVar11 = (float10)round((fVar5 - (float10)param_3) * fVar11);
-  fVar5 = (float10)round
-                             ((fVar6 + (float10)param_3) * ((float10)1 / (float10)fVar3));
-  uVar13 = 0x4688f0;
-  fVar12 = (float10)round((fVar7 + (float10)param_3) * fVar12);
-  local_58 = (int)ROUND(fVar10);
-  local_34 = (float)(int)ROUND(fVar11);
-  local_38 = (float)(int)ROUND(fVar5);
-  local_2c = (float)(int)ROUND(fVar12);
-  if ((int)ROUND(fVar9) <= (int)ROUND(fVar8)) {
+  CStack_70.x = 6.477579e-39;
+  local_2c = (float)(int)ROUND(dVar11);
+  local_20 = (int)ROUND(dVar10);
+  dVar12 = round((double)(fVar1 * fVar3));
+  dVar13 = round((double)fVar4);
+  dVar14 = round((double)(fVar2 * fVar3));
+  dVar15 = round((double)fVar6);
+  local_58 = (int)ROUND(dVar12);
+  local_34 = (float)(int)ROUND(dVar13);
+  local_38 = (float)(int)ROUND(dVar14);
+  local_2c = (float)(int)ROUND(dVar15);
+  if ((int)ROUND(dVar11) <= (int)ROUND(dVar10)) {
     do {
-      iVar4 = local_58;
+      grid_x = local_58;
       if (local_58 <= (int)local_38) {
         do {
-          fVar3 = local_34;
+          fVar9 = local_34;
           if ((int)local_34 <= (int)local_2c) {
             do {
-              iVar2 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
-                                (param_1,iVar4,local_30,fVar3,uVar13);
-              if (iVar2 != 0) {
-                iVar2 = core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500
-                                  (iVar2,&local_64,unaff_EDI,local_54,&uStack_70,&local_48);
-                if (iVar2 != 0) {
-                  bVar1 = true;
+              this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
+                                      (this_ptr,grid_x,local_30,(int)fVar9);
+              if (this_ptr_00 != (CDemonCube *)0x0) {
+                iVar8 = core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500
+                                  (this_ptr_00,&local_64,unaff_EDI,&local_54,&CStack_70,
+                                   (uint *)&local_48);
+                if (iVar8 != 0) {
+                  bVar7 = true;
                 }
               }
-              fVar3 = (float)((int)fVar3 + 1);
-            } while ((int)fVar3 <= (int)local_2c);
+              fVar9 = (float)((int)fVar9 + 1);
+            } while ((int)fVar9 <= (int)local_2c);
           }
-          iVar4 = iVar4 + 1;
-        } while (iVar4 <= (int)local_38);
+          grid_x = grid_x + 1;
+        } while (grid_x <= (int)local_38);
       }
-      if (bVar1) {
-        if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {
-          *unaff_EBX = uStack_70;
-          unaff_EBX[1] = uStack_6c;
-          unaff_EBX[2] = uStack_68;
+      if (bVar7) {
+        if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {
+          unaff_EBX->x = CStack_70.x;
+          unaff_EBX->y = CStack_70.y;
+          unaff_EBX->z = CStack_70.z;
         }
         if (unaff_ESI != (float *)0x0) {
           *unaff_ESI = local_48;
         }
-        return local_54[0];
+        return local_54.x;
       }
       local_30 = local_30 + -1;
     } while (local_3c <= local_30);
@@ -117,10 +116,10 @@ uint __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(int
   if (unaff_ESI != (float *)0x0) {
     *unaff_ESI = 1.4013e-45;
   }
-  if (unaff_EBX != (uint *)0x0) {
-    unaff_EBX[1] = 0x3f800000;
-    unaff_EBX[2] = 0;
-    *unaff_EBX = 0;
+  if (unaff_EBX != (CVector3f *)0x0) {
+    unaff_EBX->y = 1.0;
+    unaff_EBX->z = 0.0;
+    unaff_EBX->x = 0.0;
   }
-  return 0x4688e9;
+  return 6.477599e-39;
 }

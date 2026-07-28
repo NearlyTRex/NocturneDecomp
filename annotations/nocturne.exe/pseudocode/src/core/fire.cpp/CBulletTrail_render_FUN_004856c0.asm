@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(float *param_1)
+; void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_ptr)
 ;
+; Parameters:
+; CBulletTrail *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -109,7 +111,7 @@ section .text
     FLD float ptr [ESP + 0x4]           ; 0048575d
     FDIV float ptr [EBX + 0x1c]         ; 00485761
     CALL crt_math.c_round_FUN_00563a30  ; 00485764
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x60]        ; 00485769
     MOV ECX,dword ptr [ESP + 0x60]      ; 0048576d
     CMP ECX,EDX                         ; 00485771
@@ -207,7 +209,7 @@ section .text
     PUSH EAX                            ; 00485870 | DAT_01b4d738
     FSTP float ptr [ESP + 0x54]         ; 00485871
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00485875
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0048587a
     XOR EDX,EDX                         ; 0048587d
     LEA EAX,[ESP + 0x38]                ; 0048587f
@@ -220,11 +222,11 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00485895 | DAT_005ae704
     PUSH EDX                            ; 0048589b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0048589c
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004858a1
     FLD float ptr [ESP]                 ; 004858a4
     CALL crt_math.c_round_FUN_00563a30  ; 004858a7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x6c]        ; 004858ac
     MOV ECX,dword ptr [ESP + 0x6c]      ; 004858b0
     PUSH ECX                            ; 004858b4
@@ -233,12 +235,12 @@ section .text
     MOV EAX,dword ptr [EBX + 0x18]      ; 004858b9
     PUSH EAX                            ; 004858bc
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 ; 004858bd
-        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040()
+        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 004858c2
     MOV EDX,dword ptr [0x005ae704]      ; 004858c5 | DAT_005ae704
     PUSH EDX                            ; 004858cb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004858cc
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 004858d1
     MOV ECX,dword ptr [ESP + 0x60]      ; 004858d4
     INC ESI                             ; 004858d8

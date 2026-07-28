@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(undefined4 *param_1)
+; int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_script.cpp_FUN_004fe9d0 at 004feabb

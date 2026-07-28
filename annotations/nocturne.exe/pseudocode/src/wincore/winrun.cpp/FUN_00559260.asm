@@ -41,9 +41,9 @@
 ;
 ; Called Functions:
 ;   BringWindowToTop
+;   core_main.c_enterMainGameMenu_FUN_004c85e0
 ;   core_main.c_FUN_004c85f0
 ;   core_main.c_FUN_004c90e0
-;   core_main.c_FUN_004d23d0
 ;   CreateWindowExA
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdlib.c_srand_FUN_005648b0
@@ -117,7 +117,7 @@ section .text
     CALL dword ptr CS:[0x5753ec]        ; 005592dc | PTR_timeGetTime_005753ec
     PUSH EAX                            ; 005592e3
     CALL crt_stdlib.c_srand_FUN_005648b0 ; 005592e4
-        ;   XREF to: 005648b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_srand_FUN_005648b0()
+        ;   XREF to: 005648b0 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_srand_FUN_005648b0(uint seed)
     ADD ESP,0x4                         ; 005592e9
     MOV EDI,0x2de2c10                   ; 005592ec
     CALL dword ptr CS:[0x5754e8]        ; 005592f1 | PTR_GetCommandLineA_005754e8
@@ -280,7 +280,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 0055949e
     PUSH EAX                            ; 005594a2
     CALL crt_memory.c_memset_FUN_00563cc0 ; 005594a3
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005594a8
     LEA EAX,[ESP + 0x28]                ; 005594ab
     MOV EDI,0x20                        ; 005594af
@@ -297,8 +297,8 @@ section .text
     CALL core_main.c_FUN_004c85f0       ; 005594de
         ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c85f0()
     ADD ESP,0x8                         ; 005594e3
-    CALL core_main.c_FUN_004d23d0       ; 005594e6
-        ;   XREF to: 004c85e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004d23d0()
+    CALL core_main.c_enterMainGameMenu_FUN_004c85e0 ; 005594e6
+        ;   XREF to: 004c85e0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004c85e0()
     CALL core_main.c_FUN_004c90e0       ; 005594eb
         ;   XREF to: 004c90e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c90e0()
     XOR EAX,EAX                         ; 005594f0

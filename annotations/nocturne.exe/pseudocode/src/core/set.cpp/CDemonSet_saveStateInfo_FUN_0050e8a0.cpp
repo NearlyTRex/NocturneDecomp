@@ -2,28 +2,28 @@
 // Address: 0050e8a0
 // Address Range: [[0050e8a0, 0050e91a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(int *param_1,undefined4 param_2)
+// Signature: void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(int *param_1,uint param_2)
+void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
-  int *piVar2;
+  CDemonSet *pCVar2;
   
-  _fprintf(param_2,"// Set state version\n");
-  _fprintf(param_2,"1\n");
-  _fprintf(param_2,"// Camera count, enabled list\n");
+  _fprintf(file_handle,"// Set state version\n");
+  _fprintf(file_handle,"1\n");
+  _fprintf(file_handle,"// Camera count, enabled list\n");
   iVar1 = 0;
-  _fprintf(param_2,"%d\n",*param_1);
-  piVar2 = param_1;
-  if (0 < *param_1) {
+  _fprintf(file_handle,"%d\n",this_ptr->camera_count);
+  pCVar2 = this_ptr;
+  if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(param_2,"%d\n",piVar2[0x68]);
-      piVar2 = piVar2 + 0x68;
-    } while (iVar1 < *param_1);
+      _fprintf(file_handle,"%d\n",pCVar2->cameras[0].vdir_zone);
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].vdir_zone;
+    } while (iVar1 < this_ptr->camera_count);
   }
   return;
 }

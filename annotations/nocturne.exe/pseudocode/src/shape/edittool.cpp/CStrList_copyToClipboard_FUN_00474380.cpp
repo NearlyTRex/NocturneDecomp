@@ -2,59 +2,59 @@
 // Address: 00474380
 // Address Range: [[00474380, 00474459]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param_1)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param_1)
+void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *this_ptr)
 
 {
   char cVar1;
+  CEditorTools *this_ptr_00;
   char *pcVar2;
-  byte *puVar3;
+  char *pcVar3;
   uint uVar4;
-  uint uVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  byte *puVar8;
-  byte bVar9;
+  char *pcVar7;
+  byte bVar8;
   
-  bVar9 = 0;
-  iVar7 = 0;
+  bVar8 = 0;
   iVar6 = 0;
-  if (0 < *param_1) {
+  iVar5 = 0;
+  if (0 < this_ptr->item_count) {
     do {
-      pcVar2 = (char *)shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,iVar7);
-      uVar5 = 0xffffffff;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(this_ptr,iVar6);
+      uVar4 = 0xffffffff;
       do {
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
         cVar1 = *pcVar2;
-        pcVar2 = pcVar2 + (uint)bVar9 * -2 + 1;
+        pcVar2 = pcVar2 + (uint)bVar8 * -2 + 1;
       } while (cVar1 != '\0');
-      iVar7 = iVar7 + 1;
-      iVar6 = iVar6 + ~uVar5;
-    } while (iVar7 < *param_1);
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + ~uVar4;
+    } while (iVar6 < this_ptr->item_count);
   }
-  puVar3 = (byte *)shape_memdbg_cpp_malloc_FUN_00564c18(iVar6 + 1);
-  if (puVar3 == (byte *)0x0) {
+  pcVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar5 + 1U);
+  if (pcVar2 == (char *)0x0) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
     INT_01cc4804 = 0xad9;
-    core_main_c_FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes",*param_1,iVar6 + 1);
+    core_main_c_FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar5 + 1U);
   }
-  iVar6 = 0;
-  puVar8 = puVar3;
-  if (0 < *param_1) {
+  iVar5 = 0;
+  pcVar7 = pcVar2;
+  if (0 < this_ptr->item_count) {
     do {
-      uVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,iVar6);
-      iVar6 = iVar6 + 1;
-      iVar7 = _sprintf(puVar8,"%s\n",uVar4);
-      puVar8 = puVar8 + iVar7;
-    } while (iVar6 < *param_1);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(this_ptr,iVar5);
+      iVar5 = iVar5 + 1;
+      iVar6 = _sprintf(pcVar7,"%s\n",pcVar3);
+      pcVar7 = pcVar7 + iVar6;
+    } while (iVar5 < this_ptr->item_count);
   }
-  uVar4 = 0x01BCD074;
-  *puVar8 = 0;
-  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(uVar4,puVar3);
-  shape_memdbg_cpp_free_FUN_00564486(puVar3);
+  this_ptr_00 = 0x01BCD074;
+  *pcVar7 = '\0';
+  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(this_ptr_00,pcVar2);
+  shape_memdbg_cpp_free_FUN_00564486(pcVar2);
   return;
 }

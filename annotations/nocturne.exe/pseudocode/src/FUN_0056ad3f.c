@@ -9,6 +9,6 @@
 void FUN_0056ad3f(void)
 
 {
-  FUN_0056ddc0("C++ floating-point support not loaded\r\n",1);
+  HandleRuntimeError("C++ floating-point support not loaded\r\n",1);
   return;
 }

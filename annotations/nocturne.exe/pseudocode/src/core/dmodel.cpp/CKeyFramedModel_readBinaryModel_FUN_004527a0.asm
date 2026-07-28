@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(int param_1,undefined4 param_2)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFramedModel *this_ptr,_FILE *file)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -48,7 +51,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004527b4
     PUSH EAX                            ; 004527b8
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004527b9
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004527be
     CMP EAX,0x1                         ; 004527c1
     JNZ 0x00452819                      ; 004527c4
@@ -82,7 +85,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00452807
     PUSH EAX                            ; 0045280b
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0045280c
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00452811
     CMP EAX,0x1                         ; 00452814
     JZ 0x00452845                       ; 00452817
@@ -130,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10c]     ; 00452884
     PUSH ECX                            ; 0045288a
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0045288b
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00452890
     CMP EAX,0x1                         ; 00452893
     JNZ 0x00452819                      ; 00452896
@@ -148,7 +151,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x114]     ; 004528b1
     PUSH EBP                            ; 004528b7
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004528b8
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004528bd
     CMP EAX,0x1                         ; 004528c0
     JNZ 0x00452819                      ; 004528c3
@@ -161,7 +164,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x118]     ; 004528d5
     PUSH EAX                            ; 004528db
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004528dc
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004528e1
     CMP EAX,0x1                         ; 004528e4
     JNZ 0x00452819                      ; 004528e7
@@ -176,7 +179,7 @@ section .text
     PUSH EAX                            ; 00452903
     XOR EDI,EDI                         ; 00452904
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00452906
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0045290b
     CMP EDI,dword ptr [EBX + 0x120]     ; 0045290e
         ;   Label: LAB_0045290e
@@ -192,7 +195,7 @@ section .text
     ADD EAX,EDX                         ; 0045292d
     PUSH EAX                            ; 0045292f
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00452930
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00452935
     CMP EAX,0x1                         ; 00452938
     JNZ 0x00452819                      ; 0045293b
@@ -209,7 +212,7 @@ section .text
     LEA EAX,[EBX + 0x248]               ; 00452952
     PUSH EAX                            ; 00452958
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00452959
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045295e
     CMP EAX,0x1                         ; 00452961
     JNZ 0x00452819                      ; 00452964
@@ -226,7 +229,7 @@ section .text
     PUSH EBX                            ; 00452979
         ;   Label: LAB_00452979
     CALL core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0 ; 0045297a
-        ;   XREF to: 00453ff0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0()
+        ;   XREF to: 00453ff0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0045297f
     ADD ESP,0x1c                        ; 00452982
     POP EBP                             ; 00452985

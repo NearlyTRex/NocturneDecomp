@@ -106,7 +106,7 @@ section .text
     PUSH EDX                            ; 0042f023
     PUSH ECX                            ; 0042f024
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0042f025
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0042f02a
     INC EDI                             ; 0042f02d
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0042f02e

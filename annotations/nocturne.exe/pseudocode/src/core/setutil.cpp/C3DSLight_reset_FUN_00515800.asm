@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_reset_FUN_00515800(int param_1)
+; void __cdecl core_setutil_cpp_C3DSLight_reset_FUN_00515800(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_setutil.cpp_FUN_00514a50 at 00514a56

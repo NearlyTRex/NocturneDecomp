@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(int param_1)
+; int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -32,7 +32,7 @@ section .text
     LEA EAX,[EBP + 0x8]                 ; 00406749
     PUSH EAX                            ; 0040674c
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0040674d
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00406752
     TEST EAX,EAX                        ; 00406755
     JZ 0x00406819                       ; 00406757
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [0x01c039a0],EBX      ; 00406787 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDI      ; 0040678d | DAT_01c039a4
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 00406793
-        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_00404710()
+        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406798
     MOV EAX,ESI                         ; 0040679b
     XOR EBX,EBX                         ; 0040679d

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_pos
+; CVector3f *      Stack[0xc]:4   end_pos
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -40,7 +44,7 @@ section .text
     PUSH ECX                            ; 0050fa43
     PUSH 0x1fba938                      ; 0050fa44 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0 ; 0050fa49
-        ;   XREF to: 004680b0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0()
+        ;   XREF to: 004680b0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 0050fa4e
     TEST EAX,EAX                        ; 0050fa51
     JZ 0x0050fa61                       ; 0050fa53

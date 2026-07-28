@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0(undefined4 param_1,int param_2)
+; void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys *this_ptr,EInputCodeType key_code)
 ;
+; Parameters:
+; CKeys *          Stack[0x4]:4   this_ptr
+; EInputCodeType   Stack[0x8]:4   key_code
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_resetKeyState_FUN_0049e8b0 at 0049e8f2

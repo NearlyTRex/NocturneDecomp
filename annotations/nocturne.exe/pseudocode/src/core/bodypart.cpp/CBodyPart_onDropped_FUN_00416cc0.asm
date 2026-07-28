@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_onDropped_FUN_00416cc0(int param_1,int param_2)
+; void core_bodypart_cpp_CBodyPart_onDropped_FUN_00416cc0(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [ESP + 0x14],ECX      ; 00416d0b
     MOV dword ptr [ESP + 0x10],EDI      ; 00416d0f
     CALL core_box.cpp_CBox_setupVelocities_FUN_0041cb40 ; 00416d13
-        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupVelocities_FUN_0041cb40()
+        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_0041cb40(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
     ADD ESP,0xc                         ; 00416d18
     POP EDI                             ; 00416d1b
     MOV dword ptr [EBX + 0xca4],0x41200000 ; 00416d1c

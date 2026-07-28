@@ -9,43 +9,43 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 757
-  Functions flagged by multiple tools: 2
+  Functions with static analysis data: 641
+  Functions flagged by multiple tools: 4
 
   Clang-Tidy (quick):
-    Files analyzed:      8
-    Files with findings: 8
-    Total diagnostics:   17
+    Files analyzed:      11
+    Files with findings: 11
+    Total diagnostics:   14
 
   Cppcheck (quick):
-    Files analyzed:      751
-    Files with findings: 751
-    Total diagnostics:   2537
+    Files analyzed:      634
+    Files with findings: 634
+    Total diagnostics:   1788
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  bugprone-integer-division                                   9  [likely decompiler artifact]
-  cert-flp30-c                                                4
-  bugprone-swapped-arguments                                  4
+  cert-flp30-c                                                6  [likely decompiler artifact]
+  bugprone-integer-division                                   6  [likely decompiler artifact]
+  bugprone-signed-char-misuse                                 2
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                1366  [likely decompiler artifact]
-  objectIndex                                               435  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                    218
-  legacyUninitvar                                           195
+  uninitvar                                                1027  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                    203
+  legacyUninitvar                                           177
   invalidscanf                                               76
-  AssignmentAddressToInteger                                 55
-  pointerOutOfBounds                                         46
-  arrayIndexOutOfBounds                                      30
-  ignoredReturnValue                                         28
-  invalidPointerCast                                         21
-  selfAssignment                                             16
-  identicalInnerCondition                                     9
+  invalidPointerCast                                         61
+  arrayIndexOutOfBounds                                      54
+  ignoredReturnValue                                         52
+  wrongPrintfScanfArgNum                                     35
+  objectIndex                                                32
+  pointerOutOfBounds                                         16
+  nullPointer                                                10
   shiftNegativeLHS                                            7
-  nullPointer                                                 6
-  nullPointerArithmetic                                       6
+  negativeIndex                                               6
+  nullPointerRedundantCheck                                   4
+  identicalInnerCondition                                     4

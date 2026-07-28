@@ -14,14 +14,13 @@ uint FUN_00574264(short *param_1)
   short sVar1;
   short *psVar2;
   short *in_EAX;
-  uint *puVar3;
-  int iVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  bool bVar8;
+  uint *ptr;
+  int iVar3;
+  SIZE_T n;
+  ulong new_size;
+  bool bVar4;
   
-  puVar3 = _DAT_02de54a8;
+  ptr = _DAT_02de54a8;
   if (param_1 == (short *)0x0) {
     return 0xffffffff;
   }
@@ -36,55 +35,54 @@ uint FUN_00574264(short *param_1)
   if (*in_EAX == 0) {
     return 0xffffffff;
   }
-  bVar8 = in_EAX[1] == 0;
+  bVar4 = in_EAX[1] == 0;
   if (_DAT_02de54a8 == (uint *)0x0) {
-    if (bVar8) {
+    if (bVar4) {
       return 0;
     }
-    puVar3 = (uint *)malloc(9);
-    if (puVar3 == (uint *)0x0) {
+    ptr = (uint *)malloc(9);
+    if (ptr == (uint *)0x0) {
       return 0xffffffff;
     }
-    _DAT_02de54a0 = puVar3 + 2;
-    _DAT_02de54a8 = puVar3;
-    *puVar3 = 0;
-    puVar3[1] = 0;
-    iVar5 = 0;
+    _DAT_02de54a0 = ptr + 2;
+    _DAT_02de54a8 = ptr;
+    *ptr = 0;
+    ptr[1] = 0;
+    n = 0;
   }
   else {
-    iVar4 = FUN_00574404(param_1,bVar8);
-    if (bVar8) {
+    iVar3 = FUN_00574404(param_1,bVar4);
+    if (bVar4) {
       return 0;
     }
-    if (iVar4 < 1) {
-      iVar5 = -iVar4;
-      iVar6 = iVar4 * -4;
-      iVar7 = iVar5 + 1 + iVar6 + 8;
+    if (iVar3 < 1) {
+      n = -iVar3;
+      new_size = n + 1 + iVar3 * -4 + 8;
       if (_DAT_02de54a0 == (uint *)0x0) {
-        puVar3 = (uint *)malloc(iVar7);
-        if (puVar3 == (uint *)0x0) {
+        ptr = (uint *)malloc(new_size);
+        if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        FUN_00571410(puVar3,_DAT_02de54a8,iVar6);
-        _DAT_02de54a0 = puVar3 + (2 - iVar4);
-        memset(_DAT_02de54a0,0,iVar5 + 1);
+        FUN_00571410(ptr,_DAT_02de54a8,iVar3 * -4);
+        _DAT_02de54a0 = ptr + (2 - iVar3);
+        memset(_DAT_02de54a0,0,n + 1);
       }
       else {
-        puVar3 = (uint *)realloc(puVar3,iVar7,iVar6);
-        if (puVar3 == (uint *)0x0) {
+        ptr = (uint *)realloc(ptr,new_size);
+        if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        memmove(puVar3 + (2 - iVar4),_DAT_02de54a0,iVar5);
-        _DAT_02de54a0 = puVar3 + (2 - iVar4);
+        memmove(ptr + (2 - iVar3),_DAT_02de54a0,n);
+        _DAT_02de54a0 = ptr + (2 - iVar3);
       }
-      puVar3[1 - iVar4] = 0;
-      _DAT_02de54a8 = puVar3;
+      ptr[1 - iVar3] = 0;
+      _DAT_02de54a8 = ptr;
     }
     else {
-      iVar5 = iVar4 + -1;
+      n = iVar3 - 1;
     }
   }
-  puVar3[iVar5] = param_1;
-  *(byte *)(iVar5 + (int)_DAT_02de54a0) = 0;
+  ptr[n] = param_1;
+  *(byte *)(n + (int)_DAT_02de54a0) = 0;
   return 0;
 }

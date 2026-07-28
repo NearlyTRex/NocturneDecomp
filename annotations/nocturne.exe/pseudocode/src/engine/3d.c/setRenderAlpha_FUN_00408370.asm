@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int param_1)
+; int __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int alpha_color_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   alpha_color_value
 ;
 ; XREF[28]:
 ;   core_baron.cpp_FUN_004110f0 at 00411185

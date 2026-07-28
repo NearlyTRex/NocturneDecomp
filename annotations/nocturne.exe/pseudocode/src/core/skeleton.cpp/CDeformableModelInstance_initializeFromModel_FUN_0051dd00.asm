@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00(int param_1,undefined4 param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00(CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CDeformableModel * Stack[0x8]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -38,7 +41,7 @@ section .text
     PUSH EAX                            ; 0051dd0f
     MOV dword ptr [EAX + 0x22b0],EBX    ; 0051dd10
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051dd16
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051dd1b
     PUSH EAX                            ; 0051dd1e
     MOV ECX,dword ptr [ESP + 0x2c]      ; 0051dd1f
@@ -46,7 +49,7 @@ section .text
     MOV EBX,EAX                         ; 0051dd24
     MOV EBP,EAX                         ; 0051dd26
     CALL core_motion.cpp_CMotionController_setMotionList_FUN_004e1860 ; 0051dd28
-        ;   XREF to: 004e1860 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setMotionList_FUN_004e1860()
+        ;   XREF to: 004e1860 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setMotionList_FUN_004e1860(CMotionController * this_ptr, CMotionList * motion_list)
     ADD ESP,0x8                         ; 0051dd2d
     MOV EAX,dword ptr [EBX + 0x28558]   ; 0051dd30
     MOV dword ptr [ESP + 0x10],EAX      ; 0051dd36
@@ -85,7 +88,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x22b0]    ; 0051dda7
     PUSH ECX                            ; 0051ddad
     CALL core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_00518180 ; 0051ddae
-        ;   XREF to: 00518180 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_00518180()
+        ;   XREF to: 00518180 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_00518180(CDeformableModel * this_ptr, int index)
     ADD ESP,0x8                         ; 0051ddb3
     CMP EBX,EAX                         ; 0051ddb6
     JZ 0x0051ddca                       ; 0051ddb8
@@ -119,17 +122,17 @@ section .text
         ;   Label: LAB_0051ddfe
     PUSH EDX                            ; 0051de02
     CALL core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0051b750 ; 0051de03
-        ;   XREF to: 0051b750 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0051b750()
+        ;   XREF to: 0051b750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0051b750(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051de08
     MOV ECX,dword ptr [ESP + 0x28]      ; 0051de0b
     PUSH ECX                            ; 0051de0f
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60 ; 0051de10
-        ;   XREF to: 0051de60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60()
+        ;   XREF to: 0051de60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051de15
     MOV EBX,dword ptr [ESP + 0x28]      ; 0051de18
     PUSH EBX                            ; 0051de1c
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880 ; 0051de1d
-        ;   XREF to: 0051b880 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880()
+        ;   XREF to: 0051b880 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051de22
     ADD ESP,0x14                        ; 0051de25
     POP EBP                             ; 0051de28

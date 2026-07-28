@@ -9,12 +9,12 @@
 void core_trigger_cpp_FUN_00547880(void)
 
 {
-  int iVar1;
+  CTrigger *this_ptr;
   
-  iVar1 = FUN_0056497c(0x368);
-  if (iVar1 == 0) {
+  this_ptr = (CTrigger *)FUN_0056497c(0x368);
+  if (this_ptr == (CTrigger *)0x0) {
     return;
   }
-  core_trigger_cpp_CTrigger_ctor_FUN_005478b0(iVar1);
+  core_trigger_cpp_CTrigger_ctor_FUN_005478b0(this_ptr);
   return;
 }

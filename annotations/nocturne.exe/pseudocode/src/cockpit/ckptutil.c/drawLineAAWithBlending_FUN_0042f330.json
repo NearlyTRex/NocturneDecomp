@@ -1,0 +1,498 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 308,
+    "complexity_score": 129,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 99,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 407
+  },
+  "cross_references": [
+    {
+      "addr": "0042f260",
+      "from_addr": "0042f307",
+      "name": "cockpit_ckptutil.c_drawLineListFromBitmap_FUN_0042f260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f190",
+      "from_addr": "0042f235",
+      "name": "cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_0042f190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042f330",
+    "address_range": [
+      [
+        "0042f330",
+        "0042f5f2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_0042f330",
+    "signature": "void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042f8c0",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_FUN_0042f8c0"
+    },
+    {
+      "addr": "00430140",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_putPixel_FUN_00430140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00766c6c",
+      "name": "DAT_00766c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c58",
+      "name": "DAT_01c00c58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c5c",
+      "name": "DAT_01c00c5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c60",
+      "name": "DAT_01c00c60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c64",
+      "name": "DAT_01c00c64",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0042f235",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_0042f190",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0042f307",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineListFromBitmap_FUN_0042f260",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.531645569620253,
+    "instruction_count": 237,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 35,
+      "BOOL_OR": 5,
+      "BRANCH": 9,
+      "CALL": 6,
+      "CBRANCH": 28,
+      "COPY": 291,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 6,
+      "INT_2COMP": 1,
+      "INT_ADD": 96,
+      "INT_AND": 190,
+      "INT_CARRY": 12,
+      "INT_DIV": 2,
+      "INT_EQUAL": 145,
+      "INT_LEFT": 6,
+      "INT_LESS": 22,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 22,
+      "INT_REM": 2,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 27,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 74,
+      "INT_SUB": 62,
+      "INT_XOR": 16,
+      "INT_ZEXT": 6,
+      "LOAD": 60,
+      "POPCOUNT": 68,
+      "RETURN": 2,
+      "STORE": 61,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1311
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "x0",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y0",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "base_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_color",
+        "offset": 24,
+        "size": 1,
+        "type": "uchar"
+      },
+      {
+        "is_param": true,
+        "name": "blend_mode",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042f339",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "drawLineAAWithBlending_FUN_0042f330.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 51,
+          "message": "Uninitialized variable: local_1c",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_00766c6c",
+      "severity": "mild",
+      "text": "((DAT_00766c6c != 0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Uninitialized variable: local_1c",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_1c = local_1c + -1;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

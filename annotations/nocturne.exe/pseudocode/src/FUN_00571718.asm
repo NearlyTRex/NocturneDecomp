@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00571718(int param_1,int param_2)
+; SIGNAL_HANDLER_TYPE FUN_00571718(int param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
-;   void* PTR_crt_unknown.c_FUN_00566f98_005c1890 = 00566f98
+;   void* PTR_crt_unknown.c_reportAbnormalTermination_FUN_00566f98_005c1890 = 00566f98
 ;
 ; Called Functions:
-;   FUN_00568e80
-;   FUN_00571510
-;   FUN_00571564
+;   crt_errno.c_setErrno_FUN_00568e80
+;   crt_signal.c_getSignalHandler_FUN_00571564
+;   crt_signal.c_registerConsoleHandler_FUN_00571668
+;   crt_signal.c_setSignalHandler_FUN_00571510
+;   crt_signal.c_unregisterConsoleHandler_FUN_00571694
 ;   FUN_00571588
 ;   FUN_00571630
-;   FUN_00571668
-;   FUN_00571694
 ;   FUN_00572ef0
 ;
 ; *****************************************************************************
@@ -35,15 +35,15 @@ section .text
         ;   XREF to: 00571740 (CONDITIONAL_JUMP)  ; LAB_00571740
     PUSH 0x9                            ; 0057172d
         ;   Label: LAB_0057172d
-    CALL FUN_00568e80                   ; 0057172f
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 0057172f
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     MOV EAX,0x3                         ; 00571734
     ADD ESP,0x4                         ; 00571739
     POP EDI                             ; 0057173c
     POP ESI                             ; 0057173d
     POP EBX                             ; 0057173e
     RET                                 ; 0057173f
-    MOV dword ptr [0x005c1890],0x5716cc ; 00571740 | PTR_crt_unknown.c_FUN_00566f98_005c1890
+    MOV dword ptr [0x005c1890],0x5716cc ; 00571740 | PTR_crt_unknown.c_reportAbnormalTermination_FUN_00566f98_005c1890
         ;   Label: LAB_00571740
     CMP EDI,0x2                         ; 0057174a
     JZ 0x00571775                       ; 0057174d
@@ -68,26 +68,26 @@ section .text
     ADD ESP,0x8                         ; 00571772
     PUSH EBX                            ; 00571775
         ;   Label: LAB_00571775
-    CALL FUN_00571564                   ; 00571776
-        ;   XREF to: 00571564 (UNCONDITIONAL_CALL)  ; undefined FUN_00571564()
+    CALL crt_signal.c_getSignalHandler_FUN_00571564 ; 00571776
+        ;   XREF to: 00571564 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_00571564(int signal_number)
     ADD ESP,0x4                         ; 0057177b
     PUSH EDI                            ; 0057177e
     PUSH EBX                            ; 0057177f
     MOV ESI,EAX                         ; 00571780
-    CALL FUN_00571510                   ; 00571782
-        ;   XREF to: 00571510 (UNCONDITIONAL_CALL)  ; undefined FUN_00571510()
+    CALL crt_signal.c_setSignalHandler_FUN_00571510 ; 00571782
+        ;   XREF to: 00571510 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_00571510(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
     ADD ESP,0x8                         ; 00571787
     CALL FUN_00571630                   ; 0057178a
         ;   XREF to: 00571630 (UNCONDITIONAL_CALL)  ; undefined FUN_00571630()
     TEST EAX,EAX                        ; 0057178f
     JZ 0x0057179a                       ; 00571791
         ;   XREF to: 0057179a (CONDITIONAL_JUMP)  ; LAB_0057179a
-    CALL FUN_00571668                   ; 00571793
-        ;   XREF to: 00571668 (UNCONDITIONAL_CALL)  ; undefined FUN_00571668()
+    CALL crt_signal.c_registerConsoleHandler_FUN_00571668 ; 00571793
+        ;   XREF to: 00571668 (UNCONDITIONAL_CALL)  ; BOOL crt_signal.c_registerConsoleHandler_FUN_00571668()
     JMP 0x0057179f                      ; 00571798
         ;   XREF to: 0057179f (UNCONDITIONAL_JUMP)  ; LAB_0057179f
-    CALL FUN_00571694                   ; 0057179a
-        ;   XREF to: 00571694 (UNCONDITIONAL_CALL)  ; undefined FUN_00571694()
+    CALL crt_signal.c_unregisterConsoleHandler_FUN_00571694 ; 0057179a
+        ;   XREF to: 00571694 (UNCONDITIONAL_CALL)  ; undefined1 crt_signal.c_unregisterConsoleHandler_FUN_00571694()
         ;   Label: LAB_0057179a
     MOV EAX,ESI                         ; 0057179f
         ;   Label: LAB_0057179f

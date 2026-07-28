@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 190,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 43,
+    "suspect_count": 19,
     "suspect_types": [
+      "primitive_walker_cast",
       "undefined_data",
-      "unnamed_param"
+      "unnamed_param",
+      "warning_type_propagation"
     ],
-    "total_lines": 128
+    "total_lines": 141
   },
   "cross_references": [],
   "function": {
@@ -146,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_bugs.cpp_CBugs_archive_FUN_00421880",
-    "signature": "void core_bugs_cpp_CBugs_archive_FUN_00421880(int param_1)"
+    "signature": "void core_bugs_cpp_CBugs_archive_FUN_00421880(CEnemy *param_1)"
   },
   "function_calls": [
     {
@@ -283,27 +285,19 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_archive_FUN_00421880(int param_1)",
-      "type": "unnamed_param"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbd28,\"count\");",
+      "text": "void core_bugs_cpp_CBugs_archive_FUN_00421880(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -311,12 +305,36 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1212c,\"modelCount\");",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[1].base.base.actor_name + 4),\"count\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 14,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].base.flames[0x12].base.vtable,\"modelCount\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[1].base.flames[0x12].base.vtable,\"modelCount\");",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 15,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "if (DAT_00763e88 == 1) {",
@@ -324,26 +342,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1 + 0x12130;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 != param_1 + 0x12720);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1212c)) {",
+      "text": "pCVar1 = (CKeyFramedModelInstance *)&param_1[1].base.flames[0x12].flame_size;",
       "type": "unnamed_param"
     },
     {
@@ -351,31 +353,23 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0x12130;",
+      "text": "} while (pCVar1 != (CKeyFramedModelInstance *)(param_1[1].base.flames[0x14].on_event + 0x58));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x1212c));",
+      "text": "if (0 < (int)param_1[1].base.flames[0x12].base.vtable._ub) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x19700,\"allowChase\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x19704,\"allowSwarm\");",
+      "text": "pCVar1 = (CKeyFramedModelInstance *)&param_1[1].base.flames[0x12].flame_size;",
       "type": "unnamed_param"
     },
     {
@@ -383,23 +377,63 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x19708,\"allowChaseEvent\");",
+      "text": "} while (iVar2 < (int)param_1[1].base.flames[0x12].base.vtable._ub);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 32,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x44].m[2].y,",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x44].m[2].y,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 35,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x44].m[2].z,",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x44].m[2].z,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1976c,\"allowSwarmEvent\");",
+      "text": "((char *)(param_1[2].base.model.bone_transform.bone_world_matrices + 0x45),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x197d0,\"animateEvent\");",
+      "text": "((char *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x47].m[0].x,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)&param_1[2].base.model.bone_transform.bone_world_matrices[0x49].m[0].y,",
       "type": "unnamed_param"
     }
   ],

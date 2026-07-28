@@ -9,12 +9,12 @@
 void core_boxactor_cpp_FUN_0041f2e0(void)
 
 {
-  int iVar1;
+  CLightActor *this_ptr;
   
-  iVar1 = FUN_0056497c(0x3670);
-  if (iVar1 == 0) {
+  this_ptr = (CLightActor *)FUN_0056497c(0x3670);
+  if (this_ptr == (CLightActor *)0x0) {
     return;
   }
-  core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(iVar1);
+  core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(this_ptr);
   return;
 }

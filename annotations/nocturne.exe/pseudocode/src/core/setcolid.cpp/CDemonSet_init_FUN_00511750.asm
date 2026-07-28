@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_init_FUN_00511750(int param_1)
+; void __cdecl core_setcolid_cpp_CDemonSet_init_FUN_00511750(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[31]:
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040dac2

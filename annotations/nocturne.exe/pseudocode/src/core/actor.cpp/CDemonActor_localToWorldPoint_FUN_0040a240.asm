@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(int param_1,float *param_2,undefined4 param_3)
+; CVector3f * __cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor *this_ptr,CVector3f *output_world_point,CVector3f *input_local_point)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_world_point
+; CVector3f *      Stack[0xc]:4   input_local_point
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ;

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 129,
+    "complexity_score": 130,
     "cross_reference_count": 129,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -803,7 +803,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0056497c",
-    "signature": "int crt_unknown_c_FUN_0056497c(int param_1)"
+    "signature": "void * crt_unknown_c_FUN_0056497c(ulong param_1)"
   },
   "function_calls": [
     {
@@ -1002,15 +1002,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_0056497c(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == 0) {",
+      "text": "void * FUN_0056497c(ulong param_1)",
       "type": "unnamed_param"
     },
     {
@@ -1018,36 +1010,44 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (param_1 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1 = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = malloc(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "} while ((_DAT_02de548c != (code *)0x0) && (iVar1 = (*_DAT_02de548c)(param_1), iVar1 != 0));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while ((_DAT_02de548c != (code *)0x0) && (iVar1 = (*_DAT_02de548c)(param_1), iVar1 != 0));",
+      "text": "pvVar1 = malloc(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 19,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "} while ((_DAT_02de548c != (code *)0x0) && (iVar2 = (*_DAT_02de548c)(param_1), iVar2 != 0));",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while ((_DAT_02de548c != (code *)0x0) && (iVar2 = (*_DAT_02de548c)(param_1), iVar2 != 0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "if (_DAT_02de5488 == (code *)0x0) break;",

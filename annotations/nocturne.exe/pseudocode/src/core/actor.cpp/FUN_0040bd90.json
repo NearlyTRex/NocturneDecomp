@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 707,
+    "complexity_score": 694,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 59,
+    "pseudocode_lines": 104,
+    "suspect_count": 57,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 325
+    "total_lines": 332
   },
   "cross_references": [],
   "function": {
@@ -363,54 +363,96 @@
   "static_analysis": {
     "analyzed_file": "FUN_0040bd90.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 7,
+      "diagnostic_count": 13,
       "diagnostics": [
         {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 12,
+          "line": 81,
+          "message": "Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerArithmeticRedundantCheck",
+          "column": 42,
+          "line": 86,
+          "message": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerArithmeticRedundantCheck",
+          "column": 42,
+          "line": 87,
+          "message": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerArithmeticRedundantCheck",
+          "column": 42,
+          "line": 88,
+          "message": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+          "severity": "warning"
+        },
+        {
           "check_id": "invalidPointerCast",
           "column": 13,
-          "line": 53,
+          "line": 56,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 13,
-          "line": 54,
+          "line": 57,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 13,
-          "line": 55,
+          "line": 58,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
-          "column": 46,
+          "column": 22,
           "line": 59,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
-          "column": 25,
+          "column": 22,
           "line": 60,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
-          "column": 48,
-          "line": 84,
+          "column": 22,
+          "line": 61,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
-          "column": 27,
-          "line": 85,
+          "column": 24,
+          "line": 86,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 24,
+          "line": 87,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 24,
+          "line": 88,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -454,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 == (char *)0x0) {",
@@ -462,15 +504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((char *)0xfeffffff < param_1) || ((int)param_1 < 0x1000)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((char *)0xfeffffff < param_1) || ((int)param_1 < 0x1000)) {",
@@ -481,28 +515,28 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\",param_1,param_2,param_3);",
+      "text": "if (((char *)0xfeffffff < param_1) || ((int)param_1 < 0x1000)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\",param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\",param_1,param_2,param_3);",
+      "text": "core_main_c_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\",param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\",param_1,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(byte **)(param_1 + 0x68) != &DAT_0078a123) {",
@@ -510,31 +544,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 29,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "if (*(byte **)(param_1 + 0x68) != &DAT_0078a123) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "memset(&DAT_00763e10,0,0x32,*(byte **)(param_1 + 0x68));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 32,
       "match": "DAT_00763e10",
       "severity": "mild",
-      "text": "memset(&DAT_00763e10,0,0x32,*(byte **)(param_1 + 0x68));",
+      "text": "memset(&DAT_00763e10,0,0x32);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1;",
@@ -542,7 +568,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 34,
       "match": "DAT_00763e10",
       "severity": "mild",
       "text": "pcVar4 = (char *)&DAT_00763e10;",
@@ -550,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d\",param_2,param_3,param_1,&DAT_00763e10);",
@@ -558,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 46,
       "match": "param_3",
       "severity": "mild",
       "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d\",param_2,param_3,param_1,&DAT_00763e10);",
@@ -566,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d\",param_2,param_3,param_1,&DAT_00763e10);",
@@ -574,7 +600,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 46,
       "match": "DAT_00763e10",
       "severity": "mild",
       "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d\",param_2,param_3,param_1,&DAT_00763e10);",
@@ -582,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "SQRT(*(float *)(param_1 + 0x28) * *(float *)(param_1 + 0x28) +",
@@ -590,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "SQRT(*(float *)(param_1 + 0x28) * *(float *)(param_1 + 0x28) +",
@@ -598,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x20) * *(float *)(param_1 + 0x20) +",
@@ -606,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x20) * *(float *)(param_1 + 0x20) +",
@@ -614,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x24) * *(float *)(param_1 + 0x24))) {",
@@ -622,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x24) * *(float *)(param_1 + 0x24))) {",
@@ -633,23 +659,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
+      "text": "dVar9 = (double)*(float *)(param_1 + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -657,7 +667,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
+      "text": "dVar8 = (double)*(float *)(param_1 + 0x24);",
       "type": "unnamed_param"
     },
     {
@@ -665,12 +675,28 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
+      "text": "dVar7 = (double)*(float *)(param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "memset(&DAT_00763e10,0,0x32);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pcVar2 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 59,
       "match": "DAT_00763e10",
       "severity": "mild",
       "text": "pcVar4 = (char *)&DAT_00763e10;",
@@ -678,42 +704,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 71,
       "match": "param_2",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10);",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10,dVar7,dVar8",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 71,
       "match": "param_3",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cVar1 = *param_1;",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10,dVar7,dVar8",
       "type": "unnamed_param"
     },
     {
@@ -721,12 +723,36 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10,dVar7,dVar8",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",param_2,param_3,param_1,&DAT_00763e10,dVar7,dVar8",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cVar1 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pcVar2 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 78,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "if ((0x1c < local_18) || (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 8) == 0)) {",
@@ -734,42 +760,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 != (char *)0x0) {",
+      "text": "dVar9 = (double)*(float *)(param_1 + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -777,12 +771,44 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
+      "text": "dVar8 = (double)*(float *)(param_1 + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dVar7 = (double)*(float *)(param_1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "memset(&DAT_00763e10,0,0x32);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pcVar4 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 87,
       "match": "DAT_00763e10",
       "severity": "mild",
       "text": "pcVar5 = (char *)&DAT_00763e10;",
@@ -790,39 +816,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 100,
       "match": "param_2",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10);",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10,dVar7,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 100,
       "match": "param_3",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10);",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10,dVar7,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10);",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10,dVar7,",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 100,
       "match": "DAT_00763e10",
       "severity": "mild",
-      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10);",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",param_2,param_3,param_1,&DAT_00763e10,dVar7,",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 35,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -830,7 +856,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 37,
+      "line": 40,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 1; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -838,7 +864,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 56,
+      "line": 60,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -846,7 +872,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 61,
+      "line": 65,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 1; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -854,7 +880,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 82,
+      "line": 88,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -862,7 +888,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 87,
+      "line": 93,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 1; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -893,8 +919,40 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.",
+      "line": 81,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "cVar1 = *param_1;",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+      "line": 86,
+      "match": "Cppcheck: redundant null check or pointer-subtraction overflow",
+      "severity": "moderate",
+      "text": "dVar9 = (double)*(float *)(param_1 + 0x28);",
+      "type": "static_null_pointer_arithmetic_redundant_check"
+    },
+    {
+      "description": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+      "line": 87,
+      "match": "Cppcheck: redundant null check or pointer-subtraction overflow",
+      "severity": "moderate",
+      "text": "dVar8 = (double)*(float *)(param_1 + 0x24);",
+      "type": "static_null_pointer_arithmetic_redundant_check"
+    },
+    {
+      "description": "Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.",
+      "line": 88,
+      "match": "Cppcheck: redundant null check or pointer-subtraction overflow",
+      "severity": "moderate",
+      "text": "dVar7 = (double)*(float *)(param_1 + 0x20);",
+      "type": "static_null_pointer_arithmetic_redundant_check"
+    },
+    {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 53,
+      "line": 56,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "SQRT(*(float *)(param_1 + 0x28) * *(float *)(param_1 + 0x28) +",
@@ -902,7 +960,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 54,
+      "line": 57,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "*(float *)(param_1 + 0x20) * *(float *)(param_1 + 0x20) +",
@@ -910,7 +968,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 55,
+      "line": 58,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "*(float *)(param_1 + 0x24) * *(float *)(param_1 + 0x24))) {",
@@ -921,7 +979,7 @@
       "line": 59,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
+      "text": "dVar9 = (double)*(float *)(param_1 + 0x28);",
       "type": "static_invalid_pointer_cast"
     },
     {
@@ -929,23 +987,39 @@
       "line": 60,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
+      "text": "dVar8 = (double)*(float *)(param_1 + 0x24);",
       "type": "static_invalid_pointer_cast"
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 84,
+      "line": 61,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(&DAT_00763e10,0,0x32,(double)*(float *)(param_1 + 0x20),",
+      "text": "dVar7 = (double)*(float *)(param_1 + 0x20);",
       "type": "static_invalid_pointer_cast"
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 85,
+      "line": 86,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "(double)*(float *)(param_1 + 0x24),(double)*(float *)(param_1 + 0x28));",
+      "text": "dVar9 = (double)*(float *)(param_1 + 0x28);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 87,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "dVar8 = (double)*(float *)(param_1 + 0x24);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 88,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "dVar7 = (double)*(float *)(param_1 + 0x20);",
       "type": "static_invalid_pointer_cast"
     }
   ]

@@ -2,14 +2,14 @@
 // Address: 004e0380
 // Address Range: [[004e0380, 004e03b7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(int param_1,int param_2,uint param_3,uint param_4,uint param_5)
+void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index)
 
 {
   core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0
-            (param_2 * 0x608 + param_1,param_5,param_3,param_4);
+            (this_ptr->models + model_index,part_index,model_ptr,frame_index);
   return;
 }

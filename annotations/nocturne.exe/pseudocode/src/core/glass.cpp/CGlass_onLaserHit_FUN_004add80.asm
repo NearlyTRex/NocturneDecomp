@@ -70,7 +70,7 @@ section .text
     PUSH EBX                            ; 004addee | DAT_01b4d738
     FSTP float ptr [ESP + 0x10]         ; 004addef
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004addf3
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004addf8
     FILD dword ptr [0x005b762c]         ; 004addfb | DAT_005b762c
     FLD float ptr [ESP + 0x4]           ; 004ade01
@@ -78,10 +78,10 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004ade07
     FMULP ST2                           ; 004ade0b
     CALL crt_math.c_round_FUN_00563a30  ; 004ade0d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004ade12
     CALL crt_math.c_round_FUN_00563a30  ; 004ade14
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004ade19
     FISTP dword ptr [ESP + 0xc]         ; 004ade1b
     MOV EDI,dword ptr [ESP + 0xc]       ; 004ade1f

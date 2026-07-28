@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)
+; void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame)
 ;
+; Parameters:
+; SMpegSubbandQuantizedSamples * Stack[0x4]:4   quantized_samples
+; SMpegSubbandSamples * Stack[0x8]:4   output_samples
+; int *            Stack[0xc]:4   scalefactor_data
+; SMpegLayer3GranuleInfo * Stack[0x10]:4   granule
+; int              Stack[0x14]:4   channel_index
+; SMpegFrame *     Stack[0x18]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -266,7 +273,7 @@ section .text
     FLD ST0                             ; 004e5b55
     FILD dword ptr [ESP + 0x64]         ; 004e5b57
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e5b5b
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     ADD EBX,0x8                         ; 004e5b60
     INC EDX                             ; 004e5b63
     FSTP double ptr [EBX + 0x1cd6320]   ; 004e5b64
@@ -286,7 +293,7 @@ section .text
     FMUL ST1                            ; 004e5b90
     FLD ST2                             ; 004e5b92
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e5b94
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     ADD EBX,0x8                         ; 004e5b99
     INC EDX                             ; 004e5b9c
     FSTP double ptr [EBX + 0x1cd6960]   ; 004e5b9d
@@ -372,7 +379,7 @@ section .text
     FMUL double ptr [0x0058b898]        ; 004e5c90 | DOUBLE_0058b898
     FLD double ptr [0x0058b8a8]         ; 004e5c96 | DOUBLE_0058b8a8
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e5c9c
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     MOV EAX,dword ptr [ESP + 0x44]      ; 004e5ca1
     FSTP float ptr [EAX]                ; 004e5ca5
         ;   Label: LAB_004e5ca5
@@ -388,7 +395,7 @@ section .text
     FLD double ptr [0x0058b8a0]         ; 004e5cc1 | DOUBLE_0058b8a0
     FILD dword ptr [ESP + 0x64]         ; 004e5cc7
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e5ccb
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     MOV EAX,dword ptr [ESP + 0x60]      ; 004e5cd0
     FMUL float ptr [EAX]                ; 004e5cd4
     FSTP float ptr [EAX]                ; 004e5cd6

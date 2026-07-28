@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d37c
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d37c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_skeletons_d_bytes_d_mo_00591e81
@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 0051f777
         ;   Label: LAB_0051f777
     CALL core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50 ; 0051f778
-        ;   XREF to: 00517b50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50()
+        ;   XREF to: 00517b50 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(CSkeleton * this_ptr)
     INC EBX                             ; 0051f77d
     MOV ECX,dword ptr [0x02737ef4]      ; 0051f77e | DAT_02737ef4
     ADD ESP,0x4                         ; 0051f784
@@ -59,7 +59,7 @@ section .text
     PUSH ESI                            ; 0051f7b3
         ;   Label: LAB_0051f7b3
     CALL core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600 ; 0051f7b4
-        ;   XREF to: 0051b600 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600()
+        ;   XREF to: 0051b600 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(CDeformableModel * this_ptr)
     INC EBX                             ; 0051f7b9
     ADD ESP,0x4                         ; 0051f7ba
     ADD EDI,EAX                         ; 0051f7bd

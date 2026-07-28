@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_isValidIdentifierChar_FUN_00480f40(int param_1)
+; int __cdecl core_event_cpp_isValidIdentifierChar_FUN_00480f40(int ch)
 ;
+; Parameters:
+; int              Stack[0x4]:4   ch
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e214

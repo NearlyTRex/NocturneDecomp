@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(int param_1,undefined4 param_2)
+; void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet *this_ptr,int layer_flag)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 005098a6
@@ -82,7 +85,7 @@ section .text
     PUSH EAX                            ; 005087d6
     PUSH ESI                            ; 005087d7
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 005087d8
-        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0()
+        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 005087dd
     MOV EAX,dword ptr [EBX + 0x110]     ; 005087e0
     PUSH EAX                            ; 005087e6
@@ -92,13 +95,13 @@ section .text
     PUSH ECX                            ; 005087f4
     PUSH ESI                            ; 005087f5
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 005087f6
-        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340()
+        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 005087fb
     PUSH 0xffff                         ; 005087fe
     MOV EAX,[0x005ae704]                ; 00508803 | DAT_005ae704
     PUSH EAX                            ; 00508808 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00508809
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050880e
     MOV EDX,dword ptr [ESP + 0x48]      ; 00508811
     PUSH EDX                            ; 00508815
@@ -111,7 +114,7 @@ section .text
     PUSH 0x10000                        ; 0050882d
     PUSH ESI                            ; 00508832
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 00508833
-        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340()
+        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00508838
     PUSH 0x1                            ; 0050883b
     MOV ECX,dword ptr [0x005ae704]      ; 0050883d | DAT_005ae704
@@ -119,7 +122,7 @@ section .text
     ADD EDI,0x4                         ; 00508844
     INC EBP                             ; 00508847
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 00508848
-        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050()
+        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     MOV EBX,dword ptr [ESI + 0x15f2fc]  ; 0050884d
     ADD ESP,0x8                         ; 00508853
     CMP EBP,EBX                         ; 00508856

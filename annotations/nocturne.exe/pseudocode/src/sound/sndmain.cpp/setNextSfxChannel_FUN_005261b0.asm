@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(int param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[7]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c4f0

@@ -1,11 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int y1,int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x0
+; int              Stack[0x8]:4   y0
+; int              Stack[0xc]:4   x1
+; int              Stack[0x10]:4   y1
+; int              Stack[0x14]:4   color
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0045ca50 at 0045cad4
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50 at 0045cad4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad280
@@ -79,7 +85,7 @@ section .text
     PUSH EBX                            ; 0042f67e
     PUSH ESI                            ; 0042f67f
     CALL cockpit_ckptutil.c_putPixel_FUN_00430140 ; 0042f680
-        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_putPixel_FUN_00430140()
+        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_00430140(int x, int y, int color)
     ADD ESP,0xc                         ; 0042f685
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0042f688
     SUB EAX,ESI                         ; 0042f68b
@@ -136,7 +142,7 @@ section .text
     ADD ESI,EDX                         ; 0042f6f7
     PUSH ESI                            ; 0042f6f9
     CALL cockpit_ckptutil.c_putPixel_FUN_00430140 ; 0042f6fa
-        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_putPixel_FUN_00430140()
+        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_00430140(int x, int y, int color)
     ADD ESP,0xc                         ; 0042f6ff
     JMP 0x0042f6ad                      ; 0042f702
         ;   XREF to: 0042f6ad (UNCONDITIONAL_JUMP)  ; LAB_0042f6ad
@@ -152,7 +158,7 @@ section .text
     PUSH EBX                            ; 0042f711
     PUSH ESI                            ; 0042f712
     CALL cockpit_ckptutil.c_putPixel_FUN_00430140 ; 0042f713
-        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_putPixel_FUN_00430140()
+        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_00430140(int x, int y, int color)
     ADD ESP,0xc                         ; 0042f718
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0042f71b
     DEC EAX                             ; 0042f71f
@@ -178,7 +184,7 @@ section .text
     ADD ESI,EDI                         ; 0042f73b
     PUSH ESI                            ; 0042f73d
     CALL cockpit_ckptutil.c_putPixel_FUN_00430140 ; 0042f73e
-        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_putPixel_FUN_00430140()
+        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_00430140(int x, int y, int color)
     ADD ESP,0xc                         ; 0042f743
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0042f746
     DEC EDX                             ; 0042f74a
@@ -329,7 +335,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0042f89f
     PUSH ESI                            ; 0042f8a2
     CALL cockpit_ckptutil.c_putPixel_FUN_00430140 ; 0042f8a3
-        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_putPixel_FUN_00430140()
+        ;   XREF to: 00430140 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_00430140(int x, int y, int color)
     ADD ESP,0xc                         ; 0042f8a8
     MOV ESP,EBP                         ; 0042f8ab
     POP EBP                             ; 0042f8ad

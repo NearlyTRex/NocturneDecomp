@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE param_1,LPCSTR param_2)
+; FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE hModule,LPCSTR lpProcName)
 ;
+; Parameters:
+; HMODULE          Stack[0x4]:4   hModule
+; LPCSTR           Stack[0x8]:4   lpProcName
 ;
 ; XREF[2]:
 ;   engine_special.cpp_FUN_00530e60 at 00530e92

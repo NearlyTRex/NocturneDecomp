@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(undefined4 *param_1)
+; int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(_SOCKET *socket_handle)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; XREF[5]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d72
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 at 004e99d9
-;   support_trisock.cpp_FUN_00548f00 at 00548f06
 ;   support_trisock.cpp_bindSocketWrapper_FUN_00548ee0 at 00548ee6
+;   support_trisock.cpp_createSocket_FUN_00548f00 at 00548f06
 ;   support_trisock.cpp_createUDPSocket_FUN_00548f30 at 00548f36
 ;
 ; Called Functions:
@@ -24,7 +26,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00549111
     PUSH EBX                            ; 00549115
     CALL support_trisock.cpp_isSocketValid_FUN_00548f60 ; 00549116
-        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_isSocketValid_FUN_00548f60()
+        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_00548f60(_SOCKET * socket_handle)
     ADD ESP,0x4                         ; 0054911b
     TEST EAX,EAX                        ; 0054911e
     JNZ 0x00549129                      ; 00549120

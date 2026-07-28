@@ -80,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x188]               ; 0055a541
     PUSH EAX                            ; 0055a548
     CALL crt_stdio.c_fopen_FUN_0056568c ; 0055a549
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 0055a54e
     TEST EAX,EAX                        ; 0055a551
     JNZ 0x0055a55d                      ; 0055a553
@@ -94,13 +94,13 @@ section .text
     PUSH EBX                            ; 0055a55f
     PUSH EAX                            ; 0055a560
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0055a561
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0055a566
     LEA ESI,[ESP + 0x190]               ; 0055a569
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0055a570
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a575
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EDI,dword ptr [0x02de3124]      ; 0055a57a | DAT_02de3124
     MOV EBX,dword ptr [0x02de2098]      ; 0055a580 | DAT_02de2098
     TEST EDI,EDI                        ; 0055a586
@@ -108,7 +108,7 @@ section .text
         ;   XREF to: 0055a593 (CONDITIONAL_JUMP)  ; LAB_0055a593
     PUSH EBX                            ; 0055a58a
     CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 0055a58b
-        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
+        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_0055a1c0(HWND window_handle)
     ADD ESP,0x4                         ; 0055a590
     PUSH EBX                            ; 0055a593
         ;   Label: LAB_0055a593
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0055a5eb
     PUSH EAX                            ; 0055a5ef
     CALL crt_stdlib.c_atoi_FUN_00566f30 ; 0055a5f0
-        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_atoi_FUN_00566f30()
+        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_00566f30(char * string_ptr)
     ADD ESP,0x4                         ; 0055a5f5
     MOV [0x02de311c],EAX                ; 0055a5f8 | DAT_02de311c
     CMP dword ptr [0x02de312c],0x0      ; 0055a5fd | DAT_02de312c
@@ -334,13 +334,13 @@ section .text
     CALL dword ptr CS:[0x5755b0]        ; 0055a7f6 | PTR_SetThreadPriority_005755b0
     XOR ESI,ESI                         ; 0055a7fd
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 0055a7ff
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
         ;   Label: LAB_0055a7ff
     CMP ESI,dword ptr [0x02de3120]      ; 0055a804 | DAT_02de3120
     JZ 0x0055a879                       ; 0055a80a
         ;   XREF to: 0055a879 (CONDITIONAL_JUMP)  ; LAB_0055a879
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_00558b70 ; 0055a80c
-        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_wasKeyPressed_FUN_00558b70()
+        ;   XREF to: 00558b70 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_00558b70()
     TEST EAX,EAX                        ; 0055a811
     JNZ 0x0055a879                      ; 0055a813
         ;   XREF to: 0055a879 (CONDITIONAL_JUMP)  ; LAB_0055a879
@@ -388,14 +388,14 @@ section .text
     MOV EAX,[0x02de2098]                ; 0055a883 | DAT_02de2098
     PUSH EAX                            ; 0055a888
     CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 0055a889
-        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
+        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_0055a1c0(HWND window_handle)
     ADD ESP,0x4                         ; 0055a88e
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0055a891
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a896
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0055a89b
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EAX,0x1                         ; 0055a8a0
     POP EBX                             ; 0055a8a5
     POP ESI                             ; 0055a8a6

@@ -5,36 +5,80 @@
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_00565072
 // Address: 00565072
-void __cdecl ifstream::ctor(undefined4 *param_1,byte param_2,undefined4 param_3,uint param_4,undefined4 param_5);
+void __cdecl ifstream::ctor(void *this_ptr,int ctor_flags,char *filename,int open_mode,int buffer_size);
 
 // Original: crt_fstream.cpp_ofstream_ctor_FUN_0056511e
 // Address: 0056511e
-void __cdecl ofstream::ctor(undefined4 *param_1,byte param_2,undefined4 param_3,uint param_4,undefined4 param_5);
+void __cdecl ofstream::ctor(void *this_ptr,int ctor_flags,char *filename,int open_mode,int buffer_size);
 
 // Original: crt_fstream.cpp_ofstream_dtor_FUN_005651ca
 // Address: 005651ca
-int * __cdecl ofstream::dtor(int *param_1,byte param_2);
+ofstream * __cdecl ofstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_dtor_FUN_00565264
 // Address: 00565264
-int * __cdecl ifstream::dtor(int *param_1,byte param_2);
+ifstream * __cdecl ifstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_005652fe
 // Address: 005652fe
-void __cdecl ifstream::ctor(undefined4 *param_1,byte param_2);
+ifstream * __cdecl ifstream::ctor(void *this_ptr,int c1);
 
 // Original: crt_fstream.cpp_ofstream_ctor_FUN_0056536a
 // Address: 0056536a
-void __cdecl ofstream::ctor(undefined4 *param_1,byte param_2);
+ofstream * __cdecl ofstream::ctor(void *this_ptr,int c1);
 
 // Original: crt_fstream.cpp_ostream_write_FUN_00565a13
 // Address: 00565a13
-int * __cdecl ostream::write(int *param_1,undefined4 *param_2,uint param_3);
+_ostream * __cdecl ostream::write(_ostream *stream,void *buffer,SIZE_T count);
 
 // Original: crt_fstream.cpp_openFile_FUN_00565eb5
 // Address: 00565eb5
-void __cdecl openFile(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl openFile(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
 
 // Original: crt_fstream.cpp_istream_seekg_FUN_00565f14
 // Address: 00565f14
-int * __cdecl istream::seekg(int *param_1,undefined4 param_2);
+_istream * __cdecl istream::seekg(void *this_ptr,int offset);
+
+// Original: crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d
+// Address: 0056b75d
+char * fstreambase::ctor(int *param_1,byte param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+
+// Original: crt_fstream.cpp_fstreambase_dtor_FUN_0056b810
+// Address: 0056b810
+fstreambase * __cdecl fstreambase::dtor(fstreambase *this_ptr,uint flags);
+
+// Original: crt_fstream.cpp_fstreambase_ctor_FUN_0056b896
+// Address: 0056b896
+fstreambase * __cdecl fstreambase::ctor(fstreambase *this_ptr,uint c1);
+
+// Original: crt_fstream.cpp_filebuf_ctor_FUN_0057042d
+// Address: 0057042d
+filebuf * __cdecl filebuf::ctor(filebuf *this_ptr);
+
+// Original: crt_fstream.cpp_filebuf_dtor_FUN_00570449
+// Address: 00570449
+filebuf * __watcallStack filebuf::dtor(filebuf *this_ptr,uint flags);
+
+// Original: crt_fstream.cpp_filebuf_pbackfail_FUN_00571efe
+// Address: 00571efe
+uint filebuf::pbackfail(int param_1,uint param_2);
+
+// Original: crt_fstream.cpp_filebuf_overflow_FUN_00571fd1
+// Address: 00571fd1
+int filebuf::overflow(int param_1,int param_2);
+
+// Original: crt_fstream.cpp_filebuf_underflow_FUN_005721d7
+// Address: 005721d7
+uint filebuf::underflow(int param_1);
+
+// Original: crt_fstream.cpp_filebuf_setbuf_FUN_005722dc
+// Address: 005722dc
+streambuf * filebuf::setbuf(streambuf *param_1,void *param_2,int param_3);
+
+// Original: crt_fstream.cpp_filebuf_seekoff_FUN_00572338
+// Address: 00572338
+int filebuf::seekoff(int param_1,long param_2,uint param_3);
+
+// Original: crt_fstream.cpp_filebuf_sync_FUN_005723ae
+// Address: 005723ae
+int __watcallStack filebuf::sync(filebuf *this_ptr);

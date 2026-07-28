@@ -11,6 +11,8 @@
 void shape_edittool_cpp_FUN_00477690(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,8,&g_CVectorTypeInfo_005993b0);
   return;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(int param_1,int param_2,int param_3)
+; int __cdecl core_ground_cpp_CGround_getVertexIndex_FUN_004b1800(CGround *this_ptr,int column,int row)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   column
+; int              Stack[0xc]:4   row
 ;
 ; XREF[2]:
 ;   core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 at 004b1e5d

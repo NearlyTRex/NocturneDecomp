@@ -1,0 +1,412 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 232,
+    "complexity_score": 117,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 87,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_type_propagation"
+    ],
+    "total_lines": 319
+  },
+  "cross_references": [
+    {
+      "addr": "004fd450",
+      "from_addr": "004fd747",
+      "name": "core_scat.cpp_CScat_updateAiming_FUN_004fd450",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fda20",
+    "address_range": [
+      [
+        "004fda20",
+        "004fdcf0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20",
+    "signature": "int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int hand_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "00511780",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511750",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00511750"
+    },
+    {
+      "addr": "0050fb00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00"
+    },
+    {
+      "addr": "00511800",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800"
+    },
+    {
+      "addr": "0054e4a0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
+    },
+    {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058df76",
+      "name": "DOUBLE_0058df76",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "0058df7e",
+      "name": "DOUBLE_0058df7e",
+      "type": "double",
+      "value": "-0.781490709825871"
+    },
+    {
+      "addr": "0058df86",
+      "name": "DOUBLE_0058df86",
+      "type": "double",
+      "value": "1.56298141965174"
+    },
+    {
+      "addr": "0058df8e",
+      "name": "DOUBLE_0058df8e",
+      "type": "double",
+      "value": "35"
+    },
+    {
+      "addr": "0058df96",
+      "name": "DOUBLE_0058df96",
+      "type": "double",
+      "value": "-0.785398163375000"
+    },
+    {
+      "addr": "0058df9e",
+      "name": "DOUBLE_0058df9e",
+      "type": "double",
+      "value": "1.57079632675000"
+    },
+    {
+      "addr": "0058dfa6",
+      "name": "FLOAT_0058dfa6",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "005993b0",
+      "name": "g_CVectorTypeInfo_005993b0",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005be368",
+      "name": "DAT_005be368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcdef4",
+      "name": "g_CEnemyActorType_01bcdebc.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "DAT_01e57284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fe0",
+      "name": "DAT_01fa3fe0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fd747",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_CScat_updateAiming_FUN_004fd450",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.102941176470588,
+    "instruction_count": 204,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 13,
+      "BRANCH": 1,
+      "CALL": 9,
+      "CALLIND": 3,
+      "CBRANCH": 13,
+      "COPY": 534,
+      "FLOAT2FLOAT": 44,
+      "FLOAT_ADD": 8,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 16,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 87,
+      "INT_AND": 83,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 32,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 41,
+      "INT_OR": 40,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 44,
+      "INT_ZEXT": 32,
+      "LOAD": 49,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 60
+    },
+    "pcode_op_count": 1245
+  },
+  "stack_frame": {
+    "frame_size": 264,
+    "local_size": 252,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScat *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004fda2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 86,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "(target == *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18))) {",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

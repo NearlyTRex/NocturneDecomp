@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_00498790(int param_1)
+; void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_00498790(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 004977ce
@@ -32,7 +34,7 @@ section .text
     PUSH ECX                            ; 004987a7
     PUSH EDX                            ; 004987a8
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004987a9
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004987ae
     TEST EAX,EAX                        ; 004987b1
     JZ 0x004987c5                       ; 004987b3

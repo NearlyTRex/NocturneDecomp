@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(undefined4 *param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+; void __cdecl core_fire_cpp_CStake_spawn_FUN_00483320(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)
 ;
+; Parameters:
+; CStake *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   spawn_position
+; CVector3f *      Stack[0xc]:4   orientation_angles
+; CVector3f *      Stack[0x10]:4   surface_normal
 ; Local Variables:
 ; undefined        Stack[-0xb4]:1  local_b4
 ; undefined4       Stack[-0x8c]:4  local_8c
@@ -67,7 +72,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00483338
     PUSH EAX                            ; 0048333c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0048333d
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00483342
     LEA EAX,[ESP + 0x7c]                ; 00483345
     MOV EDI,0x41200000                  ; 00483349
@@ -150,7 +155,7 @@ section .text
     PUSH 0x1c08d48                      ; 0048345d
     MOV dword ptr [EAX],0x0             ; 00483462
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00483468
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     LEA EDX,[EAX + 0x338]               ; 0048346d
     ADD ESP,0x4                         ; 00483473
     MOV EAX,dword ptr [EDX]             ; 00483476
@@ -203,7 +208,7 @@ section .text
     ADD EBX,0x4                         ; 0048352a
     PUSH EBX                            ; 0048352d
     CALL core_box.cpp_CBox_setupCorners_FUN_0041a6e0 ; 0048352e
-        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupCorners_FUN_0041a6e0()
+        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041a6e0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 00483533
     PUSH 0x4116cbe4                     ; 00483536
     PUSH 0xc116cbe4                     ; 0048353b
@@ -229,7 +234,7 @@ section .text
     PUSH EBX                            ; 0048358a
     FSTP float ptr [ESP + 0x68]         ; 0048358b
     CALL core_box.cpp_CBox_setupVelocities_FUN_0041cb40 ; 0048358f
-        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupVelocities_FUN_0041cb40()
+        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_0041cb40(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
     ADD ESP,0xc                         ; 00483594
     ADD ESP,0xa8                        ; 00483597
     POP EBP                             ; 0048359d

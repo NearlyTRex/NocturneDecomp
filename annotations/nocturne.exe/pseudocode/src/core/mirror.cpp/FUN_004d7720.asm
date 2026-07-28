@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_FUN_004d7720(int param_1,undefined4 param_2)
+; void core_mirror_cpp_FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2)
 ;
 ;
 ; XREF[1]:
@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   core_mirror.cpp_FUN_004d74a0
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 004d7724
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d7725
     PUSH ECX                            ; 004d7729
-    CALL core_mirror.cpp_FUN_004d74a0   ; 004d772a
-        ;   XREF to: 004d74a0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d74a0()
+    CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0 ; 004d772a
+        ;   XREF to: 004d74a0 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004d772f
     TEST EAX,EAX                        ; 004d7732
     JNZ 0x004d7737                      ; 004d7734
@@ -39,7 +39,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004d7742 | DAT_005ae704
     PUSH EBX                            ; 004d7748 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 ; 004d7749
-        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190()
+        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004d774e
     POP EBX                             ; 004d7751
     RET                                 ; 004d7752

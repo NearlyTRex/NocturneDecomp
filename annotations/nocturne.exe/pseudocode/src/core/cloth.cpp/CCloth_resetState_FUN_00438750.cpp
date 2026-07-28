@@ -2,15 +2,14 @@
 // Address: 00438750
 // Address Range: [[00438750, 0043877f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(int param_1,int param_2)
+// Signature: void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(CCloth *this_ptr,int vertex_index)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(int param_1,int param_2)
+void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(CCloth *this_ptr,int vertex_index)
 
 {
-  param_1 = param_2 * 0x11c + param_1;
-  *(uint *)(param_1 + 0x470) = 0xffffffff;
-  *(uint *)(param_1 + 0x40c) = 0;
+  *(uint *)((int)(this_ptr->model).texture_list + vertex_index * 0x11c + 0x34c) = 0xffffffff;
+  *(uint *)((int)(this_ptr->model).texture_list + vertex_index * 0x11c + 0x2e8) = 0;
   return;
 }

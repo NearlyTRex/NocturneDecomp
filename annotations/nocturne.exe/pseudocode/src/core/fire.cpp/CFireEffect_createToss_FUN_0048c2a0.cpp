@@ -19,6 +19,6 @@ void core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0(uint param_1,uint param_2
   iVar1 = iVar1 * 0x3e4;
   *(uint *)(iVar1 + 0x1c5dc04) = param_6;
   sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0
-            (*(uint *)(iVar1 + 0x1c5dc04),iVar1 + 0x1c5d9a4);
+            (*(uint *)(iVar1 + 0x1c5dc04),(CVector3f *)(iVar1 + 0x1c5d9a4));
   return;
 }

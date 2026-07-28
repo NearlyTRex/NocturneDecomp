@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 468,
+    "complexity_score": 603,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 173,
-    "suspect_count": 28,
+    "pseudocode_lines": 183,
+    "suspect_count": 38,
     "suspect_types": [
+      "raw_address_pointer_store",
       "self_copy_guard",
+      "stack_param",
+      "stack_ref",
+      "sub84_truncation",
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr"
+      "unrolled_memcpy"
     ],
-    "total_lines": 570
+    "total_lines": 580
   },
   "cross_references": [],
   "function": {
@@ -148,7 +153,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_turret.cpp_CTurret_fire_FUN_0054ab10",
-    "signature": "undefined4 core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)"
+    "signature": "undefined4 core_turret_cpp_CTurret_fire_FUN_0054ab10(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -182,14 +187,14 @@
       "name": "core_crate.cpp_CCrate_explode_FUN_0043cdb0"
     },
     {
+      "addr": "0048ab60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60"
+    },
+    {
       "addr": "0048af20",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20"
-    },
-    {
-      "addr": "0048ab60",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0048ab60"
     },
     {
       "addr": "0048e550",
@@ -199,7 +204,7 @@
     {
       "addr": "004ada20",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004ada20"
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004ada20"
     },
     {
       "addr": "004aded0",
@@ -222,6 +227,11 @@
       "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800"
     },
     {
+      "addr": "005485a0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0"
+    },
+    {
       "addr": "005485e0",
       "is_variadic": false,
       "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0"
@@ -230,11 +240,6 @@
       "addr": "00548580",
       "is_variadic": false,
       "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_00548580"
-    },
-    {
-      "addr": "005485a0",
-      "is_variadic": false,
-      "name": "core_trigger.cpp_FUN_005485a0"
     }
   ],
   "globals": [
@@ -452,34 +457,27 @@
   "static_analysis": {
     "analyzed_file": "CTurret_fire_FUN_0054ab10.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 15,
-          "line": 71,
-          "message": "Uninitialized variable: fStack_a0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 71,
-          "message": "Uninitialized variable: fStack_34",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 72,
-          "message": "Uninitialized variable: fStack_9c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 72,
+          "column": 33,
+          "line": 61,
           "message": "Uninitialized variable: fStack_30",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 33,
+          "line": 62,
+          "message": "Uninitialized variable: fStack_2c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 59,
+          "line": 173,
+          "message": "Uninitialized variable: in_stack_ffffff28",
           "severity": "error"
         }
       ],
@@ -493,159 +491,167 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)",
+      "text": "uint core_turret_cpp_CTurret_fire_FUN_0054ab10(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffff28",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_5c);",
-      "type": "unresolved_funcptr"
+      "text": "float in_stack_ffffff28;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_5c);",
+      "text": "pCVar2 = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_5c);",
+      "text": "pCVar2 = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_a4,uVar1);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&UStack_a0.vec,pCVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "uStack_60 = *(uint *)(param_1 + 0x2e0);",
+      "text": "local_5c = param_1[2].orient_matrix.m[0].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_38,&uStack_68);",
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&fStack_34,aiStack_64);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 69,
+      "match": "*(CDemonActor **)(0x01E57284",
       "severity": "moderate",
-      "text": "if ((iVar2 != 0) && (iVar3 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2), 0 < iVar3))",
-      "type": "unresolved_funcptr"
+      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
+      "type": "raw_address_pointer_store"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_trigger_cpp_FUN_005485a0(iVar3,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 103,
-      "match": "code *",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 71,
+      "match": "SUB84(",
       "severity": "moderate",
-      "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
-      "type": "unresolved_funcptr"
+      "text": "flags = SUB84(__BITCAST_UINT64(dVar4),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 78,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 82,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 87,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 91,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18),",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
+      "text": "((CTrigger *)this_ptr_00,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
+      "text": "hit_points = (*((param_1->vtable)._ub)->dtor)(param_1,flags);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "hit_points = (*((param_1->vtable)._ub)->dtor)(param_1,flags);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 115,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 132,
-      "match": "code *",
+      "match": "&stack0xffffff24",
       "severity": "moderate",
-      "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
-      "type": "unresolved_funcptr"
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff24);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
+      "text": "pCStack_d0 = (*((param_1->vtable)._ub)->dtor)(param_1,flags);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uStack_b8 = *(uint *)(param_1 + 0x564);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 158,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_ac = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 160,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
+      "text": "pCStack_d0 = (*((param_1->vtable)._ub)->dtor)(param_1,flags);",
       "type": "unnamed_param"
     },
     {
@@ -653,96 +659,160 @@
       "line": 160,
       "match": "param_1",
       "severity": "mild",
-      "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
+      "text": "fStack_ac = param_1[4].location.position.y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0x100))(iVar2,&uStack_e0);",
-      "type": "unresolved_funcptr"
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "UStack_a0._0_4_ = param_1;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2dc) == 0) break;",
+      "text": "UStack_a0._0_4_ = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_44,param_1 + 0x3c);",
+      "text": "UStack_a0.vec.z = (float)(*((param_1->vtable)._ub)->getCarrier)(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x8a8) = 2;",
+      "text": "UStack_a0.vec.z = (float)(*((param_1->vtable)._ub)->getCarrier)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 166,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "(this_ptr,(CDemonActor *)&pCStack_d0,(int)in_stack_ffffff28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 167,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[2].orient_matrix.m[0].x == 0.0) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 168,
+      "match": "*(CDemonActor **)(0x01E57284",
+      "severity": "moderate",
+      "text": "pCStack_d0 = *(CDemonActor **)(0x01E57284->lights[199].filter_names[0x13] + 0x18);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 178,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C08D04,&CStack_40,&param_1->orient_matrix);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f8) = *(uint *)(param_1 + 0x76c);",
+      "text": "pCVar1 = param_1[5].standing_platform;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f8) = *(uint *)(param_1 + 0x76c);",
+      "text": "param_1[6].create_event[0x50] = '\\x02';",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&fStack_d4 != &fStack_50)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 142,
+      "description": "Unnamed function parameter",
+      "line": 181,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[6].create_event[0x51] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 182,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[6].create_event[0x52] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 183,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[6].create_event[0x53] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 184,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].orient_matrix.m[2].y = (float)pCVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 156,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_b8.x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_c8 != &fStack_44)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 146,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
-      "text": "if (&fStack_d4 != &fStack_50) {",
+      "text": "if (&fStack_c8 != &fStack_44) {",
       "type": "self_copy_guard"
     },
     {
-      "description": "Uninitialized variable: fStack_a0",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_94 = fStack_a0 + fStack_34;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_34",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_94 = fStack_a0 + fStack_34;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_9c",
-      "line": 72,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_90 = fStack_9c + fStack_30;",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: fStack_30",
-      "line": 72,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fStack_90 = fStack_9c + fStack_30;",
+      "text": "fStack_90 = UStack_a0.vec.y + fStack_30;",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_2c",
+      "line": 62,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_8c = UStack_a0.vec.z + fStack_2c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_ffffff28",
+      "line": 173,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "(this_ptr,(CDemonActor *)&pCStack_d0,(int)in_stack_ffffff28);",
+      "type": "static_legacy_uninitvar"
     }
   ],
   "vtable_info": {

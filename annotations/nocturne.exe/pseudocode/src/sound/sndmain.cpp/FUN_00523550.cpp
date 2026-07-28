@@ -11,12 +11,24 @@
 void sound_sndmain_cpp_FUN_00523550(void)
 
 {
+  void *in_stack_00000004;
   uint in_stack_00000008;
+  ulong in_stack_0000000c;
+  int value;
   
-  if ((7 < in_stack_00000008) && ((in_stack_00000008 < 9 || (in_stack_00000008 == 0x10)))) {
-    memset();
+  if (7 < in_stack_00000008) {
+    if (in_stack_00000008 < 9) {
+      value = 0x80;
+    }
+    else {
+      if (in_stack_00000008 != 0x10) goto LAB_00523580;
+      in_stack_0000000c = in_stack_0000000c * 2;
+      value = 0;
+    }
+    memset(in_stack_00000004,value,in_stack_0000000c);
     return;
   }
+LAB_00523580:
   PTR_01cc4800 = "..\\sound\\sndmain.cpp";
   INT_01cc4804 = 0x5c4;
   core_main_c_FUN_004c8440("generateSilence - invalid bit depth!");

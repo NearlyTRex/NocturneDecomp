@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_setWeaponState_FUN_004cf180(int param_1,undefined4 param_2)
+; void core_melee_cpp_CMelee_setWeaponState_FUN_004cf180(CWeapon *param_1,int param_2)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     PUSH EAX                            ; 004cf189
     MOV dword ptr [EAX + 0x588],0x0     ; 004cf18a
     CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560 ; 004cf194
-        ;   XREF to: 00554560 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560()
+        ;   XREF to: 00554560 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_00554560(CWeapon * this_ptr, int weapon_state)
     ADD ESP,0x8                         ; 004cf199
     RET                                 ; 004cf19c
 

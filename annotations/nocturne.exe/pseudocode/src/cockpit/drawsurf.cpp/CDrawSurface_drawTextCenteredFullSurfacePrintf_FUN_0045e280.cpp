@@ -2,19 +2,19 @@
 // Address: 0045e280
 // Address Range: [[0045e280, 0045e2d5]]
 // Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(undefined4 param_1,undefined4 param_2)
+// Signature: void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(uint param_1,uint param_2)
+void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(CDrawSurface *param_1,char *param_2)
 
 {
-  byte auStack_1008 [4096];
+  char acStack_1008 [4096];
   byte *puStack_8;
   
   puStack_8 = &stack0x0000000c;
-  _vsprintf(auStack_1008,param_2,&puStack_8);
+  _vsprintf(acStack_1008,param_2,(va_list_t)&puStack_8);
   puStack_8 = (byte *)0x0;
-  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260(param_1,auStack_1008);
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260(param_1,acStack_1008);
   return;
 }

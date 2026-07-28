@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(int param_1)
+; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   key_code
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b97d
-;   core_game.cpp_FUN_0049b420 at 0049b43a
+;   core_game.cpp_drawKeyBindingEntry_FUN_0049b420 at 0049b43a
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bf553
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3b39
 ;
@@ -51,7 +53,7 @@ section .text
         ;   XREF to: 004d292c (CONDITIONAL_JUMP)  ; LAB_004d292c
     PUSH 0x588d70                       ; 004d291d | = "Mouse X-Axis"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2922
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2927
     ADD ESP,0x4                         ; 004d2929
     CMP EBX,0x256                       ; 004d292c
@@ -60,7 +62,7 @@ section .text
         ;   XREF to: 004d2943 (CONDITIONAL_JUMP)  ; LAB_004d2943
     PUSH 0x588d7d                       ; 004d2934 | = "Mouse Y-Axis"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2939
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d293e
     ADD ESP,0x4                         ; 004d2940
     CMP EBX,0x200                       ; 004d2943
@@ -69,7 +71,7 @@ section .text
         ;   XREF to: 004d295a (CONDITIONAL_JUMP)  ; LAB_004d295a
     PUSH 0x588d8a                       ; 004d294b | = "Mouse B1"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2950
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2955
     ADD ESP,0x4                         ; 004d2957
     CMP EBX,0x201                       ; 004d295a
@@ -78,7 +80,7 @@ section .text
         ;   XREF to: 004d2971 (CONDITIONAL_JUMP)  ; LAB_004d2971
     PUSH 0x588d93                       ; 004d2962 | = "Mouse B2"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2967
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d296c
     ADD ESP,0x4                         ; 004d296e
     CMP EBX,0x20c                       ; 004d2971
@@ -87,7 +89,7 @@ section .text
         ;   XREF to: 004d2988 (CONDITIONAL_JUMP)  ; LAB_004d2988
     PUSH 0x588d9c                       ; 004d2979 | = "Mouse B3"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d297e
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2983
     ADD ESP,0x4                         ; 004d2985
     CMP EBX,0x202                       ; 004d2988
@@ -96,7 +98,7 @@ section .text
         ;   XREF to: 004d299f (CONDITIONAL_JUMP)  ; LAB_004d299f
     PUSH 0x588da5                       ; 004d2990 | = "Button 1"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2995
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d299a
     ADD ESP,0x4                         ; 004d299c
     CMP EBX,0x203                       ; 004d299f
@@ -105,7 +107,7 @@ section .text
         ;   XREF to: 004d29b6 (CONDITIONAL_JUMP)  ; LAB_004d29b6
     PUSH 0x588dae                       ; 004d29a7 | = "Button 2"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d29ac
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d29b1
     ADD ESP,0x4                         ; 004d29b3
     CMP EBX,0x204                       ; 004d29b6
@@ -114,7 +116,7 @@ section .text
         ;   XREF to: 004d29cd (CONDITIONAL_JUMP)  ; LAB_004d29cd
     PUSH 0x588db7                       ; 004d29be | = "Button 3"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d29c3
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d29c8
     ADD ESP,0x4                         ; 004d29ca
     CMP EBX,0x205                       ; 004d29cd
@@ -123,7 +125,7 @@ section .text
         ;   XREF to: 004d29e4 (CONDITIONAL_JUMP)  ; LAB_004d29e4
     PUSH 0x588dc0                       ; 004d29d5 | = "Button 4"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d29da
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d29df
     ADD ESP,0x4                         ; 004d29e1
     CMP EBX,0x206                       ; 004d29e4
@@ -132,7 +134,7 @@ section .text
         ;   XREF to: 004d29fb (CONDITIONAL_JUMP)  ; LAB_004d29fb
     PUSH 0x588dc9                       ; 004d29ec | = "Button 5"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d29f1
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d29f6
     ADD ESP,0x4                         ; 004d29f8
     CMP EBX,0x207                       ; 004d29fb
@@ -141,7 +143,7 @@ section .text
         ;   XREF to: 004d2a12 (CONDITIONAL_JUMP)  ; LAB_004d2a12
     PUSH 0x588dd2                       ; 004d2a03 | = "Button 6"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a08
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a0d
     ADD ESP,0x4                         ; 004d2a0f
     CMP EBX,0x208                       ; 004d2a12
@@ -150,7 +152,7 @@ section .text
         ;   XREF to: 004d2a29 (CONDITIONAL_JUMP)  ; LAB_004d2a29
     PUSH 0x588ddb                       ; 004d2a1a | = "Button 7"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a1f
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a24
     ADD ESP,0x4                         ; 004d2a26
     CMP EBX,0x209                       ; 004d2a29
@@ -159,7 +161,7 @@ section .text
         ;   XREF to: 004d2a40 (CONDITIONAL_JUMP)  ; LAB_004d2a40
     PUSH 0x588de4                       ; 004d2a31 | = "Button 8"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a36
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a3b
     ADD ESP,0x4                         ; 004d2a3d
     CMP EBX,0x20a                       ; 004d2a40
@@ -168,7 +170,7 @@ section .text
         ;   XREF to: 004d2a57 (CONDITIONAL_JUMP)  ; LAB_004d2a57
     PUSH 0x588ded                       ; 004d2a48 | = "Button 9"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a4d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a52
     ADD ESP,0x4                         ; 004d2a54
     CMP EBX,0x20b                       ; 004d2a57
@@ -177,7 +179,7 @@ section .text
         ;   XREF to: 004d2a6e (CONDITIONAL_JUMP)  ; LAB_004d2a6e
     PUSH 0x588df6                       ; 004d2a5f | = "Button 10"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a64
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a69
     ADD ESP,0x4                         ; 004d2a6b
     CMP EBX,0x251                       ; 004d2a6e
@@ -186,7 +188,7 @@ section .text
         ;   XREF to: 004d2a85 (CONDITIONAL_JUMP)  ; LAB_004d2a85
     PUSH 0x588e00                       ; 004d2a76 | = "Gamepad left"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a7b
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a80
     ADD ESP,0x4                         ; 004d2a82
     CMP EBX,0x252                       ; 004d2a85
@@ -195,7 +197,7 @@ section .text
         ;   XREF to: 004d2a9c (CONDITIONAL_JUMP)  ; LAB_004d2a9c
     PUSH 0x588e0d                       ; 004d2a8d | = "Gamepad right"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2a92
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2a97
     ADD ESP,0x4                         ; 004d2a99
     CMP EBX,0x253                       ; 004d2a9c
@@ -204,7 +206,7 @@ section .text
         ;   XREF to: 004d2ab3 (CONDITIONAL_JUMP)  ; LAB_004d2ab3
     PUSH 0x588e1b                       ; 004d2aa4 | = "Gamepad forward"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2aa9
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2aae
     ADD ESP,0x4                         ; 004d2ab0
     CMP EBX,0x254                       ; 004d2ab3
@@ -213,7 +215,7 @@ section .text
         ;   XREF to: 004d2aca (CONDITIONAL_JUMP)  ; LAB_004d2aca
     PUSH 0x588e2b                       ; 004d2abb | = "Gamepad back"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2ac0
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2ac5
     ADD ESP,0x4                         ; 004d2ac7
     TEST ESI,ESI                        ; 004d2aca
@@ -256,7 +258,7 @@ section .text
     PUSH 0x588d69                       ; 004d2b18 | = "(none)"
         ;   Label: LAB_004d2b18
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d2b1d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV ESI,EAX                         ; 004d2b22
     ADD ESP,0x4                         ; 004d2b24
     JMP 0x004d2915                      ; 004d2b27
@@ -264,7 +266,7 @@ section .text
     PUSH EBX                            ; 004d2b2c
         ;   Label: LAB_004d2b2c
     CALL wincore_winrun.cpp_getKeyName_FUN_00559560 ; 004d2b2d
-        ;   XREF to: 00559560 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getKeyName_FUN_00559560()
+        ;   XREF to: 00559560 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_00559560(EInputCodeType keycode)
     MOV ESI,EAX                         ; 004d2b32
     ADD ESP,0x4                         ; 004d2b34
     JMP 0x004d2ace                      ; 004d2b37

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(int param_1,char *param_2)
+; void core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(CDeformableModelInstance *param_1,char *param_2)
 ;
 ;
 ; XREF[52]:
@@ -51,11 +51,11 @@ section .text
     PUSH EBX                            ; 0051e0eb
     MOV dword ptr [EBX + 0x22b0],0x0    ; 0051e0ec
     CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90 ; 0051e0f6
-        ;   XREF to: 0051dc90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90()
+        ;   XREF to: 0051dc90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051e0fb
     PUSH EBX                            ; 0051e0fe
     CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0 ; 0051e0ff
-        ;   XREF to: 0051dcb0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0()
+        ;   XREF to: 0051dcb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051e104
     MOV dword ptr [EBX + 0x2230],0xffffffff ; 0051e107
     POP EDI                             ; 0051e111

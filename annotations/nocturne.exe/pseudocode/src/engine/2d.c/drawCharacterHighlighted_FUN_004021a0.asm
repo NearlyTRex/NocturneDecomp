@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_004021a0(int param_1,int param_2,int param_3)
+; int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_004021a0(int char_code,int x_pos,int y_pos)
 ;
+; Parameters:
+; int              Stack[0x4]:4   char_code
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

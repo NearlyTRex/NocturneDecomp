@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0043cef2
         ;   Label: LAB_0043cef2
     CALL core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 ; 0043cef3
-        ;   XREF to: 0043cf10 (UNCONDITIONAL_CALL)  ; undefined core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10()
+        ;   XREF to: 0043cf10 (UNCONDITIONAL_CALL)  ; CCrossbow * core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10(CCrossbow * this_ptr)
     ADD ESP,0x4                         ; 0043cef8
     RET                                 ; 0043cefb
 

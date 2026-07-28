@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00424260(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00424260(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0 at 004796b5
 ;   core_hero.cpp_FUN_004b48d0 at 004b48e5
-;   core_npc.cpp_FUN_004ee9e0 at 004ee9e8
+;   core_npc.cpp_CNPC_setup_FUN_004ee9e0 at 004ee9e8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stake_b_kfm_00579dba
@@ -50,7 +52,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 00424267
     PUSH EBP                            ; 0042426b
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0042426c
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00424271
     PUSH 0x579dba                       ; 00424274 | = "stake_b.kfm"
     FLD float ptr [0x0059b094]          ; 00424279 | FLOAT_0059b094
@@ -58,13 +60,13 @@ section .text
     PUSH 0x7658e4                       ; 00424289 | DAT_007658e4
     FSTP float ptr [EBP + 0x240c]       ; 0042428e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00424294
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00424299
     PUSH 0x7658e4                       ; 0042429c | DAT_007658e4
     MOV ESI,EBP                         ; 004242a1
     LEA EDI,[EBP + 0x88]                ; 004242a3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004242a9
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004242ae
     MOV EBX,dword ptr [ESI + 0x24ac]    ; 004242b1
         ;   Label: LAB_004242b1
@@ -85,23 +87,23 @@ section .text
     PUSH EBX                            ; 004242dd
     FSTP float ptr [EBP + 0x1a4]        ; 004242de
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004242e4
-        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0()
+        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004242e9
     PUSH 0x0                            ; 004242ec
     PUSH 0x579e16                       ; 004242ee | = "bip01 head"
     PUSH EBX                            ; 004242f3
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004242f4
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004242f9
     PUSH EAX                            ; 004242fc
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 004242fd
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00424302
     MOV dword ptr [EBP + 0x25dc],EAX    ; 00424305
     PUSH EBP                            ; 0042430b
         ;   Label: LAB_0042430b
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 ; 0042430c
-        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0()
+        ;   XREF to: 004296c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter * this_ptr)
     MOV EBX,dword ptr [EBP + 0x260c]    ; 00424311
     ADD ESP,0x4                         ; 00424317
     TEST EBX,EBX                        ; 0042431a
@@ -111,7 +113,7 @@ section .text
     PUSH EAX                            ; 00424328
     XOR EBX,EBX                         ; 00424329
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042432b
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     MOV dword ptr [EBP + 0x2f0c],0x4    ; 00424330
     ADD ESP,0x4                         ; 0042433a
     MOV EDI,dword ptr [EAX + 0x28558]   ; 0042433d
@@ -125,7 +127,7 @@ section .text
     PUSH EBP                            ; 0042434b
     INC EBX                             ; 0042434c
     CALL core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0 ; 0042434d
-        ;   XREF to: 004266a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0()
+        ;   XREF to: 004266a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     MOV EAX,dword ptr [ESI + 0x28558]   ; 00424352
     ADD ESP,0xc                         ; 00424358
     CMP EBX,EAX                         ; 0042435b
@@ -156,7 +158,7 @@ section .text
         ;   Label: LAB_004243a0
     PUSH EBX                            ; 004243a6
     CALL core_cloth.cpp_CClothList_load_FUN_00438270 ; 004243a7
-        ;   XREF to: 00438270 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_load_FUN_00438270()
+        ;   XREF to: 00438270 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_load_FUN_00438270(CClothList * this_ptr)
     ADD ESP,0x4                         ; 004243ac
     LEA EDI,[EBP + 0x150]               ; 004243af
     PUSH EDI                            ; 004243b5
@@ -167,7 +169,7 @@ section .text
     PUSH EBX                            ; 004243be
     MOV dword ptr [ESP + 0x10],EAX      ; 004243bf
     CALL core_cloth.cpp_CClothList_setup_FUN_00438510 ; 004243c3
-        ;   XREF to: 00438510 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_setup_FUN_00438510()
+        ;   XREF to: 00438510 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_setup_FUN_00438510(CClothList * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004243c8
     PUSH EDI                            ; 004243cb
     PUSH dword ptr [EBP + 0x240c]       ; 004243cc
@@ -177,11 +179,11 @@ section .text
     PUSH EDX                            ; 004243dc
     PUSH EBX                            ; 004243dd
     CALL core_cloth.cpp_CClothList_process_FUN_00438550 ; 004243de
-        ;   XREF to: 00438550 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_process_FUN_00438550()
+        ;   XREF to: 00438550 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_process_FUN_00438550(CClothList * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 004243e3
     PUSH EBP                            ; 004243e6
     CALL core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 ; 004243e7
-        ;   XREF to: 0042a800 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800()
+        ;   XREF to: 0042a800 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(CCharacter * this_ptr)
     MOV DH,byte ptr [EBP + 0x2440]      ; 004243ec
     ADD ESP,0x4                         ; 004243f2
     TEST DH,DH                          ; 004243f5
@@ -230,7 +232,7 @@ section .text
     PUSH EBP                            ; 00424469
         ;   Label: LAB_00424469
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 0042446a
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042446f
     LEA ESI,[EAX + 0x1]                 ; 00424472
     LEA EDI,[EBP + 0x2440]              ; 00424475

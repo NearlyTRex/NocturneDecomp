@@ -9,12 +9,12 @@
 void core_hostage_cpp_FUN_004b69c0(void)
 
 {
-  int iVar1;
+  CHostage *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1f958);
-  if (iVar1 == 0) {
+  this_ptr = (CHostage *)FUN_0056497c(0x1f958);
+  if (this_ptr == (CHostage *)0x0) {
     return;
   }
-  core_hostage_cpp_CHostage_ctor_FUN_004b69f0(iVar1);
+  core_hostage_cpp_CHostage_ctor_FUN_004b69f0(this_ptr);
   return;
 }

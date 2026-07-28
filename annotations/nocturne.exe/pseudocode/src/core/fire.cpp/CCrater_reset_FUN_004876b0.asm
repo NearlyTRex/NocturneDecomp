@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CCrater_reset_FUN_004876b0(undefined4 *param_1)
+; void __cdecl core_fire_cpp_CCrater_reset_FUN_004876b0(CCrater *this_ptr)
 ;
+; Parameters:
+; CCrater *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_init_FUN_0048a150 at 0048a2af

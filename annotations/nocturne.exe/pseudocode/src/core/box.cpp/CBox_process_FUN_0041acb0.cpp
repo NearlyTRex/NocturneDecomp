@@ -2,21 +2,21 @@
 // Address: 0041acb0
 // Address Range: [[0041acb0, 0041ad0a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(undefined4 param_1,float param_2)
+// Signature: void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(CBox *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(uint param_1,float param_2)
+void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(CBox *this_ptr,float delta_time)
 
 {
   float fVar1;
   
-  if ((float)0.012500000000000001 < param_2) {
+  if ((float)0.012500000000000001 < delta_time) {
     fVar1 = (float)0.5;
-    core_box_cpp_CBox_process_FUN_0041acb0(param_1,param_2 * fVar1);
-    core_box_cpp_CBox_process_FUN_0041acb0(param_1,param_2 * fVar1);
+    core_box_cpp_CBox_process_FUN_0041acb0(this_ptr,delta_time * fVar1);
+    core_box_cpp_CBox_process_FUN_0041acb0(this_ptr,delta_time * fVar1);
     return;
   }
-  core_box_cpp_CBox_processPhysics_FUN_0041ad10(param_1,param_2);
+  core_box_cpp_CBox_processPhysics_FUN_0041ad10(this_ptr,delta_time);
   return;
 }

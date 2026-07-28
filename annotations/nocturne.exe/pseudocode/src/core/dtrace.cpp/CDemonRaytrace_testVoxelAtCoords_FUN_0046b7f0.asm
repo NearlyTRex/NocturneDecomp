@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(int param_1,uint *param_2)
+; int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   voxel_coords
 ;
 ; XREF[1]:
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef1fb

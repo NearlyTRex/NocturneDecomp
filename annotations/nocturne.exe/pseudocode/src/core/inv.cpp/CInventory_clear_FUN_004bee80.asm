@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_clear_FUN_004bee80(int param_1)
+; void __cdecl core_inv_cpp_CInventory_clear_FUN_004bee80(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_initialize_FUN_004bef10 at 004bef1b
@@ -34,7 +36,7 @@ section .text
     PUSH ESI                            ; 004beea1
     PUSH EBX                            ; 004beea2
     CALL core_inv.cpp_CInventory_removeItem_FUN_004c07b0 ; 004beea3
-        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_removeItem_FUN_004c07b0()
+        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004c07b0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EDI,dword ptr [EBX + 0x8]       ; 004beea8
     ADD ESP,0xc                         ; 004beeab
     TEST EDI,EDI                        ; 004beeae

@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 30,
+    "complexity_score": 6,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 12
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     {
       "addr": "005634b0",
       "from_addr": "00563569",
-      "name": "crt_unknown.c_FUN_005634b0",
+      "name": "crt_unknown.c_fclose_FUN_005634b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,7 +60,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_stdio.c_remove_FUN_005657c0",
-    "signature": "void __watcallStack crt_stdio_c_remove_FUN_005657c0(undefined4 param_1)"
+    "signature": "int __watcallStack crt_stdio_c_remove_FUN_005657c0(char *filename)"
   },
   "function_calls": [
     {
@@ -93,29 +91,20 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __watcallStack remove(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056bbf0(param_1);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_getPartDominantBone_FUN_00426570(int param_1,undefined4 param_2)
+; int core_charactr_cpp_CCharacter_getPartDominantBone_FUN_00426570(int param_1,int param_2)
 ;
 ;
 ; Called Functions:
@@ -19,11 +19,11 @@ section .text
     ADD EAX,0x150                       ; 00426579
     PUSH EAX                            ; 0042657e
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0042657f
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00426584
     PUSH EAX                            ; 00426587
     CALL core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_00519b10 ; 00426588
-        ;   XREF to: 00519b10 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_00519b10()
+        ;   XREF to: 00519b10 (UNCONDITIONAL_CALL)  ; SPart * core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_00519b10(CDeformableModel * this_ptr, int part_index)
     ADD ESP,0x8                         ; 0042658d
     MOV EAX,dword ptr [EAX + 0x5c]      ; 00426590
     RET                                 ; 00426593

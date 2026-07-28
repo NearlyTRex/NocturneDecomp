@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(int param_1,LPCSTR param_2)
+; int engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(CWinFont *param_1,LPCSTR param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -28,7 +28,7 @@ section .text
     PUSH -0x1                           ; 0055877f
     PUSH EBX                            ; 00558781
     CALL engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0 ; 00558782
-        ;   XREF to: 005584d0 (UNCONDITIONAL_CALL)  ; undefined engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0()
+        ;   XREF to: 005584d0 (UNCONDITIONAL_CALL)  ; int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFont * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 00558787
     TEST EAX,EAX                        ; 0055878a
     JNZ 0x00558794                      ; 0055878c

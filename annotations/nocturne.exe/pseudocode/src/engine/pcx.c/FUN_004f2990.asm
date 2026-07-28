@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pcx_c_FUN_004f2990(undefined4 param_1)
+; void engine_pcx_c_FUN_004f2990(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
@@ -19,7 +19,7 @@
 ; undefined2       Stack[-0x40]:2  local_40
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049cfa9
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cfa9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_0058cfc3
@@ -66,7 +66,7 @@ section .text
     PUSH EAX                            ; 004f29c4
     MOV ESI,0x1                         ; 004f29c5
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f29ca
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV AH,0xa                          ; 004f29cf
     MOV DL,0x5                          ; 004f29d1
     ADD ESP,0xc                         ; 004f29d3
@@ -110,7 +110,7 @@ section .text
         ;   Label: LAB_004f2a5f
     PUSH EBX                            ; 004f2a64
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f2a65
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004f2a6a
     MOV EBX,EAX                         ; 004f2a6d
     TEST EAX,EAX                        ; 004f2a6f
@@ -132,7 +132,7 @@ section .text
     PUSH EAX                            ; 004f2aa1
     XOR ESI,ESI                         ; 004f2aa2
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f2aa4
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [0x005b7620]      ; 004f2aa9 | DAT_005b7620
     ADD ESP,0x10                        ; 004f2aaf
     TEST EDX,EDX                        ; 004f2ab2
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_004f2ab6
     PUSH ESI                            ; 004f2ab7
     CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ab8
-        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_004f2550()
+        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_004f2550(int row_index, _FILE * pcx_file)
     MOV EAX,[0x005b761c]                ; 004f2abd | DAT_005b761c
     ADD ESP,0x8                         ; 004f2ac2
     CMP EAX,0x280                       ; 004f2ac5
@@ -154,7 +154,7 @@ section .text
     PUSH EBX                            ; 004f2ad8
     PUSH ESI                            ; 004f2ad9
     CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ada
-        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_004f2550()
+        ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_004f2550(int row_index, _FILE * pcx_file)
     ADD ESP,0x8                         ; 004f2adf
     MOV ECX,dword ptr [0x005b7620]      ; 004f2ae2 | DAT_005b7620
         ;   Label: LAB_004f2ae2
@@ -170,7 +170,7 @@ section .text
         ;   Label: LAB_004f2af3
     PUSH 0xc                            ; 004f2af4
     CALL crt_stdio.c_fputc_FUN_00566cc0 ; 004f2af6
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_00566cc0(int character, _FILE * file)
         ;   Label: LAB_004f2af6
     ADD ESP,0x8                         ; 004f2afb
     XOR ESI,ESI                         ; 004f2afe
@@ -185,7 +185,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x1c00648]   ; 004f2b0d
     PUSH EAX                            ; 004f2b13
     CALL crt_stdio.c_fputc_FUN_00566cc0 ; 004f2b14
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_00566cc0(int character, _FILE * file)
         ;   Label: LAB_004f2b14
     ADD ESP,0x8                         ; 004f2b19
     INC ESI                             ; 004f2b1c
@@ -195,7 +195,7 @@ section .text
         ;   XREF to: 004f2b00 (CONDITIONAL_JUMP)  ; LAB_004f2b00
     PUSH EBX                            ; 004f2b25
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004f2b26
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f2b2b
     POP ESI                             ; 004f2b2e
     POP EDI                             ; 004f2b2f
@@ -207,14 +207,14 @@ section .text
     PUSH EBX                            ; 004f2b39
         ;   Label: LAB_004f2b39
     CALL engine_pcx.c_saveScreenRaw16_FUN_004f2620 ; 004f2b3a
-        ;   XREF to: 004f2620 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_saveScreenRaw16_FUN_004f2620()
+        ;   XREF to: 004f2620 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenRaw16_FUN_004f2620(char * filename)
     ADD ESP,0x4                         ; 004f2b3f
     JMP 0x004f2b30                      ; 004f2b42
         ;   XREF to: 004f2b30 (UNCONDITIONAL_JUMP)  ; LAB_004f2b30
     PUSH EBX                            ; 004f2b44
         ;   Label: LAB_004f2b44
     CALL engine_pcx.c_saveScreenRaw32_FUN_004f27e0 ; 004f2b45
-        ;   XREF to: 004f27e0 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_saveScreenRaw32_FUN_004f27e0()
+        ;   XREF to: 004f27e0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenRaw32_FUN_004f27e0(char * filename)
     ADD ESP,0x4                         ; 004f2b4a
     JMP 0x004f2b30                      ; 004f2b4d
         ;   XREF to: 004f2b30 (UNCONDITIONAL_JUMP)  ; LAB_004f2b30

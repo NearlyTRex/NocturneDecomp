@@ -25,7 +25,7 @@ void FUN_0056974c(char *param_1,uint param_2,int param_3)
   if (*(int *)(param_3 + 8) == -1) {
     *(uint *)(param_3 + 8) = 4;
   }
-  FUN_0056dc68(local_14 >> 0x10,param_1,10);
+  IntegerToString(local_14 >> 0x10,param_1,10);
   cVar1 = *param_1;
   pcVar4 = param_1;
   while (cVar1 != '\0') {

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005c5018
 ;
 ; Called Functions:
-;   engine_3d.c_FUN_00409590
+;   engine_3d.c_clipAndDrawLine3D_FUN_00409590
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 0040956d
     MOV EDI,ESP                         ; 00409571
     MOVSD.REP ES:EDI,ESI                ; 00409573
-    CALL engine_3d.c_FUN_00409590       ; 00409575
-        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00409590()
+    CALL engine_3d.c_clipAndDrawLine3D_FUN_00409590 ; 00409575
+        ;   XREF to: 00409590 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine3D_FUN_00409590()
     ADD ESP,0x60                        ; 0040957a
     ADD ESP,0x60                        ; 0040957d
     POP EDI                             ; 00409580

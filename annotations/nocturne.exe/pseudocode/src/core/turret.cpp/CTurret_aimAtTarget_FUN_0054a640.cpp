@@ -2,11 +2,11 @@
 // Address: 0054a640
 // Address Range: [[0054a640, 0054a7fe]]
 // Convention: unknown
-// Signature: undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2,float param_3)
+// Signature: undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)
 
 #include "nocturne.h"
 
-uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2,float param_3)
+uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)
 
 {
   float local_38;
@@ -21,9 +21,9 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
   float local_10;
   float local_c;
   
-  local_24 = *param_2 - *(float *)(param_1 + 0x20);
-  local_20 = param_2[1] - *(float *)(param_1 + 0x24);
-  local_1c = param_2[2] - *(float *)(param_1 + 0x28);
+  local_24 = *param_2 - (param_1->location).position.x;
+  local_20 = param_2[1] - (param_1->location).position.y;
+  local_1c = param_2[2] - (param_1->location).position.z;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_30,&local_24);
   if (local_30 < -0.5235988f) {
     local_30 = -0.5235988f;
@@ -32,11 +32,11 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
     local_30 = 1.22173f;
   }
   local_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                              (local_2c - *(float *)(param_1 + 0x34));
+                              (local_2c - (param_1->orient).vec.y);
   local_c = local_34;
   local_c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                             (local_30 - *(float *)(param_1 + 0x30));
-  local_10 = param_3 * *(float *)(param_1 + 0x770) * (float)0.017453292519444399;
+                             (local_30 - (param_1->orient).vec.x);
+  local_10 = param_3 * param_1[5].platform_position_delta.x * (float)0.017453292519444399;
   local_18 = -local_10;
   if (local_34 < local_18) {
     local_34 = local_18;
@@ -52,8 +52,8 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
   if (local_10 < local_38) {
     local_38 = local_10;
   }
-  *(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_34;
-  *(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) + local_38;
+  (param_1->orient).vec.y = (param_1->orient).vec.y + local_34;
+  (param_1->orient).vec.x = (param_1->orient).vec.x + local_38;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
   if (((float10)0 != ABS((float10)(local_34 < (float)0.001))) &&
      ((float10)0 != ABS((float10)(local_38 < (float)0.001)))) {

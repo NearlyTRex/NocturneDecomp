@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(int param_1,uint param_2,uint param_3)
+; void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround *this_ptr,int world_column,int world_row)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   world_column
+; int              Stack[0xc]:4   world_row
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -58,7 +62,7 @@ section .text
     AND EDI,ECX                         ; 004b1e54
     MOV dword ptr [ESP + 0x9c],EDX      ; 004b1e56
     CALL core_ground.cpp_CGround_getVertexIndex_FUN_004b1800 ; 004b1e5d
-        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getVertexIndex_FUN_004b1800()
+        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getVertexIndex_FUN_004b1800(CGround * this_ptr, int column, int row)
     ADD ESP,0xc                         ; 004b1e62
     MOV dword ptr [EBX + 0x4c],EAX      ; 004b1e65
     LEA EAX,[ESI + 0x1]                 ; 004b1e68
@@ -67,7 +71,7 @@ section .text
     PUSH EBX                            ; 004b1e6d
     MOV dword ptr [ESP + 0x7c],EAX      ; 004b1e6e
     CALL core_ground.cpp_CGround_getVertexIndex_FUN_004b1800 ; 004b1e72
-        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getVertexIndex_FUN_004b1800()
+        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getVertexIndex_FUN_004b1800(CGround * this_ptr, int column, int row)
     ADD ESP,0xc                         ; 004b1e77
     MOV dword ptr [EBX + 0x50],EAX      ; 004b1e7a
     MOV EAX,dword ptr [ESP + 0x70]      ; 004b1e7d
@@ -76,14 +80,14 @@ section .text
     PUSH EBP                            ; 004b1e83
     PUSH EBX                            ; 004b1e84
     CALL core_ground.cpp_CGround_getVertexIndex_FUN_004b1800 ; 004b1e85
-        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getVertexIndex_FUN_004b1800()
+        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getVertexIndex_FUN_004b1800(CGround * this_ptr, int column, int row)
     ADD ESP,0xc                         ; 004b1e8a
     PUSH ESI                            ; 004b1e8d
     PUSH EBP                            ; 004b1e8e
     PUSH EBX                            ; 004b1e8f
     MOV dword ptr [EBX + 0x54],EAX      ; 004b1e90
     CALL core_ground.cpp_CGround_getVertexIndex_FUN_004b1800 ; 004b1e93
-        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getVertexIndex_FUN_004b1800()
+        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getVertexIndex_FUN_004b1800(CGround * this_ptr, int column, int row)
     MOV ESI,dword ptr [EBX + 0x4c]      ; 004b1e98
     LEA EBP,[ESI*0x4 + 0x0]             ; 004b1e9b
     SUB EBP,ESI                         ; 004b1ea2
@@ -128,7 +132,7 @@ section .text
     PUSH EDI                            ; 004b1f15
     PUSH EBX                            ; 004b1f16
     CALL core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00 ; 004b1f17
-        ;   XREF to: 004b1d00 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00()
+        ;   XREF to: 004b1d00 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(CGround * this_ptr, int column, int row)
     MOV EAX,ESI                         ; 004b1f1c
     AND EDI,0x1                         ; 004b1f1e
     AND EAX,0x1                         ; 004b1f21
@@ -147,7 +151,7 @@ section .text
     PUSH EAX                            ; 004b1f4a
     PUSH EBX                            ; 004b1f4b
     CALL core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0 ; 004b1f4c
-        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0()
+        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround * this_ptr, SMRGLHeaderPrimitive * primitive)
     MOV EDX,0x3                         ; 004b1f51
     ADD ESP,0x8                         ; 004b1f56
     MOV dword ptr [ESP + 0x3c],EDX      ; 004b1f59
@@ -161,7 +165,7 @@ section .text
     PUSH EAX                            ; 004b1f76
     PUSH EBX                            ; 004b1f77
     CALL core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0 ; 004b1f78
-        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0()
+        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004b1f7d
     ADD ESP,0x74                        ; 004b1f80
     POP EBP                             ; 004b1f83
@@ -182,7 +186,7 @@ section .text
     PUSH EAX                            ; 004b1fa8
     PUSH EBX                            ; 004b1fa9
     CALL core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0 ; 004b1faa
-        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0()
+        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004b1faf
     MOV dword ptr [ESP + 0x3c],EDI      ; 004b1fb2
     MOV EAX,dword ptr [EBX + 0x50]      ; 004b1fb6
@@ -195,7 +199,7 @@ section .text
     PUSH EAX                            ; 004b1fcf
     PUSH EBX                            ; 004b1fd0
     CALL core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0 ; 004b1fd1
-        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0()
+        ;   XREF to: 004b1df0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004b1fd6
     ADD ESP,0x74                        ; 004b1fd9
     POP EBP                             ; 004b1fdc

@@ -33,7 +33,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 004047ea
     PUSH EAX                            ; 004047ed
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 004047ee
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 004047f3
     TEST EAX,EAX                        ; 004047f6
     JZ 0x0040486a                       ; 004047f8
@@ -58,7 +58,7 @@ section .text
     MOV dword ptr [0x01c039a0],EDI      ; 0040482e | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EBP      ; 00404834 | DAT_01c039a4
     CALL engine_light.cpp_calculateLighting_FUN_004c6cc0 ; 0040483a
-        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateLighting_FUN_004c6cc0()
+        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 0040483f
     PUSH EAX                            ; 00404842
     MOV EDI,dword ptr [0x006b0260]      ; 00404843 | DAT_006b0260

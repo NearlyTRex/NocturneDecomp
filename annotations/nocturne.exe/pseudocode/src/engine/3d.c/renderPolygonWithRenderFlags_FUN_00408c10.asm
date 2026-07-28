@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00408c10(int param_1,uint param_2,int param_3)
+; void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00408c10(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
+; int              Stack[0x8]:4   render_flags
+; int              Stack[0xc]:4   render_state_flags
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 00491656
@@ -35,7 +39,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00408c18
     PUSH EAX                            ; 00408c1b
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00408c1c
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00408c21
     TEST EAX,EAX                        ; 00408c24
     JZ 0x00408ca1                       ; 00408c26
@@ -60,7 +64,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x8]       ; 00408c64
     PUSH EDI                            ; 00408c67
     CALL engine_light.cpp_calculateLighting_FUN_004c6cc0 ; 00408c68
-        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateLighting_FUN_004c6cc0()
+        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00408c6d
     MOV [0x01c00c74],EAX                ; 00408c70 | DAT_01c00c74
     MOV EBP,dword ptr [ESP + 0x1c]      ; 00408c75
@@ -118,7 +122,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4]       ; 00408cf2
     PUSH EDI                            ; 00408cf5
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 00408cf6
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00408cfb
     POP EBP                             ; 00408cfe
     POP EDI                             ; 00408cff

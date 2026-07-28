@@ -22,6 +22,6 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00458580(void)
             (&g_CDraculaBrideActorType_01b4d224,"CDraculaBride",
              core_dracbrid_cpp_FUN_00458610,&g_INT_005ae6c8,9,&g_CEnemyActorType_01bcdebc);
   __arrinit(&DAT_01b4d280,6,&g_SFreakyTypeInfo_0059c560);
-  FUN_00564bb0(0x5ae6b8);
+  _atexit((WatcomStaticDestructorNode *)0x5ae6b8);
   return;
 }

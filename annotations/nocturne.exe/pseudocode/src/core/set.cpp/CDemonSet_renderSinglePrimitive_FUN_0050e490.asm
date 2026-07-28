@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(int param_1,undefined4 param_2)
+; int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
 ;   core_box.cpp_FUN_0041d050 at 0041d1c8
@@ -39,7 +42,7 @@ section .text
         ;   Label: LAB_0050e4b5
     PUSH EAX                            ; 0050e4b6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 ; 0050e4b7
-        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190()
+        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0050e4bc
     RET                                 ; 0050e4bf
 

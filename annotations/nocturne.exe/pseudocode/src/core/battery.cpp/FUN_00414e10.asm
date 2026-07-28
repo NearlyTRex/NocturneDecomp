@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_battery_cpp_FUN_00414e10(undefined4 param_1,undefined4 param_2)
+; undefined4 core_battery_cpp_FUN_00414e10(undefined4 param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00414e15
     PUSH EDX                            ; 00414e19
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 00414e1a
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00414e1f
     TEST EAX,EAX                        ; 00414e22
     JZ 0x00414e2b                       ; 00414e24

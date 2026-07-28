@@ -2,13 +2,15 @@
 // Address: 004eefd0
 // Address Range: [[004eefd0, 004eeffe]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Signature: int __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color)
 
 #include "nocturne.h"
 
-void __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+int __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color)
 
 {
-  (**(code **)(*param_1 + 4))(param_1,param_2,param_3,param_4,param_5,param_6);
-  return;
+  int iVar1;
+  
+  iVar1 = (*this_ptr->vtable->drawText)(this_ptr,text,x,y,foreground_color,background_color);
+  return iVar1;
 }

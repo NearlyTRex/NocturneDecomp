@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uint param_1)
+; char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   error_code
 ;
 ; XREF[18]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 at 0052acf4
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 at 0052b122
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b951
+;   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280 at 0052a3b5
 ;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0 at 0052b84b
 ;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0 at 0052bb94
 ;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0 at 0052ae50
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052a9f6
 ;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0 at 0052a196
 ;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 at 0052a81d
-;   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270 at 0052b572
 ;   ... and 8 more
 ;
 ; Referenced Globals:

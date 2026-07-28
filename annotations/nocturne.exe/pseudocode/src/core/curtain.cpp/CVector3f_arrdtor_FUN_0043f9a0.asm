@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(undefined4 param_1)
+; CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f *objs,uint flags)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0 at 0051b702
@@ -24,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043f9a7
     PUSH EDX                            ; 0043f9ab
     CALL crt_memory.c___arrfini_FUN_0056494f ; 0043f9ac
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0043f9b1
     RET                                 ; 0043f9b4
 

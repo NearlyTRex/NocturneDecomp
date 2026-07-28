@@ -2,13 +2,13 @@
 // Address: 00490460
 // Address Range: [[00490460, 0049046e]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(int param_1)
+// Signature: void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(CBitFont *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(int param_1)
+void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(CBitFont *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x1d64) = 1;
+  this_ptr->is_initialized = 1;
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(void)
+; int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundingBox3D *this_ptr)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -173,7 +175,7 @@ section .text
     MOV dword ptr [ESP + 0x28],ESI      ; 0041ce55
     MOV dword ptr [ESP + 0x14],ESI      ; 0041ce59
     CALL core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0 ; 0041ce5d
-        ;   XREF to: 00451aa0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0()
+        ;   XREF to: 00451aa0 (UNCONDITIONAL_CALL)  ; int core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0(CDemonLight * this_ptr, CRect * rect)
     ADD ESP,0x8                         ; 0041ce62
     POP EBX                             ; 0041ce65
     POP ESI                             ; 0041ce66

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawPolyList2_FUN_005327c0(int param_1,undefined4 *param_2,int param_3,undefined4 param_4)
+; int __cdecl engine_special_cpp_drawPolyList2_FUN_005327c0(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex_buffer
+; ushort * *       Stack[0x8]:4   polygons
+; int              Stack[0xc]:4   polygon_count
+; int              Stack[0x10]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

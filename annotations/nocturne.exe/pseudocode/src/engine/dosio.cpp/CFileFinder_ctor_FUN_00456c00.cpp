@@ -2,14 +2,14 @@
 // Address: 00456c00
 // Address Range: [[00456c00, 00456c1b]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(int param_1)
+// Signature: CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(CFileFinder *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(int param_1)
+CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(CFileFinder *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x10c) = 0;
-  engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(param_1);
-  return param_1;
+  this_ptr->has_results = 0;
+  engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(this_ptr);
+  return this_ptr;
 }

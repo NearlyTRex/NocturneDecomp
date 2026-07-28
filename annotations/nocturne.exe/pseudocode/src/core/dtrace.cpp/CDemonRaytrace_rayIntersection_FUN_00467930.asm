@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930(undefined4 param_1,float *param_2,float *param_3,float *param_4)
+; CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930(CDemonRaytrace *this_ptr,CVector3f *output_point,CVector3f *ray_start,CVector3f *ray_end)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_point
+; CVector3f *      Stack[0xc]:4   ray_start
+; CVector3f *      Stack[0x10]:4   ray_end
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined4       Stack[-0x30]:4  local_30

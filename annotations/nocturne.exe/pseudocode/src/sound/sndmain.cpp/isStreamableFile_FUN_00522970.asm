@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_isStreamableFile_FUN_00522970(undefined4 param_1)
+; undefined4 sound_sndmain_cpp_isStreamableFile_FUN_00522970(char *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@ section .text
     PUSH EDX                            ; 0052297d
     PUSH 0x592778                       ; 0052297e | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00522983
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00522988
     CMP EAX,0x200000                    ; 0052298b
     JLE 0x0052299e                      ; 00522990
@@ -42,13 +42,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x114]     ; 005229a7
     PUSH ECX                            ; 005229ae
     CALL crt_string.c_splitpath_FUN_00566498 ; 005229af
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 005229b4
     PUSH 0x59277e                       ; 005229b7 | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 005229bc
     PUSH EAX                            ; 005229c0
     CALL crt_string.c__stricmp_FUN_00564520 ; 005229c1
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005229c6
     TEST EAX,EAX                        ; 005229c9
     JZ 0x00522992                       ; 005229cb
@@ -57,7 +57,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005229d2
     PUSH EAX                            ; 005229d6
     CALL crt_string.c__stricmp_FUN_00564520 ; 005229d7
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005229dc
     TEST EAX,EAX                        ; 005229df
     JZ 0x00522992                       ; 005229e1

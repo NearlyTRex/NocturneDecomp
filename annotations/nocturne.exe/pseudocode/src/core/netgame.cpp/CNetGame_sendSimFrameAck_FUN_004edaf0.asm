@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(int *param_1)
+; void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined1       Stack[-0x44]:1  local_44
@@ -92,7 +94,7 @@ section .text
     PUSH ECX                            ; 004edb96
     PUSH EBX                            ; 004edb97
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004edb98
-        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_004eb350()
+        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EAX,[0x01cea3f8]                ; 004edb9d | DAT_01cea3f8
     ADD ESP,0xc                         ; 004edba2
     MOV [0x01cea408],EAX                ; 004edba5 | DAT_01cea408

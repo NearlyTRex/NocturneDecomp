@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004d8c00(undefined4 param_1,char *param_2,undefined4 param_3,undefined4 param_4,int param_5)
+; void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor_ptr
+; _FILE *          Stack[0xc]:4   file
+; CDemonActor *    Stack[0x10]:4   current_actor
+; char *           Stack[0x14]:4   description
 ;
 ; XREF[1]:
 ;   core_actor.cpp_archiveActor_FUN_0040c980 at 0040c9f2

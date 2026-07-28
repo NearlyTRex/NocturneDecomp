@@ -2,31 +2,27 @@
 // Address: 00479390
 // Address Range: [[00479390, 00479417]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(int param_1,undefined4 param_2)
+// Signature: CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(CEmitter *this_ptr,CVector3f *out_point)
 
 #include "nocturne.h"
 
-uint __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(int param_1,uint param_2)
+CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(CEmitter *this_ptr,CVector3f *out_point)
 
 {
-  uint uStack_30;
-  uint uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
-  uint uStack_10;
-  uint uStack_c;
+  CBoundingBox3D CStack_30;
+  CVector3f CStack_18;
+  float fStack_c;
   
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&uStack_30);
-  uStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uStack_30,uStack_24);
-  uStack_c = uStack_18;
-  uStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uStack_2c,uStack_20);
-  uStack_c = uStack_14;
-  uStack_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uStack_28,uStack_1c);
-  uStack_c = uStack_10;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,param_2,&uStack_18);
-  return param_2;
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_30);
+  CStack_18.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                 (CStack_30.min.x,CStack_30.max.x);
+  fStack_c = CStack_18.x;
+  CStack_18.y = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                 (CStack_30.min.y,CStack_30.max.y);
+  fStack_c = CStack_18.y;
+  CStack_18.z = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                                 (CStack_30.min.z,CStack_30.max.z);
+  fStack_c = CStack_18.z;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&this_ptr->base,out_point,&CStack_18);
+  return out_point;
 }

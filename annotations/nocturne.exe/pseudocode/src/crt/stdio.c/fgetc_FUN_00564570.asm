@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fgetc_FUN_00564570(undefined4 *param_1)
+; int __cdecl crt_stdio_c_fgetc_FUN_00564570(_FILE *file)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[28]:
 ;   cockpit_ckptutil.c_FUN_00430210 at 0043027b
-;   core_actor.cpp_FUN_0040cb00 at 0040cb1b
-;   core_actor.cpp_FUN_0040ce80 at 0040ce9b
+;   core_actor.cpp_archiveBox_FUN_0040ce80 at 0040ce9b
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cf90
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3bb
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00 at 0040cb1b
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc13
 ;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d12c
 ;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c6f0
@@ -18,13 +20,13 @@
 ;   ... and 18 more
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564640
-;   FUN_005671e4
-;   FUN_00568e80
+;   crt_errno.c_setErrno_FUN_00568e80
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
+;   crt_unknown.c_FillBufferAndGetChar_FUN_00564640
 ;
 ; *****************************************************************************
 
@@ -38,7 +40,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00564574
     MOV EDX,dword ptr [EBX + 0x10]      ; 00564578
     PUSH EDX                            ; 0056457b
-    CALL dword ptr [0x005c1ac0]         ; 0056457c | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 0056457c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV ESI,dword ptr [EBX + 0x8]       ; 00564582
     MOV ECX,dword ptr [ESI + 0xc]       ; 00564585
     ADD ESP,0x4                         ; 00564588
@@ -60,8 +62,8 @@ section .text
     JNZ 0x005645c9                      ; 005645ad
         ;   XREF to: 005645c9 (CONDITIONAL_JUMP)  ; LAB_005645c9
     PUSH 0x4                            ; 005645af
-    CALL FUN_00568e80                   ; 005645b1
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 005645b1
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     MOV DL,byte ptr [EBX + 0xc]         ; 005645b6
     MOV ESI,0xffffffff                  ; 005645b9
     OR DL,0x20                          ; 005645be
@@ -77,8 +79,8 @@ section .text
     JGE 0x005645e1                      ; 005645d2
         ;   XREF to: 005645e1 (CONDITIONAL_JUMP)  ; LAB_005645e1
     PUSH EBX                            ; 005645d4
-    CALL crt_unknown.c_FUN_00564640     ; 005645d5
-        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564640()
+    CALL crt_unknown.c_FillBufferAndGetChar_FUN_00564640 ; 005645d5
+        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FillBufferAndGetChar_FUN_00564640(_FILE * file)
     ADD ESP,0x4                         ; 005645da
     MOV ESI,EAX                         ; 005645dd
     JMP 0x005645ea                      ; 005645df
@@ -102,8 +104,8 @@ section .text
     JGE 0x0056460d                      ; 005645fe
         ;   XREF to: 0056460d (CONDITIONAL_JUMP)  ; LAB_0056460d
     PUSH EBX                            ; 00564600
-    CALL crt_unknown.c_FUN_00564640     ; 00564601
-        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564640()
+    CALL crt_unknown.c_FillBufferAndGetChar_FUN_00564640 ; 00564601
+        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FillBufferAndGetChar_FUN_00564640(_FILE * file)
     ADD ESP,0x4                         ; 00564606
     MOV ESI,EAX                         ; 00564609
     JMP 0x00564617                      ; 0056460b
@@ -125,7 +127,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x10]      ; 0056462a
         ;   Label: LAB_0056462a
     PUSH EDI                            ; 0056462d
-    CALL dword ptr [0x005c1ac4]         ; 0056462e | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 0056462e | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
         ;   Label: LAB_0056462e
     ADD ESP,0x4                         ; 00564634
     MOV EAX,ESI                         ; 00564637

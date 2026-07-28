@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(int param_1,undefined4 *param_2)
+; CVector3f * core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CDemonActor *param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
@@ -112,7 +112,7 @@ section .text
     PUSH EAX                            ; 0042cb5d
     PUSH ESI                            ; 0042cb5e
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0042cb5f
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0042cb64
     CMP EDI,EAX                         ; 0042cb67
     JZ 0x0042cb7b                       ; 0042cb69
@@ -130,7 +130,7 @@ section .text
     PUSH EAX                            ; 0042cb82
     PUSH ESI                            ; 0042cb83
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0042cb84
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     LEA EDX,[EDI + 0xc]                 ; 0042cb89
     ADD ESP,0xc                         ; 0042cb8c
     CMP EDX,EAX                         ; 0042cb8f

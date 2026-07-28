@@ -97,13 +97,13 @@ section .text
         ;   Label: LAB_00525b32
     PUSH 0x0                            ; 00525b35
     CALL crt_math.c_round_FUN_00563a30  ; 00525b37
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 00525b3c
     MOV ECX,dword ptr [ESP + 0xc]       ; 00525b40
     PUSH ECX                            ; 00525b44
     PUSH EAX                            ; 00525b45
     CALL sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10 ; 00525b46
-        ;   XREF to: 00523d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10()
+        ;   XREF to: 00523d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)
     MOV EAX,dword ptr [EBX + 0x74]      ; 00525b4b
     ADD ESP,0xc                         ; 00525b4e
     FILD dword ptr [EAX + 0x140]        ; 00525b51

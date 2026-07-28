@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(int param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6)
+; void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler
+; float            Stack[0x10]:4   delta_time
+; float            Stack[0x14]:4   floor_y
+; CDeformableModelInstance * Stack[0x18]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1e0]:4  local_1e0
 ; undefined4       Stack[-0x1dc]:4  local_1dc
@@ -211,7 +218,7 @@ section .text
     LEA EAX,[ESP + 0x14c]               ; 00436f91
     PUSH EAX                            ; 00436f98
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00436f99
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     FLD float ptr [EAX]                 ; 00436f9e
     FMUL float ptr [ESI]                ; 00436fa0
     ADD ESP,0xc                         ; 00436fa2
@@ -270,7 +277,7 @@ section .text
     PUSH EBX                            ; 0043705b
     PUSH EDI                            ; 0043705c
     CALL core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580 ; 0043705d
-        ;   XREF to: 00436580 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580()
+        ;   XREF to: 00436580 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth * this_ptr, int bone_index, CDeformableModelInstance * model_ptr)
     INC EBX                             ; 00437062
     MOV ECX,dword ptr [EDI + 0x37b4c]   ; 00437063
     ADD ESP,0xc                         ; 00437069
@@ -352,7 +359,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00437187
     PUSH EAX                            ; 0043718b
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0043718c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00437191
     MOV EAX,dword ptr [ESP + 0x10]      ; 00437194
     MOV dword ptr [ESP + 0xcc],EAX      ; 00437198
@@ -958,7 +965,7 @@ section .text
     PUSH EDI                            ; 00437a3a
     FSTP float ptr [EBX + 0x8]          ; 00437a3b
     CALL core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0 ; 00437a3e
-        ;   XREF to: 004366f0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0()
+        ;   XREF to: 004366f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0(CCloth * this_ptr, SClothVertex * vertex)
     ADD ESP,0x8                         ; 00437a43
     JMP 0x0043761d                      ; 00437a46
         ;   XREF to: 0043761d (UNCONDITIONAL_JUMP)  ; LAB_0043761d
@@ -966,7 +973,7 @@ section .text
         ;   Label: LAB_00437a4b
     PUSH EDI                            ; 00437a4c
     CALL core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0 ; 00437a4d
-        ;   XREF to: 004366f0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0()
+        ;   XREF to: 004366f0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0(CCloth * this_ptr, SClothVertex * vertex)
     ADD ESP,0x8                         ; 00437a52
     JMP 0x00437689                      ; 00437a55
         ;   XREF to: 00437689 (UNCONDITIONAL_JUMP)  ; LAB_00437689

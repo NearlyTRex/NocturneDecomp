@@ -17,7 +17,7 @@ CDemonActorType * FUN_0043b040(void);
 
 // Original: core_conveyor.cpp_CConveyor_ctor_FUN_0043b050
 // Address: 0043b050
-int CConveyor::ctor(undefined4 param_1);
+CConveyor * __cdecl CConveyor::ctor(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_FUN_0043b110
 // Address: 0043b110
@@ -25,7 +25,7 @@ void FUN_0043b110(int param_1);
 
 // Original: core_conveyor.cpp_CConveyor_process_FUN_0043b1a0
 // Address: 0043b1a0
-void CConveyor::process(int param_1,float param_2);
+void CConveyor::process(CPlatform *param_1,float param_2);
 
 // Original: core_conveyor.cpp_FUN_0043b2f0
 // Address: 0043b2f0
@@ -37,7 +37,7 @@ void FUN_0043b300(void);
 
 // Original: core_conveyor.cpp_FUN_0043b310
 // Address: 0043b310
-void FUN_0043b310(int param_1);
+void FUN_0043b310(CPlatform *param_1);
 
 // Original: core_conveyor.cpp_FUN_0043b3b0
 // Address: 0043b3b0
@@ -49,8 +49,8 @@ void FUN_0043b3c0(int param_1,float *param_2);
 
 // Original: core_conveyor.cpp_FUN_0043b420
 // Address: 0043b420
-int FUN_0043b420(int param_1,byte param_2);
+CDemonActor * FUN_0043b420(CDemonActor *param_1,byte param_2);
 
 // Original: core_conveyor.cpp_FUN_0043b490
 // Address: 0043b490
-int FUN_0043b490(int param_1,byte param_2);
+CDemonActor * FUN_0043b490(CDemonActor *param_1,byte param_2);

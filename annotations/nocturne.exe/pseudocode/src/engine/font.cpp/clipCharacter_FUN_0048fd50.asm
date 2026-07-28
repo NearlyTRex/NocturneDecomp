@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_font_cpp_clipCharacter_FUN_0048fd50(int *param_1,int *param_2,int *param_3,int *param_4,int *param_5,int param_6)
+; int __cdecl engine_font_cpp_clipCharacter_FUN_0048fd50(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width )
 ;
+; Parameters:
+; int *            Stack[0x4]:4   bitmap_offset
+; int *            Stack[0x8]:4   left_x
+; int *            Stack[0xc]:4   top_y
+; int *            Stack[0x10]:4   right_x
+; int *            Stack[0x14]:4   bottom_y
+; int              Stack[0x18]:4   bitmap_width
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 at 00491940

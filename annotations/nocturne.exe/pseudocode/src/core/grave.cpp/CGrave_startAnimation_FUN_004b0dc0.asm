@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0(int param_1)
+; void __cdecl core_grave_cpp_CGrave_startAnimation_FUN_004b0dc0(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_grave.cpp_CGrave_process_FUN_004b0bf0 at 004b0c45

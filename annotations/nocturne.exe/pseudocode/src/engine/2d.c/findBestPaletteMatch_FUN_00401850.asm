@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_2,int param_3,int param_4,int param_5)
+; int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int blue,int start_index,int end_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
+; int              Stack[0x10]:4   start_index
+; int              Stack[0x14]:4   end_index
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x38]:4  local_38

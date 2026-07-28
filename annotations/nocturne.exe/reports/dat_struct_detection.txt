@@ -52,7 +52,7 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005ad49c  value=0x5AD49C (5952668)  refs=4
     CDemonCamera_loadImage
       PUSH 0x5ad49c                       ; 004438cc | DAT_005ad49c
-    FUN_00443180
+    CDemonCamera_uploadBackdropTexture
       PUSH 0x5ad49c                       ; 004431e0 | DAT_005ad49c
 
   DAT_00600000  value=0x600000 (6291456)  refs=4
@@ -94,22 +94,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005c3918  value=0x5C3918 (6043928)  refs=3
     CDirectSoundDevice_allocateSfx
       PUSH 0x5c3918                       ; 0052b1d4 | DAT_005c3918
+    CDirectSoundDevice_initPropertySet
+      PUSH 0x5c3918                       ; 0052a382 | DAT_005c3918
     CDirectSoundDevice_setMode
       PUSH 0x5c3918                       ; 0052a692 | DAT_005c3918
-    FUN_0052a280
-      PUSH 0x5c3918                       ; 0052a382 | DAT_005c3918
-
-  DAT_005c1894  value=0x5C1894 (6035604)  refs=2
-    FUN_00568560
-      MOV EBX,0x5c1894                    ; 0056858c | DAT_005c1894
-    FUN_0056fdf0
-      ADD EAX,0x5c1894                    ; 0056fe0c | DAT_005c1894
-
-  DAT_005a4a18  value=0x5A4A18 (5917208)  refs=2
-    FUN_0056b75d
-      MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | DAT_005a4a18
-    FUN_0056b896
-      MOV dword ptr [EBX],0x5a4a18        ; 0056b8e8 | DAT_005a4a18
 
   DAT_005acf40  value=0x5ACF40 (5951296)  refs=2
     FUN_00410490
@@ -168,16 +156,20 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5baca4                       ; 004c5db3 | DAT_005baca4
 
   DAT_005a4508  value=0x5A4508 (5915912)  refs=2
+    CStranger_applyArmAimRotation
+      PUSH 0x5a4508                       ; 0053a41e | DAT_005a4508
     FUN_004fd1d0
       PUSH 0x5a4508                       ; 004fd336 | DAT_005a4508
-    FUN_0053a260
-      PUSH 0x5a4508                       ; 0053a41e | DAT_005a4508
 
   DAT_005be680  value=0x5BE680 (6022784)  refs=2
     CDemonSet_renderEnvMapPrimitives
       PUSH 0x5be680                       ; 0050d6b1 | DAT_005be680
     FUN_0050d910
       PUSH 0x5be680                       ; 0050d91f | DAT_005be680
+
+  DAT_005a4a18  value=0x5A4A18 (5917208)  refs=2
+    fstreambase_ctor
+      MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | DAT_005a4a18
 
   DAT_005a47a4  value=0x5A47A4 (5916580)  refs=2
     ifstream_ctor
@@ -195,35 +187,17 @@ Consider removing the Ghidra label and leaving the raw number.
     ofstream_ctor
       MOV dword ptr [EAX + -0xc],0x5a4818 ; 00565188 | DAT_005a4818
 
+  DAT_005c1894  value=0x5C1894 (6035604)  refs=2
+    __allocfp
+      MOV EBX,0x5c1894                    ; 0056858c | DAT_005c1894
+    get_standard_file_handle
+      ADD EAX,0x5c1894                    ; 0056fe0c | DAT_005c1894
+
   DAT_005bed10  value=0x5BED10 (6024464)  refs=2
+    CDirectSoundDevice_initPropertySet
+      PUSH 0x5bed10                       ; 0052a3f7 | DAT_005bed10
     CDirectSoundDevice_setMode
       PUSH 0x5bed10                       ; 0052a8cc | DAT_005bed10
-    FUN_0052a280
-      PUSH 0x5bed10                       ; 0052a3f7 | DAT_005bed10
-
-  DAT_02de4e40  value=0x2DE4E40  refs=1
-    FUN_0056720c
-      PUSH 0x2de4e40                      ; 005672bf | DAT_02de4e40
-
-  DAT_02de514c  value=0x2DE514C  refs=1
-    FUN_0056720c
-      PUSH 0x2de514c                      ; 00567413 | DAT_02de514c
-
-  DAT_005c1cec  value=0x5C1CEC (6036716)  refs=1
-    FUN_00567458
-      PUSH 0x5c1cec                       ; 00567472 | DAT_005c1cec
-
-  DAT_005a48b0  value=0x5A48B0 (5916848)  refs=1
-    FUN_0056b405
-      MOV dword ptr [EBX],0x5a48b0        ; 0056b47a | DAT_005a48b0
-
-  DAT_005a4908  value=0x5A4908 (5916936)  refs=1
-    FUN_0056b4a9
-      MOV dword ptr [EAX],0x5a4908        ; 0056b4d4 | DAT_005a4908
-
-  DAT_005a49b8  value=0x5A49B8 (5917112)  refs=1
-    FUN_0056b67d
-      MOV dword ptr [EAX],0x5a49b8        ; 0056b6b9 | DAT_005a49b8
 
   DAT_0076595c  value=0x76595C (7756124)  refs=1
     CCharacter_dismemberPartInternal
@@ -242,7 +216,7 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
 
   DAT_005ad57c  value=0x5AD57C (5952892)  refs=1
-    FUN_0044d060
+    CDemonGlobe_renderCoronaTextured
       PUSH 0x5ad57c                       ; 0044d154 | DAT_005ad57c
 
   DAT_005b8afc  value=0x5B8AFC (5999356)  refs=1
@@ -302,7 +276,7 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x5bae58                    ; 004cf3e5 | DAT_005bae58
 
   DAT_005be090  value=0x5BE090 (6021264)  refs=1
-    FUN_004f18c0
+    CPathMap_renderPathMap
       PUSH 0x5be090                       ; 004f1929 | DAT_005be090
 
   DAT_005be0a8  value=0x5BE0A8 (6021288)  refs=1
@@ -333,6 +307,26 @@ Consider removing the Ghidra label and leaving the raw number.
     CWerewolf_renderEyeGlow
       PUSH 0x5c1618                       ; 0055760f | DAT_005c1618
 
+  DAT_005a49b8  value=0x5A49B8 (5917112)  refs=1
+    istream_ctor
+      MOV dword ptr [EAX],0x5a49b8        ; 0056b6b9 | DAT_005a49b8
+
+  DAT_005a4908  value=0x5A4908 (5916936)  refs=1
+    ostream_ctor
+      MOV dword ptr [EAX],0x5a4908        ; 0056b4d4 | DAT_005a4908
+
+  DAT_02de4e40  value=0x2DE4E40  refs=1
+    initialize_runtime
+      PUSH 0x2de4e40                      ; 005672bf | DAT_02de4e40
+
+  DAT_02de514c  value=0x2DE514C  refs=1
+    initialize_runtime
+      PUSH 0x2de514c                      ; 00567413 | DAT_02de514c
+
+  DAT_005c1cec  value=0x5C1CEC (6036716)  refs=1
+    InitializeWinAppRuntime
+      PUSH 0x5c1cec                       ; 00567472 | DAT_005c1cec
+
   DAT_005a4730  value=0x5A4730 (5916464)  refs=1
     istrstream_ctor
       MOV dword ptr [EAX],0x5a4730        ; 00564f8c | DAT_005a4730
@@ -352,6 +346,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005a46c0  value=0x5A46C0 (5916352)  refs=1
     ostrstream_ctor
       MOV dword ptr [EDX + -0xc],0x5a46c0 ; 00564e1e | DAT_005a46c0
+
+  DAT_005a48b0  value=0x5A48B0 (5916848)  refs=1
+    strstreambase_ctor
+      MOV dword ptr [EBX],0x5a48b0        ; 0056b47a | DAT_005a48b0
 
   DAT_005c17f8  value=0x5C17F8 (6035448)  refs=1
     _strftime
@@ -381,20 +379,20 @@ Consider removing the Ghidra label and leaving the raw number.
     getDirectSoundDevice
       PUSH 0x5c3908                       ; 0052c043 | DAT_005c3908
 
-  DAT_005bea30  value=0x5BEA30 (6023728)  refs=1
-    FUN_00522480
-      PUSH 0x5bea30                       ; 00522524 | DAT_005bea30
-
   DAT_005bea44  value=0x5BEA44 (6023748)  refs=1
     getSampleInfo
       PUSH 0x5bea44                       ; 00527b78 | DAT_005bea44
+
+  DAT_005bea30  value=0x5BEA30 (6023728)  refs=1
+    getSfxSample
+      PUSH 0x5bea30                       ; 00522524 | DAT_005bea30
 
   DAT_02de0860  value=0x2DE0860  refs=1
     FUN_00559500
       PUSH 0x2de0860                      ; 00559531 | DAT_02de0860
 
   DAT_80000002  value=0x80000002  refs=1
-    FUN_00559d20
+    getRegistryStringValue
       PUSH 0x80000002                     ; 00559d37 | DAT_80000002
 
 --------------------------------------------------------------------------------

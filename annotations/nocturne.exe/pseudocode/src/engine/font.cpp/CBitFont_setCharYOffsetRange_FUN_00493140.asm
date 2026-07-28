@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_00493140(int param_1,undefined4 param_2,int param_3,int param_4)
+; void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_00493140(CBitFont *this_ptr,int offset_value,int start_char,int end_char)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   offset_value
+; int              Stack[0xc]:4   start_char
+; int              Stack[0x10]:4   end_char
 ;
 ; XREF[1]:
 ;   core_dfont.cpp_FUN_0044c560 at 0044c5cb

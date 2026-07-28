@@ -9,12 +9,12 @@
 void core_grave_cpp_FUN_004b0b10(void)
 
 {
-  int iVar1;
+  CGrave *this_ptr;
   
-  iVar1 = FUN_0056497c(0x3a8);
-  if (iVar1 == 0) {
+  this_ptr = (CGrave *)FUN_0056497c(0x3a8);
+  if (this_ptr == (CGrave *)0x0) {
     return;
   }
-  core_grave_cpp_CGrave_ctor_FUN_004b0b40(iVar1);
+  core_grave_cpp_CGrave_ctor_FUN_004b0b40(this_ptr);
   return;
 }

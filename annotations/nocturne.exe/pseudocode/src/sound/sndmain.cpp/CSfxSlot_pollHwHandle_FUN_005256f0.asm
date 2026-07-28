@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810 at 00529863
@@ -74,7 +76,7 @@ section .text
     PUSH EBX                            ; 00525754
         ;   Label: LAB_00525754
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00525755
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 0052575a
     POP EBP                             ; 0052575d
     POP EDI                             ; 0052575e
@@ -93,7 +95,7 @@ section .text
     PUSH EBX                            ; 0052577b
         ;   Label: LAB_0052577b
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 0052577c
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 00525781
     POP EBP                             ; 00525784
     POP EDI                             ; 00525785
@@ -137,7 +139,7 @@ section .text
     ADD ESP,0xc                         ; 005257ca
     PUSH EBX                            ; 005257cd
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005257ce
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 005257d3
     POP EBP                             ; 005257d6
     POP EDI                             ; 005257d7

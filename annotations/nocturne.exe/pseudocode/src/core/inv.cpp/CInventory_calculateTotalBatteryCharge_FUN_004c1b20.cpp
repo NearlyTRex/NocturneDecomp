@@ -2,31 +2,31 @@
 // Address: 004c1b20
 // Address Range: [[004c1b20, 004c1b8c]]
 // Convention: __cdecl
-// Signature: float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(int param_1,float param_2)
+// Signature: float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory *inventory_ptr,float max_charge)
 
 #include "nocturne.h"
 
-float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(int param_1,float param_2)
+float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory *inventory_ptr,float max_charge)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
-  int iVar3;
-  uint local_20;
+  CInventory *pCVar3;
+  float local_20;
   
-  local_20 = 1.0 / param_2;
+  local_20 = 1.0 / max_charge;
   iVar2 = 0;
-  iVar3 = param_1;
-  if (0 < *(int *)(param_1 + 8)) {
+  pCVar3 = inventory_ptr;
+  if (0 < inventory_ptr->item_count) {
     do {
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar3 + 0xc),g_CBatteryActorType_00764674.name_hash);
-      if (iVar1 != 0) {
-        local_20 = 1.0 / *(float *)(iVar1 + 0x2d0) + local_20;
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                         (pCVar3->items[0],g_CBatteryActorType_00764674.name_hash);
+      if (pCVar1 != (CDemonActor *)0x0) {
+        local_20 = 1.0 / pCVar1[2].orient.vec.x + local_20;
       }
       iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 4;
-    } while (iVar2 < *(int *)(param_1 + 8));
+      pCVar3 = (CInventory *)&pCVar3->owner;
+    } while (iVar2 < inventory_ptr->item_count);
   }
   return 1.0 / local_20;
 }

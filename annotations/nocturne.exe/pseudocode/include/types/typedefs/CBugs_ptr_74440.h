@@ -10,17 +10,16 @@ struct CBugs;
 // Full base definition required for offsetof() in adj().
 #include "types/classes/CBugs.h"
 // Adjusted pointer: CBugs_ptr_74440
-// Points to CKeyFramedModelInstance at offset 0x122c8 in CBugs
+// Points to CBugs at offset 0x122c8 in CBugs
 // 32-bit pointer to CBugs
-struct CKeyFramedModelInstance;
 struct CBugs_ptr_74440 {
     void *_raw;
     typedef CBugs base_type;
     CBugs_ptr_74440() : _raw(0) {}
     template<typename T> CBugs_ptr_74440(T* p) : _raw((void*)p) {}
     template<typename T> CBugs_ptr_74440& operator=(T* p) { _raw = (void*)p; return *this; }
-    CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, models)); }
+    CBugs* operator->() const { return (CBugs*)_raw; }
+    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, models[1].part_visibility_flags[7])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

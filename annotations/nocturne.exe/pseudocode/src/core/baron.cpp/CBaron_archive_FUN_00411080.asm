@@ -37,19 +37,19 @@ section .text
     LEA EAX,[EBX + 0x1fa3c]             ; 004110a0
     PUSH EAX                            ; 004110a6
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004110a7
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004110ac
     PUSH 0x5786a4                       ; 004110af | = "goAwayEvent"
     LEA EAX,[EBX + 0x1faa0]             ; 004110b4
     PUSH EAX                            ; 004110ba
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004110bb
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004110c0
     PUSH 0x5786b0                       ; 004110c3 | = "summoned"
     ADD EBX,0x1fb34                     ; 004110c8
     PUSH EBX                            ; 004110ce
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004110cf
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004110d4
     POP EBX                             ; 004110d7
     RET                                 ; 004110d8

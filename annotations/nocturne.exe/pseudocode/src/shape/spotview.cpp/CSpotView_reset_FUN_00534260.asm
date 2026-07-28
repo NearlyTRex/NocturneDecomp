@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_00534260(undefined4 *param_1,uint param_2)
+; void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_00534260(CSpotView *this_ptr,uint control_flags)
 ;
+; Parameters:
+; CSpotView *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   control_flags
 ;
 ; XREF[2]:
 ;   shape_spotview.cpp_CSpotView_ctor_FUN_00534200 at 00534252
-;   shape_spotview.cpp_FUN_005342b0 at 00534577
+;   shape_spotview.cpp_CSpotView_handleInput_FUN_005342b0 at 00534577
 ;
 ; *****************************************************************************
 

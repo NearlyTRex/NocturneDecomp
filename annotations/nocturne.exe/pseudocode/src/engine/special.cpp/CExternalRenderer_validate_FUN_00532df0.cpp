@@ -2,61 +2,68 @@
 // Address: 00532df0
 // Address Range: [[00532df0, 00532f26]]
 // Convention: __cdecl
-// Signature: bool __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(int param_1,int param_2)
+// Signature: int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(CExternalRenderer *this_ptr,CExternalRenderer *capabilities)
 
 #include "nocturne.h"
 
-bool __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(int param_1,int param_2)
+int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(CExternalRenderer *this_ptr,CExternalRenderer *capabilities)
 
 {
-  int *piVar1;
-  int iVar2;
-  bool bVar3;
-  bool bVar4;
+  uint *puVar1;
+  uint *puVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  uint uVar6;
   
-  bVar3 = param_2 == 0;
-  if (param_2 != 0) {
-    if ((*(short *)(param_1 + 0x204) == *(short *)(param_2 + 0x204)) ||
-       (*(short *)(param_1 + 0x204) == -1)) {
-      bVar3 = true;
+  uVar6 = (uint)(capabilities == (CExternalRenderer *)0x0);
+  if (capabilities != (CExternalRenderer *)0x0) {
+    if ((this_ptr->api_version == capabilities->api_version) || (this_ptr->api_version == 0xffff)) {
+      uVar4 = 1;
     }
     else {
-      bVar3 = false;
+      uVar4 = 0;
     }
-    if ((bVar3 != false) && ((~*(uint *)(param_1 + 0x208) & *(uint *)(param_2 + 0x208)) != 0)) {
-      return false;
+    if ((uVar4 != 0) &&
+       ((~(this_ptr->feature_flags).dword & (capabilities->feature_flags).dword) != 0)) {
+      return 0;
     }
-    if (bVar3 != false) {
-      if (*(short *)(param_2 + 0x200) != 0) {
-        bVar3 = *(int *)(param_1 + 0x1fe) >> 0x18 == *(int *)(param_2 + 0x1fe) >> 0x18;
+    if (uVar4 != 0) {
+      if (capabilities->interface_version != 0) {
+        uVar4 = (uint)(*(int *)(this_ptr->vendor_name + 0xfe) >> 0x18 ==
+                      *(int *)(capabilities->vendor_name + 0xfe) >> 0x18);
       }
-      if ((bVar3 != false) && (*(short *)(param_2 + 0x202) != 0)) {
-        bVar3 = *(int *)(param_1 + 0x200) >> 0x18 == *(int *)(param_2 + 0x200) >> 0x18;
+      if ((uVar4 != 0) && (capabilities->driver_version != 0)) {
+        iVar5._0_2_ = this_ptr->interface_version;
+        iVar5._2_2_ = this_ptr->driver_version;
+        iVar3._0_2_ = capabilities->interface_version;
+        iVar3._2_2_ = capabilities->driver_version;
+        uVar4 = (uint)(iVar5 >> 0x18 == iVar3 >> 0x18);
       }
     }
-    if ((bVar3 != false) && (*(char *)(param_2 + 0x100) != '\0')) {
-      iVar2 = _strcmp(param_2 + 0x100,param_1 + 0x100);
-      bVar3 = iVar2 == 0;
+    if ((uVar4 != 0) && (capabilities->vendor_name[0] != '\0')) {
+      iVar5 = _strcmp(capabilities->vendor_name,this_ptr->vendor_name);
+      uVar4 = (uint)(iVar5 == 0);
     }
-    if (bVar3 != false) {
-      if (*(int *)(param_1 + 0x20c) != 0x10) {
-        return false;
+    uVar6 = 0;
+    if (uVar4 != 0) {
+      if (this_ptr->function_count != 0x10) {
+        return 0;
       }
-      iVar2 = 0;
-      if (bVar3 != false) {
-        do {
-          piVar1 = (int *)(param_1 + 0x210);
-          param_1 = param_1 + 4;
-          bVar4 = *(int *)(param_2 + 0x210) == *piVar1;
-          param_2 = param_2 + 4;
-          iVar2 = iVar2 + 1;
-          if (0xf < iVar2) {
-            return bVar4;
-          }
-          bVar3 = false;
-        } while (bVar4);
-      }
+      iVar5 = 0;
+      uVar6 = uVar4;
+      do {
+        if (uVar6 == 0) {
+          return 0;
+        }
+        puVar1 = this_ptr->function_table;
+        puVar2 = capabilities->function_table;
+        this_ptr = (CExternalRenderer *)(this_ptr->description + 4);
+        capabilities = (CExternalRenderer *)(capabilities->description + 4);
+        uVar6 = (uint)(*puVar2 == *puVar1);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < 0x10);
     }
   }
-  return bVar3;
+  return uVar6;
 }

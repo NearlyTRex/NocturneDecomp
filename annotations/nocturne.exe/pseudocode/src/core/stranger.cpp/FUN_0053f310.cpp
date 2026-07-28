@@ -2,361 +2,369 @@
 // Address: 0053f310
 // Address Range: [[0053f310, 0053fc38]]
 // Convention: unknown
-// Signature: void core_stranger_cpp_FUN_0053f310(int param_1,float param_2)
+// Signature: void core_stranger_cpp_FUN_0053f310(CStranger *param_1,float param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0053f84f) */
 
-void core_stranger_cpp_FUN_0053f310(int param_1,float param_2)
+void core_stranger_cpp_FUN_0053f310(CStranger *param_1,float param_2)
 
 {
-  float fVar1;
+  CWeapon *pCVar1;
   uint uVar2;
   int iVar3;
-  int iVar4;
+  CMotionList *pCVar4;
   int iVar5;
-  uint *puVar6;
-  byte local_60 [12];
-  byte local_54 [20];
-  int local_40;
+  CLightGun *pCVar6;
+  float fVar7;
+  float *pfVar8;
+  CDemonActor *pCVar9;
+  float *pfVar10;
+  int iVar11;
+  int *in_stack_ffffffa4;
+  CVector3f CStack_50;
   int local_3c;
   int local_38;
-  int local_34;
-  int local_30;
+  SMotion *local_34;
+  CDemonActor *local_30;
   int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  float local_14;
+  CMotionController *local_28;
+  float local_24;
+  CDemonActor *local_20;
+  CDemonActor *local_1c;
+  CInventory *local_18;
+  CWeapon *local_14;
   
-  if ((*(int *)(param_1 + 0x2a84) == 0xe) && (*(int *)(param_1 + 0x24f0) == 0)) {
-    *(uint *)(param_1 + 0x2a88) = 0;
-    *(uint *)(param_1 + 0x2a84) = 0;
+  if (((param_1->base).base.layer_action_index == 0xe) &&
+     ((param_1->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
+    (param_1->base).base.layer_action_t = 0.0;
+    (param_1->base).base.layer_action_index = 0;
   }
-  local_3c = -1;
-  local_18 = 0;
-  if (*(int *)(param_1 + 0x1fa18) == 0) {
-    if (*(int *)(param_1 + 0x1fa3c) != 0) {
-      if (*(int *)(param_1 + 0x24f0) == 0) {
-        local_18 = *(int *)(param_1 + 0x1f8d0);
+  local_3c = 0xffffffff;
+  local_18 = (CInventory *)0x0;
+  if ((param_1->base).nearby_interactive_actor == (CDemonActor *)0x0) {
+    if (param_1->guns_drawn != 0) {
+      pCVar9 = (param_1->base).base.carry_hands[1].carry_actor;
+      if (((pCVar9 != (CDemonActor *)0x0) &&
+          (local_18 = (CInventory *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (pCVar9,g_CWeaponActorType_02ddf970.name_hash),
+          local_18 == (CInventory *)0x0)) &&
+         (pCVar9 = (param_1->base).base.carry_hands[1].carry_actor,
+         uVar2 = (*((pCVar9->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar9), (uVar2 & 3) != 0)) {
+        local_38 = 8;
       }
-      else {
-        local_18 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(int *)(param_1 + 0x24f0),g_CWeaponActorType_02ddf970.name_hash);
-        if ((local_18 == 0) &&
-           (uVar2 = (**(code **)(*(int *)(*(int *)(param_1 + 0x24f0) + 0x14c) + 0x6c))
-                              (*(int *)(param_1 + 0x24f0)), (uVar2 & 3) != 0)) {
-          local_3c = 8;
-        }
-      }
-      if ((local_18 == 0) && (local_3c < 0)) {
-        *(uint *)(param_1 + 0x1fa3c) = 0;
+      if ((local_14 == (CWeapon *)0x0) && (local_38 < 0)) {
+        param_1->guns_drawn = 0;
       }
     }
   }
   else {
-    *(uint *)(param_1 + 0x1fa3c) = 0;
+    param_1->guns_drawn = 0;
   }
-  local_1c = param_1 + 0x1f5a0;
-  local_40 = 0;
-  local_2c = param_1 + 0x150;
-  local_30 = 0;
+  local_18 = &(param_1->base).inventory;
+  local_3c = 0;
+  local_28 = &(param_1->base).base.model.motion_controller;
+  local_2c = 0;
   do {
     if (param_2 <= 0.0) {
 LAB_0053f38b:
-      if (local_40 == 0) {
+      if (local_3c == 0) {
         return;
       }
       goto LAB_0053fc23;
     }
-    iVar5 = *(int *)(param_1 + 0x1faa0);
-    if ((iVar5 == 1) || (*(int *)(param_1 + 0x1fa1c) != 0)) {
+    iVar11 = param_1->action_pending;
+    if ((iVar11 == 1) || ((param_1->base).target_actor != (CDemonActor *)0x0)) {
 LAB_0053f41f:
-      iVar5 = 3;
+      iVar11 = 3;
     }
-    else if (iVar5 == 2) {
-      iVar5 = 0;
+    else if (iVar11 == 2) {
+      iVar11 = 0;
     }
-    else if (iVar5 == 3) {
-      local_14 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-                                  (param_1,6);
-      iVar5 = 6;
-      if ((float)0.98999999999999999 < local_14) {
-        fVar1 = param_2 * (float)25 + *(float *)(param_1 + 0x1fa4c);
-        *(float *)(param_1 + 0x1fa4c) = fVar1;
-        if (70.0f < fVar1) {
-          *(float *)(param_1 + 0x1fa4c) = 70.0f;
+    else if (iVar11 == 3) {
+      fVar7 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,6);
+      iVar11 = 6;
+      if ((float)0.98999999999999999 < fVar7) {
+        fVar7 = param_2 * (float)25 + param_1->aim_speed_factor;
+        param_1->aim_speed_factor = fVar7;
+        if (70.0f < fVar7) {
+          param_1->aim_speed_factor = 70.0f;
         }
-        if (*(int *)(param_1 + 0xbca0) == 0) goto switchD_0053f7b3_caseD_3;
+        if ((param_1->base).player_input.action_state.fire == 0) goto switchD_0053f7b3_caseD_3;
         goto LAB_0053f38b;
       }
     }
     else {
-      iVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-      if ((iVar5 != 0) && (*(int *)(param_1 + 0x1fa00) == 0)) goto LAB_0053f41f;
-      iVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-      if ((iVar5 == 0) || (*(int *)(param_1 + 0x1fa00) != 1)) {
-        iVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-        if ((iVar5 == 0) && (*(int *)(param_1 + 0x1fa00) == 2)) {
-          iVar5 = 10;
+      pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+      if ((pCVar6 != (CLightGun *)0x0) && ((param_1->base).is_wearing_gas_mask == 0))
+      goto LAB_0053f41f;
+      pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+      if ((pCVar6 == (CLightGun *)0x0) || ((param_1->base).is_wearing_gas_mask != 1)) {
+        pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+        if ((pCVar6 == (CLightGun *)0x0) && ((param_1->base).is_wearing_gas_mask == 2)) {
+          iVar11 = 10;
         }
         else {
-          iVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-          if ((iVar5 == 0) && (*(int *)(param_1 + 0x1fa00) == 1)) goto LAB_0053f41f;
-          iVar5 = local_3c;
-          if (local_3c < 0) {
-            iVar5 = *(int *)(param_1 + 0x1fa94);
-            if (iVar5 == local_18) {
-              if (*(int *)(param_1 + 0x1fa94) == 0) {
+          pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+          if ((pCVar6 == (CLightGun *)0x0) && ((param_1->base).is_wearing_gas_mask == 1))
+          goto LAB_0053f41f;
+          iVar11 = local_38;
+          if (local_38 < 0) {
+            pCVar1 = param_1->weapon;
+            if (pCVar1 == local_14) {
+              if (param_1->weapon == (CWeapon *)0x0) {
 switchD_0053f7b3_caseD_3:
-                iVar5 = 0;
+                iVar11 = 0;
               }
               else {
-                switch(*(uint *)(*(int *)(param_1 + 0x1fa94) + 0x2d8)) {
+                switch(param_1->weapon->weapon_type) {
                 case 0:
                 case 5:
-                  iVar5 = 2;
+                  iVar11 = 2;
                   break;
                 case 1:
-                  iVar5 = 4;
+                  iVar11 = 4;
                   break;
                 case 2:
-                  iVar5 = 5;
+                  iVar11 = 5;
                   break;
                 default:
                   goto switchD_0053f7b3_caseD_3;
                 case 4:
-                  iVar5 = 7;
+                  iVar11 = 7;
                   break;
                 case 7:
-                  iVar5 = 8;
+                  iVar11 = 8;
                 }
               }
             }
-            else if (iVar5 == 0) {
-              if (local_18 == 0) {
-                iVar5 = 0;
+            else if (pCVar1 == (CWeapon *)0x0) {
+              if (local_14 == (CWeapon *)0x0) {
+                iVar11 = 0;
               }
               else {
-                uVar2 = *(uint *)(local_18 + 0x2d8);
+                uVar2 = local_14->weapon_type;
                 if (uVar2 < 7) goto joined_r0x0053f88b;
                 if (((7 < uVar2) && (uVar2 != 8)) ||
-                   ((iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                       (local_18,g_CMeleeActorType_01cc56a4.name_hash), iVar5 != 0
-                    && (*(int *)(iVar5 + 0x580) != 0)))) goto LAB_0053f41f;
-                iVar5 = 0;
+                   ((pCVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
+                                        (&local_14->base,g_CMeleeActorType_01cc56a4.name_hash),
+                    pCVar9 != (CDemonActor *)0x0 && (pCVar9[4].orient_matrix.m[0].y != 0.0))))
+                goto LAB_0053f41f;
+                iVar11 = 0;
               }
             }
             else {
-              uVar2 = *(uint *)(iVar5 + 0x2d8);
+              uVar2 = pCVar1->weapon_type;
               if (uVar2 < 7) {
 joined_r0x0053f88b:
                 if (uVar2 != 0) goto LAB_0053f41f;
-                iVar5 = 1;
+                iVar11 = 1;
               }
               else {
                 if (((7 < uVar2) && (uVar2 != 8)) ||
-                   ((iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                       (iVar5,g_CMeleeActorType_01cc56a4.name_hash), iVar5 != 0 &&
-                    (*(int *)(iVar5 + 0x580) != 0)))) goto LAB_0053f41f;
-                iVar5 = 0;
+                   ((pCVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
+                                        (&pCVar1->base,g_CMeleeActorType_01cc56a4.name_hash),
+                    pCVar9 != (CDemonActor *)0x0 && (pCVar9[4].orient_matrix.m[0].y != 0.0))))
+                goto LAB_0053f41f;
+                iVar11 = 0;
               }
             }
           }
         }
       }
       else {
-        iVar5 = 10;
+        iVar11 = 10;
       }
     }
-    local_28 = *(int *)(param_1 + 0x2a88);
-    iVar3 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(param_1,&param_2,iVar5);
-    local_14 = (float)(*(int *)(param_1 + 0x2650 + *(int *)(param_1 + 0x2a84) * 0x38) * 0x54c);
-    iVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(local_2c);
-    local_38 = (int)local_14 + iVar4 + 0x968;
-    switch(*(uint *)(param_1 + 0x2a84)) {
+    local_24 = (param_1->base).base.layer_action_t;
+    iVar3 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(param_1,&param_2,iVar11);
+    iVar5 = (param_1->base).base.layer_actions[(param_1->base).base.layer_action_index].motion_index
+    ;
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(local_28);
+    local_34 = pCVar4->motions + iVar5;
+    switch((param_1->base).base.layer_action_index) {
     case 6:
-      local_20 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(uint *)(param_1 + 0x1fa94),
-                            g_CDynamiteActorType_01bca088.name_hash);
-      if (((local_20 != 0) && (iVar4 = core_dynamite_cpp_FUN_0046ed80(local_20), iVar4 == 0)) &&
-         (local_14 = (float)(0xb / (longlong)*(int *)(local_38 + 100)),
-         (float)(int)local_14 <= *(float *)(param_1 + 0x2a88))) {
-        core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(local_20);
+      local_1c = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (&param_1->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
+      if (((local_1c != (CDemonActor *)0x0) &&
+          (iVar5 = core_dynamite_cpp_FUN_0046ed80(local_1c), iVar5 == 0)) &&
+         ((float)(int)(0xb / (longlong)local_34->frame_count) <= (param_1->base).base.layer_action_t
+         )) {
+        core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(local_1c);
       }
       break;
     case 7:
-      if ((*(int *)(param_1 + 0x1faa0) == 3) &&
-         (local_14 = (float)(0xb / (longlong)*(int *)(local_38 + 100)),
-         (float)(int)local_14 <= *(float *)(param_1 + 0x2a88))) {
-        core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(param_1,local_54);
-        local_34 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(uint *)(param_1 + 0x1fa94),
-                              g_CDynamiteActorType_01bca088.name_hash);
-        local_24 = local_34;
-        if (local_34 != 0) {
-          puVar6 = (uint *)
-                   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                             (param_1,local_60,local_54);
-          if ((uint *)(local_24 + 0x574) != puVar6) {
-            *(uint *)(local_24 + 0x574) = *puVar6;
-            *(uint *)(local_24 + 0x578) = puVar6[1];
-            *(uint *)(local_24 + 0x57c) = puVar6[2];
+      if ((param_1->action_pending == 3) &&
+         ((float)(int)(0xb / (longlong)local_34->frame_count) <= (param_1->base).base.layer_action_t
+         )) {
+        core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(param_1,&CStack_50);
+        local_30 = core_actor_cpp_castToClassHash_FUN_0040d890
+                             (&param_1->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
+        local_20 = local_30;
+        if (local_30 != (CDemonActor *)0x0) {
+          pfVar8 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                                      (param_1,&stack0xffffffa4,&CStack_50);
+          pfVar10 = &local_20[4].orient.vec.y;
+          if (pfVar10 != pfVar8) {
+            *pfVar10 = *pfVar8;
+            local_20[4].orient.vec.z = pfVar8[1];
+            local_20[4].orient_matrix.m[0].x = pfVar8[2];
           }
-          (**(code **)(*(int *)(local_34 + 0x14c) + 0xdc))(local_34);
-          *(uint *)(param_1 + 0x1fa94) = 0;
+          (*((local_30->vtable)._ub)->showEditorHelp)(local_30,in_stack_ffffffa4);
+          param_1->weapon = (CWeapon *)0x0;
         }
-        if (*(int *)(param_1 + 0x24f0) != 0) {
-          (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,local_54);
+        if ((param_1->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
+          (*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);
         }
-        *(uint *)(param_1 + 0x1faa0) = 0;
-        *(float *)(param_1 + 0x1fa4c) = 10.0f;
+        param_1->action_pending = 0;
+        param_1->aim_speed_factor = 10.0f;
       }
-      if (1.0 <= *(float *)(param_1 + 0x2a88)) {
-        *(uint *)(param_1 + 0x2a84) = 0;
-        *(uint *)(param_1 + 0x2a88) = 0;
+      if (1.0 <= (param_1->base).base.layer_action_t) {
+        (param_1->base).base.layer_action_index = 0;
+        (param_1->base).base.layer_action_t = 0.0;
       }
       break;
     case 8:
-      if (((local_28 < 0x3f19999a) && (0x3f199999 < *(int *)(param_1 + 0x2a88))) &&
-         (iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                            (*(uint *)(param_1 + 0x1fa94),"CShotgun"), iVar4 != 0)) {
-        (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xd0))
-                  (*(int *)(param_1 + 0x1fa94));
+      if ((((int)local_24 < 0x3f19999a) && (0x3f199999 < (int)(param_1->base).base.layer_action_t))
+         && (iVar5 = core_actor_cpp_isOfClass_FUN_0040d7e0
+                               (&param_1->weapon->base,"CShotgun"), iVar5 != 0)) {
+        (*((param_1->weapon->base).vtable._ub)->processInEditor)(&param_1->weapon->base);
       }
       break;
     case 0xc:
-      if (((local_28 < 0x3ebd70a4) && (0x3ebd70a3 < *(int *)(param_1 + 0x2a88))) &&
-         (iVar4 = *(int *)(param_1 + 0x1fa94), iVar4 != 0)) {
-        (**(code **)(*(int *)(iVar4 + 0x14c) + 0x70))(iVar4,1);
+      if ((((int)local_24 < 0x3ebd70a4) && (0x3ebd70a3 < (int)(param_1->base).base.layer_action_t))
+         && (pCVar1 = param_1->weapon, pCVar1 != (CWeapon *)0x0)) {
+        (*((pCVar1->base).vtable._ub)->processMeleeHit)(&pCVar1->base,1);
       }
       break;
     case 0xd:
-      if (((local_28 < 0x3f28f5c3) && (0x3f28f5c2 < *(int *)(param_1 + 0x2a88))) &&
-         (iVar4 = *(int *)(param_1 + 0x1fa94), iVar4 != 0)) {
-        (**(code **)(*(int *)(iVar4 + 0x14c) + 0x70))(iVar4,2);
+      if ((((int)local_24 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(param_1->base).base.layer_action_t))
+         && (pCVar1 = param_1->weapon, pCVar1 != (CWeapon *)0x0)) {
+        (*((pCVar1->base).vtable._ub)->processMeleeHit)(&pCVar1->base,2);
       }
     }
     if (-1 < iVar3) {
-      iVar4 = *(int *)(param_1 + 0x1fa94);
-      if (iVar4 != local_18) {
-        if (iVar4 != 0) {
-          uVar2 = *(uint *)(iVar4 + 0x2d8);
+      pCVar1 = param_1->weapon;
+      if (pCVar1 != local_14) {
+        if (pCVar1 != (CWeapon *)0x0) {
+          uVar2 = pCVar1->weapon_type;
           if (uVar2 < 7) {
             if (uVar2 == 0) {
-              iVar4 = 1;
+              iVar5 = 1;
             }
             else {
-              iVar4 = 3;
+              iVar5 = 3;
             }
           }
           else if ((uVar2 < 8) || (uVar2 == 8)) {
-            iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (iVar4,g_CMeleeActorType_01cc56a4.name_hash);
-            if ((iVar4 == 0) || (*(int *)(iVar4 + 0x580) == 0)) {
-              iVar4 = 0;
+            pCVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
+                               (&pCVar1->base,g_CMeleeActorType_01cc56a4.name_hash);
+            if ((pCVar9 == (CDemonActor *)0x0) || (pCVar9[4].orient_matrix.m[0].y == 0.0)) {
+              iVar5 = 0;
             }
             else {
-              iVar4 = 3;
+              iVar5 = 3;
             }
           }
           else {
-            iVar4 = 3;
+            iVar5 = 3;
           }
-          if (iVar3 == iVar4) {
-            (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xd4))
-                      (*(int *)(param_1 + 0x1fa94),1);
-            *(uint *)(param_1 + 0x1fa94) = 0;
-            local_40 = 1;
+          if (iVar3 == iVar5) {
+            (*((param_1->weapon->base).vtable._ub)->getPropertyList)
+                      (&param_1->weapon->base,(CActorPropertyList *)0x1);
+            param_1->weapon = (CWeapon *)0x0;
+            local_34 = (SMotion *)0x1;
           }
         }
-        if (*(int *)(param_1 + 0x1fa3c) != 0) {
-          if (local_18 == 0) {
+        if (param_1->guns_drawn != 0) {
+          if (local_14 == (CWeapon *)0x0) {
 LAB_0053f520:
-            iVar4 = 0;
+            iVar5 = 0;
           }
           else {
-            uVar2 = *(uint *)(local_18 + 0x2d8);
+            uVar2 = local_14->weapon_type;
             if (uVar2 < 7) {
               if (uVar2 == 0) {
-                iVar4 = 1;
+                iVar5 = 1;
               }
               else {
-                iVar4 = 3;
+                iVar5 = 3;
               }
             }
             else if ((uVar2 < 8) || (uVar2 == 8)) {
-              iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                (local_18,g_CMeleeActorType_01cc56a4.name_hash);
-              if ((iVar4 == 0) || (*(int *)(iVar4 + 0x580) == 0)) goto LAB_0053f520;
-              iVar4 = 3;
+              pCVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
+                                 (&local_14->base,g_CMeleeActorType_01cc56a4.name_hash);
+              if ((pCVar9 == (CDemonActor *)0x0) || (pCVar9[4].orient_matrix.m[0].y == 0.0))
+              goto LAB_0053f520;
+              iVar5 = 3;
             }
             else {
-              iVar4 = 3;
+              iVar5 = 3;
             }
           }
-          if (iVar3 == iVar4) {
-            *(int *)(param_1 + 0x1fa94) = local_18;
-            if (local_18 != 0) {
-              (**(code **)(*(int *)(local_18 + 0x14c) + 0xd4))(local_18,2);
+          if (iVar3 == iVar5) {
+            param_1->weapon = local_14;
+            if (local_14 != (CWeapon *)0x0) {
+              (*((local_14->base).vtable._ub)->getPropertyList)
+                        (&local_14->base,(CActorPropertyList *)0x2);
             }
-            local_40 = 1;
+            local_3c = 1;
           }
         }
       }
-      if ((*(int *)(param_1 + 0x1faa0) == 1) && (iVar3 == 3)) {
-        core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004b5c70(param_1,1);
-        *(uint *)(param_1 + 0x1faa0) = 0;
+      if ((param_1->action_pending == 1) && (iVar3 == 3)) {
+        core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004b5c70(&param_1->base,1);
+        param_1->action_pending = 0;
       }
-      if ((*(int *)(param_1 + 0x1fa1c) != 0) && (iVar3 == 3)) {
-        core_inv_cpp_CInventory_removeItem_FUN_004c07b0(local_1c,*(int *)(param_1 + 0x1fa1c),0);
+      pCVar9 = (param_1->base).target_actor;
+      if ((pCVar9 != (CDemonActor *)0x0) && (iVar3 == 3)) {
+        core_inv_cpp_CInventory_removeItem_FUN_004c07b0(local_18,pCVar9,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
-                  (0x01CC9450,*(uint *)(param_1 + 0x1fa1c));
+                  (0x01CC9450,(param_1->base).target_actor);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
-                  (param_1,1,*(uint *)(param_1 + 0x1fa1c),0);
-        iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                          (*(uint *)(param_1 + 0x1fa1c),"CTrap");
-        if (iVar4 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_2c,0x16,1);
-          if (*(int *)(param_1 + 0x1faa0) != 0) {
+                  ((CCharacter *)param_1,1,(param_1->base).target_actor,0.0);
+        iVar5 = core_actor_cpp_isOfClass_FUN_0040d7e0((param_1->base).target_actor,"CTrap")
+        ;
+        if (iVar5 == 0) {
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_28,0x16,1);
+          if (param_1->action_pending != 0) {
             shape_edittool_cpp_FUN_0046fb40
-                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
+                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",param_1->action_pending,
                        0x13ba);
           }
-          *(uint *)(param_1 + 0x1faa0) = 2;
+          param_1->action_pending = 2;
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_2c,0x14,1);
-          *(uint *)(param_1 + 0x1faa0) = 6;
+          core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_28,0x14,1);
+          param_1->action_pending = 6;
         }
-        *(uint *)(param_1 + 0x1fa1c) = 0;
+        (param_1->base).target_actor = (CDemonActor *)0x0;
       }
       if (iVar3 == 10) {
-        iVar4 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-        if (iVar4 == 0) {
+        pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+        if (pCVar6 == (CLightGun *)0x0) {
 LAB_0053f61d:
-          *(uint *)(param_1 + 0x1fa00) = 1;
+          (param_1->base).is_wearing_gas_mask = 1;
         }
         else {
-          *(uint *)(param_1 + 0x1fa00) = 2;
+          (param_1->base).is_wearing_gas_mask = 2;
         }
       }
-      else if ((iVar3 == 3) && (*(int *)(param_1 + 0x1fa00) < 2)) {
-        iVar4 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_1c);
-        if (iVar4 != 0) goto LAB_0053f61d;
-        *(uint *)(param_1 + 0x1fa00) = 0;
+      else if ((iVar3 == 3) && ((param_1->base).is_wearing_gas_mask < 2)) {
+        pCVar6 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(local_18);
+        if (pCVar6 != (CLightGun *)0x0) goto LAB_0053f61d;
+        (param_1->base).is_wearing_gas_mask = 0;
       }
-      if ((*(int *)(param_1 + 0x1faa0) == 7) && ((iVar3 == 0 || (iVar3 == 8)))) {
-        *(uint *)(param_1 + 0x1faa0) = 0;
+      if ((param_1->action_pending == 7) && ((iVar3 == 0 || (iVar3 == 8)))) {
+        param_1->action_pending = 0;
       }
-      core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(param_1,iVar5);
+      core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50((CCharacter *)param_1,iVar11);
     }
-    local_30 = local_30 + 1;
-  } while (local_30 < 2);
-  if (local_40 == 0) {
+    local_2c = local_2c + 1;
+  } while (local_2c < 2);
+  if (local_3c == 0) {
     return;
   }
 LAB_0053fc23:

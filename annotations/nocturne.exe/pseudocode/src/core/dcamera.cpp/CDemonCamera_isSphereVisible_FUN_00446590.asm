@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int param_1,float *param_2,float param_3)
+; int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(CDemonCamera *this_ptr,CVector3f *position,float radius)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -14,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0048ab60 at 0048ac50
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ac50
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bddc = 256

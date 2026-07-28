@@ -2,13 +2,13 @@
 // Address: 004ce7c0
 // Address Range: [[004ce7c0, 004ce919]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int param_1,int param_2,int param_3,int param_4)
+// Signature: void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int param_1,int param_2,int param_3,int param_4)
+void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height)
 
 {
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc549c) = _DAT_01c039c4;
@@ -35,8 +35,7 @@ void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int param_1,int param_2,i
     INT_01cc4804 = 0x53d;
     core_main_c_FUN_004c8440("Too many 3D windows");
   }
-  engine_2d_c_setupViewportAndClipping_FUN_00401e30
-            (param_1,param_2,param_1 + param_3,param_2 + param_4);
+  engine_2d_c_setupViewportAndClipping_FUN_00401e30(x,y,x + width,y + height);
   DAT_005b7648 = 0x10000;
   return;
 }

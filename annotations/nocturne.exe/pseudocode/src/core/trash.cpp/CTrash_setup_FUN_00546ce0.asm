@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_CTrash_setup_FUN_00546ce0(int param_1)
+; void core_trash_cpp_CTrash_setup_FUN_00546ce0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -21,12 +21,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00546ce4
     PUSH EBX                            ; 00546ce8
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00546ce9
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00546cee
     LEA EAX,[EBX + 0x150]               ; 00546cf1
     PUSH EAX                            ; 00546cf7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00546cf8
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     LEA EAX,[EBX + 0x2f8]               ; 00546cfd
     MOV dword ptr [EAX + 0x8],0x0       ; 00546d03
     MOV EDX,dword ptr [EAX + 0x8]       ; 00546d0a

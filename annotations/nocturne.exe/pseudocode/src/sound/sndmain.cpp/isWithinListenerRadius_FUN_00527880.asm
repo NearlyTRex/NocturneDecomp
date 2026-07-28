@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880(double param_1,double param_2,double param_3,double param_4)
+; int __cdecl sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880(double pos_x,double pos_y,double pos_z,double radius)
 ;
+; Parameters:
+; double           Stack[0x4]:8   pos_x
+; double           Stack[0xc]:8   pos_y
+; double           Stack[0x14]:8   pos_z
+; double           Stack[0x1c]:8   radius
 ;
 ; XREF[6]:
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411dd8

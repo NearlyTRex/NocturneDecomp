@@ -19,7 +19,7 @@ struct CNPC_ptr_344 {
     template<typename T> CNPC_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CNPC_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CNPC* operator->() const { return (CNPC*)_raw; }
-    CNPC* adj() const { return (CNPC*)((char*)_raw - offsetof(CNPC, base.model)); }
+    CNPC* adj() const { return (CNPC*)((char*)_raw - offsetof(CNPC, base.model.motion_controller.current_frame_number)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

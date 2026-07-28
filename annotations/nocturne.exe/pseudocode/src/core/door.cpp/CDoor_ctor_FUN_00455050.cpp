@@ -1,81 +1,119 @@
 // Name: core_door.cpp_CDoor_ctor_FUN_00455050
 // Address: 00455050
 // Address Range: [[00455050, 004551ee]]
-// Convention: unknown
-// Signature: int core_door_cpp_CDoor_ctor_FUN_00455050(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr)
 
 #include "nocturne.h"
 
-int core_door_cpp_CDoor_ctor_FUN_00455050(uint param_1)
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr)
 
 {
   char cVar1;
   int iVar2;
+  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
+  int *piVar5;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  core_event_cpp_FUN_00481620(iVar2 + 800);
-  *(byte ***)(iVar2 + -4) = &PTR_core_door_cpp_CDoor_setup_FUN_004551f0_0059c284;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"churchd01.kfm");
-  *(uint *)(iVar2 + 0x180) = 0;
-  *(uint *)(iVar2 + 0x184) = 1;
-  *(uint *)(iVar2 + 0x188) = 0;
-  *(uint *)(iVar2 + 0x18c) = 0;
-  if ((uint *)(iVar2 + 0x83c) != (uint *)(iVar2 + -0x130)) {
-    *(uint *)(iVar2 + 0x83c) = *(uint *)(iVar2 + -0x130);
-    *(uint *)(iVar2 + 0x840) = *(uint *)(iVar2 + -300);
-    *(uint *)(iVar2 + 0x844) = *(uint *)(iVar2 + -0x128);
+  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+  core_event_cpp_FUN_00481620(this_ptr_00[2].part_visibility_flags + 10);
+  this_ptr_00[-1].model_ptr =
+       (CKeyFramedModel *)&PTR_core_door_cpp_CDoor_setup_FUN_004551f0_0059c284;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (this_ptr_00,"churchd01.kfm");
+  this_ptr_00[1].part_visibility_flags[1] = 0;
+  this_ptr_00[1].part_visibility_flags[2] = 1;
+  this_ptr_00[1].part_visibility_flags[3] = 0;
+  this_ptr_00[1].part_visibility_flags[4] = 0;
+  if ((int *)(this_ptr_00[5].model_name + 0x58) != this_ptr_00[-1].part_visibility_flags + 0x13) {
+    *(int *)(this_ptr_00[5].model_name + 0x58) = this_ptr_00[-1].part_visibility_flags[0x13];
+    *(int *)(this_ptr_00[5].model_name + 0x5c) = this_ptr_00[-1].part_visibility_flags[0x14];
+    *(int *)(this_ptr_00[5].model_name + 0x60) = this_ptr_00[-1].part_visibility_flags[0x15];
   }
   pcVar3 = "defaultDoorOpen";
-  pcVar4 = (char *)(iVar2 + 400);
+  piVar5 = this_ptr_00[1].part_visibility_flags + 5;
   do {
     cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    *(char *)piVar5 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar5 + 1) = cVar1;
+    piVar5 = (int *)((int)piVar5 + 2);
   } while (cVar1 != '\0');
-  pcVar3 = "defaultDoorClose";
-  pcVar4 = (char *)(iVar2 + 500);
+  pcVar4 = "defaultDoorClose";
+  pcVar3 = this_ptr_00[1].model_name;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar4;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "door-locked.wav";
-  *(byte *)(iVar2 + 0x70c) = 0;
-  pcVar4 = (char *)(iVar2 + 0x7d4);
-  *(byte *)(iVar2 + 0x770) = 0;
+  this_ptr_00[4].model_name[0xa4] = '\0';
+  piVar5 = this_ptr_00[5].part_visibility_flags + 0x1a;
+  *(byte *)(this_ptr_00[5].part_visibility_flags + 1) = 0;
   do {
     cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    *(char *)piVar5 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar5 + 1) = cVar1;
+    piVar5 = (int *)((int)piVar5 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + 0x838) = 0;
-  *(uint *)(iVar2 + 0x854) = 0;
-  *(uint *)(iVar2 + 0x858) = 0x3f800000;
-  *(uint *)(iVar2 + 0x85c) = 0x3f800000;
-  *(uint *)(iVar2 + 0x860) = 0x3f800000;
-  *(uint *)(iVar2 + 0x17c) = 0;
-  *(byte *)(iVar2 + 600) = 0;
-  *(byte *)(iVar2 + 700) = 0;
-  *(uint *)(iVar2 + 0x870) = 0;
-  *(uint *)(iVar2 + 0x874) = 0;
-  *(uint *)(iVar2 + 0x878) = 1;
-  *(uint *)(iVar2 + 0x87c) = 0;
-  *(uint *)(iVar2 + 0x880) = 3;
-  *(uint *)(iVar2 + 0x884) = 1;
-  return iVar2 + -0x150;
+  this_ptr_00[5].model_name[0x54] = '\0';
+  this_ptr_00[5].model_name[0x55] = '\0';
+  this_ptr_00[5].model_name[0x56] = '\0';
+  this_ptr_00[5].model_name[0x57] = '\0';
+  this_ptr_00[5].model_name[0x70] = '\0';
+  this_ptr_00[5].model_name[0x71] = '\0';
+  this_ptr_00[5].model_name[0x72] = '\0';
+  this_ptr_00[5].model_name[0x73] = '\0';
+  this_ptr_00[5].model_name[0x74] = '\0';
+  this_ptr_00[5].model_name[0x75] = '\0';
+  this_ptr_00[5].model_name[0x76] = -0x80;
+  this_ptr_00[5].model_name[0x77] = '?';
+  this_ptr_00[5].model_name[0x78] = '\0';
+  this_ptr_00[5].model_name[0x79] = '\0';
+  this_ptr_00[5].model_name[0x7a] = -0x80;
+  this_ptr_00[5].model_name[0x7b] = '?';
+  this_ptr_00[5].model_name[0x7c] = '\0';
+  this_ptr_00[5].model_name[0x7d] = '\0';
+  this_ptr_00[5].model_name[0x7e] = -0x80;
+  this_ptr_00[5].model_name[0x7f] = '?';
+  this_ptr_00[1].part_visibility_flags[0] = 0;
+  this_ptr_00[1].model_name[100] = '\0';
+  this_ptr_00[1].model_name[200] = '\0';
+  this_ptr_00[5].model_name[0x8c] = '\0';
+  this_ptr_00[5].model_name[0x8d] = '\0';
+  this_ptr_00[5].model_name[0x8e] = '\0';
+  this_ptr_00[5].model_name[0x8f] = '\0';
+  this_ptr_00[5].model_name[0x90] = '\0';
+  this_ptr_00[5].model_name[0x91] = '\0';
+  this_ptr_00[5].model_name[0x92] = '\0';
+  this_ptr_00[5].model_name[0x93] = '\0';
+  this_ptr_00[5].model_name[0x94] = '\x01';
+  this_ptr_00[5].model_name[0x95] = '\0';
+  this_ptr_00[5].model_name[0x96] = '\0';
+  this_ptr_00[5].model_name[0x97] = '\0';
+  this_ptr_00[5].model_name[0x98] = '\0';
+  this_ptr_00[5].model_name[0x99] = '\0';
+  this_ptr_00[5].model_name[0x9a] = '\0';
+  this_ptr_00[5].model_name[0x9b] = '\0';
+  this_ptr_00[5].model_name[0x9c] = '\x03';
+  this_ptr_00[5].model_name[0x9d] = '\0';
+  this_ptr_00[5].model_name[0x9e] = '\0';
+  this_ptr_00[5].model_name[0x9f] = '\0';
+  this_ptr_00[5].model_name[0xa0] = '\x01';
+  this_ptr_00[5].model_name[0xa1] = '\0';
+  this_ptr_00[5].model_name[0xa2] = '\0';
+  this_ptr_00[5].model_name[0xa3] = '\0';
+  return (CDoor *)(this_ptr_00[-1].part_visibility_flags + 0xb);
 }

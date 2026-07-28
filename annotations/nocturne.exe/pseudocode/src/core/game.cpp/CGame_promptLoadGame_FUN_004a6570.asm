@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004a6570(int param_1)
+; void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004a6570(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x210]:1  local_210
 ; undefined1       Stack[-0x20f]:1  local_20f
@@ -49,13 +51,13 @@ section .text
     PUSH 0x1c78598                      ; 004a6598 | DAT_01c78598
     MOV byte ptr [EBX + 0x9c8],0x0      ; 004a659d
     CALL crt_string.c_splitpath_FUN_00566498 ; 004a65a4
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 004a65a9
     PUSH 0x584562                       ; 004a65ac | = "noc"
     LEA EAX,[ESP + 0x108]               ; 004a65b1
     PUSH EAX                            ; 004a65b8
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a65b9
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a65be
     TEST EAX,EAX                        ; 004a65c1
     JZ 0x004a65de                       ; 004a65c3
@@ -64,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004a65ca
     PUSH EAX                            ; 004a65d1
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a65d2
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a65d7
     TEST EAX,EAX                        ; 004a65da
     JNZ 0x004a663b                      ; 004a65dc
@@ -96,13 +98,13 @@ section .text
     PUSH 0x584571                       ; 004a660b | = "save"
     PUSH 0x584576                       ; 004a6610 | = "Select file to load"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a6615
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a661a
     PUSH EAX                            ; 004a661d
     MOV EDX,dword ptr [0x005b6d50]      ; 004a661e | DAT_005b6d50
     PUSH EDX                            ; 004a6624
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 ; 004a6625
-        ;   XREF to: 00470550 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550()
+        ;   XREF to: 00470550 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004a662a
     TEST EAX,EAX                        ; 004a662d
     JNZ 0x004a6642                      ; 004a662f

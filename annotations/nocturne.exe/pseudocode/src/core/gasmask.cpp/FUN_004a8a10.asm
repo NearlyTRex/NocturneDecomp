@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gasmask_cpp_FUN_004a8a10(undefined4 param_1)
+; int * core_gasmask_cpp_FUN_004a8a10(undefined4 param_1)
 ;
 ;
 ; XREF[2]:
@@ -31,7 +31,7 @@ section .text
     ADD EAX,0x150                       ; 004a8a1e
     PUSH EAX                            ; 004a8a23
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004a8a24
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004a8a29
     LEA EBX,[EAX + 0xfffffeb0]          ; 004a8a2c
     PUSH 0x584aa1                       ; 004a8a32 | = "gasmask.kfm"
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 004a8a3d
     MOV dword ptr [EBX + 0x14c],0x59e0e4 ; 004a8a3e | PTR_core_gasmask.cpp_FUN_004a8a60_0059e0e4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004a8a48
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004a8a4d
     MOV EAX,EBX                         ; 004a8a50
     MOV dword ptr [EBX + 0x2cc],0x0     ; 004a8a52

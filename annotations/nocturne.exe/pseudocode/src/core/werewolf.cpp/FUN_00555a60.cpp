@@ -9,12 +9,12 @@
 void core_werewolf_cpp_FUN_00555a60(void)
 
 {
-  int iVar1;
+  CWerewolf *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd6c);
-  if (iVar1 == 0) {
+  this_ptr = (CWerewolf *)FUN_0056497c(0xbd6c);
+  if (this_ptr == (CWerewolf *)0x0) {
     return;
   }
-  core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(iVar1);
+  core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(this_ptr);
   return;
 }

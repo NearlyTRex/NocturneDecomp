@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,26 +122,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 659,
+    "complexity_score": 350,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 229,
-    "suspect_count": 39,
+    "pseudocode_lines": 230,
+    "suspect_count": 9,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 772
+    "total_lines": 773
   },
   "cross_references": [
+    {
+      "addr": "0052eac0",
+      "from_addr": "0052eaec",
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0052eac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0052eb00",
       "from_addr": "0052eb32",
@@ -171,12 +175,6 @@
       "from_addr": "0052eaa8",
       "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052eac0",
-      "from_addr": "0052eaec",
-      "name": "core_sound.cpp_FUN_0052eac0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -190,7 +188,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_sound.cpp_playSfxInternal_FUN_0052d120",
-    "signature": "undefined4 __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(undefined4 param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )"
+    "signature": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)"
   },
   "function_calls": [
     {
@@ -505,7 +503,7 @@
       {
         "call_addr": "0052eaec",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0052eac0",
+        "caller": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0052eac0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -514,11 +512,11 @@
         "stack_params": 7
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
     "estimated_params": 7,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.854014598540146,
@@ -560,10 +558,10 @@
     "pcode_op_count": 1995
   },
   "stack_frame": {
-    "frame_size": 404,
+    "frame_size": 432,
     "local_size": 404,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -726,6 +724,55 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "user_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "z",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "position_tracker",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 28,
+        "size": 4,
+        "type": "uint"
       }
     ]
   },
@@ -754,15 +801,15 @@
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 188,
-          "message": "sscanf format string requires 2 parameters but only 0 are given.",
+          "line": 190,
+          "message": "sscanf format string requires 2 parameters but only 1 is given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 201,
-          "message": "sscanf format string requires 2 parameters but only 0 are given.",
+          "line": 203,
+          "message": "sscanf format string requires 2 parameters but only 1 is given.",
           "severity": "error"
         },
         {
@@ -786,260 +833,28 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar4 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_14 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_005c168c",
       "severity": "mild",
-      "text": "while ((((cVar4 != '\\0' && (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
+      "text": "while ((((cVar5 != '\\0' && (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid sfx string: %s\",param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 103,
       "match": "DAT_005bef20",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005bef20;",
+      "text": "puVar8 = &DAT_005bef20;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_44 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_40 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_3c = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 != (float *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_44 = param_3 + *param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "local_44 = param_3 + *param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_40 = param_4 + param_6[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "local_40 = param_4 + param_6[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_3c = param_5 + param_6[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "local_3c = param_5 + param_6[2];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 178,
+      "line": 180,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "if (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 185,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid sfx string: %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid sfx string: %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 208,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Invalid sfx string: %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 217,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "if (param_6 == (float *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 219,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((double)param_3,(double)param_4,(double)param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 219,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "((double)param_3,(double)param_4,(double)param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 219,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "((double)param_3,(double)param_4,(double)param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 225,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00526150(0,param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -1054,7 +869,7 @@
       "line": 105,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -1088,17 +903,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "call_site_count": 6,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
-      "type": "param_count_too_few"
     },
     {
       "description": "Uninitialized variable: local_2c",

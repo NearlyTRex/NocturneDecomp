@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(undefined4 param_1,float *param_2)
+; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer *this_ptr,CVector3f *output)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -41,7 +44,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00460d3b
     MOV ESI,ESP                         ; 00460d3e
     CALL engine_matrix.c_getCameraOrigin_FUN_004ce760 ; 00460d40
-        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ce760()
+        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_004ce760(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 00460d45
     MOV dword ptr [ESP + 0xc],EAX       ; 00460d48
     FLD double ptr [0x0057dc6d]         ; 00460d4c | DOUBLE_0057dc6d

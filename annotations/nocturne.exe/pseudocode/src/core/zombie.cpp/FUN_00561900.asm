@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_FUN_00561900(int param_1)
+; int core_zombie_cpp_FUN_00561900(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -21,7 +21,7 @@ section .text
     ADD EAX,0x150                       ; 00561904
     PUSH EAX                            ; 00561909
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 0056190a
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0056190f
     ADD ESP,0x4                         ; 00561912
     CMP EAX,0xe                         ; 00561915
@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_00561928
     PUSH ECX                            ; 0056192c
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 0056192d
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00561932
     RET                                 ; 00561935
 

@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_playSound_FUN_0052ea40(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; uint __cdecl core_sound_cpp_CSound_playSound_FUN_0052ea40(CSound *this_ptr,void *user_data,char *sound_name)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; void *           Stack[0x8]:4   user_data
+; char *           Stack[0xc]:4   sound_name
 ;
 ; XREF[9]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c50d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05cf
-;   core_game.cpp_FUN_004a0430 at 004a04cb
+;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004a0430 at 004a04cb
 ;   core_script.cpp_CScript_getDialogDuration_FUN_005049b0 at 00504b2a
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052dee5
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0 at 0052ea22
@@ -33,7 +37,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0052ea4f
     PUSH ECX                            ; 0052ea53
     CALL core_sound.cpp_playSfxInternal_FUN_0052d120 ; 0052ea54
-        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_playSfxInternal_FUN_0052d120()
+        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_0052d120(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 0052ea59
     RET                                 ; 0052ea5c
 

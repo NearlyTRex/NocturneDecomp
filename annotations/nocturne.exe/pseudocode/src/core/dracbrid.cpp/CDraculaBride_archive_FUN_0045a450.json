@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 321,
+    "complexity_score": 334,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 19,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
     "suspect_count": 24,
     "suspect_types": [
+      "primitive_walker_cast",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 283
+    "total_lines": 291
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450",
-    "signature": "int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)"
+    "signature": "void core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CEnemy *param_1)"
   },
   "function_calls": [
     {
@@ -170,6 +171,11 @@
       "name": "core_actor.cpp_archiveInteger_FUN_0040c900"
     },
     {
+      "addr": "0040cb00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040cb00"
+    },
+    {
       "addr": "0040c6d0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveString_FUN_0040c6d0"
@@ -178,11 +184,6 @@
       "addr": "0040c450",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveVector_FUN_0040c450"
-    },
-    {
-      "addr": "0040cb00",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cb00"
     },
     {
       "addr": "004796c0",
@@ -370,12 +371,12 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)",
+      "text": "void core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
@@ -383,26 +384,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc8c,\"speed\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->speed,\"speed\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,\"modelName\");",
+      "text": "(&(param_1->base).model,\"modelName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc9c,\"guardDistance\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1->guard_distance,\"guardDistance\");",
       "type": "unnamed_param"
     },
     {
@@ -410,7 +411,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0xbd48,\"riseEvent\"),",
+      "text": "((char *)&param_1[1].base.base.location.position.y,\"riseEvent\"),",
       "type": "unnamed_param"
     },
     {
@@ -418,15 +419,7 @@
       "line": 24,
       "match": "DAT_00763e88",
       "severity": "mild",
-      "text": "iVar1 = DAT_00763e88, DAT_00763e88 == 1)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "iVar1 = DAT_00763e88, DAT_00763e88 == 1)) {",
+      "text": "DAT_00763e88 == 1)) {",
       "type": "undefined_data"
     },
     {
@@ -434,31 +427,15 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,pcVar4,0);",
+      "text": "(&(param_1->base).model.motion_controller,pcVar2,0.0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040cb00(param_1 + 0x150,\"motionState\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2a8c,\"clothCount\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x2a8c)) {",
+      "text": "(&(param_1->base).model.motion_controller,\"motionState\");",
       "type": "unnamed_param"
     },
     {
@@ -466,55 +443,55 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_1 + 0x2a90;",
+      "text": "(&(param_1->base).cloth_list.count,\"clothCount\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(param_1 + 0x2a8c));",
+      "text": "if (0 < (param_1->base).cloth_list.count) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0xbdac,\"freakyVoiceNumber\");",
+      "text": "string_buffer = (param_1->base).cloth_list.filenames;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbe4c,\"exploded\");",
+      "text": "} while (iVar1 < (param_1->base).cloth_list.count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbdd0,\"partCount\");",
+      "text": "((int *)(param_1[1].base.base.create_event + 0x10),\"freakyVoiceNumber\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 57,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].base.base.previous_transform_state,\"exploded\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbe50,\"fadeTimer\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0xbdd0)) {",
+      "text": "((int *)&param_1[1].base.base.previous_transform_state,\"exploded\");",
       "type": "unnamed_param"
     },
     {
@@ -522,7 +499,23 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_1 + 0xbdd4;",
+      "text": "((int *)(param_1[1].base.base.create_event + 0x34),\"partCount\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1[1].base.base.previous_transform_state.position.y,\"fadeTimer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1[1].base.base.create_event + 0x34)) {",
       "type": "unnamed_param"
     },
     {
@@ -530,15 +523,7 @@
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)(param_1 + 0xbdd0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbdb0,\"mistState\");",
+      "text": "pcVar2 = param_1[1].base.base.create_event + 0x38;",
       "type": "unnamed_param"
     },
     {
@@ -546,15 +531,31 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbdb4,\"vanishTimer\");",
+      "text": "} while (iVar1 < *(int *)(param_1[1].base.base.create_event + 0x34));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0xbdc0,\"newPos\");",
+      "text": "((int *)(param_1[1].base.base.create_event + 0x14),\"mistState\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float *)(param_1[1].base.base.create_event + 0x18),\"vanishTimer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CVector3f *)(param_1[1].base.base.create_event + 0x24),\"newPos\");",
       "type": "unnamed_param"
     }
   ],

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CBulletTrail_process_FUN_004856a0(int param_1)
+; void __cdecl core_fire_cpp_CBulletTrail_process_FUN_004856a0(CBulletTrail *this_ptr)
 ;
+; Parameters:
+; CBulletTrail *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a47e

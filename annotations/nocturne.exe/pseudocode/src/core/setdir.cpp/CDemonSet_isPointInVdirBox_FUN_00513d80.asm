@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(int param_1,int param_2,float *param_3)
+; int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   box_index
+; CVector3f *      Stack[0xc]:4   point
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

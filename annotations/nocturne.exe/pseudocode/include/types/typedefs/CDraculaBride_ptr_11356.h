@@ -19,7 +19,7 @@ struct CDraculaBride_ptr_11356 {
     template<typename T> CDraculaBride_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CDraculaBride_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CDraculaBride* operator->() const { return (CDraculaBride*)_raw; }
-    CDraculaBride* adj() const { return (CDraculaBride*)((char*)_raw - offsetof(CDraculaBride, base.base.collision_test_points)); }
+    CDraculaBride* adj() const { return (CDraculaBride*)((char*)_raw - offsetof(CDraculaBride, base.base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

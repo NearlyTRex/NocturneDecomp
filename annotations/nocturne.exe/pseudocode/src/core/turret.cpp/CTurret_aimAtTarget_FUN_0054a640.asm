@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2,float param_3)
+; undefined4 core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CDemonActor *param_1,float *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -157,7 +157,7 @@ section .text
     FSTP float ptr [EBX + 0x34]         ; 0054a77d
     FSTP float ptr [EBX + 0x30]         ; 0054a780
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0054a783
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054a788
     FLD float ptr [ESP + 0x4]           ; 0054a78b
     FCOMP double ptr [0x00596ead]       ; 0054a78f | DOUBLE_00596ead

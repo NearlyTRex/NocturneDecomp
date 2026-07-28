@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(int *param_1,int param_2)
+; void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(CNetGame *this_ptr,int player_index)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebaa6
@@ -79,7 +82,7 @@ section .text
     PUSH EAX                            ; 004ecfdf
     MOV dword ptr [ESP + 0xc],ECX       ; 004ecfe0
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004ecfe4
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ecfe9
     MOV EAX,dword ptr [ESP + 0xcc]      ; 004ecfec
     MOV EAX,dword ptr [EAX + 0x16c]     ; 004ecff3
@@ -169,10 +172,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd4]      ; 004ed0eb
     PUSH ESI                            ; 004ed0f2
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004ed0f3
-        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_004eb350()
+        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 004ed0f8
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ed0fb
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ed100
     MOV ECX,0x12                        ; 004ed102
     SAR EDX,0x1f                        ; 004ed107

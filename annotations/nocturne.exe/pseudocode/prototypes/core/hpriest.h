@@ -25,7 +25,7 @@ void FUN_004b9b50(int param_1);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004b9b80
 // Address: 004b9b80
-void CHighPriestOfGardath::process(int param_1,undefined4 param_2);
+void CHighPriestOfGardath::process(CNPC *param_1,float param_2);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_processDamage_FUN_004b9bd0
 // Address: 004b9bd0
@@ -33,4 +33,4 @@ void CHighPriestOfGardath::processDamage(undefined4 param_1,int param_2);
 
 // Original: core_hpriest.cpp_FUN_004b9bf0
 // Address: 004b9bf0
-int FUN_004b9bf0(int param_1,byte param_2);
+CDemonActor * FUN_004b9bf0(CDemonActor *param_1,byte param_2);

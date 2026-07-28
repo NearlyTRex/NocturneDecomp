@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20(void)
+; float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

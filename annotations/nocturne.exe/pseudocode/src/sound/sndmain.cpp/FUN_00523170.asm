@@ -73,7 +73,7 @@ section .text
     PUSH EDX                            ; 005231e1
     PUSH EAX                            ; 005231e2
     CALL crt_string.c_memmove_FUN_00566170 ; 005231e3
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,[0x02dc8334]                ; 005231e8 | DAT_02dc8334
     MOV EDX,dword ptr [0x02dc8330]      ; 005231ed | DAT_02dc8330
     DEC EAX                             ; 005231f3
@@ -88,7 +88,7 @@ section .text
     ADD EBX,0x4                         ; 0052320d
     INC EDI                             ; 00523210
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00523211
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ECX,dword ptr [0x005bea68]      ; 00523216 | DAT_005bea68
     ADD ESP,0xc                         ; 0052321c
     CMP EDI,ECX                         ; 0052321f

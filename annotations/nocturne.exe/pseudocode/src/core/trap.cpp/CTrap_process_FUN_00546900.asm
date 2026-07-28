@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trap_cpp_CTrap_process_FUN_00546900(int param_1)
+; void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
@@ -80,7 +80,7 @@ section .text
     MOV ECX,dword ptr [EDI + EBX*0x1 + 0x150bf8] ; 00546990
     PUSH ECX                            ; 00546997
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00546998
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 0054699d
     ADD ESP,0x8                         ; 0054699f
     TEST EAX,EAX                        ; 005469a2
@@ -92,7 +92,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005469af
     PUSH EAX                            ; 005469b3
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 005469b4
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 005469b9
     LEA EAX,[ESP + 0x3c]                ; 005469bc
     PUSH EAX                            ; 005469c0
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 005469fd
     PUSH ESI                            ; 005469fe
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 005469ff
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00546a04
     FLD float ptr [ESP + 0x7c]          ; 00546a07
     FADD float ptr [ESP + 0x58]         ; 00546a0b
@@ -158,7 +158,7 @@ section .text
     PUSH EAX                            ; 00546a73
     MOV dword ptr [EBX + 0xbd50],ESI    ; 00546a74
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00546a7a
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00546a7f
     MOV EAX,ESP                         ; 00546a82
     MOV EDX,0x41200000                  ; 00546a84

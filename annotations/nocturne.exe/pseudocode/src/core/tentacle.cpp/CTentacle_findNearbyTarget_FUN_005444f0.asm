@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(int param_1,undefined4 param_2)
+; int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle *this_ptr,char *class_name)
 ;
+; Parameters:
+; CTentacle *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   class_name
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -61,7 +64,7 @@ section .text
     PUSH EDX                            ; 0054453c
     PUSH EBX                            ; 0054453d
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0054453e
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00544543
     TEST EAX,EAX                        ; 00544546
     JZ 0x0054452b                       ; 00544548

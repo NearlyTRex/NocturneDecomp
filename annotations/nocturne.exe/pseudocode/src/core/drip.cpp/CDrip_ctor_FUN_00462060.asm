@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_drip_cpp_CDrip_ctor_FUN_00462060(undefined4 param_1)
+; CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00462060(CDrip *this_ptr)
 ;
+; Parameters:
+; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_drip.cpp_FUN_00462030 at 00462043
@@ -36,7 +38,7 @@ section .text
     ADD EAX,0x150                       ; 00462070
     PUSH EAX                            ; 00462075
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00462076
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0046207b
     LEA EBX,[EAX + 0xfffffeb0]          ; 0046207e
     PUSH 0x57ddde                       ; 00462084 | = "stalag.kfm"
@@ -44,7 +46,7 @@ section .text
     PUSH EAX                            ; 0046208f
     MOV dword ptr [EBX + 0x14c],0x59c5e4 ; 00462090 | PTR_core_drip.cpp_CDrip_setup_FUN_00462140_0059c5e4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0046209a
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x2     ; 0046209f
     LEA EAX,[EBX + 0x2fc]               ; 004620a9
     MOV dword ptr [EBX + 0x2d0],0x1     ; 004620af

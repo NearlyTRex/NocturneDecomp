@@ -1,0 +1,25 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; uint * __watcallRegister crt_unknown_c_GetRandomSeedPointer_FUN_00564880(void)
+;
+;
+; XREF[2]:
+;   crt_stdlib.c_rand_FUN_0056488c at 0056488c
+;   crt_stdlib.c_srand_FUN_005648b0 at 005648b0
+;
+; Referenced Globals:
+;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
+;
+; Called Functions:
+;   crt_thread.c_GetTLS_FUN_005671dc
+;
+; *****************************************************************************
+
+section .text
+
+    CALL dword ptr [0x005c1abc]         ; 00564880 | PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc
+        ;   Label: crt_unknown.c_GetRandomSeedPointer_FUN_00564880
+    ADD EAX,0xc                         ; 00564886
+    RET                                 ; 00564889
+

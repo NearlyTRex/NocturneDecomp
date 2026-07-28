@@ -2,101 +2,105 @@
 // Address: 004357b0
 // Address Range: [[004357b0, 004359d5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(int param_1)
+// Signature: void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(int param_1)
+void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr)
 
 {
-  int iVar1;
+  int *piVar1;
   int iVar2;
   int iVar3;
-  float *pfVar4;
-  int iVar5;
-  float *pfVar6;
+  int iVar4;
+  int *piVar5;
+  int *piVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
-  bool bVar10;
-  int local_2c;
-  int local_28;
+  bool bVar9;
+  int *local_2c;
+  CCloth *local_28;
   int local_24;
   int local_20;
   int local_14;
   
   local_14 = 0;
-  if (0 < *(int *)(param_1 + 0x104)) {
-    iVar1 = param_1 + 0x398;
-    local_28 = param_1;
-    local_2c = iVar1;
+  if (0 < (this_ptr->model).vertex_count) {
+    piVar1 = &(this_ptr->model).texture_list[8].textures[2].base.count;
+    local_28 = this_ptr;
+    local_2c = piVar1;
     do {
-      *(uint *)(local_28 + 0x3c8) = 0;
-      *(uint *)(local_28 + 0x40c) = 0;
+      (local_28->model).texture_list[9].textures[1].base.count = 0;
+      (local_28->model).texture_list[10].textures[1].base.type = 0;
       local_24 = 0;
-      if (0 < *(int *)(param_1 + 0x110)) {
-        pfVar6 = (float *)(iVar1 + local_14 * 0x11c);
+      if (0 < (this_ptr->model).poly_count) {
+        piVar5 = piVar1 + local_14 * 0x47;
         local_20 = 0;
         do {
-          iVar9 = *(int *)(param_1 + 0x114) + local_20;
+          iVar8 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2))
+                        ->base).base.type + local_20;
           iVar2 = 0;
-          iVar8 = iVar9;
-          if (0 < *(int *)(iVar9 + 4)) {
+          iVar7 = iVar8;
+          if (0 < *(int *)(iVar8 + 4)) {
             do {
-              if (local_14 == *(int *)(iVar8 + 0x18)) break;
+              if (local_14 == *(int *)(iVar7 + 0x18)) break;
               iVar2 = iVar2 + 1;
-              iVar8 = iVar8 + 0xc;
-            } while (iVar2 < *(int *)(iVar9 + 4));
+              iVar7 = iVar7 + 0xc;
+            } while (iVar2 < *(int *)(iVar8 + 4));
           }
-          if ((iVar2 != *(int *)(iVar9 + 4)) && (iVar2 = 0, iVar8 = iVar9, 0 < *(int *)(iVar9 + 4)))
+          if ((iVar2 != *(int *)(iVar8 + 4)) && (iVar2 = 0, iVar7 = iVar8, 0 < *(int *)(iVar8 + 4)))
           {
 LAB_004358cb:
             do {
-              iVar5 = *(int *)(iVar9 + ((iVar2 + 1) % *(int *)(iVar9 + 4)) * 0xc + 0x18);
-              if ((*(int *)(iVar8 + 0x18) == local_14) ||
-                 (bVar10 = iVar5 == local_14, iVar5 = *(int *)(iVar8 + 0x18), bVar10)) {
+              iVar4 = *(int *)(iVar8 + ((iVar2 + 1) % *(int *)(iVar8 + 4)) * 0xc + 0x18);
+              if ((*(int *)(iVar7 + 0x18) == local_14) ||
+                 (bVar9 = iVar4 == local_14, iVar4 = *(int *)(iVar7 + 0x18), bVar9)) {
                 iVar3 = 0;
-                iVar7 = local_2c;
-                if (0 < *(int *)(local_2c + 0x30)) {
+                piVar6 = local_2c;
+                if (0 < local_2c[0xc]) {
                   do {
-                    if (iVar5 == *(int *)(iVar7 + 0x34)) break;
+                    if (iVar4 == piVar6[0xd]) break;
                     iVar3 = iVar3 + 1;
-                    iVar7 = iVar7 + 4;
-                  } while (iVar3 < *(int *)(local_2c + 0x30));
+                    piVar6 = piVar6 + 1;
+                  } while (iVar3 < local_2c[0xc]);
                 }
-                if ((iVar3 == *(int *)(local_2c + 0x30)) &&
-                   (*(float *)(local_2c + 0xc4) <= *(float *)(iVar5 * 0x11c + 0x45c + param_1))) {
-                  *(int *)(local_2c + 0x34 + *(int *)(local_2c + 0x30) * 4) = iVar5;
-                  pfVar4 = (float *)(iVar1 + iVar5 * 0x11c);
-                  *(float *)(local_2c + 0x78 + *(int *)(local_2c + 0x30) * 4) =
-                       SQRT((pfVar6[2] - pfVar4[2]) * (pfVar6[2] - pfVar4[2]) +
-                            (*pfVar6 - *pfVar4) * (*pfVar6 - *pfVar4) +
-                            (pfVar6[1] - pfVar4[1]) * (pfVar6[1] - pfVar4[1]));
-                  iVar5 = *(int *)(local_2c + 0x30) + 1;
-                  *(int *)(local_2c + 0x30) = iVar5;
-                  if (0xf < iVar5) {
+                if ((iVar3 == local_2c[0xc]) &&
+                   ((float)local_2c[0x31] <=
+                    *(float *)((int)(this_ptr->model).texture_list + iVar4 * 0x11c + 0x338))) {
+                  local_2c[local_2c[0xc] + 0xd] = iVar4;
+                  piVar6 = piVar1 + iVar4 * 0x47;
+                  local_2c[local_2c[0xc] + 0x1e] =
+                       (int)SQRT(((float)piVar5[2] - (float)piVar6[2]) *
+                                 ((float)piVar5[2] - (float)piVar6[2]) +
+                                 ((float)*piVar5 - (float)*piVar6) *
+                                 ((float)*piVar5 - (float)*piVar6) +
+                                 ((float)piVar5[1] - (float)piVar6[1]) *
+                                 ((float)piVar5[1] - (float)piVar6[1]));
+                  iVar4 = local_2c[0xc];
+                  local_2c[0xc] = iVar4 + 1;
+                  if (0xf < iVar4 + 1) {
                     PTR_01cc4800 = "..\\core\\cloth.cpp";
                     INT_01cc4804 = 0x1c3;
                     core_main_c_FUN_004c8440("Too many connecting verticies");
                     iVar2 = iVar2 + 1;
-                    iVar8 = iVar8 + 0xc;
-                    if (*(int *)(iVar9 + 4) <= iVar2) break;
+                    iVar7 = iVar7 + 0xc;
+                    if (*(int *)(iVar8 + 4) <= iVar2) break;
                     goto LAB_004358cb;
                   }
                 }
               }
               iVar2 = iVar2 + 1;
-              iVar8 = iVar8 + 0xc;
-            } while (iVar2 < *(int *)(iVar9 + 4));
+              iVar7 = iVar7 + 0xc;
+            } while (iVar2 < *(int *)(iVar8 + 4));
           }
           local_20 = local_20 + 0x48;
           local_24 = local_24 + 1;
-        } while (local_24 < *(int *)(param_1 + 0x110));
+        } while (local_24 < (this_ptr->model).poly_count);
       }
-      local_2c = local_2c + 0x11c;
-      local_28 = local_28 + 0x11c;
+      local_2c = local_2c + 0x47;
+      local_28 = (CCloth *)&(local_28->model).env_map_opac_list;
       local_14 = local_14 + 1;
-    } while (local_14 < *(int *)(param_1 + 0x104));
+    } while (local_14 < (this_ptr->model).vertex_count);
   }
   return;
 }

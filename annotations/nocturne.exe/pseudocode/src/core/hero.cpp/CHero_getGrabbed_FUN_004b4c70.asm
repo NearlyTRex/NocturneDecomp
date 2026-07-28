@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(int param_1,int param_2,int param_3)
+; int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004b4c70(CHero *this_ptr,CDemonActor *grabber,int grab_type)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   grabber
+; int              Stack[0xc]:4   grab_type
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;
@@ -51,11 +55,11 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 004b4ca6
     PUSH EBX                            ; 004b4cac
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004b4cad
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004b4cb2
     PUSH EAX                            ; 004b4cb5
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004b4cb6
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004b4cbb
     TEST EAX,EAX                        ; 004b4cbe
     JGE 0x004b4cca                      ; 004b4cc0
@@ -70,11 +74,11 @@ section .text
     PUSH 0x5857a8                       ; 004b4ccc | = "GETGRABBED_FRONT"
     PUSH EBX                            ; 004b4cd1
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004b4cd2
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004b4cd7
     PUSH EAX                            ; 004b4cda
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004b4cdb
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004b4ce0
     TEST EAX,EAX                        ; 004b4ce3
     JL 0x004b4d31                       ; 004b4ce5
@@ -86,7 +90,7 @@ section .text
     PUSH EAX                            ; 004b4cf3
     PUSH ESI                            ; 004b4cf4
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004b4cf5
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLDZ                                ; 004b4cfa
     ADD ESP,0xc                         ; 004b4cfc
     FCOMP float ptr [EAX + 0x8]         ; 004b4cff
@@ -98,7 +102,7 @@ section .text
     PUSH 0x5857b9                       ; 004b4d09 | = "GETGRABBED_FRONT"
     PUSH EBX                            ; 004b4d0e
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 ; 004b4d0f
-        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740()
+        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController * this_ptr, char * state_name, int force_immediate)
     ADD ESP,0xc                         ; 004b4d14
     JMP 0x004b4c81                      ; 004b4d17
         ;   XREF to: 004b4c81 (UNCONDITIONAL_JUMP)  ; LAB_004b4c81
@@ -107,7 +111,7 @@ section .text
     PUSH 0x5857ca                       ; 004b4d1e | = "GETGRABBED_BACK"
     PUSH EBX                            ; 004b4d23
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 ; 004b4d24
-        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740()
+        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController * this_ptr, char * state_name, int force_immediate)
     ADD ESP,0xc                         ; 004b4d29
     JMP 0x004b4c81                      ; 004b4d2c
         ;   XREF to: 004b4c81 (UNCONDITIONAL_JUMP)  ; LAB_004b4c81
@@ -116,7 +120,7 @@ section .text
     PUSH 0x5857da                       ; 004b4d33 | = "GETGRABBED"
     PUSH EBX                            ; 004b4d38
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 ; 004b4d39
-        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740()
+        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController * this_ptr, char * state_name, int force_immediate)
     ADD ESP,0xc                         ; 004b4d3e
     JMP 0x004b4c81                      ; 004b4d41
         ;   XREF to: 004b4c81 (UNCONDITIONAL_JUMP)  ; LAB_004b4c81

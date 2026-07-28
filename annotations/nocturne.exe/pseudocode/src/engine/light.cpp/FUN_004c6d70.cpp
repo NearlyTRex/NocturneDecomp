@@ -11,7 +11,7 @@
 void engine_light_cpp_FUN_004c6d70(void)
 
 {
-  uint *in_stack_00000008;
+  int *in_stack_00000008;
   
   engine_light_cpp_calculatePhongLighting_FUN_004c6a70
             (*in_stack_00000008,in_stack_00000008[1],in_stack_00000008[2]);

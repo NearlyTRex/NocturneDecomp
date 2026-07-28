@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c6e12
         ;   Label: LAB_004c6e12
     CALL core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30 ; 004c6e13
-        ;   XREF to: 004c6e30 (UNCONDITIONAL_CALL)  ; undefined core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30()
+        ;   XREF to: 004c6e30 (UNCONDITIONAL_CALL)  ; CLightGun * core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 004c6e18
     RET                                 ; 004c6e1b
 

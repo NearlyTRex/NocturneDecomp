@@ -2,11 +2,11 @@
 // Address: 004ee3f0
 // Address Range: [[004ee3f0, 004ee4d6]]
 // Convention: __cdecl
-// Signature: byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
+// Signature: char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg)
 
 #include "nocturne.h"
 
-byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
+char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg)
 
 {
   byte bVar1;
@@ -14,15 +14,15 @@ byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
   byte *pbVar3;
   int iVar4;
   
-  if (param_1[2] != 0x3e) {
-    bVar2 = *param_1;
-    if ((param_1[2] ^ bVar2) != 0x3e) {
+  if (encrypted_msg[2] != '>') {
+    bVar2 = *encrypted_msg;
+    if ((byte)(encrypted_msg[2] ^ bVar2) != 0x3e) {
       PTR_01cc4800 = "..\\support\\newmsg.cpp";
       INT_01cc4804 = 0xca;
       core_main_c_FUN_004c8440("decryptMessage - invalid initial mask value!");
     }
     iVar4 = 2;
-    pbVar3 = param_1 + 2;
+    pbVar3 = (byte *)(encrypted_msg + 2);
     while (bVar1 = *pbVar3, *pbVar3 = bVar1 ^ bVar2, (bVar1 ^ bVar2) != 0) {
       bVar2 = bVar2 * -0x43 + 1;
       pbVar3 = pbVar3 + 1;
@@ -37,8 +37,8 @@ byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
       PTR_01cc4800 = "..\\support\\newmsg.cpp";
       INT_01cc4804 = 0xe8;
       core_main_c_FUN_004c8440("decryptMessage - premature null terminator!");
-      return param_1 + 0x17;
+      return encrypted_msg + 0x17;
     }
   }
-  return param_1 + 0x17;
+  return encrypted_msg + 0x17;
 }

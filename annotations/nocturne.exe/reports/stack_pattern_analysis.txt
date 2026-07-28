@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 535 / 5616
+Functions with stack patterns: 535 / 5610
 
 Pattern type counts:
   stack_alignment                  416
@@ -21,14 +21,14 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_startup.cpp_WinMainBootstrap_FUN_0056df10
     Address: 0056df10
-    Suspect count: 15
+    Suspect count: 17
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0056df2b: SUB ESP,EAX
     - [dynamic_alloca] at 0056df7e: SUB ESP,EAX
 
-  FUN_0057301c
+  crt_io.c_write_FUN_0057301c
     Address: 0057301c
-    Suspect count: 71
+    Suspect count: 34
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005731be: SUB ESP,EAX
     - [alt_frame_pointer] at 005731ce: MOV ESI,ESP
@@ -58,7 +58,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004058db: MOV EDI,ESP
     - [alt_frame_pointer] at 004058ee: MOV EDI,ESP
 
-  engine_3d.c_FUN_00405900
+  engine_3d.c_drawLineStrip3D_FUN_00405900
     File: engine/3d.c, Suspects: 12
     - [alt_frame_pointer] at 00405950: MOV EDI,ESP
     - [alt_frame_pointer] at 0040596b: MOV EDI,ESP
@@ -85,7 +85,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040a429: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740
-    File: core/actor.cpp, Suspects: 54
+    File: core/actor.cpp, Suspects: 60
     - [stack_alignment] at 0040a74c: AND ESP,0xfffffff8
 
   core_actor.cpp_FUN_0040add0
@@ -97,18 +97,18 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040b207: AND ESP,0xfffffff8
 
   core_actor.cpp_FUN_0040b300
-    File: core/actor.cpp, Suspects: 73
+    File: core/actor.cpp, Suspects: 122
     - [stack_alignment] at 0040b30c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0
-    File: core/actor.cpp, Suspects: 14
+    File: core/actor.cpp, Suspects: 5
     - [alt_frame_pointer] at 0040c804: MOV EDI,ESP
     - [alt_frame_pointer] at 0040c816: MOV EDI,ESP
     - [alt_frame_pointer] at 0040c83a: MOV EDI,ESP
     - [alt_frame_pointer] at 0040c856: MOV EDI,ESP
 
   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00
-    File: core/actor.cpp, Suspects: 9
+    File: core/actor.cpp, Suspects: 2
     - [alt_frame_pointer] at 0040ca2d: MOV ESI,ESP
     - [alt_frame_pointer] at 0040ca45: MOV EDI,ESP
 
@@ -118,7 +118,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040cac8: MOV EDI,ESP
 
   core_actor.cpp_getRandomInt_FUN_0040de00
-    File: core/actor.cpp, Suspects: 11
+    File: core/actor.cpp, Suspects: 0
     - [stack_alignment] at 0040de08: AND ESP,0xfffffff8
 
   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -130,7 +130,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040fa29: AND ESP,0xfffffff8
 
   core_baron.cpp_FUN_00410cc0
-    File: core/baron.cpp, Suspects: 20
+    File: core/baron.cpp, Suspects: 30
     - [stack_alignment] at 00410ccc: AND ESP,0xfffffff8
 
   core_baron.cpp_CBaron_advanceMotion_FUN_00411010
@@ -138,7 +138,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00411015: AND ESP,0xfffffff8
 
   core_baron.cpp_FUN_004110f0
-    File: core/baron.cpp, Suspects: 27
+    File: core/baron.cpp, Suspects: 26
     - [stack_alignment] at 004110f9: AND ESP,0xfffffff8
 
   core_bat.cpp_FUN_00411940
@@ -146,35 +146,35 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00411946: AND ESP,0xfffffff8
 
   core_bat.cpp_CBat_process_FUN_00411c40
-    File: core/bat.cpp, Suspects: 46
+    File: core/bat.cpp, Suspects: 41
     - [stack_alignment] at 00411c48: AND ESP,0xfffffff8
 
   core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20
-    File: core/bat.cpp, Suspects: 9
+    File: core/bat.cpp, Suspects: 0
     - [stack_alignment] at 00411f27: AND ESP,0xfffffff8
 
   core_batman.cpp_FUN_00414340
-    File: core/batman.cpp, Suspects: 30
+    File: core/batman.cpp, Suspects: 29
     - [stack_alignment] at 00414349: AND ESP,0xfffffff8
 
   core_beast.cpp_CBeast_process_FUN_004150d0
-    File: core/beast.cpp, Suspects: 16
+    File: core/beast.cpp, Suspects: 17
     - [stack_alignment] at 004150d8: AND ESP,0xfffffff8
 
   core_biggs.cpp_CBiggs_process_FUN_004154b0
-    File: core/biggs.cpp, Suspects: 74
+    File: core/biggs.cpp, Suspects: 78
     - [stack_alignment] at 004154b8: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00
-    File: core/bodypart.cpp, Suspects: 16
+    File: core/bodypart.cpp, Suspects: 3
     - [stack_alignment] at 00416b09: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
-    File: core/bodypart.cpp, Suspects: 72
+    File: core/bodypart.cpp, Suspects: 19
     - [stack_alignment] at 00416d4c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-    File: core/bodypart.cpp, Suspects: 21
+    File: core/bodypart.cpp, Suspects: 24
     - [stack_alignment] at 0041773c: AND ESP,0xfffffff8
 
   core_boneguy.cpp_FUN_00418180
@@ -182,7 +182,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00418187: AND ESP,0xfffffff8
 
   core_boneguy.cpp_FUN_004181f0
-    File: core/boneguy.cpp, Suspects: 9
+    File: core/boneguy.cpp, Suspects: 8
     - [stack_alignment] at 004181f8: AND ESP,0xfffffff8
 
   core_boneguy.cpp_FUN_004182cd
@@ -190,43 +190,43 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 004182d7: AND ESP,0xfffffff8
 
   core_boneguy.cpp_hsvToRgb_FUN_00418480
-    File: core/boneguy.cpp, Suspects: 10
+    File: core/boneguy.cpp, Suspects: 0
     - [stack_alignment] at 00418487: AND ESP,0xfffffff8
 
   core_boneguy.cpp_FUN_004196b0
-    File: core/boneguy.cpp, Suspects: 56
+    File: core/boneguy.cpp, Suspects: 57
     - [stack_alignment] at 004196bc: AND ESP,0xfffffff8
 
   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0
-    File: core/boneguy.cpp, Suspects: 23
+    File: core/boneguy.cpp, Suspects: 12
     - [alt_frame_pointer] at 0041a28d: MOV ESI,ESP
 
   core_box.cpp_CBox_process_FUN_0041acb0
-    File: core/box.cpp, Suspects: 10
+    File: core/box.cpp, Suspects: 0
     - [stack_alignment] at 0041acb7: AND ESP,0xfffffff8
 
   core_box.cpp_CBox_processPhysics_FUN_0041ad10
-    File: core/box.cpp, Suspects: 327
+    File: core/box.cpp, Suspects: 35
     - [stack_alignment] at 0041ad1c: AND ESP,0xfffffff8
 
   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
-    File: core/box.cpp, Suspects: 20
+    File: core/box.cpp, Suspects: 5
     - [stack_alignment] at 0041d458: AND ESP,0xfffffff8
 
   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
     File: core/box.cpp, Suspects: 115
     - [stack_alignment] at 0041d559: AND ESP,0xfffffff8
 
-  core_box.cpp_FUN_0041daa0
+  core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0
     File: core/box.cpp, Suspects: 20
     - [stack_alignment] at 0041daa9: AND ESP,0xfffffff8
 
   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0
-    File: core/boxactor.cpp, Suspects: 67
+    File: core/boxactor.cpp, Suspects: 5
     - [stack_alignment] at 0041e5ec: AND ESP,0xfffffff8
 
-  core_boxactor.cpp_FUN_0041ef90
-    File: core/boxactor.cpp, Suspects: 22
+  core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90
+    File: core/boxactor.cpp, Suspects: 0
     - [stack_alignment] at 0041ef98: AND ESP,0xfffffff8
 
   core_boxactor.cpp_FUN_0041f6e0
@@ -234,23 +234,23 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0041f6ec: AND ESP,0xfffffff8
 
   core_bride.cpp_CBride_processDismemberment_FUN_00420a10
-    File: core/bride.cpp, Suspects: 50
+    File: core/bride.cpp, Suspects: 1
     - [stack_alignment] at 00420a19: AND ESP,0xfffffff8
 
   core_bugs.cpp_CBugs_setup_FUN_004211e0
-    File: core/bugs.cpp, Suspects: 27
+    File: core/bugs.cpp, Suspects: 44
     - [stack_alignment] at 004211e9: AND ESP,0xfffffff8
 
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
-    File: core/bugs.cpp, Suspects: 9
+    File: core/bugs.cpp, Suspects: 14
     - [stack_alignment] at 004216d9: AND ESP,0xfffffff8
 
   core_bugs.cpp_FUN_00422050
-    File: core/bugs.cpp, Suspects: 54
+    File: core/bugs.cpp, Suspects: 53
     - [stack_alignment] at 0042205c: AND ESP,0xfffffff8
 
   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
-    File: core/bugs.cpp, Suspects: 68
+    File: core/bugs.cpp, Suspects: 15
     - [stack_alignment] at 0042237c: AND ESP,0xfffffff8
 
   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 41.1 suspects/function
-  Without stack patterns: avg 14.0 suspects/function
+  With stack patterns:    avg 29.7 suspects/function
+  Without stack patterns: avg 10.1 suspects/function

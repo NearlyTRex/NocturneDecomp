@@ -2,13 +2,13 @@
 // Address: 004b1910
 // Address Range: [[004b1910, 004b1cfd]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int param_1)
+// Signature: void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(CGround *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int param_1)
+void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(CGround *this_ptr)
 
 {
   int iVar1;
@@ -35,7 +35,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int 
   int local_18;
   int local_14;
   
-  local_30 = *(int *)(param_1 + 0x14) * *(int *)(param_1 + 0x1c);
+  local_30 = this_ptr->grid_height * this_ptr->vertical_scale;
   local_28 = local_30 * 0x100;
   local_6c[0] = ((uint)((longlong)_DAT_01cc5118 * (longlong)local_28) >> 0x10 |
                 (int)((ulonglong)((longlong)_DAT_01cc5118 * (longlong)local_28) >> 0x20) << 0x10) +
@@ -119,7 +119,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int 
   local_18 = 999;
   iVar3 = -999;
   iVar4 = 0;
-  local_20 = *(int *)(param_1 + 0x1c) << 8;
+  local_20 = this_ptr->vertical_scale << 8;
   iVar5 = -999;
   do {
     iVar1 = *(int *)((int)local_6c + iVar4) / local_20;
@@ -140,32 +140,32 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int 
   } while (iVar4 != 0x3c);
   local_18 = local_18 + -2;
   local_14 = local_14 + -2;
-  *(int *)(param_1 + 0x40) = iVar3 + 2;
-  *(int *)(param_1 + 0x48) = iVar5 + 2;
-  *(int *)(param_1 + 0x3c) = local_14;
-  *(int *)(param_1 + 0x44) = local_18;
-  local_1c = -*(int *)(param_1 + 0x10);
-  if (-*(int *)(param_1 + 0x10) < *(int *)(param_1 + 0x3c)) {
-    local_1c = *(int *)(param_1 + 0x3c);
+  this_ptr->visible_max_x = iVar3 + 2;
+  this_ptr->visible_max_y = iVar5 + 2;
+  this_ptr->visible_min_x = local_14;
+  this_ptr->visible_min_y = local_18;
+  local_1c = -this_ptr->grid_width;
+  if (-this_ptr->grid_width < this_ptr->visible_min_x) {
+    local_1c = this_ptr->visible_min_x;
   }
-  iVar3 = *(int *)(param_1 + 0x10);
-  if (*(int *)(param_1 + 0x40) < *(int *)(param_1 + 0x10)) {
-    iVar3 = *(int *)(param_1 + 0x40);
+  iVar3 = this_ptr->grid_width;
+  if (this_ptr->visible_max_x < this_ptr->grid_width) {
+    iVar3 = this_ptr->visible_max_x;
   }
-  iVar5 = -*(int *)(param_1 + 0x14);
-  if (-*(int *)(param_1 + 0x14) < *(int *)(param_1 + 0x44)) {
-    iVar5 = *(int *)(param_1 + 0x44);
+  iVar5 = -this_ptr->grid_height;
+  if (-this_ptr->grid_height < this_ptr->visible_min_y) {
+    iVar5 = this_ptr->visible_min_y;
   }
-  local_24 = *(int *)(param_1 + 0x14);
-  if (*(int *)(param_1 + 0x48) < *(int *)(param_1 + 0x14)) {
-    local_24 = *(int *)(param_1 + 0x48);
+  local_24 = this_ptr->grid_height;
+  if (this_ptr->visible_max_y < this_ptr->grid_height) {
+    local_24 = this_ptr->visible_max_y;
   }
   iVar4 = local_1c;
   if (iVar5 <= local_24) {
     do {
       for (; iVar4 <= iVar3; iVar4 = iVar4 + 1) {
         core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820
-                  (param_1,*(int *)(param_1 + 0x2c) + iVar4,*(int *)(param_1 + 0x30) + iVar5);
+                  (this_ptr,this_ptr->camera_x + iVar4,this_ptr->camera_y + iVar5);
       }
       iVar5 = iVar5 + 1;
       iVar4 = local_1c;

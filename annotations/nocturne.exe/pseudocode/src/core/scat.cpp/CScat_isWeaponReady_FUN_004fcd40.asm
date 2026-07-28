@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(int param_1)
+; int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_scat.cpp_CScat_processDamage_FUN_004fcbd0 at 004fcce0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(void)
+; void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools *this_ptr)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_FUN_0046fa20 at 0046fa32

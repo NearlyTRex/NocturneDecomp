@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(undefined4 *param_1)
+; CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(CPod *this_ptr)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_podmain.cpp_CDemonPod_ctor_FUN_004f93c0 at 004f93c5

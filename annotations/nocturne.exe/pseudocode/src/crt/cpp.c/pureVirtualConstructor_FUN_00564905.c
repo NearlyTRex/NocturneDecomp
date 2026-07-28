@@ -9,6 +9,6 @@
 void pureVirtualConstructor(void)
 
 {
-  FUN_0056af76("byte constructor or destructor called!",1);
+  reportPureVirtualError("byte constructor or destructor called!",1);
   return;
 }

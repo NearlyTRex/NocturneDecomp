@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(int param_1)
+; void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x17c]:4  local_17c
 ;
@@ -61,7 +63,7 @@ section .text
         ;   Label: LAB_004d9c45
     PUSH EBX                            ; 004d9c4a
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004d9c4b
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d9c50
     TEST EAX,EAX                        ; 004d9c53
     JZ 0x004d9c65                       ; 004d9c55
@@ -70,14 +72,14 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004d9c58
     PUSH EAX                            ; 004d9c5c
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004d9c5d
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004d9c62
     MOV EBP,dword ptr [0x01cae160]      ; 004d9c65 | g_CHeroPlaceholderActorType_01cae128.name_hash
         ;   Label: LAB_004d9c65
     PUSH EBP                            ; 004d9c6b
     PUSH EBX                            ; 004d9c6c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004d9c6d
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d9c72
     TEST EAX,EAX                        ; 004d9c75
     JNZ 0x004d9d99                      ; 004d9c77
@@ -106,12 +108,12 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d9caf
     PUSH EAX                            ; 004d9cb3
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004d9cb4
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004d9cb9
     PUSH EAX                            ; 004d9cbc
     PUSH EDI                            ; 004d9cbd
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 004d9cbe
-        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0()
+        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004d9cc3
     MOV ESI,EAX                         ; 004d9cc6
     TEST EAX,EAX                        ; 004d9cc8
@@ -135,7 +137,7 @@ section .text
         ;   XREF to: 004d9d09 (CONDITIONAL_JUMP)  ; LAB_004d9d09
     PUSH EAX                            ; 004d9d00
     CALL core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90 ; 004d9d01
-        ;   XREF to: 004b5f90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90()
+        ;   XREF to: 004b5f90 (UNCONDITIONAL_CALL)  ; CHeroPlaceholder * core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder * this_ptr)
     ADD ESP,0x4                         ; 004d9d06
     MOV EBP,EAX                         ; 004d9d09
         ;   Label: LAB_004d9d09
@@ -165,18 +167,18 @@ section .text
         ;   Label: LAB_004d9d4b
     PUSH EDI                            ; 004d9d4c
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004d9d4d
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d9d52
     PUSH 0x1                            ; 004d9d55
     PUSH ESI                            ; 004d9d57
     PUSH EDI                            ; 004d9d58
     CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d9d59
-        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90()
+        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 004d9d5e
     PUSH EBP                            ; 004d9d61
     PUSH EDI                            ; 004d9d62
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004d9d63
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d9d68
     PUSH 0x58a0ff                       ; 004d9d6b | = "Replaced hero OK.  You will need to s..."
     MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | DAT_005b6d50
@@ -188,7 +190,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d9d81
     PUSH EAX                            ; 004d9d85
     CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004d9d86
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_00474cf0(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d9d8b
     POP ESI                             ; 004d9d8e
     ADD ESP,0x170                       ; 004d9d8f
@@ -205,7 +207,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004d9da8
     PUSH EAX                            ; 004d9dac
     CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004d9dad
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_00474cf0(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d9db2
     ADD ESP,0x170                       ; 004d9db5
     POP EBP                             ; 004d9dbb
@@ -224,7 +226,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004d9dd5
     PUSH EAX                            ; 004d9dd9
     CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004d9dda
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_00474cf0(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d9ddf
     ADD ESP,0x170                       ; 004d9de2
     POP EBP                             ; 004d9de8

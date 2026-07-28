@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004b5c70(int param_1,int param_2)
+; void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004b5c70(CHero *this_ptr,int hand_index)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 00497538
@@ -37,7 +40,7 @@ section .text
     LEA EAX,[ECX + 0x1f5a0]             ; 004b5c95
     PUSH EAX                            ; 004b5c9b
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 004b5c9c
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004b5ca1
     MOV dword ptr [EBX + 0x24ac],0x0    ; 004b5ca4
     POP EBX                             ; 004b5cae

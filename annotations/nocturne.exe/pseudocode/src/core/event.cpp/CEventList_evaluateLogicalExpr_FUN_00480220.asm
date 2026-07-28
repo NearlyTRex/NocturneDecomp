@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00480220(undefined4 param_1,int param_2,int *param_3)
+; int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_00480220(CEventList *this_ptr,char *expression,int *parse_position)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   expression
+; int *            Stack[0xc]:4   parse_position
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e18f
@@ -27,7 +31,7 @@ section .text
     PUSH ESI                            ; 00480231
     PUSH EBP                            ; 00480232
     CALL core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 ; 00480233
-        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0()
+        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList * this_ptr, char * expression, int * parse_position)
     ADD ESP,0xc                         ; 00480238
     MOV EDI,EAX                         ; 0048023b
     TEST EAX,EAX                        ; 0048023d
@@ -60,7 +64,7 @@ section .text
     PUSH ESI                            ; 00480274
     PUSH EBP                            ; 00480275
     CALL core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 ; 00480276
-        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0()
+        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList * this_ptr, char * expression, int * parse_position)
     ADD ESP,0xc                         ; 0048027b
     TEST EAX,EAX                        ; 0048027e
     JL 0x0047e14d                       ; 00480280
@@ -88,7 +92,7 @@ section .text
     PUSH ESI                            ; 004802a6
     PUSH EBP                            ; 004802a7
     CALL core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 ; 004802a8
-        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0()
+        ;   XREF to: 0047e0d0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList * this_ptr, char * expression, int * parse_position)
     ADD ESP,0xc                         ; 004802ad
     TEST EAX,EAX                        ; 004802b0
     JL 0x0047e14d                       ; 004802b2

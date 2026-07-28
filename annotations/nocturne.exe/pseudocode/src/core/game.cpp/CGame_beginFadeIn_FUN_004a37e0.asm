@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(void)
+; void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd37
@@ -68,7 +70,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0xc]       ; 004a36fb
     PUSH ECX                            ; 004a36fe
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004a36ff
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004a3704
     LEA EBX,[ESP + 0x18]                ; 004a3707
     LEA EAX,[ESP + 0x24]                ; 004a370b

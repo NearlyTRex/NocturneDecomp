@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_restoreZBuffer_FUN_00532c90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; int __cdecl engine_special_cpp_restoreZBuffer_FUN_00532c90(int left,int top,int mode,int right,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   top
+; int              Stack[0xc]:4   mode
+; int              Stack[0x10]:4   right
+; int              Stack[0x14]:4   bottom
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710 at 00440978

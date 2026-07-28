@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(CBugs *this_ptr,int vertex_index,int neighbor_index,int first_edge_data)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_index
+; int              Stack[0xc]:4   neighbor_index
+; int              Stack[0x10]:4   first_edge_data
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_FUN_004219f0 at 00421a39

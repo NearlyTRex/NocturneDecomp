@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; MMRESULT __cdecl wincore_winrun_cpp_initJoystick_FUN_00559e20(void)
+; void __cdecl wincore_winrun_cpp_initJoystick_FUN_00559e20(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x194]:1  local_194

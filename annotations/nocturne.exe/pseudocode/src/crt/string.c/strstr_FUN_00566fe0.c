@@ -2,112 +2,113 @@
 // Address: 00566fe0
 // Address Range: [[00566fe0, 005670ae]]
 // Convention: __cdecl
-// Signature: byte * __cdecl crt_string_c_strstr_FUN_00566fe0(byte *param_1,byte *param_2)
+// Signature: char * __cdecl crt_string_c_strstr_FUN_00566fe0(char *haystack_str,char *needle_str)
 
 #include "nocturne.h"
 
 /* WARNING: Instruction at (ram,0x00567072) overlaps instruction at (ram,0x00567070)
-byte * __cdecl strstr(byte *param_1,byte *param_2)
+char * __cdecl strstr(char *haystack_str,char *needle_str)
 
 {
-  byte bVar1;
-  byte bVar2;
+  char cVar1;
+  char cVar2;
   int iVar3;
-  byte *pbVar4;
+  char *pcVar4;
   uint uVar5;
-  byte *pbVar6;
+  char *pcVar6;
   byte *pbVar7;
-  byte *pbVar8;
-  byte *pbVar9;
+  char *pcVar8;
+  char *pcVar9;
   byte *pbVar10;
-  bool bVar11;
+  byte *pbVar11;
   bool bVar12;
+  bool bVar13;
   
-  bVar1 = *param_2;
-  if (bVar1 != 0) {
-    if (param_2[1] == 0) {
+  cVar1 = *needle_str;
+  if (cVar1 != '\0') {
+    if (needle_str[1] == '\0') {
       do {
-        if (*param_1 == bVar1) {
-          return param_1;
+        if (*haystack_str == cVar1) {
+          return haystack_str;
         }
-        if (*param_1 == 0) {
-          return (byte *)0x0;
+        if (*haystack_str == '\0') {
+          return (char *)0x0;
         }
-        bVar2 = param_1[1];
-        if (bVar2 == bVar1) {
-          return param_1 + 1;
+        cVar2 = haystack_str[1];
+        if (cVar2 == cVar1) {
+          return haystack_str + 1;
         }
-        param_1 = param_1 + 2;
-      } while (bVar2 != 0);
-      return (byte *)0x0;
+        haystack_str = haystack_str + 2;
+      } while (cVar2 != '\0');
+      return (char *)0x0;
     }
-    pbVar4 = (byte *)0xffffffff;
-    bVar11 = true;
-    pbVar6 = param_1;
+    pcVar4 = (char *)0xffffffff;
+    bVar12 = true;
+    pcVar6 = haystack_str;
     do {
-      pbVar9 = pbVar6;
-      if (pbVar4 == (byte *)0x0) break;
-      pbVar4 = pbVar4 + -1;
-      pbVar9 = pbVar6 + 1;
-      bVar11 = *pbVar6 == 0;
-      pbVar6 = pbVar9;
-    } while (!bVar11);
-    if (!bVar11) {
-      pbVar9 = pbVar4;
+      pcVar8 = pcVar6;
+      if (pcVar4 == (char *)0x0) break;
+      pcVar4 = pcVar4 + -1;
+      pcVar8 = pcVar6 + 1;
+      bVar12 = *pcVar6 == '\0';
+      pcVar6 = pcVar8;
+    } while (!bVar12);
+    if (!bVar12) {
+      pcVar8 = pcVar4;
     }
     uVar5 = 0xffffffff;
-    pbVar6 = param_2;
+    pcVar6 = needle_str;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
-      bVar1 = *pbVar6;
-      pbVar6 = pbVar6 + 1;
-    } while (bVar1 != 0);
-    pbVar6 = (byte *)(~uVar5 - 1);
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
+    } while (cVar1 != '\0');
+    pcVar6 = (char *)(~uVar5 - 1);
     while( true ) {
-      pbVar4 = pbVar9 + (-1 - (int)param_1);
-      bVar11 = pbVar4 == pbVar6;
-      if (pbVar4 < pbVar6) break;
-      if (pbVar4 == (byte *)0x0) {
+      pcVar4 = pcVar8 + (-1 - (int)haystack_str);
+      bVar12 = pcVar4 == pcVar6;
+      if (pcVar4 < pcVar6) break;
+      if (pcVar4 == (char *)0x0) {
 LAB_00567070_2:
-        param_1 = pbVar4;
+        haystack_str = pcVar4;
       }
       else {
         do {
-          pbVar7 = param_1;
-          if (pbVar4 == (byte *)0x0) break;
-          pbVar4 = pbVar4 + -1;
-          pbVar7 = param_1 + 1;
-          bVar11 = *param_2 == *param_1;
-          param_1 = pbVar7;
-        } while (!bVar11);
-        param_1 = pbVar7;
-        if (!bVar11) goto LAB_00567070_2;
+          pcVar9 = haystack_str;
+          if (pcVar4 == (char *)0x0) break;
+          pcVar4 = pcVar4 + -1;
+          pcVar9 = haystack_str + 1;
+          bVar12 = *needle_str == *haystack_str;
+          haystack_str = pcVar9;
+        } while (!bVar12);
+        haystack_str = pcVar9;
+        if (!bVar12) goto LAB_00567070_2;
       }
-      pbVar4 = param_1 + -1;
-      if (pbVar4 == (byte *)0x0) break;
-      bVar11 = false;
+      pbVar10 = (byte *)(haystack_str + -1);
+      if (pbVar10 == (byte *)0x0) break;
+      bVar12 = false;
       iVar3 = 0;
-      bVar12 = true;
-      pbVar7 = pbVar6;
-      pbVar8 = pbVar4;
-      pbVar10 = param_2;
+      bVar13 = true;
+      pcVar4 = pcVar6;
+      pbVar7 = pbVar10;
+      pbVar11 = (byte *)needle_str;
       do {
-        if (pbVar7 == (byte *)0x0) break;
-        pbVar7 = pbVar7 + -1;
-        bVar11 = *pbVar8 < *pbVar10;
-        bVar12 = *pbVar8 == *pbVar10;
-        pbVar8 = pbVar8 + 1;
-        pbVar10 = pbVar10 + 1;
-      } while (bVar12);
-      if (!bVar12) {
-        iVar3 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
+        if (pcVar4 == (char *)0x0) break;
+        pcVar4 = pcVar4 + -1;
+        bVar12 = *pbVar7 < *pbVar11;
+        bVar13 = *pbVar7 == *pbVar11;
+        pbVar7 = pbVar7 + 1;
+        pbVar11 = pbVar11 + 1;
+      } while (bVar13);
+      if (!bVar13) {
+        iVar3 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
       }
       if (iVar3 == 0) {
-        return pbVar4;
+        return (char *)pbVar10;
       }
     }
-    param_1 = (byte *)0x0;
+    haystack_str = (char *)0x0;
   }
-  return param_1;
+  return haystack_str;
 }

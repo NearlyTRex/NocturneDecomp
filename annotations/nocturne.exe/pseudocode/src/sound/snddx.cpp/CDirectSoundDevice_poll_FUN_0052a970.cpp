@@ -12,8 +12,9 @@ uint sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
 
 {
   uint uVar1;
-  int iVar2;
-  uint uVar3;
+  uint uVar2;
+  char *pcVar3;
+  int iVar4;
   int *piStack_1a8;
   byte *puStack_1a4;
   byte *puStack_1a0;
@@ -26,27 +27,27 @@ uint sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
       puStack_1a0 = local_8;
       puStack_1a4 = local_c;
       piStack_1a8 = _DAT_02dc921c;
-      iVar2 = (**(code **)(*_DAT_02dc921c + 0x10))();
-      if (iVar2 != 0) {
-        uVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar2);
+      uVar2 = (**(code **)(*_DAT_02dc921c + 0x10))();
+      if (uVar2 != 0) {
+        pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
         _sprintf(&piStack_1a8,"DirectSux: Unable to %s.  (%s)",
-                   "Get position of secondary buffer",uVar1);
+                   "Get position of secondary buffer",pcVar3);
         sound_sndmain_cpp_FUN_00529980(&piStack_1a8);
         return 0;
       }
-      uVar3 = uStack_18 / _DAT_02dc9238;
-      if (_DAT_02dc923c <= (int)uVar3) {
-        uVar3 = _DAT_02dc923c - 1;
+      uVar2 = uStack_18 / _DAT_02dc9238;
+      if (_DAT_02dc923c <= (int)uVar2) {
+        uVar2 = _DAT_02dc923c - 1;
       }
-      if ((int)uVar3 < 0) {
-        uVar3 = 0;
+      if ((int)uVar2 < 0) {
+        uVar2 = 0;
       }
       do {
-        if (uVar3 == _DAT_02dc9240) {
+        if (uVar2 == _DAT_02dc9240) {
           return 1;
         }
-        iVar2 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
-      } while (iVar2 != 0);
+        iVar4 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
+      } while (iVar4 != 0);
       return 0;
     }
     uVar1 = 0;

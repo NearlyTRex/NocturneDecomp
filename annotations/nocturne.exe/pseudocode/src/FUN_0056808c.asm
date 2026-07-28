@@ -22,11 +22,11 @@
 ;   undefined4 DAT_005c168c
 ;
 ; Called Functions:
+;   crt_math.c_multiply64_FUN_0056f14c
 ;   FUN_00567540
 ;   FUN_0056754c
 ;   FUN_005684f8
 ;   FUN_00568528
-;   FUN_0056f14c
 ;
 ; *****************************************************************************
 
@@ -212,8 +212,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0056824c
     MOV ECX,dword ptr [EBX + 0x4]       ; 0056824e
     MOV EBX,dword ptr [EBX]             ; 00568251
-    CALL FUN_0056f14c                   ; 00568253
-        ;   XREF to: 0056f14c (UNCONDITIONAL_CALL)  ; undefined FUN_0056f14c()
+    CALL crt_math.c_multiply64_FUN_0056f14c ; 00568253
+        ;   XREF to: 0056f14c (UNCONDITIONAL_CALL)  ; ulonglong crt_math.c_multiply64_FUN_0056f14c(ulonglong a, ulonglong b)
     MOV dword ptr [ESI + 0x4],EDX       ; 00568258
     MOV dword ptr [ESI],EAX             ; 0056825b
     MOV ESI,ESP                         ; 0056825d
@@ -275,8 +275,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 005682ef
     MOV ECX,dword ptr [EBX + 0x4]       ; 005682f1
     MOV EBX,dword ptr [EBX]             ; 005682f4
-    CALL FUN_0056f14c                   ; 005682f6
-        ;   XREF to: 0056f14c (UNCONDITIONAL_CALL)  ; undefined FUN_0056f14c()
+    CALL crt_math.c_multiply64_FUN_0056f14c ; 005682f6
+        ;   XREF to: 0056f14c (UNCONDITIONAL_CALL)  ; ulonglong crt_math.c_multiply64_FUN_0056f14c(ulonglong a, ulonglong b)
     MOV dword ptr [ESI + 0x4],EDX       ; 005682fb
     MOV dword ptr [ESI],EAX             ; 005682fe
     MOV ESI,ESP                         ; 00568300

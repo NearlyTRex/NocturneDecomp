@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00519b30(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00519b30(CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   part_name
+; int              Stack[0xc]:4   error_if_not_found
 ;
 ; XREF[14]:
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412303
@@ -48,7 +52,7 @@ section .text
         ;   Label: LAB_00519b4e
     PUSH EBP                            ; 00519b4f
     CALL crt_string.c__stricmp_FUN_00564520 ; 00519b50
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00519b55
     TEST EAX,EAX                        ; 00519b58
     JZ 0x00519b7b                       ; 00519b5a

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004d4432
         ;   Label: LAB_004d4432
     CALL core_mimic.cpp_CMimic_ctor_FUN_004d4450 ; 004d4433
-        ;   XREF to: 004d4450 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_CMimic_ctor_FUN_004d4450()
+        ;   XREF to: 004d4450 (UNCONDITIONAL_CALL)  ; CMimic * core_mimic.cpp_CMimic_ctor_FUN_004d4450(CMimic * this_ptr)
     ADD ESP,0x4                         ; 004d4438
     RET                                 ; 004d443b
 

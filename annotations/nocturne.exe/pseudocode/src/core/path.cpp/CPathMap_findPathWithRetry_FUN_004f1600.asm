@@ -1,15 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(int param_1,float *param_2,undefined4 *param_3,undefined4 param_4)
+; int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   dest_position
+; CVector3f *      Stack[0xc]:4   out_euler_angles
+; int              Stack[0x10]:4   direction_hint
 ;
 ; XREF[13]:
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422638
 ;   core_bugs.cpp_FUN_00422050 at 004221b7
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 00424978
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a8a9
-;   core_enemy.cpp_FUN_00479b60 at 00479d96
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_00479b60 at 00479d96
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00497277
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 at 004a918c
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 at 004b3d09
@@ -57,7 +62,7 @@ section .text
     PUSH ESI                            ; 004f163c
     PUSH EBX                            ; 004f163d
     CALL core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 ; 004f163e
-        ;   XREF to: 004f0c20 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20()
+        ;   XREF to: 004f0c20 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 004f1643
     MOV dword ptr [EBX + 0x138bc],EAX   ; 004f1646
     CMP EAX,0x1                         ; 004f164c

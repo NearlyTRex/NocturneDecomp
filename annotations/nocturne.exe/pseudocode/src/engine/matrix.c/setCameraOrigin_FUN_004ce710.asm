@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_setCameraOrigin_FUN_004ce710(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_matrix_c_setCameraOrigin_FUN_004ce710(int x,int y,int z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   z
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 at 0046074a

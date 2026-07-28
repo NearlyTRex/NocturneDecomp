@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2fc]:4  local_2fc
 ; undefined4       Stack[-0x2f8]:4  local_2f8
@@ -259,7 +261,7 @@ section .text
     PUSH EAX                            ; 00427639
     MOVSD.REP ES:EDI,ESI                ; 0042763a
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 0042763c
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00427641
     MOV EDX,dword ptr [ESP + 0x2d8]     ; 00427644
     MOV EDX,dword ptr [EDX + 0x4]       ; 0042764b

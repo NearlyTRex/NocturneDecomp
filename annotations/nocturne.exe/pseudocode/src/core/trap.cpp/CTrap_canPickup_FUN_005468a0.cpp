@@ -2,11 +2,11 @@
 // Address: 005468a0
 // Address Range: [[005468a0, 005468af] [005468b3, 005468ce]]
 // Convention: unknown
-// Signature: undefined4 core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,undefined4 param_2)
+// Signature: undefined4 core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,uint param_2)
+uint core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,CDemonActor *param_2)
 
 {
   int iVar1;

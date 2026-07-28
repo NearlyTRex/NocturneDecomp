@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(undefined4 param_1,int param_2,int param_3)
+; char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   key
+; int              Stack[0x8]:4   lower_bound
+; int              Stack[0xc]:4   upper_bound
 ;
 ; XREF[1]:
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370 at 004ee3d2
@@ -43,7 +47,7 @@ section .text
     PUSH ECX                            ; 004ee325
     PUSH EDI                            ; 004ee326
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004ee327
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ee32c
     TEST EAX,EAX                        ; 004ee32f
     JL 0x004ee340                       ; 004ee331
@@ -62,7 +66,7 @@ section .text
     PUSH EBP                            ; 004ee342
     PUSH EDI                            ; 004ee343
     CALL support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 ; 004ee344
-        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_findLocalizedString_FUN_004ee2f0()
+        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_004ee2f0(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 004ee349
     POP EBP                             ; 004ee34c
     POP EDI                             ; 004ee34d
@@ -76,7 +80,7 @@ section .text
     PUSH EBX                            ; 004ee357
     PUSH EDI                            ; 004ee358
     CALL support_newmsg.cpp_findLocalizedString_FUN_004ee2f0 ; 004ee359
-        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_findLocalizedString_FUN_004ee2f0()
+        ;   XREF to: 004ee2f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_004ee2f0(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 004ee35e
     POP EBP                             ; 004ee361
     POP EDI                             ; 004ee362

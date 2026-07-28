@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004b04b0(void)
+; void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004b04b0(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660 at 004a3686
@@ -38,7 +40,7 @@ section .text
     PUSH EDX                            ; 004b04bf | DAT_01b4d738
     MOV EBX,0x5b96ec                    ; 004b04c0 | DAT_005b96ec
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b04c5
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA ESI,[EBX + 0x60]                ; 004b04ca | DAT_005b974c
     ADD ESP,0x8                         ; 004b04cd
     PUSH EBX                            ; 004b04d0 | DAT_005b96ec | DAT_005b9704
@@ -46,7 +48,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004b04d1 | DAT_005ae704
     PUSH ECX                            ; 004b04d7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b04d8
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b04dd
     ADD ESP,0x8                         ; 004b04e0
     CMP EBX,ESI                         ; 004b04e3
@@ -64,7 +66,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 004b0503 | DAT_005ae704
     PUSH EAX                            ; 004b0508 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b0509
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b050e
     ADD ESP,0x8                         ; 004b0511
     CMP EBX,ESI                         ; 004b0514
@@ -87,7 +89,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 004b0540 | DAT_005ae704
     PUSH EDX                            ; 004b0546 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b0547
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 004b054c
     ADD ESP,0x8                         ; 004b054f
     CMP EBX,ESI                         ; 004b0552
@@ -102,7 +104,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004b0567 | DAT_005ae704
     PUSH ECX                            ; 004b056d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004b056e
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004b0573
     POP EBP                             ; 004b0576
     POP EDI                             ; 004b0577

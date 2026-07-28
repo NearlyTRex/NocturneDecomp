@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00548680(int param_1)
+; void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00548680(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_trigger.cpp_CTrigger_archive_FUN_00548170 at 005483f7

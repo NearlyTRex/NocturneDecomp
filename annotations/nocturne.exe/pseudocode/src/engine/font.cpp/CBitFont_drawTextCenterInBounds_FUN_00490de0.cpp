@@ -2,18 +2,17 @@
 // Address: 00490de0
 // Address Range: [[00490de0, 00490e2a]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(undefined4 param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(uint param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6,uint param_7)
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)
 
 {
   int iVar1;
   
-  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                    (param_1,param_7,param_4,param_5,param_6,param_7);
-  engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0
-            (param_1,((param_2 + param_3 + 1) - iVar1) / 2);
-  return;
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(this_ptr,text);
+  iVar1 = engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0
+                    (this_ptr,((left_x + right_x + 1) - iVar1) / 2,y,color_mode,color_value,text);
+  return iVar1;
 }

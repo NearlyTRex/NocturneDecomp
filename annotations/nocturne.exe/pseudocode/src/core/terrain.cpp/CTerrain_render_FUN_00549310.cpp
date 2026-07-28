@@ -2,62 +2,51 @@
 // Address: 00549310
 // Address Range: [[00549310, 00549407]]
 // Convention: __cdecl
-// Signature: void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(int *param_1)
+// Signature: void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,int render_pass)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(int *param_1)
+void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,int render_pass)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  int iStack_3c;
-  uint uStack_38;
-  byte *puStack_34;
-  float local_30;
-  float local_2c;
-  float local_28;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  CVector3f local_30;
   int local_24;
   int local_20;
   int local_1c;
   
-  puStack_34 = (byte *)&local_30;
   if (_DAT_02dd10cc == 0) {
     return;
   }
-  uStack_38 = DAT_005ae704;
-  iStack_3c = 0x54933b;
-  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30();
-  puStack_34 = (byte *)0x40800;
-  uStack_38 = 0;
-  iStack_3c = INT_005ba8ec;
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_30);
   local_24 = 0x40800;
   local_1c = 0;
-  iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0();
+  iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0
+                    ((CGround *)INT_005ba8ec,0,0x40800);
   iVar2 = local_1c;
   iVar1 = local_24;
-  fVar4 = (float10)256;
-  puStack_34 = (byte *)0x54938a;
+  dVar5 = (double)local_30.y * 256;
+  dVar6 = (double)local_30.z * 256;
   local_20 = iVar3;
-  fVar5 = (float10)round((float10)local_30 * fVar4);
-  uStack_38 = 0x549391;
-  fVar6 = (float10)round((float10)local_2c * fVar4);
-  iStack_3c = 0x5493aa;
-  local_20 = (int)ROUND(fVar6);
-  fVar4 = (float10)round((float10)local_28 * fVar4);
-  local_2c = (float)((int)ROUND(fVar6) + iVar3);
-  local_24 = (int)ROUND(fVar4);
-  local_28 = (float)((iVar2 + local_24) - *param_1);
-  local_30 = (float)(iVar1 + (int)ROUND(fVar5));
-  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0(DAT_005ae704,&local_30);
-  core_ground_cpp_CGround_render_FUN_004b2110(INT_005ba8ec);
+  dVar4 = round((double)local_30.x * 256);
+  dVar5 = round(dVar5);
+  local_20 = (int)ROUND(dVar5);
+  dVar6 = round(dVar6);
+  local_30.y = (float)((int)ROUND(dVar5) + iVar3);
+  local_24 = (int)ROUND(dVar6);
+  local_30.z = (float)((iVar2 + local_24) - this_ptr->animation_counter);
+  local_30.x = (float)(iVar1 + (int)ROUND(dVar4));
+  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0
+            (DAT_005ae704,(CVector3i *)&local_30);
+  core_ground_cpp_CGround_render_FUN_004b2110((CGround *)INT_005ba8ec);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (DAT_005ae704,&iStack_3c);
+            (DAT_005ae704,(CVector3f *)&stack0xffffffc4);
   return;
 }

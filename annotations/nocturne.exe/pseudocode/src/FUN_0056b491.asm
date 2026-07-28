@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0056b491(int param_1,undefined4 param_2)
+; void FUN_0056b491(int param_1,uint param_2)
 ;
 ;
 ; Called Functions:
-;   FUN_0056b5ad
+;   crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
     PUSH ECX                            ; 0056b49c
     SUB EAX,EDX                         ; 0056b49d
     PUSH EAX                            ; 0056b49f
-    CALL FUN_0056b5ad                   ; 0056b4a0
-        ;   XREF to: 0056b5ad (UNCONDITIONAL_CALL)  ; undefined FUN_0056b5ad()
+    CALL crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad ; 0056b4a0
+        ;   XREF to: 0056b5ad (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad(strstreambase * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0056b4a5
     RET                                 ; 0056b4a8
 

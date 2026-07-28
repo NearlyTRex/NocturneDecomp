@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00551202
         ;   Label: LAB_00551202
     CALL core_wateract.cpp_CWaterActor_ctor_FUN_00551220 ; 00551203
-        ;   XREF to: 00551220 (UNCONDITIONAL_CALL)  ; undefined core_wateract.cpp_CWaterActor_ctor_FUN_00551220()
+        ;   XREF to: 00551220 (UNCONDITIONAL_CALL)  ; CWaterActor * core_wateract.cpp_CWaterActor_ctor_FUN_00551220(CWaterActor * this_ptr)
     ADD ESP,0x4                         ; 00551208
     RET                                 ; 0055120b
 

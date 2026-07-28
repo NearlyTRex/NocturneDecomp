@@ -2,13 +2,13 @@
 // Address: 004aeae0
 // Address Range: [[004aeae0, 004aeb65]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(void)
+// Signature: void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(CBloodSplat *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(void)
+void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(CBloodSplat *this_ptr)
 
 {
   _DAT_01c78c84 = 4;

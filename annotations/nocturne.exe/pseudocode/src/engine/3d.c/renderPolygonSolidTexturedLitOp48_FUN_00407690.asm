@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00407690(int param_1)
+; int * engine_3d_c_renderPolygonSolidTexturedLitOp48_FUN_00407690(SMRGLHeaderPrimitive *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 0040769a
     PUSH EAX                            ; 0040769d
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0040769e
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 004076a3
     TEST EAX,EAX                        ; 004076a6
     JZ 0x00407701                       ; 004076a8
@@ -48,13 +48,13 @@ section .text
     PUSH 0xffff                         ; 004076cc
     MOV dword ptr [0x01c039a0],EDI      ; 004076d1 | DAT_01c039a0
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004076d7
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 004076dc
     MOV EBP,0x1                         ; 004076df
     PUSH EBX                            ; 004076e4
     MOV dword ptr [0x01c039a4],EBP      ; 004076e5 | DAT_01c039a4
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 004076eb
-        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_00404710()
+        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 004076f0
     PUSH ESI                            ; 004076f3
     MOV EAX,dword ptr [EBX + 0x4]       ; 004076f4

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 260,
+    "complexity_score": 364,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 19,
+    "pseudocode_lines": 64,
+    "suspect_count": 27,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "primitive_walker_cast",
       "undefined_data",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 226
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -147,7 +150,7 @@
     ],
     "convention": "unknown",
     "name": "core_lever.cpp_CLever_archive_FUN_004c66f0",
-    "signature": "void core_lever_cpp_CLever_archive_FUN_004c66f0(int param_1)"
+    "signature": "void core_lever_cpp_CLever_archive_FUN_004c66f0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -378,7 +381,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_lever_cpp_CLever_archive_FUN_004c66f0(int param_1)",
+      "text": "void core_lever_cpp_CLever_archive_FUN_004c66f0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -399,42 +402,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(param_1 + 0x150,local_d4);",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1),local_d4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = (char *)(param_1 + 0x1c8);",
+      "text": "pcVar2 = param_1[1].create_event;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,\"leverType\");",
-      "type": "unnamed_param"
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 30,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"leverType\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2d8,\"onEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x33c,\"offEvent\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"leverType\");",
       "type": "unnamed_param"
     },
     {
@@ -442,7 +437,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3a0,\"sound\");",
+      "text": "((char *)((int)&param_1[2].orient + 8),\"onEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -450,55 +445,63 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d4,\"param\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[2].create_event + 0x24,\"offEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x404,\"momentaryFlag\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)&param_1[2].collision_disabled,\"sound\")",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x408,\"linkedLever\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[2].orient.vec.y,\"param\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x40c,\"endVertexIndex\");",
+      "text": "((int *)(param_1[3].actor_name + 0x14),\"momentaryFlag\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x410,\"moving\");",
+      "text": "((CDemonActor **)(param_1[3].actor_name + 0x18),\"linkedLever\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x414,\"moveToPct\");",
+      "text": "((int *)(param_1[3].actor_name + 0x1c),\"endVertexIndex\");",
       "type": "unnamed_param"
     },
     {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 50,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[3].location,\"moving\");",
+      "type": "primitive_walker_cast"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveRules_FUN_0040d110(param_1 + 0x418,\"rules\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[3].location,\"moving\");",
       "type": "unnamed_param"
     },
     {
@@ -506,24 +509,88 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x804,\"allowedSides\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[3].location.position.y,\"moveToPct\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x808,\"enableCollision\");",
+      "text": "((CRuleList *)&param_1[3].location.position.z,\"rules\");",
       "type": "unnamed_param"
     },
     {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 59,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[6].location.position.y,\"allowedSides\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[6].location.position.y,\"allowedSides\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 65,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[6].location.position.z,\"enableCollision\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[6].location.position.z,\"enableCollision\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&param_1[2].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&param_1[2].orient",
+      "severity": "moderate",
+      "text": "((char *)((int)&param_1[2].orient + 8),\"onEvent\");",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 18,
+      "line": 19,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((char *)((int)&param_1[2].orient + 8),\"onEvent\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 39,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[3].actor_name + 0x14),\"momentaryFlag\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 47,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[3].actor_name + 0x1c),\"endVertexIndex\");",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

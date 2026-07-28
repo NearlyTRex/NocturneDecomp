@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0056720c at 0056721f
 ;   FUN_0056e608 at 0056e61d
+;   crt_startup.c_initialize_runtime_FUN_0056720c at 0056721f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c20cc

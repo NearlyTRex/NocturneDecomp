@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CDemonActor * core_gore_cpp_CGore_spawnFlies_FUN_004b0580(undefined4 param_1,float *param_2,undefined4 param_3,float param_4,CDemonActor *param_5)
 ;
 ;
 ; XREF[1]:
@@ -92,13 +92,13 @@ section .text
     MOV ESI,dword ptr [0x005baf90]      ; 004b0635 | DAT_005baf90
     PUSH ESI                            ; 004b063b | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004b063c
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b0641
     PUSH EBX                            ; 004b0644
     MOV EDI,dword ptr [0x005baf90]      ; 004b0645 | DAT_005baf90
     PUSH EDI                            ; 004b064b | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004b064c
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b0651
     MOV EAX,EBX                         ; 004b0654
     POP EDI                             ; 004b0656

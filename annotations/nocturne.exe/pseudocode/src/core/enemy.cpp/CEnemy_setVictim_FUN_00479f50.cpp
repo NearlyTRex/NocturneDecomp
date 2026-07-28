@@ -2,14 +2,14 @@
 // Address: 00479f50
 // Address Range: [[00479f50, 00479f68]]
 // Convention: __cdecl
-// Signature: void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(CEnemy *this_ptr,CDemonActor *victim)
 
 #include "nocturne.h"
 
-void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(int param_1,uint param_2)
+void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(CEnemy *this_ptr,CDemonActor *victim)
 
 {
-  *(uint *)(param_1 + 0xbca8) = 0;
-  *(uint *)(param_1 + 0xbd1c) = param_2;
+  this_ptr->victim_search_timer = 0.0;
+  this_ptr->script_victim = (CCharacter *)victim;
   return;
 }

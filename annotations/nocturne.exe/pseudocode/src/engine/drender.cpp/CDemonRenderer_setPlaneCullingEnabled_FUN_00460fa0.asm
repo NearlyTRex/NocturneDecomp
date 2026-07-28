@@ -1,15 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(int param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(CDemonRenderer *this_ptr,int enabled)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   enabled
 ;
 ; XREF[7]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd45
 ;   core_box.cpp_FUN_0041d050 at 0041d107
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 00453289
 ;   core_manpuz.cpp_FUN_004ca790 at 004cab58
-;   core_path.cpp_FUN_004f18c0 at 004f19c1
+;   core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0 at 004f19c1
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 at 00460fe0
 ;   engine_drender.cpp_FUN_004574e0 at 00457505
 ;

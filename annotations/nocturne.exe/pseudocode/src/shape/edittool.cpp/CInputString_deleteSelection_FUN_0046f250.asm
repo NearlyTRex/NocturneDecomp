@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_deleteSelection_FUN_0046f250(int param_1)
+; void __cdecl shape_edittool_cpp_CInputString_deleteSelection_FUN_0046f250(CInputString *this_ptr)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004712d1
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f477
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f9b9
-;   shape_edittool.cpp_FUN_00470eb0 at 004712d1
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0
@@ -33,7 +35,7 @@ section .text
     PUSH EDX                            ; 0046f26a
     PUSH EBX                            ; 0046f26b
     CALL shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0 ; 0046f26c
-        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0()
+        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString * this_ptr, int start_pos, int end_pos)
     MOV EAX,dword ptr [EBX + 0x138]     ; 0046f271
     ADD ESP,0xc                         ; 0046f277
     MOV dword ptr [EBX + 0x134],EAX     ; 0046f27a
@@ -44,7 +46,7 @@ section .text
     PUSH EAX                            ; 0046f283
     PUSH EBX                            ; 0046f284
     CALL shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0 ; 0046f285
-        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0()
+        ;   XREF to: 0046f1e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString * this_ptr, int start_pos, int end_pos)
     MOV EAX,dword ptr [EBX + 0x134]     ; 0046f28a
     ADD ESP,0xc                         ; 0046f290
     MOV dword ptr [EBX + 0x138],EAX     ; 0046f293

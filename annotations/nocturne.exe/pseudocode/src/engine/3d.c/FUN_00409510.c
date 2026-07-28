@@ -45,6 +45,6 @@ void engine_3d_c_FUN_00409510(int param_1,int param_2)
     puVar2 = puVar2 + 1;
     puVar3 = puVar3 + 1;
   }
-  engine_3d_c_FUN_00409590();
+  engine_3d_c_clipAndDrawLine3D_FUN_00409590();
   return;
 }

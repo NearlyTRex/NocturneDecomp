@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(int param_1)
+; void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
 ;
@@ -80,7 +82,7 @@ section .text
     PUSH EBX                            ; 004410a0
     MOV dword ptr [EBX + 0x1cc],ESI     ; 004410a1
     CALL core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40 ; 004410a7
-        ;   XREF to: 00440d40 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40()
+        ;   XREF to: 00440d40 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 004410ac
     ADD ESP,0xc                         ; 004410af
     POP EDI                             ; 004410b2

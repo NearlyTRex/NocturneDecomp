@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CPickList_insert_FUN_004760a0(int param_1,undefined4 param_2,undefined4 param_3)
+; void shape_edittool_cpp_CPickList_insert_FUN_004760a0(CStrList *param_1,int param_2,char *param_3)
 ;
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004760ba
     PUSH EBP                            ; 004760be
     CALL shape_edittool.cpp_CStrList_insert_FUN_00473cf0 ; 004760bf
-        ;   XREF to: 00473cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_insert_FUN_00473cf0()
+        ;   XREF to: 00473cf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insert_FUN_00473cf0(CStrList * this_ptr, int insert_index, char * string_data)
     ADD ESP,0xc                         ; 004760c4
     POP EBP                             ; 004760c7
     POP EDI                             ; 004760c8

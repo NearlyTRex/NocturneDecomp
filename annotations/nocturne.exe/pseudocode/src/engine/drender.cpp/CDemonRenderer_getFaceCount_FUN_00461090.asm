@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(int param_1)
+; int __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[62]:
 ;   core_batman.cpp_FUN_00414340 at 00414385

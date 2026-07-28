@@ -2,50 +2,48 @@
 // Address: 0050df40
 // Address Range: [[0050df40, 0050dfd5]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(int param_1,int param_2,int param_3)
+void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
 
 {
   int iVar1;
-  int iVar2;
   
   if (*(int *)(0x01C775EC + 0x1f0) == 0) {
     if (*(int *)(DAT_005ae704 + 0x18) == 0) {
       iVar1 = 0;
-      if (0 < param_3) {
+      if (0 < primitive_count) {
         do {
           iVar1 = iVar1 + 1;
-          iVar2 = engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                            (DAT_005ae704,param_2);
-          param_2 = param_2 + 0x28;
-        } while (iVar1 < param_3);
+          engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
+                    (DAT_005ae704,primitive_array);
+          primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
+        } while (iVar1 < primitive_count);
         if (_DAT_01c02594 == 0) {
-          return iVar2;
+          return;
         }
         goto LAB_0050dfcc;
       }
     }
     else {
-      iVar2 = 0;
-      iVar1 = param_2;
-      if (0 < param_3) {
+      iVar1 = 0;
+      if (0 < primitive_count) {
         do {
-          iVar2 = iVar2 + 1;
-          param_2 = core_mirror_cpp_FUN_004d76e0(*(uint *)(param_1 + 0x161268),iVar1);
-          iVar1 = iVar1 + 0x28;
-        } while (iVar2 < param_3);
+          iVar1 = iVar1 + 1;
+          core_mirror_cpp_FUN_004d76e0(this_ptr->sorted_render_actors[0x6e0],primitive_array);
+          primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
+        } while (iVar1 < primitive_count);
       }
     }
     if (_DAT_01c02594 != 0) {
 LAB_0050dfcc:
-      iVar1 = engine_special_cpp_sync_FUN_00532b30();
-      return iVar1;
+      engine_special_cpp_sync_FUN_00532b30();
+      return;
     }
   }
-  return param_2;
+  return;
 }

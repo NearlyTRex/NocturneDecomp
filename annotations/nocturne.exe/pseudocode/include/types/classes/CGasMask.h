@@ -6,12 +6,12 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CGasMask
-// Ghidra size: 0x2d8 (728 bytes)
+// Ghidra size: 0x2d0 (720 bytes)
 #pragma pack(push, 1)
 typedef struct CGasMask {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    struct CDemonActor* carrier; // 0x2d4
+    CKeyFramedModelInstance model; // 0x150
+    struct CDemonActor* carrier; // 0x2cc
 } CGasMask;
 #pragma pack(pop)
 

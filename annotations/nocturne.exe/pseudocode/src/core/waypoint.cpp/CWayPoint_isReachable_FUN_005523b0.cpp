@@ -2,30 +2,28 @@
 // Address: 005523b0
 // Address Range: [[005523b0, 0055249c]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)
+// Signature: int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds)
 
 #include "nocturne.h"
 
-bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)
+int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds)
 
 {
-  uint uVar1;
-  int iVar2;
-  byte local_30 [12];
+  CPathMap *this_ptr_00;
+  int iVar1;
+  CVector3f local_30;
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
-  float local_14;
-  float local_10;
+  CVector3f local_18;
   
-  local_24 = *param_1 - *param_2;
-  local_20 = param_1[1] - param_2[1];
-  local_1c = param_1[2] - param_2[2];
-  if (param_3 == 0) {
+  local_24 = *(float *)(this_ptr->base).base.actor_name - (from_location->position).x;
+  local_20 = *(float *)((this_ptr->base).base.actor_name + 4) - (from_location->position).y;
+  local_1c = *(float *)((this_ptr->base).base.actor_name + 8) - (from_location->position).z;
+  if (use_tight_bounds == 0) {
     if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {
       if ((float)30 < ABS(local_1c)) {
-        return false;
+        return 0;
       }
       goto LAB_00552457;
     }
@@ -33,12 +31,13 @@ bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1
   else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))
           && (ABS(local_1c) <= (float)25)) {
 LAB_00552457:
-    local_18 = *param_1;
-    local_14 = param_1[1];
-    local_10 = param_1[2];
-    uVar1 = core_path_cpp_getPathMap_FUN_004f1e00(param_2);
-    iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(uVar1,&local_18,local_30,0);
-    return iVar2 == 1;
+    local_18.x = *(float *)(this_ptr->base).base.actor_name;
+    local_18.y = *(float *)((this_ptr->base).base.actor_name + 4);
+    local_18.z = *(float *)((this_ptr->base).base.actor_name + 8);
+    this_ptr_00 = core_path_cpp_getPathMap_FUN_004f1e00(from_location);
+    iVar1 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600(this_ptr_00,&local_18,&local_30,0)
+    ;
+    return (uint)(iVar1 == 1);
   }
-  return false;
+  return 0;
 }

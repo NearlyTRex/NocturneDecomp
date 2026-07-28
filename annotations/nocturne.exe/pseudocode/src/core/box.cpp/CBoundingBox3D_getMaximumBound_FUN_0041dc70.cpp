@@ -2,24 +2,23 @@
 // Address: 0041dc70
 // Address Range: [[0041dc70, 0041dcb6]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70(int param_1)
+// Signature: float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70(int param_1)
+float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70(CBoundingBox3D *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  if ((*(float *)(param_1 + 0xc) <= *(float *)(param_1 + 0x10)) ||
-     (*(float *)(param_1 + 0xc) <= *(float *)(param_1 + 0x14))) {
-    if (*(float *)(param_1 + 0x10) <= *(float *)(param_1 + 0x14)) {
-      return *(uint *)(param_1 + 0x14);
+  if (((this_ptr->max).x <= (this_ptr->max).y) || ((this_ptr->max).x <= (this_ptr->max).z)) {
+    if ((this_ptr->max).y <= (this_ptr->max).z) {
+      return (this_ptr->max).z;
     }
-    uVar1 = *(uint *)(param_1 + 0x10);
+    fVar1 = (this_ptr->max).y;
   }
   else {
-    uVar1 = *(uint *)(param_1 + 0xc);
+    fVar1 = (this_ptr->max).x;
   }
-  return uVar1;
+  return fVar1;
 }

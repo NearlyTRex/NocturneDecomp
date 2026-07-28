@@ -9,12 +9,12 @@
 void core_flamecan_cpp_FUN_0048e340(void)
 
 {
-  int iVar1;
+  CFlameCan *this_ptr;
   
-  iVar1 = FUN_0056497c(0x5d8);
-  if (iVar1 == 0) {
+  this_ptr = (CFlameCan *)FUN_0056497c(0x5d8);
+  if (this_ptr == (CFlameCan *)0x0) {
     return;
   }
-  core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(iVar1);
+  core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(this_ptr);
   return;
 }

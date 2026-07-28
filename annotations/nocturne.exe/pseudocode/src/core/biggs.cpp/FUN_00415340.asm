@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00415352
         ;   Label: LAB_00415352
     CALL core_biggs.cpp_CBiggs_ctor_FUN_00415370 ; 00415353
-        ;   XREF to: 00415370 (UNCONDITIONAL_CALL)  ; undefined core_biggs.cpp_CBiggs_ctor_FUN_00415370()
+        ;   XREF to: 00415370 (UNCONDITIONAL_CALL)  ; CBiggs * core_biggs.cpp_CBiggs_ctor_FUN_00415370(CBiggs * this_ptr)
     ADD ESP,0x4                         ; 00415358
     RET                                 ; 0041535b
 

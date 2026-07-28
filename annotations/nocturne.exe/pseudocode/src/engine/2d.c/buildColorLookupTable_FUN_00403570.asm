@@ -77,7 +77,7 @@ section .text
     INC ESI                             ; 004035ee
     ADD EBX,0x8                         ; 004035ef
     CALL engine_2d.c_findBestPaletteMatch_FUN_00401850 ; 004035f2
-        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_findBestPaletteMatch_FUN_00401850()
+        ;   XREF to: 00401850 (UNCONDITIONAL_CALL)  ; int engine_2d.c_findBestPaletteMatch_FUN_00401850(int red, int green, int blue, int start_index, ...)
     ADD ESP,0x14                        ; 004035f7
     MOV byte ptr [ESI + -0x1],AL        ; 004035fa | DAT_01bf7720
     CMP EBX,0x100                       ; 004035fd

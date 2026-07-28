@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(int param_1,undefined4 param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(CDemonCamera *this_ptr,int clear_color)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   clear_color
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a2782

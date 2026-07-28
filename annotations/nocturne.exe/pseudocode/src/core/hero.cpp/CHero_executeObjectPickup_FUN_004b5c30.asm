@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004b5c30(int param_1,undefined4 param_2)
+; void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004b5c30(CHero *this_ptr,int hand_index)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 004974ee
@@ -32,7 +35,7 @@ section .text
     PUSH ESI                            ; 004b5c4c
     PUSH EBX                            ; 004b5c4d
     CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40 ; 004b5c4e
-        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40()
+        ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 004b5c53
     MOV dword ptr [EBX + 0x1fa08],0x0   ; 004b5c56
     POP ESI                             ; 004b5c60

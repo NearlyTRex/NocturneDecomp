@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(int param_1)
+; void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
@@ -49,7 +51,7 @@ section .text
     PUSH 0x6                            ; 004dc15e
     PUSH EAX                            ; 004dc160
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004dc161
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004dc166
     ADD ESP,0x4                         ; 004dc169
     POP EBX                             ; 004dc16c
@@ -59,7 +61,7 @@ section .text
     PUSH 0x2                            ; 004dc170
     PUSH EAX                            ; 004dc172
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004dc173
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004dc178
     ADD ESP,0x4                         ; 004dc17b
     POP EBX                             ; 004dc17e

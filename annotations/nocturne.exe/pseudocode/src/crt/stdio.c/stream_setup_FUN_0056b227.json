@@ -1,0 +1,210 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 154,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 93
+  },
+  "cross_references": [
+    {
+      "addr": "0056ce57",
+      "from_addr": "0056ce96",
+      "name": "FUN_0056ce57",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564c53",
+      "from_addr": "00564c7a",
+      "name": "crt_iostream.cpp_istream_get_FUN_00564c53",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b227",
+    "address_range": [
+      [
+        "0056b227",
+        "0056b2b3"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_stream_setup_FUN_0056b227",
+    "signature": "int __watcallStack crt_stdio_c_stream_setup_FUN_0056b227(_FILE *stream,int operation_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b327",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
+    },
+    {
+      "addr": "0056b3c2",
+      "is_variadic": false,
+      "name": "crt_stdio.c_stream_flush_FUN_0056b3c2"
+    },
+    {
+      "addr": "0056fd26",
+      "is_variadic": false,
+      "name": "crt_string.c_mbstrncpy_core_FUN_0056fd26"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.685185185185185,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 28,
+      "INT_AND": 35,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "LOAD": 25,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 253
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "operation_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&stream->_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 8,
+      "match": "(int)&stream->_handle",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_link` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)&stream->_link",
+      "severity": "moderate",
+      "text": "stream_00 = *(_FILE **)((int)&stream->_link + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&stream->_flag",
+      "severity": "moderate",
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&stream->_ptr",
+      "severity": "moderate",
+      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_handle` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&stream->_handle",
+      "severity": "moderate",
+      "text": "return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&stream->_ptr",
+      "severity": "moderate",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 8,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 10,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "stream_00 = *(_FILE **)((int)&stream->_link + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
+; void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger *this_ptr)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x9c]:1  local_9c
 ;
@@ -71,7 +73,7 @@ section .text
     MOV EDI,dword ptr [0x02dc9f5c]      ; 0053e37c | DAT_02dc9f5c
     MOV dword ptr [ESP + 0xc8],EDX      ; 0053e382
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0053e389
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0053e38e
     XOR EAX,EAX                         ; 0053e391
     MOV dword ptr [ESP + 0xac],EAX      ; 0053e393
@@ -115,14 +117,14 @@ section .text
     MOV EAX,[0x005be368]                ; 0053e418 | DAT_005be368
     PUSH EAX                            ; 0053e41d | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0053e41e
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053e423
     LEA ESI,[EBX + 0x1fa70]             ; 0053e426
     PUSH EBX                            ; 0053e42c
     MOV EDX,dword ptr [0x005be368]      ; 0053e42d | DAT_005be368
     PUSH EDX                            ; 0053e433 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0053e434
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053e439
     LEA EAX,[ESP + 0x58]                ; 0053e43c
     PUSH EAX                            ; 0053e440
@@ -139,7 +141,7 @@ section .text
     PUSH EAX                            ; 0053e468 | DAT_01e57284
     FSTP float ptr [ESP + 0x30]         ; 0053e469
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0053e46d
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053e472
     FLDZ                                ; 0053e475
     FLD float ptr [ESP + 0x2c]          ; 0053e477
@@ -196,7 +198,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0053e527
     PUSH EAX                            ; 0053e52d
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0053e52e
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0053e533
     LEA EAX,[ESP + 0x58]                ; 0053e536
     PUSH EAX                            ; 0053e53a
@@ -204,7 +206,7 @@ section .text
     PUSH EAX                            ; 0053e542
     PUSH EBX                            ; 0053e543
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0053e544
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0053e549
     LEA EAX,[ESP + 0x70]                ; 0053e54c
     FLD float ptr [ESP + 0x88]          ; 0053e550
@@ -356,7 +358,7 @@ section .text
         ;   XREF to: 0053e5e9 (CONDITIONAL_JUMP)  ; LAB_0053e5e9
     FLD double ptr [ESP + 0x20]         ; 0053e73b
     CALL crt_math.c_acos_FUN_00565ca4   ; 0053e73f
-        ;   XREF to: 00565ca4 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_00565ca4()
+        ;   XREF to: 00565ca4 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00565ca4(double x)
     FLDZ                                ; 0053e744
     FXCH                                ; 0053e746
     FSTP float ptr [ESP + 0xc0]         ; 0053e748
@@ -407,7 +409,7 @@ section .text
         ;   XREF to: 0053e600 (CONDITIONAL_JUMP)  ; LAB_0053e600
     FLD double ptr [ESP + 0x8]          ; 0053e7e1
     CALL crt_math.c_acos_FUN_00565ca4   ; 0053e7e5
-        ;   XREF to: 00565ca4 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_acos_FUN_00565ca4()
+        ;   XREF to: 00565ca4 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00565ca4(double x)
     FLDZ                                ; 0053e7ea
     FXCH                                ; 0053e7ec
     FSTP float ptr [ESP + 0xb8]         ; 0053e7ee

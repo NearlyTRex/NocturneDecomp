@@ -2,66 +2,63 @@
 // Address: 004ecc80
 // Address Range: [[004ecc80, 004ece65]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(int param_1,int param_2)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(CNetGame *this_ptr,int player_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(int param_1,int param_2)
+void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(CNetGame *this_ptr,int player_index)
 
 {
-  byte *puVar1;
-  int iVar2;
-  byte *puVar3;
-  int iVar4;
-  byte *puVar5;
-  int iVar6;
+  int iVar1;
+  byte *src;
+  void *dest;
+  byte *dest_00;
+  byte *local_14;
   
-  if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
+  if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x862;
     core_main_c_FUN_004c8440("CNetGame::removePlayer - invalid player index");
   }
-  if (param_2 == *(int *)(param_1 + 0x114)) {
+  if (player_index == this_ptr->local_player_index) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x869;
     core_main_c_FUN_004c8440("CNetGame::removePlayer - tried to remove myself!");
   }
-  if (param_2 == *(int *)(param_1 + 0x110)) {
-    *(uint *)(param_1 + 0x110) = 0xffffffff;
+  if (player_index == this_ptr->server_player_index) {
+    this_ptr->server_player_index = -1;
   }
-  if (param_2 == *(int *)(param_1 + 0x114)) {
-    *(uint *)(param_1 + 0x114) = 0xffffffff;
+  if (player_index == this_ptr->local_player_index) {
+    this_ptr->local_player_index = -1;
   }
-  iVar2 = *(int *)(param_1 + 0x1c) + -1;
-  *(int *)(param_1 + 0x1c) = iVar2;
-  iVar6 = param_2 + 1;
+  iVar1 = this_ptr->player_count + -1;
+  this_ptr->player_count = iVar1;
   memmove
-            (param_2 * 0x78 + param_1 + 0x20,iVar6 * 0x78 + param_1 + 0x20,(iVar2 - param_2) * 0x78,
-             iVar6);
-  iVar2 = 0;
+            (this_ptr->players + player_index,this_ptr->players + player_index + 1,
+             (iVar1 - player_index) * 0x78);
+  iVar1 = 0;
   if (0 < _DAT_01d06610) {
-    puVar5 = &DAT_01d0661c + param_2;
-    puVar3 = &DAT_01d0661c + iVar6;
-    puVar1 = &DAT_01d06624 + param_2 * 4;
-    iVar4 = param_2 * 4 + 0x1d06620;
+    dest_00 = &DAT_01d0661c + player_index;
+    src = &DAT_01d0661d + player_index;
+    local_14 = &DAT_01d06624 + player_index * 4;
+    dest = (void *)(player_index * 4 + 0x1d06620);
     do {
-      memmove
-                (puVar5,puVar3,*(int *)(param_1 + 0x1c) - param_2,iVar6,puVar1);
-      iVar2 = iVar2 + 1;
-      puVar3 = puVar3 + 0x114;
-      memmove(iVar4,puVar1,(*(int *)(param_1 + 0x1c) - param_2) * 4);
-      puVar5 = puVar5 + 0x114;
-      puVar1 = puVar1 + 0x114;
-      iVar4 = iVar4 + 0x114;
-    } while (iVar2 < _DAT_01d06610);
+      memmove(dest_00,src,this_ptr->player_count - player_index);
+      iVar1 = iVar1 + 1;
+      src = src + 0x114;
+      memmove(dest,local_14,(this_ptr->player_count - player_index) * 4);
+      dest_00 = dest_00 + 0x114;
+      local_14 = local_14 + 0x114;
+      dest = (void *)((int)dest + 0x114);
+    } while (iVar1 < _DAT_01d06610);
   }
-  if (param_2 < *(int *)(param_1 + 0x110)) {
-    *(int *)(param_1 + 0x110) = *(int *)(param_1 + 0x110) + -1;
+  if (player_index < this_ptr->server_player_index) {
+    this_ptr->server_player_index = this_ptr->server_player_index + -1;
   }
-  if (param_2 < *(int *)(param_1 + 0x114)) {
-    *(int *)(param_1 + 0x114) = *(int *)(param_1 + 0x114) + -1;
+  if (player_index < this_ptr->local_player_index) {
+    this_ptr->local_player_index = this_ptr->local_player_index + -1;
     return;
   }
   return;

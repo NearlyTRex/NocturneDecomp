@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004c1f90(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004c1f90(int x1,int y1,int x2,int y2,int alpha)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; int              Stack[0x14]:4   alpha
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -31,7 +37,7 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_004405d0
+;   core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
@@ -69,14 +75,14 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 004c1fd9 | DAT_005ae704
     PUSH EDI                            ; 004c1fdf | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c1fe0
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004c1fe5
     MOV EBP,dword ptr [ESP + 0x5c]      ; 004c1fe8
     PUSH EBP                            ; 004c1fec
     MOV EAX,[0x005ae704]                ; 004c1fed | DAT_005ae704
     PUSH EAX                            ; 004c1ff2 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004c1ff3
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004c1ff8
     MOV EDX,dword ptr [ESP + 0x4c]      ; 004c1ffb
     IMUL EDX,EBX                        ; 004c1fff
@@ -145,7 +151,7 @@ section .text
     MOV dword ptr [ESP + 0x30],EBX      ; 004c20fa
     MOV dword ptr [ESP + 0x2c],ECX      ; 004c20fe
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 004c2102
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004c2107
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004c210a
     MOV dword ptr [ESP + 0x28],EAX      ; 004c210e
@@ -161,8 +167,8 @@ section .text
     PUSH EAX                            ; 004c212d
     PUSH 0x1fb8508                      ; 004c212e
     MOV dword ptr [ESP + 0x48],EBP      ; 004c2133
-    CALL core_dcamera.cpp_FUN_004405d0  ; 004c2137
-        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004405d0()
+    CALL core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0 ; 004c2137
+        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0(CDemonCamera * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 004c213c
     ADD ESP,0x38                        ; 004c213f
     POP EBP                             ; 004c2142

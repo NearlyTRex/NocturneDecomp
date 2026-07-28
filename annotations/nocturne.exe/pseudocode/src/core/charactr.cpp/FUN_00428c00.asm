@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_FUN_00428c00(int param_1,float param_2)
+; undefined4 core_charactr_cpp_FUN_00428c00(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
@@ -133,7 +133,7 @@ section .text
     PUSH EAX                            ; 00428cf2
     PUSH ESI                            ; 00428cf3
     CALL core_door.cpp_CDoor_getOpenStandPos_FUN_00456260 ; 00428cf4
-        ;   XREF to: 00456260 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_getOpenStandPos_FUN_00456260()
+        ;   XREF to: 00456260 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor * this_ptr, CVector3f * out_pos, CVector3f * direction, CVector3f * actor_pos)
     ADD ESP,0x10                        ; 00428cf9
     PUSH 0x0                            ; 00428cfc
     MOV EAX,dword ptr [EBX + 0x25ac]    ; 00428cfe
@@ -148,7 +148,7 @@ section .text
     PUSH EAX                            ; 00428d20
     PUSH EBX                            ; 00428d21
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 00428d22
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 00428d27
     TEST EAX,EAX                        ; 00428d2a
     JL 0x00428df4                       ; 00428d2c
@@ -162,7 +162,7 @@ section .text
     PUSH EAX                            ; 00428d48
     PUSH EBX                            ; 00428d49
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00428d4a
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00428d4f
     PUSH EAX                            ; 00428d52
     LEA EAX,[ESP + 0x4]                 ; 00428d53
@@ -265,7 +265,7 @@ section .text
     PUSH EBP                            ; 00428e65
     PUSH ESI                            ; 00428e66
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00428e67
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00428e6c
     TEST EAX,EAX                        ; 00428e6f
     JZ 0x00428e83                       ; 00428e71
@@ -273,7 +273,7 @@ section .text
     PUSH EAX                            ; 00428e73
     PUSH EDI                            ; 00428e74
     CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 ; 00428e75
-        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680()
+        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint * this_ptr, CWayPoint * start_waypoint)
     ADD ESP,0x8                         ; 00428e7a
     MOV ESI,EAX                         ; 00428e7d
     TEST EAX,EAX                        ; 00428e7f
@@ -287,7 +287,7 @@ section .text
     PUSH ESI                            ; 00428e96
     PUSH EBX                            ; 00428e97
     CALL core_charactr.cpp_CCharacter_followActor_FUN_00428780 ; 00428e98
-        ;   XREF to: 00428780 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_followActor_FUN_00428780()
+        ;   XREF to: 00428780 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_followActor_FUN_00428780(CCharacter * this_ptr, CDemonActor * actor, float min_dist, float max_dist, ...)
     ADD ESP,0x14                        ; 00428e9d
     MOV EAX,0x1                         ; 00428ea0
     ADD ESP,0x38                        ; 00428ea5

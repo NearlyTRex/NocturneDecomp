@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(int param_1,int param_2)
+; void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,CDemonActor *target)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x28]:4  local_28
@@ -58,7 +61,7 @@ section .text
     PUSH EDI                            ; 00410aaf
     PUSH ESI                            ; 00410ab0
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00410ab1
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00410ab6
     TEST EAX,EAX                        ; 00410ab9
     JNZ 0x00410b8f                      ; 00410abb
@@ -114,14 +117,14 @@ section .text
     LEA EAX,[EBX + 0xbc94]              ; 00410b51
     PUSH EAX                            ; 00410b57
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00410b58
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00410b5d
     PUSH 0x1                            ; 00410b60
     PUSH 0x6                            ; 00410b62
     LEA EAX,[EBX + 0x150]               ; 00410b64
     PUSH EAX                            ; 00410b6a
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00410b6b
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV dword ptr [EBX + 0x1fb34],0x1   ; 00410b70
     ADD ESP,0xc                         ; 00410b7a
     MOV dword ptr [EBX + 0x1fb38],0x0   ; 00410b7d

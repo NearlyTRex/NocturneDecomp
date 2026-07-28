@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_00559bf0(HANDLE param_1,double param_2)
+; int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_00559bf0(HANDLE mutex_handle,double timeout_seconds)
 ;
+; Parameters:
+; HANDLE           Stack[0x4]:4   mutex_handle
+; double           Stack[0x8]:8   timeout_seconds
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;
@@ -34,7 +37,7 @@ section .text
         ;   Label: LAB_00559c01
     FMUL double ptr [0x00598141]        ; 00559c05 | DOUBLE_00598141
     CALL crt_math.c_round_FUN_00563a30  ; 00559c0b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [ESP]               ; 00559c10
     MOV EAX,dword ptr [ESP]             ; 00559c13
     PUSH EAX                            ; 00559c16

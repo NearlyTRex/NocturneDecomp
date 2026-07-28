@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_FUN_0045ab40(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_dracbrid_cpp_FUN_0045ab40(CDemonActor *param_1,undefined4 param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x174]:1  local_174
@@ -89,7 +89,7 @@ section .text
     ADD ESP,0x8                         ; 0045ab6e
     FSTP float ptr [EBP + 0xbdb8]       ; 0045ab71
     CALL sound_sndmain.cpp_isSoundBusy_FUN_00528490 ; 0045ab77
-        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundBusy_FUN_00528490()
+        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00528490()
     TEST EAX,EAX                        ; 0045ab7c
     JZ 0x0045aba1                       ; 0045ab7e
         ;   XREF to: 0045aba1 (CONDITIONAL_JUMP)  ; LAB_0045aba1
@@ -100,7 +100,7 @@ section .text
     PUSH EDX                            ; 0045ab89
     MOV EDI,EBX                         ; 0045ab8a
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0045ab8c
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0045ab91
     TEST EAX,EAX                        ; 0045ab94
     JZ 0x0045abac                       ; 0045ab96
@@ -126,7 +126,7 @@ section .text
     LEA EAX,[EBP + 0x150]               ; 0045abbe
     PUSH EAX                            ; 0045abc4
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 0045abc5
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0045abca
     PUSH EAX                            ; 0045abcd
     LEA EAX,[ESP + 0x128]               ; 0045abce
@@ -134,7 +134,7 @@ section .text
     PUSH EBP                            ; 0045abd6
     ADD EBX,0x2c                        ; 0045abd7
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0045abda
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0045abdf
     CMP EBX,EAX                         ; 0045abe2
     JZ 0x0045abf6                       ; 0045abe4
@@ -318,7 +318,7 @@ section .text
     PUSH dword ptr [EDI + 0x1c]         ; 0045af20 | DAT_01b4d29c
     PUSH EAX                            ; 0045af23
     CALL core_spline.cpp_computeSplineBasis_FUN_00533ce0 ; 0045af24
-        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_computeSplineBasis_FUN_00533ce0()
+        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00533ce0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 0045af29
     LEA EAX,[EDI + 0x44]                ; 0045af2c
     PUSH EAX                            ; 0045af2f | DAT_01b4d2c4
@@ -334,7 +334,7 @@ section .text
     PUSH EAX                            ; 0045af4b
     LEA EBX,[EDI + 0x4]                 ; 0045af4c
     CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10 ; 0045af4f
-        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10()
+        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 0045af54
     CMP EBX,EAX                         ; 0045af57
     JZ 0x0045af6b                       ; 0045af59
@@ -360,7 +360,7 @@ section .text
     PUSH EAX                            ; 0045af8a
     LEA EBX,[EDI + 0x10]                ; 0045af8b
     CALL core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0 ; 0045af8e
-        ;   XREF to: 005340d0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0()
+        ;   XREF to: 005340d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 0045af93
     CMP EBX,EAX                         ; 0045af96
     JZ 0x0045afaa                       ; 0045af98
@@ -372,21 +372,21 @@ section .text
     MOV EDX,dword ptr [EAX + 0x8]       ; 0045afa4
     MOV dword ptr [EBX + 0x8],EDX       ; 0045afa7 | DAT_01b4d298
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 0045afaa
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
         ;   Label: LAB_0045afaa
     LEA EAX,[EDI + 0x4]                 ; 0045afaf
     PUSH EAX                            ; 0045afb2 | DAT_01b4d284
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0 ; 0045afb3
-        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0()
+        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 0045afb8
     LEA EAX,[EDI + 0x10]                ; 0045afbb
     PUSH EAX                            ; 0045afbe | DAT_01b4d290
     CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00526090 ; 0045afbf
-        ;   XREF to: 00526090 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00526090()
+        ;   XREF to: 00526090 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00526090(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 0045afc4
     PUSH dword ptr [ESP + 0x180]        ; 0045afc7
     CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0 ; 0045afce
-        ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0()
+        ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0(float volume)
     ADD ESP,0x4                         ; 0045afd3
     MOV EBX,dword ptr [ESP + 0x17c]     ; 0045afd6
     PUSH EBX                            ; 0045afdd
@@ -400,11 +400,11 @@ section .text
     MOV EAX,ESP                         ; 0045aff2
     PUSH EAX                            ; 0045aff4
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 0045aff5
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 0045affa
     MOV dword ptr [EDI],EAX             ; 0045affd | DAT_01b4d280
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 0045afff
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     MOV dword ptr [EDI + 0x50],EBP      ; 0045b004 | DAT_01b4d2d0
     ADD ESP,0x164                       ; 0045b007
     POP EBP                             ; 0045b00d

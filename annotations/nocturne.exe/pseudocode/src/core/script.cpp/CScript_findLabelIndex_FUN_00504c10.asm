@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(int param_1,undefined4 param_2)
+; int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_ptr,char *label_name)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   label_name
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170 at 004ff19d
@@ -54,11 +57,11 @@ section .text
     INC EAX                             ; 00504c49
     PUSH EAX                            ; 00504c4a
     CALL core_script.cpp_skipWhitespace_FUN_004fe070 ; 00504c4b
-        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_skipWhitespace_FUN_004fe070()
+        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_004fe070(char * str)
     ADD ESP,0x4                         ; 00504c50
     PUSH EAX                            ; 00504c53
     CALL crt_string.c__stricmp_FUN_00564520 ; 00504c54
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00504c59
     TEST EAX,EAX                        ; 00504c5c
     JNZ 0x00504c33                      ; 00504c5e

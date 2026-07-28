@@ -9,6 +9,9 @@
 void FUN_0056c02b(void)
 
 {
-  FUN_0056be50();
+  float10 in_ST1;
+  float10 in_ST3;
+  
+  fdiv(in_ST1,in_ST3);
   return;
 }

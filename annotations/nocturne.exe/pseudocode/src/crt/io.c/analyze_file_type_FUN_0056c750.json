@@ -1,0 +1,218 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 136,
+    "complexity_score": 107,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 67,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strchr"
+    ],
+    "total_lines": 203
+  },
+  "cross_references": [
+    {
+      "addr": "0056c864",
+      "from_addr": "0056c9f7",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056c750",
+    "address_range": [
+      [
+        "0056c750",
+        "0056c861"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_io.c_analyze_file_type_FUN_0056c750",
+    "signature": "uint __watcallStack crt_io_c_analyze_file_type_FUN_0056c750(uint open_flags,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000040",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:00000043",
+      "is_variadic": false,
+      "name": "CreateFileA"
+    },
+    {
+      "addr": "005649c0",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005649c0"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    },
+    {
+      "addr": "EXTERNAL:00000062",
+      "is_variadic": false,
+      "name": "GetFileType"
+    },
+    {
+      "addr": "EXTERNAL:00000064",
+      "is_variadic": false,
+      "name": "GetLastError"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057548c",
+      "name": "PTR_CloseHandle_0057548c",
+      "type": "void*",
+      "value": "00175ad4"
+    },
+    {
+      "addr": "00575498",
+      "name": "PTR_CreateFileA_00575498",
+      "type": "void*",
+      "value": "00175b06"
+    },
+    {
+      "addr": "00575514",
+      "name": "PTR_GetFileType_00575514",
+      "type": "void*",
+      "value": "00175d4e"
+    },
+    {
+      "addr": "0057551c",
+      "name": "PTR_GetLastError_0057551c",
+      "type": "void*",
+      "value": "00175d70"
+    },
+    {
+      "addr": "00598bd4",
+      "name": "s_con_00598bd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598bd8",
+      "name": "s_conin_00598bd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598be0",
+      "name": "s_EXE_00598be0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1d11",
+      "name": "DAT_005c1d11",
+      "type": "undefined2",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056c9f7",
+        "call_type": "direct",
+        "caller": "crt_io.c_getFileStat_FUN_0056c864",
+        "estimated_params": 2,
+        "instructions_analyzed": 14,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.505263157894737,
+    "instruction_count": 95,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 5,
+      "CALL": 2,
+      "CALLIND": 4,
+      "CBRANCH": 18,
+      "COPY": 79,
+      "INT_ADD": 13,
+      "INT_AND": 71,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 62,
+      "INT_LESS": 11,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 31,
+      "INT_SUB": 33,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 428
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "open_flags",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005c1d11",
+      "severity": "mild",
+      "text": "if (DAT_005c1d11 < 0x8000) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c1d11",
+      "severity": "mild",
+      "text": "if ((0x7fff < DAT_005c1d11) || (DVar3 = GetLastError(), DVar3 == 5)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 46,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

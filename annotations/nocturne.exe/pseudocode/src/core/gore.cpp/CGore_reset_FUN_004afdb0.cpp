@@ -2,13 +2,13 @@
 // Address: 004afdb0
 // Address Range: [[004afdb0, 004afdfa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(void)
+// Signature: void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(CGore *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(void)
+void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(CGore *this_ptr)
 
 {
   byte *puVar1;

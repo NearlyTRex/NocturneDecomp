@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60(int param_1,int *param_2,byte param_3,byte param_4)
+; ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60(CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   projected_coord
+; uchar            Stack[0xc]:1   x_round_flag
+; uchar            Stack[0x10]:1   y_round_flag
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 004420d1

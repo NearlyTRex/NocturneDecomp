@@ -2,47 +2,49 @@
 // Address: 00420a10
 // Address Range: [[00420a10, 00420c3a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(int param_1,int *param_2)
+// Signature: void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(CBride *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(int param_1,int *param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00420a10(CBride *this_ptr,SDamageInfo *damage_info)
 
 {
   int iVar1;
-  uint uVar2;
+  CBodyPart *body_part;
   float local_20;
   
-  if ((0.0 < (float)param_2[0xb]) && (*param_2 == -1)) {
+  if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
     iVar1 = rand();
     switch(iVar1 % 5) {
     case 0:
-      iVar1 = *(int *)(param_1 + 0xbd24);
+      iVar1 = this_ptr->part_indices[0];
       break;
     case 1:
-      iVar1 = *(int *)(param_1 + 0xbd28);
+      iVar1 = this_ptr->part_indices[1];
       break;
     case 2:
-      iVar1 = *(int *)(param_1 + 0xbd2c);
+      iVar1 = this_ptr->part_indices[2];
       break;
     case 3:
-      iVar1 = *(int *)(param_1 + 0xbd30);
+      iVar1 = this_ptr->part_indices[3];
       break;
     case 4:
-      iVar1 = *(int *)(param_1 + 0xbd44);
+      iVar1 = this_ptr->part_indices[8];
       break;
     default:
       goto switchD_00420a49_default;
     }
-    *param_2 = iVar1;
+    damage_info->hit_part_index = iVar1;
   }
 switchD_00420a49_default:
-  iVar1 = *param_2;
-  if ((((iVar1 == *(int *)(param_1 + 0xbd24)) || (iVar1 == *(int *)(param_1 + 0xbd28))) ||
-      (iVar1 == *(int *)(param_1 + 0xbd2c))) ||
-     ((iVar1 == *(int *)(param_1 + 0xbd30) || (iVar1 == *(int *)(param_1 + 0xbd44))))) {
-    local_20 = (float)param_2[0xb];
-    if (*(int *)(param_1 + 0xbd44) == *param_2) {
+  iVar1 = damage_info->hit_part_index;
+  if ((((iVar1 == this_ptr->part_indices[0]) || (iVar1 == this_ptr->part_indices[1])) ||
+      (iVar1 == this_ptr->part_indices[2])) ||
+     ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[8])))) {
+    local_20 = damage_info->dismember_prob;
+    if (this_ptr->part_indices[8] == damage_info->hit_part_index) {
       local_20 = local_20 * (float)0.33300000000000002;
     }
     if (*(int *)(0x01C775EC + 0x1e0) != 0) {
@@ -53,34 +55,38 @@ switchD_00420a49_default:
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(local_20);
     if (iVar1 != 0) {
-      uVar2 = core_bodypart_cpp_createBodyPart_FUN_00415b30
-                        (param_1 + 0x20,param_1 + 0x30,param_2 + 3,param_1,0,0,0);
-      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(param_1,uVar2,*param_2,0);
-      if (*param_2 == *(int *)(param_1 + 0xbd24)) {
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00415b30
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,&damage_info->impact_point,
+                             (CDemonActor *)this_ptr,0,0,0);
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
+                ((CCharacter *)this_ptr,body_part,damage_info->hit_part_index,0);
+      if (damage_info->hit_part_index == this_ptr->part_indices[0]) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
-                  (param_1,uVar2,*(uint *)(param_1 + 0xbd28),0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[1],0);
       }
-      if (*(int *)(param_1 + 0xbd2c) == *param_2) {
+      if (this_ptr->part_indices[2] == damage_info->hit_part_index) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
-                  (param_1,uVar2,*(uint *)(param_1 + 0xbd30),0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],0);
       }
-      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(param_1,"limb?.wav");
-      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(uVar2);
-      if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd44) * 4) == 0) {
-        param_2[1] = 0x461c3c00;
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(body_part);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0) {
+        damage_info->damage_amount = 9999.0;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)7);
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
-  iVar1 = *param_2;
-  if (iVar1 == *(int *)(param_1 + 0xbd44)) {
-    param_2[1] = (int)((float)param_2[1] * (float)2.5);
+  iVar1 = damage_info->hit_part_index;
+  if (iVar1 == this_ptr->part_indices[8]) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
-  if ((iVar1 != *(int *)(param_1 + 0xbd40)) && (iVar1 != *(int *)(param_1 + 0xbd3c))) {
-    param_2[1] = (int)((float)param_2[1] * (float)0.5);
+  if ((iVar1 != this_ptr->part_indices[7]) && (iVar1 != this_ptr->part_indices[6])) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
-  param_2[1] = param_2[1];
+  damage_info->damage_amount = damage_info->damage_amount;
   return;
 }

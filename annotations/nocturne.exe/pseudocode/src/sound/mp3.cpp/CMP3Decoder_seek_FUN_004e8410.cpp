@@ -2,55 +2,56 @@
 // Address: 004e8410
 // Address Range: [[004e8410, 004e8576]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(int param_1,int param_2)
+// Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(CMP3Decoder *this_ptr,int sample_offset)
 
 #include "nocturne.h"
 
-uint __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(int param_1,int param_2)
+int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(CMP3Decoder *this_ptr,int sample_offset)
 
 {
   int iVar1;
   
-  *(uint *)(param_1 + 0x108) = 0;
-  *(uint *)(param_1 + 0x10c) = 0;
-  _fseek(*(uint *)(param_1 + 0x5320),*(uint *)(param_1 + 0x5340),0);
-  *(uint *)(param_1 + 0x5330) = 0;
-  *(uint *)(param_1 + 0x5334) = 0;
-  *(uint *)(param_1 + 0x532c) = 0;
-  *(uint *)(param_1 + 0x5338) = 0;
-  *(uint *)(param_1 + 0x533c) = 0;
-  *(uint *)(param_1 + 0x5348) = *(uint *)(param_1 + 0x5344);
-  *(uint *)(param_1 + 0x534c) = 0;
-  *(uint *)(param_1 + 0x1310) = 0;
-  *(uint *)(param_1 + 0x1314) = 0;
-  *(uint *)(param_1 + 0x1318) = 0;
-  *(uint *)(param_1 + 0x531c) = 8;
-  *(uint *)(param_1 + 0x7350) = 0x40;
-  *(uint *)(param_1 + 0x7354) = 0x40;
-  memset(param_1 + 0x5350,0,0x2000);
-  memset(param_1 + 0x7430,0,0x1200);
-  for (; 0x8ff < param_2; param_2 = param_2 - iVar1) {
-    iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(param_1,0);
+  this_ptr->available_samples = 0;
+  this_ptr->decode_buffer_pos = (short *)0x0;
+  _fseek((this_ptr->file_bitstream).file_handle,(this_ptr->file_bitstream).stream_start_position
+             ,0);
+  (this_ptr->file_bitstream).current_byte_index = 0;
+  (this_ptr->file_bitstream).bits_available = 0;
+  (this_ptr->file_bitstream).total_bits_read = 0;
+  (this_ptr->file_bitstream).end_of_stream_flag = 0;
+  (this_ptr->file_bitstream).error_flag = 0;
+  (this_ptr->file_bitstream).bytes_remaining = (this_ptr->file_bitstream).stream_length;
+  this_ptr->main_data_offset = 0;
+  (this_ptr->memory_bitstream).buffer_size_limit = 0;
+  (this_ptr->memory_bitstream).total_bits_read = 0;
+  (this_ptr->memory_bitstream).current_dword_index = 0;
+  (this_ptr->memory_bitstream).bits_available = 8;
+  this_ptr->synthesis_buffer_index[0] = 0x40;
+  this_ptr->synthesis_buffer_index[1] = 0x40;
+  memset(this_ptr->synthesis_v_buffer,0,0x2000);
+  memset(this_ptr->synthesis_history,0,0x1200);
+  for (; 0x8ff < sample_offset; sample_offset = sample_offset - iVar1) {
+    iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(this_ptr,(short *)0x0);
     if (iVar1 < 1) {
       return 0;
     }
   }
-  if (0 < param_2) {
+  if (0 < sample_offset) {
     while( true ) {
-      iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(param_1,param_1 + 0x110);
-      *(int *)(param_1 + 0x108) = iVar1;
+      iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(this_ptr,this_ptr->decode_buffer);
+      this_ptr->available_samples = iVar1;
       if (iVar1 < 1) {
         return 0;
       }
-      if (param_2 < iVar1) break;
-      *(uint *)(param_1 + 0x108) = 0;
-      param_2 = param_2 - iVar1;
-      if (param_2 < 1) {
+      if (sample_offset < iVar1) break;
+      this_ptr->available_samples = 0;
+      sample_offset = sample_offset - iVar1;
+      if (sample_offset < 1) {
         return 1;
       }
     }
-    *(int *)(param_1 + 0x108) = iVar1 - param_2;
-    *(int *)(param_1 + 0x10c) = param_1 + 0x110 + param_2 * *(int *)(param_1 + 0x104) * 2;
+    this_ptr->available_samples = iVar1 - sample_offset;
+    this_ptr->decode_buffer_pos = this_ptr->decode_buffer + sample_offset * this_ptr->num_channels;
     return 1;
   }
   return 1;

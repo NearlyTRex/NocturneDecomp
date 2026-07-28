@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_restoreVideoMode_FUN_005325f0(void)
+; int __cdecl engine_special_cpp_restoreVideoMode_FUN_005325f0(void)
 ;
 ;
 ; XREF[2]:

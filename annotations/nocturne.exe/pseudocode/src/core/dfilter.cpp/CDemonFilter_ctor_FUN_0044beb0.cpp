@@ -2,32 +2,32 @@
 // Address: 0044beb0
 // Address Range: [[0044beb0, 0044bef0]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(undefined4 *param_1)
+// Signature: CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(CDemonFilter *this_ptr)
 
 #include "nocturne.h"
 
-uint * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(uint *param_1)
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(CDemonFilter *this_ptr)
 
 {
   char cVar1;
   char *pcVar2;
   char *pcVar3;
   
-  param_1[0x12] = 0;
+  this_ptr->data_buffer = (uchar *)0x0;
   pcVar2 = "unnamed";
-  *param_1 = 0x40;
-  pcVar3 = (char *)(param_1 + 2);
-  param_1[1] = 0x40;
+  this_ptr->size = 0x40;
+  pcVar3 = this_ptr->name;
+  this_ptr->count = 0x40;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') {
-      return param_1;
+      return this_ptr;
     }
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  return param_1;
+  return this_ptr;
 }

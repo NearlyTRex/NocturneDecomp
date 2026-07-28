@@ -2,50 +2,50 @@
 // Address: 004564b0
 // Address Range: [[004564b0, 0045664e]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(int param_1,int param_2)
+// Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener)
 
 #include "nocturne.h"
 
-uint __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(int param_1,int param_2)
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener)
 
 {
-  uint uVar1;
-  byte local_18 [8];
-  float local_10;
+  char *message;
+  CVector3f local_18;
   
-  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,local_18,param_2 + 0x20);
-  uVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("The door is locked from the other side.");
-  if (local_10 <= 0.0) {
-    if ((*(byte *)(param_1 + 0x9d0) & 2) != 0) goto LAB_0045663d;
-    if (*(int *)(param_1 + 0x9d0) != 0) {
-      core_door_cpp_CDoor_onLocked_FUN_00456650(param_1);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,uVar1,0x40a00000);
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+            (&this_ptr->base,&local_18,&(opener->location).position);
+  message = support_newmsg_cpp_getLocalizedString_FUN_004ee370("The door is locked from the other side.");
+  if (local_18.z <= 0.0) {
+    if ((this_ptr->allowed_sides & 2) != 0) goto LAB_0045663d;
+    if (this_ptr->allowed_sides != 0) {
+      core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,message,5.0);
       return 0;
     }
   }
   else {
-    if ((*(byte *)(param_1 + 0x9d0) & 1) != 0) {
+    if ((this_ptr->allowed_sides & 1) != 0) {
 LAB_0045663d:
-      switch(*(uint *)(param_1 + 0x2d0)) {
-      case 0:
-        if (*(int *)(param_1 + 0x2dc) != 0) {
-          local_10 = -local_10;
+      switch(this_ptr->door_type) {
+      case DOOR_TYPE_SWING:
+        if (this_ptr->door_swing != 0) {
+          local_18.z = -local_18.z;
         }
-        if (*(int *)(param_1 + 0x2d8) != 0) {
-          local_10 = -local_10;
+        if (this_ptr->door_state != DOOR_STATE_CLOSED) {
+          local_18.z = -local_18.z;
         }
-        if (0.0 <= local_10) {
+        if (0.0 <= local_18.z) {
           return 2;
         }
         return 3;
-      case 1:
-        if (*(int *)(param_1 + 0x2d8) == 0) {
+      case DOOR_TYPE_VERTICAL:
+        if (this_ptr->door_state == DOOR_STATE_CLOSED) {
           return 6;
         }
         return 7;
-      case 2:
+      case DOOR_TYPE_SLIDE:
         goto switchD_00456648_caseD_2;
-      case 3:
+      case DOOR_TYPE_TILT:
         return 1;
       default:
         PTR_01cc4800 = "..\\core\\door.cpp";
@@ -54,20 +54,20 @@ LAB_0045663d:
         return 0;
       }
     }
-    if (*(int *)(param_1 + 0x9d0) != 0) {
-      core_door_cpp_CDoor_onLocked_FUN_00456650(param_1);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,uVar1,0x40a00000);
+    if (this_ptr->allowed_sides != 0) {
+      core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,message,5.0);
     }
   }
   return 0;
 switchD_00456648_caseD_2:
-  if (*(int *)(param_1 + 0x2d4) != 1) {
-    local_10 = -local_10;
+  if (this_ptr->door_side != 1) {
+    local_18.z = -local_18.z;
   }
-  if (*(int *)(param_1 + 0x2d8) != 0) {
-    local_10 = -local_10;
+  if (this_ptr->door_state != DOOR_STATE_CLOSED) {
+    local_18.z = -local_18.z;
   }
-  if (0.0 <= local_10) {
+  if (0.0 <= local_18.z) {
     return 4;
   }
   return 5;

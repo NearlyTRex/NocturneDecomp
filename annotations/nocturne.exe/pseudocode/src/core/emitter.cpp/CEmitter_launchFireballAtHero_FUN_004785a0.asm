@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(int param_1)
+; void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004785a0(CEmitter *this_ptr)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -53,7 +55,7 @@ section .text
     ADD EBX,0x20                        ; 004785ad
     PUSH EBX                            ; 004785b0
     CALL core_hero.cpp_closestHeroToPoint_FUN_004b4500 ; 004785b1
-        ;   XREF to: 004b4500 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_closestHeroToPoint_FUN_004b4500()
+        ;   XREF to: 004b4500 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_closestHeroToPoint_FUN_004b4500(CLocation * location)
     FLD float ptr [EAX + 0x20]          ; 004785b6
     FSUB float ptr [EBX]                ; 004785b9
     ADD ESP,0x4                         ; 004785bb
@@ -105,7 +107,7 @@ section .text
     FST float ptr [ESP + 0xc]           ; 0047865c
     FLD float ptr [ESP + 0x4]           ; 00478660
     CALL crt_math.c_atan2_FUN_00566c81  ; 00478664
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     FLD float ptr [ESP + 0xc]           ; 00478669
     FMUL ST0                            ; 0047866d
     FLD float ptr [ESP + 0x4]           ; 0047866f
@@ -192,7 +194,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 00478750 | DAT_005b80f0
     PUSH EDX                            ; 00478756
     CALL core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 ; 00478757
-        ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createFireball_FUN_0048b270()
+        ;   XREF to: 0048b270 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)
     ADD ESP,0x14                        ; 0047875c
     MOV ESP,EBP                         ; 0047875f
         ;   Label: LAB_0047875f

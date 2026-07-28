@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(int param_1)
+; float * core_skeleton_cpp_CDeformableModel_dtor_FUN_00517c80(CDeformableModel *param_1)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00517c81
     PUSH EBX                            ; 00517c85
     CALL core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0 ; 00517c86
-        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0()
+        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00517c8b
     PUSH 0x0                            ; 00517c8e
     ADD EBX,0x1c0c                      ; 00517c90
@@ -30,7 +30,7 @@ section .text
     SUB EAX,0x4bc                       ; 00517ca1
     PUSH EAX                            ; 00517ca6
     CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0 ; 00517ca7
-        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0()
+        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 00517cac
     SUB EAX,0x1750                      ; 00517caf
     POP EBX                             ; 00517cb4

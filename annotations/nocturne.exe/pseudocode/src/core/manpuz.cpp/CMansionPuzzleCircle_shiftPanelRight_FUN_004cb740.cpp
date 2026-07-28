@@ -2,27 +2,27 @@
 // Address: 004cb740
 // Address Range: [[004cb740, 004cb7ee]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(int param_1,int param_2)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 #include "nocturne.h"
 
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(int param_1,int param_2)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
-  int *piVar1;
+  SPanel *pSVar1;
   int iVar2;
   
-  piVar1 = (int *)(param_1 + 0x5e8 + param_2 * 100);
-  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);
-  if ((((*piVar1 == 0) || (*(int *)(param_1 + 0x5e8 + iVar2 * 100) != 0)) ||
-      ((piVar1[1] & 0x7fffffffU) != 0)) || ((piVar1[2] & 0x7fffffffU) != 0)) {
+  pSVar1 = this_ptr->panels + panel_index;
+  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(this_ptr,panel_index);
+  if ((((pSVar1->exists == 0) || (this_ptr->panels[iVar2].exists != 0)) ||
+      (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
     PTR_01cc4800 = "..\\core\\manpuz.cpp";
     INT_01cc4804 = 0x57d;
     core_main_c_FUN_004c8440("CMansionPuzzleCircle::shiftPanelRight - fubared.");
   }
-  piVar1[2] = 0x3f800000;
+  pSVar1->anim_speed = 1.0;
   sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(piVar1 + 0x16);
+  sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(&pSVar1->world_position);
   sound_sndmain_cpp_startSfx_FUN_005265a0("manpuz-doorslide.wav");
   sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   return;

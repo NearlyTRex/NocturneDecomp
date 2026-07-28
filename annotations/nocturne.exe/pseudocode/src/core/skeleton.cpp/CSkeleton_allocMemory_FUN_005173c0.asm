@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(int param_1,int param_2,undefined4 param_3)
+; void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *this_ptr,int bone_count,int frame_count)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_count
+; int              Stack[0xc]:4   frame_count
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 at 005176de
@@ -46,7 +50,7 @@ section .text
     SHL EAX,0x4                         ; 005173fa
     PUSH EAX                            ; 005173fd
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 005173fe
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     MOV ESI,dword ptr [EBX + 0x2936c]   ; 00517403
     MOV dword ptr [EBX + 0x29370],EAX   ; 00517409
     LEA EAX,[ESI*0x4 + 0x0]             ; 0051740f
@@ -56,7 +60,7 @@ section .text
     ADD EAX,0x4                         ; 0051741e
     PUSH EAX                            ; 00517421
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 00517422
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 00517427
     TEST EAX,EAX                        ; 0051742a
     JZ 0x00517434                       ; 0051742c
@@ -72,7 +76,7 @@ section .text
     ADD EAX,0x4                         ; 0051744c
     PUSH EAX                            ; 0051744f
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 00517450
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 00517455
     TEST EAX,EAX                        ; 00517458
     JZ 0x00517462                       ; 0051745a

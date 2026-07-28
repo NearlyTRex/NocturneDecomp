@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,undefined4 *param_2)
+; undefined4 core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 0045aa13
     MOV EDI,0x3                         ; 0045aa14
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 0045aa19
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0045aa1e
     CMP EBX,EAX                         ; 0045aa21
     JZ 0x0045aa35                       ; 0045aa23
@@ -65,7 +65,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 0045aa41
     PUSH EAX                            ; 0045aa47
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 0045aa48
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     LEA EDX,[EBX + 0xc]                 ; 0045aa4d
     ADD ESP,0xc                         ; 0045aa50
     CMP EDX,EAX                         ; 0045aa53
@@ -86,7 +86,7 @@ section .text
     PUSH ESI                            ; 0045aa78
     ADD EBX,0x18                        ; 0045aa79
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 0045aa7c
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 0045aa81
     CMP EBX,EAX                         ; 0045aa84
     JZ 0x0045aa98                       ; 0045aa86

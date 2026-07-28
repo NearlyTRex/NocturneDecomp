@@ -1,0 +1,450 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 200,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 17,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051e7d0",
+    "address_range": [
+      [
+        "0051e7d0",
+        "0051e85a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_0051e7d0",
+    "signature": "CVector3f * core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_0051e7d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e1890",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004e1890"
+    },
+    {
+      "addr": "0051e590",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.352941176470588,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 155,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 3,
+      "INT_ADD": 24,
+      "INT_AND": 28,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SEXT": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 16,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 13,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 375
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "getRootMotionDeltaForMotion_FUN_0051e7d0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 24,
+          "message": "Uninitialized variable: in_stack_00000010",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 34,
+          "line": 27,
+          "message": "Uninitialized variable: in_stack_0000000c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 28,
+          "message": "Uninitialized variable: in_stack_00000014",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 24,
+          "line": 23,
+          "message": "Uninitialized variable: in_stack_00000004",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CDeformableModelInstance *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "float in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(&in_stack_00000004->motion_controller);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 < 0.0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000010 = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "fVar1 = (float)pCVar2->motions[in_stack_0000000c].frame_count;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "if (fVar1 < in_stack_00000014) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "in_stack_00000014 = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "fVar1 = (float)pCVar2->motions[in_stack_0000000c].frame_start;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_00000010 + fVar1,in_stack_00000014 + fVar1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_00000010 + fVar1,in_stack_00000014 + fVar1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_00000010 + fVar1,in_stack_00000014 + fVar1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_00000010 + fVar1,in_stack_00000014 + fVar1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "return in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000010",
+      "line": 24,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (in_stack_00000010 < 0.0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar1 = (float)pCVar2->motions[in_stack_0000000c].frame_count;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000014",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (fVar1 < in_stack_00000014) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000004",
+      "line": 23,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "(&in_stack_00000004->motion_controller);",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

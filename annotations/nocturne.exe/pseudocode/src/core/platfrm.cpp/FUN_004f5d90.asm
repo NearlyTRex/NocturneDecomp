@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_platfrm_cpp_FUN_004f5d90(undefined4 param_1)
+; CCourseFrame ** core_platfrm_cpp_FUN_004f5d90(undefined4 param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -21,7 +21,7 @@
 ;   core_course.cpp_CCourse_ctor_FUN_0043b5d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   core_xform.cpp_FUN_0055d610
+;   core_xform.cpp_eulerToQuaternion_FUN_0055d610
 ;
 ; *****************************************************************************
 
@@ -40,12 +40,12 @@ section .text
     ADD EAX,0x150                       ; 004f5da3
     PUSH EAX                            ; 004f5da8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004f5da9
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f5dae
     ADD EAX,0x1b8                       ; 004f5db1
     PUSH EAX                            ; 004f5db6
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 004f5db7
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_ctor_FUN_0043b5d0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 004f5dbc
     LEA EBX,[EAX + 0xfffffcf8]          ; 004f5dbf
     PUSH 0x58d75f                       ; 004f5dc5 | = "slider1.kfm"
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 004f5dd0
     MOV dword ptr [EBX + 0x14c],0x5a1384 ; 004f5dd1 | PTR_core_platfrm.cpp_FUN_004f5f60_005a1384
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004f5ddb
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV byte ptr [EBX + 0x34c],0x0      ; 004f5de0
     MOV byte ptr [EBX + 0x3b0],0x0      ; 004f5de7
     MOV byte ptr [EBX + 0x414],0x0      ; 004f5dee
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_004f5e67
     PUSH EAX                            ; 004f5e6a
     LEA ESI,[ESP + 0xc]                 ; 004f5e6b
-    CALL core_xform.cpp_FUN_0055d610    ; 004f5e6f
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 004f5e6f
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
     LEA ESI,[ESP + 0xc]                 ; 004f5e74
     LEA EDI,[EBX + 0x33c]               ; 004f5e78
     ADD ESP,0x4                         ; 004f5e7e

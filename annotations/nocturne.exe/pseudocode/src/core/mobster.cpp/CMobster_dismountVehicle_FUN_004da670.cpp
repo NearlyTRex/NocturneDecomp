@@ -2,56 +2,52 @@
 // Address: 004da670
 // Address Range: [[004da670, 004da75f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(int param_1)
+// Signature: void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(CMobster *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(int param_1)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(CMobster *this_ptr)
 
 {
   float fVar1;
-  uint *puVar2;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  byte local_30 [12];
-  uint local_24;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
-  uint local_10;
+  CVector3f *pCVar2;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
-  if (*(int *)(param_1 + 0xbd4c) == 0) {
-    local_14 = 0xc0166666;
-    local_10 = 0xbfcccccd;
-    local_18 = 0x40866666;
+  if (this_ptr->side_of_car == 0) {
+    local_18.y = -2.35;
+    local_18.z = -1.6;
+    local_18.x = 4.2;
     if (&local_24 != &local_18) {
-      local_20 = 0xc0166666;
-      local_1c = 0xbfcccccd;
-      local_24 = 0x40866666;
+      local_24.y = -2.35;
+      local_24.z = -1.6;
+      local_24.x = 4.2;
     }
-    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)1.57079632675;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + (float)1.57079632675;
   }
   else {
-    local_38 = 0xc0166666;
-    local_34 = 0xbfcccccd;
-    local_3c = 0xc0866666;
+    local_3c.y = -2.35;
+    local_3c.z = -1.6;
+    local_3c.x = -4.2;
     if (&local_24 != &local_3c) {
-      local_20 = 0xc0166666;
-      local_1c = 0xbfcccccd;
-      local_24 = 0xc0866666;
+      local_24.y = -2.35;
+      local_24.z = -1.6;
+      local_24.x = -4.2;
     }
-    fVar1 = *(float *)(*(int *)(param_1 + 0xbd48) + 0x34) + (float)-1.57079632675;
+    fVar1 = (this_ptr->vehicle->orient).vec.y + (float)-1.57079632675;
   }
-  *(float *)(param_1 + 0x34) = fVar1;
-  puVar2 = (uint *)
-           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (*(uint *)(param_1 + 0xbd48),local_30,&local_24);
-  *(uint *)(param_1 + 0x20) = *puVar2;
-  *(uint *)(param_1 + 0x24) = puVar2[1];
-  *(uint *)(param_1 + 0x28) = puVar2[2];
-  *(uint *)(param_1 + 0xbd48) = 0;
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,8,1);
+  (this_ptr->base).base.base.orient.vec.y = fVar1;
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                     (this_ptr->vehicle,&local_30,&local_24);
+  (this_ptr->base).base.base.location.position.x = pCVar2->x;
+  (this_ptr->base).base.base.location.position.y = pCVar2->y;
+  (this_ptr->base).base.base.location.position.z = pCVar2->z;
+  this_ptr->vehicle = (CDemonActor *)0x0;
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+            (&(this_ptr->base).base.model.motion_controller,8,1);
   return;
 }

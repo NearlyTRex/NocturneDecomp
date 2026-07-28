@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050ddd0(int param_1,int param_2,int param_3,undefined4 param_4)
+; void core_set_cpp_FUN_0050ddd0(CDemonSet *param_1,SMRGLPrimitiveQuad *param_2,int param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
@@ -90,7 +90,7 @@ section .text
     ADD EBX,0x48                        ; 0050de67
     INC ESI                             ; 0050de6a
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80 ; 0050de6b
-        ;   XREF to: 00460e80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80()
+        ;   XREF to: 00460e80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0050de70
     CMP ESI,EDI                         ; 0050de73
     JL 0x0050de17                       ; 0050de75
@@ -105,7 +105,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0050de87 | DAT_005ae704
     PUSH EBX                            ; 0050de8d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_00461440 ; 0050de8e
-        ;   XREF to: 00461440 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_00461440()
+        ;   XREF to: 00461440 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_00461440(CDemonRenderer * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0050de93
     ADD ESP,0x28                        ; 0050de96
         ;   Label: LAB_0050de96
@@ -118,7 +118,7 @@ section .text
         ;   Label: LAB_0050de9e
     PUSH ESI                            ; 0050dea4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050dea5
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050deaa
     TEST EAX,EAX                        ; 0050dead
     JNZ 0x0050de02                      ; 0050deaf
@@ -128,7 +128,7 @@ section .text
     PUSH EBP                            ; 0050debb
     PUSH EBX                            ; 0050debc
     CALL core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670 ; 0050debd
-        ;   XREF to: 0050d670 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670()
+        ;   XREF to: 0050d670 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prims, int count, int alpha)
     ADD ESP,0x10                        ; 0050dec2
     ADD ESP,0x28                        ; 0050dec5
     POP EBP                             ; 0050dec8

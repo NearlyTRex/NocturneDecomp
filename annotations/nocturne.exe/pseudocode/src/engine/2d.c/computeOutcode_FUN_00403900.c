@@ -2,24 +2,24 @@
 // Address: 00403900
 // Address Range: [[00403900, 00403931]]
 // Convention: __cdecl
-// Signature: byte __cdecl engine_2d_c_computeOutcode_FUN_00403900(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+// Signature: int __cdecl engine_2d_c_computeOutcode_FUN_00403900(int x,int y,int x_min,int y_min,int x_max,int y_max)
 
 #include "nocturne.h"
 
-byte __cdecl engine_2d_c_computeOutcode_FUN_00403900(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+int __cdecl engine_2d_c_computeOutcode_FUN_00403900(int x,int y,int x_min,int y_min,int x_max,int y_max)
 
 {
   byte bVar1;
   
-  bVar1 = param_6 < param_2;
-  if (param_2 < param_4) {
+  bVar1 = y_max < y;
+  if (y < y_min) {
     bVar1 = bVar1 | 2;
   }
-  if (param_5 < param_1) {
+  if (x_max < x) {
     bVar1 = bVar1 | 4;
   }
-  if (param_1 < param_3) {
+  if (x < x_min) {
     bVar1 = bVar1 | 8;
   }
-  return bVar1;
+  return (uint)bVar1;
 }

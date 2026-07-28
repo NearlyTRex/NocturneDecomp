@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 136,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 4,
+    "pseudocode_lines": 83,
+    "suspect_count": 6,
     "suspect_types": [
+      "stack_ref",
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 348
+    "total_lines": 350
   },
   "cross_references": [
     {
@@ -521,26 +522,42 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_00587ed1",
       "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(&DAT_00587ed1,\"enemy.pod\",\"rb\");",
+      "text": "(&DAT_00587ed1,\"enemy.pod\",\"rb\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xfffffef0",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);",
-      "type": "unresolved_funcptr"
+      "text": "_sprintf(&stack0xfffffef0,\"load%d\",(uVar2 & 3) + 1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "((CAlphaBitmap *)0x1cc480c,&stack0xfffffef0,0x280,0x1e0);",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 49,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);",
+      "text": "iVar3 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 51,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);",
       "type": "unresolved_funcptr"
     }
   ]

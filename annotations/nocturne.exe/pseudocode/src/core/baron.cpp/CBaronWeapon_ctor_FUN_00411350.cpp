@@ -1,23 +1,27 @@
 // Name: core_baron.cpp_CBaronWeapon_ctor_FUN_00411350
 // Address: 00411350
 // Address Range: [[00411350, 004113a3]]
-// Convention: unknown
-// Signature: void core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CWeapon *param_1)
 
 #include "nocturne.h"
 
-void core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(uint param_1)
+void __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CWeapon *param_1)
 
 {
-  int iVar1;
+  CWeapon *pCVar1;
   
-  iVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_baron_cpp_CBaronWeapon_setup_FUN_004113b0_00599c14;
-  *(uint *)(iVar1 + 0x2d8) = 8;
-  *(uint *)(iVar1 + 0x2dc) = 0;
-  *(uint *)(iVar1 + 0x2e0) = 0x43480000;
-  *(uint *)(iVar1 + 0x2e4) = 0;
-  *(uint *)(iVar1 + 0x2e8) = 0;
-  *(uint *)(iVar1 + 0x570) = 0;
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  (pCVar1->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_baron_cpp_CBaronWeapon_setup_FUN_004113b0_00599c14;
+  pCVar1->weapon_type = 8;
+  pCVar1->can_penetrate = 0;
+  pCVar1->bolt_velocity = 200.0;
+  pCVar1->fire_cooldown = 0;
+  pCVar1->can_attach_light = 0;
+  pCVar1[1].base.actor_name[0] = '\0';
+  pCVar1[1].base.actor_name[1] = '\0';
+  pCVar1[1].base.actor_name[2] = '\0';
+  pCVar1[1].base.actor_name[3] = '\0';
   return;
 }

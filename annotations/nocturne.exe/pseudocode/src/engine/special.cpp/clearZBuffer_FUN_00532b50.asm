@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_clearZBuffer_FUN_00532b50(void)
+; int __cdecl engine_special_cpp_clearZBuffer_FUN_00532b50(void)
 ;
 ;
 ; XREF[1]:

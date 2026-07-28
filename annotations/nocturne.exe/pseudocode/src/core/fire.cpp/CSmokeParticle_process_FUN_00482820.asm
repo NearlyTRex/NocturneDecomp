@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_00482820(undefined4 *param_1)
+; void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_00482820(CSmokeParticle *this_ptr)
 ;
+; Parameters:
+; CSmokeParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

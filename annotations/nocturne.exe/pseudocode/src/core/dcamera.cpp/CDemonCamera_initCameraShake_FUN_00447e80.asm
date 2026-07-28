@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80(undefined4 param_1,undefined4 param_2,float param_3,float param_4,float param_5)
+; void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   peak_intensity
+; float            Stack[0xc]:4   attack_time
+; float            Stack[0x10]:4   sustain_duration
+; float            Stack[0x14]:4   decay_time
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_0050e660 at 0050e675
@@ -40,16 +46,16 @@ section .text
     MOV dword ptr [0x012ceb60],EDX      ; 00447ea1 | DAT_012ceb60
     FXCH ST2                            ; 00447ea7
     CALL crt_math.c_round_FUN_00563a30  ; 00447ea9
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00447eae
     CALL crt_math.c_round_FUN_00563a30  ; 00447eb0
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00447eb5
     CALL crt_math.c_round_FUN_00563a30  ; 00447eb7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 00447ebc
     CALL crt_math.c_round_FUN_00563a30  ; 00447ebe
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00447ec3
     FISTP dword ptr [0x005ad448]        ; 00447ec5 | DAT_005ad448
     FXCH ST2                            ; 00447ecb

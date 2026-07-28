@@ -13,16 +13,16 @@
 ;   TerminatedCString s_Unable_to_resize_thread_0059919c
 ;   TerminatedCString s_Unable_to_resize_thread_005991c4
 ;   undefined4 DAT_005c1ab8
-;   void* PTR_FUN_005c1ae8 = 005671e4
-;   void* PTR_FUN_005c1aec = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec = 005671e4
 ;   undefined4 DAT_005c20cc
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
+;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_00565c50
-;   FUN_005671e4
-;   FUN_0056ddc0
 ;   GetCurrentThreadId
 ;   TlsSetValue
 ;
@@ -35,7 +35,7 @@ section .text
     PUSH ESI                            ; 005711a9
     PUSH EDI                            ; 005711aa
     PUSH EBP                            ; 005711ab
-    CALL dword ptr [0x005c1ae8]         ; 005711ac | PTR_FUN_005c1ae8
+    CALL dword ptr [0x005c1ae8]         ; 005711ac | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8
     CALL dword ptr CS:[0x575500]        ; 005711b2 | PTR_GetCurrentThreadId_00575500
     MOV EBX,dword ptr [0x02de5d70]      ; 005711b9 | DAT_02de5d70
     TEST EBX,EBX                        ; 005711bf
@@ -58,7 +58,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x8]       ; 005711db
     PUSH EBP                            ; 005711de
     CALL crt_memory.c_realloc_FUN_00564a70 ; 005711df
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 005711e4
     MOV EBP,EAX                         ; 005711e7
     TEST EAX,EAX                        ; 005711e9
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 0057124c (CONDITIONAL_JUMP)  ; LAB_0057124c
     PUSH 0x1                            ; 005711ed
     PUSH 0x59919c                       ; 005711ef | = "Unable to resize thread-specific data..."
-    CALL FUN_0056ddc0                   ; 005711f4
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 005711f4
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 005711f9
     JMP 0x0057124c                      ; 005711fc
         ;   XREF to: 0057124c (UNCONDITIONAL_JUMP)  ; LAB_0057124c
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 00571224 (CONDITIONAL_JUMP)  ; LAB_00571224
     PUSH 0x1                            ; 00571215
     PUSH 0x5991c4                       ; 00571217 | = "Unable to resize thread-specific data..."
-    CALL FUN_0056ddc0                   ; 0057121c
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0057121c
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 00571221
     MOV ESI,dword ptr [EBX + 0x8]       ; 00571224
         ;   Label: LAB_00571224
@@ -114,7 +114,7 @@ section .text
     PUSH EAX                            ; 00571264
     MOV byte ptr [EBP + 0x53],0x0       ; 00571265
     CALL dword ptr CS:[0x5755cc]        ; 00571269 | PTR_TlsSetValue_005755cc
-    CALL dword ptr [0x005c1aec]         ; 00571270 | PTR_FUN_005c1aec
+    CALL dword ptr [0x005c1aec]         ; 00571270 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec
     MOV EAX,EBP                         ; 00571276
     POP EBP                             ; 00571278
     POP EDI                             ; 00571279

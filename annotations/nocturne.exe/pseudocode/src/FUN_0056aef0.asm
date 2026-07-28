@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056dd60 at 0056dd68
+;   crt_stdio.c_fflush_FUN_0056dd60 at 0056dd68
 ;
 ; Called Functions:
 ;   FUN_0056aefc

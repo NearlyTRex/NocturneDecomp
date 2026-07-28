@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_00526240(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_00526240(uint flags)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   flags
 ;
 ; XREF[5]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7205

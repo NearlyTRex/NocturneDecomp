@@ -2,21 +2,21 @@
 // Address: 0045eee0
 // Address Range: [[0045eee0, 0045ef89]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   
-  if ((*(int *)(param_1 + 0xc) == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8), iVar3 != 0)) {
+  if ((param_1->plane_culling_enabled == 0) ||
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_2 + 8)), iVar3 != 0)) {
     iVar3 = 0;
     if (0 < *(int *)(param_2 + 4)) {
       iVar1 = param_2;
@@ -28,18 +28,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
         iVar2 = iVar2 + 4;
       } while (iVar3 < *(int *)(param_2 + 4));
     }
-    if (*(int *)(param_1 + 4) == 0) {
+    if (param_1->face_count == 0) {
       _DAT_01c039a0 = 0xc0;
       _DAT_01c039a4 = 6;
-      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463d98;
+      _DAT_01c00c7c = core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98;
     }
     else {
       _DAT_01c039a0 = 0;
       _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
+      _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-              (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);
+              (param_1,*(int *)(param_2 + 4),(int *)&DAT_01b4d76c);
   }
   return;
 }

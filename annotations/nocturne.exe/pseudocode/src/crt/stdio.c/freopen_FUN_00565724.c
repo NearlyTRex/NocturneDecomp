@@ -2,34 +2,35 @@
 // Address: 00565724
 // Address Range: [[00565724, 005657b5]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_stdio_c_freopen_FUN_00565724(undefined4 param_1,undefined1 *param_2,int param_3)
+// Signature: _FILE * __cdecl crt_stdio_c_freopen_FUN_00565724(char *filename,char *mode,_FILE *stream)
 
 #include "nocturne.h"
 
-uint __cdecl _freopen(uint param_1,byte *param_2,int param_3)
+_FILE * __cdecl _freopen(char *filename,char *mode,_FILE *stream)
 
 {
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  uint uVar4;
-  uint uStack_14;
+  int iVar1;
+  int parsed_mode_flags;
+  _FILE *file_struct;
+  _FILE *p_Var2;
+  int iStack_14;
   
-  iVar2 = FUN_005653e0(param_2,&uStack_14);
-  uVar4 = 0;
-  if (iVar2 != 0) {
-    uVar1 = *(uint *)(param_3 + 0x10);
-    (*(code *)PTR_FUN_005c1ac0)(uVar1);
+  parsed_mode_flags = OpenModeStringParser(mode,&iStack_14);
+  p_Var2 = (_FILE *)0x0;
+  if (parsed_mode_flags != 0) {
+    iVar1 = stream->_handle;
+    (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(iVar1);
     if (DAT_005c1d58 != (code *)0x0) {
-      (*DAT_005c1d58)(uVar1);
+      (*DAT_005c1d58)(iVar1);
     }
-    iVar3 = FUN_005656a4(param_3);
-    uVar4 = 0;
-    if (iVar3 != 0) {
-      *(uint *)(iVar3 + 0xc) = *(uint *)(iVar3 + 0xc) & 0x4000;
-      uVar4 = FUN_0056551c(param_1,*param_2,iVar2,uStack_14,0,iVar3);
+    file_struct = (_FILE *)FUN_005656a4(stream);
+    p_Var2 = (_FILE *)0x0;
+    if (file_struct != (_FILE *)0x0) {
+      file_struct->_flag = file_struct->_flag & 0x4000;
+      p_Var2 = OpenFileAndInitialize
+                         (filename,*mode,parsed_mode_flags,iStack_14,0,file_struct);
     }
-    (*(code *)PTR_FUN_005c1ac4)(uVar1);
+    (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(iVar1);
   }
-  return uVar4;
+  return p_Var2;
 }

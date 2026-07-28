@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_trash_cpp_CTrash_ctor_FUN_00546c90(undefined4 param_1)
+; CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_00546c90(CTrash *this_ptr)
 ;
+; Parameters:
+; CTrash *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_trash.cpp_FUN_00546c60 at 00546c73
@@ -30,7 +32,7 @@ section .text
     ADD EAX,0x150                       ; 00546c9e
     PUSH EAX                            ; 00546ca3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00546ca4
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00546ca9
     LEA EBX,[EAX + 0xfffffeb0]          ; 00546cac
     PUSH 0x596932                       ; 00546cb2 | = "question.kfm"
@@ -38,7 +40,7 @@ section .text
     PUSH EAX                            ; 00546cbd
     MOV dword ptr [EBX + 0x14c],0x5a3544 ; 00546cbe | PTR_core_trash.cpp_CTrash_setup_FUN_00546ce0_005a3544
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00546cc8
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00546ccd
     MOV EAX,EBX                         ; 00546cd0
     POP EBX                             ; 00546cd2

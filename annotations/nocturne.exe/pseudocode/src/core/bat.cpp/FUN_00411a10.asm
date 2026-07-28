@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bat_cpp_FUN_00411a10(undefined4 param_1)
+; CKeyFramedModel ** core_bat_cpp_FUN_00411a10(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -37,12 +37,12 @@ section .text
     ADD EAX,0x170                       ; 00411a20
     PUSH EAX                            ; 00411a25
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 00411a26
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_ctor_FUN_0043b5d0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00411a2b
     ADD EAX,0x10                        ; 00411a2e
     PUSH EAX                            ; 00411a31
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00411a32
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xfffffe80]          ; 00411a37
     MOV dword ptr [EBX + 0x14c],0x599e94 ; 00411a3d | PTR_core_bat.cpp_CBat_setup_FUN_00411ae0_00599e94
     MOV dword ptr [EBX + 0x17c],0x0     ; 00411a47
@@ -73,7 +73,7 @@ section .text
     LEA EAX,[EBX + 0x180]               ; 00411aa6
     PUSH EAX                            ; 00411aac
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00411aad
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV byte ptr [EBX + 0x30c],0x0      ; 00411ab2
     MOV dword ptr [EBX + 0x370],0x41700000 ; 00411ab9
     ADD ESP,0x8                         ; 00411ac3

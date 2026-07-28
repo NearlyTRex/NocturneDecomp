@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(CDemonLight *this_ptr,int restore_viewport_state)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   restore_viewport_state
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
@@ -82,12 +85,12 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0044e78c | DAT_005ae704
     PUSH EDX                            ; 0044e792 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e793
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070()
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e798
     MOV ECX,dword ptr [0x005ae704]      ; 0044e79b | DAT_005ae704
     PUSH ECX                            ; 0044e7a1 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 0044e7a2
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0044e7a7
     MOV EBX,dword ptr [ESI + 0x1cc4]    ; 0044e7aa
     XOR EAX,EAX                         ; 0044e7b0
@@ -110,7 +113,7 @@ section .text
     PUSH ESI                            ; 0044e7e0
         ;   Label: LAB_0044e7e0
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270 ; 0044e7e1
-        ;   XREF to: 00440270 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270()
+        ;   XREF to: 00440270 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0044e7e6
     MOV dword ptr [ESI + 0x11e4],0x0    ; 0044e7e9
     MOV ESP,EBP                         ; 0044e7f3

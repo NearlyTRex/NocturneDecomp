@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl engine_prim_c_findEdgeInBuffer_FUN_004f9830(int param_1,int *param_2)
+; SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_004f9830(int y_value,SSoftwareEdge *edge_ptr)
 ;
+; Parameters:
+; int              Stack[0x4]:4   y_value
+; SSoftwareEdge *  Stack[0x8]:4   edge_ptr
 ;
 ; XREF[2]:
 ;   engine_prim.c_FUN_004f9dd0 at 004f9f5a

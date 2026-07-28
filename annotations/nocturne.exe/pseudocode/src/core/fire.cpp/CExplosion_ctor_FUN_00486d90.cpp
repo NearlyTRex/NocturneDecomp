@@ -2,13 +2,13 @@
 // Address: 00486d90
 // Address Range: [[00486d90, 00486d9b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(int param_1)
+// Signature: CExplosion * __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(CExplosion *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(int param_1)
+CExplosion * __cdecl core_fire_cpp_CExplosion_ctor_FUN_00486d90(CExplosion *this_ptr)
 
 {
-  *(uint *)(param_1 + 0xc) = 0;
-  return;
+  this_ptr->lifetime = 0.0;
+  return this_ptr;
 }

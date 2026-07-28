@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(int *param_1,ushort *param_2,int param_3)
+; void engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(CDemonRenderer *param_1,STrianglePackedIndices *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
@@ -63,7 +63,7 @@ section .text
     PUSH 0x3                            ; 0045f647
     PUSH ECX                            ; 0045f649
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f64a
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045f64f
     POP EBX                             ; 0045f652
     POP EBP                             ; 0045f653
@@ -78,7 +78,7 @@ section .text
     PUSH EBP                            ; 0045f664
     PUSH ECX                            ; 0045f665
     CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 ; 0045f666
-        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0()
+        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     ADD ESP,0xc                         ; 0045f66b
     POP EBP                             ; 0045f66e
     RET                                 ; 0045f66f
@@ -125,7 +125,7 @@ section .text
     PUSH 0x3                            ; 0045f6dc
     PUSH ECX                            ; 0045f6de
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f6df
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045f6e4
     POP EBX                             ; 0045f6e7
     POP EBP                             ; 0045f6e8

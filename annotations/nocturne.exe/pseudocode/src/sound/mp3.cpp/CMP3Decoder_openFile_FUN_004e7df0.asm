@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_00522480 at 0052280e
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522afe
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b8b
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 0052280e
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005269f5
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 004e7dfc
     PUSH 0x58b938                       ; 004e7dfd | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004e7e02
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004e7e07
     MOV EBP,EAX                         ; 004e7e0a
     TEST EAX,EAX                        ; 004e7e0c
@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 004e7e15
     PUSH 0x58b960                       ; 004e7e16 | = "sound"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004e7e1b
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e7e20
     MOV EBX,EAX                         ; 004e7e23
     TEST EAX,EAX                        ; 004e7e25

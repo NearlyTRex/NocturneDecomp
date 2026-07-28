@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6)
+; CVector3f * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   basis
+; CVector3f *      Stack[0x8]:4   out
+; CVector3f *      Stack[0xc]:4   p0
+; CVector3f *      Stack[0x10]:4   p1
+; CVector3f *      Stack[0x14]:4   p2
+; CVector3f *      Stack[0x18]:4   p3
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54

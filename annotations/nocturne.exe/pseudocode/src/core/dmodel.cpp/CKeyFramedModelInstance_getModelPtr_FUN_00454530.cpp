@@ -2,18 +2,18 @@
 // Address: 00454530
 // Address Range: [[00454530, 00454576]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(int param_1)
+// Signature: CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(int param_1)
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x178) != 0) {
-    return *(uint *)(param_1 + 0x178);
+  if (this_ptr->model_ptr != (CKeyFramedModel *)0x0) {
+    return this_ptr->model_ptr;
   }
   PTR_01cc4800 = "..\\core\\dmodel.cpp";
   INT_01cc4804 = 0x52d;
-  core_main_c_FUN_004c8440("Tried to do something with model %s, but modelPtr not set.  (CKeyFramedModelInstance::preCache not called.",param_1 + 0x78);
-  return *(uint *)(param_1 + 0x178);
+  core_main_c_FUN_004c8440("Tried to do something with model %s, but modelPtr not set.  (CKeyFramedModelInstance::preCache not called.",this_ptr->model_name);
+  return this_ptr->model_ptr;
 }

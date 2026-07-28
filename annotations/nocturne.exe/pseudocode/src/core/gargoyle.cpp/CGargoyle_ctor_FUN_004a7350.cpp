@@ -1,42 +1,43 @@
 // Name: core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350
 // Address: 004a7350
 // Address Range: [[004a7350, 004a7441]]
-// Convention: unknown
-// Signature: int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *this_ptr)
 
 #include "nocturne.h"
 
-int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(uint param_1)
+CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *this_ptr)
 
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  CGargoyle *pCVar3;
   
-  iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450_0059df54;
+  pCVar3 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450_0059df54;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (iVar3 + 0x150,"gargoyle.dfm");
-  *(uint *)(iVar3 + 0x2dd4) = 0x3f19999a;
-  *(uint *)(iVar3 + 0x2dd8) = 0x3f19999a;
-  *(uint *)(iVar3 + 0x2608) = 2;
-  *(uint *)(iVar3 + 0x2434) = 0x41f00000;
-  *(uint *)(iVar3 + 0x108) = 0xffff;
-  *(uint *)(iVar3 + 0x10c) = 0xffff;
-  *(uint *)(iVar3 + 0x110) = 0xffff;
-  *(uint *)(iVar3 + 0xbd6c) = 0xffff;
-  *(uint *)(iVar3 + 0xbd70) = 0xffff;
-  *(uint *)(iVar3 + 0xbd74) = 0xffff;
-  *(uint *)(iVar3 + 0xbd54) = 0x80;
-  *(uint *)(iVar3 + 0xbd58) = 0x80;
-  *(uint *)(iVar3 + 0xbd5c) = 0x80;
-  *(uint *)(iVar3 + 0xbd60) = 0;
+            (&(pCVar3->base).base.model,"gargoyle.dfm");
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
+  (pCVar3->base).base.collision_cylinder_radius = 0.6;
+  (pCVar3->base).base.blood_type = 2;
+  (pCVar3->base).base.hit_points = 30.0;
+  (pCVar3->base).base.base.scale.x = 0xffff;
+  (pCVar3->base).base.base.scale.y = 0xffff;
+  (pCVar3->base).base.base.scale.z = 0xffff;
+  (pCVar3->target_scale).x = 0xffff;
+  (pCVar3->target_scale).y = 0xffff;
+  (pCVar3->target_scale).z = 0xffff;
+  pCVar3->stone_red = 0x80;
+  pCVar3->stone_green = 0x80;
+  pCVar3->stone_blue = 0x80;
+  pCVar3->home_base = (CDemonActor *)0x0;
   fVar1 = 50.0f;
-  *(uint *)(iVar3 + 0xbd78) = 0;
+  pCVar3->returning_home = 0;
   fVar2 = 100.0f;
-  *(uint *)(iVar3 + 0xbd7c) = 0;
-  *(uint *)(iVar3 + 0x261c) = 0;
-  *(float *)(iVar3 + 0x2ddc) = fVar1;
-  *(float *)(iVar3 + 0x2de0) = fVar2;
-  return iVar3;
+  pCVar3->petrify_timer = 0.0;
+  (pCVar3->base).base.show_in_editor = 0;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
+  return pCVar3;
 }

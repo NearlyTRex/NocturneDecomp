@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_CScript_executeInitSection_FUN_004ff170(int param_1)
+; void __cdecl core_script_cpp_CScript_executeInitSection_FUN_004ff170(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -61,7 +63,7 @@ section .text
         ;   Label: LAB_004ff197
     PUSH EBX                            ; 004ff19c
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00504c10 ; 004ff19d
-        ;   XREF to: 00504c10 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_findLabelIndex_FUN_00504c10()
+        ;   XREF to: 00504c10 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00504c10(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 004ff1a2
     MOV ESI,EAX                         ; 004ff1a5
     TEST EAX,EAX                        ; 004ff1a7
@@ -71,7 +73,7 @@ section .text
     PUSH 0x58e39d                       ; 004ff1ac | = "initSectionEnd"
     PUSH EBX                            ; 004ff1b1
     CALL core_script.cpp_CScript_findLabelIndex_FUN_00504c10 ; 004ff1b2
-        ;   XREF to: 00504c10 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_findLabelIndex_FUN_00504c10()
+        ;   XREF to: 00504c10 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findLabelIndex_FUN_00504c10(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 004ff1b7
     MOV EBP,EAX                         ; 004ff1ba
     TEST EAX,EAX                        ; 004ff1bc
@@ -92,7 +94,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x40]      ; 004ff1df
     MOV dword ptr [ESP + 0xc],ECX       ; 004ff1e2
     CALL core_script.cpp_CScript_step_FUN_004ff2c0 ; 004ff1e6
-        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_004ff2c0()
+        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_004ff2c0(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 004ff1eb
     TEST EAX,EAX                        ; 004ff1ee
     JL 0x004ff251                       ; 004ff1f0
@@ -108,7 +110,7 @@ section .text
     PUSH ECX                            ; 004ff20a | DAT_01c775ec
     XOR ESI,ESI                         ; 004ff20b
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 004ff20d
-        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0()
+        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ff212
     MOV dword ptr [0x01e56c24],ESI      ; 004ff215 | DAT_01e56c24
     MOV EAX,dword ptr [ESP + 0x8]       ; 004ff21b

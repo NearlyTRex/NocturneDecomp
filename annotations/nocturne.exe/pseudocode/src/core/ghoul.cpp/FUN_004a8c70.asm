@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004a8c82
         ;   Label: LAB_004a8c82
     CALL core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0 ; 004a8c83
-        ;   XREF to: 004a8ca0 (UNCONDITIONAL_CALL)  ; undefined core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0()
+        ;   XREF to: 004a8ca0 (UNCONDITIONAL_CALL)  ; CGhoul * core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0(CGhoul * this_ptr)
     ADD ESP,0x4                         ; 004a8c88
     RET                                 ; 004a8c8b
 

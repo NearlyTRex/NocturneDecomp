@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_004f3f00(undefined4 param_1)
+; CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_004f3f00(CPackedBitmap *this_ptr,uint flags)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   cockpit_pkbitmap.cpp_FUN_004f4f90 at 004f50db

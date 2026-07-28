@@ -2,55 +2,56 @@
 // Address: 004775b0
 // Address Range: [[004775b0, 00477651]]
 // Convention: __cdecl
-// Signature: bool __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(byte *param_1,byte *param_2,int param_3)
+// Signature: int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,char *target_string,int case_sensitive)
 
 #include "nocturne.h"
 
-bool __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(byte *param_1,byte *param_2,int param_3)
+int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,char *target_string,int case_sensitive)
 
 {
   byte bVar1;
   int iVar2;
   int iVar3;
   
-  bVar1 = *param_1;
+  bVar1 = *pattern;
   do {
     if (bVar1 == 0) {
-      return *param_2 == 0;
+      return (uint)(*target_string == 0);
     }
-    bVar1 = *param_1;
+    bVar1 = *pattern;
     if (bVar1 < 0x2a) {
 LAB_004775d2:
-      if (param_3 == 0) {
-        iVar2 = tolower(*param_1);
-        iVar3 = tolower(*param_2);
+      if (case_sensitive == 0) {
+        iVar2 = tolower((uint)(byte)*pattern);
+        iVar3 = tolower((uint)(byte)*target_string);
         if (iVar2 != iVar3) {
-          return false;
+          return 0;
         }
       }
-      else if (*param_1 != *param_2) {
-        return false;
+      else if (*pattern != *target_string) {
+        return 0;
       }
     }
     else {
       if (bVar1 < 0x2b) {
         while( true ) {
-          iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(param_1 + 1,param_2,param_3);
+          iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
+                            (pattern + 1,target_string,case_sensitive);
           if (iVar2 != 0) {
-            return true;
+            return 1;
           }
-          if (*param_2 == 0) break;
-          param_2 = param_2 + 1;
+          if (*target_string == 0) break;
+          target_string = target_string + 1;
         }
-        return false;
+        return 0;
       }
       if (bVar1 != 0x3f) goto LAB_004775d2;
-      if (*param_2 == 0) {
-        return false;
+      if (*target_string == 0) {
+        return 0;
       }
     }
-    param_2 = param_2 + 1;
-    bVar1 = param_1[1];
-    param_1 = param_1 + 1;
+    target_string = target_string + 1;
+    bVar1 = pattern[1];
+    pattern = pattern + 1;
   } while( true );
 }

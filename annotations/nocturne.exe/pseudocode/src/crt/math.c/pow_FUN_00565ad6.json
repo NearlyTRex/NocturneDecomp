@@ -2,22 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 497,
+    "complexity_score": 100,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "severe",
-    "pseudocode_lines": 87,
-    "suspect_count": 38,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_reconstruction",
-      "extra_output",
-      "nan_function_artifact",
-      "register_param",
       "undefined_data",
-      "unnamed_param"
+      "warning_unreachable"
     ],
-    "total_lines": 250
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -62,28 +58,28 @@
     "convention": "__fpustack_safe",
     "is_ebp_frame": true,
     "name": "crt_math.c_pow_FUN_00565ad6",
-    "signature": "float10 __fpustack_safe crt_math_c_pow_FUN_00565ad6(float10 param_1,float10 param_2)"
+    "signature": "float10 __fpustack_safe crt_math_c_pow_FUN_00565ad6(float10 base,float10 exp)"
   },
   "function_calls": [
     {
-      "addr": "00565c12",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00565c12"
-    },
-    {
-      "addr": "0056bd22",
-      "is_variadic": false,
-      "name": "FUN_0056bd22"
-    },
-    {
       "addr": "0056bdd2",
       "is_variadic": false,
-      "name": "FUN_0056bdd2"
+      "name": "crt_math.c_exp_FUN_0056bdd2"
     },
     {
       "addr": "0056bf67",
       "is_variadic": false,
-      "name": "FUN_0056bf67"
+      "name": "crt_math.c_function_dispatch_FUN_0056bf67"
+    },
+    {
+      "addr": "0056bd22",
+      "is_variadic": false,
+      "name": "crt_math.c_math_domain_error_FUN_0056bd22"
+    },
+    {
+      "addr": "00565c12",
+      "is_variadic": false,
+      "name": "crt_unknown.c_integer_power_FUN_00565c12"
     }
   ],
   "globals": [
@@ -98,8 +94,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "skipped",
-    "declared_params": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "estimated_params": 2,
     "skip_reason": "fpu_or_no_param_convention"
   },
   "pcode_summary": {
@@ -184,308 +180,36 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Unreachable code block removed",
       "line": 2,
-      "match": "param_1",
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "float10 __fpustack_safe pow(float10 param_1,float10 param_2)",
-      "type": "unnamed_param"
+      "text": "/* WARNING: Removing unreachable block (ram,0x00565bfd) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "float10 __fpustack_safe pow(float10 param_1,float10 param_2)",
-      "type": "unnamed_param"
+      "text": "/* WARNING: Removing unreachable block (ram,0x00565c03) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_EDX",
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "uint in_EDX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uint extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "uint extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar9 = (double)param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == fVar6) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar7 = ROUND(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar10 = (ulonglong)(param_1 < fVar6) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 < fVar6) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (fVar7 != param_2) goto LAB_00565aed;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((!NAN(fVar7) && !NAN(param_2)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 33,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "if ((!NAN(fVar7) && !NAN(param_2)) &&",
-      "type": "nan_function_artifact"
-    },
-    {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 33,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "if ((!NAN(fVar7) && !NAN(param_2)) &&",
-      "type": "nan_function_artifact"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(bVar4 = 0, param_2 - (param_2 / (float10)2) * (float10)2 != (float10)0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(bVar4 = 0, param_2 - (param_2 / (float10)2) * (float10)2 != (float10)0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0xff < (ushort)(((ushort)((ulonglong)(double)param_2 >> 0x30) & 0x7ff0) + 0xc010))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = (int)ROUND(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uVar5 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1 = param_2;",
-      "type": "unnamed_param"
+      "text": "/* WARNING: Removing unreachable block (ram,0x00565c05) */",
+      "type": "warning_unreachable"
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 34,
       "match": "DAT_005c1d98",
       "severity": "mild",
       "text": "if ((DAT_005c1d98 & 1) == 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = fVar6 / param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uVar5 = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
-      "match": "extraout_EDX_01",
-      "severity": "moderate",
-      "text": "uVar5 = extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(lVar8 = (ulonglong)uVar5 << 0x20, param_2 = param_1,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(lVar8 = (ulonglong)uVar5 << 0x20, param_2 = param_1,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (fVar7 == param_2) goto LAB_00565b61;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar6 = (float10)0.6931471805599453 * param_2 * ABS(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = (float10)0.6931471805599453 * param_2 * ABS(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 82,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "in_EDX = (uint)((ulonglong)lVar8 >> 0x20);",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 86,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "dVar9 = (double)FUN_0056bd22(dVar9,(double)param_2,uVar3,in_EDX);",
-      "type": "register_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "dVar9 = (double)FUN_0056bd22(dVar9,(double)param_2,uVar3,in_EDX);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 42,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar10 = CONCAT44(iVar1,(int)uVar10);",
-      "type": "concat_reconstruction"
     }
   ]
 }

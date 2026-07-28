@@ -2,17 +2,18 @@
 // Address: 005281f0
 // Address Range: [[005281f0, 00528209]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_005281f0(undefined4 param_1)
+// Signature: void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_005281f0(int channel_count)
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_005281f0(uint param_1)
+void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_005281f0(int channel_count)
 
 {
-  uint uVar1;
+  int sample_rate;
+  int bits_per_sample;
   
-  uVar1 = sound_sndmain_cpp_getAudioSampleRate_FUN_005281b0();
-  uVar1 = sound_sndmain_cpp_getAudioBitDepth_FUN_005281a0(param_1,uVar1);
-  sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(uVar1);
+  sample_rate = sound_sndmain_cpp_getAudioSampleRate_FUN_005281b0();
+  bits_per_sample = sound_sndmain_cpp_getAudioBitDepth_FUN_005281a0();
+  sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(bits_per_sample,channel_count,sample_rate);
   return;
 }

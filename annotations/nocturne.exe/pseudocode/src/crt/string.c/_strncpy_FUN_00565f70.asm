@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_string_c__strncpy_FUN_00565f70(char *param_1,char *param_2,int param_3)
+; char * __cdecl crt_string_c__strncpy_FUN_00565f70(char *dest,char *src,SIZE_T count)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest
+; char *           Stack[0x8]:4   src
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[8]:
-;   FUN_0056c864 at 0056cb4b
 ;   FUN_00572b70 at 00572bbe
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0 at 004f3fcc
-;   cockpit_pkbmpset.cpp_FUN_004f5c40 at 004f5c4f
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_004f5c40 at 004f5c4f
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0 at 004ec0cf
+;   crt_io.c_getFileStat_FUN_0056c864 at 0056cb4b
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 at 00456dbb
 ;   engine_pod.cpp_findFilesByExtension_FUN_004f8b90 at 004f8cfa
 ;   shape_edittool.cpp_CInputString_init_FUN_0046f0a0 at 0046f10c

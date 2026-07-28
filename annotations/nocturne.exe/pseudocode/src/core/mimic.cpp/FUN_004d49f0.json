@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 324,
+    "complexity_score": 318,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 64,
-    "suspect_count": 25,
+    "pseudocode_lines": 68,
+    "suspect_count": 24,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 234
+    "total_lines": 238
   },
   "cross_references": [],
   "function": {
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_mimic.cpp_FUN_004d49f0",
-    "signature": "void core_mimic_cpp_FUN_004d49f0(int param_1,undefined4 param_2)"
+    "signature": "void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -312,7 +312,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_mimic_cpp_FUN_004d49f0(int param_1,uint param_2)",
+      "text": "void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -320,15 +320,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_mimic_cpp_FUN_004d49f0(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x108) =",
+      "text": "void core_mimic_cpp_FUN_004d49f0(CMimic *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -336,7 +328,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x10c) = *(uint *)(*(int *)(iVar2 * 4 + 0x1cae0d8) + 0x10c);",
+      "text": "(param_1->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x108);",
       "type": "unnamed_param"
     },
     {
@@ -344,7 +336,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x110) = *(uint *)(*(int *)(iVar2 * 4 + 0x1cae0d8) + 0x110);",
+      "text": "(param_1->base).base.base.scale.y = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x10c);",
       "type": "unnamed_param"
     },
     {
@@ -352,7 +344,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 <= *(float *)(param_1 + 0x47578)) {",
+      "text": "fVar1 = (param_1->cloth).vertices[0x30b].rest_lengths[2];",
       "type": "unnamed_param"
     },
     {
@@ -360,31 +352,23 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);",
+      "text": "(param_1->base).base.base.scale.z = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x110);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
+      "text": "core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
+      "text": "core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -392,31 +376,31 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4691c) < 2) {",
+      "text": "iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
+      "line": 26,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x4691c) < 1) &&",
+      "text": "iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1 + 0xbd88), iVar2 != 0)) {",
+      "text": "iVar3 = (param_1->cloth).vertices[0x300].connected_indices[9];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x4691c) = 1;",
+      "text": "(0x01C03A10,param_1->attack_condition), iVar3 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -424,28 +408,36 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1 + 0xbd24);",
+      "text": "(param_1->cloth).vertices[0x300].connected_indices[9] = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar2 != 0) && (core_mimic_cpp_FUN_004d4ba0(param_1), *(int *)(param_1 + 0x4691c) == 1))",
+      "text": "(0x01C03A10,param_1->mirror_condition);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar2 != 0) && (core_mimic_cpp_FUN_004d4ba0(param_1), *(int *)(param_1 + 0x4691c) == 1))",
+      "text": "(core_mimic_cpp_FUN_004d4ba0(param_1),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->cloth).vertices[0x300].connected_indices[9] == 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(param_1);",
@@ -453,31 +445,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mimic_cpp_FUN_004d4f30(param_1,param_2);",
@@ -485,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
       "text": "core_mimic_cpp_FUN_004d4f30(param_1,param_2);",
@@ -493,10 +485,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)param_1);",
       "type": "unnamed_param"
     }
   ],

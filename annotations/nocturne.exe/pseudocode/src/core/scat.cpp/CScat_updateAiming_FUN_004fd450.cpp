@@ -2,43 +2,36 @@
 // Address: 004fd450
 // Address Range: [[004fd450, 004fda10]]
 // Convention: __cdecl
-// Signature: void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float param_2,int param_3)
+// Signature: void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float param_2,int param_3)
+void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered)
 
 {
-  int iVar1;
-  float fVar2;
+  CDemonActor *target;
+  float fVar1;
+  SMotion *pSVar2;
   int iVar3;
-  uint uVar4;
-  float *pfVar5;
+  CVector3f *pCVar4;
+  CBoundingBox3D *pCVar5;
   float fVar6;
   float local_13c;
-  float local_138;
-  float fStack_134;
-  float fStack_130;
-  byte auStack_c0 [24];
-  byte auStack_a8 [12];
-  float fStack_9c;
-  float fStack_98;
-  float fStack_94;
+  CVector3f local_138 [10];
+  CBoundingBox3D CStack_c0;
+  CVector3f CStack_a8;
+  CVector3f CStack_9c;
   float fStack_90;
   float fStack_8c;
   float fStack_88;
   float fStack_84;
   float fStack_80;
   float fStack_7c;
-  float fStack_78;
-  float fStack_74;
-  float fStack_70;
-  byte auStack_6c [12];
-  float fStack_60;
-  float fStack_5c;
-  float fStack_58;
+  CVector3f CStack_78;
+  CVector3f CStack_6c;
+  CVector3f CStack_60;
   float fStack_54;
   float fStack_50;
   float local_40;
@@ -47,23 +40,25 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
   float local_34;
   float local_30;
   float local_2c;
-  int local_28;
+  CDemonActor *local_28;
   float local_24;
   int local_20;
   uint local_1c;
   float local_18;
   
-  *(uint *)(param_1 + 0x1fa64) = 0;
-  if ((param_3 == 0) &&
-     (iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150),
-     *(int *)(iVar3 + 0x24) == 2)) {
-    param_3 = 1;
+  this_ptr->aim_converged = 0;
+  if ((is_holstered == 0) &&
+     (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                         (&(this_ptr->base).base.model.motion_controller), pSVar2->state_index == 2)
+     ) {
+    is_holstered = 1;
   }
-  local_13c = *(float *)(param_1 + 0x1fa54);
-  local_2c = *(float *)(param_1 + 0x1fa58);
-  if ((*(int *)(param_1 + 0x1f59c) != 0) && (*(int *)(param_1 + 0xbc90) != 2)) {
-    local_13c = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 *
-                param_2 + local_13c;
+  local_13c = this_ptr->aim_pitch;
+  local_2c = this_ptr->aim_yaw;
+  if (((this_ptr->base).aim_mode != AIM_MODE_AUTO) &&
+     ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
+    local_13c = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
+                (float)2 * delta_time + local_13c;
     local_1c = 0x3fc90fdb;
     if (local_13c < -1.570796f) {
       local_13c = -1.5707964;
@@ -74,81 +69,79 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
     local_2c = 0.0;
     goto LAB_004fd4ed;
   }
-  if ((*(int *)(param_1 + 0x1fa3c) == 0) || (param_3 != 0)) {
-    *(uint *)(param_1 + 0x1fa60) = 0;
+  if ((this_ptr->guns_drawn == 0) || (is_holstered != 0)) {
+    this_ptr->aim_target = (CDemonActor *)0x0;
   }
-  else if (*(int *)(param_1 + 0xbca0) == 0) {
-    local_28 = param_3;
+  else if ((this_ptr->base).player_input.action_state.fire == 0) {
+    local_28 = (CDemonActor *)is_holstered;
     local_24 = 1e+30;
     iVar3 = 0;
-    for (local_20 = param_3; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1)
-    {
-      iVar1 = *(int *)(iVar3 + 0x14cd70 + 0x01E57284);
-      local_18 = (float)core_scat_cpp_FUN_004fda20
-                                  (param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1fa60));
+    for (local_20 = is_holstered; local_20 < *(int *)(0x01E57284 + 0x14cd6c);
+        local_20 = local_20 + 1) {
+      target = *(CDemonActor **)(iVar3 + 0x14cd70 + 0x01E57284);
+      local_18 = (float)core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20
+                                  (this_ptr,target,(uint)(target == this_ptr->aim_target));
       if ((0.0 <= local_18) && (local_18 < local_24)) {
-        local_28 = iVar1;
+        local_28 = target;
         local_24 = local_18;
       }
       iVar3 = iVar3 + 4;
     }
-    *(int *)(param_1 + 0x1fa60) = local_28;
+    this_ptr->aim_target = local_28;
   }
-  if (*(int *)(param_1 + 0xbca0) != 0) {
-    if (*(int *)(param_1 + 0x1fa60) == 0) {
-      *(uint *)(param_1 + 0x1fa58) = 0;
-      *(uint *)(param_1 + 0x1fa54) = *(uint *)(param_1 + 0x1fa58);
-      local_13c = *(float *)(param_1 + 0x1fa54);
+  if ((this_ptr->base).player_input.action_state.fire != 0) {
+    if (this_ptr->aim_target == (CDemonActor *)0x0) {
+      this_ptr->aim_yaw = 0.0;
+      this_ptr->aim_pitch = this_ptr->aim_yaw;
+      local_13c = this_ptr->aim_pitch;
       local_2c = local_13c;
     }
     goto LAB_004fd4ed;
   }
-  if (*(int *)(param_1 + 0x1fa60) == 0) goto LAB_004fd4ed;
-  __arrinit(&local_138,10,&g_CVectorTypeInfo_005993b0);
-  iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa60) + 0x14c) + 0x4c))
-                    (*(int *)(param_1 + 0x1fa60),&local_138);
+  if (this_ptr->aim_target == (CDemonActor *)0x0) goto LAB_004fd4ed;
+  __arrinit(local_138,10,&g_CVectorTypeInfo_005993b0);
+  iVar3 = (*((this_ptr->aim_target->vtable)._ub)->getTargetPoints)(this_ptr->aim_target,local_138);
   if (iVar3 < 1) {
-    pfVar5 = (float *)(**(code **)(*(int *)(*(int *)(param_1 + 0x1fa60) + 0x14c) + 0x14))
-                                (*(int *)(param_1 + 0x1fa60),auStack_c0);
-    fStack_90 = *pfVar5 + pfVar5[3];
-    fStack_8c = pfVar5[1] + pfVar5[4];
-    fStack_78 = fStack_90 * 0.5f;
-    fStack_88 = pfVar5[2] + pfVar5[5];
-    fStack_74 = fStack_8c * 0.5f;
-    fStack_130 = fStack_88 * 0.5f;
-    fStack_70 = fStack_130;
-    fVar6 = fStack_78;
-    fVar2 = fStack_74;
-    if (&fStack_60 != &fStack_78) goto LAB_004fd81b;
+    pCVar5 = (*((this_ptr->aim_target->vtable)._ub)->getBoundingBox)
+                       (this_ptr->aim_target,&CStack_c0);
+    fStack_90 = (pCVar5->min).x + (pCVar5->max).x;
+    fStack_8c = (pCVar5->min).y + (pCVar5->max).y;
+    CStack_78.x = fStack_90 * 0.5f;
+    fStack_88 = (pCVar5->min).z + (pCVar5->max).z;
+    CStack_78.y = fStack_8c * 0.5f;
+    local_138[0].z = fStack_88 * 0.5f;
+    CStack_78.z = local_138[0].z;
+    fVar6 = CStack_78.x;
+    fVar1 = CStack_78.y;
+    if (&CStack_60 != &CStack_78) goto LAB_004fd81b;
   }
-  else if (&fStack_60 != &local_138) {
-    fStack_60 = local_138;
-    fStack_5c = fStack_134;
-    fVar6 = fStack_60;
-    fVar2 = fStack_5c;
+  else if (&CStack_60 != local_138) {
+    CStack_60.x = local_138[0].x;
+    CStack_60.y = local_138[0].y;
+    fVar6 = CStack_60.x;
+    fVar1 = CStack_60.y;
 LAB_004fd81b:
-    fStack_5c = fVar2;
-    fStack_60 = fVar6;
-    fStack_58 = fStack_130;
+    CStack_60.y = fVar1;
+    CStack_60.x = fVar6;
+    CStack_60.z = local_138[0].z;
   }
-  uVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                    (*(uint *)(param_1 + 0x1fa60),auStack_6c,&fStack_60);
-  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&fStack_9c,uVar4);
-  pfVar5 = (float *)core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-                              (param_1 + 0x150,auStack_a8,_DAT_01e533a0);
-  fStack_84 = fStack_9c - *pfVar5;
-  fStack_80 = fStack_98 - pfVar5[1];
-  fStack_7c = fStack_94 - pfVar5[2];
+  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                     (this_ptr->aim_target,&CStack_6c,&CStack_60);
+  core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+            ((CDemonActor *)this_ptr,&CStack_9c,pCVar4);
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
+                     (&(this_ptr->base).base.model,&CStack_a8,_DAT_01e533a0);
+  fStack_84 = CStack_9c.x - pCVar4->x;
+  fStack_80 = CStack_9c.y - pCVar4->y;
+  fStack_7c = CStack_9c.z - pCVar4->z;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&fStack_54,&fStack_84);
   local_13c = fStack_54;
   local_2c = fStack_50;
 LAB_004fd4ed:
-  local_38 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                              (local_2c - *(float *)(param_1 + 0x1fa58));
+  local_38 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_2c - this_ptr->aim_yaw);
   local_18 = local_38;
-  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                              (local_13c - *(float *)(param_1 + 0x1fa54));
-  local_30 = param_2 * (float)3.1415926535000001 * (float)1.5;
+  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_13c - this_ptr->aim_pitch);
+  local_30 = delta_time * (float)3.1415926535000001 * (float)1.5;
   local_3c = -local_30;
   if (local_38 < local_3c) {
     local_38 = local_3c;
@@ -164,18 +157,16 @@ LAB_004fd4ed:
   if (local_30 < local_34) {
     local_34 = local_30;
   }
-  *(float *)(param_1 + 0x1fa54) = *(float *)(param_1 + 0x1fa54) + local_34;
-  *(float *)(param_1 + 0x1fa58) = *(float *)(param_1 + 0x1fa58) + local_38;
-  if ((*(int *)(param_1 + 0x1fa60) != 0) && (param_3 == 0)) {
-    local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                (*(float *)(param_1 + 0x1fa58) - local_2c);
+  this_ptr->aim_pitch = this_ptr->aim_pitch + local_34;
+  this_ptr->aim_yaw = this_ptr->aim_yaw + local_38;
+  if ((this_ptr->aim_target != (CDemonActor *)0x0) && (is_holstered == 0)) {
+    local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c);
     if (((float)0.02 <= ABS(local_18)) &&
-       (fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                 (*(float *)(param_1 + 0x1fa58) - local_2c),
+       (fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(this_ptr->aim_yaw - local_2c),
        (float)0.02 <= ABS(fVar6))) {
       return;
     }
-    *(uint *)(param_1 + 0x1fa64) = 1;
+    this_ptr->aim_converged = 1;
     return;
   }
   return;

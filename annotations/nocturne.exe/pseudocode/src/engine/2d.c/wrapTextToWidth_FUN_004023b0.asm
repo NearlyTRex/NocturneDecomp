@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_00402408
     PUSH EDI                            ; 00402409
     CALL engine_2d.c_getStringWidth_FUN_00401ed0 ; 0040240a
-        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_getStringWidth_FUN_00401ed0()
+        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_00401ed0(char * text)
     ADD ESP,0x4                         ; 0040240f
     CMP EAX,dword ptr [ESP + 0x11c]     ; 00402412
     JLE 0x004023dd                      ; 00402419
@@ -95,7 +95,7 @@ section .text
     PUSH EAX                            ; 00402459
     MOV byte ptr [ESP + EDX*0x1 + 0x4],CH ; 0040245a
     CALL engine_2d.c_getStringWidth_FUN_00401ed0 ; 0040245e
-        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_getStringWidth_FUN_00401ed0()
+        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_00401ed0(char * text)
     ADD ESP,0x4                         ; 00402463
     CMP EAX,dword ptr [ESP + 0x11c]     ; 00402466
     JLE 0x00402495                      ; 0040246d

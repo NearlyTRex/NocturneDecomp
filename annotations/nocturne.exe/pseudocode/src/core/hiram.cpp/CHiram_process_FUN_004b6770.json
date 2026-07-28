@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 239,
+    "complexity_score": 263,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 20,
     "suspect_types": [
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memset"
     ],
-    "total_lines": 185
+    "total_lines": 194
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hiram.cpp_CHiram_process_FUN_004b6770",
-    "signature": "void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)"
+    "signature": "void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -182,7 +183,7 @@
     {
       "addr": "004ada20",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004ada20"
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004ada20"
     },
     {
       "addr": "004d90a0",
@@ -330,7 +331,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)",
+      "text": "void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -338,12 +339,12 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_hiram_cpp_CHiram_process_FUN_004b6770(int param_1,float param_2)",
+      "text": "void core_hiram_cpp_CHiram_process_FUN_004b6770(CCharacter *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
@@ -351,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
@@ -359,31 +360,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);",
+      "text": "(&(param_1->model).motion_controller);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x1f570)",
+      "text": "(0x01C03A10,param_1[2].flames[0x1b].off_event + 0xc);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,1,1);",
+      "text": "(&(param_1->model).motion_controller,1,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "local_18[0] = param_2;",
@@ -391,58 +392,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23ac) = 0;",
+      "text": "(param_1->model).accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1 + 0x150;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);",
+      "text": "this_ptr = &param_1->model;",
       "type": "unnamed_param"
     },
     {
@@ -450,20 +411,60 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar2);",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
@@ -471,11 +472,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 37,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->model).accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "vtable_info": {

@@ -2,13 +2,13 @@
 // Address: 0050c010
 // Address Range: [[0050c010, 0050c1f2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(undefined4 param_1,int param_2)
+// Signature: void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemonSet *this_ptr,int vertex_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(uint param_1,int param_2)
+void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemonSet *this_ptr,int vertex_count)
 
 {
   int iVar1;
@@ -19,14 +19,14 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(uint p
   int local_c;
   int local_8;
   
-  if (_DAT_007f7374 != 0) {
+  if (_DAT_007f7374 != (CDemonCamera *)0x0) {
     piVar3 = (int *)*DAT_005ae704;
     local_c = _DAT_01c00c50 - _DAT_01c00c48;
     iVar4 = _DAT_01c00c50 + _DAT_01c00c48;
     iVar2 = _DAT_01c00c54 - _DAT_01c00c4c;
     local_8 = _DAT_01c00c54 + _DAT_01c00c4c;
     local_10 = 0;
-    if (0 < param_2) {
+    if (0 < vertex_count) {
       do {
         if ((*(byte *)((int)piVar3 + 0x13) & 0x80) == 0) {
           if (piVar3[4] < iVar4) {
@@ -78,9 +78,9 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(uint p
         }
         local_10 = local_10 + 1;
         piVar3 = piVar3 + 0xc;
-      } while (local_10 < param_2);
+      } while (local_10 < vertex_count);
     }
-    core_dcamera_cpp_FUN_004405d0
+    core_dcamera_cpp_CDemonCamera_pushRect_FUN_004405d0
               (_DAT_007f7374,iVar4 >> 0x10,local_c >> 0x10,iVar2 >> 0x10,local_8 >> 0x10);
   }
   return;

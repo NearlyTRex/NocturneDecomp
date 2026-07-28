@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_004e9860
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   crt_unknown.c_FUN_00564bb0
+;   crt_unknown.c__atexit_FUN_00564bb0
 ;
 ; *****************************************************************************
 
@@ -20,17 +20,17 @@ section .text
     PUSH 0x1cea280                      ; 004e94a0
         ;   Label: core_netgame.cpp_staticInit_FUN_004e94a0
     CALL core_netgame.cpp_CNetGame_ctor_FUN_004e9860 ; 004e94a5
-        ;   XREF to: 004e9860 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_ctor_FUN_004e9860()
+        ;   XREF to: 004e9860 (UNCONDITIONAL_CALL)  ; CNetGame * core_netgame.cpp_CNetGame_ctor_FUN_004e9860(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e94aa
     PUSH 0x5bded0                       ; 004e94ad
-    CALL crt_unknown.c_FUN_00564bb0     ; 004e94b2
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 004e94b2
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004e94b7
     PUSH 0x5a0de0                       ; 004e94ba
     PUSH 0x190                          ; 004e94bf
     PUSH 0x1cea410                      ; 004e94c4
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004e94c9
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV EDX,0x405                       ; 004e94ce
     ADD ESP,0xc                         ; 004e94d3
     XOR AH,AH                           ; 004e94d6

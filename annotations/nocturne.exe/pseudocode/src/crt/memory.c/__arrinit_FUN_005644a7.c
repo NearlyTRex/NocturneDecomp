@@ -2,24 +2,24 @@
 // Address: 005644a7
 // Address Range: [[005644a7, 005644ee]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_memory_c___arrinit_FUN_005644a7(int param_1,uint param_2,int param_3)
+// Signature: void * __cdecl crt_memory_c___arrinit_FUN_005644a7(void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 
-int __cdecl __arrinit(int param_1,uint param_2,int param_3)
+void * __cdecl __arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 {
-  code *pcVar1;
+  WATCOM_DEFAULT_CONSTRUCTOR_FUNC *pWVar1;
   int iVar2;
-  int iVar3;
-  uint uVar4;
+  void *param0;
+  uint uVar3;
   
-  pcVar1 = *(code **)(param_3 + 4);
-  iVar2 = *(int *)(param_3 + 0x10);
-  iVar3 = param_1;
-  for (uVar4 = 0; uVar4 < param_2; uVar4 = uVar4 + 1) {
-    (*pcVar1)(iVar3,uVar4,param_3);
-    iVar3 = iVar3 + iVar2;
+  pWVar1 = type_info->ctor;
+  iVar2 = type_info->instance_size;
+  param0 = array_start;
+  for (uVar3 = 0; uVar3 < (uint)element_count; uVar3 = uVar3 + 1) {
+    (*pWVar1)(param0);
+    param0 = (void *)((int)param0 + iVar2);
   }
-  return param_1;
+  return array_start;
 }

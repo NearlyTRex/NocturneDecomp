@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemonSet *this_ptr,int vertex_count)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -26,7 +29,7 @@
 ;   undefined4 DAT_01c00c54
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_004405d0
+;   core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0
 ;
 ; *****************************************************************************
 
@@ -189,8 +192,8 @@ section .text
     PUSH EDX                            ; 0050c1a1
     MOV dword ptr [ESP + 0x24],ECX      ; 0050c1a2
     MOV dword ptr [ESP + 0x2c],EBX      ; 0050c1a6
-    CALL core_dcamera.cpp_FUN_004405d0  ; 0050c1aa
-        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004405d0()
+    CALL core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0 ; 0050c1aa
+        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0(CDemonCamera * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0050c1af
     POP EBX                             ; 0050c1b2
     POP ESI                             ; 0050c1b3

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(undefined4 param_1)
+; CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
 ;   core_cloth.cpp_CClothList_load_FUN_00438270 at 004382a6
@@ -27,21 +29,21 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_ctor_FUN_00435100
     PUSH EAX                            ; 00435104
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590 ; 00435105
-        ;   XREF to: 00452590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590()
+        ;   XREF to: 00452590 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0043510a
     PUSH 0x59b3a0                       ; 0043510d | g_SClothVertexTypeInfo_0059b3a0
     PUSH 0x320                          ; 00435112
     ADD EAX,0x398                       ; 00435117
     PUSH EAX                            ; 0043511c
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0043511d
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00435122
     PUSH 0x59b3c0                       ; 00435125 | g_SClothBoneTypeInfo_0059b3c0
     PUSH 0x32                           ; 0043512a
     ADD EAX,0x377b8                     ; 0043512c
     PUSH EAX                            ; 00435131
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00435132
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV dword ptr [EAX + 0x2fac],0x0    ; 00435137
     MOV dword ptr [EAX + -0x4],0x0      ; 00435141
     ADD ESP,0xc                         ; 00435148

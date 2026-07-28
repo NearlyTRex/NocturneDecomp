@@ -2,53 +2,53 @@
 // Address: 0045b4c0
 // Address Range: [[0045b4c0, 0045b5e2]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface )
 
 #include "nocturne.h"
 
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface )
 
 {
-  param_1[2] = param_2;
-  param_1[3] = param_3;
-  *param_1 = param_4;
-  param_1[1] = param_5;
-  param_1[4] = param_1[2];
-  param_1[5] = param_1[3];
-  param_1[6] = param_1[2] + *param_1 + -1;
-  param_1[7] = param_1[3] + param_1[1] + -1;
-  if (param_6 != 0) {
-    param_1[2] = param_1[2] + *(int *)(param_6 + 8);
-    param_1[3] = param_1[3] + *(int *)(param_6 + 0xc);
-    param_1[4] = param_1[4] + *(int *)(param_6 + 8);
-    param_1[5] = param_1[5] + *(int *)(param_6 + 0xc);
-    param_1[6] = param_1[6] + *(int *)(param_6 + 8);
-    param_1[7] = param_1[7] + *(int *)(param_6 + 0xc);
-    if (param_1[4] < *(int *)(param_6 + 0x10)) {
-      param_1[4] = *(int *)(param_6 + 0x10);
+  this_ptr->x = x;
+  this_ptr->y = y;
+  this_ptr->width = width;
+  this_ptr->height = height;
+  this_ptr->clip_left = this_ptr->x;
+  this_ptr->clip_top = this_ptr->y;
+  this_ptr->clip_right = this_ptr->x + this_ptr->width + -1;
+  this_ptr->clip_bottom = this_ptr->y + this_ptr->height + -1;
+  if (parent_surface != (CDrawSurface *)0x0) {
+    this_ptr->x = this_ptr->x + parent_surface->x;
+    this_ptr->y = this_ptr->y + parent_surface->y;
+    this_ptr->clip_left = this_ptr->clip_left + parent_surface->x;
+    this_ptr->clip_top = this_ptr->clip_top + parent_surface->y;
+    this_ptr->clip_right = this_ptr->clip_right + parent_surface->x;
+    this_ptr->clip_bottom = this_ptr->clip_bottom + parent_surface->y;
+    if (this_ptr->clip_left < parent_surface->clip_left) {
+      this_ptr->clip_left = parent_surface->clip_left;
     }
-    if (param_1[5] < *(int *)(param_6 + 0x14)) {
-      param_1[5] = *(int *)(param_6 + 0x14);
+    if (this_ptr->clip_top < parent_surface->clip_top) {
+      this_ptr->clip_top = parent_surface->clip_top;
     }
-    if (*(int *)(param_6 + 0x18) < param_1[6]) {
-      param_1[6] = *(int *)(param_6 + 0x18);
+    if (parent_surface->clip_right < this_ptr->clip_right) {
+      this_ptr->clip_right = parent_surface->clip_right;
     }
-    if (*(int *)(param_6 + 0x1c) < param_1[7]) {
-      param_1[7] = *(int *)(param_6 + 0x1c);
+    if (parent_surface->clip_bottom < this_ptr->clip_bottom) {
+      this_ptr->clip_bottom = parent_surface->clip_bottom;
     }
   }
-  if (param_1[4] < 0) {
-    param_1[4] = 0;
+  if (this_ptr->clip_left < 0) {
+    this_ptr->clip_left = 0;
   }
-  if (param_1[5] < 0) {
-    param_1[5] = 0;
+  if (this_ptr->clip_top < 0) {
+    this_ptr->clip_top = 0;
   }
-  if (DAT_005b761c <= param_1[6]) {
-    param_1[6] = DAT_005b761c + -1;
+  if (DAT_005b761c <= this_ptr->clip_right) {
+    this_ptr->clip_right = DAT_005b761c + -1;
   }
-  if (param_1[7] < DAT_005b7620) {
+  if (this_ptr->clip_bottom < DAT_005b7620) {
     return;
   }
-  param_1[7] = DAT_005b7620 + -1;
+  this_ptr->clip_bottom = DAT_005b7620 + -1;
   return;
 }

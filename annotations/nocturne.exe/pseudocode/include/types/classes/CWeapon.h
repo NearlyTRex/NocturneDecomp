@@ -8,29 +8,29 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CWeapon
-// Ghidra size: 0x578 (1400 bytes)
+// Ghidra size: 0x570 (1392 bytes)
 #pragma pack(push, 1)
 typedef struct CWeapon {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    int weapon_state; // 0x2d4
-    int is_spread_weapon; // 0x2d8
-    int fire_mode; // 0x2dc
-    int weapon_type; // 0x2e0
-    int can_penetrate; // 0x2e4
-    float bolt_velocity; // 0x2e8
-    int fire_cooldown; // 0x2ec
-    int can_attach_light; // 0x2f0
-    CColor3i muzzle_flash_color; // 0x2f4
-    float fire_cooldown_timer; // 0x300
-    struct CDemonActor* carried_by_actor; // 0x304
-    CBox physics_box; // 0x308
-    float ground_height; // 0x560
-    float weight; // 0x564
-    int ammo_count; // 0x568
-    int ammo_type; // 0x56c
-    float sim_timer; // 0x570
-    int is_rendered; // 0x574
+    CKeyFramedModelInstance model; // 0x150
+    int weapon_state; // 0x2cc
+    int is_spread_weapon; // 0x2d0
+    int fire_mode; // 0x2d4
+    int weapon_type; // 0x2d8
+    int can_penetrate; // 0x2dc
+    float bolt_velocity; // 0x2e0
+    int fire_cooldown; // 0x2e4
+    int can_attach_light; // 0x2e8
+    CColor3i muzzle_flash_color; // 0x2ec
+    float fire_cooldown_timer; // 0x2f8
+    struct CDemonActor* carried_by_actor; // 0x2fc
+    CBox physics_box; // 0x300
+    float ground_height; // 0x558
+    float weight; // 0x55c
+    int ammo_count; // 0x560
+    int ammo_type; // 0x564
+    float sim_timer; // 0x568
+    int is_rendered; // 0x56c
 } CWeapon;
 #pragma pack(pop)
 

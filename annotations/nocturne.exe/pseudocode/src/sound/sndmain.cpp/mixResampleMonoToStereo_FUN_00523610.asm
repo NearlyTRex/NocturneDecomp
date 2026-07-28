@@ -64,7 +64,7 @@ section .text
     ADD ESP,0x8                         ; 0052364b
     FLD double ptr [EBP + -0x24]        ; 0052364e
     CALL crt_math.c_round_FUN_00563a30  ; 00523651
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [EBP + -0x24]       ; 00523656
     MOV EAX,dword ptr [EBP + -0x24]     ; 00523659
     MOV dword ptr [EBP + -0x18],EAX     ; 0052365c
@@ -76,7 +76,7 @@ section .text
     FSUBR double ptr [EBP + 0x20]       ; 0052366d
     FMUL double ptr [0x00592946]        ; 00523670 | DOUBLE_00592946
     CALL crt_math.c_round_FUN_00563a30  ; 00523676
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [EBP + -0x24]       ; 0052367b
     MOV EAX,dword ptr [EBP + -0x24]     ; 0052367e
     MOV dword ptr [EBP + -0x14],EAX     ; 00523681
@@ -91,7 +91,7 @@ section .text
     ADD ESP,0x8                         ; 00523697
     FLD double ptr [EBP + -0x24]        ; 0052369a
     CALL crt_math.c_round_FUN_00563a30  ; 0052369d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [EBP + -0x24]       ; 005236a2
     MOV EAX,dword ptr [EBP + -0x24]     ; 005236a5
     MOV dword ptr [EBP + -0x10],EAX     ; 005236a8
@@ -102,7 +102,7 @@ section .text
     FSUBR double ptr [EBP + 0x28]       ; 005236b7
     FMUL double ptr [0x00592946]        ; 005236ba | DOUBLE_00592946
     CALL crt_math.c_round_FUN_00563a30  ; 005236c0
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [EBP + -0x24]       ; 005236c5
     MOV EAX,dword ptr [EBP + -0x24]     ; 005236c8
     MOV dword ptr [EBP + -0x1c],EAX     ; 005236cb

@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004c3280(int param_1,uint param_2)
+; void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004c3280(CInventory *this_ptr,uint key_mask)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   key_mask
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_removeMatchingKeys_FUN_004b5cb0 at 004b5cbf
-;   core_hero.cpp_FUN_004b5ec0 at 004b5f1e
+;   core_hero.cpp_CHero_reset_FUN_004b5ec0 at 004b5f1e
 ;
 ; Referenced Globals:
 ;   undefined4 g_CKeyActorActorType_01cc30a8.name_hash
@@ -38,7 +41,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc]       ; 004c329d
     PUSH EDX                            ; 004c32a0
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c32a1
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c32a6
     TEST EAX,EAX                        ; 004c32a9
     JZ 0x004c32ce                       ; 004c32ab
@@ -51,7 +54,7 @@ section .text
     PUSH EAX                            ; 004c32ba
     PUSH EDI                            ; 004c32bb
     CALL core_inv.cpp_CInventory_removeItem_FUN_004c07b0 ; 004c32bc
-        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_removeItem_FUN_004c07b0()
+        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004c07b0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 004c32c1
     CMP ESI,dword ptr [EDI + 0x8]       ; 004c32c4
     JL 0x004c3297                       ; 004c32c7

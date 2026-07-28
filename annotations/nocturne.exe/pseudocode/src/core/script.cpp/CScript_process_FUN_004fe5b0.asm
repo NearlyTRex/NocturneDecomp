@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(int *param_1)
+; void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -86,7 +88,7 @@ section .text
     MOV EDX,dword ptr [0x005b9354]      ; 004fe62c | DAT_005b9354
     PUSH EDX                            ; 004fe632 | DAT_01c775ec
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 004fe633
-        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0()
+        ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)
     XOR ECX,ECX                         ; 004fe638
     ADD ESP,0x4                         ; 004fe63a
     MOV dword ptr [0x01e56c24],ECX      ; 004fe63d | DAT_01e56c24
@@ -111,7 +113,7 @@ section .text
     PUSH EBX                            ; 004fe65d
     MOV EDI,dword ptr [EBX + 0x40]      ; 004fe65e
     CALL core_script.cpp_CScript_step_FUN_004ff2c0 ; 004fe661
-        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_004ff2c0()
+        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_004ff2c0(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 004fe666
     TEST EAX,EAX                        ; 004fe669
     JZ 0x004fe623                       ; 004fe66b
@@ -170,7 +172,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x24]      ; 004fe6f7
     PUSH EDI                            ; 004fe6fa
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004fe6fb
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004fe700
     MOV ESP,EBP                         ; 004fe703
     POP EBP                             ; 004fe705

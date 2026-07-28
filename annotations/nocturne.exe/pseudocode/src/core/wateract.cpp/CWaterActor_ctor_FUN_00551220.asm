@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_wateract_cpp_CWaterActor_ctor_FUN_00551220(undefined4 param_1)
+; CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_00551220(CWaterActor *this_ptr)
 ;
+; Parameters:
+; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_wateract.cpp_FUN_005511f0 at 00551203
@@ -40,7 +42,7 @@ section .text
     ADD EAX,0x294                       ; 00551239
     PUSH EAX                            ; 0055123e
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0055123f
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd6c]          ; 00551244
     MOV dword ptr [EDX + 0x14c],0x5a3ef4 ; 0055124a | PTR_core_wateract.cpp_CWaterActor_setup_FUN_00551370_005a3ef4
     MOV dword ptr [EDX + 0x150],0x40800000 ; 00551254

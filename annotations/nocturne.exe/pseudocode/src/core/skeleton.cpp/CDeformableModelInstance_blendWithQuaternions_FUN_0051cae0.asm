@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0(int param_1,undefined4 *param_2,float *param_3,float param_4,int param_5,code *param_6)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,CVector3f *source_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CQuaternion4f *  Stack[0x8]:4   source_quaternions
+; CVector3f *      Stack[0xc]:4   source_position
+; float            Stack[0x10]:4   blend_weight
+; int              Stack[0x14]:4   bone_index
+; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ; Local Variables:
 ; undefined        Stack[-0xd8]:1  local_d8
 ; undefined        Stack[-0xc8]:1  local_c8
@@ -38,8 +45,8 @@
 ;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10
-;   core_xform.cpp_FUN_0055d0d0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
+;   core_xform.cpp_negateFirstComponent_FUN_0055d0d0
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;
 ; *****************************************************************************
@@ -69,7 +76,7 @@ section .text
         ;   Label: LAB_0051cb07
     PUSH EDX                            ; 0051cb0e
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051cb0f
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051cb14
     MOV EBX,dword ptr [ESP + 0xec]      ; 0051cb17
     MOV EBP,EAX                         ; 0051cb1e
@@ -95,7 +102,7 @@ section .text
     PUSH EBX                            ; 0051cb76
     PUSH EBP                            ; 0051cb77
     CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10 ; 0051cb78
-        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10()
+        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0051cb7d
     TEST EAX,EAX                        ; 0051cb80
     JL 0x0051cbe3                       ; 0051cb82
@@ -247,7 +254,7 @@ section .text
     PUSH EDX                            ; 0051ce00
     PUSH EBP                            ; 0051ce01
     CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10 ; 0051ce02
-        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10()
+        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0051ce07
     TEST EAX,EAX                        ; 0051ce0a
     JL 0x0051ce62                       ; 0051ce0c
@@ -308,8 +315,8 @@ section .text
     PUSH EAX                            ; 0051ced2
     LEA ESI,[ESP + 0x24]                ; 0051ced3
     LEA EDI,[ESP + 0x44]                ; 0051ced7
-    CALL core_xform.cpp_FUN_0055d0d0    ; 0051cedb
-        ;   XREF to: 0055d0d0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d0d0()
+    CALL core_xform.cpp_negateFirstComponent_FUN_0055d0d0 ; 0051cedb
+        ;   XREF to: 0055d0d0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_negateFirstComponent_FUN_0055d0d0(CQuaternion4f * vector_in, CQuaternion4f * vector_out)
     ADD ESP,0x4                         ; 0051cee0
     LEA EAX,[ESP + 0x40]                ; 0051cee3
     LEA ESI,[ESP + 0x20]                ; 0051cee7

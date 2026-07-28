@@ -19,7 +19,7 @@ struct CHero_ptr_11356 {
     template<typename T> CHero_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CHero_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CHero* operator->() const { return (CHero*)_raw; }
-    CHero* adj() const { return (CHero*)((char*)_raw - offsetof(CHero, base.collision_test_points)); }
+    CHero* adj() const { return (CHero*)((char*)_raw - offsetof(CHero, base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

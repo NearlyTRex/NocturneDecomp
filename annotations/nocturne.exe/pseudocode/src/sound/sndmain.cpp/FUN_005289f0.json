@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 253,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 72,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
-      "unrolled_memcpy"
+      "unnamed_param"
     ],
-    "total_lines": 284
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -155,7 +154,7 @@
     ],
     "convention": "unknown",
     "name": "sound_sndmain.cpp_FUN_005289f0",
-    "signature": "undefined4 sound_sndmain_cpp_FUN_005289f0(undefined4 param_1)"
+    "signature": "void sound_sndmain_cpp_FUN_005289f0(CIniFile *param_1)"
   },
   "function_calls": [
     {
@@ -484,20 +483,20 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_FUN_005289f0(uint param_1)",
+      "text": "void sound_sndmain_cpp_FUN_005289f0(CIniFile *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 22,
       "match": "DAT_005beaa0",
       "severity": "mild",
-      "text": "puVar4 = &DAT_005beaa0;",
+      "text": "puVar2 = &DAT_005beaa0;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getString_FUN_004bd910(param_1,\"DeviceName\",local_194,0x100);",
@@ -505,7 +504,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_005bea74",
       "severity": "mild",
       "text": "DAT_005bea74 = 0xffffffff;",
@@ -513,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Bits\",&local_30);",
@@ -521,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Channels\",&local_2c);",
@@ -529,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Hz\",&local_28);",
@@ -537,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"HwMixingEnabled\",&local_24);",
@@ -545,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(param_1,\"MaxSwLatency\",&local_20);",
@@ -553,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,\"Mute\",&local_24);",
@@ -561,7 +560,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_005bea60",
       "severity": "mild",
       "text": "if (0 < DAT_005bea60) {",
@@ -569,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(param_1,local_94,&local_1c);",
@@ -577,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(param_1,local_94,&local_18);",
@@ -585,19 +584,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005bea60",
       "severity": "mild",
-      "text": "} while (iVar2 < DAT_005bea60);",
+      "text": "} while (iVar1 < DAT_005bea60);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 25,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
     },
     {
       "call_site_count": 1,

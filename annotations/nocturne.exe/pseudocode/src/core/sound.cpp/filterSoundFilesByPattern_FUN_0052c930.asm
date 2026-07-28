@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(undefined4 param_1)
+; void core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -40,12 +40,12 @@ section .text
     PUSH EBX                            ; 0052c952
     PUSH 0x2dc9610                      ; 0052c953
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052c958
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0052c95d
     PUSH EAX                            ; 0052c960
     PUSH EBP                            ; 0052c961
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 0052c962
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004775b0(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 0052c967
     TEST EAX,EAX                        ; 0052c96a
     JZ 0x0052c9b7                       ; 0052c96c
@@ -53,7 +53,7 @@ section .text
     PUSH EBX                            ; 0052c96e
     PUSH 0x2dc9610                      ; 0052c96f
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 0052c974
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     IMUL EDI,dword ptr [0x02dc9620],0x28 ; 0052c979 | DAT_02dc9620
     ADD ESP,0x8                         ; 0052c980
     MOV ESI,EAX                         ; 0052c983

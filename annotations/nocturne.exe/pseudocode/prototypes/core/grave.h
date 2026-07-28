@@ -17,35 +17,35 @@ CDemonActorType * FUN_004b0b30(void);
 
 // Original: core_grave.cpp_CGrave_ctor_FUN_004b0b40
 // Address: 004b0b40
-int CGrave::ctor(undefined4 param_1);
+CGrave * __cdecl CGrave::ctor(CGrave *this_ptr);
 
 // Original: core_grave.cpp_FUN_004b0bd0
 // Address: 004b0bd0
-void FUN_004b0bd0(int param_1);
+void FUN_004b0bd0(CDemonActor *param_1);
 
 // Original: core_grave.cpp_CGrave_process_FUN_004b0bf0
 // Address: 004b0bf0
-void CGrave::process(int param_1,float param_2);
+void CGrave::process(CGrave *param_1,float param_2);
 
 // Original: core_grave.cpp_FUN_004b0cb0
 // Address: 004b0cb0
-int FUN_004b0cb0(int param_1);
+int FUN_004b0cb0(CDemonActor *param_1);
 
 // Original: core_grave.cpp_FUN_004b0d40
 // Address: 004b0d40
-void FUN_004b0d40(int param_1,int param_2);
+void FUN_004b0d40(CDemonActor *param_1,int param_2);
 
 // Original: core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0
 // Address: 004b0dc0
-void __cdecl CGrave::startAnimation(int param_1);
+void __cdecl CGrave::startAnimation(CGrave *this_ptr);
 
 // Original: core_grave.cpp_CGrave_archive_FUN_004b0e20
 // Address: 004b0e20
-void CGrave::archive(int param_1);
+void CGrave::archive(CDemonActor *param_1);
 
 // Original: core_grave.cpp_CGrave_getBoundingBox_FUN_004b0f20
 // Address: 004b0f20
-undefined4 * CGrave::getBoundingBox(int param_1,undefined4 *param_2);
+int * CGrave::getBoundingBox(int param_1,int *param_2);
 
 // Original: core_grave.cpp_FUN_004b1000
 // Address: 004b1000
@@ -53,4 +53,4 @@ undefined4 FUN_004b1000(void);
 
 // Original: core_grave.cpp_FUN_004b1010
 // Address: 004b1010
-undefined4 FUN_004b1010(undefined4 param_1,byte param_2);
+CDemonActor * FUN_004b1010(CDemonActor *param_1,byte param_2);

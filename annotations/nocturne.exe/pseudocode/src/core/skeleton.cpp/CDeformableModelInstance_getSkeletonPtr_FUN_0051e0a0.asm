@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(undefined4 param_1)
+; CSkeleton * __cdecl core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[74]:
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102d6
@@ -29,11 +31,11 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
     PUSH EDX                            ; 0051e0a4
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051e0a5
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051e0aa
     PUSH EAX                            ; 0051e0ad
     CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130 ; 0051e0ae
-        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130()
+        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0051e0b3
     RET                                 ; 0051e0b6
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_reset_FUN_0052e9c0(void)
+; void __cdecl core_sound_cpp_CSound_reset_FUN_0052e9c0(CSound *this_ptr)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004d23d0 at 004d2705
@@ -18,7 +20,7 @@
 section .text
 
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_00528080 ; 0052e9c0
-        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
+        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
         ;   Label: core_sound.cpp_CSound_reset_FUN_0052e9c0
     JMP 0x00527c30                      ; 0052e9c5
         ;   XREF to: 00527c30 (UNCONDITIONAL_CALL)

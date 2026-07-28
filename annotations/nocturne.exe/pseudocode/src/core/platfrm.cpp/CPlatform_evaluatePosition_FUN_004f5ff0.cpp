@@ -2,30 +2,30 @@
 // Address: 004f5ff0
 // Address Range: [[004f5ff0, 004f614d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(int param_1)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
-void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(int param_1)
+void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform *this_ptr)
 
 {
-  uint *puVar1;
-  float *pfVar2;
+  CLocation *out_pos;
+  UOrientationVector *out_euler;
+  float *pfVar1;
+  CVector3f *pCVar2;
   uint *puVar3;
   byte bVar4;
   float afStackY_1844 [1523];
-  byte *puVar5;
-  uint local_68;
-  uint local_58;
+  CQuaternion4f *quat_in;
+  float local_68;
+  CQuaternion4f local_58;
   float local_48;
   float local_44;
   float local_40;
   float local_3c;
   float local_38;
   float local_34;
-  byte local_30 [12];
+  CVector3f local_30;
   float local_24;
   float local_20;
   float local_1c;
@@ -33,55 +33,55 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(int param_
   int local_14;
   
   bVar4 = 0;
-  if (*(float *)(param_1 + 0x2d4) < 0.0) {
-    *(uint *)(param_1 + 0x2d4) = 0;
+  if (this_ptr->param < 0.0) {
+    this_ptr->param = 0.0;
   }
-  if (1.0 < *(float *)(param_1 + 0x2d4)) {
-    *(uint *)(param_1 + 0x2d4) = 0x3f800000;
+  if (1.0 < this_ptr->param) {
+    this_ptr->param = 1.0;
   }
-  puVar1 = (uint *)(param_1 + 0x30);
-  if (*(char *)(param_1 + 0x2e8) == '\0') {
-    pfVar2 = (float *)(param_1 + 0x2d4);
-    local_48 = *(float *)(param_1 + 800) * *pfVar2;
-    local_44 = *(float *)(param_1 + 0x324) * *pfVar2;
-    local_40 = *(float *)(param_1 + 0x328) * *pfVar2;
-    local_18 = 1.0 - *(float *)(param_1 + 0x2d4);
-    local_24 = *(float *)(param_1 + 0x314) * local_18;
-    local_20 = *(float *)(param_1 + 0x318) * local_18;
-    local_1c = *(float *)(param_1 + 0x31c) * local_18;
+  out_pos = &(this_ptr->base).location;
+  out_euler = &(this_ptr->base).orient;
+  if (this_ptr->course_filename[0] == '\0') {
+    pfVar1 = &this_ptr->param;
+    local_48 = (this_ptr->end_pos).x * *pfVar1;
+    local_44 = (this_ptr->end_pos).y * *pfVar1;
+    local_40 = (this_ptr->end_pos).z * *pfVar1;
+    local_18 = 1.0 - this_ptr->param;
+    local_24 = (this_ptr->start_pos).x * local_18;
+    local_20 = (this_ptr->start_pos).y * local_18;
+    local_1c = (this_ptr->start_pos).z * local_18;
     local_3c = local_24 + local_48;
     local_38 = local_20 + local_44;
     local_34 = local_1c + local_40;
-    *(float *)(param_1 + 0x20) = local_3c;
-    *(float *)(param_1 + 0x24) = local_38;
-    *(float *)(param_1 + 0x28) = local_34;
+    (out_pos->position).x = local_3c;
+    (this_ptr->base).location.position.y = local_38;
+    (this_ptr->base).location.position.z = local_34;
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
-              (param_1 + 0x32c,param_1 + 0x33c,*(uint *)(param_1 + 0x2d4));
-    puVar3 = &stack0xffffffa8;
-    puVar5 = local_30;
-    local_58 = local_68;
-    *(uint *)((int)&stack0xffffffac + (uint)bVar4 * 0xfffffffe * 4) =
+              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param);
+    quat_in = &local_58;
+    pCVar2 = &local_30;
+    local_58.w = local_68;
+    puVar3 = (uint *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    *(uint *)((int)&local_58 + (uint)bVar4 * -8 + 4) =
          *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
-    *(uint *)(local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -0x20) =
-         *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    *(uint *)
-     ((int)(local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -0x20) + ((uint)bVar4 * -2 + 1) * 4) =
+    *puVar3 = *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    puVar3[(uint)bVar4 * -2 + 1] =
          *(uint *)
           ((int)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
           ((uint)bVar4 * -2 + 1) * 4);
-    puVar3 = (uint *)core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(puVar5,puVar3);
-    if (puVar1 != puVar3) {
-      *puVar1 = *puVar3;
-      *(uint *)(param_1 + 0x34) = puVar3[1];
-      *(uint *)(param_1 + 0x38) = puVar3[2];
+    pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(pCVar2,quat_in);
+    if ((CVector3f *)out_euler != pCVar2) {
+      (out_euler->vec).x = pCVar2->x;
+      (this_ptr->base).orient.vec.y = pCVar2->y;
+      (this_ptr->base).orient.vec.z = pCVar2->z;
       return;
     }
   }
   else {
-    local_14 = *(int *)(param_1 + 0x308);
+    local_14 = (this_ptr->course).len;
     core_course_cpp_CCourse_evaluate_FUN_0043b800
-              ((int *)(param_1 + 0x308),(float)local_14 * *(float *)(param_1 + 0x2d4),
-               (float *)(param_1 + 0x20),puVar1);
+              (&this_ptr->course,(float)local_14 * this_ptr->param,&out_pos->position,
+               &out_euler->vec);
   }
   return;
 }

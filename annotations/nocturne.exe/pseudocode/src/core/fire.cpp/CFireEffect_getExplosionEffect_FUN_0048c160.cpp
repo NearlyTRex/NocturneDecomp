@@ -2,11 +2,11 @@
 // Address: 0048c160
 // Address Range: [[0048c160, 0048c299]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(undefined4 param_1,float *param_2,float param_3,float *param_4,float *param_5)
+// Signature: int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 
 #include "nocturne.h"
 
-uint __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(uint param_1,float *param_2,float param_3,float *param_4,float *param_5)
+int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 
 {
   float fVar1;
@@ -17,7 +17,7 @@ uint __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(uint para
   float local_48;
   float local_44;
   float local_40;
-  float local_3c [6];
+  CVector3f local_3c [2];
   float local_24 [5];
   
   pfVar5 = (float *)0x1c5d708;
@@ -25,24 +25,24 @@ uint __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(uint para
   do {
     if ((float)0.5 < pfVar5[3]) {
       if (&local_48 != local_24) {
-        local_48 = *param_2 - *pfVar5;
-        local_44 = param_2[1] - pfVar5[1];
-        local_40 = param_2[2] - pfVar5[2];
+        local_48 = position->x - *pfVar5;
+        local_44 = position->y - pfVar5[1];
+        local_40 = position->z - pfVar5[2];
       }
       fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-      if (fVar1 < pfVar5[4] * (float)0.5 + param_3) {
-        if (param_4 != (float *)0x0) {
+      if (fVar1 < pfVar5[4] * (float)0.5 + radius) {
+        if (out_force_dir != (CVector3f *)0x0) {
           fVar1 = 1.0 / fVar1;
           fVar2 = local_44 * fVar1 * 5.4811317061554153e-315._0_4_;
           fVar3 = local_40 * fVar1 * 5.4811317061554153e-315._0_4_;
-          if (local_3c != param_4) {
-            *param_4 = local_48 * fVar1 * 5.4811317061554153e-315._0_4_;
-            param_4[1] = fVar2;
-            param_4[2] = fVar3;
+          if (local_3c != out_force_dir) {
+            out_force_dir->x = local_48 * fVar1 * 5.4811317061554153e-315._0_4_;
+            out_force_dir->y = fVar2;
+            out_force_dir->z = fVar3;
           }
         }
-        if (param_5 != (float *)0x0) {
-          *param_5 = pfVar5[5];
+        if (out_gore_multiplier != (float *)0x0) {
+          *out_gore_multiplier = pfVar5[5];
         }
         return 1;
       }

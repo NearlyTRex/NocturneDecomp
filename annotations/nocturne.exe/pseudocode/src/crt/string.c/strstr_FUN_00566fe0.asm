@@ -1,15 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte * __cdecl crt_string_c_strstr_FUN_00566fe0(byte *param_1,byte *param_2)
+; char * __cdecl crt_string_c_strstr_FUN_00566fe0(char *haystack_str,char *needle_str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   haystack_str
+; char *           Stack[0x8]:4   needle_str
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_script.cpp_trimLine_FUN_004fdf60 at 004fdfa5
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521fce
-;   sound_sndmain.cpp_FUN_00521d80 at 00521d8d
+;   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00521d80 at 00521d8d
 ;
 ; *****************************************************************************
 

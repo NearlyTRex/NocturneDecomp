@@ -2,45 +2,48 @@
 // Address: 004b6080
 // Address Range: [[004b6080, 004b61e9]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,undefined4 param_2)
+// Signature: CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 
 #include "nocturne.h"
 
-int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,uint param_2)
+CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 
 {
-  uint uVar1;
-  int iVar2;
-  char *pcVar3;
+  UOrientationVector *pUVar1;
+  CDemonActor *actor_ptr;
+  UOrientationVector *pUVar2;
+  CHero *actor;
+  char *class_name;
+  uint class_name_hash;
   
-  iVar2 = 0;
-  switch(param_2) {
-  case 0:
-    pcVar3 = "CGabriella";
+  actor = (CHero *)0x0;
+  switch(hero_type) {
+  case HERO_TYPE_GABRIELLA:
+    class_name = "CGabriella";
     break;
-  case 1:
-    pcVar3 = "CSvetlana";
+  case HERO_TYPE_SVETLANA:
+    class_name = "CSvetlana";
     break;
-  case 2:
-    pcVar3 = "CStranger";
+  case HERO_TYPE_STRANGER:
+    class_name = "CStranger";
     break;
-  case 3:
-    pcVar3 = "CScat";
+  case HERO_TYPE_SCAT:
+    class_name = "CScat";
     break;
-  case 4:
-    pcVar3 = "CBaron";
+  case HERO_TYPE_BARON:
+    class_name = "CBaron";
     break;
-  case 5:
-    pcVar3 = "CIcePick";
+  case HERO_TYPE_ICEPICK:
+    class_name = "CIcePick";
     break;
-  case 6:
-    pcVar3 = "CHaystack";
+  case HERO_TYPE_HAYSTACK:
+    class_name = "CHaystack";
     break;
-  case 7:
-    pcVar3 = "CColonel";
+  case HERO_TYPE_COLONEL:
+    class_name = "CColonel";
     break;
-  case 8:
-    pcVar3 = "CMoloch";
+  case HERO_TYPE_MOLOCH:
+    class_name = "CMoloch";
     break;
   default:
     PTR_01cc4800 = "..\\core\\hero.cpp";
@@ -48,24 +51,27 @@ int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,u
     core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004b60b9;
   }
-  uVar1 = core_actor_cpp_createActorByName_FUN_0040d540(pcVar3,g_CHeroActorType_01cae0ec.name_hash);
-  iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar1);
+  class_name_hash = g_CHeroActorType_01cae0ec.name_hash;
+  actor_ptr = core_actor_cpp_createActorByName_FUN_0040d540(class_name);
+  actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
 LAB_004b60b9:
-  if (iVar2 == 0) {
+  if (actor == (CHero *)0x0) {
     PTR_01cc4800 = "..\\core\\hero.cpp";
     INT_01cc4804 = 0x57d;
     core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - failed.");
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar2);
-  *(uint *)(iVar2 + 0x20) = *(uint *)(param_1 + 0x20);
-  *(uint *)(iVar2 + 0x24) = *(uint *)(param_1 + 0x24);
-  *(uint *)(iVar2 + 0x28) = *(uint *)(param_1 + 0x28);
-  *(uint *)(iVar2 + 0x2c) = *(uint *)(param_1 + 0x2c);
-  if ((uint *)(iVar2 + 0x30) != (uint *)(param_1 + 0x30)) {
-    *(uint *)(iVar2 + 0x30) = *(uint *)(param_1 + 0x30);
-    *(uint *)(iVar2 + 0x34) = *(uint *)(param_1 + 0x34);
-    *(uint *)(iVar2 + 0x38) = *(uint *)(param_1 + 0x38);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,(CDemonActor *)actor);
+  (actor->base).base.location.position.x = (this_ptr->base).location.position.x;
+  (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
+  (actor->base).base.location.position.z = (this_ptr->base).location.position.z;
+  (actor->base).base.location.area_id = (this_ptr->base).location.area_id;
+  pUVar1 = &(actor->base).base.orient;
+  pUVar2 = &(this_ptr->base).orient;
+  if (pUVar1 != pUVar2) {
+    (pUVar1->vec).x = (pUVar2->vec).x;
+    (actor->base).base.orient.vec.y = (this_ptr->base).orient.vec.y;
+    (actor->base).base.orient.vec.z = (this_ptr->base).orient.vec.z;
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(iVar2);
-  return iVar2;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)actor);
+  return actor;
 }

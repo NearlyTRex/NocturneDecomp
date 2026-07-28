@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int param_2,char *param_3)
+; void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(CStrList *this_ptr,int insert_index,char *string_data)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   insert_index
+; char *           Stack[0xc]:4   string_data
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_insert_FUN_004760a0 at 004760bf
@@ -59,7 +63,7 @@ section .text
     PUSH EAX                            ; 00473d36
     PUSH EBX                            ; 00473d37
     CALL shape_edittool.cpp_CStrList_allocate_FUN_00473de0 ; 00473d38
-        ;   XREF to: 00473de0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_allocate_FUN_00473de0()
+        ;   XREF to: 00473de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_allocate_FUN_00473de0(CStrList * this_ptr, int new_capacity)
     ADD ESP,0x8                         ; 00473d3d
     MOV EAX,dword ptr [EBX]             ; 00473d40
         ;   Label: LAB_00473d40
@@ -75,7 +79,7 @@ section .text
     ADD EAX,ECX                         ; 00473d5c
     PUSH EAX                            ; 00473d5e
     CALL crt_string.c_memmove_FUN_00566170 ; 00473d5f
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00473d64
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00473d67
     SUB ECX,ECX                         ; 00473d6b
@@ -87,7 +91,7 @@ section .text
     INC ECX                             ; 00473d75
     PUSH ECX                            ; 00473d76
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00473d77
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV ECX,dword ptr [EBX + 0x8]       ; 00473d7c
     MOV dword ptr [ECX + ESI*0x1],EAX   ; 00473d7f
     MOV EAX,dword ptr [EBX + 0x8]       ; 00473d82

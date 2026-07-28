@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(int param_1,int param_2)
+; void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; CDeformableModelInstance * Stack[0x8]:4   deformable_model
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -72,23 +75,23 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 00437dde | DAT_005ae704
     PUSH EDI                            ; 00437de4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 00437de5
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00437dea
     PUSH 0xffff                         ; 00437ded
     MOV EAX,[0x005ae704]                ; 00437df2 | DAT_005ae704
     PUSH EAX                            ; 00437df7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00437df8
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00437dfd
     MOV EDX,dword ptr [0x005ae704]      ; 00437e00 | DAT_005ae704
     PUSH EDX                            ; 00437e06 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00437e07
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     FLD float ptr [EBP + 0x37b48]       ; 00437e0c
     FMUL double ptr [0x0057aedd]        ; 00437e12 | DOUBLE_0057aedd
     ADD ESP,0x4                         ; 00437e18
     CALL crt_math.c_round_FUN_00563a30  ; 00437e1b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x4]         ; 00437e20
     MOV ECX,dword ptr [ESP + 0x4]       ; 00437e24
     CMP ECX,0x3e8                       ; 00437e28
@@ -101,7 +104,7 @@ section .text
         ;   Label: LAB_00437e40
     PUSH EAX                            ; 00437e46
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 00437e47
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     MOV EDX,dword ptr [EBP + 0x37b44]   ; 00437e4c
     ADD ESP,0x4                         ; 00437e52
     TEST EDX,EDX                        ; 00437e55
@@ -124,7 +127,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00437e85 | DAT_005be368
     PUSH EDX                            ; 00437e8b | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00437e8c
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00437e91
     TEST EBX,EBX                        ; 00437e94
     JZ 0x00437ef0                       ; 00437e96
@@ -200,7 +203,7 @@ section .text
     MOV EAX,[0x005be368]                ; 00437f5f | DAT_005be368
     PUSH EAX                            ; 00437f64 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00437f65
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00437f6a
     CMP dword ptr [ESP + 0x4],0xf618    ; 00437f6d
     JGE 0x00438015                      ; 00437f75
@@ -230,13 +233,13 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 00437fb4 | DAT_005ae704
     PUSH ESI                            ; 00437fba | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 00437fbb
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00437fc0
     PUSH 0x1                            ; 00437fc3
     MOV EDI,dword ptr [0x005ae704]      ; 00437fc5 | DAT_005ae704
     PUSH EDI                            ; 00437fcb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 00437fcc
-        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050()
+        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00437fd1
     ADD ESP,0x14                        ; 00437fd4
         ;   Label: LAB_00437fd4
@@ -250,7 +253,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 00437fdd | DAT_005ae704
     PUSH EAX                            ; 00437fe2 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00437fe3
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00437fe8
     JMP 0x00437e40                      ; 00437feb
         ;   XREF to: 00437e40 (UNCONDITIONAL_JUMP)  ; LAB_00437e40
@@ -301,7 +304,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00438066 | DAT_005be368
     PUSH EDX                            ; 0043806c | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 0043806d
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00438072
     TEST EBX,EBX                        ; 00438075
     JZ 0x004380d0                       ; 00438077
@@ -418,7 +421,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 004381ab | DAT_005be368
     PUSH EDI                            ; 004381b1 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 004381b2
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 004381b7
     CMP dword ptr [ESP + 0x4],0xf618    ; 004381ba
     JGE 0x004381f0                      ; 004381c2

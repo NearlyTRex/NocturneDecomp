@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(int param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[48]:
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 at 0040eebc
@@ -29,7 +31,7 @@ section .text
     ADD EAX,0x78                        ; 00454514
     PUSH EAX                            ; 00454517
     CALL core_dmodel.cpp_loadModel_FUN_004543b0 ; 00454518
-        ;   XREF to: 004543b0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_004543b0()
+        ;   XREF to: 004543b0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_004543b0(char * filename)
     ADD ESP,0x4                         ; 0045451d
     MOV EDX,dword ptr [ESP + 0x4]       ; 00454520
     MOV dword ptr [EDX + 0x178],EAX     ; 00454524

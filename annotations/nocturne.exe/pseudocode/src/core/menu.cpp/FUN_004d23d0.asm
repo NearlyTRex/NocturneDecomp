@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_menu_cpp_FUN_004d23d0(void)
+; int __cdecl core_menu_cpp_FUN_004d23d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004d23d0 at 004c85e0
+;   core_main.c_enterMainGameMenu_FUN_004c85e0 at 004c85e0
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d23b8 = 004d25ec
@@ -74,14 +74,14 @@ section .text
     PUSH EDI                            ; 004d2408 | = "f0100" | s_f0300_0058920d
     PUSH EBX                            ; 004d2409
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004d240a
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004d240f
     PUSH 0x1                            ; 004d2412
     PUSH 0x2                            ; 004d2414
     PUSH EBX                            ; 004d2416
     ADD ESI,0x4                         ; 004d2417
     CALL engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0 ; 004d241a
-        ;   XREF to: 0040e9e0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0()
+        ;   XREF to: 0040e9e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0(CAlphaBitmap * this_ptr, int scaleFactorX, int scaleFactorY)
     ADD ESP,0xc                         ; 004d241f
     ADD EBX,0x14                        ; 004d2422
     CMP ESI,0x20                        ; 004d2425
@@ -92,44 +92,44 @@ section .text
     PUSH 0x588d05                       ; 004d242e | = "fblurl"
     PUSH 0x1cc5b20                      ; 004d2433
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004d2438
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004d243d
     PUSH 0x46                           ; 004d2440
     PUSH ESI                            ; 004d2442
     PUSH 0x588d0c                       ; 004d2443 | = "fblurm"
     PUSH 0x1cc5b34                      ; 004d2448
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004d244d
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004d2452
     PUSH 0x46                           ; 004d2455
     PUSH 0x68                           ; 004d2457
     PUSH 0x588d13                       ; 004d2459 | = "fblurr"
     PUSH 0x1cc5b48                      ; 004d245e
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004d2463
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004d2468
     XOR EBP,EBP                         ; 004d246b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d246d
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d2472
         ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2477
     MOV dword ptr [ESP + 0x10],EBP      ; 004d247c
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d2480
-        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_init_FUN_004de860()
+        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d2485
     MOV EDX,dword ptr [0x005b9354]      ; 004d2488 | DAT_005b9354
     MOV EAX,0x1                         ; 004d248e
     PUSH EDX                            ; 004d2493 | DAT_01c775ec
     MOV dword ptr [ESP + 0x14],EAX      ; 004d2494
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d2498
-        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_saveClockTime_FUN_0049a890()
+        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d249d
     MOV ECX,dword ptr [0x005b9354]      ; 004d24a0 | DAT_005b9354
         ;   Label: LAB_004d24a0
     PUSH ECX                            ; 004d24a6 | DAT_01c775ec
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d24a7
-        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_updateDT_FUN_0049a8a0()
+        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d24ac
     MOV EAX,[0x005b9354]                ; 004d24af | DAT_005b9354
     SUB ESP,0x4                         ; 004d24b4
@@ -137,15 +137,15 @@ section .text
     MOV dword ptr [ESP],EDX             ; 004d24bd
     PUSH 0x1cc5780                      ; 004d24c0
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d24c5
-        ;   XREF to: 004deae0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_update_FUN_004deae0()
+        ;   XREF to: 004deae0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_004deae0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d24ca
     PUSH 0x1cc5780                      ; 004d24cd
     CALL core_moon.cpp_CMoon_render_FUN_004dec50 ; 004d24d2
-        ;   XREF to: 004dec50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_render_FUN_004dec50()
+        ;   XREF to: 004dec50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004dec50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d24d7
     PUSH 0x588d1a                       ; 004d24da | = "S T A R T"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d24df
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d24e4
     MOV EDI,0x1cc7d10                   ; 004d24e7
     MOV ESI,EAX                         ; 004d24ec
@@ -167,7 +167,7 @@ section .text
         ;   Label: LAB_004d2507
     PUSH 0x588d24                       ; 004d2508 | = "O P T I O N S"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d250d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d2512
     MOV EDI,0x1cc7e10                   ; 004d2515
     MOV ESI,EAX                         ; 004d251a
@@ -189,7 +189,7 @@ section .text
         ;   Label: LAB_004d2535
     PUSH 0x588d32                       ; 004d2536 | = "L O A D"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d253b
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d2540
     MOV EDI,0x1cc7f10                   ; 004d2543
     MOV ESI,EAX                         ; 004d2548
@@ -212,7 +212,7 @@ section .text
     PUSH 0x588d3a                       ; 004d2564 | = "Q U I T"
     MOV EDI,0x1cc8010                   ; 004d2569
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d256e
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d2573
     MOV ESI,EAX                         ; 004d2576
     MOV EDX,0x1cc7d10                   ; 004d2578
@@ -247,7 +247,7 @@ section .text
     PUSH 0x4                            ; 004d25b9
     PUSH 0x1cc8110                      ; 004d25bb
     CALL core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440 ; 004d25c0
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440()
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
     ADD ESP,0x14                        ; 004d25c5
     MOV EBX,dword ptr [ESP + 0x10]      ; 004d25c8
     MOV ESI,EAX                         ; 004d25cc
@@ -255,9 +255,9 @@ section .text
     JZ 0x004d25d7                       ; 004d25d0
         ;   XREF to: 004d25d7 (CONDITIONAL_JUMP)  ; LAB_004d25d7
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004d25d2
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004d25d7
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_004d25d7
     CMP ESI,0x3                         ; 004d25dc
     JA 0x004d266d                       ; 004d25df
@@ -267,12 +267,12 @@ section .text
     PUSH 0x1cc5780                      ; 004d25ec
         ;   Label: caseD_0
     CALL core_moon.cpp_CMoon_free_FUN_004dea60 ; 004d25f1
-        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_free_FUN_004dea60()
+        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_004dea60(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d25f6
     MOV EDX,dword ptr [0x005bed68]      ; 004d25f9 | DAT_005bed68
     PUSH EDX                            ; 004d25ff
     CALL core_sound.cpp_CSound_reset_FUN_0052e9c0 ; 004d2600
-        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_reset_FUN_0052e9c0()
+        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0052e9c0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d2605
     MOV EAX,[0x005bac64]                ; 004d2608 | INT_005bac64
     PUSH 0x2a                           ; 004d260d
@@ -300,17 +300,17 @@ section .text
         ;   Label: LAB_004d263f
     ADD ESP,0x8                         ; 004d2644
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d2647
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d264c
         ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2651
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d2656
-        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_init_FUN_004de860()
+        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d265b
     MOV EDI,dword ptr [0x005bed68]      ; 004d265e | DAT_005bed68
     PUSH EDI                            ; 004d2664
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d2665
-        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_configure_FUN_0052e850()
+        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
         ;   Label: LAB_004d2665
     ADD ESP,0x4                         ; 004d266a
         ;   Label: LAB_004d266a
@@ -345,18 +345,18 @@ section .text
     JZ 0x004d26d3                       ; 004d26ab
         ;   XREF to: 004d26d3 (CONDITIONAL_JUMP)  ; LAB_004d26d3
     CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 004d26ad
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
     TEST EAX,EAX                        ; 004d26b2
     SETZ AL                             ; 004d26b4
     AND EAX,0xff                        ; 004d26b7
     PUSH EAX                            ; 004d26bc
     CALL sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 ; 004d26bd
-        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0()
+        ;   XREF to: 00526cb0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0(int enable)
     ADD ESP,0x4                         ; 004d26c2
     MOV EAX,[0x005bed68]                ; 004d26c5 | DAT_005bed68
     PUSH EAX                            ; 004d26ca
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d26cb
-        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_configure_FUN_0052e850()
+        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d26d0
     PUSH 0x1d                           ; 004d26d3
         ;   Label: LAB_004d26d3
@@ -381,14 +381,14 @@ section .text
         ;   Label: LAB_004d26fe
     PUSH EDX                            ; 004d2704
     CALL core_sound.cpp_CSound_reset_FUN_0052e9c0 ; 004d2705
-        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_reset_FUN_0052e9c0()
+        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0052e9c0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d270a
     CALL core_main.c_FUN_004c8510       ; 004d270d
         ;   XREF to: 004c8510 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8510()
     MOV ECX,dword ptr [0x005bed68]      ; 004d2712 | DAT_005bed68
     PUSH ECX                            ; 004d2718
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d2719
-        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_configure_FUN_0052e850()
+        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d271e
     PUSH 0x1d                           ; 004d2721
         ;   Label: LAB_004d2721
@@ -415,10 +415,10 @@ section .text
     PUSH EDI                            ; 004d2753
     MOV dword ptr [ESP + 0x14],ESI      ; 004d2754
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d2758
-        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_configure_FUN_0052e850()
+        ;   XREF to: 0052e850 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0052e850(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d275d
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d2760
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     TEST EBP,EBP                        ; 004d2765
         ;   Label: LAB_004d2765
     JZ 0x004d24a0                       ; 004d2767
@@ -426,11 +426,11 @@ section .text
     MOV EAX,[0x005bed68]                ; 004d276d | DAT_005bed68
     PUSH EAX                            ; 004d2772
     CALL core_sound.cpp_CSound_reset_FUN_0052e9c0 ; 004d2773
-        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_reset_FUN_0052e9c0()
+        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0052e9c0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d2778
     PUSH 0x1cc5780                      ; 004d277b
     CALL core_moon.cpp_CMoon_free_FUN_004dea60 ; 004d2780
-        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_free_FUN_004dea60()
+        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_004dea60(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d2785
     MOV EAX,EBP                         ; 004d2788
     POP EBX                             ; 004d278a
@@ -477,12 +477,12 @@ section .text
     PUSH 0x1cc5780                      ; 004d27ee
         ;   Label: caseD_2
     CALL core_moon.cpp_CMoon_free_FUN_004dea60 ; 004d27f3
-        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_free_FUN_004dea60()
+        ;   XREF to: 004dea60 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_004dea60(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d27f8
     MOV ESI,dword ptr [0x005bed68]      ; 004d27fb | DAT_005bed68
     PUSH ESI                            ; 004d2801
     CALL core_sound.cpp_CSound_reset_FUN_0052e9c0 ; 004d2802
-        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_reset_FUN_0052e9c0()
+        ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0052e9c0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d2807
     PUSH 0x1                            ; 004d280a
     PUSH 0x0                            ; 004d280c
@@ -492,12 +492,12 @@ section .text
         ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004a4170()
     ADD ESP,0xc                         ; 004d281a
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d281d
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL engine_texture.cpp_FUN_005459f0 ; 004d2822
         ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_005459f0()
     PUSH 0x1cc5780                      ; 004d2827
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d282c
-        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_init_FUN_004de860()
+        ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d2831
     MOV EAX,[0x005bed68]                ; 004d2834 | DAT_005bed68
     PUSH EAX                            ; 004d2839
@@ -506,7 +506,7 @@ section .text
     PUSH 0x0                            ; 004d283f
         ;   Label: caseD_1
     CALL core_menu.cpp_showOptionsScreen_FUN_004d21c0 ; 004d2841
-        ;   XREF to: 004d21c0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_showOptionsScreen_FUN_004d21c0()
+        ;   XREF to: 004d21c0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems)
     JMP 0x004d266a                      ; 004d2846
         ;   XREF to: 004d266a (UNCONDITIONAL_JUMP)  ; LAB_004d266a
     MOV EBP,0x63                        ; 004d284b

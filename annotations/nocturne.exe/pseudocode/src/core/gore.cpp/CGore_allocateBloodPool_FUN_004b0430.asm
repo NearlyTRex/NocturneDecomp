@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004b0430(void)
+; CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004b0430(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004b0480 at 004b048f
+;   core_gore.cpp_CGore_createBloodPool_FUN_004b0480 at 004b048f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c9e034

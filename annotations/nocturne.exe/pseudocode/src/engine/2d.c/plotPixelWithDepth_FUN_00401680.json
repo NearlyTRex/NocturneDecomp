@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 284,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 24,
+    "pseudocode_lines": 25,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 76
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -155,7 +153,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_plotPixelWithDepth_FUN_00401680",
-    "signature": "void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int param_1,int param_2,uint param_3)"
+    "signature": "void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int x_coord,int y_coord,uint depth_value)"
   },
   "function_calls": [],
   "globals": [
@@ -198,11 +196,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.711111111111111,
@@ -234,12 +232,34 @@
     "pcode_op_count": 212
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x_coord",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "depth_value",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
     {
@@ -251,191 +271,60 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int param_1,int param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "iVar1 = DAT_005b7624;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)(&DAT_01bd4260 + param_2) + param_1 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)(&DAT_01bd4260 + param_2) + param_1 * 4);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_01bd4260",
       "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)(&DAT_01bd4260 + param_2) + param_1 * 4);",
+      "text": "puVar3 = (uint *)(*(int *)(&DAT_01bd4260 + iVar2) + x_coord * 4);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (*puVar2 < param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*puVar2 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_2) + param_1) = DAT_01c00c70;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_2) + param_1) = DAT_01c00c70;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_2) + param_1) = DAT_01c00c70;",
+      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + iVar2) + x_coord) = DAT_01c00c70;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_01c00c70",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_2) + param_1) = DAT_01c00c70;",
+      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + iVar2) + x_coord) = DAT_01c00c70;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "*(uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2)) =",
+      "text": "*(uint *)(x_coord * 4 + *(int *)(&DAT_01bd2fa0 + iVar2)) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 25,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "*(ushort *)(x_coord * 2 + *(int *)(&DAT_01bd2fa0 + iVar2)) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
       "match": "DAT_01bff720",
       "severity": "mild",
       "text": "*(ushort *)(&DAT_01bff720 + (_DAT_01c00c70 & 0xff) * 2);",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

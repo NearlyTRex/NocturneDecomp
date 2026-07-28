@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(int param_1)
+; CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[43]:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 at 0040eb86
@@ -31,7 +33,7 @@ section .text
     PUSH EBX                            ; 00454499
     MOV dword ptr [EBX + 0x178],0x0     ; 0045449a
     CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0 ; 004544a4
-        ;   XREF to: 004544b0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0()
+        ;   XREF to: 004544b0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004544a9
     MOV EAX,EBX                         ; 004544ac
     POP EBX                             ; 004544ae

@@ -50,7 +50,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004be2e1
     PUSH EAX                            ; 004be2e5
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004bd860 ; 004be2e6
-        ;   XREF to: 004bd860 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_ctor_FUN_004bd860()
+        ;   XREF to: 004bd860 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004bd860(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004be2eb
     PUSH 0x5baa28                       ; 004be2ee | = "Graphics"
     LEA EAX,[ESP + 0x4]                 ; 004be2f3
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004be38c
     PUSH EAX                            ; 004be390
     CALL engine_ini.cpp_CIniFile_setString_FUN_004bd9a0 ; 004be391
-        ;   XREF to: 004bd9a0 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_setString_FUN_004bd9a0()
+        ;   XREF to: 004bd9a0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004bd9a0(CIniFile * this_ptr, char * key, char * value)
     MOV EAX,[0x005b9354]                ; 004be396 | DAT_005b9354
     ADD ESP,0xc                         ; 004be39b
     MOV EBP,dword ptr [EAX + 0x224]     ; 004be39e | DAT_01c77810
@@ -193,7 +193,7 @@ section .text
     MOV EAX,ESP                         ; 004be495
     PUSH EAX                            ; 004be497
     CALL sound_sndmain.cpp_writeIni_FUN_00528c80 ; 004be498
-        ;   XREF to: 00528c80 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_writeIni_FUN_00528c80()
+        ;   XREF to: 00528c80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_writeIni_FUN_00528c80(CIniFile * ini_file)
     ADD ESP,0x4                         ; 004be49d
     PUSH 0x5baa38                       ; 004be4a0 | = "Control"
     LEA EAX,[ESP + 0x4]                 ; 004be4a5

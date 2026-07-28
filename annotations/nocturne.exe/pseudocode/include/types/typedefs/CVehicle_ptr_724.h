@@ -10,17 +10,16 @@ struct CVehicle;
 // Full base definition required for offsetof() in adj().
 #include "types/classes/CVehicle.h"
 // Adjusted pointer: CVehicle_ptr_724
-// Points to CKeyFramedModelInstance at offset 0x2d4 in CVehicle
+// Points to CVehicle at offset 0x2d4 in CVehicle
 // 32-bit pointer to CVehicle
-struct CKeyFramedModelInstance;
 struct CVehicle_ptr_724 {
     void *_raw;
     typedef CVehicle base_type;
     CVehicle_ptr_724() : _raw(0) {}
     template<typename T> CVehicle_ptr_724(T* p) : _raw((void*)p) {}
     template<typename T> CVehicle_ptr_724& operator=(T* p) { _raw = (void*)p; return *this; }
-    CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CVehicle* adj() const { return (CVehicle*)((char*)_raw - offsetof(CVehicle, extra_models)); }
+    CVehicle* operator->() const { return (CVehicle*)_raw; }
+    CVehicle* adj() const { return (CVehicle*)((char*)_raw - offsetof(CVehicle, extra_models[0].part_visibility_flags[2])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

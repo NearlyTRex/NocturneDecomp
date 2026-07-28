@@ -2,37 +2,38 @@
 // Address: 00474ae0
 // Address Range: [[00474ae0, 00474c81]]
 // Convention: unknown
-// Signature: void shape_edittool_cpp_FUN_00474ae0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void shape_edittool_cpp_FUN_00474ae0(CStrList *param_1,char *param_2,char *param_3)
 
 #include "nocturne.h"
 
-void shape_edittool_cpp_FUN_00474ae0(uint param_1,uint param_2,uint param_3)
+void shape_edittool_cpp_FUN_00474ae0(CStrList *param_1,char *param_2,char *param_3)
 
 {
-  char acStack_828 [276];
-  byte auStack_714 [260];
-  byte auStack_610 [260];
-  byte auStack_50c [260];
-  byte auStack_408 [256];
-  byte auStack_308 [256];
-  byte auStack_208 [256];
-  byte auStack_108 [256];
-  byte auStack_8 [4];
+  CFileFinder CStack_828;
+  char acStack_714 [260];
+  char acStack_610 [260];
+  char acStack_50c [260];
+  char acStack_408 [256];
+  char acStack_308 [256];
+  char acStack_208 [256];
+  char acStack_108 [256];
+  char acStack_8 [4];
   
-  splitpath(param_2,auStack_8,auStack_108,auStack_308,auStack_408);
-  makepath(auStack_208,0,auStack_108,auStack_308,auStack_408);
-  splitpath(param_3,0,0,auStack_308,auStack_408);
-  makepath(auStack_50c,auStack_8,auStack_208,auStack_308,auStack_408);
-  engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(acStack_828);
-  engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(acStack_828,auStack_50c);
-  while (acStack_828[0] != '\0') {
-    splitpath(acStack_828,0,0,auStack_308,auStack_408);
-    makepath(auStack_714,auStack_8,auStack_208,auStack_308,auStack_408);
-    _fullpath(auStack_610,auStack_714,0x104);
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,auStack_610);
-    engine_dosio_cpp_CFileFinder_findNext_FUN_00456cc0(acStack_828);
+  splitpath(param_2,acStack_8,acStack_108,acStack_308,acStack_408);
+  makepath(acStack_208,(char *)0x0,acStack_108,acStack_308,acStack_408);
+  splitpath(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
+  makepath(acStack_50c,acStack_8,acStack_208,acStack_308,acStack_408);
+  engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(&CStack_828);
+  engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(&CStack_828,acStack_50c);
+  while (CStack_828.filename[0] != '\0') {
+    splitpath
+              (CStack_828.filename,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
+    makepath(acStack_714,acStack_8,acStack_208,acStack_308,acStack_408);
+    _fullpath(acStack_610,acStack_714,0x104);
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0(param_1,acStack_610);
+    engine_dosio_cpp_CFileFinder_findNext_FUN_00456cc0(&CStack_828);
   }
-  engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(acStack_828);
-  engine_dosio_cpp_CFileFinder_dtor_FUN_00456c20(acStack_828,0);
+  engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(&CStack_828);
+  engine_dosio_cpp_CFileFinder_dtor_FUN_00456c20(&CStack_828,0);
   return;
 }

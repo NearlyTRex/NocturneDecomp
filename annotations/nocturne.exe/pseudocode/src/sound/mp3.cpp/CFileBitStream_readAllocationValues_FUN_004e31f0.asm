@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(undefined4 param_1,int param_2,int param_3)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame )
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
+; SMpegSubbandAllocation * Stack[0x8]:4   output_allocation
+; SMpegFrame *     Stack[0xc]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -58,7 +62,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 004e3243
     PUSH ECX                            ; 004e3247
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e3248
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0()
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 004e324d
     ADD EBX,0x80                        ; 004e3250
     AND EAX,0xff                        ; 004e3256
@@ -97,7 +101,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 004e32ab
     PUSH EDX                            ; 004e32af
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e32b0
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0()
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 004e32b5
     MOV ECX,dword ptr [ESP + 0xc]       ; 004e32b8
     ADD EBX,0x4                         ; 004e32bc

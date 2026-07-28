@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(undefined4 param_1,int param_2,int param_3)
+; void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission *this_ptr,CDemonActor *actor,int should_delete)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; int              Stack[0xc]:4   should_delete
 ;
 ; XREF[5]:
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9b68

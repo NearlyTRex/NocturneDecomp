@@ -2,26 +2,30 @@
 // Address: 005229f0
 // Address Range: [[005229f0, 00522d06]]
 // Convention: unknown
-// Signature: char * sound_sndmain_cpp_FUN_005229f0(undefined4 param_1,char *param_2)
+// Signature: CSfxSample * sound_sndmain_cpp_FUN_005229f0(int param_1,char *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * sound_sndmain_cpp_FUN_005229f0(uint param_1,char *param_2)
+CSfxSample * sound_sndmain_cpp_FUN_005229f0(int param_1,char *param_2)
 
 {
   char cVar1;
-  char *pcVar2;
+  float fVar2;
+  CSfxSample *sfx_sample;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
-  float10 fVar6;
-  uint uVar7;
-  byte local_114 [256];
-  char *local_14;
+  CMP3Decoder *this_ptr;
+  CMP3Decoder *pCVar4;
+  _FILE *p_Var5;
+  long lVar6;
+  int iVar7;
+  double dVar8;
+  CSfxSample *pCVar9;
+  char local_114 [256];
+  CSfxSample *local_14;
   
-  iVar4 = 0;
+  iVar7 = 0;
   do {
     _DAT_02dc1ed8 = _DAT_02dc1ed8 + 1;
     if (0x3f < _DAT_02dc1ed8) {
@@ -29,145 +33,105 @@ char * sound_sndmain_cpp_FUN_005229f0(uint param_1,char *param_2)
     }
     iVar3 = _DAT_02dc1ed8 * 0x168;
     if ((*(int *)(iVar3 + 0x2dc2004) == 0) && (*(int *)(iVar3 + 0x2dc2008) == 0)) {
-      local_14 = (char *)(iVar3 + 0x2dc1edc);
+      local_14 = (CSfxSample *)(iVar3 + 0x2dc1edc);
       goto LAB_00522a32;
     }
-    iVar4 = iVar4 + 1;
-  } while (iVar4 < 0x40);
-  local_14 = (char *)0x0;
+    iVar7 = iVar7 + 1;
+  } while (iVar7 < 0x40);
+  local_14 = (CSfxSample *)0x0;
 LAB_00522a32:
-  pcVar2 = local_14;
-  if (local_14 == (char *)0x0) {
-    return (char *)0x0;
+  sfx_sample = local_14;
+  if (local_14 == (CSfxSample *)0x0) {
+    return (CSfxSample *)0x0;
   }
-  splitpath(param_2,0,0,0,local_114);
-  iVar4 = _stricmp(local_114,"mp3");
-  if ((iVar4 == 0) ||
-     (iVar4 = _stricmp(local_114,".mp3"), iVar4 == 0)) {
-    iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_2);
-    if (iVar4 < 1) goto LAB_00522ceb;
-    iVar3 = FUN_0056497c(0x8630);
-    iVar4 = 0;
-    if (iVar3 != 0) {
-      iVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(iVar3);
+  splitpath(param_2,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
+  iVar7 = _stricmp(local_114,"mp3");
+  if ((iVar7 == 0) ||
+     (iVar7 = _stricmp(local_114,".mp3"), iVar7 == 0)) {
+    iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_2);
+    if (iVar7 < 1) goto LAB_00522ceb;
+    this_ptr = (CMP3Decoder *)FUN_0056497c(0x8630);
+    pCVar4 = (CMP3Decoder *)0x0;
+    if (this_ptr != (CMP3Decoder *)0x0) {
+      pCVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(this_ptr);
     }
-    *(int *)(pcVar2 + 0x144) = iVar4;
-    if (iVar4 == 0) {
+    sfx_sample->loop_destinations[2] = (int)pCVar4;
+    if (pCVar4 == (CMP3Decoder *)0x0) {
       PTR_01cc4800 = "..\\sound\\sndmain.cpp";
       INT_01cc4804 = 0x3c8;
       core_main_c_FUN_004c8440("Out of memory.");
     }
-    sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(*(uint *)(pcVar2 + 0x144),param_2);
-    pcVar5 = pcVar2;
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(sfx_sample->loop_destinations[2],param_2);
+    pCVar9 = sfx_sample;
     do {
       cVar1 = *param_2;
-      *pcVar5 = cVar1;
+      (pCVar9->sample_info).name[0] = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = param_2[1];
       param_2 = param_2 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      (pCVar9->sample_info).name[1] = cVar1;
+      pCVar9 = (CSfxSample *)((pCVar9->sample_info).name + 2);
     } while (cVar1 != '\0');
-    pcVar2[0x100] = '\x01';
-    pcVar2[0x101] = '\0';
-    pcVar2[0x102] = '\0';
-    pcVar2[0x103] = '\0';
-    iVar4 = *(int *)(pcVar2 + 0x144);
-    pcVar2[0x104] = '\x10';
-    pcVar2[0x105] = '\0';
-    pcVar2[0x106] = '\0';
-    pcVar2[0x107] = '\0';
-    *(uint *)(pcVar2 + 0x108) = *(uint *)(iVar4 + 0x104);
-    uVar7 = *(uint *)(*(int *)(pcVar2 + 0x144) + 0x100);
-    pcVar2[0x110] = -1;
-    pcVar2[0x111] = -1;
-    pcVar2[0x112] = -1;
-    pcVar2[0x113] = -1;
-    *(uint *)(pcVar2 + 0x10c) = uVar7;
-    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pcVar2);
-    pcVar2[0x128] = '\0';
-    pcVar2[0x129] = '\0';
-    pcVar2[0x12a] = '\0';
-    pcVar2[299] = '\0';
-    pcVar2[300] = '\0';
-    pcVar2[0x12d] = '\0';
-    pcVar2[0x12e] = '\0';
-    pcVar2[0x12f] = '\0';
-    iVar4 = *(int *)(pcVar2 + 0x10c);
-    pcVar2[0x130] = '\0';
-    pcVar2[0x131] = '\0';
-    pcVar2[0x132] = '\0';
-    pcVar2[0x133] = '\0';
-    fVar6 = (float10)2.0f;
-    pcVar2[0x13c] = '\0';
-    pcVar2[0x13d] = '\0';
-    pcVar2[0x13e] = '\0';
-    pcVar2[0x13f] = '\0';
-    pcVar2[0x140] = '\0';
-    pcVar2[0x141] = '\0';
-    pcVar2[0x142] = '\0';
-    pcVar2[0x143] = '\0';
-    uVar7 = 0x522bb8;
-    pcVar5 = pcVar2;
-    fVar6 = (float10)round((float10)iVar4 * fVar6);
-    *(int *)(pcVar2 + 0x138) = (int)ROUND(fVar6);
-    *(uint *)(pcVar2 + 0x134) = param_1;
-    iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(uVar7,pcVar5);
+    (sfx_sample->sample_info).streaming_flag = 1;
+    iVar7 = sfx_sample->loop_destinations[2];
+    (sfx_sample->sample_info).bit_depth = 0x10;
+    (sfx_sample->sample_info).num_channels = *(int *)(iVar7 + 0x104);
+    iVar7 = *(int *)(sfx_sample->loop_destinations[2] + 0x100);
+    (sfx_sample->sample_info).sample_count = -1;
+    (sfx_sample->sample_info).sample_rate = iVar7;
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(sfx_sample);
+    sfx_sample->loop_endpoints[0] = 0;
+    sfx_sample->loop_endpoints[1] = 0;
+    iVar7 = (sfx_sample->sample_info).sample_rate;
+    sfx_sample->loop_endpoints[2] = 0;
+    fVar2 = (float)iVar7 * 2.0f;
+    sfx_sample->loop_destinations[0] = 0;
+    sfx_sample->loop_destinations[1] = 0;
+    pCVar9 = (CSfxSample *)0x522bb8;
+    dVar8 = round((double)fVar2);
+    sfx_sample->loop_endpoints[4] = (int)ROUND(dVar8);
+    sfx_sample->loop_endpoints[3] = param_1;
+    iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar9);
   }
   else {
-    iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,"rb");
-    *(int *)(pcVar2 + 0x14c) = iVar4;
-    pcVar5 = pcVar2;
-    if (iVar4 == 0) goto LAB_00522ceb;
+    p_Var5 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_2,"rb");
+    sfx_sample->loop_destinations[4] = (int)p_Var5;
+    pCVar9 = sfx_sample;
+    if (p_Var5 == (_FILE *)0x0) goto LAB_00522ceb;
     do {
       cVar1 = *param_2;
-      *pcVar5 = cVar1;
+      (pCVar9->sample_info).name[0] = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = param_2[1];
       param_2 = param_2 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      (pCVar9->sample_info).name[1] = cVar1;
+      pCVar9 = (CSfxSample *)((pCVar9->sample_info).name + 2);
     } while (cVar1 != '\0');
-    uVar7 = _ftell(*(uint *)(pcVar2 + 0x14c));
-    *(uint *)(pcVar2 + 0x148) = uVar7;
-    iVar4 = sound_sndmain_cpp_parseWavFile_FUN_00521830
-                      (*(uint *)(pcVar2 + 0x14c),pcVar2 + 0x148,pcVar2);
-    if (iVar4 == 0) goto LAB_00522ceb;
-    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pcVar2);
-    pcVar2[0x128] = '\0';
-    pcVar2[0x129] = '\0';
-    pcVar2[0x12a] = '\0';
-    pcVar2[299] = '\0';
-    pcVar2[300] = '\0';
-    pcVar2[0x12d] = '\0';
-    pcVar2[0x12e] = '\0';
-    pcVar2[0x12f] = '\0';
-    iVar4 = *(int *)(pcVar2 + 0x10c);
-    pcVar2[0x130] = '\0';
-    pcVar2[0x131] = '\0';
-    pcVar2[0x132] = '\0';
-    pcVar2[0x133] = '\0';
-    fVar6 = (float10)2.0f;
-    pcVar2[0x13c] = '\0';
-    pcVar2[0x13d] = '\0';
-    pcVar2[0x13e] = '\0';
-    pcVar2[0x13f] = '\0';
-    pcVar2[0x140] = '\0';
-    pcVar2[0x141] = '\0';
-    pcVar2[0x142] = '\0';
-    pcVar2[0x143] = '\0';
-    uVar7 = 0x522ccf;
-    pcVar5 = pcVar2;
-    fVar6 = (float10)round((float10)iVar4 * fVar6);
-    *(int *)(pcVar2 + 0x138) = (int)ROUND(fVar6);
-    *(uint *)(pcVar2 + 0x134) = param_1;
-    iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(uVar7,pcVar5);
+    lVar6 = _ftell((_FILE *)sfx_sample->loop_destinations[4]);
+    sfx_sample->loop_destinations[3] = lVar6;
+    iVar7 = sound_sndmain_cpp_parseWavFile_FUN_00521830
+                      ((_FILE *)sfx_sample->loop_destinations[4],sfx_sample->loop_destinations + 3,
+                       sfx_sample);
+    if (iVar7 == 0) goto LAB_00522ceb;
+    sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(sfx_sample);
+    sfx_sample->loop_endpoints[0] = 0;
+    sfx_sample->loop_endpoints[1] = 0;
+    iVar7 = (sfx_sample->sample_info).sample_rate;
+    sfx_sample->loop_endpoints[2] = 0;
+    fVar2 = (float)iVar7 * 2.0f;
+    sfx_sample->loop_destinations[0] = 0;
+    sfx_sample->loop_destinations[1] = 0;
+    pCVar9 = (CSfxSample *)0x522ccf;
+    dVar8 = round((double)fVar2);
+    sfx_sample->loop_endpoints[4] = (int)ROUND(dVar8);
+    sfx_sample->loop_endpoints[3] = param_1;
+    iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(pCVar9);
   }
-  if (iVar4 != 0) {
-    sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(pcVar2,0,0);
-    return pcVar2;
+  if (iVar7 != 0) {
+    sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(sfx_sample,0,0);
+    return sfx_sample;
   }
 LAB_00522ceb:
-  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pcVar2);
-  return (char *)0x0;
+  sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(sfx_sample);
+  return (CSfxSample *)0x0;
 }

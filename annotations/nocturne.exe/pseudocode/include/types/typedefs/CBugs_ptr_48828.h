@@ -19,7 +19,7 @@ struct CBugs_ptr_48828 {
     template<typename T> CBugs_ptr_48828(T* p) : _raw((void*)p) {}
     template<typename T> CBugs_ptr_48828& operator=(T* p) { _raw = (void*)p; return *this; }
     CBugs* operator->() const { return (CBugs*)_raw; }
-    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, state)); }
+    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, bugs[6].position.z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

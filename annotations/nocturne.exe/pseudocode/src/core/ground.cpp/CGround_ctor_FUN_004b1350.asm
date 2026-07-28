@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ground_cpp_CGround_ctor_FUN_004b1350(int *param_1,int param_2,int param_3)
+; CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004b1350(CGround *this_ptr,int width,int height)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
 ;
 ; XREF[1]:
 ;   core_ground.cpp_staticInit_FUN_004b1060 at 004b106f

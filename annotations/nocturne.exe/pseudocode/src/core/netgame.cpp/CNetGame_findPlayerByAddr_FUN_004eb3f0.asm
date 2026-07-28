@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_004eb3f0(int param_1,int *param_2)
+; int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_004eb3f0(CNetGame *this_ptr,SNetworkAddr *addr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   addr
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004ea84c

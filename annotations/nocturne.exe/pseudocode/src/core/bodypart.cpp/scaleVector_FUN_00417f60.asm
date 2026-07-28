@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_scaleVector_FUN_00417f60(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_bodypart_cpp_scaleVector_FUN_00417f60(CVector3f *src,CVector3f *dst,float *scalar)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   src
+; CVector3f *      Stack[0x8]:4   dst
+; float *          Stack[0xc]:4   scalar
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_FUN_004196b0 at 004198be

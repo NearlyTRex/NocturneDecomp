@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   output_buffer
+; uint *           Stack[0x8]:4   source1_buffer
+; uint *           Stack[0xc]:4   source2_buffer
+; uint             Stack[0x10]:4   alpha1
+; uint             Stack[0x14]:4   alpha2
+; int              Stack[0x18]:4   pixel_count
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0 at 0044709b

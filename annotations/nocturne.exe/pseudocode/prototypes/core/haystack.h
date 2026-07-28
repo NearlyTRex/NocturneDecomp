@@ -25,7 +25,7 @@ void FUN_004b3110(int param_1);
 
 // Original: core_haystack.cpp_FUN_004b32d0
 // Address: 004b32d0
-void FUN_004b32d0(int param_1,float param_2);
+void FUN_004b32d0(CHero *param_1,float param_2);
 
 // Original: core_haystack.cpp_CHaystack_updateAI_FUN_004b3880
 // Address: 004b3880
@@ -33,11 +33,11 @@ void __cdecl CHaystack::updateAI(int param_1,float param_2);
 
 // Original: core_haystack.cpp_CHaystack_advanceMotion_FUN_004b3e00
 // Address: 004b3e00
-void __cdecl CHaystack::advanceMotion(int param_1,float param_2);
+void __cdecl CHaystack::advanceMotion(CCharacter *param_1,float param_2);
 
 // Original: core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004b3f40
 // Address: 004b3f40
-void __cdecl CHaystack::checkMeleeHit(int param_1,undefined4 param_2);
+void __cdecl CHaystack::checkMeleeHit(CCharacter *param_1,int param_2);
 
 // Original: core_haystack.cpp_FUN_004b3fe0
 // Address: 004b3fe0
@@ -45,11 +45,11 @@ void FUN_004b3fe0(undefined4 param_1);
 
 // Original: core_haystack.cpp_FUN_004b3ff0
 // Address: 004b3ff0
-void FUN_004b3ff0(undefined4 param_1);
+void FUN_004b3ff0(CCharacter *param_1);
 
 // Original: core_haystack.cpp_CHaystack_processDamage_FUN_004b4000
 // Address: 004b4000
-void CHaystack::processDamage(int param_1,int param_2);
+void CHaystack::processDamage(CCharacter *param_1,SDamageInfo *param_2);
 
 // Original: core_haystack.cpp_FUN_004b4120
 // Address: 004b4120
@@ -61,4 +61,4 @@ void FUN_004b4130(int param_1,undefined4 param_2);
 
 // Original: core_haystack.cpp_FUN_004b4140
 // Address: 004b4140
-undefined4 FUN_004b4140(undefined4 param_1,byte param_2);
+CHero * FUN_004b4140(CHero *param_1,byte param_2);

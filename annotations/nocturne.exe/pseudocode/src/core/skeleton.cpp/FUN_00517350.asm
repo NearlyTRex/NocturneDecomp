@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_00517350(undefined4 param_1)
+; void core_skeleton_cpp_FUN_00517350(CMotionList *param_1)
 ;
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0051735a
     PUSH EDX                            ; 0051735e
     CALL core_motion.cpp_CMotionList_ctor_FUN_004e0900 ; 0051735f
-        ;   XREF to: 004e0900 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_ctor_FUN_004e0900()
+        ;   XREF to: 004e0900 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionList_ctor_FUN_004e0900(CMotionList * this_ptr)
     MOV dword ptr [EAX + 0x28558],0x0   ; 00517364
     MOV dword ptr [EAX + 0x2936c],0x0   ; 0051736e
     MOV dword ptr [EAX + 0x29370],0x0   ; 00517378

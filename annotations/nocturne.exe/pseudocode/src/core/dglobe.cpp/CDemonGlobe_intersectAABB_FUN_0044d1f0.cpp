@@ -2,11 +2,11 @@
 // Address: 0044d1f0
 // Address Range: [[0044d1f0, 0044d2c2]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(int param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5)
+// Signature: int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max)
 
 #include "nocturne.h"
 
-uint __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(int param_1,float *param_2,uint param_3,float *param_4,float *param_5)
+int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max)
 
 {
   float *pfVar1;
@@ -15,22 +15,20 @@ uint __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(int param_1,
   float local_1c;
   byte local_18 [12];
   
-  local_24 = *(float *)(param_1 + 0x24) - *param_2;
-  local_20 = *(float *)(param_1 + 0x28) - param_2[1];
-  local_1c = *(float *)(param_1 + 0x2c) - param_2[2];
+  local_24 = (this_ptr->position).x - reference_position->x;
+  local_20 = (this_ptr->position).y - reference_position->y;
+  local_1c = (this_ptr->position).z - reference_position->z;
   pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                              (param_3,local_18,&local_24);
+                              (rotation_matrix,local_18,&local_24);
   if (&local_24 != pfVar1) {
     local_24 = *pfVar1;
     local_20 = pfVar1[1];
     local_1c = pfVar1[2];
   }
-  if ((((*param_4 <= local_24 + *(float *)(param_1 + 0x30)) &&
-       (param_4[1] <= local_20 + *(float *)(param_1 + 0x30))) &&
-      (param_4[2] <= local_1c + *(float *)(param_1 + 0x30))) &&
-     (((local_24 - *(float *)(param_1 + 0x30) <= *param_5 &&
-       (local_20 - *(float *)(param_1 + 0x30) <= param_5[1])) &&
-      (local_1c - *(float *)(param_1 + 0x30) <= param_5[2])))) {
+  if ((((aabb_min->x <= local_24 + this_ptr->radius) && (aabb_min->y <= local_20 + this_ptr->radius)
+       ) && (aabb_min->z <= local_1c + this_ptr->radius)) &&
+     (((local_24 - this_ptr->radius <= aabb_max->x && (local_20 - this_ptr->radius <= aabb_max->y))
+      && (local_1c - this_ptr->radius <= aabb_max->z)))) {
     return 1;
   }
   return 0;

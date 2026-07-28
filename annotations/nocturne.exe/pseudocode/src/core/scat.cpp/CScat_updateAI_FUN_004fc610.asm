@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(int param_1,float param_2)
+; void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float delta_time)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x78]:4  local_78
@@ -78,7 +81,7 @@ section .text
     LEA EAX,[EBX + 0xbc94]              ; 004fc653
     PUSH EAX                            ; 004fc659
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004fc65a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EAX,[0x01cae0e8]                ; 004fc65f | DAT_01cae0e8
     LEA EDX,[EBX + 0x20]                ; 004fc664
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004fc667
@@ -186,7 +189,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004fc79a
     PUSH EAX                            ; 004fc7a0
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004fc7a1
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004fc7a6
     ADD ESP,0x4                         ; 004fc7a9
     CMP EAX,0x7                         ; 004fc7ac
@@ -212,7 +215,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004fc7e5
     PUSH EAX                            ; 004fc7e8
     CALL core_path.cpp_getPathMap_FUN_004f1e00 ; 004fc7e9
-        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getPathMap_FUN_004f1e00()
+        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_004f1e00(CLocation * location)
     ADD ESP,0x4                         ; 004fc7ee
     MOV EDX,EAX                         ; 004fc7f1
     MOV ECX,dword ptr [EBX + 0x6c]      ; 004fc7f3
@@ -224,7 +227,7 @@ section .text
     PUSH EAX                            ; 004fc7ff
     PUSH EDX                            ; 004fc800
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 004fc801
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 004fc806
     TEST EAX,EAX                        ; 004fc809
     JZ 0x004fc893                       ; 004fc80b
@@ -415,7 +418,7 @@ section .text
     PUSH EAX                            ; 004fca19
     PUSH EBX                            ; 004fca1a
     CALL core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90 ; 004fca1b
-        ;   XREF to: 00424e90 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90()
+        ;   XREF to: 00424e90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90(CCharacter * this_ptr, CVector3f * target)
     ADD ESP,0x8                         ; 004fca20
     MOV dword ptr [EBX + 0xbc9c],0x0    ; 004fca23
         ;   Label: LAB_004fca23

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int param_2)
+; void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame *this_ptr,int perform_handshake)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   perform_handshake
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x30]:4  local_30
@@ -18,11 +21,11 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049deb9
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5ed7
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e9996
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a10
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9aa2
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eb0d3
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb86c
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 at 004e99c7
-;   core_netgame.cpp_FUN_004e99f0 at 004e9a10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Disconnecting_from_serve_0058bc84
@@ -97,10 +100,10 @@ section .text
     MOV EBX,dword ptr [0x005b6d50]      ; 004e9f0a | DAT_005b6d50
     PUSH EBX                            ; 004e9f10
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004e9f11
-        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660()
+        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004e9f16
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e9f19
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004e9f1e
     MOV EBX,0x12                        ; 004e9f20
     SAR EDX,0x1f                        ; 004e9f25
@@ -129,7 +132,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004e9f72
     MOV dword ptr [ESP + 0x10],EAX      ; 004e9f75
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e9f79
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_004e9f79
     MOV EDX,EAX                         ; 004e9f7e
     MOV ECX,0x12                        ; 004e9f80
@@ -206,7 +209,7 @@ section .text
     FSTP float ptr [ESP]                ; 004ea045
     PUSH ECX                            ; 004ea048
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 004ea049
-        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760()
+        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 004ea04e
     MOV EAX,[0x01cea3f8]                ; 004ea051 | DAT_01cea3f8
         ;   Label: LAB_004ea051
@@ -239,7 +242,7 @@ section .text
     JNC 0x004ea0d9                      ; 004ea098
         ;   XREF to: 004ea0d9 (CONDITIONAL_JUMP)  ; LAB_004ea0d9
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ea09a
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ea09f
     MOV ECX,0x12                        ; 004ea0a1
     SAR EDX,0x1f                        ; 004ea0a6
@@ -274,12 +277,12 @@ section .text
     PUSH EAX                            ; 004ea0e9
     PUSH ESI                            ; 004ea0ea
     CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0 ; 004ea0eb
-        ;   XREF to: 004edab0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0()
+        ;   XREF to: 004edab0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 004ea0f0
     PUSH ESI                            ; 004ea0f3
     MOV EBX,dword ptr [0x01cea3f8]      ; 004ea0f4 | DAT_01cea3f8
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea0fa
-        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740()
+        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     MOV ECX,dword ptr [ESI + 0x110]     ; 004ea0ff
     ADD ESP,0x4                         ; 004ea105
     TEST ECX,ECX                        ; 004ea108
@@ -297,10 +300,10 @@ section .text
     MOV EBX,dword ptr [0x005b6d50]      ; 004ea129 | DAT_005b6d50
     PUSH EBX                            ; 004ea12f
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 ; 004ea130
-        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660()
+        ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004ea135
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ea138
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ea13d
     MOV EBX,0x12                        ; 004ea13f
     SAR EDX,0x1f                        ; 004ea144
@@ -329,7 +332,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004ea191
     MOV dword ptr [ESP + 0x14],EAX      ; 004ea194
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ea198
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_004ea198
     MOV EDX,EAX                         ; 004ea19d
     MOV ECX,0x12                        ; 004ea19f
@@ -408,7 +411,7 @@ section .text
     PUSH EAX                            ; 004ea26a
     MOV EDI,0x20000                     ; 004ea26b
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 ; 004ea270
-        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760()
+        ;   XREF to: 00471760 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 004ea275
     MOV EAX,[0x01cea3f8]                ; 004ea278 | DAT_01cea3f8
         ;   Label: LAB_004ea278
@@ -441,7 +444,7 @@ section .text
     JNC 0x004ea305                      ; 004ea2c4
         ;   XREF to: 004ea305 (CONDITIONAL_JUMP)  ; LAB_004ea305
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ea2c6
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ea2cb
     MOV ECX,0x12                        ; 004ea2cd
     SAR EDX,0x1f                        ; 004ea2d2
@@ -484,7 +487,7 @@ section .text
     PUSH EDI                            ; 004ea31f
     PUSH ESI                            ; 004ea320
     CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0 ; 004ea321
-        ;   XREF to: 004edab0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0()
+        ;   XREF to: 004edab0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 004ea326
     INC EBX                             ; 004ea329
         ;   Label: LAB_004ea329
@@ -497,7 +500,7 @@ section .text
         ;   Label: LAB_004ea334
     MOV EBX,dword ptr [0x01cea3f8]      ; 004ea335 | DAT_01cea3f8
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea33b
-        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740()
+        ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame * this_ptr)
     MOV EDI,dword ptr [ESI + 0x1c]      ; 004ea340
     ADD ESP,0x4                         ; 004ea343
     CMP EDI,0x1                         ; 004ea346

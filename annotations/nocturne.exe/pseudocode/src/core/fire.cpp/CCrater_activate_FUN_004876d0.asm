@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CCrater_activate_FUN_004876d0(undefined4 *param_1,undefined4 *param_2,float param_3)
+; void core_fire_cpp_CCrater_activate_FUN_004876d0(CCrater *param_1,float *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x78]:4  local_78
@@ -70,7 +70,7 @@ section .text
     PUSH ESI                            ; 004876f9
         ;   Label: LAB_004876f9
     CALL core_fire.cpp_CCrater_render_FUN_00487af0 ; 004876fa
-        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_render_FUN_00487af0()
+        ;   XREF to: 00487af0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_render_FUN_00487af0(CCrater * this_ptr)
     ADD ESP,0x4                         ; 004876ff
     LEA EAX,[ESI + 0xc]                 ; 00487702
     PUSH 0x0                            ; 00487705

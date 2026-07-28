@@ -10,13 +10,15 @@ uint * core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(int param_1)
 
 {
   uint *puVar1;
-  int iVar2;
+  void *pvVar2;
   uint *puVar3;
   uint *puVar4;
   
-  iVar2 = __arrinit(param_1 + 0x1750,100,&g_CVectorTypeInfo_005993b0);
-  iVar2 = __arrinit(iVar2 + 0x4bc,100,&g_CBoundingBox3D_005993f0);
-  puVar1 = (uint *)(iVar2 + -0x1c0c);
+  pvVar2 = __arrinit
+                     ((void *)(param_1 + 0x1750),100,&g_CVectorTypeInfo_005993b0);
+  pvVar2 = __arrinit
+                     ((void *)((int)pvVar2 + 0x4bc),100,&g_CBoundingBox3D_005993f0);
+  puVar1 = (uint *)((int)pvVar2 + -0x1c0c);
   puVar3 = puVar1;
   do {
     puVar4 = puVar3 + 1;
@@ -28,21 +30,21 @@ uint * core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(int param_1)
     puVar3[0x29] = 0;
     puVar3[0xb] = 0;
     puVar3 = puVar4;
-  } while (puVar4 != (uint *)(iVar2 + -0x1bf8));
-  *(uint *)(iVar2 + -0x1b54) = 0;
-  *(uint *)(iVar2 + -0x1b50) = 0;
-  memset(iVar2 + -0x1b4c,0,0xb40);
-  *(uint *)(iVar2 + -0x100c) = 0;
-  memset(iVar2 + -0x1008,0,0xb40);
-  *(byte *)(iVar2 + 0xe10) = 0;
-  *(uint *)(iVar2 + 0xe60) = 0;
-  *(uint *)(iVar2 + -0x4c0) = 0x3f800000;
+  } while (puVar4 != (uint *)((int)pvVar2 + -0x1bf8));
+  *(uint *)((int)pvVar2 + -0x1b54) = 0;
+  *(uint *)((int)pvVar2 + -0x1b50) = 0;
+  memset((void *)((int)pvVar2 + -0x1b4c),0,0xb40);
+  *(uint *)((int)pvVar2 + -0x100c) = 0;
+  memset((void *)((int)pvVar2 + -0x1008),0,0xb40);
+  *(byte *)((int)pvVar2 + 0xe10) = 0;
+  *(uint *)((int)pvVar2 + 0xe60) = 0;
+  *(uint *)((int)pvVar2 + -0x4c0) = 0x3f800000;
   *puVar1 = 0;
-  *(uint *)(iVar2 + -0x4c4) = *(uint *)(iVar2 + -0x4c0);
-  *(uint *)(iVar2 + -0x4c8) = *(uint *)(iVar2 + -0x4c4);
-  memset(iVar2 + -0x1c08,0,0x28);
-  *(uint *)(iVar2 + -4) = 0;
-  *(uint *)(iVar2 + -8) = *(uint *)(iVar2 + -4);
-  *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -8);
+  *(uint *)((int)pvVar2 + -0x4c4) = *(uint *)((int)pvVar2 + -0x4c0);
+  *(uint *)((int)pvVar2 + -0x4c8) = *(uint *)((int)pvVar2 + -0x4c4);
+  memset((void *)((int)pvVar2 + -0x1c08),0,0x28);
+  *(uint *)((int)pvVar2 + -4) = 0;
+  *(uint *)((int)pvVar2 + -8) = *(uint *)((int)pvVar2 + -4);
+  *(uint *)((int)pvVar2 + -0xc) = *(uint *)((int)pvVar2 + -8);
   return puVar1;
 }

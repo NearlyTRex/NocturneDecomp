@@ -2,39 +2,42 @@
 // Address: 00553d90
 // Address Range: [[00553d90, 00553e9f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(undefined4 param_1)
+// Signature: CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(CWeapon *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(uint param_1)
+CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_00553d90(CWeapon *this_ptr)
 
 {
   int iVar1;
+  CKeyFramedModelInstance *pCVar2;
+  CBox *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
-  iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x1b0);
-  *(byte ***)(iVar1 + -0x1b4) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_005a4154;
-  *(uint *)(iVar1 + 0x25c) = 0x40a00000;
-  *(uint *)(iVar1 + -8) = 0;
-  *(uint *)(iVar1 + -0x34) = 0;
-  *(uint *)(iVar1 + -4) = 0;
-  *(uint *)(iVar1 + 0x260) = 0x14;
-  *(uint *)(iVar1 + 0x264) = 0;
-  *(uint *)(iVar1 + -0x200) = 1;
-  *(uint *)(iVar1 + -0x30) = 0;
-  *(uint *)(iVar1 + -0x2c) = 0;
-  *(uint *)(iVar1 + -0x28) = 0;
-  *(uint *)(iVar1 + -0x24) = 0;
-  *(uint *)(iVar1 + -0x20) = 0x43480000;
-  *(uint *)(iVar1 + -0x1c) = 0;
-  *(uint *)(iVar1 + -0x18) = 1;
-  *(uint *)(iVar1 + -0x14) = 0xff;
-  *(uint *)(iVar1 + -0x10) = 0;
-  *(uint *)(iVar1 + -0xc) = 0;
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar1 + 0x150));
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar2[1].part_visibility_flags + 0xd));
+  pCVar3[-1].extents.x = (float)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_005a4154;
+  pCVar3[1].position.y = 5.0;
+  pCVar3[-1].scrape_points[7].raytrace_normal.z = 0.0;
+  pCVar3[-1].scrape_points[7].local_position.y = 0.0;
+  pCVar3[-1].is_valid = 0;
+  pCVar3[1].position.z = 2.8026e-44;
+  pCVar3[1].orientation.x = 0.0;
+  pCVar3[-1].linear_velocity_temp.x = 1.4013e-45;
+  pCVar3[-1].scrape_points[7].local_position.z = 0.0;
+  pCVar3[-1].scrape_points[7].transformed_position.x = 0.0;
+  pCVar3[-1].scrape_points[7].transformed_position.y = 0.0;
+  pCVar3[-1].scrape_points[7].transformed_position.z = 0.0;
+  pCVar3[-1].scrape_points[7].previous_position.x = 200.0;
+  pCVar3[-1].scrape_points[7].previous_position.y = 0.0;
+  pCVar3[-1].scrape_points[7].previous_position.z = 1.4013e-45;
+  pCVar3[-1].scrape_points[7].raytrace_intersection = 3.57331e-43;
+  pCVar3[-1].scrape_points[7].raytrace_normal.x = 0.0;
+  pCVar3[-1].scrape_points[7].raytrace_normal.y = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar1 + -0x1b0,"gat.kfm");
-  *(uint *)(iVar1 + 0x268) = 0;
-  *(uint *)(iVar1 + 0x26c) = 0;
-  return iVar1 + -0x300;
+            ((CKeyFramedModelInstance *)&pCVar3[-1].extents.y,"gat.kfm");
+  pCVar3[1].orientation.y = 0.0;
+  pCVar3[1].orientation.z = 0.0;
+  return (CWeapon *)&pCVar3[-2].scrape_points[4].raytrace_normal.y;
 }

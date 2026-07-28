@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWDecompress_process_FUN_00439a70(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_00439a70(CLZWDecompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 ;
+; Parameters:
+; CLZWDecompress * Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x8]:4   istream
+; int *            Stack[0xc]:4   byte_count
+; _ostream *       Stack[0x10]:4   ostream
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004a4170 at 004a44e9
@@ -42,7 +47,7 @@ section .text
     PUSH EAX                            ; 00439a9a
     PUSH ESI                            ; 00439a9b
     CALL support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0 ; 00439a9c
-        ;   XREF to: 004394f0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0()
+        ;   XREF to: 004394f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary * this_ptr, int code, int parent_index)
     ADD ESP,0xc                         ; 00439aa1
     TEST EAX,EAX                        ; 00439aa4
     JZ 0x00439aaf                       ; 00439aa6
@@ -62,7 +67,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 00439aca
     PUSH EAX                            ; 00439acd
     CALL support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00439590 ; 00439ace
-        ;   XREF to: 00439590 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00439590()
+        ;   XREF to: 00439590 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_00439590(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, _istream * istream, int * bytes_remaining)
     ADD ESP,0x10                        ; 00439ad3
     MOV dword ptr [EBX + 0x2c],EAX      ; 00439ad6
     TEST EAX,EAX                        ; 00439ad9

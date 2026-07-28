@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(int param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer *this_ptr,int enabled)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   enabled
 ;
 ; XREF[18]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160fe

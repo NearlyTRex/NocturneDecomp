@@ -2,19 +2,19 @@
 // Address: 0044bf20
 // Address Range: [[0044bf20, 0044bf6c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(int *param_1)
+// Signature: void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(int *param_1)
+void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter *this_ptr)
 
 {
-  int iVar1;
+  uchar *puVar1;
   
-  core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(param_1);
-  iVar1 = malloc(*param_1 * param_1[1]);
-  param_1[0x12] = iVar1;
-  if (iVar1 != 0) {
+  core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(this_ptr);
+  puVar1 = (uchar *)malloc(this_ptr->size * this_ptr->count);
+  this_ptr->data_buffer = puVar1;
+  if (puVar1 != (uchar *)0x0) {
     return;
   }
   PTR_01cc4800 = "..\\core\\dfilter.cpp";

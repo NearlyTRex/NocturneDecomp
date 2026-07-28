@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(int param_1,float param_2)
+; void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(CSvetlana *this_ptr,float delta_time)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_svetlana.cpp_FUN_00541d00 at 00541dc6
@@ -34,7 +37,7 @@ section .text
     PUSH EAX                            ; 00542ae5
     PUSH ESI                            ; 00542ae6
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 00542ae7
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 00542aec
     MOV EDX,EAX                         ; 00542aef
     CMP EAX,0x64                        ; 00542af1
@@ -46,7 +49,7 @@ section .text
     PUSH EDI                            ; 00542afe
     PUSH EBX                            ; 00542aff
     CALL core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70 ; 00542b00
-        ;   XREF to: 00542b70 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70()
+        ;   XREF to: 00542b70 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetlana * this_ptr, int bone_index)
     MOV EDX,dword ptr [EBX + 0x1fa40]   ; 00542b05
     ADD ESP,0x8                         ; 00542b0b
     TEST EDX,EDX                        ; 00542b0e
@@ -73,7 +76,7 @@ section .text
     PUSH EDX                            ; 00542b37
     PUSH EBX                            ; 00542b38
     CALL core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70 ; 00542b39
-        ;   XREF to: 00542b70 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70()
+        ;   XREF to: 00542b70 (UNCONDITIONAL_CALL)  ; void core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetlana * this_ptr, int bone_index)
     MOV ECX,dword ptr [EBX + 0x1fa40]   ; 00542b3e
     ADD ESP,0x8                         ; 00542b44
     TEST ECX,ECX                        ; 00542b47
@@ -83,7 +86,7 @@ section .text
         ;   Label: LAB_00542b4b
     PUSH EBX                            ; 00542b4c
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 00542b4d
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 00542b52
     JMP 0x00542b1e                      ; 00542b55
         ;   XREF to: 00542b1e (UNCONDITIONAL_JUMP)  ; LAB_00542b1e
@@ -94,7 +97,7 @@ section .text
     PUSH EDX                            ; 00542b5c
     PUSH EBX                            ; 00542b5d
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 00542b5e
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 00542b63
     JMP 0x00542b1e                      ; 00542b66
         ;   XREF to: 00542b1e (UNCONDITIONAL_JUMP)  ; LAB_00542b1e

@@ -17,19 +17,19 @@ CDemonActorType * FUN_0048e360(void);
 
 // Original: core_flamecan.cpp_CFlameCan_ctor_FUN_0048e370
 // Address: 0048e370
-int CFlameCan::ctor(undefined4 param_1);
+CFlameCan * __cdecl CFlameCan::ctor(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_setup_FUN_0048e410
 // Address: 0048e410
-void CFlameCan::setup(int param_1);
+void CFlameCan::setup(CDemonActor *param_1);
 
 // Original: core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
 // Address: 0048e550
-void __cdecl CFlameCan::ignite(int param_1);
+void __cdecl CFlameCan::ignite(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0
 // Address: 0048e5a0
-void CFlameCan::process(int param_1,float param_2);
+void CFlameCan::process(CFlameCan *param_1,float param_2);
 
 // Original: core_flamecan.cpp_FUN_0048e6d0
 // Address: 0048e6d0
@@ -45,7 +45,7 @@ undefined4 FUN_0048e790(int param_1,float *param_2);
 
 // Original: core_flamecan.cpp_FUN_0048e830
 // Address: 0048e830
-void FUN_0048e830(int param_1);
+void FUN_0048e830(CDemonActor *param_1);
 
 // Original: core_flamecan.cpp_FUN_0048e890
 // Address: 0048e890
@@ -57,4 +57,4 @@ undefined4 * FUN_0048e8a0(int param_1,undefined4 *param_2);
 
 // Original: core_flamecan.cpp_FUN_0048e8f0
 // Address: 0048e8f0
-int FUN_0048e8f0(int param_1,byte param_2);
+CDemonActor * FUN_0048e8f0(CDemonActor *param_1,byte param_2);

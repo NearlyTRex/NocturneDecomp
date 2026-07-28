@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_FUN_0050aba0(int param_1)
+; int core_set_cpp_FUN_0050aba0(CDemonSet *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -75,7 +75,7 @@ section .text
     FST float ptr [ESP + 0x8]           ; 0050ac2c
     FLD float ptr [ESP]                 ; 0050ac30
     CALL crt_math.c_atan2_FUN_00566c81  ; 0050ac33
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     FLD float ptr [ESP + 0x8]           ; 0050ac38
     FMUL ST0                            ; 0050ac3c
     FLD float ptr [ESP]                 ; 0050ac3e
@@ -84,7 +84,7 @@ section .text
     FSQRT                               ; 0050ac45
     FLD float ptr [ESP + 0x4]           ; 0050ac47
     CALL crt_math.c_atan2_FUN_00566c81  ; 0050ac4b
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     XOR EDX,EDX                         ; 0050ac50
     MOV dword ptr [ESP + 0x14],EDX      ; 0050ac52
     LEA EAX,[ESP + 0xc]                 ; 0050ac56
@@ -95,7 +95,7 @@ section .text
     PUSH 0x1fb8618                      ; 0050ac63 | DAT_01fb8618
     FSTP float ptr [ESP + 0x14]         ; 0050ac68
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0050ac6c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EDX,dword ptr [EBX + 0x15aabc]  ; 0050ac71
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050ac77
     SUB EAX,EDX                         ; 0050ac7e
@@ -120,16 +120,16 @@ section .text
         ;   Label: LAB_0050acb2
     PUSH 0x1fb8508                      ; 0050acb4
     CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 ; 0050acb9
-        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290()
+        ;   XREF to: 00440290 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera * this_ptr, int skip_clear_buffers)
     ADD ESP,0x8                         ; 0050acbe
     PUSH 0x10                           ; 0050acc1
     PUSH EBX                            ; 0050acc3
     CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 ; 0050acc4
-        ;   XREF to: 0050d2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0()
+        ;   XREF to: 0050d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0050acc9
     PUSH EBX                            ; 0050accc
     CALL core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 ; 0050accd
-        ;   XREF to: 0050a640 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640()
+        ;   XREF to: 0050a640 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050acd2
     PUSH 0x0                            ; 0050acd5
     PUSH 0x1fb8508                      ; 0050acd7

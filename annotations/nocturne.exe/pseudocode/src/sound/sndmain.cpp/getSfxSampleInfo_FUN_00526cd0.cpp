@@ -2,11 +2,11 @@
 // Address: 00526cd0
 // Address Range: [[00526cd0, 00526d00]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(undefined4 param_1,undefined4 *param_2)
+// Signature: int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint sfx_handle,CSfxSample *output_buffer)
 
 #include "nocturne.h"
 
-uint __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint param_1,uint *param_2)
+int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint sfx_handle,CSfxSample *output_buffer)
 
 {
   int iVar1;
@@ -15,15 +15,15 @@ uint __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint param_1,uint *
   byte bVar4;
   
   bVar4 = 0;
-  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(param_1,1);
+  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
   if (iVar1 == 0) {
     return 0;
   }
   puVar3 = *(uint **)(iVar1 + 0x74);
   for (iVar2 = 0x4a; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *param_2 = *puVar3;
+    *(uint *)(output_buffer->sample_info).name = *puVar3;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-    param_2 = param_2 + (uint)bVar4 * -2 + 1;
+    output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);
   }
   sound_sndmain_cpp_unlockSound_FUN_00528890();
   return 1;

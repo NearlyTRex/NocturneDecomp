@@ -2,23 +2,23 @@
 // Address: 00523890
 // Address Range: [[00523890, 005238ed]]
 // Convention: unknown
-// Signature: void sound_sndmain_cpp_FUN_00523890(undefined4 param_1)
+// Signature: void sound_sndmain_cpp_FUN_00523890(CSfxSample *param_1)
 
 #include "nocturne.h"
 
-void sound_sndmain_cpp_FUN_00523890(uint param_1)
+void sound_sndmain_cpp_FUN_00523890(CSfxSample *param_1)
 
 {
-  int iVar1;
+  CSfxSample *pCVar1;
   
-  iVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(param_1);
-  *(uint *)(iVar1 + 0x120) = 0;
-  *(uint *)(iVar1 + 300) = 0;
-  *(uint *)(iVar1 + 0x130) = 0;
-  *(uint *)(iVar1 + 0x128) = 0;
-  *(uint *)(iVar1 + 0x134) = 0xffffffff;
-  *(uint *)(iVar1 + 0x14c) = 0;
-  *(uint *)(iVar1 + 0x144) = 0;
-  *(uint *)(iVar1 + 0x154) = 0;
+  pCVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(param_1);
+  pCVar1->sample_data = (short *)0x0;
+  pCVar1->loop_endpoints[1] = 0;
+  pCVar1->loop_endpoints[2] = 0;
+  pCVar1->loop_endpoints[0] = 0;
+  pCVar1->loop_endpoints[3] = -1;
+  pCVar1->loop_destinations[4] = 0;
+  pCVar1->loop_destinations[2] = 0;
+  pCVar1->ref_count = 0;
   return;
 }

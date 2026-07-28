@@ -1,18 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+; void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   vertex1
+; CVector3f *      Stack[0xc]:4   vertex2
+; CVector3f *      Stack[0x10]:4   vertex3
 ;
 ; XREF[11]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 at 00453b61
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100 at 0045431f
-;   core_dtri.cpp_FUN_0046e960 at 0046e99e
+;   core_dtri.cpp_buildClipTriangleFan_FUN_0046e960 at 0046e99e
 ;   core_manpuz.cpp_FUN_004c9580 at 004c99af
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050f063
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710 at 005107d1
-;   core_setcolid.cpp_FUN_0050eba0 at 0050ebbf
-;   core_setcolid.cpp_FUN_005106a0 at 005106bb
+;   core_setcolid.cpp_rayTestQuadFloor_FUN_0050eba0 at 0050ebbf
+;   core_setcolid.cpp_testCylinderQuadCollision_FUN_005106a0 at 005106bb
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0051a470 at 0051a5ca
 ;   core_stairs.cpp_CStairs_buildCollision_FUN_00534ad0 at 00534bc6
 ;   ... and 1 more
@@ -59,7 +64,7 @@ section .text
     PUSH EAX                            ; 0046c5f4
         ;   Label: LAB_0046c5f4
     CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0046c460 ; 0046c5f5
-        ;   XREF to: 0046c460 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_calculateData_FUN_0046c460()
+        ;   XREF to: 0046c460 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle * triangle)
     ADD ESP,0x4                         ; 0046c5fa
     POP ESI                             ; 0046c5fd
     POP EBX                             ; 0046c5fe

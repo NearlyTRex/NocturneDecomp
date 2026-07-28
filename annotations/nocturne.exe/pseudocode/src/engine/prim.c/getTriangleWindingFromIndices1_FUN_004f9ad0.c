@@ -2,11 +2,11 @@
 // Address: 004f9ad0
 // Address Range: [[004f9ad0, 004f9bbb]]
 // Convention: __cdecl
-// Signature: bool __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(int param_1)
+// Signature: int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
 
 #include "nocturne.h"
 
-bool __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(int param_1)
+int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle *triangle)
 
 {
   int iVar1;
@@ -19,9 +19,9 @@ bool __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(int param
   int local_1c;
   int local_18;
   
-  iVar1 = *(int *)(param_1 + 0x18);
-  iVar4 = *(int *)(param_1 + 0x24);
-  iVar5 = *(int *)(param_1 + 0x30);
+  iVar1 = triangle->vertices[0].vertex_index;
+  iVar4 = triangle->vertices[1].vertex_index;
+  iVar5 = triangle->vertices[2].vertex_index;
   iVar3 = iVar4 * 0x30;
   if (DAT_006b0280 == 1) {
     local_24 = (&DAT_005c5024)[iVar4 * 0xc] - (&DAT_005c5024)[iVar1 * 0xc];
@@ -40,5 +40,5 @@ bool __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_004f9ad0(int param
   uVar2 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar1 = iVar5 - iVar4;
-  return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
+  return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
 }

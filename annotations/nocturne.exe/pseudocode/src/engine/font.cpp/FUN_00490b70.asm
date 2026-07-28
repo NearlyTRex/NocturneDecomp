@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_00490b70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; void engine_font_cpp_FUN_00490b70(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6,va_list_t param_7)
 ;
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_00490b20 at 00490b4f
+;   engine_font.cpp_CBitFont_drawTextF_FUN_00490b20 at 00490b4f
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
@@ -28,7 +28,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490b8a
     PUSH EAX                            ; 00490b8e
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00490b8f
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00490b94
     MOV EAX,ESP                         ; 00490b97
     PUSH EAX                            ; 00490b99
@@ -43,7 +43,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1028]    ; 00490bba
     PUSH EAX                            ; 00490bc1
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 00490bc2
-        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0()
+        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490bc7
     ADD ESP,0x1000                      ; 00490bca
     POP EBP                             ; 00490bd0

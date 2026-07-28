@@ -12,6 +12,6 @@ void core_game_cpp_FUN_004a3a70(void)
 
 {
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20
-            (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0);
+            ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),0);
   return;
 }

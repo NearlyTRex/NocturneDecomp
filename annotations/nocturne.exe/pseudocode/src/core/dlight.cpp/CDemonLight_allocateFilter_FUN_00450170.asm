@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00515350 at 00515412
@@ -24,7 +26,7 @@ section .text
     PUSH 0x10000                        ; 00450170
         ;   Label: core_dlight.cpp_CDemonLight_allocateFilter_FUN_00450170
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00450175
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0045017a
     MOV EDX,dword ptr [ESP + 0x4]       ; 0045017d
     MOV dword ptr [EDX + 0x1c6c],EAX    ; 00450181

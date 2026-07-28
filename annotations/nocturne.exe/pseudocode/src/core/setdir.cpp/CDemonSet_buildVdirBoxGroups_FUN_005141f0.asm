@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(int param_1)
+; undefined8 core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(CDemonSet *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -62,7 +62,7 @@ section .text
     PUSH EBX                            ; 00514251
     PUSH EDI                            ; 00514252
     CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300 ; 00514253
-        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300()
+        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet * this_ptr, int box_index)
     INC EBX                             ; 00514258
     ADD ESP,0x8                         ; 00514259
     MOV ESI,dword ptr [EDI + 0x15b028]  ; 0051425c
@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_005142a2
     PUSH ESI                            ; 005142a3
     CALL core_setdir.cpp_testOBBIntersection_FUN_00513e80 ; 005142a4
-        ;   XREF to: 00513e80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_testOBBIntersection_FUN_00513e80()
+        ;   XREF to: 00513e80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_testOBBIntersection_FUN_00513e80(SVDBox * obb_a, SVDBox * obb_b)
     ADD ESP,0x8                         ; 005142a9
     TEST EAX,EAX                        ; 005142ac
     JNZ 0x005142ec                      ; 005142ae
@@ -116,7 +116,7 @@ section .text
         ;   Label: LAB_005142be
     PUSH EDI                            ; 005142bf
     CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300 ; 005142c0
-        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300()
+        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet * this_ptr, int box_index)
     ADD ESP,0x8                         ; 005142c5
     MOV EDX,dword ptr [ESP + 0x14]      ; 005142c8
     MOV dword ptr [ESP + 0x10],EAX      ; 005142cc
@@ -129,7 +129,7 @@ section .text
     ADD EBP,ECX                         ; 005142dd
     PUSH EBP                            ; 005142df
     CALL core_setdir.cpp_testOBBIntersection_FUN_00513e80 ; 005142e0
-        ;   XREF to: 00513e80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_testOBBIntersection_FUN_00513e80()
+        ;   XREF to: 00513e80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_testOBBIntersection_FUN_00513e80(SVDBox * obb_a, SVDBox * obb_b)
     ADD ESP,0x8                         ; 005142e5
     TEST EAX,EAX                        ; 005142e8
     JZ 0x005142a2                       ; 005142ea

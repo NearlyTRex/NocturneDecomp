@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(undefined4 *param_1,char *param_2,undefined4 param_3)
+; void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 ;
+; Parameters:
+; SMRGLSkyTexture * Stack[0x4]:4   sky_texture
+; char *           Stack[0x8]:4   texture_name
+; int              Stack[0xc]:4   brightness_factor
 ; Local Variables:
 ; undefined        Stack[-0xb4]:1  local_b4
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -107,13 +111,13 @@ section .text
     PUSH EAX                            ; 004635c3
     PUSH 0x1fba938                      ; 004635c4 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 004635c9
-        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0()
+        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004635ce
     LEA EAX,[ESP + 0x60]                ; 004635d1
     PUSH EAX                            ; 004635d5
     PUSH 0x1fba938                      ; 004635d6 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 004635db
-        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0()
+        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 004635e0
     FLD float ptr [ESP + 0x54]          ; 004635e3
     FADD float ptr [ESP + 0x60]         ; 004635e7
@@ -178,7 +182,7 @@ section .text
     MOV EBX,0x4                         ; 004636bb
     XOR ESI,ESI                         ; 004636c0
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004636c2
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV ECX,dword ptr [0x005ae704]      ; 004636c7 | DAT_005ae704
     ADD ESP,0x8                         ; 004636cd
     LEA EAX,[EBX + EBP*0x1]             ; 004636d0
@@ -190,7 +194,7 @@ section .text
     MOV dword ptr [ESP + 0x14],ESI      ; 004636e1
     MOV dword ptr [ESP + 0x10],ESI      ; 004636e5
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004636e9
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     FLD double ptr [0x0057dfbe]         ; 004636ee | DOUBLE_0057dfbe
     FSIN                                ; 004636f4
     ADD ESP,0x8                         ; 004636f6
@@ -204,20 +208,20 @@ section .text
     FMULP                               ; 0046370f
     FXCH                                ; 00463711
     CALL crt_math.c_round_FUN_00563a30  ; 00463713
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x48]        ; 00463718
     MOV EAX,dword ptr [ESP + 0x48]      ; 0046371c
     MOV ECX,dword ptr [0x005ae704]      ; 00463720 | DAT_005ae704
     MOV dword ptr [ESP + 0x50],EAX      ; 00463726
     LEA EAX,[ESP + 0x48]                ; 0046372a
     CALL crt_math.c_round_FUN_00563a30  ; 0046372e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EAX                            ; 00463733
     FISTP dword ptr [ESP + 0x50]        ; 00463734
     MOV EAX,dword ptr [ECX]             ; 00463738
     PUSH EAX                            ; 0046373a
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046373b
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00463740
     MOV EBX,dword ptr [ESP + 0x48]      ; 00463743
     LEA EAX,[ESP + 0x48]                ; 00463747
@@ -229,7 +233,7 @@ section .text
     ADD EAX,0x30                        ; 0046375a
     PUSH EAX                            ; 0046375d
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046375e
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00463763
     MOV ESI,dword ptr [ESP + 0x50]      ; 00463766
     LEA EAX,[ESP + 0x48]                ; 0046376a
@@ -241,7 +245,7 @@ section .text
     ADD EAX,0x60                        ; 0046377d
     PUSH EAX                            ; 00463780
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00463781
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00463786
     MOV EDI,dword ptr [ESP + 0x48]      ; 00463789
     NEG EDI                             ; 0046378d
@@ -253,7 +257,7 @@ section .text
     ADD EAX,0x90                        ; 0046379f
     PUSH EAX                            ; 004637a4
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004637a5
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004637aa
     MOV EAX,[0x005ae704]                ; 004637ad | DAT_005ae704
     MOV EBX,dword ptr [EAX]             ; 004637b2 | DAT_01b4d738
@@ -317,7 +321,7 @@ section .text
     MOV dword ptr [ESP + 0x4c],EBX      ; 00463886
     MOV dword ptr [ESP + 0x50],EBX      ; 0046388a
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460 ; 0046388e
-        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460()
+        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 00463893
     MOV dword ptr [ESP + 0x90],EDI      ; 00463896
     MOV ESI,dword ptr [ESP + 0x90]      ; 0046389d
@@ -331,7 +335,7 @@ section .text
     INC ESI                             ; 004638aa
     INC EBX                             ; 004638ab
     CALL core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440 ; 004638ac
-        ;   XREF to: 00463440 (UNCONDITIONAL_CALL)  ; undefined core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440()
+        ;   XREF to: 00463440 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture * sky_texture, int u_coord, int v_coord, int vertex_index)
     ADD ESP,0x10                        ; 004638b1
     CMP EBX,0x4                         ; 004638b4
     JL 0x004638a6                       ; 004638b7
@@ -413,7 +417,7 @@ section .text
     MOV dword ptr [ESP + 0x50],EBP      ; 004639d3
     ADD ESI,0x1000000                   ; 004639d7
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460 ; 004639dd
-        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460()
+        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 004639e2
     CMP EDI,0x3                         ; 004639e5
     JL 0x00463923                       ; 004639e8

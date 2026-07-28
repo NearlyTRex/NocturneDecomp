@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_render_FUN_004b2110(int param_1)
+; void __cdecl core_ground_cpp_CGround_render_FUN_004b2110(CGround *this_ptr)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x10]:4  local_10
@@ -32,7 +34,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004b2116
     MOV ESI,ESP                         ; 004b211a
     CALL engine_matrix.c_getCameraOrigin_FUN_004ce760 ; 004b211c
-        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ce760()
+        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_004ce760(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 004b2121
     MOV ESI,dword ptr [EBX + 0x1c]      ; 004b2124
     MOV EDX,EAX                         ; 004b2127
@@ -59,23 +61,23 @@ section .text
     PUSH EBX                            ; 004b2156
         ;   Label: LAB_004b2156
     CALL core_ground.cpp_CGround_transformAndStoreVertices_FUN_004b1910 ; 004b2157
-        ;   XREF to: 004b1910 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_transformAndStoreVertices_FUN_004b1910()
+        ;   XREF to: 004b1910 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004b1910(CGround * this_ptr)
     ADD ESP,0x4                         ; 004b215c
     PUSH 0x1                            ; 004b215f
     MOV EBP,dword ptr [0x005ae704]      ; 004b2161 | DAT_005ae704
     PUSH EBP                            ; 004b2167 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 004b2168
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004b216d
     PUSH EBX                            ; 004b2170
     CALL core_ground.cpp_CGround_renderVisibleTerrain_FUN_004b1ff0 ; 004b2171
-        ;   XREF to: 004b1ff0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderVisibleTerrain_FUN_004b1ff0()
+        ;   XREF to: 004b1ff0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004b1ff0(CGround * this_ptr)
     ADD ESP,0x4                         ; 004b2176
     PUSH 0x0                            ; 004b2179
     MOV EAX,[0x005ae704]                ; 004b217b | DAT_005ae704
     PUSH EAX                            ; 004b2180 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 004b2181
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004b2186
     ADD ESP,0xc                         ; 004b2189
     POP EBP                             ; 004b218c

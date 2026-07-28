@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(int *param_1,int param_2)
+; int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(CPickList *this_ptr,int item_index)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   item_index
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00474ec7

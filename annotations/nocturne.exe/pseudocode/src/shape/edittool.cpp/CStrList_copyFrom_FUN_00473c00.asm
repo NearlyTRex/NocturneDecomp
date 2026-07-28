@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(int param_1,int *param_2)
+; CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *dest_ptr,CStrList *source_ptr)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   dest_ptr
+; CStrList *       Stack[0x8]:4   source_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CStrList_copy_FUN_00473bd0 at 00473bef
@@ -39,7 +42,7 @@ section .text
     PUSH EDI                            ; 00473c22
     XOR EBX,EBX                         ; 00473c23
     CALL shape_edittool.cpp_CStrList_allocate_FUN_00473de0 ; 00473c25
-        ;   XREF to: 00473de0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_allocate_FUN_00473de0()
+        ;   XREF to: 00473de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_allocate_FUN_00473de0(CStrList * this_ptr, int new_capacity)
     ADD ESP,0x8                         ; 00473c2a
         ;   Label: LAB_00473c2a
     MOV EAX,dword ptr [ESI]             ; 00473c2d
@@ -49,13 +52,13 @@ section .text
     PUSH EBX                            ; 00473c33
     PUSH ESI                            ; 00473c34
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00473c35
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00473c3a
     PUSH EAX                            ; 00473c3d
     PUSH EDI                            ; 00473c3e
     INC EBX                             ; 00473c3f
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 00473c40
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     JMP 0x00473c2a                      ; 00473c45
         ;   XREF to: 00473c2a (UNCONDITIONAL_JUMP)  ; LAB_00473c2a
     MOV EAX,EDI                         ; 00473c47

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_init_FUN_004b13d0(int *param_1)
+; void __cdecl core_ground_cpp_CGround_init_FUN_004b13d0(CGround *this_ptr)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_terrain.cpp_CTerrain_init_FUN_005492b0 at 005492c2
@@ -31,14 +33,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004b13d1
     PUSH EBX                            ; 004b13d5
     CALL core_ground.cpp_CGround_free_FUN_004b1470 ; 004b13d6
-        ;   XREF to: 004b1470 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_free_FUN_004b1470()
+        ;   XREF to: 004b1470 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_free_FUN_004b1470(CGround * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 004b13db
     IMUL EAX,dword ptr [EBX + 0x4]      ; 004b13dd
     ADD ESP,0x4                         ; 004b13e1
     SHL EAX,0x2                         ; 004b13e4
     PUSH EAX                            ; 004b13e7
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004b13e8
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004b13ed
     MOV dword ptr [EBX + 0x24],EAX      ; 004b13f0
     TEST EAX,EAX                        ; 004b13f3
@@ -54,7 +56,7 @@ section .text
         ;   XREF to: 004b1411 (CONDITIONAL_JUMP)  ; LAB_004b1411
     PUSH EAX                            ; 004b1408
     CALL core_texlist.cpp_CTextureList_ctor_FUN_00544930 ; 004b1409
-        ;   XREF to: 00544930 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_CTextureList_ctor_FUN_00544930()
+        ;   XREF to: 00544930 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_ctor_FUN_00544930(CTextureList * this_ptr)
     ADD ESP,0x4                         ; 004b140e
     MOV dword ptr [EBX + 0x28],EAX      ; 004b1411
         ;   Label: LAB_004b1411

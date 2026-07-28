@@ -27,7 +27,7 @@ section .text
         ;   Label: engine_special.cpp_FUN_00532f50
     PUSH EDI                            ; 00532f51
     CALL engine_special.cpp_kill_FUN_005322b0 ; 00532f52
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005322b0()
     MOV EAX,dword ptr [ESP + 0x10]      ; 00532f57
     MOV ESI,dword ptr [ESP + 0xc]       ; 00532f5b
     MOV EDI,0x5c0e80                    ; 00532f5f | DAT_005c0e80
@@ -51,7 +51,7 @@ section .text
     MOV EDX,dword ptr [0x02dc9e18]      ; 00532f83 | DAT_02dc9e18
     PUSH EDX                            ; 00532f89
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 00532f8a
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
     ADD ESP,0x4                         ; 00532f8f
     POP EDI                             ; 00532f92
     POP ESI                             ; 00532f93

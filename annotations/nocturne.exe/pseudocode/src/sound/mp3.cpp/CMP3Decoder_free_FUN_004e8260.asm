@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(undefined1 *param_1)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(CMP3Decoder *this_ptr)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0 at 004e7dd6
 ;   sound_mp3.cpp_FUN_004e7ed0 at 004e7edc
-;   sound_sndmain.cpp_FUN_00522480 at 005226fd
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527bc2
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005226fd
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -43,7 +45,7 @@ section .text
     PUSH EDX                            ; 004e8297
         ;   Label: LAB_004e8297
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004e8298
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004e829d
     MOV dword ptr [EBX],0x0             ; 004e82a0
     MOV EBX,dword ptr [ESI + 0x4]       ; 004e82a6

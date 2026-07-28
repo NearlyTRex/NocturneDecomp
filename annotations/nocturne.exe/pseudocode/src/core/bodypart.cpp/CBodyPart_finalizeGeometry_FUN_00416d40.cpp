@@ -2,209 +2,208 @@
 // Address: 00416d40
 // Address Range: [[00416d40, 00417318]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(int param_1)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(int param_1)
+void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart *this_ptr)
 
 {
-  int iVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
-  float *pfVar5;
-  uint *puVar6;
-  int *piVar7;
-  uint *puVar8;
-  uint uVar9;
-  int iVar10;
+  double dVar1;
+  float *pfVar2;
+  SBodyPartModel *pSVar3;
+  CVector3f *pCVar4;
+  CVector3i *pCVar5;
+  float fVar6;
+  int iVar7;
+  SMRGLPrimitiveTriangle *pSVar8;
+  int iVar9;
+  int *piVar10;
   int iVar11;
-  int iVar12;
+  CLocation *pCVar12;
+  SMRGLPrimitiveTriangle *texture;
   int iVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float10 fVar16;
+  double dVar14;
+  double dVar15;
+  double dVar16;
   byte local_78 [12];
   float local_6c;
   float local_68;
   float local_64;
-  int local_60;
-  int local_5c;
-  int local_58;
-  int local_54;
-  int local_50;
-  int local_4c;
+  CVector3i local_60;
+  CVector3i local_54;
   byte local_48 [12];
-  byte local_3c [20];
-  int local_28;
+  CVector3f local_3c;
+  SBodyPartFire *local_28;
   int local_24;
   int local_20;
   float local_1c;
-  int local_18;
+  float local_18;
   
-  if ((2 < *(int *)(param_1 + 0x16c)) && (0 < *(int *)(param_1 + 0x178))) {
+  if ((2 < this_ptr->vertex_count) && (0 < this_ptr->tri_count)) {
     core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-              (param_1,&local_54,&local_60);
-    local_18 = -((local_54 + local_60) / 2);
-    iVar12 = -((local_50 + local_5c) / 2);
-    iVar10 = 0;
-    iVar13 = -((local_4c + local_58) / 2);
-    if (0 < *(int *)(param_1 + 0x16c)) {
-      iVar11 = 0;
+              (this_ptr,&local_54,&local_60);
+    local_18 = (float)-((local_54.x + local_60.x) / 2);
+    iVar11 = -((local_54.y + local_60.y) / 2);
+    iVar7 = 0;
+    iVar13 = -((local_54.z + local_60.z) / 2);
+    if (0 < this_ptr->vertex_count) {
+      iVar9 = 0;
       do {
-        iVar1 = *(int *)(param_1 + 0x170);
-        *(int *)(iVar11 + iVar1) = *(int *)(iVar11 + iVar1) + local_18;
-        piVar7 = (int *)(iVar11 + 4 + iVar1);
-        *piVar7 = *piVar7 + iVar12;
-        piVar7 = (int *)(iVar11 + 8 + iVar1);
-        *piVar7 = *piVar7 + iVar13;
-        iVar10 = iVar10 + 1;
-        iVar11 = iVar11 + 0xc;
-      } while (iVar10 < *(int *)(param_1 + 0x16c));
+        pCVar5 = this_ptr->vertices;
+        piVar10 = (int *)((int)&pCVar5->x + iVar9);
+        *piVar10 = *piVar10 + (int)local_18;
+        piVar10 = (int *)((int)&pCVar5->y + iVar9);
+        *piVar10 = *piVar10 + iVar11;
+        piVar10 = (int *)((int)&pCVar5->z + iVar9);
+        *piVar10 = *piVar10 + iVar13;
+        iVar7 = iVar7 + 1;
+        iVar9 = iVar9 + 0xc;
+      } while (iVar7 < this_ptr->vertex_count);
     }
-    local_54 = local_54 + local_18;
-    local_50 = local_50 + iVar12;
-    local_4c = local_4c + iVar13;
-    local_60 = local_60 + local_18;
-    local_58 = local_58 + iVar13;
-    local_5c = local_5c + iVar12;
+    local_54.x = local_54.x + (int)local_18;
+    local_54.y = local_54.y + iVar11;
+    local_54.z = local_54.z + iVar13;
+    local_60.x = local_60.x + (int)local_18;
+    local_60.z = local_60.z + iVar13;
+    local_60.y = local_60.y + iVar11;
     local_6c = (float)0.00390625;
-    *(float *)(param_1 + 0x154) = (float)local_54 * local_6c;
-    *(float *)(param_1 + 0x158) = (float)local_50 * local_6c;
-    *(float *)(param_1 + 0x15c) = (float)local_4c * local_6c;
-    *(float *)(param_1 + 0x160) = (float)local_60 * local_6c;
-    local_68 = (float)iVar12 * local_6c;
-    *(float *)(param_1 + 0x164) = (float)local_5c * local_6c;
+    (this_ptr->bounding_box).min.x = (float)local_54.x * local_6c;
+    (this_ptr->bounding_box).min.y = (float)local_54.y * local_6c;
+    (this_ptr->bounding_box).min.z = (float)local_54.z * local_6c;
+    (this_ptr->bounding_box).max.x = (float)local_60.x * local_6c;
+    local_68 = (float)iVar11 * local_6c;
+    (this_ptr->bounding_box).max.y = (float)local_60.y * local_6c;
     local_64 = (float)iVar13 * local_6c;
-    *(float *)(param_1 + 0x168) = (float)local_58 * local_6c;
-    local_6c = (float)local_18 * local_6c;
+    (this_ptr->bounding_box).max.z = (float)local_60.z * local_6c;
+    local_6c = (float)(int)local_18 * local_6c;
     local_1c = local_64;
-    pfVar5 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
-                                (param_1,local_48,&local_6c);
-    *(float *)(param_1 + 0x20) = *(float *)(param_1 + 0x20) - *pfVar5;
-    *(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) - pfVar5[1];
-    *(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) - pfVar5[2];
-    iVar10 = 0;
-    if (0 < *(int *)(param_1 + 0x284)) {
-      pfVar5 = (float *)(param_1 + 0x288);
+    pfVar2 = (float *)core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
+                                (this_ptr,local_48,&local_6c);
+    pCVar12 = &(this_ptr->base).location;
+    (pCVar12->position).x = (pCVar12->position).x - *pfVar2;
+    (this_ptr->base).location.position.y = (this_ptr->base).location.position.y - pfVar2[1];
+    (this_ptr->base).location.position.z = (this_ptr->base).location.position.z - pfVar2[2];
+    iVar7 = 0;
+    if (0 < this_ptr->attached_model_count) {
+      pSVar3 = this_ptr->attached_models;
       do {
-        *pfVar5 = *pfVar5 + local_6c;
-        pfVar5[1] = pfVar5[1] + local_68;
-        iVar10 = iVar10 + 1;
-        pfVar5[2] = pfVar5[2] + local_64;
-        pfVar5 = pfVar5 + 0x65;
-      } while (iVar10 < *(int *)(param_1 + 0x284));
+        (pSVar3->scale).x = (pSVar3->scale).x + local_6c;
+        (pSVar3->scale).y = (pSVar3->scale).y + local_68;
+        iVar7 = iVar7 + 1;
+        (pSVar3->scale).z = (pSVar3->scale).z + local_64;
+        pSVar3 = pSVar3 + 1;
+      } while (iVar7 < this_ptr->attached_model_count);
     }
-    iVar10 = 0;
-    if (0 < *(int *)(param_1 + 0x744)) {
-      local_28 = param_1 + 0x748;
-      puVar8 = (uint *)(param_1 + 0x774);
+    iVar7 = 0;
+    if (0 < this_ptr->fire_count) {
+      local_28 = this_ptr->fires;
+      pCVar12 = &this_ptr->fires[0].flame.base.location;
       do {
-        pfVar5 = (float *)(iVar10 * 0x2a8 + local_28);
-        *pfVar5 = *pfVar5 + local_6c;
-        pfVar5[1] = pfVar5[1] + local_68;
-        pfVar5[2] = pfVar5[2] + local_64;
-        iVar10 = iVar10 + 1;
-        puVar6 = (uint *)
-                 core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,pfVar5);
-        *puVar8 = *puVar6;
-        puVar8[1] = puVar6[1];
-        puVar8[2] = puVar6[2];
-        puVar8 = puVar8 + 0xaa;
-      } while (iVar10 < *(int *)(param_1 + 0x744));
+        pCVar4 = &local_28[iVar7].local_position;
+        pCVar4->x = pCVar4->x + local_6c;
+        pCVar4->y = pCVar4->y + local_68;
+        pCVar4->z = pCVar4->z + local_64;
+        iVar7 = iVar7 + 1;
+        pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                           (&this_ptr->base,&local_3c,pCVar4);
+        (pCVar12->position).x = pCVar4->x;
+        (pCVar12->position).y = pCVar4->y;
+        (pCVar12->position).z = pCVar4->z;
+        pCVar12 = (CLocation *)((int)(pCVar12 + 0x2a) + 8);
+      } while (iVar7 < this_ptr->fire_count);
     }
-    memset
-              (*(uint *)(param_1 + 0x174),0,*(int *)(param_1 + 0x16c) * 0xc);
+    memset(this_ptr->normals,0,this_ptr->vertex_count * 0xc);
     local_20 = 0;
-    if (0 < *(int *)(param_1 + 0x178)) {
+    if (0 < this_ptr->tri_count) {
       local_24 = 0;
       do {
-        iVar13 = *(int *)(param_1 + 0x17c) + local_24;
-        *(uint *)(iVar13 + 4) = 3;
-        engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920
-                  (*(uint *)(param_1 + 0x170),iVar13);
-        iVar12 = 0;
-        iVar10 = iVar13;
-        if (0 < *(int *)(iVar13 + 4)) {
+        texture = (SMRGLPrimitiveTriangle *)
+                  ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                         type + local_24);
+        (texture->base).base.count = 3;
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920(this_ptr->vertices,texture);
+        iVar7 = 0;
+        pSVar8 = texture;
+        if (0 < (texture->base).base.count) {
           do {
-            piVar7 = (int *)(*(int *)(param_1 + 0x174) + *(int *)(iVar10 + 0x18) * 0xc);
-            *piVar7 = *piVar7 + *(int *)(iVar13 + 8);
-            piVar7[1] = piVar7[1] + *(int *)(iVar13 + 0xc);
-            piVar7[2] = piVar7[2] + *(int *)(iVar13 + 0x10);
-            iVar12 = iVar12 + 1;
-            iVar10 = iVar10 + 0xc;
-          } while (iVar12 < *(int *)(iVar13 + 4));
+            pCVar5 = this_ptr->normals + pSVar8->vertices[0].vertex_index;
+            pCVar5->x = pCVar5->x + (texture->base).surface_normal.A.i;
+            pCVar5->y = pCVar5->y + (texture->base).surface_normal.B.i;
+            pCVar5->z = pCVar5->z + (texture->base).surface_normal.C.i;
+            iVar7 = iVar7 + 1;
+            pSVar8 = (SMRGLPrimitiveTriangle *)&(pSVar8->base).surface_normal.B;
+          } while (iVar7 < (texture->base).base.count);
         }
         local_24 = local_24 + 0x3c;
         local_20 = local_20 + 1;
-      } while (local_20 < *(int *)(param_1 + 0x178));
+      } while (local_20 < this_ptr->tri_count);
     }
-    iVar10 = 0;
-    if (0 < *(int *)(param_1 + 0x16c)) {
-      iVar12 = 0;
+    iVar7 = 0;
+    if (0 < this_ptr->vertex_count) {
+      iVar11 = 0;
       do {
-        piVar7 = (int *)(*(int *)(param_1 + 0x174) + iVar12);
-        dVar2 = (double)*piVar7;
-        iVar13 = piVar7[1];
-        dVar4 = (double)iVar13;
-        iVar11 = piVar7[2];
-        dVar3 = (double)iVar11;
-        dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar2 * dVar2);
-        if (dVar2 <= 0.0) {
-          piVar7[2] = 0;
-          piVar7[1] = piVar7[2];
-          *piVar7 = piVar7[2];
+        piVar10 = (int *)((int)&this_ptr->normals->x + iVar11);
+        dVar14 = (double)*piVar10;
+        dVar15 = (double)piVar10[1];
+        dVar1 = (double)piVar10[2];
+        dVar16 = SQRT(dVar1 * dVar1 + dVar15 * dVar15 + dVar14 * dVar14);
+        if (dVar16 <= 0.0) {
+          piVar10[2] = 0;
+          piVar10[1] = piVar10[2];
+          *piVar10 = piVar10[2];
         }
         else {
-          fVar14 = (float10)65535 / (float10)dVar2;
-          fVar15 = (float10)round((float10)*piVar7 * fVar14);
-          fVar16 = (float10)round((float10)iVar13 * fVar14);
-          fVar14 = (float10)round((float10)iVar11 * fVar14);
-          *piVar7 = (int)ROUND(fVar15);
-          piVar7[1] = (int)ROUND(fVar16);
-          piVar7[2] = (int)ROUND(fVar14);
+          dVar16 = 65535 / dVar16;
+          dVar14 = round(dVar14 * dVar16);
+          dVar15 = round(dVar15 * dVar16);
+          dVar16 = round(dVar1 * dVar16);
+          *piVar10 = (int)ROUND(dVar14);
+          piVar10[1] = (int)ROUND(dVar15);
+          piVar10[2] = (int)ROUND(dVar16);
         }
-        iVar10 = iVar10 + 1;
-        iVar12 = iVar12 + 0xc;
-      } while (iVar10 < *(int *)(param_1 + 0x16c));
+        iVar7 = iVar7 + 1;
+        iVar11 = iVar11 + 0xc;
+      } while (iVar7 < this_ptr->vertex_count);
     }
-    core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(param_1);
-    if ((uint *)(param_1 + 0xcf4) != (uint *)(param_1 + 0x278)) {
-      *(uint *)(param_1 + 0xcf4) = *(uint *)(param_1 + 0x278);
-      *(uint *)(param_1 + 0xcf8) = *(uint *)(param_1 + 0x27c);
-      *(uint *)(param_1 + 0xcfc) = *(uint *)(param_1 + 0x280);
+    core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_00417d70(this_ptr);
+    pCVar4 = &(this_ptr->physics_box).linear_velocity;
+    if (pCVar4 != &this_ptr->initial_velocity) {
+      pCVar4->x = (this_ptr->initial_velocity).x;
+      (this_ptr->physics_box).linear_velocity.y = (this_ptr->initial_velocity).y;
+      (this_ptr->physics_box).linear_velocity.z = (this_ptr->initial_velocity).z;
     }
-    puVar8 = (uint *)
-             core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                       (param_1 + 0xccc,local_78,param_1 + 0x278);
-    if ((uint *)(param_1 + 0xd00) != puVar8) {
-      *(uint *)(param_1 + 0xd00) = *puVar8;
-      *(uint *)(param_1 + 0xd04) = puVar8[1];
-      *(uint *)(param_1 + 0xd08) = puVar8[2];
+    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                                (&(this_ptr->physics_box).rotation_matrix,local_78,
+                                 &this_ptr->initial_velocity);
+    pCVar4 = &(this_ptr->physics_box).linear_velocity_local;
+    if (pCVar4 != (CVector3f *)pfVar2) {
+      pCVar4->x = *pfVar2;
+      (this_ptr->physics_box).linear_velocity_local.y = pfVar2[1];
+      (this_ptr->physics_box).linear_velocity_local.z = pfVar2[2];
     }
-    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-    *(int *)(param_1 + 0xd24) = local_18;
-    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-    *(int *)(param_1 + 0xd2c) = local_18;
-    uVar9 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc116cbe4,0x4116cbe4);
-    *(uint *)(param_1 + 0xd28) = uVar9;
+    local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
+    (this_ptr->physics_box).angular_velocity.x = local_18;
+    local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
+    (this_ptr->physics_box).angular_velocity.z = local_18;
+    fVar6 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc116cbe4,0x4116cbe4);
+    (this_ptr->physics_box).angular_velocity.y = fVar6;
     return;
   }
-  *(uint *)(param_1 + 0x70) = 2;
-  core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(param_1,0,0);
-  puVar8 = (uint *)(param_1 + 0x160);
-  if (puVar8 != (uint *)&DAT_02dd1184) {
-    *puVar8 = _DAT_02dd1184;
-    *(uint *)(param_1 + 0x164) = _DAT_02dd1188;
-    *(uint *)(param_1 + 0x168) = _DAT_02dd118c;
+  (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
+  core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(this_ptr,0,0);
+  pCVar4 = &(this_ptr->bounding_box).max;
+  if (pCVar4 != (CVector3f *)&DAT_02dd1184) {
+    pCVar4->x = _DAT_02dd1184;
+    (this_ptr->bounding_box).max.y = _DAT_02dd1188;
+    (this_ptr->bounding_box).max.z = _DAT_02dd118c;
   }
-  if ((uint *)(param_1 + 0x154) != puVar8) {
-    *(uint *)(param_1 + 0x154) = *puVar8;
-    *(uint *)(param_1 + 0x158) = *(uint *)(param_1 + 0x164);
-    *(uint *)(param_1 + 0x15c) = *(uint *)(param_1 + 0x168);
+  if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar4) {
+    (this_ptr->bounding_box).min.x = pCVar4->x;
+    (this_ptr->bounding_box).min.y = (this_ptr->bounding_box).max.y;
+    (this_ptr->bounding_box).min.z = (this_ptr->bounding_box).max.z;
   }
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00439af0(int param_1,undefined4 param_2)
+; int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_00439af0(CLZWDecompress *this_ptr,_ostream *ostream)
 ;
+; Parameters:
+; CLZWDecompress * Stack[0x4]:4   this_ptr
+; _ostream *       Stack[0x8]:4   ostream
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004a4170 at 004a4501

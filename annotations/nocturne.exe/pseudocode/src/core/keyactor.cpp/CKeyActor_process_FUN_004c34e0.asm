@@ -40,14 +40,14 @@ section .text
     FSTP ST1                            ; 004c3508
     FSTP float ptr [ESI + 0x2d0]        ; 004c350a
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90 ; 004c3510
-        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90()
+        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90(CDemonGlobe * this_ptr, CVector3f * position)
     FLD float ptr [ESI + 0x2d0]         ; 004c3515
     FSIN                                ; 004c351b
     FMUL double ptr [0x00587594]        ; 004c351d | DOUBLE_00587594
     FADD double ptr [0x0058759c]        ; 004c3523 | DOUBLE_0058759c
     ADD ESP,0x8                         ; 004c3529
     CALL crt_math.c_round_FUN_00563a30  ; 004c352c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 004c3531
     MOV EAX,dword ptr [ESP + 0x8]       ; 004c3535
     MOV EDX,EAX                         ; 004c3539
@@ -65,14 +65,14 @@ section .text
     PUSH EBX                            ; 004c355b
     MOV byte ptr [EBX + 0x1c],AL        ; 004c355c
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0 ; 004c355f
-        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0()
+        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 004c3564
     PUSH EBX                            ; 004c3567
     MOV EDX,dword ptr [0x005be368]      ; 004c3568 | DAT_005be368
     PUSH EDX                            ; 004c356e | DAT_01e57284
     MOV dword ptr [EBX + 0x20],0x0      ; 004c356f
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 004c3576
-        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0()
+        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 004c357b
     ADD ESP,0xc                         ; 004c357e
     POP ESI                             ; 004c3581

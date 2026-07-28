@@ -9,7 +9,7 @@
 void __cdecl engine_ncursfx_cpp_staticInit_FUN_004ee4e0(void)
 
 {
-  engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(0x1d465c0);
-  FUN_00564bb0(0x5be050);
+  engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500((CMouse *)0x1d465c0);
+  _atexit((WatcomStaticDestructorNode *)0x5be050);
   return;
 }

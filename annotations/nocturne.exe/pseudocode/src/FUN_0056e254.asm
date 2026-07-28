@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
+;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0
 ;   crt_unknown.c_FUN_00565c50
-;   FUN_0056ddc0
 ;   InitializeCriticalSection
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 0056e2a1 (CONDITIONAL_JUMP)  ; LAB_0056e2a1
     PUSH 0x1                            ; 0056e292
     PUSH 0x598c1c                       ; 0056e294 | = "Unable to allocate semaphore data\r\n"
-    CALL FUN_0056ddc0                   ; 0056e299
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0056e299
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 0056e29e
     MOV EAX,[0x02de5c14]                ; 0056e2a1 | DAT_02de5c14
         ;   Label: LAB_0056e2a1
@@ -66,7 +66,7 @@ section .text
     MOV ECX,dword ptr [0x02de5c18]      ; 0056e2ab | DAT_02de5c18
     PUSH ECX                            ; 0056e2b1
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e2b2
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 0056e2b7
     MOV [0x02de5c18],EAX                ; 0056e2ba | DAT_02de5c18
     TEST EAX,EAX                        ; 0056e2bf
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0056e2d2 (CONDITIONAL_JUMP)  ; LAB_0056e2d2
     PUSH 0x1                            ; 0056e2c3
     PUSH 0x598c40                       ; 0056e2c5 | = "Unable to allocate semaphore data\r\n"
-    CALL FUN_0056ddc0                   ; 0056e2ca
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0056e2ca
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 0056e2cf
     MOV EAX,[0x02de5c14]                ; 0056e2d2 | DAT_02de5c14
         ;   Label: LAB_0056e2d2

@@ -2,48 +2,50 @@
 // Address: 0044c310
 // Address Range: [[0044c310, 0044c495]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int param_2)
+// Signature: void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int param_2)
+void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx *this_ptr,char *filename)
 
 {
-  int iVar1;
-  uint uVar2;
-  byte local_10c [256];
+  _FILE *p_Var1;
+  SMovieFrame *pSVar2;
+  CDemonFilter *this_ptr_00;
+  int iVar3;
+  char local_10c [256];
   
-  core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(param_1);
-  if (param_2 != 0) {
-    _sprintf(local_10c,"%s.txt",param_2);
-    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(param_2,local_10c,"rt");
-    if (iVar1 == 0) {
+  core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(this_ptr);
+  if (filename != (char *)0x0) {
+    _sprintf(local_10c,"%s.txt",filename);
+    p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60(filename,local_10c,"rt");
+    if (p_Var1 == (_FILE *)0x0) {
       PTR_01cc4800 = "..\\core\\dfilter.cpp";
       INT_01cc4804 = 0x15a;
-      core_main_c_FUN_004c8440("Can't open movie %s.txt",param_2);
+      core_main_c_FUN_004c8440("Can't open movie %s.txt",filename);
     }
-    _fscanf(iVar1,"%d\n",param_1);
-    _fclose(iVar1);
-    iVar1 = malloc(*param_1 << 0xd);
-    param_1[1] = iVar1;
-    _sprintf(local_10c,"%s.mov",param_2);
-    iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(param_2,local_10c,"rb");
-    if (iVar1 == 0) {
+    _fscanf(p_Var1,"%d\n",this_ptr);
+    _fclose(p_Var1);
+    pSVar2 = (SMovieFrame *)malloc(this_ptr->frame_count << 0xd);
+    this_ptr->movie_data = pSVar2;
+    _sprintf(local_10c,"%s.mov",filename);
+    p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60(filename,local_10c,"rb");
+    if (p_Var1 == (_FILE *)0x0) {
       PTR_01cc4800 = "..\\core\\dfilter.cpp";
       INT_01cc4804 = 0x166;
-      core_main_c_FUN_004c8440("Can't open movie %s.mov",param_2);
+      core_main_c_FUN_004c8440("Can't open movie %s.mov",filename);
     }
-    _fread(param_1[1],0x2000,*param_1,iVar1);
-    _fclose(iVar1);
-    for (iVar1 = 0; iVar1 < *param_1 * 0x2000; iVar1 = iVar1 + 1) {
-      *(char *)(iVar1 + param_1[1]) =
-           (char)((uint)((int)(uint)*(byte *)(iVar1 + param_1[1]) >> 2) / 2);
+    _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
+    _fclose(p_Var1);
+    for (iVar3 = 0; iVar3 < this_ptr->frame_count * 0x2000; iVar3 = iVar3 + 1) {
+      this_ptr->movie_data->pixels[iVar3] =
+           (uchar)((uint)((int)(uint)this_ptr->movie_data->pixels[iVar3] >> 2) / 2);
     }
-    param_1[2] = 0;
+    this_ptr->current_frame = 0.0;
     return;
   }
-  uVar2 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(0x014B8DE8,"movscrn.raw")
-  ;
-  core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(uVar2,"movscrn.raw");
+  this_ptr_00 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60
+                          (0x014B8DE8,"movscrn.raw");
+  core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(this_ptr_00,"movscrn.raw");
   return;
 }

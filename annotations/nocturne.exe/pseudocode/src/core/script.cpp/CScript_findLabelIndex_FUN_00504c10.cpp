@@ -2,34 +2,35 @@
 // Address: 00504c10
 // Address Range: [[00504c10, 00504c66]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(int param_1,undefined4 param_2)
+// Signature: int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_ptr,char *label_name)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(int param_1,uint param_2)
+int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(CScript *this_ptr,char *label_name)
 
 {
   char *pcVar1;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  char *str2;
   
-  iVar4 = 0;
-  if (0 < *(int *)(param_1 + 0x28)) {
-    iVar5 = 0;
+  iVar3 = 0;
+  if (0 < this_ptr->xref_count) {
+    iVar4 = 0;
     do {
-      pcVar1 = *(char **)(iVar5 + 4 + *(int *)(param_1 + 0x2c));
+      pcVar1 = *(char **)(this_ptr->xref_entries->name + iVar4 + 4);
       if (*pcVar1 == ':') {
-        uVar2 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar1 + 1,param_2);
-        iVar3 = _stricmp(uVar2);
-        if (iVar3 == 0) {
-          return iVar4;
+        str2 = label_name;
+        pcVar1 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar1 + 1);
+        iVar2 = _stricmp(pcVar1,str2);
+        if (iVar2 == 0) {
+          return iVar3;
         }
       }
-      iVar4 = iVar4 + 1;
-      iVar5 = iVar5 + 8;
-    } while (iVar4 < *(int *)(param_1 + 0x28));
+      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 8;
+    } while (iVar3 < this_ptr->xref_count);
   }
   return -1;
 }

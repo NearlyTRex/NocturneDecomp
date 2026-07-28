@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
+; CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(UINT device_id)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
 ; undefined        Stack[-0x138]:1  local_138
 ;
@@ -43,7 +45,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x77c]     ; 0052bef9
     PUSH 0x2dc93a0                      ; 0052bf00
     CALL sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90 ; 0052bf05
-        ;   XREF to: 00529e90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90()
+        ;   XREF to: 00529e90 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice * this_ptr)
     ADD ESP,0x4                         ; 0052bf0a
     TEST EAX,EAX                        ; 0052bf0d
     JNZ 0x0052bf1b                      ; 0052bf0f
@@ -87,7 +89,7 @@ section .text
         ;   XREF to: 0052bfb3 (CONDITIONAL_JUMP)  ; LAB_0052bfb3
     PUSH EAX                            ; 0052bf66
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052bf67
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052bf6c
     PUSH EAX                            ; 0052bf6f
     PUSH 0x594859                       ; 0052bf70 | = "create DirectSound object"
@@ -105,7 +107,7 @@ section .text
     ADD ESP,0x4                         ; 0052bf97
     PUSH 0x2dc93a0                      ; 0052bf9a
     CALL sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90 ; 0052bf9f
-        ;   XREF to: 00529e90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90()
+        ;   XREF to: 00529e90 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice * this_ptr)
     ADD ESP,0x4                         ; 0052bfa4
     XOR EAX,EAX                         ; 0052bfa7
     ADD ESP,0x76c                       ; 0052bfa9
@@ -129,7 +131,7 @@ section .text
     LEA EAX,[ESP + 0x760]               ; 0052bfd2
     PUSH EAX                            ; 0052bfd9
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052bfda
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052bfdf
     MOV ESI,0x14                        ; 0052bfe2
     MOV EDI,0x11                        ; 0052bfe7
@@ -147,7 +149,7 @@ section .text
     JNZ 0x0052c08c                      ; 0052c016
         ;   XREF to: 0052c08c (CONDITIONAL_JUMP)  ; LAB_0052c08c
     CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0 ; 0052c018
-        ;   XREF to: 005284e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0()
+        ;   XREF to: 005284e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0()
         ;   Label: LAB_0052c018
     TEST EAX,EAX                        ; 0052c01d
     JZ 0x0052c04d                       ; 0052c01f
@@ -175,7 +177,7 @@ section .text
     PUSH EAX                            ; 0052c05c
         ;   Label: LAB_0052c05c
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052c05d
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052c062
     PUSH EAX                            ; 0052c065
     PUSH 0x594873                       ; 0052c066 | = "Set cooperative level"
@@ -191,7 +193,7 @@ section .text
     PUSH EAX                            ; 0052c08c
         ;   Label: LAB_0052c08c
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052c08d
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052c092
     PUSH EAX                            ; 0052c095
     PUSH 0x594889                       ; 0052c096 | = "Create the primary buffer"
@@ -222,7 +224,7 @@ section .text
         ;   XREF to: 0052c018 (CONDITIONAL_JUMP)  ; LAB_0052c018
     PUSH EAX                            ; 0052c0eb
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052c0ec
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052c0f1
     PUSH EAX                            ; 0052c0f4
     PUSH 0x5948a3                       ; 0052c0f5 | = "Create the primary buffer"

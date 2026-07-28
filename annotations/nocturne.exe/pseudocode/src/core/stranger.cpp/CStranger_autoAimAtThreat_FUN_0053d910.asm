@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_1,int param_2,float param_3)
+; void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger *this_ptr,int hand_index,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x30]:4  local_30
@@ -240,7 +244,7 @@ section .text
     PUSH EDX                            ; 0053dbac
     PUSH EAX                            ; 0053dbad
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0053dbae
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EBX,EAX                         ; 0053dbb3
     LEA EAX,[ESP + 0xc4]                ; 0053dbb5
     ADD ESP,0xc                         ; 0053dbbc
@@ -255,7 +259,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0053dbd7
     PUSH ESI                            ; 0053dbda
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0053dbdb
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0053dbe0
     MOV EAX,dword ptr [ESP + 0x194]     ; 0053dbe3
     MOV EAX,dword ptr [EAX]             ; 0053dbea
@@ -270,7 +274,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0053dc15
     PUSH EAX                            ; 0053dc1c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0053dc1d
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0053dc22
     LEA EAX,[ESP + 0x10c]               ; 0053dc25
     MOV EBX,0x7149f2ca                  ; 0053dc2c
@@ -302,7 +306,7 @@ section .text
     MOV EDI,dword ptr [EAX + 0x152b3c]  ; 0053dca1
     PUSH EDI                            ; 0053dca7
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0053dca8
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 0053dcad
     ADD ESP,0x8                         ; 0053dcaf
     TEST EAX,EAX                        ; 0053dcb2
@@ -381,7 +385,7 @@ section .text
     PUSH EDX                            ; 0053ddb0
     PUSH EAX                            ; 0053ddb1
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0053ddb2
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EBX,EAX                         ; 0053ddb7
     LEA EAX,[ESP + 0xc4]                ; 0053ddb9
     ADD ESP,0xc                         ; 0053ddc0
@@ -415,7 +419,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 0053de24
     PUSH EAX                            ; 0053de28
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0053de29
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0053de2e
     LEA EAX,[ESP + 0x18]                ; 0053de31
     PUSH EAX                            ; 0053de35
@@ -441,7 +445,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1a4]     ; 0053de78
     PUSH EAX                            ; 0053de7f
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0053de80
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0053de85
     LEA EAX,[ESP + 0x130]               ; 0053de88
     PUSH EAX                            ; 0053de8f
@@ -450,7 +454,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0053de98
     PUSH EDX                            ; 0053de9b
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0053de9c
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0053dea1
     FLDZ                                ; 0053dea4
     FLD float ptr [ESP + 0xdc]          ; 0053dea6
@@ -569,27 +573,27 @@ section .text
     MOV EAX,[0x005be368]                ; 0053e039 | DAT_005be368
     PUSH EAX                            ; 0053e03e | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0053e03f
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053e044
     PUSH 0x2                            ; 0053e047
     MOV EDX,dword ptr [0x005be368]      ; 0053e049 | DAT_005be368
     PUSH EDX                            ; 0053e04f | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800 ; 0053e050
-        ;   XREF to: 00511800 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800()
+        ;   XREF to: 00511800 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet * this_ptr, int ray_type)
     ADD ESP,0x8                         ; 0053e055
     MOV ECX,dword ptr [EBP + 0x14]      ; 0053e058
     PUSH ECX                            ; 0053e05b
     MOV EDI,dword ptr [0x005be368]      ; 0053e05c | DAT_005be368
     PUSH EDI                            ; 0053e062 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0053e063
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053e068
     MOV EAX,dword ptr [ESP + 0x19c]     ; 0053e06b
     PUSH EAX                            ; 0053e072
     MOV EDX,dword ptr [0x005be368]      ; 0053e073 | DAT_005be368
     PUSH EDX                            ; 0053e079 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0053e07a
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053e07f
     LEA EAX,[ESP + 0x130]               ; 0053e082
     PUSH EAX                            ; 0053e089
@@ -598,13 +602,13 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0053e092 | DAT_005be368
     PUSH ECX                            ; 0053e098 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30 ; 0053e099
-        ;   XREF to: 0050fa30 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30()
+        ;   XREF to: 0050fa30 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 0053e09e
     MOV EDI,EAX                         ; 0053e0a1
     MOV EAX,[0x005be368]                ; 0053e0a3 | DAT_005be368
     PUSH EAX                            ; 0053e0a8 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0053e0a9
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053e0ae
     TEST EDI,EDI                        ; 0053e0b1
     JNZ 0x0053defa                      ; 0053e0b3

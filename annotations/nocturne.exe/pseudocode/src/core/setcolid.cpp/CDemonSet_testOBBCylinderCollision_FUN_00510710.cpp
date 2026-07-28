@@ -2,80 +2,91 @@
 // Address: 00510710
 // Address Range: [[00510710, 00510a3c]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,undefined4 param_5)
+// Signature: int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)
 
 #include "nocturne.h"
 
-bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)
+int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)
 
 {
-  uint uVar1;
+  CVector3f *pCVar1;
   float *pfVar2;
-  float *pfVar3;
-  int iVar4;
-  float local_1e8 [3];
-  byte local_1dc [12];
-  byte local_1d0 [12];
-  byte local_1c4 [12];
-  byte local_1b8 [12];
-  byte local_1ac [12];
-  byte local_1a0 [12];
-  byte local_194 [12];
-  byte local_188 [56];
-  byte local_150 [56];
-  byte local_118 [56];
-  byte local_e0 [56];
-  byte local_a8 [56];
-  byte local_70 [56];
-  byte local_38 [12];
+  CVector3f *pCVar3;
+  uint corner_index;
+  CVector3f local_1e8;
+  CVector3f local_1dc;
+  CVector3f local_1d0;
+  CVector3f local_1c4;
+  CVector3f local_1b8;
+  CVector3f local_1ac;
+  CVector3f local_1a0;
+  CVector3f local_194;
+  CDemonTriangle local_188;
+  CDemonTriangle local_150;
+  CDemonTriangle local_118;
+  CDemonTriangle local_e0;
+  CDemonTriangle local_a8;
+  CDemonTriangle local_70;
+  CVector3f local_38;
   byte local_2c [12];
-  float local_20;
-  float local_1c;
-  float local_18;
+  CVector3f local_20;
   float local_14;
   
-  pfVar3 = local_1e8;
-  iVar4 = 0;
-  __arrinit(local_1e8,8,&g_CVectorTypeInfo_005993b0);
+  pCVar3 = &local_1e8;
+  corner_index = 0;
+  __arrinit(&local_1e8,8,&g_CVectorTypeInfo_005993b0);
   do {
-    uVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(param_3,local_38,iVar4);
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(bounding_box,&local_38,corner_index)
+    ;
     pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                (param_5,local_2c,uVar1);
-    local_20 = *pfVar2 + *param_4;
-    local_1c = pfVar2[1] + param_4[1];
-    local_18 = pfVar2[2] + param_4[2];
-    if (pfVar3 != &local_20) {
-      *pfVar3 = local_20;
-      pfVar3[1] = local_1c;
-      pfVar3[2] = local_18;
+                                (orientation_matrix,local_2c,pCVar1);
+    local_20.x = *pfVar2 + position->x;
+    local_20.y = pfVar2[1] + position->y;
+    local_20.z = pfVar2[2] + position->z;
+    if (pCVar3 != &local_20) {
+      pCVar3->x = local_20.x;
+      pCVar3->y = local_20.y;
+      pCVar3->z = local_20.z;
     }
-    iVar4 = iVar4 + 1;
-    pfVar3 = pfVar3 + 3;
-  } while (iVar4 < 8);
-  local_14 = *param_2;
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_70,local_1e8,local_1b8,local_1a0);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_70,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_70,local_1e8,local_1a0,local_1d0);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_70,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_188,local_1dc,local_1c4,local_194);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_188,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_188,local_1dc,local_194,local_1ac);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_188,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_150,local_1e8,local_1dc,local_1ac);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_150,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_150,local_1e8,local_1ac,local_1b8);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_150,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_118,local_1d0,local_1a0,local_194);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_118,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_118,local_1d0,local_194,local_1c4);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_118,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_e0,local_1e8,local_1d0,local_1c4);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_e0,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_e0,local_1e8,local_1c4,local_1dc);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_e0,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_a8,local_1b8,local_1ac,local_194);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_a8,param_2);
-  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(local_a8,local_1b8,local_194,local_1a0);
-  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_a8,param_2);
-  return *param_2 < local_14;
+    corner_index = corner_index + 1;
+    pCVar3 = pCVar3 + 1;
+  } while ((int)corner_index < 8);
+  local_14 = cylinder->closest_t;
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_70,&local_1e8,&local_1b8,&local_1a0);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_70,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_70,&local_1e8,&local_1a0,&local_1d0);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_70,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_188,&local_1dc,&local_1c4,&local_194);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_188,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_188,&local_1dc,&local_194,&local_1ac);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_188,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_150,&local_1e8,&local_1dc,&local_1ac);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_150,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_150,&local_1e8,&local_1ac,&local_1b8);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_150,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_118,&local_1d0,&local_1a0,&local_194);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_118,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_118,&local_1d0,&local_194,&local_1c4);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_118,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_e0,&local_1e8,&local_1d0,&local_1c4);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_e0,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_e0,&local_1e8,&local_1c4,&local_1dc);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_e0,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_a8,&local_1b8,&local_1ac,&local_194);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_a8,cylinder);
+  core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
+            (&local_a8,&local_1b8,&local_194,&local_1a0);
+  core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(&local_a8,cylinder);
+  return (uint)(cylinder->closest_t < local_14);
 }

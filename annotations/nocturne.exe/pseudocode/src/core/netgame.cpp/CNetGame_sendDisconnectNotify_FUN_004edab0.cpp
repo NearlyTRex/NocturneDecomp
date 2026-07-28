@@ -2,20 +2,19 @@
 // Address: 004edab0
 // Address Range: [[004edab0, 004edae3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload)
 
 #include "nocturne.h"
 
-void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(uint param_1,uint param_2,uint param_3)
+void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload)
 
 {
-  uint local_10;
-  byte local_c;
-  uint local_b;
+  SNetPacketHeader local_10;
+  int local_b;
   
-  local_c = 0xd;
-  local_b = param_3;
-  local_10 = 9;
-  core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(param_1,param_2,&local_10);
+  local_10.type = PACKET_DISCONNECT;
+  local_b = payload;
+  local_10.size = 9;
+  core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(this_ptr,dest_addr,&local_10);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(int param_1,int param_2)
+; void core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640(CDemonActor *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 004ca68d
     FSTP float ptr [EBX + 0x1c]         ; 004ca68e
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004ca691
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004ca696
     MOV EAX,dword ptr [EDI + 0x1504]    ; 004ca699
     MOV dword ptr [ESP + 0x8],EAX       ; 004ca69f
@@ -87,7 +87,7 @@ section .text
     PUSH EDI                            ; 004ca6de
     ADD EBX,0x58                        ; 004ca6df
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004ca6e2
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004ca6e7
     CMP EBX,EAX                         ; 004ca6ea
     JNZ 0x004ca6f5                      ; 004ca6ec

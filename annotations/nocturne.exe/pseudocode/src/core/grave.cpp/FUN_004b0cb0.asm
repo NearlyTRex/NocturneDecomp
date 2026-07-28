@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_grave_cpp_FUN_004b0cb0(int param_1)
+; int core_grave_cpp_FUN_004b0cb0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_004b0ce2
     PUSH EBX                            ; 004b0ce3
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004b0ce4
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 004b0ce9
     PUSH 0x0                            ; 004b0cec
     LEA EAX,[ESP + 0x8]                 ; 004b0cee
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x8                         ; 004b0cfd
     PUSH EAX                            ; 004b0d00
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 004b0d01
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 004b0d06
     MOV ESI,EAX                         ; 004b0d09
     TEST EAX,EAX                        ; 004b0d0b
@@ -63,12 +63,12 @@ section .text
     PUSH dword ptr [EBX + 0x2cc]        ; 004b0d17
     PUSH EAX                            ; 004b0d1d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 004b0d1e
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004b0d23
     PUSH EBX                            ; 004b0d26
         ;   Label: LAB_004b0d26
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004b0d27
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004b0d2c
     MOV EAX,ESI                         ; 004b0d2f
     POP ESI                             ; 004b0d31

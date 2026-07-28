@@ -11,7 +11,7 @@ void core_path_cpp_CPathMap_reset_FUN_004f1e10(int param_1)
 {
   uint uVar1;
   
-  memset(param_1 + 0x9c70,0x7f,40000);
+  memset((void *)(param_1 + 0x9c70),0x7f,40000);
   *(uint *)(param_1 + 0x138bc) = 0;
   *(uint *)(param_1 + 0x138c8) = 0;
   *(uint *)(param_1 + 0x138c4) = *(uint *)(param_1 + 0x138c8);

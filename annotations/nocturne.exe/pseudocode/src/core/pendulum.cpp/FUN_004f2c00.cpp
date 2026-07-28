@@ -9,12 +9,12 @@
 void core_pendulum_cpp_FUN_004f2c00(void)
 
 {
-  int iVar1;
+  CPendulum *this_ptr;
   
-  iVar1 = FUN_0056497c(0x43c);
-  if (iVar1 == 0) {
+  this_ptr = (CPendulum *)FUN_0056497c(0x43c);
+  if (this_ptr == (CPendulum *)0x0) {
     return;
   }
-  core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(iVar1);
+  core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(this_ptr);
   return;
 }

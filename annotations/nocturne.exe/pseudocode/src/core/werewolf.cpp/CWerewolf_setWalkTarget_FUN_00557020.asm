@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_00557020(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_00557020(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x150                       ; 00557024
     PUSH EAX                            ; 00557029
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 0055702a
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0055702f
     ADD ESP,0x4                         ; 00557032
     CMP EAX,0x13                        ; 00557035
@@ -32,7 +32,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 00557048
     PUSH ECX                            ; 0055704c
     CALL core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0 ; 0055704d
-        ;   XREF to: 00428ab0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0()
+        ;   XREF to: 00428ab0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter * this_ptr, CDemonActor * target, float min_distance, float max_distance)
     ADD ESP,0x10                        ; 00557052
     RET                                 ; 00557055
 

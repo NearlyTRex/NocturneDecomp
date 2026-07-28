@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawFullScreenQuad_FUN_005329c0(undefined4 param_1)
+; int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_005329c0(int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   color
 ;
 ; XREF[1]:
 ;   engine_special.cpp_clearScreenRegion_FUN_0052ef37 at 0052ef48
@@ -30,7 +32,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005329cd
     PUSH EAX                            ; 005329d1
     CALL crt_memory.c_memset_FUN_00563cc0 ; 005329d2
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EAX,[0x01c00c58]                ; 005329d7 | DAT_01c00c58
     ADD ESP,0xc                         ; 005329dc
     SHL EAX,0x10                        ; 005329df
@@ -64,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00532a58
     PUSH EAX                            ; 00532a5c
     CALL engine_special.cpp_drawPolygon_FUN_00532620 ; 00532a5d
-        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00532620()
+        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00532620(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EAX,0x1                         ; 00532a62
     ADD ESP,0xc                         ; 00532a67
     ADD ESP,0xc0                        ; 00532a6a

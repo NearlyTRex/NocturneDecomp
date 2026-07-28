@@ -10,34 +10,34 @@ void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float para
 
 {
   float fVar1;
-  uint uVar2;
+  CEventList *this_ptr;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  float10 fVar5;
+  double dVar4;
   
-  iVar3 = *(int *)((int)param_1 + 0x2b224);
-  fVar5 = (float10)round
-                             ((float10)param_2 * (float10)65536 * (float10)8
-                             );
-  iVar3 = iVar3 + (int)ROUND(fVar5);
-  *(int *)((int)param_1 + 0x2b224) = iVar3;
-  if (0x10000 < iVar3) {
-    iVar4 = *(int *)((int)param_1 + 0x2b220) + 1;
-    *(int *)((int)param_1 + 0x2b224) = iVar3 + -0x10000;
-    *(int *)((int)param_1 + 0x2b220) = iVar4;
-    if (0xf < iVar4) {
+  iVar2 = *(int *)((int)param_1 + 0x2b224);
+  dVar4 = round
+                    ((double)(param_2 * (float)65536 * (float)8));
+  iVar2 = iVar2 + (int)ROUND(dVar4);
+  *(int *)((int)param_1 + 0x2b224) = iVar2;
+  if (0x10000 < iVar2) {
+    iVar3 = *(int *)((int)param_1 + 0x2b220) + 1;
+    *(int *)((int)param_1 + 0x2b224) = iVar2 + -0x10000;
+    *(int *)((int)param_1 + 0x2b220) = iVar3;
+    if (0xf < iVar3) {
       *(uint *)((int)param_1 + 0x2b220) = 0;
     }
   }
-  uVar2 = 0x01C03A10;
+  this_ptr = 0x01C03A10;
   *(float *)((int)param_1 + 0x7f94) = 1.0 / param_1;
-  iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(uVar2,(int)param_1 + 0x1ac);
-  if (iVar3 != 0) {
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                    (this_ptr,(char *)((int)param_1 + 0x1ac));
+  if (iVar2 != 0) {
     *(uint *)((int)param_1 + 0x278) = 1;
   }
-  iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,(int)param_1 + 0x210);
-  if (iVar3 != 0) {
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                    (0x01C03A10,(char *)((int)param_1 + 0x210));
+  if (iVar2 != 0) {
     *(uint *)((int)param_1 + 0x278) = 3;
   }
   switch(*(uint *)((int)param_1 + 0x278)) {

@@ -1,0 +1,620 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 175,
+    "complexity_score": 425,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 30,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 280
+  },
+  "cross_references": [
+    {
+      "addr": "004df2f0",
+      "from_addr": "004df452",
+      "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004df800",
+    "address_range": [
+      [
+        "004df800",
+        "004df9d7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
+      "addr": "004dfba0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058abd4",
+      "name": "s_core_morph_cpp_0058abd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058abe6",
+      "name": "s_CMorphModel_setFaceList_0058abe6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058ac14",
+      "name": "s_core_morph_cpp_0058ac14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058ac26",
+      "name": "s_CMorphModel_setFaceList_0058ac26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "PTR_01cc4800",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "INT_01cc4804",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd4314",
+      "name": "DAT_01cd4314",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004df452",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0",
+        "estimated_params": 8,
+        "instructions_analyzed": 15,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.784313725490196,
+    "instruction_count": 153,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 8,
+      "COPY": 155,
+      "INT_ADD": 130,
+      "INT_AND": 93,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 43,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 6,
+      "INT_SLESS": 38,
+      "INT_SUB": 49,
+      "INT_XOR": 3,
+      "INT_ZEXT": 30,
+      "LOAD": 82,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 42,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 885
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_data",
+        "offset": 12,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_stride",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_list",
+        "offset": 20,
+        "size": 4,
+        "type": "SMRGLTextureLod *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_index_list",
+        "offset": 24,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "start_face",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->faces->vertices + iVar6 + -0x14) = 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)poly_data",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)poly_data + (uint)bVar14 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(UIntegerFloat *)((int)pSVar8",
+      "severity": "moderate",
+      "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)pSVar8",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)pSVar8 + (uint)bVar14 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(UIntegerFloat *)((int)pSVar8",
+      "severity": "moderate",
+      "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(int *)((int)pSVar3",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)pSVar3 + (uint)bVar14 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
+      "severity": "moderate",
+      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)pSVar8 + (uint)bVar14 * -8 + 0x1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
+      "severity": "moderate",
+      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pUVar10 = (UIntegerFloat *)((int)pSVar8 + (uint)bVar14 * -8 + 0x10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pSVar2->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)&pSVar2->vertices[2].vertex_index",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)&pSVar2->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)pSVar3",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)pSVar3 + (uint)bVar14 * -8 + 0x1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)&this_ptr->faces->vertices[0].vertex_index",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[1].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)&this_ptr->faces->vertices[1].vertex_index",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->faces->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)&this_ptr->faces->vertices[2].vertex_index",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 58,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 68,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 74,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 83,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)&pSVar2->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 91,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 93,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 97,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 105,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 89,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "*(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 95,
+      "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar8 = (SMRGLHeaderPrimitive *)&(pSVar8->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

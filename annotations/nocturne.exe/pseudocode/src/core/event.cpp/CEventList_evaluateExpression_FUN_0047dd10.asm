@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_0047dd10(undefined4 param_1,int param_2)
+; int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_0047dd10(CEventList *this_ptr,char *expression)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   expression
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
@@ -41,7 +44,7 @@ section .text
     PUSH EBX                            ; 0047dd2a
     MOV dword ptr [ESP + 0xc],EDX       ; 0047dd2b
     CALL core_event.cpp_CEventList_evaluateLogicalExpr_FUN_00480220 ; 0047dd2f
-        ;   XREF to: 00480220 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateLogicalExpr_FUN_00480220()
+        ;   XREF to: 00480220 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateLogicalExpr_FUN_00480220(CEventList * this_ptr, char * expression, int * parse_position)
     ADD ESP,0xc                         ; 0047dd34
     TEST EAX,EAX                        ; 0047dd37
     JL 0x0047dd47                       ; 0047dd39

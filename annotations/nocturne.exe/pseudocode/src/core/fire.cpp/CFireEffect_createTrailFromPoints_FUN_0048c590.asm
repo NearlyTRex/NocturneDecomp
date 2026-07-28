@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(undefined4 param_1,float *param_2,float *param_3,float param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_point
+; CVector3f *      Stack[0xc]:4   end_point
+; float            Stack[0x10]:4   size
+; float            Stack[0x14]:4   alpha
+; float            Stack[0x18]:4   lifetime
+; SMRGLTextureBasic * Stack[0x1c]:4   texture_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -70,7 +78,7 @@ section .text
     FLD1                                ; 0048c601
     FADDP                               ; 0048c603
     CALL crt_math.c_round_FUN_00563a30  ; 0048c605
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 0048c60a
     MOV EAX,dword ptr [ESP]             ; 0048c60d
     MOV dword ptr [ESP + 0x20],EAX      ; 0048c610
@@ -101,7 +109,7 @@ section .text
     PUSH EAX                            ; 0048c652
     PUSH EDI                            ; 0048c653
     CALL core_fire.cpp_CFireEffect_createTrailSegment_FUN_0048c530 ; 0048c654
-        ;   XREF to: 0048c530 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createTrailSegment_FUN_0048c530()
+        ;   XREF to: 0048c530 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailSegment_FUN_0048c530(CFireEffect * this_ptr, CVector3f * position, float size, float alpha, ...)
     ADD ESP,0x18                        ; 0048c659
     INC EBX                             ; 0048c65c
     FLD float ptr [ESP + 0x4]           ; 0048c65d

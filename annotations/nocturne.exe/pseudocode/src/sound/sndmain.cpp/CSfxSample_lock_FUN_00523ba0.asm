@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(int param_1,int param_2,int param_3)
+; short * sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample *param_1,int param_2,int param_3)
 ;
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240da
-;   sound_sndmain.cpp_FUN_00522480 at 005226d1
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005226d1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059299a
@@ -74,7 +74,7 @@ section .text
     PUSH EBX                            ; 00523c29
         ;   Label: LAB_00523c29
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00523c2a
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,ESI                        ; 00523c2f
     MOV EDX,dword ptr [EBX + 0x120]     ; 00523c32
     ADD ESP,0x4                         ; 00523c38

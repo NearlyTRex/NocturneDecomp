@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_00517190(undefined4 param_1)
+; void core_skeleton_cpp_FUN_00517190(_FILE *param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 00517195
         ;   Label: LAB_00517195
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517196
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051719b
     TEST EAX,EAX                        ; 0051719e
     JL 0x005171a7                       ; 005171a0

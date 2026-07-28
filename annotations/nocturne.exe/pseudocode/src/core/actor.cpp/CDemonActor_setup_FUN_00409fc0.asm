@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(int param_1)
+; void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[44]:
 ;   core_ammo.cpp_FUN_0040ec00 at 0040ec17
@@ -19,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
-;   core_path.cpp_FUN_004f0360
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360
 ;
 ; *****************************************************************************
 
@@ -31,7 +33,7 @@ section .text
     PUSH EBX                            ; 00409fc5
     MOV dword ptr [EBX + 0x114],0x0     ; 00409fc6
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00409fd0
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00409fd5
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00409fd8
     PUSH EBX                            ; 00409fde
@@ -47,8 +49,8 @@ section .text
     ADD EBX,0x20                        ; 00409ff0
     PUSH EBX                            ; 00409ff3
     PUSH EAX                            ; 00409ff4
-    CALL core_path.cpp_FUN_004f0360     ; 00409ff5
-        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f0360()
+    CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360 ; 00409ff5
+        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 00409ffa
     POP EBX                             ; 00409ffd
     RET                                 ; 00409ffe

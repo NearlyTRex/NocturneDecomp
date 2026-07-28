@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 447,
+    "complexity_score": 479,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 162,
-    "suspect_count": 26,
+    "pseudocode_lines": 174,
+    "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
       "raw_address_constant",
+      "shadow_pointer_walk",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 523
+    "total_lines": 535
   },
   "cross_references": [],
   "function": {
@@ -150,7 +150,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90",
-    "signature": "int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)"
+    "signature": "SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *param_1)"
   },
   "function_calls": [
     {
@@ -429,26 +429,19 @@
   "static_analysis": {
     "analyzed_file": "interpolateCubicKeyframes_FUN_004c3c90.c",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 43,
-          "line": 54,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
           "check_id": "uninitvar",
-          "column": 36,
-          "line": 121,
+          "column": 25,
+          "line": 125,
           "message": "Uninitialized variable: iStack_34",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 146,
+          "line": 155,
           "message": "Uninitialized variable: local_2c",
           "severity": "warning"
         }
@@ -471,39 +464,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x14) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar16 = (int)*(uint *)(param_1 + 0x10) >> 0x1f;",
+      "text": "SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -511,31 +472,39 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar11 = *(uint *)(param_1 + 0x10) ^ uVar16;",
+      "text": "if (param_1->base_keyframes == (SMRGLKeyframe *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = _DAT_01bd1d84 % (int)(*(int *)(param_1 + 8) * uVar13);",
+      "text": "engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = _DAT_01bd1d84 % (int)(*(int *)(param_1 + 8) * uVar13);",
+      "text": "uVar20 = param_1->cycle_length;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 8) <= local_1c) {",
+      "text": "uVar23 = param_1->current_position >> 0x1f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar18 = param_1->current_position ^ uVar23;",
       "type": "unnamed_param"
     },
     {
@@ -543,148 +512,180 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 8) <= local_1c) {",
+      "text": "iVar28 = (param_1->header).child_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar22 = *(int *)(param_1 + 8) + -1;",
+      "text": "param_1->current_position = _DAT_01bd1d84 % (int)((param_1->header).child_count * uVar20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x14);",
+      "text": "param_1->current_position = _DAT_01bd1d84 % (int)((param_1->header).child_count * uVar20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar14 = (int *)(*(int *)(param_1 + 0x14) + 0x14);",
+      "text": "if ((param_1->header).child_count <= local_1c) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar18 = (int *)(*(int *)(iVar17 * 4 + param_1 + 0x118) + 0x14);",
+      "text": "iVar28 = (param_1->header).child_count + -1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar20 = (int *)(*(int *)(local_1c * 4 + param_1 + 0x118) + 0x14);",
+      "text": "pSVar21 = param_1->base_keyframes;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar21 = (int *)(*(int *)(iVar22 * 4 + param_1 + 0x118) + 0x14);",
+      "text": "pSVar22 = param_1->base_keyframes + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar17 = *(int *)(param_1 + 0x14) + 0x14;",
+      "text": "pSVar25 = param_1->loaded_frames[iVar24] + 1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(uint *)((int)puVar19",
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar26 = param_1->loaded_frames[local_1c] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar27 = param_1->loaded_frames[iVar28] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 158,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar21 = param_1->base_keyframes;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 176,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_3d_c_FUN_00408e80(param_1->base_keyframes);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 177,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x4c3e61 assigned to bare local `uVar35`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar35` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 99,
+      "match": "0x4c3e61",
       "severity": "moderate",
-      "text": "puVar19 = (uint *)((int)puVar19 + (uVar13 & 0xfffffffc));",
+      "text": "uVar35 = 0x4c3e61;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4c3e6c assigned to bare local `uVar34`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar34` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 104,
+      "match": "0x4c3e6c",
+      "severity": "moderate",
+      "text": "uVar34 = 0x4c3e6c;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4c3e73 assigned to bare local `uVar33`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar33` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 106,
+      "match": "0x4c3e73",
+      "severity": "moderate",
+      "text": "uVar33 = 0x4c3e73;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4c3e7a assigned to bare local `uVar32`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar32` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 108,
+      "match": "0x4c3e7a",
+      "severity": "moderate",
+      "text": "uVar32 = 0x4c3e7a;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 173,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_3d_c_FUN_00408e80(*(uint *)(param_1 + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 0x158;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `puVar19` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 162,
-      "match": "(int)puVar19",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar27` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar27->owner`). Replace `pSVar27->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 136,
+      "match": "pSVar27 = (T *)&pSVar27->FIELD",
       "severity": "moderate",
-      "text": "puVar19 = (uint *)((int)puVar19 + (uVar13 & 0xfffffffc));",
-      "type": "pointer_truncation"
+      "text": "pSVar27 = (SMRGLKeyframe *)&pSVar27->vertex_header;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Raw hex address 0x4c3e61 assigned to bare local `uVar31`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar31` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 90,
-      "match": "0x4c3e61",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar25` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar25->owner`). Replace `pSVar25->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 137,
+      "match": "pSVar25 = (T *)&pSVar25->FIELD",
       "severity": "moderate",
-      "text": "uVar31 = 0x4c3e61;",
-      "type": "raw_address_constant"
+      "text": "pSVar25 = (SMRGLKeyframe *)&pSVar25->vertex_header;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Raw hex address 0x4c3e6c assigned to bare local `uVar30`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar30` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 93,
-      "match": "0x4c3e6c",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar26` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar26->owner`). Replace `pSVar26->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 139,
+      "match": "pSVar26 = (T *)&pSVar26->FIELD",
       "severity": "moderate",
-      "text": "uVar30 = 0x4c3e6c;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x4c3e73 assigned to bare local `uVar29`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar29` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 95,
-      "match": "0x4c3e73",
-      "severity": "moderate",
-      "text": "uVar29 = 0x4c3e73;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x4c3e7a assigned to bare local `uVar28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 98,
-      "match": "0x4c3e7a",
-      "severity": "moderate",
-      "text": "uVar28 = 0x4c3e7a;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 54,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar16 = (int)*(uint *)(param_1 + 0x10) >> 0x1f;",
-      "type": "static_shift_too_many_bits"
+      "text": "pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Uninitialized variable: iStack_34",
-      "line": 121,
+      "line": 125,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "((uint)((longlong)iStack_34 * (longlong)*piVar20) >> 0x10 |",
+      "text": "lVar5 = (longlong)iStack_34 * (longlong)(pSVar26->header).base.type;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 146,
+      "line": 155,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_2c = local_2c + 1;",

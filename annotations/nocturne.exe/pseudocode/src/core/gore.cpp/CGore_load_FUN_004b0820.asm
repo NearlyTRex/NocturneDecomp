@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gore_cpp_CGore_load_FUN_004b0820(undefined4 param_1,undefined4 param_2)
+; int __cdecl core_gore_cpp_CGore_load_FUN_004b0820(CGore *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ;
@@ -38,7 +41,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 004b0837
     PUSH EBX                            ; 004b083b
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004b083c
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004b0841
     PUSH 0x1c9e038                      ; 004b0844 | DAT_01c9e038
     PUSH 0x5851d8                       ; 004b0849 | = "%d\n"

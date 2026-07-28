@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(int param_1,int param_2,int param_3)
+; int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v0
+; SRenderVertex *  Stack[0x8]:4   v1
+; SRenderVertex *  Stack[0xc]:4   v2
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

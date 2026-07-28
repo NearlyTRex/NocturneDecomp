@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dcamera_cpp_FUN_0043ff30(undefined4 param_1)
+; CDemonCamera * core_dcamera_cpp_FUN_0043ff30(CDemonCamera *param_1)
 ;
 ;
 ; XREF[1]:
@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043ff31
     PUSH EBX                            ; 0043ff35
     CALL core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 ; 0043ff36
-        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_free_FUN_004401d0()
+        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0043ff3b
     MOV EAX,EBX                         ; 0043ff3e
     POP EBX                             ; 0043ff40

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(undefined4 *param_1,uint param_2)
+; CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(CCodec *this_ptr,uint flags)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_FUN_00446810 at 00446dc8
@@ -42,11 +45,11 @@ section .text
         ;   Label: LAB_00438f51
     PUSH EBX                            ; 00438f56
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00438f57
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00438f5c
     PUSH EAX                            ; 00438f5f
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00438f60
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00438f65
     MOV EAX,EBX                         ; 00438f68
     POP EBX                             ; 00438f6a

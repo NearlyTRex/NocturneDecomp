@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(undefined4 *param_1)
+; CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00439830 at 00439835

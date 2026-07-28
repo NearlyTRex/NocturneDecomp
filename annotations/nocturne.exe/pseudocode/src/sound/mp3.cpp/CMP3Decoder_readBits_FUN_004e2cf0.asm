@@ -1,18 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint param_2)
+; uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder *this_ptr,uint num_bits)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   num_bits
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8eff
 ;   sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70 at 004e4fdf
+;   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200 at 004e58bc
 ;   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 at 004e30cb
 ;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_004e2dd0 at 004e2dd7
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0 at 004e497c
-;   sound_mp3.cpp_FUN_004e5200 at 004e58bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b5de

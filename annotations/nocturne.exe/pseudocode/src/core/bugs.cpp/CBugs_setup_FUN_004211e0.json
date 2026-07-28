@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 368,
+    "complexity_score": 565,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 93,
-    "suspect_count": 27,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 44,
     "suspect_types": [
-      "unnamed_param"
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_memset"
     ],
-    "total_lines": 293
+    "total_lines": 290
   },
   "cross_references": [],
   "function": {
@@ -146,7 +152,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_CBugs_setup_FUN_004211e0",
-    "signature": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)"
+    "signature": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)"
   },
   "function_calls": [
     {
@@ -359,7 +365,15 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)",
+      "text": "void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.base.orient.vec.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -367,7 +381,15 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = 0;",
+      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -375,7 +397,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x38);",
+      "text": "(param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -383,7 +405,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x38);",
+      "text": "(param_1->base).base.base.orient.vec.x = (param_1->base).base.base.orient.vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -391,15 +413,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x34);",
+      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -407,15 +421,15 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
+      "text": "param_1->model_count = 4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1212c) = 4;",
+      "text": "if (0 < param_1->model_count) {",
       "type": "unnamed_param"
     },
     {
@@ -423,31 +437,23 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1212c)) {",
+      "text": "pcVar10 = param_1->models[0].model_name;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_1 + 0x12130;",
+      "text": "iVar6 = param_1->model_count + -1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar9 = (char *)(param_1 + 0x121a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x1212c) + -1;",
+      "text": "param_1->model_count = iVar6;",
       "type": "unnamed_param"
     },
     {
@@ -455,31 +461,63 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1212c) = iVar5;",
+      "text": "local_20 = param_1->models + iVar7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x1212c));",
+      "text": "local_1c = param_1->models[iVar7 + 1].model_name;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar6 < *(int *)(param_1 + 0x1212c));",
+      "text": "} while (iVar6 < param_1->model_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0xbd28)) {",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1->models + iVar7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar7 < param_1->model_count);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1->count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar11 = &param_1->bugs[0].dest_position;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar8 = &param_1->bugs[0].orientation;",
       "type": "unnamed_param"
     },
     {
@@ -487,15 +525,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar10 = (uint *)(param_1 + 0xbd4c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)(param_1 + 0xbd40);",
+      "text": "local_2c = &param_1->bugs[0].position;",
       "type": "unnamed_param"
     },
     {
@@ -503,7 +533,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = (uint *)(param_1 + 0xbd34);",
+      "text": "pSVar9 = param_1->bugs + local_28;",
       "type": "unnamed_param"
     },
     {
@@ -511,28 +541,68 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar8 = (uint *)(local_28 * 0x40 + param_1 + 0xbd2c);",
+      "text": "iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,param_1->model_count + -1);",
       "type": "unnamed_param"
     },
     {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 77,
+      "match": "pCVar8[-1].",
+      "severity": "mild",
+      "text": "pCVar11->x = pCVar8[-1].x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 78,
+      "match": "pCVar8[-1].",
+      "severity": "mild",
+      "text": "pCVar11->y = pCVar8[-1].y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 79,
+      "match": "pCVar8[-1].",
+      "severity": "mild",
+      "text": "pCVar11->z = pCVar8[-1].z;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 81,
+      "match": "(CVector3f *)((int)(pCVar11 + 5) +",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 82,
+      "match": "(CVector3f *)((int)(pCVar8 + 5) +",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 83,
+      "match": "(CVector3f *)((int)(local_2c + 5) +",
+      "severity": "moderate",
+      "text": "local_2c = (CVector3f *)((int)(local_2c + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0,*(int *)(param_1 + 0x1212c) + -1,fVar11,fVar12);",
+      "text": "} while (local_28 < param_1->count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_28 < *(int *)(param_1 + 0xbd28));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(param_1);",
@@ -540,35 +610,107 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->grid_cell_x = -9999;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->grid_cell_z = -9999;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.base.collision_disabled = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 91,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1984c) = 0xffffd8f1;",
+      "text": "param_1->damage_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x19850) = 0xffffd8f1;",
-      "type": "unnamed_param"
+      "description": "Pointer value `(pCVar11 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)(pCVar11 + 5)",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x100) = 1;",
-      "type": "unnamed_param"
+      "description": "Pointer value `(pCVar8 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)(pCVar8 + 5)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1985c) = 0;",
-      "type": "unnamed_param"
+      "description": "Pointer value `(local_2c + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)(local_2c + 5)",
+      "severity": "moderate",
+      "text": "local_2c = (CVector3f *)((int)(local_2c + 5) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 77,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar11->x = pCVar8[-1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 20,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->base).base.base.orient.vec.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 71,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pCVar8->z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via element-arithmetic `(int)(pCVar11 + N) + M`, where `N*sizeof(*pCVar11) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar11->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 81,
+      "match": "pCVar11 = (T *)((int)(pCVar11 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via element-arithmetic `(int)(pCVar8 + N) + M`, where `N*sizeof(*pCVar8) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar8->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pCVar8 = (T *)((int)(pCVar8 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via element-arithmetic `(int)(local_2c + N) + M`, where `N*sizeof(*local_2c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_2c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 83,
+      "match": "local_2c = (T *)((int)(local_2c + N) + M)",
+      "severity": "moderate",
+      "text": "local_2c = (CVector3f *)((int)(local_2c + 5) + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

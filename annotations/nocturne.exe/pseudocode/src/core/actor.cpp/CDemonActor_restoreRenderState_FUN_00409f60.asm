@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(void)
+; void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[62]:
 ;   core_ammo.cpp_FUN_0040ec30 at 0040ec66
@@ -32,7 +34,7 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
     PUSH EDX                            ; 00409f66 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00409f67
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 00409f6c
     RET                                 ; 00409f6f
 

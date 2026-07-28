@@ -2,11 +2,11 @@
 // Address: 00401850
 // Address Range: [[00401850, 00401983]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int blue,int start_index,int end_index)
 
 #include "nocturne.h"
 
-int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_2,int param_3,int param_4,int param_5)
+int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int blue,int start_index,int end_index)
 
 {
   float fVar1;
@@ -19,31 +19,31 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int param_1,int param_
   int unaff_EDI;
   float local_20;
   
-  pbVar5 = &DAT_01c00648 + param_4 * 3;
+  pbVar5 = &DAT_01c00648 + start_index * 3;
   local_20 = 1e+30;
-  if (param_4 <= param_5) {
-    iVar7 = param_4 << 2;
+  if (start_index <= end_index) {
+    iVar7 = start_index << 2;
     do {
-      uVar6 = (int)(param_1 - (uint)*pbVar5) >> 0x1f;
-      fVar1 = (float)(int)((param_1 - (uint)*pbVar5 ^ uVar6) - uVar6);
-      uVar6 = (int)(param_2 - (uint)pbVar5[1]) >> 0x1f;
-      fVar2 = (float)(int)((param_2 - (uint)pbVar5[1] ^ uVar6) - uVar6);
-      uVar6 = (int)(param_3 - (uint)pbVar5[2]) >> 0x1f;
-      fVar3 = ABS(SQRT((float)param_3 * (float)param_3 +
-                       (float)param_2 * (float)param_2 + (float)param_1 * (float)param_1) *
+      uVar6 = (int)(red - (uint)*pbVar5) >> 0x1f;
+      fVar1 = (float)(int)((red - (uint)*pbVar5 ^ uVar6) - uVar6);
+      uVar6 = (int)(green - (uint)pbVar5[1]) >> 0x1f;
+      fVar2 = (float)(int)((green - (uint)pbVar5[1] ^ uVar6) - uVar6);
+      uVar6 = (int)(blue - (uint)pbVar5[2]) >> 0x1f;
+      fVar3 = ABS(SQRT((float)blue * (float)blue +
+                       (float)green * (float)green + (float)red * (float)red) *
                   (float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));
-      fVar4 = (float)(int)((param_3 - (uint)pbVar5[2] ^ uVar6) - uVar6);
+      fVar4 = (float)(int)((blue - (uint)pbVar5[2] ^ uVar6) - uVar6);
       fVar1 = fVar3 * fVar3 * (float)0.14999999999999999 +
               fVar4 * fVar4 * (float)0.11 +
               fVar2 * fVar2 * (float)0.58999999999999997 + fVar1 * fVar1 * (float)0.29999999999999999;
       if (fVar1 < local_20) {
-        unaff_EDI = param_4;
+        unaff_EDI = start_index;
         local_20 = fVar1;
       }
       pbVar5 = pbVar5 + 3;
-      param_4 = param_4 + 1;
+      start_index = start_index + 1;
       iVar7 = iVar7 + 4;
-    } while (param_4 <= param_5);
+    } while (start_index <= end_index);
   }
   return unaff_EDI;
 }

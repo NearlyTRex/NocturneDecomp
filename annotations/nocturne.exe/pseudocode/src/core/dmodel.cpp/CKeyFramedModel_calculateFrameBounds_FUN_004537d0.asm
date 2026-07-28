@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(int param_1)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *model_ptr)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   model_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -97,7 +99,7 @@ section .text
     PUSH EDI                            ; 0045389c
     FSTP float ptr [ESP + 0x10]         ; 0045389d
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 004538a1
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     MOV EDX,dword ptr [EBP + 0x104]     ; 004538a6
     ADD ESP,0x8                         ; 004538ac
     CMP ESI,EDX                         ; 004538af
@@ -134,13 +136,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004538ec
     PUSH EBX                            ; 004538f0
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 004538f1
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 004538f6
     ADD EDI,0xc                         ; 004538f9
     PUSH EDI                            ; 004538fc
     PUSH EBX                            ; 004538fd
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 004538fe
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00453903
     MOV EDX,dword ptr [EBP + 0x100]     ; 00453906
     MOV EDI,dword ptr [ESP + 0xc]       ; 0045390c

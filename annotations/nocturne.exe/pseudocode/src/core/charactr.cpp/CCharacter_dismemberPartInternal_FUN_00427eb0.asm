@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(int param_1,int param_2,int param_3,undefined4 param_4)
+; void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CBodyPart *      Stack[0x8]:4   body_part
+; int              Stack[0xc]:4   part_index
+; int              Stack[0x10]:4   render_in_background
 ; Local Variables:
 ; undefined        Stack[-0x9c]:1  local_9c
 ; undefined4       Stack[-0x90]:4  local_90
@@ -182,7 +187,7 @@ section .text
     PUSH EAX                            ; 00428026
     MOVSD.REP ES:EDI,ESI                ; 00428027
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 00428029
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0042802e
     PUSH EAX                            ; 00428031
     MOV EAX,dword ptr [EBP + -0xe]      ; 00428032
@@ -197,7 +202,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0042804d
     PUSH EAX                            ; 00428053
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 ; 00428054
-        ;   XREF to: 00417ac0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0()
+        ;   XREF to: 00417ac0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart * this_ptr, char * model_name, CVector3f * scale, CVector3f * position)
     ADD ESP,0x10                        ; 00428059
     JMP 0x00427f4b                      ; 0042805c
         ;   XREF to: 00427f4b (UNCONDITIONAL_JUMP)  ; LAB_00427f4b
@@ -214,14 +219,14 @@ section .text
     LEA EAX,[EBP + 0x5e]                ; 00428076
     PUSH EAX                            ; 00428079
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042807a
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0042807f
     LEA EAX,[EBP + 0x5e]                ; 00428082
     PUSH EAX                            ; 00428085
     MOV ECX,dword ptr [EBP + 0x8a]      ; 00428086
     PUSH ECX                            ; 0042808c
     CALL core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 ; 0042808d
-        ;   XREF to: 00417b40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40()
+        ;   XREF to: 00417b40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40(CBodyPart * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00428092
     JMP 0x00427f91                      ; 00428095
         ;   XREF to: 00427f91 (UNCONDITIONAL_JUMP)  ; LAB_00427f91

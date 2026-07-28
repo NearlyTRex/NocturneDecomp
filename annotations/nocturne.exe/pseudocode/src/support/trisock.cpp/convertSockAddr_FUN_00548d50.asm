@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   support_trisock.cpp_FUN_00549170 at 005491c2
+;   support_trisock.cpp_acceptConnection_FUN_00549170 at 005491c2
 ;   support_trisock.cpp_getSocketName_FUN_005491e0 at 00549218
 ;   support_trisock.cpp_receiveSocketData_FUN_00549010 at 00549072
 ;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_005155e0(int param_1,int param_2)
+; void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_005155e0(C3DSLight *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047af47
@@ -53,7 +56,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 00515633
     PUSH EDI                            ; 00515637
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 00515638
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 0051563d
     POP EDI                             ; 00515640
     POP EBP                             ; 00515641

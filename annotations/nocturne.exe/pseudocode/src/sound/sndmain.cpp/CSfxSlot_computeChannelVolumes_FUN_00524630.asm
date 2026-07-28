@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(undefined4 *param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -58,7 +60,7 @@ section .text
     FILD dword ptr [ESP + 0x20]         ; 0052466a
     FSTP float ptr [ESP + 0xc]          ; 0052466e
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00527380 ; 00524672
-        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00527380()
+        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00527380(int channel_index)
     MOV dword ptr [ESP + 0x20],EAX      ; 00524677
     FLD float ptr [ESP + 0x20]          ; 0052467b
     FMUL float ptr [EBX + 0x44]         ; 0052467f

@@ -2,61 +2,65 @@
 // Address: 00566cc0
 // Address Range: [[00566cc0, 00566e08]]
 // Convention: __cdecl
-// Signature: uint __cdecl crt_stdio_c_fputc_FUN_00566cc0(uint param_1,int *param_2)
+// Signature: int __cdecl crt_stdio_c_fputc_FUN_00566cc0(int character,_FILE *file)
 
 #include "nocturne.h"
 
-uint __cdecl _fputc(uint param_1,int *param_2)
+int __cdecl _fputc(int character,_FILE *file)
 
 {
-  int iVar1;
-  uint uVar2;
+  char *pcVar1;
+  int iVar2;
+  uint uVar3;
+  uint uVar4;
   
-  (*(code *)PTR_FUN_005c1ac0)(param_2[4]);
-  iVar1 = *(int *)(param_2[2] + 0xc);
-  if (iVar1 != 1) {
-    if (iVar1 != 0) {
-      (*(code *)PTR_FUN_005c1ac4)(param_2[4]);
-      return 0xffffffff;
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
+  pcVar1 = file->_link->__get_base;
+  if (pcVar1 != (char *)0x1) {
+    if (pcVar1 != (char *)0x0) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+      return -1;
     }
-    *(uint *)(param_2[2] + 0xc) = 1;
+    file->_link->__get_base = (char *)0x1;
   }
-  if ((*(byte *)(param_2 + 3) & 2) == 0) {
-    FUN_00568e80(4);
-    *(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) | 0x20;
-    (*(code *)PTR_FUN_005c1ac4)(param_2[4]);
-    return 0xffffffff;
+  if ((file->_flag & 2) == 0) {
+    setErrno(4);
+    *(byte *)&file->_flag = (byte)file->_flag | 0x20;
+    (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+    return -1;
   }
-  if (*(int *)(param_2[2] + 8) == 0) {
-    FUN_00568ed0(param_2);
+  if (file->_link->__reserve_end == (char *)0x0) {
+    FUN_00568ed0(file);
   }
-  uVar2 = 0x400;
-  if ((param_1 == 10) && (uVar2 = 0x600, (*(byte *)(param_2 + 3) & 0x40) == 0)) {
-    *(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;
-    *(byte *)*param_2 = 0xd;
-    iVar1 = param_2[1];
-    *param_2 = *param_2 + 1;
-    param_2[1] = iVar1 + 1;
-    if (iVar1 + 1 == param_2[5]) {
-      iVar1 = FUN_00568890(param_2);
-      if (iVar1 != 0) {
-        (*(code *)PTR_FUN_005c1ac4)(param_2[4]);
-        return 0xffffffff;
+  uVar4 = 0x400;
+  if ((character == 10) && (uVar4 = 0x600, (file->_flag & 0x40) == 0)) {
+    pcVar1 = file->_ptr;
+    *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
+    *pcVar1 = '\r';
+    file->_ptr = file->_ptr + 1;
+    uVar3 = file->_cnt + 1;
+    file->_cnt = uVar3;
+    if (uVar3 == file->_bufsize) {
+      iVar2 = FUN_00568890(file);
+      if (iVar2 != 0) {
+        (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+        return -1;
       }
     }
   }
-  *(byte *)((int)param_2 + 0xd) = *(byte *)((int)param_2 + 0xd) | 0x10;
-  *(byte *)*param_2 = (byte)param_1;
-  iVar1 = param_2[1];
-  *param_2 = *param_2 + 1;
-  param_2[1] = iVar1 + 1;
-  if (((uVar2 & param_2[3]) != 0) || (iVar1 + 1 == param_2[5])) {
-    iVar1 = FUN_00568890(param_2);
-    if (iVar1 != 0) {
-      (*(code *)PTR_FUN_005c1ac4)(param_2[4]);
-      return 0xffffffff;
+  pcVar1 = file->_ptr;
+  *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
+  *pcVar1 = (char)character;
+  file->_ptr = file->_ptr + 1;
+  uVar3 = file->_cnt + 1;
+  file->_cnt = uVar3;
+  if (((uVar4 & file->_flag) != 0) || (uVar3 == file->_bufsize)) {
+    iVar2 = FUN_00568890(file);
+    if (iVar2 != 0) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+      return -1;
     }
   }
-  (*(code *)PTR_FUN_005c1ac4)(param_2[4]);
-  return param_1 & 0xff;
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+  return character & 0xff;
 }

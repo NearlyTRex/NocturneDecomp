@@ -2,35 +2,31 @@
 // Address: 004f04a0
 // Address Range: [[004f04a0, 004f0534]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(int param_1,int param_2,int param_3,int param_4)
+// Signature: int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap *this_ptr,int grid_z,int grid_x,int current_height)
 
 #include "nocturne.h"
 
-uint __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(int param_1,int param_2,int param_3,int param_4)
+int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap *this_ptr,int grid_z,int grid_x,int current_height)
 
 {
-  uint uVar1;
-  int iVar2;
-  int local_18;
-  int local_14;
-  int local_10;
+  int iVar1;
+  CVector3i local_18;
   
-  if ((((param_3 < 0) || (99 < param_3)) || (param_2 < 0)) || (99 < param_2)) {
-    uVar1 = 0xffffd8f1;
+  if ((((grid_x < 0) || (99 < grid_x)) || (grid_z < 0)) || (99 < grid_z)) {
+    iVar1 = -9999;
   }
   else {
-    iVar2 = param_3 * 4 + param_2 * 400 + param_1;
-    if (param_4 != *(int *)(iVar2 + 0x9c70)) {
-      local_18 = *(int *)(param_1 + 0x24) + param_3;
-      local_14 = param_4 + 5;
-      local_10 = *(int *)(param_1 + 0x2c) + param_2;
-      uVar1 = core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0
-                        (&DAT_01fba938,&local_18);
-      *(uint *)(iVar2 + 0x30) = uVar1;
-      *(int *)(iVar2 + 0x9c70) = param_4;
-      return uVar1;
+    if (current_height != this_ptr->height_cache_tags[grid_z][grid_x]) {
+      local_18.x = (this_ptr->grid_origin).x + grid_x;
+      local_18.y = current_height + 5;
+      local_18.z = (this_ptr->grid_origin).z + grid_z;
+      iVar1 = core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0
+                        ((CDemonRaytrace *)&DAT_01fba938,&local_18);
+      this_ptr->height_cache[grid_z][grid_x] = iVar1;
+      this_ptr->height_cache_tags[grid_z][grid_x] = current_height;
+      return iVar1;
     }
-    uVar1 = *(uint *)(iVar2 + 0x30);
+    iVar1 = this_ptr->height_cache[grid_z][grid_x];
   }
-  return uVar1;
+  return iVar1;
 }

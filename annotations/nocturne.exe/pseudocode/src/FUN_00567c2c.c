@@ -2,11 +2,11 @@
 // Address: 00567c2c
 // Address Range: [[00567c2c, 00567c70]]
 // Convention: unknown
-// Signature: byte * FUN_00567c2c(byte *param_1,int param_2)
+// Signature: byte * FUN_00567c2c(byte *param_1,void *param_2)
 
 #include "nocturne.h"
 
-byte * FUN_00567c2c(byte *param_1,int param_2)
+byte * FUN_00567c2c(byte *param_1,void *param_2)
 
 {
   byte *pbVar1;
@@ -18,7 +18,7 @@ byte * FUN_00567c2c(byte *param_1,int param_2)
   uVar2 = (uint)*param_1;
   if (uVar2 != 0) {
     do {
-      pbVar1 = (byte *)(((int)uVar2 >> 3) + param_2);
+      pbVar1 = (byte *)(((int)uVar2 >> 3) + (int)param_2);
       *pbVar1 = *pbVar1 | (&DAT_005c1b08)[uVar2 & 7];
       uVar2 = (uint)*pbVar3;
       if (uVar2 == 0) {

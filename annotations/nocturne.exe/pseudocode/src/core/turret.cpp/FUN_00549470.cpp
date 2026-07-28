@@ -9,12 +9,12 @@
 void core_turret_cpp_FUN_00549470(void)
 
 {
-  int iVar1;
+  CTurret *this_ptr;
   
-  iVar1 = FUN_0056497c(0x8b4);
-  if (iVar1 == 0) {
+  this_ptr = (CTurret *)FUN_0056497c(0x8b4);
+  if (this_ptr == (CTurret *)0x0) {
     return;
   }
-  core_turret_cpp_CTurret_ctor_FUN_005494a0(iVar1);
+  core_turret_cpp_CTurret_ctor_FUN_005494a0(this_ptr);
   return;
 }

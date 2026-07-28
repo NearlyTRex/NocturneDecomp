@@ -2,35 +2,34 @@
 // Address: 0041cb40
 // Address Range: [[0041cb40, 0041cbbe]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(int param_1,undefined4 *param_2,undefined4 *param_3)
+// Signature: void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 
 #include "nocturne.h"
 
-void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(int param_1,uint *param_2,uint *param_3)
+void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 
 {
-  uint *puVar1;
+  float *pfVar1;
   byte local_14 [12];
   
-  if (param_2 != (uint *)0x0) {
-    if ((uint *)(param_1 + 0x40) != param_2) {
-      *(uint *)(param_1 + 0x40) = *param_2;
-      *(uint *)(param_1 + 0x44) = param_2[1];
-      *(uint *)(param_1 + 0x48) = param_2[2];
+  if (linear_velocity != (CVector3f *)0x0) {
+    if (&this_ptr->linear_velocity != linear_velocity) {
+      (this_ptr->linear_velocity).x = linear_velocity->x;
+      (this_ptr->linear_velocity).y = linear_velocity->y;
+      (this_ptr->linear_velocity).z = linear_velocity->z;
     }
-    puVar1 = (uint *)
-             core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                       (param_1 + 0x18,local_14,param_1 + 0x40);
-    if ((uint *)(param_1 + 0x4c) != puVar1) {
-      *(uint *)(param_1 + 0x4c) = *puVar1;
-      *(uint *)(param_1 + 0x50) = puVar1[1];
-      *(uint *)(param_1 + 0x54) = puVar1[2];
+    pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                                (&this_ptr->rotation_matrix,local_14,&this_ptr->linear_velocity);
+    if (&this_ptr->linear_velocity_local != (CVector3f *)pfVar1) {
+      (this_ptr->linear_velocity_local).x = *pfVar1;
+      (this_ptr->linear_velocity_local).y = pfVar1[1];
+      (this_ptr->linear_velocity_local).z = pfVar1[2];
     }
   }
-  if ((param_3 != (uint *)0x0) && ((uint *)(param_1 + 0x70) != param_3)) {
-    *(uint *)(param_1 + 0x70) = *param_3;
-    *(uint *)(param_1 + 0x74) = param_3[1];
-    *(uint *)(param_1 + 0x78) = param_3[2];
+  if ((angular_velocity != (CVector3f *)0x0) && (&this_ptr->angular_velocity != angular_velocity)) {
+    (this_ptr->angular_velocity).x = angular_velocity->x;
+    (this_ptr->angular_velocity).y = angular_velocity->y;
+    (this_ptr->angular_velocity).z = angular_velocity->z;
     return;
   }
   return;

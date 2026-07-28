@@ -2,52 +2,41 @@
 // Address: 0046f0a0
 // Address Range: [[0046f0a0, 0046f129]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(char *param_1,int param_2,uint param_3,undefined4 param_4)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(char *param_1,int param_2,uint param_3,uint param_4)
+void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 
 {
-  char cVar1;
+  char *pcVar1;
   uint uVar2;
-  uint uVar3;
-  char *pcVar4;
-  byte bVar5;
+  CInputString *pCVar3;
+  byte bVar4;
   
-  bVar5 = 0;
-  *(uint *)(param_1 + 300) = param_3;
-  if (299 < param_3) {
-    param_1[300] = '+';
-    param_1[0x12d] = '\x01';
-    param_1[0x12e] = '\0';
-    param_1[0x12f] = '\0';
+  bVar4 = 0;
+  this_ptr->max_length = max_length;
+  if (299 < (uint)max_length) {
+    this_ptr->max_length = 299;
   }
-  memset(param_1,0,300);
-  if (param_2 == 0) {
-    param_1[0x130] = '\0';
-    param_1[0x131] = '\0';
-    param_1[0x132] = '\0';
-    param_1[0x133] = '\0';
+  memset(this_ptr,0,300);
+  if (source_string == (char *)0x0) {
+    this_ptr->current_length = 0;
   }
   else {
-    _strncpy(param_1,param_2,*(uint *)(param_1 + 300));
-    uVar3 = 0xffffffff;
-    pcVar4 = param_1;
+    _strncpy(this_ptr->string_data,source_string,this_ptr->max_length);
+    uVar2 = 0xffffffff;
+    pCVar3 = this_ptr;
     do {
-      if (uVar3 == 0) break;
-      uVar3 = uVar3 - 1;
-      cVar1 = *pcVar4;
-      pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
-    } while (cVar1 != '\0');
-    *(uint *)(param_1 + 0x130) = ~uVar3 - 1;
+      if (uVar2 == 0) break;
+      uVar2 = uVar2 - 1;
+      pcVar1 = pCVar3->string_data;
+      pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);
+    } while (*pcVar1 != '\0');
+    this_ptr->current_length = ~uVar2 - 1;
   }
-  uVar2 = *(uint *)(param_1 + 0x130);
-  param_1[0x138] = '\0';
-  param_1[0x139] = '\0';
-  param_1[0x13a] = '\0';
-  param_1[0x13b] = '\0';
-  *(uint *)(param_1 + 0x134) = uVar2;
-  *(uint *)(param_1 + 0x13c) = param_4;
+  this_ptr->selection_start = 0;
+  this_ptr->cursor_position = this_ptr->current_length;
+  this_ptr->mask_mode = mask_mode;
   return;
 }

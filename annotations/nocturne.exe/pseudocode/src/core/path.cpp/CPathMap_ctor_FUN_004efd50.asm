@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_path_cpp_CPathMap_ctor_FUN_004efd50(int param_1)
+; CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_004efd50(CPathMap *this_ptr)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004b46d0 at 004b46e4

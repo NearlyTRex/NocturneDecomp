@@ -2,29 +2,35 @@
 // Address: 00564f32
 // Address Range: [[00564f32, 00564fa9]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_strstream_cpp_istrstream_ctor_FUN_00564f32(undefined4 *param_1,byte param_2,undefined4 param_3,undefined4 param_4)
+// Signature: _istrstream * __cdecl crt_strstream_cpp_istrstream_ctor_FUN_00564f32(void *this_ptr,int ctor_flags,char *buffer,int size)
 
 #include "nocturne.h"
 
-void __cdecl crt_strstream_cpp_istrstream_ctor_FUN_00564f32(uint *param_1,byte param_2,uint param_3,uint param_4)
+_istrstream * __cdecl crt_strstream_cpp_istrstream_ctor_FUN_00564f32(void *this_ptr,int ctor_flags,char *buffer,int size)
 
 {
   int iVar1;
-  int *piVar2;
+  WatcomVirtualBaseDescriptor *pWVar2;
+  strstreambase *psVar3;
+  int iVar4;
+  _istrstream *p_Var5;
+  ios *piVar6;
   
-  if ((param_2 & 1) == 0) {
-    *param_1 = &DAT_005a4730;
-    param_1[0x12] = &DAT_005a4738;
-    iVar1 = FUN_0056b503(param_1 + 0x16);
-    param_1 = (uint *)(iVar1 + -0x58);
+  if ((ctor_flags & 1U) == 0) {
+    *(byte **)this_ptr = &DAT_005a4730;
+    *(byte **)((int)this_ptr + 0x48) = &DAT_005a4738;
+    piVar6 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x58));
+    this_ptr = piVar6 + -2;
   }
-  iVar1 = FUN_0056b405(param_1,1,param_3,param_4,0);
-  iVar1 = FUN_0056b67d(iVar1 + 0x48,1);
-  piVar2 = (int *)(iVar1 + -0x48);
-  *(int *)((int)piVar2 + *(int *)(*piVar2 + 4) + -4) = *(int *)(*piVar2 + 4);
-  *(byte ***)(iVar1 + -4) = &PTR_crt_strstream_cpp_istrstream_dtor_FUN_00564fd8_005a4744;
-  *(byte ***)(iVar1 + 8) = &PTR_crt_unknown_c_FUN_00564faa_005a474c;
-  *(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) =
+  psVar3 = crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(this_ptr,1,buffer,size,(char *)0x0);
+  iVar4 = crt_iostream_cpp_istream_ctor_FUN_0056b67d(&psVar3->_ios,1);
+  p_Var5 = (_istrstream *)(iVar4 + -0x48);
+  iVar1 = ((p_Var5->_strstreambase_core).layout_info)->offset_to_vbase;
+  *(int *)(p_Var5->padding + iVar1 + -0x58) = iVar1;
+  *(byte ***)(iVar4 + -4) = &PTR_crt_strstream_cpp_istrstream_dtor_FUN_00564fd8_005a4744;
+  pWVar2 = (p_Var5->_strstreambase_core).layout_info;
+  *(byte ***)(iVar4 + 8) = &PTR_crt_unknown_c_FUN_00564faa_005a474c;
+  *(byte ***)(p_Var5->padding + pWVar2->offset_to_vbase + -0x2c) =
        &PTR_crt_unknown_c_FUN_00564fc0_005a4754;
-  return;
+  return p_Var5;
 }

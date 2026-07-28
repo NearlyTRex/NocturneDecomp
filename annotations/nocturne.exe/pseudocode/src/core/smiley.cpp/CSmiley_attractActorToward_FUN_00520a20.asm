@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(int param_1,int param_2)
+; undefined4 core_smiley_cpp_CSmiley_attractActorToward_FUN_00520a20(CCharacter *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -60,14 +60,14 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00520a88
     PUSH EAX                            ; 00520a8c
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00520a8d
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 00520a92
     PUSH EAX                            ; 00520a95
     LEA EAX,[ESP + 0x4]                 ; 00520a96
     PUSH EAX                            ; 00520a9a
     PUSH ESI                            ; 00520a9b
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00520a9c
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00520aa1
     LEA EAX,[EBX + 0x30]                ; 00520aa4
     FLD float ptr [ESP + 0x4]           ; 00520aa7

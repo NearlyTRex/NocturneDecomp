@@ -1,0 +1,218 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 180,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_param"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571d4f",
+    "address_range": [
+      [
+        "00571d4f",
+        "00571d9e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_iostream.cpp_streambuf_setbuf_FUN_00571d4f",
+    "signature": "streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571df8",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_setBuffer_FUN_00571df8"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.153846153846154,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 13,
+      "INT_AND": 19,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 162
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "streambuf * crt_iostream_cpp_streambuf_setbuf_FUN_00571d4f(streambuf *param_1,void *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->__reserve_base != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 == (void *)0x0) || (param_3 < 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_2 == (void *)0x0) || (param_3 < 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (void *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 < 5) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,(void *)0x0,(void *)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(void *)((int)param_2",
+      "severity": "moderate",
+      "text": "buffer_end = (void *)((int)param_2 + param_3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "buffer_end = (void *)((int)param_2 + param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "buffer_end = (void *)((int)param_2 + param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,param_2,buffer_end,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,param_2,buffer_end,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005a4ab0"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

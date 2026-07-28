@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(int *param_1)
+; SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0 at 0049e865

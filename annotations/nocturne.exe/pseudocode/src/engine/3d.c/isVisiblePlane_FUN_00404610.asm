@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(int *param_1)
+; int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   plane
 ;
 ; XREF[79]:
 ;   core_box.cpp_FUN_0041d050 at 0041d191
 ;   engine_3d.c_FUN_00405200 at 00405209
 ;   engine_3d.c_FUN_00405ab0 at 00405ac7
-;   engine_3d.c_FUN_00406920 at 00406960
 ;   engine_3d.c_FUN_00406a00 at 00406a40
-;   engine_3d.c_FUN_00406ae0 at 00406aee
 ;   engine_3d.c_FUN_00406b80 at 00406bc0
 ;   engine_3d.c_FUN_00408fc0 at 00409100
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 004060c5
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407a34
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405e1d
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 0040852a
 ;   ... and 69 more
 ;
 ; Referenced Globals:

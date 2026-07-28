@@ -2,20 +2,23 @@
 // Address: 004544d0
 // Address Range: [[004544d0, 00454504]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(undefined4 param_1,float param_2)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(uint param_1,float param_2)
+void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 
 {
-  float10 fVar1;
-  uint uVar2;
+  CKeyFramedModel *this_ptr_00;
+  double dVar1;
+  int frame_index;
+  int render_flags_00;
   
-  uVar2 = 0x4544e5;
-  fVar1 = (float10)round((float10)param_2);
-  uVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-                    (param_1,(int)ROUND(fVar1),param_1,uVar2);
-  core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(uVar2);
+  render_flags_00 = 0x4544e5;
+  dVar1 = round((double)animation_frame);
+  frame_index = (int)ROUND(dVar1);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
+            (this_ptr_00,frame_index,this_ptr,render_flags_00);
   return;
 }

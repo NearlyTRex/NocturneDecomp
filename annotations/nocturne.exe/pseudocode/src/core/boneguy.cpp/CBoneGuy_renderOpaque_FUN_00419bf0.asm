@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(undefined4 param_1)
+; void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@ section .text
         ;   Label: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
     PUSH EDX                            ; 00419bf6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00419bf7
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00419bfc
     TEST EAX,EAX                        ; 00419bff
     JNZ 0x00419c04                      ; 00419c01
@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_00419c04
     PUSH ECX                            ; 00419c08
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 00419c09
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419c0e
     RET                                 ; 00419c11
 

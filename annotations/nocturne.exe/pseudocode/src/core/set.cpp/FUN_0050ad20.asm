@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfea
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d93a4
-;   core_set.cpp_FUN_00507f80 at 00508496
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508496
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fb99d0
@@ -74,11 +74,11 @@ section .text
     LEA EAX,[EAX]                       ; 0050ad89
     NOP                                 ; 0050ad8f
     CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0 ; 0050ad90
-        ;   XREF to: 0044e3b0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0()
+        ;   XREF to: 0044e3b0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0()
         ;   Label: LAB_0050ad90
     PUSH 0x1fb8508                      ; 0050ad95
     CALL core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 ; 0050ad9a
-        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_free_FUN_004401d0()
+        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0050ad9f
     POP EBP                             ; 0050ada2
     POP EDI                             ; 0050ada3

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(int param_1)
+; int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -62,7 +64,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 004b5005
     MOV dword ptr [ESP + 0x14],EBX      ; 004b5009
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004b500d
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004b5012
     ADD ESI,0x20                        ; 004b5015
     MOV dword ptr [ESP + 0x3c],EDI      ; 004b5018
@@ -145,7 +147,7 @@ section .text
     MOV EBX,dword ptr [0x005b7650]      ; 004b50e3 | DAT_005b7650
     PUSH EBX                            ; 004b50e9
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004b50ea
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     MOV EAX,0x1                         ; 004b50ef
     ADD ESP,0x8                         ; 004b50f4
     MOV ESP,EBP                         ; 004b50f7

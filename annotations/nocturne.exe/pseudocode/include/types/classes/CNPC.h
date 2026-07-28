@@ -6,13 +6,13 @@
 #include "types/classes/CPathMap.h"
 
 // Structure: CNPC
-// Ghidra size: 0x1f708 (128776 bytes)
+// Ghidra size: 0x1f570 (128368 bytes)
 #pragma pack(push, 1)
 typedef struct CNPC {
     CCharacter base; // 0x0
-    CPathMap path_map; // 0xbe24
-    int shoot_me; // 0x1f700
-    int pool_me; // 0x1f704
+    CPathMap path_map; // 0xbc8c
+    int shoot_me; // 0x1f568
+    int pool_me; // 0x1f56c
 } CNPC;
 #pragma pack(pop)
 

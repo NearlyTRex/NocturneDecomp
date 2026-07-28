@@ -10,10 +10,11 @@ void core_mobster_cpp_FUN_004dba70(int param_1,int param_2)
 
 {
   int iVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
+  int iVar3;
   uint *unaff_ESI;
-  uint *puVar3;
-  byte bVar4;
+  uint *puVar4;
+  byte bVar5;
   byte local_d8 [48];
   uint local_a8 [12];
   uint local_78;
@@ -41,13 +42,14 @@ void core_mobster_cpp_FUN_004dba70(int param_1,int param_2)
   uint local_14;
   uint local_10;
   
-  bVar4 = 0;
+  bVar5 = 0;
   iVar1 = param_2 * 0x44 + param_1;
-  iVar2 = *(int *)(iVar1 + 0x24a4);
+  iVar3 = *(int *)(iVar1 + 0x24a4);
   if (param_2 == 1) {
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(iVar1 + 0x24ac),g_CElephantGunActorType_01bcde44.name_hash);
-    if (iVar1 == 0) {
+    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                       (*(CDemonActor **)(iVar1 + 0x24ac),g_CElephantGunActorType_01bcde44.name_hash
+                       );
+    if (pCVar2 == (CDemonActor *)0x0) {
       local_78 = 0x3e698e54;
       local_74 = 0xbe0d3d86;
       local_70 = 0xbde5c704;
@@ -103,12 +105,12 @@ void core_mobster_cpp_FUN_004dba70(int param_1,int param_2)
     }
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_d8,&local_60,&local_30);
-  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_d8,iVar2 * 0x30 + param_1 + 0xfd0);
-  puVar3 = local_a8;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = *puVar3;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;
+  core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_d8,iVar3 * 0x30 + param_1 + 0xfd0);
+  puVar4 = local_a8;
+  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *unaff_ESI = *puVar4;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;
   }
   return;
 }

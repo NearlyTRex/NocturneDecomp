@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mirror_cpp_CMirror_ctor_FUN_004d6550(int param_1)
+; CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004d6550(CMirror *this_ptr)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_glass.cpp_FUN_004abb50 at 004abb65
@@ -24,7 +26,7 @@ section .text
     ADD EAX,0x98                        ; 004d655b
     PUSH EAX                            ; 004d6560
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004d6561
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004d6566
     SUB EAX,0x98                        ; 004d6569
     RET                                 ; 004d656e

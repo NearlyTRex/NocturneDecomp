@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * shape_edittool_cpp_CStrList_copy_FUN_00473bd0(undefined4 *param_1,undefined4 param_2)
+; CStrList * shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *param_1,CStrList *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 00473be7
     MOV dword ptr [EBX + 0x8],0x0       ; 00473be8
     CALL shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 ; 00473bef
-        ;   XREF to: 00473c00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00()
+        ;   XREF to: 00473c00 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00(CStrList * dest_ptr, CStrList * source_ptr)
     ADD ESP,0x8                         ; 00473bf4
     MOV EAX,EBX                         ; 00473bf7
     POP EBX                             ; 00473bf9

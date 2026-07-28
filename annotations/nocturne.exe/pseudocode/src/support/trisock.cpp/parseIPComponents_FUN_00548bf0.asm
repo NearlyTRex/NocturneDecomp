@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(undefined4 param_1,undefined4 param_2)
+; int __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint *result_ptr,char *dotted_decimal_string)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   result_ptr
+; char *           Stack[0x8]:4   dotted_decimal_string
 ;
 ; XREF[1]:
 ;   support_trisock.cpp_parseIPAddress_FUN_00548af0 at 00548afb
@@ -57,7 +60,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x34]      ; 00548c3d
     PUSH EBP                            ; 00548c41
     CALL support_trisock.cpp_buildIPAddress_FUN_00548c60 ; 00548c42
-        ;   XREF to: 00548c60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildIPAddress_FUN_00548c60()
+        ;   XREF to: 00548c60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_buildIPAddress_FUN_00548c60(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
     ADD ESP,0x14                        ; 00548c47
     POP EBX                             ; 00548c4a
     POP ESI                             ; 00548c4b

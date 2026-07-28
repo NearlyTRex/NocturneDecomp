@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(undefined4 param_1)
+; CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle *this_ptr)
 ;
+; Parameters:
+; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vehicle.cpp_FUN_0054e570 at 0054e583
@@ -44,26 +46,26 @@ section .text
     ADD EAX,0x150                       ; 0054e5b0
     PUSH EAX                            ; 0054e5b5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0054e5b6
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054e5bb
     PUSH 0x59b030                       ; 0054e5be | g_CKeyFramedModelInstanceTypeInfo_0059b030
     PUSH 0x4                            ; 0054e5c3
     ADD EAX,0x17c                       ; 0054e5c5
     PUSH EAX                            ; 0054e5ca
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0054e5cb
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054e5d0
     PUSH 0x5a3d20                       ; 0054e5d3 | g_CTireTypeInfo_005a3d20
     PUSH 0x4                            ; 0054e5d8
     ADD EAX,0x668                       ; 0054e5da
     PUSH EAX                            ; 0054e5df
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0054e5e0
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054e5e5
     ADD EAX,0x6e4                       ; 0054e5e8
     PUSH EAX                            ; 0054e5ed
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 0054e5ee
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_ctor_FUN_0043b5d0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 0054e5f3
     LEA EBX,[EAX + 0xffffefe8]          ; 0054e5f6
     PUSH 0x5972c1                       ; 0054e5fc | = "32ford.kfm"
@@ -71,32 +73,32 @@ section .text
     PUSH EAX                            ; 0054e607
     MOV dword ptr [EBX + 0x14c],0x5a3c44 ; 0054e608 | PTR_core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0_005a3c44
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e612
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054e617
     PUSH 0x5972cc                       ; 0054e61a | = "32ltire.kfm"
     LEA EAX,[EBX + 0x948]               ; 0054e61f
     PUSH EAX                            ; 0054e625
     MOV dword ptr [EBX + 0x930],0x4     ; 0054e626
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e630
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054e635
     PUSH 0x5972d8                       ; 0054e638 | = "32ltire.kfm"
     LEA EAX,[EBX + 0xcb0]               ; 0054e63d
     PUSH EAX                            ; 0054e643
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e644
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054e649
     PUSH 0x5972e4                       ; 0054e64c | = "32rtire.kfm"
     LEA EAX,[EBX + 0xafc]               ; 0054e651
     PUSH EAX                            ; 0054e657
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e658
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054e65d
     PUSH 0x5972f0                       ; 0054e660 | = "32rtire.kfm"
     LEA EAX,[EBX + 0xe64]               ; 0054e665
     PUSH EAX                            ; 0054e66b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054e66c
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x934],0xc0200000 ; 0054e671
     MOV dword ptr [EBX + 0x938],0xc0200000 ; 0054e67b
     MOV dword ptr [EBX + 0x93c],0x40a00000 ; 0054e685

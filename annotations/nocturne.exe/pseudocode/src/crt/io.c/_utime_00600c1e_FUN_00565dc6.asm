@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_io_c__utime_00600c1e_FUN_00565dc6(LPCSTR param_1,undefined4 *param_2)
+; int __cdecl crt_io_c__utime_00600c1e_FUN_00565dc6(char *filename,_utimbuf *timestamps)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; _utimbuf *       Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
 ;   engine_dosio.cpp_copyFileTimestamp_FUN_00456950 at 00456985

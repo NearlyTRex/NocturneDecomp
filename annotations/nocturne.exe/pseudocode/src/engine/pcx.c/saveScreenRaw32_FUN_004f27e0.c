@@ -2,66 +2,66 @@
 // Address: 004f27e0
 // Address Range: [[004f27e0, 004f2987]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_pcx_c_saveScreenRaw32_FUN_004f27e0(char *param_1)
+// Signature: void __cdecl engine_pcx_c_saveScreenRaw32_FUN_004f27e0(char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_pcx_c_saveScreenRaw32_FUN_004f27e0(char *param_1)
+void __cdecl engine_pcx_c_saveScreenRaw32_FUN_004f27e0(char *filename)
 
 {
   char cVar1;
-  int iVar2;
-  uint *puVar3;
-  uint uVar4;
-  char *pcVar5;
-  int iVar6;
-  char *pcVar7;
+  _FILE *file;
+  uint *puVar2;
+  uint uVar3;
+  char *pcVar4;
+  int iVar5;
+  char *pcVar6;
   char local_6c [80];
   uint local_1c;
   int local_18;
   int local_14;
   
-  pcVar7 = local_6c;
+  pcVar6 = local_6c;
   do {
-    cVar1 = *param_1;
-    *pcVar7 = cVar1;
-    pcVar5 = local_6c;
+    cVar1 = *filename;
+    *pcVar6 = cVar1;
+    pcVar4 = local_6c;
     if (cVar1 == '\0') break;
-    cVar1 = param_1[1];
-    param_1 = param_1 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-    pcVar5 = local_6c;
+    cVar1 = filename[1];
+    filename = filename + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
+    pcVar4 = local_6c;
   } while (cVar1 != '\0');
   do {
-    pcVar7 = pcVar5;
-    if (*pcVar5 == '.') goto LAB_004f2823;
-    if (*pcVar5 == '\0') break;
-    pcVar7 = pcVar5 + 1;
-    if (*pcVar7 == '.') goto LAB_004f2823;
-    pcVar5 = pcVar5 + 2;
-  } while (*pcVar7 != '\0');
-  pcVar7 = (char *)0x0;
+    pcVar6 = pcVar4;
+    if (*pcVar4 == '.') goto LAB_004f2823;
+    if (*pcVar4 == '\0') break;
+    pcVar6 = pcVar4 + 1;
+    if (*pcVar6 == '.') goto LAB_004f2823;
+    pcVar4 = pcVar4 + 2;
+  } while (*pcVar6 != '\0');
+  pcVar6 = (char *)0x0;
 LAB_004f2823:
-  if (pcVar7 == (char *)0x0) {
+  if (pcVar6 == (char *)0x0) {
     PTR_01cc4800 = "..\\engine\\pcx.c";
     INT_01cc4804 = 0x99;
     core_main_c_FUN_004c8440("saveScreenRaw32 - No ext found");
   }
-  pcVar5 = ".RAW";
+  pcVar4 = ".RAW";
   do {
-    cVar1 = *pcVar5;
-    *pcVar7 = cVar1;
+    cVar1 = *pcVar4;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar2 = _fopen(local_6c,"wb");
-  if (iVar2 == 0) {
+  file = _fopen(local_6c,"wb");
+  if (file == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\pcx.c";
     INT_01cc4804 = 0x9f;
     core_main_c_FUN_004c8440("saveScreenRaw32 - Unable to open output");
@@ -70,23 +70,23 @@ LAB_004f2823:
   if (0 < DAT_005b7620) {
     local_18 = 0;
     do {
-      iVar6 = 0;
-      puVar3 = *(uint **)(&DAT_01bd2fa0 + local_18);
+      iVar5 = 0;
+      puVar2 = *(uint **)(&DAT_01bd2fa0 + local_18);
       if (0 < DAT_005b761c) {
         do {
-          uVar4 = (*puVar3 >> (DAT_01c00630 & 0x1f)) * _DAT_01c00634;
-          local_1c = (*puVar3 >> (DAT_01c0063c & 0x1f)) * _DAT_01c00640 & 0xff;
-          _fputc(_DAT_01c00628 * (*puVar3 >> (DAT_01c00624 & 0x1f)) & 0xff,iVar2);
-          _fputc(uVar4 & 0xff,iVar2);
-          puVar3 = puVar3 + 1;
-          iVar6 = iVar6 + 1;
-          _fputc(local_1c,iVar2);
-        } while (iVar6 < DAT_005b761c);
+          uVar3 = (*puVar2 >> (DAT_01c00630 & 0x1f)) * _DAT_01c00634;
+          local_1c = (*puVar2 >> (DAT_01c0063c & 0x1f)) * _DAT_01c00640 & 0xff;
+          _fputc(_DAT_01c00628 * (*puVar2 >> (DAT_01c00624 & 0x1f)) & 0xff,file);
+          _fputc(uVar3 & 0xff,file);
+          puVar2 = puVar2 + 1;
+          iVar5 = iVar5 + 1;
+          _fputc(local_1c,file);
+        } while (iVar5 < DAT_005b761c);
       }
       local_18 = local_18 + 4;
       local_14 = local_14 + 1;
     } while (local_14 < DAT_005b7620);
   }
-  _fclose(iVar2);
+  _fclose(file);
   return;
 }

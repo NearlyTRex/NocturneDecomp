@@ -2,11 +2,11 @@
 // Address: 00548dc0
 // Address Range: [[00548dc0, 00548e16]]
 // Convention: unknown
-// Signature: void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(int param_1)
+// Signature: void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)
 
 #include "nocturne.h"
 
-void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(int param_1)
+void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)
 
 {
   ushort uVar1;
@@ -19,7 +19,7 @@ void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(int param_1)
   uint auStack_14 [3];
   
   bVar4 = 0;
-  uVar1 = *(ushort *)(param_1 + 4);
+  uVar1 = param_1->port;
   uVar2 = Ordinal_9();
   uStack_1c = CONCAT22(uVar2,uVar1);
   support_trisock_cpp_getIPAddress_FUN_00548d20(param_1);

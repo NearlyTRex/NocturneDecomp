@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,undefined4 param_2)
+; undefined4 core_trap_cpp_CTrap_canPickup_FUN_005468a0(int param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005468b8
     PUSH ECX                            ; 005468bc
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 005468bd
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 005468c2
     TEST EAX,EAX                        ; 005468c5
     JZ 0x005468b2                       ; 005468c7

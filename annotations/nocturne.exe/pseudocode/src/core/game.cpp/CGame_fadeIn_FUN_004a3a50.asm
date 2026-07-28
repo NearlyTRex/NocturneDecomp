@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_game_cpp_CGame_fadeIn_FUN_004a3a50(void)
+; uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004a3a50(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047f118

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *this_ptr,float frustum_param,int render_mode)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   frustum_param
+; int              Stack[0xc]:4   render_mode
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,9 +14,9 @@
 ;
 ; XREF[6]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508634
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508061
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
-;   core_set.cpp_FUN_00507f80 at 00508061
 ;   core_set.cpp_FUN_0050a260 at 0050a3cf
 ;   core_setdir.cpp_FUN_00513720 at 00513809
 ;
@@ -31,9 +35,9 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
 ;   core_dskybox.cpp_renderSkyDome_FUN_00463580
+;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40
 ;   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0
-;   core_dtrace.cpp_FUN_00469ce0
 ;   core_glass.cpp_FUN_004ac7c0
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
@@ -62,13 +66,13 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00507c94 | DAT_005ae704
     PUSH EDX                            ; 00507c9a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70 ; 00507c9b
-        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70()
+        ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70(CDemonRenderer * this_ptr, CVector3i * direction)
     ADD ESP,0x8                         ; 00507ca0
     MOV ECX,dword ptr [0x005ae704]      ; 00507ca3 | DAT_005ae704
     PUSH 0x3e800000                     ; 00507ca9
     PUSH ECX                            ; 00507cae | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40 ; 00507caf
-        ;   XREF to: 00460c40 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40()
+        ;   XREF to: 00460c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(CDemonRenderer * this_ptr, float intensity)
     MOV ESI,dword ptr [EBX + 0x15aa64]  ; 00507cb4
     ADD ESP,0x8                         ; 00507cba
     TEST ESI,ESI                        ; 00507cbd
@@ -99,8 +103,8 @@ section .text
         ;   Label: LAB_00507d04
     PUSH dword ptr [ESP + 0x28]         ; 00507d05
     PUSH 0x1fba938                      ; 00507d09 | DAT_01fba938
-    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507d0e
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
+    CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507d0e
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507d13
     CMP EDI,0x2                         ; 00507d16
     JNZ 0x00507d51                      ; 00507d19
@@ -119,13 +123,13 @@ section .text
     PUSH EAX                            ; 00507d43
     PUSH 0x1fba938                      ; 00507d44 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40 ; 00507d49
-        ;   XREF to: 0046ae40 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40()
+        ;   XREF to: 0046ae40 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array)
     ADD ESP,0xc                         ; 00507d4e
     MOV EAX,[0x005ae704]                ; 00507d51 | DAT_005ae704
         ;   Label: LAB_00507d51
     PUSH EAX                            ; 00507d56 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00507d57
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00507d5c
     TEST EAX,EAX                        ; 00507d5f
     JNZ 0x00507ef1                      ; 00507d61
@@ -135,7 +139,7 @@ section .text
         ;   XREF to: 00507d79 (CONDITIONAL_JUMP)  ; LAB_00507d79
     PUSH EBX                            ; 00507d70
     CALL core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210 ; 00507d71
-        ;   XREF to: 0050e210 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210()
+        ;   XREF to: 0050e210 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00507d76
     MOV EDI,dword ptr [0x01c02594]      ; 00507d79 | DAT_01c02594
         ;   Label: LAB_00507d79
@@ -153,14 +157,14 @@ section .text
     MOV dword ptr [ESP + 0xc],EDI       ; 00507d9a
     MOV dword ptr [ESP + 0x10],EDI      ; 00507d9e
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00507da2
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00507da7
     PUSH -0x1                           ; 00507daa
     PUSH EDI                            ; 00507dac
     PUSH EDI                            ; 00507dad
     PUSH 0x1fbacc8                      ; 00507dae
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 ; 00507db3
-        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040()
+        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 00507db8
     CMP dword ptr [EBX + 0x15a8a8],0x0  ; 00507dbb
         ;   Label: LAB_00507dbb
@@ -178,7 +182,7 @@ section .text
     MOV EAX,[0x005c1144]                ; 00507de0 | DAT_005c1144
     PUSH EAX                            ; 00507de5
     CALL core_terrain.cpp_CTerrain_render_FUN_00549310 ; 00507de6
-        ;   XREF to: 00549310 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_CTerrain_render_FUN_00549310()
+        ;   XREF to: 00549310 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_00549310(CTerrain * this_ptr, int render_pass)
     ADD ESP,0x8                         ; 00507deb
     MOV EDX,dword ptr [EBX + 0x15a8cc]  ; 00507dee
         ;   Label: LAB_00507dee
@@ -192,7 +196,7 @@ section .text
     ADD EAX,0x1e4                       ; 00507e02
     PUSH EAX                            ; 00507e07
     CALL core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980 ; 00507e08
-        ;   XREF to: 004d7980 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980()
+        ;   XREF to: 004d7980 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(CMirror * this_ptr)
     MOV EAX,dword ptr [ESI + 0x15a8d0]  ; 00507e0d
     MOV EDX,dword ptr [EAX + 0x178]     ; 00507e13
     ADD ESP,0x4                         ; 00507e19
@@ -213,8 +217,8 @@ section .text
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
     PUSH 0x1fba938                      ; 00507e3b | DAT_01fba938
-    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507e40
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
+    CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507e40
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507e45
     PUSH EBX                            ; 00507e48
     ADD ESI,0x4                         ; 00507e49
@@ -242,7 +246,7 @@ section .text
     PUSH EDX                            ; 00507e76
     PUSH 0x1fba938                      ; 00507e77 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0 ; 00507e7c
-        ;   XREF to: 0046ace0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0()
+        ;   XREF to: 0046ace0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace * this_ptr, int visible_cube_count, int * visible_cube_indices)
     ADD ESP,0xc                         ; 00507e81
     CMP EDI,0x1                         ; 00507e84
         ;   Label: LAB_00507e84
@@ -262,7 +266,7 @@ section .text
     MOV EDX,dword ptr [0x005b0674]      ; 00507eaf | DAT_005b0674
     PUSH EDX                            ; 00507eb5
     CALL core_dskybox.cpp_renderSkyDome_FUN_00463580 ; 00507eb6
-        ;   XREF to: 00463580 (UNCONDITIONAL_CALL)  ; undefined core_dskybox.cpp_renderSkyDome_FUN_00463580()
+        ;   XREF to: 00463580 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 00507ebb
     JMP 0x00507dc8                      ; 00507ebe
         ;   XREF to: 00507dc8 (UNCONDITIONAL_JUMP)  ; LAB_00507dc8
@@ -270,7 +274,7 @@ section .text
         ;   Label: LAB_00507ec3
     PUSH ESI                            ; 00507ec9 | DAT_02dd1210
     CALL core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800 ; 00507eca
-        ;   XREF to: 00550800 (UNCONDITIONAL_CALL)  ; undefined core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800()
+        ;   XREF to: 00550800 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater * this_ptr)
     MOV EAX,[0x005c11ec]                ; 00507ecf | DAT_005c11ec
     MOV EDI,dword ptr [EAX]             ; 00507ed4 | DAT_02dd1210
     ADD ESP,0x4                         ; 00507ed6
@@ -280,7 +284,7 @@ section .text
     PUSH 0x1                            ; 00507ee1
     PUSH EAX                            ; 00507ee3 | DAT_02dd1210
     CALL core_water.cpp_CWater_render_FUN_00550cb0 ; 00507ee4
-        ;   XREF to: 00550cb0 (UNCONDITIONAL_CALL)  ; undefined core_water.cpp_CWater_render_FUN_00550cb0()
+        ;   XREF to: 00550cb0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_00550cb0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 00507ee9
     JMP 0x00507dd5                      ; 00507eec
         ;   XREF to: 00507dd5 (UNCONDITIONAL_JUMP)  ; LAB_00507dd5
@@ -299,7 +303,7 @@ section .text
     ADD EAX,0x1e4                       ; 00507f16
     PUSH EAX                            ; 00507f1b
     CALL core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980 ; 00507f1c
-        ;   XREF to: 004d7980 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980()
+        ;   XREF to: 004d7980 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(CMirror * this_ptr)
     MOV EAX,dword ptr [EDI + 0x15a8d0]  ; 00507f21
     MOV EBP,dword ptr [EAX + 0x178]     ; 00507f27
     ADD ESP,0x4                         ; 00507f2d
@@ -320,8 +324,8 @@ section .text
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b
     PUSH 0x1fba938                      ; 00507f4f | DAT_01fba938
-    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507f54
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
+    CALL core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 ; 00507f54
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace * this_ptr, float fov_or_radius, int render_mode)
     ADD ESP,0xc                         ; 00507f59
     PUSH EBX                            ; 00507f5c
     ADD EDI,0x4                         ; 00507f5d

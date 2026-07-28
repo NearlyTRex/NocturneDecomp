@@ -84,7 +84,7 @@ section .text
     POP EBX                             ; 00528eae
     RET                                 ; 00528eaf
     CALL sound_sndmain.cpp_getMixBufferCount_FUN_00528620 ; 00528eb0
-        ;   XREF to: 00528620 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMixBufferCount_FUN_00528620()
+        ;   XREF to: 00528620 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getMixBufferCount_FUN_00528620()
         ;   Label: LAB_00528eb0
     CMP EAX,dword ptr [EBX + 0x2dbd350] ; 00528eb5
     JZ 0x00529207                       ; 00528ebb
@@ -334,7 +334,7 @@ section .text
     JLE 0x00528fad                      ; 005291f2
         ;   XREF to: 00528fad (CONDITIONAL_JUMP)  ; LAB_00528fad
     CALL sound_sndmain.cpp_getMixBufferCount_FUN_00528620 ; 005291f8
-        ;   XREF to: 00528620 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMixBufferCount_FUN_00528620()
+        ;   XREF to: 00528620 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getMixBufferCount_FUN_00528620()
         ;   Label: LAB_005291f8
     MOV EDX,dword ptr [EBP + 0x14]      ; 005291fd
     MOV dword ptr [EDX*0x4 + 0x2dbd350],EAX ; 00529200
@@ -366,7 +366,7 @@ section .text
     FDIVP                               ; 00529272
     FXCH                                ; 00529274
     CALL crt_math.c_round_FUN_00563a30  ; 00529276
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x90]        ; 0052927b
     SUB ESP,0x8                         ; 00529282
     FSTP double ptr [ESP]               ; 00529285
@@ -377,7 +377,7 @@ section .text
     FLD double ptr [ESP + 0x84]         ; 0052929b
     ADD ESP,0x8                         ; 005292a2
     CALL crt_math.c_round_FUN_00563a30  ; 005292a5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EAX,dword ptr [ESP + 0x90]      ; 005292aa
     FISTP dword ptr [ESP + 0x8c]        ; 005292b1
     CMP EDI,EAX                         ; 005292b8

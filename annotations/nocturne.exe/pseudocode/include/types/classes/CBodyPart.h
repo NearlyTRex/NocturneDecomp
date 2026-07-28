@@ -15,36 +15,36 @@ struct SMRGLPrimitiveTriangle;
 #include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CBodyPart
-// Ghidra size: 0xf30 (3888 bytes)
+// Ghidra size: 0xf18 (3864 bytes)
 #pragma pack(push, 1)
 typedef struct CBodyPart {
     CDemonActor base; // 0x0
-    int render_in_background; // 0x158
-    CBoundingBox3D bounding_box; // 0x15c
-    int vertex_count; // 0x174
-    struct CVector3i* vertices; // 0x178
-    struct CVector3i* normals; // 0x17c
-    int tri_count; // 0x180
-    struct SMRGLPrimitiveTriangle* faces; // 0x184
-    int* face_texture_indices; // 0x188
-    int texture_count; // 0x18c
-    SMRGLTextureBasic textures[10]; // 0x190
-    CVector3f initial_velocity; // 0x280
-    int attached_model_count; // 0x28c
-    SBodyPartModel attached_models[3]; // 0x290
-    int fire_count; // 0x74c
-    SBodyPartFire fires[2]; // 0x750
-    int dont_use_normals; // 0xcb0
-    int transparent_geometry_flag; // 0xcb4
-    int blood_type; // 0xcb8
-    float physics_timer; // 0xcbc
-    int render_alpha; // 0xcc0
-    int dont_pick_me_up; // 0xcc4
-    int fire_time_remaining; // 0xcc8
-    CBox physics_box; // 0xccc
-    float ground_height; // 0xf24
-    struct CDemonActor* carried_by_actor; // 0xf28
-    int is_visible; // 0xf2c
+    int render_in_background; // 0x150
+    CBoundingBox3D bounding_box; // 0x154
+    int vertex_count; // 0x16c
+    struct CVector3i* vertices; // 0x170
+    struct CVector3i* normals; // 0x174
+    int tri_count; // 0x178
+    struct SMRGLPrimitiveTriangle* faces; // 0x17c
+    int* face_texture_indices; // 0x180
+    int texture_count; // 0x184
+    SMRGLTextureBasic textures[10]; // 0x188
+    CVector3f initial_velocity; // 0x278
+    int attached_model_count; // 0x284
+    SBodyPartModel attached_models[3]; // 0x288
+    int fire_count; // 0x744
+    SBodyPartFire fires[2]; // 0x748
+    int dont_use_normals; // 0xc98
+    int transparent_geometry_flag; // 0xc9c
+    int blood_type; // 0xca0
+    float physics_timer; // 0xca4
+    int render_alpha; // 0xca8
+    int dont_pick_me_up; // 0xcac
+    int fire_time_remaining; // 0xcb0
+    CBox physics_box; // 0xcb4
+    float ground_height; // 0xf0c
+    struct CDemonActor* carried_by_actor; // 0xf10
+    int is_visible; // 0xf14
 } CBodyPart;
 #pragma pack(pop)
 

@@ -2,11 +2,11 @@
 // Address: 00446ea0
 // Address Range: [[00446ea0, 00446fd2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(int param_1,int param_2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(CDemonCamera *this_ptr,int plane_index)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(int param_1,int param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(CDemonCamera *this_ptr,int plane_index)
 
 {
   int iVar1;
@@ -15,14 +15,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(int
   int iVar4;
   int iVar5;
   
-  iVar4 = param_2 * 0x12c00;
-  for (iVar5 = 1; iVar4 = iVar4 + 0x140, iVar5 < *(int *)(param_1 + 0x154) + -1; iVar5 = iVar5 + 1)
-  {
+  iVar4 = plane_index * 0x12c00;
+  for (iVar5 = 1; iVar4 = iVar4 + 0x140, iVar5 < this_ptr->display_height + -1; iVar5 = iVar5 + 1) {
     iVar3 = 1;
     iVar2 = iVar5 * 0x140;
     iVar1 = iVar4;
     while( true ) {
-      if (*(int *)(param_1 + 0x150) + -1 <= iVar3) break;
+      if (this_ptr->display_width + -1 <= iVar3) break;
       iVar3 = iVar3 + 1;
       *(byte *)(iVar1 + 0x12e1779) = (&DAT_012ceb79)[iVar2];
       iVar2 = iVar2 + 1;
@@ -30,24 +29,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(int
     }
   }
   iVar4 = 0;
-  if (0 < *(int *)(param_1 + 0x154)) {
-    iVar5 = param_2 * 0x12c00;
+  if (0 < this_ptr->display_height) {
+    iVar5 = plane_index * 0x12c00;
     do {
       *(byte *)(iVar5 + 0x12e1778) = (&DAT_012ceb78)[iVar4 * 0x140];
-      *(byte *)(*(int *)(param_1 + 0x150) + 0x12e1777 + iVar5) =
-           *(byte *)(*(int *)(param_1 + 0x150) + 0x12ceb77 + iVar4 * 0x140);
+      *(byte *)(this_ptr->display_width + 0x12e1777 + iVar5) =
+           *(byte *)(this_ptr->display_width + 0x12ceb77 + iVar4 * 0x140);
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 0x140;
-    } while (iVar4 < *(int *)(param_1 + 0x154));
+    } while (iVar4 < this_ptr->display_height);
   }
   iVar5 = 1;
-  iVar4 = param_2 * 0x12c00;
-  while (iVar5 < *(int *)(param_1 + 0x150) + -1) {
+  iVar4 = plane_index * 0x12c00;
+  while (iVar5 < this_ptr->display_width + -1) {
     *(byte *)(iVar4 + 0x12e1779) = (&DAT_012ceb78)[iVar5];
-    iVar2 = (*(int *)(param_1 + 0x154) + -1) * 0x140;
+    iVar2 = (this_ptr->display_height + -1) * 0x140;
     iVar1 = iVar2 + iVar5;
     iVar5 = iVar5 + 1;
-    *(byte *)(iVar2 + param_2 * 0x12c00 + 0x12e1777 + iVar5) = (&DAT_012ceb78)[iVar1];
+    *(byte *)(iVar2 + plane_index * 0x12c00 + 0x12e1777 + iVar5) = (&DAT_012ceb78)[iVar1];
     iVar4 = iVar4 + 1;
   }
   return;

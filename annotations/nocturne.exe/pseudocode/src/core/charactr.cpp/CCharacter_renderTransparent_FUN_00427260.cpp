@@ -2,16 +2,16 @@
 // Address: 00427260
 // Address Range: [[00427260, 0042728f]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(int param_1)
+// Signature: int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(int param_1)
+int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(CCharacter *this_ptr)
 
 {
-  if ((0 < *(int *)(param_1 + 0x2f08)) && (*(int *)(param_1 + 0x2618) != 0)) {
-    core_charactr_cpp_CCharacter_renderFlames_FUN_00427290(param_1);
-    return *(uint *)(param_1 + 0x2618);
+  if ((0 < this_ptr->fire_count) && (this_ptr->was_rendered_opaque != 0)) {
+    core_charactr_cpp_CCharacter_renderFlames_FUN_00427290(this_ptr);
+    return this_ptr->was_rendered_opaque;
   }
-  return *(uint *)(param_1 + 0x2618);
+  return this_ptr->was_rendered_opaque;
 }

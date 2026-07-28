@@ -2,49 +2,48 @@
 // Address: 004ee5a0
 // Address Range: [[004ee5a0, 004ee67f]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(int param_1)
+// Signature: void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(int param_1)
+void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr)
 
 {
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  byte local_3c [16];
-  byte local_2c [16];
-  byte local_1c [16];
+  int iVar1;
+  CAlphaBitmap *pCVar2;
+  CMouse *this_ptr_00;
+  char local_3c [16];
+  char local_2c [16];
+  char local_1c [16];
   
-  iVar2 = 0;
-  iVar3 = param_1;
+  iVar1 = 0;
+  this_ptr_00 = this_ptr;
   do {
-    iVar2 = iVar2 + 1;
-    _sprintf(local_1c,"crsr%d",iVar2);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(iVar3,local_1c,0x36,0x37);
-    iVar3 = iVar3 + 0x14;
-  } while (iVar2 < 8);
-  iVar3 = param_1 + 0xa0;
-  iVar2 = 0;
+    iVar1 = iVar1 + 1;
+    _sprintf(local_1c,"crsr%d",iVar1);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(this_ptr_00->cursors,local_1c,0x36,0x37);
+    this_ptr_00 = (CMouse *)(this_ptr_00->cursors + 1);
+  } while (iVar1 < 8);
+  pCVar2 = this_ptr->flames;
+  iVar1 = 0;
   do {
-    iVar2 = iVar2 + 1;
-    _sprintf(local_3c,"flame%d",iVar2);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(iVar3,local_3c,0x36,0x37);
-    iVar3 = iVar3 + 0x14;
-  } while (iVar2 < 7);
-  iVar3 = param_1 + 300;
-  iVar2 = 0;
+    iVar1 = iVar1 + 1;
+    _sprintf(local_3c,"flame%d",iVar1);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(pCVar2,local_3c,0x36,0x37);
+    pCVar2 = pCVar2 + 1;
+  } while (iVar1 < 7);
+  pCVar2 = this_ptr->skulls;
+  iVar1 = 0;
   do {
-    iVar2 = iVar2 + 1;
-    _sprintf(local_2c,"crsrskll%d",iVar2);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(iVar3,local_2c,0x36,0x37);
-    iVar3 = iVar3 + 0x14;
-  } while (iVar2 < 7);
-  iVar3 = param_1 + 0x1b8;
+    iVar1 = iVar1 + 1;
+    _sprintf(local_2c,"crsrskll%d",iVar1);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(pCVar2,local_2c,0x36,0x37);
+    pCVar2 = pCVar2 + 1;
+  } while (iVar1 < 7);
+  pCVar2 = this_ptr->skulls + 7;
   do {
-    uVar1 = engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(iVar3,"crsrskll7",0x36,0x37)
-    ;
-    iVar3 = iVar3 + 0x14;
-  } while (iVar3 != param_1 + 600);
-  return uVar1;
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(pCVar2,"crsrskll7",0x36,0x37);
+    pCVar2 = pCVar2 + 1;
+  } while (pCVar2 != (CAlphaBitmap *)&this_ptr->anim_timer);
+  return;
 }

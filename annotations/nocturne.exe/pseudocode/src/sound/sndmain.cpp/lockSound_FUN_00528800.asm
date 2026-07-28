@@ -7,14 +7,14 @@
 ; XREF[16]:
 ;   core_tommygun.cpp_FUN_005464a0 at 005465dd
 ;   sound_sndmain.cpp_FUN_00527570 at 00527574
-;   sound_sndmain.cpp_FUN_005278e0 at 005278e6
 ;   sound_sndmain.cpp_FUN_00527950 at 00527957
-;   sound_sndmain.cpp_FUN_005279b0 at 005279b1
-;   sound_sndmain.cpp_FUN_005293f0 at 00529437
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527452
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e78
 ;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c32
+;   sound_sndmain.cpp_getChannelLevels_FUN_005293f0 at 00529437
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 005279f1
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 at 005234fb
+;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 at 00528246
 ;   ... and 6 more
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@ section .text
     JNZ 0x0052883e                      ; 00528809
         ;   XREF to: 0052883e (CONDITIONAL_JUMP)  ; LAB_0052883e
     CALL wincore_winrun.cpp_createMutex_FUN_00559bc0 ; 0052880b
-        ;   XREF to: 00559bc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_createMutex_FUN_00559bc0()
+        ;   XREF to: 00559bc0 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_00559bc0()
     MOV [0x02dc84b8],EAX                ; 00528810 | DAT_02dc84b8
     TEST EAX,EAX                        ; 00528815
     JNZ 0x0052883e                      ; 00528817
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_0052883e
     PUSH ESI                            ; 00528844
     CALL wincore_winrun.cpp_waitForMutex_FUN_00559bd0 ; 00528845
-        ;   XREF to: 00559bd0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_waitForMutex_FUN_00559bd0()
+        ;   XREF to: 00559bd0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_00559bd0(HANDLE mutex_handle)
     MOV EDI,dword ptr [0x02dc84bc]      ; 0052884a | DAT_02dc84bc
     INC EDI                             ; 00528850
     ADD ESP,0x4                         ; 00528851

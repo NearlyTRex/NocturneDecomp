@@ -9,12 +9,12 @@
 void core_vampboss_cpp_FUN_0054c280(void)
 
 {
-  int iVar1;
+  CVampireBoss *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbedc8);
-  if (iVar1 == 0) {
+  this_ptr = (CVampireBoss *)FUN_0056497c(0xbedc8);
+  if (this_ptr == (CVampireBoss *)0x0) {
     return;
   }
-  core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(iVar1);
+  core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(this_ptr);
   return;
 }

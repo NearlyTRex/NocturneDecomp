@@ -2,13 +2,13 @@
 // Address: 0053055c
 // Address Range: [[0053055c, 005305f6]]
 // Convention: __cdecl
-// Signature: undefined8 __cdecl engine_special_cpp_renderAlphaRow32_FUN_0053055c(undefined4 *param_1,byte *param_2,byte *param_3,uint param_4,int param_5)
+// Signature: void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0053055c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-ulonglong __cdecl engine_special_cpp_renderAlphaRow32_FUN_0053055c(uint *param_1,byte *param_2,byte *param_3,uint param_4,int param_5)
+void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0053055c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 {
 __asm {
         pushad

@@ -2,26 +2,26 @@
 // Address: 004deae0
 // Address Range: [[004deae0, 004dec46]]
 // Convention: __cdecl
-// Signature: void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(int param_1,float param_2)
+// Signature: void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(int param_1,float param_2)
+void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta_time)
 
 {
   float fVar1;
   float fVar2;
   int iVar3;
   
-  fVar1 = param_2 * (float)0.012500000000000001 + *(float *)(param_1 + 4);
-  *(float *)(param_1 + 4) = fVar1;
+  fVar1 = delta_time * (float)0.012500000000000001 + this_ptr->rotation_phase;
+  this_ptr->rotation_phase = fVar1;
   if ((float)0.57999999999999996 < fVar1) {
-    *(uint *)(param_1 + 4) = 0x3f147ae1;
+    this_ptr->rotation_phase = 0.58;
     DAT_005bb210 = 1;
   }
-  _DAT_01ccdec4 = param_2 * (float)12 + _DAT_01ccdec4;
+  _DAT_01ccdec4 = delta_time * (float)12 + _DAT_01ccdec4;
   if ((float)60 <= _DAT_01ccdec4) {
     _DAT_01ccdec4 = _DAT_01ccdec4 + 1.6117013929914458e-314._0_4_;
   }
@@ -31,13 +31,13 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(int param_1,float param_2)
     iVar3 = 0;
     do {
       *(float *)(iVar3 + 0x1ccdef0) =
-           param_2 * (float)20 + *(float *)(iVar3 + 0x1ccdef0);
+           delta_time * (float)20 + *(float *)(iVar3 + 0x1ccdef0);
       fVar1 = (float)*(int *)(*(int *)(iVar3 + 0x1ccdeec) * 0xc + 0x1ccdec8);
       if (fVar1 <= *(float *)(iVar3 + 0x1ccdef0)) {
         *(float *)(iVar3 + 0x1ccdef0) = *(float *)(iVar3 + 0x1ccdef0) - fVar1;
       }
       fVar1 = (float)_DAT_01cce2bc;
-      fVar2 = param_2 * (float)30 + *(float *)(iVar3 + 0x1ccdef4);
+      fVar2 = delta_time * (float)30 + *(float *)(iVar3 + 0x1ccdef4);
       *(float *)(iVar3 + 0x1ccdef4) = fVar2;
       if (fVar1 <= fVar2) {
         *(float *)(iVar3 + 0x1ccdef4) = *(float *)(iVar3 + 0x1ccdef4) - fVar1;

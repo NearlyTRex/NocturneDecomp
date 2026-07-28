@@ -81,7 +81,7 @@ section .text
     PUSH EBX                            ; 004e97c2
     MOV dword ptr [0x01d09c00],EDX      ; 004e97c3 | DAT_01d09c00
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004e97c9
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004e97ce
     MOV EAX,dword ptr [ESP + 0xc]       ; 004e97d1
     MOV dword ptr [EBX],EAX             ; 004e97d5

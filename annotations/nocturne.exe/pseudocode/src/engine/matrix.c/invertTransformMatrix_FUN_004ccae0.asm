@@ -216,37 +216,37 @@ section .text
     FMUL float ptr [ESP]                ; 004ccd26
     FXCH ST6                            ; 004ccd29
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd2b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [0x01cc5118]        ; 004ccd30 | DAT_01cc5118
     FLD float ptr [ESP + 0x8]           ; 004ccd36
     FMUL float ptr [ESP]                ; 004ccd3a
     FXCH ST3                            ; 004ccd3d
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd3f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [0x01cc511c]        ; 004ccd44 | DAT_01cc511c
     FLD float ptr [ESP + 0x10]          ; 004ccd4a
     FMUL float ptr [ESP]                ; 004ccd4e
     FXCH ST2                            ; 004ccd51
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd53
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST4                            ; 004ccd58
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd5a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST5                            ; 004ccd5f
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd61
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004ccd66
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd68
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST6                            ; 004ccd6d
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd6f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 004ccd74
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd76
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 004ccd7b
     CALL crt_math.c_round_FUN_00563a30  ; 004ccd7d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST4                            ; 004ccd82
     FISTP dword ptr [0x01cc5120]        ; 004ccd84 | DAT_01cc5120
     FXCH ST4                            ; 004ccd8a

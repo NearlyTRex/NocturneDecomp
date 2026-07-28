@@ -2,27 +2,30 @@
 // Address: 00524830
 // Address Range: [[00524830, 00524d0d]]
 // Convention: unknown
-// Signature: undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
+// Signature: undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
+uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)
 
 {
   float fVar1;
-  double dVar2;
-  double dVar3;
+  float fVar2;
+  float fVar3;
   double dVar4;
   double dVar5;
   double dVar6;
   double dVar7;
   double dVar8;
-  int iVar9;
-  int iVar10;
+  double dVar9;
+  double dVar10;
   int iVar11;
+  int iVar12;
+  CSfxSlot *pCVar13;
   ulonglong local_60;
+  uint local_38;
   int local_18;
   
   if (_DAT_02dc84bc < 1) {
@@ -30,123 +33,122 @@ uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
     INT_01cc4804 = 0x95d;
     core_main_c_FUN_004c8440();
   }
-  if (*(int *)(param_1 + 0x74) == 0) {
+  if (param_1->playback_state == 0) {
     return 0;
   }
   local_18 = 0;
-  if (*(int *)(param_1 + 0x114) == 1) {
-    engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"SFXDBG: sample = %s\n",*(int *)(param_1 + 0x74));
+  if (param_1->stop_after_fade == 1.4013e-45) {
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"SFXDBG: sample = %s\n");
   }
-  if ((*(int *)(param_1 + 0x70) != 0) && (0.0 <= *(double *)(param_1 + 0x60))) {
-    if ((0.0 < param_2) && (0.0 <= *(float *)(param_1 + 0x10c))) {
-      if (*(float *)(param_1 + 0x10c) <= param_2) {
-        if ((*(uint *)(param_1 + 0x110) & 0x7fffffff) != 0) goto LAB_00524b03;
-        *(uint *)(param_1 + 0x44) = *(uint *)(param_1 + 0x108);
+  if ((param_1->hardware_buffer_handle != 0) && (0.0 <= (param_1->options).trigger_time)) {
+    if ((0.0 < param_2) && (0.0 <= param_1->fade_target_volume)) {
+      if (param_1->fade_target_volume <= param_2) {
+        if (ABS(param_1->fade_time_remaining) != 0.0) goto LAB_00524b03;
+        (param_1->options).current_volume = param_1->max_distance;
       }
       else {
-        fVar1 = *(float *)(param_1 + 0x10c);
-        *(float *)(param_1 + 0x10c) = *(float *)(param_1 + 0x10c) - param_2;
-        *(float *)(param_1 + 0x44) =
-             (param_2 / fVar1) * (*(float *)(param_1 + 0x108) - *(float *)(param_1 + 0x44)) +
-             *(float *)(param_1 + 0x44);
+        fVar1 = (param_1->options).current_volume;
+        fVar2 = param_1->fade_target_volume;
+        fVar3 = (param_1->options).current_volume;
+        param_1->fade_target_volume = param_1->fade_target_volume - param_2;
+        (param_1->options).current_volume =
+             (param_2 / fVar2) * (param_1->max_distance - fVar1) + fVar3;
       }
       local_18 = 8;
     }
-    sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410();
-    if (*(double *)(param_1 + 0x4c) == _DAT_005a2148) {
-      if (*(int *)(param_1 + 0x114) == 1) {
-        engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"  auto computing delay...\n");
+    sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(param_1);
+    if ((param_1->options).delay_remaining == _DAT_005a2148) {
+      if (param_1->stop_after_fade == 1.4013e-45) {
+        engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350);
       }
-      sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0();
+      sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0(param_1);
     }
-    if (*(int *)(param_1 + 0x114) == 1) {
+    if (param_1->stop_after_fade == 1.4013e-45) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"  delayRemaining = %7.2fs\n",*(uint *)(param_1 + 0x4c),
-                 *(uint *)(param_1 + 0x50));
+                (PTR_DAT_005ad350,"  delayRemaining = %7.2fs\n",
+                 *(uint *)&(param_1->options).delay_remaining);
     }
-    *(uint *)(param_1 + 0x78) = *(uint *)(param_1 + 0x48);
-    if (*(int *)(param_1 + 0x114) == 1) {
+    param_1->sample = (CSfxSample *)(param_1->options).base_frequency;
+    if (param_1->stop_after_fade == 1.4013e-45) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"  freq = %5.2f\n",(double)*(float *)(param_1 + 0x78));
+                (PTR_DAT_005ad350,"  freq = %5.2f\n",(double)(float)param_1->sample);
     }
-    if ((*(byte *)(param_1 + 0x5c) & 1) == 0) {
-      dVar5 = *(double *)(param_1 + 4) - _DAT_02dc78e0;
-      dVar3 = *(double *)(param_1 + 0xc) - _DAT_02dc78e8;
-      dVar4 = *(double *)(param_1 + 0x14) - _DAT_02dc78f0;
-      dVar2 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar5 * dVar5);
-      if (*(int *)(param_1 + 0x114) == 1) {
+    if (((param_1->options).flags & 1) == 0) {
+      dVar7 = (param_1->options).position.x - _DAT_02dc78e0;
+      dVar5 = (param_1->options).position.y - _DAT_02dc78e8;
+      dVar6 = (param_1->options).position.z - _DAT_02dc78f0;
+      dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
+      if (param_1->stop_after_fade == 1.4013e-45) {
+        local_38 = SUB84(__BITCAST_UINT64(dVar4),0);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"  distToEar = %7.2fs\n",dVar2);
+                  (PTR_DAT_005ad350,"  distToEar = %7.2fs\n",local_38);
       }
-      dVar6 = _DAT_02dc78f8 - *(double *)(param_1 + 0x24);
-      dVar7 = _DAT_02dc7900 - *(double *)(param_1 + 0x2c);
-      dVar8 = _DAT_02dc7908 - *(double *)(param_1 + 0x34);
-      if (dVar2 <= 0.0) {
-        dVar2 = SQRT(dVar8 * dVar8 + dVar7 * dVar7 + dVar6 * dVar6);
+      dVar8 = _DAT_02dc78f8 - (param_1->options).velocity.x;
+      dVar9 = _DAT_02dc7900 - (param_1->options).velocity.y;
+      dVar10 = _DAT_02dc7908 - (param_1->options).velocity.z;
+      if (dVar4 <= 0.0) {
+        dVar4 = SQRT(dVar10 * dVar10 + dVar9 * dVar9 + dVar8 * dVar8);
       }
       else {
-        dVar2 = (dVar4 * dVar8 + dVar3 * dVar7 + dVar5 * dVar6) / dVar2;
+        dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar2 * _DAT_005bea80 + _DAT_005a2150) / _DAT_005a2150;
-      if (*(int *)(param_1 + 0x114) == 1) {
+      local_60 = (dVar4 * _DAT_005bea80 + _DAT_005a2150) / _DAT_005a2150;
+      if (param_1->stop_after_fade == 1.4013e-45) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"  doppler = %5.2f\n",local_60);
+                  (PTR_DAT_005ad350,"  doppler = %5.2f\n",(uint)local_60);
       }
-      dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));
-      if (local_60 < dVar2) {
-        local_60 = dVar2;
+      dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));
+      if (local_60 < dVar4) {
+        local_60 = dVar4;
       }
       if (__BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158)) < local_60) {
         local_60 = __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));
       }
-      if (*(int *)(param_1 + 0x114) == 1) {
+      if (param_1->stop_after_fade == 1.4013e-45) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"  doppler (clamped) = %5.2f\n",(uint)local_60,
-                   (int)((ulonglong)local_60 >> 0x20));
+                  (PTR_DAT_005ad350,"  doppler (clamped) = %5.2f\n",(uint)local_60);
       }
-      *(float *)(param_1 + 0x78) = *(float *)(param_1 + 0x78) * (float)local_60;
+      param_1->sample = (CSfxSample *)((float)param_1->sample * (float)local_60);
     }
-    else if (*(int *)(param_1 + 0x114) == 1) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"  non spatialized\n");
+    else if (param_1->stop_after_fade == 1.4013e-45) {
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350);
     }
-    sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0();
-    sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520();
-    if (*(int *)(param_1 + 0x114) == 1) {
+    sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(param_1);
+    sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520(param_1);
+    if (param_1->stop_after_fade == 1.4013e-45) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"  vol = %5.2f\n",(double)*(float *)(param_1 + 0x44));
+                (PTR_DAT_005ad350,"  vol = %5.2f\n",(double)(param_1->options).current_volume);
     }
-    sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630();
-    if ((*(int *)(param_1 + 0x114) == 1) && (iVar9 = 0, iVar11 = param_1, 0 < DAT_005bea68)) {
+    sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(param_1);
+    if ((param_1->stop_after_fade == 1.4013e-45) &&
+       (iVar11 = 0, pCVar13 = param_1, 0 < DAT_005bea68)) {
       do {
-        iVar10 = iVar9 + 1;
+        iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"  channelVol[%d] = %5.2f\n",iVar9,
-                   (double)((float)(1 << ((char)*(uint *)(*(int *)(param_1 + 0x74) + 0x104) -
-                                          1U & 0x1f)) * *(float *)(iVar11 + 0x9c)));
-        iVar9 = iVar10;
-        iVar11 = iVar11 + 4;
-      } while (iVar10 < DAT_005bea68);
+                  (PTR_DAT_005ad350,"  channelVol[%d] = %5.2f\n",iVar11,
+                   (double)((float)(1 << ((char)*(uint *)(param_1->playback_state + 0x104) -
+                                          1U & 0x1f)) * pCVar13->distance_to_speakers[7]));
+        iVar11 = iVar12;
+        pCVar13 = (CSfxSlot *)&(pCVar13->options).position;
+      } while (iVar12 < DAT_005bea68);
     }
-    if (*(float *)(param_1 + 0x78) < (float)(1.0 / _FLOAT_005a2160)) {
-      *(float *)(param_1 + 0x78) = (float)(1.0 / _FLOAT_005a2160);
+    if ((float)param_1->sample < (float)(1.0 / _FLOAT_005a2160)) {
+      param_1->sample = (CSfxSample *)(float)(1.0 / _FLOAT_005a2160);
     }
-    if ((float)_FLOAT_005a2160 < *(float *)(param_1 + 0x78)) {
-      *(float *)(param_1 + 0x78) = (float)_FLOAT_005a2160;
+    if ((float)_FLOAT_005a2160 < (float)param_1->sample) {
+      param_1->sample = (CSfxSample *)(float)_FLOAT_005a2160;
     }
-    if (*(int *)(param_1 + 0x114) == 1) {
+    if (param_1->stop_after_fade == 1.4013e-45) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"  effFreq = %5.2f\n",(double)*(float *)(param_1 + 0x78));
+                (PTR_DAT_005ad350,"  effFreq = %5.2f\n",(double)(float)param_1->sample);
     }
-    if (((local_18 != 0) && (_DAT_02dc8318 != (int *)0x0)) && (*(int *)(param_1 + 0x6c) != 0)) {
+    if (((local_18 != 0) && (_DAT_02dc8318 != (int *)0x0)) && ((param_1->options).dead != 0)) {
       (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,param_1,local_18);
     }
     return 1;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (PTR_DAT_005ad350,"Killing %s in compute()\n",*(uint *)(param_1 + 0x74));
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"Killing %s in compute()\n");
 LAB_00524b03:
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570();
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(param_1);
   return 0;
 }

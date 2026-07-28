@@ -2,72 +2,69 @@
 // Address: 004f3430
 // Address Range: [[004f3430, 004f3a15]]
 // Convention: __cdecl
-// Signature: void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(int param_1,float param_2)
+// Signature: void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(int param_1,float param_2)
+void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *this_ptr,float delta_time)
 
 {
-  uint *puVar1;
-  float10 fVar2;
+  float fVar1;
+  CVector3f *pCVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
-  double dVar6;
-  float local_68;
-  float local_64;
+  float10 fVar6;
+  double dVar7;
   float local_60;
-  float local_54;
-  float local_50;
+  float local_5c;
+  float local_58;
   float local_4c;
   float local_48;
+  float local_44;
   float local_40;
-  byte local_30 [12];
+  float local_3c;
+  CVector3f local_30;
   double local_24;
   double local_1c;
-  float local_14;
   
-  local_24 = (double)*(float *)(param_1 + 0x398);
+  local_24 = (double)this_ptr->param;
   local_1c = (double)floor(local_24);
-  local_50 = (float)((float10)local_24 - (float10)local_1c);
-  *(float *)(param_1 + 0x398) = param_2 / *(float *)(param_1 + 0x39c) + *(float *)(param_1 + 0x398);
-  if ((*(int *)(param_1 + 0x434) != 0) && (1.0 < *(float *)(param_1 + 0x398))) {
-    *(float *)(param_1 + 0x398) = *(float *)(param_1 + 0x398) + 0.5f;
+  local_48 = (float)((float10)local_24 - (float10)local_1c);
+  this_ptr->param = delta_time / this_ptr->period + this_ptr->param;
+  if ((this_ptr->one_shot != 0) && (1.0 < this_ptr->param)) {
+    this_ptr->param = this_ptr->param + 0.5f;
   }
-  dVar6 = (double)floor((double)*(float *)(param_1 + 0x398));
-  fVar2 = (float10)*(float *)(param_1 + 0x398) - (float10)dVar6;
-  *(float *)(param_1 + 0x398) = (float)fVar2;
-  fVar3 = (float10)fsin(fVar2 * (float10)2 * (float10)3.1415926535000001);
-  fVar4 = (float10)*(float *)(param_1 + 0x42c) + (float10)param_2;
-  fVar5 = (float10)-1;
-  *(float *)(param_1 + 0x42c) = (float)fVar4;
-  fVar2 = (float10)1;
-  fVar5 = (float10)1.4426950408889634 * fVar4 * (float10)*(float *)(param_1 + 0x428) * fVar5;
-  fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);
-  fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);
-  *(float *)(param_1 + 0x38) = (float)(fVar2 * fVar3 * (float10)*(float *)(param_1 + 0x3a0));
-  local_1c = dVar6;
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000();
-  puVar1 = (uint *)
-           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (param_1,local_30,param_1 + 0x408);
-  if ((uint *)(param_1 + 0x414) != puVar1) {
-    *(uint *)(param_1 + 0x414) = *puVar1;
-    *(uint *)(param_1 + 0x418) = puVar1[1];
-    *(uint *)(param_1 + 0x41c) = puVar1[2];
+  dVar7 = (double)floor((double)this_ptr->param);
+  fVar3 = (float10)this_ptr->param - (float10)dVar7;
+  this_ptr->param = (float)fVar3;
+  fVar4 = (float10)fsin(fVar3 * (float10)2 * (float10)3.1415926535000001);
+  fVar5 = (float10)this_ptr->decay_timer + (float10)delta_time;
+  fVar6 = (float10)-1;
+  this_ptr->decay_timer = (float)fVar5;
+  fVar3 = (float10)1;
+  fVar6 = (float10)1.4426950408889634 * fVar5 * (float10)this_ptr->decay * fVar6;
+  fVar5 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+  fVar3 = (float10)fscale(fVar5 + fVar3,fVar6);
+  (this_ptr->base).orient.vec.z = (float)(fVar3 * fVar4 * (float10)this_ptr->max_angle);
+  local_1c = dVar7;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                     (&this_ptr->base,&local_30,&this_ptr->swing_tip_local);
+  if (&this_ptr->swing_tip_world != pCVar2) {
+    (this_ptr->swing_tip_world).x = pCVar2->x;
+    (this_ptr->swing_tip_world).y = pCVar2->y;
+    (this_ptr->swing_tip_world).z = pCVar2->z;
   }
-  fVar2 = (float10)1;
-  fVar5 = (float10)1.4426950408889634 *
-          (float10)*(float *)(param_1 + 0x428) * (float10)-1 *
-          (float10)*(float *)(param_1 + 0x42c);
-  fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);
-  fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);
-  if ((0.0 < param_2) && ((float)0.10000000000000001 < (float)fVar2)) {
-    local_40 = *(float *)(param_1 + 0x398);
-    local_48 = local_50;
-    if (local_50 < (float)-0.5) {
-      local_48 = local_50 + 1.0;
+  fVar3 = (float10)1;
+  fVar6 = (float10)1.4426950408889634 *
+          (float10)this_ptr->decay * (float10)-1 * (float10)this_ptr->decay_timer;
+  fVar4 = (float10)f2xm1(fVar6 - (fVar6 / fVar3) * fVar3);
+  fVar3 = (float10)fscale(fVar4 + fVar3,fVar6);
+  if ((0.0 < delta_time) && ((float)0.10000000000000001 < (float)fVar3)) {
+    local_40 = this_ptr->param;
+    if (local_48 < (float)-0.5) {
+      local_48 = local_48 + 1.0;
     }
     if ((float)0.5 + 0.0 < local_48) {
       local_48 = local_48 + 1.5873523201947252e-314._0_4_;
@@ -86,85 +83,86 @@ void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(int param_1,fl
         local_40 = local_40 + 1.5873523201947252e-314._0_4_;
       }
       if (0.0 < local_40) {
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x3c8);
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->creak_1_sound);
       }
     }
-    local_14 = *(float *)(param_1 + 0x3c4) + (float)0.25;
-    local_64 = *(float *)(param_1 + 0x398);
-    local_54 = local_50;
-    if (local_50 < local_14 + (float)-0.5) {
-      local_54 = local_50 + 1.0;
+    fVar1 = this_ptr->swoosh_phase_bias + (float)0.25;
+    local_4c = local_3c;
+    local_5c = this_ptr->param;
+    if (local_3c < fVar1 + (float)-0.5) {
+      local_4c = local_3c + 1.0;
     }
-    if (local_14 + (float)0.5 < local_54) {
-      local_54 = local_54 + 1.5873523201947252e-314._0_4_;
-    }
-    if (local_54 <= local_14) {
-      if (local_64 < local_54) {
-        local_64 = local_64 + 1.0;
-      }
-      if (local_64 < local_54) {
-        local_64 = local_64 + 1.0;
-      }
-      if (local_54 + 1.0 < local_64) {
-        local_64 = local_64 + 1.5873523201947252e-314._0_4_;
-      }
-      if (local_54 + 1.0 < local_64) {
-        local_64 = local_64 + 1.5873523201947252e-314._0_4_;
-      }
-      if (local_14 < local_64) {
-        core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                  (0x02DC9450,param_1,param_1 + 0x3a4,param_1 + 0x414);
-      }
-    }
-    local_60 = *(float *)(param_1 + 0x398);
-    local_4c = local_50;
-    if (local_50 < 0.0) {
-      local_4c = local_50 + 1.0;
-    }
-    if ((float)0.5 + 0.5 < local_4c) {
+    if (fVar1 + (float)0.5 < local_4c) {
       local_4c = local_4c + 1.5873523201947252e-314._0_4_;
     }
-    if (local_4c <= 0.5) {
-      if (local_60 < local_4c) {
-        local_60 = local_60 + 1.0;
+    if (local_4c <= fVar1) {
+      if (local_5c < local_4c) {
+        local_5c = local_5c + 1.0;
       }
-      if (local_60 < local_4c) {
-        local_60 = local_60 + 1.0;
+      if (local_5c < local_4c) {
+        local_5c = local_5c + 1.0;
       }
-      if (local_4c + 1.0 < local_60) {
-        local_60 = local_60 + 1.5873523201947252e-314._0_4_;
+      if (local_4c + 1.0 < local_5c) {
+        local_5c = local_5c + 1.5873523201947252e-314._0_4_;
       }
-      if (local_4c + 1.0 < local_60) {
-        local_60 = local_60 + 1.5873523201947252e-314._0_4_;
+      if (local_4c + 1.0 < local_5c) {
+        local_5c = local_5c + 1.5873523201947252e-314._0_4_;
       }
-      if (0.5 < local_60) {
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 1000);
-      }
-    }
-    local_14 = *(float *)(param_1 + 0x3c4) + (float)0.75;
-    local_68 = *(float *)(param_1 + 0x398);
-    if (local_50 < local_14 + (float)-0.5) {
-      local_50 = local_50 + 1.0;
-    }
-    if (local_14 + (float)0.5 < local_50) {
-      local_50 = local_50 + 1.5873523201947252e-314._0_4_;
-    }
-    if (local_50 <= local_14) {
-      if (local_68 < local_50) {
-        local_68 = local_68 + 1.0;
-      }
-      if (local_68 < local_50) {
-        local_68 = local_68 + 1.0;
-      }
-      if (local_50 + 1.0 < local_68) {
-        local_68 = local_68 + 1.5873523201947252e-314._0_4_;
-      }
-      if (local_50 + 1.0 < local_68) {
-        local_68 = local_68 + 1.5873523201947252e-314._0_4_;
-      }
-      if (local_14 < local_68) {
+      if (fVar1 < local_5c) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                  (0x02DC9450,param_1,param_1 + 0x3a4,param_1 + 0x414);
+                  (0x02DC9450,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
+      }
+    }
+    local_44 = local_3c;
+    local_58 = this_ptr->param;
+    if (local_3c < 0.0) {
+      local_44 = local_3c + 1.0;
+    }
+    if ((float)0.5 + 0.5 < local_44) {
+      local_44 = local_44 + 1.5873523201947252e-314._0_4_;
+    }
+    if (local_44 <= 0.5) {
+      if (local_58 < local_44) {
+        local_58 = local_58 + 1.0;
+      }
+      if (local_58 < local_44) {
+        local_58 = local_58 + 1.0;
+      }
+      if (local_44 + 1.0 < local_58) {
+        local_58 = local_58 + 1.5873523201947252e-314._0_4_;
+      }
+      if (local_44 + 1.0 < local_58) {
+        local_58 = local_58 + 1.5873523201947252e-314._0_4_;
+      }
+      if (0.5 < local_58) {
+        (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->creak_2_sound);
+      }
+    }
+    local_30.x = this_ptr->swoosh_phase_bias + (float)0.75;
+    local_48 = local_3c;
+    local_60 = this_ptr->param;
+    if (local_3c < local_30.x + (float)-0.5) {
+      local_48 = local_3c + 1.0;
+    }
+    if (local_30.x + (float)0.5 < local_48) {
+      local_48 = local_48 + 1.5873523201947252e-314._0_4_;
+    }
+    if (local_48 <= local_30.x) {
+      if (local_60 < local_48) {
+        local_60 = local_60 + 1.0;
+      }
+      if (local_60 < local_48) {
+        local_60 = local_60 + 1.0;
+      }
+      if (local_48 + 1.0 < local_60) {
+        local_60 = local_60 + 1.5873523201947252e-314._0_4_;
+      }
+      if (local_48 + 1.0 < local_60) {
+        local_60 = local_60 + 1.5873523201947252e-314._0_4_;
+      }
+      if (local_30.x < local_60) {
+        core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
+                  (0x02DC9450,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
         return;
       }
     }

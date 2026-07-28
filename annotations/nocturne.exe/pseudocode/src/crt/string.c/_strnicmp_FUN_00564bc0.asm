@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c__strnicmp_FUN_00564bc0(byte *param_1,undefined1 *param_2,int param_3)
+; int __cdecl crt_string_c__strnicmp_FUN_00564bc0(char *str1,char *str2,int count)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str1
+; char *           Stack[0x8]:4   str2
+; int              Stack[0xc]:4   count
 ;
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 00428738

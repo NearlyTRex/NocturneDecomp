@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * engine_console_cpp_CConsole_ctor_FUN_0043abe0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 ;
+; Parameters:
+; CConsole *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   screen_x
+; int              Stack[0x14]:4   screen_y
 ;
 ; XREF[1]:
 ;   core_console.cpp_staticInit_FUN_0043abb0 at 0043abbd
@@ -37,7 +43,7 @@ section .text
     PUSH EBX                            ; 0043ac2b
         ;   Label: LAB_0043ac2b
     CALL engine_console.cpp_CConsole_reset_FUN_0043ae00 ; 0043ac2c
-        ;   XREF to: 0043ae00 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_reset_FUN_0043ae00()
+        ;   XREF to: 0043ae00 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_reset_FUN_0043ae00(CConsole * this_ptr)
     ADD ESP,0x4                         ; 0043ac31
     MOV EAX,EBX                         ; 0043ac34
     MOV dword ptr [EBX],0x0             ; 0043ac36

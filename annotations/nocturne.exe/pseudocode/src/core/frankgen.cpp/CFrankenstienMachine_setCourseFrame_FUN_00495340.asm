@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340(int param_1,float param_2,float param_3)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   start_frame
+; float            Stack[0xc]:4   end_frame
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -81,7 +85,7 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 004953b9
     PUSH EBX                            ; 004953bd
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004953be
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004953c3
     MOV ESP,EBP                         ; 004953c6
     POP EBP                             ; 004953c8

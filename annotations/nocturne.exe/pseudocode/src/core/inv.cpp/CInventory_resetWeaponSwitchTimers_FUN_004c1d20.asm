@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(int param_1,int param_2)
+; void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory *this_ptr,int reset_both)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   reset_both
 ;
 ; XREF[5]:
 ;   core_game.cpp_FUN_004a3a70 at 004a3a84

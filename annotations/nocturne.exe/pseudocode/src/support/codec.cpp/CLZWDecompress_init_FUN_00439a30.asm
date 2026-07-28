@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_00439a30(int param_1)
+; void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_00439a30(CLZWDecompress *this_ptr)
 ;
+; Parameters:
+; CLZWDecompress * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 00443506
@@ -28,12 +30,12 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 00439a41
     PUSH EAX                            ; 00439a44
     CALL support_codec.cpp_CLZWDictionary_init_FUN_004393d0 ; 00439a45
-        ;   XREF to: 004393d0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_init_FUN_004393d0()
+        ;   XREF to: 004393d0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_init_FUN_004393d0(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits)
     ADD ESP,0xc                         ; 00439a4a
     LEA EAX,[EBX + 0x18]                ; 00439a4d
     PUSH EAX                            ; 00439a50
     CALL support_codec.cpp_resetBitBuffer_FUN_00438a90 ; 00439a51
-        ;   XREF to: 00438a90 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_resetBitBuffer_FUN_00438a90()
+        ;   XREF to: 00438a90 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_resetBitBuffer_FUN_00438a90(SBitBuffer * bit_buffer)
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 00439a56
     ADD ESP,0x4                         ; 00439a5d
     MOV dword ptr [EBX + 0x28],0xffffffff ; 00439a60

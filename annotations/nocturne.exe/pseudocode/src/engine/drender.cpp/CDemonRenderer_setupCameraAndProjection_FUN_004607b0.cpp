@@ -2,98 +2,112 @@
 // Address: 004607b0
 // Address Range: [[004607b0, 004609cd]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(int param_1,int param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(int param_1,int param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix)
 
 {
   float fVar1;
   float fVar2;
-  longlong lVar3;
-  float10 fVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  int iVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
-  float10 fVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  uint uVar16;
-  uint uVar17;
-  uint uVar18;
-  uint uVar19;
-  float local_20 [2];
-  float local_18;
+  float fVar3;
+  float fVar4;
+  longlong lVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  int iVar16;
+  int iVar17;
+  int iVar18;
+  int iVar19;
+  double dVar20;
+  double dVar21;
+  double dVar22;
+  double dVar23;
+  CVector3f local_20;
   
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(param_2,local_20);
-  fVar13 = (float10)0.31830988619288902;
-  fVar14 = (float10)0.31830988619288902;
-  fVar15 = (float10)32768;
-  fVar4 = (float10)32768;
-  fVar9 = (float10)round();
-  _DAT_01c039e8 = (uint)ROUND(fVar9);
-  fVar9 = (float10)round();
-  _DAT_01c039ec = (uint)ROUND(fVar9);
-  fVar9 = (float10)round();
-  _DAT_01c039f0 = (int)ROUND(fVar9);
-  fVar9 = (float10)round();
-  _DAT_01c039f4 = (uint)ROUND(fVar9);
-  fVar1 = *(float *)(param_2 + 0x1c);
-  fVar9 = (float10)65536;
-  fVar10 = (float10)round();
-  iVar5 = DAT_005b7648;
-  _DAT_01c039f8 = (uint)ROUND(fVar10);
-  fVar2 = *(float *)(param_2 + 0x20);
-  fVar10 = (float10)65536;
-  fVar11 = (float10)round();
-  fVar12 = (float10)round();
-  fVar9 = (float10)round((float10)fVar1 * fVar9);
-  uVar19 = 0x4608bd;
-  fVar10 = (float10)round((float10)fVar2 * fVar10);
-  _DAT_01c039fc = (int)ROUND(fVar11);
-  _DAT_01c03a00 = (uint)ROUND(fVar12);
-  _DAT_01c03a04 = (uint)ROUND(fVar9);
-  _DAT_01c03a08 = (int)ROUND(fVar10);
-  uVar18 = 0x4608e2;
-  fVar13 = (float10)round((float10)local_20[0] * fVar13 * fVar15);
-  uVar17 = 0x4608e9;
-  fVar14 = (float10)round((float10)local_18 * fVar14 * fVar4);
-  uVar16 = 0x4608f0;
-  fVar15 = (float10)round();
-  iVar6 = _DAT_01c00c64;
-  iVar7 = _DAT_01c00c5c;
-  _DAT_01c039d0 = (int)ROUND(fVar13);
-  _DAT_01c039d4 = (int)ROUND(fVar14);
-  _DAT_01c039d8 = (int)ROUND(fVar15);
-  iVar8 = _DAT_01c00c60 - _DAT_01c00c58;
-  *(int *)(param_1 + 0x24) = (int)(0x100000000 / (longlong)iVar5);
-  iVar5 = DAT_005b7648;
-  iVar7 = ((iVar8 + 1) * 0x10000) / ((iVar6 - iVar7) + 1);
-  *(int *)(param_1 + 0x28) = iVar7;
-  *(int *)(param_1 + 0x28) =
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(transform_matrix,&local_20);
+  fVar1 = transform_matrix->m[0].y;
+  fVar6 = (float)65536;
+  fVar2 = transform_matrix->m[0].z;
+  fVar7 = (float)65536;
+  fVar3 = transform_matrix->m[1].x;
+  fVar8 = (float)65536;
+  fVar10 = (float)0.31830988619288902;
+  fVar12 = (float)0.31830988619288902;
+  fVar14 = (float)0.31830988619288902;
+  fVar9 = (float)32768;
+  fVar11 = (float)32768;
+  fVar13 = (float)32768;
+  dVar20 = round
+                     ((double)(transform_matrix->m[0].x * (float)65536));
+  _DAT_01c039e8 = (uint)ROUND(dVar20);
+  fVar4 = transform_matrix->m[1].y;
+  fVar15 = (float)65536;
+  dVar20 = round((double)(fVar1 * fVar6));
+  _DAT_01c039ec = (uint)ROUND(dVar20);
+  fVar1 = transform_matrix->m[1].z;
+  fVar6 = (float)65536;
+  dVar20 = round((double)(fVar2 * fVar7));
+  _DAT_01c039f0 = (int)ROUND(dVar20);
+  fVar2 = transform_matrix->m[2].x;
+  fVar7 = (float)65536;
+  dVar20 = round((double)(fVar3 * fVar8));
+  _DAT_01c039f4 = (uint)ROUND(dVar20);
+  fVar3 = transform_matrix->m[2].y;
+  fVar8 = (float)65536;
+  dVar20 = round((double)(fVar4 * fVar15));
+  iVar16 = DAT_005b7648;
+  _DAT_01c039f8 = (uint)ROUND(dVar20);
+  fVar4 = transform_matrix->m[2].z;
+  fVar15 = (float)65536;
+  dVar20 = round((double)(fVar1 * fVar6));
+  dVar21 = round((double)(fVar2 * fVar7));
+  dVar22 = round((double)(fVar3 * fVar8));
+  dVar23 = round((double)(fVar4 * fVar15));
+  _DAT_01c039fc = (int)ROUND(dVar20);
+  _DAT_01c03a00 = (uint)ROUND(dVar21);
+  _DAT_01c03a04 = (uint)ROUND(dVar22);
+  _DAT_01c03a08 = (int)ROUND(dVar23);
+  dVar20 = round((double)(local_20.x * fVar10 * fVar9));
+  dVar21 = round((double)(local_20.z * fVar12 * fVar11));
+  dVar22 = round((double)(local_20.y * fVar14 * fVar13));
+  iVar17 = _DAT_01c00c64;
+  iVar18 = _DAT_01c00c5c;
+  _DAT_01c039d0 = (int)ROUND(dVar20);
+  _DAT_01c039d4 = (int)ROUND(dVar21);
+  _DAT_01c039d8 = (int)ROUND(dVar22);
+  iVar19 = _DAT_01c00c60 - _DAT_01c00c58;
+  this_ptr->projection_reciprocal = (int)(0x100000000 / (longlong)iVar16);
+  iVar16 = DAT_005b7648;
+  iVar18 = ((iVar19 + 1) * 0x10000) / ((iVar17 - iVar18) + 1);
+  this_ptr->aspect_ratio_fixed = iVar18;
+  this_ptr->aspect_ratio_fixed =
        (int)((longlong)
-             ((((longlong)iVar7 & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)iVar7 * 0x10000 & 0xffffffffU) / (longlong)iVar5);
-  lVar3 = (longlong)*(int *)(param_1 + 0x24) * (longlong)(int)_DAT_01c039e8;
-  _DAT_01c039e8 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  lVar3 = (longlong)*(int *)(param_1 + 0x24) * (longlong)(int)_DAT_01c039f4;
-  _DAT_01c039f4 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  lVar3 = (longlong)*(int *)(param_1 + 0x24) * (longlong)(int)_DAT_01c03a00;
-  _DAT_01c03a00 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  lVar3 = (longlong)*(int *)(param_1 + 0x28) * (longlong)(int)_DAT_01c039ec;
-  _DAT_01c039ec = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  lVar3 = (longlong)*(int *)(param_1 + 0x28) * (longlong)(int)_DAT_01c039f8;
-  _DAT_01c039f8 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  lVar3 = (longlong)*(int *)(param_1 + 0x28) * (longlong)(int)_DAT_01c03a04;
-  _DAT_01c03a04 = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-  engine_matrix_c_invertTransformMatrix_FUN_004ccae0(uVar16,uVar17,uVar18,uVar19);
+             ((((longlong)iVar18 & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)iVar18 * 0x10000 & 0xffffffffU) / (longlong)iVar16);
+  lVar5 = (longlong)this_ptr->projection_reciprocal * (longlong)(int)_DAT_01c039e8;
+  _DAT_01c039e8 = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  lVar5 = (longlong)this_ptr->projection_reciprocal * (longlong)(int)_DAT_01c039f4;
+  _DAT_01c039f4 = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  lVar5 = (longlong)this_ptr->projection_reciprocal * (longlong)(int)_DAT_01c03a00;
+  _DAT_01c03a00 = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  lVar5 = (longlong)this_ptr->aspect_ratio_fixed * (longlong)(int)_DAT_01c039ec;
+  _DAT_01c039ec = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  lVar5 = (longlong)this_ptr->aspect_ratio_fixed * (longlong)(int)_DAT_01c039f8;
+  _DAT_01c039f8 = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  lVar5 = (longlong)this_ptr->aspect_ratio_fixed * (longlong)(int)_DAT_01c03a04;
+  _DAT_01c03a04 = (uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10;
+  engine_matrix_c_invertTransformMatrix_FUN_004ccae0();
   return;
 }

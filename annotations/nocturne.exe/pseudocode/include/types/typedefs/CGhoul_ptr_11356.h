@@ -19,7 +19,7 @@ struct CGhoul_ptr_11356 {
     template<typename T> CGhoul_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CGhoul_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CGhoul* operator->() const { return (CGhoul*)_raw; }
-    CGhoul* adj() const { return (CGhoul*)((char*)_raw - offsetof(CGhoul, base.base.collision_test_points)); }
+    CGhoul* adj() const { return (CGhoul*)((char*)_raw - offsetof(CGhoul, base.base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0056e990(undefined4 param_1)
+; void * FUN_0056e990(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_0056720c at 00567380
+;   crt_startup.c_initialize_runtime_FUN_0056720c at 00567380
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
@@ -28,7 +28,7 @@ section .text
     LEA ESI,[EAX*0x2 + 0x0]             ; 0056e9a0
     PUSH ESI                            ; 0056e9a7
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0056e9a8
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0056e9ad
     MOV EBX,EAX                         ; 0056e9b0
     TEST EAX,EAX                        ; 0056e9b2

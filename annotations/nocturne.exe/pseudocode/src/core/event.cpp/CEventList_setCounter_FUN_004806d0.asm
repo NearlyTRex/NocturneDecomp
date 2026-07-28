@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(int param_1,char *param_2,int param_3)
+; void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(CEventList *this_ptr,char *name,int value)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; int              Stack[0xc]:4   value
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047bba4
@@ -67,7 +71,7 @@ section .text
     ADD EAX,EBP                         ; 0048072b
     PUSH EAX                            ; 0048072d
     CALL crt_string.c_memmove_FUN_00566170 ; 0048072e
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x337c]    ; 00480733
     SUB EAX,ESI                         ; 00480739
     ADD ESP,0xc                         ; 0048073b
@@ -80,7 +84,7 @@ section .text
     ADD EBX,EDI                         ; 0048074e
     PUSH EBX                            ; 00480750
     CALL crt_string.c_memmove_FUN_00566170 ; 00480751
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00480756
     POP EBP                             ; 00480759
     POP EDI                             ; 0048075a

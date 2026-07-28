@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_0045b5f0(uint param_1)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   color_value
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e431
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e431
 ;   core_script.cpp_FUN_004fe9d0 at 004fea18
 ;
 ; Referenced Globals:

@@ -17,7 +17,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_00566ca9
     FLD double ptr [ESP + 0x4]          ; 00566cad
     CALL crt_math.c_atan2_FUN_00566c81  ; 00566cb1
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     SUB ESP,0x8                         ; 00566cb6
     FSTP double ptr [ESP]               ; 00566cb9
     WAIT                                ; 00566cbc

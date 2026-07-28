@@ -1,11 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; int              Stack[0xc]:4   gather_count
+; float            Stack[0x10]:4   spawn_rate
+; CVector3f *      Stack[0x14]:4   box_size
 ;
 ; XREF[8]:
-;   core_actor.cpp_FUN_0040b090 at 0040b0ba
+;   core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090 at 0040b0ba
 ;   core_colonel.cpp_CColonel_processDamage_FUN_0043aa00 at 0043aae6
 ;   core_gabriela.cpp_FUN_004996b0 at 004997ee
 ;   core_haystack.cpp_CHaystack_processDamage_FUN_004b4000 at 004b4100

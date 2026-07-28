@@ -2,18 +2,18 @@
 // Address: 00414c40
 // Address Range: [[00414c40, 00414c5e]]
 // Convention: unknown
-// Signature: undefined4 core_batman_cpp_FUN_00414c40(int param_1,undefined4 param_2)
+// Signature: ECollisionType core_batman_cpp_FUN_00414c40(CCharacter *param_1,SCollisionInfo *param_2)
 
 #include "nocturne.h"
 
-uint core_batman_cpp_FUN_00414c40(int param_1,uint param_2)
+ECollisionType core_batman_cpp_FUN_00414c40(CCharacter *param_1,SCollisionInfo *param_2)
 
 {
-  uint uVar1;
+  ECollisionType EVar1;
   
-  if (*(int *)(param_1 + 0xbdc0) != 0) {
-    return 0;
+  if (param_1[1].base.previous_transform_state.orientation.vec.x != 0.0) {
+    return COLLISION_TYPE_NONE;
   }
-  uVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);
-  return uVar1;
+  EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);
+  return EVar1;
 }

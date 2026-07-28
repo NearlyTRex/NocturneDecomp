@@ -32,7 +32,7 @@
     {
       "addr": "0047a350",
       "from_addr": "0047a360",
-      "name": "core_event.cpp_FUN_0047a350",
+      "name": "core_event.cpp_parseIntOrCounter_FUN_0047a350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,7 +116,7 @@
     {
       "addr": "004e5200",
       "from_addr": "004e54e3",
-      "name": "sound_mp3.cpp_FUN_004e5200",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,13 +154,13 @@
     ],
     "convention": "unknown",
     "name": "crt_stdio.c_sscanf_FUN_00566b5c",
-    "signature": "void crt_stdio_c_sscanf_FUN_00566b5c(undefined4 param_1,undefined4 param_2)"
+    "signature": "void crt_stdio_c_sscanf_FUN_00566b5c(char *param_1,char *param_2)"
   },
   "function_calls": [
     {
       "addr": "00566b20",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00566b20"
+      "name": "crt_unknown.c_vsscanf_FUN_00566b20"
     }
   ],
   "globals": [],
@@ -351,7 +351,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void sscanf(uint param_1,uint param_2)",
+      "text": "void sscanf(char *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -359,7 +359,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void sscanf(uint param_1,uint param_2)",
+      "text": "void sscanf(char *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -375,7 +375,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00566b20(param_1,param_2,&local_8);",
+      "text": "vsscanf(param_1,param_2,(va_list_t)&local_8);",
       "type": "unnamed_param"
     },
     {
@@ -383,7 +383,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00566b20(param_1,param_2,&local_8);",
+      "text": "vsscanf(param_1,param_2,(va_list_t)&local_8);",
       "type": "unnamed_param"
     },
     {

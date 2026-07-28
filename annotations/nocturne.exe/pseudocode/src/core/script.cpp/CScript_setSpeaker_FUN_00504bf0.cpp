@@ -2,17 +2,17 @@
 // Address: 00504bf0
 // Address Range: [[00504bf0, 00504c09]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(int param_1,int param_2)
+// Signature: void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(CScript *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(int param_1,int param_2)
+void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(CScript *this_ptr,CDemonActor *actor)
 
 {
-  if (param_2 != *(int *)(param_1 + 4)) {
+  if (actor != this_ptr->who_is_speaking) {
     return;
   }
-  *(uint *)(param_1 + 4) = 0;
-  *(byte *)(param_1 + 0x4c) = 0;
+  this_ptr->who_is_speaking = (CDemonActor *)0x0;
+  *(byte *)&this_ptr->cmd_timer = 0;
   return;
 }

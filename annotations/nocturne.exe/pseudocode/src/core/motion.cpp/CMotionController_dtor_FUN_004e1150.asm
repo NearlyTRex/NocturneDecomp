@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(int param_1,uint param_2)
+; CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(CMotionController *this_ptr,uint flags)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0 at 0051b710
@@ -38,11 +41,11 @@ section .text
         ;   Label: LAB_004e116c
     PUSH EBX                            ; 004e1171
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004e1172
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004e1177
     PUSH EAX                            ; 004e117a
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004e117b
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004e1180
     MOV EAX,EBX                         ; 004e1183
     POP EBX                             ; 004e1185

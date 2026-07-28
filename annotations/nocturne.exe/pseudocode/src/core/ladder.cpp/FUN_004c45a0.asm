@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_FUN_004c45a0(int param_1)
+; void core_ladder_cpp_FUN_004c45a0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xdc]:1  local_dc
@@ -91,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 004c466e
     PUSH EAX                            ; 004c4672
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 004c4673
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA EDX,[EBX + 0x30]                ; 004c4678
     ADD ESP,0x8                         ; 004c467b
     CMP EDX,EAX                         ; 004c467e
@@ -106,7 +106,7 @@ section .text
     PUSH EBX                            ; 004c4692
         ;   Label: LAB_004c4692
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004c4693
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c4698
     POP ESI                             ; 004c469b
     POP EDI                             ; 004c469c

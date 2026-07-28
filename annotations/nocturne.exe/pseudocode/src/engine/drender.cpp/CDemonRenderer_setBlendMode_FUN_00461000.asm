@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(undefined4 param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer *this_ptr,int blend_mode)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   blend_mode
 ;
 ; XREF[34]:
 ;   core_baron.cpp_FUN_004110f0 at 0041121f
@@ -28,7 +31,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
     PUSH EDX                            ; 00461004
     CALL engine_3d.c_setBlendMode_FUN_004083c0 ; 00461005
-        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setBlendMode_FUN_004083c0()
+        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_004083c0(int blend_mode)
     ADD ESP,0x4                         ; 0046100a
     RET                                 ; 0046100d
 

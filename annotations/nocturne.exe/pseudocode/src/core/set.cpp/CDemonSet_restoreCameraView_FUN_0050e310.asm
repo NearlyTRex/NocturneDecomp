@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_restoreCameraView_FUN_0050e310(int param_1)
+; void __cdecl core_set_cpp_CDemonSet_restoreCameraView_FUN_0050e310(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_00509a80 at 00509af1
@@ -23,7 +25,7 @@ section .text
     PUSH EBX                            ; 0050e31d
     MOV ESI,dword ptr [EBX + 0x15aac0]  ; 0050e31e
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0050e324
-        ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setCameraView_FUN_005088f0()
+        ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     MOV dword ptr [EBX + 0x15aac4],0x0  ; 0050e329
     ADD ESP,0x8                         ; 0050e333
     MOV dword ptr [EBX + 0x15aac0],ESI  ; 0050e336

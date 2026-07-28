@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(int param_1)
+; void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x154]:4  local_154
@@ -64,7 +66,7 @@ section .text
     SUB ESP,0x144                       ; 004ec186
     AND ESP,0xfffffff8                  ; 004ec18c
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ec18f
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ec194
     MOV EBX,0x12                        ; 004ec196
     SAR EDX,0x1f                        ; 004ec19b
@@ -205,7 +207,7 @@ section .text
     PUSH EAX                            ; 004ec399
     MOV dword ptr [0x01d06610],ECX      ; 004ec39a | DAT_01d06610
     CALL crt_string.c_memmove_FUN_00566170 ; 004ec3a0
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004ec3a5
     MOV EAX,dword ptr [ESP + 0x120]     ; 004ec3a8
         ;   Label: LAB_004ec3a8
@@ -312,7 +314,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ec4bf
     PUSH EAX                            ; 004ec4c2
     CALL core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0 ; 004ec4c3
-        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0()
+        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     MOV EAX,[0x01cea3f8]                ; 004ec4c8 | DAT_01cea3f8
     ADD ESP,0xc                         ; 004ec4cd
     MOV dword ptr [EBX + 0xc],EAX       ; 004ec4d0 | DAT_01d06624

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ae960(undefined4 *param_1,float *param_2,undefined4 param_3)
+; void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ae960(CBloodSplat *this_ptr,CVector3f *position,int blood_type)
 ;
+; Parameters:
+; CBloodSplat *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190 at 004b01b2
@@ -39,7 +43,7 @@ section .text
     PUSH 0x0                            ; 004ae98b
     LEA EBX,[ESI + 0x2c]                ; 004ae98d
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004ae990
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004ae995
     MOV dword ptr [ESI + 0x28],EAX      ; 004ae998
     MOV EAX,EDI                         ; 004ae99b

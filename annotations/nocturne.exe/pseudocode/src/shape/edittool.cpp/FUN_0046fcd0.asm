@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0046fcd0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0046fcd0(CEditorTools *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -81,7 +81,7 @@ section .text
     PUSH EAX                            ; 0046fd14
     MOV dword ptr [0x01bcd9b8],EDX      ; 0046fd15 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0046fd1b
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0046fd20
     MOV [0x01bcd9bc],EAX                ; 0046fd23 | DAT_01bcd9bc
     LEA EAX,[ESP + 0x24]                ; 0046fd28
@@ -92,7 +92,7 @@ section .text
     PUSH ESI                            ; 0046fd36
     PUSH 0x1bca4d0                      ; 0046fd37
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0046fd3c
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0046fd41
     MOV EAX,0x57e5d7                    ; 0046fd44 | = "Error"
     PUSH EAX                            ; 0046fd49 | = "Error"
@@ -122,7 +122,7 @@ section .text
     MOV EBX,dword ptr [0x01bcd070]      ; 0046fd88 | DAT_01bcd070
     PUSH EBX                            ; 0046fd8e
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 0046fd8f
-        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60()
+        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0046fd94
     PUSH 0x0                            ; 0046fd97
     MOV EBX,EAX                         ; 0046fd99
@@ -138,7 +138,7 @@ section .text
     PUSH EAX                            ; 0046fdb4
     PUSH EDI                            ; 0046fdb5
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 0046fdb6
-        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
+        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0046fdbb
     PUSH EDI                            ; 0046fdbe
     CALL shape_edittool.cpp_FUN_004722b0 ; 0046fdbf
@@ -146,7 +146,7 @@ section .text
     ADD ESP,0x4                         ; 0046fdc4
     PUSH 0xffff                         ; 0046fdc7
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0046fdcc
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0046fdd1
     PUSH -0x1                           ; 0046fdd4
     MOV EDX,dword ptr [0x01bcddd4]      ; 0046fdd6 | DAT_01bcddd4
@@ -173,25 +173,25 @@ section .text
     MOV ESI,dword ptr [0x01bcd070]      ; 0046fe16 | DAT_01bcd070
     PUSH ESI                            ; 0046fe1c
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0046fe1d
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 0046fe22
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0046fe25
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fe2a
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EBP,dword ptr [0x005bac64]      ; 0046fe2f | INT_005bac64
     PUSH EBP                            ; 0046fe35 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046fe36
-        ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0()
+        ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0046fe3b
     PUSH EDI                            ; 0046fe3e
     CALL shape_edittool.cpp_FUN_004720c0 ; 0046fe3f
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 0046fe44
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0046fe47
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fe4c
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     ADD ESP,0x8                         ; 0046fe51
     POP EBP                             ; 0046fe54
     POP EDI                             ; 0046fe55

@@ -17,15 +17,15 @@ CDemonActorType * FUN_00515d10(void);
 
 // Original: core_shotgun.cpp_FUN_00515d20
 // Address: 00515d20
-int FUN_00515d20(undefined4 param_1);
+CWeapon * FUN_00515d20(CWeapon *param_1);
 
 // Original: core_shotgun.cpp_FUN_00515db0
 // Address: 00515db0
-void FUN_00515db0(int param_1);
+void FUN_00515db0(CWeapon *param_1,undefined4 param_2,float param_3);
 
 // Original: core_shotgun.cpp_FUN_00515ea0
 // Address: 00515ea0
-undefined4 FUN_00515ea0(int param_1);
+undefined4 FUN_00515ea0(CWeapon *param_1);
 
 // Original: core_shotgun.cpp_CShotgun_onFired_FUN_00516620
 // Address: 00516620
@@ -37,8 +37,8 @@ undefined4 FUN_00516730(int param_1);
 
 // Original: core_shotgun.cpp_FUN_00516770
 // Address: 00516770
-void FUN_00516770(int param_1);
+void FUN_00516770(CDemonActor *param_1);
 
 // Original: core_shotgun.cpp_FUN_00516960
 // Address: 00516960
-undefined4 FUN_00516960(undefined4 param_1,byte param_2);
+CWeapon * FUN_00516960(CWeapon *param_1,byte param_2);

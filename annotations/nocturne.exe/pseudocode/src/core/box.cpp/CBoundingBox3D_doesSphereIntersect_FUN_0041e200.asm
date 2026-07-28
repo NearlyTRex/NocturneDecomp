@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(undefined4 param_1,float *param_2,float param_3)
+; int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   sphere_center
+; float            Stack[0xc]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -28,7 +32,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0041e20e
     PUSH EDX                            ; 0041e212
     CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 ; 0041e213
-        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160()
+        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D * this_ptr, CVector3f * out_point, CVector3f * in_point)
     ADD ESP,0xc                         ; 0041e218
     FLD float ptr [ESP]                 ; 0041e21b
     FSUB float ptr [EBX]                ; 0041e21e

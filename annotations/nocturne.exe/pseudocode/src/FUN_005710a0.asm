@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005710a0(undefined4 param_1,undefined4 param_2)
+; void FUN_005710a0(char *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[1]:
-;   FUN_0056dcd0 at 0056dd02
+;   crt_string.c__mbstrnicmp_FUN_0056dcd0 at 0056dd02
 ;
 ; Called Functions:
-;   FUN_0056da50
+;   crt_locale.c_mblen_FUN_0056da50
 ;   FUN_00572d50
 ;   FUN_00572d90
 ;   FUN_00572e00
@@ -33,8 +33,8 @@ section .text
     ADD ESP,0x8                         ; 005710b4
     MOV EBX,dword ptr [ESP + 0x14]      ; 005710b7
     PUSH EBX                            ; 005710bb
-    CALL FUN_0056da50                   ; 005710bc
-        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da50()
+    CALL crt_locale.c_mblen_FUN_0056da50 ; 005710bc
+        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 005710c1
     MOV ECX,dword ptr [ESP + 0x18]      ; 005710c4
     XOR DL,DL                           ; 005710c8
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x8                         ; 005710d9
     MOV ESI,dword ptr [ESP + 0x18]      ; 005710dc
     PUSH ESI                            ; 005710e0
-    CALL FUN_0056da50                   ; 005710e1
-        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da50()
+    CALL crt_locale.c_mblen_FUN_0056da50 ; 005710e1
+        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 005710e6
     XOR DH,DH                           ; 005710e9
     MOV byte ptr [ESP + EAX*0x1],DH     ; 005710eb

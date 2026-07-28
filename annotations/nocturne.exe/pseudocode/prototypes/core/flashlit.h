@@ -17,7 +17,7 @@ CDemonActorType * FUN_0048ed50(void);
 
 // Original: core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60
 // Address: 0048ed60
-int CFlashlight::ctor(undefined4 param_1);
+CWeapon * __cdecl CFlashlight::ctor(CWeapon *param_1);
 
 // Original: core_flashlit.cpp_FUN_0048ede0
 // Address: 0048ede0
@@ -29,4 +29,4 @@ undefined4 FUN_0048edf0(void);
 
 // Original: core_flashlit.cpp_FUN_0048ee00
 // Address: 0048ee00
-undefined4 FUN_0048ee00(undefined4 param_1,byte param_2);
+CWeapon * FUN_0048ee00(CWeapon *param_1,byte param_2);

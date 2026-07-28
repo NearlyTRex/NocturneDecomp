@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 125,
+    "complexity_score": 158,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 11,
     "suspect_types": [
-      "unnamed_param"
+      "unnamed_param",
+      "warning_type_propagation"
     ],
-    "total_lines": 95
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -145,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_vampboss.cpp_CVampireBoss_archive_FUN_0054dc70",
-    "signature": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(int param_1)"
+    "signature": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CEnemy *param_1)"
   },
   "function_calls": [
     {
@@ -166,7 +167,7 @@
     {
       "addr": "0040cb00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cb00"
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040cb00"
     },
     {
       "addr": "004796c0",
@@ -274,19 +275,19 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(int param_1)",
-      "type": "unnamed_param"
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
+      "text": "void core_vampboss_cpp_CVampireBoss_archive_FUN_0054dc70(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -294,23 +295,15 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040cb00(param_1 + 0x150,\"human model motion state\");",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040cb00(param_1 + 0xbd24,\"bat model motion state\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xbedb4,\"wayPoint0\");",
+      "text": "(&(param_1->base).model.motion_controller,\"human model motion state\");",
       "type": "unnamed_param"
     },
     {
@@ -318,39 +311,55 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xbedb8,\"wayPoint1\");",
+      "text": "((CMotionController *)(param_1 + 1),\"bat model motion state\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xbedbc,\"wayPoint2\");",
+      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].x,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xbedc0,\"wayPoint3\");",
+      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].y,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbe168,\"form\");",
+      "text": "&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m[0].z,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbed98,\"morphT\");",
+      "text": "(param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3e].m + 1),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[0x10].base.model.bone_transform.bone_scales + 0x3a),\"form\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1[0x10].base.model.bone_transform.bone_world_matrices[0x3d].m[1].y,",
       "type": "unnamed_param"
     }
   ],

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ushort core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(int param_1,float param_2)
+; ushort core_colonel_cpp_CColonel_processMotionEvents_FUN_0043a980(CCharacter *param_1,float param_2)
 ;
 ;
 ; XREF[1]:
@@ -28,7 +28,7 @@ section .text
     PUSH EAX                            ; 0043a994
     PUSH EBX                            ; 0043a995
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 0043a996
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 0043a99b
     MOV EDX,EAX                         ; 0043a99e
     CMP EAX,0x64                        ; 0043a9a0
@@ -55,7 +55,7 @@ section .text
         ;   Label: LAB_0043a9c1
     PUSH ESI                            ; 0043a9c2
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 0043a9c3
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 0043a9c8
     JMP 0x0043a9a7                      ; 0043a9cb
         ;   XREF to: 0043a9a7 (UNCONDITIONAL_JUMP)  ; LAB_0043a9a7
@@ -66,7 +66,7 @@ section .text
     PUSH EDX                            ; 0043a9d2
     PUSH ESI                            ; 0043a9d3
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 0043a9d4
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 0043a9d9
     JMP 0x0043a9a7                      ; 0043a9dc
         ;   XREF to: 0043a9a7 (UNCONDITIONAL_JUMP)  ; LAB_0043a9a7

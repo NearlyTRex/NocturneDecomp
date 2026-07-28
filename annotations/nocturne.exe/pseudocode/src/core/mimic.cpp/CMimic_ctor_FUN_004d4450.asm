@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_mimic_cpp_CMimic_ctor_FUN_004d4450(undefined4 param_1)
+; CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_mimic.cpp_FUN_004d4420 at 004d4433
@@ -31,17 +33,17 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d4452
     PUSH EDX                            ; 004d4456
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004d4457
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004d445c
     ADD EAX,0xbdec                      ; 004d445f
     PUSH EAX                            ; 004d4464
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 004d4465
-        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_ctor_FUN_00435100()
+        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     ADD ESP,0x4                         ; 004d446a
     ADD EAX,0x3ab60                     ; 004d446d
     PUSH EAX                            ; 004d4472
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 004d4473
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_004e0050(CMorph * this_ptr)
     LEA EDX,[EAX + 0xfffb96b4]          ; 004d4478
     MOV dword ptr [EDX + 0x14c],0x5a05f4 ; 004d447e | PTR_core_mimic.cpp_FUN_004d4650_005a05f4
     MOV dword ptr [EDX + 0x2dd4],0x3f000000 ; 004d4488

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 311,
+    "complexity_score": 396,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
-    "suspect_count": 24,
+    "pseudocode_lines": 71,
+    "suspect_count": 31,
     "suspect_types": [
+      "suspect_float",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 226
+    "total_lines": 236
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_hostage.cpp_CHostage_setup_FUN_004b6b20",
-    "signature": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(int param_1)"
+    "signature": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(CNPC *param_1)"
   },
   "function_calls": [
     {
@@ -162,7 +163,7 @@
     {
       "addr": "004ee9e0",
       "is_variadic": false,
-      "name": "core_npc.cpp_FUN_004ee9e0"
+      "name": "core_npc.cpp_CNPC_setup_FUN_004ee9e0"
     },
     {
       "addr": "0051e0a0",
@@ -333,15 +334,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(param_1 + 0x150);",
+      "text": "void core_hostage_cpp_CHostage_setup_FUN_004b6b20(CNPC *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -349,7 +342,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0x23b0;",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(&(param_1->base).model);",
       "type": "unnamed_param"
     },
     {
@@ -357,63 +350,111 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 6;",
+      "text": "str1 = (param_1->base).model.model_name;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 16,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 8.40779e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 8.40779e-45;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 0;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 23,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 1;",
-      "type": "unnamed_param"
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 2;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 1.4013e-45;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 27,
+      "match": "2.8026e-45",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 4;",
-      "type": "unnamed_param"
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 2.8026e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 5;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 2.8026e-45;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 31,
+      "match": "5.60519e-45",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f920) = 3;",
-      "type": "unnamed_param"
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 5.60519e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1 + 0x150);",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 5.60519e-45;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 35,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 7.00649e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 7.00649e-45;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 39,
+      "match": "4.2039e-45",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 4.2039e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2b].y = 4.2039e-45;",
       "type": "unnamed_param"
     },
     {
@@ -421,23 +462,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f938) = uVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f934) = uVar5;",
+      "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -445,47 +470,31 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f93c) = uVar5;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2d].y = fVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f940) = uVar5;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2d].x = fVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24e8) = uVar5;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2d].z = fVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f920) != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x24a4) = uVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x25bc) = uVar3;",
+      "text": "param_1[1].base.model.transformed_vertices[0x2e].x = fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -493,23 +502,71 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f920) == 1) {",
+      "text": "fVar2 = param_1[1].base.model.transformed_vertices[0x2b].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_npc_cpp_FUN_004ee9e0(param_1);",
+      "text": "(param_1->base).carry_hands[1].bone_index = iVar1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 60,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (fVar2 != 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f918) = 0;",
+      "text": "(param_1->base).carry_hands[0].bone_index = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = param_1[1].base.model.transformed_vertices[0x2b].y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).gesture_branch_root = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 68,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (fVar2 == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setup_FUN_004ee9e0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.transformed_vertices[0x2a].z = 0.0;",
       "type": "unnamed_param"
     }
   ],

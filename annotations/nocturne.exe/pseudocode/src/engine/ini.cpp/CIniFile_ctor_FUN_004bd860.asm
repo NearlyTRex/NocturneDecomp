@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004bd860(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004bd860(CIniFile *this_ptr,char *filename,char *section)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; char *           Stack[0xc]:4   section
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004a4b50 at 004a4c34
@@ -25,7 +29,7 @@ section .text
     PUSH EDX                            ; 004bd869
     PUSH EBX                            ; 004bd86a
     CALL engine_ini.cpp_CIniFile_init_FUN_004bd890 ; 004bd86b
-        ;   XREF to: 004bd890 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_init_FUN_004bd890()
+        ;   XREF to: 004bd890 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_init_FUN_004bd890(char * dest, char * source)
     ADD ESP,0x8                         ; 004bd870
     MOV ECX,dword ptr [ESP + 0x10]      ; 004bd873
     PUSH ECX                            ; 004bd877

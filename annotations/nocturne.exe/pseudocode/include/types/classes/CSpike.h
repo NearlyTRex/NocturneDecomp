@@ -7,28 +7,28 @@
 #include "types/classes/CVector3f.h"
 
 // Structure: CSpike
-// Ghidra size: 0x560 (1376 bytes)
+// Ghidra size: 0x558 (1368 bytes)
 #pragma pack(push, 1)
 typedef struct CSpike {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    int spike_type; // 0x2d4
-    int spike_state; // 0x2d8
-    int are_we_active; // 0x2dc
-    CVector3f base_position; // 0x2e0
-    float extend_distance; // 0x2ec
-    char start_event[100]; // 0x2f0
-    char stop_event[100]; // 0x354
-    char extend_event[100]; // 0x3b8
-    char retract_event[100]; // 0x41c
-    float extend_time; // 0x480
-    float retract_time; // 0x484
-    float wait_timer; // 0x488
-    char extend_sound[100]; // 0x48c
-    char retract_sound[100]; // 0x4f0
-    float period; // 0x554
-    float damage_strength; // 0x558
-    float param; // 0x55c
+    CKeyFramedModelInstance model; // 0x150
+    int spike_type; // 0x2cc
+    int spike_state; // 0x2d0
+    int are_we_active; // 0x2d4
+    CVector3f base_position; // 0x2d8
+    float extend_distance; // 0x2e4
+    char start_event[100]; // 0x2e8
+    char stop_event[100]; // 0x34c
+    char extend_event[100]; // 0x3b0
+    char retract_event[100]; // 0x414
+    float extend_time; // 0x478
+    float retract_time; // 0x47c
+    float wait_timer; // 0x480
+    char extend_sound[100]; // 0x484
+    char retract_sound[100]; // 0x4e8
+    float period; // 0x54c
+    float damage_strength; // 0x550
+    float param; // 0x554
 } CSpike;
 #pragma pack(pop)
 

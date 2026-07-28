@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(int param_1,float *param_2)
+; int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004dffc0(CMorphModel *this_ptr,CVector3f *position)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(undefined4 *param_1)
+; SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo *this_ptr)
 ;
+; Parameters:
+; SCollisionInfo * Stack[0x4]:4   this_ptr
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390 at 0040a39b
@@ -14,7 +16,7 @@
 ;   core_platfrm.cpp_FUN_004f7360 at 004f7384
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050ee61
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 00510125
-;   core_setcolid.cpp_FUN_00510a40 at 00510ba8
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510ba8
 ;   ... and 5 more
 ;
 ; *****************************************************************************

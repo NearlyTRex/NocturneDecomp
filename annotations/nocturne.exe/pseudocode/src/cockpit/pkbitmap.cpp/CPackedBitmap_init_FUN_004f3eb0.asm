@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_004f3eb0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; CPackedBitmap * cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_004f3eb0(CPackedBitmap *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
 ; Called Functions:
@@ -21,13 +21,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f3eb4
     PUSH EBX                            ; 004f3eb8
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20 ; 004f3eb9
-        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20()
+        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f3ebe
     PUSH 0x14                           ; 004f3ec1
     PUSH 0x0                            ; 004f3ec3
     PUSH EBX                            ; 004f3ec5
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f3ec6
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004f3ecb
     MOV EDX,dword ptr [ESP + 0x28]      ; 004f3ece
     PUSH EDX                            ; 004f3ed2

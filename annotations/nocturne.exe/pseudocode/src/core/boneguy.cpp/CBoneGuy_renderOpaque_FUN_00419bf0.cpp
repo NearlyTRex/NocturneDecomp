@@ -2,11 +2,11 @@
 // Address: 00419bf0
 // Address Range: [[00419bf0, 00419c11]]
 // Convention: unknown
-// Signature: void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(undefined4 param_1)
+// Signature: void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
 
 #include "nocturne.h"
 
-void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(uint param_1)
+void core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0(CCharacter *param_1)
 
 {
   int iVar1;

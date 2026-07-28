@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20(int param_1,int param_2)
+; int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20(CDemonCamera *this_ptr,CDemonLight *light_source)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light_source
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00507f80 at 00508261
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508261
 ;
 ; *****************************************************************************
 

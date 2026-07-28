@@ -17,6 +17,11 @@ Evidence is gathered from several independent signals, strongest first:
   vtable         positional slot correspondence in an anchored vtable pair.
   callsite       an anchored pair's ordered call sequence aligns, so callees at
                  the same index correspond (BinDiff-style fixpoint).
+  order          two anchored pairs bracket the same number of unmatched
+                 functions in the same translation unit, so source order fixes
+                 the alignment. Alone in consulting no similarity at all, which
+                 is why it is the only signal that can match a function whose
+                 body was *edited* between the builds.
   caller         the inverse: unique unmatched caller of an anchored pair.
   shape_relaxed  identical mnemonic sequence but differing operands -- same
                  code shape, different registers/constants. Corroboration only.
@@ -32,6 +37,7 @@ Usage:
 """
 
 import argparse
+import bisect
 import json
 import os
 import re
@@ -53,6 +59,12 @@ SIGNAL_CONFIDENCE = {
     "string":        0.97,
     "vtable":        0.90,
     "callsite":      0.85,
+    # A singleton bracket is forced by two independent anchors. Its one failure
+    # mode is a function removed and another added inside the same bracket,
+    # which presents identically; widening the bracket only makes that more
+    # likely, so multi-slot alignment is scored lower.
+    "order":         0.85,
+    "order_multi":   0.78,
     "caller":        0.75,
     "shape_relaxed": 0.80,
 }
@@ -292,6 +304,130 @@ def prop_callsites(ev, a_img, b_img, mapping):
     return n
 
 
+def longest_increasing(values):
+    """Indices of a longest strictly-increasing subsequence of `values`."""
+    tails, tail_idx, prev = [], [], [None] * len(values)
+    for i, v in enumerate(values):
+        j = bisect.bisect_left(tails, v)
+        if j == len(tails):
+            tails.append(v)
+            tail_idx.append(i)
+        else:
+            tails[j] = v
+            tail_idx[j] = i
+        prev[i] = tail_idx[j - 1] if j else None
+    out, k = [], (tail_idx[-1] if tail_idx else None)
+    while k is not None:
+        out.append(k)
+        k = prev[k]
+    out.reverse()
+    return out
+
+
+# A multi-slot bracket's identity alignment is accepted only if at least this
+# fraction of its measurable pairs corroborate on shape.
+BRACKET_MIN_AGREEMENT = 0.5
+
+
+def bracket_aligns(shapes_a, shapes_b, gap_a, gap_b):
+    """Does a multi-slot bracket's identity alignment hold up on shape?
+
+    Equal counts do not by themselves force the alignment: a function added
+    and another removed inside the same bracket keeps the count equal while
+    shifting every slot, which produces a run of confident, uniformly wrong
+    matches -- the worst possible failure, because it looks orderly.
+
+    Checking the bracket *as a whole* catches that without giving up what the
+    signal is for. A single edited function inside an otherwise-corroborating
+    bracket is still matched, because it is outvoted by its neighbours; only
+    when the bracket as a whole fails to corroborate is the alignment itself
+    rejected.
+
+    `unshaped` pairs carry no information either way and are excluded rather
+    than counted as agreement.
+    """
+    if len(gap_a) < 2:
+        return True
+    good = bad = 0
+    for x, y in zip(gap_a, gap_b):
+        verdict = shape_agreement(shapes_a.get(x), shapes_b.get(y))
+        if verdict == "size_mismatch":
+            bad += 1
+        elif verdict != "unshaped":
+            good += 1
+    if not (good + bad):
+        return False
+    return good >= BRACKET_MIN_AGREEMENT * (good + bad)
+
+
+def prop_order(ev, a_img, b_img, mapping, editor_only=None):
+    """Match by position within a translation unit.
+
+    The linker lays an object file's code out as one contiguous run and the
+    compiler keeps source order inside it, so a unit's functions appear in the
+    same relative order in both builds. Two already-matched functions therefore
+    bracket a region, and any unmatched function between them in nocedit must
+    correspond to something between their counterparts in nocturne -- or to
+    nothing at all, if the game build dropped it.
+
+    When the two sides of a bracket hold the same number of functions, order
+    alone determines the alignment; no similarity is consulted. That is what
+    makes this pass able to match functions whose *body was edited* between the
+    builds, which every other signal here is blind to by construction.
+
+    Anchors are first reduced to a longest increasing subsequence. A pair that
+    breaks monotonicity is either a mismatch or a genuinely moved function;
+    either way it cannot be trusted to bracket a region, and one bad anchor
+    would otherwise corrupt every gap it touches.
+
+    `crt_*` units are skipped: they come from libraries, are laid out per
+    archive member rather than in source order, and are the only units where
+    the monotonicity this rests on measurably fails.
+    """
+    b_all = b_img.addrs_sorted
+    shapes_a, shapes_b = sm.shapes_for(a_img), sm.shapes_for(b_img)
+    n_forced = 0
+
+    for tu, addrs in a_img.tu_groups().items():
+        if tu.startswith("crt_"):
+            continue
+        matched = [(i, a) for i, a in enumerate(addrs) if mapping.has_a(a)]
+        if len(matched) < 2:
+            continue
+        keep = longest_increasing([int(mapping.a2b[a], 16) for _, a in matched])
+        anchors = [matched[k] for k in keep]
+
+        for (ia, aa), (ib, ab) in zip(anchors, anchors[1:]):
+            gap_a = [addrs[k] for k in range(ia + 1, ib)
+                     if not mapping.has_a(addrs[k])]
+            if not gap_a:
+                continue
+            lo, hi = int(mapping.a2b[aa], 16), int(mapping.a2b[ab], 16)
+            gap_b = [f"{v:08x}" for v in
+                     b_all[bisect.bisect_right(b_all, lo):bisect.bisect_left(b_all, hi)]
+                     if not mapping.has_b(f"{v:08x}")]
+
+            if not gap_b:
+                # Bracketed on both sides with nothing to match: these exist in
+                # the editor build and nowhere in the game build.
+                if editor_only is not None:
+                    editor_only.extend((tu, a) for a in gap_a)
+                continue
+            if len(gap_a) != len(gap_b):
+                # Unequal counts mean something was added or removed as well as
+                # kept; position no longer determines which is which.
+                continue
+            if not bracket_aligns(shapes_a, shapes_b, gap_a, gap_b):
+                continue
+
+            signal = "order" if len(gap_a) == 1 else "order_multi"
+            for x, y in zip(gap_a, gap_b):
+                ev.add(x, y, signal, f"{tu} between {aa} and {ab}")
+                n_forced += 1
+
+    return n_forced
+
+
 def prop_callers(ev, a_img, b_img, mapping):
     """Propagate to the unique unmatched caller of an anchored pair."""
     inv_a, inv_b = a_img.callers_of(), b_img.callers_of()
@@ -309,7 +445,7 @@ def prop_callers(ev, a_img, b_img, mapping):
 # Driver
 # --------------------------------------------------------------------------
 
-def build_mapping(a_img, b_img, max_rounds=12, verbose=True):
+def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True):
     ev = Evidence()
     mapping = Mapping()
     log = []
@@ -330,8 +466,10 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True):
         v = prop_vtables(ev, a_img, b_img, mapping)
         c = prop_callsites(ev, a_img, b_img, mapping)
         k = prop_callers(ev, a_img, b_img, mapping)
+        o = prop_order(ev, a_img, b_img, mapping) if use_order else 0
         added = resolve(ev, mapping)
-        note(f"  round {rnd}: vtable={v} callsite={c} caller={k} -> +{added} ({len(mapping)} total)")
+        note(f"  round {rnd}: vtable={v} callsite={c} caller={k} order={o} "
+             f"-> +{added} ({len(mapping)} total)")
         # Stop when a round adds less than 1% of the current mapping.
         if added <= max(1, len(mapping) // 100):
             break
@@ -341,7 +479,18 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True):
     added = resolve(ev, mapping)
     note(f"  shape_relaxed: {r} candidate pairs -> +{added} ({len(mapping)} total)")
 
-    return mapping, log
+    # A final bracket pass: the relaxed round just added anchors, which narrows
+    # gaps that were previously too loose to resolve. It also settles which
+    # functions are bracketed with no counterpart at all -- meaningful only
+    # once nothing further will be matched.
+    editor_only = []
+    if use_order:
+        o = prop_order(ev, a_img, b_img, mapping, editor_only)
+        added = resolve(ev, mapping)
+        note(f"  order (final): {o} candidate pairs -> +{added} ({len(mapping)} total)")
+        note(f"  bracketed with no counterpart: {len(editor_only)} (editor-only)")
+
+    return mapping, log, editor_only
 
 
 def main():
@@ -356,6 +505,8 @@ def main():
                     help="drop pairs below this confidence from the output")
     ap.add_argument("--show", type=int, default=20,
                     help="sample N matches in the report (default: 20)")
+    ap.add_argument("--no-order", action="store_true",
+                    help="disable translation-unit order matching (for A/B)")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args()
 
@@ -365,7 +516,8 @@ def main():
         print(f"{args.a_prog}: {len(a_img.functions)} functions\n"
               f"{args.b_prog}: {len(b_img.functions)} functions\n", file=sys.stderr)
 
-    mapping, _ = build_mapping(a_img, b_img, verbose=not args.quiet)
+    mapping, _, editor_only = build_mapping(a_img, b_img, verbose=not args.quiet,
+                                            use_order=not args.no_order)
 
     # ---- report ----------------------------------------------------------
     by_signal = Counter()
@@ -427,6 +579,12 @@ def main():
             "from": args.a_prog,
             "to": args.b_prog,
             "pairs": pairs,
+            # Bracketed by matched neighbours on both sides with nothing
+            # between them in the game build: present in the editor only.
+            # Stronger than "unmatched", which merely means "not found".
+            "editor_only": [{"a": a, "tu": tu,
+                             "name": a_img.by_addr[a]["name"]}
+                            for tu, a in sorted(editor_only, key=lambda t: t[1])],
             "unmatched_a": sorted(f["addr"].lower() for f in a_img.functions
                                   if not mapping.has_a(f["addr"].lower())),
             "unmatched_b": sorted(f["addr"].lower() for f in b_img.functions

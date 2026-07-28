@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(int param_1,undefined4 param_2)
+; int core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *param_1,CVector3f *param_2)
 ;
 ;
 ; XREF[2]:
@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 00514358
     PUSH ESI                            ; 00514359
     CALL core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80 ; 0051435a
-        ;   XREF to: 00513d80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80()
+        ;   XREF to: 00513d80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet * this_ptr, int box_index, CVector3f * point)
     ADD ESP,0xc                         ; 0051435f
     TEST EAX,EAX                        ; 00514362
     JNZ 0x00514378                      ; 00514364
@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_00514378
     PUSH ESI                            ; 00514379
     CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300 ; 0051437a
-        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300()
+        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet * this_ptr, int box_index)
     ADD ESP,0x8                         ; 0051437f
     POP EDI                             ; 00514382
     POP ESI                             ; 00514383

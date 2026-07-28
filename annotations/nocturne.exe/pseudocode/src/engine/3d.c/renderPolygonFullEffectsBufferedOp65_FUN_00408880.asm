@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -48,7 +50,7 @@ section .text
     LEA EAX,[EBP + 0x8]                 ; 0040888e
     PUSH EAX                            ; 00408891
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00408892
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00408897
     TEST EAX,EAX                        ; 0040889a
     JZ 0x00408a2f                       ; 0040889c
@@ -163,7 +165,7 @@ section .text
     JL 0x004089c1                       ; 004089f3
         ;   XREF to: 004089c1 (CONDITIONAL_JUMP)  ; LAB_004089c1
     CALL engine_texture.cpp_getCurrentTexture_FUN_00545ad0 ; 004089f5
-        ;   XREF to: 00545ad0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_getCurrentTexture_FUN_00545ad0()
+        ;   XREF to: 00545ad0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_00545ad0()
         ;   Label: LAB_004089f5
     MOV EDI,dword ptr [ESP]             ; 004089fa
     MOV ECX,0x12                        ; 004089fd

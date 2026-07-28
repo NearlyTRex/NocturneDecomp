@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet *this_ptr,CDemonGlobe *globe)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonGlobe *    Stack[0x8]:4   globe
 ;
 ; XREF[6]:
 ;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4f4

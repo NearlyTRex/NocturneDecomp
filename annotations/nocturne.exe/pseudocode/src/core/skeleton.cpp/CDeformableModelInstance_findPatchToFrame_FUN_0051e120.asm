@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051e120(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051e120(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x35a0]:4  local_35a0
@@ -52,14 +52,14 @@ section .text
     MOV EDI,dword ptr [ESP + 0x359c]    ; 0051e12a
     PUSH EDI                            ; 0051e131
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 0051e132
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0051e137
     IMUL EDX,dword ptr [ESP + 0x35a8],0x54c ; 0051e13a
     MOV EAX,dword ptr [EDX + EAX*0x1 + 0x9cc] ; 0051e145
     PUSH EDI                            ; 0051e14c
     MOV dword ptr [ESP + 0x357c],EAX    ; 0051e14d
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051e154
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051e159
     MOV EBX,dword ptr [EAX + 0x28558]   ; 0051e15c
     LEA EAX,[ESP + 0x1a9c]              ; 0051e162
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 0051e178
     PUSH EDI                            ; 0051e179
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350 ; 0051e17a
-        ;   XREF to: 0051e350 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350()
+        ;   XREF to: 0051e350 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350(CDeformableModelInstance * this_ptr, int motion_index, float animation_time, SPose * output_bone_data)
     ADD ESP,0x10                        ; 0051e17f
     PUSH EDI                            ; 0051e182
     LEA EAX,[ESP + 0x1aa0]              ; 0051e183
@@ -77,7 +77,7 @@ section .text
     MOV EBP,0xffffffff                  ; 0051e18b
     XOR ESI,ESI                         ; 0051e190
     CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 ; 0051e192
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0()
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 0051e197
     MOV EAX,0x7149f2ca                  ; 0051e19a
     MOV EDX,dword ptr [ESP + 0x3578]    ; 0051e19f
@@ -97,13 +97,13 @@ section .text
     PUSH EBP                            ; 0051e1da
     PUSH EDI                            ; 0051e1db
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350 ; 0051e1dc
-        ;   XREF to: 0051e350 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350()
+        ;   XREF to: 0051e350 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350(CDeformableModelInstance * this_ptr, int motion_index, float animation_time, SPose * output_bone_data)
     ADD ESP,0x10                        ; 0051e1e1
     PUSH EDI                            ; 0051e1e4
     LEA EAX,[ESP + 0x4]                 ; 0051e1e5
     PUSH EAX                            ; 0051e1e9
     CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0 ; 0051e1ea
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0()
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 0051e1ef
     XOR EAX,EAX                         ; 0051e1f2
     XOR ECX,ECX                         ; 0051e1f4

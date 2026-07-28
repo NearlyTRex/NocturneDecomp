@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(int param_1,char *param_2,undefined4 param_3,float param_4)
+; void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; int              Stack[0xc]:4   value
+; float            Stack[0x10]:4   duration
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -51,7 +56,7 @@ section .text
         ;   Label: LAB_004a3aed
     PUSH EDI                            ; 004a3aee
     CALL crt_string.c__stricmp_FUN_00564520 ; 004a3aef
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a3af4
     TEST EAX,EAX                        ; 004a3af7
     JZ 0x004a3b1f                       ; 004a3af9

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dtrace_cpp_FUN_00467890(undefined4 param_1,undefined4 param_2)
+; undefined4 core_dtrace_cpp_FUN_00467890(undefined4 param_1,char *param_2)
 ;
 ;
 ; XREF[1]:
@@ -27,7 +27,7 @@ section .text
     PUSH EDX                            ; 0046789a
     PUSH 0x57e1d5                       ; 0046789b | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004678a0
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004678a5
     ADD ESP,0xc                         ; 004678a7
     TEST EAX,EAX                        ; 004678aa
@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x8                         ; 004678bb
     PUSH EBX                            ; 004678be
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004678bf
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,0x1                         ; 004678c4
     ADD ESP,0x4                         ; 004678c9
     POP EBX                             ; 004678cc

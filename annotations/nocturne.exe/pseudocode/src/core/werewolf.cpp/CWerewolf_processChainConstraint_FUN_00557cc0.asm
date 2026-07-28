@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(int param_1)
+; void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x7c]:8  local_7c
 ; undefined4       Stack[-0x74]:4  local_74
@@ -88,7 +90,7 @@ section .text
     MOV dword ptr [EBP + -0x3c],EDI     ; 00557d12
     MOV dword ptr [EBP + -0x38],ESI     ; 00557d15
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00557d18
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     MOV EAX,dword ptr [EBX + 0xbd50]    ; 00557d1d
     ADD ESP,0xc                         ; 00557d23
     ADD EAX,0x20                        ; 00557d26
@@ -97,7 +99,7 @@ section .text
     PUSH EAX                            ; 00557d2d
     PUSH EBX                            ; 00557d2e
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00557d2f
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLD float ptr [EBP + -0x54]         ; 00557d34
     ADD ESP,0xc                         ; 00557d37
     FCOMP double ptr [0x00597f09]       ; 00557d3a | DOUBLE_00597f09
@@ -203,7 +205,7 @@ section .text
     FSTP float ptr [EBP + -0x24]        ; 00557e46
     FSTP float ptr [EBP + -0x20]        ; 00557e49
     CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 ; 00557e4c
-        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050()
+        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00557e51
     MOV ESP,EBP                         ; 00557e54
     POP EBP                             ; 00557e56
@@ -223,7 +225,7 @@ section .text
     PUSH EBX                            ; 00557e71
     MOV dword ptr [EBP + -0x30],ESI     ; 00557e72
     CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 ; 00557e75
-        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050()
+        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00557e7a
     MOV ESP,EBP                         ; 00557e7d
     POP EBP                             ; 00557e7f

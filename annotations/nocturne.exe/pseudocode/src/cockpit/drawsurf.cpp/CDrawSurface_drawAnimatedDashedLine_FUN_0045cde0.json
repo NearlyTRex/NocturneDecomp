@@ -1,0 +1,475 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 199,
+    "complexity_score": 240,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 60,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 259
+  },
+  "cross_references": [
+    {
+      "addr": "0045cfd0",
+      "from_addr": "0045cfe2",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0045cfd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045cc70",
+      "from_addr": "0045ccb6",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045cff0",
+      "from_addr": "0045d050",
+      "name": "cockpit_drawsurf.cpp_FUN_0045cff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045d070",
+      "from_addr": "0045d0bc",
+      "name": "cockpit_drawsurf.cpp_FUN_0045d070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045cde0",
+    "address_range": [
+      [
+        "0045cde0",
+        "0045cfc2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045bab0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057da4e",
+      "name": "DOUBLE_0057da4e",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "005ae6f4",
+      "name": "DAT_005ae6f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ae6f8",
+      "name": "DAT_005ae6f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d484",
+      "name": "DAT_01b4d484",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d488",
+      "name": "DAT_01b4d488",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d48c",
+      "name": "DAT_01b4d48c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd1d80",
+      "name": "DAT_01bd1d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd1d84",
+      "name": "DAT_01bd1d84",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.871794871794871,
+    "instruction_count": 156,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 17,
+      "COPY": 201,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 51,
+      "INT_AND": 134,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 92,
+      "INT_LEFT": 12,
+      "INT_LESS": 16,
+      "INT_NOTEQUAL": 28,
+      "INT_OR": 30,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 4,
+      "INT_SEXT": 4,
+      "INT_SLESS": 40,
+      "INT_SREM": 4,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 43,
+      "INT_XOR": 2,
+      "INT_ZEXT": 16,
+      "LOAD": 27,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 29,
+      "SUBPIECE": 8,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 916
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005ae6f8",
+      "severity": "mild",
+      "text": "if (DAT_005ae6f8 < _DAT_01b4d484) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005ae6f8",
+      "severity": "mild",
+      "text": "_DAT_01b4d488 = _DAT_01b4d484 / DAT_005ae6f8 + _DAT_01b4d488;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if ((float)(DAT_005ae6f4 * 2) < _DAT_01b4d488) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005ae6f4",
+      "severity": "mild",
+      "text": "if (iVar2 % (DAT_005ae6f4 * 2) < DAT_005ae6f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)x",
+      "severity": "moderate",
+      "text": "for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&x->width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&x->width",
+      "severity": "moderate",
+      "text": "for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)x",
+      "severity": "moderate",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(this_ptr_00,(int)x,y1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {",
+      "type": "pointer_cast"
+    }
+  ]
+}

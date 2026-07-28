@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl core_fire_cpp_allocateBulletHole_FUN_0048a0e0(void)
+; CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_0048a0e0(void)
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0048ab60 at 0048ad12
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ad12
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c20140

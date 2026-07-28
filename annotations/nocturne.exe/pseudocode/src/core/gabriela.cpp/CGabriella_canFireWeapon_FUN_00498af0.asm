@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gabriela_cpp_CGabriella_canFireWeapon_FUN_00498af0(int param_1)
+; int __cdecl core_gabriela_cpp_CGabriella_canFireWeapon_FUN_00498af0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_FUN_00495a20 at 004961c7

@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(int param_1,int param_2)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(CMP3Decoder *this_ptr,int num_bits)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   num_bits
 ;
 ; XREF[1]:
-;   sound_mp3.cpp_FUN_004e5200 at 004e583c
+;   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200 at 004e583c
 ;
 ; *****************************************************************************
 

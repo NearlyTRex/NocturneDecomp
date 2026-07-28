@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004a7332
         ;   Label: LAB_004a7332
     CALL core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350 ; 004a7333
-        ;   XREF to: 004a7350 (UNCONDITIONAL_CALL)  ; undefined core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350()
+        ;   XREF to: 004a7350 (UNCONDITIONAL_CALL)  ; CGargoyle * core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004a7338
     RET                                 ; 004a733b
 

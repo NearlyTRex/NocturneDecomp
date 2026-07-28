@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(int *param_1,int param_2,int *param_3,int param_4,int param_5)
+; void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   num_lods
+; int              Stack[0xc]:4   num_texture_sets
+; int              Stack[0x10]:4   num_textures
+; int              Stack[0x14]:4   num_parts
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280 at 0051938b
@@ -38,7 +44,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 00517db0
     PUSH EBX                            ; 00517db4
     CALL core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0 ; 00517db5
-        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0()
+        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00517dba
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00517dbd
     CMP EDX,0x5                         ; 00517dc1

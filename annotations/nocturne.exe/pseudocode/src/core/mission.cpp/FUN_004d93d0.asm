@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mission_cpp_FUN_004d93d0(undefined4 *param_1,char *param_2)
+; void core_mission_cpp_FUN_004d93d0(CDemonMission *param_1,char *param_2)
 ;
 ;
 ; Called Functions:
@@ -44,13 +44,13 @@ section .text
     ADD ESP,0x4                         ; 004d9411
     PUSH EBX                            ; 004d9414
     CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0 ; 004d9415
-        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0()
+        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d941a
     PUSH 0x0                            ; 004d941d
     PUSH EBX                            ; 004d941f
     MOV dword ptr [EBX],0xffffffff      ; 004d9420
     CALL core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 ; 004d9426
-        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_loadSet_FUN_004d9020()
+        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004d942b
     POP EDI                             ; 004d942e
     POP ESI                             ; 004d942f

@@ -13,7 +13,7 @@
 ;   undefined4 s_illPriest_00585fed+1
 ;   undefined4 s_llPriest_00585fed+2
 ;   undefined4 s_lPriest_00585fed+3
-;   undefined1* PTR_core_npc.cpp_FUN_004ee9e0_0059f264 = 004ee9e0
+;   undefined1* PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_0059f264 = 004ee9e0
 ;
 ; Called Functions:
 ;   core_npc.cpp_FUN_004ee950
@@ -36,7 +36,7 @@ section .text
     MOV EBX,EAX                         ; 004b9b05
     LEA EDI,[EAX + 0x150]               ; 004b9b07
     PUSH EDI                            ; 004b9b0d
-    MOV dword ptr [EAX + 0x14c],0x59f264 ; 004b9b0e | PTR_core_npc.cpp_FUN_004ee9e0_0059f264
+    MOV dword ptr [EAX + 0x14c],0x59f264 ; 004b9b0e | PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_0059f264
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004b9b18
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 004b9b1d

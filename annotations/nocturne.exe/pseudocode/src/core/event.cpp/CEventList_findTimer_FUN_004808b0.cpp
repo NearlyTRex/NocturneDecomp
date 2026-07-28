@@ -2,28 +2,28 @@
 // Address: 004808b0
 // Address Range: [[004808b0, 004808fa]]
 // Convention: __cdecl
-// Signature: int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(int param_1,undefined4 param_2)
+// Signature: int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(CEventList *this_ptr,char *name)
 
 #include "nocturne.h"
 
-int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(int param_1,uint param_2)
+int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(CEventList *this_ptr,char *name)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  char (*str1) [32];
   
   iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x3210)) {
-    iVar3 = param_1 + 0x3214;
+  if (0 < (this_ptr->timers).count) {
+    str1 = (this_ptr->timers).names;
     do {
-      iVar1 = _stricmp(iVar3,param_2);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 0x20;
-    } while (iVar2 < *(int *)(param_1 + 0x3210));
+      str1 = str1 + 1;
+    } while (iVar2 < (this_ptr->timers).count);
   }
   return -1;
 }

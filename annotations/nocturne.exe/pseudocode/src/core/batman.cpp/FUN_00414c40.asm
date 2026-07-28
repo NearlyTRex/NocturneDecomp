@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_batman_cpp_FUN_00414c40(int param_1,undefined4 param_2)
+; ECollisionType core_batman_cpp_FUN_00414c40(CCharacter *param_1,SCollisionInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -23,7 +23,7 @@ section .text
     PUSH ECX                            ; 00414c54
     PUSH EAX                            ; 00414c55
     CALL core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0 ; 00414c56
-        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0()
+        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; ECollisionType core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 00414c5b
     RET                                 ; 00414c5e
 

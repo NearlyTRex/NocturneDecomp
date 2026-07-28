@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00476160(int param_1)
+; void shape_edittool_cpp_FUN_00476160(CStrList *param_1)
 ;
 ;
 ; XREF[6]:
@@ -31,7 +31,7 @@ section .text
         ;   Label: LAB_0047616f
     MOV dword ptr [EBX + 0x130],0x0     ; 00476170
     CALL shape_edittool.cpp_CStrList_clear_FUN_00473c50 ; 0047617a
-        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_clear_FUN_00473c50()
+        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_clear_FUN_00473c50(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0047617f
     POP EBX                             ; 00476182
     RET                                 ; 00476183

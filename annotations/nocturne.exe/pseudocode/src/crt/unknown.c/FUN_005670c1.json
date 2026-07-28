@@ -2,21 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 133,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 8,
+    "pseudocode_lines": 30,
+    "suspect_count": 16,
     "suspect_types": [
+      "extra_output",
       "pointer_cast",
       "pointer_truncation",
       "register_param",
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 47
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -40,20 +41,20 @@
   },
   "function_calls": [
     {
-      "addr": "005670ed",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005670ed"
-    },
-    {
       "addr": "005671dc",
       "is_variadic": false,
-      "name": "FUN_005671dc"
+      "name": "crt_thread.c_GetTLS_FUN_005671dc"
+    },
+    {
+      "addr": "005670ed",
+      "is_variadic": false,
+      "name": "crt_unknown.c_ProbeStackSpace_FUN_005670ed"
     }
   ],
   "globals": [
     {
       "addr": "005c1abc",
-      "name": "PTR_FUN_005c1abc",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc",
       "type": "void*",
       "value": "005671dc"
     }
@@ -123,51 +124,115 @@
       "type": "register_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "uint extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX_00",
+      "severity": "moderate",
+      "text": "uint extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xfffffffc",
+      "severity": "moderate",
+      "text": "if (in_EAX < &stack0xfffffffc) {",
+      "type": "stack_ref"
+    },
+    {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "if (in_EAX < &iStack_4) {",
+      "text": "if (in_EAX < &stack0xfffffffc) {",
       "type": "register_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffffc",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)(*(code *)PTR_FUN_005c1abc)();",
-      "type": "unresolved_funcptr"
+      "text": "iVar2 = (int)in_EAX - (int)&stack0xfffffffc;",
+      "type": "stack_ref"
     },
     {
       "description": "Inferred register parameter",
       "line": 15,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "text": "iVar2 = (int)in_EAX - (int)&stack0xfffffffc;",
       "type": "register_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)(*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "ProbeStackSpace((uint)in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 26,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
       "type": "stack_ref"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX_00",
+      "severity": "moderate",
+      "text": "return extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Pointer value `in_EAX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
       "match": "(int)in_EAX",
       "severity": "moderate",
-      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "text": "iVar2 = (int)in_EAX - (int)&stack0xfffffffc;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&iStack_4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&stack0xfffffffc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
-      "match": "(int)&iStack_4",
+      "match": "(int)&stack0xfffffffc",
       "severity": "moderate",
-      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "text": "iVar2 = (int)in_EAX - (int)&stack0xfffffffc;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(uint)in_EAX",
+      "severity": "moderate",
+      "text": "ProbeStackSpace((uint)in_EAX);",
       "type": "pointer_truncation"
     },
     {
@@ -175,7 +240,7 @@
       "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "text": "iVar2 = (int)in_EAX - (int)&stack0xfffffffc;",
       "type": "pointer_cast"
     }
   ]

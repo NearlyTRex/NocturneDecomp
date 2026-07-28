@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(undefined4 param_1,undefined4 param_2)
+; int __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound *this_ptr,uint sfx_handle)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   sfx_handle
 ;
 ; XREF[10]:
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e7b2
@@ -27,7 +30,7 @@ section .text
         ;   Label: core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0
     PUSH EDX                            ; 0052eba4
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0052eba5
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0052ebaa
     RET                                 ; 0052ebad
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
+; int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00528780(void)
 ;
 ;
 ; XREF[3]:
@@ -39,7 +39,7 @@ section .text
     PUSH 0x47ae147b                     ; 005287a3
     INC EBX                             ; 005287a8
     CALL wincore_winrun.cpp_sleep_FUN_00559cc0 ; 005287a9
-        ;   XREF to: 00559cc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_sleep_FUN_00559cc0()
+        ;   XREF to: 00559cc0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_00559cc0(double seconds)
     ADD ESP,0x8                         ; 005287ae
     CMP EBX,0x64                        ; 005287b1
     JGE 0x005287bf                      ; 005287b4

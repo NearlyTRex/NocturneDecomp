@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   crt_unknown.c_FUN_00564bb0
+;   crt_unknown.c__atexit_FUN_00564bb0
 ;
 ; *****************************************************************************
 
@@ -31,11 +31,11 @@ section .text
     PUSH 0x8                            ; 0041e288
     PUSH 0x76483c                       ; 0041e28a
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0041e28f
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041e294
     PUSH 0x5ad08c                       ; 0041e297
-    CALL crt_unknown.c_FUN_00564bb0     ; 0041e29c
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0041e29c
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0041e2a1
     PUSH 0x764800                       ; 0041e2a4
     PUSH 0x2                            ; 0041e2a9

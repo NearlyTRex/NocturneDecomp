@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(int param_1,byte *param_2)
+; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
 ;
+; Parameters:
+; CFileFinder *    Stack[0x4]:4   finder
+; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
@@ -55,7 +58,7 @@ section .text
     PUSH 0x0                            ; 00456da4
     PUSH EBX                            ; 00456da6
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00456da7
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00456dac
     PUSH 0xff                           ; 00456daf
     MOV ESI,EDI                         ; 00456db4
@@ -63,7 +66,7 @@ section .text
     PUSH EAX                            ; 00456db9
     PUSH EBX                            ; 00456dba
     CALL crt_string.c__strncpy_FUN_00565f70 ; 00456dbb
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     MOV dword ptr [EBX + 0x100],0x0     ; 00456dc0
     MOV AH,byte ptr [EDI]               ; 00456dca
     ADD ESP,0xc                         ; 00456dcc
@@ -161,7 +164,7 @@ section .text
     MOV EAX,ESP                         ; 00456ecd
     PUSH EAX                            ; 00456ecf
     CALL crt_time.c__mktime_FUN_00565fb0 ; 00456ed0
-        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_00565fb0()
+        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_00565fb0(_tm * timeptr)
     ADD ESP,0x4                         ; 00456ed5
     MOV dword ptr [EBX + 0x108],EAX     ; 00456ed8
     ADD ESP,0x3c                        ; 00456ede

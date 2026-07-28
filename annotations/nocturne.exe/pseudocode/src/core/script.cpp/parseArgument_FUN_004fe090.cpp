@@ -2,11 +2,11 @@
 // Address: 004fe090
 // Address Range: [[004fe090, 004fe130]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(int *param_1,int param_2,int param_3)
+// Signature: char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(char **cursor,char *out_buffer,int max_length)
 
 #include "nocturne.h"
 
-char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(int *param_1,int param_2,int param_3)
+char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(char **cursor,char *out_buffer,int max_length)
 
 {
   char cVar1;
@@ -14,20 +14,21 @@ char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(int *param_1,int param
   int iVar3;
   int iVar4;
   int iVar5;
+  char *pcVar6;
   
-  pcVar2 = (char *)core_script_cpp_skipWhitespace_FUN_004fe070(*param_1);
-  *param_1 = (int)pcVar2;
+  pcVar2 = core_script_cpp_skipWhitespace_FUN_004fe070(*cursor);
+  *cursor = pcVar2;
   if (*pcVar2 != '(') {
     return "No opening parenthesis";
   }
   iVar3 = 0;
   iVar4 = 0;
-  if (0 < param_3) {
+  if (0 < max_length) {
     do {
-      iVar5 = *param_1;
-      pcVar2 = (char *)(iVar5 + 1);
-      *param_1 = (int)pcVar2;
-      cVar1 = *pcVar2;
+      pcVar2 = *cursor;
+      pcVar6 = pcVar2 + 1;
+      *cursor = pcVar6;
+      cVar1 = *pcVar6;
       if (cVar1 == '\0') {
         return "Can't find closing parenthesis";
       }
@@ -36,19 +37,19 @@ char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(int *param_1,int param
       }
       else if (cVar1 == ')') {
         if (iVar3 == 0) {
-          *param_1 = iVar5 + 2;
-          *(byte *)(iVar4 + param_2) = 0;
-          core_script_cpp_trimString_FUN_004fe000(param_2);
-          iVar4 = core_script_cpp_skipWhitespace_FUN_004fe070(*param_1);
-          *param_1 = iVar4;
+          *cursor = pcVar2 + 2;
+          out_buffer[iVar4] = '\0';
+          core_script_cpp_trimString_FUN_004fe000(out_buffer);
+          pcVar2 = core_script_cpp_skipWhitespace_FUN_004fe070(*cursor);
+          *cursor = pcVar2;
           return (char *)0x0;
         }
         iVar3 = iVar3 + -1;
       }
       iVar5 = iVar4 + 1;
-      *(byte *)(iVar4 + param_2) = *(byte *)*param_1;
+      out_buffer[iVar4] = **cursor;
       iVar4 = iVar5;
-    } while (iVar5 < param_3);
+    } while (iVar5 < max_length);
   }
   return "Argument too long";
 }

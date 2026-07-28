@@ -9,47 +9,57 @@
 void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1)
 
 {
-  int iVar1;
+  char (*pacVar1) [40];
   int iVar2;
+  C3DSLight *pCVar3;
+  CDemonSet *pCVar4;
+  int iVar5;
   
-  *(uint *)(0x01E57284 + 0x14cd6c) = 0;
-  iVar1 = param_1[0x145];
+  pCVar3 = 0x01E57284->lights + 199;
+  *(char *)((int)(pCVar3->filter_names + 0x14) + 0) = '\0';
+  *(char *)((int)(pCVar3->filter_names + 0x14) + 1) = '\0';
+  *(char *)((int)(pCVar3->filter_names + 0x14) + 2) = '\0';
+  *(char *)((int)(pCVar3->filter_names + 0x14) + 3) = '\0';
+  iVar2 = param_1[0x145];
   do {
-    if (iVar1 == 0) {
+    if (iVar2 == 0) {
       core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(0x01E57284);
       core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(0x01E57284);
       return;
     }
-    if (*param_1 == *(int *)(iVar1 + 0x2c)) {
-      if (*(int *)(iVar1 + 0x70) == 0) {
-        if (*(char *)(iVar1 + 0x78) != '\0') {
-          iVar2 = _stricmp(iVar1 + 0x78,"none");
-          if ((iVar2 != 0) &&
-             (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                (0x01C03A10,iVar1 + 0x78), iVar2 == 0)) goto LAB_004d927a;
+    if (*param_1 == *(int *)(iVar2 + 0x2c)) {
+      if (*(int *)(iVar2 + 0x70) == 0) {
+        if (*(char *)(iVar2 + 0x78) != '\0') {
+          iVar5 = _stricmp((char *)(iVar2 + 0x78),"none");
+          if ((iVar5 != 0) &&
+             (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                                (0x01C03A10,(char *)(iVar2 + 0x78)), iVar5 == 0))
+          goto LAB_004d927a;
         }
-        iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(*(uint *)(iVar1 + 0x74));
-        if (iVar2 == 0) {
-          *(uint *)(iVar1 + 0x70) = 2;
+        iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(*(float *)(iVar2 + 0x74));
+        if (iVar5 == 0) {
+          *(uint *)(iVar2 + 0x70) = 2;
         }
         else {
-          *(uint *)(iVar1 + 0x70) = 1;
+          *(uint *)(iVar2 + 0x70) = 1;
 LAB_004d91fc:
-          if (1999 < *(int *)(0x01E57284 + 0x14cd6c)) {
+          if (1999 < *(int *)0x01E57284->lights[199].filter_names[0x14]) {
             PTR_01cc4800 = "..\\core\\mission.cpp";
             INT_01cc4804 = 0x44e;
             core_main_c_FUN_004c8440("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
-          iVar2 = 0x01E57284;
-          *(int *)(0x01E57284 + 0x14cd70 + *(int *)(0x01E57284 + 0x14cd6c) * 4) = iVar1;
-          *(int *)(iVar2 + 0x14cd6c) = *(int *)(iVar2 + 0x14cd6c) + 1;
+          pCVar4 = 0x01E57284;
+          *(int *)(0x01E57284->lights[199].filter_names[0x14] +
+                  *(int *)0x01E57284->lights[199].filter_names[0x14] * 4 + 4) = iVar2;
+          pacVar1 = pCVar4->lights[199].filter_names + 0x14;
+          *(int *)*pacVar1 = *(int *)*pacVar1 + 1;
         }
       }
       else {
 LAB_004d927a:
-        if (*(int *)(iVar1 + 0x70) == 1) goto LAB_004d91fc;
+        if (*(int *)(iVar2 + 0x70) == 1) goto LAB_004d91fc;
       }
     }
-    iVar1 = *(int *)(iVar1 + 0x144);
+    iVar2 = *(int *)(iVar2 + 0x144);
   } while( true );
 }

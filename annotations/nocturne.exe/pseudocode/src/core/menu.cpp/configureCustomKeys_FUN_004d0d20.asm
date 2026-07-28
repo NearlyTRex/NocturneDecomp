@@ -59,7 +59,7 @@ section .text
     MOV EBX,0x1cc65b0                   ; 004d0d33
     MOV dword ptr [ESP + 0x104],EDX     ; 004d0d38
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d0d3f
-        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_saveClockTime_FUN_0049a890()
+        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d0d44
     XOR EAX,EAX                         ; 004d0d47
     MOV dword ptr [EAX + 0x1cc6eb0],EBX ; 004d0d49
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_004d0d5d
     PUSH EBX                            ; 004d0d63
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d0d64
-        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_updateDT_FUN_0049a8a0()
+        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d0d69
     MOV EAX,[0x005b9354]                ; 004d0d6c | DAT_005b9354
     SUB ESP,0x4                         ; 004d0d71
@@ -81,11 +81,11 @@ section .text
     MOV dword ptr [ESP],EDX             ; 004d0d7a
     PUSH 0x1cc5780                      ; 004d0d7d
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d0d82
-        ;   XREF to: 004deae0 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_update_FUN_004deae0()
+        ;   XREF to: 004deae0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_004deae0(CMoon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d0d87
     PUSH 0x1cc5780                      ; 004d0d8a
     CALL core_moon.cpp_CMoon_render_FUN_004dec50 ; 004d0d8f
-        ;   XREF to: 004dec50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_CMoon_render_FUN_004dec50()
+        ;   XREF to: 004dec50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_004dec50(CMoon * this_ptr)
     MOV EAX,[0x005b9354]                ; 004d0d94 | DAT_005b9354
     XOR EBX,EBX                         ; 004d0d99
     MOV EAX,dword ptr [EAX + 0xbc]      ; 004d0d9b | DAT_01c776a8
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 004d109e (CONDITIONAL_JUMP)  ; LAB_004d109e
     PUSH 0x5889db                       ; 004d0db3 | = "Control : Keyboard/Mouse"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0db8
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
         ;   Label: LAB_004d0db8
     ADD ESP,0x4                         ; 004d0dbd
     PUSH EAX                            ; 004d0dc0
@@ -108,7 +108,7 @@ section .text
     ADD ESP,0x8                         ; 004d0dcb
     PUSH 0x588a06                       ; 004d0dce | = "Customize Keys"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0dd3
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d0dd8
     INC EBX                             ; 004d0ddb
     PUSH EAX                            ; 004d0ddc
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 004d10d0 (CONDITIONAL_JUMP)  ; LAB_004d10d0
     PUSH 0x588a15                       ; 004d0e10 | = "Always run : ON"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0e15
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
         ;   Label: LAB_004d0e15
     ADD ESP,0x4                         ; 004d0e1a
     PUSH EAX                            ; 004d0e1d
@@ -149,7 +149,7 @@ section .text
     PUSH 0x588a36                       ; 004d0e40 | = "Aiming : Auto"
     MOV dword ptr [EAX + 0xc4],0x0      ; 004d0e45 | DAT_01c776b0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0e4f
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d0e54
     PUSH EAX                            ; 004d0e57
     MOV EAX,EBX                         ; 004d0e58
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 004d111c (CONDITIONAL_JUMP)  ; LAB_004d111c
     PUSH 0x588a69                       ; 004d0e8b | = "Auto use health : On"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0e90
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
         ;   Label: LAB_004d0e90
     ADD ESP,0x4                         ; 004d0e95
     PUSH EAX                            ; 004d0e98
@@ -182,7 +182,7 @@ section .text
     ADD ESP,0x8                         ; 004d0e9f
     PUSH 0x588a94                       ; 004d0ea2 | = "X-axis sensitivity : "
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0ea7
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV EDI,EBX                         ; 004d0eac
     ADD ESP,0x4                         ; 004d0eae
     SHL EDI,0x8                         ; 004d0eb1
@@ -240,7 +240,7 @@ section .text
     PUSH 0x588ab0                       ; 004d0f23 | = "Y-axis sensitivity : "
     INC EBX                             ; 004d0f28
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0f29
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     MOV EDI,EBX                         ; 004d0f2e
     ADD ESP,0x4                         ; 004d0f30
     SHL EDI,0x8                         ; 004d0f33
@@ -310,7 +310,7 @@ section .text
         ;   XREF to: 004d1126 (CONDITIONAL_JUMP)  ; LAB_004d1126
     PUSH 0x588acc                       ; 004d0fd7 | = "Invert Y Axis : ON"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0fdc
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
         ;   Label: LAB_004d0fdc
     ADD ESP,0x4                         ; 004d0fe1
     PUSH EAX                            ; 004d0fe4
@@ -322,7 +322,7 @@ section .text
     PUSH 0x588afd                       ; 004d0ff0 | = "Control Options"
         ;   Label: LAB_004d0ff0
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d0ff5
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d0ffa
     PUSH EAX                            ; 004d0ffd
     PUSH 0xfa                           ; 004d0ffe
@@ -331,11 +331,11 @@ section .text
     PUSH EBX                            ; 004d100b
     PUSH 0x1cc6eb0                      ; 004d100c
     CALL core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440 ; 004d1011
-        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440()
+        ;   XREF to: 004cf440 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
     ADD ESP,0x14                        ; 004d1016
     MOV EBX,EAX                         ; 004d1019
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004d101b
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CMP EBX,0x7                         ; 004d1020
     JA 0x004d1056                       ; 004d1023
         ;   XREF to: 004d1056 (CONDITIONAL_JUMP)  ; default
@@ -390,7 +390,7 @@ section .text
     PUSH 0x5889c8                       ; 004d10a8 | = "Control : Keyboard"
     MOV dword ptr [EAX + 0xbc],0x0      ; 004d10ad | DAT_01c776a8
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d10b7
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d10bc
     PUSH EAX                            ; 004d10bf
     MOV EAX,EBX                         ; 004d10c0
@@ -406,7 +406,7 @@ section .text
     PUSH 0x588a44                       ; 004d10da | = "Aiming : Kindof auto"
         ;   Label: LAB_004d10da
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d10df
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d10e4
     PUSH EAX                            ; 004d10e7
     PUSH ESI                            ; 004d10e8
@@ -415,7 +415,7 @@ section .text
     PUSH 0x588a59                       ; 004d10ee | = "Aiming : Manual"
         ;   Label: LAB_004d10ee
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d10f3
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d10f8
     PUSH EAX                            ; 004d10fb
     PUSH ESI                            ; 004d10fc
@@ -464,7 +464,7 @@ section .text
     JMP 0x004d1056                      ; 004d1177
         ;   XREF to: 004d1056 (UNCONDITIONAL_JUMP)  ; default
     CALL core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 ; 004d117c
-        ;   XREF to: 004d2d00 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00()
+        ;   XREF to: 004d2d00 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00()
         ;   Label: caseD_1
     JMP 0x004d1056                      ; 004d1181
         ;   XREF to: 004d1056 (UNCONDITIONAL_JUMP)  ; default
@@ -499,28 +499,28 @@ section .text
     PUSH 0x588b0d                       ; 004d11f2 | = "Adjust X-Axis sensitivity"
         ;   Label: caseD_5
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d11f7
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d11fc
     PUSH EAX                            ; 004d11ff
     MOV EAX,[0x005b9354]                ; 004d1200 | DAT_005b9354
     ADD EAX,0x9c                        ; 004d1205
     PUSH EAX                            ; 004d120a | DAT_01c77688
     CALL core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 ; 004d120b
-        ;   XREF to: 004cfbc0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0()
+        ;   XREF to: 004cfbc0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0(int * sensitivity_value_ptr, char * window_title)
     ADD ESP,0x8                         ; 004d1210
     JMP 0x004d1056                      ; 004d1213
         ;   XREF to: 004d1056 (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x588b27                       ; 004d1218 | = "Adjust Y-Axis sensitivity"
         ;   Label: caseD_6
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d121d
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d1222
     PUSH EAX                            ; 004d1225
     MOV EAX,[0x005b9354]                ; 004d1226 | DAT_005b9354
     ADD EAX,0xa0                        ; 004d122b
     PUSH EAX                            ; 004d1230 | DAT_01c7768c
     CALL core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 ; 004d1231
-        ;   XREF to: 004cfbc0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0()
+        ;   XREF to: 004cfbc0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0(int * sensitivity_value_ptr, char * window_title)
     ADD ESP,0x8                         ; 004d1236
     JMP 0x004d1056                      ; 004d1239
         ;   XREF to: 004d1056 (UNCONDITIONAL_JUMP)  ; default
@@ -541,11 +541,11 @@ section .text
     JNZ 0x004d1056                      ; 004d126c
         ;   XREF to: 004d1056 (CONDITIONAL_JUMP)  ; default
     CALL core_menu.cpp_calibrateGamepad_FUN_004cf8d0 ; 004d1272
-        ;   XREF to: 004cf8d0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_calibrateGamepad_FUN_004cf8d0()
+        ;   XREF to: 004cf8d0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004cf8d0()
     JMP 0x004d1056                      ; 004d1277
         ;   XREF to: 004d1056 (UNCONDITIONAL_JUMP)  ; default
     CALL core_menu.cpp_calibrateGamepad_FUN_004cf8d0 ; 004d127c
-        ;   XREF to: 004cf8d0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_calibrateGamepad_FUN_004cf8d0()
+        ;   XREF to: 004cf8d0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004cf8d0()
         ;   Label: LAB_004d127c
     TEST EAX,EAX                        ; 004d1281
     JNZ 0x004d1089                      ; 004d1283

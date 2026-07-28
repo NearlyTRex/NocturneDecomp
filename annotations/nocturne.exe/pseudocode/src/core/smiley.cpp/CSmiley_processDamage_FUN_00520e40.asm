@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_CSmiley_processDamage_FUN_00520e40(int param_1,int param_2)
+; void core_smiley_cpp_CSmiley_processDamage_FUN_00520e40(CSmiley *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -48,7 +48,7 @@ section .text
     PUSH ESI                            ; 00520e80
     PUSH EBX                            ; 00520e81
     CALL core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60 ; 00520e82
-        ;   XREF to: 00520b60 (UNCONDITIONAL_CALL)  ; undefined core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60()
+        ;   XREF to: 00520b60 (UNCONDITIONAL_CALL)  ; void core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60(CSmiley * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00520e87
     PUSH EDI                            ; 00520e8a
         ;   Label: LAB_00520e8a
@@ -65,7 +65,7 @@ section .text
     PUSH EDI                            ; 00520ead
     MOV dword ptr [EBX + 0x2434],0x0    ; 00520eae
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00520eb8
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00520ebd
     ADD ESP,0x4                         ; 00520ec0
     CMP EAX,0x8                         ; 00520ec3
@@ -78,7 +78,7 @@ section .text
     PUSH 0x7                            ; 00520ecf
     PUSH EDI                            ; 00520ed1
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00520ed2
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00520ed7
     PUSH 0x0                            ; 00520eda
     PUSH 0x1                            ; 00520edc
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_00520f00
     PUSH EBX                            ; 00520f01
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 00520f02
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00520f07
     POP EDI                             ; 00520f0a
     POP ESI                             ; 00520f0b
@@ -116,12 +116,12 @@ section .text
     PUSH 0x3                            ; 00520f2d
     PUSH EDI                            ; 00520f2f
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00520f30
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00520f35
     PUSH ESI                            ; 00520f38
     PUSH EBX                            ; 00520f39
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 00520f3a
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00520f3f
     POP EDI                             ; 00520f42
     POP ESI                             ; 00520f43

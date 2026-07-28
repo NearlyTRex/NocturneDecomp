@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80(int param_1,int param_2,undefined4 param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
+; CustomScanlineFunc * Stack[0xc]:4   scanline_renderer
 ;
 ; XREF[4]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044d00d
@@ -49,7 +53,7 @@ section .text
         ;   Label: LAB_00460ea1
     PUSH EAX                            ; 00460ea4
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00460ea5
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00460eaa
     TEST EAX,EAX                        ; 00460ead
     JZ 0x00460e9c                       ; 00460eaf
@@ -84,7 +88,7 @@ section .text
     PUSH EAX                            ; 00460ef5
     PUSH 0x766c74                       ; 00460ef6 | DAT_00766c74
     CALL engine_3d.c_rasterizePolygonCustom_FUN_00562de0 ; 00460efb
-        ;   XREF to: 00562de0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_rasterizePolygonCustom_FUN_00562de0()
+        ;   XREF to: 00562de0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00460f00
     POP EBP                             ; 00460f03
     POP EDI                             ; 00460f04

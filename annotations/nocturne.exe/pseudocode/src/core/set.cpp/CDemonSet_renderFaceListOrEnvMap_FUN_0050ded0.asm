@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSet *this_ptr,SInputFace *faces,int count,int flags)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; SInputFace *     Stack[0x8]:4   faces
+; int              Stack[0xc]:4   count
+; int              Stack[0x10]:4   flags
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518645
@@ -37,7 +42,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0050dee9 | DAT_005ae704
     PUSH EBX                            ; 0050deef | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050def0
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050def5
     TEST EAX,EAX                        ; 0050def8
     JZ 0x0050df1d                       ; 0050defa

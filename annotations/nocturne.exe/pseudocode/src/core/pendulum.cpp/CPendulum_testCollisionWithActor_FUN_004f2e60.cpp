@@ -2,28 +2,27 @@
 // Address: 004f2e60
 // Address Range: [[004f2e60, 004f3332]]
 // Convention: __cdecl
-// Signature: void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int param_1,int param_2,int param_3,int param_4)
+// Signature: void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int param_1,int param_2,int param_3,int param_4)
+void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor)
 
 {
   int iVar1;
-  float *pfVar2;
-  int *piVar3;
-  byte auStack_110 [20];
-  float fStack_fc;
-  float fStack_f8;
-  float fStack_f4;
-  byte auStack_e8 [24];
-  byte auStack_d0 [24];
-  byte auStack_b8 [24];
-  float fStack_a0;
-  float fStack_9c;
-  float fStack_98;
+  ECollisionType EVar2;
+  CBoundingBox3D *pCVar3;
+  float *pfVar4;
+  CKeyFramedModel *pCVar5;
+  CVector3f *pCVar6;
+  CVector3i *pCVar7;
+  SCollisionInfo SStack_110;
+  CBoundingBox3D CStack_e8;
+  CBoundingBox3D CStack_d0;
+  CBoundingBox3D CStack_b8;
+  CVector3f CStack_a0;
   float fStack_94;
   float fStack_90;
   float fStack_8c;
@@ -40,100 +39,111 @@ void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int
   float fStack_58;
   float fStack_54;
   float fStack_50;
-  float fStack_4c;
-  float fStack_48;
-  float fStack_44;
+  CVector3f CStack_4c;
   byte auStack_40 [12];
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  int iStack_28;
+  CMatrix3x3f *pCStack_28;
   float fStack_24;
   int iStack_20;
   int iStack_1c;
-  float *pfStack_18;
+  CLocation *pCStack_18;
   
-  core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_110);
-  if ((((param_3 == 0) ||
-       (iVar1 = (**(code **)(*(int *)(param_3 + 0x14c) + 0x104))(param_3), iVar1 == 0)) &&
-      ((param_4 == 0 ||
-       (iVar1 = (**(code **)(*(int *)(param_4 + 0x14c) + 0x104))(param_4), iVar1 == 0)))) &&
-     (iVar1 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x34))(param_2,auStack_110), iVar1 == 2)) {
-    pfVar2 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_b8);
-    fStack_58 = *pfVar2 + pfVar2[3];
-    fStack_54 = pfVar2[1] + pfVar2[4];
+  core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_110);
+  if ((((left_hand_actor == (CDemonActor *)0x0) ||
+       (iVar1 = (*(((left_hand_actor->vtable)._uc)->_uc).releaseFromGrab)
+                          ((CCharacter *)left_hand_actor), iVar1 == 0)) &&
+      ((right_hand_actor == (CDemonActor *)0x0 ||
+       (iVar1 = (*(((right_hand_actor->vtable)._uc)->_uc).releaseFromGrab)
+                          ((CCharacter *)right_hand_actor), iVar1 == 0)))) &&
+     (EVar2 = (*((actor->vtable)._ub)->getCollisionType)(actor,&SStack_110),
+     EVar2 == COLLISION_TYPE_CYLINDER)) {
+    pCVar3 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_b8);
+    fStack_58 = (pCVar3->min).x + (pCVar3->max).x;
+    fStack_54 = (pCVar3->min).y + (pCVar3->max).y;
     fStack_34 = fStack_58 * 0.5f;
-    fStack_50 = pfVar2[2] + pfVar2[5];
+    fStack_50 = (pCVar3->min).z + (pCVar3->max).z;
     fStack_30 = fStack_54 * 0.5f;
     fStack_2c = fStack_50 * 0.5f;
-    fStack_7c = *(float *)(param_2 + 0x20) + fStack_34;
-    fStack_78 = *(float *)(param_2 + 0x24) + fStack_30;
-    fStack_74 = *(float *)(param_2 + 0x28) + fStack_2c;
-    fStack_70 = fStack_7c - *(float *)(param_1 + 0x20);
-    fStack_6c = fStack_78 - *(float *)(param_1 + 0x24);
-    fStack_68 = fStack_74 - *(float *)(param_1 + 0x28);
-    pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                                (param_1 + 0x3c,auStack_40,&fStack_70);
-    if (&fStack_7c != pfVar2) {
-      fStack_7c = *pfVar2;
-      fStack_78 = pfVar2[1];
-      fStack_74 = pfVar2[2];
+    fStack_7c = (actor->location).position.x + fStack_34;
+    fStack_78 = (actor->location).position.y + fStack_30;
+    fStack_74 = (actor->location).position.z + fStack_2c;
+    fStack_70 = fStack_7c - (this_ptr->base).location.position.x;
+    fStack_6c = fStack_78 - (this_ptr->base).location.position.y;
+    fStack_68 = fStack_74 - (this_ptr->base).location.position.z;
+    pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+                                (&(this_ptr->base).orient_matrix,auStack_40,&fStack_70);
+    if (&fStack_7c != pfVar4) {
+      fStack_7c = *pfVar4;
+      fStack_78 = pfVar4[1];
+      fStack_74 = pfVar4[2];
     }
-    pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_e8);
-    if (((((*pfVar2 <= fStack_7c) && (pfVar2[1] <= fStack_78)) && (pfVar2[2] <= fStack_74)) &&
-        ((fStack_7c <= pfVar2[3] && (fStack_78 <= pfVar2[4])))) && (fStack_74 <= pfVar2[5])) {
-      iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-      fStack_24 = fStack_f4 * fStack_f4;
-      iStack_20 = *(int *)(iVar1 + 0x104);
-      piVar3 = *(int **)(iVar1 + 0x10c);
+    pCVar3 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_e8);
+    if ((((((pCVar3->min).x <= fStack_7c) && ((pCVar3->min).y <= fStack_78)) &&
+         ((pCVar3->min).z <= fStack_74)) &&
+        ((fStack_7c <= (pCVar3->max).x && (fStack_78 <= (pCVar3->max).y)))) &&
+       (fStack_74 <= (pCVar3->max).z)) {
+      pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
+      fStack_24 = SStack_110.cylinder_radius * SStack_110.cylinder_radius;
+      iStack_20 = pCVar5->vertex_count;
+      pCVar7 = pCVar5->vertex_list;
       iStack_1c = 0;
       if (0 < iStack_20) {
-        pfStack_18 = (float *)(param_2 + 0x20);
-        iStack_28 = param_1 + 0x3c;
+        pCStack_18 = &actor->location;
+        pCStack_28 = &(this_ptr->base).orient_matrix;
         while( true ) {
-          fStack_a0 = (float)*piVar3 * _DAT_005a1228;
-          fStack_9c = (float)piVar3[1] * _DAT_005a1228;
-          fStack_98 = (float)piVar3[2] * _DAT_005a1228;
-          pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                      (iStack_28,auStack_64,&fStack_a0);
-          if (&fStack_a0 != pfVar2) {
-            fStack_a0 = *pfVar2;
-            fStack_9c = pfVar2[1];
-            fStack_98 = pfVar2[2];
+          CStack_a0.x = (float)pCVar7->x * _DAT_005a1228;
+          CStack_a0.y = (float)pCVar7->y * _DAT_005a1228;
+          CStack_a0.z = (float)pCVar7->z * _DAT_005a1228;
+          pCVar6 = (CVector3f *)
+                   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                             (pCStack_28,auStack_64,&CStack_a0);
+          if (&CStack_a0 != pCVar6) {
+            CStack_a0.x = pCVar6->x;
+            CStack_a0.y = pCVar6->y;
+            CStack_a0.z = pCVar6->z;
           }
-          fStack_a0 = (fStack_a0 + *(float *)(param_1 + 0x20)) - *pfStack_18;
-          fStack_9c = (fStack_9c + *(float *)(param_1 + 0x24)) - pfStack_18[1];
-          fStack_98 = (fStack_98 + *(float *)(param_1 + 0x28)) - pfStack_18[2];
-          if (((fStack_fc <= fStack_9c) && (fStack_9c <= fStack_f8 + 1.0)) &&
-             (fStack_a0 * fStack_a0 + fStack_98 * fStack_98 <= fStack_24)) break;
+          CStack_a0.x = (CStack_a0.x + (this_ptr->base).location.position.x) -
+                        (pCStack_18->position).x;
+          CStack_a0.y = (CStack_a0.y + (this_ptr->base).location.position.y) -
+                        (pCStack_18->position).y;
+          CStack_a0.z = (CStack_a0.z + (this_ptr->base).location.position.z) -
+                        (pCStack_18->position).z;
+          if (((SStack_110.cylinder_bottom_y <= CStack_a0.y) &&
+              (CStack_a0.y <= SStack_110.cylinder_top_y + 1.0)) &&
+             (CStack_a0.x * CStack_a0.x + CStack_a0.z * CStack_a0.z <= fStack_24)) break;
           iStack_1c = iStack_1c + 1;
-          piVar3 = piVar3 + 3;
+          pCVar7 = pCVar7 + 1;
           if (iStack_20 <= iStack_1c) {
             return;
           }
         }
-        if (param_3 != 0) {
-          (**(code **)(*(int *)(param_3 + 0x14c) + 0xd4))(param_3,7,0,0xbf800000);
+        if (left_hand_actor != (CDemonActor *)0x0) {
+          (*((left_hand_actor->vtable)._ub)->getPropertyList)
+                    (left_hand_actor,(CActorPropertyList *)0x7);
         }
-        if (param_4 != 0) {
-          (**(code **)(*(int *)(param_4 + 0x14c) + 0xd4))(param_4,7,0,0xbf800000);
+        if (right_hand_actor != (CDemonActor *)0x0) {
+          (*((right_hand_actor->vtable)._ub)->getPropertyList)
+                    (right_hand_actor,(CActorPropertyList *)0x7);
         }
-        pfVar2 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,auStack_d0);
-        fStack_94 = *pfVar2 + pfVar2[3];
-        fStack_90 = pfVar2[1] + pfVar2[4];
+        pCVar3 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_d0);
+        fStack_94 = (pCVar3->min).x + (pCVar3->max).x;
+        fStack_90 = (pCVar3->min).y + (pCVar3->max).y;
         fStack_88 = fStack_94 * 0.5f;
-        fStack_8c = pfVar2[2] + pfVar2[5];
+        fStack_8c = (pCVar3->min).z + (pCVar3->max).z;
         fStack_84 = fStack_90 * 0.5f;
         fStack_80 = fStack_8c * 0.5f;
-        fStack_4c = *(float *)(param_2 + 0x20) + fStack_88;
-        fStack_48 = *(float *)(param_2 + 0x24) + fStack_84;
-        fStack_44 = *(float *)(param_2 + 0x28) + fStack_80;
-        if (&fStack_a0 != &fStack_4c) {
-          fStack_a0 = fStack_4c;
-          fStack_9c = fStack_48;
-          fStack_98 = fStack_44;
+        CStack_4c.x = (actor->location).position.x + fStack_88;
+        CStack_4c.y = (actor->location).position.y + fStack_84;
+        CStack_4c.z = (actor->location).position.z + fStack_80;
+        if (&CStack_a0 != &CStack_4c) {
+          CStack_a0.x = CStack_4c.x;
+          CStack_a0.y = CStack_4c.y;
+          CStack_a0.z = CStack_4c.z;
         }
-        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,&fStack_a0,0,200,0);
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
+                  ((CGore *)INT_005b96c4,&CStack_a0,(CVector3f *)0x0,200,0);
         return;
       }
     }

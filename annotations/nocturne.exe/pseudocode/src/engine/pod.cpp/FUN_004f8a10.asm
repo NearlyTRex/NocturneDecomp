@@ -46,7 +46,7 @@ section .text
     MOV EAX,ESP                         ; 004f8a43
     PUSH EAX                            ; 004f8a45
     CALL engine_dosio.cpp_findFileNormally_FUN_00456800 ; 004f8a46
-        ;   XREF to: 00456800 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFileNormally_FUN_00456800()
+        ;   XREF to: 00456800 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_00456800(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004f8a4b
     TEST EAX,EAX                        ; 004f8a4e
     JZ 0x004f8ad4                       ; 004f8a50
@@ -65,7 +65,7 @@ section .text
     ADD EAX,0x4                         ; 004f8a71
     PUSH EAX                            ; 004f8a74
     CALL crt_string.c__stricmp_FUN_00564520 ; 004f8a75
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004f8a7a
     TEST EAX,EAX                        ; 004f8a7d
     JNZ 0x004f8ade                      ; 004f8a7f
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_004f8aa6
     PUSH EAX                            ; 004f8aa8
     CALL engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 ; 004f8aa9
-        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
+        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f8aae
     PUSH EAX                            ; 004f8ab1
     CALL crt_unknown.c_FUN_00564494     ; 004f8ab2

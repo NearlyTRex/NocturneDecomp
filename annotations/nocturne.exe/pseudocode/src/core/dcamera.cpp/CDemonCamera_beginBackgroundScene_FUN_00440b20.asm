@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int param_1)
+; void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b14

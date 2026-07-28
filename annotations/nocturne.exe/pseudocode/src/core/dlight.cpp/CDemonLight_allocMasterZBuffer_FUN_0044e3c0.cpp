@@ -2,23 +2,23 @@
 // Address: 0044e3c0
 // Address Range: [[0044e3c0, 0044e437]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(int param_1)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(int param_1)
+void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(CDemonLight *this_ptr)
 
 {
-  uint uVar1;
+  void *pvVar1;
   
-  if (*(int *)(param_1 + 0x164) != 0) {
+  if ((this_ptr->base).zbuffer_raw != (void *)0x0) {
     PTR_01cc4800 = "..\\core\\dlight.cpp";
     INT_01cc4804 = 0xcd;
     core_main_c_FUN_004c8440("CDemonLight::allocMasterZBuffer - We already have one!");
   }
-  uVar1 = core_dlight_cpp_getRestoreMemory_FUN_0044e340
-                    (*(int *)(param_1 + 0x1cc0) * *(int *)(param_1 + 0x1cc4));
-  *(uint *)(param_1 + 0x2f9c) = uVar1;
-  _memcpy(*(int *)(param_1 + 0x1cc0) * *(int *)(param_1 + 0x1cc4) * 2);
+  pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_0044e340
+                     (this_ptr->shadow_map_width * this_ptr->shadow_map_height);
+  this_ptr->master_zbuffer = pvVar1;
+  _memcpy(this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
   return;
 }

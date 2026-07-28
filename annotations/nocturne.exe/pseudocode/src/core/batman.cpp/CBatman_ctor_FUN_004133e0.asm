@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_batman_cpp_CBatman_ctor_FUN_004133e0(undefined4 param_1)
+; CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_004133e0(CBatman *this_ptr)
 ;
+; Parameters:
+; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_batman.cpp_FUN_004133b0 at 004133c3
@@ -32,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004133e3
     PUSH EDX                            ; 004133e7
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004133e8
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004133ed
     MOV EBX,EAX                         ; 004133f0
     PUSH 0x578a97                       ; 004133f2 | = "batman.dfm"

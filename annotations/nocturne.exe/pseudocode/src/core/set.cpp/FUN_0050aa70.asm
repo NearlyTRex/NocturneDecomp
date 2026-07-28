@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049cfe2
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cfe2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_omni_lights_005905b3
@@ -110,7 +110,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0050ab47
     PUSH ESI                            ; 0050ab4b
     CALL engine_2d.c_drawText_FUN_00402600 ; 0050ab4c
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0050ab51
     MOV EAX,[0x01fb9b54]                ; 0050ab54 | DAT_01fb9b54
     PUSH EAX                            ; 0050ab59
@@ -128,7 +128,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 0050ab7f
     PUSH EBX                            ; 0050ab83
     CALL engine_2d.c_drawText_FUN_00402600 ; 0050ab84
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0050ab89
     ADD ESP,0x100                       ; 0050ab8c
     POP EBP                             ; 0050ab92

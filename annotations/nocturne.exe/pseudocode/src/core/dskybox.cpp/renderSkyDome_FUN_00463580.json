@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 579,
+    "complexity_score": 422,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
-    "suspect_count": 34,
+    "pseudocode_lines": 142,
+    "suspect_count": 25,
     "suspect_types": [
       "concat_reconstruction",
-      "param_count_too_few",
+      "stack_ref",
       "undefined_data",
       "unknown_field",
-      "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 566
+    "total_lines": 504
   },
   "cross_references": [
     {
@@ -164,7 +163,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dskybox.cpp_renderSkyDome_FUN_00463580",
-    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(undefined4 *param_1,char *param_2,undefined4 param_3)"
+    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)"
   },
   "function_calls": [
     {
@@ -308,11 +307,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.338414634146342,
@@ -361,10 +360,10 @@
     "pcode_op_count": 1751
   },
   "stack_frame": {
-    "frame_size": 184,
+    "frame_size": 196,
     "local_size": 184,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -639,95 +638,53 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sky_texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLSkyTexture *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "brightness_factor",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "renderSkyDome_FUN_00463580.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 12,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 54,
-          "line": 181,
+          "line": 136,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 43,
-          "line": 182,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 22,
-          "line": 191,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 40,
-          "line": 197,
+          "line": 137,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 20,
-          "line": 83,
-          "message": "Uninitialized variable: local_60",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 83,
-          "message": "Uninitialized variable: local_54",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 84,
-          "message": "Uninitialized variable: local_58",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 84,
-          "message": "Uninitialized variable: local_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 87,
-          "message": "Uninitialized variable: local_5c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 15,
-          "line": 91,
-          "message": "Uninitialized variable: local_50",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 122,
-          "message": "Uninitialized variable: local_74",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 124,
+          "line": 89,
           "message": "Uninitialized variable: local_6c",
           "severity": "error"
         }
@@ -746,240 +703,176 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar9 = (char *)(param_1 + 3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_1 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 45,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "piStack_bc = (int *)&DAT_01fba938;",
+      "text": "core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0((CDemonRaytrace *)&DAT_01fba938,&local_60);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 46,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "piStack_bc = (int *)&DAT_01fba938;",
+      "text": "core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0((CDemonRaytrace *)&DAT_01fba938,&local_54);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 65,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,(CVector3f *)&DAT_01b7b728);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
       "match": "DAT_01b7b728",
       "severity": "mild",
-      "text": "pfStack_b8 = (float *)&DAT_01b7b728;",
+      "text": "(DAT_005ae704,(CVector3f *)&DAT_01b7b728);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 67,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "piStack_bc = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfStack_b8 = (float *)(param_1 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "piStack_bc = DAT_005ae704;",
+      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 72,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "piVar4 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 120,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "piVar4 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "*(uint *)(*DAT_005ae704 + 0x20) = uVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*piVar4 + 0x58) = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 162,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(param_1,iVar10,iVar8,fVar7);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 202,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&piStack_bc,0x2c5);",
+      "text": "pCVar2 = DAT_005ae704;",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 205,
+      "line": 73,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_68 = local_74._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_74._4_4_ = (uint)ROUND(dVar10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "pCVar2 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "DAT_005ae704->vertex_buffer_ptr->r = iVar6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 111,
+      "match": "&stack0xffffff44",
+      "severity": "moderate",
+      "text": "(pCVar2,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 140,
+      "match": "&stack0xffffff44",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 140,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 143,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
@@ -987,7 +880,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -995,26 +888,15 @@
     },
     {
       "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 205,
+      "line": 143,
       "match": "CONCAT13",
       "severity": "moderate",
       "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
       "type": "concat_reconstruction"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    },
-    {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 181,
+      "line": 136,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_1c = (int)(((int)local_30 + ((int)local_30 >> 0x1f) * -4) -",
@@ -1022,87 +904,15 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 182,
+      "line": 137,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)local_30 >> 0x1f) << 1 < 0)) >> 2 & 0xffffff;",
       "type": "static_shift_too_many_bits"
     },
     {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 191,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar10 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 197,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "local_90 = (int)((iVar8 + (iVar8 >> 0x1f) * -4) - (uint)((iVar8 >> 0x1f) << 1 < 0)) >> 2 ^",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: local_60",
-      "line": 83,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01b7b728 = (local_60 + local_54) * fVar7;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_54",
-      "line": 83,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01b7b728 = (local_60 + local_54) * fVar7;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_58",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01b7b730 = (local_58 + local_4c) * fVar7;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_4c",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01b7b730 = (local_58 + local_4c) * fVar7;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_5c",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01b7b72c = local_5c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_50",
-      "line": 91,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c = (local_50 - local_5c) * (float)1.4139999999999999;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 122,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_74 = -local_74;",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: local_6c",
-      "line": 124,
+      "line": 89,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_6c = -local_6c;",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(int param_1,undefined4 *param_2,int param_3)
+; undefined4 core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CDemonActor *param_1,float *param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_0054a8bb
     PUSH EBX                            ; 0054a8bc
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0054a8bd
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     MOV EDI,dword ptr [ESI + 0xc]       ; 0054a8c2
     ADD ESP,0x4                         ; 0054a8c5
     TEST EDI,EDI                        ; 0054a8c8

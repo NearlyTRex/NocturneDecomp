@@ -52,7 +52,7 @@ section .text
     AND EAX,0xff                        ; 00447524
     PUSH EAX                            ; 00447529
     CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 0044752a
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColor_FUN_00532af0(int red, int green, int blue)
     FLD double ptr [0x0057bae3]         ; 0044752f | DOUBLE_0057bae3
     FLD float ptr [EBX + 0xc]           ; 00447535
     FMUL ST1                            ; 00447538
@@ -67,19 +67,19 @@ section .text
     ADD ESP,0xc                         ; 00447552
     FXCH ST3                            ; 00447555
     CALL crt_math.c_round_FUN_00563a30  ; 00447557
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 0044755c
     CALL crt_math.c_round_FUN_00563a30  ; 0044755e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00447563
     CALL crt_math.c_round_FUN_00563a30  ; 00447565
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 0044756a
     CALL crt_math.c_round_FUN_00563a30  ; 0044756c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST4                            ; 00447571
     CALL crt_math.c_round_FUN_00563a30  ; 00447573
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00447578
     FISTP dword ptr [0x0140e790]        ; 0044757a | DAT_0140e790
     FISTP dword ptr [0x0140e794]        ; 00447580 | DAT_0140e794

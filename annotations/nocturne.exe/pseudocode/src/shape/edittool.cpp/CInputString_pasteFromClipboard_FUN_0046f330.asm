@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0046f330(undefined4 param_1)
+; void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0046f330(CInputString *this_ptr)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f4d7
@@ -27,7 +29,7 @@ section .text
     MOV EDX,dword ptr [0x005b6d50]      ; 0046f336 | DAT_005b6d50
     PUSH EDX                            ; 0046f33c
     CALL shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00472c90 ; 0046f33d
-        ;   XREF to: 00472c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00472c90()
+        ;   XREF to: 00472c90 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00472c90(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0046f342
     MOV EBX,EAX                         ; 0046f345
     XOR EAX,EAX                         ; 0046f347
@@ -56,14 +58,14 @@ section .text
     PUSH EAX                            ; 0046f371
     PUSH ESI                            ; 0046f372
     CALL shape_edittool.cpp_CInputString_insertChar_FUN_0046f150 ; 0046f373
-        ;   XREF to: 0046f150 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_insertChar_FUN_0046f150()
+        ;   XREF to: 0046f150 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_insertChar_FUN_0046f150(CInputString * this_ptr, char character, int advance_cursor)
     ADD ESP,0xc                         ; 0046f378
     JMP 0x0046f362                      ; 0046f37b
         ;   XREF to: 0046f362 (UNCONDITIONAL_JUMP)  ; LAB_0046f362
     PUSH ESI                            ; 0046f37d
         ;   Label: LAB_0046f37d
     CALL shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130 ; 0046f37e
-        ;   XREF to: 0046f130 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130()
+        ;   XREF to: 0046f130 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0046f383
     POP ESI                             ; 0046f386
     POP EBX                             ; 0046f387

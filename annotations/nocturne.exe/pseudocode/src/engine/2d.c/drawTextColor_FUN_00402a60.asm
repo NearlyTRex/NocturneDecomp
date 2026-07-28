@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawTextColor_FUN_00402a60(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_2d_c_drawTextColor_FUN_00402a60(char *text,int x,int y)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[6]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d979
@@ -47,7 +51,7 @@ section .text
     PUSH EAX                            ; 00402a8f
     PUSH EDX                            ; 00402a90
     CALL engine_2d.c_drawTextWrappedColor_FUN_004024e0 ; 00402a91
-        ;   XREF to: 004024e0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextWrappedColor_FUN_004024e0()
+        ;   XREF to: 004024e0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextWrappedColor_FUN_004024e0(char * text, int x_start, int y_start, int x_max, ...)
     ADD ESP,0x18                        ; 00402a96
     POP EBX                             ; 00402a99
     POP EBP                             ; 00402a9a
@@ -65,7 +69,7 @@ section .text
     PUSH EAX                            ; 00402ab4
     PUSH EDX                            ; 00402ab5
     CALL engine_2d.c_drawTextMultilineColor_FUN_00402570 ; 00402ab6
-        ;   XREF to: 00402570 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextMultilineColor_FUN_00402570()
+        ;   XREF to: 00402570 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultilineColor_FUN_00402570(char * text, int x_start, int y_start, int x_max, ...)
     ADD ESP,0x18                        ; 00402abb
     POP EBP                             ; 00402abe
     POP EDI                             ; 00402abf

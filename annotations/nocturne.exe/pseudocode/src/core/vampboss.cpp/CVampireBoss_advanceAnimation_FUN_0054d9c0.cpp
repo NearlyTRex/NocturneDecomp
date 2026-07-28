@@ -2,50 +2,53 @@
 // Address: 0054d9c0
 // Address Range: [[0054d9c0, 0054dabb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(int param_1,float param_2)
+// Signature: void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(int param_1,float param_2)
+void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time)
 
 {
   uint uVar1;
+  char *sound_name;
   float local_78;
-  byte local_74 [104];
+  char local_74 [104];
   
-  if (0.0 < param_2) {
-LAB_0054d9e2:
+  if (0.0 < delta_time) {
     do {
-      uVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0xbd24,&param_2);
-      if (uVar1 < 0x66) {
-        if (uVar1 == 0x65) {
-          local_78 = 0.0;
-          if (*(int *)(param_1 + 0xbe168) == 1) {
-            local_78 = *(float *)(param_1 + 0xbed98);
-          }
-          if (*(int *)(param_1 + 0xbe168) == 2) {
-            local_78 = 1.0;
-          }
-          if (*(int *)(param_1 + 0xbe168) == 3) {
-            local_78 = *(float *)(param_1 + 0xbed98);
-          }
-          if (0.0 < (double)local_78) {
-            _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);
-            goto LAB_0054da79;
-          }
-        }
-      }
-      else {
-        if ((0x66 < uVar1) && (uVar1 != 0x67)) {
-          if (param_2 <= 0.0) {
-            return;
-          }
-          goto LAB_0054d9e2;
-        }
+      while( true ) {
+        uVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
+                          (&(this_ptr->model).motion_controller,&delta_time);
+        if (uVar1 < 0x66) break;
+        if ((uVar1 < 0x67) || (uVar1 == 0x67)) {
+          sound_name = "wing?.wav @1.5 *1.2";
 LAB_0054da79:
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))();
+          (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
+          goto LAB_0054da86;
+        }
+        if (delta_time <= 0.0) {
+          return;
+        }
       }
-    } while (0.0 < param_2);
+      if (uVar1 == 0x65) {
+        local_78 = 0.0;
+        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 1) {
+          local_78 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+        }
+        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 2) {
+          local_78 = 1.0;
+        }
+        if ((this_ptr->skirt_cloth).vertices[0x26a].connected_indices[3] == 3) {
+          local_78 = (float)(this_ptr->skirt_cloth).vertices[0x275].connected_indices[2];
+        }
+        if (0.0 < (double)local_78) {
+          _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);
+          sound_name = local_74;
+          goto LAB_0054da79;
+        }
+      }
+LAB_0054da86:
+    } while (0.0 < delta_time);
   }
   return;
 }

@@ -49,7 +49,7 @@ section .text
     FDIV double ptr [EDX + EAX*0x8 + 0x5bbc48] ; 004e781e | DAT_005bbc48
     MOV EAX,dword ptr [ESP + 0x14]      ; 004e7825
     CALL crt_math.c_round_FUN_00563a30  ; 004e7829
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EDX,dword ptr [EAX]             ; 004e782e
     FISTP dword ptr [ESP]               ; 004e7830
     TEST EDX,EDX                        ; 004e7833

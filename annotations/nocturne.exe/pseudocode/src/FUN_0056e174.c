@@ -9,10 +9,10 @@
 void FUN_0056e174(int param_1)
 
 {
-  (*(code *)PTR_FUN_005c1af0)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0)();
   if ((0 < param_1) && (param_1 < DAT_005c1f58)) {
     *(uint *)(DAT_005c1f54 + param_1 * 4) = 0;
   }
-  (*(code *)PTR_FUN_005c1af4)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();
   return;
 }

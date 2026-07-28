@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(int param_1)
+; void core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CTrigger *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -29,7 +29,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005525e7
     PUSH EDI                            ; 005525eb
     CALL core_trigger.cpp_CTrigger_archive_FUN_00548170 ; 005525ec
-        ;   XREF to: 00548170 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_archive_FUN_00548170()
+        ;   XREF to: 00548170 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_archive_FUN_00548170(CTrigger * this_ptr)
     MOV EDX,dword ptr [0x005c1578]      ; 005525f1 | INT_005c1578
     ADD ESP,0x4                         ; 005525f7
     CMP EDX,0x2                         ; 005525fa
@@ -53,7 +53,7 @@ section .text
     LEA EBX,[ESP + 0x4]                 ; 0055261d
     PUSH EBX                            ; 00552621
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00552622
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00552627
     JMP 0x005525ff                      ; 0055262a
         ;   XREF to: 005525ff (UNCONDITIONAL_JUMP)  ; LAB_005525ff
@@ -63,7 +63,7 @@ section .text
     PUSH EBX                            ; 00552637
     XOR ESI,ESI                         ; 00552638
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0055263a
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     MOV EBX,dword ptr [EDI + 0x368]     ; 0055263f
     ADD ESP,0x8                         ; 00552645
     TEST EBX,EBX                        ; 00552648
@@ -75,7 +75,7 @@ section .text
     PUSH EBX                            ; 00552654
     INC ESI                             ; 00552655
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00552656
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0055265b
     MOV EBP,dword ptr [EDI + 0x368]     ; 0055265e
     ADD EBX,0x8                         ; 00552664

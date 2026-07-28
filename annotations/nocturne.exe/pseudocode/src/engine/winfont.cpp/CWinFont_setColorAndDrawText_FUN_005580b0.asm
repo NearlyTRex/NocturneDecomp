@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(int *param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,int param_6,int param_7)
+; void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; HDC              Stack[0x8]:4   device_context
+; char *           Stack[0xc]:4   text_string
+; int              Stack[0x10]:4   x
+; int              Stack[0x14]:4   y
+; int              Stack[0x18]:4   foreground_color
+; int              Stack[0x1c]:4   background_color
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x28]:4  local_28
@@ -241,7 +249,7 @@ section .text
     LEA EAX,[EBX + 0x18]                ; 005582c0
     PUSH EAX                            ; 005582c3
     CALL crt_string.c__strcmp_FUN_005649c0 ; 005582c4
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005582c9
     TEST EAX,EAX                        ; 005582cc
     JNZ 0x005580db                      ; 005582ce
@@ -249,7 +257,7 @@ section .text
     JMP 0x00558202                      ; 005582d4
         ;   XREF to: 00558202 (UNCONDITIONAL_JUMP)  ; LAB_00558202
     CALL engine_font.cpp_getDefaultTextColor_FUN_00491140 ; 005582d9
-        ;   XREF to: 00491140 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_getDefaultTextColor_FUN_00491140()
+        ;   XREF to: 00491140 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_getDefaultTextColor_FUN_00491140()
         ;   Label: LAB_005582d9
     MOV EDX,dword ptr [0x005b7624]      ; 005582de | DAT_005b7624
     MOV dword ptr [ESP],EAX             ; 005582e4

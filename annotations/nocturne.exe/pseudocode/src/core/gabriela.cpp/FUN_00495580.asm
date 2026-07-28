@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_00497900 at 00497cea
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497cea
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00581e12 = 0.950000000000000

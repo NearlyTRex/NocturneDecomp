@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(int param_1)
+; int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_00427260(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_gabriela.cpp_CGabriella_renderTransparent_FUN_00498db0 at 00498dcc
@@ -33,7 +35,7 @@ section .text
     PUSH EBX                            ; 0042727f
         ;   Label: LAB_0042727f
     CALL core_charactr.cpp_CCharacter_renderFlames_FUN_00427290 ; 00427280
-        ;   XREF to: 00427290 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderFlames_FUN_00427290()
+        ;   XREF to: 00427290 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderFlames_FUN_00427290(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00427285
     MOV EAX,dword ptr [EBX + 0x2618]    ; 00427288
     POP EBX                             ; 0042728e

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004c3760(int param_1,int param_2)
+; void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004c3760(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   vertex_data
+; SMRGLPrimitiveTriangleIndex * Stack[0x8]:4   texture
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x44]:4  local_44
@@ -156,13 +159,13 @@ section .text
     FLD float ptr [ESP + 0x20]          ; 004c38d7
     FXCH ST2                            ; 004c38db
     CALL crt_math.c_round_FUN_00563a30  ; 004c38dd
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004c38e2
     CALL crt_math.c_round_FUN_00563a30  ; 004c38e4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 004c38e9
     CALL crt_math.c_round_FUN_00563a30  ; 004c38eb
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004c38f0
     FISTP dword ptr [EDX + 0x8]         ; 004c38f2
     FXCH                                ; 004c38f5
@@ -170,7 +173,7 @@ section .text
     FISTP dword ptr [EDX + 0x10]        ; 004c38fa
     FADDP                               ; 004c38fd
     CALL crt_math.c_round_FUN_00563a30  ; 004c38ff
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EDX + 0x14]        ; 004c3904
     ADD ESP,0x3c                        ; 004c3907
     POP EBP                             ; 004c390a

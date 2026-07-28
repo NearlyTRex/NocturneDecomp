@@ -2,66 +2,76 @@
 // Address: 00546900
 // Address Range: [[00546900, 00546aa8]]
 // Convention: unknown
-// Signature: void core_trap_cpp_CTrap_process_FUN_00546900(int param_1)
+// Signature: void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-void core_trap_cpp_CTrap_process_FUN_00546900(int param_1)
+void core_trap_cpp_CTrap_process_FUN_00546900(CDemonActor *param_1)
 
 {
-  int iVar1;
-  int iVar2;
+  float fVar1;
+  CCharacter *pCVar2;
+  CCharacter *this_ptr;
+  float unaff_EBX;
+  float unaff_EBP;
   int iVar3;
-  byte auStack_98 [4];
-  uint uStack_94;
-  byte auStack_5c [24];
-  float fStack_44;
-  float fStack_40;
-  float local_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
+  float unaff_EDI;
+  int iVar4;
+  int in_stack_ffffff78;
+  byte auStack_54 [36];
+  CKeyFramedModelInstance *pCStack_30;
   float fStack_24;
   float fStack_20;
-  float afStack_1c [2];
+  float fStack_1c;
+  float fStack_18;
   float fStack_14;
   
-  if (*(int *)(param_1 + 0x2cc) == 0) {
-    iVar2 = *(int *)(param_1 + 0x2d0);
-    if (iVar2 != 0) {
-      iVar2 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2);
-      if (iVar2 == 0) {
+  if (param_1[2].location.area_id == 0) {
+    fVar1 = param_1[2].orient.vec.x;
+    if (fVar1 != 0.0) {
+      iVar3 = (**(code **)(*(int *)((int)fVar1 + 0x14c) + 0x104))(fVar1);
+      if (iVar3 == 0) {
         return;
       }
-      *(uint *)(*(int *)(param_1 + 0x2d0) + 0xbd50) = 0;
-      *(uint *)(param_1 + 0x2d0) = 0;
+      *(uint *)((int)param_1[2].orient.vec.x + 0xbd50) = 0;
+      param_1[2].orient.vec.x = 0.0;
     }
-    iVar3 = 0;
-    (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_34);
-    for (iVar2 = 0; iVar2 < *(int *)(0x01E57284 + 0x150bf4); iVar2 = iVar2 + 1) {
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar3 + 0x150bf8 + 0x01E57284),
-                         g_CWerewolfActorType_02de078c.name_hash);
-      if ((iVar1 != 0) && (*(int *)(iVar1 + 0xbd50) == 0)) {
-        core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_5c);
-        (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,auStack_5c);
-        if ((*(float *)(iVar1 + 0x24) <= *(float *)(param_1 + 0x24) + fStack_24) &&
-           (*(float *)(param_1 + 0x24) + fStack_30 <= *(float *)(iVar1 + 0x24) + fStack_44)) {
-          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,afStack_1c,iVar1 + 0x20)
-          ;
-          if ((((local_34 <= afStack_1c[0] + fStack_40) && (afStack_1c[0] - fStack_40 <= fStack_28))
-              && (fStack_2c <= fStack_14 + fStack_40)) && (fStack_14 - fStack_40 <= fStack_20)) {
-            *(int *)(param_1 + 0x2d0) = iVar1;
-            *(uint *)(iVar1 + 0xbd54) = 0x40000000;
-            *(int *)(iVar1 + 0xbd50) = param_1;
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_98);
-            uStack_94 = 0x41200000;
-            (**(code **)(*(int *)(iVar1 + 0x14c) + 0x100))(iVar1,auStack_98);
+    iVar4 = 0;
+    (*((param_1->vtable)._ub)->getBoundingBox)(param_1,(CBoundingBox3D *)(auStack_54 + 0x20));
+    for (iVar3 = 0; iVar3 < *(int *)(0x01E57284 + 0x150bf4); iVar3 = iVar3 + 1) {
+      this_ptr = (CCharacter *)
+                 core_actor_cpp_castToClassHash_FUN_0040d890
+                           (*(CDemonActor **)(iVar4 + 0x150bf8 + 0x01E57284),
+                            g_CWerewolfActorType_02de078c.name_hash);
+      if ((this_ptr != (CCharacter *)0x0) && (*(int *)(this_ptr[1].base.create_event + 0x4c) == 0))
+      {
+        core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990((SCollisionInfo *)auStack_54);
+        (*((this_ptr->base).vtable._ub)->getCollisionType)
+                  ((CDemonActor *)this_ptr,(SCollisionInfo *)auStack_54);
+        if (((this_ptr->base).location.position.y <= (param_1->location).position.y + fStack_14) &&
+           ((param_1->location).position.y + fStack_20 <=
+            (this_ptr->base).location.position.y + (float)auStack_54._32_4_)) {
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                    (param_1,(CVector3f *)&stack0xfffffff4,&(this_ptr->base).location.position);
+          if ((((fStack_24 <= unaff_EDI + (float)pCStack_30) &&
+               (unaff_EDI - (float)pCStack_30 <= fStack_18)) &&
+              (fStack_1c <= unaff_EBX + (float)pCStack_30)) &&
+             (unaff_EBX - (float)pCStack_30 <= unaff_EBP)) {
+            *(CCharacter **)&param_1[2].orient = this_ptr;
+            pCVar2 = this_ptr + 1;
+            (pCVar2->base).create_event[0x50] = '\0';
+            (pCVar2->base).create_event[0x51] = '\0';
+            (pCVar2->base).create_event[0x52] = '\0';
+            (pCVar2->base).create_event[0x53] = '@';
+            *(CDemonActor **)(this_ptr[1].base.create_event + 0x4c) = param_1;
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff78);
+            (*(((this_ptr->base).vtable._uc)->_uc).getGrabbed)
+                      (this_ptr,(CDemonActor *)&stack0xffffff78,in_stack_ffffff78);
             return;
           }
         }
       }
-      iVar3 = iVar3 + 4;
+      iVar4 = iVar4 + 4;
     }
   }
   return;

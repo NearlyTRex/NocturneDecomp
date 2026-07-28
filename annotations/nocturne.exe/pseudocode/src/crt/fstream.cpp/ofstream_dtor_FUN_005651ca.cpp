@@ -2,36 +2,39 @@
 // Address: 005651ca
 // Address Range: [[005651ca, 00565263]]
 // Convention: __cdecl
-// Signature: int * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005651ca(int *param_1,byte param_2)
+// Signature: ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005651ca(void *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-int * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005651ca(int *param_1,byte param_2)
+ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005651ca(void *this_ptr,uint flags)
 
 {
-  int iVar1;
-  uint uVar2;
+  _ostream *p_Var1;
+  void *ptr;
+  ios *piVar2;
   
-  if ((param_2 & 4) == 0) {
-    *(int *)((int)param_1 + *(int *)(*param_1 + 4) + -4) = *(int *)(*param_1 + 4);
-    param_1[0x10] = (int)&PTR_crt_fstream_cpp_ofstream_dtor_FUN_005651ca_005a4824;
-    param_1[0x12] = (int)&PTR_crt_unknown_c_FUN_0056519c_005a482c;
-    *(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) =
+  if ((flags & 4) == 0) {
+    *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + -4) = *(int *)(*(int *)this_ptr + 4);
+    *(byte ***)((int)this_ptr + 0x40) =
+         &PTR_crt_fstream_cpp_ofstream_dtor_FUN_005651ca_005a4824;
+    *(byte ***)((int)this_ptr + 0x48) = &PTR_crt_unknown_c_FUN_0056519c_005a482c;
+    *(byte ***)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 0x28) =
          &PTR_crt_unknown_c_FUN_005651b2_005a4834;
-    iVar1 = FUN_0056b538(param_1 + 0x11,1);
-    param_1 = (int *)FUN_0056b810(iVar1 + -0x44,1);
-    if ((param_2 & 1) == 0) {
-      iVar1 = FUN_0056b633(param_1 + 0x14,1);
-      param_1 = (int *)(iVar1 + -0x50);
+    p_Var1 = crt_iostream_cpp_ostream_dtor_FUN_0056b538((_ostream *)((int)this_ptr + 0x44),1);
+    this_ptr = crt_fstream_cpp_fstreambase_dtor_FUN_0056b810
+                         ((fstreambase *)&p_Var1[-2]._ios.__fill_character,1);
+    if ((flags & 1) == 0) {
+      piVar2 = crt_iostream_cpp_ios_dtor_FUN_0056b633(&((ofstream *)this_ptr)->_ios,1);
+      this_ptr = &piVar2[-2].__format_flags;
     }
-    if ((param_2 & 2) == 0) {
-      return param_1;
+    if ((flags & 2) == 0) {
+      return this_ptr;
     }
-    FUN_00564494(param_1);
+    FUN_00564494(this_ptr);
   }
   else {
-    uVar2 = __vec_delete(param_1,&g_ofstreamTypeInfo_0059b4f0);
-    shape_memdbg_cpp_free_FUN_00564486(uVar2);
+    ptr = __vec_delete(this_ptr,&g_ofstreamTypeInfo_0059b4f0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
   }
-  return param_1;
+  return this_ptr;
 }

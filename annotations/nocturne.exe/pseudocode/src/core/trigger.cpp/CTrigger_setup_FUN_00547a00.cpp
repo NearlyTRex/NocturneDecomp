@@ -2,44 +2,47 @@
 // Address: 00547a00
 // Address Range: [[00547a00, 00547af0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(int param_1)
+// Signature: void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(CTrigger *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(int param_1)
+void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(CTrigger *this_ptr)
 
 {
-  uint uVar1;
+  char cVar1;
   int iVar2;
+  int iVar3;
   
-  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);
-  iVar2 = 0x01CC9450;
-  *(uint *)(param_1 + 0xf8) = 0;
-  uVar1 = *(uint *)(iVar2 + 4);
-  *(uint *)(param_1 + 0x100) = 1;
-  *(uint *)(param_1 + 0xfc) = uVar1;
-  if (*(int *)(param_1 + 0x16c) == 5) {
-    *(uint *)(param_1 + 0x100) = 0;
+  core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
+  iVar3 = 0x01CC9450;
+  (this_ptr->base).is_renderable = 0;
+  iVar3 = *(int *)(iVar3 + 4);
+  (this_ptr->base).collision_disabled = 1;
+  iVar2 = this_ptr->hero_triggers_me;
+  (this_ptr->base).is_transparent = iVar3;
+  if (iVar2 == 5) {
+    (this_ptr->base).collision_disabled = 0;
   }
-  if (*(int *)(param_1 + 0x16c) == 4) {
-    *(uint *)(param_1 + 0x100) = 0;
+  if (this_ptr->hero_triggers_me == 4) {
+    (this_ptr->base).collision_disabled = 0;
   }
-  if (*(int *)(param_1 + 0x16c) == 7) {
-    *(uint *)(param_1 + 0x100) = 0;
+  if (this_ptr->hero_triggers_me == 7) {
+    (this_ptr->base).collision_disabled = 0;
   }
-  *(uint *)(param_1 + 0x2e8) = 0;
-  *(uint *)(param_1 + 0x360) = 0;
-  iVar2 = _stricmp(param_1 + 0x21c,"none");
-  if (iVar2 == 0) {
-    *(byte *)(param_1 + 0x21c) = 0;
+  this_ptr->event_flag = 0;
+  this_ptr->cached_actor = (CDemonActor *)0x0;
+  iVar3 = _stricmp(this_ptr->on_event,"none");
+  if (iVar3 == 0) {
+    this_ptr->on_event[0] = '\0';
   }
-  iVar2 = _stricmp(param_1 + 0x280,"none");
-  if (iVar2 == 0) {
-    *(byte *)(param_1 + 0x280) = 0;
+  iVar3 = _stricmp(this_ptr->off_event,"none");
+  if (iVar3 == 0) {
+    this_ptr->off_event[0] = '\0';
   }
-  *(uint *)(param_1 + 0x104) = 0;
-  if ((*(char *)(param_1 + 0x21c) == '\0') && (*(char *)(param_1 + 0x280) == '\0')) {
-    *(uint *)(param_1 + 0x104) = 1;
+  cVar1 = this_ptr->on_event[0];
+  (this_ptr->base).process_disabled = 0;
+  if ((cVar1 == '\0') && (this_ptr->off_event[0] == '\0')) {
+    (this_ptr->base).process_disabled = 1;
     return;
   }
   return;

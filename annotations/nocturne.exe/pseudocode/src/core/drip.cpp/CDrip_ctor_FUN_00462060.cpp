@@ -1,45 +1,49 @@
 // Name: core_drip.cpp_CDrip_ctor_FUN_00462060
 // Address: 00462060
 // Address Range: [[00462060, 0046213e]]
-// Convention: unknown
-// Signature: int core_drip_cpp_CDrip_ctor_FUN_00462060(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00462060(CDrip *this_ptr)
 
 #include "nocturne.h"
 
-int core_drip_cpp_CDrip_ctor_FUN_00462060(uint param_1)
+CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00462060(CDrip *this_ptr)
 
 {
   char cVar1;
   int iVar2;
+  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
-  char *pcVar4;
+  int *piVar4;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  *(byte ***)(iVar2 + -4) = &PTR_core_drip_cpp_CDrip_setup_FUN_00462140_0059c5e4;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"stalag.kfm");
-  *(uint *)(iVar2 + 0x17c) = 2;
-  *(uint *)(iVar2 + 0x180) = 1;
-  *(uint *)(iVar2 + 0x1b4) = 0;
-  *(uint *)(iVar2 + 0x1b0) = *(uint *)(iVar2 + 0x1b4);
-  *(uint *)(iVar2 + 0x1ac) = *(uint *)(iVar2 + 0x1b0);
-  *(uint *)(iVar2 + 0x188) = 0x40a00000;
-  *(uint *)(iVar2 + 0x18c) = 0x41200000;
-  *(uint *)(iVar2 + 0x184) = 0;
+  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+  this_ptr_00[-1].model_ptr =
+       (CKeyFramedModel *)&PTR_core_drip_cpp_CDrip_setup_FUN_00462140_0059c5e4;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (this_ptr_00,"stalag.kfm");
+  this_ptr_00[1].part_visibility_flags[0] = 2;
+  this_ptr_00[1].part_visibility_flags[1] = 1;
+  this_ptr_00[1].part_visibility_flags[0xe] = 0;
+  this_ptr_00[1].part_visibility_flags[0xd] = this_ptr_00[1].part_visibility_flags[0xe];
+  this_ptr_00[1].part_visibility_flags[0xc] = this_ptr_00[1].part_visibility_flags[0xd];
+  this_ptr_00[1].part_visibility_flags[3] = 0x40a00000;
+  this_ptr_00[1].part_visibility_flags[4] = 0x41200000;
+  this_ptr_00[1].part_visibility_flags[2] = 0;
   pcVar3 = "rock-x.wav";
-  *(uint *)(iVar2 + 400) = 0;
-  *(uint *)(iVar2 + 0x1b8) = 0x41200000;
-  pcVar4 = (char *)(iVar2 + 0x1bc);
-  *(uint *)(iVar2 + 0x1e0) = 0;
+  this_ptr_00[1].part_visibility_flags[5] = 0;
+  this_ptr_00[1].part_visibility_flags[0xf] = 0x41200000;
+  piVar4 = this_ptr_00[1].part_visibility_flags + 0x10;
+  this_ptr_00[1].part_visibility_flags[0x19] = 0;
   do {
     cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    *(char *)piVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar4 + 1) = cVar1;
+    piVar4 = (int *)((int)piVar4 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + 0x1dc) = 0;
-  return iVar2 + -0x150;
+  this_ptr_00[1].part_visibility_flags[0x18] = 0;
+  return (CDrip *)(this_ptr_00[-1].part_visibility_flags + 0xb);
 }

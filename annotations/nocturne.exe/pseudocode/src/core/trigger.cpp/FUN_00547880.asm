@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00547892
         ;   Label: LAB_00547892
     CALL core_trigger.cpp_CTrigger_ctor_FUN_005478b0 ; 00547893
-        ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_ctor_FUN_005478b0()
+        ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; CTrigger * core_trigger.cpp_CTrigger_ctor_FUN_005478b0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 00547898
     RET                                 ; 0054789b
 

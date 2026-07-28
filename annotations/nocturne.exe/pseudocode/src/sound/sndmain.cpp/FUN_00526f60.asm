@@ -69,7 +69,7 @@ section .text
     ADD ESP,0xc                         ; 00526fdc
     MOV ESI,EAX                         ; 00526fdf
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526fe1
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00526fe1
     MOV EAX,ESI                         ; 00526fe6
     POP ESI                             ; 00526fe8

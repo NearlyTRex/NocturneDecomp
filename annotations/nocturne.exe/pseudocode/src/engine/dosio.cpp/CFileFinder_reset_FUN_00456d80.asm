@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(undefined1 *param_1)
+; void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(CFileFinder *this_ptr)
 ;
+; Parameters:
+; CFileFinder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40 at 00456d4f

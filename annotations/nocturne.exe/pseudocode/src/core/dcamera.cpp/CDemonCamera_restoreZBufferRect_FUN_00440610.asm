@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(int param_1,int *param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(CDemonCamera *this_ptr,CRect *rect_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CRect *          Stack[0x8]:4   rect_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -111,7 +114,7 @@ section .text
     PUSH 0x0                            ; 004406f8
     PUSH 0x0                            ; 004406fa
     CALL engine_special.cpp_restoreZBuffer_FUN_00532c90 ; 004406fc
-        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreZBuffer_FUN_00532c90()
+        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreZBuffer_FUN_00532c90(int left, int top, int mode, int right, ...)
     ADD ESP,0x14                        ; 00440701
     ADD ESP,0x4                         ; 00440704
     POP EBP                             ; 00440707

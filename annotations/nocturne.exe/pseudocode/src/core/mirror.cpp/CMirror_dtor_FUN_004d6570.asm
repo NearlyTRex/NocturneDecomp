@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mirror_cpp_CMirror_dtor_FUN_004d6570(int param_1)
+; CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_004d6570(CMirror *this_ptr,uint flags)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_glass.cpp_FUN_004adef0 at 004adf15
@@ -20,7 +23,7 @@ section .text
     ADD EAX,0x98                        ; 004d6576
     PUSH EAX                            ; 004d657b
     CALL core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90 ; 004d657c
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90()
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; SClipPlane * core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane * objs, uint flags)
     ADD ESP,0x8                         ; 004d6581
     SUB EAX,0x98                        ; 004d6584
     RET                                 ; 004d6589

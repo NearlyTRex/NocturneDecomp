@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(void)
+; int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(void)
 ;
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05ff
 ;   core_game.cpp_FUN_004a57c0 at 004a5b8e
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004710f9
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00474f0c
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8ca
-;   shape_edittool.cpp_FUN_00470eb0 at 004710f9
 ;   wincore_winvideo.cpp_FUN_0055a510 at 0055a80c
 ;
 ; Referenced Globals:

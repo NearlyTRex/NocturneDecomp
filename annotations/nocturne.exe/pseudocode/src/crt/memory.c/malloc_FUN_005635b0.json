@@ -2,36 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 45,
+    "complexity_score": 6,
     "cross_reference_count": 49,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 12
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
   },
   "cross_references": [
-    {
-      "addr": "00568560",
-      "from_addr": "005685a1",
-      "name": "FUN_00568560",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00568ed0",
       "from_addr": "00568f10",
       "name": "FUN_00568ed0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c5f0",
-      "from_addr": "0056c631",
-      "name": "FUN_0056c5f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,18 +50,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00573930",
-      "from_addr": "00573986",
-      "name": "FUN_00573930",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573afc",
-      "from_addr": "00573b5f",
-      "name": "FUN_00573afc",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005740b0",
       "from_addr": "00574100",
       "name": "FUN_005740b0",
@@ -107,12 +80,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042eb90",
-      "from_addr": "0042ed04",
-      "name": "cockpit_ckptutil.c_FUN_0042eb90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00430210",
       "from_addr": "00430312",
       "name": "cockpit_ckptutil.c_FUN_00430210",
@@ -122,6 +89,12 @@
       "addr": "004303d0",
       "from_addr": "004303ff",
       "name": "cockpit_ckptutil.c_FUN_004303d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042eb90",
+      "from_addr": "0042ed04",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,13 +112,13 @@
     {
       "addr": "004f54c0",
       "from_addr": "004f55b3",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f54c0",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f5740",
       "from_addr": "004f577e",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f5740",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -175,7 +148,7 @@
     {
       "addr": "0044d460",
       "from_addr": "0044d47c",
-      "name": "core_dimage.cpp_FUN_0044d460",
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_0044d460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -215,6 +188,24 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00573930",
+      "from_addr": "00573986",
+      "name": "crt_env.c_putenv_internal_FUN_00573930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573afc",
+      "from_addr": "00573b5f",
+      "name": "crt_env.c_updateEnvironTable_FUN_00573afc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568560",
+      "from_addr": "005685a1",
+      "name": "crt_stdio.c___allocfp_FUN_00568560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00565d00",
       "from_addr": "00565d1d",
       "name": "crt_stdlib.c__fullpath_FUN_00565d00",
@@ -230,6 +221,12 @@
       "addr": "00565c50",
       "from_addr": "00565c5b",
       "name": "crt_unknown.c_FUN_00565c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c5f0",
+      "from_addr": "0056c631",
+      "name": "crt_watcom.c_getcwd_FUN_0056c5f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -321,13 +318,13 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c_malloc_FUN_005635b0",
-    "signature": "void __cdecl crt_memory_c_malloc_FUN_005635b0(undefined4 param_1)"
+    "signature": "void * __cdecl crt_memory_c_malloc_FUN_005635b0(ulong size)"
   },
   "function_calls": [
     {
       "addr": "005635c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005635c0"
+      "name": "crt_unknown.c_InternalHeapAlloc_FUN_005635c0"
     }
   ],
   "globals": [],
@@ -446,10 +443,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -472,40 +469,20 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl malloc(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005635c0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
@@ -44,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0042958d
     PUSH EAX                            ; 00429593
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 00429594
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     FLD float ptr [ESI + EAX*0x1 + 0x988] ; 00429599
     FMUL float ptr [0x0057a26a]         ; 004295a0 | FLOAT_0057a26a
     FLD float ptr [EBX + 0x25c4]        ; 004295a6

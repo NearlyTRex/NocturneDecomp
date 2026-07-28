@@ -2,7 +2,7 @@
 // Address: 0052efc2
 // Address Range: [[0052efc2, 0052f030]]
 // Convention: unknown
-// Signature: uint engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uint param_3,uint param_4)
+// Signature: undefined4 engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uint param_3,uint param_4)
 
 #include "nocturne.h"
 
@@ -16,11 +16,12 @@ uint engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uin
   uint in_EAX;
   uint uVar3;
   ulonglong *puVar4;
+  uint unaff_retaddr;
   
   uVar2 = DAT_005bf48c;
   if (_DAT_01c02594 != 0) {
-    engine_special_cpp_clearZBox_FUN_00532b70(param_1,param_2,param_3);
-    return param_4;
+    engine_special_cpp_clearZBox_FUN_00532b70(param_1,param_2,param_3,param_4);
+    return unaff_retaddr;
   }
   do {
     puVar4 = (ulonglong *)(*(int *)(&DAT_01bd4260 + param_3 * 4) + param_1 * 4 & 0xfffffff8);

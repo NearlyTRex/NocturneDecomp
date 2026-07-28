@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00505180(int param_1,undefined4 param_2)
+; int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00505180(CScript *this_ptr,char *path)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   path
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ;
@@ -34,7 +37,7 @@ section .text
     PUSH EDX                            ; 005051a3
     XOR EBX,EBX                         ; 005051a4
     CALL crt_string.c_splitpath_FUN_00566498 ; 005051a6
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     MOV ECX,dword ptr [EDI + 0x1c]      ; 005051ab
     ADD ESP,0x14                        ; 005051ae
     TEST ECX,ECX                        ; 005051b1
@@ -48,7 +51,7 @@ section .text
     ADD EAX,ESI                         ; 005051bd
     PUSH EAX                            ; 005051bf
     CALL crt_string.c__stricmp_FUN_00564520 ; 005051c0
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005051c5
     TEST EAX,EAX                        ; 005051c8
     JZ 0x005051ea                       ; 005051ca

@@ -2,15 +2,16 @@
 // Address: 0054f870
 // Address Range: [[0054f870, 0054f883]]
 // Convention: unknown
-// Signature: int core_vehicle_cpp_CTire_ctor_FUN_0054f870(int param_1)
+// Signature: char * core_vehicle_cpp_CTire_ctor_FUN_0054f870(int param_1)
 
 #include "nocturne.h"
 
-int core_vehicle_cpp_CTire_ctor_FUN_0054f870(int param_1)
+char * core_vehicle_cpp_CTire_ctor_FUN_0054f870(int param_1)
 
 {
-  int iVar1;
+  CKeyFramedModelInstance *pCVar1;
   
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(param_1 + 0x14);
-  return iVar1 + -0x14;
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(param_1 + 0x14));
+  return pCVar1[-1].model_name + 0xf0;
 }

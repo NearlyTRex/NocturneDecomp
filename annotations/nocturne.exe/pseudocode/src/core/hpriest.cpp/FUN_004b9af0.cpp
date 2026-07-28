@@ -15,7 +15,7 @@ int core_hpriest_cpp_FUN_004b9af0(uint param_1)
   char *pcVar4;
   
   iVar2 = core_npc_cpp_FUN_004ee950(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_npc_cpp_FUN_004ee9e0_0059f264;
+  *(byte ***)(iVar2 + 0x14c) = &PTR_core_npc_cpp_CNPC_setup_FUN_004ee9e0_0059f264;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"priest.dfm");
   pcVar3 = "killPriest";
   pcVar4 = (char *)(iVar2 + 0x1f570);

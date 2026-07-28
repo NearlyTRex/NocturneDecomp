@@ -1,32 +1,49 @@
 // Name: core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0
 // Address: 0048e9c0
 // Address Range: [[0048e9c0, 0048ea5d]]
-// Convention: unknown
-// Signature: int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CWeapon * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(CWeapon *param_1)
 
 #include "nocturne.h"
 
-int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(uint param_1)
+CWeapon * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(CWeapon *param_1)
 
 {
-  float fVar1;
-  int iVar2;
+  CWeapon *pCVar1;
+  float fVar2;
+  CWeapon *pCVar3;
   
-  iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059d7b4;
+  pCVar3 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  (pCVar3->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059d7b4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + 0x150,"flamegun.kfm");
-  *(uint *)(iVar2 + 0x574) = 0;
-  *(uint *)(iVar2 + 0x570) = 0;
-  *(uint *)(iVar2 + 0x2d0) = 0;
-  *(uint *)(iVar2 + 0x2d4) = 0;
-  *(uint *)(iVar2 + 0x2d8) = 2;
-  *(uint *)(iVar2 + 0x2dc) = 0;
-  *(uint *)(iVar2 + 0x2e0) = 0x41700000;
-  *(uint *)(iVar2 + 0x2e4) = 1;
-  fVar1 = 8.0f;
-  *(uint *)(iVar2 + 0x57c) = 0;
-  *(uint *)(iVar2 + 0x578) = 0;
-  *(float *)(iVar2 + 0x55c) = fVar1;
-  return iVar2;
+            (&pCVar3->model,"flamegun.kfm");
+  pCVar1 = pCVar3 + 1;
+  (pCVar1->base).actor_name[4] = '\0';
+  (pCVar1->base).actor_name[5] = '\0';
+  (pCVar1->base).actor_name[6] = '\0';
+  (pCVar1->base).actor_name[7] = '\0';
+  pCVar3[1].base.actor_name[0] = '\0';
+  pCVar3[1].base.actor_name[1] = '\0';
+  pCVar3[1].base.actor_name[2] = '\0';
+  pCVar3[1].base.actor_name[3] = '\0';
+  pCVar3->is_spread_weapon = 0;
+  pCVar3->fire_mode = 0;
+  pCVar3->weapon_type = 2;
+  pCVar3->can_penetrate = 0;
+  pCVar3->bolt_velocity = 15.0;
+  pCVar3->fire_cooldown = 1;
+  fVar2 = 8.0f;
+  pCVar1 = pCVar3 + 1;
+  (pCVar1->base).actor_name[0xc] = '\0';
+  (pCVar1->base).actor_name[0xd] = '\0';
+  (pCVar1->base).actor_name[0xe] = '\0';
+  (pCVar1->base).actor_name[0xf] = '\0';
+  pCVar1 = pCVar3 + 1;
+  (pCVar1->base).actor_name[8] = '\0';
+  (pCVar1->base).actor_name[9] = '\0';
+  (pCVar1->base).actor_name[10] = '\0';
+  (pCVar1->base).actor_name[0xb] = '\0';
+  pCVar3->weight = fVar2;
+  return pCVar3;
 }

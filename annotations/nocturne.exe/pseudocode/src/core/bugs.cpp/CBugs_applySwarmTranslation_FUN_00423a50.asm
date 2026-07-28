@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(int param_1,float *param_2)
+; void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(CBugs *this_ptr,CVector3f *new_position)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   new_position
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

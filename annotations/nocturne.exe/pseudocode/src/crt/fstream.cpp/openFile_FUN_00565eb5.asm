@@ -1,17 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   stream_obj
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   open_mode
+; SIZE_T           Stack[0x10]:4   buffer_size
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3e85
 ;   core_game.cpp_FUN_004a4170 at 004a4450
-;   engine_dosio.cpp_FUN_00456b20 at 00456b93
+;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b93
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00565e94
-;   FUN_0056b327
+;   crt_stdio.c_reportStreamError_FUN_0056b327
+;   crt_unknown.c_ios_clear_FUN_00565e94
 ;   FUN_0056cd9b
 ;
 ; *****************************************************************************
@@ -49,8 +54,8 @@ section .text
     PUSH 0x2                            ; 00565eec
     ADD EBX,EDX                         ; 00565eee
     PUSH EBX                            ; 00565ef0
-    CALL FUN_0056b327                   ; 00565ef1
-        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b327()
+    CALL crt_stdio.c_reportStreamError_FUN_0056b327 ; 00565ef1
+        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_0056b327(FileEmbeddedData * embedded_data, uint error_flags)
         ;   Label: LAB_00565ef1
     ADD ESP,0x8                         ; 00565ef6
         ;   Label: LAB_00565ef6
@@ -70,8 +75,8 @@ section .text
     PUSH 0x0                            ; 00565f08
     ADD EBX,EBP                         ; 00565f0a
     PUSH EBX                            ; 00565f0c
-    CALL crt_unknown.c_FUN_00565e94     ; 00565f0d
-        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565e94()
+    CALL crt_unknown.c_ios_clear_FUN_00565e94 ; 00565f0d
+        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_ios_clear_FUN_00565e94()
     JMP 0x00565ef6                      ; 00565f12
         ;   XREF to: 00565ef6 (UNCONDITIONAL_JUMP)  ; LAB_00565ef6
 

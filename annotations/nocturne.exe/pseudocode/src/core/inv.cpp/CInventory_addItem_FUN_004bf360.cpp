@@ -2,1141 +2,1131 @@
 // Address: 004bf360
 // Address Range: [[004bf360, 004c0633]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_2,int param_3)
+// Signature: int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_2,int param_3)
+int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
 {
   char cVar1;
   bool bVar2;
-  uint uVar3;
-  int iVar4;
-  char *pcVar5;
-  uint uVar6;
+  CDemonMission *pCVar3;
+  uint uVar4;
+  CDemonActor *pCVar5;
+  char *pcVar6;
   int iVar7;
-  int iVar8;
-  char *pcVar9;
-  char *pcVar10;
-  int iVar11;
-  byte bVar12;
+  CDemonActor *pCVar8;
+  CDemonActor *actor;
+  int iVar9;
+  CInventory *pCVar10;
+  char *pcVar11;
+  char *pcVar12;
+  byte bVar13;
   char acStack_334 [256];
   char acStack_234 [256];
   char acStack_134 [256];
   char *pcStack_34;
   int iStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
-  int iStack_20;
+  char *pcStack_2c;
+  char *pcStack_28;
+  CAmmo *pCStack_24;
+  CInventory *pCStack_20;
   int iStack_1c;
-  int iStack_18;
+  CInventory *pCStack_18;
   int iStack_14;
   
-  bVar12 = 0;
-  if (99 < *(int *)(param_1 + 8)) {
+  bVar13 = 0;
+  if (99 < this_ptr->item_count) {
     return 0;
   }
-  iVar4 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x8c))(param_2);
-  if (iVar4 != *(int *)(param_1 + 4)) {
-    (**(code **)(*(int *)(param_2 + 0x14c) + 0x84))(param_2,0);
-    if (*(int *)(param_1 + 4) != 0) {
-      (**(code **)(*(int *)(param_2 + 0x14c) + 0x80))(param_2,*(int *)(param_1 + 4));
+  pCVar5 = (*((item_actor->vtable)._ub)->getCarrier)(item_actor);
+  if (pCVar5 != this_ptr->owner) {
+    (*((item_actor->vtable)._ub)->onDropped)(item_actor,(CVector3f *)0x0);
+    if (this_ptr->owner != (CDemonActor *)0x0) {
+      (*((item_actor->vtable)._ub)->pickup)(item_actor,this_ptr->owner);
     }
   }
-  pcVar9 = acStack_334;
-  if (((*(int *)(param_1 + 4) == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) && (param_3 != 0)) &&
-     (*(int *)(0x01C775EC + 0x228) == 0)) {
-    pcStack_34 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(param_2);
-    core_inv_cpp_getItemIconName_FUN_004bed10(param_2);
-    iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,g_CAmmoActorType_007641bc.name_hash)
-    ;
-    pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've found : ");
+  pcVar11 = acStack_334;
+  if (((this_ptr->owner == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
+      (show_tutorial_message != 0)) && (0x01C775EC->letterbox_mode == 0)) {
+    pcStack_34 = core_inv_cpp_getItemDisplayName_FUN_004beca0(item_actor);
+    core_inv_cpp_getItemIconName_FUN_004bed10(item_actor);
+    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                       (item_actor,g_CAmmoActorType_007641bc.name_hash);
+    pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've found : ");
     do {
-      cVar1 = *pcVar5;
-      *pcVar9 = cVar1;
+      cVar1 = *pcVar6;
+      *pcVar11 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
+      cVar1 = pcVar6[1];
+      pcVar6 = pcVar6 + 2;
+      pcVar11[1] = cVar1;
+      pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
-    if (iVar4 != 0) {
-      _sprintf(acStack_134,"%d ",*(uint *)(iVar4 + 0x30c));
-      pcVar9 = acStack_134;
-      iVar4 = -1;
-      pcVar5 = acStack_334;
+    if (pCVar5 != (CDemonActor *)0x0) {
+      _sprintf(acStack_134,"%d ",pCVar5[2].direction_hint);
+      pcVar11 = acStack_134;
+      iVar9 = -1;
+      pcVar6 = acStack_334;
       do {
-        pcVar10 = pcVar5;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar5 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar10;
+        pcVar12 = pcVar6;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar6 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar6;
+        pcVar6 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar9;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar11;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar11[1];
+        pcVar11 = pcVar11 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    iVar4 = -1;
-    pcVar9 = acStack_334;
+    iVar9 = -1;
+    pcVar11 = acStack_334;
     do {
-      pcVar5 = pcVar9;
-      if (iVar4 == 0) break;
-      iVar4 = iVar4 + -1;
-      pcVar5 = pcVar9 + (uint)bVar12 * -2 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar5;
+      pcVar6 = pcVar11;
+      if (iVar9 == 0) break;
+      iVar9 = iVar9 + -1;
+      pcVar6 = pcVar11 + (uint)bVar13 * -2 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar6;
     } while (cVar1 != '\0');
-    pcVar5 = pcVar5 + -1;
-    pcVar9 = pcStack_34;
+    pcVar6 = pcVar6 + -1;
+    pcVar11 = pcStack_34;
     do {
-      cVar1 = *pcVar9;
-      *pcVar5 = cVar1;
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     acStack_234[0] = '\0';
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CHealthItem");
-    if (iVar4 != 0) {
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CHealthItem");
+    if (iVar9 != 0) {
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x84));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x88));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to cycle through your inventory.  Press ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to cycle through your inventory.  Press ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x4c));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to use this item to restore some health.");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to use this item to restore some health.");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CGasMask");
-    if (iVar4 != 0) {
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CGasMask");
+    if (iVar9 != 0) {
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x84));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x88));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to cycle through your inventory.  Press ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to cycle through your inventory.  Press ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x4c));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to put on and off the mask.");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to put on and off the mask.");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CKeyActor");
-    if (iVar4 != 0) {
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 ("With your guns put away, press ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CKeyActor");
+    if (iVar9 != 0) {
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         ("With your guns put away, press ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x48));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_fire);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to open a previously locked door.");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to open a previously locked door.");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CBoxActor");
-    if (iVar4 != 0) {
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CBoxActor");
+    if (iVar9 != 0) {
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Press ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x84));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x88));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to cycle through your inventory.  Press ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                         (" to cycle through your inventory.  Press ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x4c));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_use_item);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 (" to use this item.");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" to use this item.");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CAmmo");
-    if (iVar4 != 0) {
-      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (param_2,g_CAmmoActorType_007641bc.name_hash);
-      iVar4 = core_actor_cpp_createActorByName_FUN_0040d540(iVar4 + 0x2cc);
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                                 ("This ammo is for your ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CAmmo");
+    if (iVar9 != 0) {
+      pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                         (item_actor,g_CAmmoActorType_007641bc.name_hash);
+      pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540((char *)&pCVar5[2].location.area_id);
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("This ammo is for your ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(iVar4);
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(pCVar5);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".  Select your ");
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(".  Select your ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(iVar4);
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(pCVar5);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" with ");
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" with ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x7c));
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_weapon);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x80));
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_weapon);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
-      iVar8 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar8 == 0) break;
-        iVar8 = iVar8 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      if (iVar4 != 0) {
-        (**(code **)(*(int *)(iVar4 + 0x14c) + 200))(iVar4,2);
+      if (pCVar5 != (CDemonActor *)0x0) {
+        (*((pCVar5->vtable)._ub)->onAreaDeleted)(pCVar5,2);
       }
     }
-    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CWeapon");
-    if (iVar4 != 0) {
-      uVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (param_2,g_CWeaponActorType_02ddf970.name_hash);
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select your ");
-      pcVar9 = acStack_234;
+    iVar9 = core_actor_cpp_isOfClass_FUN_0040d7e0(item_actor,"CWeapon");
+    if (iVar9 != 0) {
+      pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                         (item_actor,g_CWeaponActorType_02ddf970.name_hash);
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select your ");
+      pcVar11 = acStack_234;
       do {
-        cVar1 = *pcVar5;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar11 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(uVar6);
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004beca0(pCVar5);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" with ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" with ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x7c));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_next_weapon);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(" and ");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)core_menu_cpp_getKeyDisplayName_FUN_004d2900
-                                 (*(uint *)(0x01C775EC + 0x80));
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(0x01C775EC->key_prev_weapon);
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
-      pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
-      iVar4 = -1;
-      pcVar9 = acStack_234;
+      pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(".");
+      iVar9 = -1;
+      pcVar11 = acStack_234;
       do {
-        pcVar10 = pcVar9;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar10 = pcVar9 + (uint)bVar12 * -2 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar10;
+        pcVar12 = pcVar11;
+        if (iVar9 == 0) break;
+        iVar9 = iVar9 + -1;
+        pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      pcVar10 = pcVar10 + -1;
+      pcVar12 = pcVar12 + -1;
       do {
-        cVar1 = *pcVar5;
-        *pcVar10 = cVar1;
+        cVar1 = *pcVar6;
+        *pcVar12 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar12[1] = cVar1;
+        pcVar12 = pcVar12 + 2;
       } while (cVar1 != '\0');
     }
-    core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,acStack_334,0x41200000);
-    pcVar9 = acStack_234;
-    pcVar5 = (char *)(param_1 + 0x34c);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(0x01C775EC,acStack_334,10.0);
+    pcVar11 = acStack_234;
+    pcVar6 = this_ptr->message_text;
     do {
-      cVar1 = *pcVar9;
-      *pcVar5 = cVar1;
+      cVar1 = *pcVar11;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
     iStack_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
-                          (_DAT_014b9904,(char *)(param_1 + 0x34c));
-    *(float *)(param_1 + 0x344) = (float)iStack_14 * (float)0.025000000000000001;
+                          (_DAT_014b9904,this_ptr->message_text);
+    this_ptr->message_display_timer = (float)iStack_14 * (float)0.025000000000000001;
   }
-  iStack_24 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (param_2,g_CAmmoActorType_007641bc.name_hash);
-  if (iStack_24 != 0) {
-    iVar4 = iStack_24 + 0x2cc;
-    iVar11 = 0;
-    core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(iStack_24,iVar4);
-    iVar8 = param_1;
-    if (0 < *(int *)(param_1 + 8)) {
+  pCStack_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040d890
+                                  (item_actor,g_CAmmoActorType_007641bc.name_hash);
+  if (pCStack_24 != (CAmmo *)0x0) {
+    pcVar11 = pCStack_24->weapon_class_name;
+    iVar9 = 0;
+    core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCStack_24,pcVar11);
+    pCVar10 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iStack_2c = iVar4;
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar8 + 0xc),g_CAmmoActorType_007641bc.name_hash);
-        if (((iVar4 != 0) &&
-            (iVar7 = _strcmp(iStack_2c,iVar4 + 0x2cc), iVar7 == 0)) &&
-           (*(int *)(iVar4 + 0x310) == *(int *)(iStack_24 + 0x310))) {
-          *(int *)(iVar4 + 0x30c) = *(int *)(iVar4 + 0x30c) + *(int *)(iStack_24 + 0x30c);
+        pcStack_2c = pcVar11;
+        pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCVar10->items[0],g_CAmmoActorType_007641bc.name_hash);
+        if (((pCVar5 != (CDemonActor *)0x0) &&
+            (iVar7 = _strcmp
+                               (pcStack_2c,(char *)&pCVar5[2].location.area_id), iVar7 == 0)) &&
+           (pCVar5[2].lifecycle_state == pCStack_24->ammo_type)) {
+          pCVar5[2].direction_hint = pCVar5[2].direction_hint + pCStack_24->ammo_count;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (PTR_DAT_005ad350,"Found existing ammo, but no weapon\n");
-          core_mission_cpp_FUN_004d9110(0x01CC9450,param_2,1);
+          core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
           return 1;
         }
-        iVar11 = iVar11 + 1;
-        iVar8 = iVar8 + 4;
-        iVar4 = iStack_2c;
-      } while (iVar11 < *(int *)(param_1 + 8));
+        iVar9 = iVar9 + 1;
+        pCVar10 = (CInventory *)&pCVar10->owner;
+        pcVar11 = pcStack_2c;
+      } while (iVar9 < this_ptr->item_count);
     }
-    iVar8 = 0;
-    iVar11 = iStack_24 + 0x2cc;
+    iVar9 = 0;
+    pcVar11 = pCStack_24->weapon_class_name;
     iStack_30 = 0;
-    iVar4 = param_1;
-    if (0 < *(int *)(param_1 + 8)) {
+    pCVar10 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar4 + 0xc),g_CWeaponActorType_02ddf970.name_hash);
-        if (iVar7 != 0) {
-          uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar7);
-          iVar7 = _stricmp(iVar11,uVar6);
+        pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCVar10->items[0],g_CWeaponActorType_02ddf970.name_hash);
+        if (pCVar5 != (CDemonActor *)0x0) {
+          pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+          iVar7 = _stricmp(pcVar11,pcVar6);
           if (iVar7 == 0) goto LAB_004bfff1;
         }
-        iVar8 = iVar8 + 1;
-        iVar4 = iVar4 + 4;
-      } while (iVar8 < *(int *)(param_1 + 8));
+        iVar9 = iVar9 + 1;
+        pCVar10 = (CInventory *)&pCVar10->owner;
+      } while (iVar9 < this_ptr->item_count);
     }
     if (iStack_30 != 0) {
 LAB_004bfff1:
-      iStack_28 = iStack_24 + 0x2cc;
-      iVar8 = 0;
-      iVar4 = param_1;
-      if (0 < *(int *)(param_1 + 8)) {
+      pcStack_28 = pCStack_24->weapon_class_name;
+      iVar9 = 0;
+      pCVar10 = this_ptr;
+      if (0 < this_ptr->item_count) {
         do {
-          iVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(uint *)(iVar4 + 0xc),g_CWeaponActorType_02ddf970.name_hash);
-          if (iVar11 != 0) {
-            uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar11);
-            iVar7 = _stricmp(iStack_28,uVar6);
-            uVar3 = g_CTommyGunActorType_02dd0fd0.name_hash;
-            if ((iVar7 == 0) && (*(int *)(iVar11 + 0x564) == *(int *)(iStack_24 + 0x310))) {
-              *(int *)(iVar11 + 0x560) = *(int *)(iVar11 + 0x560) + *(int *)(iStack_24 + 0x30c);
-              iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar11,uVar3);
-              if ((iVar4 != 0) && (200 < *(int *)(iVar4 + 0x560))) {
-                *(uint *)(iVar4 + 0x560) = 200;
+          pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                             (pCVar10->items[0],g_CWeaponActorType_02ddf970.name_hash);
+          if (pCVar5 != (CDemonActor *)0x0) {
+            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+            iVar7 = _stricmp(pcStack_28,pcVar11);
+            uVar4 = g_CTommyGunActorType_02dd0fd0.name_hash;
+            if ((iVar7 == 0) && (pCVar5[4].location.position.y == (float)pCStack_24->ammo_type)) {
+              pCVar5[4].location.position.x =
+                   (float)((int)pCVar5[4].location.position.x + pCStack_24->ammo_count);
+              pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,uVar4);
+              if ((pCVar5 != (CDemonActor *)0x0) && (200 < (int)pCVar5[4].location.position.x)) {
+                pCVar5[4].location.position.x = 2.8026e-43;
               }
-              core_mission_cpp_FUN_004d9110(0x01CC9450,param_2,1);
+              core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
                         (PTR_DAT_005ad350,"Found weapon to put this ammo into\n");
               return 1;
             }
           }
-          iVar8 = iVar8 + 1;
-          iVar4 = iVar4 + 4;
-        } while (iVar8 < *(int *)(param_1 + 8));
+          iVar9 = iVar9 + 1;
+          pCVar10 = (CInventory *)&pCVar10->owner;
+        } while (iVar9 < this_ptr->item_count);
       }
-      iVar4 = core_actor_cpp_createActorByName_FUN_0040d540(iStack_28);
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar4);
-      (*(code *)**(uint **)(iVar4 + 0x14c))(iVar4);
-      *(uint *)(iVar4 + 0x560) = *(uint *)(iStack_24 + 0x30c);
-      *(uint *)(iVar4 + 0x564) = *(uint *)(iStack_24 + 0x310);
-      (**(code **)(*(int *)(iVar4 + 0x14c) + 0x80))(iVar4,*(uint *)(param_1 + 4));
-      *(int *)(param_1 + 0xc + *(int *)(param_1 + 8) * 4) = iVar4;
-      uVar6 = 0x01CC9450;
-      *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + 1;
-      core_mission_cpp_FUN_004d9110(uVar6,param_2,1);
+      pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540(pcStack_28);
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,pCVar5);
+      (*((pCVar5->vtable)._ub)->setup)(pCVar5);
+      pCVar5[4].location.position.x = (float)pCStack_24->ammo_count;
+      pCVar5[4].location.position.y = (float)pCStack_24->ammo_type;
+      (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
+      this_ptr->items[this_ptr->item_count] = pCVar5;
+      pCVar3 = 0x01CC9450;
+      this_ptr->item_count = this_ptr->item_count + 1;
+      core_mission_cpp_FUN_004d9110(pCVar3,item_actor,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
       return 1;
     }
-    iVar4 = _strcmp(iVar11,"CDynamite");
-    if (iVar4 == 0) {
-      iVar4 = core_actor_cpp_createActorByName_FUN_0040d540("CDynamite");
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar4);
-      (*(code *)**(uint **)(iVar4 + 0x14c))(iVar4);
-      *(uint *)(iVar4 + 0x560) = *(uint *)(iStack_24 + 0x30c);
-      (**(code **)(*(int *)(iVar4 + 0x14c) + 0x80))(iVar4,*(uint *)(param_1 + 4));
-      core_actor_cpp_FUN_00409cd0(param_2);
+    iVar9 = _strcmp(pcVar11,"CDynamite");
+    if (iVar9 == 0) {
+      pCVar5 = core_actor_cpp_createActorByName_FUN_0040d540("CDynamite");
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,pCVar5);
+      (*((pCVar5->vtable)._ub)->setup)(pCVar5);
+      pCVar5[4].location.position.x = (float)pCStack_24->ammo_count;
+      (*((pCVar5->vtable)._ub)->pickup)(pCVar5,this_ptr->owner);
+      core_actor_cpp_FUN_00409cd0(item_actor);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Found dynamite.  Creating weapon for it.\n");
-      core_inv_cpp_CInventory_addItem_FUN_004bf360(param_1,iVar4,1);
+      core_inv_cpp_CInventory_addItem_FUN_004bf360(this_ptr,pCVar5,1);
       return 1;
     }
   }
-  iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,g_CWeaponActorType_02ddf970.name_hash)
-  ;
-  if (iVar4 != 0) {
-    iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,g_CMeleeActorType_01cc56a4.name_hash);
-    if (iVar8 != 0) {
-      *(int *)(param_1 + 0xc + *(int *)(param_1 + 8) * 4) = param_2;
-      uVar6 = 0x01CC9450;
-      *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + 1;
-      core_mission_cpp_FUN_004d9110(uVar6,param_2,0);
-      (**(code **)(*(int *)(param_2 + 0x14c) + 100))(param_2,param_1);
+  pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                     (item_actor,g_CWeaponActorType_02ddf970.name_hash);
+  if (pCVar5 != (CDemonActor *)0x0) {
+    pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
+                       (pCVar5,g_CMeleeActorType_01cc56a4.name_hash);
+    if (pCVar8 != (CDemonActor *)0x0) {
+      this_ptr->items[this_ptr->item_count] = item_actor;
+      pCVar3 = 0x01CC9450;
+      this_ptr->item_count = this_ptr->item_count + 1;
+      core_mission_cpp_FUN_004d9110(pCVar3,item_actor,0);
+      (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
       return 1;
     }
-    iVar8 = 0;
-    if (0 < *(int *)(param_1 + 8)) {
-      iStack_20 = param_1;
+    iVar9 = 0;
+    if (0 < this_ptr->item_count) {
+      pCStack_20 = this_ptr;
       do {
-        iVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(uint *)(iStack_20 + 0xc),g_CWeaponActorType_02ddf970.name_hash);
-        if (iVar11 != 0) {
-          uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar11);
-          uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4,uVar6);
-          iVar7 = _strcmp(uVar6);
-          uVar3 = g_CTommyGunActorType_02dd0fd0.name_hash;
-          if ((iVar7 == 0) && (*(int *)(iVar11 + 0x564) == *(int *)(iVar4 + 0x564))) {
-            *(int *)(iVar11 + 0x560) = *(int *)(iVar11 + 0x560) + *(int *)(iVar4 + 0x560);
-            iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar11,uVar3);
-            if ((iVar4 != 0) && (200 < *(int *)(iVar4 + 0x560))) {
-              *(uint *)(iVar4 + 0x560) = 200;
+        pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCStack_20->items[0],g_CWeaponActorType_02ddf970.name_hash);
+        if (pCVar8 != (CDemonActor *)0x0) {
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar8);
+          pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+          iVar7 = _strcmp(pcVar6,pcVar11);
+          uVar4 = g_CTommyGunActorType_02dd0fd0.name_hash;
+          if ((iVar7 == 0) && (pCVar8[4].location.position.y == pCVar5[4].location.position.y)) {
+            pCVar8[4].location.position.x =
+                 (float)((int)pCVar8[4].location.position.x + (int)pCVar5[4].location.position.x);
+            pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar8,uVar4);
+            if ((pCVar5 != (CDemonActor *)0x0) && (200 < (int)pCVar5[4].location.position.x)) {
+              pCVar5[4].location.position.x = 2.8026e-43;
             }
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (PTR_DAT_005ad350,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_FUN_004d9110(0x01CC9450,param_2,1);
+            core_mission_cpp_FUN_004d9110(0x01CC9450,item_actor,1);
             return 1;
           }
         }
-        iVar8 = iVar8 + 1;
-        iStack_20 = iStack_20 + 4;
-      } while (iVar8 < *(int *)(param_1 + 8));
+        iVar9 = iVar9 + 1;
+        pCStack_20 = (CInventory *)&pCStack_20->owner;
+      } while (iVar9 < this_ptr->item_count);
     }
     bVar2 = false;
     iStack_1c = 0;
-    if (0 < *(int *)(param_1 + 8)) {
-      iStack_18 = param_1;
+    if (0 < this_ptr->item_count) {
+      pCStack_18 = this_ptr;
       do {
-        iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iStack_18 + 0xc),g_CAmmoActorType_007641bc.name_hash);
-        if (iVar8 != 0) {
-          uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4);
-          iVar11 = _strcmp(iVar8 + 0x2cc,uVar6);
-          if (iVar11 == 0) {
-            uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4);
-            iVar11 = core_actor_cpp_createActorByName_FUN_0040d540(uVar6);
-            core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar11);
-            (*(code *)**(uint **)(iVar11 + 0x14c))(iVar11);
-            *(uint *)(iVar11 + 0x560) = *(uint *)(iVar8 + 0x30c);
-            *(uint *)(iVar11 + 0x564) = *(uint *)(iVar8 + 0x310);
-            (**(code **)(*(int *)(iVar11 + 0x14c) + 0x80))(iVar11,*(uint *)(param_1 + 4));
-            (**(code **)(*(int *)(iVar11 + 0x14c) + 100))(iVar11,param_1);
-            core_actor_cpp_FUN_00409cd0(*(uint *)(iStack_18 + 0xc));
-            *(int *)(iStack_18 + 0xc) = iVar11;
-            uVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4);
+        pCVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCStack_18->items[0],g_CAmmoActorType_007641bc.name_hash);
+        if (pCVar8 != (CDemonActor *)0x0) {
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+          iVar9 = _strcmp((char *)&pCVar8[2].location.area_id,pcVar11);
+          if (iVar9 == 0) {
+            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
+            actor = core_actor_cpp_createActorByName_FUN_0040d540(pcVar11);
+            core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,actor);
+            (*((actor->vtable)._ub)->setup)(actor);
+            actor[4].location.position.x = (float)pCVar8[2].direction_hint;
+            actor[4].location.position.y = (float)pCVar8[2].lifecycle_state;
+            (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
+            (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);
+            core_actor_cpp_FUN_00409cd0(pCStack_18->items[0]);
+            pCStack_18->items[0] = actor;
+            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(pCVar5);
             bVar2 = true;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (PTR_DAT_005ad350,"Converting existing ammo for %s to weapon\n",uVar6);
+                      (PTR_DAT_005ad350,"Converting existing ammo for %s to weapon\n",pcVar11);
           }
         }
-        iStack_18 = iStack_18 + 4;
+        pCStack_18 = (CInventory *)&pCStack_18->owner;
         iStack_1c = iStack_1c + 1;
-      } while (iStack_1c < *(int *)(param_1 + 8));
+      } while (iStack_1c < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_FUN_004d9110(0x01CC9450,iVar4,1);
+      core_mission_cpp_FUN_004d9110(0x01CC9450,pCVar5,1);
       return 1;
     }
   }
-  *(int *)(param_1 + 0xc + *(int *)(param_1 + 8) * 4) = param_2;
-  uVar6 = 0x01CC9450;
-  *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + 1;
-  core_mission_cpp_FUN_004d8cd0(uVar6,param_2);
-  (**(code **)(*(int *)(param_2 + 0x14c) + 100))(param_2,param_1);
-  if ((iVar4 != 0) && (*(int *)(param_1 + 0x330) == 0)) {
-    core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(param_1,iVar4,5,1);
+  this_ptr->items[this_ptr->item_count] = item_actor;
+  pCVar3 = 0x01CC9450;
+  this_ptr->item_count = this_ptr->item_count + 1;
+  core_mission_cpp_FUN_004d8cd0(pCVar3,item_actor);
+  (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
+  if ((pCVar5 != (CDemonActor *)0x0) && (this_ptr->selected_weapon == (CWeapon *)0x0)) {
+    core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(this_ptr,pCVar5,5,1);
   }
   return 1;
 }

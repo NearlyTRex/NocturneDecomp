@@ -2,11 +2,11 @@
 // Address: 0050e5d0
 // Address Range: [[0050e5d0, 0050e65e]]
 // Convention: unknown
-// Signature: void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4)
+// Signature: void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_2,undefined4 *param_3,undefined4 *param_4)
 
 #include "nocturne.h"
 
-void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,uint param_2,uint *param_3,uint *param_4)
+void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,char *param_2,uint *param_3,uint *param_4)
 
 {
   int *piVar1;
@@ -23,7 +23,7 @@ void core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(int param_1,uint param_2
       piVar1 = (int *)(param_1 + 0x19648 + iVar4);
       *param_3 = piVar1;
       if (*piVar1 == 0) {
-        iVar2 = _stricmp(piVar1 + 1,param_2);
+        iVar2 = _stricmp((char *)(piVar1 + 1),param_2);
         if (iVar2 == 0) {
           *param_4 = *(uint *)(&DAT_01fb99d4 + iVar5 * 4);
           return;

@@ -19,7 +19,7 @@ struct CBugs_ptr_344 {
     template<typename T> CBugs_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBugs_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CBugs* operator->() const { return (CBugs*)_raw; }
-    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, base.base.model)); }
+    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, base.base.model.motion_controller.current_frame_number)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

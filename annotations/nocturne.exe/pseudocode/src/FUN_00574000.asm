@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00574000(undefined4 param_1)
+; int FUN_00574000(char *param_1)
 ;
 ;
 ; XREF[2]:
-;   FUN_00573930 at 005739cd
 ;   FUN_00574680 at 00574698
+;   crt_env.c_putenv_internal_FUN_00573930 at 005739cd
 ;
 ; Called Functions:
-;   FUN_0056da80
-;   FUN_00570ca0
+;   crt_string.c_mbstring_termination_check_FUN_00570ca0
+;   crt_string.c_mbtowc_next_FUN_0056da80
 ;
 ; *****************************************************************************
 
@@ -23,15 +23,15 @@ section .text
     XOR ESI,ESI                         ; 00574006
     PUSH EBX                            ; 00574008
         ;   Label: LAB_00574008
-    CALL FUN_00570ca0                   ; 00574009
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; undefined FUN_00570ca0()
+    CALL crt_string.c_mbstring_termination_check_FUN_00570ca0 ; 00574009
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbstring_termination_check_FUN_00570ca0(char * str)
     ADD ESP,0x4                         ; 0057400e
     TEST EAX,EAX                        ; 00574011
     JNZ 0x00574023                      ; 00574013
         ;   XREF to: 00574023 (CONDITIONAL_JUMP)  ; LAB_00574023
     PUSH EBX                            ; 00574015
-    CALL FUN_0056da80                   ; 00574016
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00574016
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     INC ESI                             ; 0057401b
     ADD ESP,0x4                         ; 0057401c
     MOV EBX,EAX                         ; 0057401f

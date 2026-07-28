@@ -45,7 +45,7 @@ section .text
     PUSH EAX                            ; 00408a72
     ADD EBX,0x18                        ; 00408a73
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00408a76
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00408a7b
     TEST EAX,EAX                        ; 00408a7e
     JZ 0x00408b98                       ; 00408a80
@@ -117,7 +117,7 @@ section .text
     JL 0x00408b34                       ; 00408b60
         ;   XREF to: 00408b34 (CONDITIONAL_JUMP)  ; LAB_00408b34
     CALL engine_texture.cpp_getCurrentTexture_FUN_00545ad0 ; 00408b62
-        ;   XREF to: 00545ad0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_getCurrentTexture_FUN_00545ad0()
+        ;   XREF to: 00545ad0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_00545ad0()
         ;   Label: LAB_00408b62
     MOV EDI,dword ptr [ESP]             ; 00408b67
     MOV ECX,0x12                        ; 00408b6a

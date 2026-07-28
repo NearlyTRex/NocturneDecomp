@@ -2,11 +2,11 @@
 // Address: 0050d280
 // Address Range: [[0050d280, 0050d294]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(void)
+// Signature: void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(void)
+void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(CDemonSet *this_ptr)
 
 {
   core_dlight_cpp_captureLightTextures_FUN_004504e0();

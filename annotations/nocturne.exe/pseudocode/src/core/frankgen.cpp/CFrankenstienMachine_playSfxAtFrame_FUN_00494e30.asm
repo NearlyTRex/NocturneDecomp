@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30(int param_1,float param_2,undefined4 param_3)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   trigger_frame
+; char *           Stack[0xc]:4   sfx_filename
 ;
 ; XREF[1]:
 ;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 at 00494c24
@@ -37,18 +41,18 @@ section .text
     RET                                 ; 00494e52
         ;   Label: LAB_00494e52
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 00494e53
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
         ;   Label: LAB_00494e53
     MOV EAX,dword ptr [ESP + 0x4]       ; 00494e58
     ADD EAX,0x488                       ; 00494e5c
     PUSH EAX                            ; 00494e61
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0 ; 00494e62
-        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0()
+        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 00494e67
     MOV EDX,dword ptr [ESP + 0xc]       ; 00494e6a
     PUSH EDX                            ; 00494e6e
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 00494e6f
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 00494e74
     JMP 0x005263c0                      ; 00494e77
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)

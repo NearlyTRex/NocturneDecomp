@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(int param_1)
+; void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(CCurtain *this_ptr)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_archive_FUN_004acbc0(int param_1)
+; void core_glass_cpp_CGlass_archive_FUN_004acbc0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -31,19 +31,19 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004acbc1
     PUSH EBX                            ; 004acbc5
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004acbc6
-        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
+        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004acbcb
     PUSH 0x584fc8                       ; 004acbce | = "glassSize"
     LEA EAX,[EBX + 0x150]               ; 004acbd3
     PUSH EAX                            ; 004acbd9
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 004acbda
-        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
+        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040c450(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004acbdf
     PUSH 0x584fd2                       ; 004acbe2 | = "glassTexture"
     LEA EAX,[EBX + 0x164]               ; 004acbe7
     PUSH EAX                            ; 004acbed
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004acbee
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     MOV EDX,dword ptr [0x005b9668]      ; 004acbf3 | INT_005b9668
     ADD ESP,0x8                         ; 004acbf9
     CMP EDX,0x2                         ; 004acbfc
@@ -57,13 +57,13 @@ section .text
     LEA EAX,[EBX + 0x178]               ; 004acc13
     PUSH EAX                            ; 004acc19
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004acc1a
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004acc1f
     PUSH 0x584ff1                       ; 004acc22 | = "breakEvent"
     LEA EAX,[EBX + 0x17c]               ; 004acc27
     PUSH EAX                            ; 004acc2d
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004acc2e
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004acc33
     CMP dword ptr [0x005b9668],0x4      ; 004acc36 | INT_005b9668
         ;   Label: LAB_004acc36
@@ -73,7 +73,7 @@ section .text
     LEA EAX,[EBX + 0x1e0]               ; 004acc44
     PUSH EAX                            ; 004acc4a
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004acc4b
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004acc50
     CMP dword ptr [0x005b9668],0x5      ; 004acc53 | INT_005b9668
         ;   Label: LAB_004acc53
@@ -83,7 +83,7 @@ section .text
     LEA EAX,[EBX + 0x304]               ; 004acc61
     PUSH EAX                            ; 004acc67
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004acc68
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004acc6d
     CMP dword ptr [0x005b9668],0x6      ; 004acc70 | INT_005b9668
         ;   Label: LAB_004acc70
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x174]               ; 004acc80
     PUSH EAX                            ; 004acc86
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004acc87
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004acc8c
     JMP 0x004acc05                      ; 004acc8f
         ;   XREF to: 004acc05 (UNCONDITIONAL_JUMP)  ; LAB_004acc05
@@ -105,13 +105,13 @@ section .text
     LEA EAX,[EBX + 0x368]               ; 004acc99
     PUSH EAX                            ; 004acc9f
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004acca0
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004acca5
     PUSH 0x585029                       ; 004acca8 | = "brokenTexture"
     ADD EBX,0x374                       ; 004accad
     PUSH EBX                            ; 004accb3
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004accb4
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004accb9
     POP EBX                             ; 004accbc
     RET                                 ; 004accbd

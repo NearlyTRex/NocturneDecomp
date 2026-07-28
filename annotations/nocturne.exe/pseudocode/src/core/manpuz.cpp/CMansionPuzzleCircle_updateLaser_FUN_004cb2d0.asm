@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0(int param_1,int param_2,float param_3)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x114]:4  local_114
 ; undefined4       Stack[-0x110]:4  local_110
@@ -161,7 +165,7 @@ section .text
     PUSH EBX                            ; 004cb3a4
     FSTP float ptr [EBP + 0x46]         ; 004cb3a5
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cb3a8
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     XOR ECX,ECX                         ; 004cb3ad
     MOV dword ptr [EBP + 0x26],ECX      ; 004cb3af
     FLD float ptr [EBX + 0x5c8]         ; 004cb3b2
@@ -201,7 +205,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004cb41a | DAT_005be368
     PUSH EDX                            ; 004cb420 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004cb421
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004cb426
     LEA EAX,[EBP + 0xffffff72]          ; 004cb429
     PUSH EAX                            ; 004cb42f
@@ -278,7 +282,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004cb51b | DAT_005be368
     PUSH EDX                            ; 004cb521 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004cb522
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004cb527
     LEA ESP,[EBP + 0x76]                ; 004cb52a
     POP EBP                             ; 004cb52d
@@ -292,7 +296,7 @@ section .text
     PUSH EBX                            ; 004cb538
     MOV dword ptr [EBP + 0x72],EAX      ; 004cb539
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0 ; 004cb53c
-        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0()
+        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 004cb541
     SHL EAX,0x2                         ; 004cb543
     SUB EAX,EDX                         ; 004cb546

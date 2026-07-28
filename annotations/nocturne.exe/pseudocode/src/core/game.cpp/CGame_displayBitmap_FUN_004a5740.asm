@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(int param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char *filename,int width,int height)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b40c

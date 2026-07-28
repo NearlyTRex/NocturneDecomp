@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
+; int __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
 ;
 ;
 ; XREF[1]:

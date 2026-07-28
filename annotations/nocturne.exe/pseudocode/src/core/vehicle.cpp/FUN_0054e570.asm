@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0054e582
         ;   Label: LAB_0054e582
     CALL core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0 ; 0054e583
-        ;   XREF to: 0054e5a0 (UNCONDITIONAL_CALL)  ; undefined core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0()
+        ;   XREF to: 0054e5a0 (UNCONDITIONAL_CALL)  ; CVehicle * core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle * this_ptr)
     ADD ESP,0x4                         ; 0054e588
     RET                                 ; 0054e58b
 

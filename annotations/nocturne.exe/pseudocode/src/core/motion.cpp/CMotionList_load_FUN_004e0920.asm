@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,undefined4 param_2)
+; void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -58,7 +61,7 @@ section .text
     PUSH EBX                            ; 004e0936
         ;   Label: LAB_004e0936
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0937
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e093c
     TEST EAX,EAX                        ; 004e093f
     JL 0x004e0948                       ; 004e0941
@@ -87,7 +90,7 @@ section .text
     PUSH EBX                            ; 004e0975
         ;   Label: LAB_004e0975
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0976
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e097b
     TEST EAX,EAX                        ; 004e097e
     JL 0x004e0987                       ; 004e0980
@@ -131,7 +134,7 @@ section .text
     PUSH EBX                            ; 004e09d2
         ;   Label: LAB_004e09d2
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e09d3
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e09d8
     TEST EAX,EAX                        ; 004e09db
     JL 0x004e09e4                       ; 004e09dd
@@ -163,7 +166,7 @@ section .text
     PUSH ESI                            ; 004e0a23
         ;   Label: LAB_004e0a23
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0a24
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0a29
     TEST EAX,EAX                        ; 004e0a2c
     JL 0x004e0a35                       ; 004e0a2e
@@ -190,7 +193,7 @@ section .text
     PUSH ESI                            ; 004e0a56
         ;   Label: LAB_004e0a56
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0a57
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0a5c
     TEST EAX,EAX                        ; 004e0a5f
     JL 0x004e0a68                       ; 004e0a61
@@ -214,7 +217,7 @@ section .text
     PUSH ESI                            ; 004e0a84
         ;   Label: LAB_004e0a84
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0a85
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0a8a
     TEST EAX,EAX                        ; 004e0a8d
     JL 0x004e0a96                       ; 004e0a8f
@@ -240,7 +243,7 @@ section .text
     PUSH ESI                            ; 004e0ab9
         ;   Label: LAB_004e0ab9
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0aba
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0abf
     TEST EAX,EAX                        ; 004e0ac2
     JL 0x004e0acb                       ; 004e0ac4
@@ -262,7 +265,7 @@ section .text
     PUSH ESI                            ; 004e0ae3
         ;   Label: LAB_004e0ae3
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0ae4
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0ae9
     TEST EAX,EAX                        ; 004e0aec
     JL 0x004e0af5                       ; 004e0aee
@@ -336,7 +339,7 @@ section .text
     PUSH EBP                            ; 004e0ba3
         ;   Label: LAB_004e0ba3
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0ba4
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0ba9
     TEST EAX,EAX                        ; 004e0bac
     JL 0x004e0bb5                       ; 004e0bae
@@ -385,7 +388,7 @@ section .text
     PUSH EBP                            ; 004e0c1e
         ;   Label: LAB_004e0c1e
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0c1f
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0c24
     TEST EAX,EAX                        ; 004e0c27
     JL 0x004e0c30                       ; 004e0c29
@@ -425,7 +428,7 @@ section .text
     PUSH EBP                            ; 004e0c76
         ;   Label: LAB_004e0c76
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e0c77
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e0c7c
     TEST EAX,EAX                        ; 004e0c7f
     JL 0x004e0c88                       ; 004e0c81

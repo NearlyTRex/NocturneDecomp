@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_ckptutil_c_FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)
+; void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -22,7 +22,7 @@
 ;   int INT_01cc4804
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d370
+;   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
 ;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -54,7 +54,7 @@ section .text
     PUSH EDX                            ; 0043023b
     PUSH 0x57aa39                       ; 0043023c | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00430241
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00430246
     MOV EDI,EAX                         ; 00430249
     TEST EAX,EAX                        ; 0043024b
@@ -81,7 +81,7 @@ section .text
     PUSH EDI                            ; 0043027a
         ;   Label: LAB_0043027a
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0043027b
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00430280
     MOV dword ptr [ESP + 0x58],EAX      ; 00430283
     CMP EAX,-0x1                        ; 00430287
@@ -97,7 +97,7 @@ section .text
     ADD ESP,0xc                         ; 004302a0
     PUSH EDI                            ; 004302a3
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004302a4
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,0x7ce                       ; 004302a9
     ADD ESP,0x4                         ; 004302ae
     MOV [0x01cc4804],EAX                ; 004302b1 | INT_01cc4804
@@ -127,7 +127,7 @@ section .text
     PUSH EDI                            ; 004302ee
         ;   Label: LAB_004302ee
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004302ef
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004302f4
     CMP dword ptr [ESP + 0x80],0x0      ; 004302f7
     JNZ 0x004303a4                      ; 004302ff
@@ -142,7 +142,7 @@ section .text
     PUSH EAX                            ; 00430311
         ;   Label: LAB_00430311
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00430312
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00430317
     MOV dword ptr [ESP + 0x74],EAX      ; 0043031a
     TEST EAX,EAX                        ; 0043031e
@@ -198,8 +198,8 @@ section .text
     PUSH EBP                            ; 004303b5
     MOV EAX,dword ptr [ESP + 0x7c]      ; 004303b6
     PUSH EAX                            ; 004303ba
-    CALL cockpit_ckptutil.c_FUN_0042d370 ; 004303bb
-        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d370()
+    CALL cockpit_ckptutil.c_applyActPalette_FUN_0042d370 ; 004303bb
+        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_applyActPalette_FUN_0042d370(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
     ADD ESP,0x10                        ; 004303c0
     MOV EAX,dword ptr [ESP + 0x74]      ; 004303c3
     ADD ESP,0x5c                        ; 004303c7

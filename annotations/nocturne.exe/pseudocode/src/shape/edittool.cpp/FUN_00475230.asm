@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_FUN_00475230(int *param_1)
+; undefined4 shape_edittool_cpp_FUN_00475230(CPickList *param_1)
 ;
 ;
 ; XREF[2]:
@@ -53,7 +53,7 @@ section .text
     PUSH ECX                            ; 00475258
     PUSH EBX                            ; 00475259
     CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 0047525a
-        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040()
+        ;   XREF to: 00476040 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040(CPickList * this_ptr, int item_index)
     ADD ESP,0x8                         ; 0047525f
     TEST EAX,EAX                        ; 00475262
     JNZ 0x004753f6                      ; 00475264
@@ -153,7 +153,7 @@ section .text
     PUSH EDI                            ; 0047537d
     PUSH EBX                            ; 0047537e
     CALL shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10 ; 0047537f
-        ;   XREF to: 00475f10 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10()
+        ;   XREF to: 00475f10 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00475f10(CPickList * this_ptr, int mouse_x, int mouse_y)
     ADD ESP,0xc                         ; 00475384
     MOV ESI,EAX                         ; 00475387
     TEST EAX,EAX                        ; 00475389
@@ -164,7 +164,7 @@ section .text
     MOV dword ptr [EBX + 0x118],EAX     ; 00475396
     MOV byte ptr [0x01bd1d94],DL        ; 0047539c | DAT_01bd1d94
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004753a2
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV ECX,dword ptr [0x01bcde1c]      ; 004753a7 | DAT_01bcde1c
     MOV EDX,EAX                         ; 004753ad
     SUB EAX,ECX                         ; 004753af

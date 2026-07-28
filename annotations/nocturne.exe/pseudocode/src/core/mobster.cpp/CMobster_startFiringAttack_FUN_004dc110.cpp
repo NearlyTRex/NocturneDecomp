@@ -2,24 +2,30 @@
 // Address: 004dc110
 // Address Range: [[004dc110, 004dc17f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(int param_1)
+// Signature: void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(int param_1)
+void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *this_ptr)
 
 {
-  uint uVar1;
+  CDeformableModelInstance *this_ptr_00;
+  CDemonActor *pCVar1;
+  float fVar2;
   
-  if (0.0 < *(float *)(param_1 + 0xbdf8)) {
+  if (0.0 < this_ptr->firing_cooldown) {
     return;
   }
-  uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f000000,0x3f800000);
-  *(uint *)(param_1 + 0xbdf8) = uVar1;
-  if (*(int *)(param_1 + 0x24ac) != 0) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);
+  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f000000,0x3f800000);
+  pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
+  this_ptr_00 = &(this_ptr->base).base.model;
+  this_ptr->firing_cooldown = fVar2;
+  if (pCVar1 != (CDemonActor *)0x0) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+              (&this_ptr_00->motion_controller,6,1);
     return;
   }
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+            (&this_ptr_00->motion_controller,2,1);
   return;
 }

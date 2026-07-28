@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004af700(int param_1)
+; void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004af700(CBloodPool *this_ptr)
 ;
+; Parameters:
+; CBloodPool *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_process_FUN_004b0030 at 004b00af

@@ -2,15 +2,17 @@
 // Address: 004af2a0
 // Address Range: [[004af2a0, 004af33f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(void)
+// Signature: int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(CBloodPool *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(void)
+int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(CBloodPool *this_ptr)
 
 {
+  int iVar1;
+  
   _DAT_01c78c84 = 4;
   _DAT_01c78c98 = 0;
   _DAT_01c78c9c = 1;
@@ -28,6 +30,6 @@ void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(void)
   _DAT_01c78c90 = 0;
   _DAT_01c78c94 = 0;
   _DAT_01c78c8c = 0xffff;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  return;
+  iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+  return iVar1;
 }

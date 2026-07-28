@@ -1,0 +1,244 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 150,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "00573930",
+      "from_addr": "00573950",
+      "name": "crt_env.c_putenv_internal_FUN_00573930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570870",
+      "from_addr": "00570892",
+      "name": "crt_string.c_strpbrk_FUN_00570870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572a90",
+    "address_range": [
+      [
+        "00572a90",
+        "00572afe"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_string.c_char_in_set_FUN_00572a90",
+    "signature": "char * crt_string_c_char_in_set_FUN_00572a90(char *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056da50",
+      "is_variadic": false,
+      "name": "crt_locale.c_mblen_FUN_0056da50"
+    },
+    {
+      "addr": "0056da30",
+      "is_variadic": false,
+      "name": "crt_locale.c_wchar_to_bytes_FUN_0056da30"
+    },
+    {
+      "addr": "00570ca0",
+      "is_variadic": false,
+      "name": "crt_string.c_mbstring_termination_check_FUN_00570ca0"
+    },
+    {
+      "addr": "0056da80",
+      "is_variadic": false,
+      "name": "crt_string.c_mbtowc_next_FUN_0056da80"
+    },
+    {
+      "addr": "00572e00",
+      "is_variadic": false,
+      "name": "FUN_00572e00"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00570892",
+        "call_type": "direct",
+        "caller": "crt_string.c_strpbrk_FUN_00570870",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573950",
+        "call_type": "direct",
+        "caller": "crt_env.c_putenv_internal_FUN_00573930",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.590909090909091,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 30,
+      "INT_ADD": 13,
+      "INT_AND": 31,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 17,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 202
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "char * char_in_set(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "char * char_in_set(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "wchar_to_bytes((wchar_t)param_2,acStack_8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = mbstring_termination_check(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_00572e00(param_1,acStack_8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (char *)mbtowc_next(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (char *)mbtowc_next(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = mbstring_termination_check(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (param_2 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (char *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -47,7 +47,7 @@ section .text
     JNZ 0x0052c404                      ; 0052c424
         ;   XREF to: 0052c404 (CONDITIONAL_JUMP)  ; LAB_0052c404
     CALL sound_sndmain.cpp_killSoundThread_FUN_00528780 ; 0052c426
-        ;   XREF to: 00528780 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSoundThread_FUN_00528780()
+        ;   XREF to: 00528780 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSoundThread_FUN_00528780()
     TEST EAX,EAX                        ; 0052c42b
     JZ 0x0052c452                       ; 0052c42d
         ;   XREF to: 0052c452 (CONDITIONAL_JUMP)  ; LAB_0052c452

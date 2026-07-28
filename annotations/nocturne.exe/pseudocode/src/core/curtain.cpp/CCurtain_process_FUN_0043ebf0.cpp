@@ -2,19 +2,23 @@
 // Address: 0043ebf0
 // Address Range: [[0043ebf0, 0043f32e]]
 // Convention: unknown
-// Signature: void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
+// Signature: void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
+void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)
 
 {
-  float fVar1;
-  float fVar2;
-  int iVar3;
-  int iVar4;
-  float *pfVar5;
+  CVector3f *pCVar1;
+  float *pfVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
   int iVar6;
+  int iVar7;
+  CCurtain *pCVar8;
+  SCurtainVertex *pSVar9;
+  int iVar10;
   float fStack_e0;
   float fStack_c4;
   float fStack_c0;
@@ -46,146 +50,149 @@ void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
   float fStack_4c;
   float fStack_48;
   float fStack_44;
-  int iStack_30;
-  int iStack_2c;
+  SCurtainVertex *pSStack_30;
+  SCurtainVertex *pSStack_2c;
   int iStack_28;
   int iStack_24;
   int iStack_20;
   int iStack_1c;
   float fStack_18;
-  uint uStack_14;
+  float fStack_14;
   
-  if (((*(int *)(param_1 + 0x65b28) != 0) || (*(int *)(param_1 + 0x188) != 0)) &&
-     (*(uint *)(param_1 + 0x65b28) = 0, *(int *)(param_1 + 0x1f0) != 0)) {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x18c);
-    if (iVar3 != 0) {
-      *(uint *)(param_1 + 0x188) = 1;
+  if (((param_1->is_visible != 0) || (param_1->falling != 0)) &&
+     (param_1->is_visible = 0, param_1->simulate_me != 0)) {
+    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,param_1->let_go_event);
+    if (iVar6 != 0) {
+      param_1->falling = 1;
     }
-    iVar3 = _strcmp(param_1 + 0x18c,"none");
-    if ((iVar3 == 0) || (*(int *)(param_1 + 0x188) != 0)) {
-      if (*(int *)(param_1 + 0x65b24) != 0) {
-        uStack_14 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x38))(param_1,0x3dcccccd,0);
-        *(uint *)(param_1 + 0x65b20) = uStack_14;
+    iVar6 = _strcmp(param_1->let_go_event,"none");
+    if ((iVar6 == 0) || (param_1->falling != 0)) {
+      if (param_1->hit_floor != 0) {
+        fStack_14 = (*((param_1->base).vtable._ub)->cylinderGroundCheck)
+                              (&param_1->base,0.1,(CVector3f *)0x0);
+        param_1->floor_height = fStack_14;
       }
-      *(float *)(param_1 + 0x1c720) = 1.0 / param_2;
+      (param_1->mesh).inv_delta_time = 1.0 / param_2;
       local_ac = 99999.0;
       local_a8 = 99999.0;
       local_a4 = 99999.0;
       local_7c = -99999.0;
       local_78 = -99999.0;
       local_74 = -99999.0;
-      iVar3 = 0;
-      if (0 < *(int *)(param_1 + 0x1fc)) {
-        iVar6 = param_1 + 0x200;
+      iVar6 = 0;
+      if (0 < param_1->vertex_count) {
+        pSVar9 = param_1->vertices;
         do {
-          if (*(float *)(iVar6 + 0x20) < local_ac) {
-            local_ac = *(float *)(iVar6 + 0x20);
+          if ((pSVar9->world_position).x < local_ac) {
+            local_ac = (pSVar9->world_position).x;
           }
-          if (*(float *)(iVar6 + 0x24) < local_a8) {
-            local_a8 = *(float *)(iVar6 + 0x24);
+          if ((pSVar9->world_position).y < local_a8) {
+            local_a8 = (pSVar9->world_position).y;
           }
-          if (*(float *)(iVar6 + 0x28) < local_a4) {
-            local_a4 = *(float *)(iVar6 + 0x28);
+          if ((pSVar9->world_position).z < local_a4) {
+            local_a4 = (pSVar9->world_position).z;
           }
-          if (local_7c < *(float *)(iVar6 + 0x20)) {
-            local_7c = *(float *)(iVar6 + 0x20);
+          if (local_7c < (pSVar9->world_position).x) {
+            local_7c = (pSVar9->world_position).x;
           }
-          if (local_78 < *(float *)(iVar6 + 0x24)) {
-            local_78 = *(float *)(iVar6 + 0x24);
+          if (local_78 < (pSVar9->world_position).y) {
+            local_78 = (pSVar9->world_position).y;
           }
-          if (local_74 < *(float *)(iVar6 + 0x28)) {
-            local_74 = *(float *)(iVar6 + 0x28);
+          if (local_74 < (pSVar9->world_position).z) {
+            local_74 = (pSVar9->world_position).z;
           }
-          iVar3 = iVar3 + 1;
-          iVar6 = iVar6 + 0x74;
-        } while (iVar3 < *(int *)(param_1 + 0x1fc));
+          iVar6 = iVar6 + 1;
+          pSVar9 = pSVar9 + 1;
+        } while (iVar6 < param_1->vertex_count);
       }
       iStack_28 = 0;
       DAT_0077bdb8 = 0;
-      for (iStack_20 = 0; iVar3 = DAT_0077bdb8, iStack_20 < *(int *)(0x01E57284 + 0x14ecb0);
+      for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < *(int *)(0x01E57284 + 0x14ecb0);
           iStack_20 = iStack_20 + 1) {
-        iVar6 = *(int *)(0x01E57284 + iStack_28 + 0x14ecb4);
-        iVar4 = DAT_0077bdb8 * 10;
-        if (&DAT_0077bdbc + DAT_0077bdb8 * 3 != (uint *)(iVar6 + 0x20)) {
-          (&DAT_0077bdbc)[DAT_0077bdb8 * 3] = *(uint *)(iVar6 + 0x20);
-          (&DAT_0077bdc0)[iVar3 * 3] = *(uint *)(iVar6 + 0x24);
-          (&DAT_0077bdc4)[iVar3 * 3] = *(uint *)(iVar6 + 0x28);
+        iVar10 = *(int *)(0x01E57284 + iStack_28 + 0x14ecb4);
+        iVar7 = DAT_0077bdb8 * 10;
+        if (&DAT_0077bdbc + DAT_0077bdb8 * 3 != (uint *)(iVar10 + 0x20)) {
+          (&DAT_0077bdbc)[DAT_0077bdb8 * 3] = *(uint *)(iVar10 + 0x20);
+          (&DAT_0077bdc0)[iVar6 * 3] = *(uint *)(iVar10 + 0x24);
+          (&DAT_0077bdc4)[iVar6 * 3] = *(uint *)(iVar10 + 0x28);
         }
-        (&DAT_0077c26c)[iVar4] = 0;
-        iVar4 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x34))(iVar6,&DAT_0077c26c + iVar4);
-        if (((iVar4 == 2) && (*(float *)(iVar6 + 0x24) <= local_78)) &&
-           ((local_a8 <= *(float *)(iVar6 + 0x24) + (float)(&DAT_0077c284)[iVar3 * 10] &&
-            ((((local_ac <= *(float *)(iVar6 + 0x20) + (float)(&DAT_0077c288)[iVar3 * 10] &&
-               (*(float *)(iVar6 + 0x20) - (float)(&DAT_0077c288)[iVar3 * 10] <= local_7c)) &&
-              (local_a4 <= *(float *)(iVar6 + 0x28) + (float)(&DAT_0077c288)[iVar3 * 10])) &&
-             (*(float *)(iVar6 + 0x28) - (float)(&DAT_0077c288)[iVar3 * 10] <= local_74)))))) {
+        (&DAT_0077c26c)[iVar7] = 0;
+        iVar7 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0x34))(iVar10,&DAT_0077c26c + iVar7);
+        if (((iVar7 == 2) && (*(float *)(iVar10 + 0x24) <= local_78)) &&
+           ((local_a8 <= *(float *)(iVar10 + 0x24) + (float)(&DAT_0077c284)[iVar6 * 10] &&
+            ((((local_ac <= *(float *)(iVar10 + 0x20) + (float)(&DAT_0077c288)[iVar6 * 10] &&
+               (*(float *)(iVar10 + 0x20) - (float)(&DAT_0077c288)[iVar6 * 10] <= local_7c)) &&
+              (local_a4 <= *(float *)(iVar10 + 0x28) + (float)(&DAT_0077c288)[iVar6 * 10])) &&
+             (*(float *)(iVar10 + 0x28) - (float)(&DAT_0077c288)[iVar6 * 10] <= local_74)))))) {
           DAT_0077bdb8 = DAT_0077bdb8 + 1;
         }
         iStack_28 = iStack_28 + 4;
       }
-      *(uint *)(param_1 + 0x65b2c) = 1;
-      if ((iVar3 == 0) && (*(int *)(param_1 + 0x188) == 0)) {
-        *(uint *)(param_1 + 0x65b2c) = 0;
-        if (0 < *(int *)(param_1 + 0x1fc)) {
-          pfVar5 = (float *)(param_1 + 0x200);
-          iVar3 = 0;
+      param_1->needs_update = 1;
+      if ((iVar6 == 0) && (param_1->falling == 0)) {
+        param_1->needs_update = 0;
+        if (0 < param_1->vertex_count) {
+          pSVar9 = param_1->vertices;
+          iVar6 = 0;
           do {
-            if (pfVar5[0x1a] == 0.0) {
-              if ((float)0.10000000000000001 <
-                  SQRT(pfVar5[0xd] * pfVar5[0xd] +
-                       pfVar5[0xb] * pfVar5[0xb] + pfVar5[0xc] * pfVar5[0xc])) {
-                *(uint *)(param_1 + 0x65b2c) = 1;
+            if (pSVar9->is_pinned == 0) {
+              fVar5 = (pSVar9->velocity).y;
+              fVar3 = (pSVar9->velocity).x;
+              fVar4 = (pSVar9->velocity).z;
+              if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5)) {
+                param_1->needs_update = 1;
                 goto LAB_0043eed9;
               }
-              fStack_b8 = pfVar5[3] - *pfVar5;
-              fStack_b4 = pfVar5[4] - pfVar5[1];
-              fStack_b0 = pfVar5[5] - pfVar5[2];
+              fStack_b8 = (pSVar9->initial_position).x - (pSVar9->local_position).x;
+              fStack_b4 = (pSVar9->initial_position).y - (pSVar9->local_position).y;
+              fStack_b0 = (pSVar9->initial_position).z - (pSVar9->local_position).z;
               if ((float)0.10000000000000001 <
                   SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {
-                *(uint *)(param_1 + 0x65b2c) = 1;
+                param_1->needs_update = 1;
                 goto LAB_0043eed9;
               }
             }
-            iVar3 = iVar3 + 1;
-            pfVar5 = pfVar5 + 0x1d;
-          } while (iVar3 < *(int *)(param_1 + 0x1fc));
+            iVar6 = iVar6 + 1;
+            pSVar9 = pSVar9 + 1;
+          } while (iVar6 < param_1->vertex_count);
         }
-        if (*(int *)(param_1 + 0x65b2c) == 0) {
+        if (param_1->needs_update == 0) {
           return;
         }
       }
 LAB_0043eed9:
       iVar6 = 0;
-      iVar3 = param_1;
-      if (0 < *(int *)(param_1 + 0x1fc)) {
+      pCVar8 = param_1;
+      if (0 < param_1->vertex_count) {
         do {
-          *(uint *)(iVar3 + 0x26c) = 0;
+          pCVar8->vertices[0].has_collision = 0;
           iVar6 = iVar6 + 1;
-          iVar3 = iVar3 + 0x74;
-        } while (iVar6 < *(int *)(param_1 + 0x1fc));
+          pCVar8 = (CCurtain *)&(pCVar8->base).create_prob;
+        } while (iVar6 < param_1->vertex_count);
       }
       iStack_1c = 0;
-      if (0 < *(int *)(param_1 + 0x1fc)) {
-        iVar3 = param_1 + 0x200;
+      if (0 < param_1->vertex_count) {
+        pSVar9 = param_1->vertices;
         do {
-          if (*(int *)(iVar3 + 0x68) == 0) {
-            fVar2 = (float)0.84999999999999998;
-            *(float *)(iVar3 + 0x2c) = *(float *)(iVar3 + 0x2c) * fVar2;
-            fVar1 = *(float *)(param_1 + 0x65b10);
-            *(float *)(iVar3 + 0x34) = fVar2 * *(float *)(iVar3 + 0x34);
-            *(float *)(iVar3 + 0x30) = fVar1 * *(float *)(iVar3 + 0x30);
-            fStack_e0 = *(float *)(param_1 + 0x65b0c);
-            if (*(int *)(iVar3 + 0x70) != 0) {
+          if (pSVar9->is_pinned == 0) {
+            fVar3 = (float)0.84999999999999998;
+            (pSVar9->velocity).x = (pSVar9->velocity).x * fVar3;
+            fVar5 = param_1->dampen;
+            (pSVar9->velocity).z = fVar3 * (pSVar9->velocity).z;
+            (pSVar9->velocity).y = fVar5 * (pSVar9->velocity).y;
+            fStack_e0 = param_1->weight;
+            if (pSVar9->is_corner != 0) {
               fStack_e0 = fStack_e0 * (float)4;
             }
             fStack_44 = 1.0 / param_2;
             fStack_18 = fStack_e0 * (float)0.03125;
-            fStack_64 = -*(float *)(iVar3 + 0x2c);
-            fStack_60 = -*(float *)(iVar3 + 0x30);
+            fStack_64 = -(pSVar9->velocity).x;
+            fStack_60 = -(pSVar9->velocity).y;
             fStack_4c = fStack_64 * fStack_44;
             fStack_50 = 1.0 / fStack_18;
             fStack_48 = fStack_60 * fStack_44;
-            fStack_5c = -*(float *)(iVar3 + 0x34);
+            fStack_5c = -(pSVar9->velocity).z;
             fStack_44 = fStack_5c * fStack_44;
             fStack_94 = fStack_4c * fStack_18;
             fStack_90 = fStack_48 * fStack_18;
@@ -201,73 +208,73 @@ LAB_0043eed9:
               fStack_c0 = fStack_54;
               fStack_bc = fStack_50;
             }
-            pfVar5 = (float *)(iVar3 + 0x2c);
-            *pfVar5 = *pfVar5 + fStack_c4 * param_2;
-            *(float *)(iVar3 + 0x30) = *(float *)(iVar3 + 0x30) + fStack_c0 * param_2;
-            fStack_a0 = *pfVar5 * param_2;
-            *(float *)(iVar3 + 0x34) = *(float *)(iVar3 + 0x34) + fStack_bc * param_2;
-            fStack_9c = *(float *)(iVar3 + 0x30) * param_2;
-            fStack_98 = param_2 * *(float *)(iVar3 + 0x34);
-            *(float *)(iVar3 + 0x20) = *(float *)(iVar3 + 0x20) + fStack_a0;
-            *(float *)(iVar3 + 0x24) = *(float *)(iVar3 + 0x24) + fStack_9c;
-            *(float *)(iVar3 + 0x28) = *(float *)(iVar3 + 0x28) + fStack_98;
-            core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,iVar3);
+            pCVar1 = &pSVar9->velocity;
+            pCVar1->x = pCVar1->x + fStack_c4 * param_2;
+            (pSVar9->velocity).y = (pSVar9->velocity).y + fStack_c0 * param_2;
+            fStack_a0 = pCVar1->x * param_2;
+            (pSVar9->velocity).z = (pSVar9->velocity).z + fStack_bc * param_2;
+            fStack_9c = (pSVar9->velocity).y * param_2;
+            fStack_98 = param_2 * (pSVar9->velocity).z;
+            (pSVar9->world_position).x = (pSVar9->world_position).x + fStack_a0;
+            (pSVar9->world_position).y = (pSVar9->world_position).y + fStack_9c;
+            (pSVar9->world_position).z = (pSVar9->world_position).z + fStack_98;
+            core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);
           }
-          iVar3 = iVar3 + 0x74;
+          pSVar9 = pSVar9 + 1;
           iStack_1c = iStack_1c + 1;
-        } while (iStack_1c < *(int *)(param_1 + 0x1fc));
+        } while (iStack_1c < param_1->vertex_count);
       }
-      iStack_30 = param_1 + 0x200;
+      pSStack_30 = param_1->vertices;
       iStack_24 = 0;
       do {
         iVar6 = 0;
-        iVar3 = iStack_30;
-        if (0 < *(int *)(param_1 + 0x1fc)) {
+        pSVar9 = pSStack_30;
+        if (0 < param_1->vertex_count) {
           do {
-            if (*(int *)(iVar3 + 0x68) == 0) {
-              core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,iVar3);
+            if (pSVar9->is_pinned == 0) {
+              core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(param_1,pSVar9);
             }
             iVar6 = iVar6 + 1;
-            iVar3 = iVar3 + 0x74;
-          } while (iVar6 < *(int *)(param_1 + 0x1fc));
+            pSVar9 = pSVar9 + 1;
+          } while (iVar6 < param_1->vertex_count);
         }
         iStack_24 = iStack_24 + 1;
       } while (iStack_24 < 3);
-      iVar3 = 0;
-      if (0 < *(int *)(param_1 + 0x1fc)) {
-        pfVar5 = (float *)(param_1 + 0x65b18);
-        iVar6 = param_1 + 0x200;
+      iVar6 = 0;
+      if (0 < param_1->vertex_count) {
+        pfVar2 = &param_1->friction;
+        pSVar9 = param_1->vertices;
         do {
-          iStack_2c = iVar6;
-          if (*(int *)(iStack_2c + 0x6c) != 0) {
-            *(float *)(iStack_2c + 0x2c) = *pfVar5 * *(float *)(iStack_2c + 0x2c);
-            *(float *)(iStack_2c + 0x30) = *pfVar5 * *(float *)(iStack_2c + 0x30);
-            *(float *)(iStack_2c + 0x34) = *pfVar5 * *(float *)(iStack_2c + 0x34);
+          pSStack_2c = pSVar9;
+          if (pSStack_2c->has_collision != 0) {
+            (pSStack_2c->velocity).x = *pfVar2 * (pSStack_2c->velocity).x;
+            (pSStack_2c->velocity).y = *pfVar2 * (pSStack_2c->velocity).y;
+            (pSStack_2c->velocity).z = *pfVar2 * (pSStack_2c->velocity).z;
           }
-          if ((uint *)(iStack_2c + 0x38) != (uint *)(iStack_2c + 0x20)) {
-            *(uint *)(iStack_2c + 0x38) = *(uint *)(iStack_2c + 0x20);
-            *(uint *)(iStack_2c + 0x3c) = *(uint *)(iStack_2c + 0x24);
-            *(uint *)(iStack_2c + 0x40) = *(uint *)(iStack_2c + 0x28);
+          if (&pSStack_2c->last_world_position != &pSStack_2c->world_position) {
+            (pSStack_2c->last_world_position).x = (pSStack_2c->world_position).x;
+            (pSStack_2c->last_world_position).y = (pSStack_2c->world_position).y;
+            (pSStack_2c->last_world_position).z = (pSStack_2c->world_position).z;
           }
-          iVar3 = iVar3 + 1;
-          iVar6 = iStack_2c + 0x74;
-        } while (iVar3 < *(int *)(param_1 + 0x1fc));
+          iVar6 = iVar6 + 1;
+          pSVar9 = pSStack_2c + 1;
+        } while (iVar6 < param_1->vertex_count);
       }
-      if (*(int *)(param_1 + 0x65b24) != 0) {
+      if (param_1->hit_floor != 0) {
+        iVar10 = 0;
         iVar6 = 0;
-        iVar3 = 0;
-        if (0 < *(int *)(param_1 + 0x1fc)) {
-          iVar4 = param_1 + 0x200;
+        if (0 < param_1->vertex_count) {
+          pSVar9 = param_1->vertices;
           do {
-            if (*(float *)(iVar4 + 0x24) <= *(float *)(param_1 + 0x65b20)) {
-              iVar3 = iVar3 + 1;
+            if ((pSVar9->world_position).y <= param_1->floor_height) {
+              iVar6 = iVar6 + 1;
             }
-            iVar6 = iVar6 + 1;
-            iVar4 = iVar4 + 0x74;
-          } while (iVar6 < *(int *)(param_1 + 0x1fc));
+            iVar10 = iVar10 + 1;
+            pSVar9 = pSVar9 + 1;
+          } while (iVar10 < param_1->vertex_count);
         }
-        if (iVar3 == *(int *)(param_1 + 0x1fc)) {
-          *(uint *)(param_1 + 0x1f0) = 0;
+        if (iVar6 == param_1->vertex_count) {
+          param_1->simulate_me = 0;
         }
       }
       core_curtain_cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(param_1);

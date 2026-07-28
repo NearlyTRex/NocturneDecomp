@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00528970(void)
+; float __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00528970(void)
 ;
 ;
 ; XREF[4]:

@@ -1,0 +1,368 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 146,
+    "complexity_score": 193,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 68,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 214
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0052a280",
+    "address_range": [
+      [
+        "0052a280",
+        "0052a440"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280",
+    "signature": "void sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563cc0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_00563cc0"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00529a90",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90"
+    },
+    {
+      "addr": "00529980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00529980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005940b7",
+      "name": "s_DirectSux_Unable_to_s_s_005940b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005941a5",
+      "name": "s_Create_temp_secondary_bu_005941a5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bed10",
+      "name": "DAT_005bed10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c3918",
+      "name": "DAT_005c3918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9214",
+      "name": "DAT_02dc9214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9224",
+      "name": "DAT_02dc9224",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6507936507936507,
+    "instruction_count": 126,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 7,
+      "CBRANCH": 6,
+      "COPY": 121,
+      "INT_ADD": 50,
+      "INT_AND": 42,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 36,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 18,
+      "INT_SUB": 43,
+      "INT_XOR": 4,
+      "LOAD": 30,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 57
+    },
+    "pcode_op_count": 460
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02dc9224 + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 47,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005c3918",
+      "severity": "mild",
+      "text": "(**(code **)*puStack_28)(puStack_28,&DAT_005c3918,&uStack_24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_34 + 8))(piStack_34);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005bed10",
+      "severity": "mild",
+      "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_02dc9224",
+      "severity": "mild",
+      "text": "(**(code **)*puStack_30)(puStack_30,&DAT_005bed10,&DAT_02dc9224);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 56,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_40 + 8))(piStack_40);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piStack_3c + 8))(piStack_3c);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

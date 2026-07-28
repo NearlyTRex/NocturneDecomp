@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *param_1,undefined4 *param_2)
+; void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *base_filename,uchar *output_buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   base_filename
+; uchar *          Stack[0x8]:4   output_buffer
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0 at 0042d404
@@ -123,7 +126,7 @@ section .text
     PUSH EAX                            ; 0042d51b
     PUSH 0x57a6ea                       ; 0042d51c | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0042d521
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0042d526
     MOV ESI,EAX                         ; 0042d529
     TEST EAX,EAX                        ; 0042d52b
@@ -134,7 +137,7 @@ section .text
     PUSH 0x100                          ; 0042d532
     PUSH EBX                            ; 0042d537
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0042d538
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0042d53d
     CMP EAX,0x3                         ; 0042d540
     JZ 0x0042d57d                       ; 0042d543
@@ -159,7 +162,7 @@ section .text
     PUSH ESI                            ; 0042d57d
         ;   Label: LAB_0042d57d
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0042d57e
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0042d583
     ADD ESP,0xa0                        ; 0042d586
     POP EDI                             ; 0042d58c

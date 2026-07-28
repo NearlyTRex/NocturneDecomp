@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(int param_1)
+; void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
@@ -35,12 +37,12 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004bef16
     PUSH EDI                            ; 004bef1a
     CALL core_inv.cpp_CInventory_clear_FUN_004bee80 ; 004bef1b
-        ;   XREF to: 004bee80 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_clear_FUN_004bee80()
+        ;   XREF to: 004bee80 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_clear_FUN_004bee80(CInventory * this_ptr)
     MOV EBX,EDI                         ; 004bef20
     ADD ESP,0x4                         ; 004bef22
     LEA ESI,[EDI + 0x190]               ; 004bef25
     CALL crt_stdlib.c_rand_FUN_0056488c ; 004bef2b
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_004bef2b
     MOV dword ptr [ESP],EAX             ; 004bef30
     FILD dword ptr [ESP]                ; 004bef33
@@ -63,7 +65,7 @@ section .text
     PUSH 0x586d73                       ; 004bef65 | = "CAmmo"
         ;   Label: LAB_004bef65
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004bef6a
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004bef6f
     MOV dword ptr [EDI + 0x458],EAX     ; 004bef72
     PUSH EAX                            ; 004bef78

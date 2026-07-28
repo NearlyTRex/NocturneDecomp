@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_00519b10(int param_1,int param_2)
+; SPart * __cdecl core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_00519b10(CDeformableModel *this_ptr,int part_index)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570 at 00426588

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_course_cpp_CDemonTriangle_arrdtor_FUN_0043b5f0(undefined4 param_1)
+; CDemonTriangle * __cdecl core_course_cpp_CDemonTriangle_arrdtor_FUN_0043b5f0(CDemonTriangle *objs,uint flags)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[7]:
 ;   core_bat.cpp_CStairs_dtor_FUN_00412000 at 00412015
@@ -25,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043b5f1
     PUSH EBX                            ; 0043b5f5
     CALL core_course.cpp_CCourse_free_FUN_0043b7c0 ; 0043b5f6
-        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_free_FUN_0043b7c0()
+        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_0043b7c0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 0043b5fb
     MOV EAX,EBX                         ; 0043b5fe
     POP EBX                             ; 0043b600

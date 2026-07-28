@@ -1,0 +1,270 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 235,
+    "complexity_score": 154,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 124,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strlen"
+    ],
+    "total_lines": 359
+  },
+  "cross_references": [
+    {
+      "addr": "0056eed8",
+      "from_addr": "0056ef16",
+      "name": "crt_exception.c_installExceptionHandler_FUN_0056eed8",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0056ead4",
+    "address_range": [
+      [
+        "0056ead4",
+        "0056ecea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0056ead4",
+    "signature": "long __cdecl crt_exception_c_TopLevelExceptionFilter_FUN_0056ead4(_EXCEPTION_POINTERS *ExceptionInfo)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ea78",
+      "is_variadic": false,
+      "name": "crt_exception.c_FormatHexString_FUN_0056ea78"
+    },
+    {
+      "addr": "0056ea40",
+      "is_variadic": false,
+      "name": "crt_windows.c_has_active_window_FUN_0056ea40"
+    },
+    {
+      "addr": "005714ec",
+      "is_variadic": false,
+      "name": "FUN_005714ec"
+    },
+    {
+      "addr": "EXTERNAL:00000098",
+      "is_variadic": false,
+      "name": "WriteFile"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005755ec",
+      "name": "PTR_WriteFile_005755ec",
+      "type": "void*",
+      "value": "0017613e"
+    },
+    {
+      "addr": "00598c80",
+      "name": "s_The_instruction_at_0x000_00598c80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598cd4",
+      "name": "s_The_instruction_at_0x000_00598cd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598d28",
+      "name": "s_The_instruction_at_0x000_00598d28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598d7c",
+      "name": "s_The_instruction_at_0x000_00598d7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598dd0",
+      "name": "s_The_instruction_at_0x000_00598dd0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598e24",
+      "name": "s_The_instruction_at_0x000_00598e24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598e70",
+      "name": "s_The_instruction_at_0x000_00598e70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598ec0",
+      "name": "s_The_instruction_at_0x000_00598ec0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598f18",
+      "name": "s_The_instruction_at_0x000_00598f18",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598f4c",
+      "name": "s_at_0x00000000_The_memory_00598f4c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598f74",
+      "name": "s_read_00598f74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598f7c",
+      "name": "s_written_00598f7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598f88",
+      "name": "s_A_privileged_instruction_00598f88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598fc8",
+      "name": "s_An_illegal_instruction_w_00598fc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00599004",
+      "name": "s_An_integer_divide_by_zer_00599004",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00599048",
+      "name": "s_A_stack_overflow_was_enc_00599048",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00599084",
+      "name": "s_The_program_encountered_00599084",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005990b8",
+      "name": "s_address_0x00000000_and_c_005990b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1f54",
+      "name": "DAT_005c1f54",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5240963855421685,
+    "instruction_count": 166,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 7,
+      "BRANCH": 20,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 21,
+      "COPY": 108,
+      "INT_ADD": 40,
+      "INT_AND": 57,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 55,
+      "INT_LESS": 14,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 27,
+      "INT_SUB": 75,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 32,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 58
+    },
+    "pcode_op_count": 585
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "ExceptionInfo",
+        "offset": 4,
+        "size": 4,
+        "type": "_EXCEPTION_POINTERS *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "WriteFile(*(HANDLE *)(DAT_005c1f54 + 8),local_114,~uVar6 - 1,&local_14,(LPOVERLAPPED)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 119,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

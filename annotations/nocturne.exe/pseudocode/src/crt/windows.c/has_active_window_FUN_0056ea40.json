@@ -1,0 +1,135 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_max_restarts"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "0056ead4",
+      "from_addr": "0056eaea",
+      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0056ead4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ea40",
+    "address_range": [
+      [
+        "0056ea40",
+        "0056ea75"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_windows.c_has_active_window_FUN_0056ea40",
+    "signature": "BOOL __cdecl crt_windows_c_has_active_window_FUN_0056ea40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000006a",
+      "is_variadic": false,
+      "name": "GetProcAddress"
+    },
+    {
+      "addr": "EXTERNAL:00000075",
+      "is_variadic": false,
+      "name": "LoadLibraryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575534",
+      "name": "PTR_GetProcAddress_00575534",
+      "type": "void*",
+      "value": "00175ddc"
+    },
+    {
+      "addr": "00575560",
+      "name": "PTR_LoadLibraryA_00575560",
+      "type": "void*",
+      "value": "00175eaa"
+    },
+    {
+      "addr": "00598c64",
+      "name": "s_USER32_DLL_00598c64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598c70",
+      "name": "s_GetActiveWindow_00598c70",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056eaea",
+        "call_type": "direct",
+        "caller": "crt_exception.c_TopLevelExceptionFilter_FUN_0056ead4",
+        "estimated_params": 0,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.315789473684211,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 3,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 2,
+      "INT_AND": 14,
+      "INT_EQUAL": 10,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    }
+  ]
+}

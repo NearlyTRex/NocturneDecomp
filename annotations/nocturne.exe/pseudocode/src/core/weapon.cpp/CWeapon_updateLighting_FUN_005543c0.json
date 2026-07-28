@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 138,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "pseudocode_lines": 49,
+    "suspect_count": 21,
     "suspect_types": [
+      "stack_param",
       "stack_ref",
+      "unaffected_reg",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 162
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -149,7 +151,7 @@
     ],
     "convention": "unknown",
     "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0",
-    "signature": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(int param_1)"
+    "signature": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -376,6 +378,23 @@
     "return_addr_offset": 0,
     "variables": []
   },
+  "static_analysis": {
+    "analyzed_file": "CWeapon_updateLighting_FUN_005543c0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 31,
+          "message": "Uninitialized variable: fStack_14",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -390,56 +409,168 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(int param_1)",
+      "text": "void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))();",
-      "type": "unresolved_funcptr"
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffcc",
+      "severity": "moderate",
+      "text": "uint in_stack_ffffffcc;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))();",
+      "text": "input_local_point = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "input_local_point = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(CVector3f *)auStack_1c,input_local_point);",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 21,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x1c74764) {",
+      "text": "if (&stack0x00000000 != (byte *)0x1c74760) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))();",
-      "type": "unresolved_funcptr"
+      "description": "Unknown/mangled field access",
+      "line": 22,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_DAT_01c74744 = (float)auStack_1c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "_DAT_01c74748 = (float)auStack_1c._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))();",
+      "text": "CStack_28.y = (param_1->orient).vec.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_28.z = (param_1->orient).vec.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_28.x = (param_1->orient).vec.x + 0.3490658f;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 30,
+      "match": "DAT_01c74750",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&DAT_01c74750,&CStack_28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = (*((param_1->vtable)._ub)->getCarrier)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = (*((param_1->vtable)._ub)->getCarrier)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_ffffffcc",
+      "severity": "moderate",
+      "text": "pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,in_stack_ffffffcc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = fVar1 * 0.06666667f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((CDemonLight *)&DAT_01c74640,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01c74640",
+      "severity": "mild",
+      "text": "((CDemonLight *)&DAT_01c74640,unaff_ESI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
       "match": "DAT_02ddf9c8",
       "severity": "mild",
       "text": "DAT_02ddf9c8 = 0x20;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Uninitialized variable: fStack_14",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01c7474c = fStack_14;",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

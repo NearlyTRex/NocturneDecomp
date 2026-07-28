@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00545810(int *param_1,undefined4 param_2)
+; int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00545810(CTextureCache *this_ptr,char *output_buffer)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_getTextureCacheStats_FUN_00545a80 at 00545a8c

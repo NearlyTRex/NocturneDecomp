@@ -2,13 +2,13 @@
 // Address: 004873a0
 // Address Range: [[004873a0, 004873ae]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CToss_reset_FUN_004873a0(int param_1)
+// Signature: void __cdecl core_fire_cpp_CToss_reset_FUN_004873a0(CToss *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CToss_reset_FUN_004873a0(int param_1)
+void __cdecl core_fire_cpp_CToss_reset_FUN_004873a0(CToss *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x3dc) = 0;
+  this_ptr->fuse_timer = 0.0;
   return;
 }

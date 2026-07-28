@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,undefined4 param_2)
+; void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x1dc]:1  local_1dc
 ; undefined        Stack[-0xdc]:1  local_dc
@@ -56,12 +59,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1e0]     ; 004c119a
     PUSH EDX                            ; 004c11a1
     CALL core_inv.cpp_CInventory_clear_FUN_004bee80 ; 004c11a2
-        ;   XREF to: 004bee80 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_clear_FUN_004bee80()
+        ;   XREF to: 004bee80 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_clear_FUN_004bee80(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004c11a7
     MOV ECX,dword ptr [ESP + 0x1e0]     ; 004c11aa
     PUSH ECX                            ; 004c11b1
     CALL core_inv.cpp_CInventory_initialize_FUN_004bef10 ; 004c11b2
-        ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_initialize_FUN_004bef10()
+        ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_initialize_FUN_004bef10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004c11b7
     MOV EBX,dword ptr [ESP + 0x1e4]     ; 004c11ba
     PUSH EBX                            ; 004c11c1
@@ -69,14 +72,14 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c11c7
     PUSH EAX                            ; 004c11cb
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c11cc
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c11d1
     PUSH EBX                            ; 004c11d4
     PUSH 0xff                           ; 004c11d5
     LEA EAX,[ESP + 0x8]                 ; 004c11da
     PUSH EAX                            ; 004c11de
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c11df
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c11e4
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c11e7
     ADD EAX,0x32c                       ; 004c11ee
@@ -91,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c1208
     PUSH EAX                            ; 004c120c
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c120d
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c1212
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c1215
     ADD EAX,0x8                         ; 004c121c
@@ -106,7 +109,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c1234
     PUSH EAX                            ; 004c1238
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c1239
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c123e
     LEA EAX,[ESP + 0x1c8]               ; 004c1241
     PUSH EAX                            ; 004c1248
@@ -126,7 +129,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c1278
     PUSH EAX                            ; 004c127c
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c127d
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c1282
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c1285
     MOV EDX,dword ptr [EAX + 0x8]       ; 004c128c
@@ -163,7 +166,7 @@ section .text
     PUSH EAX                            ; 004c12fe
     PUSH ESI                            ; 004c12ff | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640 ; 004c1300
-        ;   XREF to: 004d8640 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640()
+        ;   XREF to: 004d8640 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(CDemonMission * this_ptr, char * actor_name)
     ADD ESP,0x8                         ; 004c1305
     MOV dword ptr [EBX + 0xc],EAX       ; 004c1308
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c130b
@@ -181,7 +184,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c132e
     PUSH EAX                            ; 004c1332
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c1333
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c1338
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c133b
     MOV EDI,dword ptr [EAX + 0x8]       ; 004c1342
@@ -196,7 +199,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0xc]       ; 004c1355
     PUSH EDI                            ; 004c1358
     CALL core_actor.cpp_CDemonActor_load_FUN_0040c160 ; 004c1359
-        ;   XREF to: 0040c160 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_load_FUN_0040c160()
+        ;   XREF to: 0040c160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_load_FUN_0040c160(CDemonActor * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004c135e
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004c1361
     INC ESI                             ; 004c1368
@@ -219,7 +222,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c139d
     PUSH EAX                            ; 004c13a1
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c13a2
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c13a7
     MOV EAX,[0x005baf90]                ; 004c13aa | DAT_005baf90
         ;   Label: LAB_004c13aa
@@ -236,7 +239,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1e4]     ; 004c13dd
     PUSH ESI                            ; 004c13e4
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 ; 004c13e5
-        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90()
+        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004c13ea
     ADD ESP,0x1cc                       ; 004c13ed
     POP EBP                             ; 004c13f3
@@ -251,7 +254,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004c1405
     PUSH EAX                            ; 004c1409
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004c140a
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004c140f
     MOV EDI,dword ptr [ESP + 0x1e0]     ; 004c1412
     PUSH EDI                            ; 004c1419
@@ -267,7 +270,7 @@ section .text
     PUSH EAX                            ; 004c1434
     LEA ESI,[ESP + 0x168]               ; 004c1435
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004c143c
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004c1441
     MOV EDI,EAX                         ; 004c1444
     MOV EDX,EAX                         ; 004c1446
@@ -299,7 +302,7 @@ section .text
     PUSH EBP                            ; 004c147d
     MOV EDI,EDX                         ; 004c147e
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1480
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,EDI                         ; 004c1485
     MOV dword ptr [EDX + 0x330],EAX     ; 004c1487
     MOV EDX,dword ptr [EDI + 0x330]     ; 004c148d

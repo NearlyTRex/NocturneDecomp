@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CBulletHole_process_FUN_00482e90(undefined4 *param_1)
+; void __cdecl core_fire_cpp_CBulletHole_process_FUN_00482e90(CBulletHole *this_ptr)
 ;
+; Parameters:
+; CBulletHole *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ;
@@ -35,7 +37,7 @@ section .text
     PUSH EAX                            ; 00482eac
     PUSH EDX                            ; 00482ead
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00482eae
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00482eb3
     CMP EBX,EAX                         ; 00482eb6
     JZ 0x00482e9f                       ; 00482eb8

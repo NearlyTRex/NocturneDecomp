@@ -2,11 +2,11 @@
 // Address: 00489850
 // Address Range: [[00489850, 00489973]]
 // Convention: unknown
-// Signature: undefined4 core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
+// Signature: undefined4 core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
 
 #include "nocturne.h"
 
-uint core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
+uint core_fire_cpp_CShell_onCollision_FUN_00489850(CVector3f *param_1)
 
 {
   float fVar1;
@@ -16,15 +16,15 @@ uint core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
   int iVar5;
   float local_18;
   
-  local_18 = (float)(4 - *(int *)(param_1 + 0x50)) * (float)0.25;
+  local_18 = (float)(4 - (int)param_1[6].z) * (float)0.25;
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }
   fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0c90fdb,0x40c90fdb);
-  *(float *)(param_1 + 0x44) = fVar1 * local_18;
+  param_1[5].z = fVar1 * local_18;
   fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0490fdb,0x40490fdb);
-  *(float *)(param_1 + 0x48) = fVar1 * local_18;
-  if (*(int *)(param_1 + 0x50) == 0) {
+  param_1[6].x = fVar1 * local_18;
+  if (param_1[6].z == 0.0) {
     iVar5 = 0;
     iVar4 = 0;
     do {
@@ -34,22 +34,21 @@ uint core_fire_cpp_CShell_onCollision_FUN_00489850(int param_1)
       iVar5 = iVar5 + 1;
     } while (iVar4 < 0xc);
     if (iVar5 != 3) {
-      iVar4 = _stricmp
-                        (*(uint *)(param_1 + 0x54),"shell.kfm");
+      iVar4 = _stricmp((char *)param_1[7].x,"shell.kfm");
       if (iVar4 == 0) {
         uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                           (0x02DC9450,0x01C08D04,"sh-sh?c @ .15",param_1);
         *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
-        *(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + 1;
+        param_1[6].z = (float)((int)param_1[6].z + 1);
         return 0;
       }
       uVar3 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                         (0x02DC9450,0x01C08D04,"44-sh?c @ .2",param_1);
       *(uint *)(iVar5 * 4 + 0x1c0a130) = uVar3;
-      *(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + 1;
+      param_1[6].z = (float)((int)param_1[6].z + 1);
       return 0;
     }
   }
-  *(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + 1;
+  param_1[6].z = (float)((int)param_1[6].z + 1);
   return 0;
 }

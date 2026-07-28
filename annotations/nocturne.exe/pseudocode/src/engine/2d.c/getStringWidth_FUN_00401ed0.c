@@ -2,44 +2,45 @@
 // Address: 00401ed0
 // Address Range: [[00401ed0, 00401f20]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(byte *param_1)
+// Signature: int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(char *text)
 
 #include "nocturne.h"
 
-int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(byte *param_1)
+int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(char *text)
 
 {
-  byte bVar1;
-  uint uVar2;
-  byte *pbVar3;
-  uint uVar4;
-  int iVar5;
-  byte *pbVar6;
+  char cVar1;
+  byte bVar2;
+  uint uVar3;
+  byte *pbVar4;
+  uint uVar5;
+  int iVar6;
+  char *pcVar7;
   
-  uVar4 = 0;
-  iVar5 = 0;
-  pbVar3 = param_1;
+  uVar5 = 0;
+  iVar6 = 0;
+  pbVar4 = (byte *)text;
   do {
-    uVar2 = 0xffffffff;
-    pbVar6 = param_1;
+    uVar3 = 0xffffffff;
+    pcVar7 = text;
     do {
-      if (uVar2 == 0) break;
-      uVar2 = uVar2 - 1;
-      bVar1 = *pbVar6;
-      pbVar6 = pbVar6 + 1;
-    } while (bVar1 != 0);
-    if (~uVar2 - 1 <= uVar4) {
-      return iVar5;
+      if (uVar3 == 0) break;
+      uVar3 = uVar3 - 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + 1;
+    } while (cVar1 != '\0');
+    if (~uVar3 - 1 <= uVar5) {
+      return iVar6;
     }
-    bVar1 = *pbVar3;
-    if ((bVar1 < 0x20) || (0xff < bVar1)) {
-      uVar4 = uVar4 + 1;
-      pbVar3 = pbVar3 + 1;
+    bVar2 = *pbVar4;
+    if ((bVar2 < 0x20) || (0xff < bVar2)) {
+      uVar5 = uVar5 + 1;
+      pbVar4 = pbVar4 + 1;
     }
     else {
-      iVar5 = iVar5 + (byte)(&DAT_005a4b80)[(bVar1 - 0x20) * 0x91] + 1;
-      uVar4 = uVar4 + 1;
-      pbVar3 = pbVar3 + 1;
+      iVar6 = iVar6 + (byte)(&DAT_005a4b80)[(bVar2 - 0x20) * 0x91] + 1;
+      uVar5 = uVar5 + 1;
+      pbVar4 = pbVar4 + 1;
     }
   } while( true );
 }

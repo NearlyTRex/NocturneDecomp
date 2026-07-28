@@ -8,7 +8,7 @@
 ;   FUN_0056d4ab at 0056d4bb
 ;
 ; Called Functions:
-;   FUN_0056d340
+;   crt_time.c_gmtime_r_FUN_0056d340
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0056d49a
     PUSH EDX                            ; 0056d49c
     PUSH 0x63df                         ; 0056d49d
-    CALL FUN_0056d340                   ; 0056d4a2
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d340()
+    CALL crt_time.c_gmtime_r_FUN_0056d340 ; 0056d4a2
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined crt_time.c_gmtime_r_FUN_0056d340()
     ADD ESP,0x10                        ; 0056d4a7
     RET                                 ; 0056d4aa
 

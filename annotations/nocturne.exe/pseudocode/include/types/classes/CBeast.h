@@ -5,7 +5,7 @@
 #include "types/classes/CEnemy.h"
 
 // Structure: CBeast
-// Ghidra size: 0xbebc (48828 bytes)
+// Ghidra size: 0xbd24 (48420 bytes)
 #pragma pack(push, 1)
 typedef struct CBeast {
     CEnemy base; // 0x0

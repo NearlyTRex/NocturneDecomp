@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_FUN_00421480(int param_1,undefined4 param_2)
+; void core_bugs_cpp_FUN_00421480(CBugs *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -61,7 +61,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 004214d2 | DAT_005b7650
     PUSH ECX                            ; 004214d8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004214d9
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004214de
     TEST EAX,EAX                        ; 004214e1
     JZ 0x004214a0                       ; 004214e3
@@ -75,7 +75,7 @@ section .text
     MOV EDI,dword ptr [0x005b7650]      ; 004214f8 | DAT_005b7650
     PUSH EDI                            ; 004214fe
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004214ff
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00421504
     TEST EAX,EAX                        ; 00421507
     JZ 0x004214a9                       ; 00421509
@@ -87,7 +87,7 @@ section .text
         ;   Label: caseD_1
     PUSH EBX                            ; 0042151b
     CALL core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 ; 0042151c
-        ;   XREF to: 00422370 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370()
+        ;   XREF to: 00422370 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00421521
     POP EDI                             ; 00421524
     POP EBX                             ; 00421525
@@ -96,7 +96,7 @@ section .text
         ;   Label: caseD_2
     PUSH EBX                            ; 0042152b
     CALL core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0 ; 0042152c
-        ;   XREF to: 004227a0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0()
+        ;   XREF to: 004227a0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0(CBugs * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00421531
     POP EDI                             ; 00421534
     POP EBX                             ; 00421535

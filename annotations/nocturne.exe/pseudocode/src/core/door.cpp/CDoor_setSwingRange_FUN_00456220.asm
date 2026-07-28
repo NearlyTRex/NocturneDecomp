@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(int param_1,undefined4 param_2)
+; void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00456220(CDoor *this_ptr,float swing_range)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   swing_range
 ;
 ; XREF[2]:
 ;   core_hostage.cpp_FUN_004b6d80 at 004b7034

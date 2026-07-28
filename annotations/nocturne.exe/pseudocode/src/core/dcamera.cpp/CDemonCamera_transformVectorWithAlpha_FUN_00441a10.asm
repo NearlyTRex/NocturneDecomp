@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10(int param_1,int *param_2,uint *param_3)
+; CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   input_vector
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -91,7 +94,7 @@ section .text
     PUSH EDX                            ; 00441aa0 | DAT_01b4d738
     MOV dword ptr [ESP + 0xc],EAX       ; 00441aa1
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441aa5
-        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0()
+        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00441aaa
     TEST EAX,EAX                        ; 00441aad
     JNZ 0x00441b57                      ; 00441aaf

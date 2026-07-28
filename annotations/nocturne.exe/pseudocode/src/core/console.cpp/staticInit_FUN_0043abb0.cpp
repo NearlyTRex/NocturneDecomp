@@ -9,7 +9,10 @@
 void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void)
 
 {
-  engine_console_cpp_CConsole_ctor_FUN_0043abe0(&DAT_0077ad0c,0x28,0x20,1,1);
-  FUN_00564bb0(0x5ad340);
+  uint uStack0000000c;
+  
+  engine_console_cpp_CConsole_ctor_FUN_0043abe0((CConsole *)&DAT_0077ad0c,0x28,0x20,1,1);
+  uStack0000000c = 0x43abcf;
+  _atexit((WatcomStaticDestructorNode *)0x5ad340);
   return;
 }

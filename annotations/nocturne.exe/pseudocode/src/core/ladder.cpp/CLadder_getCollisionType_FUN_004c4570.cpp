@@ -9,10 +9,11 @@
 uint core_ladder_cpp_CLadder_getCollisionType_FUN_004c4570(int param_1)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
   
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  if (*(int *)(iVar1 + 0x110) < 1) {
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  if (pCVar1->poly_count < 1) {
     return 0;
   }
   return 1;

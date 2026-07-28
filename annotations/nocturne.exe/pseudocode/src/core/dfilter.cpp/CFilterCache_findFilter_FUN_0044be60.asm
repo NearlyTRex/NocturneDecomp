@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(int *param_1,undefined4 param_2)
+; CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache *this_ptr,char *filter_name)
 ;
+; Parameters:
+; CFilterCache *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filter_name
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 at 0044c43d
@@ -32,7 +35,7 @@ section .text
         ;   Label: LAB_0044be77
     PUSH ESI                            ; 0044be78
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0044be79
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044be7e
     TEST EAX,EAX                        ; 0044be81
     JZ 0x0044be96                       ; 0044be83

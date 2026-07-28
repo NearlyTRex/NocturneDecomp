@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(undefined4 param_1)
+; CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel *objs,uint flags)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorph_dtor_FUN_004e0070 at 004e0084
@@ -23,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004e08c7
     PUSH EDX                            ; 004e08cb
     CALL crt_memory.c___arrfini_FUN_0056494f ; 004e08cc
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004e08d1
     RET                                 ; 004e08d4
 

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 209,
+    "complexity_score": 190,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 35,
+    "suspect_count": 15,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 104
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -146,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_dog.cpp_CZombieDog_processDamage_FUN_00454e30",
-    "signature": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(int param_1,int param_2)"
+    "signature": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)"
   },
   "function_calls": [
     {
@@ -244,7 +243,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(int param_1,int param_2)",
+      "text": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -252,31 +251,23 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(int param_1,int param_2)",
+      "text": "void core_dog_cpp_CZombieDog_processDamage_FUN_00454e30(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
+      "text": "fVar1 = (param_1->base).hit_points - param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2434) = fVar1;",
+      "text": "fVar1 = (param_1->base).hit_points - param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
@@ -284,7 +275,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2434) = 0;",
+      "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -292,28 +283,28 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);",
+      "text": "(param_1->base).hit_points = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar3,1);",
+      "text": "(param_1->base).hit_points = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x02DC9450,*(uint *)(param_1 + 0xbd2c));",
+      "text": "(0x02DC9450,*(uint *)(param_1[1].base.base.actor_name + 8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -321,47 +312,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"dog2.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"dog2.wav\");",
+      "text": "uVar3 = (*((param_1->base).base.vtable._ub)->playSound)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,\"dog2.wav\");",
+      "text": "((CDemonActor *)param_1,\"dog2.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbd2c) = uVar3;",
+      "text": "*(uint *)(param_1[1].base.base.actor_name + 8) = uVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
@@ -369,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",

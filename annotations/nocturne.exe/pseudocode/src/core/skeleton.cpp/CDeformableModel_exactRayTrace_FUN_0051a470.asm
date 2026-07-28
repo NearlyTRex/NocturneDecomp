@@ -168,7 +168,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0051a5c5
     PUSH EAX                            ; 0051a5c9
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 0051a5ca
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0051a5cf
     MOV EDX,dword ptr [EBP + 0x20]      ; 0051a5d2
     PUSH EDX                            ; 0051a5d5
@@ -270,7 +270,7 @@ section .text
     PUSH 0x26757d0                      ; 0051a6dd | DAT_026757d0
     MOV byte ptr [0x02684230],DL        ; 0051a6e2 | DAT_02684230
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0051a6e8
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0051a6ed
     JMP 0x0051a48b                      ; 0051a6f0
         ;   XREF to: 0051a48b (UNCONDITIONAL_JUMP)  ; LAB_0051a48b

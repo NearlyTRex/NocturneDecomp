@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(int param_1,float param_2)
+; float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory *inventory_ptr,float max_charge)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   inventory_ptr
+; float            Stack[0x8]:4   max_charge
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x14]:4  local_14
@@ -45,7 +48,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0xc]       ; 004c1b4a
     PUSH EDX                            ; 004c1b4d
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1b4e
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c1b53
     TEST EAX,EAX                        ; 004c1b56
     JNZ 0x004c1b7b                      ; 004c1b58

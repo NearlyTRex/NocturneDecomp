@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(undefined4 param_1)
+; float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 00534fd1
     XOR EBX,EBX                         ; 00534fd2
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00534fd4
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00534fd9
     TEST EAX,EAX                        ; 00534fdc
     JNZ 0x00535043                      ; 00534fde
@@ -47,7 +47,7 @@ section .text
     PUSH ECX                            ; 00534fe6
     PUSH ESI                            ; 00534fe7
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00534fe8
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00534fed
     TEST EAX,EAX                        ; 00534ff0
     JZ 0x00535004                       ; 00534ff2
@@ -55,7 +55,7 @@ section .text
     ADD EAX,0x150                       ; 00534ff4
     PUSH EAX                            ; 00534ff9
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00534ffa
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00534fff
     MOV EBX,EAX                         ; 00535002
     TEST EBX,EBX                        ; 00535004
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_00535043
     PUSH EAX                            ; 00535048
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00535049
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0053504e
     MOV EBX,EAX                         ; 00535051
     JMP 0x00534fe0                      ; 00535053

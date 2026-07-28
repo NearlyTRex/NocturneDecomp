@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(int param_1)
+; void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(CFileFinder *this_ptr)
 ;
+; Parameters:
+; CFileFinder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f9323
@@ -31,7 +33,7 @@ section .text
         ;   XREF to: 00456d59 (CONDITIONAL_JUMP)  ; LAB_00456d59
     PUSH EBX                            ; 00456d4e
     CALL engine_dosio.cpp_CFileFinder_reset_FUN_00456d80 ; 00456d4f
-        ;   XREF to: 00456d80 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_reset_FUN_00456d80()
+        ;   XREF to: 00456d80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_reset_FUN_00456d80(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00456d54
     POP EBX                             ; 00456d57
     RET                                 ; 00456d58
@@ -42,7 +44,7 @@ section .text
     MOV dword ptr [EBX + 0x10c],0x0     ; 00456d67
     PUSH EBX                            ; 00456d71
     CALL engine_dosio.cpp_CFileFinder_reset_FUN_00456d80 ; 00456d72
-        ;   XREF to: 00456d80 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_CFileFinder_reset_FUN_00456d80()
+        ;   XREF to: 00456d80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_reset_FUN_00456d80(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00456d77
     POP EBX                             ; 00456d7a
     RET                                 ; 00456d7b

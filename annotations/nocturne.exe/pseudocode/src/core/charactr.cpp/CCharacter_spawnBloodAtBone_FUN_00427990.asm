@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; int              Stack[0xc]:4   bone_index
+; float            Stack[0x10]:4   chance
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -43,7 +48,7 @@ section .text
     PUSH dword ptr [ESP + 0x38]         ; 004279ab
         ;   Label: LAB_004279ab
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004279af
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 004279b4
     TEST EAX,EAX                        ; 004279b7
     JZ 0x004279a6                       ; 004279b9
@@ -57,7 +62,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004279c7
     PUSH EAX                            ; 004279cd
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004279ce
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004279d3
     PUSH EAX                            ; 004279d6
     LEA EAX,[ESP + 0xc]                 ; 004279d7
@@ -65,7 +70,7 @@ section .text
     PUSH EBX                            ; 004279dc
     XOR ESI,ESI                         ; 004279dd
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004279df
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004279e4
     MOV EDI,0x40e00000                  ; 004279e7
     MOV dword ptr [ESP + 0x20],ESI      ; 004279ec
@@ -80,7 +85,7 @@ section .text
     MOV EDX,dword ptr [0x005b96c4]      ; 00427a09 | INT_005b96c4
     PUSH EDX                            ; 00427a0f
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00427a10
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 00427a15
     POP ESI                             ; 00427a18
     POP EDI                             ; 00427a19

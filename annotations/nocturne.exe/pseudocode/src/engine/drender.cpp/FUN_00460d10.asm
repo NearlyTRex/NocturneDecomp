@@ -10,7 +10,7 @@
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f4a6
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450695
 ;   core_dlight.cpp_FUN_0044f9b0 at 0044fb30
-;   core_dtrace.cpp_FUN_00469ce0 at 00469d34
+;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 at 00469d34
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d303
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0 at 0050d6f5
 ;   core_set.cpp_FUN_0050d910 at 0050d95f
@@ -30,7 +30,7 @@ section .text
     MOV ESI,ESP                         ; 00460d17
     MOV EDI,EBX                         ; 00460d19
     CALL engine_matrix.c_getCameraOrigin_FUN_004ce760 ; 00460d1b
-        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ce760()
+        ;   XREF to: 004ce760 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_004ce760(CVector3i * output)
     MOV ESI,ESP                         ; 00460d20
     MOVSD ES:EDI,ESI                    ; 00460d22
     MOVSD ES:EDI,ESI                    ; 00460d23

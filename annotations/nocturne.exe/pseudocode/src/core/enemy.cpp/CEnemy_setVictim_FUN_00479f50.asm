@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(int param_1,undefined4 param_2)
+; void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_00479f50(CEnemy *this_ptr,CDemonActor *victim)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   victim
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00503e42

@@ -2,41 +2,43 @@
 // Address: 004df660
 // Address Range: [[004df660, 004df734]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(int *param_1,int param_2,int *param_3,int param_4,int param_5)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(int *param_1,int param_2,int *param_3,int param_4,int param_5)
+void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 
 {
-  int iVar1;
+  SMorphPoint *pSVar1;
   int iVar2;
+  int iVar3;
   
-  if ((param_2 < 0) || (*param_1 <= param_2)) {
+  if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     PTR_01cc4800 = "..\\core\\morph.cpp";
     INT_01cc4804 = 0x112;
     core_main_c_FUN_004c8440("CMorphModel::animate - invalid part index");
   }
-  param_4 = param_4 + param_1[param_2 * 4 + 3];
-  if (param_1[param_2 * 4 + 3] + param_1[param_2 * 4 + 1] < param_4 + param_5) {
+  iVar2 = this_ptr->parts[part_index].start_vertex;
+  iVar3 = start_offset + iVar2;
+  if (iVar2 + this_ptr->parts[part_index].vertex_count < iVar3 + vertex_count) {
     PTR_01cc4800 = "..\\core\\morph.cpp";
     INT_01cc4804 = 0x119;
     core_main_c_FUN_004c8440("CMorphModel::animate - invalid vertex range");
   }
-  iVar1 = 0;
-  if (0 < param_5) {
-    param_4 = param_4 * 0x10;
+  iVar2 = 0;
+  if (0 < vertex_count) {
+    iVar3 = iVar3 * 0x10;
     do {
-      iVar2 = param_1[0x16] + param_4;
-      iVar1 = iVar1 + 1;
-      *(float *)(iVar2 + 4) = (float)*param_3 * _DAT_005a0cc8;
-      *(float *)(iVar2 + 8) = (float)param_3[1] * _DAT_005a0cc8;
-      *(float *)(iVar2 + 0xc) = (float)param_3[2] * _DAT_005a0cc8;
-      param_4 = param_4 + 0x10;
-      param_3 = param_3 + 3;
-    } while (iVar1 < param_5);
+      pSVar1 = this_ptr->points;
+      iVar2 = iVar2 + 1;
+      *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * _DAT_005a0cc8;
+      *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * _DAT_005a0cc8;
+      *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * _DAT_005a0cc8;
+      iVar3 = iVar3 + 0x10;
+      vertex_buffer = vertex_buffer + 1;
+    } while (iVar2 < vertex_count);
   }
   return;
 }

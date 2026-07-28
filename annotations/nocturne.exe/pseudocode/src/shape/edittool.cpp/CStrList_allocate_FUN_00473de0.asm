@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00473de0(int *param_1,int param_2)
+; void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00473de0(CStrList *this_ptr,int new_capacity)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   new_capacity
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 at 00473c25
+;   shape_edittool.cpp_CStrList_insertRange_FUN_00473e90 at 00473ea4
 ;   shape_edittool.cpp_CStrList_insert_FUN_00473cf0 at 00473d38
-;   shape_edittool.cpp_FUN_00473e90 at 00473ea4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ebc8
@@ -78,7 +81,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x8]       ; 00473e52
     PUSH ECX                            ; 00473e55
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00473e56
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00473e5b
     MOV dword ptr [EBX + 0x8],EAX       ; 00473e5e
     TEST EAX,EAX                        ; 00473e61

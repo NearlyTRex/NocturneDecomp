@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00558ae0(void)
+; void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00558ae0(void)
 ;
 ;
 ; XREF[3]:

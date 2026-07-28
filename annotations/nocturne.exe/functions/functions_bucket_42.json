@@ -9,7 +9,7 @@
       }
     ],
     "importable":true,
-    "name":"core_dstrender.cpp_FUN_00463c42",
+    "name":"core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00463c42",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -44,12 +44,70 @@
         "start":"005661c2"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005661c2",
-    "ret":"undefined1",
+    "name":"crt_unknown.c___arrinit_dispatch_FUN_005661c2",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"array_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"element_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"type_info",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomTypeInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -62,12 +120,38 @@
         "start":"0056b3c2"
       }
     ],
+    "conv":"__watcallStack",
     "importable":true,
-    "name":"FUN_0056b3c2",
-    "ret":"undefined1",
+    "name":"crt_stdio.c_stream_flush_FUN_0056b3c2",
+    "ret":"_FILE*",
     "vars":{
+      "params":[
+        {
+          "name":"stream",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

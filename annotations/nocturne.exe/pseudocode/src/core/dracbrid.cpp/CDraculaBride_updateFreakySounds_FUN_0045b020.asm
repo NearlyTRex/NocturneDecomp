@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(int param_1,float param_2)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDraculaBride *this_ptr,float delta_time)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
 ; undefined8       Stack[-0x98]:8  local_98
@@ -125,7 +128,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 0045b0c5 | DAT_01b4d2d4
     PUSH EBX                            ; 0045b0c7
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0045b0c8
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0045b0cd
     TEST EAX,EAX                        ; 0045b0d0
     JZ 0x0045b21d                       ; 0045b0d2
@@ -250,7 +253,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0045b236
     PUSH EAX                            ; 0045b23a
     CALL core_spline.cpp_computeSplineBasis_FUN_00533ce0 ; 0045b23b
-        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_computeSplineBasis_FUN_00533ce0()
+        ;   XREF to: 00533ce0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_00533ce0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 0045b240
     MOV EAX,dword ptr [ESP + 0x68]      ; 0045b243
     ADD EAX,0x44                        ; 0045b247
@@ -266,7 +269,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0045b25e
     PUSH EAX                            ; 0045b262
     CALL core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10 ; 0045b263
-        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10()
+        ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 0045b268
     MOV EBX,dword ptr [ESP + 0x68]      ; 0045b26b
     ADD EBX,0x4                         ; 0045b26f
@@ -313,7 +316,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0045b2de
     PUSH EAX                            ; 0045b2e2
     CALL core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0 ; 0045b2e3
-        ;   XREF to: 005340d0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0()
+        ;   XREF to: 005340d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 0045b2e8
     MOV EBX,dword ptr [ESP + 0x68]      ; 0045b2eb
     ADD EBX,0x10                        ; 0045b2ef

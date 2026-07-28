@@ -18,7 +18,7 @@ LPVOID FUN_00571170(void)
     pvVar2 = TlsGetValue(DAT_005c1ab8);
   }
   if (pvVar2 == (LPVOID)0x0) {
-    FUN_0056ddc0("Thread has no thread-specific data\r\n",1);
+    HandleRuntimeError("Thread has no thread-specific data\r\n",1);
   }
   return pvVar2;
 }

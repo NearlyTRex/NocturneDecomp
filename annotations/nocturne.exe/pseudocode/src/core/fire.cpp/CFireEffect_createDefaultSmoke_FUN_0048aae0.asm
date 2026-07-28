@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0(CFireEffect *this_ptr,CVector3f *position)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_00484ed0 at 00484ef6
@@ -26,7 +29,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 0048aaf1 | DAT_005b80f0
     PUSH ECX                            ; 0048aaf7
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0048aaf8
-        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0()
+        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 0048aafd
     RET                                 ; 0048ab00
 

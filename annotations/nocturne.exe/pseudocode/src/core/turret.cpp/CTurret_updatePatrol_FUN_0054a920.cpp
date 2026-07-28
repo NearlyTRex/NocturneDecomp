@@ -2,73 +2,71 @@
 // Address: 0054a920
 // Address Range: [[0054a920, 0054aaaa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)
+// Signature: void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)
+void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time)
 
 {
-  float *pfVar1;
+  CVector3f *input_local_point;
+  float fVar1;
   float fVar2;
   float fVar3;
-  int iVar4;
-  float *pfVar5;
-  float fStack_54;
-  uint uStack_50;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  int iVar7;
+  CVector3f *pCVar8;
+  int *in_stack_ffffffac;
   float fStack_4c;
   float fStack_48;
+  float fStack_44;
   float fStack_40;
-  float fStack_3c;
   float fStack_38;
-  float fStack_34;
-  byte auStack_30 [12];
-  float fStack_24;
-  float fStack_14;
+  CVector3f CStack_28;
+  float fStack_1c;
   
-  if (*(float *)(param_1 + 0x864) <= 0.0) {
-    if (*(int *)(param_1 + 0x778) != 0) {
-      pfVar1 = (float *)(param_1 + 0x844);
-      iVar4 = core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640
-                        (param_1,pfVar1,param_2 * (float)0.33333333333333298);
-      if (iVar4 != 0) {
-        (**(code **)(*(int *)(*(int *)(param_1 + 0x778) + 0x14c) + 0x14))
-                  (*(int *)(param_1 + 0x778),&fStack_54);
-        fStack_3c = *pfVar1;
-        fStack_38 = *(float *)(param_1 + 0x848);
-        iVar4 = 0;
-        fStack_34 = *(float *)(param_1 + 0x84c);
+  if (this_ptr->fire_sound_timer <= 0.0) {
+    if (this_ptr->guard_zone_box_trigger != (CDemonActor *)0x0) {
+      input_local_point = &this_ptr->patrol_target;
+      iVar7 = core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640
+                        (this_ptr,input_local_point,delta_time * (float)0.33333333333333298);
+      if (iVar7 != 0) {
+        (*((this_ptr->guard_zone_box_trigger->vtable)._ub)->getBoundingBox)
+                  (this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)&stack0xffffffac);
+        fVar1 = input_local_point->x;
+        fVar2 = (this_ptr->patrol_target).y;
+        iVar7 = 0;
+        fVar3 = (this_ptr->patrol_target).z;
         while( true ) {
-          fStack_24 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                       (0x3dcccccd,0x3f666666);
-          *(float *)(param_1 + 0x844) = fStack_54 * fStack_24 + (1.0 - fStack_24) * fStack_48;
-          fStack_14 = fStack_24;
-          fStack_24 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                                       (0x3dcccccd,0x3f666666);
-          *(float *)(param_1 + 0x84c) = fStack_4c * fStack_24 + (1.0 - fStack_24) * fStack_40;
-          *(uint *)(param_1 + 0x848) = uStack_50;
-          fStack_14 = fStack_24;
-          pfVar5 = (float *)core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                                      (*(uint *)(param_1 + 0x778),auStack_30,pfVar1);
-          if (pfVar1 != pfVar5) {
-            *pfVar1 = *pfVar5;
-            *(float *)(param_1 + 0x848) = pfVar5[1];
-            *(float *)(param_1 + 0x84c) = pfVar5[2];
+          fStack_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+          (this_ptr->patrol_target).x = fStack_4c * fStack_1c + (1.0 - fStack_1c) * fStack_40;
+          fStack_1c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0();
+          (this_ptr->patrol_target).z = fStack_44 * fStack_1c + (1.0 - fStack_1c) * fStack_38;
+          (this_ptr->patrol_target).y = fStack_48;
+          pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                             (this_ptr->guard_zone_box_trigger,&CStack_28,input_local_point);
+          if (input_local_point != pCVar8) {
+            input_local_point->x = pCVar8->x;
+            (this_ptr->patrol_target).y = pCVar8->y;
+            (this_ptr->patrol_target).z = pCVar8->z;
           }
-          fVar3 = *(float *)(param_1 + 0x848) - fStack_38;
-          fVar2 = *(float *)(param_1 + 0x84c) - fStack_34;
-          if (25.0f <
-              fVar2 * fVar2 + fVar3 * fVar3 + (*pfVar1 - fStack_3c) * (*pfVar1 - fStack_3c)) break;
-          iVar4 = iVar4 + 1;
-          if (4 < iVar4) {
+          fVar4 = input_local_point->x - fVar1;
+          fVar6 = (this_ptr->patrol_target).y - fVar2;
+          fVar5 = (this_ptr->patrol_target).z - fVar3;
+          if (25.0f < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
+          iVar7 = iVar7 + 1;
+          if (4 < iVar7) {
             return;
           }
         }
       }
     }
   }
-  else if (*(float *)(param_1 + 0x2f8) <= 0.0) {
-    (**(code **)(*(int *)(param_1 + 0x14c) + 0xdc))(param_1);
+  else if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
+    (*((this_ptr->base).base.vtable._ub)->showEditorHelp)((CDemonActor *)this_ptr,in_stack_ffffffac)
+    ;
   }
   return;
 }

@@ -1,11 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5)
+; void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   output_buffer
+; ulonglong *      Stack[0x8]:4   texture_buffer
+; byte *           Stack[0xc]:4   texture_indices
+; byte *           Stack[0x10]:4   lightmap_indices
+; int              Stack[0x14]:4   pixel_count
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_004470f0 at 004472cb
+;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 004472cb
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_005b47a8

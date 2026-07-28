@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(undefined4 param_1,float param_2)
+; void __cdecl core_box_cpp_CBox_process_FUN_0041acb0(CBox *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
@@ -45,12 +48,12 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 0041acdb
     PUSH EBX                            ; 0041acdf
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 0041ace0
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041ace5
     PUSH dword ptr [ESP + 0x8]          ; 0041ace8
     PUSH EBX                            ; 0041acec
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 0041aced
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041acf2
     MOV ESP,EBP                         ; 0041acf5
     POP EBP                             ; 0041acf7
@@ -60,7 +63,7 @@ section .text
         ;   Label: LAB_0041acfa
     PUSH EBX                            ; 0041acfd
     CALL core_box.cpp_CBox_processPhysics_FUN_0041ad10 ; 0041acfe
-        ;   XREF to: 0041ad10 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_processPhysics_FUN_0041ad10()
+        ;   XREF to: 0041ad10 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_processPhysics_FUN_0041ad10(CBox * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041ad03
     MOV ESP,EBP                         ; 0041ad06
     POP EBP                             ; 0041ad08

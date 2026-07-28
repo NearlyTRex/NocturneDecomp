@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_CFlies_process_FUN_0048f090(int param_1,float param_2)
+; void core_flies_cpp_CFlies_process_FUN_0048f090(CFlies *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
@@ -240,7 +240,7 @@ section .text
         ;   Label: LAB_0048f2d5
     PUSH EDI                            ; 0048f2d6
     CALL core_flies.cpp_CFlies_initFly_FUN_0048f8f0 ; 0048f2d7
-        ;   XREF to: 0048f8f0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_CFlies_initFly_FUN_0048f8f0()
+        ;   XREF to: 0048f8f0 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_CFlies_initFly_FUN_0048f8f0(CFlies * this_ptr, int fly_index)
     FLD float ptr [EDI + 0x2a0c]        ; 0048f2dc
     MOV EDX,dword ptr [EDI + 0x15c]     ; 0048f2e2
     ADD ESP,0x8                         ; 0048f2e8
@@ -311,7 +311,7 @@ section .text
     PUSH EDI                            ; 0048f389
     ADD ESI,0x28                        ; 0048f38a
     CALL core_flies.cpp_CFlies_generateRandomPoint_FUN_0048f9b0 ; 0048f38d
-        ;   XREF to: 0048f9b0 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_CFlies_generateRandomPoint_FUN_0048f9b0()
+        ;   XREF to: 0048f9b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_flies.cpp_CFlies_generateRandomPoint_FUN_0048f9b0(CFlies * this_ptr, CVector3f * out_point, CVector3f * reference_point)
     ADD ESP,0xc                         ; 0048f392
     CMP ESI,EAX                         ; 0048f395
     JZ 0x0048f137                       ; 0048f397

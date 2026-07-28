@@ -39,17 +39,17 @@ section .text
     ADD EAX,0x1f5a0                     ; 004b4dd7
     PUSH EAX                            ; 004b4ddc
     CALL core_inv.cpp_CInventory_initialize_FUN_004bef10 ; 004b4ddd
-        ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_initialize_FUN_004bef10()
+        ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_initialize_FUN_004bef10(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004b4de2
     MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | g_CWeaponActorType_02ddf970.name_hash
     PUSH EDX                            ; 004b4deb
     PUSH 0x5857f6                       ; 004b4dec | = "CGun"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b4df1
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 004b4df6
     PUSH EAX                            ; 004b4df9
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b4dfa
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b4dff
     MOV EBX,EAX                         ; 004b4e02
     TEST EAX,EAX                        ; 004b4e04
@@ -80,14 +80,14 @@ section .text
     ADD ESI,0x1f5a0                     ; 004b4e30
     PUSH ESI                            ; 004b4e36
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 004b4e37
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004b4e3c
     PUSH 0x1                            ; 004b4e3f
     PUSH 0x5                            ; 004b4e41
     PUSH 0x0                            ; 004b4e43
     PUSH ESI                            ; 004b4e45
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 004b4e46
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b4e4b
     MOV dword ptr [EBX + 0x560],0x64    ; 004b4e4e
     POP EDI                             ; 004b4e58

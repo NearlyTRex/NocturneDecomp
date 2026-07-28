@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,undefined4 param_5)
+; int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   inout_motion_index
+; float *          Stack[0xc]:4   inout_frame_number
+; float            Stack[0x10]:4   delta_time
+; float            Stack[0x14]:4   scale_factor
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

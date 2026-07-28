@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(undefined4 param_1,float *param_2,float param_3,float *param_4,float *param_5)
+; int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   radius
+; CVector3f *      Stack[0x10]:4   out_force_dir
+; float *          Stack[0x14]:4   out_gore_multiplier
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c

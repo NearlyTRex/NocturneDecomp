@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(int param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archivePartStatus_FUN_0040cbf0(CDeformableModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -60,7 +63,7 @@ section .text
         ;   Label: LAB_0040cc0c
     PUSH EBX                            ; 0040cc12
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040cc13
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040cc18
     MOV EBX,EAX                         ; 0040cc1b
     TEST EAX,EAX                        ; 0040cc1d
@@ -80,7 +83,7 @@ section .text
     ADD ESP,0xc                         ; 0040cc3e
     PUSH EBP                            ; 0040cc41
     CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90 ; 0040cc42
-        ;   XREF to: 0051dc90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90()
+        ;   XREF to: 0051dc90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040cc47
     MOV EAX,dword ptr [ESP]             ; 0040cc4a
     XOR EBX,EBX                         ; 0040cc4d
@@ -102,7 +105,7 @@ section .text
     PUSH 0x577cfc                       ; 0040cc73 | = "description"
     PUSH 0x577d08                       ; 0040cc78 | = "part status entry"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cc7d
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040cc82
     MOV ECX,dword ptr [ESP]             ; 0040cc85
         ;   Label: LAB_0040cc85
@@ -120,7 +123,7 @@ section .text
     ADD ESP,0x8                         ; 0040cca1
     PUSH EBP                            ; 0040cca4
     CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0 ; 0040cca5
-        ;   XREF to: 0051dcb0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0()
+        ;   XREF to: 0051dcb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_0051dcb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040ccaa
     MOV ESI,dword ptr [ESP]             ; 0040ccad
     XOR EBX,EBX                         ; 0040ccb0
@@ -142,7 +145,7 @@ section .text
     PUSH 0x577d1f                       ; 0040ccd6 | = "description"
     PUSH 0x577d2b                       ; 0040ccdb | = "part texture entry"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cce0
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040cce5
     MOV EAX,dword ptr [ESP]             ; 0040cce8
         ;   Label: LAB_0040cce8
@@ -162,7 +165,7 @@ section .text
         ;   Label: LAB_0040cd07
     PUSH ECX                            ; 0040cd0d
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040cd0e
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040cd13
     MOV EBX,EAX                         ; 0040cd16
     TEST EAX,EAX                        ; 0040cd18
@@ -181,7 +184,7 @@ section .text
         ;   Label: LAB_0040cd29
     PUSH 0x577cdc                       ; 0040cd2a | = "part status opening brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cd2f
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040cd34
     JMP 0x0040cc25                      ; 0040cd37
         ;   XREF to: 0040cc25 (UNCONDITIONAL_JUMP)  ; LAB_0040cc25
@@ -189,7 +192,7 @@ section .text
         ;   Label: LAB_0040cd3c
     PUSH 0x577d40                       ; 0040cd3d | = "part status info closing brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040cd42
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040cd47
     CMP EBX,0xa                         ; 0040cd4a
     JNZ 0x0040cd07                      ; 0040cd4d
@@ -211,7 +214,7 @@ section .text
     ADD ESP,0x10                        ; 0040cd6e
     PUSH 0x1                            ; 0040cd71
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040cd73
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040cd78
     MOV EDI,0x1e                        ; 0040cd7b
     PUSH EDI                            ; 0040cd80
@@ -288,7 +291,7 @@ section .text
     ADD ESP,0x8                         ; 0040ce51
     PUSH -0x1                           ; 0040ce54
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040ce56
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040ce5b
     PUSH 0x5acc90                       ; 0040ce5e | DAT_005acc90
     PUSH 0x577d82                       ; 0040ce63 | = "%s}\n"

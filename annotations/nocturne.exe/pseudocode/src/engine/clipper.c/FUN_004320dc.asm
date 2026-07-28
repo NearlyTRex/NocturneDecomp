@@ -62,7 +62,7 @@ section .text
     PUSH EDI                            ; 0043212f
     PUSH EDX                            ; 00432130
     CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 00432131
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EAX,[0x00766c70]                ; 00432136 | DAT_00766c70
     INC EAX                             ; 0043213b
     ADD ESP,0xc                         ; 0043213c

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   FUN_0056f3e0
+;   crt_stdlib.c_i64toa_FUN_0056f3e0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 0056f4d6
     LEA EAX,[ESP + 0x8]                 ; 0056f4d7
     PUSH EAX                            ; 0056f4db
-    CALL FUN_0056f3e0                   ; 0056f4dc
-        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f3e0()
+    CALL crt_stdlib.c_i64toa_FUN_0056f3e0 ; 0056f4dc
+        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_i64toa_FUN_0056f3e0()
     ADD ESP,0xc                         ; 0056f4e1
     MOV EAX,EBX                         ; 0056f4e4
     ADD ESP,0x8                         ; 0056f4e6

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_004700d0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_004700d0(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 004700f1
     MOV dword ptr [0x01bcd9b8],EDX      ; 004700f2 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004700f8
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004700fd
     MOV [0x01bcd9bc],EAX                ; 00470100 | DAT_01bcd9bc
     LEA EAX,[ESP + 0x20]                ; 00470105
@@ -58,7 +58,7 @@ section .text
     PUSH ESI                            ; 00470113
     PUSH 0x1bcb0d0                      ; 00470114
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00470119
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047011e
     MOV EBP,dword ptr [ESP + 0x18]      ; 00470121
     XOR EDI,EDI                         ; 00470125
@@ -69,7 +69,7 @@ section .text
     ADD ESP,0x4                         ; 00470131
     PUSH 0xffff                         ; 00470134
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00470139
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0047013e
     PUSH -0x1                           ; 00470141
     MOV EAX,[0x01bcddec]                ; 00470143 | DAT_01bcddec
@@ -82,10 +82,10 @@ section .text
     MOV EBX,dword ptr [0x01bcd070]      ; 0047015c | DAT_01bcd070
     PUSH EBX                            ; 00470162
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00470163
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00470168
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0047016b
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     ADD ESP,0x4                         ; 00470170
     POP EBP                             ; 00470173
     POP EDI                             ; 00470174

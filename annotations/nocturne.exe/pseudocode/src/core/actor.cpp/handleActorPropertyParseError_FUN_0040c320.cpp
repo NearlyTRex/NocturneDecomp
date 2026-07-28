@@ -2,34 +2,36 @@
 // Address: 0040c320
 // Address Range: [[0040c320, 0040c397]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(undefined4 param_1,char *param_2)
+// Signature: void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(char *property_description,char *property_type)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(uint param_1,char *param_2)
+void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(char *property_description,char *property_type)
 
 {
-  char *pcVar1;
+  CDemonActor *pCVar1;
   char *pcVar2;
   char *pcVar3;
+  CDemonActor *pCVar4;
   
-  pcVar2 = DAT_00763e8c;
-  pcVar1 = "(unknown)";
-  pcVar3 = "(unknown)";
-  if (DAT_00763e8c != (char *)0x0) {
-    pcVar1 = (char *)core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);
-    pcVar3 = pcVar2;
+  pCVar1 = DAT_00763e8c;
+  pcVar2 = "(unknown)";
+  pCVar4 = (CDemonActor *)"(unknown)";
+  if (DAT_00763e8c != (CDemonActor *)0x0) {
+    pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);
+    pCVar4 = pCVar1;
   }
-  if (param_2 == (char *)0x0) {
-    param_2 = "(unknown)";
+  if (property_type == (char *)0x0) {
+    property_type = "(unknown)";
   }
-  pcVar2 = "load";
+  pcVar3 = "load";
   if (DAT_00763e88 == 2) {
-    pcVar2 = "save";
+    pcVar3 = "save";
   }
   PTR_01cc4800 = "..\\core\\actor.cpp";
   INT_01cc4804 = 0x7fb;
-  core_main_c_FUN_004c8440("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar2,pcVar3,pcVar1,param_2,param_1)
-  ;
+  core_main_c_FUN_004c8440
+            ("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar3,pCVar4,pcVar2,property_type,
+             property_description);
   return;
 }

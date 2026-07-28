@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_lever_cpp_CLever_getHandlePosition_FUN_004c6640(int param_1,undefined4 param_2)
+; CVector3f * __cdecl core_lever_cpp_CLever_getHandlePosition_FUN_004c6640(CLever *this_ptr,CVector3f *out_position)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_position
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -36,12 +39,12 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 004c664f
     PUSH EBX                            ; 004c6655
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c6656
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c665b
     PUSH EBX                            ; 004c665e
     MOV EDI,dword ptr [EAX + 0x10c]     ; 004c665f
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c6665
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x100]     ; 004c666a
     ADD ESP,0x4                         ; 004c6670
     DEC EAX                             ; 004c6673
@@ -50,10 +53,10 @@ section .text
     FMUL float ptr [ESI + 0x2d4]        ; 004c667c
     PUSH EBX                            ; 004c6682
     CALL crt_math.c_round_FUN_00563a30  ; 004c6683
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004c6688
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004c668c
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c6691
     MOV EAX,dword ptr [EAX + 0x104]     ; 004c6694
     IMUL EAX,dword ptr [ESP + 0xc]      ; 004c669a
@@ -78,7 +81,7 @@ section .text
     PUSH EBP                            ; 004c66dc
     PUSH ESI                            ; 004c66dd
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004c66de
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004c66e3
     MOV EAX,EBP                         ; 004c66e6
     ADD ESP,0x14                        ; 004c66e8

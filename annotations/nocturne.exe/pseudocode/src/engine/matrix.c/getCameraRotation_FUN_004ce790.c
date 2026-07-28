@@ -2,22 +2,22 @@
 // Address: 004ce790
 // Address Range: [[004ce790, 004ce7be]]
 // Convention: __esi
-// Signature: undefined1 * __esi engine_matrix_c_getCameraRotation_FUN_004ce790(undefined4 *param_1)
+// Signature: void __esi engine_matrix_c_getCameraRotation_FUN_004ce790(CVector3i *output)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-byte * __esi engine_matrix_c_getCameraRotation_FUN_004ce790(uint *param_1)
+void __esi engine_matrix_c_getCameraRotation_FUN_004ce790(CVector3i *output)
 
 {
-  uint uVar1;
-  uint uVar2;
+  int iVar1;
+  int iVar2;
   
-  uVar2 = _DAT_01c039d8;
-  uVar1 = _DAT_01c039d4;
-  *param_1 = _DAT_01c039d0;
-  param_1[1] = uVar1;
-  param_1[2] = uVar2;
-  return &stack0xfffffffc;
+  iVar2 = _DAT_01c039d8;
+  iVar1 = _DAT_01c039d4;
+  output->x = _DAT_01c039d0;
+  output->y = iVar1;
+  output->z = iVar2;
+  return;
 }

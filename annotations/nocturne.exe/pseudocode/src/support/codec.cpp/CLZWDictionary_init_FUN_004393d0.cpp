@@ -2,29 +2,30 @@
 // Address: 004393d0
 // Address Range: [[004393d0, 00439447]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(int *param_1,int param_2,int param_3)
+// Signature: void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
 
 #include "nocturne.h"
 
-void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(int *param_1,int param_2,int param_3)
+void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
 
 {
-  int iVar1;
+  CLZWDictionaryNode *pCVar1;
   
-  if ((param_2 != *param_1) || (param_1[4] == 0)) {
-    *param_1 = param_2;
-    iVar1 = realloc(param_1[4],param_2 << 4);
-    param_1[4] = iVar1;
-    if (iVar1 == 0) {
+  if ((new_dict_size != this_ptr->table_capacity) ||
+     (this_ptr->node_table == (CLZWDictionaryNode *)0x0)) {
+    this_ptr->table_capacity = new_dict_size;
+    pCVar1 = (CLZWDictionaryNode *)realloc(this_ptr->node_table,new_dict_size << 4);
+    this_ptr->node_table = pCVar1;
+    if (pCVar1 == (CLZWDictionaryNode *)0x0) {
       PTR_01cc4800 = "..\\support\\codec.cpp";
       INT_01cc4804 = 0x2c7;
       core_main_c_FUN_004c8440("CLZWDictionary::init - out of memory");
-      param_1[1] = param_3;
-      support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(param_1);
+      this_ptr->num_bits = new_num_bits;
+      support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(this_ptr);
       return;
     }
   }
-  param_1[1] = param_3;
-  support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(param_1);
+  this_ptr->num_bits = new_num_bits;
+  support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(this_ptr);
   return;
 }

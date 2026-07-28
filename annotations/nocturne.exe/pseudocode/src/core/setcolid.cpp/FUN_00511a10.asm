@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0046baa0
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0
 ;   core_path.cpp_resetAllPathMaps_FUN_004f1e90
 ;
 ; *****************************************************************************
@@ -58,11 +58,11 @@ section .text
     ADD EBX,0x20                        ; 00511a61
     PUSH EBX                            ; 00511a64
     PUSH 0x1fba938                      ; 00511a65 | DAT_01fba938
-    CALL core_dtrace.cpp_FUN_0046baa0   ; 00511a6a
-        ;   XREF to: 0046baa0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0046baa0()
+    CALL core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0 ; 00511a6a
+        ;   XREF to: 0046baa0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
     ADD ESP,0x14                        ; 00511a6f
     CALL core_path.cpp_resetAllPathMaps_FUN_004f1e90 ; 00511a72
-        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_resetAllPathMaps_FUN_004f1e90()
+        ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; void core_path.cpp_resetAllPathMaps_FUN_004f1e90()
     ADD ESP,0x30                        ; 00511a77
     POP EBX                             ; 00511a7a
     RET                                 ; 00511a7b

@@ -9,7 +9,7 @@
 void __cdecl core_texlist_cpp_staticInit_FUN_00544910(void)
 
 {
-  core_texlist_cpp_CTextureList_ctor_FUN_00544930(0x2dca21c);
-  FUN_00564bb0(0x5c10c8);
+  core_texlist_cpp_CTextureList_ctor_FUN_00544930((CTextureList *)0x2dca21c);
+  _atexit((WatcomStaticDestructorNode *)0x5c10c8);
   return;
 }

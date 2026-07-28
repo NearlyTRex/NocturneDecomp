@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(int param_1)
+; void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d1a9
@@ -52,7 +54,7 @@ section .text
     MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14cd70] ; 0054e0e8 | DAT_01fa3ff4
     PUSH EBP                            ; 0054e0ef
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054e0f0
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 0054e0f5
     ADD ESP,0x8                         ; 0054e0f7
     TEST EAX,EAX                        ; 0054e0fa
@@ -63,7 +65,7 @@ section .text
         ;   XREF to: 0054e121 (CONDITIONAL_JUMP)  ; LAB_0054e121
     PUSH 0x3f000000                     ; 0054e107
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0054e10c
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 0054e111
     TEST EAX,EAX                        ; 0054e114
     JNZ 0x0054e121                      ; 0054e116

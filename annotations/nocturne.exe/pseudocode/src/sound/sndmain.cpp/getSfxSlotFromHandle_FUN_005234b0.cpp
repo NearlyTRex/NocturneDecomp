@@ -2,42 +2,42 @@
 // Address: 005234b0
 // Address Range: [[005234b0, 0052354a]]
 // Convention: unknown
-// Signature: int sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
+// Signature: CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
+CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  CSfxSlot *slot;
+  uint uVar2;
   
-  uVar3 = param_1 >> 6;
-  if (((uVar3 != 0) && (uVar3 < 0xffffff)) && ((param_1 & 0x3f) < 0x40)) {
+  uVar2 = param_1 >> 6;
+  if (((uVar2 != 0) && (uVar2 < 0xffffff)) && ((param_1 & 0x3f) < 0x40)) {
     iVar1 = (param_1 & 0x3f) * 0x120;
-    iVar2 = iVar1 + 0x2dbd374;
-    if (uVar3 == *(uint *)(&DAT_02dbd3e4 + iVar1)) {
+    slot = (CSfxSlot *)(iVar1 + 0x2dbd374);
+    if (uVar2 == *(uint *)(&DAT_02dbd3e4 + iVar1)) {
       if (param_2 != 0) {
         sound_sndmain_cpp_lockSound_FUN_00528800();
-        if ((uVar3 != *(uint *)(&DAT_02dbd3e4 + iVar1)) || (*(int *)(&DAT_02dbd3e8 + iVar1) == 0)) {
+        if ((uVar2 != *(uint *)(&DAT_02dbd3e4 + iVar1)) || (*(int *)(&DAT_02dbd3e8 + iVar1) == 0)) {
           sound_sndmain_cpp_unlockSound_FUN_00528890();
-          return 0;
+          return (CSfxSlot *)0x0;
         }
         if (*(int *)(iVar1 + 0x2dbd3e0) != 0) {
           if ((_DAT_02dc8318 != (int *)0x0) &&
-             (iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,iVar2), iVar1 != 0)) {
-            return iVar2;
+             (iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,slot), iVar1 != 0)) {
+            return slot;
           }
-          sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(iVar2);
+          sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(slot);
           sound_sndmain_cpp_unlockSound_FUN_00528890();
-          return 0;
+          return (CSfxSlot *)0x0;
         }
       }
-      return iVar2;
+      return slot;
     }
   }
-  return 0;
+  return (CSfxSlot *)0x0;
 }

@@ -2,19 +2,22 @@
 // Address: 004399f0
 // Address Range: [[004399f0, 00439a20]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(CLZWDecompress *this_ptr,int buffer_size,int initial_bits)
 
 #include "nocturne.h"
 
-void __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(uint param_1,uint param_2,uint param_3)
+CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(CLZWDecompress *this_ptr,int buffer_size,int initial_bits)
 
 {
-  int iVar1;
+  CCodec *pCVar1;
+  CLZWDictionary *pCVar2;
+  uint *puVar3;
   
-  iVar1 = support_codec_cpp_CCodec_ctor_FUN_00438f20(param_1);
-  iVar1 = support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(iVar1 + 4);
-  *(byte ***)(iVar1 + -4) = &PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00439c10_0059b444;
-  *(uint *)(iVar1 + 0x1c) = param_2;
-  *(uint *)(iVar1 + 0x20) = param_3;
-  return;
+  pCVar1 = support_codec_cpp_CCodec_ctor_FUN_00438f20(&this_ptr->base);
+  pCVar2 = support_codec_cpp_CLZWDictionary_ctor_FUN_00439350((CLZWDictionary *)(pCVar1 + 1));
+  puVar3 = &pCVar2[-1].bit_state.accumulated_bits;
+  *puVar3 = (uint)&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00439c10_0059b444;
+  pCVar2[1].table_capacity = buffer_size;
+  pCVar2[1].num_bits = initial_bits;
+  return (CLZWDecompress *)puVar3;
 }

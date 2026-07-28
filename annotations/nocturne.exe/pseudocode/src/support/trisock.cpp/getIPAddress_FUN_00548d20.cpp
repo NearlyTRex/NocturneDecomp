@@ -2,12 +2,12 @@
 // Address: 00548d20
 // Address Range: [[00548d20, 00548d26]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(undefined4 *param_1)
+// Signature: uint __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(SNetworkAddr *net_addr)
 
 #include "nocturne.h"
 
-uint __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(uint *param_1)
+uint __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(SNetworkAddr *net_addr)
 
 {
-  return *param_1;
+  return net_addr->ip_address;
 }

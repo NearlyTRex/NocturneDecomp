@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * FUN_00570ce0(char *param_1,char *param_2,int param_3)
+; char * FUN_00570ce0(char *param_1,char *param_2,ulong param_3)
 ;
 ;
 ; XREF[1]:
-;   FUN_0056db80 at 0056dba0
+;   crt_string.c_mbstrncpy_FUN_0056db80 at 0056dba0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30
@@ -65,7 +65,7 @@ section .text
     PUSH 0x0                            ; 00570d37
     PUSH EDX                            ; 00570d39
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00570d3a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00570d3f
     MOV EAX,ESI                         ; 00570d42
         ;   Label: LAB_00570d42

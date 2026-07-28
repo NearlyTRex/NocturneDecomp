@@ -19,7 +19,7 @@ struct CBoneGuy_ptr_11356 {
     template<typename T> CBoneGuy_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CBoneGuy_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CBoneGuy* operator->() const { return (CBoneGuy*)_raw; }
-    CBoneGuy* adj() const { return (CBoneGuy*)((char*)_raw - offsetof(CBoneGuy, base.base.collision_test_points)); }
+    CBoneGuy* adj() const { return (CBoneGuy*)((char*)_raw - offsetof(CBoneGuy, base.base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

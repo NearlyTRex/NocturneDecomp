@@ -1,15 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(int param_1,int param_2)
+; int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SRenderVertex *  Stack[0x8]:4   vertex_ptr
 ;
 ; XREF[6]:
+;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 004899e6
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d56
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489731
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 004829a2
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483924
-;   core_fire.cpp_FUN_00489990 at 004899e6
 ;   core_weather.cpp_CWeather_renderParticles_FUN_00555020 at 005551cc
 ;
 ; Referenced Globals:
@@ -60,7 +63,7 @@ section .text
         ;   Label: LAB_00461fc6
     PUSH EBX                            ; 00461fc8
     CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 00461fc9
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_004f99d0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00461fce
     JMP 0x00461f96                      ; 00461fd1
         ;   XREF to: 00461f96 (UNCONDITIONAL_JUMP)  ; LAB_00461f96

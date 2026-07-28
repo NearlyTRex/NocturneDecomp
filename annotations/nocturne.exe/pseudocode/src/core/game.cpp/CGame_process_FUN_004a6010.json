@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,27 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 317,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
-    "suspect_count": 17,
+    "pseudocode_lines": 128,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant",
       "unaffected_reg",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 546
+    "total_lines": 552
   },
   "cross_references": [
     {
       "addr": "0049cc10",
       "from_addr": "0049cc88",
-      "name": "core_game.cpp_FUN_0049cc10",
+      "name": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,7 +154,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_CGame_process_FUN_004a6010",
-    "signature": "void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)"
+    "signature": "void __cdecl core_game_cpp_CGame_process_FUN_004a6010(CGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -495,7 +493,7 @@
       {
         "call_addr": "0049cc88",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -506,7 +504,7 @@
       {
         "call_addr": "0049d5da",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -515,11 +513,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.635820895522388,
@@ -552,10 +550,10 @@
     "pcode_op_count": 1553
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 44,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -571,25 +569,15 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "CGame_process_FUN_004a6010.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 5,
-          "line": 24,
-          "message": "Return value of function rand() is not used.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -601,135 +589,52 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 11,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20c) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 14,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_00558a30();",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23c) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xcc) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x228) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xcc) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23c) = 0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 127,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "((double)(iVar2 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x250) = *(float *)(param_1 + 0x264) + *(float *)(param_1 + 0x250);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x250) = *(float *)(param_1 + 0x264) + *(float *)(param_1 + 0x250);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x250) = *(float *)(param_1 + 0x264) + *(float *)(param_1 + 0x250);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Raw hex address 0x1cea280 assigned to bare local `piVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `piVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 14,
+      "line": 16,
       "match": "0x1cea280",
       "severity": "moderate",
       "text": "piVar1 = 0x01CEA280;",
       "type": "raw_address_constant"
     },
     {
+      "description": "Raw hex address 0x2dc9450 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 48,
+      "match": "0x2dc9450",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x02DC9450;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Raw hex address 0x1c775ec assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 115,
+      "line": 121,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "iVar2 = 0x01C775EC;",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

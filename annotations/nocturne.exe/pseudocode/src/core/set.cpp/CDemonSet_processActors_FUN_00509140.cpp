@@ -2,42 +2,45 @@
 // Address: 00509140
 // Address Range: [[00509140, 00509756]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
+// Signature: void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
+void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_ptr)
 
 {
   int *piVar1;
   uint *puVar2;
-  float fVar3;
-  int iVar4;
-  uint uVar5;
-  int iVar6;
-  int iVar7;
+  CDemonActor *pCVar3;
+  uint uVar4;
+  int iVar5;
+  CPathMap *this_ptr_00;
+  CCharacter *this_ptr_01;
+  float fVar6;
+  CGlass *this_ptr_02;
+  CTrigger *this_ptr_03;
+  CFlameCan *this_ptr_04;
+  CDemonSet *pCVar7;
   int iVar8;
   int iVar9;
-  uint uStack_98;
-  uint uStack_94;
-  uint uStack_90;
-  uint uStack_74;
-  uint uStack_68;
-  uint uStack_64;
-  uint uStack_60;
-  float local_5c;
+  int iVar10;
+  CPathMap *grabber;
+  CDemonActor *in_stack_ffffff5c;
+  CVector3f aCStack_94 [3];
+  EDamageType EStack_70;
+  CVector3f CStack_64;
   float local_58;
   float local_54;
-  float local_50;
-  uint uStack_4c;
-  int iStack_48;
-  int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int iStack_34;
+  CPathMap *local_50;
+  float fStack_4c;
+  float fStack_48;
+  float local_44;
+  float local_40;
+  float local_3c;
+  CCharacter *local_38;
+  CCharacter *pCStack_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -46,205 +49,224 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
   int local_1c;
   int iStack_18;
   
-  iVar6 = 0;
-  if (0 < *(int *)(param_1 + 0x14cd6c)) {
+  iVar5 = 0;
+  if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
     do {
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < *(int *)(param_1 + 0x14cd6c));
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
   }
   if (*(int *)(0x01C775EC + 0x20c) != 0) {
-    local_44 = wincore_winrun_cpp_getTime_FUN_00558a30();
+    local_44 = (float)wincore_winrun_cpp_getTime_FUN_00558a30();
     local_20 = 0;
   }
   _DAT_01fba2d8 = 0;
   _DAT_01fba2ec = 0;
-  fVar3 = *(float *)(0x01C775EC + 0x264);
-  iVar6 = CONCAT22((short)((uint)fVar3 >> 0x10),
-                   (ushort)(0.0 < fVar3) << 8 | (ushort)NAN(fVar3) << 10 |
-                   (ushort)(fVar3 == 0.0) << 0xe);
-  if (0.0 < fVar3) {
-    local_50 = fVar3;
-    core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0();
-    iVar7 = 0;
-    iVar6 = param_1;
-    if (0 < *(int *)(param_1 + 0x14cd6c)) {
+  grabber = *(CPathMap **)(0x01C775EC + 0x264);
+  if (0.0 < (float)grabber) {
+    local_50 = grabber;
+    core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(this_ptr);
+    iVar5 = 0;
+    pCVar7 = this_ptr;
+    if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
       do {
-        *(int *)(*(int *)(iVar6 + 0x14cd70) + 0x6c) = iVar7;
-        iVar7 = iVar7 + 1;
-        iVar6 = iVar6 + 4;
-      } while (iVar7 < *(int *)(param_1 + 0x14cd6c));
+        *(int *)(*(int *)(pCVar7->lights[199].filter_names[0x14] + 4) + 0x6c) = iVar5;
+        iVar5 = iVar5 + 1;
+        pCVar7 = (CDemonSet *)pCVar7->cameras;
+      } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
     }
-    if (0.0 < fVar3) {
+    if (0.0 < (float)grabber) {
       local_24 = -999999;
-      iVar6 = local_24;
+      iVar5 = local_24;
       do {
-        local_24 = iVar6;
+        local_24 = iVar5;
         local_1c = 999999;
-        iVar6 = 0;
-        if (0 < *(int *)(param_1 + 0x14cd6c)) {
-          iVar9 = local_20 << 2;
-          iVar7 = param_1;
+        iVar5 = 0;
+        if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
+          iVar8 = local_20 << 2;
+          pCVar7 = this_ptr;
           do {
-            iVar8 = *(int *)(iVar7 + 0x14cd70);
-            if (*(int *)(iVar8 + 0x104) == 0) {
-              iVar4 = *(int *)(iVar8 + 100);
-              if (iVar4 == local_24) {
-                local_5c = *(float *)(iVar8 + 0x30);
-                local_58 = *(float *)(iVar8 + 0x34);
-                local_54 = *(float *)(iVar8 + 0x38);
-                DAT_00763e44 = iVar8;
+            pCVar3 = *(CDemonActor **)(pCVar7->lights[199].filter_names[0x14] + 4);
+            if (pCVar3->process_disabled == 0) {
+              iVar10 = pCVar3->health;
+              if (iVar10 == local_24) {
+                CStack_64.z = (pCVar3->orient).vec.x;
+                local_58 = (pCVar3->orient).vec.y;
+                local_54 = (pCVar3->orient).vec.z;
+                DAT_00763e44 = pCVar3;
                 if (*(int *)(0x01C775EC + 0x20c) == 2) {
                   local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
                 }
-                (**(code **)(*(int *)(DAT_00763e44 + 0x14c) + 4))(DAT_00763e44,fVar3);
+                (*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)grabber);
                 if (*(int *)(0x01C775EC + 0x20c) == 2) {
-                  iVar8 = wincore_winrun_cpp_getTime_FUN_00558a30();
-                  *(int *)(iVar9 + 0x1ffb078) = iVar8 - local_28;
-                  *(int *)(iVar9 + 0x1ffcfb8) = DAT_00763e44;
+                  iVar10 = wincore_winrun_cpp_getTime_FUN_00558a30();
+                  *(int *)(iVar8 + 0x1ffb078) = iVar10 - local_20;
+                  *(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;
                 }
                 if (*(int *)(0x01C775EC + 0x20c) != 0) {
-                  local_20 = local_20 + 1;
-                  iVar9 = iVar9 + 4;
+                  iStack_18 = iStack_18 + 1;
+                  iVar8 = iVar8 + 4;
                 }
-                iVar8 = (**(code **)(*(int *)(DAT_00763e44 + 0x14c) + 0xbc))();
-                if (iVar8 != 0) {
-                  core_path_cpp_FUN_004f0360(iVar8);
+                grabber = (CPathMap *)0x509346;
+                in_stack_ffffff5c = DAT_00763e44;
+                this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);
+                if (this_ptr_00 != (CPathMap *)0x0) {
+                  in_stack_ffffff5c = (CDemonActor *)&DAT_00763e44->location;
+                  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360
+                            (this_ptr_00,(CVector3f *)in_stack_ffffff5c,0);
+                  grabber = this_ptr_00;
                 }
-                if (((local_58 == *(float *)(DAT_00763e44 + 0x34)) &&
-                    (local_5c == *(float *)(DAT_00763e44 + 0x30))) &&
-                   (local_54 == *(float *)(DAT_00763e44 + 0x38))) {
-                  DAT_00763e44 = 0;
+                if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&
+                    ((float)local_50 == (DAT_00763e44->orient).vec.x)) &&
+                   (fStack_48 == (DAT_00763e44->orient).vec.z)) {
+                  DAT_00763e44 = (CDemonActor *)0x0;
                 }
                 else {
-                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000();
-                  DAT_00763e44 = 0;
+                  in_stack_ffffff5c = (CDemonActor *)0x509380;
+                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(DAT_00763e44);
+                  DAT_00763e44 = (CDemonActor *)0x0;
                 }
               }
-              else if ((local_24 < iVar4) && (iVar4 < local_1c)) {
-                local_1c = iVar4;
+              else if ((local_24 < iVar10) && (iVar10 < local_1c)) {
+                local_1c = iVar10;
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar7 = iVar7 + 4;
-          } while (iVar6 < *(int *)(param_1 + 0x14cd6c));
+            iVar5 = iVar5 + 1;
+            pCVar7 = (CDemonSet *)pCVar7->cameras;
+          } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
         }
-        iVar6 = local_1c;
+        iVar5 = local_1c;
       } while (local_1c < 999999);
     }
-    iVar7 = 0;
-    iVar6 = param_1;
-    if (0 < *(int *)(param_1 + 0x14cd6c)) {
+    iVar5 = 0;
+    pCVar7 = this_ptr;
+    if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
       do {
-        iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),
-                           g_CCharacterActorType_00765a60.name_hash);
-        local_38 = iVar9;
-        if (((iVar9 != 0) && (iVar8 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0x104))(), iVar8 == 0))
-           && (iStack_48 = iVar8,
-              iVar9 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                                (0x01C08D04,iVar9 + 0x20,0,&uStack_68), iVar9 != 0)) {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0();
-          uStack_74 = 4;
-          if (&uStack_98 != &uStack_68) {
-            uStack_98 = uStack_68;
-            uStack_94 = uStack_64;
-            uStack_90 = uStack_60;
-          }
-          (**(code **)(*(int *)(local_38 + 0x14c) + 0x100))(local_38);
-        }
-        iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),g_CGlassActorType_01c78c40.name_hash);
-        if (iVar9 != 0) {
-          iStack_34 = iVar9 + 0x20;
+        this_ptr_01 = (CCharacter *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(pCVar7->lights[199].filter_names[0x14] + 4),
+                                 g_CCharacterActorType_00765a60.name_hash);
+        local_38 = this_ptr_01;
+        if ((this_ptr_01 != (CCharacter *)0x0) &&
+           (fVar6 = (float)(*(((this_ptr_01->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_01),
+           fVar6 == 0.0)) {
+          grabber = (CPathMap *)&local_44;
+          local_44 = fVar6;
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                            (0x01C08D04,iStack_34,0,0);
-          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_FUN_004aded0(), iVar8 != 0)) {
-            core_glass_cpp_FUN_004ada20(iVar9);
-          }
-        }
-        iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),g_CTriggerActorType_02dd1084.name_hash)
-        ;
-        if (((iVar9 != 0) && (*(int *)(iVar9 + 0x16c) == 7)) && (*(char *)(iVar9 + 0x2fc) == '\0'))
-        {
-          uStack_4c = 0;
-          iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                            (0x01C08D04,iVar9 + 0x20,0,0);
+                            (0x01C08D04,&(this_ptr_01->base).location.position,0.0,&CStack_64,
+                             (float *)grabber);
           if (iVar8 != 0) {
-            core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(iVar9);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);
+            EStack_70 = DAMAGE_TYPE_SHATTER;
+            if (aCStack_94 != &CStack_64) {
+              aCStack_94[0].x = CStack_64.x;
+              aCStack_94[0].y = CStack_64.y;
+              aCStack_94[0].z = CStack_64.z;
+            }
+            grabber = (CPathMap *)&stack0xffffff60;
+            (*(((pCStack_34->base).vtable._uc)->_uc).getGrabbed)
+                      (pCStack_34,(CDemonActor *)grabber,(int)in_stack_ffffff5c);
           }
         }
-        iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),g_CFlameCanActorType_01c70654.name_hash
-                          );
-        if ((iVar9 != 0) &&
-           (iVar9 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
-                              (0x01C08D04,iVar9 + 0x20,0), iVar9 != 0)) {
-          core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550();
+        this_ptr_02 = (CGlass *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(pCVar7->lights[199].filter_names[0x14] + 4),
+                                 g_CGlassActorType_01c78c40.name_hash);
+        if (this_ptr_02 != (CGlass *)0x0) {
+          pCStack_34 = (CCharacter *)&(this_ptr_02->base).location;
+          iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
+                            (0x01C08D04,(CVector3f *)pCStack_34,0.0,(CVector3f *)0x0,(float *)0x0)
+          ;
+          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_FUN_004aded0(), iVar8 != 0)) {
+            core_glass_cpp_CGlass_shatter_FUN_004ada20(this_ptr_02,(CVector3f *)pCStack_34);
+          }
         }
-        iVar7 = iVar7 + 1;
-        iVar6 = iVar6 + 4;
-      } while (iVar7 < *(int *)(param_1 + 0x14cd6c));
+        this_ptr_03 = (CTrigger *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(pCVar7->lights[199].filter_names[0x14] + 4),
+                                 g_CTriggerActorType_02dd1084.name_hash);
+        if (((this_ptr_03 != (CTrigger *)0x0) && (this_ptr_03->hero_triggers_me == 7)) &&
+           (this_ptr_03->damage_actor_wildcard_name[0] == '\0')) {
+          fStack_4c = 0.0;
+          iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
+                            (0x01C08D04,&(this_ptr_03->base).location.position,0.0,
+                             (CVector3f *)0x0,&fStack_4c);
+          if (iVar8 != 0) {
+            core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(this_ptr_03,fStack_4c);
+          }
+        }
+        this_ptr_04 = (CFlameCan *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(pCVar7->lights[199].filter_names[0x14] + 4),
+                                 g_CFlameCanActorType_01c70654.name_hash);
+        if ((this_ptr_04 != (CFlameCan *)0x0) &&
+           (iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
+                              (0x01C08D04,&(this_ptr_04->base).location.position,0.0,
+                               (CVector3f *)0x0,(float *)0x0), iVar8 != 0)) {
+          core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr_04);
+        }
+        iVar5 = iVar5 + 1;
+        pCVar7 = (CDemonSet *)pCVar7->cameras;
+      } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
     }
     if (*(int *)(0x01C775EC + 0x20c) != 0) {
       if (*(int *)(0x01C775EC + 0x20c) == 2) {
-        local_3c = local_20 + -1;
+        local_3c = (float)(local_20 + -1);
         local_30 = 0;
         local_2c = 0;
-        if (0 < local_3c) {
-          local_40 = local_20 << 2;
+        if (0 < (int)local_3c) {
+          local_40 = (float)(local_20 << 2);
           do {
             if (local_2c + 1 < local_20) {
-              iVar6 = (local_2c + 1) * 4;
+              iVar5 = (local_2c + 1) * 4;
               do {
-                iVar7 = *(int *)(local_30 + 0x1ffb078);
-                if (iVar7 < *(int *)(iVar6 + 0x1ffb078)) {
-                  *(uint *)(local_30 + 0x1ffb078) = *(uint *)(iVar6 + 0x1ffb078);
-                  *(int *)(iVar6 + 0x1ffb078) = iVar7;
-                  uVar5 = *(uint *)(local_30 + 0x1ffcfb8);
-                  *(uint *)(local_30 + 0x1ffcfb8) = *(uint *)(iVar6 + 0x1ffcfb8);
-                  *(uint *)(iVar6 + 0x1ffcfb8) = uVar5;
+                iVar8 = *(int *)(local_30 + 0x1ffb078);
+                if (iVar8 < *(int *)(iVar5 + 0x1ffb078)) {
+                  *(uint *)(local_30 + 0x1ffb078) = *(uint *)(iVar5 + 0x1ffb078);
+                  *(int *)(iVar5 + 0x1ffb078) = iVar8;
+                  uVar4 = *(uint *)(local_30 + 0x1ffcfb8);
+                  *(uint *)(local_30 + 0x1ffcfb8) = *(uint *)(iVar5 + 0x1ffcfb8);
+                  *(uint *)(iVar5 + 0x1ffcfb8) = uVar4;
                 }
-                iVar6 = iVar6 + 4;
-              } while (iVar6 < local_40);
+                iVar5 = iVar5 + 4;
+              } while (iVar5 < (int)local_40);
             }
             local_30 = local_30 + 4;
             local_2c = local_2c + 1;
-          } while (local_2c < local_3c);
+          } while (local_2c < (int)local_3c);
         }
-        iVar6 = 0x14;
+        iVar5 = 0x14;
         if (local_20 < 0x14) {
-          iVar6 = local_20;
+          iVar5 = local_20;
         }
-        if (0 < iVar6) {
-          iVar9 = 0;
-          iVar7 = 0;
+        if (0 < iVar5) {
+          iVar10 = 0;
+          iVar8 = 0;
           do {
-            piVar1 = (int *)(iVar9 + 0x1ffb078);
-            puVar2 = (uint *)(iVar9 + 0x1ffcfb8);
-            iVar9 = iVar9 + 4;
-            iVar8 = iVar7 + 1;
+            piVar1 = (int *)(iVar10 + 0x1ffb078);
+            puVar2 = (uint *)(iVar10 + 0x1ffcfb8);
+            iVar10 = iVar10 + 4;
+            iVar9 = iVar8 + 1;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (PTR_DAT_005ad350,"%d. %s : %3.2f ms\n",iVar7,*puVar2,
+                      (PTR_DAT_005ad350,"%d. %s : %3.2f ms\n",iVar8,*puVar2,
                        ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-                       (double)fVar3);
-            iVar7 = iVar8;
-          } while (iVar8 < iVar6);
+                       (double)(float)grabber);
+            iVar8 = iVar9;
+          } while (iVar9 < iVar5);
         }
       }
       iStack_18 = wincore_winrun_cpp_getTime_FUN_00558a30();
-      iStack_18 = iStack_18 - local_44;
+      iStack_18 = iStack_18 - (int)local_44;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
                 (PTR_DAT_005ad350,"Process time (%d actors) : %3.2f ms\n",local_20,
                  ((double)iStack_18 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-                 (double)fVar3);
+                 (double)(float)grabber);
     }
-    iVar6 = 0;
-    if (0 < *(int *)(param_1 + 0x14cd6c)) {
+    iVar5 = 0;
+    if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
       do {
-        iVar6 = iVar6 + 1;
-      } while (iVar6 < *(int *)(param_1 + 0x14cd6c));
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < *(int *)this_ptr->lights[199].filter_names[0x14]);
     }
   }
-  return iVar6;
+  return;
 }

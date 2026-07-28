@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int param_1)
+; int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
 ;
+; Parameters:
+; int              Stack[0x4]:4   indent_delta
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_save_FUN_0040c040 at 0040c0ce
-;   core_actor.cpp_FUN_0040cb00 at 0040cba3
-;   core_actor.cpp_FUN_0040ce80 at 0040cf23
+;   core_actor.cpp_archiveBox_FUN_0040ce80 at 0040cf23
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040d082
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00 at 0040cba3
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cd73
 ;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d231
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c0fc9

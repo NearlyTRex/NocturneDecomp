@@ -1,18 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   slot
 ;
 ; XREF[10]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240ff
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 at 00524b04
 ;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 at 00524e34
 ;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0 at 00525755
-;   sound_sndmain.cpp_FUN_005278e0 at 00527923
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527467
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 at 00523539
 ;   sound_sndmain.cpp_killAllSfx_FUN_005272b0 at 005272c3
+;   sound_sndmain.cpp_killSfxByName_FUN_005278e0 at 00527923
 ;   sound_sndmain.cpp_killSfx_FUN_00527230 at 00527245
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526c2f
 ;
@@ -139,12 +141,12 @@ section .text
     PUSH ESI                            ; 00525687
         ;   Label: LAB_00525687
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 00525688
-        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60()
+        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0052568d
     PUSH 0x0                            ; 00525690
         ;   Label: LAB_00525690
     CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0 ; 00525692
-        ;   XREF to: 00521ca0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0()
+        ;   XREF to: 00521ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int requested_bytes)
     ADD ESP,0x4                         ; 00525697
     POP EBP                             ; 0052569a
         ;   Label: LAB_0052569a

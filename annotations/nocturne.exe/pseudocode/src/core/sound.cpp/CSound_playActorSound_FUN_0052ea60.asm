@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+; uint __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; char *           Stack[0xc]:4   sound_name
+; CVector3f *      Stack[0x10]:4   position
 ;
 ; XREF[10]:
 ;   core_actor.cpp_FUN_0040a2e0 at 0040a2f6
@@ -35,7 +40,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0052ea75
     PUSH ECX                            ; 0052ea79
     CALL core_sound.cpp_playSfxInternal_FUN_0052d120 ; 0052ea7a
-        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_playSfxInternal_FUN_0052d120()
+        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_0052d120(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 0052ea7f
     RET                                 ; 0052ea82
 

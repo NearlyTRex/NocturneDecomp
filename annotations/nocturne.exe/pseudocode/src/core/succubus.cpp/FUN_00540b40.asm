@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_succubus_cpp_FUN_00540b40(undefined4 param_1)
+; char * core_succubus_cpp_FUN_00540b40(CEnemy *param_1)
 ;
 ;
 ; XREF[1]:
@@ -36,22 +36,22 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00540b43
     PUSH EBX                            ; 00540b47
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00540b48
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00540b4d
     ADD EAX,0xbd24                      ; 00540b50
     PUSH EAX                            ; 00540b55
     CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660 ; 00540b56
-        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660()
+        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00540b5b
     ADD EAX,0x22b4                      ; 00540b5e
     PUSH EAX                            ; 00540b63
     CALL core_cloth.cpp_CClothList_ctor_FUN_00438210 ; 00540b64
-        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_ctor_FUN_00438210()
+        ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_ctor_FUN_00438210(CClothList * this_ptr)
     ADD ESP,0x4                         ; 00540b69
     ADD EAX,0x1cc                       ; 00540b6c
     PUSH EAX                            ; 00540b71
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 00540b72
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_004e0050(CMorph * this_ptr)
     ADD ESP,0x4                         ; 00540b77
     LEA EBX,[EAX + 0xffff1e5c]          ; 00540b7a
     PUSH 0x595ffe                       ; 00540b80 | = "succubus.dfm"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shotgun_cpp_FUN_00516960(undefined4 param_1,byte param_2)
+; CWeapon * core_shotgun_cpp_FUN_00516960(CWeapon *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     PUSH 0x1                            ; 0051696c
     PUSH EBX                            ; 0051696e
     CALL core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 ; 0051696f
-        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_dtor_FUN_00553ea0()
+        ;   XREF to: 00553ea0 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_00553ea0(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00516974
     MOV DL,byte ptr [ESP + 0xc]         ; 00516977
     MOV EBX,EAX                         ; 0051697b
@@ -40,11 +40,11 @@ section .text
         ;   Label: LAB_00516986
     PUSH EBX                            ; 0051698b
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0051698c
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00516991
     PUSH EAX                            ; 00516994
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00516995
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0051699a
     MOV EAX,EBX                         ; 0051699d
     POP EBX                             ; 0051699f

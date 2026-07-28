@@ -90,7 +90,7 @@ section .text
     LEA EAX,[ESP + 0x670]               ; 0052a4b1
     PUSH EAX                            ; 0052a4b8
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052a4b9
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052a4be
     MOV EDX,0x1                         ; 0052a4c1
     MOV EAX,dword ptr [ESP + 0x6bc]     ; 0052a4c6
@@ -163,7 +163,7 @@ section .text
     MOV EDI,0x2                         ; 0052a5d1
     MOV EBP,0x400                       ; 0052a5d6
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052a5db
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052a5e0
     MOV ECX,0x5622                      ; 0052a5e3
     LEA EAX,[ESP + 0x654]               ; 0052a5e8
@@ -180,7 +180,7 @@ section .text
     MOV EDI,0x12                        ; 0052a625
     MOV dword ptr [ESP + 0x690],EBX     ; 0052a62a
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052a631
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052a636
     LEA EAX,[ESP + 0x67c]               ; 0052a639
     LEA EDX,[ESP + 0x690]               ; 0052a640
@@ -243,7 +243,7 @@ section .text
         ;   XREF to: 0052a914 (CONDITIONAL_JUMP)  ; LAB_0052a914
     MOV dword ptr [0x02dc923c],0x8      ; 0052a709 | DAT_02dc923c
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00528970 ; 0052a713
-        ;   XREF to: 00528970 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMaxSwLatency_FUN_00528970()
+        ;   XREF to: 00528970 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00528970()
     MOV dword ptr [ESP + 0x69c],EAX     ; 0052a718
     FLD float ptr [ESP + 0x69c]         ; 0052a71f
     FILD dword ptr [0x02dc922c]         ; 0052a726 | DAT_02dc922c
@@ -251,7 +251,7 @@ section .text
     FILD dword ptr [0x02dc923c]         ; 0052a72e | DAT_02dc923c
     FDIVP                               ; 0052a734
     CALL crt_math.c_round_FUN_00563a30  ; 0052a736
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [0x02dc9234]        ; 0052a73b | DAT_02dc9234
     MOV EAX,[0x02dc9234]                ; 0052a741 | DAT_02dc9234
     ADD EAX,0xf                         ; 0052a746
@@ -273,7 +273,7 @@ section .text
     PUSH EAX                            ; 0052a77e
     MOV dword ptr [0x02dc9238],EDX      ; 0052a77f | DAT_02dc9238
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052a785
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     LEA EAX,[ESP + 0x674]               ; 0052a78a
     ADD ESP,0xc                         ; 0052a791
     MOV EDI,dword ptr [0x02dc923c]      ; 0052a794 | DAT_02dc923c
@@ -318,7 +318,7 @@ section .text
     PUSH EAX                            ; 0052a81c
         ;   Label: LAB_0052a81c
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a81d
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a822
     PUSH EAX                            ; 0052a825
     PUSH 0x5941dc                       ; 0052a826 | = "Set Primary buffer format"
@@ -338,7 +338,7 @@ section .text
     PUSH EAX                            ; 0052a855
         ;   Label: LAB_0052a855
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a856
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a85b
     PUSH EAX                            ; 0052a85e
     PUSH 0x5941f6                       ; 0052a85f | = "Get Primary buffer format"
@@ -358,7 +358,7 @@ section .text
     PUSH EAX                            ; 0052a88e
         ;   Label: LAB_0052a88e
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a88f
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a894
     PUSH EAX                            ; 0052a897
     PUSH 0x5941a5                       ; 0052a898 | = "Create temp secondary buffer for prop..."
@@ -415,7 +415,7 @@ section .text
     PUSH EAX                            ; 0052a931
         ;   Label: LAB_0052a931
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a932
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a937
     PUSH EAX                            ; 0052a93a
     PUSH 0x594210                       ; 0052a93b | = "Create the secondary buffer"

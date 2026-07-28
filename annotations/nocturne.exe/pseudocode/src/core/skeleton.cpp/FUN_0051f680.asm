@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_FUN_0051f680(undefined4 param_1)
+; CSkeleton * core_skeleton_cpp_FUN_0051f680(char *param_1)
 ;
 ;
 ; XREF[1]:
@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 0051f6ab
     ADD EBP,EAX                         ; 0051f6ac
     CALL crt_string.c__stricmp_FUN_00564520 ; 0051f6ae
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051f6b3
     TEST EAX,EAX                        ; 0051f6b6
     JZ 0x0051f725                       ; 0051f6b8
@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 0051f70f
     MOV dword ptr [0x02737ef4],EDX      ; 0051f710 | DAT_02737ef4
     CALL core_skeleton.cpp_CSkeleton_load_FUN_00517560 ; 0051f716
-        ;   XREF to: 00517560 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_load_FUN_00517560()
+        ;   XREF to: 00517560 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_load_FUN_00517560(CSkeleton * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0051f71b
     MOV EAX,EBX                         ; 0051f71e
     POP EBP                             ; 0051f720

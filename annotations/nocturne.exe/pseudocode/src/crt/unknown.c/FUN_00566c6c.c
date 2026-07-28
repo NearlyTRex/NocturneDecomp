@@ -9,13 +9,13 @@
 void FUN_00566c6c(void)
 
 {
-  unkbyte10 in_ST0;
+  float10 in_ST0;
   
   if ((DAT_005c1d98 & 1) == 0) {
     fpatan(in_ST0,(float10)1);
   }
   else {
-    FUN_0056dc98();
+    atan2((float10)1,in_ST0);
   }
   return;
 }

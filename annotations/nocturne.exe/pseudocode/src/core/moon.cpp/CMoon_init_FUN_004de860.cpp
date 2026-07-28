@@ -2,13 +2,13 @@
 // Address: 004de860
 // Address Range: [[004de860, 004dea55]]
 // Convention: __cdecl
-// Signature: void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(int *param_1)
+// Signature: void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(int *param_1)
+void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
 
 {
   uint *puVar1;
@@ -17,32 +17,34 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(int *param_1)
   float fVar4;
   uint uVar5;
   int iVar6;
+  CAlphaBitmap *this_ptr_00;
   
-  if (*param_1 == 0) {
+  if (this_ptr->is_loaded == 0) {
     if (*(int *)(0x01C775EC + 0x214) == 0x29a) {
-      core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(param_1 + 2,"taylor_head.kfm");
+      core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(&this_ptr->moon,"taylor_head.kfm");
       *(uint *)(0x01C775EC + 0x214) = 0;
     }
     else {
-      core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(param_1 + 2,"moon.kfm");
+      core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(&this_ptr->moon,"moon.kfm");
     }
-    core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(0x1cce1bc,"menubat.kfm");
-    iVar3 = 0x1ccdc64;
+    core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650
+              ((CKeyFramedModel *)0x1cce1bc,"menubat.kfm");
+    this_ptr_00 = (CAlphaBitmap *)0x1ccdc64;
     iVar6 = 0;
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-              (&DAT_01ccdc50,"menucld2",0x100,0x100);
+              ((CAlphaBitmap *)&DAT_01ccdc50,"menucld2",0x100,0x100);
     do {
       puVar1 = (uint *)((int)&PTR_s_noc00000_005bb198 + iVar6);
       iVar6 = iVar6 + 4;
-      engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(iVar3,*puVar1,0x280,0x116);
-      iVar3 = iVar3 + 0x14;
+      engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(this_ptr_00,(char *)*puVar1,0x280,0x116);
+      this_ptr_00 = this_ptr_00 + 1;
     } while (iVar6 != 0x78);
-    *param_1 = 1;
-    core_course_cpp_CCourse_load_FUN_0043b690(0x1ccdec8,"menu1.pth");
-    core_course_cpp_CCourse_load_FUN_0043b690(0x1ccded4,"menu2.pth");
-    core_course_cpp_CCourse_load_FUN_0043b690(0x1ccdee0,"menu3.pth");
+    this_ptr->is_loaded = 1;
+    core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccdec8,"menu1.pth");
+    core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccded4,"menu2.pth");
+    core_course_cpp_CCourse_load_FUN_0043b690((CCourse *)0x1ccdee0,"menu3.pth");
   }
-  param_1[1] = 0x3e800000;
+  this_ptr->rotation_phase = 0.25;
   iVar6 = 0;
   do {
     iVar3 = rand();

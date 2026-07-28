@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 004c066c (CONDITIONAL_JUMP)  ; LAB_004c066c
     PUSH EAX                            ; 004c0663
     CALL core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 ; 004c0664
-        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_ctor_FUN_0040eb70()
+        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040eb70(CAmmo * this_ptr)
     ADD ESP,0x4                         ; 004c0669
     PUSH EDI                            ; 004c066c
         ;   Label: LAB_004c066c
@@ -70,12 +70,12 @@ section .text
     PUSH ESI                            ; 004c06a9
     MOV dword ptr [EBX + 0x310],EAX     ; 004c06aa
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004c06b0
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c06b5
     PUSH EAX                            ; 004c06b8
     PUSH EBX                            ; 004c06b9
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004c06ba
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004c06bf
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004c06c2
     PUSH EBX                            ; 004c06c8
@@ -104,7 +104,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004c06f2
     PUSH EBP                            ; 004c06f6
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 004c06f7
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004c06fc
     POP EBX                             ; 004c06ff
     POP EDI                             ; 004c0700

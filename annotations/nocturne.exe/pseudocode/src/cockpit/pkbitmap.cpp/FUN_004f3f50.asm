@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbitmap_cpp_FUN_004f3f50(int param_1)
+; void cockpit_pkbitmap_cpp_FUN_004f3f50(CPackedBitmap *param_1)
 ;
 ;
 ; XREF[5]:
@@ -32,11 +32,11 @@ section .text
         ;   Label: LAB_004f3f5d
     PUSH ESI                            ; 004f3f60
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004f3f61
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004f3f66
     PUSH EBX                            ; 004f3f69
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20 ; 004f3f6a
-        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20()
+        ;   XREF to: 004f3f20 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f3f6f
     POP ESI                             ; 004f3f72
     POP EBX                             ; 004f3f73

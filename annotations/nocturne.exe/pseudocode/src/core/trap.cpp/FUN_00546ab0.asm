@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00546abf | DAT_005ae704
     PUSH EDX                            ; 00546ac5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00546ac6
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00546acb
     PUSH 0x0                            ; 00546ace
     LEA EAX,[EBX + 0x30]                ; 00546ad0
@@ -41,7 +41,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00546ad4 | DAT_005ae704
     PUSH ECX                            ; 00546ada | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00546adb
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00546ae0
     PUSH 0x0                            ; 00546ae3
     LEA EAX,[ESP + 0x4]                 ; 00546ae5
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x8                         ; 00546af4
     PUSH EAX                            ; 00546af7
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 00546af8
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 00546afd
     MOV ESI,EAX                         ; 00546b00
     TEST EAX,EAX                        ; 00546b02
@@ -68,13 +68,13 @@ section .text
     PUSH EAX                            ; 00546b1d
         ;   Label: LAB_00546b1d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00546b1e
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00546b23
     MOV EBP,dword ptr [0x005ae704]      ; 00546b26 | DAT_005ae704
         ;   Label: LAB_00546b26
     PUSH EBP                            ; 00546b2c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00546b2d
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 00546b32
     MOV EAX,ESI                         ; 00546b35
     ADD ESP,0x18                        ; 00546b37

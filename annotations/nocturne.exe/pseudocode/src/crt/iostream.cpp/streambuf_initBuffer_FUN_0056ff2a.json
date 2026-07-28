@@ -1,0 +1,134 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 17,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "0056b75d",
+      "from_addr": "0056b7ba",
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b896",
+      "from_addr": "0056b8dc",
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0056b896",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b405",
+      "from_addr": "0056b46d",
+      "name": "crt_strstream.cpp_strstreambase_ctor_FUN_0056b405",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ff2a",
+    "address_range": [
+      [
+        "0056ff2a",
+        "0056ff81"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0056ff2a",
+    "signature": "void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a(streambuf *this_ptr,char *buffer_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0056b46d",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_strstreambase_ctor_FUN_0056b405",
+        "estimated_params": 2,
+        "instructions_analyzed": 16,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056b7ba",
+        "call_type": "direct",
+        "caller": "crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d",
+        "estimated_params": 2,
+        "instructions_analyzed": 17,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056b8dc",
+        "call_type": "direct",
+        "caller": "crt_fstream.cpp_fstreambase_ctor_FUN_0056b896",
+        "estimated_params": 2,
+        "instructions_analyzed": 17,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0555555555555554,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 14,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 55
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

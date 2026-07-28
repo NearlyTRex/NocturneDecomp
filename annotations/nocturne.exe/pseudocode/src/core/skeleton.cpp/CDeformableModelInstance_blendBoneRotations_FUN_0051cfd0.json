@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 294,
+    "complexity_score": 151,
     "cross_reference_count": 11,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 22,
+    "pseudocode_lines": 46,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "stack_alignment_array",
-      "stack_ref",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 134
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -155,7 +154,7 @@
     {
       "addr": "00497900",
       "from_addr": "00497a17",
-      "name": "core_gabriela.cpp_FUN_00497900",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -185,19 +184,19 @@
     {
       "addr": "0051d650",
       "from_addr": "0051d783",
-      "name": "core_skeleton.cpp_FUN_0051d650",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053a260",
+      "from_addr": "0053a53d",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005384d0",
       "from_addr": "005387e2",
       "name": "core_stranger.cpp_FUN_005384d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053a260",
-      "from_addr": "0053a53d",
-      "name": "core_stranger.cpp_FUN_0053a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -217,7 +216,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,undefined4 param_2,float param_3,undefined4 param_4,code *param_5)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)"
   },
   "function_calls": [
     {
@@ -272,7 +271,7 @@
       {
         "call_addr": "00497a17",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_00497900",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -283,7 +282,7 @@
       {
         "call_addr": "00497af8",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_00497900",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +293,7 @@
       {
         "call_addr": "00497d17",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_00497900",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,10 +358,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.48,
@@ -402,10 +401,10 @@
     "pcode_op_count": 411
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 52,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -421,6 +420,41 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "source_quaternions",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_weight",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_callback",
+        "offset": 20,
+        "size": 4,
+        "type": "CDeformableModel_MotionBlendWeightFunc *"
       }
     ]
   },
@@ -441,185 +475,95 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 70,
+          "line": 40,
+          "message": "Uninitialized variable: fStack_2c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,uint param_2,float param_3,uint param_4,code *param_5)",
-      "type": "unnamed_param"
-    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
-      "match": "aiStackY_1808",
+      "match": "afStackY_1808",
       "severity": "moderate",
-      "text": "int aiStackY_1808 [1522];",
+      "text": "float afStackY_1808 [1522];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((float)0.001 < param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1 + 0x6b0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(local_1c,iVar2,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uStack_14 = (*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uStack_14 = (*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uStack_14 = (*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uStack_14 = (*param_5)(iVar2,param_4,param_3,iVar1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_xform_cpp_slerpQuaternion_FUN_0055d2d0(iVar3,param_2,uStack_14);",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)local_18",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 35,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8);",
+      "text": "*puVar2 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
+      "line": 36,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*puVar5 = *(uint *)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "text": "*puVar3 = *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 39,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8) +",
+      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
       "type": "stack_ref"
     },
     {
-      "description": "Pointer value `(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8)",
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)local_18",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffdc + (uint)bVar6 * -8 + (uint)bVar6 * -8) +",
+      "text": "puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);",
       "type": "pointer_truncation"
     },
     {
-      "call_site_count": 13,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Pointer value `(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 44,
+      "match": "local_18 = (T *)&(local_18->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: fStack_2c",
+      "line": 40,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(local_18->bone_transform).pose_data.bone_rotations[0].w = fStack_2c;",
+      "type": "static_uninitvar"
     }
   ]
 }

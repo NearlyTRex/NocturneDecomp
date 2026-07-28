@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_save_FUN_0048c850(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_fire_cpp_CFireEffect_save_FUN_0048c850(CFireEffect *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3d38
@@ -40,7 +43,7 @@ section .text
         ;   Label: LAB_0048c87e
     PUSH EBX                            ; 0048c87f
     CALL core_fire.cpp_CCrater_save_FUN_00487e90 ; 0048c880
-        ;   XREF to: 00487e90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_save_FUN_00487e90()
+        ;   XREF to: 00487e90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_save_FUN_00487e90(CCrater * this_ptr, _FILE * file_handle)
     ADD EBX,0x70                        ; 0048c885
     ADD ESP,0x8                         ; 0048c888
     CMP EBX,EDI                         ; 0048c88b

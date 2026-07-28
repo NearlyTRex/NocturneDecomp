@@ -1,0 +1,30 @@
+// Name: core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30
+// Address: 0044ac30
+// Address Range: [[0044ac30, 0044aca7]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30(CDemonCube *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30(CDemonCube *this_ptr)
+
+{
+  SVoxelGrid *pSVar1;
+  
+  pSVar1 = (SVoxelGrid *)FUN_00565c50(0x40,1);
+  this_ptr->voxel_buffer1 = pSVar1;
+  if (pSVar1 == (SVoxelGrid *)0x0) {
+    PTR_01cc4800 = "..\\core\\dcube.cpp";
+    INT_01cc4804 = 0x5f3;
+    core_main_c_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
+  }
+  pSVar1 = (SVoxelGrid *)FUN_00565c50(0x40,1);
+  this_ptr->voxel_buffer2 = pSVar1;
+  if (pSVar1 != (SVoxelGrid *)0x0) {
+    return;
+  }
+  PTR_01cc4800 = "..\\core\\dcube.cpp";
+  INT_01cc4804 = 0x5f5;
+  core_main_c_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
+  return;
+}

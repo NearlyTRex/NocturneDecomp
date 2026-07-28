@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0056be50
+;   crt_math.c_fdiv_FUN_0056be50
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: LAB_0056c198
     FXCH ST3                            ; 0056c19b
     FSTP extended double ptr [ESP + 0xc] ; 0056c19d
-    CALL FUN_0056be50                   ; 0056c1a1
-        ;   XREF to: 0056be50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056be50()
+    CALL crt_math.c_fdiv_FUN_0056be50   ; 0056c1a1
+        ;   XREF to: 0056be50 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_fdiv_FUN_0056be50(float10 dividend, float10 divisor)
     FXCH ST3                            ; 0056c1a6
     FLD extended double ptr [ESP + 0xc] ; 0056c1a8
     FXCH ST4                            ; 0056c1ac

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission *this_ptr,char *mission_filename,int load_flags)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   mission_filename
+; int              Stack[0xc]:4   load_flags
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004a4b50 at 004a4e9b
@@ -41,7 +45,7 @@ section .text
     PUSH EDX                            ; 004d7eec
     PUSH 0x589615                       ; 004d7eed | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004d7ef2
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004d7ef7
     MOV EBX,EAX                         ; 004d7efa
     TEST EAX,EAX                        ; 004d7efc
@@ -51,13 +55,13 @@ section .text
         ;   Label: LAB_004d7f00
     PUSH 0x589659                       ; 004d7f02 | = "Loading mission"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d7f07
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d7f0c
     PUSH EAX                            ; 004d7f0f
     MOV EDI,dword ptr [0x005baca0]      ; 004d7f10 | INT_005baca0
     PUSH EDI                            ; 004d7f16
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d7f17
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004d7f1c
     MOV EBP,dword ptr [ESP + 0x18]      ; 004d7f1f
     PUSH EBP                            ; 004d7f23
@@ -65,16 +69,16 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004d7f25
     PUSH EAX                            ; 004d7f29
     CALL core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 ; 004d7f2a
-        ;   XREF to: 004d7fe0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0()
+        ;   XREF to: 004d7fe0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonMission * this_ptr, _FILE * file_handle, int load_flags)
     ADD ESP,0xc                         ; 004d7f2f
     PUSH EBX                            ; 004d7f32
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004d7f33
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004d7f38
     MOV EDX,dword ptr [ESP + 0x10]      ; 004d7f3b
     PUSH EDX                            ; 004d7f3f
     CALL core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 ; 004d7f40
-        ;   XREF to: 004d9c20 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20()
+        ;   XREF to: 004d9c20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d7f45
     POP EBP                             ; 004d7f48
     POP EDI                             ; 004d7f49

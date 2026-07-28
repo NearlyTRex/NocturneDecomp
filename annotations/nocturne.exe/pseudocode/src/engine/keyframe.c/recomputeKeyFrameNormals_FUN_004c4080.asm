@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(uint *param_1)
+; void engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(SMRGLPrimitiveTriangle *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -75,13 +75,13 @@ section .text
         ;   Label: LAB_004c40df
     PUSH ESI                            ; 004c40e0
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 004c40e1
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 004c40e6
         ;   Label: LAB_004c40e6
     PUSH EBX                            ; 004c40e9
         ;   Label: LAB_004c40e9
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004c40ea
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004c40ef
     SHL EAX,0x2                         ; 004c40f2
     ADD EBX,EAX                         ; 004c40f5
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 004c40a3 (CONDITIONAL_JUMP)  ; LAB_004c40a3
     PUSH EBX                            ; 004c410f
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004c4110
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004c4115
     SHL EAX,0x2                         ; 004c4118
     ADD EBX,EAX                         ; 004c411b
@@ -130,7 +130,7 @@ section .text
         ;   Label: LAB_004c4157
     PUSH ESI                            ; 004c4158
     CALL engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760 ; 004c4159
-        ;   XREF to: 004c3760 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760()
+        ;   XREF to: 004c3760 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760(CVector3i * vertex_data, SMRGLPrimitiveTriangleIndex * texture)
     JMP 0x004c40e6                      ; 004c415e
         ;   XREF to: 004c40e6 (UNCONDITIONAL_JUMP)  ; LAB_004c40e6
     JBE 0x004c4157                      ; 004c4160

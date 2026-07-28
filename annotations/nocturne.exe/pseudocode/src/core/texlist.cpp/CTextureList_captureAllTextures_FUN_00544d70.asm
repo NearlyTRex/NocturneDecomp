@@ -32,7 +32,7 @@ section .text
     PUSH ECX                            ; 00544d8a
     INC EBX                             ; 00544d8b
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00544d8c
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x18                        ; 00544d91
     MOV EBP,dword ptr [EDI]             ; 00544d94
     ADD ESP,0x8                         ; 00544d96

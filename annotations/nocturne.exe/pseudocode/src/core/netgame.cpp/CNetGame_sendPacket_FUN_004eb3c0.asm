@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(int param_1,undefined4 param_2,int *param_3)
+; void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   dest_addr
+; SNetPacketHeader * Stack[0xc]:4   packet
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004ea9f3
@@ -30,7 +34,7 @@ section .text
     ADD EAX,0x170                       ; 004eb3d7
     PUSH EAX                            ; 004eb3dc
     CALL support_trisock.cpp_performSocketOperation_FUN_00549090 ; 004eb3dd
-        ;   XREF to: 00549090 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_performSocketOperation_FUN_00549090()
+        ;   XREF to: 00549090 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_performSocketOperation_FUN_00549090(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * dest_addr)
     ADD ESP,0x10                        ; 004eb3e2
     RET                                 ; 004eb3e5
 

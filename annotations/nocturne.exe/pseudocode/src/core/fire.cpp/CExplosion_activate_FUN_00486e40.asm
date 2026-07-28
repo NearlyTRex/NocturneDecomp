@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CExplosion_activate_FUN_00486e40(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+; void core_fire_cpp_CExplosion_activate_FUN_00486e40(float *param_1,float *param_2,float param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
@@ -67,7 +67,7 @@ section .text
     PUSH 0x3f000000                     ; 00486e91
     XOR EBX,EBX                         ; 00486e96
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 00486e98
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 00486e9d
     MOV dword ptr [ESI + 0x18],EAX      ; 00486ea0
     MOV EAX,dword ptr [ESP + 0x60]      ; 00486ea3
@@ -129,7 +129,7 @@ section .text
     PUSH EDX                            ; 00486f54
     FSTP float ptr [ESP + 0x14]         ; 00486f55
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00486f59
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00486f5e
     PUSH EAX                            ; 00486f61
     LEA EAX,[ESP + 0x4]                 ; 00486f62
@@ -140,7 +140,7 @@ section .text
     PUSH ECX                            ; 00486f72
     INC EBX                             ; 00486f73
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0048b320 ; 00486f74
-        ;   XREF to: 0048b320 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRock_FUN_0048b320()
+        ;   XREF to: 0048b320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 00486f79
     CMP EBX,0xa                         ; 00486f7c
     JL 0x00486ead                       ; 00486f7f

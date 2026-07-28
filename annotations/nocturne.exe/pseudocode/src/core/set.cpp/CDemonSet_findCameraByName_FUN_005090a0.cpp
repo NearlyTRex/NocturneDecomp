@@ -2,28 +2,28 @@
 // Address: 005090a0
 // Address Range: [[005090a0, 005090e2]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(int *param_1,undefined4 param_2)
+// Signature: int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name)
 
 #include "nocturne.h"
 
-int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(int *param_1,uint param_2)
+int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name)
 
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  C3DSCamera *str1;
   
   iVar2 = 0;
-  if (0 < *param_1) {
-    piVar3 = param_1 + 1;
+  if (0 < this_ptr->camera_count) {
+    str1 = this_ptr->cameras;
     do {
-      iVar1 = _stricmp(piVar3,param_2);
+      iVar1 = _stricmp(str1->name,name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      piVar3 = piVar3 + 0x68;
-    } while (iVar2 < *param_1);
+      str1 = (C3DSCamera *)&str1->enabled;
+    } while (iVar2 < this_ptr->camera_count);
   }
   return -1;
 }

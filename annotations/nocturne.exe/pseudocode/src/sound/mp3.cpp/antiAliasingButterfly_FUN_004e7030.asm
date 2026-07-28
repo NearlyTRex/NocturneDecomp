@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,float *param_2,int param_3)
+; void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input_samples
+; float *          Stack[0x8]:4   output_samples
+; SMpegLayer3GranuleInfo * Stack[0xc]:4   granule
+; SMpegFrameHeader * Stack[0x10]:4   header
 ; Local Variables:
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined4       Stack[-0x30]:4  local_30

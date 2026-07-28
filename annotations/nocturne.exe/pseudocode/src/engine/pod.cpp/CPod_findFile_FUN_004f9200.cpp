@@ -2,11 +2,11 @@
 // Address: 004f9200
 // Address Range: [[004f9200, 004f924f]]
 // Convention: unknown
-// Signature: undefined4 engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,undefined4 param_2)
+// Signature: undefined4 engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,char *param_2)
 
 #include "nocturne.h"
 
-uint engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,uint param_2)
+uint engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,char *param_2)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ uint engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,uint param_2)
   piVar2 = param_1;
   if (0 < *param_1) {
     do {
-      iVar1 = engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(piVar2[1],param_2);
+      iVar1 = engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150((CPodFile *)piVar2[1],param_2);
       if (-1 < iVar1) {
         engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(piVar2[1],iVar1,param_2);
         return 1;

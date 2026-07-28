@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
+; CSfxSlot * sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
 ;
 ;
 ; XREF[16]:
@@ -72,7 +72,7 @@ section .text
     POP EBX                             ; 005234f9
     RET                                 ; 005234fa
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005234fb
-        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
+        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
         ;   Label: LAB_005234fb
     CMP ESI,dword ptr [EBX + 0x70]      ; 00523500 | DAT_02dbd3e4
     JNZ 0x0052352e                      ; 00523503
@@ -100,7 +100,7 @@ section .text
     POP EBX                             ; 0052352c
     RET                                 ; 0052352d
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052352e
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_0052352e
     XOR EAX,EAX                         ; 00523533
     POP ESI                             ; 00523535
@@ -109,10 +109,10 @@ section .text
     PUSH EBX                            ; 00523538
         ;   Label: LAB_00523538
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00523539
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 0052353e
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00523541
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     XOR EAX,EAX                         ; 00523546
     POP ESI                             ; 00523548
     POP EBX                             ; 00523549

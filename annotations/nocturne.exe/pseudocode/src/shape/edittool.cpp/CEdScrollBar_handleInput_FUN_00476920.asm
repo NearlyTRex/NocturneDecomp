@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(int *param_1)
+; void shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollBar *param_1)
 ;
 ;
 ; XREF[1]:
@@ -39,11 +39,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00476924
     PUSH EBX                            ; 00476928
     CALL shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0 ; 00476929
-        ;   XREF to: 00476ce0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0()
+        ;   XREF to: 00476ce0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0047692e
     PUSH EBX                            ; 00476931
     CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800 ; 00476932
-        ;   XREF to: 00476800 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800()
+        ;   XREF to: 00476800 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800(CEdScrollBar * this_ptr)
     MOV EDX,dword ptr [0x01bcde24]      ; 00476937 | DAT_01bcde24
     ADD ESP,0x4                         ; 0047693d
     CMP EBX,EDX                         ; 00476940
@@ -105,11 +105,11 @@ section .text
     PUSH EBX                            ; 004769e3
         ;   Label: LAB_004769e3
     CALL shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0 ; 004769e4
-        ;   XREF to: 00476ce0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0()
+        ;   XREF to: 00476ce0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004769e9
     PUSH EBX                            ; 004769ec
     CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800 ; 004769ed
-        ;   XREF to: 00476800 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800()
+        ;   XREF to: 00476800 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_00476800(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004769f2
     POP EBP                             ; 004769f5
         ;   Label: LAB_004769f5
@@ -209,7 +209,7 @@ section .text
     JMP 0x004769e3                      ; 00476ad3
         ;   XREF to: 004769e3 (UNCONDITIONAL_JUMP)  ; LAB_004769e3
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00476ad8
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_00476ad8
     MOV ESI,dword ptr [0x01bcde2c]      ; 00476add | DAT_01bcde2c
     MOV EDX,EAX                         ; 00476ae3
@@ -354,7 +354,7 @@ section .text
     MOV dword ptr [0x01bcde28],EDI      ; 00476c4d | DAT_01bcde28
     MOV dword ptr [EBX],EBP             ; 00476c53
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00476c55
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_00476c55
     MOV [0x01bcde2c],EAX                ; 00476c5a | DAT_01bcde2c
     MOV EAX,0x48000                     ; 00476c5f

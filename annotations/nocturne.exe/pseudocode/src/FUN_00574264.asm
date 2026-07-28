@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00573930 at 00573aec
 ;   FUN_005740b0 at 005741d4
 ;   FUN_00574680 at 005746ca
+;   crt_env.c_putenv_internal_FUN_00573930 at 00573aec
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de54a0
@@ -81,7 +81,7 @@ section .text
         ;   XREF to: 005743f8 (CONDITIONAL_JUMP)  ; LAB_005743f8
     PUSH 0x9                            ; 005742d5
     CALL crt_memory.c_malloc_FUN_005635b0 ; 005742d7
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 005742dc
     MOV EBX,EAX                         ; 005742df
     TEST EAX,EAX                        ; 005742e1
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 00574397 (CONDITIONAL_JUMP)  ; LAB_00574397
     PUSH EAX                            ; 0057434c
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0057434d
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EDI,EAX                         ; 00574352
     ADD ESP,0x4                         ; 00574354
     MOV EBX,EAX                         ; 00574357
@@ -161,7 +161,7 @@ section .text
     PUSH EDI                            ; 00574386
     MOV dword ptr [0x02de54a0],EDI      ; 00574387 | DAT_02de54a0
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0057438d
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00574392
     JMP 0x005743cd                      ; 00574395
         ;   XREF to: 005743cd (UNCONDITIONAL_JUMP)  ; LAB_005743cd
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_00574397
     PUSH EBX                            ; 00574398
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00574399
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 0057439e
     MOV EBX,EAX                         ; 005743a1
     TEST EAX,EAX                        ; 005743a3
@@ -189,7 +189,7 @@ section .text
     ADD EBP,EAX                         ; 005743bc
     PUSH EBP                            ; 005743be
     CALL crt_string.c_memmove_FUN_00566170 ; 005743bf
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 005743c4
     MOV dword ptr [0x02de54a0],EBP      ; 005743c7 | DAT_02de54a0
     MOV dword ptr [EBX + ESI*0x4 + 0x4],0x0 ; 005743cd

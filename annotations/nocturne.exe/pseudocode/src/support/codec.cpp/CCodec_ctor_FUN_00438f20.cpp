@@ -2,13 +2,13 @@
 // Address: 00438f20
 // Address Range: [[00438f20, 00438f2a]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(undefined4 *param_1)
+// Signature: CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(uint *param_1)
+CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00438f20(CCodec *this_ptr)
 
 {
-  *param_1 = &PTR_support_codec_cpp_CCodec_dtor_FUN_00438f30_0059b3e4;
-  return;
+  this_ptr->vtable = (CCodec_vtable *)&PTR_support_codec_cpp_CCodec_dtor_FUN_00438f30_0059b3e4;
+  return this_ptr;
 }

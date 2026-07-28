@@ -2,11 +2,11 @@
 // Address: 00447b30
 // Address Range: [[00447b30, 00447baf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(CDemonCamera *this_ptr,int clear_color)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(int param_1,uint param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00447b30(CDemonCamera *this_ptr,int clear_color)
 
 {
   int iVar1;
@@ -15,18 +15,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00
   int iVar3;
   
   iVar4 = 0;
-  if (0 < *(int *)(param_1 + 0x140)) {
+  if (0 < (int)this_ptr->max_distance) {
     do {
       iVar1 = 0;
-      if (0 < *(int *)(param_1 + 0x13c)) {
+      if (0 < *(int *)(this_ptr->camera_name + 0xfc)) {
         do {
-          *(uint *)
-           (*(int *)(param_1 + 0x158) + (*(int *)(param_1 + 0x13c) * iVar4 + iVar1) * 4) = param_2;
+          *(int *)((int)this_ptr->framebuffer_aligned +
+                  (*(int *)(this_ptr->camera_name + 0xfc) * iVar4 + iVar1) * 4) = clear_color;
           iVar1 = iVar1 + 1;
-        } while (iVar1 < *(int *)(param_1 + 0x13c));
+        } while (iVar1 < *(int *)(this_ptr->camera_name + 0xfc));
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < *(int *)(param_1 + 0x140));
+    } while (iVar4 < (int)this_ptr->max_distance);
   }
   iVar1 = 0x140;
   iVar4 = 0;

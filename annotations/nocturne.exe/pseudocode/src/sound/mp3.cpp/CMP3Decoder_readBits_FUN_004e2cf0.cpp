@@ -2,42 +2,45 @@
 // Address: 004e2cf0
 // Address Range: [[004e2cf0, 004e2dce]]
 // Convention: __cdecl
-// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint param_2)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder *this_ptr,uint num_bits)
 
 #include "nocturne.h"
 
-uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint param_2)
+uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder *this_ptr,uint num_bits)
 
 {
-  int iVar1;
+  uint uVar1;
   uint uVar2;
   uint uVar3;
   byte local_14;
   
   uVar3 = 0;
-  *(uint *)(param_1 + 0x1314) = *(int *)(param_1 + 0x1314) + param_2;
-  while (0 < (int)param_2) {
-    if (*(int *)(param_1 + 0x531c) == 0) {
-      *(uint *)(param_1 + 0x531c) = 8;
-      uVar2 = *(int *)(param_1 + 0x1318) + 1;
-      *(uint *)(param_1 + 0x1318) = uVar2;
-      if (*(uint *)(param_1 + 0x1310) < uVar2) {
+  (this_ptr->memory_bitstream).total_bits_read =
+       (this_ptr->memory_bitstream).total_bits_read + num_bits;
+  while (0 < (int)num_bits) {
+    if ((this_ptr->memory_bitstream).bits_available == 0) {
+      (this_ptr->memory_bitstream).bits_available = 8;
+      uVar2 = (this_ptr->memory_bitstream).current_dword_index + 1;
+      (this_ptr->memory_bitstream).current_dword_index = uVar2;
+      if ((this_ptr->memory_bitstream).buffer_size_limit < uVar2) {
         PTR_01cc4800 = "..\\sound\\mp3.cpp";
         INT_01cc4804 = 0x2c0;
         core_main_c_FUN_004c8440("Buffer overflow!!  File: %s",&DAT_01cd8b28);
       }
     }
-    uVar2 = *(uint *)(param_1 + 0x531c);
-    if (param_2 < uVar2) {
-      uVar2 = param_2;
+    uVar2 = (this_ptr->memory_bitstream).bits_available;
+    if (num_bits < uVar2) {
+      uVar2 = num_bits;
     }
-    param_2 = param_2 - uVar2;
-    iVar1 = *(int *)(param_1 + 0x531c) - uVar2;
-    local_14 = (byte)iVar1;
-    uVar3 = uVar3 | ((*(uint *)(param_1 + 0x131c + (*(uint *)(param_1 + 0x1318) & 0xfff) * 4) &
-                     *(uint *)(&DAT_005bc010 + *(int *)(param_1 + 0x531c) * 4)) >> (local_14 & 0x1f)
-                    ) << ((byte)param_2 & 0x1f);
-    *(int *)(param_1 + 0x531c) = iVar1;
+    uVar1 = (this_ptr->memory_bitstream).bits_available;
+    num_bits = num_bits - uVar2;
+    uVar2 = uVar1 - uVar2;
+    local_14 = (byte)uVar2;
+    uVar3 = uVar3 | (((this_ptr->memory_bitstream).frame_buffer
+                      [(this_ptr->memory_bitstream).current_dword_index & 0xfff] &
+                     *(uint *)(&DAT_005bc010 + uVar1 * 4)) >> (local_14 & 0x1f)) <<
+                    ((byte)num_bits & 0x1f);
+    (this_ptr->memory_bitstream).bits_available = uVar2;
   }
   return uVar3;
 }

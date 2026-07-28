@@ -51,7 +51,7 @@ section .text
     PUSH 0x4                            ; 004b864e
     PUSH EDX                            ; 004b8650
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b8651
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,[0x00763e44]                ; 004b8656 | DAT_00763e44
     MOV dword ptr [EBX + 0x1f954],0x40400000 ; 004b865b
     ADD ESP,0xc                         ; 004b8665
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_004b866e
     PUSH EDI                            ; 004b8674
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004b8675
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 004b867a
     TEST EAX,EAX                        ; 004b867d
     JZ 0x004b86d8                       ; 004b867f
@@ -85,7 +85,7 @@ section .text
     PUSH EDX                            ; 004b8698
     MOV dword ptr [EBX + 0x2434],0x0    ; 004b8699
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b86a3
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b86a8
     PUSH 0x41c80000                     ; 004b86ab
     PUSH 0x32                           ; 004b86b0

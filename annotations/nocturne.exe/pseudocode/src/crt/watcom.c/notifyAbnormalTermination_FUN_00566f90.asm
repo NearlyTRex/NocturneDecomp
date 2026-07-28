@@ -8,16 +8,16 @@
 ;   core_main.c_FUN_004c8440 at 004c84d6
 ;
 ; Referenced Globals:
-;   void* PTR_crt_unknown.c_FUN_00566f98_005c1890 = 00566f98
+;   void* PTR_crt_unknown.c_reportAbnormalTermination_FUN_00566f98_005c1890 = 00566f98
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00566f98
+;   crt_unknown.c_reportAbnormalTermination_FUN_00566f98
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL dword ptr [0x005c1890]         ; 00566f90 | PTR_crt_unknown.c_FUN_00566f98_005c1890
+    CALL dword ptr [0x005c1890]         ; 00566f90 | PTR_crt_unknown.c_reportAbnormalTermination_FUN_00566f98_005c1890
         ;   Label: crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
     MOV EAX,EAX                         ; 00566f96
 

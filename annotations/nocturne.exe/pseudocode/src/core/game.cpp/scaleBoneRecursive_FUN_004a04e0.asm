@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(int param_1,int param_2,float param_3,int param_4)
+; void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_instance
+; CSkeleton *      Stack[0x8]:4   skeleton
+; float            Stack[0xc]:4   scale_factor
+; int              Stack[0x10]:4   bone_index
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a2d85
@@ -54,7 +59,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 004a0538
     PUSH ECX                            ; 004a053c
     CALL core_game.cpp_scaleBoneRecursive_FUN_004a04e0 ; 004a053d
-        ;   XREF to: 004a04e0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_scaleBoneRecursive_FUN_004a04e0()
+        ;   XREF to: 004a04e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004a0542
     JMP 0x004a051f                      ; 004a0545
         ;   XREF to: 004a051f (UNCONDITIONAL_JUMP)  ; LAB_004a051f

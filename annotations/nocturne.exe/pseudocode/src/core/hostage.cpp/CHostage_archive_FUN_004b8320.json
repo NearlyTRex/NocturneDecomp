@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 281,
+    "complexity_score": 292,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 57,
     "suspect_count": 23,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 233
+    "total_lines": 244
   },
   "cross_references": [],
   "function": {
@@ -179,6 +179,11 @@
       "name": "core_actor.cpp_archiveLocalizedString_FUN_0040c7f0"
     },
     {
+      "addr": "0040cb00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040cb00"
+    },
+    {
       "addr": "0040cbf0",
       "is_variadic": false,
       "name": "core_actor.cpp_archivePartStatus_FUN_0040cbf0"
@@ -187,11 +192,6 @@
       "addr": "0040c6d0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveString_FUN_0040c6d0"
-    },
-    {
-      "addr": "0040cb00",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cb00"
     },
     {
       "addr": "004eed10",
@@ -397,7 +397,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f91c,\"followState\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1f91c),\"followState\");",
       "type": "unnamed_param"
     },
     {
@@ -405,23 +405,15 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f924,\"hostageState\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 0x1f924),\"hostageState\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1f928,\"goalWayPoint\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(param_1 + 0x150,\"modelName\")",
+      "text": "((CDemonActor **)(param_1 + 0x1f928),\"goalWayPoint\");",
       "type": "unnamed_param"
     },
     {
@@ -429,7 +421,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040cb00(param_1 + 0x150,\"motion state\");",
+      "text": "((CMotionController *)(param_1 + 0x150),\"modelName\");",
       "type": "unnamed_param"
     },
     {
@@ -437,23 +429,15 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archivePartStatus_FUN_0040cbf0(param_1 + 0x150,\"partStatus\");",
+      "text": "((CMotionController *)(param_1 + 0x150),\"motion state\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1f570,\"rescueDistance\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f574,\"rescueCondition\");",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x150),\"partStatus\");",
       "type": "unnamed_param"
     },
     {
@@ -461,23 +445,23 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveClothList_FUN_0040cf70(param_1 + 0x2a8c,\"clothList\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)(param_1 + 0x1f570),\"rescueDistance\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f5d8,\"rescueEvent\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f574),\"rescueCondition\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f5f8,\"heroFoundMeEvent\");",
+      "text": "((CClothList *)(param_1 + 0x2a8c),\"clothList\");",
       "type": "unnamed_param"
     },
     {
@@ -485,31 +469,15 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f65c,\"heroLeftMeEvent\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f5d8),\"rescueEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f6c0,\"heroCameBackEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f788,\"goingToSitDownEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f7ec,\"sitDownEvent\");",
+      "text": "((char *)(param_1 + 0x1f5f8),\"heroFoundMeEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -517,23 +485,31 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f944,\"noShadowsWhenSaved\");",
+      "text": "((char *)(param_1 + 0x1f65c),\"heroLeftMeEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f724,\"getEatenEvent\");",
+      "text": "((char *)(param_1 + 0x1f6c0),\"heroCameBackEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(param_1 + 0x2440,\"descriptiveName\");",
+      "text": "((char *)(param_1 + 0x1f788),\"goingToSitDownEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f7ec),\"sitDownEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -541,23 +517,47 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1f92c,\"sitDownWayPoint\");",
+      "text": "((int *)(param_1 + 0x1f944),\"noShadowsWhenSaved\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f850,\"damageSound\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f724),\"getEatenEvent\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f8b4,\"dieSound\");",
+      "text": "((char *)(param_1 + 0x2440),\"descriptiveName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor **)(param_1 + 0x1f92c),\"sitDownWayPoint\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f850),\"damageSound\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)(param_1 + 0x1f8b4),\"dieSound\");",
       "type": "unnamed_param"
     }
   ],

@@ -16,11 +16,11 @@ void core_game_cpp_setupMovieRecording_FUN_0049a240(void)
   _DAT_01c78acc = 0;
   _DAT_01c78ad4 = 0;
   iVar1 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430
-                    (0x01BCD074,"Enter Movie FPS",&DAT_005b9360,1,0x3e800000,0x43700000,1
-                    );
+                    (0x01BCD074,"Enter Movie FPS",(float *)&DAT_005b9360,1,0.25,240.0,1);
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
-                      (0x01BCD074,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",&DAT_01c78ad0,1,0,99999,1);
+                      (0x01BCD074,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",(int *)&DAT_01c78ad0,1,0,
+                       99999,1);
     if (iVar1 != 0) {
       iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
                         (0x01BCD074,"Enter image width",&DAT_005b9364,1,1,9999,1);

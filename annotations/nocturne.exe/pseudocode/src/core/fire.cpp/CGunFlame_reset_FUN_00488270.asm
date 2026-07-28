@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CGunFlame_reset_FUN_00488270(undefined4 *param_1)
+; void __cdecl core_fire_cpp_CGunFlame_reset_FUN_00488270(CGunFlame *this_ptr)
 ;
+; Parameters:
+; CGunFlame *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_init_FUN_0048a150 at 0048a2d2

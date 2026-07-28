@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   color_mode
+; int              Stack[0x10]:4   color_value
+; char *           Stack[0x14]:4   text
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_printCenterFV_FUN_00490f90 at 00490fda
@@ -50,7 +56,7 @@ section .text
     PUSH EAX                            ; 00490f32
     PUSH EBP                            ; 00490f33
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 00490f34
-        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0()
+        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490f39
     POP EBP                             ; 00490f3c
     POP EDI                             ; 00490f3d

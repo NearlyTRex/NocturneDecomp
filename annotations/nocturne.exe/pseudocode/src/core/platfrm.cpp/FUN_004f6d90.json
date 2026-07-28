@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 377,
+    "complexity_score": 467,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 29,
+    "pseudocode_lines": 77,
+    "suspect_count": 37,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 242
   },
   "cross_references": [],
   "function": {
@@ -148,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_platfrm.cpp_FUN_004f6d90",
-    "signature": "void core_platfrm_cpp_FUN_004f6d90(int param_1,int param_2)"
+    "signature": "void core_platfrm_cpp_FUN_004f6d90(CDemonActor *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -306,7 +306,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_platfrm_cpp_FUN_004f6d90(int param_1,int param_2)",
+      "text": "void core_platfrm_cpp_FUN_004f6d90(CDemonActor *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +314,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_platfrm_cpp_FUN_004f6d90(int param_1,int param_2)",
+      "text": "void core_platfrm_cpp_FUN_004f6d90(CDemonActor *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -338,23 +338,15 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x4b8) < 2) && (*(int *)(param_1 + 0x4c0) == 0)) {",
+      "text": "if ((*(int *)(param_1[3].create_event + 0x50) < 2) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x4b8) < 2) && (*(int *)(param_1 + 0x4c0) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4c0) != 0) {",
+      "text": "(*(int *)(param_1[3].create_event + 0x58) == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -362,36 +354,36 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x2cc) == 3) || (*(int *)(param_1 + 0x2cc) == 4)) {",
+      "text": "if (*(int *)(param_1[3].create_event + 0x58) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x2cc) == 3) || (*(int *)(param_1 + 0x2cc) == 4)) {",
+      "text": "iVar1 = param_1[2].location.area_id;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);",
+      "text": "(0x01C03A10,(char *)&param_1[2].scale.z);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x34c);",
+      "text": "(0x01C03A10,param_1[2].create_event + 0x34);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 41,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
@@ -399,26 +391,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4c0) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x4b8) = 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x71c) = 1;",
+      "text": "if (*(int *)(param_1[3].create_event + 0x58) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].create_event[0x50] = '\\x03';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].create_event[0x51] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -426,23 +418,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_2c,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_2c,0);",
+      "text": "param_1[3].create_event[0x52] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -450,7 +426,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_2c,0);",
+      "text": "param_1[3].create_event[0x53] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -458,39 +434,55 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x50c) == 0) ||",
+      "text": "param_1[5].create_event[0x14] = '\\x01';",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
       "line": 51,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,0,0xffffffff);",
+      "text": "param_1[5].create_event[0x15] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
+      "text": "param_1[5].create_event[0x16] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_14 = (int)ROUND(*(float *)(param_1 + 0x20) * _DAT_005a1360);",
+      "text": "param_1[5].create_event[0x17] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_2c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_2c);",
       "type": "unnamed_param"
     },
     {
@@ -498,23 +490,31 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_10 = (int)ROUND(*(float *)(param_1 + 0x24) * _DAT_005a1360);",
+      "text": "if ((*(int *)param_1[3].footstep_sound_code == 0) ||",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 61,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_c = (int)ROUND(*(float *)(param_1 + 0x28) * _DAT_005a1360);",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,0,0xffffffff);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -522,8 +522,72 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
+      "text": "iStack_14 = (int)ROUND((param_1->location).position.x * _DAT_005a1360);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_10 = (int)ROUND((param_1->location).position.y * _DAT_005a1360);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_c = (int)ROUND((param_1->location).position.z * _DAT_005a1360);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1),0.0,-1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 21,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if ((*(int *)(param_1[3].create_event + 0x50) < 2) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 22,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(*(int *)(param_1[3].create_event + 0x58) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 25,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (*(int *)(param_1[3].create_event + 0x58) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 43,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (*(int *)(param_1[3].create_event + 0x58) == 0) {",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

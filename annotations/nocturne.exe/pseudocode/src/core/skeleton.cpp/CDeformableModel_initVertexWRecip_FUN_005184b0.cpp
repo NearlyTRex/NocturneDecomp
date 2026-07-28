@@ -2,27 +2,26 @@
 // Address: 005184b0
 // Address Range: [[005184b0, 00518500]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(int param_1,int param_2)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(int param_1,int param_2)
+void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices)
 
 {
   int iVar1;
   int iVar2;
   
-  param_1 = param_2 * 4 + param_1;
   iVar1 = 0;
   iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x2c)) {
+  if (0 < this_ptr->vertex_count[lod_index]) {
     do {
       *(uint *)(*DAT_005ae704 + 0x2c + iVar1) = _DAT_01c038f4;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x30;
-    } while (iVar2 < *(int *)(param_1 + 0x2c));
+    } while (iVar2 < this_ptr->vertex_count[lod_index]);
   }
-  return iVar1;
+  return;
 }

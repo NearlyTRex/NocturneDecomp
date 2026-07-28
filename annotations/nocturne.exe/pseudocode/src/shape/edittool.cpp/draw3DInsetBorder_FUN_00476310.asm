@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00476580 at 00476681
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 00476681
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70
@@ -66,7 +66,7 @@ section .text
     PUSH EDI                            ; 00476373
     INC EBX                             ; 00476374
     CALL engine_2d.c_drawHLine_FUN_00403bd0 ; 00476375
-        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawHLine_FUN_00403bd0()
+        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00403bd0(int x1, int y, int x2)
     INC ESI                             ; 0047637a
     ADD ESP,0xc                         ; 0047637b
     DEC EDI                             ; 0047637e
@@ -120,7 +120,7 @@ section .text
     PUSH EDI                            ; 004763dd
     INC EBX                             ; 004763de
     CALL engine_2d.c_drawVLine_FUN_00403ce0 ; 004763df
-        ;   XREF to: 00403ce0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawVLine_FUN_00403ce0()
+        ;   XREF to: 00403ce0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00403ce0(int x, int y1, int y2)
     DEC ESI                             ; 004763e4
     ADD ESP,0xc                         ; 004763e5
     INC EDI                             ; 004763e8
@@ -147,7 +147,7 @@ section .text
     PUSH ESI                            ; 00476404
     INC EBX                             ; 00476405
     CALL engine_2d.c_drawHLine_FUN_00403bd0 ; 00476406
-        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawHLine_FUN_00403bd0()
+        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00403bd0(int x1, int y, int x2)
     DEC EDI                             ; 0047640b
     ADD ESP,0xc                         ; 0047640c
     DEC ESI                             ; 0047640f
@@ -174,7 +174,7 @@ section .text
     PUSH EDI                            ; 0047642f
     INC EBX                             ; 00476430
     CALL engine_2d.c_drawVLine_FUN_00403ce0 ; 00476431
-        ;   XREF to: 00403ce0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawVLine_FUN_00403ce0()
+        ;   XREF to: 00403ce0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00403ce0(int x, int y1, int y2)
     DEC ESI                             ; 00476436
     ADD ESP,0xc                         ; 00476437
     DEC EDI                             ; 0047643a

@@ -12,31 +12,32 @@ int FUN_0056deac(int param_1)
 
 {
   uint *puVar1;
-  byte *puVar2;
-  uint *puVar3;
-  uint uVar4;
-  int iVar5;
+  _FILE *file_handle;
+  uint *puVar2;
+  int close_flags;
+  int iVar3;
   
-  iVar5 = 0;
-  puVar3 = _DAT_02de4e20;
+  iVar3 = 0;
+  puVar2 = _DAT_02de4e20;
 joined_r0x0056ded3:
-  if (puVar3 == (uint *)0x0) {
-    return iVar5;
+  if (puVar2 == (uint *)0x0) {
+    return iVar3;
   }
-  puVar1 = (uint *)*puVar3;
-  puVar2 = (byte *)puVar3[1];
-  uVar4 = 1;
-  puVar3 = puVar1;
-  if (((puVar2[0xd] & 0x40) == 0) && ((puVar2[0xd] & 8) == 0)) goto code_r0x0056deec;
+  puVar1 = (uint *)*puVar2;
+  file_handle = (_FILE *)puVar2[1];
+  close_flags = 1;
+  puVar2 = puVar1;
+  if (((file_handle->_flag & 0x4000) == 0) && ((file_handle->_flag & 0x800) == 0))
+  goto code_r0x0056deec;
   goto LAB_0056def9;
 code_r0x0056deec:
-  if (&DAT_005c1894 + param_1 * 0x1a <= puVar2) {
-    if (puVar2 < (byte *)0x5c18e2) {
-      uVar4 = 0;
+  if ((_FILE *)(&DAT_005c1894 + param_1 * 0x1a) <= file_handle) {
+    if (file_handle < (_FILE *)0x5c18e2) {
+      close_flags = 0;
     }
 LAB_0056def9:
-    iVar5 = iVar5 + 1;
-    FUN_005633c4(puVar2,uVar4);
+    iVar3 = iVar3 + 1;
+    __CClose(file_handle,close_flags);
   }
   goto joined_r0x0056ded3;
 }

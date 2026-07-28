@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056720c at 005672f0
+;   crt_startup.c_initialize_runtime_FUN_0056720c at 005672f0
 ;
 ; Referenced Globals:
 ;   void* PTR_GetModuleFileNameA_00575524 = 00175d90
@@ -52,7 +52,7 @@ section .text
     PUSH 0x208                          ; 0056e8c4
         ;   Label: LAB_0056e8c4
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0056e8c9
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EBX,EAX                         ; 0056e8ce
     ADD ESP,0x4                         ; 0056e8d0
     TEST EAX,EAX                        ; 0056e8d3

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(int param_1)
+; int __cdecl core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(CSkeleton *this_ptr)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_FUN_0051f760 at 0051f778

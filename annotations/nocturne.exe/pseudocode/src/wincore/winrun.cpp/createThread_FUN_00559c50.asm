@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_createThread_FUN_00559c50(LPTHREAD_START_ROUTINE param_1,LPVOID param_2)
+; HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_00559c50(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param)
 ;
+; Parameters:
+; LPTHREAD_START_ROUTINE Stack[0x4]:4   thread_func
+; LPVOID           Stack[0x8]:4   thread_param
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_startSoundThread_FUN_005286d0 at 00528728

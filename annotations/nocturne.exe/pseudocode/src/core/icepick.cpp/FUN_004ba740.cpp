@@ -6,21 +6,24 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_icepick_cpp_FUN_004ba740(int param_1,float param_2)
 
 {
   float fVar1;
-  uint uVar2;
-  byte bVar3;
-  uint auStackY_180c [1519];
-  code *pcVar4;
-  uint local_30;
-  uint local_20;
+  CMotionList *this_ptr;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
+  float afStackY_180c [1519];
+  char *motion_name;
+  int iVar5;
+  code *blend_callback;
+  CQuaternion4f local_30;
+  CQuaternion4f local_20;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (*(int *)(param_1 + 0x1fa5c) != 0) {
     if (*(int *)(param_1 + 0x1fa3c) == 0) {
       fVar1 = *(float *)(param_1 + 0x1fa64) - param_2 * (float)2;
@@ -36,12 +39,14 @@ void core_icepick_cpp_FUN_004ba740(int param_1,float param_2)
         *(uint *)(param_1 + 0x1fa64) = 0x3f800000;
       }
     }
-    uVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
-                      (param_1 + 0x150,"shoot",1);
-    uVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar2);
+    iVar5 = 1;
+    motion_name = "shoot";
+    this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
+                         ((CMotionController *)(param_1 + 0x150));
+    iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (param_1 + 0x150,uVar2,0,*(uint *)(param_1 + 0x1fa64),_DAT_01cae2c8,
-               core_skeleton_cpp_FUN_0051b650);
+              ((CMotionController *)(param_1 + 0x150),iVar5,0,*(uint *)(param_1 + 0x1fa64),
+               _DAT_01cae2c8,core_skeleton_cpp_FUN_0051b650);
     fVar1 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_2
             + *(float *)(param_1 + 0x1fa68);
     *(float *)(param_1 + 0x1fa68) = fVar1;
@@ -51,21 +56,19 @@ void core_icepick_cpp_FUN_004ba740(int param_1,float param_2)
     if (*(float *)(param_1 + 0x1fa68) < (float)-0.78539816337500001) {
       *(uint *)(param_1 + 0x1fa68) = 0xbf490fdb;
     }
-    core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x1fa68));
-    pcVar4 = core_skeleton_cpp_FUN_0051b650;
-    local_20 = local_30;
-    *(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * 0xfffffffe * 4) =
-         *(uint *)(&stack0xffffffd4 + (uint)bVar3 * -8);
-    uVar2 = _DAT_01cae2c8;
-    *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-         *(uint *)(&stack0xffffffd8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    *(uint *)
-     ((int)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4) =
-         *(uint *)
-          ((int)(&stack0xffffffd8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
-          ((uint)bVar3 * -2 + 1) * 4);
+    core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(*(float *)(param_1 + 0x1fa68),&local_30);
+    blend_callback = core_skeleton_cpp_FUN_0051b650;
+    local_20.w = local_30.w;
+    puVar3 = (uint *)((int)&local_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    puVar2 = (uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
+         *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4);
+    iVar5 = _DAT_01cae2c8;
+    *puVar3 = *puVar2;
+    puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (param_1 + 0x150,&stack0xffffffe0,*(uint *)(param_1 + 0x1fa64),uVar2,pcVar4);
+              ((CDeformableModelInstance *)(param_1 + 0x150),&local_20,*(float *)(param_1 + 0x1fa64)
+               ,iVar5,blend_callback);
   }
   return;
 }

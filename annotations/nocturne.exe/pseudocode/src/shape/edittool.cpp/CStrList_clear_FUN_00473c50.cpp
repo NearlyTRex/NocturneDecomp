@@ -2,32 +2,34 @@
 // Address: 00473c50
 // Address Range: [[00473c50, 00473caa]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(int *param_1)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(CStrList *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(int *param_1)
+void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(CStrList *this_ptr)
 
 {
   int iVar1;
   int iVar2;
+  int iVar3;
   
-  if (param_1[2] != 0) {
-    iVar1 = 0;
-    if (0 < *param_1) {
-      iVar2 = 0;
+  if (this_ptr->data_array != (char **)0x0) {
+    iVar2 = 0;
+    if (0 < this_ptr->item_count) {
+      iVar3 = 0;
       do {
-        if (*(int *)(param_1[2] + iVar2) != 0) {
-          FUN_005638d0(*(int *)(param_1[2] + iVar2));
+        iVar1 = *(int *)((int)this_ptr->data_array + iVar3);
+        if (iVar1 != 0) {
+          FUN_005638d0(iVar1);
         }
-        iVar1 = iVar1 + 1;
-        iVar2 = iVar2 + 4;
-      } while (iVar1 < *param_1);
+        iVar2 = iVar2 + 1;
+        iVar3 = iVar3 + 4;
+      } while (iVar2 < this_ptr->item_count);
     }
-    FUN_005638d0(param_1[2]);
+    FUN_005638d0(this_ptr->data_array);
   }
-  param_1[2] = 0;
-  param_1[1] = 0;
-  *param_1 = 0;
+  this_ptr->data_array = (char **)0x0;
+  this_ptr->capacity = 0;
+  this_ptr->item_count = 0;
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_00498bd0(int param_1)
+; int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_00498bd0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_FUN_00495a20 at 00496732
@@ -29,7 +31,7 @@ section .text
     ADD EAX,0x150                       ; 00498bef
     PUSH EAX                            ; 00498bf4
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00498bf5
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 00498bfa
     ADD ESP,0xc                         ; 00498bff
     RET                                 ; 00498c02

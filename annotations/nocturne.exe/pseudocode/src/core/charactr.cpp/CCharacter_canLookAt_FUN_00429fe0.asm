@@ -50,11 +50,11 @@ section .text
     PUSH 0x57a36b                       ; 0042a01f | = "STAND"
     PUSH EBX                            ; 0042a024
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 0042a025
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042a02a
     PUSH EAX                            ; 0042a02d
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 0042a02e
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 0042a033
     TEST EAX,EAX                        ; 0042a036
     JL 0x0042a00e                       ; 0042a038

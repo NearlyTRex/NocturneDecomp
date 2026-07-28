@@ -1,25 +1,25 @@
 // Name: engine_console.cpp_CConsole_ctor_FUN_0043abe0
 // Address: 0043abe0
 // Address Range: [[0043abe0, 0043ac49]]
-// Convention: unknown
-// Signature: undefined4 * engine_console_cpp_CConsole_ctor_FUN_0043abe0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Convention: __cdecl
+// Signature: CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 #include "nocturne.h"
 
-uint * engine_console_cpp_CConsole_ctor_FUN_0043abe0(uint *param_1,uint param_2,uint param_3,uint param_4,uint param_5)
+CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 {
-  param_1[0x3eb] = param_2;
-  param_1[0x3ec] = param_3;
-  param_1[0x3ed] = param_4;
-  param_1[0x3ee] = param_5;
-  if ((int)param_1[0x3ed] < 1) {
-    param_1[0x3ed] = 1;
+  this_ptr->console_width = width;
+  this_ptr->console_height = height;
+  this_ptr->screen_x = screen_x;
+  this_ptr->screen_y = screen_y;
+  if (this_ptr->screen_x < 1) {
+    this_ptr->screen_x = 1;
   }
-  if ((int)param_1[0x3ee] < 1) {
-    param_1[0x3ee] = 1;
+  if (this_ptr->screen_y < 1) {
+    this_ptr->screen_y = 1;
   }
-  engine_console_cpp_CConsole_reset_FUN_0043ae00(param_1);
-  *param_1 = 0;
-  return param_1;
+  engine_console_cpp_CConsole_reset_FUN_0043ae00(this_ptr);
+  this_ptr->file_logging_enabled = 0;
+  return this_ptr;
 }

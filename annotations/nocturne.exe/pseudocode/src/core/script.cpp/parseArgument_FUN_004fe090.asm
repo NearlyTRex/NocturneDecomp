@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(int *param_1,int param_2,int param_3)
+; char * __cdecl core_script_cpp_parseArgument_FUN_004fe090(char **cursor,char *out_buffer,int max_length)
 ;
+; Parameters:
+; char * *         Stack[0x4]:4   cursor
+; char *           Stack[0x8]:4   out_buffer
+; int              Stack[0xc]:4   max_length
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500c5b
@@ -31,7 +35,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 004fe09c
     PUSH EDX                            ; 004fe09e
     CALL core_script.cpp_skipWhitespace_FUN_004fe070 ; 004fe09f
-        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_skipWhitespace_FUN_004fe070()
+        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_004fe070(char * str)
     MOV dword ptr [EBX],EAX             ; 004fe0a4
     MOV DL,byte ptr [EAX]               ; 004fe0a6
     ADD ESP,0x4                         ; 004fe0a8
@@ -104,12 +108,12 @@ section .text
     PUSH EBP                            ; 004fe110
     MOV byte ptr [EDX + EBP*0x1],0x0    ; 004fe111
     CALL core_script.cpp_trimString_FUN_004fe000 ; 004fe115
-        ;   XREF to: 004fe000 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_trimString_FUN_004fe000()
+        ;   XREF to: 004fe000 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimString_FUN_004fe000(char * str)
     ADD ESP,0x4                         ; 004fe11a
     MOV EBP,dword ptr [EBX]             ; 004fe11d
     PUSH EBP                            ; 004fe11f
     CALL core_script.cpp_skipWhitespace_FUN_004fe070 ; 004fe120
-        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_skipWhitespace_FUN_004fe070()
+        ;   XREF to: 004fe070 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_004fe070(char * str)
     ADD ESP,0x4                         ; 004fe125
     MOV dword ptr [EBX],EAX             ; 004fe128
     XOR EAX,EAX                         ; 004fe12a

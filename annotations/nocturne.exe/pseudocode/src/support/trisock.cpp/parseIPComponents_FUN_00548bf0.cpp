@@ -2,26 +2,26 @@
 // Address: 00548bf0
 // Address Range: [[00548bf0, 00548c51]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(undefined4 param_1,undefined4 param_2)
+// Signature: int __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint *result_ptr,char *dotted_decimal_string)
 
 #include "nocturne.h"
 
-uint __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint param_1,uint param_2)
+int __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint *result_ptr,char *dotted_decimal_string)
 
 {
   int iVar1;
-  uint uVar2;
-  uint uStack_14;
-  uint uStack_10;
-  uint uStack_c;
-  uint uStack_8;
+  int iStack_14;
+  int iStack_10;
+  int iStack_c;
+  int iStack_8;
   
   iVar1 = sscanf
-                    (param_2,"%d.%d.%d.%d",&uStack_14,&uStack_10,&uStack_c,&uStack_8);
+                    (dotted_decimal_string,"%d.%d.%d.%d",&iStack_14,&iStack_10,&iStack_c,
+                     &iStack_8);
   if (iVar1 != 4) {
     return 0;
   }
-  uVar2 = support_trisock_cpp_buildIPAddress_FUN_00548c60
-                    (param_1,uStack_14,uStack_10,uStack_c,uStack_8);
-  return uVar2;
+  iVar1 = support_trisock_cpp_buildIPAddress_FUN_00548c60
+                    ((uint8_t *)result_ptr,iStack_14,iStack_10,iStack_c,iStack_8);
+  return iVar1;
 }

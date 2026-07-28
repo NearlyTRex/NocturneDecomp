@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_CBugs_setup_FUN_004211e0(int param_1)
+; void core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
@@ -50,7 +50,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x34]      ; 004211fd
     MOV dword ptr [EAX + 0x30],EDX      ; 00421200
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 00421203
-        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_setup_FUN_004796b0()
+        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004796b0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00421208
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042120b
     MOV dword ptr [EAX + 0x1212c],0x4   ; 0042120e
@@ -90,7 +90,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 0042127d
     PUSH EAX                            ; 00421281
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00421282
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00421287
     INC EDI                             ; 0042128a
     MOV EDX,dword ptr [ESP + 0x20]      ; 0042128b
@@ -145,7 +145,7 @@ section .text
     PUSH EAX                            ; 0042133c
     PUSH 0x0                            ; 0042133d
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0042133f
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 00421344
     FLD double ptr [0x00579c4d]         ; 00421347 | DOUBLE_00579c4d
     FLD float ptr [ESP]                 ; 0042134d
@@ -213,7 +213,7 @@ section .text
         ;   Label: LAB_00421413
     PUSH EBX                            ; 00421416
     CALL core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680 ; 00421417
-        ;   XREF to: 00423680 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680()
+        ;   XREF to: 00423680 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs * this_ptr)
     MOV dword ptr [EBX + 0x1984c],0xffffd8f1 ; 0042141c
     MOV dword ptr [EBX + 0x19850],0xffffd8f1 ; 00421426
     MOV dword ptr [EBX + 0x100],0x1     ; 00421430
@@ -228,7 +228,7 @@ section .text
     PUSH EDI                            ; 0042144e
         ;   Label: LAB_0042144e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0042144f
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESI,0x17c                       ; 00421454
     INC EBX                             ; 0042145a
     ADD ESP,0x4                         ; 0042145b

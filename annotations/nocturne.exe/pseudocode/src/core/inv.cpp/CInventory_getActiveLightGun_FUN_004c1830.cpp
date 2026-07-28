@@ -2,18 +2,18 @@
 // Address: 004c1830
 // Address Range: [[004c1830, 004c184d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(int param_1)
+// Signature: CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(int param_1)
+CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(CInventory *this_ptr)
 
 {
-  int iVar1;
+  CLightGun *pCVar1;
   
-  iVar1 = *(int *)(param_1 + 0x454);
-  if ((iVar1 != 0) && (*(int *)(iVar1 + 0x2cc) != 0)) {
-    return iVar1;
+  pCVar1 = this_ptr->light_gun_ptr;
+  if ((pCVar1 != (CLightGun *)0x0) && ((pCVar1->base).weapon_state != 0)) {
+    return pCVar1;
   }
-  return 0;
+  return (CLightGun *)0x0;
 }

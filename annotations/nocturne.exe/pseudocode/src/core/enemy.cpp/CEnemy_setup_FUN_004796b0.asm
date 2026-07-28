@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004796b0(undefined4 param_1)
+; void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004796b0(CEnemy *this_ptr)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[27]:
 ;   core_armour.cpp_FUN_0040fa00 at 0040fa05
@@ -28,7 +30,7 @@ section .text
         ;   Label: core_enemy.cpp_CEnemy_setup_FUN_004796b0
     PUSH EDX                            ; 004796b4
     CALL core_charactr.cpp_CCharacter_setup_FUN_00424260 ; 004796b5
-        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setup_FUN_00424260()
+        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setup_FUN_00424260(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004796ba
     RET                                 ; 004796bd
 

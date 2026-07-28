@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_pod_cpp_CPod_init_FUN_004f8af0(int *param_1)
+; void __cdecl engine_pod_cpp_CPod_init_FUN_004f8af0(CPod *this_ptr)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c85f0 at 004c86d2

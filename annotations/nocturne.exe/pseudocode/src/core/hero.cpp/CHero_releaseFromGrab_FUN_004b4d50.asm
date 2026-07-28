@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(int param_1)
+; void core_hero_cpp_CHero_releaseFromGrab_FUN_004b4d50(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -39,11 +39,11 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 004b4d78
     PUSH EBX                            ; 004b4d7e
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004b4d7f
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004b4d84
     PUSH EAX                            ; 004b4d87
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004b4d88
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004b4d8d
     TEST EAX,EAX                        ; 004b4d90
     JL 0x004b4dbf                       ; 004b4d92
@@ -65,12 +65,12 @@ section .text
     PUSH 0x5857f0                       ; 004b4db1 | = "STAND"
     PUSH EBX                            ; 004b4db6
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 ; 004b4db7
-        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740()
+        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController * this_ptr, char * state_name, int force_immediate)
     ADD ESP,0xc                         ; 004b4dbc
     PUSH ESI                            ; 004b4dbf
         ;   Label: LAB_004b4dbf
     CALL core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0 ; 004b4dc0
-        ;   XREF to: 004280b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0()
+        ;   XREF to: 004280b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004b4dc5
     ADD ESP,0x4                         ; 004b4dc8
     POP ESI                             ; 004b4dcb

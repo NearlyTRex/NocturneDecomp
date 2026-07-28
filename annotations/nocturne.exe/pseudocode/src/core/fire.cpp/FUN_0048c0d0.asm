@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0048c0d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void core_fire_cpp_FUN_0048c0d0(CDemonActor *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,float param_5)
 ;
 ;
 ; XREF[6]:
@@ -64,13 +64,13 @@ section .text
     MOV EBP,dword ptr [0x005bed68]      ; 0048c124 | DAT_005bed68
     PUSH EBP                            ; 0048c12a
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0048c12b
-        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0048c130
     PUSH dword ptr [ESP + 0x20]         ; 0048c133
     PUSH EBX                            ; 0048c137
     PUSH EDI                            ; 0048c138
     CALL core_fire.cpp_CFireEffect_createCrater_FUN_0048c370 ; 0048c139
-        ;   XREF to: 0048c370 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createCrater_FUN_0048c370()
+        ;   XREF to: 0048c370 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_0048c370(CFireEffect * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0048c13e
     MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | INT_005b9284
     PUSH EDX                            ; 0048c147

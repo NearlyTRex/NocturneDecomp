@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_isSoundBusy_FUN_00528490(void)
+; int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_00528490(void)
 ;
 ;
 ; XREF[7]:
@@ -24,7 +24,7 @@
 section .text
 
     CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00528480 ; 00528490
-        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
+        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
         ;   Label: sound_sndmain.cpp_isSoundBusy_FUN_00528490
     TEST EAX,EAX                        ; 00528495
     JZ 0x0052849e                       ; 00528497

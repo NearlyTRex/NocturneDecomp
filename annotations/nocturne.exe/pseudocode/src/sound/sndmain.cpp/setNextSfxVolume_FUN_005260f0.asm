@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(float volume)
 ;
+; Parameters:
+; float            Stack[0x4]:4   volume
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426d33

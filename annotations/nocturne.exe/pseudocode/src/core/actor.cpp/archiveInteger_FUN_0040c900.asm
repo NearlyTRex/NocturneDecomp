@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveInteger_FUN_0040c900(undefined4 *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveInteger_FUN_0040c900(int *int_ptr,char *property_name)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   int_ptr
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[64]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d33c
@@ -58,7 +61,7 @@ section .text
     PUSH EBP                            ; 0040c92e
     PUSH 0x5acc78                       ; 0040c92f | = "Integer value"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c934
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c939
     POP EBP                             ; 0040c93c
     POP EDI                             ; 0040c93d
@@ -69,7 +72,7 @@ section .text
     PUSH EDI                            ; 0040c944
     PUSH 0x5acc78                       ; 0040c945 | = "Integer value"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c94a
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c94f
     JMP 0x0040c92a                      ; 0040c952
         ;   XREF to: 0040c92a (UNCONDITIONAL_JUMP)  ; LAB_0040c92a

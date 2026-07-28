@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(undefined4 param_1)
+; CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_FUN_004da120 at 004da133
@@ -34,7 +36,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004da153
     PUSH EDX                            ; 004da157
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004da158
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004da15d
     PUSH 0x58a181                       ; 004da160 | = "mobster1.dfm"
     MOV EBX,EAX                         ; 004da165
@@ -54,7 +56,7 @@ section .text
     PUSH 0x0                            ; 004da1a9
     FSTP float ptr [EBX + 0x2de0]       ; 004da1ab
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004da1b1
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     MOV dword ptr [EBX + 0xbd28],0x0    ; 004da1b6
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 004da1c0
     MOV dword ptr [EBX + 0xbd30],0x0    ; 004da1ca
@@ -66,7 +68,7 @@ section .text
     PUSH 0x62                           ; 004da1f7
     MOV dword ptr [EBX + 0xbd24],EAX    ; 004da1f9
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004da1ff
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     MOV dword ptr [EBX + 0xbd3c],0x0    ; 004da204
     MOV dword ptr [EBX + 0xbd34],0x0    ; 004da20e
     MOV dword ptr [EBX + 0xbd40],0x0    ; 004da218

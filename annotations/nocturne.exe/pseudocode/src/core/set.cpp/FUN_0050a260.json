@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,28 +122,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 395,
+    "complexity_score": 436,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
-    "suspect_count": 25,
+    "pseudocode_lines": 126,
+    "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
+      "raw_address_pointer_store",
+      "shadow_pointer_walk",
       "stack_ref",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 468
+    "total_lines": 479
   },
   "cross_references": [
     {
       "addr": "0049cc10",
       "from_addr": "0049cf55",
-      "name": "core_game.cpp_FUN_0049cc10",
+      "name": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,7 +160,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_set.cpp_FUN_0050a260",
-    "signature": "void core_set_cpp_FUN_0050a260(int param_1)"
+    "signature": "void core_set_cpp_FUN_0050a260(CDemonSet *param_1)"
   },
   "function_calls": [
     {
@@ -487,7 +489,7 @@
       {
         "call_addr": "0049cf55",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_0049cc10",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -672,34 +674,13 @@
   "static_analysis": {
     "analyzed_file": "FUN_0050a260.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 39,
-          "line": 111,
+          "line": 122,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 51,
-          "message": "Uninitialized variable: local_34",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 54,
-          "message": "Uninitialized variable: local_28",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 55,
-          "message": "Uninitialized variable: local_24",
           "severity": "error"
         }
       ],
@@ -721,20 +702,28 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_set_cpp_FUN_0050a260(int param_1)",
+      "text": "void core_set_cpp_FUN_0050a260(CDemonSet *param_1)",
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 27,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "this_ptr = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 28,
       "match": "DAT_01c74640",
       "severity": "mild",
-      "text": "local_14 = &DAT_01c74640;",
+      "text": "local_14 = (CDemonLight *)&DAT_01c74640;",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 46,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != (byte *)0x1c74770) {",
@@ -742,7 +731,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 64,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != (byte *)0x1fb8638) {",
@@ -750,7 +739,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 72,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "DAT_005be378 = 0;",
@@ -758,15 +747,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(puVar3 + 0x100),0);",
+      "text": "(param_1,*(float *)((this_ptr_00->base).camera_name + 0xc0),0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 75,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "DAT_005be378 = 1;",
@@ -774,7 +763,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(param_1,0xffffffff);",
@@ -782,7 +771,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(param_1,1);",
@@ -790,7 +779,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(param_1,1);",
@@ -798,31 +787,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1;",
+      "text": "pCVar6 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15f2fc)) {",
+      "text": "if (0 < (int)param_1->vdir_boxes[0xec].rotation_matrix.m[2].z) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 75,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*(int *)(iVar6 + 0x15f300) + 0x14c) + 8))(*(int *)(iVar6 + 0x15f300));",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x14c) + 8))(iVar5);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 86,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
@@ -830,31 +819,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x15f2fc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(param_1,0,0,0,0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(param_1,&local_5c,0);",
+      "text": "} while (iVar4 < (int)param_1->vdir_boxes[0xec].rotation_matrix.m[2].z);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,(CVector3f *)0x0,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(param_1,&local_5c,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 101,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "if (DAT_005b7620 < 0xf1) {",
@@ -862,7 +851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 114,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "(local_14,(DAT_005b761c + iVar1) / 2,(DAT_005b7620 + iVar2) / 2,",
@@ -870,7 +859,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 114,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "(local_14,(DAT_005b761c + iVar1) / 2,(DAT_005b7620 + iVar2) / 2,",
@@ -878,7 +867,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 121,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_2c);",
@@ -886,19 +875,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 122,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,0x42000000);",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,32.0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 123,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(DAT_005ae704,&local_20);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 1,
@@ -913,35 +910,11 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 111,
+      "line": 122,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "((int)((iVar6 + (iVar6 >> 0x1f) * -0x80) - (uint)((iVar6 >> 0x1f) << 6 < 0)) >> 7) +",
+      "text": "((int)((iVar4 + (iVar4 >> 0x1f) * -0x80) - (uint)((iVar4 >> 0x1f) << 6 < 0)) >> 7) +",
       "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: local_34",
-      "line": 51,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_1c = local_34 + *(float *)(iVar6 + 0x34);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_28",
-      "line": 54,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01c74748 = local_28;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_24",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_DAT_01c7474c = local_24;",
-      "type": "static_uninitvar"
     }
   ]
 }

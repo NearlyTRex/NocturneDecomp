@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1)
+; char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(EGroundType type)
 ;
+; Parameters:
+; EGroundType      Stack[0x4]:4   type
 ;
 ; XREF[2]:
 ;   core_actor.cpp_FUN_0040db50 at 0040dc78
-;   core_fire.cpp_FUN_0048ab60 at 0048ad6f
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ad6f
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b1170 = 004b11c1

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   prompt_text
+; char *           Stack[0xc]:4   input_buffer
+; int              Stack[0x10]:4   buffer_size
+; int              Stack[0x14]:4   dialog_flags
 ;
 ; XREF[7]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e04

@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x170]     ; 00415f0f
     PUSH EDX                            ; 00415f15
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00415f16
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV EDX,dword ptr [EBX + 0x16c]     ; 00415f1b
     MOV dword ptr [EBX + 0x170],EAX     ; 00415f21
     LEA EAX,[EDX*0x4 + 0x0]             ; 00415f27
@@ -57,7 +57,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x174]     ; 00415f37
     PUSH ECX                            ; 00415f3d
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00415f3e
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV dword ptr [EBX + 0x174],EAX     ; 00415f43
     MOV EAX,dword ptr [EBX + 0x178]     ; 00415f49
     SHL EAX,0x2                         ; 00415f4f
@@ -69,7 +69,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x17c]     ; 00415f5d
     PUSH ESI                            ; 00415f63
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00415f64
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV dword ptr [EBX + 0x17c],EAX     ; 00415f69
     MOV EAX,dword ptr [EBX + 0x178]     ; 00415f6f
     ADD ESP,0x8                         ; 00415f75
@@ -78,7 +78,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x180]     ; 00415f7c
     PUSH EDI                            ; 00415f82
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00415f83
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00415f88
     MOV EBP,dword ptr [EBX + 0x16c]     ; 00415f8b
     MOV dword ptr [EBX + 0x180],EAX     ; 00415f91

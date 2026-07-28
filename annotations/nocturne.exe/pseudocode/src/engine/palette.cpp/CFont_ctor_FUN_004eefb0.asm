@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_palette_cpp_CFont_ctor_FUN_004eefb0(undefined4 *param_1)
+; CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_004eefb0(CFont *this_ptr)
 ;
+; Parameters:
+; CFont *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   engine_winfont.cpp_CWinFont_ctor_FUN_00557f50 at 00557f56

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(int param_1,int param_2,int *param_3)
+; void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light_source
+; CRect *          Stack[0xc]:4   rect
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -31,8 +35,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508253
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508ffe
-;   core_set.cpp_FUN_00507f80 at 00508253
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_0057b79b
@@ -71,7 +75,7 @@ section .text
     MOV dword ptr [ESP + 0x4c],EDX      ; 00441c72
     MOV dword ptr [ESP + 0x48],ECX      ; 00441c76
     CALL crt_string.c__strcmp_FUN_005649c0 ; 00441c7a
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00441c7f
     TEST EAX,EAX                        ; 00441c82
     JZ 0x00441f6b                       ; 00441c84
@@ -152,7 +156,7 @@ section .text
     PUSH EBX                            ; 00441d77
         ;   Label: LAB_00441d77
     CALL core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60 ; 00441d78
-        ;   XREF to: 00451a60 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60()
+        ;   XREF to: 00451a60 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00441d7d
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00441d80
     TEST EDX,EDX                        ; 00441d83
@@ -423,7 +427,7 @@ section .text
     PUSH EAX                            ; 004420cf
     PUSH EBX                            ; 004420d0
     CALL core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60 ; 004420d1
-        ;   XREF to: 0044ec60 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60()
+        ;   XREF to: 0044ec60 (UNCONDITIONAL_CALL)  ; ushort * core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60(CDemonLight * this_ptr, CVector3i * projected_coord, uchar x_round_flag, uchar y_round_flag)
     ADD ESP,0x10                        ; 004420d6
     MOV ESI,dword ptr [ESP + 0x64]      ; 004420d9
     MOV dword ptr [ESI],EAX             ; 004420dd

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(int param_1,undefined4 param_2,float param_3,undefined4 param_4,code *param_5)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CQuaternion4f *  Stack[0x8]:4   source_quaternions
+; float            Stack[0xc]:4   blend_weight
+; int              Stack[0x10]:4   bone_index
+; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,14 +16,14 @@
 ; XREF[11]:
 ;   core_baron.cpp_FUN_00410490 at 00410723
 ;   core_colonel.cpp_FUN_00439f50 at 0043a1d5
-;   core_gabriela.cpp_FUN_00497900 at 00497a17
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497a17
 ;   core_haystack.cpp_FUN_004b32d0 at 004b3564
 ;   core_icepick.cpp_FUN_004b9fe0 at 004ba2db
 ;   core_scat.cpp_FUN_004fbf20 at 004fc2c6
 ;   core_scat.cpp_FUN_004fd1d0 at 004fd43a
-;   core_skeleton.cpp_FUN_0051d650 at 0051d783
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650 at 0051d783
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a53d
 ;   core_stranger.cpp_FUN_005384d0 at 005387e2
-;   core_stranger.cpp_FUN_0053a260 at 0053a53d
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -56,7 +62,7 @@ section .text
     PUSH EDX                            ; 0051cff2
     XOR EBX,EBX                         ; 0051cff3
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051cff5
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051cffa
     MOV ECX,dword ptr [EAX + 0x28558]   ; 0051cffd
     MOV dword ptr [ESP + 0x10],EAX      ; 0051d003
@@ -74,7 +80,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 0051d023
     PUSH EDX                            ; 0051d027
     CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10 ; 0051d028
-        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10()
+        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0051d02d
     TEST EAX,EAX                        ; 0051d030
     JGE 0x0051d053                      ; 0051d032

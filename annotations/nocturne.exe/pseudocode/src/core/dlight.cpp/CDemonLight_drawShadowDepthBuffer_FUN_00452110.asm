@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   screen_x
+; int              Stack[0xc]:4   screen_y
+; int              Stack[0x10]:4   brightness_offset
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
@@ -56,7 +61,7 @@ section .text
     XOR EBX,EBX                         ; 0045211d
     MOV dword ptr [0x01abb4c4],ESI      ; 0045211f | DAT_01abb4c4
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00452125
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_00452125
     AND EAX,0x1f                        ; 0045212a
     ADD EBX,0x4                         ; 0045212d
@@ -87,7 +92,7 @@ section .text
     ADD EDI,0x4                         ; 00452175
     INC EBX                             ; 00452178
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00452179
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDX,dword ptr [0x005b7620]      ; 0045217e | DAT_005b7620
     ADD ESP,0xc                         ; 00452184
     CMP EBX,EDX                         ; 00452187

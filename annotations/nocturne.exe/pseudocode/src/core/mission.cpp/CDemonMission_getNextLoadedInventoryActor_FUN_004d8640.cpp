@@ -2,27 +2,29 @@
 // Address: 004d8640
 // Address Range: [[004d8640, 004d86ce]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(int param_1,undefined4 param_2)
+// Signature: CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(CDemonMission *this_ptr,char *actor_name)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(int param_1,uint param_2)
+CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(CDemonMission *this_ptr,char *actor_name)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
+  int iVar2;
   
-  if (*(int *)(param_1 + 0x854) == 0) {
+  if (this_ptr->delete_queue_flags[0x58] == 0) {
     PTR_01cc4800 = "..\\core\\mission.cpp";
     INT_01cc4804 = 0x186;
     core_main_c_FUN_004c8440("CDemonMission::getNextLoadedInventoryActor - no more!");
   }
-  iVar1 = _stricmp(*(uint *)(param_1 + 0x854),param_2);
-  if (iVar1 != 0) {
+  iVar2 = _stricmp((char *)this_ptr->delete_queue_flags[0x58],actor_name);
+  if (iVar2 != 0) {
     PTR_01cc4800 = "..\\core\\mission.cpp";
     INT_01cc4804 = 0x18b;
     core_main_c_FUN_004c8440
-              ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",param_2,*(uint *)(param_1 + 0x854));
+              ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",actor_name,this_ptr->delete_queue_flags[0x58]);
   }
-  *(uint *)(param_1 + 0x854) = *(uint *)(*(int *)(param_1 + 0x854) + 0x144);
-  return;
+  pCVar1 = (CDemonActor *)this_ptr->delete_queue_flags[0x58];
+  this_ptr->delete_queue_flags[0x58] = (uint)pCVar1->next_actor;
+  return pCVar1;
 }

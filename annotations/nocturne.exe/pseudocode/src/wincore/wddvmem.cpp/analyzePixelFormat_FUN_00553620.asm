@@ -44,7 +44,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00553628
     PUSH EAX                            ; 0055362c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0055362d
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00553632
     PUSH 0x0                            ; 00553635
     PUSH 0x1                            ; 00553637
@@ -215,7 +215,7 @@ section .text
         ;   Label: LAB_005537b0
     MOV [0x01c00644],EAX                ; 005537b5 | DAT_01c00644
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005537ba
-        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
+        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
     ADD ESP,0x6c                        ; 005537bf
     POP EBX                             ; 005537c2
     RET                                 ; 005537c3
@@ -223,7 +223,7 @@ section .text
         ;   Label: LAB_005537c4
     MOV [0x01c00644],EAX                ; 005537c6 | DAT_01c00644
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005537cb
-        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
+        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
     ADD ESP,0x6c                        ; 005537d0
     POP EBX                             ; 005537d3
     RET                                 ; 005537d4

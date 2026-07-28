@@ -2,11 +2,11 @@
 // Address: 00439000
 // Address Range: [[00439000, 004390a0]]
 // Convention: unknown
-// Signature: int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int *param_5,int param_6)
+// Signature: int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,undefined4 param_2,undefined4 param_3,char *param_4,int *param_5,int param_6)
 
 #include "nocturne.h"
 
-int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,uint param_2,uint param_3,uint param_4,int *param_5,int param_6)
+int support_codec_cpp_CCodec_processToBuffer_FUN_00439000(int *param_1,uint param_2,uint param_3,char *param_4,int *param_5,int param_6)
 
 {
   int iVar1;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(undefined4 *param_1)
+; CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(CCourse *this_ptr)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
 ;   core_bat.cpp_FUN_00411a10 at 00411a26

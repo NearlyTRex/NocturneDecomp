@@ -2,12 +2,12 @@
 // Address: 004e2ce0
 // Address Range: [[004e2ce0, 004e2cea]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(int param_1)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(CMP3Decoder *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(int param_1)
+uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(CMP3Decoder *this_ptr)
 
 {
-  return *(uint *)(param_1 + 0x1314);
+  return (this_ptr->memory_bitstream).total_bits_read;
 }

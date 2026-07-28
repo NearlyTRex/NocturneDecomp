@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(undefined4 *param_1)
+; CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(CDemonFilter *this_ptr)
 ;
+; Parameters:
+; CDemonFilter *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bda4

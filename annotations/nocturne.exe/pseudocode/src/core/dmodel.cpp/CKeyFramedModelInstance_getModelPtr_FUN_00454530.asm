@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(int param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[79]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a9fa

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10(CDrawSurface *this_ptr,int x,int y,int width,int height)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70 at 0045cb82
@@ -32,7 +38,7 @@ section .text
     PUSH EDX                            ; 0045cb2a
     PUSH EBX                            ; 0045cb2b
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 ; 0045cb2c
-        ;   XREF to: 0045c730 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730()
+        ;   XREF to: 0045c730 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface * this_ptr, int start_x, int y, int end_x)
     ADD ESP,0x10                        ; 0045cb31
     PUSH ESI                            ; 0045cb34
     PUSH EDI                            ; 0045cb35
@@ -40,7 +46,7 @@ section .text
     PUSH ECX                            ; 0045cb3a
     PUSH EBX                            ; 0045cb3b
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 ; 0045cb3c
-        ;   XREF to: 0045c730 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730()
+        ;   XREF to: 0045c730 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface * this_ptr, int start_x, int y, int end_x)
     ADD ESP,0x10                        ; 0045cb41
     PUSH EDI                            ; 0045cb44
     PUSH EBP                            ; 0045cb45
@@ -48,14 +54,14 @@ section .text
     PUSH EAX                            ; 0045cb4a
     PUSH EBX                            ; 0045cb4b
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850 ; 0045cb4c
-        ;   XREF to: 0045c850 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850()
+        ;   XREF to: 0045c850 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDrawSurface * this_ptr, int x, int start_y, int end_y)
     ADD ESP,0x10                        ; 0045cb51
     PUSH EDI                            ; 0045cb54
     PUSH EBP                            ; 0045cb55
     PUSH ESI                            ; 0045cb56
     PUSH EBX                            ; 0045cb57
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850 ; 0045cb58
-        ;   XREF to: 0045c850 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850()
+        ;   XREF to: 0045c850 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDrawSurface * this_ptr, int x, int start_y, int end_y)
     ADD ESP,0x10                        ; 0045cb5d
     POP EBP                             ; 0045cb60
     POP EDI                             ; 0045cb61

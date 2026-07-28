@@ -1,24 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_env_c_getenv_FUN_00566e10(char *param_1)
+; char * __cdecl crt_env_c_getenv_FUN_00566e10(char *name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   name
 ;
 ; XREF[8]:
-;   FUN_005687bc at 005687d4
-;   FUN_0056d608 at 0056d60d
 ;   FUN_00572b70 at 00572b7c
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d613
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dc1e
-;   core_game.cpp_FUN_0049cc10 at 0049d613
 ;   core_game.cpp_FUN_0049f930 at 0049fece
 ;   core_main.c_FUN_004c85f0 at 004c8622
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e994a
+;   crt_io.c_getTempDirectory_FUN_005687bc at 005687d4
+;   crt_time.c_tzset_FUN_0056d608 at 0056d60d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de54a4
 ;
 ; Called Functions:
-;   FUN_0056dcd0
+;   crt_string.c__mbstrnicmp_FUN_0056dcd0
 ;
 ; *****************************************************************************
 
@@ -55,8 +57,8 @@ section .text
         ;   Label: LAB_00566e3c
     PUSH EBP                            ; 00566e3d
     PUSH EBX                            ; 00566e3e
-    CALL FUN_0056dcd0                   ; 00566e3f
-        ;   XREF to: 0056dcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dcd0()
+    CALL crt_string.c__mbstrnicmp_FUN_0056dcd0 ; 00566e3f
+        ;   XREF to: 0056dcd0 (UNCONDITIONAL_CALL)  ; int crt_string.c__mbstrnicmp_FUN_0056dcd0(char * str1, char * str2, SIZE_T count)
     ADD ESP,0xc                         ; 00566e44
     TEST EAX,EAX                        ; 00566e47
     JNZ 0x00566e5b                      ; 00566e49

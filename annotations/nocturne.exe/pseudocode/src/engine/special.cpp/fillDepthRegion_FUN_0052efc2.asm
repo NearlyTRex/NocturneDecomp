@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uint param_3,uint param_4)
+; undefined4 engine_special_cpp_fillDepthRegion_FUN_0052efc2(int param_1,int param_2,uint param_3,uint param_4)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
     PUSH dword ptr [EBP + 0xc]          ; 0052efd6
     PUSH dword ptr [EBP + 0x8]          ; 0052efd9
     CALL engine_special.cpp_clearZBox_FUN_00532b70 ; 0052efdc
-        ;   XREF to: 00532b70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBox_FUN_00532b70()
+        ;   XREF to: 00532b70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_clearZBox_FUN_00532b70(int left, int right, int top, int bottom)
     POP EAX                             ; 0052efe1
     POP EAX                             ; 0052efe2
     POP EAX                             ; 0052efe3

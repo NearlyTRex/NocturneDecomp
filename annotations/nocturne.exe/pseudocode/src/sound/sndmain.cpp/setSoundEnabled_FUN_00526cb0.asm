@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(int param_1)
+; int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(int enable)
 ;
+; Parameters:
+; int              Stack[0x4]:4   enable
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_0049f930 at 0049fa90

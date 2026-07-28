@@ -3,13 +3,13 @@
 // Function prototypes for engine/clipper.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_clipper.c_FUN_004314b0
+// Original: engine_clipper.c_allocateClipVertex_FUN_004314b0
 // Address: 004314b0
-undefined * FUN_004314b0(void);
+undefined * allocateClipVertex(void);
 
-// Original: engine_clipper.c_FUN_00431500
+// Original: engine_clipper.c_setNearPlaneDistance_FUN_00431500
 // Address: 00431500
-void FUN_00431500(void);
+void setNearPlaneDistance(void);
 
 // Original: engine_clipper.c_FUN_00431520
 // Address: 00431520
@@ -33,23 +33,23 @@ void interpolateVertexTopClip(int *param_1,int *param_2,int *param_3);
 
 // Original: engine_clipper.c_interpolateVertexNearClip_FUN_00431930
 // Address: 00431930
-void __cdecl interpolateVertexNearClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexNearClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
-// Original: engine_clipper.c_FUN_00431a50
+// Original: engine_clipper.c_clipPolygonLeftPlane_FUN_00431a50
 // Address: 00431a50
-int FUN_00431a50(undefined4 *param_1,int param_2,int param_3);
+int clipPolygonLeftPlane(undefined4 *param_1,int param_2,int param_3);
 
-// Original: engine_clipper.c_FUN_00431b90
+// Original: engine_clipper.c_clipPolygonRightPlane_FUN_00431b90
 // Address: 00431b90
-int FUN_00431b90(undefined4 *param_1,int param_2,int param_3);
+int clipPolygonRightPlane(undefined4 *param_1,int param_2,int param_3);
 
-// Original: engine_clipper.c_FUN_00431cd0
+// Original: engine_clipper.c_clipPolygonBottomPlane_FUN_00431cd0
 // Address: 00431cd0
-int FUN_00431cd0(int *param_1,int param_2,int param_3);
+int clipPolygonBottomPlane(int *param_1,int param_2,int param_3);
 
-// Original: engine_clipper.c_FUN_00431e10
+// Original: engine_clipper.c_clipPolygonTopPlane_FUN_00431e10
 // Address: 00431e10
-int FUN_00431e10(int *param_1,int param_2,int param_3);
+int clipPolygonTopPlane(int *param_1,int param_2,int param_3);
 
 // Original: engine_clipper.c_FUN_00431f50
 // Address: 00431f50
@@ -81,27 +81,27 @@ undefined4 FUN_00432bd8(void);
 
 // Original: engine_clipper.c_FUN_00432cd0
 // Address: 00432cd0
-int * FUN_00432cd0(int *param_1,int *param_2);
+void FUN_00432cd0(uint param_1,int *param_2);
 
-// Original: engine_clipper.c_FUN_00433770
+// Original: engine_clipper.c_copyMemory_FUN_00433770
 // Address: 00433770
-void FUN_00433770(undefined4 *param_1,undefined4 *param_2,uint param_3);
+void copyMemory(undefined4 *param_1,undefined4 *param_2,uint param_3);
 
 // Original: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
 // Address: 004337a0
-void __cdecl interpolateVertexLeftClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
 // Address: 004338d0
-void __cdecl interpolateVertexRightClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
 // Address: 00433a00
-void __cdecl interpolateVertexBottomClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
 // Address: 00433b30
-void __cdecl interpolateVertexTopClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_FUN_00433c70
 // Address: 00433c70
@@ -189,4 +189,4 @@ undefined4 FUN_004348ca(void);
 
 // Original: engine_clipper.c_clipPolygonToViewport_FUN_004349a0
 // Address: 004349a0
-int * __cdecl clipPolygonToViewport(uint param_1,int *param_2);
+void __cdecl clipPolygonToViewport(int vertex_count,int *vertex_indices);

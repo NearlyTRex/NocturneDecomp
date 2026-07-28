@@ -1,0 +1,281 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 157,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 10,
+    "suspect_types": [
+      "concat_reconstruction",
+      "param_count_too_few",
+      "unknown_field",
+      "unnamed_param"
+    ],
+    "total_lines": 103
+  },
+  "cross_references": [
+    {
+      "addr": "00569928",
+      "from_addr": "00569d58",
+      "name": "FUN_00569928",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f480",
+      "from_addr": "0056f4dc",
+      "name": "FUN_0056f480",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f3e0",
+    "address_range": [
+      [
+        "0056f3e0",
+        "0056f47c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_stdlib.c_i64toa_FUN_0056f3e0",
+    "signature": "char * crt_stdlib_c_i64toa_FUN_0056f3e0(ulonglong *param_1,char *param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571a9d",
+      "is_variadic": false,
+      "name": "crt_math.c_udivmod64_FUN_00571a9d"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1ff0",
+      "name": "s_s_0123456789abcdefghijkl_005c1ff0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00569d58",
+        "call_type": "direct",
+        "caller": "FUN_00569928",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056f4dc",
+        "call_type": "direct",
+        "caller": "FUN_0056f480",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9491525423728815,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 60,
+      "INT_ADD": 37,
+      "INT_AND": 20,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_MULT": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 233
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_53",
+        "offset": -83,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "char * i64toa(ulonglong *param_1,char *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "char * i64toa(ulonglong *param_1,char *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "char * i64toa(ulonglong *param_1,char *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_18 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_28 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "} while (local_20._4_4_ != 0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "return param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 26,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "local_20 = udivmod64(local_20,CONCAT44(local_24,local_28));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

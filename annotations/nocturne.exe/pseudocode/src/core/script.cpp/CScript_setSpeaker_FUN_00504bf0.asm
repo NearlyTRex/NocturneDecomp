@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(int param_1,int param_2)
+; void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(CScript *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_FUN_004259f0 at 00425a94

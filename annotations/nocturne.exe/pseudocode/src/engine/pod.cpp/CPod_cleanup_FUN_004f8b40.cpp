@@ -2,30 +2,30 @@
 // Address: 004f8b40
 // Address Range: [[004f8b40, 004f8b88]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(int *param_1)
+// Signature: void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(CPod *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(int *param_1)
+void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(CPod *this_ptr)
 
 {
-  uint uVar1;
-  int *piVar2;
+  CPodFile *pCVar1;
+  CPod *pCVar2;
   int iVar3;
   
   iVar3 = 0;
-  piVar2 = param_1;
-  if (0 < *param_1) {
+  pCVar2 = this_ptr;
+  if (0 < this_ptr->pod_file_count) {
     do {
-      if (piVar2[1] != 0) {
-        uVar1 = engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(piVar2[1],0);
-        FUN_00564494(uVar1);
+      if (pCVar2->pod_files[0] != (CPodFile *)0x0) {
+        pCVar1 = engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(pCVar2->pod_files[0],0);
+        FUN_00564494(pCVar1);
       }
-      piVar2[1] = 0;
+      pCVar2->pod_files[0] = (CPodFile *)0x0;
       iVar3 = iVar3 + 1;
-      piVar2 = piVar2 + 1;
-    } while (iVar3 < *param_1);
+      pCVar2 = (CPod *)pCVar2->pod_files;
+    } while (iVar3 < this_ptr->pod_file_count);
   }
-  *param_1 = 0;
+  this_ptr->pod_file_count = 0;
   return;
 }

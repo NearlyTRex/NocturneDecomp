@@ -37,7 +37,7 @@ section .text
     FMUL double ptr [0x00597657]        ; 00551a94 | DOUBLE_00597657
     MOV EDX,dword ptr [EBX + 0x2b224]   ; 00551a9a
     CALL crt_math.c_round_FUN_00563a30  ; 00551aa0
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 00551aa5
     MOV EAX,dword ptr [ESP]             ; 00551aa8
     ADD EDX,EAX                         ; 00551aab
@@ -64,7 +64,7 @@ section .text
     PUSH EAX                            ; 00551af7
     FSTP float ptr [EBX + 0x7f94]       ; 00551af8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00551afe
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00551b03
     TEST EAX,EAX                        ; 00551b06
     JZ 0x00551b14                       ; 00551b08
@@ -76,7 +76,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 00551b1b | DAT_005b7650
     PUSH EDX                            ; 00551b21
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00551b22
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00551b27
     TEST EAX,EAX                        ; 00551b2a
     JZ 0x00551b38                       ; 00551b2c

@@ -2,28 +2,28 @@
 // Address: 0044be60
 // Address Range: [[0044be60, 0044bea6]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(int *param_1,undefined4 param_2)
+// Signature: CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache *this_ptr,char *filter_name)
 
 #include "nocturne.h"
 
-int __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(int *param_1,uint param_2)
+CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache *this_ptr,char *filter_name)
 
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  char (*str1) [40];
   
   iVar2 = 0;
-  if (0 < *param_1) {
-    piVar3 = param_1 + 1;
+  if (0 < this_ptr->filter_count) {
+    str1 = this_ptr->filter_names;
     do {
-      iVar1 = _strcmp(piVar3,param_2);
+      iVar1 = _strcmp(*str1,filter_name);
       if (iVar1 == 0) {
-        return param_1[iVar2 + 0x281];
+        return this_ptr->filters[iVar2];
       }
       iVar2 = iVar2 + 1;
-      piVar3 = piVar3 + 10;
-    } while (iVar2 < *param_1);
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->filter_count);
   }
-  return 0;
+  return (CDemonFilter *)0x0;
 }

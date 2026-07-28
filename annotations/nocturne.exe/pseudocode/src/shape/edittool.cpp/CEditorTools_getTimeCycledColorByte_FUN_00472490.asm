@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(void)
+; uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(CEditorTools *this_ptr)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_FUN_00437ab0 at 00437c94
@@ -22,7 +24,7 @@
 section .text
 
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00472490
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490
     AND EAX,0x30000                     ; 00472495
     CMP EAX,0x10000                     ; 0047249a

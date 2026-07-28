@@ -19,7 +19,7 @@ struct CArmour_ptr_11536 {
     template<typename T> CArmour_ptr_11536(T* p) : _raw((void*)p) {}
     template<typename T> CArmour_ptr_11536& operator=(T* p) { _raw = (void*)p; return *this; }
     CArmour* operator->() const { return (CArmour*)_raw; }
-    CArmour* adj() const { return (CArmour*)((char*)_raw - offsetof(CArmour, base.base.collision_test_normals)); }
+    CArmour* adj() const { return (CArmour*)((char*)_raw - offsetof(CArmour, base.base.collision_test_normals[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

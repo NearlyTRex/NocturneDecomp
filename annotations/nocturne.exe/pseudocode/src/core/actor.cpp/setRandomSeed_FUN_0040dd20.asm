@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(undefined4 param_1)
+; void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   seed_value
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6046

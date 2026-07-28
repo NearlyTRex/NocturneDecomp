@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dpart_cpp_CDemonPart_free_FUN_00457060(int param_1)
+; void __cdecl core_dpart_cpp_CDemonPart_free_FUN_00457060(CDemonPart *this_ptr)
 ;
+; Parameters:
+; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_dpart.cpp_CDemonPart_alloc_FUN_00456f60 at 00456f71
 ;   core_dpart.cpp_CDemonPart_dtor_FUN_00456f40 at 00456f46
-;   core_dpart.cpp_FUN_00456f60 at 00456f71
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005638d0

@@ -2,264 +2,283 @@
 // Address: 004fad00
 // Address Range: [[004fad00, 004fb369]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(int *param_1,int param_2)
+// Signature: void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(int *param_1,int param_2)
+void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(SRenderVertex *vertices,int vertex_count)
 
 {
-  longlong lVar1;
-  int iVar2;
-  int *piVar3;
-  uint uVar4;
-  int *piVar5;
-  int iVar6;
+  int iVar1;
+  longlong lVar2;
+  int iVar3;
+  SSoftwareEdge *right;
+  SRenderVertex *pSVar4;
+  uint uVar5;
+  SRenderVertex *pSVar6;
   int iVar7;
-  int *piVar8;
-  uint uVar9;
-  int iVar10;
+  int iVar8;
+  SRenderVertex *pSVar9;
+  uint uVar10;
+  int iVar11;
   int local_1c;
-  int *local_14;
+  SSoftwareEdge *local_14;
   
-  if ((DAT_005b7644 != 0) && (iVar7 = 0, piVar3 = param_1, 0 < param_2)) {
+  if ((DAT_005b7644 != 0) && (iVar8 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
-      if ((*(byte *)((int)piVar3 + 0x13) & 0x80) != 0) {
-        piVar3[3] = (int)(0x7fffffff / (longlong)piVar3[2]);
-        piVar3[4] = (int)(((longlong)*piVar3 * (longlong)_DAT_01c00c48) / (longlong)piVar3[2]) +
-                    _DAT_01c00c50;
-        piVar3[5] = (int)(((longlong)piVar3[1] * (longlong)_DAT_01c00c4c) / (longlong)piVar3[2]) +
-                    _DAT_01c00c54;
+      if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
+        (pSVar4->projected_vertex).inv_z =
+             (int)(0x7fffffff / (longlong)(pSVar4->projected_vertex).transformed_z);
+        (pSVar4->projected_vertex).screen_x =
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_x * (longlong)_DAT_01c00c48) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c00c50;
+        (pSVar4->projected_vertex).screen_y =
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_y * (longlong)_DAT_01c00c4c) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c00c54;
       }
-      iVar7 = iVar7 + 1;
-      piVar3 = piVar3 + 0xc;
-    } while (iVar7 < param_2);
+      iVar8 = iVar8 + 1;
+      pSVar4 = pSVar4 + 1;
+    } while (iVar8 < vertex_count);
   }
   if (DAT_006b0280 != 0) {
-    piVar3 = param_1 + 0xc;
-    piVar8 = param_1 + 0x18;
-    if (param_2 < 4) {
-      iVar7 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,piVar3,piVar8);
-      if (iVar7 == 0) {
+    pSVar4 = vertices + 1;
+    pSVar9 = vertices + 2;
+    if (vertex_count < 4) {
+      iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(vertices,pSVar4,pSVar9);
+      if (iVar8 == 0) {
         return;
       }
     }
     else {
-      iVar7 = param_2 + -2;
-      iVar10 = 0;
-      iVar6 = 0;
-      if (0 < iVar7) {
+      iVar8 = vertex_count + -2;
+      iVar11 = 0;
+      iVar7 = 0;
+      if (0 < iVar8) {
         do {
-          iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(param_1,piVar3,piVar8);
-          if (iVar2 == 0) {
-            iVar6 = iVar6 + 1;
+          iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10(vertices,pSVar4,pSVar9);
+          if (iVar3 == 0) {
+            iVar7 = iVar7 + 1;
           }
-          piVar3 = piVar3 + 0xc;
-          iVar10 = iVar10 + 1;
-          piVar8 = piVar8 + 0xc;
-        } while (iVar10 < iVar7);
+          pSVar4 = pSVar4 + 1;
+          iVar11 = iVar11 + 1;
+          pSVar9 = pSVar9 + 1;
+        } while (iVar11 < iVar8);
       }
-      if (iVar6 == iVar7) {
+      if (iVar7 == iVar8) {
         return;
       }
     }
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
   if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon_FUN_00532620(vertices,vertex_count,_DAT_01c039a0);
     return;
   }
   switch(_DAT_01c039a4) {
   case 1:
-    engine_prim_c_prepareDepthBuffer_FUN_004f9870(param_1,param_2);
+    engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertices,vertex_count);
     break;
   case 2:
-    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);
+    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(vertices,vertex_count);
     break;
   case 3:
-    engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(param_1,param_2);
+    engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(vertices,vertex_count);
     break;
   case 5:
-    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(param_1,param_2);
+    engine_prim_c_normalizeTextureCoords_FUN_004f98e0(vertices,vertex_count);
     break;
   case 6:
-    engine_prim_c_replaceWWithDepth_FUN_004f99d0(param_1,param_2);
+    engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertices,vertex_count);
   }
   _DAT_01e53384 = 0;
   _DAT_01e52efc = 0;
   local_1c = 0;
   _DAT_01e53380 = 0x4b0;
-  if (0 < param_2) {
+  if (0 < vertex_count) {
     do {
-      iVar7 = local_1c + 1;
-      if (param_2 <= iVar7) {
-        iVar7 = 0;
+      iVar8 = local_1c + 1;
+      if (vertex_count <= iVar8) {
+        iVar8 = 0;
       }
-      piVar3 = param_1 + iVar7 * 0xc;
-      piVar8 = param_1 + local_1c * 0xc;
-      iVar7 = piVar8[5] >> 0x10;
-      iVar6 = piVar3[5] >> 0x10;
-      if (iVar7 != iVar6) {
-        iVar10 = iVar6;
-        piVar5 = piVar8;
-        if (piVar3[5] < piVar8[5]) {
-          iVar10 = iVar7;
-          iVar7 = iVar6;
-          piVar5 = piVar3;
-          piVar3 = piVar8;
+      pSVar4 = vertices + iVar8;
+      pSVar9 = vertices + local_1c;
+      iVar8 = (pSVar9->projected_vertex).screen_y >> 0x10;
+      iVar7 = (pSVar4->projected_vertex).screen_y >> 0x10;
+      if (iVar8 != iVar7) {
+        iVar11 = iVar7;
+        pSVar6 = pSVar9;
+        if ((pSVar4->projected_vertex).screen_y < (pSVar9->projected_vertex).screen_y) {
+          iVar11 = iVar8;
+          iVar8 = iVar7;
+          pSVar6 = pSVar4;
+          pSVar4 = pSVar9;
         }
-        iVar2 = _DAT_01e52efc * 0x48;
-        *(int *)(&DAT_01e52f00 + iVar2) = iVar7;
-        iVar6 = _DAT_01e53380;
-        *(int *)(iVar2 + 0x1e52f04) = iVar10;
-        if (iVar7 < iVar6) {
-          _DAT_01e53380 = iVar7;
+        iVar3 = _DAT_01e52efc * 0x48;
+        *(int *)(&DAT_01e52f00 + iVar3) = iVar8;
+        iVar7 = _DAT_01e53380;
+        *(int *)(iVar3 + 0x1e52f04) = iVar11;
+        if (iVar8 < iVar7) {
+          _DAT_01e53380 = iVar8;
         }
-        if (_DAT_01e53384 < iVar10) {
-          _DAT_01e53384 = iVar10;
+        if (_DAT_01e53384 < iVar11) {
+          _DAT_01e53384 = iVar11;
         }
-        if ((uint)(piVar3[5] - piVar5[5]) < 0x10000) {
-          iVar7 = 0;
+        uVar5 = (pSVar4->projected_vertex).screen_y - (pSVar6->projected_vertex).screen_y;
+        if (uVar5 < 0x10000) {
+          iVar8 = 0;
         }
         else {
-          iVar7 = (int)(0xffffffff / (ulonglong)(uint)(piVar3[5] - piVar5[5]));
+          iVar8 = (int)(0xffffffff / (ulonglong)uVar5);
         }
-        uVar9 = (uint)(ushort)((ushort)piVar5[5] ^ 0xffff);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[4] - piVar5[4]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f0c) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f08) =
-             piVar5[4] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[6] - piVar5[6]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f1c) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f18) =
-             piVar5[6] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[7] - piVar5[7]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f24) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f20) =
-             piVar5[7] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[8] - piVar5[8]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f14) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f10) =
-             piVar5[8] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[0xb] - piVar5[0xb]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f34) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f30) =
-             piVar5[0xb] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[2] - piVar5[2]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f2c) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f28) =
-             piVar5[2] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[9] - piVar5[9]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f3c) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f38) =
-             piVar5[9] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar7 * (longlong)(piVar3[10] - piVar5[10]);
-        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        *(uint *)(iVar2 + 0x1e52f44) = uVar4;
-        lVar1 = (longlong)(int)uVar9 * (longlong)(int)uVar4;
-        *(uint *)(iVar2 + 0x1e52f40) =
-             piVar5[10] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        uVar10 = (uint)(ushort)((ushort)(pSVar6->projected_vertex).screen_y ^ 0xffff);
+        lVar2 = (longlong)iVar8 *
+                (longlong)
+                ((pSVar4->projected_vertex).screen_x - (pSVar6->projected_vertex).screen_x);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f0c) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f08) =
+             (pSVar6->projected_vertex).screen_x +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->u - pSVar6->u);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f1c) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f18) =
+             pSVar6->u + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->v - pSVar6->v);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f24) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f20) =
+             pSVar6->v + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->r - pSVar6->r);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f14) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f10) =
+             pSVar6->r + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->a - pSVar6->a);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f34) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f30) =
+             pSVar6->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 *
+                (longlong)
+                ((pSVar4->projected_vertex).transformed_z - (pSVar6->projected_vertex).transformed_z
+                );
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f2c) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f28) =
+             (pSVar6->projected_vertex).transformed_z +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->g - pSVar6->g);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f3c) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f38) =
+             pSVar6->g + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)iVar8 * (longlong)(pSVar4->b - pSVar6->b);
+        uVar5 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        *(uint *)(iVar3 + 0x1e52f44) = uVar5;
+        lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar5;
+        *(uint *)(iVar3 + 0x1e52f40) =
+             pSVar6->b + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
         _DAT_01e52efc = _DAT_01e52efc + 1;
       }
       local_1c = local_1c + 1;
-    } while (local_1c < param_2);
+    } while (local_1c < vertex_count);
   }
-  iVar7 = _DAT_01e53380;
-  piVar3 = (int *)&DAT_01e52f00;
-  iVar6 = 0;
+  iVar8 = _DAT_01e53380;
+  right = (SSoftwareEdge *)&DAT_01e52f00;
+  iVar7 = 0;
   if (0 < _DAT_01e52efc) {
     do {
-      if ((_DAT_01e53380 == *piVar3) && (piVar3 != (int *)0x0)) goto LAB_004faeb0;
-      iVar6 = iVar6 + 1;
-      piVar3 = piVar3 + 0x12;
-    } while (iVar6 < _DAT_01e52efc);
+      if ((_DAT_01e53380 == (right->base).y_min) && (right != (SSoftwareEdge *)0x0))
+      goto LAB_004faeb0;
+      iVar7 = iVar7 + 1;
+      right = right + 1;
+    } while (iVar7 < _DAT_01e52efc);
   }
-  piVar3 = (int *)0x0;
+  right = (SSoftwareEdge *)0x0;
 LAB_004faeb0:
-  if (piVar3 != (int *)0x0) {
-    iVar6 = 0;
-    local_14 = (int *)&DAT_01e52f00;
+  if (right != (SSoftwareEdge *)0x0) {
+    iVar7 = 0;
+    local_14 = (SSoftwareEdge *)&DAT_01e52f00;
     if (0 < _DAT_01e52efc) {
       do {
-        if ((_DAT_01e53380 == *local_14) && (local_14 != piVar3)) goto LAB_004faeed;
-        iVar6 = iVar6 + 1;
-        local_14 = local_14 + 0x12;
-      } while (iVar6 < _DAT_01e52efc);
+        if ((_DAT_01e53380 == (local_14->base).y_min) && (local_14 != right)) goto LAB_004faeed;
+        iVar7 = iVar7 + 1;
+        local_14 = local_14 + 1;
+      } while (iVar7 < _DAT_01e52efc);
     }
-    local_14 = (int *)0x0;
+    local_14 = (SSoftwareEdge *)0x0;
 LAB_004faeed:
-    if (local_14 != (int *)0x0) {
+    if (local_14 != (SSoftwareEdge *)0x0) {
       do {
-        iVar6 = _DAT_01e52efc;
-        if (piVar3[1] <= iVar7) {
-          *piVar3 = -1;
-          iVar10 = 0;
-          piVar3 = (int *)&DAT_01e52f00;
-          if (0 < iVar6) {
+        iVar7 = _DAT_01e52efc;
+        if ((right->base).y_max <= iVar8) {
+          (right->base).y_min = -1;
+          iVar11 = 0;
+          right = (SSoftwareEdge *)&DAT_01e52f00;
+          if (0 < iVar7) {
             do {
-              if ((iVar7 == *piVar3) && (piVar3 != local_14)) goto LAB_004faf43;
-              iVar10 = iVar10 + 1;
-              piVar3 = piVar3 + 0x12;
-            } while (iVar10 < _DAT_01e52efc);
+              if ((iVar8 == (right->base).y_min) && (right != local_14)) goto LAB_004faf43;
+              iVar11 = iVar11 + 1;
+              right = right + 1;
+            } while (iVar11 < _DAT_01e52efc);
           }
-          piVar3 = (int *)0x0;
+          right = (SSoftwareEdge *)0x0;
 LAB_004faf43:
-          if (piVar3 == (int *)0x0) {
+          if (right == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        iVar6 = _DAT_01e52efc;
-        if (local_14[1] <= iVar7) {
-          *local_14 = -1;
-          local_14 = (int *)&DAT_01e52f00;
-          iVar10 = 0;
-          if (iVar6 < 1) {
+        iVar7 = _DAT_01e52efc;
+        if ((local_14->base).y_max <= iVar8) {
+          (local_14->base).y_min = -1;
+          local_14 = (SSoftwareEdge *)&DAT_01e52f00;
+          iVar11 = 0;
+          if (iVar7 < 1) {
             return;
           }
-          while ((iVar7 != *local_14 || (local_14 == piVar3))) {
-            iVar10 = iVar10 + 1;
-            local_14 = local_14 + 0x12;
-            if (_DAT_01e52efc <= iVar10) {
+          while ((iVar8 != (local_14->base).y_min || (local_14 == right))) {
+            iVar11 = iVar11 + 1;
+            local_14 = local_14 + 1;
+            if (_DAT_01e52efc <= iVar11) {
               return;
             }
           }
-          if (local_14 == (int *)0x0) {
+          if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        engine_special_cpp_renderScanline_FUN_00530710(local_14,piVar3,iVar7);
-        piVar3[2] = piVar3[2] + piVar3[3];
-        piVar3[6] = piVar3[6] + piVar3[7];
-        piVar3[8] = piVar3[8] + piVar3[9];
-        piVar3[10] = piVar3[10] + piVar3[0xb];
-        piVar3[4] = piVar3[4] + piVar3[5];
-        piVar3[0xe] = piVar3[0xe] + piVar3[0xf];
-        piVar3[0x10] = piVar3[0x10] + piVar3[0x11];
-        piVar3[0xc] = piVar3[0xc] + piVar3[0xd];
-        *(int *)(iVar7 + 8) = *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0xc);
-        *(int *)(iVar7 + 0x18) = *(int *)(iVar7 + 0x18) + *(int *)(iVar7 + 0x1c);
-        *(int *)(iVar7 + 0x20) = *(int *)(iVar7 + 0x20) + *(int *)(iVar7 + 0x24);
-        *(int *)(iVar7 + 0x28) = *(int *)(iVar7 + 0x28) + *(int *)(iVar7 + 0x2c);
-        *(int *)(iVar7 + 0x10) = *(int *)(iVar7 + 0x10) + *(int *)(iVar7 + 0x14);
-        *(int *)(iVar7 + 0x38) = *(int *)(iVar7 + 0x38) + *(int *)(iVar7 + 0x3c);
-        *(int *)(iVar7 + 0x40) = *(int *)(iVar7 + 0x40) + *(int *)(iVar7 + 0x44);
-        *(int *)(iVar7 + 0x30) = *(int *)(iVar7 + 0x30) + *(int *)(iVar7 + 0x34);
+        engine_special_cpp_renderScanline_FUN_00530710(local_14,right,iVar8);
+        (right->base).x_current = (right->base).x_current + (right->base).x_gradient;
+        (right->base).u_current = (right->base).u_current + (right->base).u_gradient;
+        (right->base).v_current = (right->base).v_current + (right->base).v_gradient;
+        iVar7 = right->green_current;
+        iVar11 = right->blue_current;
+        iVar3 = (right->base).alpha_current;
+        (right->base).depth_current = (right->base).depth_current + (right->base).depth_gradient;
+        iVar1 = right->green_gradient;
+        (right->base).red_current = (right->base).red_current + (right->base).red_gradient;
+        right->green_current = iVar7 + iVar1;
+        iVar7 = (right->base).alpha_gradient;
+        right->blue_current = iVar11 + right->blue_gradient;
+        (right->base).alpha_current = iVar3 + iVar7;
+        *(int *)(iVar8 + 8) = *(int *)(iVar8 + 8) + *(int *)(iVar8 + 0xc);
+        *(int *)(iVar8 + 0x18) = *(int *)(iVar8 + 0x18) + *(int *)(iVar8 + 0x1c);
+        *(int *)(iVar8 + 0x20) = *(int *)(iVar8 + 0x20) + *(int *)(iVar8 + 0x24);
+        *(int *)(iVar8 + 0x28) = *(int *)(iVar8 + 0x28) + *(int *)(iVar8 + 0x2c);
+        *(int *)(iVar8 + 0x10) = *(int *)(iVar8 + 0x10) + *(int *)(iVar8 + 0x14);
+        *(int *)(iVar8 + 0x38) = *(int *)(iVar8 + 0x38) + *(int *)(iVar8 + 0x3c);
+        *(int *)(iVar8 + 0x40) = *(int *)(iVar8 + 0x40) + *(int *)(iVar8 + 0x44);
+        *(int *)(iVar8 + 0x30) = *(int *)(iVar8 + 0x30) + *(int *)(iVar8 + 0x34);
       } while( true );
     }
   }

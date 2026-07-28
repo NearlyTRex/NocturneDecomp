@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
-;   sound_sndmain.cpp_FUN_005257e0
+;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0
 ;   sound_sndmain.cpp_unlockSound_FUN_00528890
 ;
@@ -52,8 +52,8 @@ section .text
     JZ 0x00526d4c                       ; 00526d3d
         ;   XREF to: 00526d4c (CONDITIONAL_JUMP)  ; LAB_00526d4c
     PUSH EAX                            ; 00526d3f
-    CALL sound_sndmain.cpp_FUN_005257e0 ; 00526d40
-        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005257e0()
+    CALL sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0 ; 00526d40
+        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00526d45
     TEST EAX,EAX                        ; 00526d48
     JZ 0x00526da8                       ; 00526d4a
@@ -77,7 +77,7 @@ section .text
     ADD ESP,0x14                        ; 00526d71
     FSTP double ptr [ESP + 0x8]         ; 00526d74
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526d78
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,dword ptr [ESP + 0x8]       ; 00526d7d
     MOV dword ptr [ESP],EAX             ; 00526d81
     MOV EAX,dword ptr [ESP + 0xc]       ; 00526d84
@@ -98,7 +98,7 @@ section .text
     JMP 0x00526d8c                      ; 00526da6
         ;   XREF to: 00526d8c (UNCONDITIONAL_JUMP)  ; LAB_00526d8c
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526da8
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00526da8
     XOR EDI,EDI                         ; 00526dad
     MOV EAX,0xbff00000                  ; 00526daf

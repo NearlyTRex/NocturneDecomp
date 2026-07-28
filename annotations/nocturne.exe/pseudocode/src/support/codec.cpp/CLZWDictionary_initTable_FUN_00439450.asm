@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(int param_1)
+; void __cdecl support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(CLZWDictionary *this_ptr)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0 at 00439570

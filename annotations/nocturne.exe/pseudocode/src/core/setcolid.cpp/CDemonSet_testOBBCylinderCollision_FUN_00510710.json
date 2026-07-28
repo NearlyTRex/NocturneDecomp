@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 331,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 25,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 82,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
-    "total_lines": 353
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -145,7 +144,7 @@
     {
       "addr": "00510a40",
       "from_addr": "00510ec2",
-      "name": "core_setcolid.cpp_FUN_00510a40",
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,7 +158,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710",
-    "signature": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,undefined4 param_5)"
+    "signature": "int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)"
   },
   "function_calls": [
     {
@@ -202,7 +201,7 @@
       {
         "call_addr": "00510ec2",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_00510a40",
+        "caller": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -222,11 +221,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.971774193548387,
@@ -265,10 +264,10 @@
     "pcode_op_count": 985
   },
   "stack_frame": {
-    "frame_size": 492,
+    "frame_size": 512,
     "local_size": 492,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -424,212 +423,52 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box",
+        "offset": 12,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation_matrix",
+        "offset": 20,
+        "size": 4,
+        "type": "CMatrix3x3f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(param_3,local_38,iVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_5,local_2c,uVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_20 = *pfVar2 + *param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_1c = pfVar2[1] + param_4[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_18 = pfVar2[2] + param_4[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_14 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_70,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_70,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_188,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_188,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_150,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_150,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_118,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_118,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_e0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_e0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_a8,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(local_a8,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return *param_2 < local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 40,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar3->x = local_20.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

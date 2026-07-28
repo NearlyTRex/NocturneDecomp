@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(int param_1)
+; void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
 ;
+; Parameters:
+; CGunFlame *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
 ; undefined4       Stack[-0x24]:4  local_24
@@ -132,14 +134,14 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004881c1
     PUSH EAX                            ; 004881c7
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 004881c8
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004881cd
     PUSH ESI                            ; 004881d0
     LEA EAX,[ESP + 0x4]                 ; 004881d1
     PUSH EAX                            ; 004881d5
     PUSH EBX                            ; 004881d6
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004881d7
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 004881dc
     MOV EAX,dword ptr [EBP + 0x14]      ; 004881df
     CMP dword ptr [EAX + 0x20],0x2      ; 004881e2
@@ -160,7 +162,7 @@ section .text
     PUSH EDX                            ; 0048820b
         ;   Label: LAB_0048820b
     CALL core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550 ; 0048820c
-        ;   XREF to: 0048e550 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550()
+        ;   XREF to: 0048e550 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 00488211
     JMP 0x0048817e                      ; 00488214
         ;   XREF to: 0048817e (UNCONDITIONAL_JUMP)  ; LAB_0048817e

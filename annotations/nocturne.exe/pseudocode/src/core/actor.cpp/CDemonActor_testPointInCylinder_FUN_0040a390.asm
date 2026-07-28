@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(int param_1,float *param_2,float param_3)
+; int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; SCollisionReturnInfo * Stack[0x8]:4   collision_info
+; float            Stack[0xc]:4   tolerance
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ;
@@ -23,7 +27,7 @@ section .text
     MOV EAX,ESP                         ; 0040a398
     PUSH EAX                            ; 0040a39a
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 0040a39b
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     LEA EAX,[ESP + 0x4]                 ; 0040a3a0
     ADD ESP,0x4                         ; 0040a3a4
     XOR EDX,EDX                         ; 0040a3a7

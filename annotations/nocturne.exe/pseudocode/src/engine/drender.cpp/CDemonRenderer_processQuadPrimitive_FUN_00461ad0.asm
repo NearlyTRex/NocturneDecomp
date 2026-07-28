@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(int param_1,int param_2,undefined4 param_3)
+; void engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0(CDemonRenderer *param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x24]:2  local_24
@@ -40,7 +40,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00461ae5
     PUSH EAX                            ; 00461ae8
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00461ae9
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00461aee
     TEST EAX,EAX                        ; 00461af1
     JNZ 0x00461afd                      ; 00461af3
@@ -83,7 +83,7 @@ section .text
     PUSH EAX                            ; 00461b62
     PUSH ESI                            ; 00461b63
     CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 ; 00461b64
-        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0()
+        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     MOV EDI,dword ptr [EBX + 0x4]       ; 00461b69
     ADD ESP,0xc                         ; 00461b6c
     CMP EDI,0x3                         ; 00461b6f
@@ -111,7 +111,7 @@ section .text
     PUSH EAX                            ; 00461bbb
     PUSH ESI                            ; 00461bbc
     CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 ; 00461bbd
-        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0()
+        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     ADD ESP,0xc                         ; 00461bc2
     ADD ESP,0x14                        ; 00461bc5
     POP EBP                             ; 00461bc8

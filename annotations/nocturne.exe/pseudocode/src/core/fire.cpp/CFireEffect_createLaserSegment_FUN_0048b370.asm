@@ -1,8 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10)
+; void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   origin
+; CVector3f *      Stack[0xc]:4   hit_position
+; float            Stack[0x10]:4   beam_width
+; float            Stack[0x14]:4   reticle_intensity
+; CVector3f *      Stack[0x18]:4   reflection_normal
+; int              Stack[0x1c]:4   red
+; int              Stack[0x20]:4   green
+; int              Stack[0x24]:4   blue
+; float            Stack[0x28]:4   halo_spread
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_0048b440 at 0048b5e7

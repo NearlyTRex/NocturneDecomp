@@ -1,37 +1,38 @@
 // Name: core_netgame.cpp_CNetGame_ctor_FUN_004e9860
 // Address: 004e9860
 // Address Range: [[004e9860, 004e98e5]]
-// Convention: unknown
-// Signature: undefined4 * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1)
+// Convention: __cdecl
+// Signature: CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_004e9860(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
-uint * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1)
+CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_004e9860(CNetGame *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
-  char *pcVar3;
+  void *pvVar2;
+  _SOCKET *p_Var3;
   char *pcVar4;
+  _SOCKET *p_Var5;
   
-  iVar2 = __arrinit(param_1 + 0x20,2,&g_SNetPlayerTypeInfo_005a0e20);
-  iVar2 = support_trisock_cpp_invalidateSocket_FUN_00548ed0(iVar2 + 0x150);
-  *(uint *)(iVar2 + -0x170) = 0;
-  *(uint *)(iVar2 + -0x16c) = 0;
-  pcVar3 = "MyComputer";
-  *(uint *)(iVar2 + -0x154) = 0;
-  *(uint *)(iVar2 + -0x60) = 0xffffffff;
-  pcVar4 = (char *)(iVar2 + -0x168);
-  *(uint *)(iVar2 + -0x5c) = 0xffffffff;
+  pvVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo_005a0e20);
+  p_Var3 = support_trisock_cpp_invalidateSocket_FUN_00548ed0((_SOCKET *)((int)pvVar2 + 0x150));
+  ((CNetGame *)(p_Var3 + -0x5c))->connection_type = CONNECTION_NONE;
+  p_Var3[-0x5b] = 0;
+  pcVar4 = "MyComputer";
+  p_Var3[-0x55] = 0;
+  p_Var3[-0x18] = 0xffffffff;
+  p_Var5 = p_Var3 + -0x5a;
+  p_Var3[-0x17] = 0xffffffff;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar4;
+    *(char *)p_Var5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
+    *(char *)((int)p_Var5 + 1) = cVar1;
+    p_Var5 = (_SOCKET *)((int)p_Var5 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + -8) = 0;
-  return (uint *)(iVar2 + -0x170);
+  p_Var3[-2] = 0;
+  return (CNetGame *)(p_Var3 + -0x5c);
 }

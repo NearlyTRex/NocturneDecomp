@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)
+; void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0(CEdScrollBar *this_ptr,int left_pos,int top_pos,int right_pos,int bottom_pos)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   left_pos
+; int              Stack[0xc]:4   top_pos
+; int              Stack[0x10]:4   right_pos
+; int              Stack[0x14]:4   bottom_pos
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_FUN_00475470 at 00475873

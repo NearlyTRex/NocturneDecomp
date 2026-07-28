@@ -8,13 +8,13 @@
 ;   FUN_0056e664 at 0056e68a
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ae8 = 005671e4
-;   void* PTR_FUN_005c1aec = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec = 005671e4
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_005638d0
-;   FUN_005671e4
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 005712ed
     PUSH EDI                            ; 005712ee
     MOV EDI,dword ptr [ESP + 0x10]      ; 005712ef
-    CALL dword ptr [0x005c1ae8]         ; 005712f3 | PTR_FUN_005c1ae8
+    CALL dword ptr [0x005c1ae8]         ; 005712f3 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8
     MOV EBX,dword ptr [0x02de5d70]      ; 005712f9 | DAT_02de5d70
     MOV ESI,0x2de5d70                   ; 005712ff
     TEST EBX,EBX                        ; 00571304
@@ -58,7 +58,7 @@ section .text
     TEST EBX,EBX                        ; 00571332
     JNZ 0x00571308                      ; 00571334
         ;   XREF to: 00571308 (CONDITIONAL_JUMP)  ; LAB_00571308
-    CALL dword ptr [0x005c1aec]         ; 00571336 | PTR_FUN_005c1aec
+    CALL dword ptr [0x005c1aec]         ; 00571336 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec
         ;   Label: LAB_00571336
     POP EDI                             ; 0057133c
     POP ESI                             ; 0057133d

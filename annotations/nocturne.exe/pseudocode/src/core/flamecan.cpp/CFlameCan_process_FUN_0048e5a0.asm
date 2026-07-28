@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(int param_1,float param_2)
+; void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 0048e5af | DAT_005b7650
     PUSH EDX                            ; 0048e5b5
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0048e5b6
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0048e5bb
     TEST EAX,EAX                        ; 0048e5be
     JNZ 0x0048e5d0                      ; 0048e5c0
@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 0048e5d0
         ;   Label: LAB_0048e5d0
     CALL core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550 ; 0048e5d1
-        ;   XREF to: 0048e550 (UNCONDITIONAL_CALL)  ; undefined core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550()
+        ;   XREF to: 0048e550 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 0048e5d6
     CMP dword ptr [EBX + 0x2cc],0x0     ; 0048e5d9
     JNZ 0x0048e5e7                      ; 0048e5e0
@@ -61,7 +61,7 @@ section .text
     PUSH dword ptr [ESP + 0x48]         ; 0048e5ed
     PUSH EAX                            ; 0048e5f1
     CALL core_flame.cpp_CFlame_process_FUN_0048d0c0 ; 0048e5f2
-        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_process_FUN_0048d0c0()
+        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_process_FUN_0048d0c0(CFlame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0048e5f7
     FLD float ptr [EBX + 0x2d0]         ; 0048e5fa
     FSUB float ptr [ESP + 0x48]         ; 0048e600

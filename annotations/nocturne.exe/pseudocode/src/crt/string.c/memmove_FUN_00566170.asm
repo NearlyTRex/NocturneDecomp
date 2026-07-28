@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_string_c_memmove_FUN_00566170(undefined4 *param_1,undefined4 *param_2,uint param_3)
+; void * __cdecl crt_string_c_memmove_FUN_00566170(void *dest,void *src,SIZE_T n)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   dest
+; void *           Stack[0x8]:4   src
+; SIZE_T           Stack[0xc]:4   n
 ;
 ; XREF[45]:
-;   FUN_00571fd1 at 00572193
-;   FUN_00573afc at 00573c5c
-;   FUN_00573ca0 at 00573d4a
 ;   FUN_00574264 at 005743bf
 ;   FUN_00574404 at 005744b3
-;   cockpit_drawsurf.cpp_FUN_0045d310 at 0045d57a
+;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310 at 0045d57a
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420 at 00480538
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 004803f8
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e398
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b0b7
+;   core_event.cpp_CEventList_process_FUN_0047aa50 at 0047ab2e
+;   core_event.cpp_CEventList_setActorVariable_FUN_00480950 at 00480af6
+;   core_event.cpp_CEventList_setCounter_FUN_004806d0 at 0048072e
 ;   ... and 35 more
 ;
 ; *****************************************************************************

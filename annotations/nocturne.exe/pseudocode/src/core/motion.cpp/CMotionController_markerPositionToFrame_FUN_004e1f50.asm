@@ -12,13 +12,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_gabriela.cpp_FUN_00497900 at 00497c52
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497c52
 ;   core_ghoul.cpp_FUN_004a9270 at 004a9530
 ;   core_hostage.cpp_FUN_004b6d80 at 004b808a
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd161
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a363
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539d59
 ;   core_stranger.cpp_FUN_005384d0 at 0053967c
-;   core_stranger.cpp_FUN_0053a260 at 0053a363
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -58,7 +58,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004e1f99
     FLD ST0                             ; 004e1f9c
     CALL crt_math.c_round_FUN_00563a30  ; 004e1f9e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 004e1fa3
     MOV EAX,dword ptr [ESP + 0xc]       ; 004e1fa7
     MOV dword ptr [ESP + 0x14],EAX      ; 004e1fab

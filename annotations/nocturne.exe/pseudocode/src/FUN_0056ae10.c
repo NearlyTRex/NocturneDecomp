@@ -15,11 +15,13 @@ uint FUN_0056ae10(int param_1,uint param_2,uint param_3)
   byte bVar4;
   bool bVar5;
   
-  (*(code *)PTR_FUN_005c1ac0)(*(uint *)(param_1 + 0x10));
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)
+            (*(uint *)(param_1 + 0x10));
   iVar1 = *(int *)(*(int *)(param_1 + 8) + 0xc);
   if (iVar1 != 1) {
     if (iVar1 != 0) {
-      (*(code *)PTR_FUN_005c1ac4)(*(uint *)(param_1 + 0x10));
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)
+                (*(uint *)(param_1 + 0x10));
       return 0;
     }
     *(uint *)(*(int *)(param_1 + 8) + 0xc) = 1;
@@ -46,6 +48,7 @@ uint FUN_0056ae10(int param_1,uint param_2,uint param_3)
     uVar3 = 0xffffffff;
   }
   *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) | uVar2 & 0x30;
-  (*(code *)PTR_FUN_005c1ac4)(*(uint *)(param_1 + 0x10));
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)
+            (*(uint *)(param_1 + 0x10));
   return uVar3;
 }

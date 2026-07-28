@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(int param_1)
+; void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined4       Stack[-0x28]:4  local_28
@@ -153,11 +155,11 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 004fd13f
     PUSH ESI                            ; 004fd145
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004fd146
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004fd14b
     PUSH EAX                            ; 004fd14e
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010 ; 004fd14f
-        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010()
+        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004fd154
     PUSH dword ptr [EBX + 0x2a88]       ; 004fd157
     PUSH EAX                            ; 004fd15d

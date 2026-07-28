@@ -128,7 +128,7 @@
     {
       "addr": "0046c300",
       "from_addr": "0046c330",
-      "name": "core_dtri.cpp_FUN_0046c300",
+      "name": "core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0046c300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -322,13 +322,13 @@
     ],
     "convention": "unknown",
     "name": "crt_stdio.c_fscanf_FUN_00563350",
-    "signature": "void crt_stdio_c_fscanf_FUN_00563350(undefined4 param_1,undefined4 param_2)"
+    "signature": "void crt_stdio_c_fscanf_FUN_00563350(_FILE *param_1,char *param_2)"
   },
   "function_calls": [
     {
       "addr": "005632c8",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005632c8"
+      "name": "crt_unknown.c_vfscanf_FUN_005632c8"
     }
   ],
   "globals": [],
@@ -519,7 +519,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void _fscanf(uint param_1,uint param_2)",
+      "text": "void _fscanf(_FILE *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -527,7 +527,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void _fscanf(uint param_1,uint param_2)",
+      "text": "void _fscanf(_FILE *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -543,7 +543,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005632c8(param_1,param_2,&local_8);",
+      "text": "vfscanf(param_1,param_2,(va_list_t)&local_8);",
       "type": "unnamed_param"
     },
     {
@@ -551,7 +551,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005632c8(param_1,param_2,&local_8);",
+      "text": "vfscanf(param_1,param_2,(va_list_t)&local_8);",
       "type": "unnamed_param"
     },
     {

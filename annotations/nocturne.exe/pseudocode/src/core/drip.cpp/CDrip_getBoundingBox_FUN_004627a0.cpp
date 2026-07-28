@@ -10,7 +10,7 @@ uint * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,uint *param_2
 
 {
   uint *puVar1;
-  int iVar2;
+  CKeyFramedModel *pCVar2;
   
   if (*(int *)(param_1 + 0x2cc) != 2) {
     *param_2 = 0xbf000000;
@@ -21,8 +21,9 @@ uint * core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(int param_1,uint *param_2
     param_2[5] = 0x3f800000;
     return param_2;
   }
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  puVar1 = *(uint **)(iVar2 + 0x350);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  puVar1 = (uint *)pCVar2->texture_list[7].textures[2].base.count;
   *param_2 = *puVar1;
   param_2[1] = puVar1[1];
   param_2[2] = puVar1[2];

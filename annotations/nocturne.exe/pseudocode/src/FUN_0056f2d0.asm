@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00568e08 at 00568e08
 ;   FUN_0056e7fc at 0056e840
+;   crt_heap.c_SystemAllocWrapper_FUN_00568e08 at 00568e08
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1680
-;   void* PTR_FUN_005c1ad8 = 005671e4
-;   void* PTR_FUN_005c1ae0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad8 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0 = 005671e4
 ;
 ; Called Functions:
-;   FUN_005671e4
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   FUN_0056f36c
 ;
 ; *****************************************************************************
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 0056f2d0
         ;   Label: FUN_0056f2d0
     PUSH ESI                            ; 0056f2d1
-    CALL dword ptr [0x005c1ad8]         ; 0056f2d2 | PTR_FUN_005c1ad8
+    CALL dword ptr [0x005c1ad8]         ; 0056f2d2 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad8
     MOV EAX,[0x005c1680]                ; 0056f2d8 | DAT_005c1680
     TEST EAX,EAX                        ; 0056f2dd
     JZ 0x0056f301                       ; 0056f2df
@@ -47,7 +47,7 @@ section .text
     TEST EBX,EBX                        ; 0056f2fd
     JNZ 0x0056f2e1                      ; 0056f2ff
         ;   XREF to: 0056f2e1 (CONDITIONAL_JUMP)  ; LAB_0056f2e1
-    CALL dword ptr [0x005c1ae0]         ; 0056f301 | PTR_FUN_005c1ae0
+    CALL dword ptr [0x005c1ae0]         ; 0056f301 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0
         ;   Label: LAB_0056f301
     XOR EAX,EAX                         ; 0056f307
     POP ESI                             ; 0056f309

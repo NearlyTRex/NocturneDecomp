@@ -9,13 +9,14 @@
 void __cdecl core_dlight_cpp_captureLightTextures_FUN_004504e0(void)
 
 {
-  byte *puVar1;
+  SMRGLTextureBasic *texture;
   
-  puVar1 = &DAT_005ae488;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005ae470);
+  texture = (SMRGLTextureBasic *)&DAT_005ae488;
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,puVar1);
-    puVar1 = puVar1 + 0x30;
-  } while (puVar1 != &DAT_005ae638);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
+    texture = texture + 2;
+  } while (texture != (SMRGLTextureBasic *)&DAT_005ae638);
   return;
 }

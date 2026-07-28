@@ -1,17 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl crt_fstream_cpp_ostream_write_FUN_00565a13(int *param_1,undefined4 *param_2,uint param_3)
+; _ostream * __cdecl crt_fstream_cpp_ostream_write_FUN_00565a13(_ostream *stream,void *buffer,SIZE_T count)
 ;
+; Parameters:
+; _ostream *       Stack[0x4]:4   stream
+; void *           Stack[0x8]:4   buffer
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_FUN_00446810 at 00446929
 ;   core_game.cpp_FUN_004a3b90 at 004a3ef3
 ;
 ; Called Functions:
-;   FUN_0056b327
-;   FUN_0056b35c
-;   FUN_0056b3c2
+;   crt_stdio.c_prepare_stream_for_write_FUN_0056b35c
+;   crt_stdio.c_reportStreamError_FUN_0056b327
+;   crt_stdio.c_stream_flush_FUN_0056b3c2
 ;
 ; *****************************************************************************
 
@@ -77,8 +81,8 @@ section .text
     PUSH 0x2                            ; 00565a87
     ADD EAX,EBX                         ; 00565a89
     PUSH EAX                            ; 00565a8b
-    CALL FUN_0056b327                   ; 00565a8c
-        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b327()
+    CALL crt_stdio.c_reportStreamError_FUN_0056b327 ; 00565a8c
+        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_0056b327(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00565a91
     MOV EAX,dword ptr [EBX]             ; 00565a94
         ;   Label: LAB_00565a94
@@ -96,8 +100,8 @@ section .text
     RET                                 ; 00565aa8
     PUSH EDX                            ; 00565aa9
         ;   Label: LAB_00565aa9
-    CALL FUN_0056b35c                   ; 00565aaa
-        ;   XREF to: 0056b35c (UNCONDITIONAL_CALL)  ; undefined FUN_0056b35c()
+    CALL crt_stdio.c_prepare_stream_for_write_FUN_0056b35c ; 00565aaa
+        ;   XREF to: 0056b35c (UNCONDITIONAL_CALL)  ; BOOL crt_stdio.c_prepare_stream_for_write_FUN_0056b35c(_FILE * stream)
     ADD ESP,0x4                         ; 00565aaf
     TEST EAX,EAX                        ; 00565ab2
     JNZ 0x00565a48                      ; 00565ab4
@@ -116,8 +120,8 @@ section .text
         ;   XREF to: 00565a7e (UNCONDITIONAL_JUMP)  ; LAB_00565a7e
     PUSH EBX                            ; 00565aca
         ;   Label: LAB_00565aca
-    CALL FUN_0056b3c2                   ; 00565acb
-        ;   XREF to: 0056b3c2 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b3c2()
+    CALL crt_stdio.c_stream_flush_FUN_0056b3c2 ; 00565acb
+        ;   XREF to: 0056b3c2 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_flush_FUN_0056b3c2(_FILE * stream)
     ADD ESP,0x4                         ; 00565ad0
     JMP 0x00565aa2                      ; 00565ad3
         ;   XREF to: 00565aa2 (UNCONDITIONAL_JUMP)  ; LAB_00565aa2

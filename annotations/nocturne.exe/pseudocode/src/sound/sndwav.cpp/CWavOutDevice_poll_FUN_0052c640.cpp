@@ -13,9 +13,9 @@ uint sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  int buffer_index;
   
-  iVar3 = 0;
+  buffer_index = 0;
   if (0 < _DAT_02dc943c) {
     iVar2 = 0;
     do {
@@ -24,13 +24,13 @@ uint sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(void)
         return 0;
       }
       if (((*(byte *)(*(int *)(iVar2 + 0x2dc93a8) + 0x10) & 1) != 0) &&
-         (iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(iVar3), iVar1 == 0)) {
+         (iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(buffer_index), iVar1 == 0)) {
         sound_sndmain_cpp_FUN_00529980("WavOutDevice::poll - sendBuffer failed");
         return 0;
       }
-      iVar3 = iVar3 + 1;
+      buffer_index = buffer_index + 1;
       iVar2 = iVar2 + 4;
-    } while (iVar3 < _DAT_02dc943c);
+    } while (buffer_index < _DAT_02dc943c);
   }
   return 1;
 }

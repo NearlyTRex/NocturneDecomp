@@ -2,36 +2,50 @@
 // Address: 00524410
 // Address Range: [[00524410, 005244aa]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(int param_1)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(int param_1)
+void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(CSfxSlot *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x20) == 1) {
-    *(double *)(param_1 + 4) = (double)**(float **)(param_1 + 0x1c);
-    *(double *)(param_1 + 0xc) = (double)*(float *)(*(int *)(param_1 + 0x1c) + 4);
-    *(double *)(param_1 + 0x14) = (double)*(float *)(*(int *)(param_1 + 0x1c) + 8);
+  int iVar1;
+  void *pvVar2;
+  void *pvVar3;
+  
+  iVar1 = (this_ptr->options).position_format;
+  if (iVar1 == 1) {
+    pvVar2 = (this_ptr->options).position_source_ptr;
+    (this_ptr->options).position.x = (double)*(float *)(this_ptr->options).position_source_ptr;
+    pvVar3 = (this_ptr->options).position_source_ptr;
+    (this_ptr->options).position.y = (double)*(float *)((int)pvVar2 + 4);
+    (this_ptr->options).position.z = (double)*(float *)((int)pvVar3 + 8);
   }
-  else if (*(int *)(param_1 + 0x20) == 2) {
-    *(ulonglong *)(param_1 + 4) = **(ulonglong **)(param_1 + 0x1c);
-    *(ulonglong *)(param_1 + 0xc) = *(ulonglong *)(*(int *)(param_1 + 0x1c) + 8);
-    *(uint *)(param_1 + 0x14) = *(uint *)(*(int *)(param_1 + 0x1c) + 0x10);
-    *(uint *)(param_1 + 0x18) = *(uint *)(*(int *)(param_1 + 0x1c) + 0x14);
+  else if (iVar1 == 2) {
+    pvVar2 = (this_ptr->options).position_source_ptr;
+    (this_ptr->options).position.x = *(double *)(this_ptr->options).position_source_ptr;
+    pvVar3 = (this_ptr->options).position_source_ptr;
+    (this_ptr->options).position.y = *(double *)((int)pvVar2 + 8);
+    *(uint *)&(this_ptr->options).position.z = *(uint *)((int)pvVar3 + 0x10);
+    *(uint *)((int)&(this_ptr->options).position.z + 4) = *(uint *)((int)pvVar3 + 0x14);
   }
-  if (*(int *)(param_1 + 0x40) != 1) {
-    if (*(int *)(param_1 + 0x40) != 2) {
+  iVar1 = (this_ptr->options).velocity_format;
+  if (iVar1 != 1) {
+    if (iVar1 != 2) {
       return;
     }
-    *(ulonglong *)(param_1 + 0x24) = **(ulonglong **)(param_1 + 0x3c);
-    *(ulonglong *)(param_1 + 0x2c) = *(ulonglong *)(*(int *)(param_1 + 0x3c) + 8);
-    *(uint *)(param_1 + 0x34) = *(uint *)(*(int *)(param_1 + 0x3c) + 0x10);
-    *(uint *)(param_1 + 0x38) = *(uint *)(*(int *)(param_1 + 0x3c) + 0x14);
+    pvVar2 = (this_ptr->options).velocity_source_ptr;
+    (this_ptr->options).velocity.x = *(double *)(this_ptr->options).velocity_source_ptr;
+    pvVar3 = (this_ptr->options).velocity_source_ptr;
+    (this_ptr->options).velocity.y = *(double *)((int)pvVar2 + 8);
+    *(uint *)&(this_ptr->options).velocity.z = *(uint *)((int)pvVar3 + 0x10);
+    *(uint *)((int)&(this_ptr->options).velocity.z + 4) = *(uint *)((int)pvVar3 + 0x14);
     return;
   }
-  *(double *)(param_1 + 0x24) = (double)**(float **)(param_1 + 0x3c);
-  *(double *)(param_1 + 0x2c) = (double)*(float *)(*(int *)(param_1 + 0x3c) + 4);
-  *(double *)(param_1 + 0x34) = (double)*(float *)(*(int *)(param_1 + 0x3c) + 8);
+  pvVar2 = (this_ptr->options).velocity_source_ptr;
+  (this_ptr->options).velocity.x = (double)*(float *)(this_ptr->options).velocity_source_ptr;
+  pvVar3 = (this_ptr->options).velocity_source_ptr;
+  (this_ptr->options).velocity.y = (double)*(float *)((int)pvVar2 + 4);
+  (this_ptr->options).velocity.z = (double)*(float *)((int)pvVar3 + 8);
   return;
 }

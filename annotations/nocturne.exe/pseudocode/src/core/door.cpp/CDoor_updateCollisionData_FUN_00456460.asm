@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_updateCollisionData_FUN_00456460(int param_1)
+; void core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 0045647b
         ;   Label: LAB_0045647b
     CALL core_door.cpp_CDoor_reposition_FUN_004552a0 ; 0045647c
-        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_reposition_FUN_004552a0()
+        ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_004552a0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00456481
     PUSH EBX                            ; 00456484
     MOV EBX,dword ptr [0x005be368]      ; 00456485 | DAT_005be368

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 903,
-    "complexity_score": 1189,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 259,
-    "suspect_count": 92,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 289,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "pointer_cast"
     ],
-    "total_lines": 1162
+    "total_lines": 1192
   },
   "cross_references": [
     {
@@ -153,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(CDeformableModel *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -384,11 +383,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.341605839416059,
@@ -423,10 +422,10 @@
     "pcode_op_count": 3659
   },
   "stack_frame": {
-    "frame_size": 144,
+    "frame_size": 152,
     "local_size": 144,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -645,6 +644,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
@@ -656,7 +669,7 @@
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 29,
-          "line": 187,
+          "line": 200,
           "message": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
           "severity": "error"
         }
@@ -667,750 +680,27 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%d\\n\",&local_64);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%d,%d,%d,%d,%d,%d\\n\",&local_50,&local_4c,&local_48,&local_44,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(param_1,1,1,local_44,local_40);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(param_1,0,local_50,local_4c,local_48)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%d,%d,%d,%d\\n\",&local_5c,&local_54,&local_60,&local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%d,%d,%d,%d,%d\\n\",&local_5c,&local_58,&local_54,&local_60,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_5c,local_58,local_54,local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < *param_1; iVar1 = iVar1 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,\"%d,%d,%d,%d,%d\\n\",&local_3c,&local_38,&local_34,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 + iVar1 * 2 + 1,param_1 + iVar1 * 2 + 1 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 + iVar1 * 2 + 1,param_1 + iVar1 * 2 + 1 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,iVar1,local_3c,local_38,local_34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%[^\\n]\\n\",param_1 + 0xa87);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%[^\\n]\\n\",param_1 + 0xa87);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < param_1[0x300]; iVar1 = iVar1 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + iVar1 * 0x18 + 0x301;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,\"\\\"%[^\\\"]\\\",%d,%d,%d\\n\",piVar3,piVar3 + 8,piVar3 + 0xd,piVar3 + 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x314);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x314);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < param_1[0x300]; iVar1 = iVar1 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + iVar1 * 0x18 + 0x301;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\", %d\\n\",piVar3,piVar3 + 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\", %d, %d\\n\",piVar3,piVar3 + 0x17,piVar3 + 0x12)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x314);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x314);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < *param_1; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 141,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x309,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 141,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d\\n\",param_1 + iVar1 * 0x18 + iVar2 + 0x309,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 142,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 + iVar1 * 0x18 + iVar2 + 0x30e);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 147,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (local_20 = 0; local_20 < *param_1; local_20 = local_20 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (local_18 = 0; local_18 < param_1[local_20 + 0xb]; local_18 = local_18 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar6 = (byte *)(param_1[local_20 + 0x10] + local_18 * 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%d\\n\",local_30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 158,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,\"%d,%f,%f,%f,%f\\n\",local_2c,pbVar6 + iVar1 * 4 + 4,pbVar4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 169,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (local_14 = 0; local_14 < *param_1; local_14 = local_14 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar2 = local_14, iVar1 < param_1[local_14 + 0x15] + param_1[local_14 + 0x1a];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar2 = local_14, iVar1 < param_1[local_14 + 0x15] + param_1[local_14 + 0x1a];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1[local_14 + 0x1f] + iVar1 * 0x12;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 173,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\\n\",&local_28,local_74,&local_80,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[iVar2 + 0x24] + iVar1 * 4) = local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 190,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 193,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < *param_1; iVar1 = iVar1 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < param_1[iVar1 + 0x1a]; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 195,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%d\\n\",param_1[iVar1 + 0x29] + iVar2 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 195,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%d\\n\",param_1[iVar1 + 0x29] + iVar2 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 203,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < param_1[0x2e]; iVar1 = iVar1 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 204,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < param_1[0x2f]; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 205,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%[^\\n]\\n\",param_1 + iVar1 * 0x90 + iVar2 * 0x12 + 0x32);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 205,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = _fscanf(param_2,\"%[^\\n]\\n\",param_1 + iVar1 * 0x90 + iVar2 * 0x12 + 0x32);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 210,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 214,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + iVar1 * 3 + 0x5d4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _fscanf(param_2,\"%f,%f,%f\\n\",piVar3,piVar3 + 1,piVar3 + 2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 220,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x5d3] = 0x3f800000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 221,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x5d2] = param_1[0x5d3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 221,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x5d2] = param_1[0x5d3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 222,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x5d1] = param_1[0x5d2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 222,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x5d1] = param_1[0x5d2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 226,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 229,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x5d1,param_1 + 0x5d2,param_1 + 0x5d3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 229,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x5d1,param_1 + 0x5d2,param_1 + 0x5d3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 229,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x5d1,param_1 + 0x5d2,param_1 + 0x5d3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 229,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x5d1,param_1 + 0x5d2,param_1 + 0x5d3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 232,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x702] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 233,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x701] = param_1[0x702];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 233,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x701] = param_1[0x702];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x700] = param_1[0x701];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x700] = param_1[0x701];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 238,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x700,param_1 + 0x701,param_1 + 0x702);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x700,param_1 + 0x701,param_1 + 0x702);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x700,param_1 + 0x701,param_1 + 0x702);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 241,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0x700,param_1 + 0x701,param_1 + 0x702);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 249,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d\\n\",param_1 + iVar1 + 0x9bf);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 249,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d\\n\",param_1 + iVar1 + 0x9bf);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 253,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 255,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar3 < *(int *)((int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb8c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar3 < *(int *)((int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb8c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
-      "line": 187,
+      "line": 200,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
-      "text": "*puVar7 = local_74[iVar2 * 2];",
+      "text": "*puVar8 = local_74[iVar3 * 2];",
       "type": "static_array_oob"
     }
   ]

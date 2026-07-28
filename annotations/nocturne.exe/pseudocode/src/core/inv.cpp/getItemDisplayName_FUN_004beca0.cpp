@@ -2,33 +2,33 @@
 // Address: 004beca0
 // Address Range: [[004beca0, 004bed0b]]
 // Convention: __cdecl
-// Signature: int __cdecl core_inv_cpp_getItemDisplayName_FUN_004beca0(undefined4 param_1)
+// Signature: char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004beca0(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_inv_cpp_getItemDisplayName_FUN_004beca0(uint param_1)
+char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004beca0(CDemonActor *actor_ptr)
 
 {
   int iVar1;
   int iVar2;
+  char *str2;
   int iVar3;
-  int iVar4;
   
-  iVar3 = 0x1cb03d8;
-  iVar4 = 0;
-  iVar1 = core_inv_cpp_getItemModel_FUN_004beb40(param_1);
+  str2 = (char *)0x1cb03d8;
+  iVar3 = 0;
+  iVar1 = core_inv_cpp_getItemModel_FUN_004beb40(actor_ptr);
   if (0 < _DAT_01cb03d0) {
     do {
-      iVar2 = _stricmp(iVar1 + 0x78,iVar3);
+      iVar2 = _stricmp((char *)(iVar1 + 0x78),str2);
       if (iVar2 == 0) {
-        return iVar3 + 0x100;
+        return str2 + 0x100;
       }
-      iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 0x300;
-    } while (iVar4 < _DAT_01cb03d0);
+      iVar3 = iVar3 + 1;
+      str2 = str2 + 0x300;
+    } while (iVar3 < _DAT_01cb03d0);
   }
-  _sprintf(0x1cae380,"Add to dict: %s",iVar1 + 0x78);
-  return 0x1cae380;
+  _sprintf(0x1cae380,"Add to dict: %s",(char *)(iVar1 + 0x78));
+  return (char *)0x1cae380;
 }

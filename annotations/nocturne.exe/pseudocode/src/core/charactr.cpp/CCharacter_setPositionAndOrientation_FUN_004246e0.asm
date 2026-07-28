@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004246e0(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004246e0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   new_position
+; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00539ac0 at 00539af7

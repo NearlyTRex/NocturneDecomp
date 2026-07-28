@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * engine_3d_c_FUN_00405b40(uint *param_1)
+; SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
 ;
 ;
 ; XREF[1]:
@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_00563db8
-;   engine_3d.c_FUN_00405340
 ;   engine_3d.c_FUN_00405ab0
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
+;   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340
 ;   engine_model.c_getMRGLSize_FUN_004dd520
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
 ;
@@ -60,7 +60,7 @@ section .text
     PUSH EBX                            ; 00405b6d | DAT_006b0288
         ;   Label: LAB_00405b6d
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 00405b6e
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 00405b73
     SHL EAX,0x2                         ; 00405b76
     ADD EBX,EAX                         ; 00405b79
@@ -152,7 +152,7 @@ section .text
         ;   XREF to: 00405c3d (CONDITIONAL_JUMP)  ; LAB_00405c3d
     PUSH ECX                            ; 00405c2b
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 00405c2c
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     MOV EBP,dword ptr [ESI + 0x6b415c]  ; 00405c31 | DAT_006b415c
     ADD ESP,0x4                         ; 00405c37
     MOV EBP,dword ptr [EBP + 0x4]       ; 00405c3a
@@ -170,8 +170,8 @@ section .text
     PUSH EAX                            ; 00405c65
     ADD ESI,0x4                         ; 00405c66
     INC EDI                             ; 00405c69
-    CALL engine_3d.c_FUN_00405340       ; 00405c6a
-        ;   XREF to: 00405340 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00405340()
+    CALL engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340 ; 00405c6a
+        ;   XREF to: 00405340 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340()
     MOV EDX,dword ptr [0x006b0268]      ; 00405c6f | DAT_006b0268
     ADD ESP,0x4                         ; 00405c75
     CMP EDI,EDX                         ; 00405c78

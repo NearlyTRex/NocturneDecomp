@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setdir_cpp_FUN_00513670(undefined4 *param_1,undefined4 param_2)
+; void core_setdir_cpp_FUN_00513670(SIZE_T *param_1,char *param_2)
 ;
 ;
 ; XREF[1]:
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 0051367d
     PUSH 0x590c10                       ; 0051367e | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00513683
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00513688
     MOV EBX,EAX                         ; 0051368b
     TEST EAX,EAX                        ; 0051368d
@@ -60,7 +60,7 @@ section .text
     PUSH 0x3000                         ; 005136bd
     PUSH 0x20875f8                      ; 005136c2
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 005136c7
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV AH,byte ptr [EBX + 0xc]         ; 005136cc
     ADD ESP,0x10                        ; 005136cf
     TEST AH,0x20                        ; 005136d2
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 005136e5 (CONDITIONAL_JUMP)  ; LAB_005136e5
     PUSH EBX                            ; 005136d7
     CALL crt_stdio.c_fclose_FUN_00563380 ; 005136d8
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 005136dd
     POP EBP                             ; 005136e0
     POP EDI                             ; 005136e1
@@ -87,7 +87,7 @@ section .text
     ADD ESP,0x8                         ; 00513705
     PUSH EBX                            ; 00513708
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00513709
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051370e
     POP EBP                             ; 00513711
     POP EDI                             ; 00513712

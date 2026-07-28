@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(int *param_1)
+; void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
 ;
+; Parameters:
+; CMoon *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -55,7 +57,7 @@ section .text
     MOV dword ptr [EDI + 0x4],0x3e800000 ; 004de879
     XOR EBX,EBX                         ; 004de880
     CALL crt_stdlib.c_rand_FUN_0056488c ; 004de882
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_004de882
     MOV EDX,EAX                         ; 004de887
     SAR EDX,0x1f                        ; 004de889
@@ -135,7 +137,7 @@ section .text
     PUSH 0x58a8ae                       ; 004de98b | = "taylor_head.kfm"
     PUSH EAX                            ; 004de990
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 004de991
-        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650()
+        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     MOV EAX,[0x005b9354]                ; 004de996 | DAT_005b9354
     ADD ESP,0x8                         ; 004de99b
     MOV dword ptr [EAX + 0x214],0x0     ; 004de99e | DAT_01c77800
@@ -143,7 +145,7 @@ section .text
         ;   Label: LAB_004de9a8
     PUSH 0x1cce1bc                      ; 004de9ad
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 004de9b2
-        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650()
+        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004de9b7
     PUSH 0x100                          ; 004de9ba
     PUSH 0x100                          ; 004de9bf
@@ -152,7 +154,7 @@ section .text
     MOV ESI,0x1ccdc64                   ; 004de9ce
     XOR EBX,EBX                         ; 004de9d3
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004de9d5
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004de9da
     PUSH 0x116                          ; 004de9dd
         ;   Label: LAB_004de9dd
@@ -162,7 +164,7 @@ section .text
     PUSH ESI                            ; 004de9ee
     ADD EBX,0x4                         ; 004de9ef
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004de9f2
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004de9f7
     ADD ESI,0x14                        ; 004de9fa
     CMP EBX,0x78                        ; 004de9fd
@@ -172,17 +174,17 @@ section .text
     PUSH 0x1ccdec8                      ; 004dea07
     MOV dword ptr [EDI],0x1             ; 004dea0c
     CALL core_course.cpp_CCourse_load_FUN_0043b690 ; 004dea12
-        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_load_FUN_0043b690()
+        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_0043b690(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004dea17
     PUSH 0x58a8e6                       ; 004dea1a | = "menu2.pth"
     PUSH 0x1ccded4                      ; 004dea1f
     CALL core_course.cpp_CCourse_load_FUN_0043b690 ; 004dea24
-        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_load_FUN_0043b690()
+        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_0043b690(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004dea29
     PUSH 0x58a8f0                       ; 004dea2c | = "menu3.pth"
     PUSH 0x1ccdee0                      ; 004dea31
     CALL core_course.cpp_CCourse_load_FUN_0043b690 ; 004dea36
-        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_load_FUN_0043b690()
+        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_0043b690(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004dea3b
     JMP 0x004de874                      ; 004dea3e
         ;   XREF to: 004de874 (UNCONDITIONAL_JUMP)  ; LAB_004de874
@@ -190,7 +192,7 @@ section .text
         ;   Label: LAB_004dea43
     PUSH EAX                            ; 004dea48
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 004dea49
-        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650()
+        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004dea4e
     JMP 0x004de9a8                      ; 004dea51
         ;   XREF to: 004de9a8 (UNCONDITIONAL_JUMP)  ; LAB_004de9a8

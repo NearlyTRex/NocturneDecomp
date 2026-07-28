@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_killSound_FUN_0052ebb0(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_sound_cpp_CSound_killSound_FUN_0052ebb0(CSound *this_ptr,uint sfx_handle)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   sfx_handle
 ;
 ; XREF[7]:
 ;   core_dynamite.cpp_CDynamite_process_FUN_0046edc0 at 0046ee49
@@ -24,7 +27,7 @@ section .text
         ;   Label: core_sound.cpp_CSound_killSound_FUN_0052ebb0
     PUSH EDX                            ; 0052ebb4
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0052ebb5
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0052ebba
     RET                                 ; 0052ebbd
 

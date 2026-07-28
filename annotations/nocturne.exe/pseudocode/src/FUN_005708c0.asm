@@ -7,7 +7,7 @@
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[1]:
-;   FUN_0056c864 at 0056ca18
+;   crt_io.c_getFileStat_FUN_0056c864 at 0056ca18
 ;
 ; Referenced Globals:
 ;   void* PTR_FileTimeToDosDateTime_005754bc = 00175ba6

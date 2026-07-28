@@ -15,7 +15,7 @@ int engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(int param_1
   int *piVar2;
   int *piVar3;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
   if (iVar1 != 0) {
     if (_DAT_01c038f4 == 0) {
       if (_DAT_01c03948 == 0) {

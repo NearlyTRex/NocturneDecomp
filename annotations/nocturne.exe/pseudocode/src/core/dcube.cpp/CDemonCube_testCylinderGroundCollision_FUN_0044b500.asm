@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float *param_5,uint *param_6)
+; int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 ;
+; Parameters:
+; CDemonCube *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   cylinder_position
+; float            Stack[0xc]:4   cylinder_radius
+; CVector3f *      Stack[0x10]:4   output_height
+; CVector3f *      Stack[0x14]:4   output_normal
+; uint *           Stack[0x18]:4   output_material
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -53,7 +60,7 @@ section .text
     ADD EAX,ESI                         ; 0044b52c
     PUSH EAX                            ; 0044b52e
     CALL core_dcube.cpp_triangleCylinderCollision_FUN_00449d30 ; 0044b52f
-        ;   XREF to: 00449d30 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_triangleCylinderCollision_FUN_00449d30()
+        ;   XREF to: 00449d30 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTriangle * triangle, CVector3f * cylinder_center, float cylinder_radius, float * out_height)
     ADD ESP,0x10                        ; 0044b534
     TEST EAX,EAX                        ; 0044b537
     JZ 0x0044b53d                       ; 0044b539

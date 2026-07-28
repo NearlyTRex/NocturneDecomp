@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00472fd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5)
+; void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -19,7 +19,7 @@
 ;   engine_3d.c_processCameraRelativePoint_FUN_004044d0
 ;   engine_matrix.c_matrixPushAndTransform_FUN_004cd380
 ;   engine_matrix.c_pop_FUN_004cdbc0
-;   shape_edittool.cpp_FUN_00472de0
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     MOV EBX,ESP                         ; 00473000
     PUSH EBX                            ; 00473002
     CALL engine_3d.c_processCameraRelativePoint_FUN_004044d0 ; 00473003
-        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processCameraRelativePoint_FUN_004044d0()
+        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f * input_point)
     ADD ESP,0x4                         ; 00473008
     LEA EBX,[ESP + 0x10]                ; 0047300b
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0047300f
@@ -67,18 +67,18 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 00473045
     PUSH EBX                            ; 00473049
     CALL engine_matrix.c_matrixPushAndTransform_FUN_004cd380 ; 0047304a
-        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_matrixPushAndTransform_FUN_004cd380()
+        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_004cd380(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 0047304f
     MOV ESI,dword ptr [ESP + 0x34]      ; 00473052
     PUSH ESI                            ; 00473056
     MOV EDI,dword ptr [ESP + 0x30]      ; 00473057
     PUSH dword ptr [ESP + 0x34]         ; 0047305b
     PUSH EDI                            ; 0047305f
-    CALL shape_edittool.cpp_FUN_00472de0 ; 00473060
-        ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00472de0()
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 ; 00473060
+        ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00473065
     CALL engine_matrix.c_pop_FUN_004cdbc0 ; 00473068
-        ;   XREF to: 004cdbc0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_pop_FUN_004cdbc0()
+        ;   XREF to: 004cdbc0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004cdbc0()
     ADD ESP,0x1c                        ; 0047306d
     POP EDI                             ; 00473070
     POP ESI                             ; 00473071

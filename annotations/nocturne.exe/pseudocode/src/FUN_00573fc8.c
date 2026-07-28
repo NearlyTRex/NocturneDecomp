@@ -11,8 +11,8 @@
 void FUN_00573fc8(void)
 
 {
-  (*(code *)PTR_FUN_005c1b00)();
-  FUN_0056ef24();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00567208_005c1b00)();
+  RemoveExceptionHandler();
   if (_DAT_02de4e30 == 0) {
     FUN_0056e664(1);
   }

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00495682
         ;   Label: LAB_00495682
     CALL core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 ; 00495683
-        ;   XREF to: 004956a0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_CGabriella_ctor_FUN_004956a0()
+        ;   XREF to: 004956a0 (UNCONDITIONAL_CALL)  ; CGabriella * core_gabriela.cpp_CGabriella_ctor_FUN_004956a0(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 00495688
     RET                                 ; 0049568b
 

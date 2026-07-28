@@ -2,13 +2,13 @@
 // Address: 004613c0
 // Address Range: [[004613c0, 004613cb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(int param_1,undefined4 param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(CDemonRenderer *this_ptr,int enabled)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(int param_1,uint param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(CDemonRenderer *this_ptr,int enabled)
 
 {
-  *(uint *)(param_1 + 0x18) = param_2;
+  this_ptr->advanced_culling_enabled = enabled;
   return;
 }

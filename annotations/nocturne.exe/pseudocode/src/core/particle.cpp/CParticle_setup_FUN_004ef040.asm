@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+; void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(CParticle *this_ptr,CVector3f *position,CVector3f *velocity)
 ;
+; Parameters:
+; CParticle *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x8]:4  local_8

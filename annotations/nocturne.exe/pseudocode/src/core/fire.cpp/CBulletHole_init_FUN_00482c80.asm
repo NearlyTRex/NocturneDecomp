@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(float *param_1,float *param_2,float *param_3)
+; void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 ;
+; Parameters:
+; CBulletHole *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   hit_position
+; CVector3f *      Stack[0xc]:4   surface_normal
+; CDemonActor *    Stack[0x10]:4   hit_actor
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
 ; undefined        Stack[-0xdc]:1  local_dc
@@ -19,7 +24,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0048ab60 at 0048ad21
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ad21
 ;
 ; Referenced Globals:
 ;   float FLOAT_005810b8 = 0.1000000
@@ -88,19 +93,19 @@ section .text
     FSQRT                               ; 00482d35
     FLD float ptr [EBP + 0x4]           ; 00482d37
     CALL crt_math.c_atan2_FUN_00566c81  ; 00482d3a
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     MOV dword ptr [EBX + 0x1c],0x0      ; 00482d3f
     FCHS                                ; 00482d46
     FSTP float ptr [EBX + 0x14]         ; 00482d48
     FLD float ptr [EBP + 0x8]           ; 00482d4b
     FLD float ptr [EBP]                 ; 00482d4e
     CALL crt_math.c_atan2_FUN_00566c81  ; 00482d51
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     PUSH 0x3                            ; 00482d56
     PUSH 0x0                            ; 00482d58
     FSTP float ptr [EBX + 0x18]         ; 00482d5a
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00482d5d
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     MOV dword ptr [EBX + 0xc],0x1       ; 00482d62
     ADD ESP,0x8                         ; 00482d69
     MOV dword ptr [EBX + 0x20],EAX      ; 00482d6c
@@ -142,7 +147,7 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 00482dba
     PUSH EAX                            ; 00482dbe
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 00482dbf
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00482dc4
     LEA EAX,[ESP + 0x30]                ; 00482dc7
     PUSH EAX                            ; 00482dcb
@@ -161,7 +166,7 @@ section .text
     PUSH EAX                            ; 00482dfc
     MOVSD.REP ES:EDI,ESI                ; 00482dfd
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 00482dff
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     LEA EDX,[EBX + 0x24]                ; 00482e04
     ADD ESP,0x8                         ; 00482e07
     CMP EDX,EAX                         ; 00482e0a
@@ -179,7 +184,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 00482e26
     PUSH EAX                            ; 00482e2a
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 00482e2b
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     LEA EDX,[EBX + 0x14]                ; 00482e30
     ADD ESP,0x8                         ; 00482e33
     CMP EDX,EAX                         ; 00482e36

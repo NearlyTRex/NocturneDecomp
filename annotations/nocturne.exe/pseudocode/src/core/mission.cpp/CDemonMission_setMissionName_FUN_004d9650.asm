@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650(undefined4 param_1,char *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650(CDemonMission *this_ptr,char *name)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500de0

@@ -101,7 +101,7 @@ section .text
     PUSH EAX                            ; 00488347
     FSTP float ptr [ESP + 0x54]         ; 00488348
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0048834c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00488351
     PUSH 0x40cccccd                     ; 00488354
     PUSH 0x40a33333                     ; 00488359

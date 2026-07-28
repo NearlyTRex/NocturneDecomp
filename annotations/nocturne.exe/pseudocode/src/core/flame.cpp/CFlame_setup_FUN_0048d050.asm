@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_CFlame_setup_FUN_0048d050(int param_1)
+; void core_flame_cpp_CFlame_setup_FUN_0048d050(CDemonActor *param_1)
 ;
 ;
 ; XREF[2]:
@@ -34,7 +34,7 @@ section .text
     MOV EBP,0x5b8e00                    ; 0048d059 | DAT_005b8e00
     XOR EDI,EDI                         ; 0048d05e
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0048d060
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD EBP,0xc0                        ; 0048d065
     ADD ESP,0x4                         ; 0048d06b
     IMUL EBX,EDI,0xc0                   ; 0048d06e
@@ -46,7 +46,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 0048d07d | DAT_005ae704
     PUSH ECX                            ; 0048d083 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048d084
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 0048d089
     ADD ESP,0x8                         ; 0048d08c
     CMP EBX,ESI                         ; 0048d08f
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 0048d06e (CONDITIONAL_JUMP)  ; LAB_0048d06e
     MOV EBX,dword ptr [ESP + 0x14]      ; 0048d09f
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0048d0a3
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     AND EAX,0x1                         ; 0048d0a8
     MOV dword ptr [EBX + 0x28c],EAX     ; 0048d0ab
     POP EBP                             ; 0048d0b1

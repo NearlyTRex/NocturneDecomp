@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_stranger_cpp_FUN_005350c0(undefined4 param_1)
+; CCharacter * core_stranger_cpp_FUN_005350c0(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -49,7 +49,7 @@ section .text
     ADD EAX,0x1fb40                     ; 005350d0
     PUSH EAX                            ; 005350d5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 005350d6
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xfffe04c0]          ; 005350db
     MOV dword ptr [EBX + 0x14c],0x5a2744 ; 005350e1 | PTR_core_stranger.cpp_FUN_00535450_005a2744
     MOV dword ptr [EBX + 0x1fa3c],0x0   ; 005350eb
@@ -118,7 +118,7 @@ section .text
     ADD EAX,0x150                       ; 005352c9
     PUSH EAX                            ; 005352ce
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 005352cf
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005352d4
     PUSH 0x0                            ; 005352d7
     PUSH 0x595204                       ; 005352d9 | = "draw_stand2holsters"
@@ -126,7 +126,7 @@ section .text
     PUSH 0x0                            ; 005352e0
     PUSH EBX                            ; 005352e2
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005352e3
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005352e8
     PUSH 0x0                            ; 005352eb
     PUSH 0x595218                       ; 005352ed | = "draw_holsters2aimPistols"
@@ -134,7 +134,7 @@ section .text
     PUSH 0x1                            ; 005352f4
     PUSH EBX                            ; 005352f6
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005352f7
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005352fc
     PUSH 0x0                            ; 005352ff
     PUSH 0x595231                       ; 00535301 | = "draw_stand2coatPocket"
@@ -142,7 +142,7 @@ section .text
     PUSH 0x0                            ; 00535308
     PUSH EBX                            ; 0053530a
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 0053530b
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535310
     PUSH 0x0                            ; 00535313
     PUSH 0x595247                       ; 00535315 | = "draw_coatPocket2aimShotgun"
@@ -150,7 +150,7 @@ section .text
     PUSH 0x3                            ; 0053531c
     PUSH EBX                            ; 0053531e
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 0053531f
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535324
     PUSH 0x0                            ; 00535327
     PUSH 0x595262                       ; 00535329 | = "draw_coatPocket2aimFlameThrower"
@@ -158,7 +158,7 @@ section .text
     PUSH 0x3                            ; 00535330
     PUSH EBX                            ; 00535332
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 00535333
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535338
     PUSH 0x0                            ; 0053533b
     PUSH 0x595282                       ; 0053533d | = "draw_holsters2CoatPocket"
@@ -166,7 +166,7 @@ section .text
     PUSH 0x1                            ; 00535344
     PUSH EBX                            ; 00535346
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 00535347
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 0053534c
     PUSH 0x1                            ; 0053534f
     PUSH 0x59529b                       ; 00535351 | = "draw_stand2TossAim"
@@ -174,7 +174,7 @@ section .text
     PUSH 0x0                            ; 00535358
     PUSH EBX                            ; 0053535a
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 0053535b
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535360
     PUSH 0x1                            ; 00535363
     PUSH 0x5952ae                       ; 00535365 | = "draw_tossAim2Stand"
@@ -182,7 +182,7 @@ section .text
     PUSH 0x6                            ; 0053536c
     PUSH EBX                            ; 0053536e
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 0053536f
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535374
     PUSH 0x1                            ; 00535377
     PUSH 0x5952c1                       ; 00535379 | = "draw_shotGunRecoil"
@@ -190,7 +190,7 @@ section .text
     PUSH 0xb                            ; 00535380
     PUSH EBX                            ; 00535382
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 00535383
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535388
     PUSH 0x0                            ; 0053538b
     PUSH 0x5952d4                       ; 0053538d | = "draw_coatPocket2aimTommy"
@@ -198,7 +198,7 @@ section .text
     PUSH 0x3                            ; 00535394
     PUSH EBX                            ; 00535396
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 00535397
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 0053539c
     PUSH 0x0                            ; 0053539f
     PUSH 0x5952ed                       ; 005353a1 | = "draw_tommyRecoil"
@@ -206,7 +206,7 @@ section .text
     PUSH 0x7                            ; 005353a8
     PUSH EBX                            ; 005353aa
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005353ab
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005353b0
     PUSH 0x0                            ; 005353b3
     PUSH 0x5952fe                       ; 005353b5 | = "draw_stand2spearhold"
@@ -214,7 +214,7 @@ section .text
     PUSH 0x0                            ; 005353bc
     PUSH EBX                            ; 005353be
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005353bf
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005353c4
     PUSH 0x1                            ; 005353c7
     PUSH 0x595313                       ; 005353c9 | = "draw_spearStab"
@@ -222,7 +222,7 @@ section .text
     PUSH 0xc                            ; 005353d0
     PUSH EBX                            ; 005353d2
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005353d3
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005353d8
     PUSH 0x1                            ; 005353db
     PUSH 0x595322                       ; 005353dd | = "draw_spearOverheadswing"
@@ -230,7 +230,7 @@ section .text
     PUSH 0xc                            ; 005353e4
     PUSH EBX                            ; 005353e6
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005353e7
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 005353ec
     PUSH 0x0                            ; 005353ef
     PUSH 0x59533a                       ; 005353f1 | = "draw_holdCrate"
@@ -238,7 +238,7 @@ section .text
     PUSH 0x9                            ; 005353f8
     PUSH EBX                            ; 005353fa
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 005353fb
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535400
     PUSH 0x0                            ; 00535403
     PUSH 0x595349                       ; 00535405 | = "draw_coatPocket2GasMask"
@@ -246,7 +246,7 @@ section .text
     PUSH 0x3                            ; 0053540c
     PUSH EBX                            ; 0053540e
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 0053540f
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535414
     PUSH 0x0                            ; 00535417
     PUSH 0x595361                       ; 00535419 | = "draw_gasMask2Stand"
@@ -254,13 +254,13 @@ section .text
     PUSH 0xa                            ; 00535420
     PUSH EBX                            ; 00535422
     CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 ; 00535423
-        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760()
+        ;   XREF to: 0042a760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00535428
     PUSH 0x595374                       ; 0053542b | = "strcoat.cth"
     LEA EAX,[EBX + 0x2a8c]              ; 00535430
     PUSH EAX                            ; 00535436
     CALL core_cloth.cpp_CClothList_add_FUN_00438390 ; 00535437
-        ;   XREF to: 00438390 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_add_FUN_00438390()
+        ;   XREF to: 00438390 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_00438390(CClothList * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0053543c
     MOV EAX,EBX                         ; 0053543f
     MOV dword ptr [EBX + 0x1fcd4],0x0   ; 00535441

@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 005174f5
     MOV dword ptr [EBX + 0x2936c],0x0   ; 005174f6
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517500
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     MOV EAX,dword ptr [EBX + 0x29374]   ; 00517505
     ADD ESP,0x4                         ; 0051750b
     TEST EAX,EAX                        ; 0051750e
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0051753c
     PUSH EAX                            ; 0051753f
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517540
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00517545
     JMP 0x00517512                      ; 00517548
         ;   XREF to: 00517512 (UNCONDITIONAL_JUMP)  ; LAB_00517512
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_0051754a
     PUSH EAX                            ; 0051754d
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0051754e
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00517553
     JMP 0x0051751c                      ; 00517556
         ;   XREF to: 0051751c (UNCONDITIONAL_JUMP)  ; LAB_0051751c

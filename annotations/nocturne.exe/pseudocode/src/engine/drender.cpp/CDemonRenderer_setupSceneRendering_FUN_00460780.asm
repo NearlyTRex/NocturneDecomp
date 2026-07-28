@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(undefined4 param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(CDemonRenderer *this_ptr,CVector3f *euler_angles)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   euler_angles
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;
@@ -32,14 +35,14 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00460788
     PUSH EAX                            ; 0046078c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0046078d
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00460792
     MOV EAX,ESP                         ; 00460795
     PUSH EAX                            ; 00460797
     MOV ECX,dword ptr [ESP + 0x30]      ; 00460798
     PUSH ECX                            ; 0046079c
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0 ; 0046079d
-        ;   XREF to: 004607b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0()
+        ;   XREF to: 004607b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 004607a2
     ADD ESP,0x28                        ; 004607a5
     RET                                 ; 004607a8

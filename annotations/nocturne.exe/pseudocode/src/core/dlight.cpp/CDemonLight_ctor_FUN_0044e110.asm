@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   shadow_map_width
+; int              Stack[0xc]:4   shadow_map_height
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f32d
@@ -20,7 +24,7 @@ section .text
         ;   Label: core_dlight.cpp_CDemonLight_ctor_FUN_0044e110
     PUSH EDX                            ; 0044e114
     CALL core_dcamera.cpp_CDemonCamera_ctor_FUN_0043fee0 ; 0044e115
-        ;   XREF to: 0043fee0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_ctor_FUN_0043fee0()
+        ;   XREF to: 0043fee0 (UNCONDITIONAL_CALL)  ; CDemonCamera * core_dcamera.cpp_CDemonCamera_ctor_FUN_0043fee0(CDemonCamera * this_ptr)
     MOV dword ptr [EAX + 0x1cb4],0x1    ; 0044e11a
     MOV dword ptr [EAX + 0x1cb8],0x1    ; 0044e124
     MOV dword ptr [EAX + 0x2f94],0x0    ; 0044e12e

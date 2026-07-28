@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0051b750(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0051b750(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00 at 0051de03
@@ -33,7 +35,7 @@ section .text
     ADD ESP,0x4                         ; 0051b75c
     PUSH EBX                            ; 0051b75f
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051b760
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     MOV ESI,dword ptr [EAX + 0x2c]      ; 0051b765
     LEA EAX,[ESI*0x4 + 0x0]             ; 0051b768
     SUB EAX,ESI                         ; 0051b76f
@@ -41,7 +43,7 @@ section .text
     SHL EAX,0x2                         ; 0051b774
     PUSH EAX                            ; 0051b777
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0051b778
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 0051b77d
     MOV dword ptr [EBX + 0x2234],EAX    ; 0051b780
     TEST EAX,EAX                        ; 0051b786

@@ -2,16 +2,16 @@
 // Address: 00447f20
 // Address Range: [[00447f20, 00448307]]
 // Convention: unknown
-// Signature: undefined4 * core_dcamera_cpp_FUN_00447f20(int param_1,undefined4 *param_2)
+// Signature: CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint * core_dcamera_cpp_FUN_00447f20(int param_1,uint *param_2)
+CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)
 
 {
-  uint *puVar1;
+  CVector3f *pCVar1;
   uint uVar2;
   byte bVar3;
   int aiStackY_10d4 [1015];
@@ -38,7 +38,7 @@ uint * core_dcamera_cpp_FUN_00447f20(int param_1,uint *param_2)
   float fStack_5c;
   float fStack_58;
   float fStack_54;
-  byte auStack_50 [12];
+  CVector3f CStack_50;
   uint uStack_44;
   int aiStack_40 [4];
   int iStack_30;
@@ -51,16 +51,16 @@ uint * core_dcamera_cpp_FUN_00447f20(int param_1,uint *param_2)
   int iStack_14;
   
   bVar3 = 0;
-  puVar1 = param_2 + 3;
-  if (puVar1 != (uint *)&DAT_02dd1184) {
-    *puVar1 = _DAT_02dd1184;
-    param_2[4] = _DAT_02dd1188;
-    param_2[5] = _DAT_02dd118c;
+  pCVar1 = &param_2->max;
+  if (pCVar1 != (CVector3f *)&DAT_02dd1184) {
+    pCVar1->x = _DAT_02dd1184;
+    (param_2->max).y = _DAT_02dd1188;
+    (param_2->max).z = _DAT_02dd118c;
   }
-  if (puVar1 != param_2) {
-    *param_2 = *puVar1;
-    param_2[1] = param_2[4];
-    param_2[2] = param_2[5];
+  if ((CBoundingBox3D *)pCVar1 != param_2) {
+    (param_2->min).x = pCVar1->x;
+    (param_2->min).y = (param_2->max).y;
+    (param_2->min).z = (param_2->max).z;
   }
   pfStack_20 = (float *)(param_1 + 0x104);
   aiStack_40[2] = 0;
@@ -95,8 +95,8 @@ LAB_004480de:
         fStack_58 = fStack_a0 - pfStack_20[1];
         fStack_54 = fStack_9c - pfStack_20[2];
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                  (aiStack_40[3],auStack_50,&fStack_5c);
-        core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,auStack_50);
+                  (aiStack_40[3],&CStack_50,&fStack_5c);
+        core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_2,&CStack_50);
       }
       else {
         uVar2 = 0;

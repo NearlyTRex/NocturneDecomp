@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLPrimitiveQuad * Stack[0x8]:4   primitive_array
+; int              Stack[0xc]:4   primitive_count
+; int              Stack[0x10]:4   primitive_stride
+; int              Stack[0x14]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -64,7 +70,7 @@ section .text
     PUSH EBX                            ; 004614d5
     PUSH ESI                            ; 004614d6
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460 ; 004614d7
-        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460()
+        ;   XREF to: 0045f460 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 004614dc
     MOV EDX,dword ptr [ESP + 0x38]      ; 004614df
     INC EBP                             ; 004614e3
@@ -120,7 +126,7 @@ section .text
     DEC EDI                             ; 0046155a
     ADD EBX,ESI                         ; 0046155b
     CALL engine_drender.cpp_renderTriangleSimple_FUN_00458080 ; 0046155d
-        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleSimple_FUN_00458080()
+        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_00458080(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00461562
     TEST EDI,EDI                        ; 00461565
     JLE 0x004614f0                      ; 00461567
@@ -209,7 +215,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00461657
     PUSH EAX                            ; 0046165b
     CALL engine_drender.cpp_renderTriangleTextured_FUN_00457a00 ; 0046165c
-        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleTextured_FUN_00457a00()
+        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00457a00(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00461661
     MOV EBP,dword ptr [ESP + 0x38]      ; 00461664
     DEC EDI                             ; 00461668
@@ -230,7 +236,7 @@ section .text
     PUSH EBX                            ; 0046168d
         ;   Label: LAB_0046168d
     CALL engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0 ; 0046168e
-        ;   XREF to: 004f9ad0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0()
+        ;   XREF to: 004f9ad0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0(SMRGLPrimitiveTriangle * triangle)
     ADD ESP,0x4                         ; 00461693
     TEST EAX,EAX                        ; 00461696
     JZ 0x004616d7                       ; 00461698
@@ -272,7 +278,7 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 004616ff
     PUSH EDI                            ; 00461701
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00461702
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00461707
     ADD ESP,0x18                        ; 0046170a
     POP EBP                             ; 0046170d

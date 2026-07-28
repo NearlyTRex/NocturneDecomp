@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 0051f65d
         ;   Label: LAB_0051f65d
     CALL core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0 ; 0051f65e
-        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0()
+        ;   XREF to: 00517cc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0(CDeformableModel * this_ptr)
     ADD EBX,0x2ac0                      ; 0051f663
     ADD ESP,0x4                         ; 0051f669
     CMP EBX,ESI                         ; 0051f66c

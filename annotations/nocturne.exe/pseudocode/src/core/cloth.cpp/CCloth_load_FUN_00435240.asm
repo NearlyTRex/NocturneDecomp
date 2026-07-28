@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(int param_1,undefined4 param_2)
+; int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filename)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x138]:1  local_138
 ; undefined4       Stack[-0x38]:4  local_38
@@ -68,7 +71,7 @@ section .text
     PUSH EBX                            ; 0043525d
     PUSH 0x57acae                       ; 0043525e | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00435263
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00435268
     MOV dword ptr [ESP + 0x208],EAX     ; 0043526b
     TEST EAX,EAX                        ; 00435272
@@ -81,7 +84,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00435287
     PUSH EAX                            ; 0043528e
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0043528f
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00435294
     LEA EAX,[ESI + 0x3ab20]             ; 00435297
     PUSH EAX                            ; 0043529d
@@ -112,7 +115,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004352eb
     PUSH EAX                            ; 004352f2
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004352f3
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004352f8
     MOV EAX,ESP                         ; 004352fb
     PUSH EAX                            ; 004352fd
@@ -125,11 +128,11 @@ section .text
     PUSH EAX                            ; 0043530e
     PUSH ESI                            ; 0043530f
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 00435310
-        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650()
+        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00435315
     PUSH ESI                            ; 00435318
     CALL core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950 ; 00435319
-        ;   XREF to: 00453950 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950()
+        ;   XREF to: 00453950 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0043531e
     PUSH EBP                            ; 00435321
     PUSH 0xff                           ; 00435322
@@ -137,7 +140,7 @@ section .text
     PUSH EAX                            ; 0043532e
     LEA EBP,[ESI + 0x37b18]             ; 0043532f
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00435335
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     LEA EAX,[ESI + 0x37b1c]             ; 0043533a
     LEA EBX,[ESI + 0x37b20]             ; 00435340
     LEA EDX,[ESI + 0x37b24]             ; 00435346
@@ -189,7 +192,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00435408
     PUSH EAX                            ; 0043540f
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00435410
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00435415
     LEA EAX,[ESI + 0x37b48]             ; 00435418
     PUSH EAX                            ; 0043541e
@@ -207,7 +210,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00435442
     PUSH EAX                            ; 00435449
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0043544a
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0043544f
     LEA EAX,[ESI + 0x37b44]             ; 00435452
     PUSH EAX                            ; 00435458
@@ -223,7 +226,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00435474
     PUSH EAX                            ; 0043547b
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0043547c
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00435481
     LEA EAX,[ESI + 0x39ce8]             ; 00435484
     PUSH EAX                            ; 0043548a
@@ -234,7 +237,7 @@ section .text
     ADD ESP,0xc                         ; 00435496
     PUSH ESI                            ; 00435499
     CALL core_cloth.cpp_CCloth_allocMemory_FUN_004351b0 ; 0043549a
-        ;   XREF to: 004351b0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_allocMemory_FUN_004351b0()
+        ;   XREF to: 004351b0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_allocMemory_FUN_004351b0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 0043549f
     PUSH EBX                            ; 004354a2
     PUSH 0xff                           ; 004354a3
@@ -242,7 +245,7 @@ section .text
     PUSH EAX                            ; 004354af
     XOR EBX,EBX                         ; 004354b0
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004354b2
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     MOV EAX,dword ptr [ESI + 0x39ce8]   ; 004354b7
     ADD ESP,0xc                         ; 004354bd
     TEST EAX,EAX                        ; 004354c0
@@ -267,7 +270,7 @@ section .text
     PUSH ESI                            ; 004354f0
         ;   Label: LAB_004354f0
     CALL core_cloth.cpp_CCloth_initializeConnections_FUN_004357b0 ; 004354f1
-        ;   XREF to: 004357b0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_initializeConnections_FUN_004357b0()
+        ;   XREF to: 004357b0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_initializeConnections_FUN_004357b0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 004354f6
     MOV EBX,dword ptr [ESP + 0x208]     ; 004354f9
     PUSH EBX                            ; 00435500
@@ -275,7 +278,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00435506
     PUSH EAX                            ; 0043550d
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0043550e
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00435513
     LEA EAX,[ESI + 0x37b4c]             ; 00435516
     PUSH EAX                            ; 0043551c
@@ -370,7 +373,7 @@ section .text
     PUSH EBX                            ; 004356c7
     XOR EDI,EDI                         ; 004356c8
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004356ca
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EBP,dword ptr [ESI + 0x104]     ; 004356cf
     ADD ESP,0x4                         ; 004356d5
     TEST EBP,EBP                        ; 004356d8

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(int *param_1,int param_2,int param_3)
+; void __cdecl core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004b1d00(CGround *this_ptr,int column,int row)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   column
+; int              Stack[0xc]:4   row
 ;
 ; XREF[1]:
 ;   core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 at 004b1f17

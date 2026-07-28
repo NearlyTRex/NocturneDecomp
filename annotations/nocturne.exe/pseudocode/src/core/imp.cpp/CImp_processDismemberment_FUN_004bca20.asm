@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004bca20(int param_1,int *param_2)
+; void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004bca20(CImp *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CImp *           Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -51,7 +54,7 @@ section .text
     JNZ 0x004bca65                      ; 004bca3e
         ;   XREF to: 004bca65 (CONDITIONAL_JUMP)  ; default
     CALL crt_stdlib.c_rand_FUN_0056488c ; 004bca40
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV EDX,EAX                         ; 004bca45
     MOV EDI,0x6                         ; 004bca47
     SAR EDX,0x1f                        ; 004bca4c
@@ -101,7 +104,7 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 004bcac6
         ;   Label: LAB_004bcac6
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004bcaca
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 004bcacf
     TEST EAX,EAX                        ; 004bcad2
     JZ 0x004bcbdc                       ; 004bcad4
@@ -118,7 +121,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004bcaee
     PUSH EAX                            ; 004bcaf1
     CALL core_bodypart.cpp_createBodyPart_FUN_00415b30 ; 004bcaf2
-        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_createBodyPart_FUN_00415b30()
+        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00415b30(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 004bcaf7
     MOV EDI,EAX                         ; 004bcafa
     PUSH 0x1                            ; 004bcafc
@@ -128,7 +131,7 @@ section .text
     PUSH EDI                            ; 004bcb03
     PUSH EBX                            ; 004bcb04
     CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 ; 004bcb05
-        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0()
+        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     MOV EAX,dword ptr [ESI]             ; 004bcb0a
     MOV EDX,dword ptr [EBX + 0xbd30]    ; 004bcb0c
     ADD ESP,0x10                        ; 004bcb12
@@ -141,7 +144,7 @@ section .text
     PUSH EDI                            ; 004bcb22
     PUSH EBX                            ; 004bcb23
     CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 ; 004bcb24
-        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0()
+        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 004bcb29
     MOV EDI,dword ptr [EBX + 0xbd38]    ; 004bcb2c
         ;   Label: LAB_004bcb2c
@@ -154,7 +157,7 @@ section .text
     PUSH EBP                            ; 004bcb3f
     PUSH EBX                            ; 004bcb40
     CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 ; 004bcb41
-        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0()
+        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 004bcb46
     MOV EDX,dword ptr [EBX + 0xbd54]    ; 004bcb49
         ;   Label: LAB_004bcb49
@@ -168,7 +171,7 @@ section .text
     PUSH ECX                            ; 004bcb5f
     PUSH EBX                            ; 004bcb60
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40 ; 004bcb61
-        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40()
+        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 004bcb66
     PUSH 0x1                            ; 004bcb69
     PUSH EDI                            ; 004bcb6b
@@ -176,7 +179,7 @@ section .text
     PUSH EAX                            ; 004bcb72
     PUSH EBX                            ; 004bcb73
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40 ; 004bcb74
-        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40()
+        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 004bcb79
     PUSH 0x1                            ; 004bcb7c
     PUSH EDI                            ; 004bcb7e
@@ -184,7 +187,7 @@ section .text
     PUSH EDX                            ; 004bcb85
     PUSH EBX                            ; 004bcb86
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40 ; 004bcb87
-        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40()
+        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 004bcb8c
     PUSH 0x1                            ; 004bcb8f
     PUSH EDI                            ; 004bcb91
@@ -192,7 +195,7 @@ section .text
     PUSH ECX                            ; 004bcb98
     PUSH EBX                            ; 004bcb99
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40 ; 004bcb9a
-        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40()
+        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 004bcb9f
     PUSH 0x1                            ; 004bcba2
     PUSH EDI                            ; 004bcba4
@@ -200,17 +203,17 @@ section .text
     PUSH EDI                            ; 004bcbab
     PUSH EBX                            ; 004bcbac
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40 ; 004bcbad
-        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40()
+        ;   XREF to: 00427e40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 004bcbb2
     PUSH 0x58649a                       ; 004bcbb5 | = "limb?.wav"
         ;   Label: LAB_004bcbb5
     PUSH EBX                            ; 004bcbba
     CALL core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b490 ; 004bcbbb
-        ;   XREF to: 0042b490 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b490()
+        ;   XREF to: 0042b490 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(CCharacter * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 004bcbc0
     PUSH EBP                            ; 004bcbc3
     CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 ; 004bcbc4
-        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40()
+        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 004bcbc9
     FLD float ptr [ESI + 0x8]           ; 004bcbcc
     FLD ST0                             ; 004bcbcf

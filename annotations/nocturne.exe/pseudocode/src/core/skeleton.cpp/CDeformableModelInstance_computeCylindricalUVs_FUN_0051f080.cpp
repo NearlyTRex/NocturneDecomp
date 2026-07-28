@@ -2,80 +2,83 @@
 // Address: 0051f080
 // Address Range: [[0051f080, 0051f1cd]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(int param_1,int param_2,int param_3)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
-  int extraout_ECX;
-  int *piVar4;
-  int *extraout_EDX;
+  CVector3i *pCVar2;
+  CDeformableModel *pCVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  int iVar7;
+  int extraout_ECX;
+  int *piVar6;
+  int *extraout_EDX;
+  char *pcVar7;
   int iVar8;
-  float10 fVar9;
+  int iVar9;
+  int iVar10;
+  float10 fVar11;
+  double dVar12;
   
-  if (*(int *)(param_1 + 0x2230) < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0xfa7;
     core_main_c_FUN_004c8440("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1);
-  iVar1 = *(int *)(iVar1 + 0x2c + *(int *)(param_1 + 0x2230) * 4);
-  iVar3 = *(int *)(param_1 + 0x2234);
-  iVar7 = 1;
-  iVar5 = *(int *)(iVar3 + 4);
-  iVar6 = iVar5;
-  iVar8 = iVar5;
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
+  iVar1 = pCVar3->vertex_count[this_ptr->cached_skinned_lod_index];
+  pCVar2 = this_ptr->skinned_vertices_buffer;
+  iVar10 = 1;
+  iVar8 = pCVar2->y;
+  iVar9 = iVar8;
+  iVar4 = iVar8;
   if (1 < iVar1) {
     do {
-      iVar2 = *(int *)(iVar3 + 0x10);
-      iVar6 = iVar2;
-      if ((iVar8 <= iVar2) && (iVar6 = iVar8, iVar5 < iVar2)) {
-        iVar5 = iVar2;
+      iVar5 = pCVar2[1].y;
+      iVar9 = iVar5;
+      if ((iVar4 <= iVar5) && (iVar9 = iVar4, iVar8 < iVar5)) {
+        iVar8 = iVar5;
       }
-      iVar7 = iVar7 + 1;
-      iVar8 = iVar6;
-      iVar3 = iVar3 + 0xc;
-    } while (iVar7 < iVar1);
+      iVar10 = iVar10 + 1;
+      iVar4 = iVar9;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar10 < iVar1);
   }
-  iVar5 = iVar5 - iVar6;
-  if (iVar5 < 1) {
-    iVar5 = 1;
+  iVar8 = iVar8 - iVar9;
+  if (iVar8 < 1) {
+    iVar8 = 1;
   }
   if (0 < iVar1) {
-    iVar8 = 0;
-    iVar3 = 0;
+    iVar10 = 0;
+    iVar4 = 0;
     do {
-      piVar4 = (int *)(*(int *)(param_1 + 0x2234) + iVar8);
-      if ((*piVar4 == 0) && (piVar4[2] == 0)) {
-        iVar7 = *DAT_005ae704;
-        iVar2 = param_2;
+      piVar6 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
+      if ((*piVar6 == 0) && (piVar6[2] == 0)) {
+        iVar5 = *DAT_005ae704;
+        pcVar7 = (char *)u_offset;
       }
       else {
-        fVar9 = (float10)atan2((float10)*piVar4,(float10)piVar4[2]);
-        fVar9 = (float10)round(fVar9 * (float10)2670176.8577967598);
-        iVar2 = param_1 + (int)ROUND(fVar9);
-        iVar7 = *DAT_005ae704;
-        iVar3 = extraout_ECX;
-        piVar4 = extraout_EDX;
+        fVar11 = atan2((float10)*piVar6,(float10)piVar6[2]);
+        dVar12 = round((double)(fVar11 * (float10)2670176.8577967598));
+        pcVar7 = (this_ptr->motion_controller).current_motion_name + (int)ROUND(dVar12) + -0x30;
+        iVar5 = *DAT_005ae704;
+        iVar4 = extraout_ECX;
+        piVar6 = extraout_EDX;
       }
-      *(int *)(iVar3 + 0x18 + iVar7) = iVar2;
-      iVar7 = iVar3 + 0x30;
-      *(int *)(iVar3 + 0x1c + *DAT_005ae704) =
-           param_3 + (int)((longlong)
-                           ((((longlong)(piVar4[1] - iVar6) & 0xffffffffffU) >> 8) << 0x20 |
-                           (longlong)(piVar4[1] - iVar6) * 0x1000000 & 0xffffffffU) /
-                          (longlong)iVar5);
-      iVar8 = iVar8 + 0xc;
-      iVar3 = iVar7;
-    } while (iVar7 < iVar1 * 0x30);
+      *(char **)(iVar4 + 0x18 + iVar5) = pcVar7;
+      iVar5 = iVar4 + 0x30;
+      *(int *)(iVar4 + 0x1c + *DAT_005ae704) =
+           v_offset +
+           (int)((longlong)
+                 ((((longlong)(piVar6[1] - iVar9) & 0xffffffffffU) >> 8) << 0x20 |
+                 (longlong)(piVar6[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
+      iVar10 = iVar10 + 0xc;
+      iVar4 = iVar5;
+    } while (iVar5 < iVar1 * 0x30);
   }
   return;
 }

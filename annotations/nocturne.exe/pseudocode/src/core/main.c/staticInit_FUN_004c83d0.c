@@ -9,13 +9,13 @@
 void __cdecl core_main_c_staticInit_FUN_004c83d0(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(0x1cc480c);
-  FUN_00564bb0(0x5bad0e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(0x1cc4820);
-  FUN_00564bb0(0x5bad1e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(0x1cc4834);
-  FUN_00564bb0(0x5bad2e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(0x1cc4848);
-  FUN_00564bb0(0x5bad3e);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320((CAlphaBitmap *)0x1cc480c);
+  _atexit((WatcomStaticDestructorNode *)0x5bad0e);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320((CAlphaBitmap *)0x1cc4820);
+  _atexit((WatcomStaticDestructorNode *)0x5bad1e);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320((CAlphaBitmap *)0x1cc4834);
+  _atexit((WatcomStaticDestructorNode *)0x5bad2e);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320((CAlphaBitmap *)0x1cc4848);
+  _atexit((WatcomStaticDestructorNode *)0x5bad3e);
   return;
 }

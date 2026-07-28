@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_FUN_004790f0(int param_1,int param_2)
+; void core_emitter_cpp_FUN_004790f0(CDemonActor *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 00479104
         ;   Label: LAB_00479104
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00479105
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 0047910a
     PUSH 0x0                            ; 0047910d
     LEA EDX,[ESP + 0x4]                 ; 0047910f
@@ -39,12 +39,12 @@ section .text
     ADD ESP,0x8                         ; 0047911e
     PUSH EAX                            ; 00479121
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 00479122
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 00479127
     PUSH EBX                            ; 0047912a
     MOV dword ptr [EBX + 0x484],EAX     ; 0047912b
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 00479131
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00479136
     ADD ESP,0x18                        ; 00479139
     POP EBX                             ; 0047913c

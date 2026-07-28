@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_FUN_00516770(int param_1)
+; void core_shotgun_cpp_FUN_00516770(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x44]:1  local_44
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0051677e | DAT_005ae704
     PUSH EDX                            ; 00516784 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00516785
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0051678a
     TEST EAX,EAX                        ; 0051678d
     JZ 0x00516797                       ; 0051678f
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 005167b1
     PUSH EBX                            ; 005167b2
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005167b3
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005167b8
     MOV EAX,dword ptr [EBX + 0x2e0]     ; 005167bb
     MOV dword ptr [ESP + 0x60],EAX      ; 005167c1
@@ -158,7 +158,7 @@ section .text
     MOV ECX,dword ptr [0x005b80f0]      ; 005168dd | DAT_005b80f0
     PUSH ECX                            ; 005168e3
     CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0 ; 005168e4
-        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0()
+        ;   XREF to: 0048b3e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     ADD ESP,0x20                        ; 005168e9
     MOV dword ptr [EBX + 0x574],0x1     ; 005168ec
     FLD float ptr [ESP + 0x4c]          ; 005168f6

@@ -2,62 +2,61 @@
 // Address: 00473cf0
 // Address Range: [[00473cf0, 00473ddc]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int param_2,char *param_3)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(CStrList *this_ptr,int insert_index,char *string_data)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int param_2,char *param_3)
+void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(CStrList *this_ptr,int insert_index,char *string_data)
 
 {
   char cVar1;
   int iVar2;
-  uint uVar3;
+  char *pcVar3;
   uint uVar4;
   int iVar5;
-  char *pcVar6;
-  byte bVar7;
+  byte bVar6;
   
-  bVar7 = 0;
-  if ((param_2 < 0) || (*param_1 < param_2)) {
+  bVar6 = 0;
+  if ((insert_index < 0) || (this_ptr->item_count < insert_index)) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
     INT_01cc4804 = 0x9ba;
     core_main_c_FUN_004c8440("CStrList::insert - invalid index");
   }
-  iVar2 = *param_1;
+  iVar2 = this_ptr->item_count;
   iVar5 = iVar2 + 1;
-  *param_1 = iVar5;
-  if (param_1[1] < iVar5) {
-    shape_edittool_cpp_CStrList_allocate_FUN_00473de0(param_1,iVar2 + 0x15);
+  this_ptr->item_count = iVar5;
+  if (this_ptr->capacity < iVar5) {
+    shape_edittool_cpp_CStrList_allocate_FUN_00473de0(this_ptr,iVar2 + 0x15);
   }
-  iVar2 = param_2 * 4;
   memmove
-            (param_1[2] + iVar2 + 4,param_1[2] + iVar2,(*param_1 - param_2) * 4 + -4);
+            (this_ptr->data_array + insert_index + 1,this_ptr->data_array + insert_index,
+             (this_ptr->item_count - insert_index) * 4 - 4);
   uVar4 = 0xffffffff;
-  pcVar6 = param_3;
+  pcVar3 = string_data;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  uVar3 = malloc(~uVar4);
-  *(uint *)(param_1[2] + iVar2) = uVar3;
-  if (*(int *)(iVar2 + param_1[2]) == 0) {
+  pcVar3 = (char *)malloc(~uVar4);
+  this_ptr->data_array[insert_index] = pcVar3;
+  if (this_ptr->data_array[insert_index] == (char *)0x0) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
     INT_01cc4804 = 0x9c8;
     core_main_c_FUN_004c8440("CStrList::insert - out of memory");
   }
-  pcVar6 = *(char **)(param_1[2] + param_2 * 4);
+  pcVar3 = this_ptr->data_array[insert_index];
   do {
-    cVar1 = *param_3;
-    *pcVar6 = cVar1;
+    cVar1 = *string_data;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = param_3[1];
-    param_3 = param_3 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = string_data[1];
+    string_data = string_data + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   return;
 }

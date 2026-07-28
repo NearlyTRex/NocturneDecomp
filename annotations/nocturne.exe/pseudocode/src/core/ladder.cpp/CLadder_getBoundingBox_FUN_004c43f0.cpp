@@ -15,10 +15,11 @@ float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *p
   float fVar4;
   float fVar5;
   float fVar6;
-  int iVar7;
+  CKeyFramedModel *pCVar7;
   
-  iVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  if (*(int *)(iVar7 + 0x110) < 1) {
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  if (pCVar7->poly_count < 1) {
     fVar5 = (float)0.5;
     fVar1 = *(float *)(param_1 + 0x2d4);
     fVar2 = *(float *)(param_1 + 0x2cc);
@@ -33,12 +34,13 @@ float * core_ladder_cpp_CLadder_getBoundingBox_FUN_004c43f0(int param_1,float *p
     param_2[5] = fVar5 * fVar4;
     return param_2;
   }
-  iVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  *param_2 = *(float *)(iVar7 + 0x338);
-  param_2[1] = *(float *)(iVar7 + 0x33c);
-  param_2[2] = *(float *)(iVar7 + 0x340);
-  param_2[3] = *(float *)(iVar7 + 0x344);
-  param_2[4] = *(float *)(iVar7 + 0x348);
-  param_2[5] = *(float *)(iVar7 + 0x34c);
+  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  *param_2 = (float)pCVar7->texture_list[7].textures[1].base.count;
+  param_2[1] = *(float *)pCVar7->texture_list[7].textures[1].texture_name;
+  param_2[2] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 4);
+  param_2[3] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 8);
+  param_2[4] = *(float *)(pCVar7->texture_list[7].textures[1].texture_name + 0xc);
+  param_2[5] = (float)pCVar7->texture_list[7].textures[2].base.type;
   return param_2;
 }

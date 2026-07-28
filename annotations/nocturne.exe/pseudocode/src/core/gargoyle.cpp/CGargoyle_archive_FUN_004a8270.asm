@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_CGargoyle_archive_FUN_004a8270(int param_1)
+; void core_gargoyle_cpp_CGargoyle_archive_FUN_004a8270(CEnemy *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
-;   core_actor.cpp_FUN_0040cb00
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0
 ;
 ; *****************************************************************************
@@ -32,13 +32,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004a8272
     PUSH EBX                            ; 004a8276
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 004a8277
-        ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
+        ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_archive_FUN_004796c0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004a827c
     PUSH 0x584a10                       ; 004a827f | = "speed"
     LEA ESI,[EBX + 0xbc8c]              ; 004a8284
     PUSH ESI                            ; 004a828a
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004a828b
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a8290
     PUSH 0x584a16                       ; 004a8293 | = "modelName"
     LEA ESI,[EBX + 0x150]               ; 004a8298
@@ -48,8 +48,8 @@ section .text
     ADD ESP,0x8                         ; 004a82a4
     PUSH 0x584a20                       ; 004a82a7 | = "motion state"
     PUSH ESI                            ; 004a82ac
-    CALL core_actor.cpp_FUN_0040cb00    ; 004a82ad
-        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
+    CALL core_actor.cpp_archiveMotionState_FUN_0040cb00 ; 004a82ad
+        ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040cb00(CMotionController * motion_controller, char * property_name)
     MOV EDX,dword ptr [0x005b9624]      ; 004a82b2 | INT_005b9624
     ADD ESP,0x8                         ; 004a82b8
     CMP EDX,0x2                         ; 004a82bb
@@ -63,25 +63,25 @@ section .text
     LEA ESI,[EBX + 0xbd54]              ; 004a82c8
     PUSH ESI                            ; 004a82ce
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004a82cf
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a82d4
     PUSH 0x584a36                       ; 004a82d7 | = "stoneGreen"
     LEA ESI,[EBX + 0xbd58]              ; 004a82dc
     PUSH ESI                            ; 004a82e2
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004a82e3
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a82e8
     PUSH 0x584a41                       ; 004a82eb | = "stoneBlue"
     LEA ESI,[EBX + 0xbd5c]              ; 004a82f0
     PUSH ESI                            ; 004a82f6
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004a82f7
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a82fc
     PUSH 0x584a4b                       ; 004a82ff | = "homeBase"
     ADD EBX,0xbd60                      ; 004a8304
     PUSH EBX                            ; 004a830a
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 004a830b
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a8310
     POP ESI                             ; 004a8313
     POP EBX                             ; 004a8314

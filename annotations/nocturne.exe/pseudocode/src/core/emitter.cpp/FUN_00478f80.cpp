@@ -2,21 +2,21 @@
 // Address: 00478f80
 // Address Range: [[00478f80, 004790e6]]
 // Convention: unknown
-// Signature: undefined4 core_emitter_cpp_FUN_00478f80(int param_1)
+// Signature: undefined4 core_emitter_cpp_FUN_00478f80(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-uint core_emitter_cpp_FUN_00478f80(int param_1)
+uint core_emitter_cpp_FUN_00478f80(CDemonActor *param_1)
 
 {
   int iVar1;
   uint uVar2;
   uint local_cc;
   uint local_c8;
-  uint local_c4;
-  uint local_c0;
-  uint local_bc;
-  uint local_b8;
+  float local_c4;
+  float local_c0;
+  float local_bc;
+  float local_b8;
   uint local_b4;
   uint local_b0;
   uint local_ac;
@@ -34,10 +34,10 @@ uint core_emitter_cpp_FUN_00478f80(int param_1)
   uint local_7c;
   uint local_78;
   uint local_74;
-  uint local_70;
-  uint local_6c;
-  uint local_68;
-  uint local_64;
+  float local_70;
+  float local_6c;
+  float local_68;
+  float local_64;
   uint local_60;
   uint local_5c;
   uint local_58;
@@ -59,14 +59,15 @@ uint core_emitter_cpp_FUN_00478f80(int param_1)
   uint local_10;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
-  if (((iVar1 == 0) && (*(int *)(param_1 + 0x150) == 3)) && (*(int *)(param_1 + 0x160) != 0)) {
+  if (((iVar1 == 0) && (*(int *)param_1[1].actor_name == 3)) &&
+     (*(int *)(param_1[1].actor_name + 0x10) != 0)) {
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
     core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_cc);
-    local_c4 = *(uint *)(param_1 + 0x230);
-    local_c0 = *(uint *)(param_1 + 0x234);
-    local_bc = *(uint *)(param_1 + 0x238);
-    local_b8 = *(uint *)(param_1 + 0x23c);
+    local_c4 = param_1[1].platform_position_delta.x;
+    local_c0 = param_1[1].platform_position_delta.y;
+    local_bc = param_1[1].platform_position_delta.z;
+    local_b8 = param_1[1].platform_orientation_delta.x;
     local_74 = local_c8;
     local_58 = local_ac;
     local_54 = local_a8;
@@ -96,7 +97,7 @@ uint core_emitter_cpp_FUN_00478f80(int param_1)
     local_64 = local_b8;
     uVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                       (param_1,local_24,&local_18,&local_78,0);
-    core_fire_cpp_FUN_0048b6f0(0x01C08D04,param_1 + 0x20,uVar2);
+    core_fire_cpp_FUN_0048b6f0(0x01C08D04,&param_1->location,uVar2);
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     return 1;
   }

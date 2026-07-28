@@ -2,11 +2,11 @@
 // Address: 004cef40
 // Address Range: [[004cef40, 004cef6e]]
 // Convention: unknown
-// Signature: undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,undefined4 param_2)
+// Signature: undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,uint param_2)
+uint core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,CDemonActor *param_2)
 
 {
   int iVar1;

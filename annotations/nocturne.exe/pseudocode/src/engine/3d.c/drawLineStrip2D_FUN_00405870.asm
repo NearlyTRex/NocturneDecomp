@@ -26,7 +26,7 @@ section .text
     PUSH EBP                            ; 00405873
     SUB ESP,0x60                        ; 00405874
     CALL engine_3d.c_setActiveRenderColor_FUN_00405840 ; 00405877
-        ;   XREF to: 00405840 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setActiveRenderColor_FUN_00405840()
+        ;   XREF to: 00405840 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setActiveRenderColor_FUN_00405840()
     MOV EBX,dword ptr [ESP + 0x74]      ; 0040587c
     XOR EBP,EBP                         ; 00405880
     ADD EBX,0x8                         ; 00405882

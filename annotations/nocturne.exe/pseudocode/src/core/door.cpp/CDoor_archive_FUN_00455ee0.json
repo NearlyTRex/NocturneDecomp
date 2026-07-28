@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 425,
+    "complexity_score": 618,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 34,
+    "pseudocode_lines": 98,
+    "suspect_count": 50,
     "suspect_types": [
+      "pointer_cast",
+      "primitive_walker_cast",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 327
+    "total_lines": 350
   },
   "cross_references": [],
   "function": {
@@ -146,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_door.cpp_CDoor_archive_FUN_00455ee0",
-    "signature": "void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)"
+    "signature": "void core_door_cpp_CDoor_archive_FUN_00455ee0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -428,7 +430,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)",
+      "text": "void core_door_cpp_CDoor_archive_FUN_00455ee0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -441,58 +443,74 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,\"doorType\");",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1),\"modelName\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 12,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"doorType\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d4,\"doorSide\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient,\"doorType\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 13,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient.vec.y,\"doorSide\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d8,\"doorState\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient.vec.y,\"doorSide\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 14,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient.vec.z,\"doorState\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2dc,\"doorSwing\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient.vec.z,\"doorState\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 15,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient_matrix,\"doorSwing\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2e0,\"openEvent\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x344,\"closeEvent\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)&param_1[2].orient_matrix,\"doorSwing\");",
       "type": "unnamed_param"
     },
     {
@@ -500,7 +518,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x85c,\"openSound\");",
+      "text": "((char *)&param_1[2].orient_matrix.m[0].y,\"openEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -508,7 +526,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x8c0,\"closeSound\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[2].create_event + 0x2c,\"closeEvent\");",
       "type": "unnamed_param"
     },
     {
@@ -516,15 +534,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x988,\"keyMask\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x98c,\"origPos\");",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1[6].create_event + 4,\"openSound\");",
       "type": "unnamed_param"
     },
     {
@@ -532,31 +542,23 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x998,\"origOrient\");",
+      "text": "((char *)&param_1[6].platform_position_delta,\"closeSound\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9a4,\"param\");",
-      "type": "unnamed_param"
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 23,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[7].orient_matrix.m[2].y,\"keyMask\");",
+      "type": "primitive_walker_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9a8,\"maxParam\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9ac,\"openSpeed\");",
+      "text": "((int *)&param_1[7].orient_matrix.m[2].y,\"keyMask\");",
       "type": "unnamed_param"
     },
     {
@@ -564,7 +566,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9b0,\"closeSpeed\");",
+      "text": "((CVector3f *)&param_1[7].orient_matrix.m[2].z,\"origPos\");",
       "type": "unnamed_param"
     },
     {
@@ -572,15 +574,23 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,\"groundType\");",
+      "text": "((CVector3f *)&param_1[7].validation_magic,\"origOrient\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3a8,\"eventToTriggerWhenOpen\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(&param_1[7].create_prob,\"param\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)param_1[7].create_event,\"maxParam\");",
       "type": "unnamed_param"
     },
     {
@@ -588,23 +598,23 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x40c,\"eventToTriggerWhenClosed\");",
+      "text": "((float *)(param_1[7].create_event + 4),\"openSpeed\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9c0,\"oneShot\");",
+      "text": "((float *)(param_1[7].create_event + 8),\"closeSpeed\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x668,\"scriptOpenEvent\");",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(&param_1[2].location.area_id,\"groundType\");",
       "type": "unnamed_param"
     },
     {
@@ -612,23 +622,55 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(char *)(param_1 + 0x668) == '\\0') {",
+      "text": "((char *)&param_1[2].scale,\"eventToTriggerWhenOpen\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x470) = 0;",
+      "text": "(param_1[3].actor_name + 0x1c,\"eventToTriggerWhenClosed\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar3 = (char *)(param_1 + 0x474);",
+      "text": "((int *)(param_1[7].create_event + 0x18),\"oneShot\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)&param_1[4].previous_transform_state,\"scriptOpenEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(char *)&param_1[4].previous_transform_state.position.x == '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].create_event[8] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].create_event[9] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -636,7 +678,15 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x470) = 1;",
+      "text": "param_1[3].create_event[10] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3].create_event[0xb] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -644,31 +694,23 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveRules_FUN_0040d110(param_1 + 0x470,\"openRules\");",
+      "text": "pcVar3 = param_1[3].create_event + 0xc;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9c8,\"blockVirtualDirectorFlag\");",
+      "text": "param_1[3].create_event[8] = '\\x01';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9cc,\"plotAsBoxInShadow\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9d0,\"allowedSides\");",
+      "text": "param_1[3].create_event[9] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -676,24 +718,112 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9d4,\"allowBulletHoles\");",
+      "text": "param_1[3].create_event[10] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x924,\"lockedSound\");",
+      "text": "param_1[3].create_event[0xb] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CRuleList *)(param_1[3].create_event + 8),\"openRules\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[7].create_event + 0x20),\"blockVirtualDirectorFlag\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[7].create_event + 0x24),\"plotAsBoxInShadow\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[7].create_event + 0x28),\"allowedSides\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)(param_1[7].create_event + 0x2c),\"allowBulletHoles\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040c6d0((char *)&param_1[6].next_actor,\"lockedSound\");",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 45,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 45,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[7].create_event + 0x18),\"oneShot\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 82,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[7].create_event + 0x20),\"blockVirtualDirectorFlag\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 86,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[7].create_event + 0x24),\"plotAsBoxInShadow\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 90,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[7].create_event + 0x28),\"allowedSides\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 94,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((int *)(param_1[7].create_event + 0x2c),\"allowBulletHoles\");",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

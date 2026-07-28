@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(int param_1,int param_2,undefined4 param_3)
+; void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet *this_ptr,int index,float value)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
+; float            Stack[0xc]:4   value
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c6f5
@@ -36,7 +40,7 @@ section .text
         ;   Label: LAB_0050e4f2
     PUSH 0x1fb8508                      ; 0050e4f3
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 0050e4f8
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 0050e4fd
     RET                                 ; 0050e500
 

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 881,
+    "complexity_score": 1171,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 261,
-    "suspect_count": 60,
+    "pseudocode_lines": 271,
+    "suspect_count": 86,
     "suspect_types": [
-      "suspect_float",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_memset"
     ],
-    "total_lines": 785
+    "total_lines": 795
   },
   "cross_references": [],
   "function": {
@@ -149,7 +153,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_curtain.cpp_FUN_0043dad0",
-    "signature": "void core_curtain_cpp_FUN_0043dad0(int param_1)"
+    "signature": "void core_curtain_cpp_FUN_0043dad0(CCurtain *param_1)"
   },
   "function_calls": [
     {
@@ -491,61 +495,68 @@
   "static_analysis": {
     "analyzed_file": "FUN_0043dad0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 8,
+      "diagnostic_count": 9,
       "diagnostics": [
         {
           "check_id": "uninitvar",
+          "column": 33,
+          "line": 58,
+          "message": "Uninitialized variable: iStack_7c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
           "column": 15,
-          "line": 64,
+          "line": 70,
           "message": "Uninitialized variable: local_30",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 65,
+          "line": 71,
           "message": "Uninitialized variable: local_20",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 43,
-          "line": 65,
+          "line": 71,
           "message": "Uninitialized variable: local_70",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 17,
-          "line": 66,
+          "column": 18,
+          "line": 72,
           "message": "Uninitialized variable: unaff_EBP",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 36,
-          "line": 70,
+          "column": 37,
+          "line": 76,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 25,
-          "line": 87,
+          "column": 26,
+          "line": 93,
           "message": "Uninitialized variable: local_40",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 45,
-          "line": 90,
+          "column": 46,
+          "line": 96,
           "message": "Uninitialized variable: local_44",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 22,
-          "line": 116,
+          "line": 121,
           "message": "Uninitialized variable: local_14",
           "severity": "error"
         }
@@ -560,12 +571,12 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_curtain_cpp_FUN_0043dad0(int param_1)",
+      "text": "void core_curtain_cpp_FUN_0043dad0(CCurtain *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 20,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -573,66 +584,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x15c);",
+      "text": "(DAT_005ae704,&param_1->curtain_texture);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 43,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x15c);",
+      "text": "(DAT_005ae704,&param_1->curtain_texture);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar12 = (float10)1 / (float10)*(float *)(param_1 + 500);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x154);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar13 = (float10)round((float10)*(float *)(param_1 + 0x150) * fVar12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 42,
-      "match": "6.231602e-39",
-      "severity": "mild",
-      "text": "fVar15 = 6.231602e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1c724) = uStack_7c;",
+      "text": "fVar2 = 1.0 / param_1->patch_size;",
       "type": "unnamed_param"
     },
     {
@@ -640,31 +619,23 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1c728) = fVar1;",
+      "text": "fVar1 = (param_1->curtain_size).y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1fc) = iVar4;",
+      "text": "dVar21 = round((double)((param_1->curtain_size).x * fVar2));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 500) = *(float *)(param_1 + 500) * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 500) = *(float *)(param_1 + 500) * (float)2;",
+      "text": "(param_1->mesh).grid_cols = iStack_7c;",
       "type": "unnamed_param"
     },
     {
@@ -672,143 +643,135 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x150);",
+      "text": "(param_1->mesh).grid_rows = (int)fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->vertex_count = iVar7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->patch_size = param_1->patch_size * (float)2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (param_1->curtain_size).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "iVar5 = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((((iVar4 == 0) && (*(int *)(param_1 + 0x178) != 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar4 == iVar10 && (*(int *)(param_1 + 0x184) != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((fVar6 == 0.0 && (*(int *)(param_1 + 0x17c) != 0)))) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((fVar6 == fVar2 / (float)iVar10 && (*(int *)(param_1 + 0x180) != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((((float10)*(float *)(param_1 + 0x150) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": ") / (float10)*(float *)(param_1 + 0x150)) * fVar12 * fVar13)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "unaff_EBP = (int)ROUND(fVar14);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 107,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "*(int *)(iVar5 + 0x18) = unaff_EBP + 0x20000;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 110,
-      "match": "6.232355e-39",
-      "severity": "mild",
-      "text": "fVar15 = 6.232355e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)*(float *)(param_1 + 0x154)) * fVar12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 118,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "iVar5 = unaff_EBP;",
+      "text": "iVar16 = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1fc)) {",
+      "text": "if (((((iVar7 == 0) && (param_1->cinched_top != 0)) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = param_1 + 0x200;",
+      "text": "((iVar7 == iVar18 && (param_1->cinched_bottom != 0)))) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(iVar4 + 0x48) * 0x74 + param_1 + 0x200;",
+      "text": "((fVar11 == 0.0 && (param_1->cinched_left != 0)))) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (local_68 < *(int *)(param_1 + 0x1fc));",
+      "text": "((fVar11 == fVar2 / (float)iVar18 && (param_1->cinched_right != 0)))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1fc)) {",
+      "text": "fVar3 = (param_1->curtain_size).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 111,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = (int)ROUND(dVar21);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 112,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(iVar16 + 0x18) = unaff_EBP + 0x20000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->curtain_size).y) * fVar6));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 121,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar16 = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1->vertex_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar13 = param_1->vertices;",
       "type": "unnamed_param"
     },
     {
@@ -816,71 +779,79 @@
       "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar9 = (uint *)(param_1 + 0x20c);",
+      "text": "} while (local_68 < param_1->vertex_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 150,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar7 = (uint *)(iVar10 * 0x74 + param_1 + 0x200);",
+      "text": "if (0 < param_1->vertex_count) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar10 < *(int *)(param_1 + 0x1fc));",
+      "text": "pCVar8 = &param_1->vertices[0].initial_position;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = param_1 + 0x1f60c;",
+      "text": "pSVar13 = param_1->vertices + iVar18;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
       "line": 163,
+      "match": "(CVector3f *)((int)(pCVar8 + 9) +",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1 + 0x4288c;",
+      "text": "} while (iVar18 < param_1->vertex_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 166,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1c728)) {",
+      "text": "pSVar10 = (param_1->mesh).front_faces;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x1c724)) {",
+      "text": "pSVar15 = (param_1->mesh).back_faces;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = local_1c + (*(int *)(param_1 + 0x1c724) + 1) * local_2c;",
+      "text": "if (0 < (param_1->mesh).grid_rows) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x1c) = *(uint *)(iVar4 * 0x74 + 0x218 + param_1);",
+      "text": "if (0 < (param_1->mesh).grid_cols) {",
       "type": "unnamed_param"
     },
     {
@@ -888,15 +859,7 @@
       "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x20) = *(uint *)(iVar4 * 0x74 + 0x21c + param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 190,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x28) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);",
+      "text": "iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;",
       "type": "unnamed_param"
     },
     {
@@ -904,7 +867,7 @@
       "line": 191,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x2c) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);",
+      "text": "pSVar9->vertices[0].texture_u = param_1->vertices[iVar16].texture_u;",
       "type": "unnamed_param"
     },
     {
@@ -912,7 +875,15 @@
       "line": 192,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = iVar10 + *(int *)(param_1 + 0x1c724) + 1;",
+      "text": "pSVar9->vertices[0].texture_v = param_1->vertices[iVar16].texture_v;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 194,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pSVar9->vertices[1].texture_u = param_1->vertices[iVar16 + 1].texture_u;",
       "type": "unnamed_param"
     },
     {
@@ -920,7 +891,7 @@
       "line": 195,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x34) = *(uint *)(iVar10 + 0x218 + param_1);",
+      "text": "pSVar9->vertices[1].texture_v = param_1->vertices[iVar16 + 1].texture_v;",
       "type": "unnamed_param"
     },
     {
@@ -928,55 +899,95 @@
       "line": 196,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x38) = *(uint *)(iVar10 + 0x21c + param_1);",
+      "text": "iVar18 = (param_1->mesh).grid_cols;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 224,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = local_1c + (*(int *)(param_1 + 0x1c724) + 1) * local_2c;",
+      "text": "pSVar9->vertices[2].texture_u = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 100) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);",
+      "text": "pSVar9->vertices[2].texture_v = param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 212,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 229,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar7 = ((param_1->mesh).grid_cols + 1) * local_2c;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 232,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x68) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);",
+      "text": "pSVar9[1].vertices[0].texture_u = param_1->vertices[iVar16].texture_u;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 228,
+      "line": 233,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = iVar10 + *(int *)(param_1 + 0x1c724) + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 230,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x70) = *(uint *)(iVar10 * 0x74 + 0x218 + param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 231,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x74) = *(uint *)(iVar10 * 0x74 + 0x21c + param_1);",
+      "text": "pSVar9[1].vertices[0].texture_v = param_1->vertices[iVar16].texture_v;",
       "type": "unnamed_param"
     },
     {
@@ -984,60 +995,276 @@
       "line": 234,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x7c) = *(uint *)(iVar10 + 0x218 + param_1);",
+      "text": "iVar18 = (param_1->mesh).grid_cols;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 238,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar5 + 0x80) = *(uint *)(iVar10 + 0x21c + param_1);",
+      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_u;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 240,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (local_1c < *(int *)(param_1 + 0x1c724));",
+      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 2].texture_v;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 243,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_u;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 245,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->vertices[iVar18 + iVar7 + local_1c + 1].texture_v;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 251,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x70);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x70);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(uint *)((int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 259,
+      "match": "(uint *)((int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 266,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (local_2c < *(int *)(param_1 + 0x1c728));",
+      "text": "} while (local_1c < (param_1->mesh).grid_cols);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 261,
+      "line": 269,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1,fVar15);",
+      "text": "} while (local_2c < (param_1->mesh).grid_rows);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 262,
+      "line": 271,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xfc) = (uint)(*(int *)(param_1 + 0x174) < 0xfde9);",
+      "text": "core_curtain_cpp_CCurtain_updateWorldPositions_FUN_0043e110(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 262,
+      "line": 272,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xfc) = (uint)(*(int *)(param_1 + 0x174) < 0xfde9);",
+      "text": "(param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 272,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).is_transparent = (uint)(param_1->opacity < 0xfde9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `(pCVar8 + 9)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)(pCVar8 + 9)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 207,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x28);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 208,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x28);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 212,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 213,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 246,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 100);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 247,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x7c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 251,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x70);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 252,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 0x70);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 258,
+      "match": "(int)pSVar14",
+      "severity": "moderate",
+      "text": "puVar19 = (uint *)((int)pSVar14 + (uint)bVar20 * -8 + 0x7c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 259,
+      "match": "(int)pSVar9",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)pSVar9 + (uint)bVar20 * -8 + 100);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 155,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar13->local_position).x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 159,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pSVar13->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar12` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 142,
+      "match": "pSVar12 = (T *)&(pSVar12->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar12 = (SCurtainVertex *)&(pSVar12->local_position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via element-arithmetic `(int)(pCVar8 + N) + M`, where `N*sizeof(*pCVar8) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar8->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 163,
+      "match": "pCVar8 = (T *)((int)(pCVar8 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: iStack_7c",
+      "line": 58,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(param_1->mesh).grid_cols = iStack_7c;",
+      "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_30",
-      "line": 64,
+      "line": 70,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (0 < local_30) {",
@@ -1045,7 +1272,7 @@
     },
     {
       "description": "Uninitialized variable: local_20",
-      "line": 65,
+      "line": 71,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_18 = (int)local_20 * 0x74 + local_70;",
@@ -1053,7 +1280,7 @@
     },
     {
       "description": "Uninitialized variable: local_70",
-      "line": 65,
+      "line": 71,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_18 = (int)local_20 * 0x74 + local_70;",
@@ -1061,39 +1288,39 @@
     },
     {
       "description": "Uninitialized variable: unaff_EBP",
-      "line": 66,
+      "line": 72,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iVar5 = unaff_EBP;",
+      "text": "iVar16 = unaff_EBP;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 70,
+      "line": 76,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*(int *)(iVar5 + 0x10) = local_2c;",
+      "text": "*(int *)(iVar16 + 0x10) = local_2c;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_40",
-      "line": 87,
+      "line": 93,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "if ((fVar6 == local_40) && (iVar4 == 0)) {",
+      "text": "if ((fVar11 == local_40) && (iVar7 == 0)) {",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_44",
-      "line": 90,
+      "line": 96,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "if ((fVar6 == fVar1) && (iVar4 == local_44)) {",
+      "text": "if ((fVar11 == fVar1) && (iVar7 == local_44)) {",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_14",
-      "line": 116,
+      "line": 121,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_18 = local_14 + 0x74;",

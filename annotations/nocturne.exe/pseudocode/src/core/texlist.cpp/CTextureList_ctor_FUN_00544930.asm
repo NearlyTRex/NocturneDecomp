@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_texlist_cpp_CTextureList_ctor_FUN_00544930(undefined4 *param_1)
+; CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_00544930(CTextureList *this_ptr)
 ;
+; Parameters:
+; CTextureList *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b1409

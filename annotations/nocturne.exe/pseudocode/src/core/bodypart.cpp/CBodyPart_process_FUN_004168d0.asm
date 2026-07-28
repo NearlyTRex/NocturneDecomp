@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_CBodyPart_process_FUN_004168d0(int param_1,float param_2)
+; void core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
@@ -62,7 +62,7 @@ section .text
     PUSH EBX                            ; 00416912
         ;   Label: LAB_00416912
     CALL core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0 ; 00416913
-        ;   XREF to: 00417eb0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0()
+        ;   XREF to: 00417eb0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00416918
     PUSH EDI                            ; 0041691b
         ;   Label: LAB_0041691b
@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_0041694f
     PUSH EBX                            ; 00416953
     CALL core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00 ; 00416954
-        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00()
+        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00416959
     POP EDI                             ; 0041695c
     ADD ESP,0x4c                        ; 0041695d
@@ -131,7 +131,7 @@ section .text
         ;   Label: LAB_004169c0
     PUSH EBX                            ; 004169c4
     CALL core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00 ; 004169c5
-        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00()
+        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004169ca
     ADD ESP,0x4c                        ; 004169cd
     POP ESI                             ; 004169d0
@@ -157,7 +157,7 @@ section .text
     PUSH EDI                            ; 00416a06
     MOV dword ptr [ESP + 0x50],EAX      ; 00416a07
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 00416a0b
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     MOV EAX,dword ptr [EDI]             ; 00416a10
     MOV dword ptr [ESI],EAX             ; 00416a12
     MOV EAX,dword ptr [EDI + 0x4]       ; 00416a14
@@ -179,7 +179,7 @@ section .text
     PUSH EBX                            ; 00416a40
         ;   Label: LAB_00416a40
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00416a41
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     LEA EAX,[EBX + 0xcf4]               ; 00416a46
     FLD float ptr [EAX + 0x4]           ; 00416a4c
     FMUL ST0                            ; 00416a4f
@@ -200,7 +200,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 00416a77 | DAT_005b7650
     PUSH ECX                            ; 00416a7d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00416a7e
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00416a83
     TEST EAX,EAX                        ; 00416a86
     JNZ 0x0041694f                      ; 00416a88
@@ -208,7 +208,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00416a8e
     PUSH EAX                            ; 00416a92
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00416a93
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00416a98
     PUSH 0x41700000                     ; 00416a9b
     PUSH 0x41200000                     ; 00416aa0
@@ -229,12 +229,12 @@ section .text
     PUSH ESI                            ; 00416ad1 | DAT_01e57284
     FSTP float ptr [ESP + 0x18]         ; 00416ad2
     CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880 ; 00416ad6
-        ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880()
+        ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00416adb
     PUSH dword ptr [ESP + 0x60]         ; 00416ade
     PUSH EBX                            ; 00416ae2
     CALL core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00 ; 00416ae3
-        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00()
+        ;   XREF to: 00416b00 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00(CBodyPart * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00416ae8
     POP EDI                             ; 00416aeb
     ADD ESP,0x4c                        ; 00416aec

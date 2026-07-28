@@ -2,96 +2,60 @@
 // Address: 00565ad6
 // Address Range: [[00565ad6, 00565c11]]
 // Convention: __fpustack_safe
-// Signature: float10 __fpustack_safe crt_math_c_pow_FUN_00565ad6(float10 param_1,float10 param_2)
+// Signature: float10 __fpustack_safe crt_math_c_pow_FUN_00565ad6(float10 base,float10 exp)
 
 #include "nocturne.h"
 
-float10 __fpustack_safe pow(float10 param_1,float10 param_2)
+/* WARNING: Removing unreachable block (ram,0x00565bfd) */
+/* WARNING: Removing unreachable block (ram,0x00565c03) */
+/* WARNING: Removing unreachable block (ram,0x00565c05) */
+
+float10 __fpustack_safe pow(float10 base,float10 exp)
 
 {
-  int iVar1;
-  double dVar2;
-  byte bVar4;
-  uint uVar3;
-  uint in_EDX;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
-  uint extraout_EDX_01;
-  uint uVar5;
-  float10 fVar6;
-  float10 fVar7;
-  longlong lVar8;
-  double dVar9;
-  ulonglong uVar10;
-  short sVar11;
+  double dVar1;
+  ushort uStack_e;
+  short local_c;
+  short sStack_a;
+  short sStack_8;
+  ushort uStack_6;
   
-  fVar6 = (float10)0;
-  dVar9 = (double)param_1;
-  if (param_1 == fVar6) {
-    uVar3 = 0;
-  }
-  else {
-    fVar7 = ROUND(param_2);
-    uVar10 = (ulonglong)(param_1 < fVar6) << 8;
-    if (param_1 < fVar6) {
-      uVar3 = 1;
-      if (fVar7 != param_2) goto LAB_00565aed;
-      bVar4 = 0;
-      if ((!NAN(fVar7) && !NAN(param_2)) &&
-         (bVar4 = 0, param_2 - (param_2 / (float10)2) * (float10)2 != (float10)0)) {
-        bVar4 = 1;
-      }
-      uVar10 = (ulonglong)bVar4 << 8;
+  if (base != (float10)0) {
+    if ((float10)0 <= base) {
+      if (ROUND(exp) == exp) goto LAB_00565b61;
+LAB_00565be8:
+      exp((float10)0.6931471805599453 * exp * ABS(base));
+    }
+    else if (ROUND(exp) == exp) {
 LAB_00565b61:
-      if (0xff < (ushort)(((ushort)((ulonglong)(double)param_2 >> 0x30) & 0x7ff0) + 0xc010))
-      goto LAB_00565be8;
-      iVar1 = (int)ROUND(param_2);
-      uVar10 = CONCAT44(iVar1,(int)uVar10);
-      sVar11 = (short)((uint)iVar1 >> 0x10);
-      if (sVar11 == 0) {
-        FUN_00565c12();
-        uVar5 = extraout_EDX;
-        fVar6 = param_1;
-        param_1 = param_2;
+      uStack_e = (ushort)((ulonglong)(double)exp >> 0x30);
+      if (0xff < (ushort)((uStack_e & 0x7ff0) + 0xc010)) goto LAB_00565be8;
+      uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
+      if (uStack_6 == 0) {
+        integer_power((double)base);
       }
       else {
-        if ((sVar11 != -1) || ((short)iVar1 == 0)) goto LAB_00565be8;
-        FUN_00565c12();
-        fVar6 = (float10)1;
+        if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
+        goto LAB_00565be8;
+        integer_power((double)base);
         if ((DAT_005c1d98 & 1) == 0) {
-          fVar6 = fVar6 / param_1;
-          uVar5 = extraout_EDX_00;
-          param_1 = param_2;
+          base = (float10)1 / base;
         }
         else {
-          FUN_0056bf67();
-          uVar5 = extraout_EDX_01;
+          base = function_dispatch(0xf);
         }
       }
-      dVar2 = (double)fVar6;
-      if (((SUB82(__BITCAST_UINT64(dVar2),0) != 0 || (short)((ulonglong)dVar2 >> 0x10) != 0) ||
-           (short)((ulonglong)dVar2 >> 0x20) != 0) ||
-         (lVar8 = (ulonglong)uVar5 << 0x20, param_2 = param_1,
-         ((ushort)((ulonglong)dVar2 >> 0x30) & 0x7fff) != 0x7ff0)) goto LAB_00565c07;
+      dVar1 = (double)base;
+      local_c = SUB82(__BITCAST_UINT64(dVar1),0);
+      sStack_a = (short)((ulonglong)dVar1 >> 0x10);
+      sStack_8 = (short)((ulonglong)dVar1 >> 0x20);
+      if (((local_c != 0 || sStack_a != 0) || sStack_8 != 0) ||
+         (uStack_6 = (ushort)((ulonglong)dVar1 >> 0x30), (uStack_6 & 0x7fff) != 0x7ff0))
+      goto LAB_00565c07;
     }
-    else {
-      if (fVar7 == param_2) goto LAB_00565b61;
-LAB_00565be8:
-      fVar6 = (float10)0.6931471805599453 * param_2 * ABS(param_1);
-      lVar8 = FUN_0056bdd2(dVar9);
-      if ((char)lVar8 == '\0') {
-        if ((uVar10 & 0x100) != 0) {
-          fVar6 = -fVar6;
-        }
-        goto LAB_00565c07;
-      }
-    }
-    in_EDX = (uint)((ulonglong)lVar8 >> 0x20);
-    uVar3 = 2;
   }
-LAB_00565aed:
-  dVar9 = (double)FUN_0056bd22(dVar9,(double)param_2,uVar3,in_EDX);
-  fVar6 = (float10)dVar9;
+  dVar1 = (double)math_domain_error();
+  base = (float10)dVar1;
 LAB_00565c07:
-  return (float10)(double)fVar6;
+  return (float10)(double)base;
 }

@@ -1,50 +1,81 @@
 // Name: core_mimic.cpp_CMimic_ctor_FUN_004d4450
 // Address: 004d4450
 // Address Range: [[004d4450, 004d4536]]
-// Convention: unknown
-// Signature: int core_mimic_cpp_CMimic_ctor_FUN_004d4450(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr)
 
 #include "nocturne.h"
 
-int core_mimic_cpp_CMimic_ctor_FUN_004d4450(uint param_1)
+CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004d4450(CMimic *this_ptr)
 
 {
   char cVar1;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  char *pcVar5;
-  char *pcVar6;
+  SMRGLTextureLod *pSVar2;
+  SMRGLTextureBasic *pSVar3;
+  float fVar4;
+  float fVar5;
+  CEnemy *pCVar6;
+  CCloth *pCVar7;
+  CMorph *pCVar8;
+  char *pcVar9;
+  char *pcVar10;
   
-  iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  iVar4 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar4 + 0xbdec);
-  iVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar4 + 0x3ab60);
-  *(byte ***)(iVar4 + -0x46800) = &PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
-  *(uint *)(iVar4 + -0x43b78) = 0x3f000000;
-  pcVar5 = "CGhoul";
-  *(uint *)(iVar4 + -0x43b74) = 0x3f800000;
-  fVar2 = 50.0f;
-  *(byte *)(iVar4 + -0x3ac28) = 0;
-  fVar3 = 100.0f;
-  *(byte *)(iVar4 + -0x3abc4) = 0;
-  *(float *)(iVar4 + -0x43b70) = fVar2;
-  *(float *)(iVar4 + -0x43b6c) = fVar3;
-  *(uint *)(iVar4 + -0x30) = 0;
-  pcVar6 = (char *)(iVar4 + -0x28);
-  *(uint *)(iVar4 + -0x2c) = 0;
+  pCVar6 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  pCVar7 = core_cloth_cpp_CCloth_ctor_FUN_00435100
+                     ((CCloth *)(pCVar6[1].base.base.create_event + 0x50));
+  pCVar8 = core_morph_cpp_CMorph_ctor_FUN_004e0050
+                     ((CMorph *)(pCVar7->vertices[0x300].rest_lengths + 4));
+  pCVar8[-0x5d].models[0].textures[0xc].textures[2].base.count =
+       (int)&PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
+  pSVar2 = pCVar8[-0x5a].models[1].textures + 0x13;
+  pSVar2->textures[2].texture_name[0] = '\0';
+  pSVar2->textures[2].texture_name[1] = '\0';
+  pSVar2->textures[2].texture_name[2] = '\0';
+  pSVar2->textures[2].texture_name[3] = '?';
+  pcVar9 = "CGhoul";
+  pSVar3 = pCVar8[-0x5a].models[1].textures[0x13].textures;
+  pSVar3[2].texture_name[4] = '\0';
+  fVar4 = 50.0f;
+  pSVar3[2].texture_name[5] = '\0';
+  pSVar3[2].texture_name[6] = -0x80;
+  pSVar3[2].texture_name[7] = '?';
+  *(byte *)&pCVar8[-0x4e].models[1].textures[10].textures[0].base.type = 0;
+  fVar5 = 100.0f;
+  *(byte *)&pCVar8[-0x4e].models[1].textures[0xb].textures[1].base.count = 0;
+  *(float *)(pCVar8[-0x5a].models[1].textures[0x13].textures[2].texture_name + 8) = fVar4;
+  *(float *)(pCVar8[-0x5a].models[1].textures[0x13].textures[2].texture_name + 0xc) = fVar5;
+  pCVar8[-1].models[1].textures[0x13].textures[2].base.count = 0;
+  pcVar10 = pCVar8[-1].models[1].textures[0x13].textures[2].texture_name + 4;
+  pSVar2 = pCVar8[-1].models[1].textures + 0x13;
+  pSVar2->textures[2].texture_name[0] = '\0';
+  pSVar2->textures[2].texture_name[1] = '\0';
+  pSVar2->textures[2].texture_name[2] = '\0';
+  pSVar2->textures[2].texture_name[3] = '\0';
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar9;
+    *pcVar10 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = pcVar9[1];
+    pcVar9 = pcVar9 + 2;
+    pcVar10[1] = cVar1;
+    pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar4 + 0xc30) = 0;
-  *(uint *)(iVar4 + 0xc2c) = 0xbf800000;
-  *(uint *)(iVar4 + -0x46844) = 0x10000;
-  *(uint *)(iVar4 + -0x46840) = 0x10000;
-  *(uint *)(iVar4 + -0x4683c) = 0x10000;
-  return iVar4 + -0x4694c;
+  pCVar8[1].models[0].parts[0].vertex_count = 0;
+  pCVar8[1].models[0].part_count = -0x40800000;
+  pSVar2 = pCVar8[-0x5d].models[0].textures + 0xb;
+  pSVar2->textures[2].texture_name[0] = '\0';
+  pSVar2->textures[2].texture_name[1] = '\0';
+  pSVar2->textures[2].texture_name[2] = '\x01';
+  pSVar2->textures[2].texture_name[3] = '\0';
+  pSVar3 = pCVar8[-0x5d].models[0].textures[0xb].textures;
+  pSVar3[2].texture_name[4] = '\0';
+  pSVar3[2].texture_name[5] = '\0';
+  pSVar3[2].texture_name[6] = '\x01';
+  pSVar3[2].texture_name[7] = '\0';
+  pSVar3 = pCVar8[-0x5d].models[0].textures[0xb].textures;
+  pSVar3[2].texture_name[8] = '\0';
+  pSVar3[2].texture_name[9] = '\0';
+  pSVar3[2].texture_name[10] = '\x01';
+  pSVar3[2].texture_name[0xb] = '\0';
+  return (CMimic *)pCVar8[-0x5d].models[0].textures[8].textures[0].texture_name;
 }

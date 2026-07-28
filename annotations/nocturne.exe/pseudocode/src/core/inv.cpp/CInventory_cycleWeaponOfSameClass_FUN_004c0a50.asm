@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(int param_1,int param_2)
+; void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(CInventory *this_ptr,int direction)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   direction
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -33,7 +36,7 @@ section .text
     PUSH 0x1                            ; 004c0a5b
     PUSH ESI                            ; 004c0a5d
     CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20 ; 004c0a5e
-        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20()
+        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory * this_ptr, int reset_both)
     MOV EDX,dword ptr [ESI + 0x330]     ; 004c0a63
     ADD ESP,0x8                         ; 004c0a69
     TEST EDX,EDX                        ; 004c0a6c
@@ -66,7 +69,7 @@ section .text
     MOV EDX,dword ptr [ESI + EBX*0x4 + 0xc] ; 004c0a9d
     PUSH EDX                            ; 004c0aa1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c0aa2
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c0aa7
     MOV EDI,EAX                         ; 004c0aaa
     MOV dword ptr [ESP],EAX             ; 004c0aac
@@ -105,16 +108,16 @@ section .text
         ;   Label: LAB_004c0ad7
     PUSH ECX                            ; 004c0add
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004c0ade
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c0ae3
     PUSH EAX                            ; 004c0ae6
     PUSH EDI                            ; 004c0ae7
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004c0ae8
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c0aed
     PUSH EAX                            ; 004c0af0
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004c0af1
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004c0af6
     TEST EAX,EAX                        ; 004c0af9
     JNZ 0x004c0ab3                      ; 004c0afb
@@ -138,7 +141,7 @@ section .text
     PUSH ESI                            ; 004c0b28
     MOV dword ptr [ESI + 0x330],EAX     ; 004c0b29
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 ; 004c0b2f
-        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90()
+        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004c0b34
     ADD ESP,0x4                         ; 004c0b37
     POP EBP                             ; 004c0b3a

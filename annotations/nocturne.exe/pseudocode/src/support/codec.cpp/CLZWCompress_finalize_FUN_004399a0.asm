@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(int param_1,undefined4 param_2)
+; int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(CLZWCompress *this_ptr,_ostream *ostream)
 ;
+; Parameters:
+; CLZWCompress *   Stack[0x4]:4   this_ptr
+; _ostream *       Stack[0x8]:4   ostream
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_FUN_00446810 at 00446da4

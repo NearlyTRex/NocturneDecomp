@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00528410(int param_1)
+; void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00528410(int device_id)
 ;
+; Parameters:
+; int              Stack[0x4]:4   device_id
 ;
 ; XREF[3]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2139
@@ -30,7 +32,7 @@ section .text
         ;   Label: sound_sndmain.cpp_selectSoundDevice_FUN_00528410
     MOV EBX,dword ptr [ESP + 0x8]       ; 00528411
     CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00528480 ; 00528415
-        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
+        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
     TEST EAX,EAX                        ; 0052841a
     JNZ 0x00528440                      ; 0052841c
         ;   XREF to: 00528440 (CONDITIONAL_JUMP)  ; LAB_00528440
@@ -40,13 +42,13 @@ section .text
         ;   XREF to: 00528428 (CONDITIONAL_JUMP)  ; LAB_00528428
     MOV EBX,dword ptr [0x005bea74]      ; 00528422 | DAT_005bea74
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 00528428
-        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
+        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
         ;   Label: LAB_00528428
     CMP EBX,EAX                         ; 0052842d
     JL 0x00528465                       ; 0052842f
         ;   XREF to: 00528465 (CONDITIONAL_JUMP)  ; LAB_00528465
     CALL sound_sndmain.cpp_findBestSoundDevice_FUN_00528320 ; 00528431
-        ;   XREF to: 00528320 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_findBestSoundDevice_FUN_00528320()
+        ;   XREF to: 00528320 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_00528320()
         ;   Label: LAB_00528431
     MOV EBX,EAX                         ; 00528436
     MOV dword ptr [0x005bea74],EBX      ; 00528438 | DAT_005bea74

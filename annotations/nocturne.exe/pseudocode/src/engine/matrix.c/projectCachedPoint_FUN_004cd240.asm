@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_projectCachedPoint_FUN_004cd240(int param_1)
+; void __cdecl engine_matrix_c_projectCachedPoint_FUN_004cd240(int cacheIndex)
 ;
+; Parameters:
+; int              Stack[0x4]:4   cacheIndex
 ;
 ; XREF[2]:
-;   core_mirror.cpp_FUN_004d74a0 at 004d76a3
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0 at 004d76a3
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 004914d8
 ;
 ; Referenced Globals:
@@ -26,7 +28,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004cd250 | DAT_005c5014
     PUSH EAX                            ; 004cd255
     CALL engine_matrix.c_projectTransformedPoint_FUN_004cd260 ; 004cd256
-        ;   XREF to: 004cd260 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_004cd260()
+        ;   XREF to: 004cd260 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004cd260(SProjectedVertex * point)
     ADD ESP,0x4                         ; 004cd25b
     RET                                 ; 004cd25e
 

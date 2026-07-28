@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d2bc
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d2bc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bea94
@@ -115,7 +115,7 @@ section .text
     PUSH EBX                            ; 00527d31
         ;   Label: LAB_00527d31
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00527d32
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,dword ptr [EBX + 0x138]    ; 00527d37 | DAT_02dc217c
     INC dword ptr [ESP + 0x8]           ; 00527d3e
     ADD ESP,0x4                         ; 00527d42
@@ -128,7 +128,7 @@ section .text
     ADD EDI,EAX                         ; 00527d54
     PUSH EDI                            ; 00527d56
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00527d57
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,dword ptr [EDI + 0x138]    ; 00527d5c | DAT_02dc217c
     ADD ESP,0x4                         ; 00527d63
     ADD dword ptr [ESP + 0x8],EAX       ; 00527d66

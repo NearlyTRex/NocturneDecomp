@@ -2,69 +2,67 @@
 // Address: 004c0950
 // Address Range: [[004c0950, 004c0a44]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(int param_1,int param_2)
+// Signature: void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(CInventory *this_ptr,int direction)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(int param_1,int param_2)
+void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(CInventory *this_ptr,int direction)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  CInventory *pCVar3;
   int iVar4;
   
-  core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70(param_1);
-  if (*(int *)(param_1 + 0x334) == 0) {
-    iVar3 = 0;
-    iVar4 = param_1;
-    if (0 < *(int *)(param_1 + 8)) {
+  core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70(this_ptr);
+  if (this_ptr->selected_item == (CDemonActor *)0x0) {
+    iVar4 = 0;
+    pCVar3 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                          (*(uint *)(iVar4 + 0xc),"CWeapon");
+        iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar3->items[0],"CWeapon");
         if ((iVar1 == 0) &&
-           (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                              (*(uint *)(iVar4 + 0xc),"CAmmo"), iVar1 == 0)) {
-          *(uint *)(param_1 + 0x334) = *(uint *)(iVar4 + 0xc);
+           (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar3->items[0],"CAmmo"),
+           iVar1 == 0)) {
+          this_ptr->selected_item = pCVar3->items[0];
           return;
         }
-        iVar3 = iVar3 + 1;
-        iVar4 = iVar4 + 4;
-      } while (iVar3 < *(int *)(param_1 + 8));
+        iVar4 = iVar4 + 1;
+        pCVar3 = (CInventory *)&pCVar3->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
     return;
   }
   iVar4 = 0;
-  iVar3 = param_1;
+  pCVar3 = this_ptr;
   iVar1 = iVar4;
-  if (0 < *(int *)(param_1 + 8)) {
+  if (0 < this_ptr->item_count) {
     do {
       iVar1 = iVar4;
-      if (*(int *)(param_1 + 0x334) == *(int *)(iVar3 + 0xc)) break;
+      if (this_ptr->selected_item == pCVar3->items[0]) break;
       iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 4;
+      pCVar3 = (CInventory *)&pCVar3->owner;
       iVar1 = iVar4;
-    } while (iVar4 < *(int *)(param_1 + 8));
+    } while (iVar4 < this_ptr->item_count);
   }
   while( true ) {
-    iVar4 = iVar4 + param_2;
-    if (iVar4 < *(int *)(param_1 + 8)) {
+    iVar4 = iVar4 + direction;
+    if (iVar4 < this_ptr->item_count) {
       if (iVar4 < 0) {
-        iVar4 = *(int *)(param_1 + 8) + -1;
+        iVar4 = this_ptr->item_count + -1;
       }
     }
     else {
       iVar4 = 0;
     }
-    iVar2 = iVar4 * 4 + param_1;
-    iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(uint *)(iVar2 + 0xc),"CWeapon");
-    if ((iVar3 == 0) &&
-       (iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(*(uint *)(iVar2 + 0xc),"CAmmo")
-       , iVar3 == 0)) break;
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(this_ptr->items[iVar4],"CWeapon");
+    if ((iVar2 == 0) &&
+       (iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(this_ptr->items[iVar4],"CAmmo"),
+       iVar2 == 0)) break;
     if (iVar4 == iVar1) {
       return;
     }
   }
-  *(uint *)(param_1 + 0x334) = *(uint *)(iVar2 + 0xc);
+  this_ptr->selected_item = this_ptr->items[iVar4];
   return;
 }

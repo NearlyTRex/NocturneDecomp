@@ -5,7 +5,7 @@
 
 // Original: engine_dosio.cpp_getRelativeFilePath_FUN_00456700
 // Address: 00456700
-void __cdecl getRelativeFilePath(char *param_1,char *param_2,char *param_3);
+void __cdecl getRelativeFilePath(char *dest_path,char *directory,char *filename);
 
 // Original: engine_dosio.c_FUN_00456750
 // Address: 00456750
@@ -13,68 +13,68 @@ void FUN_00456750(undefined4 param_1);
 
 // Original: engine_dosio.cpp_findFile_FUN_004567a0
 // Address: 004567a0
-undefined4 __cdecl findFile(undefined4 param_1);
+int __cdecl findFile(SFoundFileInfo *context);
 
 // Original: engine_dosio.cpp_findFileNormally_FUN_00456800
 // Address: 00456800
-undefined4 __cdecl findFileNormally(char *param_1);
+int __cdecl findFileNormally(SFoundFileInfo *info);
 
 // Original: engine_dosio.cpp_getFileSize_FUN_004568c0
 // Address: 004568c0
-undefined4 __cdecl getFileSize(undefined4 param_1,undefined4 param_2);
+int __cdecl getFileSize(char *directory,char *filename);
 
 // Original: engine_dosio.cpp_getFileTimestamp_FUN_00456910
 // Address: 00456910
-undefined4 __cdecl getFileTimestamp(undefined4 param_1,undefined4 param_2);
+uint __cdecl getFileTimestamp(char *directory_path,char *filename);
 
 // Original: engine_dosio.cpp_copyFileTimestamp_FUN_00456950
 // Address: 00456950
-bool copyFileTimestamp(undefined4 param_1,undefined4 param_2);
+bool copyFileTimestamp(char *param_1,time_t param_2);
 
-// Original: engine_dosio.cpp_FUN_004569a0
+// Original: engine_dosio.cpp_getFileSizeWithFinder_FUN_004569a0
 // Address: 004569a0
-undefined4 FUN_004569a0(void);
+uint getFileSizeWithFinder(void);
 
-// Original: engine_dosio.cpp_FUN_00456a30
+// Original: engine_dosio.cpp_setFileAttributes_FUN_00456a30
 // Address: 00456a30
-bool FUN_00456a30(void);
+bool setFileAttributes(void);
 
 // Original: engine_dosio.cpp_getFile_FUN_00456a60
 // Address: 00456a60
-int __cdecl getFile(int param_1,undefined4 param_2,char *param_3);
+_FILE * __cdecl getFile(char *directory,char *filename,char *mode);
 
-// Original: engine_dosio.cpp_FUN_00456b20
+// Original: engine_dosio.cpp_reopenFileStream_FUN_00456b20
 // Address: 00456b20
-void FUN_00456b20(int param_1,undefined4 param_2,uint param_3,int *param_4);
+void reopenFileStream(char *param_1,char *param_2,uint param_3,_FILE *param_4);
 
 // Original: engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00
 // Address: 00456c00
-int __cdecl CFileFinder::ctor(int param_1);
+CFileFinder * __cdecl CFileFinder::ctor(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20
 // Address: 00456c20
-undefined4 __cdecl CFileFinder::dtor(undefined4 param_1);
+CFileFinder * __cdecl CFileFinder::dtor(CFileFinder *this_ptr,uint flags);
 
 // Original: engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40
 // Address: 00456c40
-undefined4 __cdecl CFileFinder::openSearch(int param_1,LPCSTR param_2);
+int __cdecl CFileFinder::openSearch(CFileFinder *this_ptr,char *search_pattern);
 
 // Original: engine_dosio.cpp_CFileFinder_findNext_FUN_00456cc0
 // Address: 00456cc0
-undefined4 __cdecl CFileFinder::findNext(int param_1);
+int __cdecl CFileFinder::findNext(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40
 // Address: 00456d40
-void __cdecl CFileFinder::closeSearch(int param_1);
+void __cdecl CFileFinder::closeSearch(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_reset_FUN_00456d80
 // Address: 00456d80
-void __cdecl CFileFinder::reset(undefined1 *param_1);
+void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90
 // Address: 00456d90
-void __cdecl CFileFinder::convertStruct(int param_1,byte *param_2);
+void __cdecl CFileFinder::convertStruct(CFileFinder *finder,LPWIN32_FIND_DATAA find_data);
 
 // Original: engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
 // Address: 00565dd0
-undefined4 __cdecl setReadonlyAttribute(LPCSTR param_1,byte param_2);
+DWORD __cdecl setReadonlyAttribute(char *filename,DWORD file_attributes);

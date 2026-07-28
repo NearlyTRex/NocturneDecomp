@@ -2,24 +2,24 @@
 // Address: 004f4a50
 // Address Range: [[004f4a50, 004f4aaa]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(int param_1,int param_2)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(int param_1,int param_2)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer)
 
 {
-  int iVar1;
+  ushort *puVar1;
   int iVar2;
   byte *pbVar3;
   int iVar4;
   uint uVar5;
   byte *pbVar6;
   
-  iVar1 = *(int *)(param_1 + 0x14);
-  iVar2 = (*(int **)(param_1 + 0x20))[*(int *)(param_1 + 0x1c)];
-  pbVar6 = (byte *)(**(int **)(param_1 + 0x20) + iVar1);
-  while (pbVar6 < (byte *)(iVar2 + iVar1)) {
+  puVar1 = this_ptr->packed_data;
+  iVar2 = this_ptr->row_offsets[this_ptr->height];
+  pbVar6 = (byte *)(*this_ptr->row_offsets + (int)puVar1);
+  while (pbVar6 < (byte *)(iVar2 + (int)puVar1)) {
     uVar5 = (uint)*(ushort *)(pbVar6 + 2);
     pbVar3 = pbVar6 + 4;
     pbVar6 = pbVar3 + (uVar5 + 3 & 0xfffffffc);
@@ -27,7 +27,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004
     if (uVar5 != 0) {
       do {
         iVar4 = iVar4 + 1;
-        *pbVar3 = *(byte *)((uint)*pbVar3 + param_2);
+        *pbVar3 = palette_buffer[*pbVar3];
         pbVar3 = pbVar3 + 1;
       } while (iVar4 < (int)uVar5);
     }

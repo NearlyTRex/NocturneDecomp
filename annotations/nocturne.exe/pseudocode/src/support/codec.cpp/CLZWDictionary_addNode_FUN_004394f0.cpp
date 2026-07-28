@@ -2,26 +2,26 @@
 // Address: 004394f0
 // Address Range: [[004394f0, 00439581]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(int *param_1,undefined4 param_2,int param_3)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary *this_ptr,int code,int parent_index)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(int *param_1,uint param_2,int param_3)
+int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary *this_ptr,int code,int parent_index)
 
 {
-  if (param_1[3] < *param_1) {
-    if ((param_1[3] & param_1[3] - 1U) == 0) {
-      param_1[2] = param_1[2] + 1;
+  if (this_ptr->entry_count < this_ptr->table_capacity) {
+    if ((this_ptr->entry_count & this_ptr->entry_count - 1U) == 0) {
+      this_ptr->current_num_bits = this_ptr->current_num_bits + 1;
     }
-    *(uint *)(param_1[3] * 0x10 + param_1[4]) = param_2;
-    *(int *)(param_1[4] + 4 + param_1[3] * 0x10) = param_3;
-    *(uint *)(param_1[3] * 0x10 + 8 + param_1[4]) = 0xffffffff;
-    *(uint *)(param_1[3] * 0x10 + param_1[4] + 0xc) =
-         *(uint *)(param_1[4] + param_3 * 0x10 + 8);
-    *(int *)(param_3 * 0x10 + param_1[4] + 8) = param_1[3];
-    param_1[3] = param_1[3] + 1;
+    this_ptr->node_table[this_ptr->entry_count].code = code;
+    this_ptr->node_table[this_ptr->entry_count].parent_index = parent_index;
+    this_ptr->node_table[this_ptr->entry_count].first_child = -1;
+    this_ptr->node_table[this_ptr->entry_count].next_sibling =
+         this_ptr->node_table[parent_index].first_child;
+    this_ptr->node_table[parent_index].first_child = this_ptr->entry_count;
+    this_ptr->entry_count = this_ptr->entry_count + 1;
     return 0;
   }
-  support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(param_1);
+  support_codec_cpp_CLZWDictionary_initTable_FUN_00439450(this_ptr);
   return 1;
 }

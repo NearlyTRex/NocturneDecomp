@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(undefined4 *param_1)
+; void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(CBitFont *this_ptr)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_font.cpp_CBitFont_ctor_FUN_0048fe10 at 0048fe16

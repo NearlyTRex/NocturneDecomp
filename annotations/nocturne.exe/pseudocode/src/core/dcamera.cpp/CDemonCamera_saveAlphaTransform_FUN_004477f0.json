@@ -1,0 +1,592 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 294,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 24,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "0050e080",
+      "from_addr": "0050e15a",
+      "name": "core_set.cpp_FUN_0050e080",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004477f0",
+    "address_range": [
+      [
+        "004477f0",
+        "00447903"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0(CDemonCamera *this_ptr,int alpha_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ce760",
+      "is_variadic": false,
+      "name": "engine_matrix.c_getCameraOrigin_FUN_004ce760"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c039e8",
+      "name": "DAT_01c039e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039ec",
+      "name": "DAT_01c039ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f0",
+      "name": "DAT_01c039f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f4",
+      "name": "DAT_01c039f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039f8",
+      "name": "DAT_01c039f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c039fc",
+      "name": "DAT_01c039fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a00",
+      "name": "DAT_01c03a00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a04",
+      "name": "DAT_01c03a04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c03a08",
+      "name": "DAT_01c03a08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5118",
+      "name": "DAT_01cc5118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc511c",
+      "name": "DAT_01cc511c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5120",
+      "name": "DAT_01cc5120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5124",
+      "name": "DAT_01cc5124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5128",
+      "name": "DAT_01cc5128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc512c",
+      "name": "DAT_01cc512c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5130",
+      "name": "DAT_01cc5130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5134",
+      "name": "DAT_01cc5134",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc5138",
+      "name": "DAT_01cc5138",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050e15a",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0050e080",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.508474576271187,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "COPY": 60,
+      "INT_ADD": 35,
+      "INT_AND": 36,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 266
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004477f5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044781f",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_saveAlphaTransform_FUN_004477f0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 33,
+          "line": 24,
+          "message": "Uninitialized variable: unaff_retaddr",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 21,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 20,
+      "match": "(uint *)(iVar1 + 0x11ec)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + 0x11ec) = 0x4477fc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 24,
+      "match": "(uint *)(iVar2 + 0x124c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x124c) = _DAT_01c039e8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 25,
+      "match": "(uint *)(iVar2 + 0x126c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x126c) = _DAT_01c039ec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 26,
+      "match": "(uint *)(iVar2 + 0x128c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x128c) = _DAT_01c039f0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 27,
+      "match": "(uint *)(iVar2 + 0x12ac)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x12ac) = _DAT_01c039f4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 28,
+      "match": "(uint *)(iVar2 + 0x12cc)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x12cc) = _DAT_01c039f8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 29,
+      "match": "(uint *)(iVar2 + 0x12ec)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x12ec) = _DAT_01c039fc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 30,
+      "match": "(uint *)(iVar2 + 0x130c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x130c) = _DAT_01c03a00;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 31,
+      "match": "(uint *)(iVar2 + 0x132c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x132c) = _DAT_01c03a04;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 32,
+      "match": "(uint *)(iVar2 + 0x134c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x134c) = _DAT_01c03a08;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 33,
+      "match": "(uint *)(iVar2 + 0x136c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x136c) = _DAT_01cc5118;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 34,
+      "match": "(uint *)(iVar2 + 0x138c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x138c) = _DAT_01cc511c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 35,
+      "match": "(uint *)(iVar2 + 0x13ac)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x13ac) = _DAT_01cc5120;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 36,
+      "match": "(uint *)(iVar2 + 0x13cc)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x13cc) = _DAT_01cc5124;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 37,
+      "match": "(uint *)(iVar2 + 0x13ec)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x13ec) = _DAT_01cc5128;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 38,
+      "match": "(uint *)(iVar2 + 0x140c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x140c) = _DAT_01cc512c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 39,
+      "match": "(uint *)(iVar2 + 0x142c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x142c) = _DAT_01cc5130;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 40,
+      "match": "(uint *)(iVar2 + 0x144c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x144c) = _DAT_01cc5134;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 41,
+      "match": "(uint *)(iVar2 + 0x146c)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x146c) = _DAT_01cc5138;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: unaff_retaddr",
+      "line": 24,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar1 = (int)this_ptr * 0xc + unaff_retaddr;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 005446c1
     MOVSD.REP ES:EDI,ESI                ; 005446c2
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 005446c4
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     MOV EDX,dword ptr [EBX + 0xbca4]    ; 005446c9
     FLD float ptr [EAX]                 ; 005446cf
     ADD ESP,0x8                         ; 005446d1
@@ -118,13 +118,13 @@ section .text
     PUSH EAX                            ; 005446ef
     FSTP float ptr [EDX + 0x28]         ; 005446f0
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 005446f3
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005446f8
     PUSH EAX                            ; 005446fb
     MOV ECX,dword ptr [EBX + 0xbca4]    ; 005446fc
     PUSH ECX                            ; 00544702
     CALL core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060 ; 00544703
-        ;   XREF to: 0042a060 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060()
+        ;   XREF to: 0042a060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter * this_ptr, UOrientationVector * orientation)
     MOV EAX,0x1                         ; 00544708
     ADD ESP,0x8                         ; 0054470d
     POP ESI                             ; 00544710

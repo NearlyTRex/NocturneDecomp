@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_mobster_cpp_FUN_004da070(undefined4 param_1,int param_2)
+; CVector3f * core_mobster_cpp_FUN_004da070(CVector3f *param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -72,7 +72,7 @@ section .text
     PUSH ESI                            ; 004da106
     FSTP float ptr [ESP + 0x2c]         ; 004da107
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004da10b
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004da110
     MOV EAX,EBX                         ; 004da113
     MOV ESP,EBP                         ; 004da115

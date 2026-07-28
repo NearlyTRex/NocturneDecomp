@@ -9,18 +9,20 @@
 void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
 
 {
-  uint uVar1;
-  bool bVar2;
-  int iVar3;
+  float delta_time;
+  bool bVar1;
+  int iVar2;
+  SMotion *pSVar3;
   
-  iVar3 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
-  if (iVar3 == 0) {
+  iVar2 = core_charactr_cpp_FUN_004259f0(param_1,param_2);
+  if (iVar2 == 0) {
     return;
   }
-  uVar1 = *(uint *)(0x01C775EC + 0x264);
-  iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-  bVar2 = false;
-  switch(*(uint *)(iVar3 + 0x24)) {
+  delta_time = 0x01C775EC->delta_time_float;
+  pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                     ((CMotionController *)(param_1 + 0x150));
+  bVar1 = false;
+  switch(pSVar3->state_index) {
   case 7:
   case 8:
   case 9:
@@ -40,15 +42,15 @@ void core_stranger_cpp_FUN_005357d0(int param_1,float param_2)
   case 0x17:
   case 0x19:
   case 0x1b:
-    bVar2 = true;
+    bVar1 = true;
   }
-  if ((*(int *)(param_1 + 0x1faa0) == 7) || (bVar2)) {
+  if ((*(int *)(param_1 + 0x1faa0) == 7) || (bVar1)) {
     param_2 = param_2 * (float)0.25;
     core_stranger_cpp_FUN_00535900(param_1,param_2);
     core_stranger_cpp_FUN_00535900(param_1,param_2);
     core_stranger_cpp_FUN_00535900(param_1,param_2);
   }
   core_stranger_cpp_FUN_00535900(param_1,param_2);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,uVar1);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,delta_time);
   return;
 }

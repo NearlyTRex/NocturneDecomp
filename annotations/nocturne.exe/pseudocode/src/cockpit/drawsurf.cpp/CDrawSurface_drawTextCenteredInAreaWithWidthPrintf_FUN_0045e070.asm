@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6)
 ;
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e93f
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e93f
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000
@@ -30,7 +30,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0045e098
     PUSH EAX                            ; 0045e09c
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0045e09d
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0045e0a2
     MOV EBX,dword ptr [ESP + 0x1028]    ; 0045e0a5
     PUSH EBX                            ; 0045e0ac
@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 0045e0d3
     MOV dword ptr [ESP + 0x1018],ECX    ; 0045e0d4
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000 ; 0045e0db
-        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000()
+        ;   XREF to: 0045e000 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x18                        ; 0045e0e0
     ADD ESP,0x1004                      ; 0045e0e3
     POP EBP                             ; 0045e0e9

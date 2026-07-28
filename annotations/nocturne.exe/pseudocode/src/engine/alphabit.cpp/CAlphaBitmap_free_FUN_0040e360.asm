@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(int *param_1)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap *this_ptr)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
 ;   core_inv.cpp_freeInventory_FUN_004bf270 at 004bf275
-;   core_main.c_FUN_004c8eb0 at 004c9093
 ;   core_main.c_FUN_004c90e0 at 004c92f3
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c9093
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004d0040
 ;   core_moon.cpp_CMoon_free_FUN_004dea60 at 004deaab
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340 at 0040e346

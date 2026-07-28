@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(undefined4 *param_1)
+; void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(CSfxOptions *this_ptr)
 ;
+; Parameters:
+; CSfxOptions *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_FUN_00526310 at 0052632f
@@ -49,7 +51,7 @@ section .text
     FSTP double ptr [EBX + 0x4]         ; 00525f1f
     FSTP double ptr [EBX + 0x24]        ; 00525f22
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00525f25
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0x60],0x0      ; 00525f2a
     MOV dword ptr [EBX + 0x64],0x0      ; 00525f31
     FLD double ptr [0x005a2148]         ; 00525f38 | DAT_005a2148

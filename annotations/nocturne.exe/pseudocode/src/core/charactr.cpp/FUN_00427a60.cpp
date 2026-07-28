@@ -15,7 +15,8 @@ void core_charactr_cpp_FUN_00427a60(int param_1)
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_0051ed30
-            (param_1 + 0x150,param_1 + 0x20,param_1 + 0x30,0);
+            ((CDeformableModelInstance *)(param_1 + 0x150),(CVector3f *)(param_1 + 0x20),
+             (CVector3f *)(param_1 + 0x30),0);
   *(uint *)(param_1 + 0x70) = 2;
   return;
 }

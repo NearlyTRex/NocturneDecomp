@@ -21,9 +21,9 @@
 ;
 ; XREF[15]:
 ;   core_boneguy.cpp_FUN_00418a00 at 00418bb6
-;   core_charactr.cpp_FUN_00429e60 at 00429f09
+;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60 at 00429f09
 ;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043b9d5
-;   core_gabriela.cpp_FUN_00497900 at 00497bba
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497bba
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0 at 004f60d4
 ;   core_scat.cpp_FUN_004fd1d0 at 004fd349
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0 at 0051d082
@@ -200,7 +200,7 @@ section .text
     FLD ST2                             ; 0055d45a
     FXCH                                ; 0055d45c
     CALL crt_math.c_atan2_FUN_00566c81  ; 0055d45e
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     FSTP ST2                            ; 0055d463
     FLD float ptr [EBP + 0x18]          ; 0055d465
     FLD1                                ; 0055d468

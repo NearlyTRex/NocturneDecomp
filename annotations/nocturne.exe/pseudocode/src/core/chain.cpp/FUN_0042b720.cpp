@@ -9,12 +9,12 @@
 void core_chain_cpp_FUN_0042b720(void)
 
 {
-  int iVar1;
+  CChain *this_ptr;
   
-  iVar1 = FUN_0056497c(0x570);
-  if (iVar1 == 0) {
+  this_ptr = (CChain *)FUN_0056497c(0x570);
+  if (this_ptr == (CChain *)0x0) {
     return;
   }
-  core_chain_cpp_CChain_ctor_FUN_0042b750(iVar1);
+  core_chain_cpp_CChain_ctor_FUN_0042b750(this_ptr);
   return;
 }

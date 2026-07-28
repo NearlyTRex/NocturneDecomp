@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0056adf0(undefined4 *param_1,undefined4 param_2)
+; void FUN_0056adf0(undefined4 *param_1,int param_2)
 ;
 ;
 ; XREF[1]:
@@ -23,7 +23,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 0056adf9
     PUSH ECX                            ; 0056adfd
     CALL crt_stdio.c_fputc_FUN_00566cc0 ; 0056adfe
-        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_00566cc0()
+        ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_00566cc0(int character, _FILE * file)
     MOV ESI,dword ptr [EBX + 0x10]      ; 0056ae03
     INC ESI                             ; 0056ae06
     ADD ESP,0x8                         ; 0056ae07

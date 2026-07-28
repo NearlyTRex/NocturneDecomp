@@ -9,6 +9,6 @@
 uint FUN_005714e0(void)
 
 {
-  FUN_0057146c();
+  InitializeConsoleHandles();
   return DAT_005c20d0;
 }

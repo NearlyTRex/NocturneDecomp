@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int param_2)
+; void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFx *this_ptr,char *filename)
 ;
+; Parameters:
+; CFilterFx *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
 ;
@@ -50,7 +53,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x114]     ; 0044c320
     PUSH ESI                            ; 0044c327
     CALL core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0 ; 0044c328
-        ;   XREF to: 0044c2f0 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0()
+        ;   XREF to: 0044c2f0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx * this_ptr)
     ADD ESP,0x4                         ; 0044c32d
     TEST EBX,EBX                        ; 0044c330
     JZ 0x0044c431                       ; 0044c332
@@ -68,7 +71,7 @@ section .text
     PUSH EAX                            ; 0044c355
     PUSH EBX                            ; 0044c356
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0044c357
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0044c35c
     MOV EDI,EAX                         ; 0044c35f
     TEST EAX,EAX                        ; 0044c361
@@ -92,13 +95,13 @@ section .text
     ADD ESP,0xc                         ; 0044c395
     PUSH EDI                            ; 0044c398
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0044c399
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,dword ptr [ESI]             ; 0044c39e
     ADD ESP,0x4                         ; 0044c3a0
     SHL EAX,0xd                         ; 0044c3a3
     PUSH EAX                            ; 0044c3a6
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0044c3a7
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0044c3ac
     PUSH EBX                            ; 0044c3af
     PUSH 0x57c0bf                       ; 0044c3b0 | = "%s.mov"
@@ -113,7 +116,7 @@ section .text
     PUSH EAX                            ; 0044c3ce
     PUSH EBX                            ; 0044c3cf
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0044c3d0
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0044c3d5
     MOV EDI,EAX                         ; 0044c3d8
     TEST EAX,EAX                        ; 0044c3da
@@ -127,11 +130,11 @@ section .text
     MOV ECX,dword ptr [ESI + 0x4]       ; 0044c3eb
     PUSH ECX                            ; 0044c3ee
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0044c3ef
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044c3f4
     PUSH EDI                            ; 0044c3f7
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0044c3f8
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0044c3fd
     XOR ECX,ECX                         ; 0044c400
     POP EDI                             ; 0044c402
@@ -162,12 +165,12 @@ section .text
     MOV EBX,dword ptr [0x005ad54c]      ; 0044c436 | DAT_005ad54c
     PUSH EBX                            ; 0044c43c
     CALL core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 ; 0044c43d
-        ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60()
+        ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache * this_ptr, char * filter_name)
     ADD ESP,0x8                         ; 0044c442
     PUSH 0x57c079                       ; 0044c445 | = "movscrn.raw"
     PUSH EAX                            ; 0044c44a
     CALL core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 ; 0044c44b
-        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90()
+        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90(CDemonFilter * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0044c450
     ADD ESP,0x100                       ; 0044c453
     POP EBP                             ; 0044c459

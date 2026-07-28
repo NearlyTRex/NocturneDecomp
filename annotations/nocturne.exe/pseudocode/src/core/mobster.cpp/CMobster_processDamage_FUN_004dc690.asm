@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(int param_1,int param_2)
+; void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(CMobster *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -33,17 +33,17 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbdc4]    ; 004dc69c
     PUSH EDX                            ; 004dc6a2
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004dc6a3
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004dc6a8
     MOV ECX,dword ptr [EBX + 0xbdbc]    ; 004dc6ab
     PUSH ECX                            ; 004dc6b1
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004dc6b2
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004dc6b7
     PUSH EDI                            ; 004dc6ba
     PUSH EBX                            ; 004dc6bb
     CALL core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0 ; 004dc6bc
-        ;   XREF to: 004dc2d0 (UNCONDITIONAL_CALL)  ; undefined core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0()
+        ;   XREF to: 004dc2d0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0(CMobster * this_ptr, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xbdcc]    ; 004dc6c1
     MOV ESI,dword ptr [EBX + EAX*0x4 + 0x2290] ; 004dc6c7
     ADD ESP,0x8                         ; 004dc6ce
@@ -71,14 +71,14 @@ section .text
     MOV EDX,dword ptr [EDI + 0x34]      ; 004dc710
     PUSH EDX                            ; 004dc713
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004dc714
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004dc719
     TEST EAX,EAX                        ; 004dc71c
     JZ 0x004dc731                       ; 004dc71e
         ;   XREF to: 004dc731 (CONDITIONAL_JUMP)  ; LAB_004dc731
     PUSH 0x3f000000                     ; 004dc720
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 004dc725
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 004dc72a
     TEST EAX,EAX                        ; 004dc72d
     JZ 0x004dc73e                       ; 004dc72f
@@ -88,13 +88,13 @@ section .text
     PUSH 0x3                            ; 004dc733
     PUSH ESI                            ; 004dc735
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004dc736
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004dc73b
     MOV ECX,dword ptr [EBX + 0xbdb8]    ; 004dc73e
         ;   Label: LAB_004dc73e
     PUSH ECX                            ; 004dc744
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004dc745
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 004dc74a
     TEST EAX,EAX                        ; 004dc74d
     JZ 0x004dc7ef                       ; 004dc74f
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_004dc755
     PUSH EBX                            ; 004dc756
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 004dc757
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004dc75c
     POP EBP                             ; 004dc75f
     POP EDI                             ; 004dc760
@@ -114,7 +114,7 @@ section .text
         ;   Label: LAB_004dc764
     MOV dword ptr [EBX + 0x2434],0x0    ; 004dc765
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004dc76f
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004dc774
     ADD ESP,0x4                         ; 004dc777
     CMP EAX,0x5                         ; 004dc77a
@@ -127,7 +127,7 @@ section .text
     PUSH 0x4                            ; 004dc786
     PUSH ESI                            ; 004dc788
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004dc789
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004dc78e
     PUSH 0x0                            ; 004dc791
     PUSH 0x1                            ; 004dc793
@@ -142,7 +142,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0xbdb8]    ; 004dc7af
     PUSH EBP                            ; 004dc7b5
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004dc7b6
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004dc7bb
     PUSH 0x58a489                       ; 004dc7be | = "mobster-die-?.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004dc7c3
@@ -154,7 +154,7 @@ section .text
     PUSH EDI                            ; 004dc7e0
     PUSH EBX                            ; 004dc7e1
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 004dc7e2
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004dc7e7
     POP EBP                             ; 004dc7ea
     POP EDI                             ; 004dc7eb
@@ -171,7 +171,7 @@ section .text
     PUSH EDI                            ; 004dc807
     PUSH EBX                            ; 004dc808
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 004dc809
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004dc80e
     POP EBP                             ; 004dc811
     POP EDI                             ; 004dc812

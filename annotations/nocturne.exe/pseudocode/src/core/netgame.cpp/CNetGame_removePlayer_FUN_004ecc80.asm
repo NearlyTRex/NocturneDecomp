@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(int param_1,int param_2)
+; void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(CNetGame *this_ptr,int player_index)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -110,7 +113,7 @@ section .text
     ADD EAX,ESI                         ; 004ecd68
     PUSH EAX                            ; 004ecd6a
     CALL crt_string.c_memmove_FUN_00566170 ; 004ecd6b
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     XOR ESI,ESI                         ; 004ecd70
     MOV EDI,dword ptr [0x01d06610]      ; 004ecd72 | DAT_01d06610
     ADD ESP,0xc                         ; 004ecd78
@@ -139,7 +142,7 @@ section .text
     PUSH EBX                            ; 004ecdc6
     PUSH EDI                            ; 004ecdc7
     CALL crt_string.c_memmove_FUN_00566170 ; 004ecdc8
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004ecdcd
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004ecdd0
     MOV ECX,dword ptr [ESP + 0x20]      ; 004ecdd4
@@ -153,7 +156,7 @@ section .text
     INC ESI                             ; 004ecde7
     ADD EBX,0x114                       ; 004ecde8
     CALL crt_string.c_memmove_FUN_00566170 ; 004ecdee
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004ecdf3
     ADD EDI,0x114                       ; 004ecdf6
     MOV EDX,dword ptr [ESP + 0x4]       ; 004ecdfc

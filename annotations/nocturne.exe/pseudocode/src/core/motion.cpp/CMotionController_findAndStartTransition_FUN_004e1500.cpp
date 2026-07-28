@@ -2,59 +2,60 @@
 // Address: 004e1500
 // Address Range: [[004e1500, 004e15f4]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(int param_1)
+// Signature: int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(CMotionController *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(int param_1)
+int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(CMotionController *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
+  SMotion *pSVar3;
+  SMotionTransition *transition;
   
-  iVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1);
-  iVar4 = *(int *)(param_1 + 0x28);
-  if ((iVar4 < 0) || (iVar4 == *(int *)(iVar1 + 0x24))) {
-    *(uint *)(param_1 + 0x2c) = 0;
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
+  iVar2 = this_ptr->state_index;
+  if ((iVar2 < 0) || (iVar2 == pSVar1->state_index)) {
+    this_ptr->in_transition = (SMotionTransition *)0x0;
     return 0;
   }
-  if ((*(int **)(param_1 + 0x2c) == (int *)0x0) || (iVar4 != **(int **)(param_1 + 0x2c))) {
+  if ((this_ptr->in_transition == (SMotionTransition *)0x0) ||
+     (iVar2 != this_ptr->in_transition->desired_state)) {
     iVar2 = 0;
-    iVar4 = 0;
-    iVar3 = iVar1;
-    if (0 < *(int *)(iVar1 + 0x68)) {
+    transition = (SMotionTransition *)0x0;
+    pSVar3 = pSVar1;
+    if (0 < pSVar1->transition_count) {
       do {
-        if (*(int *)(iVar3 + 0x6c) == *(int *)(param_1 + 0x28)) {
-          iVar4 = iVar1 + 0x6c + iVar2 * 0x18;
+        if (pSVar3->transitions[0].desired_state == this_ptr->state_index) {
+          transition = pSVar1->transitions + iVar2;
           break;
         }
         iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 0x18;
-      } while (iVar2 < *(int *)(iVar1 + 0x68));
+        pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);
+      } while (iVar2 < pSVar1->transition_count);
     }
-    if ((iVar4 != 0) && (iVar4 != *(int *)(param_1 + 0x2c))) {
-      *(uint *)(param_1 + 0x2c) = 0;
-      core_motion_cpp_CMotionController_clearTweenState_FUN_004e19f0(param_1);
-      switch(*(uint *)(iVar4 + 4)) {
-      case 1:
+    if ((transition != (SMotionTransition *)0x0) && (transition != this_ptr->in_transition)) {
+      this_ptr->in_transition = (SMotionTransition *)0x0;
+      core_motion_cpp_CMotionController_clearTweenState_FUN_004e19f0(this_ptr);
+      switch(transition->cmd) {
+      case MOTION_CMD_JUMP:
         core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990
-                  (param_1,*(uint *)(iVar4 + 8),*(uint *)(iVar4 + 0xc));
-        if (*(int *)(iVar4 + 0x14) != 0) {
-          iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1);
-          *(uint *)(param_1 + 0x28) = *(uint *)(iVar4 + 0x24);
+                  (this_ptr,transition->to_motion_number,transition->to_frame_number);
+        if (transition->set_new_state_as_desired != 0) {
+          pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
+          this_ptr->state_index = pSVar1->state_index;
         }
         return 1;
-      case 2:
-        *(int *)(param_1 + 0x2c) = iVar4;
+      case MOTION_CMD_WAIT_EXIT:
+        this_ptr->in_transition = transition;
         return 0;
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-        *(int *)(param_1 + 0x2c) = iVar4;
-        core_motion_cpp_CMotionController_startTransition_FUN_004e1770(param_1,iVar4);
+      case MOTION_CMD_TWEEN:
+      case MOTION_CMD_TWEEN_ADVANCE:
+      case MOTION_CMD_TWEEN_ADVANCE_BOTH:
+      case MOTION_CMD_TWEEN_BIDIR:
+        this_ptr->in_transition = transition;
+        core_motion_cpp_CMotionController_startTransition_FUN_004e1770(this_ptr,transition);
         return 0;
       }
     }

@@ -2,29 +2,31 @@
 // Address: 00430630
 // Address Range: [[00430630, 004310ed]]
 // Convention: unknown
-// Signature: int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
+// Signature: void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
 
 #include "nocturne.h"
 
-int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
+void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
 
 {
   int iVar1;
-  int *piVar2;
-  ushort *puVar3;
-  int iVar4;
-  ushort uVar5;
-  ushort uVar6;
+  int iVar2;
+  int *piVar3;
+  ushort *puVar4;
+  int iVar5;
+  void *pvVar6;
   ushort uVar7;
-  uint uVar8;
-  uint uVar9;
-  int iVar10;
-  uint *puVar11;
+  ushort uVar8;
+  ushort uVar9;
+  uint uVar10;
+  uint uVar11;
   int iVar12;
-  int iVar13;
+  uint *puVar13;
   int iVar14;
-  uint *puVar15;
-  byte bVar16;
+  int iVar15;
+  ulong new_size;
+  uint *puVar16;
+  byte bVar17;
   byte local_1f4 [256];
   int local_f4;
   int local_f0;
@@ -84,19 +86,19 @@ int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *pa
   int local_18;
   int local_14;
   
-  bVar16 = 0;
-  uVar8 = 0;
+  bVar17 = 0;
+  uVar10 = 0;
   if (param_1 == 0) {
-    return 0;
+    return (void *)0x0;
   }
   local_48 = param_5 + -1;
   local_ec = param_6 + -1;
-  iVar10 = 0;
+  iVar12 = 0;
   local_e8 = param_2;
   if (0 < local_ec) {
     do {
-      local_dc = iVar10 + 1;
-      local_cc = iVar10 * 0x84;
+      local_dc = iVar12 + 1;
+      local_cc = iVar12 * 0x84;
       local_e0 = 0;
       local_34 = param_2 + local_dc * 0x21;
       local_e4 = local_e8;
@@ -104,78 +106,78 @@ int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *pa
       local_70 = local_dc;
       local_68 = local_dc;
       local_2c = local_dc;
-      for (local_20 = 0; piVar2 = (int *)((int)param_2 + local_cc), local_20 < *piVar2;
+      for (local_20 = 0; piVar3 = (int *)((int)param_2 + local_cc), local_20 < *piVar3;
           local_20 = local_20 + 1) {
-        iVar14 = *(int *)((int)piVar2 + local_e0 + 4);
-        iVar12 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar14;
-        iVar13 = iVar12 + -1;
-        if (0x1ff < (int)uVar8) {
-          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar8,iVar10);
+        iVar2 = *(int *)((int)piVar3 + local_e0 + 4);
+        iVar14 = *(int *)((int)piVar3 + local_e0 + 0x44) + iVar2;
+        iVar15 = iVar14 + -1;
+        if (0x1ff < (int)uVar10) {
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
           PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           INT_01cc4804 = 0x87e;
           core_main_c_FUN_004c8440(local_1f4);
         }
-        uVar5 = (ushort)iVar10;
-        if (0 < iVar14) {
-          local_d4 = iVar14 + 1;
-          local_d8 = iVar14 + -1;
+        uVar7 = (ushort)iVar12;
+        if (0 < iVar2) {
+          local_d4 = iVar2 + 1;
+          local_d8 = iVar2 + -1;
           local_ac = 0;
           local_c4 = 0;
           local_24 = local_e4;
           local_a8 = local_34;
           while( true ) {
-            piVar2 = param_2 + local_2c * 0x21;
-            if (*piVar2 <= local_ac) break;
-            iVar4 = *(int *)((int)piVar2 + local_c4 + 4);
-            local_74 = *(int *)((int)piVar2 + local_c4 + 0x44) + iVar4 + -1;
+            piVar3 = param_2 + local_2c * 0x21;
+            if (*piVar3 <= local_ac) break;
+            iVar5 = *(int *)((int)piVar3 + local_c4 + 4);
+            local_74 = *(int *)((int)piVar3 + local_c4 + 0x44) + iVar5 + -1;
             local_38 = 0;
             if (0 < local_20) {
               local_44 = *local_e4;
               local_58 = local_44 + local_e4[0x10] + -1;
-              if (iVar4 < local_58) {
+              if (iVar5 < local_58) {
                 local_38 = 1;
               }
             }
-            uVar7 = (ushort)iVar14;
-            uVar6 = (ushort)iVar4;
-            if ((iVar4 < local_d8) && (iVar14 <= local_74)) {
-              iVar1 = uVar8 * 8;
-              uVar9 = uVar8 + 1;
-              puVar3 = &DAT_00765c6c + uVar8 * 4;
-              local_1c = uVar9;
+            uVar9 = (ushort)iVar2;
+            uVar8 = (ushort)iVar5;
+            if ((iVar5 < local_d8) && (iVar2 <= local_74)) {
+              iVar1 = uVar10 * 8;
+              uVar11 = uVar10 + 1;
+              puVar4 = &DAT_00765c6c + uVar10 * 4;
+              local_1c = uVar11;
               if (local_38 != 0) {
-                if (param_7 < (iVar14 - local_58) + -1) goto LAB_00430aa0;
+                if (param_7 < (iVar2 - local_58) + -1) goto LAB_00430aa0;
                 local_98 = 0;
-                *puVar3 = 0;
-                *puVar3 = (ushort)local_58;
-                (&DAT_00765c6e)[uVar8 * 4] = 0;
-                (&DAT_00765c6e)[uVar8 * 4] = uVar5;
-                (&DAT_00765c70)[uVar8 * 4] = 0;
-                uVar6 = (&DAT_00765c72)[uVar8 * 4];
-                (&DAT_00765c70)[uVar8 * 4] = uVar7;
-                (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000;
-                (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000 | uVar5 & 0x7fff;
+                *puVar4 = 0;
+                *puVar4 = (ushort)local_58;
+                (&DAT_00765c6e)[uVar10 * 4] = 0;
+                (&DAT_00765c6e)[uVar10 * 4] = uVar7;
+                (&DAT_00765c70)[uVar10 * 4] = 0;
+                uVar8 = (&DAT_00765c72)[uVar10 * 4];
+                (&DAT_00765c70)[uVar10 * 4] = uVar9;
+                (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000;
+                (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000 | uVar7 & 0x7fff;
                 *(byte *)((int)&DAT_00765c72 + iVar1 + 1) =
                      *(byte *)((int)&DAT_00765c72 + iVar1 + 1) & 0x7f;
-                uVar6 = (&DAT_00765c72)[uVar8 * 4];
-                local_a0 = iVar14;
-                local_9c = iVar10;
+                uVar8 = (&DAT_00765c72)[uVar10 * 4];
+                local_a0 = iVar2;
+                local_9c = iVar12;
                 goto LAB_00430932;
               }
               local_b8 = local_dc;
-              *puVar3 = 0;
-              *puVar3 = uVar7;
-              (&DAT_00765c6e)[uVar8 * 4] = 0;
-              (&DAT_00765c6e)[uVar8 * 4] = uVar5;
-              (&DAT_00765c70)[uVar8 * 4] = 0;
-              uVar7 = (&DAT_00765c72)[uVar8 * 4];
-              (&DAT_00765c70)[uVar8 * 4] = uVar6;
-              (&DAT_00765c72)[uVar8 * 4] = uVar7 & 0x8000;
-              (&DAT_00765c72)[uVar8 * 4] = uVar7 & 0x8000 | (ushort)local_dc & 0x7fff;
+              *puVar4 = 0;
+              *puVar4 = uVar9;
+              (&DAT_00765c6e)[uVar10 * 4] = 0;
+              (&DAT_00765c6e)[uVar10 * 4] = uVar7;
+              (&DAT_00765c70)[uVar10 * 4] = 0;
+              uVar9 = (&DAT_00765c72)[uVar10 * 4];
+              (&DAT_00765c70)[uVar10 * 4] = uVar8;
+              (&DAT_00765c72)[uVar10 * 4] = uVar9 & 0x8000;
+              (&DAT_00765c72)[uVar10 * 4] = uVar9 & 0x8000 | (ushort)local_dc & 0x7fff;
               *(byte *)((int)&DAT_00765c72 + iVar1 + 1) =
                    *(byte *)((int)&DAT_00765c72 + iVar1 + 1) & 0x7f;
-              (&DAT_00765c72)[uVar8 * 4] = (&DAT_00765c72)[uVar8 * 4];
-              local_c0 = iVar4;
+              (&DAT_00765c72)[uVar10 * 4] = (&DAT_00765c72)[uVar10 * 4];
+              local_c0 = iVar5;
               local_b0 = local_38;
             }
             else {
@@ -184,174 +186,174 @@ LAB_00430aa0:
               if (0 < local_ac) {
                 local_44 = *local_a8;
                 local_18 = local_44 + local_a8[0x10] + -1;
-                if (iVar14 < local_18) {
+                if (iVar2 < local_18) {
                   local_bc = 1;
                 }
               }
-              uVar9 = uVar8;
-              if ((local_d4 < iVar4) && (iVar4 <= iVar13)) {
-                if ((local_bc == 0) && ((iVar4 - iVar14) + 1 <= param_9)) {
+              uVar11 = uVar10;
+              if ((local_d4 < iVar5) && (iVar5 <= iVar15)) {
+                if ((local_bc == 0) && ((iVar5 - iVar2) + 1 <= param_9)) {
                   local_8c = local_80;
                   local_88 = 1;
-                  puVar3 = &DAT_00765c6c + uVar8 * 4;
-                  *puVar3 = 0;
-                  *puVar3 = uVar7;
-                  (&DAT_00765c6e)[uVar8 * 4] = 0;
-                  (&DAT_00765c6e)[uVar8 * 4] = uVar5;
-                  (&DAT_00765c70)[uVar8 * 4] = 0;
-                  (&DAT_00765c70)[uVar8 * 4] = uVar6;
-                  uVar6 = (&DAT_00765c72)[uVar8 * 4];
-                  (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000;
-                  (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000 | (ushort)local_80 & 0x7fff;
-                  *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) =
-                       *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) & 0x7f;
-                  uVar6 = (&DAT_00765c72)[uVar8 * 4] | 0x8000;
-                  local_94 = iVar10;
-                  local_90 = iVar4;
+                  puVar4 = &DAT_00765c6c + uVar10 * 4;
+                  *puVar4 = 0;
+                  *puVar4 = uVar9;
+                  (&DAT_00765c6e)[uVar10 * 4] = 0;
+                  (&DAT_00765c6e)[uVar10 * 4] = uVar7;
+                  (&DAT_00765c70)[uVar10 * 4] = 0;
+                  (&DAT_00765c70)[uVar10 * 4] = uVar8;
+                  uVar8 = (&DAT_00765c72)[uVar10 * 4];
+                  (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000;
+                  (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000 | (ushort)local_80 & 0x7fff;
+                  *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) =
+                       *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) & 0x7f;
+                  uVar8 = (&DAT_00765c72)[uVar10 * 4] | 0x8000;
+                  local_94 = iVar12;
+                  local_90 = iVar5;
                 }
                 else {
-                  if ((local_bc == 0) || (param_8 < (iVar4 - local_18) + -1)) goto LAB_00430936;
+                  if ((local_bc == 0) || (param_8 < (iVar5 - local_18) + -1)) goto LAB_00430936;
                   local_84 = local_18;
                   local_a4 = local_70;
                   local_78 = 1;
-                  puVar3 = &DAT_00765c6c + uVar8 * 4;
-                  *puVar3 = 0;
-                  *puVar3 = *puVar3 | (ushort)local_18;
-                  (&DAT_00765c6e)[uVar8 * 4] = 0;
-                  (&DAT_00765c6e)[uVar8 * 4] = (&DAT_00765c6e)[uVar8 * 4] | (ushort)local_70;
-                  (&DAT_00765c70)[uVar8 * 4] = 0;
-                  (&DAT_00765c70)[uVar8 * 4] = (&DAT_00765c70)[uVar8 * 4] | uVar6;
-                  uVar6 = (&DAT_00765c72)[uVar8 * 4];
-                  (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000;
-                  (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000 | (ushort)local_70 & 0x7fff;
-                  *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) =
-                       *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) & 0x7f;
-                  uVar6 = (&DAT_00765c72)[uVar8 * 4] | 0x8000;
-                  local_7c = iVar4;
-                  local_14 = iVar4;
+                  puVar4 = &DAT_00765c6c + uVar10 * 4;
+                  *puVar4 = 0;
+                  *puVar4 = *puVar4 | (ushort)local_18;
+                  (&DAT_00765c6e)[uVar10 * 4] = 0;
+                  (&DAT_00765c6e)[uVar10 * 4] = (&DAT_00765c6e)[uVar10 * 4] | (ushort)local_70;
+                  (&DAT_00765c70)[uVar10 * 4] = 0;
+                  (&DAT_00765c70)[uVar10 * 4] = (&DAT_00765c70)[uVar10 * 4] | uVar8;
+                  uVar8 = (&DAT_00765c72)[uVar10 * 4];
+                  (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000;
+                  (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000 | (ushort)local_70 & 0x7fff;
+                  *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) =
+                       *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) & 0x7f;
+                  uVar8 = (&DAT_00765c72)[uVar10 * 4] | 0x8000;
+                  local_7c = iVar5;
+                  local_14 = iVar5;
                 }
 LAB_00430932:
-                puVar3[3] = uVar6;
-                uVar9 = uVar8 + 1;
+                puVar4[3] = uVar8;
+                uVar11 = uVar10 + 1;
               }
             }
 LAB_00430936:
             local_c4 = local_c4 + 4;
             local_ac = local_ac + 1;
             local_a8 = local_a8 + 1;
-            uVar8 = uVar9;
+            uVar10 = uVar11;
           }
         }
-        if (0x1ff < (int)uVar8) {
-          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar8,iVar10);
+        if (0x1ff < (int)uVar10) {
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
           PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
           INT_01cc4804 = 0x8b8;
           core_main_c_FUN_004c8440(local_1f4);
         }
-        if (iVar13 < local_48) {
-          local_30 = iVar12 + -2;
+        if (iVar15 < local_48) {
+          local_30 = iVar14 + -2;
           local_28 = local_e0;
           local_50 = 0;
-          for (local_b4 = 0; piVar2 = param_2 + local_2c * 0x21, local_d0 = iVar12,
-              local_b4 < *piVar2; local_b4 = local_b4 + 1) {
-            local_40 = *(int *)((int)piVar2 + local_50 + 4);
+          for (local_b4 = 0; piVar3 = param_2 + local_2c * 0x21, local_d0 = iVar14,
+              local_b4 < *piVar3; local_b4 = local_b4 + 1) {
+            local_40 = *(int *)((int)piVar3 + local_50 + 4);
             local_60 = 0;
             local_44 = *(int *)((int)param_2 + local_cc) + -1;
-            iVar4 = local_40 + *(int *)((int)piVar2 + local_50 + 0x44) + -1;
-            if ((local_20 < local_44) && (*(int *)((int)param_2 + local_cc + local_e0 + 8) < iVar4))
+            iVar5 = local_40 + *(int *)((int)piVar3 + local_50 + 0x44) + -1;
+            if ((local_20 < local_44) && (*(int *)((int)param_2 + local_cc + local_e0 + 8) < iVar5))
             {
               local_60 = 1;
             }
-            if (((iVar12 < iVar4) && (local_40 <= iVar13)) && (local_60 == 0)) {
+            if (((iVar14 < iVar5) && (local_40 <= iVar15)) && (local_60 == 0)) {
               local_5c = local_68;
-              (&DAT_00765c6c)[uVar8 * 4] = 0;
-              (&DAT_00765c6c)[uVar8 * 4] = (ushort)iVar13;
-              (&DAT_00765c6e)[uVar8 * 4] = 0;
-              (&DAT_00765c6e)[uVar8 * 4] = uVar5;
-              (&DAT_00765c70)[uVar8 * 4] = 0;
-              (&DAT_00765c70)[uVar8 * 4] = (ushort)iVar4;
-              uVar6 = (&DAT_00765c72)[uVar8 * 4];
-              (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000;
-              (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000 | (ushort)local_68 & 0x7fff;
-              *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) =
-                   *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) & 0x7f;
-              uVar9 = uVar8 + 1;
-              (&DAT_00765c72)[uVar8 * 4] = (&DAT_00765c72)[uVar8 * 4];
-              local_6c = iVar10;
-              local_64 = iVar4;
+              (&DAT_00765c6c)[uVar10 * 4] = 0;
+              (&DAT_00765c6c)[uVar10 * 4] = (ushort)iVar15;
+              (&DAT_00765c6e)[uVar10 * 4] = 0;
+              (&DAT_00765c6e)[uVar10 * 4] = uVar7;
+              (&DAT_00765c70)[uVar10 * 4] = 0;
+              (&DAT_00765c70)[uVar10 * 4] = (ushort)iVar5;
+              uVar8 = (&DAT_00765c72)[uVar10 * 4];
+              (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000;
+              (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000 | (ushort)local_68 & 0x7fff;
+              *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) =
+                   *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) & 0x7f;
+              uVar11 = uVar10 + 1;
+              (&DAT_00765c72)[uVar10 * 4] = (&DAT_00765c72)[uVar10 * 4];
+              local_6c = iVar12;
+              local_64 = iVar5;
               local_54 = local_60;
             }
             else {
               local_c8 = 0;
               local_44 = param_2[local_2c * 0x21] + -1;
               if ((local_b4 < local_44) &&
-                 (*(int *)((int)(param_2 + local_2c * 0x21) + local_50 + 8) < iVar13)) {
+                 (*(int *)((int)(param_2 + local_2c * 0x21) + local_50 + 8) < iVar15)) {
                 local_c8 = 1;
               }
-              uVar9 = uVar8;
-              if (((iVar4 < local_30) && (iVar14 <= iVar4)) &&
-                 ((local_c8 == 0 && ((iVar13 - iVar4) + 1 <= param_9)))) {
+              uVar11 = uVar10;
+              if (((iVar5 < local_30) && (iVar2 <= iVar5)) &&
+                 ((local_c8 == 0 && ((iVar15 - iVar5) + 1 <= param_9)))) {
                 local_3c = 1;
-                puVar3 = &DAT_00765c6c + uVar8 * 4;
-                *puVar3 = 0;
-                *puVar3 = *puVar3 | (ushort)iVar13;
-                (&DAT_00765c6e)[uVar8 * 4] = 0;
-                (&DAT_00765c6e)[uVar8 * 4] = (&DAT_00765c6e)[uVar8 * 4] | uVar5;
-                (&DAT_00765c70)[uVar8 * 4] = 0;
-                (&DAT_00765c70)[uVar8 * 4] = (&DAT_00765c70)[uVar8 * 4] | (ushort)iVar4;
-                uVar6 = (&DAT_00765c72)[uVar8 * 4];
-                (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000;
-                (&DAT_00765c72)[uVar8 * 4] = uVar6 & 0x8000 | (ushort)local_2c & 0x7fff;
-                *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) =
-                     *(byte *)((int)&DAT_00765c72 + uVar8 * 8 + 1) & 0x7f;
-                uVar9 = uVar8 + 1;
-                (&DAT_00765c72)[uVar8 * 4] = (&DAT_00765c72)[uVar8 * 4] | 0x8000;
-                local_f4 = iVar13;
-                local_f0 = iVar10;
-                local_4c = iVar4;
-                local_14 = iVar4;
+                puVar4 = &DAT_00765c6c + uVar10 * 4;
+                *puVar4 = 0;
+                *puVar4 = *puVar4 | (ushort)iVar15;
+                (&DAT_00765c6e)[uVar10 * 4] = 0;
+                (&DAT_00765c6e)[uVar10 * 4] = (&DAT_00765c6e)[uVar10 * 4] | uVar7;
+                (&DAT_00765c70)[uVar10 * 4] = 0;
+                (&DAT_00765c70)[uVar10 * 4] = (&DAT_00765c70)[uVar10 * 4] | (ushort)iVar5;
+                uVar8 = (&DAT_00765c72)[uVar10 * 4];
+                (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000;
+                (&DAT_00765c72)[uVar10 * 4] = uVar8 & 0x8000 | (ushort)local_2c & 0x7fff;
+                *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) =
+                     *(byte *)((int)&DAT_00765c72 + uVar10 * 8 + 1) & 0x7f;
+                uVar11 = uVar10 + 1;
+                (&DAT_00765c72)[uVar10 * 4] = (&DAT_00765c72)[uVar10 * 4] | 0x8000;
+                local_f4 = iVar15;
+                local_f0 = iVar12;
+                local_4c = iVar5;
+                local_14 = iVar5;
               }
             }
             local_50 = local_50 + 4;
-            uVar8 = uVar9;
+            uVar10 = uVar11;
           }
         }
         local_e0 = local_e0 + 4;
         local_e4 = local_e4 + 1;
       }
       local_e8 = local_e8 + 0x21;
-      iVar10 = iVar10 + 1;
-    } while (iVar10 < local_ec);
+      iVar12 = iVar12 + 1;
+    } while (iVar12 < local_ec);
   }
-  if (uVar8 == 0) {
-    if (param_3 == 0) {
+  if (uVar10 == 0) {
+    if (param_3 == (void *)0x0) {
       *param_4 = 0;
     }
     return param_3;
   }
-  if (param_3 == 0) {
+  if (param_3 == (void *)0x0) {
     *param_4 = 0;
   }
-  iVar14 = *param_4 * 8 + uVar8 * 8;
-  iVar10 = realloc(param_3,iVar14);
-  if (iVar10 == 0) {
-    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",iVar14);
+  new_size = *param_4 * 8 + uVar10 * 8;
+  pvVar6 = realloc(param_3,new_size);
+  if (pvVar6 == (void *)0x0) {
+    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",new_size);
     PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     INT_01cc4804 = 0x8f7;
     core_main_c_FUN_004c8440(local_1f4);
   }
-  puVar11 = (uint *)&DAT_00765c6c;
-  puVar15 = (uint *)(*param_4 * 8 + iVar10);
-  for (iVar14 = (uVar8 & 0x1fffffff) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
-    *puVar15 = *puVar11;
-    puVar11 = puVar11 + (uint)bVar16 * -2 + 1;
-    puVar15 = puVar15 + (uint)bVar16 * -2 + 1;
+  puVar13 = (uint *)&DAT_00765c6c;
+  puVar16 = (uint *)(*param_4 * 8 + (int)pvVar6);
+  for (iVar12 = (uVar10 & 0x1fffffff) << 1; iVar12 != 0; iVar12 = iVar12 + -1) {
+    *puVar16 = *puVar13;
+    puVar13 = puVar13 + (uint)bVar17 * -2 + 1;
+    puVar16 = puVar16 + (uint)bVar17 * -2 + 1;
   }
-  for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
-    *(byte *)puVar15 = *(byte *)puVar11;
-    puVar11 = (uint *)((int)puVar11 + (uint)bVar16 * -2 + 1);
-    puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);
+  for (iVar12 = 0; iVar12 != 0; iVar12 = iVar12 + -1) {
+    *(byte *)puVar16 = *(byte *)puVar13;
+    puVar13 = (uint *)((int)puVar13 + (uint)bVar17 * -2 + 1);
+    puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);
   }
-  *param_4 = *param_4 + uVar8;
-  return iVar10;
+  *param_4 = *param_4 + uVar10;
+  return pvVar6;
 }

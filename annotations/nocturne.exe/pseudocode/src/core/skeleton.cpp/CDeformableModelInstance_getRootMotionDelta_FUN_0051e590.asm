@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590(float param_1,float *param_2,float param_3,float param_4)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590(CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,float end_frame)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_buffer
+; float            Stack[0xc]:4   start_frame
+; float            Stack[0x10]:4   end_frame
 ; Local Variables:
 ; undefined8       Stack[-0x54]:8  local_54
 ; undefined4       Stack[-0x48]:4  local_48
@@ -23,7 +28,7 @@
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510 at 0051e525
-;   core_skeleton.cpp_FUN_0051e7d0 at 0051e841
+;   core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_0051e7d0 at 0051e841
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dd1184
@@ -68,7 +73,7 @@ section .text
         ;   Label: LAB_0051e5cd
     PUSH EDI                            ; 0051e5ce
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051e5cf
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051e5d4
     FLD float ptr [ESP + 0x58]          ; 0051e5d7
     SUB ESP,0x8                         ; 0051e5db
@@ -81,7 +86,7 @@ section .text
     FLD double ptr [ESP + 0x30]         ; 0051e5f0
     ADD ESP,0x8                         ; 0051e5f4
     CALL crt_math.c_round_FUN_00563a30  ; 0051e5f7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FLD float ptr [ESP + 0x5c]          ; 0051e5fc
     FXCH                                ; 0051e600
     FISTP dword ptr [ESP + 0x3c]        ; 0051e602
@@ -93,7 +98,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDX      ; 0051e615
     FLD double ptr [ESP + 0x30]         ; 0051e619
     CALL crt_math.c_round_FUN_00563a30  ; 0051e61d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     ADD ESP,0x8                         ; 0051e622
     XOR EDX,EDX                         ; 0051e625
     FISTP dword ptr [ESP + 0x38]        ; 0051e627

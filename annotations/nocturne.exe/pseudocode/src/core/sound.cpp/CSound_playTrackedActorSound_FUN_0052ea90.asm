@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; uint __cdecl core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; char *           Stack[0xc]:4   sound_name
+; CVector3f *      Stack[0x10]:4   position_tracker
 ;
 ; XREF[6]:
 ;   core_actor.cpp_FUN_0040a300 at 0040a316
@@ -32,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0052eaa3
     PUSH EBX                            ; 0052eaa7
     CALL core_sound.cpp_playSfxInternal_FUN_0052d120 ; 0052eaa8
-        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_playSfxInternal_FUN_0052d120()
+        ;   XREF to: 0052d120 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_0052d120(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 0052eaad
     POP EBX                             ; 0052eab0
     RET                                 ; 0052eab1

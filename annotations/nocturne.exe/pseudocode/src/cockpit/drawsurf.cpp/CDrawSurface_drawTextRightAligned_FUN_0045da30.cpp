@@ -2,14 +2,14 @@
 // Address: 0045da30
 // Address Range: [[0045da30, 0045da56]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(CDrawSurface *this_ptr,char *text,int x,int y)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(uint param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(CDrawSurface *this_ptr,char *text,int x,int y)
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760
-            (param_1,param_2,param_3,0,param_4,0,0);
+            (this_ptr,text,x,0,y,0,TEXT_ALIGN_LEFT);
   return;
 }

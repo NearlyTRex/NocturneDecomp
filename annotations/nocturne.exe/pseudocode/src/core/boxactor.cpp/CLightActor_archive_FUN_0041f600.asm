@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CLightActor_archive_FUN_0041f600(int param_1)
+; void core_boxactor_cpp_CLightActor_archive_FUN_0041f600(CBoxActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -34,13 +34,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0041f605
     PUSH EBX                            ; 0041f609
     CALL core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 ; 0041f60a
-        ;   XREF to: 0041ec60 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60()
+        ;   XREF to: 0041ec60 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f60f
     PUSH 0x57996b                       ; 0041f612 | = "lightType"
     LEA EAX,[EBX + 0x664]               ; 0041f617
     PUSH EAX                            ; 0041f61d
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0041f61e
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     MOV EDX,dword ptr [EBX + 0x664]     ; 0041f623
     ADD ESP,0x8                         ; 0041f629
     TEST EDX,EDX                        ; 0041f62c
@@ -50,7 +50,7 @@ section .text
     LEA EAX,[EBX + 0x3614]              ; 0041f635
     PUSH EAX                            ; 0041f63b
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0041f63c
-        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
+        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040c450(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041f641
     PUSH 0x57997f                       ; 0041f644 | = "lightOrient"
     LEA EAX,[EBX + 0x3620]              ; 0041f649
@@ -67,7 +67,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0041f66e
     PUSH EAX                            ; 0041f672
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041f673
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041f678
     MOV EAX,dword ptr [ESP]             ; 0041f67b
     MOV dword ptr [ESI + 0x138],EAX     ; 0041f67e
@@ -76,7 +76,7 @@ section .text
     LEA EAX,[EBX + 0x231c]              ; 0041f689
     PUSH EAX                            ; 0041f68f
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0041f690
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     MOV ESI,dword ptr [EBX + 0x664]     ; 0041f695
     ADD ESP,0x8                         ; 0041f69b
     TEST ESI,ESI                        ; 0041f69e
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0041f6b7
     FSTP float ptr [ESP + 0x8]          ; 0041f6b8
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041f6bc
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041f6c1
     JMP 0x0041f684                      ; 0041f6c4
         ;   XREF to: 0041f684 (UNCONDITIONAL_JUMP)  ; LAB_0041f684
@@ -102,7 +102,7 @@ section .text
     ADD EBX,0x768                       ; 0041f6cb
     PUSH EBX                            ; 0041f6d1
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0041f6d2
-        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
+        ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040c880(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041f6d7
     ADD ESP,0x4                         ; 0041f6da
     POP ESI                             ; 0041f6dd

@@ -9,12 +9,12 @@
 void core_marquee_cpp_FUN_004cc0b0(void)
 
 {
-  int iVar1;
+  CMarquee *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1b4);
-  if (iVar1 == 0) {
+  this_ptr = (CMarquee *)FUN_0056497c(0x1b4);
+  if (this_ptr == (CMarquee *)0x0) {
     return;
   }
-  core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(iVar1);
+  core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(this_ptr);
   return;
 }

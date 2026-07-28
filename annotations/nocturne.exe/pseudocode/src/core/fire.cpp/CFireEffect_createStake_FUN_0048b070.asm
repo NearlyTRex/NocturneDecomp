@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(undefined4 param_1,float *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   impact_position
+; CVector3f *      Stack[0xc]:4   orientation_angles
+; CVector3f *      Stack[0x10]:4   surface_normal
+; int              Stack[0x14]:4   ground_type
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ; undefined4       Stack[-0x34]:4  local_34
@@ -56,7 +62,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0048b097
     PUSH EAX                            ; 0048b09b
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0048b09c
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0048b0a1
     LEA EAX,[ESP + 0x28]                ; 0048b0a4
     MOV EBP,0x3f333333                  ; 0048b0a8
@@ -98,7 +104,7 @@ section .text
     ADD EAX,0x1c23d50                   ; 0048b110
     PUSH EAX                            ; 0048b115
     CALL core_fire.cpp_CStake_spawn_FUN_00483320 ; 0048b116
-        ;   XREF to: 00483320 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CStake_spawn_FUN_00483320()
+        ;   XREF to: 00483320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_00483320(CStake * this_ptr, CVector3f * spawn_position, CVector3f * orientation_angles, CVector3f * surface_normal)
     ADD ESP,0x10                        ; 0048b11b
     MOV EBX,dword ptr [0x01c23d4c]      ; 0048b11e | DAT_01c23d4c
         ;   Label: LAB_0048b11e
@@ -135,7 +141,7 @@ section .text
     MOV EDX,dword ptr [0x005bed68]      ; 0048b16c | DAT_005bed68
     PUSH EDX                            ; 0048b172
     CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 ; 0048b173
-        ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00()
+        ;   XREF to: 0052eb00 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
     ADD ESP,0x14                        ; 0048b178
     PUSH EDI                            ; 0048b17b
     LEA EAX,[ESP + 0x44]                ; 0048b17c
@@ -149,7 +155,7 @@ section .text
     ADD EAX,0x1c23d50                   ; 0048b198
     PUSH EAX                            ; 0048b19d
     CALL core_fire.cpp_CStake_init_FUN_004832b0 ; 0048b19e
-        ;   XREF to: 004832b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CStake_init_FUN_004832b0()
+        ;   XREF to: 004832b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_init_FUN_004832b0(CStake * this_ptr, CVector3f * position, CVector3f * orientation)
     ADD ESP,0xc                         ; 0048b1a3
     JMP 0x0048b11e                      ; 0048b1a6
         ;   XREF to: 0048b11e (UNCONDITIONAL_JUMP)  ; LAB_0048b11e

@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(int param_1,undefined4 param_2)
+; void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(CMotionController *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cb00 at 0040cb39
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00 at 0040cb39
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0058b3b5
@@ -56,7 +59,7 @@ section .text
     PUSH EBX                            ; 004e21c2
         ;   Label: LAB_004e21c2
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e21c3
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e21c8
     TEST EAX,EAX                        ; 004e21cb
     JL 0x004e21d4                       ; 004e21cd

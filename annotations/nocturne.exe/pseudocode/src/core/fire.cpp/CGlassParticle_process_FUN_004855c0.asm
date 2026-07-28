@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CGlassParticle_process_FUN_004855c0(int param_1)
+; void core_fire_cpp_CGlassParticle_process_FUN_004855c0(CParticle *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -36,7 +36,7 @@ section .text
     FSTP float ptr [EBX + 0x54]         ; 004855eb
     FSTP float ptr [EBX + 0x58]         ; 004855ee
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 004855f1
-        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_process_FUN_004ef120()
+        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
     MOV EAX,[0x01bd1d80]                ; 004855f6 | DAT_01bd1d80
     MOV EDX,EAX                         ; 004855fb
     MOV ECX,0x6                         ; 004855fd

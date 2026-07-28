@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(int param_1,int param_2)
+; void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(CCharacter *this_ptr,int layer_action_index)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_action_index
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined4       Stack[-0x20]:4  local_20

@@ -1,16 +1,16 @@
 // Name: core_water.cpp_CWater_ctor_FUN_005507a0
 // Address: 005507a0
 // Address Range: [[005507a0, 005507b8]]
-// Convention: unknown
-// Signature: void core_water_cpp_CWater_ctor_FUN_005507a0(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005507a0(CWater *this_ptr)
 
 #include "nocturne.h"
 
-void core_water_cpp_CWater_ctor_FUN_005507a0(uint *param_1)
+CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005507a0(CWater *this_ptr)
 
 {
-  param_1[2] = 0x42000000;
-  *param_1 = 0;
-  param_1[1] = 0;
-  return;
+  this_ptr->tile_size = 32.0;
+  this_ptr->wave_animation_enabled = 0;
+  this_ptr->water_level_y = 0.0;
+  return this_ptr;
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(float *param_1,float *param_2,float *param_3,float param_4)
+; void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041aaa0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   new_position
+; CVector3f *      Stack[0xc]:4   new_orientation
+; float            Stack[0x10]:4   speed
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined4       Stack[-0x20]:4  local_20
@@ -12,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041a6e0 at 0041a905
-;   core_box.cpp_FUN_0041a910 at 0041aa60
+;   core_box.cpp_CBox_setupN_FUN_0041a910 at 0041aa60
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057968d = 0.03125
@@ -55,7 +60,7 @@ section .text
     LEA EBP,[ESI + 0x18]                ; 0041aad6
     PUSH EBP                            ; 0041aad9
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0041aada
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [ESI + 0xa8]          ; 0041aadf
     FMUL ST0                            ; 0041aae5
     FLD float ptr [ESI + 0xa4]          ; 0041aae7

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_FUN_004b5b00(int param_1)
+; int core_hero_cpp_FUN_004b5b00(CHero *param_1)
 ;
 ;
 ; XREF[1]:
@@ -38,7 +38,7 @@ section .text
         ;   Label: LAB_004b5b1c
     PUSH EAX                            ; 004b5b21
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b5b22
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004b5b27
     TEST EAX,EAX                        ; 004b5b2a
     JNZ 0x004b5b48                      ; 004b5b2c
@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 004b5b4e
     PUSH EBX                            ; 004b5b4f
     CALL core_inv.cpp_CInventory_select_FUN_004c1580 ; 004b5b50
-        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_select_FUN_004c1580()
+        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004c1580(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004b5b55
     POP EBP                             ; 004b5b58
     POP ESI                             ; 004b5b59
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 004b5b5c
         ;   Label: LAB_004b5b5c
     CALL core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950 ; 004b5b5d
-        ;   XREF to: 004b5950 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950()
+        ;   XREF to: 004b5950 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950(CHero * this_ptr)
     ADD ESP,0x4                         ; 004b5b62
     TEST EAX,EAX                        ; 004b5b65
     JZ 0x004b5b48                       ; 004b5b67

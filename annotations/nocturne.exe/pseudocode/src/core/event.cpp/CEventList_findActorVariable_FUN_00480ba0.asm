@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_00480ba0(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_00480ba0(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_00480b30 at 00480b3e
@@ -32,7 +35,7 @@ section .text
         ;   Label: LAB_00480bbe
     PUSH ESI                            ; 00480bbf
     CALL crt_string.c__stricmp_FUN_00564520 ; 00480bc0
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00480bc5
     TEST EAX,EAX                        ; 00480bc8
     JZ 0x00480be4                       ; 00480bca

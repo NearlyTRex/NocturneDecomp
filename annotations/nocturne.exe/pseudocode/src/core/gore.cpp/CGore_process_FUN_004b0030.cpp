@@ -2,45 +2,45 @@
 // Address: 004b0030
 // Address Range: [[004b0030, 004b00e5]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_gore_cpp_CGore_process_FUN_004b0030(void)
+// Signature: void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_gore_cpp_CGore_process_FUN_004b0030(void)
+void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
 
 {
-  uint uVar1;
-  byte *puVar2;
-  int iVar3;
-  int iVar4;
+  byte *puVar1;
+  int iVar2;
+  CBloodPool *this_ptr_00;
+  CBloodSplat *this_ptr_01;
   
-  puVar2 = (byte *)0x1c78cec;
+  puVar1 = (byte *)0x1c78cec;
   do {
-    if (0.0 < *(float *)(puVar2 + 0x18)) {
-      (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
+    if (0.0 < *(float *)(puVar1 + 0x18)) {
+      (**(code **)(*(int *)(puVar1 + 0x34) + 4))(puVar1);
     }
-    puVar2 = puVar2 + 0x40;
-  } while (puVar2 != &DAT_01c7ccec);
-  iVar3 = 0;
+    puVar1 = puVar1 + 0x40;
+  } while (puVar1 != &DAT_01c7ccec);
+  iVar2 = 0;
   if (0 < _DAT_01c7ccf0) {
-    iVar4 = 0x1c7ccf4;
+    this_ptr_01 = (CBloodSplat *)0x1c7ccf4;
     do {
-      core_gore_cpp_CBloodSplat_processAge_FUN_004af130(iVar4);
-      iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x44;
-    } while (iVar3 < _DAT_01c7ccf0);
+      core_gore_cpp_CBloodSplat_processAge_FUN_004af130(this_ptr_01);
+      iVar2 = iVar2 + 1;
+      this_ptr_01 = this_ptr_01 + 1;
+    } while (iVar2 < _DAT_01c7ccf0);
   }
-  uVar1 = core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(0x1c9e03c);
-  iVar3 = 0;
+  core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0((CBloodPool *)0x1c9e03c);
+  iVar2 = 0;
   if (0 < _DAT_01c9e038) {
-    iVar4 = 0x1c9e03c;
+    this_ptr_00 = (CBloodPool *)0x1c9e03c;
     do {
-      uVar1 = core_gore_cpp_CBloodPool_processAge_FUN_004af700(iVar4);
-      iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x28;
-    } while (iVar3 < _DAT_01c9e038);
+      core_gore_cpp_CBloodPool_processAge_FUN_004af700(this_ptr_00);
+      iVar2 = iVar2 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (iVar2 < _DAT_01c9e038);
   }
-  return uVar1;
+  return;
 }

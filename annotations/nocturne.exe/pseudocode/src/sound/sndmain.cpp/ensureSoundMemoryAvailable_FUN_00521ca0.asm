@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int param_1)
+; int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int requested_bytes)
 ;
+; Parameters:
+; int              Stack[0x4]:4   requested_bytes
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 00523a17
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 at 00525692
-;   sound_sndmain.cpp_FUN_00527930 at 00527944
+;   sound_sndmain.cpp_setMemoryBudget_FUN_00527930 at 00527944
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bea94
@@ -79,7 +81,7 @@ section .text
     ADD EDI,EBX                         ; 00521d0b
     PUSH EDI                            ; 00521d0d
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00521d0e
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,dword ptr [EDI + 0x138]    ; 00521d13 | DAT_02dc217c
     ADD ESP,0x4                         ; 00521d1a
     ADD ESI,EAX                         ; 00521d1d
@@ -99,13 +101,13 @@ section .text
     ADD EDI,EAX                         ; 00521d3f
     PUSH EDI                            ; 00521d41
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00521d42
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     IMUL EAX,dword ptr [EDI + 0x138]    ; 00521d47
     ADD ESP,0x4                         ; 00521d4e
     PUSH EDI                            ; 00521d51
     SUB ESI,EAX                         ; 00521d52
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 00521d54
-        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60()
+        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00521d59
     CMP EBX,0x40                        ; 00521d5c
     JL 0x00521cc3                       ; 00521d5f

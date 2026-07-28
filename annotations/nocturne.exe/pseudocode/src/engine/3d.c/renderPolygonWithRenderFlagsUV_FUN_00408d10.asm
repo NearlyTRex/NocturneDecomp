@@ -33,7 +33,7 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 00408d1c
     PUSH EAX                            ; 00408d1f
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00408d20
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00408d25
     TEST EAX,EAX                        ; 00408d28
     JZ 0x00408dea                       ; 00408d2a
@@ -57,7 +57,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x8]       ; 00408d67
     PUSH EAX                            ; 00408d6a
     CALL engine_light.cpp_calculateLighting_FUN_004c6cc0 ; 00408d6b
-        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateLighting_FUN_004c6cc0()
+        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00408d70
     MOV [0x01c00c74],EAX                ; 00408d73 | DAT_01c00c74
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00408d78
@@ -138,7 +138,7 @@ section .text
     MOV EBP,dword ptr [EDI + 0x4]       ; 00408e49
     PUSH EBP                            ; 00408e4c
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 00408e4d
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00408e52
     POP EBP                             ; 00408e55
     POP EDI                             ; 00408e56

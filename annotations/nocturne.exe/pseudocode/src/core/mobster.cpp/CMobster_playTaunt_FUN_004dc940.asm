@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int param_2)
+; void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr,int taunt_category)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   taunt_category
 ; Local Variables:
 ; undefined        Stack[-0x80]:1  local_80
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -130,7 +133,7 @@ section .text
     PUSH EBX                            ; 004dca21
     FSTP float ptr [ESI + 0xbd3c]       ; 004dca22
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004dca28
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 004dca2d
     TEST EAX,EAX                        ; 004dca30
     JNZ 0x004dc9a8                      ; 004dca32
@@ -150,7 +153,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x150bf8]  ; 004dca5a
     PUSH ECX                            ; 004dca60
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004dca61
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004dca66
     TEST EAX,EAX                        ; 004dca69
     JNZ 0x004dca7b                      ; 004dca6b
@@ -166,7 +169,7 @@ section .text
         ;   Label: LAB_004dca7b
     PUSH EDX                            ; 004dca81
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004dca82
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 004dca87
     TEST EAX,EAX                        ; 004dca8a
     JZ 0x004dca6d                       ; 004dca8c

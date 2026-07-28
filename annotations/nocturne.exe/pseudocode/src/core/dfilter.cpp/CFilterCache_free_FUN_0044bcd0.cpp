@@ -2,29 +2,29 @@
 // Address: 0044bcd0
 // Address Range: [[0044bcd0, 0044bd14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(int *param_1)
+// Signature: void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(CFilterCache *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(int *param_1)
+void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(CFilterCache *this_ptr)
 
 {
-  uint uVar1;
+  CDemonFilter *pCVar1;
   int iVar2;
-  int *piVar3;
+  CFilterCache *pCVar3;
   
   iVar2 = 0;
-  piVar3 = param_1;
-  if (0 < *param_1) {
+  pCVar3 = this_ptr;
+  if (0 < this_ptr->filter_count) {
     do {
-      if (piVar3[0x281] != 0) {
-        uVar1 = core_dfilter_cpp_CDemonFilter_dtor_FUN_0044bf00(piVar3[0x281],0);
-        FUN_00564494(uVar1);
+      if (pCVar3->filters[0] != (CDemonFilter *)0x0) {
+        pCVar1 = core_dfilter_cpp_CDemonFilter_dtor_FUN_0044bf00(pCVar3->filters[0],0);
+        FUN_00564494(pCVar1);
       }
       iVar2 = iVar2 + 1;
-      piVar3 = piVar3 + 1;
-    } while (iVar2 < *param_1);
+      pCVar3 = (CFilterCache *)pCVar3->filter_names;
+    } while (iVar2 < this_ptr->filter_count);
   }
-  *param_1 = 0;
+  this_ptr->filter_count = 0;
   return;
 }

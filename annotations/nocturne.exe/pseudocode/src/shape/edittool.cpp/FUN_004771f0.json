@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 307,
+    "complexity_score": 327,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 24,
+    "suspect_count": 26,
     "suspect_types": [
       "stack_param",
       "undefined_data",
@@ -174,12 +174,12 @@
     {
       "addr": "00477300",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00477300"
+      "name": "shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300"
     },
     {
       "addr": "00477370",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00477370"
+      "name": "shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_00477370"
     }
   ],
   "globals": [
@@ -295,7 +295,7 @@
   "static_analysis": {
     "analyzed_file": "FUN_004771f0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 4,
       "diagnostics": [
         {
           "check_id": "uninitvar",
@@ -306,9 +306,23 @@
         },
         {
           "check_id": "uninitvar",
-          "column": 13,
+          "column": 3,
           "line": 29,
           "message": "Uninitialized variable: in_stack_00000004",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 35,
+          "line": 29,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 35,
+          "line": 31,
+          "message": "Uninitialized variable: in_stack_0000000c",
           "severity": "error"
         }
       ],
@@ -330,7 +344,7 @@
       "line": 14,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "int in_stack_00000004;",
+      "text": "CEdCheck *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -338,7 +352,7 @@
       "line": 15,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "uint in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -346,7 +360,7 @@
       "line": 16,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "uint in_stack_0000000c;",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -386,7 +400,7 @@
       "line": 22,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_00000008;",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -394,7 +408,7 @@
       "line": 22,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_00000008;",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -402,7 +416,7 @@
       "line": 23,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "pcVar6 = (char *)(in_stack_00000004 + 0x24);",
+      "text": "pcVar6 = in_stack_00000004->checkbox_text;",
       "type": "stack_param"
     },
     {
@@ -410,7 +424,7 @@
       "line": 24,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000004 + 0x14) = in_stack_0000000c;",
+      "text": "in_stack_00000004->y_position = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -418,7 +432,7 @@
       "line": 24,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "*(uint *)(in_stack_00000004 + 0x14) = in_stack_0000000c;",
+      "text": "in_stack_00000004->y_position = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -458,7 +472,7 @@
       "line": 42,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(_DAT_01bcd070,in_stack_00000004 + 0x24);",
+      "text": "(_DAT_01bcd070,in_stack_00000004->checkbox_text);",
       "type": "stack_param"
     },
     {
@@ -466,7 +480,7 @@
       "line": 43,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = *(int *)(in_stack_00000004 + 0x14) + iVar2;",
+      "text": "in_stack_00000004->right_boundary = in_stack_00000004->y_position + iVar2;",
       "type": "stack_param"
     },
     {
@@ -474,7 +488,15 @@
       "line": 43,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = *(int *)(in_stack_00000004 + 0x14) + iVar2;",
+      "text": "in_stack_00000004->right_boundary = in_stack_00000004->y_position + iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00477300(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -482,15 +504,23 @@
       "line": 45,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(in_stack_00000004 + 0x10);",
+      "text": "iVar2 = in_stack_00000004->x_position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,in_stack_00000004 + 0x24)",
+      "text": "iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_00477370(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(_DAT_01bcd070,in_stack_00000004->checkbox_text);",
       "type": "stack_param"
     },
     {
@@ -498,7 +528,7 @@
       "line": 49,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "*(int *)(in_stack_00000004 + 0x18) = iVar2 + iVar3 + iVar4 + iVar5;",
+      "text": "in_stack_00000004->total_width = iVar2 + iVar3 + iVar4 + iVar5;",
       "type": "stack_param"
     },
     {
@@ -522,7 +552,23 @@
       "line": 29,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_00000008;",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 29,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "in_stack_00000004->y_position = in_stack_0000000c;",
       "type": "static_uninitvar"
     }
   ]

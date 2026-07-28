@@ -2,18 +2,18 @@
 // Address: 005049b0
 // Address Range: [[005049b0, 00504b69]]
 // Convention: unknown
-// Signature: float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,undefined4 param_2,undefined4 param_3,char *param_4)
+// Signature: float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint param_2,uint param_3,char *param_4)
+float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  CDemonActor *pCVar2;
+  int iVar3;
   uint uVar4;
   char *pcVar5;
   byte bVar6;
@@ -25,13 +25,13 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
   
   bVar6 = 0;
   local_18 = 0;
-  if (*(float *)(param_1 + 0x44c) < 0.0) {
-    iVar2 = sscanf(param_3,&DOUBLE_0058fa9a,&local_28);
-    if (iVar2 != 1) {
+  if (*(float *)((int)param_1 + 0x44c) < 0.0) {
+    iVar3 = sscanf(param_3,&DOUBLE_0058fa9a,&local_28);
+    if (iVar3 != 1) {
       local_28 = (float)core_sound_cpp_FUN_0052ebc0(0x02DC9450,param_3);
       local_14 = local_28;
       if (local_28 < 0.0) {
-        shape_edittool_cpp_CStrList_add_FUN_00473cb0(0x1e56c30,param_3);
+        shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)0x1e56c30,param_3);
         uVar4 = 0xffffffff;
         pcVar5 = param_4;
         do {
@@ -50,25 +50,26 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
     }
   }
   else {
-    local_28 = *(float *)(param_1 + 0x44c);
+    local_28 = *(float *)((int)param_1 + 0x44c);
   }
-  iVar2 = core_script_cpp_getActor_FUN_004fe180
-                    (param_2,g_CCharacterActorType_00765a60.name_hash,
-                     &g_CCharacterActorType_00765a60);
-  *(int *)(param_1 + 4) = iVar2;
-  if (iVar2 == 0) {
+  pCVar2 = core_script_cpp_getActor_FUN_004fe180
+                     (param_2,g_CCharacterActorType_00765a60.name_hash,
+                      &g_CCharacterActorType_00765a60);
+  *(CDemonActor **)((int)param_1 + 4) = pCVar2;
+  if (pCVar2 == (CDemonActor *)0x0) {
     if (_DAT_01e56c2c != 0) {
       return 0.0;
     }
     return -1.0;
   }
-  *(int *)(param_1 + 8) = iVar2;
-  if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {
-    *(uint *)(param_1 + 0x10) = 1;
-    *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 4);
+  *(CDemonActor **)((int)param_1 + 8) = pCVar2;
+  if ((*(int *)((int)param_1 + 0x14) == 0) &&
+     (*(int *)((int)param_1 + 4) != *(int *)((int)param_1 + 0xc))) {
+    *(uint *)((int)param_1 + 0x10) = 1;
+    *(uint *)((int)param_1 + 0xc) = *(uint *)((int)param_1 + 4);
   }
   if (_DAT_01e56418 == 0) {
-    pcVar5 = (char *)(param_1 + 0x4c);
+    pcVar5 = (char *)((int)param_1 + 0x4c);
     do {
       cVar1 = *param_4;
       *pcVar5 = cVar1;
@@ -78,14 +79,14 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)(param_1 + 4) != 0) {
-      *(float *)(*(int *)(param_1 + 4) + 0x2610) = local_28;
+    if (*(int *)((int)param_1 + 4) != 0) {
+      *(float *)(*(int *)((int)param_1 + 4) + 0x2610) = local_28;
     }
     if (local_18 != 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(2);
-      uVar3 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);
-      *(uint *)(param_1 + 0x24) = uVar3;
+      uVar4 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);
+      *(uint *)((int)param_1 + 0x24) = uVar4;
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
   }

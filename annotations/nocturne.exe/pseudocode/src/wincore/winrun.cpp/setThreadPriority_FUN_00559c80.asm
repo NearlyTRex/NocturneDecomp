@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_00559c80(HANDLE param_1,uint param_2)
+; int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_00559c80(HANDLE hThread,int priority_level)
 ;
+; Parameters:
+; HANDLE           Stack[0x4]:4   hThread
+; int              Stack[0x8]:4   priority_level
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_startSoundThread_FUN_005286d0 at 0052873c

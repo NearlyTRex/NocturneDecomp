@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(int param_1,uint param_2)
+; void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *this_ptr,uint dirty_flags_mask)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   dirty_flags_mask
 ; Local Variables:
 ; undefined8       Stack[-0x8c]:8  local_8c
 ; undefined        Stack[-0x60]:1  local_60
@@ -74,7 +77,7 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 0050d310 | DAT_005ae704
     PUSH ESI                            ; 0050d316 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 0050d317
-        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30()
+        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
     MOV EDI,dword ptr [0x007f7370]      ; 0050d31c | DAT_007f7370
     ADD ESP,0x8                         ; 0050d322
     TEST EDI,EDI                        ; 0050d325
@@ -172,7 +175,7 @@ section .text
     POP EBX                             ; 0050d434
     RET                                 ; 0050d435
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 0050d436
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_0050d436
     MOV dword ptr [ESP + 0x5c],EAX      ; 0050d43b
     JMP 0x0050d2f0                      ; 0050d43f
@@ -235,7 +238,7 @@ section .text
     PUSH EBX                            ; 0050d4e5
     FSTP float ptr [ESP + 0x44]         ; 0050d4e6
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0050d4ea
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0050d4ef
     FLD float ptr [ESP + 0x24]          ; 0050d4f2
     FSUB float ptr [ESP + 0x18]         ; 0050d4f6
@@ -320,7 +323,7 @@ section .text
     JMP 0x0050d416                      ; 0050d5d5
         ;   XREF to: 0050d416 (UNCONDITIONAL_JUMP)  ; LAB_0050d416
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 0050d5da
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_0050d5da
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0050d5df
     SUB EAX,EDX                         ; 0050d5e3

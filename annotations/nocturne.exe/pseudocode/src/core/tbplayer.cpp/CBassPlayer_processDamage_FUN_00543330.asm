@@ -31,7 +31,7 @@ section .text
     PUSH EDX                            ; 0054335b
     MOV dword ptr [EDX + 0x22e4],0x0    ; 0054335c
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00543366
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0054336b
     RET                                 ; 0054336e
 

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(int *param_1,float param_2,float param_3,int *param_4,int *param_5,float *param_6)
+; void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   motion_index
+; float            Stack[0xc]:4   frame_number
+; int *            Stack[0x10]:4   out_frame1
+; int *            Stack[0x14]:4   out_frame2
+; float *          Stack[0x18]:4   out_blend_weight
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -67,7 +74,7 @@ section .text
     FILD dword ptr [EDI + EAX*0x1 + 0x9c8] ; 004e20e7
     FADD float ptr [EDX + 0x38]         ; 004e20ee
     CALL crt_math.c_round_FUN_00563a30  ; 004e20f1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESI]               ; 004e20f6
     MOV EAX,dword ptr [EDX + 0x64]      ; 004e20f8
     DEC EAX                             ; 004e20fb
@@ -116,7 +123,7 @@ section .text
     FADD float ptr [ESP + 0x24]         ; 004e2151
     FLD ST0                             ; 004e2155
     CALL crt_math.c_round_FUN_00563a30  ; 004e2157
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ECX]               ; 004e215c
     MOV EDX,dword ptr [ECX]             ; 004e215e
     INC EDX                             ; 004e2160

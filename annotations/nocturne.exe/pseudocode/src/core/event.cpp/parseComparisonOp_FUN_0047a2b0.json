@@ -1,0 +1,292 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 106,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 7,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0047a2b0",
+    "address_range": [
+      [
+        "0047a2b0",
+        "0047a34c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_event.cpp_parseComparisonOp_FUN_0047a2b0",
+    "signature": "undefined4 core_event_cpp_parseComparisonOp_FUN_0047a2b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005649c0",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005649c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057f3b3",
+      "name": "s_anon_0057f3b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f3b5",
+      "name": "s_anon_0057f3b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f3b8",
+      "name": "s_anon_0057f3b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f3bb",
+      "name": "s_anon_0057f3bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f3be",
+      "name": "s_anon_0057f3be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f3c0",
+      "name": "s_anon_0057f3c0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.051724137931035,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALL": 6,
+      "CBRANCH": 6,
+      "COPY": 46,
+      "INT_ADD": 21,
+      "INT_AND": 30,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 24,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 19,
+      "LOAD": 15,
+      "POPCOUNT": 12,
+      "RETURN": 7,
+      "STORE": 19
+    },
+    "pcode_op_count": 235
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "char *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\"<\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\"<=\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\"==\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\"!=\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\">\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar1 = _strcmp(in_stack_00000004,\">=\");",
+      "type": "stack_param"
+    }
+  ]
+}

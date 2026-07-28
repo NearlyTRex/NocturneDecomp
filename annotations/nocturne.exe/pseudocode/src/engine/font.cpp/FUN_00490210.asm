@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_00490210(int param_1,undefined4 param_2)
+; void engine_font_cpp_FUN_00490210(CBitFont *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x22c]:1  local_22c
@@ -48,7 +48,7 @@ section .text
     PUSH EDX                            ; 0049022c
     PUSH 0x581804                       ; 0049022d | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00490232
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00490237
     ADD ESP,0xc                         ; 00490239
     TEST EAX,EAX                        ; 0049023c
@@ -66,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 00490251
     PUSH EAX                            ; 00490258
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00490259
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0049025e
     LEA EAX,[ESP + 0x4]                 ; 00490261
     PUSH EAX                            ; 00490265
@@ -80,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 0049027a
     PUSH EAX                            ; 00490281
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00490282
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00490287
     LEA EAX,[ESP + 0x208]               ; 0049028a
     PUSH EAX                            ; 00490291
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004902ae
     PUSH EAX                            ; 004902b5
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004902b6
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004902bb
     LEA EAX,[ESP + 0x210]               ; 004902be
     PUSH EAX                            ; 004902c5
@@ -112,7 +112,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004902e2
     PUSH EAX                            ; 004902e9
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004902ea
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004902ef
     LEA EAX,[ESP + 0x214]               ; 004902f2
     PUSH EAX                            ; 004902f9
@@ -126,7 +126,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 0049030e
     PUSH EAX                            ; 00490315
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00490316
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0049031b
     LEA EAX,[ESP + 0x218]               ; 0049031e
     PUSH EAX                            ; 00490325
@@ -140,7 +140,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 0049033a
     PUSH EAX                            ; 00490341
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00490342
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00490347
     LEA EAX,[ESP + 0x220]               ; 0049034a
     PUSH EAX                            ; 00490351
@@ -153,7 +153,7 @@ section .text
     ADD ESP,0x10                        ; 00490365
     PUSH EBX                            ; 00490368
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00490369
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0049036e
     CMP dword ptr [ESP + 0x20c],0x20    ; 00490371
     JZ 0x004903e3                       ; 00490379
@@ -173,7 +173,7 @@ section .text
     PUSH EAX                            ; 004903a7
     PUSH ESI                            ; 004903a8
     CALL engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0 ; 004903a9
-        ;   XREF to: 004901d0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0()
+        ;   XREF to: 004901d0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x1c                        ; 004903ae
     MOV EAX,dword ptr [ESP + 0x218]     ; 004903b1
         ;   Label: LAB_004903b1
@@ -202,7 +202,7 @@ section .text
     PUSH EAX                            ; 0049040c
     PUSH ESI                            ; 0049040d
     CALL engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40 ; 0049040e
-        ;   XREF to: 0048ff40 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40()
+        ;   XREF to: 0048ff40 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x14                        ; 00490413
     JMP 0x004903b1                      ; 00490416
         ;   XREF to: 004903b1 (UNCONDITIONAL_JUMP)  ; LAB_004903b1

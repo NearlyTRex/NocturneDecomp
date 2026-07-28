@@ -2,54 +2,60 @@
 // Address: 0053ffe0
 // Address Range: [[0053ffe0, 005402e5]]
 // Convention: unknown
-// Signature: void core_stranger_cpp_FUN_0053ffe0(int param_1)
+// Signature: void core_stranger_cpp_FUN_0053ffe0(CStranger *param_1)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_FUN_0053ffe0(int param_1)
+void core_stranger_cpp_FUN_0053ffe0(CStranger *param_1)
 
 {
-  float fVar1;
+  CWeapon *this_ptr;
+  SArmAimData *pSVar1;
+  _FILE *file_handle;
   uint uVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
+  SArmAimData *pSVar6;
+  uint uVar7;
+  int iVar8;
+  int *unaff_ESI;
   
-  *(uint *)(param_1 + 0x1fa9c) = 0;
-  if (*(int *)(param_1 + 0xbca0) == 0) {
-    return;
-  }
-  if (*(int *)(param_1 + 0x2590) != 0) {
-    return;
-  }
-  if (*(int *)(param_1 + 0x1faa0) != 0) {
-    return;
-  }
-  if (*(int *)(param_1 + 0x1fa3c) == 0) {
-    return;
-  }
-  iVar5 = *(int *)(param_1 + 0x1fa94);
+  iVar5 = (param_1->base).player_input.action_state.fire;
+  param_1->can_grab_weapon = 0;
   if (iVar5 == 0) {
-    iVar5 = *(int *)(param_1 + 0x24f0);
+    return;
+  }
+  if ((param_1->base).base.grabbed_by != (CDemonActor *)0x0) {
+    return;
+  }
+  if (param_1->action_pending != 0) {
+    return;
+  }
+  if (param_1->guns_drawn == 0) {
+    return;
+  }
+  this_ptr = param_1->weapon;
+  if (this_ptr == (CWeapon *)0x0) {
+    this_ptr = (CWeapon *)(param_1->base).base.carry_hands[1].carry_actor;
 LAB_0054003e:
-    if ((iVar5 != 0) && (uVar2 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x6c))(iVar5), uVar2 != 0))
-    {
+    if ((this_ptr != (CWeapon *)0x0) &&
+       (uVar2 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
+       uVar2 != 0)) {
       iVar5 = 0;
       while( true ) {
-        iVar7 = *(int *)(param_1 + 0x1faa4) + 1;
-        *(int *)(param_1 + 0x1faa4) = iVar7;
-        if ((iVar7 < 0) || (1 < iVar7)) {
-          *(uint *)(param_1 + 0x1faa4) = 0;
+        iVar8 = param_1->melee_attack_index + 1;
+        param_1->melee_attack_index = iVar8;
+        if ((iVar8 < 0) || (1 < iVar8)) {
+          param_1->melee_attack_index = 0;
         }
-        uVar6 = *(int *)(param_1 + 0x1faa4) + 0xc;
+        uVar7 = param_1->melee_attack_index + 0xc;
         uVar3 = 0;
-        if (0xb < uVar6) {
-          if (uVar6 < 0xd) {
+        if (0xb < uVar7) {
+          if (uVar7 < 0xd) {
             uVar3 = 1;
           }
-          else if (uVar6 == 0xd) {
+          else if (uVar7 == 0xd) {
             uVar3 = 2;
           }
         }
@@ -59,37 +65,37 @@ LAB_0054003e:
           return;
         }
       }
-      *(uint *)(param_1 + 0x2a88) = 0;
-      *(uint *)(param_1 + 0x1faa0) = 7;
-      *(int *)(param_1 + 0x2a84) = *(int *)(param_1 + 0x1faa4) + 0xc;
+      (param_1->base).base.layer_action_t = 0.0;
+      param_1->action_pending = 7;
+      (param_1->base).base.layer_action_index = param_1->melee_attack_index + 0xc;
       return;
     }
   }
-  else if (*(int *)(iVar5 + 0x2d8) == 7) goto LAB_0054003e;
-  if (*(int *)(param_1 + 0x1fa94) == 0) {
+  else if (this_ptr->weapon_type == 7) goto LAB_0054003e;
+  if (param_1->weapon == (CWeapon *)0x0) {
     return;
   }
-  iVar5 = *(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8);
+  iVar5 = param_1->weapon->weapon_type;
   if (iVar5 == 3) {
     return;
   }
-  if ((*(int *)(param_1 + 0x1f59c) == 0) && (iVar5 == 0)) {
-    iVar5 = param_1 + 0x1fa50;
-    iVar7 = param_1 + 0x1fa70;
-    if (*(int *)(param_1 + 0x1fa98) != 0) {
-      iVar7 = iVar5;
-      iVar5 = param_1 + 0x1fa70;
+  if (((param_1->base).aim_mode == AIM_MODE_AUTO) && (iVar5 == 0)) {
+    pSVar6 = &param_1->right_arm_aim;
+    pSVar1 = &param_1->left_arm_aim;
+    if (param_1->dual_wield_side != 0) {
+      pSVar1 = pSVar6;
+      pSVar6 = &param_1->left_arm_aim;
     }
-    if ((*(int *)(iVar7 + 0x1c) == 2) && (*(int *)(iVar5 + 0x1c) != 2)) {
-      *(uint *)(param_1 + 0x1fa98) = (uint)(*(int *)(param_1 + 0x1fa98) == 0);
+    if ((pSVar1->aim_lock_state == 2) && (pSVar6->aim_lock_state != 2)) {
+      param_1->dual_wield_side = (uint)(param_1->dual_wield_side == 0);
     }
   }
-  if (*(int *)(param_1 + 0x1fa94) == 0) {
+  if (param_1->weapon == (CWeapon *)0x0) {
 switchD_005400cd_caseD_3:
     uVar4 = 0;
   }
   else {
-    switch(*(uint *)(*(int *)(param_1 + 0x1fa94) + 0x2d8)) {
+    switch(param_1->weapon->weapon_type) {
     case 0:
     case 5:
       uVar4 = 2;
@@ -109,31 +115,31 @@ switchD_005400cd_caseD_3:
       uVar4 = 8;
     }
   }
-  fVar1 = (float)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0(param_1,uVar4);
-  if ((float)0.98999999999999999 <= fVar1) {
-    iVar5 = param_1 + 0x1fa50;
-    if ((*(int *)(param_1 + 0x1fa98) != 0) && (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 0))
-    {
-      iVar5 = param_1 + 0x1fa70;
+  file_handle = (_FILE *)core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+                                   (param_1,uVar4);
+  if ((float)0.98999999999999999 <= (float)file_handle) {
+    pSVar6 = &param_1->right_arm_aim;
+    if ((param_1->dual_wield_side != 0) && (param_1->weapon->weapon_type == 0)) {
+      pSVar6 = &param_1->left_arm_aim;
     }
-    if (((1.0 <= *(float *)(iVar5 + 0x14)) && (*(float *)(iVar5 + 0x10) <= 0.0)) &&
-       (iVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xe0))
-                          (*(int *)(param_1 + 0x1fa94)), iVar5 != 0)) {
-      if (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) == 0) {
+    if (((1.0 <= pSVar6->kickback_factor) && (pSVar6->recoil_timer <= 0.0)) &&
+       (iVar5 = (*((param_1->weapon->base).vtable._ub)->addFilesToExtract)
+                          (&param_1->weapon->base,file_handle), iVar5 != 0)) {
+      if (param_1->weapon->weapon_type == 0) {
         core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660
-                  (param_1,*(uint *)(param_1 + 0x1fa98));
-        *(uint *)(param_1 + 0x1fa98) = (uint)(*(int *)(param_1 + 0x1fa98) == 0);
+                  (param_1,param_1->dual_wield_side);
+        param_1->dual_wield_side = (uint)(param_1->dual_wield_side == 0);
       }
-      *(uint *)(param_1 + 0x1fa9c) = 0;
-      iVar5 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xdc))
-                        (*(int *)(param_1 + 0x1fa94));
+      param_1->can_grab_weapon = 0;
+      iVar5 = (*((param_1->weapon->base).vtable._ub)->showEditorHelp)
+                        (&param_1->weapon->base,unaff_ESI);
       if (iVar5 != 0) {
-        *(uint *)(param_1 + 0x1fa9c) = 1;
+        param_1->can_grab_weapon = 1;
       }
       core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(param_1,0);
-      if (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d4) == 2) {
-        *(uint *)(param_1 + 0x2a88) = 0;
-        *(uint *)(param_1 + 0x2a84) = 8;
+      if (param_1->weapon->fire_mode == 2) {
+        (param_1->base).base.layer_action_t = 0.0;
+        (param_1->base).base.layer_action_index = 8;
         return;
       }
     }

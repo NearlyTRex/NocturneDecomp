@@ -21,7 +21,7 @@ uint * FUN_005711a8(void)
   byte bVar7;
   
   bVar7 = 0;
-  (*(code *)PTR_FUN_005c1ae8)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae8)();
   DVar2 = GetCurrentThreadId();
   for (puVar1 = _DAT_02de5d70; (puVar1 != (uint *)0x0 && (DVar2 != puVar1[1]));
       puVar1 = (uint *)*puVar1) {
@@ -29,7 +29,7 @@ uint * FUN_005711a8(void)
   if (puVar1[3] == 0) {
     lpTlsValue = (uint *)FUN_00565c50(1,0x000000F4);
     if (lpTlsValue == (uint *)0x0) {
-      FUN_0056ddc0("Unable to resize thread-specific data\r\n",1);
+      HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
     uVar4 = ((uint *)puVar1[2])[0x3c];
     puVar5 = (uint *)puVar1[2];
@@ -47,9 +47,9 @@ uint * FUN_005711a8(void)
     puVar1[3] = 1;
   }
   else {
-    lpTlsValue = (uint *)realloc(puVar1[2],0x000000F4);
+    lpTlsValue = (uint *)realloc((void *)puVar1[2],0x000000F4);
     if (lpTlsValue == (uint *)0x0) {
-      FUN_0056ddc0("Unable to resize thread-specific data\r\n",1);
+      HandleRuntimeError("Unable to resize thread-specific data\r\n",1);
     }
   }
   puVar1[2] = lpTlsValue;
@@ -58,6 +58,6 @@ uint * FUN_005711a8(void)
   *(byte *)((int)lpTlsValue + 0x52) = 1;
   *(byte *)((int)lpTlsValue + 0x53) = 0;
   TlsSetValue(DVar2,lpTlsValue);
-  (*(code *)PTR_FUN_005c1aec)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1aec)();
   return lpTlsValue;
 }

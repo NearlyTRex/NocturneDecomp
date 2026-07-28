@@ -2,25 +2,26 @@
 // Address: 0053ff50
 // Address Range: [[0053ff50, 0053ffb0]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(int param_1)
+// Signature: int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(CStranger *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(int param_1)
+int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(CStranger *this_ptr)
 
 {
-  int iVar1;
-  float fVar2;
-  uint uVar3;
+  CDemonActor *this_ptr_00;
+  float fVar1;
+  uint uVar2;
   
-  iVar1 = *(int *)(param_1 + 0x24f0);
-  if (((iVar1 == 0) ||
-      (uVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x6c))(iVar1), (uVar3 & 4) == 0)) &&
-     ((*(int *)(param_1 + 0x1fa94) == 0 || (*(int *)(*(int *)(param_1 + 0x1fa94) + 0x2d8) != 3)))) {
+  this_ptr_00 = (this_ptr->base).base.carry_hands[1].carry_actor;
+  if (((this_ptr_00 == (CDemonActor *)0x0) ||
+      (uVar2 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00),
+      (uVar2 & 4) == 0)) &&
+     ((this_ptr->weapon == (CWeapon *)0x0 || (this_ptr->weapon->weapon_type != 3)))) {
     return 0;
   }
-  fVar2 = 10.0f;
-  *(uint *)(param_1 + 0x1faa0) = 3;
-  *(float *)(param_1 + 0x1fa4c) = fVar2;
+  fVar1 = 10.0f;
+  this_ptr->action_pending = 3;
+  this_ptr->aim_speed_factor = fVar1;
   return 1;
 }

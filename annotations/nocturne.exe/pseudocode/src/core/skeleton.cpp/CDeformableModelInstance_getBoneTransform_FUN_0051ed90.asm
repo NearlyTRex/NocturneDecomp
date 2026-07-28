@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90(int param_1,undefined4 *param_2)
+; SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; SPose *          Stack[0x8]:4   bone_transform
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -41,7 +44,7 @@ section .text
     PUSH EDI                            ; 0051edb8
         ;   Label: LAB_0051edb8
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051edb9
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051edbe
     MOV EAX,dword ptr [EAX + 0x28558]   ; 0051edc1
     XOR EDX,EDX                         ; 0051edc7

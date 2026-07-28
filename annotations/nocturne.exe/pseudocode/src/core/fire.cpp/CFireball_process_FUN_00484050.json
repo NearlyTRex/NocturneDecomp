@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 467,
+    "complexity_score": 505,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 36,
+    "pseudocode_lines": 95,
+    "suspect_count": 38,
     "suspect_types": [
+      "pointer_cast",
       "raw_address_constant",
+      "suspect_float",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 295
+    "total_lines": 303
   },
   "cross_references": [],
   "function": {
@@ -148,7 +150,7 @@
     ],
     "convention": "unknown",
     "name": "core_fire.cpp_CFireball_process_FUN_00484050",
-    "signature": "void core_fire_cpp_CFireball_process_FUN_00484050(int param_1)"
+    "signature": "void core_fire_cpp_CFireball_process_FUN_00484050(CParticle *param_1)"
   },
   "function_calls": [
     {
@@ -309,15 +311,15 @@
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 29,
-          "line": 50,
+          "column": 39,
+          "line": 56,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
-          "line": 51,
+          "line": 57,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -340,31 +342,31 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_fire_cpp_CFireball_process_FUN_00484050(int param_1)",
+      "text": "void core_fire_cpp_CFireball_process_FUN_00484050(CParticle *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x40) == 0) {",
+      "text": "if (param_1[1].position.z == 0.0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 21,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x40) = 1;",
-      "type": "unnamed_param"
+      "text": "param_1[1].position.z = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x48) = 0;",
+      "text": "param_1[1].position.z = 1.4013e-45;",
       "type": "unnamed_param"
     },
     {
@@ -372,15 +374,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)(param_1 + 0x3c) * (longlong)_DAT_01bd1d80;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x38) -",
+      "text": "param_1[1].velocity.y = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -388,15 +382,15 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x38) = iVar3;",
+      "text": "lVar3 = (longlong)(int)param_1[1].position.y * (longlong)_DAT_01bd1d80;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x18) = 0;",
+      "text": "fVar5 = (float)((int)param_1[1].position.x -",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +398,15 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = 0;",
+      "text": "param_1[1].position.x = fVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->lifetime_remaining = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -412,15 +414,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_particle_cpp_CParticle_process_FUN_004ef120(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x4c) =",
+      "text": "param_1[1].position.x = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +422,15 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x4c) +",
+      "text": "core_particle_cpp_CParticle_process_FUN_004ef120(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_1[1].lifetime_remaining;",
       "type": "unnamed_param"
     },
     {
@@ -436,15 +438,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x50) = *(int *)(param_1 + 0x50) + iVar3;",
+      "text": "param_1[1].velocity.z =",
       "type": "unnamed_param"
     },
     {
@@ -452,23 +446,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x44) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1 + 0x5c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(iVar3,param_1);",
+      "text": "(float)((int)param_1[1].velocity.z +",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +454,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x38);",
+      "text": "fVar1 = param_1[1].velocity.x;",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +462,15 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x98) = iVar4;",
+      "text": "param_1[1].lifetime_remaining = (float)((int)fVar5 + iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = &param_1[1].previous_position;",
       "type": "unnamed_param"
     },
     {
@@ -492,15 +478,23 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(char *)(param_1 + 0x78) =",
+      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90((CDemonGlobe *)this_ptr,&param_1->position)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x7c) = 0;",
+      "text": "fVar5 = param_1[1].position.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].previous_position.y = fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -508,15 +502,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x48) + _DAT_01bd1d80;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x48) = iVar3;",
+      "text": "*(char *)&param_1[2].position.z =",
       "type": "unnamed_param"
     },
     {
@@ -524,15 +510,15 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x48) = iVar3 + -0x1000;",
+      "text": "param_1[2].velocity.x = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(uVar2,param_1,0x40000000,0,0xffff);",
+      "text": "fVar5 = (float)((int)param_1[1].velocity.y + _DAT_01bd1d80);",
       "type": "unnamed_param"
     },
     {
@@ -540,31 +526,31 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,param_1,0,0x20000,0x10000,0,0xffff);",
+      "text": "param_1[1].velocity.y = fVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,param_1,0,0x20000,0x10000,0,0xffff);",
+      "text": "param_1[1].velocity.y = (float)((int)fVar5 + -0x1000);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,param_1,0,0x20000,0x10000,0,0xffff);",
+      "text": "(this_ptr_00,&param_1->position,2.0,(CVector3f *)0x0,0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C08D04,param_1,0,0x20000,0x10000,0,0xffff);",
+      "text": "(0x01C08D04,&param_1->position,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);",
       "type": "unnamed_param"
     },
     {
@@ -572,7 +558,15 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x44) == 0) {",
+      "text": "(0x01C08D04,&param_1->position,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C08D04,&param_1->position,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);",
       "type": "unnamed_param"
     },
     {
@@ -580,55 +574,79 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x44) == 2) {",
+      "text": "(0x01C08D04,&param_1->position,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_1[1].velocity.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 79,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "else if (fVar5 == 2.8026e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)0x01E57284",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)0x01E57284->actors + iVar6 + 0x1b5c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 88,
+      "line": 96,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x14c) + 0xf8))(iVar5,param_1,local_14,auStack_54);",
+      "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0xf8))(iVar2,param_1,local_14,&SStack_54);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x14c) + 0xf8))(iVar5,param_1,local_14,auStack_54);",
+      "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0xf8))(iVar2,param_1,local_14,&SStack_54);",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x1e57284 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 48,
+      "description": "Raw hex address 0x1e57284 assigned to bare local `this_ptr_01`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_01` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 54,
       "match": "0x1e57284",
       "severity": "moderate",
-      "text": "iVar4 = 0x01E57284;",
+      "text": "this_ptr_01 = 0x01E57284;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1c08d04 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 53,
+      "description": "Raw hex address 0x1c08d04 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
       "match": "0x1c08d04",
       "severity": "moderate",
-      "text": "uVar2 = 0x01C08D04;",
+      "text": "this_ptr_00 = 0x01C08D04;",
       "type": "raw_address_constant"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 50,
+      "line": 56,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "iVar4 = (iVar4 + (iVar4 >> 0x1f) * -0x100) - (uint)((iVar4 >> 0x1f) << 7 < 0);",
+      "text": "iVar4 = ((int)fVar5 + ((int)fVar5 >> 0x1f) * -0x100) - (uint)(((int)fVar5 >> 0x1f) << 7 < 0);",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 51,
+      "line": 57,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
+      "text": "iVar6 = iVar4 >> 0x1f;",
       "type": "static_shift_too_many_bits"
     }
   ],

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_00523b20(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_00523b20(CSfxSample *this_ptr)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 0052391c

@@ -19,7 +19,7 @@ struct CSentinel_ptr_344 {
     template<typename T> CSentinel_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CSentinel_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CSentinel* operator->() const { return (CSentinel*)_raw; }
-    CSentinel* adj() const { return (CSentinel*)((char*)_raw - offsetof(CSentinel, base.base.model)); }
+    CSentinel* adj() const { return (CSentinel*)((char*)_raw - offsetof(CSentinel, base.base.model.motion_controller.current_frame_number)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

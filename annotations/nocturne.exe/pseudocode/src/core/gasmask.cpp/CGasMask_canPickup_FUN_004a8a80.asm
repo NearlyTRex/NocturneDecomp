@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gasmask_cpp_CGasMask_canPickup_FUN_004a8a80(undefined4 param_1,undefined4 param_2)
+; undefined4 core_gasmask_cpp_CGasMask_canPickup_FUN_004a8a80(undefined4 param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004a8a85
     PUSH EDX                            ; 004a8a89
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004a8a8a
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004a8a8f
     TEST EAX,EAX                        ; 004a8a92
     JZ 0x004a8aa0                       ; 004a8a94

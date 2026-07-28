@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   crt_time.c__mktime_FUN_00565fb0
-;   FUN_0056cea0
+;   crt_time.c_is_leap_year_FUN_0056cea0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
         ;   XREF to: 0056cfb8 (CONDITIONAL_JUMP)  ; LAB_0056cfb8
     LEA EAX,[EDI + 0x76c]               ; 0056cef2
     PUSH EAX                            ; 0056cef8
-    CALL FUN_0056cea0                   ; 0056cef9
-        ;   XREF to: 0056cea0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056cea0()
+    CALL crt_time.c_is_leap_year_FUN_0056cea0 ; 0056cef9
+        ;   XREF to: 0056cea0 (UNCONDITIONAL_CALL)  ; int crt_time.c_is_leap_year_FUN_0056cea0(int year)
     ADD ESP,0x4                         ; 0056cefe
     TEST EAX,EAX                        ; 0056cf01
     JZ 0x0056cf18                       ; 0056cf03
@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EDI      ; 0056cf51
     MOV dword ptr [ESP + 0x24],EBP      ; 0056cf55
     CALL crt_time.c__mktime_FUN_00565fb0 ; 0056cf59
-        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_00565fb0()
+        ;   XREF to: 00565fb0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_00565fb0(_tm * timeptr)
     ADD ESP,0x4                         ; 0056cf5e
     MOV EDX,dword ptr [EBX + 0x18]      ; 0056cf61
     SUB EDX,dword ptr [ESP + 0x18]      ; 0056cf64

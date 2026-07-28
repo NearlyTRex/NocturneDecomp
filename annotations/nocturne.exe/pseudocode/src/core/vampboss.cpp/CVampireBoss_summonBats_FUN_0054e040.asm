@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(int param_1)
+; void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d3b2
@@ -50,7 +52,7 @@ section .text
     MOV EDI,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0054e075 | DAT_01fa3ff4
     PUSH EDI                            ; 0054e07c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0054e07d
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0054e082
     TEST EAX,EAX                        ; 0054e085
     JZ 0x0054e09b                       ; 0054e087

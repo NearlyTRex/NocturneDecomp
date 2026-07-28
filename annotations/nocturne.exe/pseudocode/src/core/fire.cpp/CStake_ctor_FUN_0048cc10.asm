@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_fire_cpp_CStake_ctor_FUN_0048cc10(int param_1)
+; int * core_fire_cpp_CStake_ctor_FUN_0048cc10(int param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     ADD EAX,0x4                         ; 0048cc14
     PUSH EAX                            ; 0048cc17
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 0048cc18
-        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_ctor_FUN_0041a610()
+        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     ADD ESP,0x4                         ; 0048cc1d
     SUB EAX,0x4                         ; 0048cc20
     RET                                 ; 0048cc23

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(int param_1)
+; int __cdecl core_charactr_cpp_CCharacter_isOnGround_FUN_00425960(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[18]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041259d

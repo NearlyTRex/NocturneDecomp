@@ -9,12 +9,12 @@
 void core_passngr_cpp_FUN_004ef4b0(void)
 
 {
-  int iVar1;
+  CPassenger *this_ptr;
   
-  iVar1 = FUN_0056497c(0x202b0);
-  if (iVar1 == 0) {
+  this_ptr = (CPassenger *)FUN_0056497c(0x202b0);
+  if (this_ptr == (CPassenger *)0x0) {
     return;
   }
-  core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(iVar1);
+  core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(this_ptr);
   return;
 }

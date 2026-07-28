@@ -43,7 +43,7 @@ section .text
     XOR EBP,EBP                         ; 004070a2
     MOV dword ptr [0x01c039a0],EDI      ; 004070a4 | DAT_01c039a0
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004070aa
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     MOV EAX,[0x006b0270]                ; 004070af | DAT_006b0270
     ADD ESP,0x4                         ; 004070b4
     MOV dword ptr [0x01c039a4],EBP      ; 004070b7 | DAT_01c039a4
@@ -54,7 +54,7 @@ section .text
     PUSH ECX                            ; 004070c4
     PUSH EBX                            ; 004070c5
     CALL engine_3d.c_rasterizePolygonHardware_FUN_00494260 ; 004070c6
-        ;   XREF to: 00494260 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_rasterizePolygonHardware_FUN_00494260()
+        ;   XREF to: 00494260 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonHardware_FUN_00494260(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004070cb
     MOV EAX,0x6b0288                    ; 004070ce | DAT_006b0288
     POP EBP                             ; 004070d3

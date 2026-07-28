@@ -2,41 +2,46 @@
 // Address: 005444f0
 // Address Range: [[005444f0, 005445ba]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(int param_1,undefined4 param_2)
+// Signature: int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle *this_ptr,char *class_name)
 
 #include "nocturne.h"
 
-uint __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(int param_1,uint param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle *this_ptr,char *class_name)
 
 {
-  int iVar1;
+  CTentacle *actor_ptr;
+  float fVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  uint local_14;
+  int local_14;
   
-  iVar6 = 0;
+  iVar5 = 0;
   local_14 = 0;
   do {
     if (*(int *)(0x01E57284 + 0x14ecb0) <= local_14) {
       return 0;
     }
-    iVar1 = *(int *)(iVar6 + 0x14ecb4 + 0x01E57284);
-    if (iVar1 != param_1) {
-      iVar5 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar1,param_2);
-      if (iVar5 != 0) {
-        fVar2 = *(float *)(iVar1 + 0x20) - *(float *)(param_1 + 0x20);
-        fVar3 = (*(float *)(iVar1 + 0x24) - *(float *)(param_1 + 0x24)) * (float)3;
-        fVar4 = *(float *)(iVar1 + 0x28) - *(float *)(param_1 + 0x28);
-        if (SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3) < *(float *)(param_1 + 0xbc9c)) {
-          *(int *)(param_1 + 0xbca4) = iVar1;
+    actor_ptr = *(CTentacle **)(iVar5 + 0x14ecb4 + 0x01E57284);
+    if (actor_ptr != this_ptr) {
+      iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)actor_ptr,class_name);
+      if (iVar4 != 0) {
+        fVar1 = (actor_ptr->base).base.base.location.position.x -
+                (this_ptr->base).base.base.location.position.x;
+        fVar2 = ((actor_ptr->base).base.base.location.position.y -
+                (this_ptr->base).base.base.location.position.y) * (float)3;
+        fVar3 = (actor_ptr->base).base.base.location.position.z -
+                (this_ptr->base).base.base.location.position.z;
+        if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (this_ptr->base).guard_distance) {
+          (this_ptr->base).victim = (CCharacter *)actor_ptr;
           return 1;
         }
       }
     }
     local_14 = local_14 + 1;
-    iVar6 = iVar6 + 4;
+    iVar5 = iVar5 + 4;
   } while( true );
 }

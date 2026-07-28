@@ -2,56 +2,55 @@
 // Address: 004806d0
 // Address Range: [[004806d0, 004807d4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(int param_1,char *param_2,int param_3)
+// Signature: void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(CEventList *this_ptr,char *name,int value)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(int param_1,char *param_2,int param_3)
+void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(CEventList *this_ptr,char *name,int value)
 
 {
-  int iVar1;
-  char cVar2;
+  char cVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
+  char (*pacVar4) [32];
   
-  iVar3 = core_event_cpp_CEventList_findCounter_FUN_00480900(param_1,param_2);
-  if (iVar3 < 0) {
-    if (param_3 != 0) {
-      if (9 < *(int *)(param_1 + 0x337c)) {
+  iVar2 = core_event_cpp_CEventList_findCounter_FUN_00480900(this_ptr,name);
+  if (iVar2 < 0) {
+    if (value != 0) {
+      if (9 < (this_ptr->counters).count) {
         PTR_01cc4800 = "..\\core\\event.cpp";
         INT_01cc4804 = 0xab2;
         core_main_c_FUN_004c8440("CEventList::setCounter - too many counters!");
       }
-      pcVar5 = (char *)(param_1 + 0x3380 + *(int *)(param_1 + 0x337c) * 0x20);
+      pacVar4 = (this_ptr->counters).names + (this_ptr->counters).count;
       do {
-        cVar2 = *param_2;
-        *pcVar5 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = param_2[1];
-        param_2 = param_2 + 2;
-        pcVar5[1] = cVar2;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar2 != '\0');
-      *(int *)(param_1 + 0x34c0 + *(int *)(param_1 + 0x337c) * 4) = param_3;
-      *(int *)(param_1 + 0x337c) = *(int *)(param_1 + 0x337c) + 1;
+        cVar1 = *name;
+        (*pacVar4)[0] = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = name[1];
+        name = name + 2;
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [32])(*pacVar4 + 2);
+      } while (cVar1 != '\0');
+      (this_ptr->counters).values[(this_ptr->counters).count] = value;
+      (this_ptr->counters).count = (this_ptr->counters).count + 1;
       return;
     }
   }
   else {
-    iVar1 = iVar3 * 4;
-    if (param_3 == 0) {
-      iVar4 = *(int *)(param_1 + 0x337c) + -1;
-      *(int *)(param_1 + 0x337c) = iVar4;
+    if (value == 0) {
+      iVar3 = (this_ptr->counters).count + -1;
+      (this_ptr->counters).count = iVar3;
       memmove
-                (iVar3 * 0x20 + param_1 + 0x3380,iVar3 * 0x20 + 0x20 + param_1 + 0x3380,
-                 (iVar4 - iVar3) * 0x20);
+                ((this_ptr->counters).names + iVar2,
+                 ((SCounterBlock *)(&this_ptr->timers + 1))->names + iVar2 + 1,
+                 (iVar3 - iVar2) * 0x20);
       memmove
-                (param_1 + 0x34c0 + iVar1,iVar1 + 4 + param_1 + 0x34c0,
-                 (*(int *)(param_1 + 0x337c) - iVar3) * 4);
+                ((this_ptr->counters).values + iVar2,(this_ptr->counters).values + iVar2 + 1,
+                 ((this_ptr->counters).count - iVar2) * 4);
       return;
     }
-    *(int *)(iVar1 + 0x34c0 + param_1) = param_3;
+    (this_ptr->counters).values[iVar2] = value;
   }
   return;
 }

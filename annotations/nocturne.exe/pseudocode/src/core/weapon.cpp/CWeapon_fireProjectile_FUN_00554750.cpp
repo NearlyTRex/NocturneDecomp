@@ -2,21 +2,22 @@
 // Address: 00554750
 // Address Range: [[00554750, 0055477f] [00554781, 00554903]]
 // Convention: unknown
-// Signature: void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
+// Signature: void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CDemonActor *param_1)
 
 #include "nocturne.h"
 
-void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
+void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CDemonActor *param_1)
 
 {
   int iVar1;
-  uint uVar2;
+  CVector3f *input_local_point;
+  CDemonActor *pCVar2;
   uint local_e8;
   uint local_e4;
   uint local_e0;
-  uint local_dc;
-  uint local_d8;
-  uint local_d4;
+  float local_dc;
+  float local_d8;
+  float local_d4;
   uint local_d0;
   uint local_cc;
   uint local_c8;
@@ -35,9 +36,9 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
   uint local_94;
   uint local_90;
   uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
+  float local_88;
+  float local_84;
+  float local_80;
   uint local_7c;
   uint local_78;
   uint local_74;
@@ -53,37 +54,38 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
   uint local_4c;
   uint local_48;
   uint local_44;
-  byte local_40 [12];
   byte local_34 [12];
-  byte local_28 [12];
+  CVector3f local_28;
   uint local_1c;
   uint local_18;
-  uint local_14;
+  float local_14;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar1 != 0) {
     return;
   }
-  uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_40);
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_28,uVar2);
-  local_14 = *(uint *)(param_1 + 0x2e0);
+  input_local_point = (CVector3f *)(*((param_1->vtable)._ub)->initializeInEditor)(param_1);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_28,input_local_point);
+  local_14 = param_1[2].orient_matrix.m[0].y;
   local_1c = 0;
   local_18 = 0;
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_34,&local_1c);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
-  if (*(int *)(param_1 + 0x2fc) != 0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,*(int *)(param_1 + 0x2fc));
+  pCVar2 = (CDemonActor *)param_1[2].orient_matrix.m[2].z;
+  if (pCVar2 != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,pCVar2);
   }
   core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_94);
   local_8c = 1;
-  local_88 = *(uint *)(param_1 + 0x2ec);
-  local_84 = *(uint *)(param_1 + 0x2f0);
-  local_80 = *(uint *)(param_1 + 0x2f4);
+  local_88 = param_1[2].orient_matrix.m[1].y;
+  local_84 = param_1[2].orient_matrix.m[1].z;
+  local_80 = param_1[2].orient_matrix.m[2].x;
   local_94 = 0x3f800000;
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(param_1 + 0x2fc),g_CHeroActorType_01cae0ec.name_hash);
-  local_d0 = (uint)(iVar1 != 0);
+  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                     ((CDemonActor *)param_1[2].orient_matrix.m[2].z,
+                      g_CHeroActorType_01cae0ec.name_hash);
+  local_d0 = (uint)(pCVar2 != (CDemonActor *)0x0);
   local_e8 = local_94;
   local_e4 = local_90;
   local_e0 = local_8c;
@@ -106,7 +108,7 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
   local_78 = 1;
   local_cc = 1;
   local_7c = local_d0;
-  core_fire_cpp_FUN_0048b6f0(0x01C08D04,local_28,local_34,&local_e8,0);
+  core_fire_cpp_FUN_0048b6f0(0x01C08D04,&local_28,local_34,&local_e8,0);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   return;
 }

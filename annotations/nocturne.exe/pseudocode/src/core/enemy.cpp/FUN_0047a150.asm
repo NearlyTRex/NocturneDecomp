@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_enemy_cpp_FUN_0047a150(undefined4 param_1)
+; int core_enemy_cpp_FUN_0047a150(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -30,7 +30,7 @@ section .text
     XOR EDI,EDI                         ; 0047a15c
     XOR ESI,ESI                         ; 0047a15e
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 0047a160
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0047a165
     XOR EBP,EBP                         ; 0047a168
     MOV dword ptr [ESP],EAX             ; 0047a16a
@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 0047a18e
     PUSH EBX                            ; 0047a18f
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0047a190
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0047a195
     TEST EAX,EAX                        ; 0047a198
     JZ 0x0047a1c6                       ; 0047a19a

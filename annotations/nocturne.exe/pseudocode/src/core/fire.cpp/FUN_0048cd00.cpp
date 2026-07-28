@@ -11,6 +11,8 @@
 void core_fire_cpp_FUN_0048cd00(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,100,&g_CTrailTypeInfo_0059d4e0);
   return;
 }

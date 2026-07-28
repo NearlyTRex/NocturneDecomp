@@ -2,11 +2,11 @@
 // Address: 0043c940
 // Address Range: [[0043c940, 0043c95b]]
 // Convention: unknown
-// Signature: undefined4 core_crate_cpp_CCrate_canPickup_FUN_0043c940(undefined4 param_1,undefined4 param_2)
+// Signature: undefined4 core_crate_cpp_CCrate_canPickup_FUN_0043c940(undefined4 param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_crate_cpp_CCrate_canPickup_FUN_0043c940(uint param_1,uint param_2)
+uint core_crate_cpp_CCrate_canPickup_FUN_0043c940(uint param_1,CDemonActor *param_2)
 
 {
   int iVar1;

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSfxFade_FUN_00527260(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __cdecl sound_sndmain_cpp_setSfxFade_FUN_00527260(uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; float            Stack[0x8]:4   target_volume
+; float            Stack[0xc]:4   fade_duration
+; int              Stack[0x10]:4   stop_after_fade
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -41,7 +46,7 @@ section .text
     FILD dword ptr [ESP]                ; 00527295
     FSTP float ptr [EAX + 0x110]        ; 00527298
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052729e
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 005272a3
     ADD ESP,0x4                         ; 005272a8
     RET                                 ; 005272ab

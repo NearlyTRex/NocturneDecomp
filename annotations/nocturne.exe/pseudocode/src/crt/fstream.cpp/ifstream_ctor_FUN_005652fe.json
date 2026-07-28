@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 170,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 13,
+    "pseudocode_lines": 27,
+    "suspect_count": 10,
     "suspect_types": [
+      "negative_offset",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 59
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -41,23 +41,23 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_ifstream_ctor_FUN_005652fe",
-    "signature": "void __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005652fe(undefined4 *param_1,byte param_2)"
+    "signature": "ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005652fe(void *this_ptr,int c1)"
   },
   "function_calls": [
     {
+      "addr": "0056b896",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0056b896"
+    },
+    {
       "addr": "0056b503",
       "is_variadic": false,
-      "name": "FUN_0056b503"
+      "name": "crt_iostream.cpp_ios_ctor_FUN_0056b503"
     },
     {
       "addr": "0056b67d",
       "is_variadic": false,
-      "name": "FUN_0056b67d"
-    },
-    {
-      "addr": "0056b896",
-      "is_variadic": false,
-      "name": "FUN_0056b896"
+      "name": "crt_iostream.cpp_istream_ctor_FUN_0056b67d"
     }
   ],
   "globals": [
@@ -118,11 +118,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.451612903225806,
@@ -150,117 +150,108 @@
     "pcode_op_count": 138
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "c1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005652fe(uint *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005652fe(uint *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 & 1) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = &DAT_005a47a4;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 13,
       "match": "DAT_005a47a4",
       "severity": "mild",
-      "text": "*param_1 = &DAT_005a47a4;",
+      "text": "*(byte **)this_ptr = &DAT_005a47a4;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x11] = &DAT_005a47ac;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005a47ac",
-      "severity": "mild",
-      "text": "param_1[0x11] = &DAT_005a47ac;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0056b503(param_1 + 0x15);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (uint *)(iVar1 + -0x54);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0056b896(param_1,1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)piVar2",
+      "line": 14,
+      "match": "(byte **)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)piVar2 + *(int *)(*piVar2 + 4) + -4) = *(int *)(*piVar2 + 4);",
+      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 17,
-      "match": "(int)piVar2",
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005a47ac",
+      "severity": "mild",
+      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
-      "text": "*(int *)((int)piVar2 + *(int *)(*piVar2 + 4) + -4) = *(int *)(*piVar2 + 4);",
+      "text": "piVar6 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "piVar6[-2].",
+      "severity": "mild",
+      "text": "this_ptr = &piVar6[-2].__tied_stream;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)(piVar5->_fstreambase_core).layout_info",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)(piVar5->_fstreambase_core).layout_info + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)pvVar2",
+      "severity": "moderate",
+      "text": "((piVar5->_fstreambase_core)._filebuf.__unbuffered_get_area + *(int *)((int)pvVar2 + 4) + -0x10)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pvVar2",
+      "severity": "moderate",
+      "text": "((piVar5->_fstreambase_core)._filebuf.__unbuffered_get_area + *(int *)((int)pvVar2 + 4) + -0x10)",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
-      "match": "(int)piVar2",
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 14,
+      "match": "(byte **)((int)this_ptr + 0x44)",
       "severity": "moderate",
-      "text": "*(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) =",
-      "type": "pointer_truncation"
+      "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 15,
+      "match": "(ios *)((int)this_ptr + 0x54)",
+      "severity": "moderate",
+      "text": "piVar6 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

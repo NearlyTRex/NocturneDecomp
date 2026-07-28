@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_writeActorReference_FUN_00505280(undefined4 param_1,int *param_2)
+; void __cdecl core_script_cpp_writeActorReference_FUN_00505280(_FILE *file_handle,CDemonActor **actor)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor * *  Stack[0x8]:4   actor
 ;
 ; XREF[1]:
 ;   core_script.cpp_FUN_005055f0 at 00505757

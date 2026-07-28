@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(int param_1,int param_2)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPackedBitmap *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b53
@@ -59,7 +62,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004f4c08
     PUSH EAX                            ; 004f4c0c
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f4c0d
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4c12
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004f4c15
     PUSH EBP                            ; 004f4c18
@@ -69,7 +72,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x20]      ; 004f4c1d
     PUSH ESI                            ; 004f4c20
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f4c21
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4c26
     PUSH EBP                            ; 004f4c29
     MOV EDI,dword ptr [EBX + 0x1c]      ; 004f4c2a
@@ -80,7 +83,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x14]      ; 004f4c36
     PUSH ECX                            ; 004f4c39
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f4c3a
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV AH,byte ptr [EBP + 0xc]         ; 004f4c3f
     ADD ESP,0x10                        ; 004f4c42
     TEST AH,0x20                        ; 004f4c45

@@ -2,44 +2,44 @@
 // Address: 005256f0
 // Address Range: [[005256f0, 005257d9]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(int param_1)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(int param_1)
+void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this_ptr)
 
 {
   int iVar1;
   uint uVar2;
   
-  if (*(int *)(param_1 + 0x6c) == 0) {
+  if ((this_ptr->options).dead == 0) {
     return;
   }
   if (_DAT_02dc8318 == (int *)0x0) {
-    sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(param_1);
+    sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
     return;
   }
-  if (*(int *)(param_1 + 0x74) == 0) {
+  if (this_ptr->playback_state == 0) {
     PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     INT_01cc4804 = 0xb63;
     core_main_c_FUN_004c8440("SfxSlot::pollHwHandle - no sample?");
   }
-  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,param_1);
+  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,this_ptr);
   if (iVar1 == 0) {
-    if (*(int *)(*(int *)(param_1 + 0x74) + 0x124) != 0) {
-      sound_sndmain_cpp_FUN_00529980("Killing looped sfx %s, which died??\n",*(int *)(param_1 + 0x74));
+    if (*(int *)(this_ptr->playback_state + 0x124) != 0) {
+      sound_sndmain_cpp_FUN_00529980("Killing looped sfx %s, which died??\n",this_ptr->playback_state);
     }
-    sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(param_1);
+    sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
     return;
   }
   uVar2 = 0;
-  if ((*(byte *)(param_1 + 0x5c) & 1) == 0) {
-    if (*(int *)(param_1 + 0x20) != 0) {
+  if (((this_ptr->options).flags & 1) == 0) {
+    if ((this_ptr->options).position_format != 0) {
       uVar2 = 2;
     }
-    if (*(int *)(param_1 + 0x40) != 0) {
+    if ((this_ptr->options).velocity_format != 0) {
       uVar2 = uVar2 | 4;
       if (uVar2 == 0) {
         return;
@@ -51,13 +51,12 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(int param_1)
     return;
   }
 LAB_005257a3:
-  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,param_1,uVar2);
+  iVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,uVar2);
   if (iVar1 != 0) {
     return;
   }
   sound_sndmain_cpp_FUN_00529980
-            ("Error setting hw sfx %d options (sample %s), killing.\n",*(uint *)(param_1 + 0x6c),
-             *(uint *)(param_1 + 0x74));
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(param_1);
+            ("Error setting hw sfx %d options (sample %s), killing.\n",(this_ptr->options).dead,this_ptr->playback_state);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
   return;
 }

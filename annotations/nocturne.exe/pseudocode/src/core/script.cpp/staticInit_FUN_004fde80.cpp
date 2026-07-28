@@ -10,8 +10,8 @@ void __cdecl core_script_cpp_staticInit_FUN_004fde80(void)
 
 {
   shape_edittool_cpp_FUN_00474c90(0x1e56c30);
-  FUN_00564bb0(0x5be200);
+  _atexit((WatcomStaticDestructorNode *)0x5be200);
   core_script_cpp_FUN_004fe490(&DAT_01e56da0);
-  FUN_00564bb0(0x5be210);
+  _atexit((WatcomStaticDestructorNode *)0x5be210);
   return;
 }

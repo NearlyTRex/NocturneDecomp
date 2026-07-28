@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(int param_1,int param_2,uint param_3)
+; void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   plane_index
+; uint             Stack[0xc]:4   blend_alpha
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -88,7 +92,7 @@ section .text
     PUSH EBP                            ; 00447099
     PUSH ESI                            ; 0044709a | DAT_012cecb8
     CALL core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50 ; 0044709b
-        ;   XREF to: 00465f50 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50()
+        ;   XREF to: 00465f50 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, ...)
     ADD ESP,0x18                        ; 004470a0
     INC EDI                             ; 004470a3
     MOV EAX,dword ptr [ESP + 0x18]      ; 004470a4

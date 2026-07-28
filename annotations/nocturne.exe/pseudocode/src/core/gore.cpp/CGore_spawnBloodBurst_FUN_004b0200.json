@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 430,
+    "complexity_score": 356,
     "cross_reference_count": 17,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 31,
+    "pseudocode_lines": 101,
+    "suspect_count": 24,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant",
-      "self_copy_guard",
-      "unnamed_param"
+      "stack_ref",
+      "unknown_field"
     ],
-    "total_lines": 308
+    "total_lines": 309
   },
   "cross_references": [
     {
@@ -252,7 +251,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200",
-    "signature": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(undefined4 param_1,undefined4 param_2,float *param_3,int param_4,int param_5)"
+    "signature": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)"
   },
   "function_calls": [
     {
@@ -392,10 +391,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.694444444444445,
@@ -439,10 +438,10 @@
     "pcode_op_count": 1025
   },
   "stack_frame": {
-    "frame_size": 124,
+    "frame_size": 144,
     "local_size": 124,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -577,6 +576,41 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -600,39 +634,32 @@
   "static_analysis": {
     "analyzed_file": "CGore_spawnBloodBurst_FUN_004b0200.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 8,
+      "diagnostic_count": 6,
       "diagnostics": [
         {
           "check_id": "ignoredReturnValue",
           "column": 7,
-          "line": 68,
+          "line": 67,
           "message": "Return value of function atan2() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 23,
-          "line": 55,
+          "column": 20,
+          "line": 53,
           "message": "Uninitialized variable: local_38",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 45,
-          "line": 55,
-          "message": "Uninitialized variable: local_40",
-          "severity": "warning"
+          "column": 30,
+          "line": 74,
+          "message": "Uninitialized variable: local_44",
+          "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 67,
-          "line": 55,
-          "message": "Uninitialized variable: local_3c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 22,
+          "column": 28,
           "line": 91,
           "message": "Uninitialized variable: local_74",
           "severity": "error"
@@ -650,13 +677,6 @@
           "line": 93,
           "message": "Uninitialized variable: fStack_5c",
           "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 39,
-          "line": 75,
-          "message": "Uninitialized variable: local_44",
-          "severity": "error"
         }
       ],
       "error": null
@@ -665,278 +685,211 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(uint param_1,uint param_2,float *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(uint param_1,uint param_2,float *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(uint param_1,uint param_2,float *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(uint param_1,uint param_2,float *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(uint param_1,uint param_2,float *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 != 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == (float *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0 < param_4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iStack_7c = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(param_1,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(param_1,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (iVar2 < param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 42,
-      "match": "param_3",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
+      "text": "local_40._0_4_ = direction->x;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = SQRT(param_3[2] * param_3[2] + *param_3 * *param_3 + param_3[1] * param_3[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 43,
-      "match": "param_3",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "if (&local_40 != param_3) {",
-      "type": "unnamed_param"
+      "text": "local_40._4_4_ = direction->y;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "local_40 = *param_3;",
-      "type": "unnamed_param"
+      "text": "(float)local_40._0_4_ * (float)local_40._0_4_ +",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_3",
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "local_3c = param_3[1];",
-      "type": "unnamed_param"
+      "text": "(float)local_40._0_4_ * (float)local_40._0_4_ +",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_3",
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "local_38 = param_3[2];",
-      "type": "unnamed_param"
+      "text": "(float)local_40._4_4_ * (float)local_40._4_4_);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_4",
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "if (0 < param_4) {",
-      "type": "unnamed_param"
+      "text": "(float)local_40._4_4_ * (float)local_40._4_4_);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(param_1,param_2,&local_3c,param_5);",
-      "type": "unnamed_param"
+      "text": "local_40._4_4_ = 0.0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_2",
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(param_1,param_2,&local_3c,param_5);",
-      "type": "unnamed_param"
+      "text": "local_40._0_4_ = 0.0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_5",
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(param_1,param_2,&local_3c,param_5);",
-      "type": "unnamed_param"
+      "text": "local_40._0_4_ = (float)local_40._0_4_ * fVar1;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_4",
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "} while (iVar2 < param_4);",
-      "type": "unnamed_param"
+      "text": "local_40._0_4_ = (float)local_40._0_4_ * fVar1;",
+      "type": "unknown_field"
     },
     {
-      "description": "Raw hex address 0x4b02e5 assigned to bare local `iStack_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 60,
-      "match": "0x4b02e5",
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = (float)local_40._4_4_ * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = (float)local_40._4_4_ * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "((float10)(float)local_40._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "SQRT((float10)(float)local_40._0_4_ * (float10)(float)local_40._0_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "SQRT((float10)(float)local_40._0_4_ * (float10)(float)local_40._0_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "x = (float10)(float)local_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = local_30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = local_20 + (float)local_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = local_20 + (float)local_40._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "iStack_7c = 0x4b02e5;",
-      "type": "raw_address_constant"
+      "text": "((CMatrix3x3f *)&stack0xffffff84,(CVector3f *)(local_40 + 4));",
+      "type": "stack_ref"
     },
     {
-      "description": "Raw hex address 0x4b02f8 assigned to bare local `uVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 67,
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = local_74;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_54 = (float)local_40._4_4_ * local_24;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_40._4_4_ = local_54;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Raw hex address 0x4b02f8 assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 66,
       "match": "0x4b02f8",
       "severity": "moderate",
-      "text": "uVar5 = 0x4b02f8;",
+      "text": "uVar4 = 0x4b02f8;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_3c != &local_54)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 91,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_3c != &local_54) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "call_site_count": 21,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 55,
+      "line": 53,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_78 = SQRT(local_38 * local_38 + local_40 * local_40 + local_3c * local_3c);",
+      "text": "fVar1 = SQRT(local_38 * local_38 +",
       "type": "static_uninitvar"
     },
     {
-      "description": "Uninitialized variable: local_40",
-      "line": 55,
+      "description": "Uninitialized variable: local_44",
+      "line": 74,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_78 = SQRT(local_38 * local_38 + local_40 * local_40 + local_3c * local_3c);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_3c",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_78 = SQRT(local_38 * local_38 + local_40 * local_40 + local_3c * local_3c);",
+      "text": "fVar3 = atan2((float10)local_44,x);",
       "type": "static_uninitvar"
     },
     {
@@ -944,7 +897,7 @@
       "line": 91,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_3c = local_74;",
+      "text": "local_40._4_4_ = local_74;",
       "type": "static_uninitvar"
     },
     {
@@ -962,14 +915,6 @@
       "severity": "major",
       "text": "local_34 = fStack_5c;",
       "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_44",
-      "line": 75,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "fVar4 = (float10)atan2((float10)local_44);",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(undefined4 param_1,float *param_2)
+; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(CDemonRenderer *this_ptr,CVector3f *output)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -43,7 +46,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00460dbb
     MOV ESI,ESP                         ; 00460dbe
     CALL engine_matrix.c_getCameraRotation_FUN_004ce790 ; 00460dc0
-        ;   XREF to: 004ce790 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraRotation_FUN_004ce790()
+        ;   XREF to: 004ce790 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_004ce790(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 00460dc5
     MOV dword ptr [ESP + 0xc],EAX       ; 00460dc8
     FLD double ptr [0x0057dc75]         ; 00460dcc | DOUBLE_0057dc75

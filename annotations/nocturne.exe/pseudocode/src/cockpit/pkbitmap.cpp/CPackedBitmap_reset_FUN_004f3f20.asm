@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_004f3f20(int param_1)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_004f3f20(CPackedBitmap *this_ptr)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90 at 004f3e96

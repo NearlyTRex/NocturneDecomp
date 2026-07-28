@@ -2,13 +2,13 @@
 // Address: 00528080
 // Address Range: [[00528080, 005280b1]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_00528080(void)
+// Signature: int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_00528080(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_00528080(void)
+int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_00528080(void)
 
 {
   int iVar1;

@@ -12,8 +12,8 @@ int sound_sndmain_cpp_FUN_00529a00(void)
 
 {
   int iVar1;
-  int in_stack_00000004;
+  CSfxSample *in_stack_00000004;
   
-  iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40();
-  return iVar1 * *(int *)(in_stack_00000004 + 0x138);
+  iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000004);
+  return iVar1 * in_stack_00000004->loop_endpoints[4];
 }

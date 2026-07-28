@@ -13,8 +13,16 @@ void ::memcpy(uint param_1);
 
 // Original: crt_watcom.c__mkdir_FUN_00565e40
 // Address: 00565e40
-undefined4 __cdecl ::mkdir(LPCSTR param_1);
+int __cdecl ::mkdir(char *path);
+
+// Original: crt_watcom.c_getcwd_FUN_0056c5f0
+// Address: 00566440
+char * __cdecl getcwd(char *buffer,SIZE_T size);
 
 // Original: crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
 // Address: 00566f90
 void __cdecl notifyAbnormalTermination(void);
+
+// Original: crt_watcom.c_getcwd_FUN_0056c5f0
+// Address: 0056c5f0
+char * __cdecl getcwd(char *buffer,SIZE_T size);

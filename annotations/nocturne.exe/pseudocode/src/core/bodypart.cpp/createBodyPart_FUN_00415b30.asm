@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   position
+; UOrientationVector * Stack[0x8]:4   orientation
+; CVector3f *      Stack[0xc]:4   initial_velocity
+; CDemonActor *    Stack[0x10]:4   scale_source
+; int              Stack[0x14]:4   dont_use_normals
+; int              Stack[0x18]:4   is_transparent
+; int              Stack[0x1c]:4   blood_type
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x14]:4  local_14
@@ -92,7 +100,7 @@ section .text
     PUSH EBX                            ; 00415bb0
         ;   Label: LAB_00415bb0
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00415bb1
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00415bb6
     TEST ESI,ESI                        ; 00415bb9
     JZ 0x00415c3f                       ; 00415bbb
@@ -112,13 +120,13 @@ section .text
     MOV ESI,dword ptr [0x005baf90]      ; 00415bdc | DAT_005baf90
     PUSH ESI                            ; 00415be2
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 00415be3
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00415be8
     PUSH EBX                            ; 00415beb
     MOV EBP,dword ptr [0x005baf90]      ; 00415bec | DAT_005baf90
     PUSH EBP                            ; 00415bf2
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 00415bf3
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00415bf8
     TEST EDI,EDI                        ; 00415bfb
     JNZ 0x00415cbb                      ; 00415bfd
@@ -141,7 +149,7 @@ section .text
     PUSH EAX                            ; 00415c31
         ;   Label: LAB_00415c31
     CALL core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 ; 00415c32
-        ;   XREF to: 00415d20 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20()
+        ;   XREF to: 00415d20 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00415c37
     JMP 0x00415b58                      ; 00415c3a
         ;   XREF to: 00415b58 (UNCONDITIONAL_JUMP)  ; LAB_00415b58

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005191f0(int param_1,char *param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005191f0(CDeformableModel *this_ptr,char *filename)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_getDeformableModel_FUN_0051f570 at 0051f629
@@ -53,7 +56,7 @@ section .text
     PUSH EBX                            ; 00519222
     PUSH 0x591696                       ; 00519223 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00519228
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0051922d
     MOV EDI,EAX                         ; 00519230
     TEST EAX,EAX                        ; 00519232
@@ -64,11 +67,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00519237
     PUSH EBX                            ; 0051923b
     CALL core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280 ; 0051923c
-        ;   XREF to: 00519280 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280()
+        ;   XREF to: 00519280 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00519241
     PUSH EDI                            ; 00519244
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00519245
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0051924a
     POP EDI                             ; 0051924d
     POP ESI                             ; 0051924e

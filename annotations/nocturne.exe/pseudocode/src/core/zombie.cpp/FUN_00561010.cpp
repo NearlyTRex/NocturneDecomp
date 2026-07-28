@@ -2,270 +2,256 @@
 // Address: 00561010
 // Address Range: [[00561010, 005617d2]]
 // Convention: unknown
-// Signature: undefined4 core_zombie_cpp_FUN_00561010(int param_1,float param_2)
+// Signature: undefined4 core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_zombie_cpp_FUN_00561010(int param_1,float param_2)
+uint core_zombie_cpp_FUN_00561010(CZombie *param_1,float param_2)
 
 {
-  uint uVar1;
-  float fVar2;
+  CLocation *pCVar1;
+  uint uVar2;
   float fVar3;
-  int iVar4;
-  uint uVar5;
-  float *pfVar6;
-  int iVar7;
+  float fVar4;
+  CDemonActor *pCVar5;
+  CDemonActor *pCVar6;
+  CVector3f *pCVar7;
   int iVar8;
-  int iVar9;
+  CBoundingBox3D *pCVar9;
+  int iVar10;
+  int iVar11;
+  CVector3f *pCVar12;
+  float *pfVar13;
   float fStack_168;
-  int aiStack_160 [10];
+  uint auStack_160 [10];
   int aiStack_138 [10];
-  byte auStack_110 [24];
-  byte auStack_f8 [8];
-  float fStack_f0;
-  byte auStack_ec [12];
-  byte auStack_e0 [8];
-  float fStack_d8;
-  byte auStack_d4 [12];
-  uint uStack_c8;
-  uint uStack_c4;
-  uint uStack_c0;
-  byte auStack_bc [8];
-  float fStack_b4;
-  byte auStack_b0 [12];
-  uint uStack_a4;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
-  uint uStack_90;
+  CBoundingBox3D CStack_110;
+  CBoundingBox3D CStack_f8;
+  CBoundingBox3D CStack_e0;
+  CVector3f CStack_c8;
+  CVector3f CStack_bc;
+  CVector3f CStack_b0;
+  CVector3f CStack_a4;
+  CVector3f CStack_98;
   float fStack_8c;
   float fStack_88;
   float fStack_84;
-  byte auStack_80 [8];
-  float fStack_78;
-  uint uStack_74;
-  uint uStack_70;
-  uint uStack_6c;
-  byte auStack_68 [12];
-  float fStack_5c;
-  float fStack_58;
-  float fStack_54;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_3c;
-  uint uStack_30;
-  uint uStack_2c;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
+  CVector3f CStack_50;
+  CVector3f CStack_44;
+  float fStack_30;
+  float fStack_2c;
   int iStack_28;
   int local_24;
   int local_20;
-  float *local_1c;
+  CLocation *local_1c;
   int local_18;
-  uint local_14;
+  float local_14;
   
-  if (*(int *)(param_1 + 0xbdf0) < 0) {
+  if (param_1->part_indices[4] < 0) {
     return 0;
   }
-  fVar2 = *(float *)(param_1 + 0xbd2c) - param_2;
-  *(float *)(param_1 + 0xbd2c) = fVar2;
-  if (0.0 < fVar2) {
-    *(int *)(param_1 + 0xbd28) = *(int *)(param_1 + 0xbd28) + 1;
-    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
-    *(uint *)(param_1 + 0xbd2c) = local_14;
+  fVar3 = param_1->pickup_scan_timer - param_2;
+  param_1->pickup_scan_timer = fVar3;
+  if (0.0 < fVar3) {
+    param_1->pickup_seed = param_1->pickup_seed + 1;
+    local_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a00000,0x41200000);
+    param_1->pickup_scan_timer = local_14;
   }
-  if (*(int *)(param_1 + 0x24ac) != 0) {
+  if ((param_1->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (*(int *)(param_1 + 0x24f0) != 0) {
+  if ((param_1->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  if (0.0 < *(float *)(param_1 + 0xbd30)) {
-    param_2 = *(float *)(param_1 + 0xbd30) - param_2;
-    *(float *)(param_1 + 0xbd30) = param_2;
+  if (0.0 < param_1->pickup_approach_progress) {
+    param_2 = param_1->pickup_approach_progress - param_2;
+    param_1->pickup_approach_progress = param_2;
     if (0.0 <= param_2) {
       return 0;
     }
-    *(uint *)(param_1 + 0xbd30) = 0;
+    param_1->pickup_approach_progress = 0.0;
     return 0;
   }
-  iVar7 = *(int *)(param_1 + 0xbd34);
-  if (iVar7 == 0) {
+  pCVar6 = param_1->pickup_target;
+  pCVar1 = &(param_1->base).base.base.location;
+  if (pCVar6 == (CDemonActor *)0x0) {
     local_24 = 0;
     local_20 = 0;
-    iVar7 = 0;
-    local_1c = (float *)(param_1 + 0x20);
+    iVar10 = 0;
+    local_1c = pCVar1;
     for (local_18 = 0; local_18 < *(int *)(0x01E57284 + 0x14cd6c); local_18 = local_18 + 1) {
-      iVar8 = *(int *)(0x01E57284 + local_20 + 0x14cd70);
-      iVar4 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x8c))(iVar8);
-      iVar9 = iVar7;
-      if ((iVar4 == 0) &&
-         (iVar4 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x7c))(iVar8,param_1), iVar4 == 3)) {
-        pfVar6 = (float *)(**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_110);
-        fStack_5c = pfVar6[3] - *pfVar6;
-        fStack_58 = pfVar6[4] - pfVar6[1];
-        fStack_54 = pfVar6[5] - pfVar6[2];
-        iStack_28 = core_zombie_cpp_classifyObjectShape_FUN_0055e940(&fStack_5c);
+      pCVar6 = *(CDemonActor **)(0x01E57284 + local_20 + 0x14cd70);
+      pCVar5 = (*((pCVar6->vtable)._ub)->getCarrier)(pCVar6);
+      iVar11 = iVar10;
+      if ((pCVar5 == (CDemonActor *)0x0) &&
+         (iVar8 = (*((pCVar6->vtable)._ub)->canPickup)(pCVar6,(CDemonActor *)param_1), iVar8 == 3))
+      {
+        pCVar9 = (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_110);
+        CStack_5c.x = (pCVar9->max).x - (pCVar9->min).x;
+        CStack_5c.y = (pCVar9->max).y - (pCVar9->min).y;
+        CStack_5c.z = (pCVar9->max).z - (pCVar9->min).z;
+        iStack_28 = core_zombie_cpp_classifyObjectShape_FUN_0055e940(&CStack_5c);
         if (((iStack_28 != 0) &&
-            (iVar4 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(param_1,iStack_28),
-            iVar4 != 0)) &&
-           ((iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar8,"CBodyPart"), iVar4 == 0
-            || ((*(uint *)(iVar8 + 0x6c) & 3) == (*(uint *)(param_1 + 0xbd28) & 3))))) {
-          fStack_8c = *(float *)(iVar8 + 0x20) - *local_1c;
-          fStack_88 = *(float *)(iVar8 + 0x24) - local_1c[1];
+            (iVar8 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(param_1,iStack_28),
+            iVar8 != 0)) &&
+           ((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar6,"CBodyPart"), iVar8 == 0
+            || ((pCVar6->direction_hint & 3U) == (param_1->pickup_seed & 3U))))) {
+          fStack_8c = (pCVar6->location).position.x - (local_1c->position).x;
+          fStack_88 = (pCVar6->location).position.y - (local_1c->position).y;
           fStack_88 = fStack_88 * fStack_88;
-          fStack_84 = *(float *)(iVar8 + 0x28) - local_1c[2];
+          fStack_84 = (pCVar6->location).position.z - (local_1c->position).z;
           fStack_88 = fStack_88 * fStack_88;
-          fVar2 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
-          if (((float)5 <= fVar2) &&
-             (fVar2 <= *(float *)(param_1 + 0xbd24) * 15.0f)) {
-            *(int *)((int)aiStack_138 + iVar7) = iStack_28;
-            iVar9 = iVar7 + 4;
+          fVar3 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
+          if (((float)5 <= fVar3) &&
+             (fVar3 <= param_1->pickup_range_factor * 15.0f)) {
+            *(int *)((int)aiStack_138 + iVar10) = iStack_28;
+            iVar11 = iVar10 + 4;
             local_24 = local_24 + 1;
-            *(int *)((int)aiStack_160 + iVar7) = iVar8;
-            if (0x27 < iVar9) break;
+            *(CDemonActor **)((int)auStack_160 + iVar10) = pCVar6;
+            if (0x27 < iVar11) break;
           }
         }
       }
       local_20 = local_20 + 4;
-      iVar7 = iVar9;
+      iVar10 = iVar11;
     }
     if (local_24 < 1) {
       return 0;
     }
-    iVar7 = core_actor_cpp_getRandomInt_FUN_0040de00(0,local_24 + -1);
-    *(int *)(param_1 + 0xbd34) = aiStack_160[iVar7];
-    iVar7 = aiStack_138[iVar7];
-    *(uint *)(param_1 + 0xbd30) = 0xc2200000;
-    *(int *)(param_1 + 0xbd38) = iVar7;
-    *(int *)(param_1 + 0xbd28) = *(int *)(param_1 + 0xbd28) + 1;
+    iVar10 = core_actor_cpp_getRandomInt_FUN_0040de00(0,local_24 + -1);
+    param_1->pickup_target = (CDemonActor *)auStack_160[iVar10];
+    iVar10 = aiStack_138[iVar10];
+    param_1->pickup_approach_progress = -40.0;
+    param_1->object_shape_class = iVar10;
+    param_1->pickup_seed = param_1->pickup_seed + 1;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,
-               *(uint *)(param_1 + 0xbd34));
+              (PTR_DAT_005ad350,"%s is going to try to pick up %s\n",param_1,param_1->pickup_target);
     return 1;
   }
-  iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x8c))(iVar7);
-  if (iVar7 != 0) {
+  pCVar6 = (*((pCVar6->vtable)._ub)->getCarrier)(pCVar6);
+  if (pCVar6 != (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",param_1,
-               *(uint *)(param_1 + 0xbd34));
-    *(uint *)(param_1 + 0xbd34) = 0;
-    *(uint *)(param_1 + 0xbd30) = 0;
+              (PTR_DAT_005ad350,"%s can't pick up %s, sombody else beat me to it!\n",param_1,param_1->pickup_target);
+    param_1->pickup_target = (CDemonActor *)0x0;
+    param_1->pickup_approach_progress = 0.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
     return 0;
   }
-  fVar2 = *(float *)(param_1 + 0x20) - *(float *)(*(int *)(param_1 + 0xbd34) + 0x20);
-  fVar3 = *(float *)(param_1 + 0x28) - *(float *)(*(int *)(param_1 + 0xbd34) + 0x28);
-  fStack_168 = (float)5 - SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)0.33333333333333298
+  fVar3 = (pCVar1->position).x - (param_1->pickup_target->location).position.x;
+  fVar4 = (param_1->base).base.base.location.position.z -
+          (param_1->pickup_target->location).position.z;
+  fStack_168 = (float)5 - SQRT(fVar4 * fVar4 + fVar3 * fVar3) * (float)0.33333333333333298
   ;
   if (fStack_168 < 1.0) {
     fStack_168 = 1.0;
   }
-  iVar8 = -1;
-  *(float *)(param_1 + 0xbd30) = param_2 * fStack_168 + *(float *)(param_1 + 0xbd30);
-  iVar7 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0
-                    (param_1,*(uint *)(param_1 + 0xbd38));
-  if ((((-1 < iVar7) && (*(float *)(param_1 + 0xbd30) < 0.0)) &&
-      (iVar9 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbd34) + 0x14c) + 0x7c))
-                         (*(int *)(param_1 + 0xbd34),param_1), iVar9 == 3)) &&
-     (iVar9 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880
-                        (param_1,*(uint *)(param_1 + 0xbd38)), iVar9 != 0)) {
-    uVar1 = *(uint *)(param_1 + 0xbd38);
-    if (uVar1 < 2) {
-      if (uVar1 == 1) {
+  iVar11 = -1;
+  param_1->pickup_approach_progress = param_2 * fStack_168 + param_1->pickup_approach_progress;
+  iVar10 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0
+                     (param_1,param_1->object_shape_class);
+  if ((((-1 < iVar10) && (param_1->pickup_approach_progress < 0.0)) &&
+      (iVar8 = (*((param_1->pickup_target->vtable)._ub)->canPickup)
+                         (param_1->pickup_target,(CDemonActor *)param_1), iVar8 == 3)) &&
+     (iVar8 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880
+                        (param_1,param_1->object_shape_class), iVar8 != 0)) {
+    uVar2 = param_1->object_shape_class;
+    if (uVar2 < 2) {
+      if (uVar2 == 1) {
 LAB_00561230:
-        iVar8 = *(int *)(param_1 + 0xbd34);
-        (**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_e0);
-        uStack_2c = 0x3f000000;
-        uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
-                          (auStack_e0,auStack_b0,auStack_d4,auStack_80,&uStack_2c);
-        core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
-        fStack_78 = fStack_d8 + (float)0.40000000000000002;
-        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_44,auStack_80);
-        if (&uStack_a4 != &uStack_44) {
-          uStack_a4 = uStack_44;
-          uStack_a0 = uStack_40;
-          uStack_9c = uStack_3c;
+        pCVar6 = param_1->pickup_target;
+        (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_e0);
+        fStack_2c = 0.5;
+        pfVar13 = &fStack_2c;
+        pCVar12 = &CStack_80;
+        pCVar7 = core_bodypart_cpp_addVector_FUN_00417fc0(&CStack_e0.min,&CStack_b0,&CStack_e0.max);
+        core_bodypart_cpp_scaleVector_FUN_00417f60(pCVar7,pCVar12,pfVar13);
+        CStack_80.z = CStack_e0.min.z + (float)0.40000000000000002;
+        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(pCVar6,&CStack_44,&CStack_80);
+        if (&CStack_a4 != &CStack_44) {
+          CStack_a4.x = CStack_44.x;
+          CStack_a4.y = CStack_44.y;
+          CStack_a4.z = CStack_44.z;
         }
       }
       else {
 LAB_005614f8:
-        iVar8 = *(int *)(param_1 + 0xbd34);
-        if (&uStack_a4 != (uint *)(iVar8 + 0x20)) {
-          uStack_a4 = *(uint *)(iVar8 + 0x20);
-          uStack_a0 = *(uint *)(iVar8 + 0x24);
-          uStack_9c = *(uint *)(iVar8 + 0x28);
+        pCVar6 = param_1->pickup_target;
+        if ((CLocation *)&CStack_a4 != &pCVar6->location) {
+          CStack_a4.x = (pCVar6->location).position.x;
+          CStack_a4.y = (pCVar6->location).position.y;
+          CStack_a4.z = (pCVar6->location).position.z;
         }
       }
     }
     else {
-      if (2 < uVar1) {
-        if (uVar1 != 3) goto LAB_005614f8;
+      if (2 < uVar2) {
+        if (uVar2 != 3) goto LAB_005614f8;
         goto LAB_00561230;
       }
-      iVar8 = *(int *)(param_1 + 0xbd34);
-      (**(code **)(*(int *)(iVar8 + 0x14c) + 0x14))(iVar8,auStack_f8);
-      uStack_30 = 0x3f000000;
-      uVar5 = core_bodypart_cpp_addVector_FUN_00417fc0
-                        (auStack_f8,auStack_68,auStack_ec,auStack_bc,&uStack_30);
-      core_bodypart_cpp_scaleVector_FUN_00417f60(uVar5);
-      fStack_b4 = fStack_f0 + (float)0.40000000000000002;
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar8,&uStack_50,auStack_bc);
-      if (&uStack_a4 != &uStack_50) {
-        uStack_a4 = uStack_50;
-        uStack_a0 = uStack_4c;
-        uStack_9c = uStack_48;
+      pCVar6 = param_1->pickup_target;
+      (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,&CStack_f8);
+      pfVar13 = &fStack_30;
+      pCVar12 = &CStack_bc;
+      fStack_30 = 0.5;
+      pCVar7 = core_bodypart_cpp_addVector_FUN_00417fc0(&CStack_f8.min,&CStack_68,&CStack_f8.max);
+      core_bodypart_cpp_scaleVector_FUN_00417f60(pCVar7,pCVar12,pfVar13);
+      CStack_bc.z = CStack_f8.min.z + (float)0.40000000000000002;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(pCVar6,&CStack_50,&CStack_bc);
+      if (&CStack_a4 != &CStack_50) {
+        CStack_a4.x = CStack_50.x;
+        CStack_a4.y = CStack_50.y;
+        CStack_a4.z = CStack_50.z;
       }
     }
-    uStack_c8 = _DAT_02dd1184;
-    uStack_c4 = _DAT_02dd1188;
-    uStack_c0 = _DAT_02dd118c;
-    if (iVar7 == 0) {
-      uStack_74 = 0xbfc00000;
-      uStack_70 = 0;
-      uStack_6c = uStack_70;
-      if (&uStack_c8 != &uStack_74) {
-        uStack_c8 = 0xbfc00000;
-        uStack_c4 = 0;
-        uStack_c0 = 0;
+    CStack_c8.x = _DAT_02dd1184;
+    CStack_c8.y = _DAT_02dd1188;
+    CStack_c8.z = _DAT_02dd118c;
+    if (iVar10 == 0) {
+      CStack_74.x = -1.5;
+      CStack_74.y = 0.0;
+      CStack_74.z = CStack_74.y;
+      if (&CStack_c8 != &CStack_74) {
+        CStack_c8.x = -1.5;
+        CStack_c8.y = 0.0;
+        CStack_c8.z = 0.0;
       }
     }
-    if (iVar7 == 1) {
-      uStack_94 = 0;
-      uStack_90 = 0;
-      uStack_98 = 0x3fc00000;
-      if (&uStack_c8 != &uStack_98) {
-        uStack_c4 = 0;
-        uStack_c0 = 0;
-        uStack_c8 = 0x3fc00000;
+    if (iVar10 == 1) {
+      CStack_98.y = 0.0;
+      CStack_98.z = 0.0;
+      CStack_98.x = 1.5;
+      if (&CStack_c8 != &CStack_98) {
+        CStack_c8.y = 0.0;
+        CStack_c8.z = 0.0;
+        CStack_c8.x = 1.5;
       }
     }
-    iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
-                      (param_1,&uStack_a4,0,&uStack_c8,0,0);
+    iVar11 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                       ((CCharacter *)param_1,&CStack_a4,(CPathMap *)0x0,&CStack_c8,0.0,0.0);
   }
-  if (iVar8 < 0) {
+  if (iVar11 < 0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",param_1,
-               *(uint *)(param_1 + 0xbd34));
-    *(uint *)(param_1 + 0xbd34) = 0;
-    *(uint *)(param_1 + 0xbd30) = 0x41a00000;
+              (PTR_DAT_005ad350,"%s can't pick up %s, giving up\n",param_1,param_1->pickup_target);
+    param_1->pickup_target = (CDemonActor *)0x0;
+    param_1->pickup_approach_progress = 20.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(param_1);
     return 0;
   }
-  if (iVar8 < 1) {
+  if (iVar11 < 1) {
     return 1;
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,
-             *(uint *)(param_1 + 0xbd34));
-  uVar1 = *(uint *)(param_1 + 0xbd38);
-  if (uVar1 < 2) {
-    if (uVar1 != 1) {
+            (PTR_DAT_005ad350,"%s beginning to pickup %s\n",param_1,param_1->pickup_target);
+  uVar2 = param_1->object_shape_class;
+  if (uVar2 < 2) {
+    if (uVar2 != 1) {
 LAB_005615c6:
       PTR_01cc4800 = "..\\core\\zombie.cpp";
       INT_01cc4804 = 0x5d0;
@@ -274,14 +260,15 @@ LAB_005615c6:
     }
   }
   else {
-    if (uVar1 < 3) {
-      uVar5 = 0xc;
+    if (uVar2 < 3) {
+      iVar10 = 0xc;
       goto LAB_00561571;
     }
-    if (uVar1 != 3) goto LAB_005615c6;
+    if (uVar2 != 3) goto LAB_005615c6;
   }
-  uVar5 = 10;
+  iVar10 = 10;
 LAB_00561571:
-  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar5,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+            (&(param_1->base).base.model.motion_controller,iVar10,1);
   return 1;
 }

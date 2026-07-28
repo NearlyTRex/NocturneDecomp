@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_stdio_c_fgets_FUN_00564b20(char *param_1,int param_2,int param_3)
+; char * __cdecl crt_stdio_c_fgets_FUN_00564b20(char *str,int num,_FILE *stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; int              Stack[0x8]:4   num
+; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[21]:
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041c850 at 0041c872
@@ -18,12 +22,12 @@
 ;   ... and 11 more
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_FUN_00564570
-;   FUN_005671e4
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;
 ; *****************************************************************************
 
@@ -40,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 00564b2f
     MOV EDX,dword ptr [EDI + 0x10]      ; 00564b33
     PUSH EDX                            ; 00564b36
-    CALL dword ptr [0x005c1ac0]         ; 00564b37 | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 00564b37 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV EAX,dword ptr [EDI + 0xc]       ; 00564b3d
     ADD ESP,0x4                         ; 00564b40
     AND EAX,0x30                        ; 00564b43
@@ -56,7 +60,7 @@ section .text
         ;   XREF to: 00564b76 (CONDITIONAL_JUMP)  ; LAB_00564b76
     PUSH EDI                            ; 00564b5a
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00564b5b
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00564b60
     MOV dword ptr [ESP],EAX             ; 00564b63
     CMP EAX,-0x1                        ; 00564b66
@@ -91,7 +95,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x10]      ; 00564b96
     PUSH EAX                            ; 00564b99
     MOV dword ptr [EDI + 0xc],ESI       ; 00564b9a
-    CALL dword ptr [0x005c1ac4]         ; 00564b9d | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00564b9d | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 00564ba3
     MOV EAX,EBP                         ; 00564ba6
     ADD ESP,0x8                         ; 00564ba8

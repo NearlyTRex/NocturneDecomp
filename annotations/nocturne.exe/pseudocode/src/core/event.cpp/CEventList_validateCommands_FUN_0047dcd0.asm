@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl core_event_cpp_CEventList_validateCommands_FUN_0047dcd0(undefined4 param_1,char *param_2)
+; char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_0047dcd0(CEventList *this_ptr,char *commands)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   commands
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e1c
@@ -37,7 +40,7 @@ section .text
     XOR EBX,EBX                         ; 0047dce9
     MOV dword ptr [0x01c08b5c],EDX      ; 0047dceb | DAT_01c08b5c
     CALL core_event.cpp_CEventList_executeCommandString_FUN_0047ab90 ; 0047dcf1
-        ;   XREF to: 0047ab90 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommandString_FUN_0047ab90()
+        ;   XREF to: 0047ab90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 0047dcf6
     MOV dword ptr [0x01c08b5c],EBX      ; 0047dcf9 | DAT_01c08b5c
     TEST EAX,EAX                        ; 0047dcff

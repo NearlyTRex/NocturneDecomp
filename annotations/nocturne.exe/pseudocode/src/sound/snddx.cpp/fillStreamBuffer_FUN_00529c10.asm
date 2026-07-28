@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
+; int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -159,7 +159,7 @@ section .text
     PUSH EAX                            ; 00529d5d
         ;   Label: LAB_00529d5d
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 00529d5e
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 00529d63
     PUSH EAX                            ; 00529d66
     PUSH 0x5940d6                       ; 00529d67 | = "Lock secondary buffer"
@@ -184,7 +184,7 @@ section .text
     PUSH EAX                            ; 00529d96
         ;   Label: LAB_00529d96
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 00529d97
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 00529d9c
     PUSH EAX                            ; 00529d9f
     PUSH 0x5940ec                       ; 00529da0 | = "Unlock secondary buffer"

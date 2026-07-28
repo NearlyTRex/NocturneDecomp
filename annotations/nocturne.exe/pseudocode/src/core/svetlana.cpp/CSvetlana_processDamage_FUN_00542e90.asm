@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(int param_1,int param_2)
+; void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CCharacter *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -74,12 +74,12 @@ section .text
     PUSH ESI                            ; 00542f19
         ;   Label: LAB_00542f19
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00542f1a
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00542f1f
     MOV EAX,dword ptr [EBX + 0x950a4]   ; 00542f22
     PUSH EAX                            ; 00542f28
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 00542f29
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 00542f2e
     TEST EAX,EAX                        ; 00542f31
     JZ 0x00542ff5                       ; 00542f33
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_00542f39
     PUSH EBX                            ; 00542f3a
     CALL core_charactr.cpp_CCharacter_processDamage_FUN_00428510 ; 00542f3b
-        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processDamage_FUN_00428510()
+        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_00428510(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00542f40
     POP EDI                             ; 00542f43
     POP ESI                             ; 00542f44
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_00542f5b
     MOV dword ptr [EBX + 0x2434],0x0    ; 00542f5c
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00542f66
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00542f6b
     ADD ESP,0x4                         ; 00542f6e
     CMP EAX,0x9                         ; 00542f71
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 00542f39 (CONDITIONAL_JUMP)  ; LAB_00542f39
     PUSH ESI                            ; 00542f76
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00542f77
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00542f7c
     ADD ESP,0x4                         ; 00542f7f
     CMP EAX,0x8                         ; 00542f82
@@ -125,7 +125,7 @@ section .text
     PUSH ESI                            ; 00542f8b
     MOV dword ptr [EBX + 0x2590],0x0    ; 00542f8c
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00542f96
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00542f9b
     PUSH 0x0                            ; 00542f9e
     PUSH 0x42480000                     ; 00542fa0
@@ -134,12 +134,12 @@ section .text
     MOV EDX,dword ptr [0x005b96c4]      ; 00542fa8 | INT_005b96c4
     PUSH EDX                            ; 00542fae
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 00542faf
-        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()
+        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 00542fb4
     MOV ECX,dword ptr [EBX + 0x950a4]   ; 00542fb7
     PUSH ECX                            ; 00542fbd
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00542fbe
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00542fc3
     PUSH 0x596460                       ; 00542fc6 | = "svet-die.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00542fcb
@@ -150,7 +150,7 @@ section .text
     PUSH EDI                            ; 00542fde
     PUSH EBX                            ; 00542fdf
     CALL core_charactr.cpp_CCharacter_processDamage_FUN_00428510 ; 00542fe0
-        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processDamage_FUN_00428510()
+        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_00428510(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00542fe5
     POP EDI                             ; 00542fe8
     POP ESI                             ; 00542fe9
@@ -171,7 +171,7 @@ section .text
     PUSH EDI                            ; 0054300d
     PUSH EBX                            ; 0054300e
     CALL core_charactr.cpp_CCharacter_processDamage_FUN_00428510 ; 0054300f
-        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processDamage_FUN_00428510()
+        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_00428510(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00543014
     POP EDI                             ; 00543017
     POP ESI                             ; 00543018

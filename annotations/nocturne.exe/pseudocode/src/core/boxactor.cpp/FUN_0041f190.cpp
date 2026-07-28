@@ -9,33 +9,34 @@
 void core_boxactor_cpp_FUN_0041f190(int param_1)
 
 {
-  uint uVar1;
-  uint *puVar2;
+  CBoundingBox3D *this_ptr;
+  CVector3f *pCVar1;
+  CVector3f *out_point;
   byte local_40 [24];
-  byte auStack_28 [12];
-  uint local_1c;
-  uint uStack_18;
-  uint uStack_14;
-  byte local_10 [12];
+  CVector3f CStack_28;
+  CVector3f local_1c;
+  CVector3f local_10;
   
-  if (*(int *)(param_1 + 0x31c) == 0) {
+  if (*(CDemonActor **)(param_1 + 0x31c) == (CDemonActor *)0x0) {
     return;
   }
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-            (*(int *)(param_1 + 0x31c),&local_1c,param_1 + 0x20);
-  uVar1 = (**(code **)(*(int *)(*(int *)(param_1 + 0x31c) + 0x14c) + 0x14))
-                    (*(int *)(param_1 + 0x31c),local_40,local_10,&local_1c);
-  puVar2 = (uint *)core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(uVar1);
-  if (&local_1c != puVar2) {
-    local_1c = *puVar2;
-    uStack_18 = puVar2[1];
-    uStack_14 = puVar2[2];
+            (*(CDemonActor **)(param_1 + 0x31c),&local_1c,(CVector3f *)(param_1 + 0x20));
+  pCVar1 = &local_1c;
+  out_point = &local_10;
+  this_ptr = (CBoundingBox3D *)
+             (**(code **)(*(int *)(*(int *)(param_1 + 0x31c) + 0x14c) + 0x14))
+                       (*(int *)(param_1 + 0x31c),local_40);
+  pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(this_ptr,out_point,pCVar1);
+  if (&local_1c != pCVar1) {
+    local_1c.x = pCVar1->x;
+    local_1c.y = pCVar1->y;
+    local_1c.z = pCVar1->z;
   }
-  puVar2 = (uint *)
-           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (*(uint *)(param_1 + 0x31c),auStack_28,&local_1c);
-  *(uint *)(param_1 + 0x20) = *puVar2;
-  *(uint *)(param_1 + 0x24) = puVar2[1];
-  *(uint *)(param_1 + 0x28) = puVar2[2];
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                     (*(CDemonActor **)(param_1 + 0x31c),&CStack_28,&local_1c);
+  *(float *)(param_1 + 0x20) = pCVar1->x;
+  *(float *)(param_1 + 0x24) = pCVar1->y;
+  *(float *)(param_1 + 0x28) = pCVar1->z;
   return;
 }

@@ -2,40 +2,40 @@
 // Address: 004e1d80
 // Address Range: [[004e1d80, 004e1e56]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(int *param_1,int param_2,float param_3,float *param_4)
+// Signature: void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time)
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(int *param_1,int param_2,float param_3,float *param_4)
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time)
 
 {
   float fVar1;
   float fVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
+  SMotion *pSVar4;
+  SMotion *pSVar5;
   float local_20;
   
-  iVar5 = param_2 * 0x54c + *param_1 + 0x968;
-  fVar1 = *param_4 * *(float *)(iVar5 + 0x20) + param_3;
+  pSVar5 = this_ptr->motion_list_ptr->motions + motion_index;
+  fVar1 = *remaining_time * pSVar5->fps + current_frame;
   iVar3 = 0;
-  iVar4 = iVar5;
+  pSVar4 = pSVar5;
   local_20 = fVar1;
-  if (0 < *(int *)(iVar5 + 0x4a4)) {
+  if (0 < pSVar5->signal_count) {
     do {
-      fVar2 = (float)*(int *)(iVar4 + 0x4a8);
-      if ((param_3 <= fVar2) && (fVar2 <= local_20 + (float)0.001)) {
+      fVar2 = (float)pSVar4->signals[0].frame_number;
+      if ((current_frame <= fVar2) && (fVar2 <= local_20 + (float)0.001)) {
         local_20 = fVar2 + (float)0.001;
       }
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 8;
-    } while (iVar3 < *(int *)(iVar5 + 0x4a4));
+      pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
+    } while (iVar3 < pSVar5->signal_count);
   }
-  if ((float)*(int *)(iVar5 + 100) < local_20) {
-    local_20 = (float)*(int *)(iVar5 + 100);
+  if ((float)pSVar5->frame_count < local_20) {
+    local_20 = (float)pSVar5->frame_count;
   }
   if (local_20 < fVar1) {
-    *param_4 = (local_20 - param_3) / *(float *)(iVar5 + 0x20);
+    *remaining_time = (local_20 - current_frame) / pSVar5->fps;
     return;
   }
   return;

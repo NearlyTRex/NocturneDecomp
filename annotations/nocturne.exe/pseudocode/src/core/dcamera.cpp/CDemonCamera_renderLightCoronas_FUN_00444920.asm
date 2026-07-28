@@ -68,7 +68,7 @@ section .text
     ADD EBX,0x4                         ; 0044494a
         ;   Label: LAB_0044494a
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0044494d
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     AND EAX,0xff                        ; 00444952
     MOV dword ptr [EBX + 0x12b0230],EAX ; 00444957
     CMP EBX,0x400                       ; 0044495d
@@ -110,11 +110,11 @@ section .text
     FMUL double ptr [0x0057b97b]        ; 004449c0 | DOUBLE_0057b97b
     FXCH                                ; 004449c6
     CALL crt_math.c_round_FUN_00563a30  ; 004449c8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     XOR EAX,EAX                         ; 004449cd
     FXCH                                ; 004449cf
     CALL crt_math.c_round_FUN_00563a30  ; 004449d1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV dword ptr [ESP + 0x30],EAX      ; 004449d6
     FISTP dword ptr [0x00b0e600]        ; 004449da | DAT_00b0e600
     MOV EAX,dword ptr [EBP + 0x14]      ; 004449e0

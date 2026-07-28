@@ -2,20 +2,19 @@
 // Address: 00564e6b
 // Address Range: [[00564e6b, 00564e97]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_00564e6b(int *param_1)
+// Signature: int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_00564e6b(void *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_00564e6b(int *param_1)
+int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_00564e6b(void *this_ptr)
 
 {
   int iVar1;
-  uint uVar2;
   
-  if ((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0x10) & 3) != 0) {
-    return 0xffffffff;
+  if ((*(uint *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 0x10) & 3) != 0) {
+    return -1;
   }
-  iVar1 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);
-  uVar2 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,0,1,2);
-  return uVar2;
+  iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);
+  iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,0,1,2);
+  return iVar1;
 }

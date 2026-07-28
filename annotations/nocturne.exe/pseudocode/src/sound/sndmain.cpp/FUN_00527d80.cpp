@@ -9,18 +9,17 @@
 void sound_sndmain_cpp_FUN_00527d80(void)
 
 {
-  int iVar1;
+  int channel_index;
   
-  iVar1 = 0;
+  channel_index = 0;
   do {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(iVar1,0x3f800000);
-    sound_sndmain_cpp_enableSfxChannel_FUN_00527410(iVar1,1);
-    iVar1 = iVar1 + 1;
-  } while (iVar1 < 0x20);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(channel_index,1.0);
+    sound_sndmain_cpp_enableSfxChannel_FUN_00527410(channel_index,1);
+    channel_index = channel_index + 1;
+  } while (channel_index < 0x20);
   func_0x00527830(0,0x3ff00000);
-  sound_sndmain_cpp_set3DListenerPos_FUN_00527610(0,0,0,0,0,0);
-  sound_sndmain_cpp_set3DListenerOrient_FUN_00527690
-            (0,0x3ff00000,0,0,0,0,0,0,0,0x3ff00000,0,0,0,0,0,0,0,0x3ff00000);
-  sound_sndmain_cpp_set3DListenerVelocity_FUN_005277b0(0,0,0,0,0,0);
+  sound_sndmain_cpp_set3DListenerPos_FUN_00527610(0.0,0.0,0.0);
+  sound_sndmain_cpp_set3DListenerOrient_FUN_00527690(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_005277b0(0.0,0.0,0.0);
   return;
 }

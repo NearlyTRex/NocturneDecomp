@@ -2,41 +2,42 @@
 // Address: 0047a4c0
 // Address Range: [[0047a4c0, 0047a5d3]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *param_2,undefined4 *param_3)
+// Signature: int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *offset,CVector3f *out_position)
 
 #include "nocturne.h"
 
-uint __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *param_2,uint *param_3)
+int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *offset,CVector3f *out_position)
 
 {
-  int iVar1;
-  byte local_78 [100];
+  CDemonActor *pCVar1;
+  char local_78 [100];
   int local_14;
   
   local_14 = -1;
   sscanf
-            (param_1 + *param_2," { %f, %f, %f }%n",param_3,param_3 + 1,param_3 + 2,&local_14);
+            (buffer + *offset," { %f, %f, %f }%n",out_position,&out_position->y,&out_position->z,
+             &local_14);
   if (6 < local_14) {
-    *param_2 = *param_2 + local_14;
+    *offset = *offset + local_14;
     return 1;
   }
-  sscanf(param_1 + *param_2," %[^ ,(){}]%n",local_78,&local_14);
+  sscanf(buffer + *offset," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
     _sprintf(&DAT_01c08b60,"Error parsing vector location");
-    return 0xffffffff;
+    return -1;
   }
-  iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390
-                    (local_78,g_CDemonActorActorType_00763e48.name_hash,
-                     &g_CDemonActorActorType_00763e48);
-  if (iVar1 == 0) {
-    return 0xffffffff;
+  pCVar1 = core_event_cpp_resolveActorByName_FUN_0047a390
+                     (local_78,g_CDemonActorActorType_00763e48.name_hash,
+                      g_CDemonActorActorType_00763e48.class_name);
+  if (pCVar1 == (CDemonActor *)0x0) {
+    return -1;
   }
-  *param_2 = *param_2 + local_14;
-  if (iVar1 != 0x0FFFFFFF) {
-    if (param_3 != (uint *)(iVar1 + 0x20)) {
-      *param_3 = *(uint *)(iVar1 + 0x20);
-      param_3[1] = *(uint *)(iVar1 + 0x24);
-      param_3[2] = *(uint *)(iVar1 + 0x28);
+  *offset = *offset + local_14;
+  if (pCVar1 != 0x0FFFFFFF) {
+    if ((CLocation *)out_position != &pCVar1->location) {
+      out_position->x = (pCVar1->location).position.x;
+      out_position->y = (pCVar1->location).position.y;
+      out_position->z = (pCVar1->location).position.z;
     }
     return 1;
   }

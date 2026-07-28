@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_larva_cpp_CLarva_setup_FUN_004c4910(int param_1)
+; void core_larva_cpp_CLarva_setup_FUN_004c4910(CEnemy *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -24,16 +24,16 @@ section .text
     LEA EBX,[ESI + 0x150]               ; 004c4919
     PUSH EBX                            ; 004c491f
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004c4920
-        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0()
+        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c4925
     PUSH EBX                            ; 004c4928
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004c4929
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c492e
     PUSH ESI                            ; 004c4931
     MOV dword ptr [ESI + 0xbd24],0x0    ; 004c4932
     CALL core_enemy.cpp_CEnemy_setup_FUN_004796b0 ; 004c493c
-        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_setup_FUN_004796b0()
+        ;   XREF to: 004796b0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setup_FUN_004796b0(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004c4941
     PUSH 0x41f00000                     ; 004c4944
     PUSH 0x0                            ; 004c4949

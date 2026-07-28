@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_larva_cpp_CLarva_ctor_FUN_004c4880(undefined4 param_1)
+; CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_004c4880(CLarva *this_ptr)
 ;
+; Parameters:
+; CLarva *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_larva.cpp_FUN_004c4850 at 004c4863
@@ -26,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c4881
     PUSH EDX                            ; 004c4885
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004c4886
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004c488b
     PUSH 0x58777b                       ; 004c488e | = "worm.dfm"
     MOV EBX,EAX                         ; 004c4893

@@ -49,7 +49,7 @@ section .text
     PUSH 0x180                          ; 004bdb89
     PUSH 0x5baa00                       ; 004bdb8e | = ".\\system\\nocturne.ini"
     CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0 ; 004bdb93
-        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0()
+        ;   XREF to: 00565dd0 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 004bdb98
     TEST EAX,EAX                        ; 004bdb9b
     JNZ 0x004be29f                      ; 004bdb9d
@@ -61,7 +61,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004bdbab
     PUSH EAX                            ; 004bdbaf
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004bd860 ; 004bdbb0
-        ;   XREF to: 004bd860 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_ctor_FUN_004bd860()
+        ;   XREF to: 004bd860 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004bd860(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004bdbb5
     PUSH 0x5baa28                       ; 004bdbb8 | = "Graphics"
     LEA EAX,[ESP + 0x10]                ; 004bdbbd
@@ -253,7 +253,7 @@ section .text
     MOV EBP,dword ptr [0x005b9354]      ; 004bde00 | DAT_005b9354
     PUSH EBP                            ; 004bde06
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610 ; 004bde07
-        ;   XREF to: 0049e610 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610()
+        ;   XREF to: 0049e610 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610(CGame * this_ptr)
     MOV EAX,[0x005b9354]                ; 004bde0c | DAT_005b9354
     ADD ESP,0x4                         ; 004bde11
     ADD EAX,0x28                        ; 004bde14

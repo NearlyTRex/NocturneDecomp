@@ -18,7 +18,7 @@ section .text
     PUSH 0x7658e4                       ; 00423ea0
         ;   Label: core_charactr.cpp_staticInit_FUN_00423ea0
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00423ea5
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00423eaa
     PUSH 0x763e48                       ; 00423ead
     PUSH 0x6                            ; 00423eb2

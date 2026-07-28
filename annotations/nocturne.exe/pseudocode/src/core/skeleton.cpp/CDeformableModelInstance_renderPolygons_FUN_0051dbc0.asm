@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0051dbc0(CDeformableModelInstance *param_1,int param_2,int param_3)
 ;
 ;
 ; XREF[2]:
@@ -44,11 +44,11 @@ section .text
     PUSH EAX                            ; 0051dbee
     PUSH EBX                            ; 0051dbef
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051dbf0
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051dbf5
     PUSH EAX                            ; 0051dbf8
     CALL core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 ; 0051dbf9
-        ;   XREF to: 00518510 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510()
+        ;   XREF to: 00518510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510(CDeformableModel * this_ptr, int lod_index, int * part_visibility_flags, int * texture_set_indices, ...)
     ADD ESP,0x18                        ; 0051dbfe
     POP EBP                             ; 0051dc01
     POP EDI                             ; 0051dc02

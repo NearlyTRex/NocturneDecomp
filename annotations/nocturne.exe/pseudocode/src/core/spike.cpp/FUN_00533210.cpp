@@ -27,11 +27,13 @@ void core_spike_cpp_FUN_00533210(int param_1,float param_2)
   float local_14;
   
   if ((*(int *)(param_1 + 0x2cc) == 0) || (*(int *)(param_1 + 0x2cc) == 1)) {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x2e8);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,(char *)(param_1 + 0x2e8));
     if (iVar3 != 0) {
       *(uint *)(param_1 + 0x2d4) = 1;
     }
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x34c);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,(char *)(param_1 + 0x34c));
     if (iVar3 == 0) goto LAB_005333e2;
     *(uint *)(param_1 + 0x2d4) = 0;
 LAB_00533279:
@@ -43,11 +45,13 @@ LAB_00533279:
     }
   }
   else {
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x3b0);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,(char *)(param_1 + 0x3b0));
     if (iVar3 != 0) {
       *(uint *)(param_1 + 0x2d4) = 1;
     }
-    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x414);
+    iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,(char *)(param_1 + 0x414));
     if (iVar3 == 0) {
 LAB_005333e2:
       if (*(int *)(param_1 + 0x2d4) == 0) goto LAB_00533279;

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,24 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 643,
+    "complexity_score": 526,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
-    "suspect_count": 37,
+    "pseudocode_lines": 216,
+    "suspect_count": 28,
     "suspect_types": [
-      "param_count_too_few",
-      "raw_address_constant",
+      "stack_ref",
       "unaffected_reg",
-      "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 559
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -159,7 +157,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_CGame_displayActStats_FUN_004a6680",
-    "signature": "void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)"
+    "signature": "void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(CGame *this_ptr)"
   },
   "function_calls": [
     {
@@ -342,11 +340,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.044117647058823,
@@ -387,10 +385,10 @@
     "pcode_op_count": 1372
   },
   "stack_frame": {
-    "frame_size": 1356,
+    "frame_size": 1360,
     "local_size": 1356,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -476,6 +474,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
       }
     ]
   },
@@ -539,7 +544,7 @@
         {
           "check_id": "uninitvar",
           "column": 43,
-          "line": 201,
+          "line": 184,
           "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
@@ -558,152 +563,88 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 16,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x248) = *(float *)(param_1 + 0x250) + *(float *)(param_1 + 0x248);",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar8 = &stack0xfffffaa8;",
+      "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x248) = *(float *)(param_1 + 0x250) + *(float *)(param_1 + 0x248);",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 78,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar12 = &stack0xfffffaa8;",
+      "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x248) = *(float *)(param_1 + 0x250) + *(float *)(param_1 + 0x248);",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 116,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar8 = &stack0xfffffaa8;",
+      "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x250);",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 137,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar12 = &stack0xfffffaa8;",
+      "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x24c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(param_1 + 0x254);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x250) = (float)(fVar13 - (float10)iStack_34 * (float10)60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar13 = (float10)*(float *)(param_1 + 0x250) - (float10)iStack_34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x250) = (float)fVar13;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x254) = iVar6 + iVar4;",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 158,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar12 = &stack0xfffffaa8;",
+      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 194,
+      "line": 177,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "_sprintf(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",
       "type": "unaffected_reg"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 181,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "pcVar8 = &stack0xfffffaa8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 202,
+      "match": "&stack0xfffffaa8",
+      "severity": "moderate",
+      "text": "(this_ptr_00,&stack0xfffffaa8,(char *)0x1c71e40,0x14,0x100,0xc0);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 234,
+      "line": 217,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "*(uint *)(unaff_EDI + 0x250) = 0;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Raw hex address 0x4a6697 assigned to bare local `uStack_550`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_550` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
-      "match": "0x4a6697",
-      "severity": "moderate",
-      "text": "uStack_550 = 0x4a6697;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x4a6749 assigned to bare local `uStack_550`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_550` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 64,
-      "match": "0x4a6749",
-      "severity": "moderate",
-      "text": "uStack_550 = 0x4a6749;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x4a67b6 assigned to bare local `uVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 78,
-      "match": "0x4a67b6",
-      "severity": "moderate",
-      "text": "uVar14 = 0x4a67b6;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1c71e40 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 225,
-      "match": "0x1c71e40",
-      "severity": "moderate",
-      "text": "iVar4 = 0x1c71e40;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 84,
+      "line": 67,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -711,7 +652,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 105,
+      "line": 88,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -719,7 +660,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 143,
+      "line": 126,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -727,7 +668,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 164,
+      "line": 147,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -735,7 +676,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 185,
+      "line": 168,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -743,7 +684,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 208,
+      "line": 191,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -751,7 +692,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 96,
+      "line": 79,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -759,7 +700,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 119,
+      "line": 102,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -767,7 +708,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 134,
+      "line": 117,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -775,7 +716,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 155,
+      "line": 138,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -783,7 +724,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 176,
+      "line": 159,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -791,7 +732,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 199,
+      "line": 182,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -799,7 +740,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 96,
+      "line": 79,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -807,7 +748,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 134,
+      "line": 117,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -815,7 +756,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 155,
+      "line": 138,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -823,7 +764,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 176,
+      "line": 159,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -831,26 +772,15 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 199,
+      "line": 182,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 201,
+      "line": 184,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "_sprintf(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",

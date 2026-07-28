@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_elephant_cpp_FUN_004777a0(int param_1)
+; void core_elephant_cpp_FUN_004777a0(CWeapon *param_1,undefined4 param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -44,7 +44,7 @@ section .text
     PUSH EBX                            ; 004777b6
     MOV dword ptr [EBX + 0x574],0x0     ; 004777b7
     CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 004777c1
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00554030(CWeapon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004777c6
     ADD ESP,0x18                        ; 004777c9
     POP EBP                             ; 004777cc
@@ -67,7 +67,7 @@ section .text
     PUSH EBX                            ; 004777f7
     XOR ESI,ESI                         ; 004777f8
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004777fa
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EAX,[ESP + 0x14]                ; 004777ff
     ADD ESP,0xc                         ; 00477803
     MOV dword ptr [0x01c762fc],ESI      ; 00477806 | DAT_01c762fc
@@ -85,7 +85,7 @@ section .text
     PUSH EAX                            ; 00477831
     PUSH 0x1c74750                      ; 00477832 | DAT_01c74750
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00477837
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0047783c
     MOV EDI,0x42e00000                  ; 0047783f
     PUSH 0x3f800000                     ; 00477844
@@ -94,7 +94,7 @@ section .text
     FSTP float ptr [0x01c74740]         ; 00477854 | DAT_01c74740
     MOV dword ptr [0x01c74778],EDI      ; 0047785a | DAT_01c74778
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 ; 00477860
-        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080()
+        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00477865
     PUSH 0x1c74640                      ; 00477868 | DAT_01c74640
     MOV EAX,[0x005be368]                ; 0047786d | DAT_005be368
@@ -102,7 +102,7 @@ section .text
     PUSH EAX                            ; 00477874 | DAT_01e57284
     MOV dword ptr [0x01c76310],EBP      ; 00477875 | DAT_01c76310
     CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 0047787b
-        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970()
+        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 00477880
     POP ESI                             ; 00477883
     POP EDI                             ; 00477884

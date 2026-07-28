@@ -26,7 +26,7 @@ section .text
     MOV ESI,dword ptr [0x005b7650]      ; 004c81b6 | DAT_005b7650
     PUSH ESI                            ; 004c81bc
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004c81bd
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004c81c2
     TEST EAX,EAX                        ; 004c81c5
     JNZ 0x004c81cc                      ; 004c81c7
@@ -46,7 +46,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 004c81e0 | DAT_005b7650
     PUSH ECX                            ; 004c81e6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004c81e7
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004c81ec
     TEST EAX,EAX                        ; 004c81ef
     JZ 0x004c81c9                       ; 004c81f1

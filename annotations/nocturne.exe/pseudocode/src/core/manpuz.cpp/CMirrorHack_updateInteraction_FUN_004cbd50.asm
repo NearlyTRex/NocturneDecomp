@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004cbd50(int param_1,undefined4 *param_2,int param_3)
+; undefined4 core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004cbd50(CDemonActor *param_1,float *param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     PUSH ECX                            ; 004cbd81
         ;   Label: LAB_004cbd81
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004cbd82
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     MOV EAX,0x1                         ; 004cbd87
     ADD ESP,0x4                         ; 004cbd8c
     POP EBX                             ; 004cbd8f

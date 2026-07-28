@@ -2,30 +2,33 @@
 // Address: 0043fe60
 // Address Range: [[0043fe60, 0043fede]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(int param_1,int param_2,int param_3)
+// Signature: void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(SFogGrid *fog_ptr,int time_major,int time_minor)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(int param_1,int param_2,int param_3)
+void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60(SFogGrid *fog_ptr,int time_major,int time_minor)
 
 {
-  longlong lVar1;
-  uint uVar2;
+  int iVar1;
+  longlong lVar2;
   uint uVar3;
+  uint uVar4;
   
-  lVar1 = (longlong)(param_2 * 0x10000 + param_3) * 0x100;
-  uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)(int)uVar2 * (longlong)*(int *)(param_1 + 0x100c);
-  uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  *(uint *)(param_1 + 0x1000) = uVar3;
-  *(uint *)(param_1 + 0x1000) = -uVar3;
-  lVar1 = (longlong)(int)uVar2 * (longlong)*(int *)(param_1 + 0x1010);
-  uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  *(uint *)(param_1 + 0x1004) = uVar3;
-  *(uint *)(param_1 + 0x1004) = -uVar3;
-  lVar1 = (longlong)(int)uVar2 * (longlong)*(int *)(param_1 + 0x1014);
-  uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  *(uint *)(param_1 + 0x1008) = uVar2;
-  *(uint *)(param_1 + 0x1008) = -uVar2;
+  lVar2 = (longlong)(time_major * 0x10000 + time_minor) * 0x100;
+  uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+  lVar2 = (longlong)(int)uVar3 * (longlong)(fog_ptr->scroll_vector).x;
+  uVar4 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+  iVar1 = (fog_ptr->scroll_vector).y;
+  (fog_ptr->sampling_offset).x = uVar4;
+  (fog_ptr->sampling_offset).x = -uVar4;
+  lVar2 = (longlong)(int)uVar3 * (longlong)iVar1;
+  uVar4 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+  iVar1 = (fog_ptr->scroll_vector).z;
+  (fog_ptr->sampling_offset).y = uVar4;
+  (fog_ptr->sampling_offset).y = -uVar4;
+  lVar2 = (longlong)(int)uVar3 * (longlong)iVar1;
+  uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+  (fog_ptr->sampling_offset).z = uVar3;
+  (fog_ptr->sampling_offset).z = -uVar3;
   return;
 }

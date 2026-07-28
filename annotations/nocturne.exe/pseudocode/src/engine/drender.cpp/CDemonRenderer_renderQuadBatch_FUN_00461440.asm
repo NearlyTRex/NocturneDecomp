@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLPrimitiveQuad * Stack[0x8]:4   primitive_array
+; int              Stack[0xc]:4   primitive_count
+; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_0050ddd0 at 0050de8e
@@ -65,7 +70,7 @@ section .text
     PUSH ESI                            ; 00461499
     PUSH EBX                            ; 0046149a
     CALL engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 ; 0046149b
-        ;   XREF to: 004614b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0()
+        ;   XREF to: 004614b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDemonRenderer * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int primitive_stride, ...)
     ADD ESP,0x14                        ; 004614a0
     POP EBP                             ; 004614a3
     POP EDI                             ; 004614a4

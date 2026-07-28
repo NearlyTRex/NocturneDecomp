@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_archiveOrientation_FUN_0040c4f0(float *param_1,undefined4 param_2)
+; void core_actor_cpp_archiveOrientation_FUN_0040c4f0(float *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
@@ -58,7 +58,7 @@ section .text
     PUSH EDI                            ; 0040c525
     PUSH 0x5acc20                       ; 0040c526 | = "Euler PBH orientation"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c52b
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c530
     POP EDI                             ; 0040c533
     POP EBX                             ; 0040c534
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 0040c53b
     PUSH 0x5acc20                       ; 0040c53c | = "Euler PBH orientation"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c541
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c546
     POP ESI                             ; 0040c549
     JMP 0x0040c521                      ; 0040c54a

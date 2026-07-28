@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -28,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 0051b487
     PUSH EBX                            ; 0051b48b
     CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130 ; 0051b48c
-        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130()
+        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(CDeformableModel * this_ptr)
     XOR ESI,ESI                         ; 0051b491
     ADD ESP,0x4                         ; 0051b493
     MOV EDX,dword ptr [EAX + 0x28558]   ; 0051b496

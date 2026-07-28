@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveFloat_FUN_0040c880(float *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveFloat_FUN_0040c880(float *float_ptr,char *property_name)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   float_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;
@@ -59,7 +62,7 @@ section .text
     PUSH EDI                            ; 0040c8ad
     PUSH 0x5acc60                       ; 0040c8ae | = "Floating point value"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c8b3
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c8b8
     POP EDI                             ; 0040c8bb
     POP EBX                             ; 0040c8bc
@@ -70,7 +73,7 @@ section .text
     PUSH ESI                            ; 0040c8c3
     PUSH 0x5acc60                       ; 0040c8c4 | = "Floating point value"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c8c9
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c8ce
     POP ESI                             ; 0040c8d1
     JMP 0x0040c8a9                      ; 0040c8d2

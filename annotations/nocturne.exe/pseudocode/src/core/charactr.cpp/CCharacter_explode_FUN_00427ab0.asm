@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   impact_point
+; float            Stack[0xc]:4   impact_force
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428571
@@ -58,7 +62,7 @@ section .text
     PUSH EBX                            ; 00427b0f
     FSTP float ptr [ESP + 0x2c]         ; 00427b10
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00427b14
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00427b19
     PUSH 0x40800000                     ; 00427b1c
     PUSH 0x44bb8000                     ; 00427b21
@@ -76,7 +80,7 @@ section .text
     PUSH ECX                            ; 00427b49
     PUSH EBX                            ; 00427b4a
     CALL core_charactr.cpp_CCharacter_dismember_FUN_00427b60 ; 00427b4b
-        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismember_FUN_00427b60()
+        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_00427b60(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 00427b50
     ADD ESP,0x3c                        ; 00427b53
     POP EBX                             ; 00427b56

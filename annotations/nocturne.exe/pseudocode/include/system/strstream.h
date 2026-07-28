@@ -1,0 +1,70 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+#include "system/iostream.h"
+#include "system/watcom.h"
+
+// =============================================================================
+// STRSTREAM - System Header
+// =============================================================================
+
+// Structure: strstreambuf
+#pragma pack(push, 1)
+typedef struct strstreambuf {
+    streambuf _streambuf;
+    struct strstreambuf_vtable* __vtable;
+    void* __alloc_fn;
+    void* __free_fn;
+    int __allocation_size;
+    short __minbuf_size;
+    uchar __bit_flags;
+    char padding;
+} strstreambuf;
+#pragma pack(pop)
+
+// Structure: strstreambase_core
+typedef struct strstreambase_core {
+    struct WatcomVirtualBaseDescriptor* layout_info;
+    strstreambuf _strstreambuf;
+    struct WatcomThunkedDestructor* destructor_vtable;
+} strstreambase_core;
+
+// Structure: _istrstream
+typedef struct _istrstream {
+    strstreambase_core _strstreambase_core;
+    istream_core _istream_core;
+    char padding[4];
+    ios _ios;
+} _istrstream;
+
+// Structure: _ostrstream
+typedef struct _ostrstream {
+    strstreambase_core _strstreambase_core;
+    ostream_core _ostream_core;
+    ios _ios;
+    char padding[4];
+} _ostrstream;
+
+// Structure: strstreambase
+typedef struct strstreambase {
+    strstreambase_core _strstreambase_core;
+    char padding[4];
+    ios _ios;
+} strstreambase;
+
+// Structure: strstreambuf_vtable
+typedef struct strstreambuf_vtable {
+    cpp_streambuf_do_sgetn* do_sgetn;
+    cpp_streambuf_do_sputn* do_sputn;
+    cpp_streambuf_pbackfail* pbackfail;
+    cpp_streambuf_overflow* overflow;
+    cpp_streambuf_underflow* underflow;
+    cpp_streambuf_setbuf* setbuf;
+    cpp_streambuf_seekoff* seekoff;
+    cpp_streambuf_seekpos* seekpos;
+    cpp_streambuf_sync* sync;
+    cpp_streambuf_destructor* destructor;
+    cpp_streambuf_doallocate* doallocate;
+} strstreambuf_vtable;
+

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900(int param_1,int param_2,float param_3)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   reflector_index
+; float            Stack[0xc]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d2d

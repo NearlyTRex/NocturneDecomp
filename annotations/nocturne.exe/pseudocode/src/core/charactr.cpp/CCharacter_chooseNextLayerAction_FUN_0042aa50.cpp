@@ -2,63 +2,63 @@
 // Address: 0042aa50
 // Address Range: [[0042aa50, 0042abc1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(int param_1,int param_2)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(CCharacter *this_ptr,int layer_action_index)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(int param_1,int param_2)
+void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(CCharacter *this_ptr,int layer_action_index)
 
 {
   float fVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  SLayerAction *pSVar4;
   float local_14;
   
-  if ((*(int *)(param_1 + 0x2a84) < 0) || (*(int *)(param_1 + 0x2620) <= *(int *)(param_1 + 0x2a84))
-     ) {
+  if ((this_ptr->layer_action_index < 0) ||
+     (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     PTR_01cc4800 = "..\\core\\charactr.cpp";
     INT_01cc4804 = 0xfb4;
     core_main_c_FUN_004c8440("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
-  if ((float)1.0000000000000001e-05 <= *(float *)(param_1 + 0x2a88)) {
-    if (*(float *)(param_1 + 0x2a88) <= (float)0.99999000000000005) {
+  if ((float)1.0000000000000001e-05 <= this_ptr->layer_action_t) {
+    if (this_ptr->layer_action_t <= (float)0.99999000000000005) {
       return;
     }
-    iVar2 = *(int *)(param_1 + 0x2628 + *(int *)(param_1 + 0x2a84) * 0x38);
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].to_bone_index;
   }
   else {
-    iVar2 = *(int *)(param_1 + 0x2624 + *(int *)(param_1 + 0x2a84) * 0x38);
+    iVar2 = this_ptr->layer_actions[this_ptr->layer_action_index].from_bone_index;
   }
-  if (param_2 != iVar2) {
+  if (layer_action_index != iVar2) {
     local_14 = 999.0;
     iVar3 = 0;
-    if (0 < *(int *)(param_1 + 0x2620)) {
-      piVar4 = (int *)(param_1 + 0x2624);
+    if (0 < this_ptr->layer_action_count) {
+      pSVar4 = this_ptr->layer_actions;
       do {
-        if ((piVar4[10] < 0) || (*piVar4 != iVar2)) {
-          if ((piVar4[10] < 1) &&
-             ((piVar4[1] == iVar2 &&
-              (fVar1 = (float)piVar4[0xd] +
-                       *(float *)(*piVar4 * 0x50 + param_1 + param_2 * 4 + 0xb64c), fVar1 < local_14
-              )))) {
-            *(uint *)(param_1 + 0x2a88) = 0x3f800000;
-            *(int *)(param_1 + 0x2a84) = iVar3;
+        if ((pSVar4->direction < 0) || (pSVar4->from_bone_index != iVar2)) {
+          if ((pSVar4->direction < 1) &&
+             ((pSVar4->to_bone_index == iVar2 &&
+              (fVar1 = pSVar4->duration +
+                       this_ptr->motion_transition_costs[pSVar4->from_bone_index]
+                       [layer_action_index], fVar1 < local_14)))) {
+            this_ptr->layer_action_t = 1.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
         else {
-          fVar1 = (float)piVar4[0xd] + *(float *)(param_2 * 4 + 0xb64c + piVar4[1] * 0x50 + param_1)
-          ;
+          fVar1 = pSVar4->duration +
+                  this_ptr->motion_transition_costs[pSVar4->to_bone_index][layer_action_index];
           if (fVar1 < local_14) {
-            *(uint *)(param_1 + 0x2a88) = 0;
-            *(int *)(param_1 + 0x2a84) = iVar3;
+            this_ptr->layer_action_t = 0.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
         iVar3 = iVar3 + 1;
-        piVar4 = piVar4 + 0xe;
-      } while (iVar3 < *(int *)(param_1 + 0x2620));
+        pSVar4 = pSVar4 + 1;
+      } while (iVar3 < this_ptr->layer_action_count);
     }
   }
   return;

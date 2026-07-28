@@ -2,23 +2,22 @@
 // Address: 00460db0
 // Address Range: [[00460db0, 00460e11]]
 // Convention: __cdecl
-// Signature: float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(undefined4 param_1,float *param_2)
+// Signature: CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(CDemonRenderer *this_ptr,CVector3f *output)
 
 #include "nocturne.h"
 
-float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(uint param_1,float *param_2)
+CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(CDemonRenderer *this_ptr,CVector3f *output)
 
 {
   float fVar1;
   float fVar2;
-  int local_20;
-  int local_1c;
+  CVector3i local_20;
   
   engine_matrix_c_getCameraRotation_FUN_004ce790(&local_20);
   fVar2 = (float)3.0517578125e-05;
   fVar1 = (float)3.1415926535000001;
-  *param_2 = fVar2 * 4591045.0 * fVar1;
-  param_2[2] = (float)local_20 * fVar2 * fVar1;
-  param_2[1] = fVar1 * (float)local_1c * fVar2;
-  return param_2;
+  output->x = fVar2 * 4591045.0 * fVar1;
+  output->z = (float)local_20.x * fVar2 * fVar1;
+  output->y = fVar1 * (float)local_20.y * fVar2;
+  return output;
 }

@@ -13,7 +13,7 @@ int * core_netgame_cpp_allocSimFrame_FUN_004e9730(int param_1)
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  int *dest;
   
   iVar2 = 0;
   if (0 < _DAT_01d09c00) {
@@ -34,9 +34,9 @@ int * core_netgame_cpp_allocSimFrame_FUN_004e9730(int param_1)
     INT_01cc4804 = 299;
     core_main_c_FUN_004c8440("allocSimFrame - sim history list full");
   }
-  piVar3 = (int *)(_DAT_01d09c00 * 100 + 0x1d09c04);
+  dest = (int *)(_DAT_01d09c00 * 100 + 0x1d09c04);
   _DAT_01d09c00 = _DAT_01d09c00 + 1;
-  memset(piVar3,0,100);
-  *piVar3 = param_1;
-  return piVar3;
+  memset(dest,0,100);
+  *dest = param_1;
+  return dest;
 }

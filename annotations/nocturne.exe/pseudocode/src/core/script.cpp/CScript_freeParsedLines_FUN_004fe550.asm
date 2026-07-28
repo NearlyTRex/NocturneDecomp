@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_004fe550(int param_1)
+; void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_004fe550(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_script.cpp_FUN_004fe500 at 004fe512

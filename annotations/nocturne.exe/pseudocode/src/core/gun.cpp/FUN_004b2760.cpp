@@ -2,23 +2,24 @@
 // Address: 004b2760
 // Address Range: [[004b2760, 004b27bf]]
 // Convention: unknown
-// Signature: int core_gun_cpp_FUN_004b2760(undefined4 param_1)
+// Signature: CWeapon * core_gun_cpp_FUN_004b2760(CWeapon *param_1)
 
 #include "nocturne.h"
 
-int core_gun_cpp_FUN_004b2760(uint param_1)
+CWeapon * core_gun_cpp_FUN_004b2760(CWeapon *param_1)
 
 {
-  int iVar1;
+  CWeapon *pCVar1;
   
-  iVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059e744;
+  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  (pCVar1->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059e744;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar1 + 0x150,"gat.kfm");
-  *(uint *)(iVar1 + 0x2d0) = 0;
-  *(uint *)(iVar1 + 0x2d4) = 1;
-  *(uint *)(iVar1 + 0x2dc) = 1;
-  *(uint *)(iVar1 + 0x2e0) = 0x42480000;
-  *(uint *)(iVar1 + 0x2e4) = 0;
-  return iVar1;
+            (&pCVar1->model,"gat.kfm");
+  pCVar1->is_spread_weapon = 0;
+  pCVar1->fire_mode = 1;
+  pCVar1->can_penetrate = 1;
+  pCVar1->bolt_velocity = 50.0;
+  pCVar1->fire_cooldown = 0;
+  return pCVar1;
 }

@@ -2,62 +2,62 @@
 // Address: 00564570
 // Address Range: [[00564570, 0056463d]]
 // Convention: __cdecl
-// Signature: uint __cdecl crt_stdio_c_fgetc_FUN_00564570(undefined4 *param_1)
+// Signature: int __cdecl crt_stdio_c_fgetc_FUN_00564570(_FILE *file)
 
 #include "nocturne.h"
 
-uint __cdecl _fgetc(uint *param_1)
+int __cdecl _fgetc(_FILE *file)
 
 {
-  int iVar1;
-  uint uVar2;
+  char *pcVar1;
+  int iVar2;
   uint uVar3;
   
-  (*(code *)PTR_FUN_005c1ac0)(param_1[4]);
-  iVar1 = *(int *)(param_1[2] + 0xc);
-  if (iVar1 != 1) {
-    if (iVar1 != 0) {
-      uVar3 = param_1[4];
-      uVar2 = 0xffffffff;
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
+  pcVar1 = file->_link->__get_base;
+  if (pcVar1 != (char *)0x1) {
+    if (pcVar1 != (char *)0x0) {
+      iVar2 = file->_handle;
+      uVar3 = 0xffffffff;
       goto LAB_0056462e;
     }
-    *(uint *)(param_1[2] + 0xc) = 1;
+    file->_link->__get_base = (char *)0x1;
   }
-  if ((*(byte *)(param_1 + 3) & 1) == 0) {
-    FUN_00568e80(4);
-    uVar2 = 0xffffffff;
-    *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x20;
+  if ((file->_flag & 1) == 0) {
+    setErrno(4);
+    uVar3 = 0xffffffff;
+    *(byte *)&file->_flag = (byte)file->_flag | 0x20;
   }
   else {
-    iVar1 = param_1[1];
-    param_1[1] = iVar1 + -1;
-    if (iVar1 + -1 < 0) {
-      uVar2 = FUN_00564640(param_1);
+    iVar2 = file->_cnt + -1;
+    file->_cnt = iVar2;
+    if (iVar2 < 0) {
+      uVar3 = FillBufferAndGetChar(file);
     }
     else {
-      uVar2 = (uint)*(byte *)*param_1;
-      *param_1 = (byte *)*param_1 + 1;
+      uVar3 = (uint)(byte)*file->_ptr;
+      file->_ptr = file->_ptr + 1;
     }
   }
-  if ((*(byte *)(param_1 + 3) & 0x40) == 0) {
-    if (uVar2 == 0xd) {
-      iVar1 = param_1[1];
-      param_1[1] = iVar1 + -1;
-      if (iVar1 + -1 < 0) {
-        uVar2 = FUN_00564640(param_1);
+  if ((file->_flag & 0x40) == 0) {
+    if (uVar3 == 0xd) {
+      iVar2 = file->_cnt + -1;
+      file->_cnt = iVar2;
+      if (iVar2 < 0) {
+        uVar3 = FillBufferAndGetChar(file);
       }
       else {
-        uVar2 = (uint)*(byte *)*param_1;
-        *param_1 = (byte *)*param_1 + 1;
+        uVar3 = (uint)(byte)*file->_ptr;
+        file->_ptr = file->_ptr + 1;
       }
     }
-    if (uVar2 == 0x1a) {
-      uVar2 = 0xffffffff;
-      *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x10;
+    if (uVar3 == 0x1a) {
+      uVar3 = 0xffffffff;
+      *(byte *)&file->_flag = (byte)file->_flag | 0x10;
     }
   }
-  uVar3 = param_1[4];
+  iVar2 = file->_handle;
 LAB_0056462e:
-  (*(code *)PTR_FUN_005c1ac4)(uVar3);
-  return uVar2;
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(iVar2);
+  return uVar3;
 }

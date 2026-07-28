@@ -3,13 +3,13 @@
 // Function prototypes for wincore/wddvmem.cpp
 // Generated from Ghidra function signatures
 
-// Original: wincore_wddvmem.cpp_FUN_004b6220
+// Original: wincore_wddvmem.cpp_initializeColorMasks_FUN_004b6220
 // Address: 004b6220
-undefined8 FUN_004b6220(void);
+undefined8 initializeColorMasks(void);
 
-// Original: wincore_wddvmem.cpp_FUN_004b6370
+// Original: wincore_wddvmem.cpp_populateColorTable_FUN_004b6370
 // Address: 004b6370
-undefined8 FUN_004b6370(void);
+undefined8 populateColorTable(void);
 
 // Original: wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 // Address: 004b63f0
@@ -19,9 +19,9 @@ void __cdecl convertPaletteToDirectColor(void);
 // Address: 005528e0
 undefined4 reinitializeDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00552990
+// Original: wincore_wddvmem.cpp_shutdownDirectDraw_FUN_00552990
 // Address: 00552990
-undefined4 FUN_00552990(void);
+undefined4 shutdownDirectDraw(void);
 
 // Original: wincore_wddvmem.cpp_FUN_00552a20
 // Address: 00552a20
@@ -39,13 +39,13 @@ undefined4 FUN_00552b40(void);
 // Address: 00552cb0
 void FUN_00552cb0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00552d70
+// Original: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00552d70
 // Address: 00552d70
-void FUN_00552d70(void);
+void initializeScanlinePointers(void);
 
 // Original: wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
 // Address: 00552e00
-undefined4 __cdecl setScreenResolution(int param_1,int param_2,int param_3);
+int __cdecl setScreenResolution(int width,int height,int bits_per_pixel);
 
 // Original: wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190
 // Address: 00553190
@@ -63,9 +63,9 @@ void __cdecl openScreenDevice(void);
 // Address: 00553520
 void __cdecl closeScreenDevice(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00553600
+// Original: wincore_wddvmem.cpp_findMostSignificantBit_FUN_00553600
 // Address: 00553600
-int FUN_00553600(void);
+int findMostSignificantBit(void);
 
 // Original: wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620
 // Address: 00553620
@@ -81,7 +81,7 @@ void __cdecl swapBuffers(void);
 
 // Original: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70
 // Address: 00553b70
-void restoreVideoAndMinimizeWindow(void);
+void __cdecl restoreVideoAndMinimizeWindow(void);
 
 // Original: wincore_wddvmem.cpp_FUN_00553ba0
 // Address: 00553ba0
@@ -101,4 +101,4 @@ void FUN_00553d30(LPCSTR param_1);
 
 // Original: wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
 // Address: 00553d40
-void __cdecl getProcAddress(HMODULE param_1,LPCSTR param_2);
+FARPROC __cdecl getProcAddress(HMODULE hModule,LPCSTR lpProcName);

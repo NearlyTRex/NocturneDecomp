@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(int param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_actor_cpp_castToClassHash_FUN_0040d890(CDemonActor *actor_ptr,uint class_name_hash)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
+; uint             Stack[0x8]:4   class_name_hash
 ;
 ; XREF[116]:
 ;   core_actor.cpp_FUN_0040a140 at 0040a1b2
@@ -12,7 +15,7 @@
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0 at 00410c77
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00414086
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004223fc
-;   core_bugs.cpp_FUN_00423790 at 004237bb
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 004237bb
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 004299b7
 ;   core_charactr.cpp_FUN_00428c00 at 00428e67
 ;   ... and 106 more
@@ -39,7 +42,7 @@ section .text
     PUSH EDX                            ; 0040d8a1
     PUSH EBX                            ; 0040d8a2
     CALL core_actor.cpp_isOfClassHash_FUN_0040d860 ; 0040d8a3
-        ;   XREF to: 0040d860 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClassHash_FUN_0040d860()
+        ;   XREF to: 0040d860 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040d860(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040d8a8
     TEST EAX,EAX                        ; 0040d8ab
     JZ 0x0040d89b                       ; 0040d8ad

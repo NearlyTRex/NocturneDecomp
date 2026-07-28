@@ -12,7 +12,8 @@ void core_baron_cpp_CBaron_advanceMotion_FUN_00411010(int param_1,float param_2)
   uint uVar1;
   
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0x150,&param_2);
+    uVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
+                      ((CMotionController *)(param_1 + 0x150),&param_2);
     if (99 < uVar1) {
       if (uVar1 < 0x65) {
         core_baron_cpp_FUN_00410cc0(param_1);

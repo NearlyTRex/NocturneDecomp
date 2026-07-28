@@ -2,13 +2,15 @@
 // Address: 00438a00
 // Address Range: [[00438a00, 00438a17]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(undefined4 param_1)
+// Signature: SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *objs,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(uint param_1)
+SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *objs,uint flags)
 
 {
-  __arrfini(param_1,800,&g_SClothVertexTypeInfo_0059b3a0);
-  return;
+  SClothVertex *pSVar1;
+  
+  pSVar1 = (SClothVertex *)__arrfini(objs,800,&g_SClothVertexTypeInfo_0059b3a0);
+  return pSVar1;
 }

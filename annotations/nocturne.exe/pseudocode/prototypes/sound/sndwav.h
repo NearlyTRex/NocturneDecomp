@@ -9,11 +9,11 @@ void __cdecl staticInit(void);
 
 // Original: sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130
 // Address: 0052c130
-undefined4 __cdecl writeWavOutBuffer(int param_1);
+int __cdecl writeWavOutBuffer(int buffer_index);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_close_FUN_0052c290
 // Address: 0052c290
-bool __cdecl CWavOutDevice::close(int *param_1);
+int __cdecl CWavOutDevice::close(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
 // Address: 0052c340
@@ -37,7 +37,7 @@ undefined4 enumerateWavOutDevice(UINT_PTR param_1,char *param_2);
 
 // Original: sound_sndwav.cpp_getWavOutDevice_FUN_0052c760
 // Address: 0052c760
-undefined * __cdecl getWavOutDevice(UINT_PTR param_1);
+CWavOutDevice * __cdecl getWavOutDevice(UINT device_id);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0
 // Address: 0052c7b0

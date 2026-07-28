@@ -2,18 +2,19 @@
 // Address: 004399a0
 // Address Range: [[004399a0, 004399e4]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(int param_1,undefined4 param_2)
+// Signature: int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(CLZWCompress *this_ptr,_ostream *ostream)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(int param_1,uint param_2)
+int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_004399a0(CLZWCompress *this_ptr,_ostream *ostream)
 
 {
-  if (-1 < *(int *)(param_1 + 0x30)) {
+  if (-1 < this_ptr->current_code) {
     support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0
-              (param_1 + 4,*(int *)(param_1 + 0x30),param_1 + 0x18,param_2);
-    *(uint *)(param_1 + 0x30) = 0xffffffff;
+              (&this_ptr->dictionary,this_ptr->current_code,&(this_ptr->dictionary).bit_state,
+               ostream);
+    this_ptr->current_code = -1;
   }
-  support_codec_cpp_flushBitBuffer_FUN_00438d60(param_1 + 0x18,param_2);
+  support_codec_cpp_flushBitBuffer_FUN_00438d60(&(this_ptr->dictionary).bit_state,ostream);
   return 1;
 }

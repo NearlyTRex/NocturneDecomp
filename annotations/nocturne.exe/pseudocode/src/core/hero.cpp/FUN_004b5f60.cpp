@@ -9,12 +9,12 @@
 void core_hero_cpp_FUN_004b5f60(void)
 
 {
-  int iVar1;
+  CHeroPlaceholder *this_ptr;
   
-  iVar1 = FUN_0056497c(0x154);
-  if (iVar1 == 0) {
+  this_ptr = (CHeroPlaceholder *)FUN_0056497c(0x154);
+  if (this_ptr == (CHeroPlaceholder *)0x0) {
     return;
   }
-  core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(iVar1);
+  core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(this_ptr);
   return;
 }

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -148,7 +148,7 @@
     {
       "addr": "004f54c0",
       "from_addr": "004f568d",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f54c0",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -246,7 +246,7 @@
       {
         "call_addr": "004f568d",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_004f54c0",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -300,23 +300,6 @@
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "CPackedBitmap_load_FUN_004f47b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "AssignmentAddressToInteger",
-          "column": 19,
-          "line": 77,
-          "message": "Assigning a pointer to an integer is not portable.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -436,7 +419,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((*(int *)(param_1 + 0x1c) + 1) * 4);",
+      "text": "pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((*(int *)(param_1 + 0x1c) + 1) * 4);",
       "type": "unnamed_param"
     },
     {
@@ -444,7 +427,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = iVar1;",
+      "text": "*(void **)(param_1 + 0x20) = pvVar1;",
       "type": "unnamed_param"
     },
     {
@@ -460,7 +443,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(*(int *)(param_1 + 0x20) + iStack_28) = iVar1;",
+      "text": "*(ulong *)(*(int *)(param_1 + 0x20) + iStack_28) = new_size;",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +459,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar6 = realloc(*(uint *)(param_1 + 0x14),iVar1);",
+      "text": "pvVar1 = realloc(*(void **)(param_1 + 0x14),new_size);",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +467,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14) = uVar6;",
+      "text": "*(void **)(param_1 + 0x14) = pvVar1;",
       "type": "unnamed_param"
     },
     {
@@ -508,7 +491,7 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x18) <= iVar8) break;",
+      "text": "if (*(int *)(param_1 + 0x18) <= iVar7) break;",
       "type": "unnamed_param"
     },
     {
@@ -524,7 +507,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = realloc(*(uint *)(param_1 + 0x14),iStack_18);",
+      "text": "pvVar1 = realloc(*(void **)(param_1 + 0x14),uStack_18);",
       "type": "unnamed_param"
     },
     {
@@ -532,7 +515,7 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x14) = iVar4;",
+      "text": "*(void **)(param_1 + 0x14) = pvVar1;",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +523,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "_sprintf(auStack_154,\"Out of memory packing file \\\"%s\\\" on row %u trying to get %u bytes\",param_1,iStack_24,iStack_18",
+      "text": "_sprintf(auStack_154,\"Out of memory packing file \\\"%s\\\" on row %u trying to get %u bytes\",param_1,iStack_24,uStack_18",
       "type": "unnamed_param"
     },
     {
@@ -548,23 +531,23 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar5 = (ushort *)(*(int *)(param_1 + 0x14) + iVar1);",
+      "text": "puVar4 = (ushort *)(*(int *)(param_1 + 0x14) + new_size);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(uint *)((int)puVar9",
+      "match": "(uint *)((int)puVar8",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(ushort *)((int)puVar5",
+      "match": "(ushort *)((int)puVar4",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)puVar5 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -572,7 +555,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar8 < *(int *)(param_1 + 0x18));",
+      "text": "} while (iVar7 < *(int *)(param_1 + 0x18));",
       "type": "unnamed_param"
     },
     {
@@ -584,19 +567,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 92,
-      "match": "(int)puVar9",
+      "match": "(int)puVar8",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 93,
-      "match": "(int)puVar5",
+      "match": "(int)puVar4",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)puVar5 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
@@ -604,7 +587,7 @@
       "line": 85,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar7 = (uVar10 & 0xffff) >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "text": "for (uVar5 = (uVar9 & 0xffff) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -612,7 +595,7 @@
       "line": 90,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar10 = uVar10 & 3; iVar1 = iStack_1c, uVar10 != 0; uVar10 = uVar10 - 1) {",
+      "text": "for (uVar9 = uVar9 & 3; new_size = uStack_1c, uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {

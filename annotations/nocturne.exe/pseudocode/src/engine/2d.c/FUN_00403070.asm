@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00403070(undefined4 param_1,undefined4 param_2)
+; void engine_2d_c_FUN_00403070(char *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 00403080
     PUSH 0x57718f                       ; 00403081 | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403086
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0040308b
     MOV ESI,EAX                         ; 0040308e
     TEST EAX,EAX                        ; 00403090
@@ -52,11 +52,11 @@ section .text
     PUSH 0x100                          ; 0040309b
     PUSH 0x1bd1ea0                      ; 004030a0
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004030a5
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004030aa
     PUSH ESI                            ; 004030ad
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004030ae
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004030b3
         ;   Label: LAB_004030b3
     XOR EAX,EAX                         ; 004030b6
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 004030b9 (CONDITIONAL_JUMP)  ; LAB_004030b9
     PUSH EBX                            ; 004030d9
     CALL engine_special.cpp_setFogColorFromPalette_FUN_00532a80 ; 004030da
-        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColorFromPalette_FUN_00532a80()
+        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColorFromPalette_FUN_00532a80(int palette_index)
     ADD ESP,0x4                         ; 004030df
     POP EDI                             ; 004030e2
     POP EBX                             ; 004030e3
@@ -90,7 +90,7 @@ section .text
     PUSH EDI                            ; 004030fc
     PUSH 0x577196                       ; 004030fd | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403102
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00403107
     MOV ESI,EAX                         ; 0040310a
     JMP 0x00403094                      ; 0040310c

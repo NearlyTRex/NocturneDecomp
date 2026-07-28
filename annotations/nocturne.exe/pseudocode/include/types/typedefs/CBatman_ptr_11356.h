@@ -19,7 +19,7 @@ struct CBatman_ptr_11356 {
     template<typename T> CBatman_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CBatman_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CBatman* operator->() const { return (CBatman*)_raw; }
-    CBatman* adj() const { return (CBatman*)((char*)_raw - offsetof(CBatman, base.base.collision_test_points)); }
+    CBatman* adj() const { return (CBatman*)((char*)_raw - offsetof(CBatman, base.base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

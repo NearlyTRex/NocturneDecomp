@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+; void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     ADD EBX,EAX                         ; 004e00cd
     PUSH EBX                            ; 004e00cf
     CALL core_morph.cpp_CMorphModel_free_FUN_004df290 ; 004e00d0
-        ;   XREF to: 004df290 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_free_FUN_004df290()
+        ;   XREF to: 004df290 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_free_FUN_004df290(CMorphModel * this_ptr)
     ADD ESP,0x4                         ; 004e00d5
     MOV EDX,dword ptr [ESP + 0x30]      ; 004e00d8
     PUSH EDX                            ; 004e00dc
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 004e00f7
     PUSH EBX                            ; 004e00f8
     CALL core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 ; 004e00f9
-        ;   XREF to: 004df2f0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0()
+        ;   XREF to: 004df2f0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel * this_ptr, int vertex_count, CVector3i * vertex_data, int poly_count, ...)
     ADD ESP,0x20                        ; 004e00fe
     POP EBP                             ; 004e0101
     POP EDI                             ; 004e0102

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_00527610(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_00527610(double pos_x,double pos_y,double pos_z)
 ;
+; Parameters:
+; double           Stack[0x4]:8   pos_x
+; double           Stack[0xc]:8   pos_y
+; double           Stack[0x14]:8   pos_z
 ;
 ; XREF[3]:
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e902

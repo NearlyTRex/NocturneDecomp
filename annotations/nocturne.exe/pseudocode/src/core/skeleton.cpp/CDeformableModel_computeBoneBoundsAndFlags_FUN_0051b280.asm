@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -42,7 +44,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x38]      ; 0051b287
     PUSH EBP                            ; 0051b28b
     CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130 ; 0051b28c
-        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130()
+        ;   XREF to: 00518130 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0051b291
     MOV dword ptr [ESP + 0x14],EAX      ; 0051b294
     MOV EAX,dword ptr [EAX + 0x28558]   ; 0051b298
@@ -56,7 +58,7 @@ section .text
     PUSH EDI                            ; 0051b2b0
         ;   Label: LAB_0051b2b0
     CALL core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0 ; 0051b2b1
-        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0()
+        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0(CBoundingBox3D * this_ptr)
     ADD EBX,0x4                         ; 0051b2b6
     INC ESI                             ; 0051b2b9
     ADD ESP,0x4                         ; 0051b2ba
@@ -150,7 +152,7 @@ section .text
     PUSH EAX                            ; 0051b39c
     INC EBX                             ; 0051b39d
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 0051b39e
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     XOR EAX,EAX                         ; 0051b3a3
     INC EDI                             ; 0051b3a5
     MOV AL,byte ptr [EBX]               ; 0051b3a6

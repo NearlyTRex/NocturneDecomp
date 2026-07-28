@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(undefined4 param_1,undefined4 param_2)
+; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -9,11 +9,11 @@
 ; XREF[8]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3d4c
 ;   core_mission.cpp_FUN_004d8720 at 004d8740
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a05
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9b62
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d63
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb0c
-;   core_netgame.cpp_FUN_004e99f0 at 004e9a05
-;   engine_pod.cpp_FUN_004f8240 at 004f8294
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8294
 ;   engine_pod.cpp_FUN_004f8eb0 at 004f8ece
 ;
 ; Referenced Globals:
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 00470011
     MOV dword ptr [0x01bcd9b8],EDX      ; 00470012 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00470018
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047001d
     MOV [0x01bcd9bc],EAX                ; 00470020 | DAT_01bcd9bc
     LEA EAX,[ESP + 0x20]                ; 00470025
@@ -69,14 +69,14 @@ section .text
     PUSH 0x1bcacd0                      ; 00470034
     XOR EDI,EDI                         ; 00470039
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0047003b
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00470040
     MOV dword ptr [ESP],EDI             ; 00470043
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 00470046
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 0047004b
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00470050
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     MOV EAX,[0x005b7620]                ; 00470055 | DAT_005b7620
     MOV EDX,EAX                         ; 0047005a
     SAR EDX,0x1f                        ; 0047005c
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0()
     ADD ESP,0x18                        ; 0047008f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00470092
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     ADD ESP,0x4                         ; 00470097
     POP EBP                             ; 0047009a
     POP EDI                             ; 0047009b

@@ -16,8 +16,9 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
   float fVar3;
   int iVar4;
   float *pfVar5;
-  uint uVar6;
-  int iVar7;
+  SMotion *pSVar6;
+  uint uVar7;
+  int iVar8;
   float fStack_98;
   float fStack_8c;
   byte auStack_84 [12];
@@ -31,15 +32,14 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
   float fStack_5c;
   float fStack_58;
   byte auStack_54 [12];
-  byte auStack_48 [4];
-  float fStack_44;
+  CVector3f CStack_48;
   float fStack_3c;
   float fStack_38;
   float fStack_34;
   float local_30;
   float local_28;
   float local_24;
-  int iStack_20;
+  CPathMap *pCStack_20;
   float local_1c;
   float fStack_18;
   float fStack_14;
@@ -47,8 +47,8 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
   bVar2 = false;
   local_1c = 0.25;
   local_24 = 0.7853982;
-  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  memset(param_1 + 0xbc94,0,0x2c);
+  iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  memset((void *)(param_1 + 0xbc94),0,0x2c);
   if (*(int *)(param_1 + 0x1fa38) != 0) {
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     local_6c = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
@@ -75,12 +75,12 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
       }
       else {
         bVar2 = true;
-        iVar7 = iVar4;
+        iVar8 = iVar4;
       }
     }
-    fStack_78 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    fStack_74 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    fStack_70 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    fStack_78 = *(float *)(iVar8 + 0x20) - *(float *)(param_1 + 0x20);
+    fStack_74 = *(float *)(iVar8 + 0x24) - *(float *)(param_1 + 0x24);
+    fStack_70 = *(float *)(iVar8 + 0x28) - *(float *)(param_1 + 0x28);
     if (&local_6c != &fStack_78) {
       local_6c = fStack_78;
       local_68 = fStack_74;
@@ -90,33 +90,34 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
     *(uint *)(param_1 + 0x2410) = 0;
     fStack_18 = fVar1;
     if ((float)6 <= fVar1) {
-      iStack_20 = 0;
+      pCStack_20 = (CPathMap *)0x0;
       if (bVar2) {
         *(uint *)(param_1 + 0x2dbc) = 0;
       }
       else {
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        iStack_20 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
+        pCStack_20 = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
-          if (uVar6 < 2) {
+        if ((iVar4 == 0) && (uVar7 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar7 != 0)) {
+          if (uVar7 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }
-          else if (uVar6 == 2) {
+          else if (uVar7 == 2) {
             *(uint *)(param_1 + 0xbc9c) = 1;
             *(uint *)(param_1 + 0xbc94) = 1;
           }
         }
       }
-      if (iStack_20 == 0) {
-        iStack_20 = core_path_cpp_getPathMap_FUN_004f1e00(iVar7 + 0x20);
+      if (pCStack_20 == (CPathMap *)0x0) {
+        pCStack_20 = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar8 + 0x20));
       }
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
-                        (iStack_20,param_1 + 0x20,auStack_48,*(uint *)(param_1 + 0x6c));
+                        (pCStack_20,(CVector3f *)(param_1 + 0x20),&CStack_48,
+                         *(int *)(param_1 + 0x6c));
       if (iVar4 != 0) {
         fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                     (fStack_44 - *(float *)(param_1 + 0x34));
+                                     (CStack_48.y - *(float *)(param_1 + 0x34));
         fVar3 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_38 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
@@ -141,25 +142,27 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
           *(uint *)(param_1 + 0xbcac) = 1;
         }
         else {
-          iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-          if ((*(int *)(iVar4 + 0x24) != 2) && (*(int *)(iVar4 + 0x24) != 1)) {
+          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                             ((CMotionController *)(param_1 + 0x150));
+          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
             *(uint *)(param_1 + 0xbca0) = 1;
           }
         }
         *(uint *)(param_1 + 0x2dbc) = 0;
       }
       else {
-        iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-        if ((*(int *)(iVar4 + 0x24) == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
+        pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                           ((CMotionController *)(param_1 + 0x150));
+        if ((pSVar6->state_index == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
           *(uint *)(param_1 + 0xbcac) = 1;
         }
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x140))(iVar4);
-        if ((iVar4 == 0) && (uVar6 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar6 != 0)) {
-          if (uVar6 < 2) {
+        if ((iVar4 == 0) && (uVar7 = core_charactr_cpp_FUN_0042af70(param_1,param_2), uVar7 != 0)) {
+          if (uVar7 < 2) {
             *(uint *)(param_1 + 0xbc94) = 1;
           }
-          else if (uVar6 == 2) {
+          else if (uVar7 == 2) {
             *(uint *)(param_1 + 0xbc9c) = 1;
             *(uint *)(param_1 + 0xbc94) = 1;
           }
@@ -196,9 +199,9 @@ void core_svetlana_cpp_FUN_005423c0(int param_1,float param_2)
       *(uint *)(param_1 + 0x2410) = 0;
       *(float *)(param_1 + 0xbcb8) = local_1c;
     }
-    fStack_60 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
-    fStack_5c = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
-    fStack_58 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
+    fStack_60 = *(float *)(iVar8 + 0x20) - *(float *)(param_1 + 0x20);
+    fStack_5c = *(float *)(iVar8 + 0x24) - *(float *)(param_1 + 0x24);
+    fStack_58 = *(float *)(iVar8 + 0x28) - *(float *)(param_1 + 0x28);
     if (&local_6c != &fStack_60) {
       local_6c = fStack_60;
       local_68 = fStack_5c;

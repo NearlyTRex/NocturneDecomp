@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_copyVector_FUN_0040e180(undefined4 *param_1,undefined4 *param_2)
+; void __cdecl core_actor_cpp_copyVector_FUN_0040e180(CVector3f *dst_ptr,CVector3f *src_ptr)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dst_ptr
+; CVector3f *      Stack[0x8]:4   src_ptr
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501526

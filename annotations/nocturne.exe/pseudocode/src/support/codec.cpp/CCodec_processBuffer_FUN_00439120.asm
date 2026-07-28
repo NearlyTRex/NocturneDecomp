@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CCodec_processBuffer_FUN_00439120(int *param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5 ,undefined4 param_6)
+; undefined4 support_codec_cpp_CCodec_processBuffer_FUN_00439120(int *param_1,char *param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
@@ -30,7 +30,7 @@ section .text
     LEA EBX,[ESP + 0xc]                 ; 0043913e
     PUSH EBX                            ; 00439142
     CALL crt_strstream.cpp_istrstream_ctor_FUN_00564f32 ; 00439143
-        ;   XREF to: 00564f32 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_istrstream_ctor_FUN_00564f32()
+        ;   XREF to: 00564f32 (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_ctor_FUN_00564f32(void * this_ptr, int ctor_flags, char * buffer, int size)
     ADD ESP,0x10                        ; 00439148
     MOV EBX,dword ptr [ESP + 0xac]      ; 0043914b
     PUSH EBX                            ; 00439152
@@ -53,7 +53,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0043918b
     PUSH EAX                            ; 0043918f
     CALL crt_strstream.cpp_istrstream_dtor_FUN_00564fd8 ; 00439190
-        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_istrstream_dtor_FUN_00564fd8()
+        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_dtor_FUN_00564fd8(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00439195
     MOV EAX,EBX                         ; 00439198
     ADD ESP,0x84                        ; 0043919a

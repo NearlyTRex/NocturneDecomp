@@ -10,7 +10,8 @@ uint sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(uint param_1,i
 
 {
   int iVar1;
-  uint uVar2;
+  uint error_code;
+  char *pcVar2;
   int *piStack_19c;
   byte *puStack_198;
   byte bStack_c;
@@ -21,11 +22,11 @@ uint sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0(uint param_1,i
      (*(int *)(iVar1 * 4 + 0x2dc9324) != 0)) {
     puStack_198 = local_4;
     piStack_19c = *(int **)(iVar1 * 4 + 0x2dc92a8);
-    iVar1 = (**(code **)(*piStack_19c + 0x24))();
-    if (iVar1 != 0) {
-      uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
+    error_code = (**(code **)(*piStack_19c + 0x24))();
+    if (error_code != 0) {
+      pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(&piStack_19c,"DirectSux: Unable to %s.  (%s)","Get active sfx secondary buffer status"
-                 ,uVar2);
+                 ,pcVar2);
       sound_sndmain_cpp_FUN_00529980(&piStack_19c);
       return 0;
     }

@@ -15,7 +15,7 @@ uint core_barrier_cpp_CBarrier_getCollisionType_FUN_00411860(int param_1,int *pa
     return 0;
   }
   if (*(char *)(param_1 + 0x160) != '\0') {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(DAT_00763e44,param_1 + 0x160);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(DAT_00763e44,(char *)(param_1 + 0x160));
     if (iVar1 == 0) {
       return 0;
     }

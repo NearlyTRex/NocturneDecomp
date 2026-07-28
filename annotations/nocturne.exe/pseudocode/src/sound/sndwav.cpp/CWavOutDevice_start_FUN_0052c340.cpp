@@ -19,11 +19,11 @@ uint sound_sndwav_cpp_CWavOutDevice_start_FUN_0052c340(int *param_1)
   if (0 < _DAT_02dc943c) {
     iVar2 = 0;
     do {
-      memset(*(uint *)(iVar2 + 0x2dc93a8),0,0x20);
+      memset(*(void **)(iVar2 + 0x2dc93a8),0,0x20);
       **(uint **)(iVar2 + 0x2dc93a8) = *(uint *)(iVar2 + 0x2dc93c8);
       *(int *)(*(int *)(iVar2 + 0x2dc93a8) + 0xc) = iVar3;
       *(uint *)(*(int *)(iVar2 + 0x2dc93a8) + 4) = _DAT_02dc9438;
-      iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130();
+      iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(iVar3);
       if (iVar1 == 0) goto LAB_0052c3d6;
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 4;

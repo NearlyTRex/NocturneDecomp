@@ -2,35 +2,33 @@
 // Address: 0052d790
 // Address Range: [[0052d790, 0052db19] [0052db4b, 0052dc06] [0052dc48, 0052dcb3]]
 // Convention: unknown
-// Signature: int core_sound_cpp_FUN_0052d790(void)
+// Signature: uint core_sound_cpp_FUN_0052d790(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_sound_cpp_FUN_0052d790(void)
+uint core_sound_cpp_FUN_0052d790(void)
 
 {
   char cVar1;
-  int iVar2;
+  CVector3f *pCVar2;
   int iVar3;
-  ushort extraout_var;
-  ushort uVar4;
-  float *pfVar5;
-  char *pcVar6;
-  uint *puVar7;
-  char *pcVar8;
-  byte bVar9;
-  float fVar10;
-  float fVar11;
+  int iVar4;
+  uint extraout_EAX;
+  uint uVar5;
+  CVector3f *pCVar6;
+  char *pcVar7;
+  uint *puVar8;
+  int iVar9;
+  char *pcVar10;
+  byte bVar11;
+  float fVar12;
+  float fVar13;
   char acStack_118 [100];
-  byte auStack_b4 [100];
-  uint uStack_50;
-  float fStack_4c;
-  float fStack_48;
-  uint uStack_44;
-  float fStack_40;
-  float fStack_3c;
+  char acStack_b4 [100];
+  CVector3f CStack_50;
+  CVector3f CStack_44;
   uint uStack_38;
   uint uStack_34;
   uint uStack_30;
@@ -38,161 +36,159 @@ int core_sound_cpp_FUN_0052d790(void)
   float fStack_28;
   float fStack_24;
   float fStack_20;
-  float *pfStack_1c;
+  CVector3f *pCStack_1c;
   float fStack_18;
   float fStack_14;
   
-  bVar9 = 0;
+  bVar11 = 0;
   fStack_18 = *(float *)(0x01C775EC + 0x264);
   if (*(int *)(0x01C775EC + 0x240) == 0) {
-    if (_DAT_02dc9d54 != *(int *)(0x01E57284 + 0x15aabc)) {
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750();
-      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0();
-      uStack_50 = _DAT_02dc945c;
-      fStack_4c = _DAT_02dc9460;
-      fStack_48 = _DAT_02dc9464;
+    if (_DAT_02dc9d54 != 0x01E57284->renderable_actors[0x773]) {
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(0x01E57284);
+      CStack_50.x = _DAT_02dc945c;
+      CStack_50.y = _DAT_02dc9460;
+      CStack_50.z = _DAT_02dc9464;
       uStack_38 = 0;
-      uStack_44 = _DAT_02dc945c;
+      CStack_44.x = _DAT_02dc945c;
       uStack_34 = 0x41a00000;
-      fStack_3c = _DAT_02dc9464;
+      CStack_44.z = _DAT_02dc9464;
       uStack_30 = 0;
-      fStack_40 = _DAT_02dc9460 + 20.0f;
-      iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                        (0x01E57284,&uStack_50,&uStack_44);
-      if (iVar2 == 0) {
+      CStack_44.y = _DAT_02dc9460 + 20.0f;
+      iVar3 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
+                        (0x01E57284,&CStack_50,&CStack_44);
+      if (iVar3 == 0) {
         PTR_s_int_005bed60 = "ext";
       }
       else {
         PTR_s_int_005bed60 = "int";
       }
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750();
-      _DAT_02dc9d54 = *(int *)(0x01E57284 + 0x15aabc);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
+      _DAT_02dc9d54 = 0x01E57284->renderable_actors[0x773];
     }
   }
   else {
     PTR_s_int_005bed60 = "ext";
-    _DAT_02dc9d54 = -1;
+    _DAT_02dc9d54 = (CDemonActor *)0xffffffff;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-  sound_sndmain_cpp_setNextSfxFlags_FUN_00526240();
-  sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
-  iVar2 = _stricmp(PTR_s_int_005bed60,"int");
-  if (iVar2 == 0) {
-    sound_sndmain_cpp_killSfx_FUN_00527230();
-    fVar10 = 0.4;
+  sound_sndmain_cpp_setNextSfxFlags_FUN_00526240(1);
+  sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
+  iVar3 = _stricmp(PTR_s_int_005bed60,"int");
+  if (iVar3 == 0) {
+    sound_sndmain_cpp_killSfx_FUN_00527230(_DAT_02dc9d5c);
+    fVar12 = 0.4;
   }
   else {
-    fVar10 = 0.7;
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
-    if (iVar2 == 0) {
+    fVar12 = 0.7;
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(_DAT_02dc9d5c);
+    if (iVar3 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-      sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0();
-      _DAT_02dc9d5c = sound_sndmain_cpp_startSfx_FUN_005265a0();
+      sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(0.4);
+      _DAT_02dc9d5c = sound_sndmain_cpp_startSfx_FUN_005265a0("trainext.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
     }
   }
-  iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
-  if (iVar2 == 0) {
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(_DAT_02dc9d58);
+  if (iVar3 == 0) {
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-    sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0();
-    _DAT_02dc9d58 = sound_sndmain_cpp_startSfx_FUN_005265a0();
+    sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(fVar12 * (float)1.5);
+    _DAT_02dc9d58 = sound_sndmain_cpp_startSfx_FUN_005265a0("railnoiz.wav");
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }
   else {
-    iVar2 = _stricmp(PTR_s_x_005bed64,PTR_s_int_005bed60);
-    if (iVar2 != 0) {
-      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,fVar10 * (float)1.5);
+    iVar3 = _stricmp(PTR_s_x_005bed64,PTR_s_int_005bed60);
+    if (iVar3 != 0) {
+      sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9d58,fVar12 * (float)1.5);
     }
   }
   sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
-  pfVar5 = (float *)&DAT_02dc9ca4;
-  iVar2 = 0;
+  pCVar6 = (CVector3f *)&DAT_02dc9ca4;
+  iVar3 = 0;
   PTR_s_x_005bed64 = PTR_s_int_005bed60;
   _DAT_02dc9d44 = 0.0;
   _DAT_02dc9d48 = 0.0;
-  pfStack_1c = (float *)0x0;
+  pCStack_1c = (CVector3f *)0x0;
   _DAT_02dc9d4c = 30.0;
   do {
-    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50();
-    if (iVar3 == 0) {
-      uVar4 = 0;
-      pfStack_1c = pfVar5;
-    }
-    else {
+    iVar9 = iVar3 * 0x10;
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(iVar9 + 0x2dc9cb0));
+    pCVar2 = pCVar6;
+    if (iVar4 != 0) {
       fStack_2c = _DAT_02dc9d44 * fStack_18;
       fStack_28 = _DAT_02dc9d48 * fStack_18;
       fStack_24 = _DAT_02dc9d4c * fStack_18;
-      *pfVar5 = *pfVar5 + fStack_2c;
-      pfVar5[1] = pfVar5[1] + fStack_28;
-      pfVar5[2] = pfVar5[2] + fStack_24;
-      uVar4 = (ushort)((uint)iVar3 >> 0x10);
-      if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar2 * 0x10))) {
-        sound_sndmain_cpp_killSfx_FUN_00527230();
-        uVar4 = extraout_var;
+      pCVar6->x = pCVar6->x + fStack_2c;
+      pCVar6->y = pCVar6->y + fStack_28;
+      pCVar6->z = pCVar6->z + fStack_24;
+      pCVar2 = pCStack_1c;
+      if ((float)510 < ABS(*(float *)(&DAT_02dc9cac + iVar9))) {
+        sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(iVar9 + 0x2dc9cb0));
+        pCVar2 = pCStack_1c;
       }
     }
-    iVar2 = iVar2 + 1;
-    pfVar5 = pfVar5 + 4;
-  } while (iVar2 < 10);
+    pCStack_1c = pCVar2;
+    iVar3 = iVar3 + 1;
+    pCVar6 = (CVector3f *)&pCVar6[1].y;
+  } while (iVar3 < 10);
   _DAT_02dc9d50 = _DAT_02dc9d50 - fStack_18;
-  iVar2 = CONCAT22(uVar4,(ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |
-                         (ushort)(_DAT_02dc9d50 == 0.0) << 0xe);
-  if ((0.0 >= _DAT_02dc9d50) && (pfStack_1c != (float *)0x0)) {
-    _DAT_02dc9d50 =
-         (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000,0x40a00000);
+  uVar5 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |
+                        (ushort)(_DAT_02dc9d50 == 0.0) << 0xe);
+  if ((0.0 >= _DAT_02dc9d50) && (pCStack_1c != (CVector3f *)0x0)) {
+    _DAT_02dc9d50 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f800000);
     fStack_20 = 20.0;
-    fVar11 = 1.0;
-    puVar7 = &DAT_005bef88;
-    pcVar8 = acStack_118;
+    fVar13 = 1.0;
+    puVar8 = &DAT_005bef88;
+    pcVar10 = acStack_118;
     fStack_14 = _DAT_02dc9d50;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar8 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
-      pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
+    for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(uint *)pcVar10 = *puVar8;
+      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+      pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;
     }
-    iVar3 = rand(fVar10,0x3f800000);
-    iVar2 = iVar3 / 5;
+    iVar3 = rand();
+    uVar5 = iVar3 / 5;
     switch(iVar3 % 5) {
     case 0:
     case 1:
-      fVar11 = fVar10 * (float)0.59999999999999998;
+      fVar13 = fVar12 * (float)0.59999999999999998;
       fStack_20 = 25.0;
-      _sprintf(acStack_118,"rail?%s.wav",PTR_s_int_005bed60,fVar10,fVar11);
+      _sprintf(acStack_118,"rail?%s.wav",PTR_s_int_005bed60,fVar12,fVar13);
       break;
     case 2:
     case 3:
-      fVar11 = fVar10 * (float)0.80000000000000004;
-      pcVar8 = acStack_118;
+      fVar13 = fVar12 * (float)0.80000000000000004;
+      pcVar10 = acStack_118;
       fStack_20 = 20.0;
-      pcVar6 = "bump?.wav";
+      pcVar7 = "bump?.wav";
       do {
-        cVar1 = *pcVar6;
-        *pcVar8 = cVar1;
+        cVar1 = *pcVar7;
+        *pcVar10 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar8[1] = cVar1;
-        pcVar8 = pcVar8 + 2;
+        cVar1 = pcVar7[1];
+        pcVar7 = pcVar7 + 2;
+        pcVar10[1] = cVar1;
+        pcVar10 = pcVar10 + 2;
       } while (cVar1 != '\0');
       break;
     case 4:
       goto LAB_0052da35;
     }
-    *pfStack_1c = 0.0;
-    fStack_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0400000,0x40000000);
-    fVar10 = fStack_14 * fStack_20 + _DAT_02dc9464;
-    pfStack_1c[1] = 0.0;
-    pfStack_1c[2] = fVar10;
+    pCStack_1c->x = 0.0;
+    fStack_14 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0400000);
+    fVar12 = fStack_14 * fStack_20 + _DAT_02dc9464;
+    pCStack_1c->y = 0.0;
+    pCStack_1c->z = fVar12;
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
-    sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0();
-    sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090();
-    _sprintf(auStack_b4,"%s @ %g",acStack_118,(double)fVar11);
-    fVar10 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
-                              (0x02DC9450,0,auStack_b4,pfStack_1c);
-    pfStack_1c[3] = fVar10;
-    iVar2 = sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
-    return iVar2;
+    sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
+    sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);
+    _sprintf(acStack_b4,"%s @ %g",acStack_118,(double)fVar13);
+    fVar12 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
+                              (0x02DC9450,(CDemonActor *)0x0,acStack_b4,pCStack_1c);
+    pCStack_1c[1].x = fVar12;
+    sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
+    return extraout_EAX;
   }
 LAB_0052da35:
-  return iVar2;
+  return uVar5;
 }

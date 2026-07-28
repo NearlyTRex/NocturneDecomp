@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(int param_1,float param_2)
+; void core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xac]:4  local_ac
@@ -65,7 +65,7 @@ section .text
     MOV ESI,dword ptr [0x005b7650]      ; 0043ec37 | DAT_005b7650
     PUSH ESI                            ; 0043ec3d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0043ec3e
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0043ec43
     TEST EAX,EAX                        ; 0043ec46
     JZ 0x0043ec54                       ; 0043ec48
@@ -76,7 +76,7 @@ section .text
     LEA EAX,[EDI + 0x18c]               ; 0043ec59
     PUSH EAX                            ; 0043ec5f
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0043ec60
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0043ec65
     TEST EAX,EAX                        ; 0043ec68
     JZ 0x0043ec79                       ; 0043ec6a
@@ -449,7 +449,7 @@ section .text
     PUSH EDI                            ; 0043f058
         ;   Label: LAB_0043f058
     CALL core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0 ; 0043f059
-        ;   XREF to: 0043e1e0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0()
+        ;   XREF to: 0043e1e0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 0043f05e
     MOV ESP,EBP                         ; 0043f061
         ;   Label: LAB_0043f061
@@ -678,7 +678,7 @@ section .text
     PUSH EDI                            ; 0043f30f
     FSTP float ptr [EAX + 0x8]          ; 0043f310
     CALL core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290 ; 0043f313
-        ;   XREF to: 0043e290 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290()
+        ;   XREF to: 0043e290 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain * this_ptr, SCurtainVertex * vertex)
     ADD ESP,0x8                         ; 0043f318
     JMP 0x0043ef26                      ; 0043f31b
         ;   XREF to: 0043ef26 (UNCONDITIONAL_JUMP)  ; LAB_0043ef26
@@ -686,7 +686,7 @@ section .text
         ;   Label: LAB_0043f320
     PUSH EDI                            ; 0043f321
     CALL core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290 ; 0043f322
-        ;   XREF to: 0043e290 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290()
+        ;   XREF to: 0043e290 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain * this_ptr, SCurtainVertex * vertex)
     ADD ESP,0x8                         ; 0043f327
     JMP 0x0043ef75                      ; 0043f32a
         ;   XREF to: 0043ef75 (UNCONDITIONAL_JUMP)  ; LAB_0043ef75

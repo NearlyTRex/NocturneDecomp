@@ -20,10 +20,9 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
   uint *puVar8;
   int iVar9;
   byte bVar10;
-  float10 fVar11;
-  double dVar12;
-  float fVar13;
-  uint uVar14;
+  double dVar11;
+  float fVar12;
+  uint uVar13;
   float local_54;
   float local_50;
   float local_4c;
@@ -54,19 +53,19 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
                                    (*(float *)(param_1 + 0x19834) + *(float *)(param_1 + 0x19840)) *
                                    0.5f) * local_c));
   fVar1 = (fVar1 + fVar2) * local_c;
-  uVar14 = 0x421c4a;
-  fVar11 = (float10)round((float10)join_0x00000008_0x00000000_);
-  local_38 = (int)ROUND(fVar11);
-  dVar12 = (double)floor((double)fVar1,uVar14);
+  uVar13 = 0x421c4a;
+  dVar11 = round(join_0x00000008_0x00000000_);
+  local_38 = (int)ROUND(dVar11);
+  dVar11 = (double)floor((double)fVar1,uVar13);
   local_10 = local_38;
   fVar1 = (float)local_38 * 0.5f;
-  local_44 = (byte  [8])dVar12;
-  fVar11 = (float10)round((float10)dVar12);
-  local_18 = (int)ROUND(fVar11);
-  fVar13 = (float)local_18 * 0.5f;
+  local_44 = (byte  [8])dVar11;
+  dVar11 = round(dVar11);
+  local_18 = (int)ROUND(dVar11);
+  fVar12 = (float)local_18 * 0.5f;
   fVar2 = 0.5f * 5.4034218993573707e-315._0_4_ * (float)0.5;
   *(float *)(param_1 + 0x19854) = (fVar1 - *(float *)(param_1 + 0x20)) - fVar2;
-  *(float *)(param_1 + 0x19858) = (fVar13 - *(float *)(param_1 + 0x28)) - fVar2;
+  *(float *)(param_1 + 0x19858) = (fVar12 - *(float *)(param_1 + 0x28)) - fVar2;
   if ((iStack_3c != *(int *)(param_1 + 0x1984c)) || (local_18 != *(int *)(param_1 + 0x19850))) {
     local_20 = *(int *)(unaff_EBX + 0x1984c) - iStack_3c;
     local_24 = *(int *)(unaff_EBX + 0x19850) - local_18;
@@ -86,7 +85,7 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
     }
     local_50 = *(float *)(unaff_EBX + 0x24);
     fVar2 = *(float *)(unaff_EBX + 0x28);
-    fVar13 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x19854);
+    fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x19854);
     fVar1 = *(float *)(unaff_EBX + 0x19858);
     local_34 = local_20 * -0x30;
     local_38 = local_24 * 4;
@@ -94,7 +93,7 @@ void core_bugs_cpp_FUN_00421b80(int param_1)
     local_30 = unaff_EBX;
     do {
       iVar5 = 0;
-      local_54 = (float)local_1c * 0.5f + fVar13;
+      local_54 = (float)local_1c * 0.5f + fVar12;
       iVar6 = local_34 - local_38;
       iVar4 = local_30;
       iVar9 = local_30;

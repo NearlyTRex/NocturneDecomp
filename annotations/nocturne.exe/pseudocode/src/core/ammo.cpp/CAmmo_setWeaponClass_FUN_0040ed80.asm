@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *param_2)
+; void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo *this_ptr,char *weapon_class_name)
 ;
+; Parameters:
+; CAmmo *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   weapon_class_name
 ;
 ; XREF[6]:
 ;   core_ammobox.cpp_FUN_0040f1a0 at 0040f230
@@ -53,7 +56,7 @@ section .text
         ;   Label: LAB_0040ed99
     PUSH EBP                            ; 0040ed9e
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040ed9f
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040eda4
     TEST EAX,EAX                        ; 0040eda7
     JNZ 0x0040edd6                      ; 0040eda9
@@ -71,13 +74,13 @@ section .text
         ;   Label: LAB_0040edc7
     PUSH EAX                            ; 0040edcd
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040edce
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040edd3
     PUSH 0x57829d                       ; 0040edd6 | = "CShotgun"
         ;   Label: LAB_0040edd6
     PUSH EBP                            ; 0040eddb
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040eddc
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040ede1
     TEST EAX,EAX                        ; 0040ede4
     JNZ 0x0040edfc                      ; 0040ede6
@@ -86,13 +89,13 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040eded
     PUSH EAX                            ; 0040edf3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040edf4
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040edf9
     PUSH 0x5782b0                       ; 0040edfc | = "CCrossbow"
         ;   Label: LAB_0040edfc
     PUSH EBP                            ; 0040ee01
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040ee02
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040ee07
     TEST EAX,EAX                        ; 0040ee0a
     JNZ 0x0040ee31                      ; 0040ee0c
@@ -106,13 +109,13 @@ section .text
     PUSH EAX                            ; 0040ee28
         ;   Label: LAB_0040ee28
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ee29
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ee2e
     PUSH 0x5782d2                       ; 0040ee31 | = "CDynamite"
         ;   Label: LAB_0040ee31
     PUSH EBP                            ; 0040ee36
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040ee37
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040ee3c
     TEST EAX,EAX                        ; 0040ee3f
     JNZ 0x0040ee57                      ; 0040ee41
@@ -121,13 +124,13 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040ee48
     PUSH EAX                            ; 0040ee4e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ee4f
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ee54
     PUSH 0x5782ef                       ; 0040ee57 | = "CTommyGun"
         ;   Label: LAB_0040ee57
     PUSH EBP                            ; 0040ee5c
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040ee5d
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040ee62
     TEST EAX,EAX                        ; 0040ee65
     JNZ 0x0040ee7d                      ; 0040ee67
@@ -136,13 +139,13 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040ee6e
     PUSH EAX                            ; 0040ee74
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ee75
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ee7a
     PUSH 0x578309                       ; 0040ee7d | = "CFlameThrower"
         ;   Label: LAB_0040ee7d
     PUSH EBP                            ; 0040ee82
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040ee83
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040ee88
     TEST EAX,EAX                        ; 0040ee8b
     JNZ 0x0040eea3                      ; 0040ee8d
@@ -151,13 +154,13 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040ee94
     PUSH EAX                            ; 0040ee9a
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ee9b
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040eea0
     PUSH 0x578324                       ; 0040eea3 | = "CElephantGun"
         ;   Label: LAB_0040eea3
     PUSH EBP                            ; 0040eea8
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0040eea9
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040eeae
     TEST EAX,EAX                        ; 0040eeb1
     JZ 0x0040ef31                       ; 0040eeb3
@@ -165,7 +168,7 @@ section .text
     ADD EBX,0x150                       ; 0040eeb5
     PUSH EBX                            ; 0040eebb
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0040eebc
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040eec1
     POP EBP                             ; 0040eec4
     POP EDI                             ; 0040eec5
@@ -226,12 +229,12 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040ef36
     PUSH EAX                            ; 0040ef3c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ef3d
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ef42
     ADD EBX,0x150                       ; 0040ef45
     PUSH EBX                            ; 0040ef4b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0040ef4c
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040ef51
     POP EBP                             ; 0040ef54
     POP EDI                             ; 0040ef55

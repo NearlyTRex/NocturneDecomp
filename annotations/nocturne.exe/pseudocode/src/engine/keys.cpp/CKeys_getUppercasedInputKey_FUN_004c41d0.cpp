@@ -2,16 +2,17 @@
 // Address: 004c41d0
 // Address Range: [[004c41d0, 004c41e3]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(void)
+// Signature: int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(CKeys *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(void)
+int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(CKeys *this_ptr)
 
 {
-  byte uVar1;
+  uint uVar1;
+  int iVar2;
   
   uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
-  toupper(uVar1);
-  return;
+  iVar2 = toupper(uVar1 & 0xff);
+  return iVar2;
 }

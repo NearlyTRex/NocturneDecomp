@@ -1,53 +1,55 @@
 // Name: core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0
 // Address: 004a8ca0
 // Address Range: [[004a8ca0, 004a8dc3]]
-// Convention: unknown
-// Signature: int core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(CGhoul *this_ptr)
 
 #include "nocturne.h"
 
-int core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(uint param_1)
+CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(CGhoul *this_ptr)
 
 {
-  float fVar1;
-  int iVar2;
+  CGhoul *pCVar1;
+  float fVar2;
   float fVar3;
-  float10 fVar4;
+  double dVar4;
   uint uVar5;
-  uint uVar6;
+  int iVar6;
   uint uVar7;
+  uint uVar8;
   
-  iVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0_0059e224;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"guul.dfm");
-  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41a00000,0x420c0000);
-  uVar7 = 0x41200000;
-  uVar6 = 0x40800000;
+  pCVar1 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0_0059e224;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (&(pCVar1->base).base.model,"guul.dfm");
+  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41a00000,0x420c0000);
+  uVar8 = 0x41200000;
+  uVar7 = 0x40800000;
   uVar5 = 0x4a8cfc;
-  fVar4 = (float10)round((float10)fVar3 * (float10)65536);
-  *(int *)(iVar2 + 0xbd28) = (int)ROUND(fVar4);
-  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uVar5,uVar6,uVar7);
-  *(uint *)(iVar2 + 0xbd30) = 0xa0000;
-  *(uint *)(iVar2 + 0xbd34) = 0xffffffff;
-  fVar4 = (float10)65536;
-  *(uint *)(iVar2 + 0xbd38) = 0;
-  *(uint *)(iVar2 + 0xbd44) = 2;
-  uVar6 = 3;
-  uVar5 = 0x4a8d47;
-  fVar4 = (float10)round((float10)fVar3 * fVar4);
-  *(int *)(iVar2 + 0xbd2c) = (int)ROUND(fVar4);
-  uVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(1,uVar5,uVar6);
-  *(uint *)(iVar2 + 0x2dd4) = 0x3f400000;
-  *(uint *)(iVar2 + 0x2dd8) = 0x3fc00000;
-  *(uint *)(iVar2 + 0xbd80) = 0;
-  *(uint *)(iVar2 + 0xbd84) = 0;
-  *(uint *)(iVar2 + 0xbd88) = 0;
-  *(uint *)(iVar2 + 0xbd8c) = 0;
-  fVar3 = 50.0f;
-  *(uint *)(iVar2 + 0xbd90) = 0;
-  fVar1 = 100.0f;
-  *(uint *)(iVar2 + 0xbd40) = uVar5;
-  *(float *)(iVar2 + 0x2ddc) = fVar3;
-  *(float *)(iVar2 + 0x2de0) = fVar1;
-  return iVar2;
+  dVar4 = round((double)(fVar2 * (float)65536));
+  pCVar1->burp_timer = (int)ROUND(dVar4);
+  fVar3 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(uVar5,uVar7,uVar8);
+  pCVar1->arise_timer = 0xa0000;
+  pCVar1->pending_eat_state = -1;
+  fVar2 = (float)65536;
+  pCVar1->flinch_blend_weight = 0.0;
+  pCVar1->spasm_count = 2;
+  iVar6 = 0x4a8d47;
+  dVar4 = round((double)(fVar3 * fVar2));
+  pCVar1->spasm_timer = (int)ROUND(dVar4);
+  iVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(1,iVar6);
+  (pCVar1->base).base.collision_cylinder_height = 0.75;
+  (pCVar1->base).base.collision_cylinder_radius = 1.5;
+  pCVar1->stun_timer = 0.0;
+  pCVar1->dark_waypoint = (CDemonActor *)0x0;
+  pCVar1->heal_timer = 0.0;
+  pCVar1->is_berserk = 0;
+  fVar2 = 50.0f;
+  pCVar1->stuck_timer = 0.0;
+  fVar3 = 100.0f;
+  pCVar1->lives_left = iVar6;
+  (pCVar1->base).base.ai_detection_range_min = fVar2;
+  (pCVar1->base).base.ai_detection_range_max = fVar3;
+  return pCVar1;
 }

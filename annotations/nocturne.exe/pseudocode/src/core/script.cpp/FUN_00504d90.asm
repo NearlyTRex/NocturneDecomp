@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_script_cpp_FUN_00504d90(int *param_1)
+; undefined4 core_script_cpp_FUN_00504d90(CScript *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -67,7 +67,7 @@ section .text
     PUSH EBX                            ; 00504de9
     MOV EDI,dword ptr [EBX + 0x40]      ; 00504dea
     CALL core_script.cpp_CScript_step_FUN_004ff2c0 ; 00504ded
-        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_step_FUN_004ff2c0()
+        ;   XREF to: 004ff2c0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_004ff2c0(CScript * this_ptr, float * time_remaining)
     ADD ESP,0x8                         ; 00504df2
     TEST EAX,EAX                        ; 00504df5
     JL 0x00504e30                       ; 00504df7

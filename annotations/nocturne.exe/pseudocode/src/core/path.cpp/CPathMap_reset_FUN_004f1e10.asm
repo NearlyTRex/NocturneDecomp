@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_path.cpp_CPathMap_ctor_FUN_004efd50 at 004efd73
-;   core_path.cpp_FUN_004f0360 at 004f048d
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360 at 004f048d
 ;   core_path.cpp_resetAllPathMaps_FUN_004f1e90 at 004f1ed7
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
     LEA EAX,[EBX + 0x9c70]              ; 004f1e1c
     PUSH EAX                            ; 004f1e22
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f1e23
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     LEA EAX,[EBX + 0x138c0]             ; 004f1e28
     MOV dword ptr [EBX + 0x138bc],0x0   ; 004f1e2e
     MOV dword ptr [EAX + 0x8],0x0       ; 004f1e38
@@ -42,7 +42,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004f1e6a
     MOV dword ptr [EAX],EDX             ; 004f1e6d
     CALL crt_stdlib.c_rand_FUN_0056488c ; 004f1e6f
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     AND EAX,0x3fff                      ; 004f1e74
     MOV dword ptr [EBX + 0x138d8],EAX   ; 004f1e79
     POP EBX                             ; 004f1e7f

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(undefined4 param_1,float *param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer *this_ptr,CVector3f *point_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   point_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -44,10 +47,10 @@ section .text
     FMULP ST3                           ; 0046071a
     FXCH                                ; 0046071c
     CALL crt_math.c_round_FUN_00563a30  ; 0046071e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00460723
     CALL crt_math.c_round_FUN_00563a30  ; 00460725
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0046072a
     FISTP dword ptr [ESP]               ; 0046072c
     FISTP dword ptr [ESP + 0x4]         ; 0046072f
@@ -55,13 +58,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00460736
     PUSH EDX                            ; 0046073a
     CALL crt_math.c_round_FUN_00563a30  ; 0046073b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH ECX                            ; 00460740
     FISTP dword ptr [ESP + 0xc]         ; 00460741
     MOV EBX,dword ptr [ESP + 0xc]       ; 00460745
     PUSH EBX                            ; 00460749
     CALL engine_matrix.c_setCameraOrigin_FUN_004ce710 ; 0046074a
-        ;   XREF to: 004ce710 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_setCameraOrigin_FUN_004ce710()
+        ;   XREF to: 004ce710 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraOrigin_FUN_004ce710(int x, int y, int z)
     ADD ESP,0xc                         ; 0046074f
     ADD ESP,0x8                         ; 00460752
     POP EBX                             ; 00460755

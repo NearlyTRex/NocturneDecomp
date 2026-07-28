@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00455032
         ;   Label: LAB_00455032
     CALL core_door.cpp_CDoor_ctor_FUN_00455050 ; 00455033
-        ;   XREF to: 00455050 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_ctor_FUN_00455050()
+        ;   XREF to: 00455050 (UNCONDITIONAL_CALL)  ; CDoor * core_door.cpp_CDoor_ctor_FUN_00455050(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00455038
     RET                                 ; 0045503b
 

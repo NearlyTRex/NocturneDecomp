@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[39]:
 ;   core_armour.cpp_FUN_0040fa20 at 0040fad8
@@ -37,7 +39,7 @@ section .text
     PUSH EDX                            ; 0051b8ad
     PUSH EBX                            ; 0051b8ae
     CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 ; 0051b8af
-        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920()
+        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     FLD float ptr [EBX + 0x14]          ; 0051b8b4
     ADD ESP,0x10                        ; 0051b8b7
     FCOMP double ptr [0x00591b63]       ; 0051b8ba | DOUBLE_00591b63

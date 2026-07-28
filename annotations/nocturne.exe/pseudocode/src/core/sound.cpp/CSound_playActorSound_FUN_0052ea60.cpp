@@ -2,13 +2,16 @@
 // Address: 0052ea60
 // Address Range: [[0052ea60, 0052ea82]]
 // Convention: __cdecl
-// Signature: void __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+// Signature: uint __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position)
 
 #include "nocturne.h"
 
-void __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(uint param_1,uint param_2,uint param_3,uint *param_4)
+uint __cdecl core_sound_cpp_CSound_playActorSound_FUN_0052ea60(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position)
 
 {
-  core_sound_cpp_playSfxInternal_FUN_0052d120(param_2,param_3,*param_4,param_4[1],param_4[2],0,0);
-  return;
+  uint uVar1;
+  
+  uVar1 = core_sound_cpp_playSfxInternal_FUN_0052d120
+                    (actor,sound_name,position->x,position->y,position->z,(CVector3f *)0x0,0);
+  return uVar1;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * __esi engine_matrix_c_getCameraRotation_FUN_004ce790(undefined4 *param_1)
+; void __esi engine_matrix_c_getCameraRotation_FUN_004ce790(CVector3i *output)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

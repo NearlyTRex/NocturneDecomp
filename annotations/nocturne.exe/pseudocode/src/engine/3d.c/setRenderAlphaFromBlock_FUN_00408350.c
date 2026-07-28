@@ -9,6 +9,6 @@
 int engine_3d_c_setRenderAlphaFromBlock_FUN_00408350(int param_1)
 
 {
-  engine_3d_c_setRenderAlpha_FUN_00408370(*(uint *)(param_1 + 4));
+  engine_3d_c_setRenderAlpha_FUN_00408370(*(int *)(param_1 + 4));
   return param_1 + 8;
 }

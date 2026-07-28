@@ -60,7 +60,7 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004859e7 | DAT_01b4d738
     PUSH EAX                            ; 004859e9
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004859ea
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 004859ef | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 004859f4 | DAT_01b4d738
     FILD dword ptr [EAX + 0x8]          ; 004859f6

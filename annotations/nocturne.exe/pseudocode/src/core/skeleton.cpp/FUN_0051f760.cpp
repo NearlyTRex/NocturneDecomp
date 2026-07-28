@@ -15,30 +15,31 @@ void core_skeleton_cpp_FUN_0051f760(uint param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  CSkeleton *this_ptr;
+  CDeformableModel *this_ptr_00;
   
   iVar3 = 0;
   iVar4 = 0;
   if (0 < _DAT_02737ef4) {
-    iVar5 = 0x2737ef8;
+    this_ptr = (CSkeleton *)0x2737ef8;
     do {
-      iVar1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(iVar5);
+      iVar1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(this_ptr);
       iVar3 = iVar3 + 1;
-      iVar5 = iVar5 + 0x2937c;
+      this_ptr = (CSkeleton *)this_ptr->bone_scales;
       iVar4 = iVar4 + iVar1;
     } while (iVar3 < _DAT_02737ef4);
   }
   iVar3 = 0;
-  iVar5 = 0;
+  iVar1 = 0;
   if (0 < _DAT_0268cef0) {
-    iVar1 = 0x268cef4;
+    this_ptr_00 = (CDeformableModel *)0x268cef4;
     do {
-      iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(iVar1);
+      iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(this_ptr_00);
       iVar3 = iVar3 + 1;
-      iVar5 = iVar5 + iVar2;
-      iVar1 = iVar1 + 0x2ac0;
+      iVar1 = iVar1 + iVar2;
+      this_ptr_00 = (CDeformableModel *)(this_ptr_00->texture_sets[1].textures[0x45].textures + 1);
     } while (iVar3 < _DAT_0268cef0);
   }
-  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,iVar5);
+  _sprintf(param_1,"%d skeletons, %d bytes, %d models, %d bytes",_DAT_02737ef4,iVar4,_DAT_0268cef0,iVar1);
   return;
 }

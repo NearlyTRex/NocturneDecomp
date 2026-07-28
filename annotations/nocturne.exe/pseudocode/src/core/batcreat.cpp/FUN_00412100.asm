@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_batcreat_cpp_FUN_00412100(undefined4 param_1)
+; CEnemy * core_batcreat_cpp_FUN_00412100(CEnemy *param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00412101
     PUSH EDX                            ; 00412105
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00412106
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0041210b
     PUSH 0x57883c                       ; 0041210e | = "batcreat.dfm"
     MOV EBX,EAX                         ; 00412113

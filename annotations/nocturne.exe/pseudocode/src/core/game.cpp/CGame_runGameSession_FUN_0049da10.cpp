@@ -2,32 +2,32 @@
 // Address: 0049da10
 // Address Range: [[0049da10, 0049e60e]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
+// Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
+int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
 
 {
   char cVar1;
-  uint uVar2;
+  char *pcVar2;
   int iVar3;
   int iVar4;
-  char *pcVar5;
+  uint uVar5;
   char *pcVar6;
-  byte local_400 [368];
-  byte local_290 [368];
-  byte local_120 [256];
+  uint uVar7;
+  byte local_400 [736];
+  char local_120 [256];
   byte *local_20;
-  uint local_1c;
+  int local_1c;
   int local_18;
   float local_14;
   
   local_14 = 0.0;
   local_1c = 0;
-  engine_console_cpp_CConsole_reset_FUN_0043ae00(PTR_DAT_005ad350);
+  engine_console_cpp_CConsole_reset_FUN_0043ae00((CConsole *)PTR_DAT_005ad350);
   engine_console_cpp_CConsole_printf_FUN_0043ac60
             (PTR_DAT_005ad350,"Nocturne is alive and kicking\n");
   engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -42,53 +42,53 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
   engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"%s\n",local_120);
   local_20 = local_400;
   engine_console_cpp_CConsole_printf_FUN_0043ac60(PTR_DAT_005ad350,"ESP: %08X\n",local_400);
-  *(uint *)(param_1 + 0x270) = 0;
-  *(uint *)(param_1 + 0x1fc) = 0;
-  *(uint *)(param_1 + 0x274) = 1;
-  *(uint *)(param_1 + 0x1e4) = 0;
-  *(uint *)(param_1 + 0x1e8) = 0;
-  *(uint *)(param_1 + 0x278) = 0;
-  *(uint *)(param_1 + 0x1d0) = 0;
-  *(uint *)(param_1 + 0x1e0) = 0;
-  *(uint *)(param_1 + 0x1d4) = 0;
-  *(uint *)(param_1 + 0x1d8) = 0;
-  *(uint *)(param_1 + 0x1dc) = 0;
-  *(uint *)(param_1 + 0x27c) = 0;
-  *(uint *)(param_1 + 0x280) = 0;
-  *(uint *)(param_1 + 0x1ec) = 0x3f800000;
-  *(uint *)(param_1 + 0x1f0) = 0;
-  *(uint *)(param_1 + 500) = 0;
-  *(uint *)(param_1 + 0x1f8) = 0;
-  *(byte *)(param_1 + 0x8b4) = 0;
-  *(uint *)(param_1 + 0x9b4) = 0;
-  *(uint *)(param_1 + 0x9b8) = 0;
-  *(uint *)(param_1 + 0x23c) = 0;
-  *(uint *)(param_1 + 0xcc) = 0;
-  *(uint *)(param_1 + 0x208) = 0;
-  *(uint *)(param_1 + 0x238) = 0;
-  *(uint *)(param_1 + 0x20c) = 0;
-  *(uint *)(param_1 + 0xac8) = 0;
-  *(uint *)(param_1 + 0x240) = 0;
-  *(uint *)(param_1 + 0x244) = 0;
-  *(uint *)(param_1 + 0x220) = 0;
-  *(uint *)(param_1 + 0x218) = 0;
-  *(uint *)(param_1 + 0x21c) = 0;
+  this_ptr->camera_view_index = 0;
+  this_ptr->is_paused = 0;
+  this_ptr->is_game_active = 1;
+  this_ptr->camera_debug_enabled = 0;
+  this_ptr->debug_toggle_flag = 0;
+  this_ptr->screen_clear_enabled = 0;
+  this_ptr->god_mode_enabled = 0;
+  this_ptr->gratuitous_dismemberment = 0;
+  this_ptr->freeze_enemies_enabled = 0;
+  this_ptr->event_processing_enabled = 0;
+  this_ptr->subtitle_system_enabled = 0;
+  this_ptr->screen_clear_condition = 0;
+  this_ptr->console_enabled = 0;
+  this_ptr->time_scale_factor = 1.0;
+  this_ptr->scripted_sequence_active = 0;
+  this_ptr->render_mode = 0;
+  this_ptr->editor_tools_enabled = 0;
+  this_ptr->bitmap_filename[0] = '\0';
+  this_ptr->bitmap_width = 0;
+  this_ptr->bitmap_height = 0;
+  this_ptr->is_processing = 0;
+  this_ptr->cutscene_skippable = 0;
+  this_ptr->skip_frame_render = 0;
+  this_ptr->allow_hero_controls_flag = 0;
+  this_ptr->profile_mode = 0;
+  this_ptr->show_customizable_keys = 0;
+  this_ptr->goggles_active = 0;
+  this_ptr->flashlight_active = 0;
+  this_ptr->player_hit_flag = 0;
+  this_ptr->geometry_debug_enabled = 0;
+  this_ptr->collision_render_enabled = 0;
   _DAT_01c78420 = 0;
-  *(uint *)(param_1 + 0x210) = 0;
-  uVar2 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0(BYTE_ARRAY_0058283a);
-  iVar3 = getenv(uVar2);
-  if (iVar3 != 0) {
-    *(uint *)(param_1 + 0x210) = 1;
+  this_ptr->developer_mode_enabled = 0;
+  pcVar2 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_0058283a);
+  pcVar2 = getenv(pcVar2);
+  if (pcVar2 != (char *)0x0) {
+    this_ptr->developer_mode_enabled = 1;
   }
-  pcVar5 = "Flashlight";
-  core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(&DAT_01c74640);
+  pcVar2 = "Flashlight";
+  core_dlight_cpp_CDemonLight_init_FUN_0044e1e0((CDemonLight *)&DAT_01c74640);
   pcVar6 = &DAT_01c74640;
   do {
-    cVar1 = *pcVar5;
+    cVar1 = *pcVar2;
     *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
@@ -100,151 +100,155 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
   }
   else {
     _DAT_01c78698 = 0;
-    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(0x01E57284,&DAT_01c7869c);
+    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(0x01E57284,(int *)&DAT_01c7869c);
   }
-  if (*(int *)(param_1 + 0x224) < 0x8000) {
-    *(uint *)(param_1 + 0x224) = 0x8000;
+  if (this_ptr->gamma < 0x8000) {
+    this_ptr->gamma = 0x8000;
   }
-  else if (0x10000 < *(int *)(param_1 + 0x224)) {
-    *(uint *)(param_1 + 0x224) = 0x10000;
+  else if (0x10000 < this_ptr->gamma) {
+    this_ptr->gamma = 0x10000;
   }
-  core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
-  core_game_cpp_CGame_setGameRes_FUN_0049d870(param_1);
-  core_game_cpp_CGame_clearOverlay_FUN_0049aa90(param_1);
+  core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,this_ptr->gamma);
+  core_game_cpp_CGame_setGameRes_FUN_0049d870(this_ptr);
+  core_game_cpp_CGame_clearOverlay_FUN_0049aa90(this_ptr);
   shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
-  if (*(int *)(param_1 + 0x274) == 0) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(0x01E57284,*(uint *)(param_1 + 0x270))
-    ;
+  if (this_ptr->is_game_active == 0) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(0x01E57284,this_ptr->camera_view_index);
   }
   else {
     core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],1);
   }
-  core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(param_1);
-  core_game_cpp_CGame_loadAssets_FUN_004a3660(param_1);
+  core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(this_ptr);
+  core_game_cpp_CGame_loadAssets_FUN_004a3660(this_ptr);
   iVar3 = core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(0x01CEA280,3);
   if ((iVar3 != 0) &&
      (iVar3 = core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(0x01CEA280,4), iVar3 != 0)) {
-    0x01CEA280[1] = 3;
-    core_game_cpp_CGame_saveClockTime_FUN_0049a890(param_1);
-    core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(param_1);
+    0x01CEA280->network_mode = NET_MODE_PLAYING;
+    core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
+    core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(0x01CEA280);
-    core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(INT_005baca0);
-    *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) =
-         *(uint *)(param_1 + 0xc4);
-    *(uint *)(param_1 + 600) = 0;
+    core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0((CLevelLoader *)INT_005baca0);
+    *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
+    this_ptr->act_completion_state = 0;
     while( true ) {
-      if ((*(int *)(param_1 + 0x1fc) != 0) || (uVar2 = 1, _DAT_01c78420 != 0)) {
-        uVar2 = 0;
+      if ((this_ptr->is_paused != 0) || (iVar3 = 1, _DAT_01c78420 != 0)) {
+        iVar3 = 0;
       }
-      engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(INT_005bac64,uVar2);
-      core_game_cpp_FUN_0049f930(param_1);
-      core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(param_1);
-      core_game_cpp_CGame_processFudge_FUN_0049b260(param_1);
-      core_game_cpp_CGame_playerControls_FUN_0049e7d0(param_1);
-      if ((((*(int *)(param_1 + 0x274) != 0) && (*(int *)(param_1 + 0xcc) == 0)) &&
-          (0x01CEA280[0x5a] == 0)) && (*(int *)(param_1 + 0x240) == 0)) {
+      engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210((CKeys *)INT_005bac64,iVar3);
+      core_game_cpp_FUN_0049f930(this_ptr);
+      core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(this_ptr);
+      core_game_cpp_CGame_processFudge_FUN_0049b260(this_ptr);
+      core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);
+      if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
+          (0x01CEA280->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0)) {
         iVar3 = core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],0x01E56DA0[4]);
         if (iVar3 != 0) {
-          core_game_cpp_CGame_saveClockTime_FUN_0049a890(param_1);
+          core_game_cpp_CGame_saveClockTime_FUN_0049a890(this_ptr);
         }
         0x01E56DA0[4] = 0;
       }
-      core_game_cpp_FUN_0049cc10(param_1);
+      core_game_cpp_CGame_processFrame_FUN_0049cc10(this_ptr);
+      iVar3 = _DAT_01c78420;
       if (_DAT_01c78420 == 0) {
-        iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
-        if (iVar3 != 0) {
+        iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
+        if (iVar4 != 0) {
           shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
-          *(uint *)(param_1 + 0x200) = 0;
-          iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-          iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-          if (1 < iVar3) goto LAB_0049dec1;
-          if (*0x01CEA280 == 2) {
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("Leave network game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(&DAT_01c78424,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(&DAT_01c78424,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("You are connect to a network game.\nDo you want to leave the game?",0,1);
-            shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(&DAT_01c78424,uVar2);
+          this_ptr->wait_for_keypress = 0;
+          iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+          iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);
+          if (1 < iVar4) goto LAB_0049dec1;
+          if (0x01CEA280->connection_type == CONNECTION_CLIENT) {
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                               ("Leave network game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);
+            uVar5 = 1;
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                               ("You are connect to a network game.\nDo you want to leave the game?");
+            shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
+                      ((CPickList *)&DAT_01c78424,pcVar2,iVar3,uVar5);
             _DAT_01c78420 = 1;
           }
-          else if (*0x01CEA280 == 1) {
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("Abort network game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(&DAT_01c78424,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(&DAT_01c78424,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("You are hosting a network game.\nDo you want to abort the game?",0,1);
-            shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(&DAT_01c78424,uVar2);
+          else if (0x01CEA280->connection_type == CONNECTION_HOST) {
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                               ("Abort network game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&DAT_01c78424,pcVar2);
+            uVar5 = 1;
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
+                               ("You are hosting a network game.\nDo you want to abort the game?");
+            shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
+                      ((CPickList *)&DAT_01c78424,pcVar2,iVar3,uVar5);
             _DAT_01c78420 = 1;
           }
           else {
             core_sound_cpp_CSound_shutdown_FUN_0052df90(0x02DC9450);
             xxx_unk_c_FUN_004940d0(INT_005b9284);
-            shape_edittool_cpp_FUN_00474c90(local_290);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Options");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Save game");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-            shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
-            if (*(int *)(param_1 + 0x228) == 1) {
-              uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Skip cinematic.");
-              shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
+            shape_edittool_cpp_FUN_00474c90(local_400 + 0x170);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Options");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Save game");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
+            shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
+            if (this_ptr->letterbox_mode == 1) {
+              pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Skip cinematic.")
+              ;
+              shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)(local_400 + 0x170),pcVar2);
             }
-            if (*(int *)(param_1 + 0x228) != 0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(local_290,3,0);
+            if (this_ptr->letterbox_mode != 0) {
+              shape_edittool_cpp_CPickList_enableItem_FUN_00475f80
+                        ((CPickList *)(local_400 + 0x170),3,0);
             }
-            uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                              ("Game paused",0xffffffff);
+            uVar7 = 0xffffffff;
+            pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Game paused");
             iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                              (local_290,uVar2);
+                              (local_400 + 0x170,pcVar2,uVar7);
             if (iVar3 == 1) {
-              engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(INT_005bac64,0);
-              core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(param_1);
+              engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210((CKeys *)INT_005bac64,0);
+              core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
               core_menu_cpp_showOptionsScreen_FUN_004d21c0(1);
-              core_game_cpp_CGame_setGameRes_FUN_0049d870(param_1);
+              core_game_cpp_CGame_setGameRes_FUN_0049d870(this_ptr);
               engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210
-                        (INT_005bac64,*(int *)(param_1 + 0x1fc) == 0);
+                        ((CKeys *)INT_005bac64,(uint)(this_ptr->is_paused == 0));
               core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
-                        (0x01E57284,*(uint *)(0x01E57284 + 0x15aabc));
+                        (0x01E57284,(int)0x01E57284->renderable_actors[0x773]);
               _DAT_01bcd070 = _DAT_014b9904;
               if (0xf0 < DAT_005b7620) {
                 _DAT_01bcd070 = _DAT_014b9900;
               }
             }
             if (iVar3 == 2) {
-              core_game_cpp_CGame_promptLoadGame_FUN_004a6570(param_1);
+              core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
             }
             if (iVar3 == 3) {
-              core_game_cpp_FUN_004a3b90(param_1,0);
+              core_game_cpp_FUN_004a3b90(this_ptr,0);
             }
             if (iVar3 == 4) {
-              uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-              iVar4 = shape_edittool_cpp_FUN_00470230(0x01BCD074,uVar2);
+              pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
+              iVar4 = shape_edittool_cpp_FUN_00470230(0x01BCD074,pcVar2);
               if (iVar4 != 0) {
-                shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_290,0);
+                shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)(local_400 + 0x170),0);
                 goto LAB_0049dec1;
               }
             }
             if (iVar3 == 5) {
               iVar3 = core_script_cpp_FUN_00504d90(0x01E56DA0);
-              *(uint *)(param_1 + 0xcc) = (uint)(iVar3 == 0);
+              this_ptr->cutscene_skippable = (uint)(iVar3 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403f50();
-            if (*(int *)(param_1 + 0xcc) == 0) {
+            if (this_ptr->cutscene_skippable == 0) {
               core_sound_cpp_CSound_init_FUN_0052ddf0(0x02DC9450);
               xxx_unk_c_FUN_004940d0(INT_005b9284);
             }
-            *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) =
-                 *(uint *)(param_1 + 0xc4);
-            shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_290,0);
+            *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
+            shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)(local_400 + 0x170),0);
           }
         }
       }
@@ -264,9 +268,9 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
           goto LAB_0049dec1;
         }
       }
-      if ((*(int *)(param_1 + 0xcc) == 0) && (0x01CEA280[0x5a] == 0)) {
+      if ((this_ptr->cutscene_skippable == 0) && (0x01CEA280->has_pending_sim_frame == 0)) {
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-        *(int *)(param_1 + 0x26c) = *(int *)(param_1 + 0x26c) + 1;
+        this_ptr->frame_counter = this_ptr->frame_counter + 1;
       }
       else {
         wincore_winrun_cpp_processWindowMessages_FUN_005591c0();
@@ -274,7 +278,7 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
       if (_DAT_02de20a4 != 0) {
         _DAT_02de20a4 = 0;
         core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
-                  (0x01E57284,*(uint *)(0x01E57284 + 0x15aabc));
+                  (0x01E57284,(int)0x01E57284->renderable_actors[0x773]);
       }
       iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
       iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
@@ -282,13 +286,13 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
         iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
         if (iVar3 != 0) goto LAB_0049dec1;
         if (local_14 < 0.0) {
-          iVar3 = core_game_cpp_CGame_fadeIn_FUN_004a3a50(param_1);
-          if (iVar3 != 0) goto LAB_0049dec1;
+          uVar5 = core_game_cpp_CGame_fadeIn_FUN_004a3a50(this_ptr);
+          if (uVar5 != 0) goto LAB_0049dec1;
         }
         else {
-          local_14 = local_14 + *(float *)(param_1 + 0x264);
+          local_14 = local_14 + this_ptr->delta_time_float;
           if ((float)4 < local_14) {
-            core_game_cpp_CGame_beginFadeOut_FUN_004a3820(param_1);
+            core_game_cpp_CGame_beginFadeOut_FUN_004a3820(this_ptr);
             local_14 = -1.0;
           }
         }
@@ -297,13 +301,13 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
         local_1c = 1;
         goto LAB_0049dec1;
       }
-      core_game_cpp_FUN_004a57c0(param_1);
-      if (*(int *)(param_1 + 0x200) != 0) {
+      core_game_cpp_FUN_004a57c0(this_ptr);
+      if (this_ptr->wait_for_keypress != 0) {
         wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
       }
-      if (*(int *)(param_1 + 0x9c4) != 0) break;
+      if (this_ptr->need_chapter_reload != 0) break;
       if (local_18 != 0) {
-        local_18 = *(int *)(param_1 + 0x9c4);
+        local_18 = this_ptr->need_chapter_reload;
         core_sound_cpp_CSound_init_FUN_0052ddf0(0x02DC9450);
         xxx_unk_c_FUN_004940d0(INT_005b9284);
       }
@@ -313,33 +317,34 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
 LAB_0049dec1:
   iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-  if ((iVar3 == 2) && (*(int *)(param_1 + 0x9c4) == 0)) {
+  if ((iVar3 == 2) && (this_ptr->need_chapter_reload == 0)) {
     shape_edittool_cpp_FUN_00474c90(local_400);
-    uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_400,uVar2);
-    uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-    shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_400,uVar2);
+    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)local_400,pcVar2);
+    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
+    shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)local_400,pcVar2);
     do {
-      uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Game Over",0xffffffff);
+      uVar7 = 0xffffffff;
+      pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Game Over");
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
-                        (local_400,uVar2);
+                        (local_400,pcVar2,uVar7);
       if (iVar3 == 0) {
-        core_game_cpp_CGame_promptLoadGame_FUN_004a6570(param_1);
+        core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
         break;
       }
     } while (iVar3 != 1);
-    shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_400,0);
+    shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)local_400,0);
   }
-  uVar2 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(0x01CC9450);
+  iVar4 = core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(0x01CC9450);
   iVar3 = INT_005bac64;
-  *(uint *)(param_1 + 0x24c) = uVar2;
-  engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(iVar3,0);
+  this_ptr->damageable_enemy_count = iVar4;
+  engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210((CKeys *)iVar3,0);
   core_sound_cpp_CSound_shutdown_FUN_0052df90(0x02DC9450);
   xxx_unk_c_FUN_004940d0(INT_005b9284);
-  core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(param_1);
+  core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
   (**(code **)(*(int *)INT_005bac64 + 8))(INT_005bac64);
   core_set_cpp_FUN_0050ad20(0x01E57284);
-  *(uint *)(param_1 + 0x1ec) = 0x3f800000;
+  this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
   core_inv_cpp_freeInventory_FUN_004bf270();
   return local_1c;

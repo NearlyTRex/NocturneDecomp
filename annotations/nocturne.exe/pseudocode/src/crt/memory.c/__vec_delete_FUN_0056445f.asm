@@ -1,20 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl crt_memory_c___vec_delete_FUN_0056445f(int param_1,undefined4 param_2)
+; void * __cdecl crt_memory_c___vec_delete_FUN_0056445f(void *object_ptr,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   object_ptr
+; WatcomTypeInfo * Stack[0x8]:4   type_info
 ;
 ; XREF[137]:
-;   FUN_0056b538 at 0056b57d
-;   FUN_0056b5ad at 0056b603
-;   FUN_0056b633 at 0056b660
-;   FUN_0056b6e8 at 0056b72d
-;   FUN_0056b810 at 0056b866
-;   FUN_005701cf at 00570225
-;   FUN_00570449 at 005704a4
 ;   cockpit_pkbitmap.cpp_FUN_004f5320 at 004f532e
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 at 00409ed7
-;   core_ammo.cpp_FUN_0040ef90 at 0040efbc
+;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040efbc
+;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4dc
+;   core_anvil.cpp_FUN_0040f8b0 at 0040f8dc
+;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd87
+;   core_armour.cpp_CFlame_dtor_FUN_0040fdc0 at 0040fdec
+;   core_armour.cpp_FUN_0040fc30 at 0040fcc7
+;   core_backgnd.cpp_FUN_004100f0 at 0041011c
+;   core_baron.cpp_CBaronWeapon_dtor_FUN_00411610 at 0041163c
 ;   ... and 127 more
 ;
 ; Called Functions:
@@ -42,7 +45,7 @@ section .text
     PUSH ECX                            ; 00564478
     PUSH EAX                            ; 00564479
     CALL crt_memory.c___arrfini_FUN_0056494f ; 0056447a
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0056447f
     MOV EAX,EBX                         ; 00564482
     POP EBX                             ; 00564484

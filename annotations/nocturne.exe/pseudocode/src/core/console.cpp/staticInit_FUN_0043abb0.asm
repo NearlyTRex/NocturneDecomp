@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564bb0
+;   crt_unknown.c__atexit_FUN_00564bb0
 ;   engine_console.cpp_CConsole_ctor_FUN_0043abe0
 ;
 ; *****************************************************************************
@@ -19,11 +19,11 @@ section .text
     PUSH 0x28                           ; 0043abb6
     PUSH 0x77ad0c                       ; 0043abb8
     CALL engine_console.cpp_CConsole_ctor_FUN_0043abe0 ; 0043abbd
-        ;   XREF to: 0043abe0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_CConsole_ctor_FUN_0043abe0()
+        ;   XREF to: 0043abe0 (UNCONDITIONAL_CALL)  ; CConsole * engine_console.cpp_CConsole_ctor_FUN_0043abe0(CConsole * this_ptr, int width, int height, int screen_x, ...)
     ADD ESP,0x14                        ; 0043abc2
     PUSH 0x5ad340                       ; 0043abc5
-    CALL crt_unknown.c_FUN_00564bb0     ; 0043abca
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0043abca
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0043abcf
     RET                                 ; 0043abd2
 

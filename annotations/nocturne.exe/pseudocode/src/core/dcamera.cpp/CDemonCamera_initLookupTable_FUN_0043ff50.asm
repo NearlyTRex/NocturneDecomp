@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50(undefined4 param_1)
+; void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -33,7 +35,7 @@ section .text
     PUSH 0x10000                        ; 0043ff5b
     PUSH EBX                            ; 0043ff60
     CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70 ; 0043ff61
-        ;   XREF to: 00447a70 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70()
+        ;   XREF to: 00447a70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDemonCamera * this_ptr, int gamma_value)
     MOV EDX,dword ptr [0x005b7620]      ; 0043ff66 | DAT_005b7620
     ADD ESP,0x8                         ; 0043ff6c
     CMP EDX,0x1e0                       ; 0043ff6f
@@ -44,7 +46,7 @@ section .text
         ;   Label: LAB_0043ff80
     PUSH EBX                            ; 0043ff81
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_00440010 ; 0043ff82
-        ;   XREF to: 00440010 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_init_FUN_00440010()
+        ;   XREF to: 00440010 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_00440010(CDemonCamera * this_ptr, int screen_height)
     ADD ESP,0x8                         ; 0043ff87
     PUSH 0x0                            ; 0043ff8a
     PUSH 0x0                            ; 0043ff8c

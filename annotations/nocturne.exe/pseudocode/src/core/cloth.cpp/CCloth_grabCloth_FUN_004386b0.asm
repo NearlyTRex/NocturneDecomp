@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(CCloth *this_ptr,char *bone_name,int vertex_index)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   vertex_index
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_005402f0 at 0054043a
@@ -38,7 +42,7 @@ section .text
         ;   Label: LAB_004386ce
     PUSH EBP                            ; 004386cf
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004386d0
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004386d5
     TEST EAX,EAX                        ; 004386d8
     JNZ 0x0043870d                      ; 004386da

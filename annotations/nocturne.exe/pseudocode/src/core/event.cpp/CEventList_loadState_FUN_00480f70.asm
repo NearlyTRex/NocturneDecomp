@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(CEventList *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
@@ -51,14 +54,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x128]     ; 00480f81
     PUSH EBX                            ; 00480f88
     CALL core_event.cpp_CEventList_reset_FUN_0047aa00 ; 00480f89
-        ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_reset_FUN_0047aa00()
+        ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0047aa00(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00480f8e
     PUSH ESI                            ; 00480f91
     PUSH 0xff                           ; 00480f92
     LEA EAX,[ESP + 0x8]                 ; 00480f97
     PUSH EAX                            ; 00480f9b
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00480f9c
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00480fa1
     LEA EAX,[ESP + 0x100]               ; 00480fa4
     PUSH EAX                            ; 00480fab
@@ -77,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00480fd0
     PUSH EAX                            ; 00480fd4
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00480fd5
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00480fda
     PUSH EBX                            ; 00480fdd
     PUSH 0x580d3a                       ; 00480fde | = "%d\n"
@@ -110,7 +113,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00481016
     PUSH EDI                            ; 0048101a
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0048101b
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00481020
     LEA EDI,[EBX + 0xc84]               ; 00481023
     PUSH EDI                            ; 00481029
@@ -146,7 +149,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00481076
     PUSH EDI                            ; 0048107a
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0048107b
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00481080
     LEA EDI,[EBX + 0x258c]              ; 00481083
     PUSH EDI                            ; 00481089
@@ -185,7 +188,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 004810e4
     PUSH EDI                            ; 004810e8
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004810e9
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004810ee
     LEA EDI,[EBX + 0x3210]              ; 004810f1
     PUSH EDI                            ; 004810f7
@@ -230,7 +233,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00481174
     PUSH EDI                            ; 00481178
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00481179
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0048117e
     LEA EDI,[EBX + 0x337c]              ; 00481181
     PUSH EDI                            ; 00481187
@@ -276,7 +279,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00481204
     PUSH EDI                            ; 00481208
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00481209
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0048120e
     LEA EDI,[EBX + 0x34e8]              ; 00481211
     PUSH EDI                            ; 00481217
@@ -344,7 +347,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 004812cc
     PUSH EDI                            ; 004812d0
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004812d1
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004812d6
     LEA EDI,[EBX + 0x1908]              ; 004812d9
     PUSH EDI                            ; 004812df

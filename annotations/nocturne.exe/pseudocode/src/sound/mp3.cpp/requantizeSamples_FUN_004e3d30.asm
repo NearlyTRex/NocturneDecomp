@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 ;
+; Parameters:
+; SMpegSubbandScalefactors * Stack[0x4]:4   quantized_samples
+; SMpegSubbandScalefactors * Stack[0x8]:4   dequantized_samples
+; SMpegSubbandAllocation * Stack[0xc]:4   allocation
+; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined4       Stack[-0x28]:4  local_28

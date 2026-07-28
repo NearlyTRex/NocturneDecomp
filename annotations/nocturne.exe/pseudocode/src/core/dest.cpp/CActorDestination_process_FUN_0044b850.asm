@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(int param_1)
+; void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(CActorDestination *this_ptr,float delta_time)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -92,7 +95,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b8e1
     PUSH EAX                            ; 0044b8e4
     CALL core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0 ; 0044b8e5
-        ;   XREF to: 0044bab0 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0()
+        ;   XREF to: 0044bab0 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0044b8ea
     TEST EAX,EAX                        ; 0044b8ed
     JZ 0x0044b8d4                       ; 0044b8ef
@@ -156,7 +159,7 @@ section .text
     MOV EDI,dword ptr [0x005b7650]      ; 0044b994 | DAT_005b7650
     PUSH EDI                            ; 0044b99a
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 0044b99b
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
         ;   Label: LAB_0044b99b
     ADD ESP,0x8                         ; 0044b9a0
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044b9a3

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(int *param_1,int param_2,undefined4 param_3)
+; void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(CDemonSet *this_ptr,int group_id,float value)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   group_id
+; float            Stack[0xc]:4   value
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c9c3
@@ -49,7 +53,7 @@ section .text
     PUSH EBX                            ; 0050e544
     PUSH EDI                            ; 0050e545
     CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0 ; 0050e546
-        ;   XREF to: 0050e4c0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0()
+        ;   XREF to: 0050e4c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet * this_ptr, int index, float value)
     ADD ESP,0xc                         ; 0050e54b
     JMP 0x0050e52e                      ; 0050e54e
         ;   XREF to: 0050e52e (UNCONDITIONAL_JUMP)  ; LAB_0050e52e

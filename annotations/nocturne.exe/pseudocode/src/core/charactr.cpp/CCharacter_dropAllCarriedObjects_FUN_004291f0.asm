@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a0fc

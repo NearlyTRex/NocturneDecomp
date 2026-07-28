@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(int *param_1,float *param_2)
+; void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0044cd90(CDemonGlobe *this_ptr,CVector3f *position)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[7]:
 ;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4a2
@@ -35,16 +38,16 @@ section .text
     FLD float ptr [EAX]                 ; 0044cda5
     FMUL ST1                            ; 0044cda7
     CALL crt_math.c_round_FUN_00563a30  ; 0044cda9
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ECX]               ; 0044cdae
     FLD float ptr [EAX + 0x4]           ; 0044cdb0
     FMUL ST1                            ; 0044cdb3
     CALL crt_math.c_round_FUN_00563a30  ; 0044cdb5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ECX + 0x4]         ; 0044cdba
     FMUL float ptr [EAX + 0x8]          ; 0044cdbd
     CALL crt_math.c_round_FUN_00563a30  ; 0044cdc0
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ECX + 0x8]         ; 0044cdc5
     RET                                 ; 0044cdc8
     PUSH EBX                            ; 0044cdc9

@@ -2,21 +2,21 @@
 // Address: 004fe140
 // Address Range: [[004fe140, 004fe17a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_parseConditionExpr_FUN_004fe140(undefined4 param_1,undefined4 param_2)
+// Signature: char * __cdecl core_script_cpp_parseConditionExpr_FUN_004fe140(char **cursor,char *out_buffer)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_script_cpp_parseConditionExpr_FUN_004fe140(uint param_1,uint param_2)
+char * __cdecl core_script_cpp_parseConditionExpr_FUN_004fe140(char **cursor,char *out_buffer)
 
 {
-  int iVar1;
+  char *pcVar1;
   
-  iVar1 = core_script_cpp_parseArgument_FUN_004fe090(param_1,param_2,100);
-  if ((iVar1 == 0) && (_DAT_01e56418 != 0)) {
-    core_event_cpp_CEventList_validateCondition_FUN_0047dc90(0x01C03A10,param_2);
-    return;
+  pcVar1 = core_script_cpp_parseArgument_FUN_004fe090(cursor,out_buffer,100);
+  if ((pcVar1 == (char *)0x0) && (_DAT_01e56418 != 0)) {
+    pcVar1 = core_event_cpp_CEventList_validateCondition_FUN_0047dc90(0x01C03A10,out_buffer);
+    return pcVar1;
   }
-  return;
+  return pcVar1;
 }

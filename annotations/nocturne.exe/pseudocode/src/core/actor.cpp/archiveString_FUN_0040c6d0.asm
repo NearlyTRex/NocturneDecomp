@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveString_FUN_0040c6d0(undefined1 *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveString_FUN_0040c6d0(char *string_buffer,char *property_type)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   string_buffer
+; char *           Stack[0x8]:4   property_type
 ;
 ; XREF[54]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d35e
@@ -52,7 +55,7 @@ section .text
         ;   Label: LAB_0040c6e9
     PUSH EDI                            ; 0040c6ef
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c6f0
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     MOV EDX,EAX                         ; 0040c6f5
     ADD ESP,0x4                         ; 0040c6f7
     INC DL                              ; 0040c6fa
@@ -66,13 +69,13 @@ section .text
     PUSH EBX                            ; 0040c710
     PUSH 0x5acc58                       ; 0040c711 | = "String"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c716
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c71b
     MOV EBP,dword ptr [0x00763e84]      ; 0040c71e | DAT_00763e84
         ;   Label: LAB_0040c71e
     PUSH EBP                            ; 0040c724
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c725
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040c72a
     CMP EAX,0x22                        ; 0040c72d
     JZ 0x0040c791                       ; 0040c730
@@ -81,7 +84,7 @@ section .text
     PUSH EDX                            ; 0040c738
     PUSH EAX                            ; 0040c739
     CALL crt_stdio.c_ungetc_FUN_00564740 ; 0040c73a
-        ;   XREF to: 00564740 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_00564740()
+        ;   XREF to: 00564740 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_00564740(int character, _FILE * stream)
     ADD ESP,0x8                         ; 0040c73f
     PUSH ESI                            ; 0040c742
     PUSH 0x577c60                       ; 0040c743 | = "%[^\"]"
@@ -96,13 +99,13 @@ section .text
     PUSH EBX                            ; 0040c75c
     PUSH 0x5acc58                       ; 0040c75d | = "String"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c762
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c767
     MOV ESI,dword ptr [0x00763e84]      ; 0040c76a | DAT_00763e84
         ;   Label: LAB_0040c76a
     PUSH ESI                            ; 0040c770
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c771
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040c776
     CMP EAX,0x22                        ; 0040c779
     JNZ 0x0040c796                      ; 0040c77c
@@ -111,7 +114,7 @@ section .text
         ;   Label: LAB_0040c77e
     PUSH 0x5acc58                       ; 0040c77f | = "String"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c784
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c789
     POP EBP                             ; 0040c78c
     POP EDI                             ; 0040c78d
@@ -126,12 +129,12 @@ section .text
         ;   Label: LAB_0040c796
     PUSH 0x5acc58                       ; 0040c797 | = "String"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c79c
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c7a1
     PUSH EBX                            ; 0040c7a4
     PUSH 0x5acc58                       ; 0040c7a5 | = "String"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c7aa
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c7af
     POP EBP                             ; 0040c7b2
     POP EDI                             ; 0040c7b3
@@ -150,7 +153,7 @@ section .text
     PUSH EBX                            ; 0040c7d1
     PUSH 0x5acc58                       ; 0040c7d2 | = "String"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c7d7
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c7dc
     POP EBP                             ; 0040c7df
     POP EDI                             ; 0040c7e0

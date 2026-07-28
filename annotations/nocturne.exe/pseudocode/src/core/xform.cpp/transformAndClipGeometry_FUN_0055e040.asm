@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2)
+; void core_xform_cpp_transformAndClipGeometry_FUN_0055e040(uint param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -564,7 +564,7 @@ section .text
     PUSH EDX                            ; 0055e4d9 | DAT_02de3770
     PUSH EBP                            ; 0055e4da
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0 ; 0055e4db
-        ;   XREF to: 0055d6b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0()
+        ;   XREF to: 0055d6b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EBP,dword ptr [0x02de3134]      ; 0055e4e0 | DAT_02de3134
     INC EBP                             ; 0055e4e6
     ADD ESP,0xc                         ; 0055e4e7
@@ -612,7 +612,7 @@ section .text
     PUSH EBP                            ; 0055e54a
     PUSH EDX                            ; 0055e54b | DAT_02de3770
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0 ; 0055e54c
-        ;   XREF to: 0055d6b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0()
+        ;   XREF to: 0055d6b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02de3134]      ; 0055e551 | DAT_02de3134
     INC ESI                             ; 0055e557
     ADD ESP,0xc                         ; 0055e558
@@ -626,7 +626,7 @@ section .text
     PUSH EDX                            ; 0055e573 | DAT_02de3140
     PUSH EBP                            ; 0055e574
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770 ; 0055e575
-        ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770()
+        ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02de3138]      ; 0055e57a | DAT_02de3138
     INC ESI                             ; 0055e580
     ADD ESP,0xc                         ; 0055e581
@@ -674,7 +674,7 @@ section .text
     PUSH EBP                            ; 0055e5e4
     PUSH EDX                            ; 0055e5e5 | DAT_02de3140
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770 ; 0055e5e6
-        ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770()
+        ;   XREF to: 0055d770 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x02de3138]      ; 0055e5eb | DAT_02de3138
     INC EDI                             ; 0055e5f1
     ADD ESP,0xc                         ; 0055e5f2
@@ -688,7 +688,7 @@ section .text
     PUSH EDX                            ; 0055e60d | DAT_02de3d70
     PUSH EBP                            ; 0055e60e
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830 ; 0055e60f
-        ;   XREF to: 0055d830 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830()
+        ;   XREF to: 0055d830 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02de313c]      ; 0055e614 | DAT_02de313c
     INC ESI                             ; 0055e61a
     ADD ESP,0xc                         ; 0055e61b
@@ -736,7 +736,7 @@ section .text
     PUSH EBP                            ; 0055e67e
     PUSH EDX                            ; 0055e67f | DAT_02de3d70
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830 ; 0055e680
-        ;   XREF to: 0055d830 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830()
+        ;   XREF to: 0055d830 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x02de313c]      ; 0055e685 | DAT_02de313c
     INC EDI                             ; 0055e68b
     ADD ESP,0xc                         ; 0055e68c
@@ -750,7 +750,7 @@ section .text
     PUSH EDX                            ; 0055e6a7 | DAT_02de4340
     PUSH EBP                            ; 0055e6a8
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055e6a9
-        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0()
+        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x00766c70]      ; 0055e6ae | DAT_00766c70
     INC ESI                             ; 0055e6b4
     ADD ESP,0xc                         ; 0055e6b5
@@ -798,7 +798,7 @@ section .text
     PUSH EBP                            ; 0055e718
     PUSH EDX                            ; 0055e719 | DAT_02de4340
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055e71a
-        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0()
+        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x00766c70]      ; 0055e71f | DAT_00766c70
     INC EDI                             ; 0055e725
     ADD ESP,0xc                         ; 0055e726

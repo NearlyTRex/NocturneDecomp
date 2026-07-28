@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_font_cpp_FUN_0048fe30(undefined4 param_1)
+; CBitFont * engine_font_cpp_FUN_0048fe30(CBitFont *param_1)
 ;
 ;
 ; XREF[1]:
@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0048fe31
     PUSH EBX                            ; 0048fe35
     CALL engine_font.cpp_CBitFont_free_FUN_00490420 ; 0048fe36
-        ;   XREF to: 00490420 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_free_FUN_00490420()
+        ;   XREF to: 00490420 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_free_FUN_00490420(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 0048fe3b
     MOV EAX,EBX                         ; 0048fe3e
     POP EBX                             ; 0048fe40

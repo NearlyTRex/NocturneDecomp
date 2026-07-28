@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00549482
         ;   Label: LAB_00549482
     CALL core_turret.cpp_CTurret_ctor_FUN_005494a0 ; 00549483
-        ;   XREF to: 005494a0 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_ctor_FUN_005494a0()
+        ;   XREF to: 005494a0 (UNCONDITIONAL_CALL)  ; CTurret * core_turret.cpp_CTurret_ctor_FUN_005494a0(CTurret * this_ptr)
     ADD ESP,0x4                         ; 00549488
     RET                                 ; 0054948b
 

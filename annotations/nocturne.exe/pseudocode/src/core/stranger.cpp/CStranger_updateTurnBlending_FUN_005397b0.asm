@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(int param_1,float param_2)
+; void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(CStranger *this_ptr,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined8       Stack[-0x40]:8  local_40

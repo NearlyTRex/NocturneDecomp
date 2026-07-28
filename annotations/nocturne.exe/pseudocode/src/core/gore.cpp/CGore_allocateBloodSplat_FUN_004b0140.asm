@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004b0140(void)
+; CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004b0140(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190 at 004b019f

@@ -2,11 +2,11 @@
 // Address: 00465f50
 // Address Range: [[00465f50, 00465fc8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5,int param_6)
+// Signature: void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(uint *param_1,uint *param_2,uint *param_3,uint param_4,uint param_5,int param_6)
+void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count)
 {
 __asm {
         push ECX

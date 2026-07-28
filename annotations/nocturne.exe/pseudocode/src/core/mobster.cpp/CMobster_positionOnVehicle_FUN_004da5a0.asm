@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(int param_1)
+; void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(CMobster *this_ptr)
 ;
+; Parameters:
+; CMobster *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -65,7 +67,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0xbd48]    ; 004da602
     PUSH ECX                            ; 004da608
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004da609
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EAX]                 ; 004da60e
     ADD ESP,0xc                         ; 004da610
     FSTP float ptr [EBX + 0x20]         ; 004da613

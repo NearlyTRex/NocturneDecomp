@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,int roll)
 ;
+; Parameters:
+; int              Stack[0x4]:4   pitch
+; int              Stack[0x8]:4   yaw
+; int              Stack[0xc]:4   roll
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -273,7 +277,7 @@ section .text
     IDIV EBX                            ; 004cd09d
     MOV [0x01c03a04],EAX                ; 004cd09f | DAT_01c03a04
     CALL engine_matrix.c_invertTransformMatrix_FUN_004ccae0 ; 004cd0a4
-        ;   XREF to: 004ccae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_invertTransformMatrix_FUN_004ccae0()
+        ;   XREF to: 004ccae0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_invertTransformMatrix_FUN_004ccae0()
     ADD ESP,0x8                         ; 004cd0a9
     POP EBP                             ; 004cd0ac
     POP ESI                             ; 004cd0ad

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(void)
+; void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509943
@@ -50,7 +52,7 @@ section .text
         ;   Label: LAB_004afe19
     PUSH ECX                            ; 004afe1f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004afe20
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004afe25
     TEST EAX,EAX                        ; 004afe28
     JNZ 0x004afe13                      ; 004afe2a
@@ -63,7 +65,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 004afe31 | DAT_005be368
     PUSH EBX                            ; 004afe37 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 004afe38
-        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0()
+        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004afe3d
     PUSH 0x1c78cec                      ; 004afe40
     MOV EBX,0x1c78cec                   ; 004afe45

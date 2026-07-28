@@ -2,20 +2,20 @@
 // Address: 00405c90
 // Address Range: [[00405c90, 00405e01]]
 // Convention: unknown
-// Signature: int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(int param_1)
+// Signature: int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(int param_1)
+int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *param_1)
 
 {
   int iVar1;
-  int *piVar2;
+  SMRGLHeaderPrimitive *pSVar2;
   int *piVar3;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);
   if (iVar1 == 0) goto LAB_00405cb0;
   engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
   if (_DAT_01c038f4 == 0) {
@@ -47,15 +47,16 @@ LAB_00405d98:
   piVar3 = &DAT_006b029c;
   _DAT_01c039a4 = 1;
   _DAT_01c039a0 = 0xd9;
-  piVar2 = (int *)(param_1 + 0x18);
-  for (iVar1 = 0; iVar1 < *(int *)(param_1 + 4) * 3; iVar1 = iVar1 + 3) {
-    *piVar3 = *piVar2 + DAT_006b0264;
-    (&DAT_005c502c)[(*piVar2 + DAT_006b0264) * 0xc] = piVar2[1];
+  pSVar2 = param_1 + 1;
+  for (iVar1 = 0; iVar1 < (param_1->base).count * 3; iVar1 = iVar1 + 3) {
+    *piVar3 = (pSVar2->base).type + DAT_006b0264;
+    (&DAT_005c502c)[((pSVar2->base).type + DAT_006b0264) * 0xc] = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
-    *(int *)(&DAT_005c5030 + (*piVar2 + DAT_006b0264) * 0x30) = piVar2[2];
-    piVar2 = piVar2 + 3;
+    *(UIntegerFloat *)(&DAT_005c5030 + ((pSVar2->base).type + DAT_006b0264) * 0x30) =
+         (pSVar2->surface_normal).A;
+    pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),&DAT_006b029c);
+  engine_clipper_c_FUN_00432cd0((param_1->base).count,&DAT_006b029c);
 LAB_00405cb0:
-  return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
+  return (int)&param_1[1].base + (param_1->base).count * 0xc;
 }

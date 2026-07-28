@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 266,
+    "complexity_score": 286,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 15,
+    "pseudocode_lines": 81,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "pointer_stride_bytecount",
       "raw_address_constant",
+      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 236
+    "total_lines": 226
   },
   "cross_references": [],
   "function": {
@@ -346,15 +348,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 36,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "if (0 < DAT_005bea68) {",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(void **)(iVar2 + 0x2dc8360",
+      "severity": "moderate",
+      "text": "(*(void **)(iVar2 + 0x2dc8360),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 42,
+      "match": "*(void **)(iVar2 + 0x2dc8360",
+      "severity": "moderate",
+      "text": "(void *)(_DAT_02dc8330 * 4 + (int)*(void **)(iVar2 + 0x2dc8360)),",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 50,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "} while (iVar5 < DAT_005bea68);",
@@ -362,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 53,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "iStack_1c = DAT_005bea68;",
@@ -370,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 54,
       "match": "DAT_005bea6c",
       "severity": "mild",
       "text": "iStack_18 = DAT_005bea6c;",
@@ -378,7 +396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 55,
       "match": "DAT_005bea68",
       "severity": "mild",
       "text": "if (0 < DAT_005bea68) {",
@@ -386,23 +404,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 59,
       "match": "(uint *)((int)auStack_40",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_40 + iVar3) = *(uint *)(iVar3 + 0x2dc8360);",
+      "text": "*(uint *)((int)auStack_40 + iVar5) = *(uint *)(iVar5 + 0x2dc8360);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 61,
       "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "} while (iVar5 < DAT_005bea68 * 4);",
+      "text": "} while (iVar2 < DAT_005bea68 * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 63,
       "match": "DAT_005bea6c",
       "severity": "mild",
       "text": "fStack_14 = (float)_DAT_02dc8330 / (float)DAT_005bea6c;",
@@ -410,23 +428,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 68,
       "match": "DAT_02dc1b74",
       "severity": "mild",
-      "text": "} while (puVar2 != &DAT_02dc1b74);",
+      "text": "} while (puVar3 != &DAT_02dc1b74);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 80,
       "match": "DAT_02dc1b74",
       "severity": "mild",
-      "text": "} while (puVar2 != &DAT_02dc1b74);",
+      "text": "} while (puVar3 != &DAT_02dc1b74);",
       "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x5231e8 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 48,
+      "line": 39,
       "match": "0x5231e8",
       "severity": "moderate",
       "text": "uStack_50 = 0x5231e8;",
@@ -434,27 +452,27 @@
     },
     {
       "description": "Raw hex address 0x523216 assigned to bare local `uStack_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 54,
+      "line": 47,
       "match": "0x523216",
       "severity": "moderate",
       "text": "uStack_50 = 0x523216;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x523297 assigned to bare local `iStack_4c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_4c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
-      "match": "0x523297",
-      "severity": "moderate",
-      "text": "iStack_4c = 0x523297;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 83,
+      "line": 73,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (count = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 48,
+      "match": "memset",
+      "severity": "moderate",
+      "text": "memset",
+      "type": "pointer_stride_bytecount"
     }
   ]
 }

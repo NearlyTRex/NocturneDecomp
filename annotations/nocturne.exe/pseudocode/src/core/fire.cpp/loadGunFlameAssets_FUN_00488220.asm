@@ -46,7 +46,7 @@ section .text
     ADD EDI,0x18                        ; 00488255
     INC EBX                             ; 00488258
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00488259
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0048825e
     CMP EBX,0x14                        ; 00488261
     JL 0x00488233                       ; 00488264

@@ -1,19 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_special_cpp_transformPoint_FUN_00530a25(uint *param_1,int *param_2)
+; int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
 ;
+; Parameters:
+; SProjectedVertex * Stack[0x4]:4   output
+; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[16]:
 ;   core_chain.cpp_FUN_0042c4c0 at 0042c630
 ;   core_fire.cpp_CCrater_render_FUN_00487af0 at 00487b60
 ;   core_fire.cpp_CLightningBolt_render_FUN_00488bf0 at 00488fb2
+;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 004899d6
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d46
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489721
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482992
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483914
-;   core_fire.cpp_FUN_00489990 at 004899d6
-;   core_fire.cpp_FUN_0048c8d0 at 0048c904
+;   core_fire.cpp_transformWorldToScreen_FUN_0048c8d0 at 0048c904
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae1de
 ;   ... and 6 more
 ;

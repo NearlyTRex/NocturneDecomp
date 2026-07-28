@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004783a2
         ;   Label: LAB_004783a2
     CALL core_emitter.cpp_CEmitter_ctor_FUN_004783c0 ; 004783a3
-        ;   XREF to: 004783c0 (UNCONDITIONAL_CALL)  ; undefined core_emitter.cpp_CEmitter_ctor_FUN_004783c0()
+        ;   XREF to: 004783c0 (UNCONDITIONAL_CALL)  ; CEmitter * core_emitter.cpp_CEmitter_ctor_FUN_004783c0(CEmitter * this_ptr)
     ADD ESP,0x4                         ; 004783a8
     RET                                 ; 004783ab
 

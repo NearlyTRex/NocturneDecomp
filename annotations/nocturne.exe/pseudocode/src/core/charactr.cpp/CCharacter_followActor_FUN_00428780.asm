@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,int param_2,float param_3,float param_4,int *param_5)
+; void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; float            Stack[0xc]:4   min_dist
+; float            Stack[0x10]:4   max_dist
+; int *            Stack[0x14]:4   out_state
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -329,7 +335,7 @@ section .text
     PUSH EAX                            ; 00428a51
     PUSH ESI                            ; 00428a52
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 00428a53
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 00428a58
     TEST EAX,EAX                        ; 00428a5b
     JL 0x00428a78                       ; 00428a5d

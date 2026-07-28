@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_weather_cpp_CWeather_ctor_FUN_00554960(undefined4 param_1)
+; CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_00554960(CWeather *this_ptr)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_weather.cpp_staticInit_FUN_00554930 at 00554935
@@ -20,7 +22,7 @@ section .text
     PUSH 0x0                            ; 00554965
     PUSH EBX                            ; 00554967
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_00555750 ; 00554968
-        ;   XREF to: 00555750 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_setWeatherType_FUN_00555750()
+        ;   XREF to: 00555750 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_00555750(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 0055496d
     MOV EAX,EBX                         ; 00554970
     POP EBX                             ; 00554972

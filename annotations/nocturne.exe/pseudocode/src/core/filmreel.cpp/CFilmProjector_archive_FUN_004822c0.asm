@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(int param_1)
+; void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(CActorDestination *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004822c1
     PUSH EBX                            ; 004822c5
     CALL core_dest.cpp_CActorDestination_archive_FUN_0044bb10 ; 004822c6
-        ;   XREF to: 0044bb10 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_archive_FUN_0044bb10()
+        ;   XREF to: 0044bb10 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_archive_FUN_0044bb10(CActorDestination * this_ptr)
     MOV EDX,dword ptr [0x005b801c]      ; 004822cb | INT_005b801c
     ADD ESP,0x4                         ; 004822d1
     CMP EDX,0x2                         ; 004822d4
@@ -36,13 +36,13 @@ section .text
     LEA EAX,[EBX + 0x368]               ; 004822e0
     PUSH EAX                            ; 004822e6
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 004822e7
-        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
+        ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040c980(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004822ec
     PUSH 0x58105b                       ; 004822ef | = "keyEvent"
     LEA EAX,[EBX + 0x36c]               ; 004822f4
     PUSH EAX                            ; 004822fa
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004822fb
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 00482300
     POP EBX                             ; 00482303
     RET                                 ; 00482304

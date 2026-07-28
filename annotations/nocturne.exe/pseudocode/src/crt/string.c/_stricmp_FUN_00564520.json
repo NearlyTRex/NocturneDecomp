@@ -2,32 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 119,
+    "complexity_score": 19,
     "cross_reference_count": 93,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 9,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 61
   },
   "cross_references": [
-    {
-      "addr": "0056b960",
-      "from_addr": "0056b9ef",
-      "name": "FUN_0056b960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c750",
-      "from_addr": "0056c783",
-      "name": "FUN_0056c750",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004f4ac0",
       "from_addr": "004f4aef",
@@ -37,7 +22,7 @@
     {
       "addr": "004f5a50",
       "from_addr": "004f5adc",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f5a50",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_004f5a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -295,7 +280,7 @@
     {
       "addr": "004ee9e0",
       "from_addr": "004ee9fc",
-      "name": "core_npc.cpp_FUN_004ee9e0",
+      "name": "core_npc.cpp_CNPC_setup_FUN_004ee9e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -443,6 +428,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056c750",
+      "from_addr": "0056c783",
+      "name": "crt_io.c_analyze_file_type_FUN_0056c750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b960",
+      "from_addr": "0056b9ef",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_0056b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00565d00",
       "from_addr": "00565d5f",
       "name": "crt_stdlib.c__fullpath_FUN_00565d00",
@@ -527,21 +524,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00522480",
-      "from_addr": "005224a0",
-      "name": "sound_sndmain.cpp_FUN_00522480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005229f0",
       "from_addr": "00522a8a",
       "name": "sound_sndmain.cpp_FUN_005229f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005278e0",
-      "from_addr": "0052790f",
-      "name": "sound_sndmain.cpp_FUN_005278e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -563,9 +548,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00522480",
+      "from_addr": "005224a0",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00522970",
       "from_addr": "005229c1",
       "name": "sound_sndmain.cpp_isStreamableFile_FUN_00522970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005278e0",
+      "from_addr": "0052790f",
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_005278e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -585,7 +582,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_string.c__stricmp_FUN_00564520",
-    "signature": "int __cdecl crt_string_c__stricmp_FUN_00564520(byte *param_1,byte *param_2)"
+    "signature": "int __cdecl crt_string_c__stricmp_FUN_00564520(char *str1,char *str2)"
   },
   "function_calls": [],
   "globals": [],
@@ -704,10 +701,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.1,
@@ -736,88 +733,27 @@
     "pcode_op_count": 153
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl _stricmp(byte *param_1,byte *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl _stricmp(byte *param_1,byte *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "bVar2 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

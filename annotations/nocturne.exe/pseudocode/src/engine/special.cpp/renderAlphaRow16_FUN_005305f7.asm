@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl engine_special_cpp_renderAlphaRow16_FUN_005305f7(ushort *param_1,byte *param_2,byte *param_3,uint param_4,int param_5)
+; void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005305f7(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 ;
+; Parameters:
+; ushort *         Stack[0x4]:4   destPixels
+; uchar *          Stack[0x8]:4   srcIndices
+; uchar *          Stack[0xc]:4   srcAlpha
+; int              Stack[0x10]:4   globalAlpha
+; int              Stack[0x14]:4   pixelCount
 ;
 ; XREF[2]:
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710 at 0040e87b

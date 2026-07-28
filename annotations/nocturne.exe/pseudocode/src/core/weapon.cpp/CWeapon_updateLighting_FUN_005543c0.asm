@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(int param_1)
+; void core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 005543e2
     PUSH EBX                            ; 005543e3
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005543e4
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,0x1                         ; 005543e9
     LEA EAX,[ESP + 0x24]                ; 005543ee
     ADD ESP,0xc                         ; 005543f2
@@ -86,7 +86,7 @@ section .text
     PUSH 0x1c74750                      ; 00554457 | DAT_01c74750
     FSTP float ptr [ESP + 0x14]         ; 0055445c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00554460
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00554465
     MOV EDX,dword ptr [0x01cae124]      ; 00554468 | g_CHeroActorType_01cae0ec.name_hash
     MOV EAX,0x3f800000                  ; 0055446e
@@ -101,7 +101,7 @@ section .text
     ADD ESP,0x4                         ; 00554497
     PUSH EAX                            ; 0055449a
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0055449b
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005544a0
     TEST EAX,EAX                        ; 005544a3
     JZ 0x005544ce                       ; 005544a5
@@ -121,7 +121,7 @@ section .text
         ;   Label: LAB_005544ce
     PUSH 0x1c74640                      ; 005544d2 | DAT_01c74640
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 ; 005544d7
-        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080()
+        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight * this_ptr, float intensity)
     MOV EAX,[0x005b9354]                ; 005544dc | DAT_005b9354 | DAT_01c775ec
     MOV ECX,dword ptr [EAX + 0x244]     ; 005544e1 | DAT_01c77830
     ADD ESP,0x8                         ; 005544e7
@@ -139,7 +139,7 @@ section .text
     PUSH EAX                            ; 005544fa
     PUSH 0x2ddf9ac                      ; 005544fb
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90 ; 00554500
-        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90()
+        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00554505
     MOV EBX,0x8000                      ; 00554508
     PUSH 0x40400000                     ; 0055450d
@@ -148,7 +148,7 @@ section .text
     MOV dword ptr [0x02ddf9e8],EBX      ; 00554519 | DAT_02ddf9e8
     MOV byte ptr [0x02ddf9c8],AH        ; 0055451f | DAT_02ddf9c8
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0 ; 00554525
-        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0()
+        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0055452a
     PUSH 0x2ddf9ac                      ; 0055452d
     MOV EDI,dword ptr [0x005be368]      ; 00554532 | DAT_005be368
@@ -156,7 +156,7 @@ section .text
     PUSH EDI                            ; 0055453a | DAT_01e57284
     MOV dword ptr [0x02ddf9cc],ESI      ; 0055453b | DAT_02ddf9cc
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00554541
-        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0()
+        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00554546
     POP EDI                             ; 00554549
     ADD ESP,0x2c                        ; 0055454a

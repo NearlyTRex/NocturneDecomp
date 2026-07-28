@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_getFileTimestamp_FUN_00456910(undefined4 param_1,undefined4 param_2)
+; uint __cdecl engine_dosio_cpp_getFileTimestamp_FUN_00456910(char *directory_path,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory_path
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x214]:1  local_214
 ; undefined4       Stack[-0x8]:4  local_8
@@ -27,12 +30,12 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00456926
     PUSH EAX                            ; 0045692a
     CALL engine_dosio.cpp_getRelativeFilePath_FUN_00456700 ; 0045692b
-        ;   XREF to: 00456700 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getRelativeFilePath_FUN_00456700()
+        ;   XREF to: 00456700 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_getRelativeFilePath_FUN_00456700(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 00456930
     MOV EAX,ESP                         ; 00456933
     PUSH EAX                            ; 00456935
     CALL engine_dosio.cpp_findFile_FUN_004567a0 ; 00456936
-        ;   XREF to: 004567a0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_004567a0()
+        ;   XREF to: 004567a0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_004567a0(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 0045693b
     TEST EAX,EAX                        ; 0045693e
     JZ 0x00456949                       ; 00456940

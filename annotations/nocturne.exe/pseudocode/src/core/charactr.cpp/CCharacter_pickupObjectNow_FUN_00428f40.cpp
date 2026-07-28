@@ -2,32 +2,33 @@
 // Address: 00428f40
 // Address Range: [[00428f40, 00429008]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(int param_1,int param_2,int param_3,undefined4 param_4)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(int param_1,int param_2,int param_3,uint param_4)
+void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
 
 {
-  int *piVar1;
+  SCarryHand *pSVar1;
   
-  if ((param_2 < 0) || (1 < param_2)) {
+  if ((hand_index < 0) || (1 < hand_index)) {
     PTR_01cc4800 = "..\\core\\charactr.cpp";
     INT_01cc4804 = 0xbe7;
     core_main_c_FUN_004c8440("CCharacter::pickupObjectNow - invalid hand index");
   }
-  if (param_3 != 0) {
-    (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,param_2,0);
-    piVar1 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);
-    if ((piVar1[1] < 0) || (*(int *)(param_1 + 0x2290 + piVar1[1] * 4) != 0)) {
-      if (*piVar1 < 0) {
+  if (object != (CDemonActor *)0x0) {
+    (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    pSVar1 = this_ptr->carry_hands + hand_index;
+    if ((pSVar1->secondary_bone_index < 0) ||
+       ((this_ptr->model).part_data.visibility_flags[pSVar1->secondary_bone_index] != 0)) {
+      if (pSVar1->bone_index < 0) {
         PTR_01cc4800 = "..\\core\\charactr.cpp";
         INT_01cc4804 = 0xbff;
         core_main_c_FUN_004c8440("CCharacter::pickupObjectNow - invalid bone!");
       }
-      (**(code **)(*(int *)(param_3 + 0x14c) + 0x80))(param_3,param_1);
-      piVar1[2] = param_3;
-      core_charactr_cpp_CCharacter_computePickup_FUN_00429010(param_1,param_2,param_4);
+      (*((object->vtable)._ub)->pickup)(object,&this_ptr->base);
+      pSVar1->carry_actor = object;
+      core_charactr_cpp_CCharacter_computePickup_FUN_00429010(this_ptr,hand_index,blend_time);
       return;
     }
   }

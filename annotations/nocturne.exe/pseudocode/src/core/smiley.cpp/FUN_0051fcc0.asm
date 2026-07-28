@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0051fcd2
         ;   Label: LAB_0051fcd2
     CALL core_smiley.cpp_CSmiley_ctor_FUN_0051fcf0 ; 0051fcd3
-        ;   XREF to: 0051fcf0 (UNCONDITIONAL_CALL)  ; undefined core_smiley.cpp_CSmiley_ctor_FUN_0051fcf0()
+        ;   XREF to: 0051fcf0 (UNCONDITIONAL_CALL)  ; CSmiley * core_smiley.cpp_CSmiley_ctor_FUN_0051fcf0(CSmiley * this_ptr)
     ADD ESP,0x4                         ; 0051fcd8
     RET                                 ; 0051fcdb
 

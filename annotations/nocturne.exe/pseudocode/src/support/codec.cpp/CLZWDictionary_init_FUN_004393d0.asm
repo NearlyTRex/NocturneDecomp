@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(int *param_1,int param_2,int param_3)
+; void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_004393d0(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   new_dict_size
+; int              Stack[0xc]:4   new_num_bits
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWCompress_init_FUN_00439880 at 00439895
@@ -40,7 +44,7 @@ section .text
     PUSH EBX                            ; 004393e9
     MOV dword ptr [EBX + 0x4],EAX       ; 004393ea
     CALL support_codec.cpp_CLZWDictionary_initTable_FUN_00439450 ; 004393ed
-        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_initTable_FUN_00439450()
+        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_initTable_FUN_00439450(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 004393f2
     POP EBP                             ; 004393f5
     POP ESI                             ; 004393f6
@@ -53,7 +57,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x10]      ; 004393ff
     PUSH ESI                            ; 00439402
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00439403
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00439408
     MOV dword ptr [EBX + 0x10],EAX      ; 0043940b
     TEST EAX,EAX                        ; 0043940e
@@ -71,7 +75,7 @@ section .text
     PUSH EBX                            ; 00439438
     MOV dword ptr [EBX + 0x4],EAX       ; 00439439
     CALL support_codec.cpp_CLZWDictionary_initTable_FUN_00439450 ; 0043943c
-        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_initTable_FUN_00439450()
+        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_initTable_FUN_00439450(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 00439441
     POP EBP                             ; 00439444
     POP ESI                             ; 00439445

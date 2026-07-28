@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(int param_1,undefined4 param_2)
+; void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStranger *this_ptr,float delta_time)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_00535900 at 005364b8
@@ -44,7 +47,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x1fa94]   ; 0054068d
     PUSH ESI                            ; 00540693
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00540694
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 00540699
     ADD ESP,0x8                         ; 0054069b
     TEST EAX,EAX                        ; 0054069e

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(int param_1,undefined4 *param_2,int param_3)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_position
+; int              Stack[0xc]:4   bone_index
 ;
 ; XREF[46]:
 ;   core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00413250 at 00413274

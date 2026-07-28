@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_beast_cpp_CBeast_process_FUN_004150d0(int param_1,float param_2)
+; void core_beast_cpp_CBeast_process_FUN_004150d0(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -55,18 +55,18 @@ section .text
     PUSH EAX                            ; 00415126
     PUSH EBX                            ; 00415127
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 00415128
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 0041512d
     JMP 0x00415118                      ; 00415130
         ;   XREF to: 00415118 (UNCONDITIONAL_JUMP)  ; LAB_00415118
     PUSH ESI                            ; 00415132
         ;   Label: LAB_00415132
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_004259a0 ; 00415133
-        ;   XREF to: 004259a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_preProcess_FUN_004259a0()
+        ;   XREF to: 004259a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_004259a0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00415138
     PUSH EBX                            ; 0041513b
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 0041513c
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00415141
     PUSH dword ptr [EBP + 0x14]         ; 00415144
     PUSH ESI                            ; 00415147

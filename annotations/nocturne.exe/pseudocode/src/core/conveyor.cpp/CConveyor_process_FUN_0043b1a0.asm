@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(int param_1,float param_2)
+; void core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CPlatform *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 0043b1b2 | DAT_005b7650
     PUSH EDX                            ; 0043b1b8
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0043b1b9
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0043b1be
     TEST EAX,EAX                        ; 0043b1c1
     JZ 0x0043b1cf                       ; 0043b1c3
@@ -55,7 +55,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 0043b1d6 | DAT_005b7650
     PUSH ECX                            ; 0043b1dc
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0043b1dd
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0043b1e2
     TEST EAX,EAX                        ; 0043b1e5
     JNZ 0x0043b22e                      ; 0043b1e7
@@ -140,7 +140,7 @@ section .text
     PUSH EAX                            ; 0043b2d0
     PUSH EBX                            ; 0043b2d1
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0043b2d2
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0043b2d7
     TEST EAX,EAX                        ; 0043b2da
     JNZ 0x0043b24d                      ; 0043b2dc

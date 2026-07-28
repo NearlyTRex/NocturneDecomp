@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_moloch_cpp_CMoloch_startMorph_FUN_004de700(int param_1)
+; void __cdecl core_moloch_cpp_CMoloch_startMorph_FUN_004de700(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004ddf04

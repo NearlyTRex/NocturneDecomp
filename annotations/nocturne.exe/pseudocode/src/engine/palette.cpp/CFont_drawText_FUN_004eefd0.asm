@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color)
 ;
+; Parameters:
+; CFont *          Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   foreground_color
+; int              Stack[0x18]:4   background_color
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980 at 004909f6

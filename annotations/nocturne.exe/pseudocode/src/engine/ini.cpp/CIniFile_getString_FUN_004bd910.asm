@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
 ;
 ;
 ; XREF[4]:
@@ -49,7 +49,7 @@ section .text
     ADD EBX,0x100                       ; 004bd935
     PUSH EBX                            ; 004bd93b
     CALL engine_ini.cpp_getProfileString_FUN_004bd750 ; 004bd93c
-        ;   XREF to: 004bd750 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_getProfileString_FUN_004bd750()
+        ;   XREF to: 004bd750 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_getProfileString_FUN_004bd750(char * section, char * key, char * default_value, char * output_buffer, ...)
     ADD ESP,0x18                        ; 004bd941
     POP EBP                             ; 004bd944
     POP EBX                             ; 004bd945

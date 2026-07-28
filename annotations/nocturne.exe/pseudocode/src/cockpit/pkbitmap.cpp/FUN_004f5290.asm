@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   cockpit_pkbmpset.cpp_FUN_004f53f0 at 004f5413
-;   cockpit_pkbmpset.cpp_FUN_004f5920 at 004f5943
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_004f53f0 at 004f5413
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920 at 004f5943
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -26,7 +26,7 @@ section .text
     PUSH EAX                            ; 004f52af
     MOV dword ptr [EAX + 0x18],0x0      ; 004f52b0
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f52b7
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004f52bc
     RET                                 ; 004f52bf
 

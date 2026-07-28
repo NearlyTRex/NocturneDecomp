@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+; void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   character_code
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   right_x
+; int              Stack[0x18]:4   bottom_y
+; int              Stack[0x1c]:4   color_mode
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ; undefined4       Stack[-0x50]:4  local_50
@@ -91,7 +99,7 @@ section .text
     MOV EBP,0x4e1e                      ; 00491243
     MOV ESI,0x4e1d                      ; 00491248
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0049124d
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     MOV ECX,0x4e1c                      ; 00491252
     ADD ESP,0x4                         ; 00491257
     MOV EDI,0x4e1f                      ; 0049125a
@@ -260,21 +268,21 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004914d3
     PUSH ECX                            ; 004914d7
     CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004914d8
-        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPoint_FUN_004cd240()
+        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPoint_FUN_004cd240(int cacheIndex)
     ADD ESP,0x4                         ; 004914dd
     MOV EBX,dword ptr [ESP + 0x40]      ; 004914e0
     PUSH EBX                            ; 004914e4
     CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004914e5
-        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPoint_FUN_004cd240()
+        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPoint_FUN_004cd240(int cacheIndex)
     ADD ESP,0x4                         ; 004914ea
     PUSH EBP                            ; 004914ed
     CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004914ee
-        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPoint_FUN_004cd240()
+        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPoint_FUN_004cd240(int cacheIndex)
     ADD ESP,0x4                         ; 004914f3
     MOV EAX,dword ptr [ESP + 0x38]      ; 004914f6
     PUSH EAX                            ; 004914fa
     CALL engine_matrix.c_projectCachedPoint_FUN_004cd240 ; 004914fb
-        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPoint_FUN_004cd240()
+        ;   XREF to: 004cd240 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPoint_FUN_004cd240(int cacheIndex)
     ADD ESP,0x4                         ; 00491500
     MOV ECX,dword ptr [ESP + 0x5c]      ; 00491503
     MOV EDX,dword ptr [ESP + 0x58]      ; 00491507
@@ -359,7 +367,7 @@ section .text
     MOV dword ptr [ESP + 0xc],ECX       ; 00491630
     MOV dword ptr [ESP + 0x28],EAX      ; 00491634
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00491638
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     MOV EDI,dword ptr [0x01c02584]      ; 0049163d | DAT_01c02584
     ADD ESP,0x4                         ; 00491643
     TEST EDI,EDI                        ; 00491646
@@ -371,7 +379,7 @@ section .text
         ;   Label: LAB_00491651
     PUSH EAX                            ; 00491655
     CALL engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10 ; 00491656
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10()
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void engine_3d.c_renderPolygonWithRenderFlags_FUN_00408c10(SMRGLHeaderPrimitive * primitive, int render_flags, int render_state_flags)
     ADD ESP,0xc                         ; 0049165b
     ADD ESP,0x44                        ; 0049165e
     POP EBP                             ; 00491661

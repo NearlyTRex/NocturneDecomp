@@ -10,7 +10,7 @@ uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_
 
 {
   float fVar1;
-  int iVar2;
+  SMotion *pSVar2;
   
   param_2[6] = *(int *)(param_1 + 0x2398);
   param_2[7] = 0x3f800000;
@@ -23,8 +23,9 @@ uint core_mimic_cpp_CMimic_getCollisionType_FUN_004d5c80(int param_1,int *param_
   else {
     param_2[5] = 0x40000000;
   }
-  iVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-  if (*(int *)(iVar2 + 0x24) == 0xc) {
+  pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                     ((CMotionController *)(param_1 + 0x150));
+  if (pSVar2->state_index == 0xc) {
     return 0;
   }
   return 2;

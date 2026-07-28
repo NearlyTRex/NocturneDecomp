@@ -74,7 +74,7 @@ section .text
     SHL EAX,0x2                         ; 00453475
     PUSH EAX                            ; 00453478
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 00453479
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     MOV EDX,dword ptr [EBX + 0x110]     ; 0045347e
     MOV dword ptr [EBX + 0x10c],EAX     ; 00453484
     LEA EAX,[EDX*0x8 + 0x0]             ; 0045348a
@@ -83,14 +83,14 @@ section .text
     SHL EAX,0x3                         ; 00453496
     PUSH EAX                            ; 00453499
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0045349a
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     MOV dword ptr [EBX + 0x114],EAX     ; 0045349f
     MOV EAX,dword ptr [EBX + 0x110]     ; 004534a5
     ADD ESP,0x4                         ; 004534ab
     SHL EAX,0x2                         ; 004534ae
     PUSH EAX                            ; 004534b1
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004534b2
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     MOV ESI,dword ptr [EBX + 0x100]     ; 004534b7
     MOV dword ptr [EBX + 0x118],EAX     ; 004534bd
     LEA EAX,[ESI*0x4 + 0x0]             ; 004534c3
@@ -100,7 +100,7 @@ section .text
     ADD EAX,0x4                         ; 004534d2
     PUSH EAX                            ; 004534d5
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004534d6
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004534db
     TEST EAX,EAX                        ; 004534de
     JZ 0x004534e8                       ; 004534e0
@@ -185,7 +185,7 @@ section .text
     SHL EAX,0x2                         ; 004535c9
     PUSH EAX                            ; 004535cc
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004535cd
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004535d2
     MOV dword ptr [EBX + 0x108],EAX     ; 004535d5
     TEST EAX,EAX                        ; 004535db

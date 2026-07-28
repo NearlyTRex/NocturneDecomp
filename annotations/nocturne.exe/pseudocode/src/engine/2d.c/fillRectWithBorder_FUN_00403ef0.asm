@@ -1,16 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403ef0(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,undefined4 param_6)
+; void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403ef0(int x1,int y1,int x2,int y2,int fill_color,int border_color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; int              Stack[0x14]:4   fill_color
+; int              Stack[0x18]:4   border_color
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049ae38
 ;   core_game.cpp_drawHealthBar_FUN_0049aab0 at 0049aafc
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfd0a
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 004765b1
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 at 004718ab
 ;   shape_edittool.cpp_FUN_004722b0 at 0047237b
-;   shape_edittool.cpp_FUN_00476580 at 004765b1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70
@@ -38,7 +45,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 00403f07
     PUSH EDI                            ; 00403f0b
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 00403f0c
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00403f11
     MOV EAX,dword ptr [ESP + 0x24]      ; 00403f14
     MOV EBX,dword ptr [0x01c00c70]      ; 00403f18 | DAT_01c00c70
@@ -54,7 +61,7 @@ section .text
     LEA EAX,[EDI + -0x1]                ; 00403f33
     PUSH EAX                            ; 00403f36
     CALL engine_2d.c_drawRect_FUN_00403e10 ; 00403f37
-        ;   XREF to: 00403e10 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawRect_FUN_00403e10()
+        ;   XREF to: 00403e10 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403e10(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00403f3c
     MOV dword ptr [0x01c00c70],EBX      ; 00403f3f | DAT_01c00c70
     POP EDI                             ; 00403f45

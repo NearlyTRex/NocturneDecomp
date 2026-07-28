@@ -58,7 +58,7 @@ section .text
     FSTP ST1                            ; 0048e276
     FSTP float ptr [ESP + 0xc]          ; 0048e278
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90 ; 0048e27c
-        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90()
+        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0048e281
     PUSH dword ptr [EBX + 0x27c]        ; 0048e284
     FLD float ptr [EBX + 0x27c]         ; 0048e28a
@@ -73,7 +73,7 @@ section .text
     FMUL double ptr [0x0058161f]        ; 0048e2ab | DOUBLE_0058161f
     ADD ESP,0x8                         ; 0048e2b1
     CALL crt_math.c_round_FUN_00563a30  ; 0048e2b4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x14]        ; 0048e2b9
     MOV EAX,dword ptr [ESP + 0x14]      ; 0048e2bd
     MOV EDX,EAX                         ; 0048e2c1
@@ -95,7 +95,7 @@ section .text
     FSTP float ptr [ESP]                ; 0048e2f6
     PUSH ESI                            ; 0048e2f9
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0 ; 0048e2fa
-        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0()
+        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 0048e2ff
     MOV dword ptr [ESI + 0x20],0x2      ; 0048e302
     MOV ESP,EBP                         ; 0048e309

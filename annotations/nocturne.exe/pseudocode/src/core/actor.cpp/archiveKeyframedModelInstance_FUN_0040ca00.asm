@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(int param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(CKeyFramedModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined1       Stack[-0xcf]:1  local_cf
@@ -44,13 +47,13 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0040ca20
     PUSH ESI                            ; 0040ca24
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0040ca25
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040ca2a
     MOV ESI,ESP                         ; 0040ca2d
     PUSH ESI                            ; 0040ca2f
     PUSH EDI                            ; 0040ca30
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0040ca31
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040ca36
     ADD ESP,0xc8                        ; 0040ca39
     POP EDI                             ; 0040ca3f
@@ -79,7 +82,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0040ca62
     PUSH ESI                            ; 0040ca66
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0040ca67
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040ca6c
     ADD ESP,0xc8                        ; 0040ca6f
     POP EDI                             ; 0040ca75

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c4862
         ;   Label: LAB_004c4862
     CALL core_larva.cpp_CLarva_ctor_FUN_004c4880 ; 004c4863
-        ;   XREF to: 004c4880 (UNCONDITIONAL_CALL)  ; undefined core_larva.cpp_CLarva_ctor_FUN_004c4880()
+        ;   XREF to: 004c4880 (UNCONDITIONAL_CALL)  ; CLarva * core_larva.cpp_CLarva_ctor_FUN_004c4880(CLarva * this_ptr)
     ADD ESP,0x4                         ; 004c4868
     RET                                 ; 004c486b
 

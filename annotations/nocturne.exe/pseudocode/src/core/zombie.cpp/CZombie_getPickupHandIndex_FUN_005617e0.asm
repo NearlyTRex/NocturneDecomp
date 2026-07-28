@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(int param_1,uint param_2)
+; int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie *this_ptr,int object_shape_type)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   object_shape_type
 ;
 ; XREF[3]:
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880 at 0056188b
@@ -34,7 +37,7 @@ section .text
     ADD EAX,0x23b0                      ; 005617f4
     PUSH EAX                            ; 005617f9
     CALL crt_string.c__stricmp_FUN_00564520 ; 005617fa
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005617ff
     TEST EAX,EAX                        ; 00561802
     JZ 0x00561836                       ; 00561804
@@ -46,7 +49,7 @@ section .text
     ADD EAX,0x23b0                      ; 00561810
     PUSH EAX                            ; 00561815
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 00561816
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056181b
     TEST EAX,EAX                        ; 0056181e
     JNZ 0x00561858                      ; 00561820

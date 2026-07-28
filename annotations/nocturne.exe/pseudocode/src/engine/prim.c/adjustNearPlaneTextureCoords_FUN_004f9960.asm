@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(int param_1,int param_2)
+; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[4]:
 ;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 00563099

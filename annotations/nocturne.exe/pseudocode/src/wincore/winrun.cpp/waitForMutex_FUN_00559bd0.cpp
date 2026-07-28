@@ -2,18 +2,18 @@
 // Address: 00559bd0
 // Address Range: [[00559bd0, 00559bed]]
 // Convention: __cdecl
-// Signature: bool __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE param_1)
+// Signature: int __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE mutex_handle)
 
 #include "nocturne.h"
 
-bool __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE param_1)
+int __cdecl wincore_winrun_cpp_waitForMutex_FUN_00559bd0(HANDLE mutex_handle)
 
 {
   DWORD DVar1;
   
-  if (param_1 == (HANDLE)0x0) {
-    return false;
+  if (mutex_handle == (HANDLE)0x0) {
+    return 0;
   }
-  DVar1 = WaitForSingleObject(param_1,0xffffffff);
-  return DVar1 == 0;
+  DVar1 = WaitForSingleObject(mutex_handle,0xffffffff);
+  return (uint)(DVar1 == 0);
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_00523890(undefined4 param_1)
+; void sound_sndmain_cpp_FUN_00523890(CSfxSample *param_1)
 ;
 ;
 ; Called Functions:
@@ -15,7 +15,7 @@ section .text
         ;   Label: sound_sndmain.cpp_FUN_00523890
     PUSH EDX                            ; 00523894
     CALL sound_sndmain.cpp_CSfxSample_init_FUN_00525b70 ; 00523895
-        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_init_FUN_00525b70()
+        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_00525b70(CSfxSample * this_ptr)
     MOV dword ptr [EAX + 0x120],0x0     ; 0052389a
     MOV dword ptr [EAX + 0x12c],0x0     ; 005238a4
     MOV dword ptr [EAX + 0x130],0x0     ; 005238ae

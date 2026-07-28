@@ -9,10 +9,10 @@
 void core_cloth_cpp_FUN_00435210(int param_1)
 
 {
-  if (*(int *)(param_1 + 0x3aafc) == 0) {
+  if (*(void **)(param_1 + 0x3aafc) == (void *)0x0) {
     return;
   }
-  shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 0x3aafc));
+  shape_memdbg_cpp_free_FUN_00564486(*(void **)(param_1 + 0x3aafc));
   *(uint *)(param_1 + 0x3aafc) = 0;
   return;
 }

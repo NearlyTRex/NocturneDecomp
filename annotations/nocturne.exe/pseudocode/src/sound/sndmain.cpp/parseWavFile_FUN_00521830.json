@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,27 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 453,
+    "complexity_score": 184,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 118,
-    "suspect_count": 32,
+    "pseudocode_lines": 119,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
-    "total_lines": 487
+    "total_lines": 488
   },
   "cross_references": [
-    {
-      "addr": "00522480",
-      "from_addr": "00522648",
-      "name": "sound_sndmain.cpp_FUN_00522480",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "005229f0",
       "from_addr": "00522c6f",
@@ -153,6 +145,12 @@
       "addr": "005279e0",
       "from_addr": "00527b03",
       "name": "sound_sndmain.cpp_getSampleInfo_FUN_005279e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522480",
+      "from_addr": "00522648",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -172,7 +170,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_parseWavFile_FUN_00521830",
-    "signature": "undefined4 __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)"
+    "signature": "int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample)"
   },
   "function_calls": [
     {
@@ -280,7 +278,7 @@
       {
         "call_addr": "00522648",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00522480",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -312,10 +310,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.031802120141343,
@@ -357,10 +355,10 @@
     "pcode_op_count": 1424
   },
   "stack_frame": {
-    "frame_size": 140,
+    "frame_size": 152,
     "local_size": 140,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -446,60 +444,74 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "file_offset_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_sample",
+        "offset": 12,
+        "size": 4,
+        "type": "CSfxSample *"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "parseWavFile_FUN_00521830.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 7,
+      "diagnostic_count": 6,
       "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 41,
-          "line": 107,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
         {
           "check_id": "uninitvar",
           "column": 35,
-          "line": 33,
+          "line": 34,
           "message": "Uninitialized variable: local_17",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 57,
-          "line": 33,
+          "line": 34,
           "message": "Uninitialized variable: local_16",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 79,
-          "line": 33,
+          "line": 34,
           "message": "Uninitialized variable: local_15",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 38,
-          "line": 37,
+          "line": 38,
           "message": "Uninitialized variable: local_87",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 61,
-          "line": 37,
+          "line": 38,
           "message": "Uninitialized variable: local_86",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 81,
-          "line": 37,
+          "line": 38,
           "message": "Uninitialized variable: local_85",
           "severity": "error"
         }
@@ -510,104 +522,8 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = _fseek(param_1,*param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = _fseek(param_1,*param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = _fread(&local_18,8,1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = _fread(&local_88,4,1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = _fread(&local_18,8,1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = _fread(&local_24,10,1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 59,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -618,167 +534,44 @@
       "line": 59,
       "match": "._2_2_",
       "severity": "mild",
+      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._2_2_",
+      "severity": "mild",
       "text": "_sprintf(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",local_24._2_2_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 64,
       "match": "._2_2_",
       "severity": "mild",
       "text": "sVar1 = local_24._2_2_ * (short)local_20;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x104) = 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x104) = 0x10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = _fread(&local_18,8,1,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + iVar2 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + iVar2 + 8;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 100,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
+      "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + 0x110) =",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 102,
+      "line": 103,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(uint)((int)((*(int *)(param_3 + 0x104) + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x10c) = local_20 & 0xffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fclose(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 107,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
       "description": "Uninitialized variable: local_17",
-      "line": 33,
+      "line": 34,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -786,7 +579,7 @@
     },
     {
       "description": "Uninitialized variable: local_16",
-      "line": 33,
+      "line": 34,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -794,7 +587,7 @@
     },
     {
       "description": "Uninitialized variable: local_15",
-      "line": 33,
+      "line": 34,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
@@ -802,7 +595,7 @@
     },
     {
       "description": "Uninitialized variable: local_87",
-      "line": 37,
+      "line": 38,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
@@ -810,7 +603,7 @@
     },
     {
       "description": "Uninitialized variable: local_86",
-      "line": 37,
+      "line": 38,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
@@ -818,7 +611,7 @@
     },
     {
       "description": "Uninitialized variable: local_85",
-      "line": 37,
+      "line": 38,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",

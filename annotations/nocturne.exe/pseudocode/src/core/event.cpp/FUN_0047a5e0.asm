@@ -67,7 +67,7 @@ section .text
     PUSH ESI                            ; 0047a639
     DEC EBX                             ; 0047a63a
     CALL crt_string.c_memmove_FUN_00566170 ; 0047a63b
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0047a640
     JMP 0x0047a619                      ; 0047a643
         ;   XREF to: 0047a619 (UNCONDITIONAL_JUMP)  ; LAB_0047a619

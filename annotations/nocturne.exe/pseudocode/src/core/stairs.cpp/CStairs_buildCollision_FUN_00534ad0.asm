@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(int param_1)
+; void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(CStairs *this_ptr)
 ;
+; Parameters:
+; CStairs *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -108,7 +110,7 @@ section .text
     PUSH EAX                            ; 00534bc4
     PUSH EDI                            ; 00534bc5
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 00534bc6
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 00534bcb
     LEA EAX,[ESP + 0x1c]                ; 00534bce
     PUSH EAX                            ; 00534bd2
@@ -119,7 +121,7 @@ section .text
     PUSH EBP                            ; 00534bdd
     ADD EDI,0x70                        ; 00534bde
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 00534be1
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 00534be6
     MOV ECX,dword ptr [EBX + 0x164]     ; 00534be9
     ADD EBP,0x70                        ; 00534bef

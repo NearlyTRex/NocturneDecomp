@@ -1,0 +1,347 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 172,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 14,
+    "suspect_types": [
+      "pointer_truncation",
+      "stack_param",
+      "unaffected_reg"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00476eb0",
+    "address_range": [
+      [
+        "00476eb0",
+        "00476eec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0",
+    "signature": "void shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477100",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00477100"
+    },
+    {
+      "addr": "00477080",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_00477080"
+    },
+    {
+      "addr": "00476ef0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00476ef0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.703703703703703,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 18,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 15,
+      "LOAD": 10,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 127
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "CEdButton_calculateAndSetBounds_FUN_00476eb0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 21,
+          "message": "Uninitialized variable: in_stack_00000010",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "char *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "CEdButton *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "bottom = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_calculateButtonHeight_FUN_00477100(in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar1 = shape_edittool_cpp_calculateButtonWidth_FUN_00477080(in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(in_stack_00000008,in_stack_0000000c,(int)in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "(in_stack_00000008,in_stack_0000000c,(int)in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "(in_stack_00000008,in_stack_0000000c,(int)in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "iVar1 + in_stack_0000000c + -1,(int)bottom,unaff_EDI);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar1 + in_stack_0000000c + -1,(int)bottom,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `in_stack_00000010` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)in_stack_00000010",
+      "severity": "moderate",
+      "text": "(in_stack_00000008,in_stack_0000000c,(int)in_stack_00000010,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `bottom` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)bottom",
+      "severity": "moderate",
+      "text": "iVar1 + in_stack_0000000c + -1,(int)bottom,unaff_EDI);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000010",
+      "line": 21,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "bottom = in_stack_00000010;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

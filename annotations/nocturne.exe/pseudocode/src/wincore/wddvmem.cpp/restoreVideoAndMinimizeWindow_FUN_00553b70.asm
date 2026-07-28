@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70(void)
+; void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70(void)
 ;
 ;
 ; XREF[1]:
@@ -33,7 +33,7 @@ section .text
     PUSH EBX                            ; 00553b83
         ;   Label: LAB_00553b83
     CALL engine_special.cpp_restoreVideoMode_FUN_005325f0 ; 00553b84
-        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreVideoMode_FUN_005325f0()
+        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreVideoMode_FUN_005325f0()
     PUSH 0x6                            ; 00553b89
     MOV EBX,dword ptr [0x02de2098]      ; 00553b8b | DAT_02de2098
     PUSH EBX                            ; 00553b91

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_event_cpp_FUN_0047a210(undefined4 param_1)
+; undefined4 core_event_cpp_FUN_0047a210(char *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -40,7 +40,7 @@ section .text
     PUSH EDX                            ; 0047a23c
     XOR EBX,EBX                         ; 0047a23d
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0047a23f
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047a244
     XOR EAX,EAX                         ; 0047a247
     MOV dword ptr [ESP],EBX             ; 0047a249

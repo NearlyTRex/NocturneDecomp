@@ -2,13 +2,13 @@
 // Address: 0046ace0
 // Address Range: [[0046ace0, 0046ae30]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(int param_1,int param_2,int *param_3)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(int param_1,int param_2,int *param_3)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
 
 {
   float fVar1;
@@ -25,9 +25,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(int param_1,int 
   float local_20 [6];
   
   _DAT_01b7b748 = 0;
-  if ((0 < param_2) && (param_3 != (int *)0x0)) {
-    _DAT_01b7b744 = param_2;
-    if (20000 < param_2) {
+  if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {
+    _DAT_01b7b744 = visible_cube_count;
+    if (20000 < visible_cube_count) {
       PTR_01cc4800 = "..\\core\\dtrace.cpp";
       INT_01cc4804 = 0x8c9;
       core_main_c_FUN_004c8440("CDemonRaytrace::setPVS - Too many drawn cubes in pvs!");
@@ -36,27 +36,27 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(int param_1,int 
     if (0 < _DAT_01b7b744) {
       pfVar10 = (float *)&DAT_01b8efcc;
       do {
-        iVar5 = *param_3;
-        *(int *)(iVar11 * 4 + 0x1b7b74c) = iVar5 * 0x34 + *(int *)(param_1 + 0x50);
-        iVar6 = *(int *)(param_1 + 0x48);
-        uVar8 = (longlong)iVar5 / (longlong)*(int *)(param_1 + 0x48);
+        iVar5 = *visible_cube_indices;
+        *(CDemonCube **)(iVar11 * 4 + 0x1b7b74c) = this_ptr->cube_data + iVar5;
+        iVar6 = (this_ptr->grid_coord).z;
+        uVar8 = (longlong)iVar5 / (longlong)(this_ptr->grid_coord).z;
         uVar9 = (int)uVar8 >> 0x1f;
-        iVar7 = *(int *)(param_1 + 0x44);
-        fVar1 = *(float *)(param_1 + 0x2c);
-        fVar2 = *(float *)(param_1 + 0x14);
-        fVar3 = *(float *)(param_1 + 0x30);
-        fVar4 = *(float *)(param_1 + 0x18);
+        iVar7 = (this_ptr->grid_coord).y;
+        fVar1 = (this_ptr->cell_size).y;
+        fVar2 = (this_ptr->bbox_min).y;
+        fVar3 = (this_ptr->cell_size).z;
+        fVar4 = (this_ptr->bbox_min).z;
         if (pfVar10 != local_20) {
           *pfVar10 = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) /
-                                 (longlong)*(int *)(param_1 + 0x44)) * *(float *)(param_1 + 0x28) +
-                     *(float *)(param_1 + 0x10);
+                                 (longlong)(this_ptr->grid_coord).y) * (this_ptr->cell_size).x +
+                     (this_ptr->bbox_min).x;
           pfVar10[1] = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) %
                                    (longlong)iVar7) * fVar1 + fVar2;
           pfVar10[2] = (float)(iVar5 % iVar6) * fVar3 + fVar4;
         }
         pfVar10 = pfVar10 + 3;
         iVar11 = iVar11 + 1;
-        param_3 = param_3 + 1;
+        visible_cube_indices = visible_cube_indices + 1;
       } while (iVar11 < _DAT_01b7b744);
     }
     _DAT_01b7b748 = 1;

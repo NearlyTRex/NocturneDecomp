@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(undefined4 *param_1,byte param_2,char *param_3,undefined4 param_4,byte param_5)
+; _ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(void *this_ptr,int flags,char *buffer,int buffer_size,int mode)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   flags
+; char *           Stack[0xc]:4   buffer
+; int              Stack[0x10]:4   buffer_size
+; int              Stack[0x14]:4   mode
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_finalizeBuffer_FUN_004392d0 at 004392f4
@@ -16,9 +22,9 @@
 ;   void* PTR_crt_unknown.c_FUN_00564e53_005a46dc = 00564e53
 ;
 ; Called Functions:
-;   FUN_0056b405
-;   FUN_0056b4a9
-;   FUN_0056b503
+;   crt_iostream.cpp_ios_ctor_FUN_0056b503
+;   crt_iostream.cpp_ostream_ctor_FUN_0056b4a9
+;   crt_strstream.cpp_strstreambase_ctor_FUN_0056b405
 ;
 ; *****************************************************************************
 
@@ -57,14 +63,14 @@ section .text
     PUSH EBX                            ; 00564dcd
     PUSH 0x1                            ; 00564dce
     PUSH EDX                            ; 00564dd0
-    CALL FUN_0056b405                   ; 00564dd1
-        ;   XREF to: 0056b405 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b405()
+    CALL crt_strstream.cpp_strstreambase_ctor_FUN_0056b405 ; 00564dd1
+        ;   XREF to: 0056b405 (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_ctor_FUN_0056b405(strstreambase * this_ptr, int ctor_flags, char * buffer, int size, ...)
     ADD ESP,0x14                        ; 00564dd6
     PUSH 0x1                            ; 00564dd9
     ADD EAX,0x48                        ; 00564ddb
     PUSH EAX                            ; 00564dde
-    CALL FUN_0056b4a9                   ; 00564ddf
-        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b4a9()
+    CALL crt_iostream.cpp_ostream_ctor_FUN_0056b4a9 ; 00564ddf
+        ;   XREF to: 0056b4a9 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_ctor_FUN_0056b4a9()
     LEA EDX,[EAX + -0x48]               ; 00564de4
     MOV EAX,dword ptr [EDX]             ; 00564de7
     MOV EAX,dword ptr [EAX + 0x4]       ; 00564de9
@@ -84,8 +90,8 @@ section .text
     ADD EDX,0x54                        ; 00564e1a
     PUSH EDX                            ; 00564e1d
     MOV dword ptr [EDX + -0xc],0x5a46c0 ; 00564e1e | DAT_005a46c0
-    CALL FUN_0056b503                   ; 00564e25
-        ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b503()
+    CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 00564e25
+        ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 00564e2a
     LEA EDX,[EAX + -0x54]               ; 00564e2d
     JMP 0x00564da2                      ; 00564e30

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_fopen_FUN_0056568c(undefined4 param_1,undefined4 param_2)
+; _FILE * __cdecl crt_stdio_c_fopen_FUN_0056568c(char *filename,char *mode)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; char *           Stack[0x8]:4   mode
 ;
 ; XREF[22]:
 ;   FUN_00568690 at 005686da
@@ -18,7 +21,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00565630
+;   crt_unknown.c_fopenWithFlags_FUN_00565630
 ;
 ; *****************************************************************************
 
@@ -31,8 +34,8 @@ section .text
     PUSH EDX                            ; 00565693
     MOV EBX,dword ptr [ESP + 0x10]      ; 00565694
     PUSH EBX                            ; 00565698
-    CALL crt_unknown.c_FUN_00565630     ; 00565699
-        ;   XREF to: 00565630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565630()
+    CALL crt_unknown.c_fopenWithFlags_FUN_00565630 ; 00565699
+        ;   XREF to: 00565630 (UNCONDITIONAL_CALL)  ; _FILE * crt_unknown.c_fopenWithFlags_FUN_00565630(char * filename, char * mode, int flags)
     ADD ESP,0xc                         ; 0056569e
     POP EBX                             ; 005656a1
     RET                                 ; 005656a2

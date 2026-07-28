@@ -43,19 +43,19 @@
     {
       "addr": "0044ac30",
       "from_addr": "0044ac3a",
-      "name": "core_dcube.cpp_FUN_0044ac30",
+      "name": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00456f60",
       "from_addr": "00456f98",
-      "name": "core_dpart.cpp_FUN_00456f60",
+      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_00456f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00467250",
       "from_addr": "00467264",
-      "name": "core_dtrace.cpp_FUN_00467250",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,7 +104,7 @@
       {
         "call_addr": "0044ac3a",
         "call_type": "direct",
-        "caller": "core_dcube.cpp_FUN_0044ac30",
+        "caller": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +117,7 @@
       {
         "call_addr": "0044ac71",
         "call_type": "direct",
-        "caller": "core_dcube.cpp_FUN_0044ac30",
+        "caller": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +161,7 @@
       {
         "call_addr": "00456f98",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00456f60",
+        "caller": "core_dpart.cpp_CDemonPart_alloc_FUN_00456f60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "00456fe3",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00456f60",
+        "caller": "core_dpart.cpp_CDemonPart_alloc_FUN_00456f60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +185,7 @@
       {
         "call_addr": "0045701f",
         "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00456f60",
+        "caller": "core_dpart.cpp_CDemonPart_alloc_FUN_00456f60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -196,7 +196,7 @@
       {
         "call_addr": "00467264",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00467250",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +269,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = malloc(param_1 * param_2);",
+      "text": "dest = malloc(param_1 * param_2);",
       "type": "unnamed_param"
     },
     {
@@ -277,7 +277,7 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = malloc(param_1 * param_2);",
+      "text": "dest = malloc(param_1 * param_2);",
       "type": "unnamed_param"
     },
     {
@@ -285,7 +285,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "memset(iVar1,0,param_1 * param_2);",
+      "text": "memset(dest,0,param_1 * param_2);",
       "type": "unnamed_param"
     },
     {
@@ -293,7 +293,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "memset(iVar1,0,param_1 * param_2);",
+      "text": "memset(dest,0,param_1 * param_2);",
       "type": "unnamed_param"
     },
     {

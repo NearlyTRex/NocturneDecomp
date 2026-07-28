@@ -19,7 +19,7 @@ struct CWerewolf_ptr_13260 {
     template<typename T> CWerewolf_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CWerewolf_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CWerewolf* operator->() const { return (CWerewolf*)_raw; }
-    CWerewolf* adj() const { return (CWerewolf*)((char*)_raw - offsetof(CWerewolf, base.base.flames)); }
+    CWerewolf* adj() const { return (CWerewolf*)((char*)_raw - offsetof(CWerewolf, base.base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(int param_1,float param_2)
+; void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(CTrigger *this_ptr,float hit_points)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   hit_points
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ; undefined8       Stack[-0xc]:8  local_c

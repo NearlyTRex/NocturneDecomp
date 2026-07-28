@@ -2,37 +2,37 @@
 // Address: 0046b7f0
 // Address Range: [[0046b7f0, 0046b8c6]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(int param_1,uint *param_2)
+// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 #include "nocturne.h"
 
-bool __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(int param_1,uint *param_2)
+int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords)
 
 {
-  uint uVar1;
+  SVoxelGrid *pSVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   
-  uVar1 = *param_2;
-  if ((((-1 < (int)uVar1) && (-1 < (int)param_2[1])) && (-1 < (int)param_2[2])) &&
-     ((iVar2 = (int)((uVar1 + ((int)uVar1 >> 0x1f) * -8) - (uint)(((int)uVar1 >> 0x1f) << 2 < 0)) >>
-               3, iVar2 < *(int *)(param_1 + 0x40) &&
-      (iVar4 = (int)param_2[1] >> 0x1f,
-      iVar4 = (int)((param_2[1] + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3,
-      iVar4 < *(int *)(param_1 + 0x44))))) {
-    iVar5 = (int)param_2[2] >> 0x1f;
-    iVar3 = (int)((param_2[2] + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-    iVar5 = *(int *)(param_1 + 0x48);
+  iVar2 = voxel_coords->x;
+  if ((((-1 < iVar2) && (-1 < voxel_coords->y)) && (-1 < voxel_coords->z)) &&
+     ((iVar2 = (int)((iVar2 + (iVar2 >> 0x1f) * -8) - (uint)((iVar2 >> 0x1f) << 2 < 0)) >> 3,
+      iVar2 < (this_ptr->grid_coord).x &&
+      (iVar4 = voxel_coords->y >> 0x1f,
+      iVar4 = (int)((voxel_coords->y + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3,
+      iVar4 < (this_ptr->grid_coord).y)))) {
+    iVar5 = voxel_coords->z >> 0x1f;
+    iVar3 = (int)((voxel_coords->z + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
+    iVar5 = (this_ptr->grid_coord).z;
     if (iVar3 < iVar5) {
-      iVar2 = *(int *)((iVar2 * *(int *)(param_1 + 0x44) * iVar5 + iVar3 + iVar4 * iVar5) * 0x34 +
-                      *(int *)(param_1 + 0x50));
-      if (iVar2 != 0) {
-        return (*(byte *)((param_2[2] & 7) * 8 + (param_2[1] & 7) + iVar2) &
-               (&DAT_005b6d08)[*param_2 & 7]) != 0;
+      pSVar1 = this_ptr->cube_data[iVar2 * (this_ptr->grid_coord).y * iVar5 + iVar3 + iVar4 * iVar5]
+               .voxel_buffer1;
+      if (pSVar1 != (SVoxelGrid *)0x0) {
+        return (uint)((pSVar1->voxels[voxel_coords->z & 7][voxel_coords->y & 7] &
+                      (&DAT_005b6d08)[voxel_coords->x & 7]) != 0);
       }
     }
   }
-  return false;
+  return 0;
 }

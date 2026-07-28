@@ -2,11 +2,11 @@
 // Address: 0044d7a0
 // Address Range: [[0044d7a0, 0044d878]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(float *param_1,float *param_2)
+// Signature: void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 #include "nocturne.h"
 
-void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(float *param_1,float *param_2)
+void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 {
   float fVar1;
@@ -21,25 +21,29 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(float 
   float10 fVar10;
   float10 fVar11;
   
-  fVar6 = (float10)fsin((float10)*param_2);
-  fVar7 = (float10)fsin((float10)param_2[2]);
-  fVar8 = (float10)fsin((float10)param_2[1]);
-  fVar9 = (float10)fcos((float10)*param_2);
-  fVar10 = (float10)fcos((float10)param_2[2]);
-  fVar11 = (float10)fcos((float10)param_2[1]);
+  fVar6 = (float10)fsin((float10)euler_angles->x);
+  fVar7 = (float10)fsin((float10)euler_angles->z);
+  fVar8 = (float10)fsin((float10)euler_angles->y);
+  fVar9 = (float10)fcos((float10)euler_angles->x);
+  fVar10 = (float10)fcos((float10)euler_angles->z);
+  fVar11 = (float10)fcos((float10)euler_angles->y);
   fVar1 = (float)fVar8;
   fVar2 = (float)fVar6;
   fVar3 = (float)fVar7;
   fVar4 = (float)fVar10;
   fVar5 = (float)fVar11;
-  param_1[2] = (float)((float10)fVar1 * fVar9);
-  param_1[5] = -fVar2;
-  param_1[3] = (float)(fVar7 * fVar9);
-  param_1[4] = (float)(fVar10 * fVar9);
-  param_1[8] = (float)((float10)fVar5 * fVar9);
-  *param_1 = (float)((float10)fVar5 * (float10)fVar4 + fVar8 * (float10)fVar2 * (float10)fVar3);
-  param_1[1] = (float)(-(float10)fVar5 * (float10)fVar3 + fVar8 * (float10)fVar2 * (float10)fVar4);
-  param_1[7] = (float)((float10)fVar3 * (float10)fVar1 + fVar11 * (float10)fVar2 * (float10)fVar4);
-  param_1[6] = (float)(-(float10)fVar1 * (float10)fVar4 + fVar11 * (float10)fVar2 * (float10)fVar3);
+  this_ptr->m[0].z = (float)((float10)fVar1 * fVar9);
+  this_ptr->m[1].z = -fVar2;
+  this_ptr->m[1].x = (float)(fVar7 * fVar9);
+  this_ptr->m[1].y = (float)(fVar10 * fVar9);
+  this_ptr->m[2].z = (float)((float10)fVar5 * fVar9);
+  this_ptr->m[0].x =
+       (float)((float10)fVar5 * (float10)fVar4 + fVar8 * (float10)fVar2 * (float10)fVar3);
+  this_ptr->m[0].y =
+       (float)(-(float10)fVar5 * (float10)fVar3 + fVar8 * (float10)fVar2 * (float10)fVar4);
+  this_ptr->m[2].y =
+       (float)((float10)fVar3 * (float10)fVar1 + fVar11 * (float10)fVar2 * (float10)fVar4);
+  this_ptr->m[2].x =
+       (float)(-(float10)fVar1 * (float10)fVar4 + fVar11 * (float10)fVar2 * (float10)fVar3);
   return;
 }

@@ -2,56 +2,54 @@
 // Address: 0045f790
 // Address Range: [[0045f790, 0045f8cb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790(int *param_1,int param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790(int *param_1,int param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  SMRGLPrimitivePoly *pSVar3;
   int iVar4;
-  int iVar5;
   
-  if ((param_1[3] == 0) ||
-     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8), iVar4 != 0)) {
-    if (param_1[1] == 0) {
-      if (0 < *(int *)(param_2 + 4)) {
+  if ((this_ptr->plane_culling_enabled == 0) ||
+     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00404610(&(poly->base).surface_normal), iVar4 != 0)) {
+    if (this_ptr->face_count == 0) {
+      if (0 < (poly->base).base.count) {
         iVar2 = 0;
         iVar4 = 0;
-        iVar3 = param_2;
+        pSVar3 = poly;
         do {
-          iVar1 = *(int *)(iVar3 + 0x18);
-          if (param_1[8] == 0) {
-            iVar5 = iVar1 * 0x30;
-            *(uint *)(*param_1 + iVar5 + 0x18) = *(uint *)(iVar3 + 0x1c);
-            *(uint *)(*param_1 + iVar5 + 0x1c) = *(uint *)(iVar3 + 0x20);
+          iVar1 = pSVar3->vertices[0].vertex_index;
+          if (this_ptr->skip_uv_extraction == 0) {
+            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3->vertices[0].texture_u;
+            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3->vertices[0].texture_v;
           }
           *(int *)(&DAT_01b4d76c + iVar2) = iVar1;
-          iVar3 = iVar3 + 0xc;
+          pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
           iVar4 = iVar4 + 1;
           iVar2 = iVar2 + 4;
-        } while (iVar4 < *(int *)(param_2 + 4));
+        } while (iVar4 < (poly->base).base.count);
       }
     }
     else {
       iVar4 = 0;
-      if (0 < *(int *)(param_2 + 4)) {
+      if (0 < (poly->base).base.count) {
         iVar2 = 0;
-        iVar3 = param_2;
+        pSVar3 = poly;
         do {
-          *(uint *)(&DAT_01b4d76c + iVar2) = *(uint *)(iVar3 + 0x18);
+          *(int *)(&DAT_01b4d76c + iVar2) = pSVar3->vertices[0].vertex_index;
           iVar2 = iVar2 + 4;
           iVar4 = iVar4 + 1;
-          iVar3 = iVar3 + 0xc;
-        } while (iVar4 < *(int *)(param_2 + 4));
+          pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
+        } while (iVar4 < (poly->base).base.count);
       }
     }
-    if (param_1[1] == 0) {
+    if (this_ptr->face_count == 0) {
       if (DAT_005b7624 == 0x20) {
         _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
       }
@@ -64,10 +62,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f7
     else {
       _DAT_01c039a0 = 0;
       _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
+      _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-              (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);
+              (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);
   }
   return;
 }

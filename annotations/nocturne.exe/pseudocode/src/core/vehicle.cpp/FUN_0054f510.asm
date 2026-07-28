@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_vehicle_cpp_FUN_0054f510(int param_1)
+; int core_vehicle_cpp_FUN_0054f510(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
@@ -37,7 +37,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0054f517
     PUSH EDX                            ; 0054f51b
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0054f51c
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 0054f521
     PUSH 0x0                            ; 0054f524
     LEA EAX,[ESP + 0x1c]                ; 0054f526
@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x8                         ; 0054f543
     PUSH EAX                            ; 0054f546
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0054f547
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 0054f54c
     MOV EBX,dword ptr [ESP + 0x7c]      ; 0054f54f
     MOV dword ptr [ESP + 0x60],EAX      ; 0054f553
@@ -61,7 +61,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0054f561 | DAT_005ae704
     PUSH EBX                            ; 0054f567 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f568
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054f56d
     TEST EAX,EAX                        ; 0054f570
     JZ 0x0054f5da                       ; 0054f572
@@ -80,7 +80,7 @@ section .text
     ADD ESP,0x8                         ; 0054f59a
     PUSH EAX                            ; 0054f59d
     CALL core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 ; 0054f59e
-        ;   XREF to: 0041dcc0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0()
+        ;   XREF to: 0041dcc0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0054f5a3
     LEA EAX,[EAX]                       ; 0054f5a6
     LEA EDX,[EDX]                       ; 0054f5ac
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_0054f5b0
     PUSH ECX                            ; 0054f5b4
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0054f5b5
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054f5ba
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0054f5bd
     CMP dword ptr [EAX + 0x1064],0x0    ; 0054f5c1
@@ -109,7 +109,7 @@ section .text
     PUSH 0x0                            ; 0054f5e5
     PUSH EAX                            ; 0054f5e7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0054f5e8
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0054f5ed
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0054f5f0
     MOV EBP,dword ptr [EAX + 0x930]     ; 0054f5f4
@@ -130,7 +130,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0054f625 | DAT_005ae704
     PUSH EDX                            ; 0054f62b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0054f62c
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0054f631
     PUSH 0x0                            ; 0054f634
     MOV ECX,dword ptr [ESP + 0x68]      ; 0054f636
@@ -138,23 +138,23 @@ section .text
     MOV EAX,[0x005ae704]                ; 0054f63b | DAT_005ae704
     PUSH EAX                            ; 0054f640 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0054f641
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0054f646
     PUSH -0x1                           ; 0054f649
     PUSH 0x0                            ; 0054f64b
     PUSH EBP                            ; 0054f64d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0054f64e
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0054f653
     MOV EDX,dword ptr [0x005ae704]      ; 0054f656 | DAT_005ae704
     PUSH EDX                            ; 0054f65c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0054f65d
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0054f662
     MOV ECX,dword ptr [0x005ae704]      ; 0054f665 | DAT_005ae704
     PUSH ECX                            ; 0054f66b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0054f66c
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0054f671
     MOV EAX,dword ptr [ESP + 0x64]      ; 0054f674
     ADD EAX,0x1b4                       ; 0054f678
@@ -174,7 +174,7 @@ section .text
         ;   Label: LAB_0054f6a7
     PUSH ESI                            ; 0054f6ad | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f6ae
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0054f6b3
     TEST EAX,EAX                        ; 0054f6b6
     JNZ 0x0054f5ce                      ; 0054f6b8
@@ -196,7 +196,7 @@ section .text
     MOV dword ptr [ESP + 0x60],EDX      ; 0054f6f4
     MOV dword ptr [ESP + 0x64],EBP      ; 0054f6f8
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0054f6fc
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0054f701
     PUSH 0x41200000                     ; 0054f704
     LEA EAX,[ESI + 0x30]                ; 0054f709
@@ -205,7 +205,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 0054f712
     PUSH EAX                            ; 0054f716
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_00451b70 ; 0054f717
-        ;   XREF to: 00451b70 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_renderConeLightGeometry_FUN_00451b70()
+        ;   XREF to: 00451b70 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_00451b70(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 0054f71c
     LEA EAX,[ESP + 0x54]                ; 0054f71f
     PUSH EAX                            ; 0054f723
@@ -213,7 +213,7 @@ section .text
     PUSH EAX                            ; 0054f728
     PUSH ESI                            ; 0054f729
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0054f72a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EBX,EAX                         ; 0054f72f
     LEA EAX,[ESP + 0x3c]                ; 0054f731
     ADD ESP,0xc                         ; 0054f735
@@ -235,7 +235,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 0054f762
     PUSH EAX                            ; 0054f766
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_00451b70 ; 0054f767
-        ;   XREF to: 00451b70 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_renderConeLightGeometry_FUN_00451b70()
+        ;   XREF to: 00451b70 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_00451b70(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 0054f76c
     MOV EAX,dword ptr [ESP + 0x60]      ; 0054f76f
     ADD ESP,0x68                        ; 0054f773

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(undefined4 param_1,char *param_2)
+; void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools *this_ptr,char *output_buffer)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   output_buffer
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30
@@ -13,8 +16,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d494
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dab0
-;   core_game.cpp_FUN_0049cc10 at 0049d494
 ;   core_main.c_FUN_004c8510 at 004c85ab
 ;
 ; Referenced Globals:
@@ -54,7 +57,7 @@ section .text
         ;   Label: LAB_004736ec
     PUSH EAX                            ; 004736ee
     CALL crt_heap.c__heapwalk_FUN_00566b90 ; 004736ef
-        ;   XREF to: 00566b90 (UNCONDITIONAL_CALL)  ; undefined crt_heap.c__heapwalk_FUN_00566b90()
+        ;   XREF to: 00566b90 (UNCONDITIONAL_CALL)  ; int crt_heap.c__heapwalk_FUN_00566b90(_heapinfo * heap_info)
     ADD ESP,0x4                         ; 004736f4
     TEST EAX,EAX                        ; 004736f7
     JZ 0x00473735                       ; 004736f9

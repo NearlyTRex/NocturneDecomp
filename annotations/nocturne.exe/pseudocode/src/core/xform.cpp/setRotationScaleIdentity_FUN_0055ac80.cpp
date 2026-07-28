@@ -2,21 +2,21 @@
 // Address: 0055ac80
 // Address Range: [[0055ac80, 0055acc2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_0055ac80(undefined4 *param_1)
+// Signature: void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_0055ac80(CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 
-void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_0055ac80(uint *param_1)
+void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_0055ac80(CMatrix3x4f *matrix)
 
 {
-  param_1[1] = 0;
-  param_1[2] = 0;
-  param_1[4] = 0;
-  param_1[5] = 0x3f800000;
-  param_1[6] = 0;
-  param_1[8] = 0;
-  param_1[9] = 0;
-  param_1[10] = 0x3f800000;
-  *param_1 = 0x3f800000;
+  matrix->m[0].x = 0.0;
+  matrix->m[0].y = 0.0;
+  matrix->m[1].w = 0.0;
+  matrix->m[1].x = 1.0;
+  matrix->m[1].y = 0.0;
+  matrix->m[2].w = 0.0;
+  matrix->m[2].x = 0.0;
+  matrix->m[2].y = 1.0;
+  matrix->m[0].w = 1.0;
   return;
 }

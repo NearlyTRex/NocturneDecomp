@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_00476800(int *param_1)
+; void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_00476800(CEdScrollBar *this_ptr)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 at 00476932
-;   shape_edittool.cpp_FUN_00476580 at 0047658d
+;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 0047658d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f0b4

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(int param_1,int param_2)
+; void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(CCloth *this_ptr,int vertex_index)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_index
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_005402f0 at 00540564

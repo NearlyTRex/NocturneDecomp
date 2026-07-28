@@ -1,12 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char(*) [4] crt_stdlib_c__fullpath_FUN_00565d00(char(*param_1) [4],LPCSTR param_2,uint param_3)
+; char * __cdecl crt_stdlib_c__fullpath_FUN_00565d00(char *buffer,char *path,SIZE_T buffer_size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; char *           Stack[0x8]:4   path
+; SIZE_T           Stack[0xc]:4   buffer_size
 ;
 ; XREF[5]:
-;   FUN_005687bc at 00568807
-;   FUN_0056c864 at 0056c8cd
+;   crt_io.c_getFileStat_FUN_0056c864 at 0056c8cd
+;   crt_io.c_getTempDirectory_FUN_005687bc at 00568807
 ;   engine_dosio.cpp_findFileNormally_FUN_00456800 at 00456832
 ;   engine_pod.cpp_FUN_004f7ae0 at 004f7b12
 ;   shape_edittool.cpp_FUN_00474ae0 at 00474c2c
@@ -18,11 +22,11 @@
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
+;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_unknown.c_FUN_005638d0
-;   FUN_00568e80
-;   FUN_0056c5f0
+;   crt_watcom.c_getcwd_FUN_0056c5f0
 ;   GetFullPathNameA
 ;
 ; *****************************************************************************
@@ -44,15 +48,15 @@ section .text
     MOV EDI,0x104                       ; 00565d17
     PUSH EDI                            ; 00565d1c
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00565d1d
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00565d22
     MOV EBP,EAX                         ; 00565d25
     TEST EAX,EAX                        ; 00565d27
     JNZ 0x00565d3c                      ; 00565d29
         ;   XREF to: 00565d3c (CONDITIONAL_JUMP)  ; LAB_00565d3c
     PUSH 0x5                            ; 00565d2b
-    CALL FUN_00568e80                   ; 00565d2d
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 00565d2d
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     ADD ESP,0x4                         ; 00565d32
     XOR EAX,EAX                         ; 00565d35
     JMP 0x00565db8                      ; 00565d37
@@ -69,8 +73,8 @@ section .text
     PUSH EDI                            ; 00565d47
         ;   Label: LAB_00565d47
     PUSH EBX                            ; 00565d48
-    CALL FUN_0056c5f0                   ; 00565d49
-        ;   XREF to: 0056c5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056c5f0()
+    CALL crt_watcom.c_getcwd_FUN_0056c5f0 ; 00565d49
+        ;   XREF to: 0056c5f0 (UNCONDITIONAL_CALL)  ; char * crt_watcom.c_getcwd_FUN_0056c5f0(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 00565d4e
     ADD ESP,0x4                         ; 00565d51
     POP EBP                             ; 00565d54
@@ -82,7 +86,7 @@ section .text
         ;   Label: LAB_00565d59
     PUSH ESI                            ; 00565d5e
     CALL crt_string.c__stricmp_FUN_00564520 ; 00565d5f
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00565d64
     TEST EAX,EAX                        ; 00565d67
     JNZ 0x00565d96                      ; 00565d69
@@ -95,8 +99,8 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 00565d76
     PUSH 0xe                            ; 00565d79
-    CALL FUN_00568e80                   ; 00565d7b
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 00565d7b
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     ADD ESP,0x4                         ; 00565d80
     XOR EAX,EAX                         ; 00565d83
     ADD ESP,0x4                         ; 00565d85
@@ -121,7 +125,7 @@ section .text
     JNZ 0x00565db6                      ; 00565da5
         ;   XREF to: 00565db6 (CONDITIONAL_JUMP)  ; LAB_00565db6
     CALL crt_errno.c___set_errno_FUN_0056c73c ; 00565da7
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_0056c73c()
     XOR EAX,EAX                         ; 00565dac
     ADD ESP,0x4                         ; 00565dae
     POP EBP                             ; 00565db1

@@ -11,29 +11,31 @@ uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int p
 {
   int iVar1;
   int iVar2;
+  uint error_code;
   uint uVar3;
+  char *pcVar4;
   int *piStack_1b0;
   int *piStack_1ac;
   char *pcStack_1a8;
   char *pcStack_1a4;
   
-  iVar2 = *(int *)(param_2 + 0x6c);
-  if ((((iVar2 < 1) || (0x1e < iVar2)) || (*(int *)(iVar2 * 4 + 0x2dc92a8) == 0)) ||
-     (*(int *)(iVar2 * 4 + 0x2dc9324) == 0)) {
+  iVar1 = *(int *)(param_2 + 0x6c);
+  if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
+     (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
     pcStack_1a8 = "DirectSoundDevice::startSfx - invalid handle: %d";
     PTR_01cc4800 = "..\\sound\\snddx.cpp";
     INT_01cc4804 = 0x3b9;
     piStack_1ac = (int *)0x52b9e8;
-    pcStack_1a4 = (char *)iVar2;
+    pcStack_1a4 = (char *)iVar1;
     core_main_c_FUN_004c8440();
   }
   pcStack_1a4 = (char *)0xffffffff;
   pcStack_1a8 = (char *)param_2;
   piStack_1ac = param_1;
   piStack_1b0 = (int *)0x52b9f4;
-  iVar1 = (**(code **)(*param_1 + 0x40))();
+  iVar2 = (**(code **)(*param_1 + 0x40))();
   uVar3 = 0;
-  if (iVar1 != 0) {
+  if (iVar2 != 0) {
     if (*(int *)(param_2 + 0x74) == 0) {
       pcStack_1a4 = "DirectSoundDevice::startSfx - no sample??";
       PTR_01cc4800 = "..\\sound\\snddx.cpp";
@@ -46,13 +48,13 @@ uint sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(int *param_1,int p
       pcStack_1a4 = (char *)0x1;
     }
     pcStack_1a8 = (char *)0x0;
-    piStack_1b0 = *(int **)(iVar2 * 4 + 0x2dc92a8);
+    piStack_1b0 = *(int **)(iVar1 * 4 + 0x2dc92a8);
     piStack_1ac = (int *)0x0;
-    iVar2 = (**(code **)(*piStack_1b0 + 0x30))();
-    if (iVar2 != 0) {
-      uVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar2);
+    error_code = (**(code **)(*piStack_1b0 + 0x30))();
+    if (error_code != 0) {
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(&piStack_1b0,"DirectSux: Unable to %s.  (%s)","Play hardware sfx secondary buffer"
-                 ,uVar3);
+                 ,pcVar4);
       sound_sndmain_cpp_FUN_00529980(&piStack_1b0);
       return 0;
     }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(undefined1 *param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(CKeyFramedModel *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100 at 00435105

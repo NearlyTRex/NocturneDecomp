@@ -1,0 +1,161 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 7,
+    "suspect_types": [
+      "carry_arith_idiom",
+      "sub84_truncation"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [
+    {
+      "addr": "00567d88",
+      "from_addr": "00568078",
+      "name": "FUN_00567d88",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f100",
+    "address_range": [
+      [
+        "0056f100",
+        "0056f14b"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_math.c_doubleToFloat_FUN_0056f100",
+    "signature": "float __watcallRegister crt_math_c_doubleToFloat_FUN_0056f100(double val)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00568078",
+        "call_type": "direct",
+        "caller": "FUN_00567d88",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.033333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 4,
+      "CBRANCH": 4,
+      "COPY": 18,
+      "INT_ADD": 18,
+      "INT_AND": 34,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 1,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 3,
+      "INT_RIGHT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "INT_ZEXT": 5,
+      "LOAD": 6,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 1
+    },
+    "pcode_op_count": 211
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 11,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uVar4 = SUB84(val,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 13,
+      "match": "CARRY4(uVar3,uVar3)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 13,
+      "match": "CARRY4(uVar3 * 2,(uint)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 13,
+      "match": "CARRY4(uVar4,uVar4)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 15,
+      "match": "CARRY4(uVar4,uVar4)",
+      "severity": "moderate",
+      "text": "uVar4 = uVar3 * 2 + (uint)CARRY4(uVar4,uVar4) + (uint)(0xdfffffff < uVar4 * 2);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 20,
+      "match": "CARRY4(uVar2,uVar2)",
+      "severity": "moderate",
+      "text": "return (float)(((uVar4 + 0x90000000) * 2 + (uint)CARRY4(uVar2,uVar2)) * 2 +",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 21,
+      "match": "CARRY4(uVar2 * 2,uVar2 * 2)",
+      "severity": "moderate",
+      "text": "(uint)CARRY4(uVar2 * 2,uVar2 * 2) | uVar1);",
+      "type": "carry_arith_idiom"
+    }
+  ]
+}

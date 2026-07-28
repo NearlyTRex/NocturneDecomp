@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_keyactor_cpp_FUN_004c3460(undefined4 param_1)
+; int * core_keyactor_cpp_FUN_004c3460(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -30,7 +30,7 @@ section .text
     ADD EAX,0x150                       ; 004c346e
     PUSH EAX                            ; 004c3473
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c3474
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c3479
     LEA EBX,[EAX + 0xfffffeb0]          ; 004c347c
     PUSH 0x58757e                       ; 004c3482 | = "key1.kfm"
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 004c348d
     MOV dword ptr [EBX + 0x14c],0x59f824 ; 004c348e | PTR_core_keyactor.cpp_FUN_004c34c0_0059f824
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c3498
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c349d
     MOV dword ptr [EBX + 0x2cc],0x1     ; 004c34a0
     MOV EAX,EBX                         ; 004c34aa

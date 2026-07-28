@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ; undefined        Stack[-0x50]:1  local_50
@@ -73,7 +75,7 @@ section .text
     PUSH 0x3dcccccd                     ; 00427838
         ;   Label: LAB_00427838
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0042783d
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 00427842
     TEST EAX,EAX                        ; 00427845
     JZ 0x00427823                       ; 00427847
@@ -93,13 +95,13 @@ section .text
     MOV dword ptr [EBP + -0x18],ECX     ; 00427867
     MOV dword ptr [EBP + -0x14],EDX     ; 0042786a
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042786d
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 00427872
     PUSH EAX                            ; 00427875
     LEA EAX,[EBP + -0x10]               ; 00427876
     PUSH EAX                            ; 00427879
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042787a
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0042787f
     LEA EAX,[EBP + -0x10]               ; 00427882
     PUSH EAX                            ; 00427885
@@ -107,7 +109,7 @@ section .text
     PUSH EAX                            ; 00427889
     PUSH EBX                            ; 0042788a
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0042788b
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     XOR EAX,EAX                         ; 00427890
     ADD ESP,0xc                         ; 00427892
     MOV dword ptr [EBP + -0x24],EAX     ; 00427895
@@ -131,7 +133,7 @@ section .text
     MOV EAX,[0x005b96c4]                ; 004278c3 | INT_005b96c4
     PUSH EAX                            ; 004278c8
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004278c9
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 004278ce
     JMP 0x00427823                      ; 004278d1
         ;   XREF to: 00427823 (UNCONDITIONAL_JUMP)  ; LAB_00427823

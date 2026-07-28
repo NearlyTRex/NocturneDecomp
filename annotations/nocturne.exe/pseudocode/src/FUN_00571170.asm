@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005c1ab8
 ;
 ; Called Functions:
-;   FUN_0056ddc0
+;   crt_startup.c_HandleRuntimeError_FUN_0056ddc0
 ;   FUN_0056e608
 ;   TlsGetValue
 ;
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 005711a3 (CONDITIONAL_JUMP)  ; LAB_005711a3
     PUSH 0x1                            ; 00571194
     PUSH 0x599174                       ; 00571196 | = "Thread has no thread-specific data\r\n"
-    CALL FUN_0056ddc0                   ; 0057119b
-        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
+    CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0057119b
+        ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 005711a0
     MOV EAX,EBX                         ; 005711a3
         ;   Label: LAB_005711a3

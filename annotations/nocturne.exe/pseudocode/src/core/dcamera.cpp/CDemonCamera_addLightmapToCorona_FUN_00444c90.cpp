@@ -2,14 +2,14 @@
 // Address: 00444c90
 // Address Range: [[00444c90, 00444e1a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(int param_1,int param_2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
-void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(int param_1,int param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
   bool bVar1;
@@ -24,22 +24,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(int 
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  CDemonLight *local_14;
   
   local_1c = 0;
-  if (0 < *(int *)(param_1 + 0x154)) {
+  if (0 < this_ptr->display_height) {
     local_18 = 0;
     local_20 = 0xa9d078;
-    local_14 = param_2;
+    local_14 = light_source;
     do {
-      iVar2 = (*(int *)(local_14 + 0x1888) - *(int *)(local_14 + 0x14c8)) + 1;
+      iVar2 = (local_14->right_extent[0] - local_14->left_extent[0]) + 1;
       if (0 < iVar2) {
-        puVar3 = (uint *)(*(int *)(param_2 + 0x1c48) + local_18 + *(int *)(local_14 + 0x14c8) * 4);
+        puVar3 = (uint *)((int)light_source->corona_visibility_buffers +
+                         local_14->left_extent[0] * 4 + local_18);
         puVar9 = (uint *)
-                 (*(int *)(param_2 + 0x1c4c) + local_18 + *(int *)(local_14 + 0x14c8) * 4);
-        piVar4 = (int *)(*(int *)(param_2 + 0x1c50) + local_18 + *(int *)(local_14 + 0x14c8) * 4);
-        pcVar5 = (char *)(local_20 + *(int *)(local_14 + 0x14c8));
-        _DAT_014b7194 = *(int *)(param_2 + 0x1c54);
+                 ((int)light_source->corona_depth_buffer + local_14->left_extent[0] * 4 + local_18);
+        piVar4 = (int *)((int)light_source->corona_lightmap_indices +
+                        local_14->left_extent[0] * 4 + local_18);
+        pcVar5 = (char *)(local_20 + local_14->left_extent[0]);
+        _DAT_014b7194 = light_source->precomputed_lighting_textures;
         iVar8 = iVar2;
         do {
           iVar6 = iVar8 + -8;
@@ -60,7 +62,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(int 
         } while (iVar7 != 0 && bVar1);
         do {
           if ((*puVar3 != 0) && (*puVar3 <= (uint)*(ushort *)*puVar9)) {
-            *pcVar5 = *pcVar5 + *(char *)(_DAT_014b7194 + *piVar4);
+            *pcVar5 = *pcVar5 + _DAT_014b7194[*piVar4];
           }
           puVar3 = puVar3 + 1;
           puVar9 = puVar9 + 1;
@@ -71,11 +73,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00444c90(int 
           iVar2 = iVar8;
         } while (iVar8 != 0 && bVar1);
       }
-      local_14 = local_14 + 4;
+      local_14 = (CDemonLight *)&(local_14->base).base.position;
       local_20 = local_20 + 0x140;
       local_18 = local_18 + 0x500;
       local_1c = local_1c + 1;
-    } while (local_1c < *(int *)(param_1 + 0x154));
+    } while (local_1c < this_ptr->display_height);
   }
   return;
 }

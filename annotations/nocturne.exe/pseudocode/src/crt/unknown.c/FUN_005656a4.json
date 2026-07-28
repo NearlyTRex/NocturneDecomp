@@ -36,35 +36,35 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005656a4",
-    "signature": "int crt_unknown_c_FUN_005656a4(int param_1)"
+    "signature": "_FILE * crt_unknown_c_FUN_005656a4(_FILE *param_1)"
   },
   "function_calls": [
     {
-      "addr": "005634b0",
+      "addr": "00568e80",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005634b0"
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
     },
     {
       "addr": "005671e4",
       "is_variadic": false,
-      "name": "FUN_005671e4"
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
     },
     {
-      "addr": "00568e80",
+      "addr": "005634b0",
       "is_variadic": false,
-      "name": "FUN_00568e80"
+      "name": "crt_unknown.c_fclose_FUN_005634b0"
     }
   ],
   "globals": [
     {
       "addr": "005c1ad0",
-      "name": "PTR_FUN_005c1ad0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad0",
       "type": "void*",
       "value": "005671e4"
     },
     {
       "addr": "005c1ad4",
-      "name": "PTR_FUN_005c1ad4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad4",
       "type": "void*",
       "value": "005671e4"
     },
@@ -151,7 +151,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_005656a4(int param_1)",
+      "text": "_FILE * FUN_005656a4(_FILE *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -159,7 +159,7 @@
       "line": 11,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ad0)();",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();",
       "type": "unresolved_funcptr"
     },
     {
@@ -167,7 +167,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == iVar1) {",
+      "text": "if (param_1 == file_handle) {",
       "type": "unnamed_param"
     },
     {
@@ -175,7 +175,7 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ad4)();",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();",
       "type": "unresolved_funcptr"
     },
     {
@@ -191,7 +191,7 @@
       "line": 22,
       "match": "DAT_02de4e24",
       "severity": "mild",
-      "text": "puVar2 = (uint *)&DAT_02de4e24;",
+      "text": "puVar1 = (uint *)&DAT_02de4e24;",
       "type": "undefined_data"
     },
     {
@@ -199,7 +199,7 @@
       "line": 28,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ad4)();",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();",
       "type": "unresolved_funcptr"
     },
     {
@@ -207,7 +207,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (param_1 != puVar2[1]);",
+      "text": "} while (param_1 != (_FILE *)puVar1[1]);",
       "type": "unnamed_param"
     },
     {
@@ -215,7 +215,7 @@
       "line": 35,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ad4)();",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();",
       "type": "unresolved_funcptr"
     },
     {

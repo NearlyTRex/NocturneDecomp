@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(int *param_1)
+; void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,int render_pass)
 ;
+; Parameters:
+; CTerrain *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_pass
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -58,7 +61,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 0054932f | DAT_005ae704
     PUSH ECX                            ; 00549335 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 00549336
-        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30()
+        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0054933b
     MOV EBX,0x40800                     ; 0054933e
     PUSH EBX                            ; 00549343
@@ -69,7 +72,7 @@ section .text
     MOV dword ptr [ESP + 0x18],EBX      ; 0054934e
     MOV dword ptr [ESP + 0x20],ESI      ; 00549352
     CALL core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0 ; 00549356
-        ;   XREF to: 004b21b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0()
+        ;   XREF to: 004b21b0 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0(CGround * this_ptr, int world_x, int world_z)
     ADD ESP,0xc                         ; 0054935b
     FLD double ptr [0x00596cd5]         ; 0054935e | DOUBLE_00596cd5
     FLD float ptr [ESP]                 ; 00549364
@@ -84,10 +87,10 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0054937f
     FXCH                                ; 00549383
     CALL crt_math.c_round_FUN_00563a30  ; 00549385
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0054938a
     CALL crt_math.c_round_FUN_00563a30  ; 0054938c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00549391
     FISTP dword ptr [ESP + 0x18]        ; 00549393
     MOV EAX,dword ptr [ESP + 0x18]      ; 00549397
@@ -95,7 +98,7 @@ section .text
     ADD ECX,EAX                         ; 0054939f
     MOV EAX,dword ptr [ESP + 0x18]      ; 005493a1
     CALL crt_math.c_round_FUN_00563a30  ; 005493a5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     ADD EAX,EDX                         ; 005493aa
     FISTP dword ptr [ESP + 0x18]        ; 005493ac
     MOV dword ptr [ESP + 0x10],EAX      ; 005493b0
@@ -112,19 +115,19 @@ section .text
     PUSH EDI                            ; 005493d4 | DAT_01b4d738
     MOV dword ptr [ESP + 0x1c],ESI      ; 005493d5
     CALL engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0 ; 005493d9
-        ;   XREF to: 004606e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0()
+        ;   XREF to: 004606e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0(CDemonRenderer * this_ptr, CVector3i * origin)
     ADD ESP,0x8                         ; 005493de
     MOV EAX,[0x005ba8ec]                ; 005493e1 | INT_005ba8ec
     PUSH EAX                            ; 005493e6
     CALL core_ground.cpp_CGround_render_FUN_004b2110 ; 005493e7
-        ;   XREF to: 004b2110 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_render_FUN_004b2110()
+        ;   XREF to: 004b2110 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_render_FUN_004b2110(CGround * this_ptr)
     ADD ESP,0x4                         ; 005493ec
     MOV EAX,ESP                         ; 005493ef
     PUSH EAX                            ; 005493f1
     MOV EDX,dword ptr [0x005ae704]      ; 005493f2 | DAT_005ae704
     PUSH EDX                            ; 005493f8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 005493f9
-        ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700()
+        ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005493fe
     MOV ESP,EBP                         ; 00549401
     POP EBP                             ; 00549403

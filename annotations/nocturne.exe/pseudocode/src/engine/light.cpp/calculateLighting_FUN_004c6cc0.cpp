@@ -2,25 +2,25 @@
 // Address: 004c6cc0
 // Address Range: [[004c6cc0, 004c6d63]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)
+// Signature: int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int normal_x,int normal_y,int normal_z)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)
+int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int normal_x,int normal_y,int normal_z)
 
 {
   longlong lVar1;
   int iVar2;
   int iVar3;
   
-  iVar3 = ((uint)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x10 |
-          (int)((ulonglong)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x20) << 0x10) +
-          ((uint)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x10 |
-          (int)((ulonglong)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x20) << 0x10) +
-          ((uint)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x10 |
-          (int)((ulonglong)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x20) << 0x10);
+  iVar3 = ((uint)((longlong)normal_x * (longlong)_DAT_01c039dc) >> 0x10 |
+          (int)((ulonglong)((longlong)normal_x * (longlong)_DAT_01c039dc) >> 0x20) << 0x10) +
+          ((uint)((longlong)normal_y * (longlong)_DAT_01c039e0) >> 0x10 |
+          (int)((ulonglong)((longlong)normal_y * (longlong)_DAT_01c039e0) >> 0x20) << 0x10) +
+          ((uint)((longlong)normal_z * (longlong)_DAT_01c039e4) >> 0x10 |
+          (int)((ulonglong)((longlong)normal_z * (longlong)_DAT_01c039e4) >> 0x20) << 0x10);
   iVar2 = -iVar3;
   if (iVar2 < 0) {
     iVar2 = 0;

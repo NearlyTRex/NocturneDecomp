@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 183,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "pseudocode_lines": 73,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 162
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -154,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580",
-    "signature": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)"
+    "signature": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)"
   },
   "function_calls": [
     {
@@ -184,11 +182,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.625,
@@ -224,10 +222,10 @@
     "pcode_op_count": 407
   },
   "stack_frame": {
-    "frame_size": 316,
+    "frame_size": 328,
     "local_size": 316,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -369,61 +367,121 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCloth_computeBoneTransform_FUN_00436580.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 11,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 69,
+          "line": 59,
+          "message": "Uninitialized variable: local_128",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 69,
+          "line": 60,
+          "message": "Uninitialized variable: local_118",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 69,
+          "line": 61,
+          "message": "Uninitialized variable: local_134",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 69,
+          "line": 62,
+          "message": "Uninitialized variable: local_124",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 67,
+          "line": 63,
+          "message": "Uninitialized variable: local_114",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 64,
+          "message": "Uninitialized variable: local_130",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 65,
+          "message": "Uninitialized variable: local_120",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 66,
+          "message": "Uninitialized variable: local_110",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 79,
+          "message": "Uninitialized variable: local_9c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 80,
+          "message": "Uninitialized variable: local_8c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 66,
+          "line": 81,
+          "message": "Uninitialized variable: local_7c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_00436580(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = param_2 * 0xac + param_1 + 0x37b50;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_2 * 0xac + param_1 + 0x37b50;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_xform_cpp_inverse_FUN_0055bd00(param_3 + 0xe80 + *(int *)(iVar2 + 0x40) * 0x30);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -431,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
+      "line": 46,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -439,22 +497,99 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 63,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_128",
       "line": 59,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xc] = local_128;",
+      "type": "static_uninitvar"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "description": "Uninitialized variable: local_118",
+      "line": 60,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xd] = local_118;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_134",
+      "line": 61,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xe] = local_134;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_124",
+      "line": 62,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].rest_lengths[bone_index * 0x2b + 0xf] = local_124;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_114",
+      "line": 63,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -10] = local_114;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_130",
+      "line": 64,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -9] = local_130;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_120",
+      "line": 65,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -8] = local_120;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_110",
+      "line": 66,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -7] = local_110;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_9c",
+      "line": 79,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*piVar2 = local_9c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_8c",
+      "line": 80,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -4] = local_8c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_7c",
+      "line": 81,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "this_ptr->vertices[0x2d5].bone_index[bone_index * 0x2b + -3] = local_7c;",
+      "type": "static_uninitvar"
     }
   ]
 }

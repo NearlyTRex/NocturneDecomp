@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(int param_1)
+; int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(SMRGLHeaderPrimitive *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@ section .text
     LEA EAX,[EBP + 0x8]                 ; 00405e19
     PUSH EAX                            ; 00405e1c
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00405e1d
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00405e22
     TEST EAX,EAX                        ; 00405e25
     JZ 0x00405fef                       ; 00405e27
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [0x01c039a0],EDI      ; 00405f09 | DAT_01c039a0
     MOV [0x01c039a4],EAX                ; 00405f0f | DAT_01c039a4
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 00405f14
-        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_00404710()
+        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00405f19
     JMP 0x00405e66                      ; 00405f1c
         ;   XREF to: 00405e66 (UNCONDITIONAL_JUMP)  ; LAB_00405e66
@@ -157,7 +157,7 @@ section .text
     MOV [0x01c039a0],EAX                ; 00405f80 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDX      ; 00405f85 | DAT_01c039a4
     CALL engine_light.cpp_calculateLighting_FUN_004c6cc0 ; 00405f8b
-        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateLighting_FUN_004c6cc0()
+        ;   XREF to: 004c6cc0 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_004c6cc0(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00405f90
     MOV EAX,[0x01c00c74]                ; 00405f93 | DAT_01c00c74
     PUSH EAX                            ; 00405f98

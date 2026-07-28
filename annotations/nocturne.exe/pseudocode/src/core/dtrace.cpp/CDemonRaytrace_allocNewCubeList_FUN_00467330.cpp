@@ -2,22 +2,24 @@
 // Address: 00467330
 // Address Range: [[00467330, 0046739d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(int param_1)
+// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(CDemonRaytrace *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(int param_1)
+void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(CDemonRaytrace *this_ptr)
 
 {
-  uint uVar1;
-  int iVar2;
+  void *array_memory;
+  CDemonCube *pCVar1;
+  int element_count;
+  WatcomTypeInfo *type_info;
   
-  iVar2 = *(int *)(param_1 + 0x48) * *(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44);
-  uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18
-                    (iVar2 * 0x34 + 4,iVar2,&g_CDemonCubeTypeInfo_0059c8c0);
-  iVar2 = __vec_new(uVar1);
-  *(int *)(param_1 + 0x50) = iVar2;
-  if (iVar2 != 0) {
+  element_count = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+  type_info = &g_CDemonCubeTypeInfo_0059c8c0;
+  array_memory = shape_memdbg_cpp_malloc_FUN_00564c18(element_count * 0x34 + 4);
+  pCVar1 = (CDemonCube *)__vec_new(array_memory,element_count,type_info);
+  this_ptr->cube_data = pCVar1;
+  if (pCVar1 != (CDemonCube *)0x0) {
     return;
   }
   PTR_01cc4800 = "..\\core\\dtrace.cpp";

@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 00437a71 | DAT_01b4d738
     XOR EBX,EBX                         ; 00437a72
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10 ; 00437a74
-        ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10()
+        ;   XREF to: 00460f10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(CDemonRenderer * this_ptr, int color)
     MOV ECX,dword ptr [ESI + 0x37b4c]   ; 00437a79
     ADD ESP,0x8                         ; 00437a7f
     TEST ECX,ECX                        ; 00437a82

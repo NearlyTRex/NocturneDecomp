@@ -10,10 +10,10 @@ void core_dtrace_cpp_FUN_004675e0(int param_1)
 
 {
   if (*(int *)(param_1 + 8) != 0) {
-    shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 8) + -4);
+    shape_memdbg_cpp_free_FUN_00564486((void *)(*(int *)(param_1 + 8) + -4));
   }
-  if (*(int *)(param_1 + 0xc) != 0) {
-    shape_memdbg_cpp_free_FUN_00564486(*(int *)(param_1 + 0xc));
+  if (*(void **)(param_1 + 0xc) != (void *)0x0) {
+    shape_memdbg_cpp_free_FUN_00564486(*(void **)(param_1 + 0xc));
   }
   *(uint *)(param_1 + 0xc) = 0;
   *(uint *)(param_1 + 4) = 0;

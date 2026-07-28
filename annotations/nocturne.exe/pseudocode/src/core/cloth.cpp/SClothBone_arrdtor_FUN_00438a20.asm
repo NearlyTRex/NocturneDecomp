@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(undefined4 param_1)
+; SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(SClothBone *objs,uint flags)
 ;
+; Parameters:
+; SClothBone *     Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160 at 00435177
@@ -23,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00438a27
     PUSH EDX                            ; 00438a2b
     CALL crt_memory.c___arrfini_FUN_0056494f ; 00438a2c
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00438a31
     RET                                 ; 00438a34
 

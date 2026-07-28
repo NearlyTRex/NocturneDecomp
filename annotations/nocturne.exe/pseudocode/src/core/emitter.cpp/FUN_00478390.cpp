@@ -9,12 +9,12 @@
 void core_emitter_cpp_FUN_00478390(void)
 
 {
-  int iVar1;
+  CEmitter *this_ptr;
   
-  iVar1 = FUN_0056497c(0x48c);
-  if (iVar1 == 0) {
+  this_ptr = (CEmitter *)FUN_0056497c(0x48c);
+  if (this_ptr == (CEmitter *)0x0) {
     return;
   }
-  core_emitter_cpp_CEmitter_ctor_FUN_004783c0(iVar1);
+  core_emitter_cpp_CEmitter_ctor_FUN_004783c0(this_ptr);
   return;
 }

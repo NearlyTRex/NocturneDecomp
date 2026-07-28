@@ -2,53 +2,52 @@
 // Address: 005173c0
 // Address Range: [[005173c0, 005174df]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(int param_1,int param_2,undefined4 param_3)
+// Signature: void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(int param_1,int param_2,uint param_3)
+void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
-  int iVar1;
-  uint uVar2;
-  int *piVar3;
-  int *piVar4;
+  float fVar1;
+  CQuaternion4f *pCVar2;
+  CVector3f *pCVar3;
+  CVector3f *pCVar4;
   
-  core_skeleton_cpp_FUN_005174e0(param_1);
-  if (100 < param_2) {
+  core_skeleton_cpp_FUN_005174e0(this_ptr);
+  if (100 < bone_count) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0xc6;
     core_main_c_FUN_004c8440("Too bony!");
   }
-  *(int *)(param_1 + 0x28558) = param_2;
-  *(uint *)(param_1 + 0x2936c) = param_3;
-  uVar2 = shape_memdbg_cpp_malloc_FUN_00564c18
-                    (*(int *)(param_1 + 0x28558) * *(int *)(param_1 + 0x2936c) * 0x10);
-  iVar1 = *(int *)(param_1 + 0x2936c);
-  *(uint *)(param_1 + 0x29370) = uVar2;
-  piVar3 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0xc + 4);
-  piVar4 = piVar3;
-  if (piVar3 != (int *)0x0) {
-    piVar4 = piVar3 + 1;
-    *piVar3 = iVar1;
+  this_ptr->bone_count = bone_count;
+  this_ptr->frame_count = frame_count;
+  pCVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(this_ptr->bone_count * this_ptr->frame_count * 0x10)
+  ;
+  fVar1 = (float)this_ptr->frame_count;
+  this_ptr->bone_angle_frames = pCVar2;
+  pCVar3 = shape_memdbg_cpp_malloc_FUN_00564c18((int)fVar1 * 0xc + 4);
+  pCVar4 = pCVar3;
+  if (pCVar3 != (CVector3f *)0x0) {
+    pCVar4 = (CVector3f *)&pCVar3->y;
+    pCVar3->x = fVar1;
   }
-  iVar1 = *(int *)(param_1 + 0x2936c);
-  *(int **)(param_1 + 0x29374) = piVar4;
-  piVar3 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0xc + 4);
-  piVar4 = piVar3;
-  if (piVar3 != (int *)0x0) {
-    piVar4 = piVar3 + 1;
-    *piVar3 = iVar1;
+  fVar1 = (float)this_ptr->frame_count;
+  this_ptr->frame_positions_1 = pCVar4;
+  pCVar3 = shape_memdbg_cpp_malloc_FUN_00564c18((int)fVar1 * 0xc + 4);
+  pCVar4 = pCVar3;
+  if (pCVar3 != (CVector3f *)0x0) {
+    pCVar4 = (CVector3f *)&pCVar3->y;
+    pCVar3->x = fVar1;
   }
-  *(int **)(param_1 + 0x29378) = piVar4;
-  if (((*(int *)(param_1 + 0x29370) != 0) && (*(int *)(param_1 + 0x29374) != 0)) &&
-     (piVar4 != (int *)0x0)) {
+  this_ptr->frame_positions_2 = pCVar4;
+  if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
+      (this_ptr->frame_positions_1 != (CVector3f *)0x0)) && (pCVar4 != (CVector3f *)0x0)) {
     return;
   }
   PTR_01cc4800 = "..\\core\\skeleton.cpp";
   INT_01cc4804 = 0xda;
   core_main_c_FUN_004c8440
-            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",*(uint *)(param_1 + 0x28558),
-             *(uint *)(param_1 + 0x2936c));
+            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
   return;
 }

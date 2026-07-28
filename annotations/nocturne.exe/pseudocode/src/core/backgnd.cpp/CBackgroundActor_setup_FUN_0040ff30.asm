@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(int param_1)
+; undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(CDemonActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -18,11 +18,11 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0040ff35
     PUSH EAX                            ; 0040ff3b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0040ff3c
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040ff41
     PUSH EBX                            ; 0040ff44
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0040ff45
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV EDX,dword ptr [EBX + 0x2cc]     ; 0040ff4a
     ADD ESP,0x4                         ; 0040ff50
     TEST EDX,EDX                        ; 0040ff53

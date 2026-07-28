@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(float *param_1,int param_2)
+; int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *this_ptr)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
 ; undefined4       Stack[-0x44]:4  local_44
@@ -85,7 +87,7 @@ section .text
         ;   Label: LAB_0041ced5
     PUSH EDX                            ; 0041cedb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041cedc
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041cee1
     TEST EAX,EAX                        ; 0041cee4
     JNZ 0x0041d030                      ; 0041cee6
@@ -153,7 +155,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0041cfaf
     PUSH EAX                            ; 0041cfb3
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041cfb4
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0041cfb9
     MOV EBX,dword ptr [0x007f7370]      ; 0041cfbc | DAT_007f7370
     FLD float ptr [ESP + 0x60]          ; 0041cfc2
@@ -204,7 +206,7 @@ section .text
         ;   XREF to: 0041d025 (CONDITIONAL_JUMP)  ; LAB_0041d025
     PUSH EBX                            ; 0041d037
     CALL core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0 ; 0041d038
-        ;   XREF to: 0041cce0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0()
+        ;   XREF to: 0041cce0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0041d03d
     TEST EAX,EAX                        ; 0041d040
     JNZ 0x0041d025                      ; 0041d042

@@ -9,7 +9,7 @@
 void __cdecl core_dmodel_cpp_staticInit_FUN_00452530(void)
 
 {
-  __arrinit(0x1abb65c,0x100,&g_CKeyFramedModelTypeInfo_0059c0a0);
-  FUN_00564bb0(&DAT_005ae638);
+  __arrinit((void *)0x1abb65c,0x100,&g_CKeyFramedModelTypeInfo_0059c0a0);
+  _atexit((WatcomStaticDestructorNode *)&DAT_005ae638);
   return;
 }

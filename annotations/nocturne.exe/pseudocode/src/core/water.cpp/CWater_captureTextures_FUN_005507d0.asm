@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_water_cpp_CWater_captureTextures_FUN_005507d0(void)
+; void __cdecl core_water_cpp_CWater_captureTextures_FUN_005507d0(CWater *this_ptr)
 ;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_loadAssets_FUN_0050d280 at 0050d28c
@@ -31,7 +33,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 005507de | DAT_005ae704
     PUSH EDX                            ; 005507e4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 005507e5
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD EBX,0x18                        ; 005507ea
     ADD ESP,0x8                         ; 005507ed
     CMP EBX,ESI                         ; 005507f0

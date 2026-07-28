@@ -13,9 +13,10 @@ uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
 {
   int iVar1;
   uint uVar2;
-  byte *puVar3;
-  int iVar4;
-  ulonglong local_338;
+  char *pcVar3;
+  byte *puVar4;
+  int iVar5;
+  double local_338;
   byte auStack_330 [400];
   byte auStack_1a0 [400];
   
@@ -27,39 +28,39 @@ uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
          ((int)((_DAT_02dc9228 + (_DAT_02dc9228 >> 0x1f) * -8) -
                (uint)((_DAT_02dc9228 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02dc9234 * _DAT_02dc9230;
     local_338 = ((double)_DAT_02dc9234 / (double)_DAT_02dc922c) * 0.5;
-    iVar4 = 0;
+    iVar5 = 0;
     _DAT_02dc9240 = 0;
     if (0 < _DAT_02dc923c) {
       do {
         iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_00529c10();
         if (iVar1 == 0) goto LAB_0052a05b;
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < _DAT_02dc923c);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < _DAT_02dc923c);
     }
   }
-  iVar4 = sound_sndmain_cpp_startSoundThread_FUN_005286d0((uint)local_338,local_338._4_4_);
-  if (iVar4 != 0) {
+  iVar5 = sound_sndmain_cpp_startSoundThread_FUN_005286d0(local_338);
+  if (iVar5 != 0) {
     if (_DAT_02dc921c == (int *)0x0) {
       return 1;
     }
-    iVar4 = (**(code **)(*_DAT_02dc921c + 0x34))(_DAT_02dc921c,0);
-    if (iVar4 == 0) {
-      iVar4 = (**(code **)(*_DAT_02dc921c + 0x30))(_DAT_02dc921c,0,0,1);
-      if (iVar4 == 0) {
+    uVar2 = (**(code **)(*_DAT_02dc921c + 0x34))(_DAT_02dc921c,0);
+    if (uVar2 == 0) {
+      uVar2 = (**(code **)(*_DAT_02dc921c + 0x30))(_DAT_02dc921c,0,0,1);
+      if (uVar2 == 0) {
         return 1;
       }
-      uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar4);
+      pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(auStack_330,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
-                 uVar2);
-      puVar3 = auStack_330;
+                 pcVar3);
+      puVar4 = auStack_330;
     }
     else {
-      uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar4);
+      pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
       _sprintf(auStack_1a0,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
-                 uVar2);
-      puVar3 = auStack_1a0;
+                 pcVar3);
+      puVar4 = auStack_1a0;
     }
-    sound_sndmain_cpp_FUN_00529980(puVar3);
+    sound_sndmain_cpp_FUN_00529980(puVar4);
   }
 LAB_0052a05b:
   (**(code **)(*param_1 + 8))(param_1);

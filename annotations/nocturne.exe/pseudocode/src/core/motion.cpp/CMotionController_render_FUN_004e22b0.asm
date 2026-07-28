@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(int param_1,int param_2)
+; void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionController *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8
 ; undefined1       Stack[-0xa7]:1  local_a7
@@ -71,7 +74,7 @@ section .text
         ;   Label: LAB_004e22d6
     PUSH ECX                            ; 004e22dc | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004e22dd
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004e22e2
     TEST EAX,EAX                        ; 004e22e5
     JNZ 0x004e22ce                      ; 004e22e7
@@ -105,7 +108,7 @@ section .text
     ADD EAX,0xea5d0                     ; 004e233c
     PUSH EAX                            ; 004e2341
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004e2342
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 004e2347 | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 004e234c | DAT_01b4d738
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 004e234e
@@ -124,7 +127,7 @@ section .text
     PUSH EDI                            ; 004e237a
     MOV dword ptr [EBP + 0x76],EDX      ; 004e237b
     CALL engine_2d.c_drawText_FUN_00402600 ; 004e237e
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 004e2383
     MOV EDX,dword ptr [EAX + 0x28]      ; 004e2389
     ADD ESP,0xc                         ; 004e238c
@@ -133,7 +136,7 @@ section .text
         ;   XREF to: 004e2448 (CONDITIONAL_JUMP)  ; LAB_004e2448
     PUSH EAX                            ; 004e2397
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004e2398
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EDX,dword ptr [EBP + 0x8e]      ; 004e239d
     MOV EAX,dword ptr [EAX + 0x24]      ; 004e23a3
     MOV ESI,dword ptr [EDX + 0x28]      ; 004e23a6
@@ -147,7 +150,7 @@ section .text
     PUSH EDX                            ; 004e23bc
     SUB EDI,EAX                         ; 004e23bd
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004e23bf
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD EAX,0x4                         ; 004e23c4
     ADD ESP,0x4                         ; 004e23c7
     ADD EAX,EDI                         ; 004e23ca
@@ -155,7 +158,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x8e]      ; 004e23cd
     PUSH EDX                            ; 004e23d3
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 004e23d4
-        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0()
+        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e23d9
     PUSH EAX                            ; 004e23dc
     PUSH 0x58b4cc                       ; 004e23dd | = "%s -> %s"
@@ -172,7 +175,7 @@ section .text
     LEA EAX,[EBP + -0x1e]               ; 004e23f6
     PUSH EAX                            ; 004e23f9
     CALL engine_2d.c_drawText_FUN_00402600 ; 004e23fa
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004e23ff
     MOV EAX,dword ptr [EBP + 0x8e]      ; 004e2402
     SUB ESP,0x8                         ; 004e2408
@@ -180,7 +183,7 @@ section .text
     FSTP double ptr [ESP]               ; 004e240e
     PUSH EAX                            ; 004e2411
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004e2412
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e2417
     PUSH EAX                            ; 004e241a
     PUSH 0x58b4d5                       ; 004e241b | = "%s : %5.2f"
@@ -196,7 +199,7 @@ section .text
     LEA EAX,[EBP + -0x1e]               ; 004e2434
     PUSH EAX                            ; 004e2437
     CALL engine_2d.c_drawText_FUN_00402600 ; 004e2438
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004e243d
     LEA ESP,[EBP + 0x7a]                ; 004e2440
     POP EBP                             ; 004e2443
@@ -208,7 +211,7 @@ section .text
         ;   Label: LAB_004e2448
     PUSH EDI                            ; 004e244e
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 004e244f
-        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0()
+        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e2454
     LEA EDI,[EBP + -0x1e]               ; 004e2457
     MOV ESI,EAX                         ; 004e245a

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_game_cpp_CGame_ctor_FUN_0049a650(undefined4 *param_1)
+; CGame * __cdecl core_game_cpp_CGame_ctor_FUN_0049a650(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a209
@@ -34,7 +36,7 @@ section .text
     PUSH EBX                            ; 0049a6a4
     MOV dword ptr [EBX + 0xbc],0x0      ; 0049a6a5
     CALL core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610 ; 0049a6af
-        ;   XREF to: 0049e610 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610()
+        ;   XREF to: 0049e610 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610(CGame * this_ptr)
     MOV byte ptr [EBX + 0xd0],0x0       ; 0049a6b4
     MOV dword ptr [EBX + 0x1d0],0x0     ; 0049a6bb
     MOV dword ptr [EBX + 0x1d4],0x0     ; 0049a6c5

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,26 +122,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 584,
+    "complexity_score": 382,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
-    "suspect_count": 47,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 107,
+    "suspect_count": 25,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 379
+    "total_lines": 392
   },
   "cross_references": [
     {
       "addr": "005084c0",
       "from_addr": "00508634",
       "name": "core_set.cpp_CDemonSet_initScene_FUN_005084c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00507f80",
+      "from_addr": "00508061",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,12 +161,6 @@
       "addr": "005088f0",
       "from_addr": "00508b2f",
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00507f80",
-      "from_addr": "00508061",
-      "name": "core_set.cpp_FUN_00507f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -185,7 +186,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(int param_1,undefined4 param_2,int param_3)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *this_ptr,float frustum_param,int render_mode)"
   },
   "function_calls": [
     {
@@ -199,6 +200,11 @@
       "name": "core_dskybox.cpp_renderSkyDome_FUN_00463580"
     },
     {
+      "addr": "00469ce0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0"
+    },
+    {
       "addr": "0046ae40",
       "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40"
@@ -207,11 +213,6 @@
       "addr": "0046ace0",
       "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0"
-    },
-    {
-      "addr": "00469ce0",
-      "is_variadic": false,
-      "name": "core_dtrace.cpp_FUN_00469ce0"
     },
     {
       "addr": "004ac7c0",
@@ -419,7 +420,7 @@
       {
         "call_addr": "00508061",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00507f80",
+        "caller": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -429,10 +430,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.227906976744186,
@@ -466,10 +467,10 @@
     "pcode_op_count": 1124
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 44,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -492,6 +493,27 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "frustum_param",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "render_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -505,35 +527,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00460c70(DAT_005ae704,&DAT_005be36c);",
+      "text": "(DAT_005ae704,(CVector3i *)&DAT_005be36c);",
       "type": "undefined_data"
     },
     {
@@ -541,7 +539,7 @@
       "line": 14,
       "match": "DAT_005be36c",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00460c70(DAT_005ae704,&DAT_005be36c);",
+      "text": "(DAT_005ae704,(CVector3i *)&DAT_005be36c);",
       "type": "undefined_data"
     },
     {
@@ -549,331 +547,176 @@
       "line": 15,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(DAT_005ae704,0x3e800000);",
+      "text": "engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(DAT_005ae704,0.25);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x15aa64) != 0) goto LAB_00507d51;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((param_3 == 0) || (*(int *)(param_1 + 0x15aabc) < 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_3 == 0) || (*(int *)(param_1 + 0x15aabc) < 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 1) goto LAB_00507d02;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x15aabc) * 0x1a0 + param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x15aabc) * 0x1a0 + param_1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0(&DAT_01fba938,iVar3,iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x15aabc) * 0x1a0 + param_1 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x15aabc) * 0x1a0 + param_1 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01fba938",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(&DAT_01fba938,iVar3 + 400,iVar3 + 0x194);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,iVar2,visible_cube_indices);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
+      "match": "DAT_01fba938",
+      "severity": "mild",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,frustum_param,iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01fba938",
+      "severity": "mild",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x15a8ac) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 57,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&local_1c);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x15a8a8) == 0) && (*(int *)(param_1 + 0x161240) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x15a8a8) == 0) && (*(int *)(param_1 + 0x161240) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01B7B4E8,param_1 + 0x161244,*(uint *)(param_1 + 0x161264));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01B7B4E8,param_1 + 0x161244,*(uint *)(param_1 + 0x161264));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x15a8a4) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x15a8c0) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x15a8cc)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_FUN_0050e080(param_1,iVar1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 87,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,frustum_param,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x15a8cc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if ((DAT_005be378 != 0) && (iVar1 = 0, iVar3 = param_1, 0 < *(int *)(param_1 + 0x15a8cc))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if ((DAT_005be378 != 0) && (iVar1 = 0, iVar3 = param_1, 0 < *(int *)(param_1 + 0x15a8cc))) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 94,
       "match": "DAT_005be378",
       "severity": "mild",
-      "text": "else if ((DAT_005be378 != 0) && (iVar1 = 0, iVar3 = param_1, 0 < *(int *)(param_1 + 0x15a8cc))) {",
+      "text": "else if ((DAT_005be378 != 0) &&",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_FUN_0050e080(param_1,iVar1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 104,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "((CDemonRaytrace *)&DAT_01fba938,frustum_param,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(param_1);",
-      "type": "unnamed_param"
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "if ((render_mode == 0) || (pCVar1 = this_ptr->renderable_actors[0x773], (int)pCVar1 < 0)) {",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x15a8cc));",
-      "type": "unnamed_param"
+      "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&this_ptr->cameras[0].rotation_matrix",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x78);",
+      "type": "pointer_truncation"
     },
     {
-      "call_site_count": 8,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x78);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&this_ptr->cameras[0].rotation_matrix",
+      "severity": "moderate",
+      "text": "*(int **)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x7c),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "*(int **)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x7c),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&this_ptr->cameras[0].rotation_matrix",
+      "severity": "moderate",
+      "text": "(int *)((int)&this_ptr->cameras[0].rotation_matrix + iVar2 + 0x78),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->cameras[0].rotation_matrix` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&this_ptr->cameras[0].rotation_matrix",
+      "severity": "moderate",
+      "text": "(int **)((int)&this_ptr->cameras[0].rotation_matrix + iVar2 + 0x7c));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x78);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int **)((int)&this_ptr->cameras[0].rotation_matrix + (int)pCVar1 * 0x1a0 + 0x7c),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(int *)((int)&this_ptr->cameras[0].rotation_matrix + iVar2 + 0x78),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(int **)((int)&this_ptr->cameras[0].rotation_matrix + iVar2 + 0x7c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 90,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonSet *)pCVar3->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 105,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonSet *)pCVar3->cameras;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

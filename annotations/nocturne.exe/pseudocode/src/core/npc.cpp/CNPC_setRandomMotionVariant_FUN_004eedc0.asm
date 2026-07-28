@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(undefined4 param_1,char *param_2)
+; int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(CNPC *this_ptr,char *motion_name)
 ;
+; Parameters:
+; CNPC *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   motion_name
 ; Local Variables:
 ; undefined        Stack[-0xd8]:1  local_d8
 ; undefined1       Stack[-0xd7]:1  local_d7
@@ -36,7 +39,7 @@ section .text
     PUSH EDX                            ; 004eedd8
     XOR EBX,EBX                         ; 004eedd9
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004eeddb
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004eede0
     MOV EBP,EAX                         ; 004eede3
     XOR EDI,EDI                         ; 004eede5
@@ -55,7 +58,7 @@ section .text
     PUSH EAX                            ; 004eee03
     PUSH EBP                            ; 004eee04
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004eee05
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004eee0a
     TEST EAX,EAX                        ; 004eee0d
     JL 0x004eee14                       ; 004eee0f
@@ -70,7 +73,7 @@ section .text
     PUSH EBX                            ; 004eee18
     PUSH 0x1                            ; 004eee19
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004eee1b
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004eee20
     PUSH EAX                            ; 004eee23
     PUSH ESI                            ; 004eee24
@@ -86,7 +89,7 @@ section .text
     PUSH EAX                            ; 004eee3d
     PUSH EBP                            ; 004eee3e
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004eee3f
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004eee44
     TEST EAX,EAX                        ; 004eee47
     JGE 0x004eee76                      ; 004eee49
@@ -124,7 +127,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xe4]      ; 004eee79
     PUSH ECX                            ; 004eee80
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004eee81
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004eee86
     ADD ESP,0xc                         ; 004eee8b
     ADD ESP,0xc8                        ; 004eee8e

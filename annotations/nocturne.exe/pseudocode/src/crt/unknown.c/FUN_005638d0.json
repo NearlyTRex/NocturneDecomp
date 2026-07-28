@@ -88,18 +88,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00573930",
-      "from_addr": "005739f0",
-      "name": "FUN_00573930",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573ca0",
-      "from_addr": "00573d2d",
-      "name": "FUN_00573ca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005740b0",
       "from_addr": "0057415f",
       "name": "FUN_005740b0",
@@ -124,15 +112,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042eb90",
-      "from_addr": "0042eced",
-      "name": "cockpit_ckptutil.c_FUN_0042eb90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004303d0",
       "from_addr": "004304ac",
       "name": "cockpit_ckptutil.c_FUN_004303d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042eb90",
+      "from_addr": "0042eced",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3f80",
+      "from_addr": "004f3f8f",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,21 +148,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f3f80",
-      "from_addr": "004f3f8f",
-      "name": "cockpit_pkbitmap.cpp_FUN_004f3f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f54c0",
       "from_addr": "004f56a3",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f54c0",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f5740",
       "from_addr": "004f5814",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f5740",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,7 +186,7 @@
     {
       "addr": "0044d4c0",
       "from_addr": "0044d4d2",
-      "name": "core_dimage.cpp_FUN_0044d4c0",
+      "name": "core_dimage.cpp_CDemonImage_freeMemory_FUN_0044d4c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -262,21 +250,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00573ca0",
+      "from_addr": "00573d2d",
+      "name": "crt_env.c_findEnvVar_FUN_00573ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573930",
+      "from_addr": "005739f0",
+      "name": "crt_env.c_putenv_internal_FUN_00573930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00565d00",
       "from_addr": "00565d71",
       "name": "crt_stdlib.c__fullpath_FUN_00565d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005634b0",
-      "from_addr": "00563535",
-      "name": "crt_unknown.c_FUN_005634b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00564494",
       "from_addr": "0056449e",
       "name": "crt_unknown.c_FUN_00564494",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005634b0",
+      "from_addr": "00563535",
+      "name": "crt_unknown.c_fclose_FUN_005634b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -294,7 +294,7 @@
     {
       "addr": "004dcee0",
       "from_addr": "004dcf41",
-      "name": "engine_model.c_FUN_004dcee0",
+      "name": "engine_model.c_freeMRGLData_FUN_004dcee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -304,15 +304,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544ef0",
-      "from_addr": "00545054",
-      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0",
+      "addr": "00544e60",
+      "from_addr": "00544ea2",
+      "name": "engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544e60",
-      "from_addr": "00544ea2",
-      "name": "engine_texture.cpp_FUN_00544e60",
+      "addr": "00544ef0",
+      "from_addr": "00545054",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -416,13 +416,13 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005638d0",
-    "signature": "void crt_unknown_c_FUN_005638d0(undefined4 param_1)"
+    "signature": "void crt_unknown_c_FUN_005638d0(void *param_1)"
   },
   "function_calls": [
     {
       "addr": "005638e0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638e0"
+      "name": "crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0"
     }
   ],
   "globals": [],
@@ -460,7 +460,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005638d0(uint param_1)",
+      "text": "void FUN_005638d0(void *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -468,7 +468,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005638e0(param_1);",
+      "text": "ValidateHeapIntegrity(param_1);",
       "type": "unnamed_param"
     }
   ]

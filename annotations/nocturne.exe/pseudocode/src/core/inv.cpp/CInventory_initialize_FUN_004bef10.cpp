@@ -2,32 +2,33 @@
 // Address: 004bef10
 // Address Range: [[004bef10, 004bef94]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(int param_1)
+// Signature: void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(int param_1)
+void __cdecl core_inv_cpp_CInventory_initialize_FUN_004bef10(CInventory *this_ptr)
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
+  CAmmo *this_ptr_00;
+  CInventory *pCVar2;
+  CDemonActor **ppCVar3;
   
-  core_inv_cpp_CInventory_clear_FUN_004bee80(param_1);
-  iVar2 = param_1;
+  core_inv_cpp_CInventory_clear_FUN_004bee80(this_ptr);
+  pCVar2 = this_ptr;
   do {
     iVar1 = rand();
-    iVar3 = iVar2 + 4;
-    *(float *)(iVar2 + 0x19c) =
+    ppCVar3 = &pCVar2->owner;
+    pCVar2->item_angles[0] =
          (float)iVar1 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
-    iVar2 = iVar3;
-  } while (iVar3 != param_1 + 400);
-  if (*(int *)(param_1 + 0x458) != 0) {
+    pCVar2 = (CInventory *)ppCVar3;
+  } while (ppCVar3 != this_ptr->items + 0x61);
+  if (this_ptr->ammo_ptr != (CAmmo *)0x0) {
     return;
   }
-  iVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CAmmo");
-  *(int *)(param_1 + 0x458) = iVar2;
-  (*(code *)**(uint **)(iVar2 + 0x14c))(iVar2);
-  *(uint *)(param_1 + 0x45c) = 0;
+  this_ptr_00 = (CAmmo *)core_actor_cpp_createActorByName_FUN_0040d540("CAmmo");
+  this_ptr->ammo_ptr = this_ptr_00;
+  (*((this_ptr_00->base).vtable._ub)->setup)((CDemonActor *)this_ptr_00);
+  this_ptr->cached_ammo_count = 0;
   return;
 }

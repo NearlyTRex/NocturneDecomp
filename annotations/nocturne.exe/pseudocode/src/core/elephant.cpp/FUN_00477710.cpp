@@ -2,31 +2,40 @@
 // Address: 00477710
 // Address Range: [[00477710, 00477799]]
 // Convention: unknown
-// Signature: int core_elephant_cpp_FUN_00477710(undefined4 param_1)
+// Signature: CWeapon * core_elephant_cpp_FUN_00477710(CWeapon *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int core_elephant_cpp_FUN_00477710(uint param_1)
+CWeapon * core_elephant_cpp_FUN_00477710(CWeapon *param_1)
 
 {
-  uint uVar1;
-  int iVar2;
+  CWeapon *pCVar1;
+  float fVar2;
+  CWeapon *pCVar3;
   
-  iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059cb34;
+  pCVar3 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
+  (pCVar3->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059cb34;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + 0x150,"elephantgun.kfm");
-  *(uint *)(iVar2 + 0x570) = 0x41200000;
-  *(uint *)(iVar2 + 0x2d0) = 1;
-  *(uint *)(iVar2 + 0x2d4) = 2;
-  *(uint *)(iVar2 + 0x2d8) = 1;
-  *(uint *)(iVar2 + 0x2dc) = 1;
-  *(uint *)(iVar2 + 0x2e0) = 0x41700000;
-  uVar1 = _DAT_0059cb2c;
-  *(uint *)(iVar2 + 0x2e4) = 0;
-  *(uint *)(iVar2 + 0x574) = 0;
-  *(uint *)(iVar2 + 0x55c) = uVar1;
-  return iVar2;
+            (&pCVar3->model,"elephantgun.kfm");
+  pCVar3[1].base.actor_name[0] = '\0';
+  pCVar3[1].base.actor_name[1] = '\0';
+  pCVar3[1].base.actor_name[2] = ' ';
+  pCVar3[1].base.actor_name[3] = 'A';
+  pCVar3->is_spread_weapon = 1;
+  pCVar3->fire_mode = 2;
+  pCVar3->weapon_type = 1;
+  pCVar3->can_penetrate = 1;
+  pCVar3->bolt_velocity = 15.0;
+  fVar2 = _DAT_0059cb2c;
+  pCVar3->fire_cooldown = 0;
+  pCVar1 = pCVar3 + 1;
+  (pCVar1->base).actor_name[4] = '\0';
+  (pCVar1->base).actor_name[5] = '\0';
+  (pCVar1->base).actor_name[6] = '\0';
+  (pCVar1->base).actor_name[7] = '\0';
+  pCVar3->weight = fVar2;
+  return pCVar3;
 }

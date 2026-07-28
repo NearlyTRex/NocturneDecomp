@@ -2,20 +2,19 @@
 // Address: 00548c60
 // Address Range: [[00548c60, 00548cc1]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: int __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 #include "nocturne.h"
 
-uint __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(byte *param_1,int param_2,int param_3,int param_4,int param_5)
+int __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
 
 {
-  if (((((-1 < param_2) && (param_2 < 0x100)) && (-1 < param_3)) &&
-      ((param_3 < 0x100 && (-1 < param_4)))) &&
-     ((param_4 < 0x100 && ((-1 < param_5 && (param_5 < 0x100)))))) {
-    param_1[1] = (char)param_3;
-    param_1[2] = (char)param_4;
-    param_1[3] = (char)param_5;
-    *param_1 = (byte)param_2;
+  if (((((-1 < octet1) && (octet1 < 0x100)) && (-1 < octet2)) && ((octet2 < 0x100 && (-1 < octet3)))
+      ) && ((octet3 < 0x100 && ((-1 < octet4 && (octet4 < 0x100)))))) {
+    dest_ip[1] = (uint8_t)octet2;
+    dest_ip[2] = (uint8_t)octet3;
+    dest_ip[3] = (uint8_t)octet4;
+    *dest_ip = (uint8_t)octet1;
     return 1;
   }
   return 0;

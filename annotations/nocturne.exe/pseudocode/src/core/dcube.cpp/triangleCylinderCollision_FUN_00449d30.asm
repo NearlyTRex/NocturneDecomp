@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(int *param_1,float *param_2,float param_3,float *param_4)
+; uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00449d30(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height)
 ;
+; Parameters:
+; CDemonCubeTriangle * Stack[0x4]:4   triangle
+; CVector3f *      Stack[0x8]:4   cylinder_center
+; float            Stack[0xc]:4   cylinder_radius
+; float *          Stack[0x10]:4   out_height
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined4       Stack[-0x80]:4  local_80
@@ -212,7 +217,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 00449ef2
     PUSH EAX                            ; 00449ef6
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0 ; 00449ef7
-        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0()
+        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     ADD ESP,0x10                        ; 00449efc
     MOV ECX,dword ptr [EBP + 0x20]      ; 00449eff
     PUSH ECX                            ; 00449f02
@@ -223,7 +228,7 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 00449f0d
     PUSH EAX                            ; 00449f11
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0 ; 00449f12
-        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0()
+        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     ADD ESP,0x10                        ; 00449f17
     OR EDI,EAX                          ; 00449f1a
     MOV EAX,dword ptr [EBP + 0x20]      ; 00449f1c
@@ -234,7 +239,7 @@ section .text
     LEA EAX,[ESP + 0x54]                ; 00449f28
     PUSH EAX                            ; 00449f2c
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0 ; 00449f2d
-        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0()
+        ;   XREF to: 00449bc0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00449bc0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     FLD float ptr [EBX + 0xc]           ; 00449f32
     FMUL ST0                            ; 00449f35
     FLD float ptr [EBX + 0x14]          ; 00449f37

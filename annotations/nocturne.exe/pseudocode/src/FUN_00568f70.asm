@@ -6,12 +6,12 @@
 ;
 ; XREF[2]:
 ;   crt_stdio.c_fread_FUN_005636d0 at 005637e9
-;   crt_unknown.c_FUN_00564670 at 005646ff
+;   crt_unknown.c_FillInputBuffer_FUN_00564670 at 005646ff
 ;
 ; Referenced Globals:
 ;   void* PTR_ReadFile_0057557c = 00175f40
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;   undefined4 DAT_005c1d54
 ;   undefined4 DAT_005c1d7c
 ;   undefined4 DAT_005c1f54
@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
-;   FUN_005671e4
-;   FUN_00568e80
+;   crt_errno.c_setErrno_FUN_00568e80
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   ReadFile
 ;
 ; *****************************************************************************
@@ -42,15 +42,15 @@ section .text
         ;   XREF to: 00568f9b (CONDITIONAL_JUMP)  ; LAB_00568f9b
     PUSH 0x4                            ; 00568f87
         ;   Label: LAB_00568f87
-    CALL FUN_00568e80                   ; 00568f89
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 00568f89
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     MOV EAX,0xffffffff                  ; 00568f8e
     ADD ESP,0x4                         ; 00568f93
     JMP 0x00569031                      ; 00568f96
         ;   XREF to: 00569031 (UNCONDITIONAL_JUMP)  ; LAB_00569031
     PUSH EBX                            ; 00568f9b
         ;   Label: LAB_00568f9b
-    CALL dword ptr [0x005c1ac0]         ; 00568f9c | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 00568f9c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV ECX,dword ptr [0x005c1d7c]      ; 00568fa2 | DAT_005c1d7c
     ADD ESP,0x4                         ; 00568fa8
     TEST ECX,ECX                        ; 00568fab
@@ -71,7 +71,7 @@ section .text
     ADD ESP,0xc                         ; 00568fce
     PUSH EBX                            ; 00568fd1
     MOV ESI,EAX                         ; 00568fd2
-    CALL dword ptr [0x005c1ac4]         ; 00568fd4 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00568fd4 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 00568fda
     MOV EAX,ESI                         ; 00568fdd
     ADD ESP,0x4                         ; 00568fdf
@@ -96,10 +96,10 @@ section .text
     JNZ 0x00569024                      ; 0056900b
         ;   XREF to: 00569024 (CONDITIONAL_JUMP)  ; LAB_00569024
     PUSH EBX                            ; 0056900d
-    CALL dword ptr [0x005c1ac4]         ; 0056900e | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 0056900e | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 00569014
     CALL crt_errno.c___set_errno_FUN_0056c73c ; 00569017
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_0056c73c()
     ADD ESP,0x4                         ; 0056901c
     POP EBP                             ; 0056901f
     POP EDI                             ; 00569020
@@ -108,7 +108,7 @@ section .text
     RET                                 ; 00569023
     PUSH EBX                            ; 00569024
         ;   Label: LAB_00569024
-    CALL dword ptr [0x005c1ac4]         ; 00569025 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00569025 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 0056902b
     MOV EAX,dword ptr [ESP]             ; 0056902e
     ADD ESP,0x4                         ; 00569031

@@ -44,7 +44,7 @@ section .text
     LEA EAX,[EBP*0x2 + 0x0]             ; 005746a3
     PUSH EAX                            ; 005746aa
     CALL crt_memory.c_malloc_FUN_005635b0 ; 005746ab
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EBX,EAX                         ; 005746b0
     ADD ESP,0x4                         ; 005746b2
     TEST EAX,EAX                        ; 005746b5

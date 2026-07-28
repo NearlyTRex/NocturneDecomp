@@ -2,13 +2,13 @@
 // Address: 004721e0
 // Address Range: [[004721e0, 004722af]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(void)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(void)
+void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools *this_ptr)
 
 {
   int iVar1;

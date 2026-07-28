@@ -60,7 +60,7 @@ section .text
     MOV dword ptr [0x02dc943c],EDX      ; 0052c49a | DAT_02dc943c
     MOV [0x02dc9430],EAX                ; 0052c4a0 | DAT_02dc9430
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00528970 ; 0052c4a5
-        ;   XREF to: 00528970 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMaxSwLatency_FUN_00528970()
+        ;   XREF to: 00528970 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00528970()
     MOV dword ptr [ESP + 0x10],EAX      ; 0052c4aa
     FLD float ptr [ESP + 0x10]          ; 0052c4ae
     FILD dword ptr [0x02dc942c]         ; 0052c4b2 | DAT_02dc942c
@@ -68,7 +68,7 @@ section .text
     FILD dword ptr [0x02dc943c]         ; 0052c4ba | DAT_02dc943c
     FDIVP                               ; 0052c4c0
     CALL crt_math.c_round_FUN_00563a30  ; 0052c4c2
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [0x02dc9434]        ; 0052c4c7 | DAT_02dc9434
     MOV EAX,[0x02dc9434]                ; 0052c4cd | DAT_02dc9434
     ADD EAX,0xf                         ; 0052c4d2

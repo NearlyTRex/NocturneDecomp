@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(int param_1,int param_2,undefined4 *param_3)
+; int __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(CCharacter *character,char *part_names,int *part_mask)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   character
+; char *           Stack[0x8]:4   part_names
+; int *            Stack[0xc]:4   part_mask
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
 ; undefined4       Stack[-0x10]:4  local_10
@@ -45,7 +49,7 @@ section .text
     ADD EAX,0x150                       ; 004fe3f7
     PUSH EAX                            ; 004fe3fc
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 004fe3fd
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004fe402
     MOV ESI,EAX                         ; 004fe405
     LEA EAX,[ESP + 0x64]                ; 004fe407
@@ -77,7 +81,7 @@ section .text
     PUSH ESI                            ; 004fe444
     ADD EBX,ECX                         ; 004fe445
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00519b30 ; 004fe447
-        ;   XREF to: 00519b30 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00519b30()
+        ;   XREF to: 00519b30 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00519b30(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 004fe44c
     TEST EAX,EAX                        ; 004fe44f
     JL 0x004fe45c                       ; 004fe451
@@ -90,7 +94,7 @@ section .text
     PUSH EAX                            ; 004fe45e
     PUSH ESI                            ; 004fe45f
     CALL core_script.cpp_getDeformableModelFilename_FUN_005058b0 ; 004fe460
-        ;   XREF to: 005058b0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_getDeformableModelFilename_FUN_005058b0()
+        ;   XREF to: 005058b0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_getDeformableModelFilename_FUN_005058b0(CDeformableModel * model_ptr)
     ADD ESP,0x4                         ; 004fe465
     PUSH EAX                            ; 004fe468
     MOV EAX,dword ptr [ESP + 0x80]      ; 004fe469

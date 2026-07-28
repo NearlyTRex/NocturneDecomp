@@ -50,7 +50,7 @@ section .text
     PUSH 0x5949a0                       ; 0052c6fb | = "WavOutWrite: "
     MOV dword ptr [EBX + 0x10c],EAX     ; 0052c700
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0052c706
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0052c70b
     MOV EDI,EBX                         ; 0052c70e
     MOV ESI,EAX                         ; 0052c710

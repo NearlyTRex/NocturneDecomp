@@ -2,43 +2,43 @@
 // Address: 00402320
 // Address Range: [[00402320, 004023aa]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(byte *param_1,int param_2,int param_3,undefined4 param_4,int param_5)
+// Signature: void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(char *text,int x_start,int y_start,int x_max,int y_max)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(byte *param_1,int param_2,int param_3,uint param_4,int param_5)
+void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(char *text,int x_start,int y_start,int x_max,int y_max)
 
 {
-  byte bVar1;
+  char cVar1;
   uint uVar2;
-  uint uVar3;
+  uint char_code;
+  int x_pos;
+  char *pcVar3;
   int iVar4;
-  byte *pbVar5;
-  int iVar6;
   
   uVar2 = 0xffffffff;
-  pbVar5 = param_1;
+  pcVar3 = text;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    bVar1 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
-  } while (bVar1 != 0);
-  iVar6 = 0;
-  iVar4 = param_2;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + 1;
+  } while (cVar1 != '\0');
+  iVar4 = 0;
+  x_pos = x_start;
   if (0 < (int)(~uVar2 - 1)) {
     do {
-      if ((*param_1 == 10) && (param_3 = param_3 + 0xb, iVar4 = param_2, param_5 < param_3)) {
+      if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, y_max < y_start)) {
         return;
       }
-      uVar3 = (uint)*param_1;
-      if ((0x1f < *param_1) && (uVar3 < 0x100)) {
-        engine_2d_c_drawCharacter_FUN_00401c40(uVar3,iVar4,param_3);
-        iVar4 = iVar4 + (byte)(&DAT_005a4b80)[(uVar3 - 0x20) * 0x91] + 1;
+      char_code = (uint)(byte)*text;
+      if ((0x1f < (byte)*text) && (char_code < 0x100)) {
+        engine_2d_c_drawCharacter_FUN_00401c40(char_code,x_pos,y_start);
+        x_pos = x_pos + (byte)(&DAT_005a4b80)[(char_code - 0x20) * 0x91] + 1;
       }
-      iVar6 = iVar6 + 1;
-      param_1 = param_1 + 1;
-    } while (iVar6 < (int)(~uVar2 - 1));
+      iVar4 = iVar4 + 1;
+      text = text + 1;
+    } while (iVar4 < (int)(~uVar2 - 1));
   }
   return;
 }

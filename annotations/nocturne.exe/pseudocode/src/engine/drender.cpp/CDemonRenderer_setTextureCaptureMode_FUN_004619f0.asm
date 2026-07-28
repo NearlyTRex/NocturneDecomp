@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(int param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(CDemonRenderer *this_ptr,int enable_advanced_mode)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   enable_advanced_mode
 ;
 ; XREF[7]:
 ;   core_baron.cpp_FUN_004110f0 at 00411244

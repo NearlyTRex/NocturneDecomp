@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 138,
+    "complexity_score": 76,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_reconstruction",
-      "register_param",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 66
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -179,7 +177,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_clearZBufferNative_FUN_0052eed4",
-    "signature": "undefined8 __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)"
+    "signature": "void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)"
   },
   "function_calls": [],
   "globals": [
@@ -335,24 +333,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "uint in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "uint in_EDX;",
-      "type": "register_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_005bf48c",
       "severity": "mild",
       "text": "_DAT_005bf494 = DAT_005bf48c;",
@@ -360,7 +342,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "puVar4 = (ulonglong *)(_DAT_01bd4260 + _DAT_01c00c5c * DAT_005b761c * 4);",
@@ -368,35 +350,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar2 = ((_DAT_01c00c64 - _DAT_01c00c5c) + 1) * DAT_005b761c;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 31,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "return CONCAT44(in_EDX,in_EAX);",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 31,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "return CONCAT44(in_EDX,in_EAX);",
-      "type": "register_param"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 31,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "return CONCAT44(in_EDX,in_EAX);",
-      "type": "concat_reconstruction"
     }
   ]
 }

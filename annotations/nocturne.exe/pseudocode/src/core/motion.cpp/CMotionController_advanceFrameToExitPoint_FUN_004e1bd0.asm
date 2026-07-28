@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1bd0(int *param_1,int param_2,float param_3,float *param_4,undefined4 *param_5)
+; int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1bd0(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   motion_index
+; float            Stack[0xc]:4   current_frame
+; float *          Stack[0x10]:4   inout_delta_time
+; SMotionTransition * Stack[0x14]:4   out_transition
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

@@ -2,22 +2,25 @@
 // Address: 0054b2a0
 // Address Range: [[0054b2a0, 0054b304]]
 // Convention: unknown
-// Signature: void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(int param_1)
+// Signature: void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(CEnemy *param_1)
 
 #include "nocturne.h"
 
-void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(int param_1)
+void core_tvbat_cpp_CTVBat_setup_FUN_0054b2a0(CEnemy *param_1)
 
 {
-  uint uVar1;
+  float fVar1;
+  float fVar2;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0xbd28);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
+            ((CKeyFramedModelInstance *)(param_1[1].base.base.actor_name + 4));
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
-  *(uint *)(param_1 + 0x2434) = 0x41200000;
-  *(uint *)(param_1 + 0xbf58) = 0;
-  *(uint *)(param_1 + 0xbf50) = 0;
-  uVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                    (*(uint *)(param_1 + 0xbf48),*(uint *)(param_1 + 0xbf4c));
-  *(uint *)(param_1 + 0xbf54) = uVar1;
+  (param_1->base).hit_points = 10.0;
+  param_1[1].base.model.transformed_vertices[0xb].z = 0.0;
+  fVar2 = param_1[1].base.model.transformed_vertices[10].z;
+  fVar1 = param_1[1].base.model.transformed_vertices[10].y;
+  param_1[1].base.model.transformed_vertices[0xb].x = 0.0;
+  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(fVar1,fVar2);
+  param_1[1].base.model.transformed_vertices[0xb].y = fVar2;
   return;
 }

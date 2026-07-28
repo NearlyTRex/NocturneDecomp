@@ -9,9 +9,10 @@
 void engine_drender_cpp_FUN_00460c26(void)
 
 {
-  float10 fVar1;
+  float10 in_ST0;
+  double dVar1;
   
-  fVar1 = (float10)round();
-  DAT_005b7648 = (int)ROUND(fVar1);
+  dVar1 = round((double)in_ST0);
+  DAT_005b7648 = (int)ROUND(dVar1);
   return;
 }

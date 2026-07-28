@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_CSimBox_setup_FUN_00516c60(int param_1)
+; void core_simbox_cpp_CSimBox_setup_FUN_00516c60(CDemonActor *param_1)
 ;
 ;
 ; Called Functions:
@@ -21,11 +21,11 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00516c69
     PUSH EAX                            ; 00516c6f
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00516c70
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00516c75
     PUSH EBX                            ; 00516c78
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00516c79
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00516c7e
     MOV EAX,ESP                         ; 00516c81
     PUSH EAX                            ; 00516c83
@@ -76,7 +76,7 @@ section .text
     LEA EAX,[EBX + 0x350]               ; 00516d01
     PUSH EAX                            ; 00516d07
     CALL core_box.cpp_CBox_setupCorners_FUN_0041a6e0 ; 00516d08
-        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupCorners_FUN_0041a6e0()
+        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041a6e0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     LEA EAX,[EBX + 0x5ac]               ; 00516d0d
     ADD ESP,0x14                        ; 00516d13
     CMP EAX,ESI                         ; 00516d16

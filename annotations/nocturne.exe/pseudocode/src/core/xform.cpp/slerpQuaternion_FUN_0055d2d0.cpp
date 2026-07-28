@@ -18,9 +18,9 @@ float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_
   float *pfVar4;
   float *pfVar5;
   byte bVar7;
+  float10 x;
   float10 fVar8;
   float10 fVar9;
-  float10 fVar10;
   float afStack_1830 [1517];
   uint uStack_7c;
   uint local_78;
@@ -64,14 +64,14 @@ float * core_xform_cpp_slerpQuaternion_FUN_0055d2d0(float *param_1,float *param_
       uStack_7c = uStack_7c ^ 0x80000000;
     }
     if (__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec])) <= 0.99999000000000005) {
-      fVar8 = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));
-      fVar9 = (float10)atan2(SQRT((float10)1 - fVar8 * fVar8));
-      fVar10 = (float10)fsin(((float10)1 - (float10)param_3) * fVar9);
-      fVar9 = (float10)fsin((float10)param_3 * fVar9);
-      dVar2 = (double)(fVar10 * ((float10)1 / fVar8));
+      x = (float10)__BITCAST_DOUBLE(CONCAT44(uStack_7c,afStack_1830[0x5ec]));
+      fVar8 = atan2(SQRT((float10)1 - x * x),x);
+      fVar9 = (float10)fsin(((float10)1 - (float10)param_3) * fVar8);
+      fVar8 = (float10)fsin((float10)param_3 * fVar8);
+      dVar2 = (double)(fVar9 * ((float10)1 / x));
       uStack_74 = SUB84(__BITCAST_UINT64(dVar2),0);
       local_70 = (uint)((ulonglong)dVar2 >> 0x20);
-      dVar2 = (double)(fVar9 * ((float10)1 / fVar8));
+      dVar2 = (double)(fVar8 * ((float10)1 / x));
       uStack_7c = SUB84(__BITCAST_UINT64(dVar2),0);
       local_78 = (uint)((ulonglong)dVar2 >> 0x20);
       local_18 = __BITCAST_DOUBLE(CONCAT44(uStack_74,local_78));

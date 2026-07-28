@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(int param_1)
+; void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0046f2e0(CInputString *this_ptr)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -45,7 +47,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 0046f312
     MOV byte ptr [EBX],0x0              ; 0046f316
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10 ; 0046f319
-        ;   XREF to: 00472d10 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10()
+        ;   XREF to: 00472d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0046f31e
     MOV AL,byte ptr [ESP + 0x8]         ; 0046f321
     MOV byte ptr [EBX],AL               ; 0046f325

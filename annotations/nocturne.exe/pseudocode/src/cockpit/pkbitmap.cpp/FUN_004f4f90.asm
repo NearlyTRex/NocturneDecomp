@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)
+; CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -53,7 +53,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 004f4fa5
     PUSH EAX                            ; 004f4fa9
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f4faa
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4faf
     CMP EAX,0x1                         ; 004f4fb2
     JNZ 0x004f5018                      ; 004f4fb5
@@ -117,11 +117,11 @@ section .text
     ADD EAX,0x4                         ; 004f505b
     PUSH EAX                            ; 004f505e
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004f505f
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004f5064
     PUSH EAX                            ; 004f5067
     CALL crt_memory.c___vec_new_FUN_00566234 ; 004f5068
-        ;   XREF to: 00566234 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_new_FUN_00566234()
+        ;   XREF to: 00566234 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00566234(void * array_memory, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004f506d
     MOV dword ptr [ESP + 0x2c],EAX      ; 004f5070
     TEST EAX,EAX                        ; 004f5074
@@ -148,7 +148,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x38]      ; 004f50a1
     PUSH EBX                            ; 004f50a5
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 ; 004f50a6
-        ;   XREF to: 004f4c80 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80()
+        ;   XREF to: 004f4c80 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
     ADD ESP,0xc                         ; 004f50ab
     MOV EBX,0x1                         ; 004f50ae
     CMP EBX,dword ptr [ESP + 0x50]      ; 004f50b3
@@ -158,20 +158,20 @@ section .text
         ;   Label: LAB_004f50b9
     PUSH EAX                            ; 004f50bb
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90 ; 004f50bc
-        ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90()
+        ;   XREF to: 004f3e90 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f50c1
     PUSH 0x1                            ; 004f50c4
     PUSH EBP                            ; 004f50c6
     LEA EAX,[ESP + 0x8]                 ; 004f50c7
     PUSH EAX                            ; 004f50cb
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 ; 004f50cc
-        ;   XREF to: 004f4c80 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80()
+        ;   XREF to: 004f4c80 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
     ADD ESP,0xc                         ; 004f50d1
     PUSH 0x0                            ; 004f50d4
     LEA EAX,[ESP + 0x4]                 ; 004f50d6
     PUSH EAX                            ; 004f50da
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00 ; 004f50db
-        ;   XREF to: 004f3f00 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00()
+        ;   XREF to: 004f3f00 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00(CPackedBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f50e0
     INC EBX                             ; 004f50e3
     CMP EBX,dword ptr [ESP + 0x50]      ; 004f50e4

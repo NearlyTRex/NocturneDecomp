@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(int param_1,undefined4 *param_2)
+; CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace *this_ptr,CVector3f *output_vector)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_vector
 ;
 ; XREF[3]:
 ;   core_dskybox.cpp_renderSkyDome_FUN_00463580 at 004635db

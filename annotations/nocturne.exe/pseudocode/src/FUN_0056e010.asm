@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_005671e8 at 005671ed
 ;   FUN_0056e1a0 at 0056e1ba
 ;   FUN_0056e474 at 0056e479
+;   crt_io.c_register_handler_wrapper_FUN_005671e8 at 005671ed
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1af0 = 005671e4
-;   void* PTR_FUN_005c1af4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4 = 005671e4
 ;   undefined4 DAT_005c1f54
 ;   undefined4 DAT_005c1f58
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
-;   FUN_005671e4
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
 
     PUSH EBX                            ; 0056e010
         ;   Label: FUN_0056e010
-    CALL dword ptr [0x005c1af0]         ; 0056e011 | PTR_FUN_005c1af0
+    CALL dword ptr [0x005c1af0]         ; 0056e011 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0
     MOV EDX,dword ptr [0x005c1f58]      ; 0056e017 | DAT_005c1f58
     XOR EBX,EBX                         ; 0056e01d
     TEST EDX,EDX                        ; 0056e01f
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 0056e049 (CONDITIONAL_JUMP)  ; LAB_0056e049
     MOV EAX,dword ptr [ESP + 0x8]       ; 0056e039
     MOV dword ptr [EDX],EAX             ; 0056e03d
-    CALL dword ptr [0x005c1af4]         ; 0056e03f | PTR_FUN_005c1af4
+    CALL dword ptr [0x005c1af4]         ; 0056e03f | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4
     MOV EAX,EBX                         ; 0056e045
     POP EBX                             ; 0056e047
     RET                                 ; 0056e048
@@ -59,7 +59,7 @@ section .text
     MOV EBX,dword ptr [0x005c1f54]      ; 0056e05b | DAT_005c1f54
     PUSH EBX                            ; 0056e061
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e062
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV EDX,dword ptr [0x005c1f58]      ; 0056e067 | DAT_005c1f58
     MOV ECX,dword ptr [0x005c1f58]      ; 0056e06d | DAT_005c1f58
     ADD ESP,0x8                         ; 0056e073
@@ -70,7 +70,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0056e081
     MOV dword ptr [0x005c1f58],ECX      ; 0056e085 | DAT_005c1f58
     MOV dword ptr [EAX],EDX             ; 0056e08b
-    CALL dword ptr [0x005c1af4]         ; 0056e08d | PTR_FUN_005c1af4
+    CALL dword ptr [0x005c1af4]         ; 0056e08d | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4
     MOV EAX,[0x005c1f58]                ; 0056e093 | DAT_005c1f58
     DEC EAX                             ; 0056e098
     POP EBX                             ; 0056e099

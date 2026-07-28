@@ -13,21 +13,22 @@ float core_xform_cpp_FUN_0055b0b0(void)
 
 {
   float10 fVar1;
+  double dVar2;
   double in_stack_00000004;
   double in_stack_0000000c;
   float local_c;
   
   if ((_DAT_0059825e <= in_stack_00000004) || (in_stack_00000004 <= _DAT_00598266)) {
     if ((_DAT_0059826e < in_stack_0000000c) && (in_stack_0000000c < 1.0)) {
-      fVar1 = (float10)acos((float10)in_stack_0000000c);
-      local_c = (float)fVar1;
+      dVar2 = acos(in_stack_0000000c);
+      local_c = (float)dVar2;
     }
     if (in_stack_00000004 < 0.0) {
       local_c = -local_c;
     }
   }
   else {
-    fVar1 = (float10)asin((float10)in_stack_00000004);
+    fVar1 = asin((float10)in_stack_00000004);
     local_c = (float)fVar1;
     if (in_stack_0000000c < 0.0) {
       local_c = (float)_DAT_00598276 - local_c;

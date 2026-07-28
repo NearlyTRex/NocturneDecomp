@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   color_mode
+; int              Stack[0x14]:4   color_value
+; char *           Stack[0x18]:4   text
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d879
@@ -40,7 +47,7 @@ section .text
     PUSH EAX                            ; 00490c0d
     PUSH ESI                            ; 00490c0e
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 00490c0f
-        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0()
+        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490c14
     POP ESI                             ; 00490c17
     POP EBX                             ; 00490c18

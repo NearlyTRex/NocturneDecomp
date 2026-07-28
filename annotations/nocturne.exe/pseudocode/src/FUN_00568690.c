@@ -2,59 +2,60 @@
 // Address: 00568690
 // Address Range: [[00568690, 005687bb]]
 // Convention: unknown
-// Signature: int FUN_00568690(void)
+// Signature: _FILE * FUN_00568690(void)
 
 #include "nocturne.h"
 
-int FUN_00568690(void)
+_FILE * FUN_00568690(void)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
+  _FILE *p_Var3;
   int *piVar4;
-  uint uVar5;
-  byte auStack_238 [276];
-  byte auStack_124 [276];
+  uint file_handle;
+  int file_handle_00;
+  char acStack_238 [276];
+  char acStack_124 [276];
   
-  iVar2 = (*(code *)PTR_FUN_005c1abc)();
-  uVar1 = *(uint *)(iVar2 + 4);
-  iVar2 = 0;
+  iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
+  iVar1 = *(int *)(iVar1 + 4);
+  file_handle_00 = 0;
   do {
     while( true ) {
       do {
-        FUN_005633fc(auStack_124,iVar2);
-        iVar2 = iVar2 + 1;
-        iVar3 = FUN_0056f170(auStack_124,2);
-      } while (iVar3 == 0);
-      iVar3 = _fopen(auStack_124,&DAT_00598b50);
-      if (iVar3 != 0) break;
-      piVar4 = (int *)FUN_0056f1a0();
-      if ((*piVar4 == 0xb) || (piVar4 = (int *)FUN_0056f1a0(), *piVar4 == 6)) {
-        return 0;
+        _tempnam(acStack_124,file_handle_00);
+        file_handle_00 = file_handle_00 + 1;
+        iVar2 = FUN_0056f170(acStack_124,2);
+      } while (iVar2 == 0);
+      p_Var3 = _fopen(acStack_124,&DAT_00598b50);
+      if (p_Var3 != (_FILE *)0x0) break;
+      piVar4 = _errno();
+      if ((*piVar4 == 0xb) || (piVar4 = _errno(), *piVar4 == 6)) {
+        return (_FILE *)0x0;
       }
     }
-    _fclose(iVar3);
-    uVar5 = (uint)DAT_005c1a9c;
+    _fclose(p_Var3);
+    file_handle = (uint)DAT_005c1a9c;
     do {
-      FUN_005633fc(auStack_238,uVar5);
-      iVar3 = rename(auStack_124,auStack_238);
-      if (iVar3 == 0) {
-        iVar3 = _fopen(auStack_238,&DAT_00598b50);
-        if (iVar3 != 0) {
-          *(byte *)(iVar3 + 0xd) = *(byte *)(iVar3 + 0xd) | 8;
-          DAT_005c1a9c = (byte)uVar5;
-          *(byte *)(*(int *)(iVar3 + 8) + 0x14) = DAT_005c1a9c;
-          FUN_00568e80(uVar1);
-          return iVar3;
+      _tempnam(acStack_238,file_handle);
+      iVar2 = rename(acStack_124,acStack_238);
+      if (iVar2 == 0) {
+        p_Var3 = _fopen(acStack_238,&DAT_00598b50);
+        if (p_Var3 != (_FILE *)0x0) {
+          *(byte *)((int)&p_Var3->_flag + 1) = *(byte *)((int)&p_Var3->_flag + 1) | 8;
+          DAT_005c1a9c = (byte)file_handle;
+          *(byte *)&p_Var3->_link->__get_ptr = DAT_005c1a9c;
+          setErrno(iVar1);
+          return p_Var3;
         }
-        piVar4 = (int *)FUN_0056f1a0();
+        piVar4 = _errno();
         if (*piVar4 == 0xb) {
-          return 0;
+          return (_FILE *)0x0;
         }
       }
-      uVar5 = uVar5 + 1;
-      iVar3 = FUN_0056f170(auStack_124,2);
-    } while (iVar3 == 0);
+      file_handle = file_handle + 1;
+      iVar2 = FUN_0056f170(acStack_124,2);
+    } while (iVar2 == 0);
   } while( true );
 }

@@ -2,13 +2,13 @@
 // Address: 00460e70
 // Address Range: [[00460e70, 00460e74]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
+void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer *this_ptr)
 
 {
   _DAT_01cc53d0 = _DAT_01cc53d0 + -1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_fscanf_FUN_00563350(undefined4 param_1,undefined4 param_2)
+; void crt_stdio_c_fscanf_FUN_00563350(_FILE *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -20,7 +20,7 @@
 ;   ... and 39 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005632c8
+;   crt_unknown.c_vfscanf_FUN_005632c8
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EDX                            ; 00563362
     MOV EBX,dword ptr [ESP + 0x14]      ; 00563363
     PUSH EBX                            ; 00563367
-    CALL crt_unknown.c_FUN_005632c8     ; 00563368
-        ;   XREF to: 005632c8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005632c8()
+    CALL crt_unknown.c_vfscanf_FUN_005632c8 ; 00563368
+        ;   XREF to: 005632c8 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_vfscanf_FUN_005632c8(_FILE * file, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0056336d
     ADD ESP,0x4                         ; 00563370
     POP EBX                             ; 00563373

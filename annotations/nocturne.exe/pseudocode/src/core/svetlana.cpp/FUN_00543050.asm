@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_svetlana_cpp_FUN_00543050(int param_1,byte param_2)
+; CHero * core_svetlana_cpp_FUN_00543050(CHero *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160
-;   core_hero.cpp_FUN_004b4800
+;   core_hero.cpp_CHero_dtor_FUN_004b4800
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -28,19 +28,19 @@ section .text
     ADD EBX,0x5a574                     ; 0054305e
     PUSH EBX                            ; 00543064
     CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 00543065
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00435160(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054306a
     PUSH 0x0                            ; 0054306d
     SUB EAX,0x3ab30                     ; 0054306f
     PUSH EAX                            ; 00543074
     CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 00543075
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00435160(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054307a
     PUSH 0x1                            ; 0054307d
     LEA EBX,[EAX + 0xfffe05bc]          ; 0054307f
     PUSH EBX                            ; 00543085
-    CALL core_hero.cpp_FUN_004b4800     ; 00543086
-        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b4800()
+    CALL core_hero.cpp_CHero_dtor_FUN_004b4800 ; 00543086
+        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_dtor_FUN_004b4800(CHero * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054308b
     MOV DL,byte ptr [ESP + 0xc]         ; 0054308e
     MOV EBX,EAX                         ; 00543092
@@ -54,11 +54,11 @@ section .text
         ;   Label: LAB_0054309d
     PUSH EBX                            ; 005430a2
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 005430a3
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005430a8
     PUSH EAX                            ; 005430ab
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 005430ac
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 005430b1
     MOV EAX,EBX                         ; 005430b4
     POP EBX                             ; 005430b6

@@ -1,36 +1,37 @@
 // Name: core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30
 // Address: 004c6e30
 // Address Range: [[004c6e30, 004c6ee5]]
-// Convention: unknown
-// Signature: int core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(CLightGun *this_ptr)
 
 #include "nocturne.h"
 
-int core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(uint param_1)
+CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(CLightGun *this_ptr)
 
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  CLightGun *pCVar3;
   
-  iVar3 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059fd94;
+  pCVar3 = (CLightGun *)core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
+  (pCVar3->base).base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_weapon_cpp_CWeapon_setup_FUN_00553f10_0059fd94;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar3 + 0x150,"cre.kfm");
-  *(uint *)(iVar3 + 0x574) = 0;
-  *(uint *)(iVar3 + 0x570) = 0;
-  *(uint *)(iVar3 + 0x2d0) = 0;
-  *(uint *)(iVar3 + 0x2d4) = 0;
-  *(uint *)(iVar3 + 0x2d8) = 2;
-  *(uint *)(iVar3 + 0x2dc) = 0;
-  *(uint *)(iVar3 + 0x2e0) = 0x42000000;
-  *(uint *)(iVar3 + 0x2e4) = 1;
+            (&(pCVar3->base).model,"cre.kfm");
+  pCVar3->sfx_handle = 0;
+  pCVar3->fire_flash_pending = 0;
+  (pCVar3->base).is_spread_weapon = 0;
+  (pCVar3->base).fire_mode = 0;
+  (pCVar3->base).weapon_type = 2;
+  (pCVar3->base).can_penetrate = 0;
+  (pCVar3->base).bolt_velocity = 32.0;
+  (pCVar3->base).fire_cooldown = 1;
   fVar1 = 8.0f;
-  *(uint *)(iVar3 + 0x2e8) = 0;
+  (pCVar3->base).can_attach_light = 0;
   fVar2 = 30.0f;
-  *(uint *)(iVar3 + 0x580) = 0;
-  *(uint *)(iVar3 + 0x57c) = 0x3f800000;
-  *(float *)(iVar3 + 0x55c) = fVar1;
-  *(float *)(iVar3 + 0x578) = fVar2;
-  return iVar3;
+  pCVar3->hit_enemy = 0;
+  pCVar3->charge_ratio = 1.0;
+  (pCVar3->base).weight = fVar1;
+  pCVar3->charge_level = fVar2;
+  return pCVar3;
 }

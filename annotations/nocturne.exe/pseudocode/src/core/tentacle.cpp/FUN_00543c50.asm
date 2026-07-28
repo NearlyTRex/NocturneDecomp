@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tentacle_cpp_FUN_00543c50(int param_1,float param_2)
+; void core_tentacle_cpp_FUN_00543c50(CTentacle *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x258]:4  local_258
@@ -87,7 +87,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x244]     ; 00543cc2
     PUSH EDX                            ; 00543cc9
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00543cca
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00543ccf
     ADD ESP,0x4                         ; 00543cd2
     CMP EAX,0x2                         ; 00543cd5
@@ -123,7 +123,7 @@ section .text
     PUSH 0x59653b                       ; 00543d2d | = "CHero CNPC"
     PUSH EBX                            ; 00543d32
     CALL core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0 ; 00543d33
-        ;   XREF to: 005444f0 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0()
+        ;   XREF to: 005444f0 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 00543d38
     TEST EAX,EAX                        ; 00543d3b
     JZ 0x00543d6f                       ; 00543d3d
@@ -132,13 +132,13 @@ section .text
     PUSH 0x2                            ; 00543d41
     PUSH ESI                            ; 00543d43
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00543d44
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00543d49
     MOV EDX,dword ptr [EBX + 0xbd2c]    ; 00543d4c
     PUSH EDX                            ; 00543d52
     MOV dword ptr [EBX + 0xbd24],0x0    ; 00543d53
     CALL core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0 ; 00543d5d
-        ;   XREF to: 004b0dc0 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0()
+        ;   XREF to: 004b0dc0 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0(CGrave * this_ptr)
     ADD ESP,0x4                         ; 00543d62
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 00543d65
     FLD float ptr [EBP + 0x18]          ; 00543d6f
@@ -156,12 +156,12 @@ section .text
     PUSH EBX                            ; 00543d97
         ;   Label: LAB_00543d97
     CALL core_charactr.cpp_CCharacter_preProcess_FUN_004259a0 ; 00543d98
-        ;   XREF to: 004259a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_preProcess_FUN_004259a0()
+        ;   XREF to: 004259a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_004259a0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00543d9d
     LEA EAX,[EBX + 0x150]               ; 00543da0
     PUSH EAX                            ; 00543da6
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 00543da7
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00543dac
     PUSH dword ptr [EBP + 0x18]         ; 00543daf
     PUSH EBX                            ; 00543db2
@@ -190,7 +190,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x244]     ; 00543de8
     PUSH EAX                            ; 00543def
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 ; 00543df0
-        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0()
+        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00543df5
     PUSH EBX                            ; 00543df8
     LEA ESI,[ESP + 0xa4]                ; 00543df9
@@ -206,14 +206,14 @@ section .text
     PUSH EAX                            ; 00543e24
     MOVSD.REP ES:EDI,ESI                ; 00543e25
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 00543e27
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 00543e2c
     PUSH EAX                            ; 00543e2f
     LEA EAX,[ESP + 0x1c4]               ; 00543e30
     PUSH EAX                            ; 00543e37
     PUSH EBX                            ; 00543e38
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00543e39
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00543e3e
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 00543e41
     FLD float ptr [ESP + 0x1c0]         ; 00543e47
@@ -274,7 +274,7 @@ section .text
     LEA EAX,[ESP + 0xd8]                ; 00543f11
     PUSH EAX                            ; 00543f18
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 00543f19
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00543f1e
     LEA EAX,[ESP + 0x70]                ; 00543f21
     PUSH EAX                            ; 00543f25
@@ -356,7 +356,7 @@ section .text
     PUSH EAX                            ; 00544061
     INC ESI                             ; 00544062
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00544063
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 00544068
     CMP ESI,0x46                        ; 0054406b
     JGE 0x00543cb1                      ; 0054406e
@@ -386,7 +386,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x248]     ; 005440b8
     PUSH ECX                            ; 005440bf
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 005440c0
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 005440c5
     CMP EAX,0x64                        ; 005440c8
     JC 0x00543cb1                       ; 005440cb
@@ -402,7 +402,7 @@ section .text
         ;   Label: LAB_005440e1
     PUSH EBX                            ; 005440e6
     CALL core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0 ; 005440e7
-        ;   XREF to: 005444f0 (UNCONDITIONAL_CALL)  ; undefined core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0()
+        ;   XREF to: 005444f0 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005440ec
     TEST EAX,EAX                        ; 005440ef
     JZ 0x00543d6f                       ; 005440f1
@@ -411,7 +411,7 @@ section .text
     PUSH 0x2                            ; 005440f9
     PUSH ESI                            ; 005440fb
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 005440fc
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00544101
     MOV dword ptr [EBX + 0xbd24],0x0    ; 00544104
     JMP 0x00543d6f                      ; 0054410e
@@ -430,7 +430,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24c]     ; 00544131
     PUSH EDI                            ; 00544138
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00544139
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0054413e
     MOV dword ptr [EBX + 0xbd24],0x41c80000 ; 00544141
     JMP 0x00543d6f                      ; 0054414b
@@ -556,7 +556,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 005442da
     PUSH EAX                            ; 005442e0
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 005442e1
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005442e6
     MOV dword ptr [EBX + 0xbd24],0x41c80000 ; 005442e9
     JMP 0x00543d6f                      ; 005442f3

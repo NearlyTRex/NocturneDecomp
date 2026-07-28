@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(int param_1)
+; void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_gabriela.cpp_FUN_004998c0 at 0049997b

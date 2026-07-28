@@ -152,12 +152,12 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 005558f8
     FSTP float ptr [ESP + 0x14]         ; 005558fc
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00555900
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00555905
     MOV EDX,dword ptr [0x005be368]      ; 00555908 | DAT_005be368
     PUSH EDX                            ; 0055590e | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0 ; 0055590f
-        ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0()
+        ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00555914
     LEA EAX,[ESP + 0xc]                 ; 00555917
     PUSH EAX                            ; 0055591b

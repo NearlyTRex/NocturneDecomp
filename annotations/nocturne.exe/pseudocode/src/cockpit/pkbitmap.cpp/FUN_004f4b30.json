@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 70,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
+    "suspect_count": 6,
     "suspect_types": [
+      "raw_address_constant",
       "unnamed_param"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [],
   "function": {
@@ -145,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbitmap.cpp_FUN_004f4b30",
-    "signature": "void cockpit_pkbitmap_cpp_FUN_004f4b30(undefined4 param_1,undefined4 param_2)"
+    "signature": "void cockpit_pkbitmap_cpp_FUN_004f4b30(CPackedBitmap *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -253,7 +254,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_004f4b30(uint param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_004f4b30(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +262,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_004f4b30(uint param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_004f4b30(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -269,7 +270,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _fopen(param_2,\"wb\");",
+      "text": "file_handle = _fopen(param_2,\"wb\");",
       "type": "unnamed_param"
     },
     {
@@ -277,7 +278,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "_sprintf(auStack_6c,\"Unable to create PBM file %s\",param_2);",
+      "text": "_sprintf(&uStack_6c,\"Unable to create PBM file %s\",param_2);",
       "type": "unnamed_param"
     },
     {
@@ -285,8 +286,16 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(param_1,iVar1);",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(param_1,file_handle);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x4f4b61 assigned to bare local `uStack_6c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_6c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 16,
+      "match": "0x4f4b61",
+      "severity": "moderate",
+      "text": "uStack_6c = 0x4f4b61;",
+      "type": "raw_address_constant"
     }
   ]
 }

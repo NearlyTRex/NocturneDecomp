@@ -9,10 +9,10 @@
 void engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(int param_1)
 
 {
-  int iVar1;
+  CAlphaBitmap *pCVar1;
   
-  iVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(param_1 + 300,0);
-  iVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(iVar1 + -0x8c,0);
-  core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(iVar1 + -0xa0,0);
+  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0((CAlphaBitmap *)(param_1 + 300),0);
+  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(pCVar1 + -7,0);
+  core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(pCVar1 + -8,0);
   return;
 }

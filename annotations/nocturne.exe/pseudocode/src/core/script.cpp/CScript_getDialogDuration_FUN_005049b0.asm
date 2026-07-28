@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,undefined4 param_2,undefined4 param_3,char *param_4)
+; float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(void *param_1,char *param_2,char *param_3,char *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -64,7 +64,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 005049ea
     PUSH EDI                            ; 005049ed
     CALL core_script.cpp_getActor_FUN_004fe180 ; 005049ee
-        ;   XREF to: 004fe180 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_getActor_FUN_004fe180()
+        ;   XREF to: 004fe180 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_004fe180(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 005049f3
     MOV dword ptr [EBX + 0x4],EAX       ; 005049f6
     TEST EAX,EAX                        ; 005049f9
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_00504a76
     PUSH 0x1e56c30                      ; 00504a77
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 00504a7c
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00504a81
     MOV EDI,ESI                         ; 00504a84
     SUB ECX,ECX                         ; 00504a86
@@ -186,10 +186,10 @@ section .text
     JZ 0x00504b3a                       ; 00504b0d
         ;   XREF to: 00504b3a (CONDITIONAL_JUMP)  ; LAB_00504b3a
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 00504b0f
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     PUSH 0x2                            ; 00504b14
     CALL sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0 ; 00504b16
-        ;   XREF to: 005261b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0()
+        ;   XREF to: 005261b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
     ADD ESP,0x4                         ; 00504b1b
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00504b1e
     PUSH ECX                            ; 00504b21
@@ -197,11 +197,11 @@ section .text
     MOV ESI,dword ptr [0x005bed68]      ; 00504b23 | DAT_005bed68
     PUSH ESI                            ; 00504b29
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 00504b2a
-        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playSound_FUN_0052ea40()
+        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 00504b2f
     MOV dword ptr [EBX + 0x24],EAX      ; 00504b32
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 00504b35
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     MOV EAX,dword ptr [ESP]             ; 00504b3a
         ;   Label: LAB_00504b3a
     MOV dword ptr [ESP + 0xc],EAX       ; 00504b3d

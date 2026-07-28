@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gabriela_cpp_getSelectedWeapon_FUN_0049a160(int param_1)
+; CWeapon * __cdecl core_gabriela_cpp_getSelectedWeapon_FUN_0049a160(CInventory *inventory_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   inventory_ptr
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00503330

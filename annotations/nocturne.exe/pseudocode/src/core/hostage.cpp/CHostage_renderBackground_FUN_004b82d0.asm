@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int param_2)
+; void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(char *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -32,7 +32,7 @@ section .text
         ;   Label: LAB_004b82ec
     PUSH EBX                            ; 004b82f1
     CALL crt_string.c__stricmp_FUN_00564520 ; 004b82f2
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b82f7
     TEST EAX,EAX                        ; 004b82fa
     JZ 0x004b82ea                       ; 004b82fc

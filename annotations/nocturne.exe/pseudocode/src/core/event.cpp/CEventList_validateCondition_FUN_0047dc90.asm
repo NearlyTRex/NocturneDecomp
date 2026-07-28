@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(undefined4 param_1,char *param_2)
+; char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(CEventList *this_ptr,char *expression)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   expression
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047cd24
@@ -38,7 +41,7 @@ section .text
     XOR EBX,EBX                         ; 0047dca9
     MOV dword ptr [0x01c08b5c],EDX      ; 0047dcab | DAT_01c08b5c
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10 ; 0047dcb1
-        ;   XREF to: 0047dd10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10()
+        ;   XREF to: 0047dd10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0047dcb6
     MOV dword ptr [0x01c08b5c],EBX      ; 0047dcb9 | DAT_01c08b5c
     TEST EAX,EAX                        ; 0047dcbf

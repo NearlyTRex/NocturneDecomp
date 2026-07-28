@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(int param_1,int param_2)
+; int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00532df0(CExternalRenderer *this_ptr,CExternalRenderer *capabilities)
 ;
+; Parameters:
+; CExternalRenderer * Stack[0x4]:4   this_ptr
+; CExternalRenderer * Stack[0x8]:4   capabilities
 ;
 ; XREF[2]:
 ;   engine_special.cpp_FUN_00530e60 at 00530ed0
@@ -92,7 +95,7 @@ section .text
     PUSH EAX                            ; 00532eb9
     XOR EBX,EBX                         ; 00532eba
     CALL crt_string.c__strcmp_FUN_005649c0 ; 00532ebc
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00532ec1
     TEST EAX,EAX                        ; 00532ec4
     SETZ AL                             ; 00532ec6

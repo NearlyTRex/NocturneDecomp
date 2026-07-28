@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_CLever_setup_FUN_004c6110(int param_1)
+; void core_lever_cpp_CLever_setup_FUN_004c6110(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -30,11 +30,11 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004c6119
     PUSH EAX                            ; 004c611f
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004c6120
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c6125
     PUSH EBX                            ; 004c6128
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 004c6129
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV AH,byte ptr [EBX + 0x3a0]       ; 004c612e
     ADD ESP,0x4                         ; 004c6134
     TEST AH,AH                          ; 004c6137
@@ -51,7 +51,7 @@ section .text
     LEA EAX,[EBX + 0x1c8]               ; 004c6145
     PUSH EAX                            ; 004c614b
     CALL crt_string.c__stricmp_FUN_00564520 ; 004c614c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004c6151
     TEST EAX,EAX                        ; 004c6154
     JZ 0x004c613b                       ; 004c6156

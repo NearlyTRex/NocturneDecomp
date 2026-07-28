@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void)
+; void __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void)
 ;
 ;
 ; XREF[28]:
@@ -9,9 +9,9 @@
 ;   core_dcube.cpp_FUN_0044b660 at 0044b699
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b9
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a74
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cd04
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a701a
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d99e
-;   core_game.cpp_FUN_0049cc10 at 0049cd04
 ;   core_game.cpp_FUN_004a57c0 at 004a5989
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5900
 ;   core_main.c_FUN_004c8510 at 004c851b
@@ -41,7 +41,7 @@ section .text
     JZ 0x0052ee83                       ; 0052ee79
         ;   XREF to: 0052ee83 (CONDITIONAL_JUMP)  ; LAB_0052ee83
     CALL engine_special.cpp_clear_FUN_005329a0 ; 0052ee7b
-        ;   XREF to: 005329a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clear_FUN_005329a0()
+        ;   XREF to: 005329a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_clear_FUN_005329a0()
     POP EDI                             ; 0052ee80
     POP ESI                             ; 0052ee81
     RET                                 ; 0052ee82

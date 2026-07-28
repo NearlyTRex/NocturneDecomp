@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00570ad0(undefined4 param_1,uint *param_2,uint param_3)
+; undefined4 FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
 ;
 ;
 ; XREF[1]:
 ;   FUN_0056cd9b at 0056cdfb
 ;
 ; Called Functions:
-;   FUN_0056b934
-;   FUN_0056c864
+;   crt_io.c_getFileStat_FUN_0056c864
+;   crt_stdio.c_CreateFileVariadic_FUN_0056b934
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH EAX                            ; 00570b3e
     MOV EDX,dword ptr [ESP + 0x58]      ; 00570b3f
     PUSH EDX                            ; 00570b43
-    CALL FUN_0056c864                   ; 00570b44
-        ;   XREF to: 0056c864 (UNCONDITIONAL_CALL)  ; undefined FUN_0056c864()
+    CALL crt_io.c_getFileStat_FUN_0056c864 ; 00570b44
+        ;   XREF to: 0056c864 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_0056c864(char * filename, _stat * file_info)
     ADD ESP,0x8                         ; 00570b49
     CMP EAX,-0x1                        ; 00570b4c
     JZ 0x00570b5c                       ; 00570b4f
@@ -140,8 +140,8 @@ section .text
     PUSH EBX                            ; 00570bae
     MOV ESI,dword ptr [ESP + 0x60]      ; 00570baf
     PUSH ESI                            ; 00570bb3
-    CALL FUN_0056b934                   ; 00570bb4
-        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b934()
+    CALL crt_stdio.c_CreateFileVariadic_FUN_0056b934 ; 00570bb4
+        ;   XREF to: 0056b934 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_CreateFileVariadic_FUN_0056b934()
     ADD ESP,0x10                        ; 00570bb9
     ADD ESP,0x48                        ; 00570bbc
         ;   Label: LAB_00570bbc

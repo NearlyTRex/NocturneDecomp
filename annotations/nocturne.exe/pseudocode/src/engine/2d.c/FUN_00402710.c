@@ -2,11 +2,11 @@
 // Address: 00402710
 // Address Range: [[00402710, 0040275b]]
 // Convention: unknown
-// Signature: void engine_2d_c_FUN_00402710(byte *param_1,int param_2,undefined4 param_3)
+// Signature: void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
-void engine_2d_c_FUN_00402710(byte *param_1,int param_2,uint param_3)
+void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
 
 {
   byte bVar1;

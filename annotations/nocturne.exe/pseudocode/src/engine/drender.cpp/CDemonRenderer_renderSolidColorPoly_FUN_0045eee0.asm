@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *param_1,int param_2)
 ;
 ;
 ; XREF[7]:
-;   core_dtrace.cpp_FUN_00468d00 at 00469126
-;   core_dtri.cpp_FUN_0046e9f0 at 0046eb2d
-;   core_set.cpp_FUN_0050dfe0 at 0050e04f
+;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00 at 00469126
+;   core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0 at 0046eb2d
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0 at 0050e04f
 ;   core_setdir.cpp_FUN_00511d80 at 00512326
 ;   core_setdir.cpp_FUN_005125a0 at 0051329d
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518ca1
@@ -73,7 +73,7 @@ section .text
     PUSH EDX                            ; 0045ef47
     PUSH EDI                            ; 0045ef48
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045ef49
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045ef4e
     POP EBX                             ; 0045ef51
     POP EBP                             ; 0045ef52
@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_0045ef56
     PUSH EAX                            ; 0045ef59
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0045ef5a
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0045ef5f
     TEST EAX,EAX                        ; 0045ef62
     JZ 0x0045ef52                       ; 0045ef64

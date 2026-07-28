@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00403460(undefined4 param_1)
+; void engine_2d_c_FUN_00403460(char *param_1)
 ;
 ;
 ; XREF[1]:
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 00403466
     PUSH 0x5771fc                       ; 00403467 | = "fog"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 0040346c
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00403471
     CMP EAX,0x1000                      ; 00403474
     JZ 0x004034cb                       ; 00403479
@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 00403480
     PUSH 0x577203                       ; 00403481 | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403486
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 0040348b
     ADD ESP,0xc                         ; 0040348d
     TEST EAX,EAX                        ; 00403490
@@ -80,11 +80,11 @@ section .text
     PUSH 0x100                          ; 004034d7
     PUSH 0x1bf5620                      ; 004034dc
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004034e1
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004034e6
     PUSH EBX                            ; 004034e9
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004034ea
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     JMP 0x004034a3                      ; 004034ef
         ;   XREF to: 004034a3 (UNCONDITIONAL_JUMP)  ; LAB_004034a3
 

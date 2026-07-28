@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d46f
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d46f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058e24e
@@ -22,10 +22,10 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30
+;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320
 ;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480
 ;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
-;   cockpit_drawsurf.cpp_FUN_0045d2b0
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_00477660
@@ -58,20 +58,20 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 004fea09
     PUSH EAX                            ; 004fea0d
     CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480 ; 004fea0e
-        ;   XREF to: 0045b480 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480()
+        ;   XREF to: 0045b480 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 004fea13
     PUSH 0x0                            ; 004fea16
     CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004fea18
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004fea1d
     LEA EAX,[ESP + 0x64]                ; 004fea20
     PUSH EAX                            ; 004fea24
-    CALL cockpit_drawsurf.cpp_FUN_0045d2b0 ; 004fea25
-        ;   XREF to: 0045d2b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045d2b0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0 ; 004fea25
+        ;   XREF to: 0045d2b0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0(CDrawSurface * this_ptr)
     ADD ESP,0x4                         ; 004fea2a
     PUSH 0x0                            ; 004fea2d
     CALL cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0 ; 004fea2f
-        ;   XREF to: 0045baa0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0()
+        ;   XREF to: 0045baa0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0(CBitFont * font_ptr)
     MOV EDX,dword ptr [EBP + 0x28]      ; 004fea34
     ADD ESP,0x4                         ; 004fea37
     TEST EDX,EDX                        ; 004fea3a
@@ -80,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 004fea42
     PUSH EAX                            ; 004fea46
     CALL cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320 ; 004fea47
-        ;   XREF to: 0045e320 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320()
+        ;   XREF to: 0045e320 (UNCONDITIONAL_CALL)  ; int cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320(CDrawSurface * this_ptr)
     MOV EBX,EAX                         ; 004fea4c
     ADD ESP,0x4                         ; 004fea4e
     MOV EDX,dword ptr [EBP + 0x40]      ; 004fea51
@@ -116,7 +116,7 @@ section .text
         ;   Label: LAB_004feab3
     PUSH EDI                            ; 004feaba
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_00477660 ; 004feabb
-        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getItemCount_FUN_00477660()
+        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_00477660(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004feac0
     CMP EBX,EAX                         ; 004feac3
     JGE 0x004feb57                      ; 004feac5
@@ -130,7 +130,7 @@ section .text
         ;   XREF to: 004feb83 (CONDITIONAL_JUMP)  ; LAB_004feb83
     PUSH 0xfa                           ; 004feae3
     CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feae8
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
         ;   Label: LAB_004feae8
     ADD ESP,0x4                         ; 004feaed
     LEA EDI,[EBX + 0x1]                 ; 004feaf0
@@ -148,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 004feb0e
     PUSH EAX                            ; 004feb12
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30 ; 004feb13
-        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30()
+        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(CDrawSurface * this_ptr, char * text, int x, int y)
     ADD ESP,0x10                        ; 004feb18
     PUSH ESI                            ; 004feb1b
     PUSH 0x1e                           ; 004feb1c
@@ -156,13 +156,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x9c]      ; 004feb1f
     PUSH EAX                            ; 004feb26
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004feb27
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004feb2c
     PUSH EAX                            ; 004feb2f
     LEA EAX,[ESP + 0x70]                ; 004feb30
     PUSH EAX                            ; 004feb34
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30 ; 004feb35
-        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30()
+        ;   XREF to: 0045da30 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(CDrawSurface * this_ptr, char * text, int x, int y)
     ADD ESP,0x10                        ; 004feb3a
     MOV EDX,dword ptr [ESP + 0x88]      ; 004feb3d
     MOV ECX,dword ptr [ESP + 0x8c]      ; 004feb44
@@ -174,12 +174,12 @@ section .text
     PUSH 0xff                           ; 004feb57
         ;   Label: LAB_004feb57
     CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004feb5c
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004feb61
     LEA EAX,[ESP + 0x64]                ; 004feb64
     PUSH EAX                            ; 004feb68
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70 ; 004feb69
-        ;   XREF to: 0045cb70 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70()
+        ;   XREF to: 0045cb70 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70(CDrawSurface * this_ptr)
     ADD ESP,0x4                         ; 004feb6e
     ADD ESP,0x94                        ; 004feb71
     POP EBP                             ; 004feb77
@@ -209,13 +209,13 @@ section .text
     PUSH 0xf9                           ; 004feba6
         ;   Label: LAB_004feba6
     CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0 ; 004febab
-        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0()
+        ;   XREF to: 0045b5f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0(int color_value)
     ADD ESP,0x4                         ; 004febb0
     PUSH 0x58e251                       ; 004febb3 | = "(No script loaded.)"
     LEA EAX,[ESP + 0x68]                ; 004febb8
     PUSH EAX                            ; 004febbc
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260 ; 004febbd
-        ;   XREF to: 0045e260 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260()
+        ;   XREF to: 0045e260 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260(CDrawSurface * this_ptr, char * text)
     ADD ESP,0x8                         ; 004febc2
     JMP 0x004feb57                      ; 004febc5
         ;   XREF to: 004feb57 (UNCONDITIONAL_JUMP)  ; LAB_004feb57

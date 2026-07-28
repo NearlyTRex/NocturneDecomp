@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(undefined4 param_1,undefined4 param_2,int param_3)
+; int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width,int height,int bits_per_pixel)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
+; int              Stack[0xc]:4   bits_per_pixel
 ;
 ; XREF[2]:
 ;   wincore_wddvmem.cpp_FUN_00553ba0 at 00553bd2
@@ -53,7 +57,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e18]      ; 005324c3 | DAT_02dc9e18
     PUSH ESI                            ; 005324c9
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 005324ca
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
     ADD ESP,0x4                         ; 005324cf
     TEST EAX,EAX                        ; 005324d2
     JZ 0x00532580                       ; 005324d4
@@ -75,7 +79,7 @@ section .text
     CALL dword ptr [0x02dc9ddc]         ; 00532505 | DAT_02dc9ddc
     ADD ESP,0x8                         ; 0053250b
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 0053250e
-        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
+        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
     MOV EDX,dword ptr [0x02dc9e14]      ; 00532513 | DAT_02dc9e14
     PUSH EDX                            ; 00532519
     MOV ECX,dword ptr [0x02dc9e10]      ; 0053251a | DAT_02dc9e10
@@ -88,7 +92,7 @@ section .text
     MOV dword ptr [0x01c02594],EDI      ; 00532536 | DAT_01c02594
     MOV dword ptr [0x02dc9e1c],EBX      ; 0053253c | DAT_02dc9e1c
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00532542
-        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_lockFrame_FUN_005322e0()
+        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
     MOV EBP,dword ptr [0x005b7624]      ; 00532547 | DAT_005b7624
     CMP EBP,0x10                        ; 0053254d
     JNZ 0x00532585                      ; 00532550

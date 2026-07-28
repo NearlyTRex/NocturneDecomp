@@ -6,13 +6,13 @@
 #include "types/structs/SWayPointAdjacency.h"
 
 // Structure: CWayPoint
-// Ghidra size: 0x558 (1368 bytes)
+// Ghidra size: 0x550 (1360 bytes)
 #pragma pack(push, 1)
 typedef struct CWayPoint {
     CTrigger base; // 0x0
-    int num_adjacent_waypoints; // 0x370
-    SWayPointAdjacency adjacency[60]; // 0x374
-    float pathfind_cost; // 0x554
+    int num_adjacent_waypoints; // 0x368
+    SWayPointAdjacency adjacency[60]; // 0x36c
+    float pathfind_cost; // 0x54c
 } CWayPoint;
 #pragma pack(pop)
 

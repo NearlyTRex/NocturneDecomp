@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [0x005b761c]      ; 00553bcb | DAT_005b761c
     PUSH EBX                            ; 00553bd1
     CALL engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553bd2
-        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setResolutionAndColorTable_FUN_005324a0()
+        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005324a0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553bd7
     TEST EAX,EAX                        ; 00553bda
     JNZ 0x00553c81                      ; 00553bdc
@@ -120,7 +120,7 @@ section .text
     MOV ECX,dword ptr [0x005b761c]      ; 00553c71 | DAT_005b761c
     PUSH ECX                            ; 00553c77
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553c78
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553c7d
     POP EDI                             ; 00553c80
     MOV EBX,dword ptr [0x02de2098]      ; 00553c81 | DAT_02de2098

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(undefined4 param_1,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDemonCamera *this_ptr,int gamma_value)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   gamma_value
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -53,10 +56,10 @@ section .text
     FLD ST2                             ; 00447aa4
     FXCH                                ; 00447aa6
     CALL crt_math.c_pow_FUN_00565ad6    ; 00447aa8
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     FMUL ST3                            ; 00447aad
     CALL crt_math.c_round_FUN_00563a30  ; 00447aaf
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBP + -0xc]        ; 00447ab4
     MOV EAX,dword ptr [EBP + -0xc]      ; 00447ab7
     MOV EBX,dword ptr [EBP + -0xc]      ; 00447aba
@@ -89,7 +92,7 @@ section .text
     PUSH EAX                            ; 00447b1a
     FSTP ST0                            ; 00447b1b
     CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 00447b1d
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColor_FUN_00532af0(int red, int green, int blue)
     ADD ESP,0xc                         ; 00447b22
     MOV ESP,EBP                         ; 00447b25
     POP EBP                             ; 00447b27

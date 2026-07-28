@@ -2,29 +2,30 @@
 // Address: 004296c0
 // Address Range: [[004296c0, 00429728]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(int param_1)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter *this_ptr)
 
 {
-  uint *puVar1;
-  byte auStack_1c [24];
+  CVector3f *pCVar1;
+  CBoundingBox3D *pCVar2;
+  CBoundingBox3D CStack_1c;
   
-  if (*(char *)(param_1 + 0x23b0) != '\0') {
-    puVar1 = (uint *)
-             core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
-                       (param_1 + 0x150,auStack_1c);
-    if ((uint *)(param_1 + 0x25f0) != puVar1) {
-      *(uint *)(param_1 + 0x25f0) = *puVar1;
-      *(uint *)(param_1 + 0x25f4) = puVar1[1];
-      *(uint *)(param_1 + 0x25f8) = puVar1[2];
+  if ((this_ptr->model).model_name[0] != '\0') {
+    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40
+                       (&this_ptr->model,&CStack_1c);
+    if (&this_ptr->cached_bounding_box != pCVar2) {
+      (this_ptr->cached_bounding_box).min.x = (pCVar2->min).x;
+      (this_ptr->cached_bounding_box).min.y = (pCVar2->min).y;
+      (this_ptr->cached_bounding_box).min.z = (pCVar2->min).z;
     }
-    if ((uint *)(param_1 + 0x25fc) != puVar1 + 3) {
-      *(uint *)(param_1 + 0x25fc) = puVar1[3];
-      *(uint *)(param_1 + 0x2600) = puVar1[4];
-      *(uint *)(param_1 + 0x2604) = puVar1[5];
+    pCVar1 = &(this_ptr->cached_bounding_box).max;
+    if (pCVar1 != &pCVar2->max) {
+      pCVar1->x = (pCVar2->max).x;
+      (this_ptr->cached_bounding_box).max.y = (pCVar2->max).y;
+      (this_ptr->cached_bounding_box).max.z = (pCVar2->max).z;
       return;
     }
   }

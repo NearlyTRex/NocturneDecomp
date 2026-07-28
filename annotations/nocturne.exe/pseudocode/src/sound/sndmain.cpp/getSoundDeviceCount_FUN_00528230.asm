@@ -38,9 +38,9 @@ section .text
     PUSH ESI                            ; 00528245
         ;   Label: LAB_00528245
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00528246
-        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
+        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052824b
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     XOR EBX,EBX                         ; 00528250
     XOR ESI,ESI                         ; 00528252
     IMUL EAX,EBX,0x118                  ; 00528254

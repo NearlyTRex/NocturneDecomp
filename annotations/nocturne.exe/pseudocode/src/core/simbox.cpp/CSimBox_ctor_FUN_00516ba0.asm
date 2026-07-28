@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(undefined4 param_1)
+; CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(CSimBox *this_ptr)
 ;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_simbox.cpp_FUN_00516b70 at 00516b83
@@ -37,12 +39,12 @@ section .text
     ADD EAX,0x150                       ; 00516bb0
     PUSH EAX                            ; 00516bb5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00516bb6
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00516bbb
     ADD EAX,0x200                       ; 00516bbe
     PUSH EAX                            ; 00516bc3
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 00516bc4
-        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_ctor_FUN_0041a610()
+        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     ADD ESP,0x4                         ; 00516bc9
     LEA EBX,[EAX + 0xfffffcb0]          ; 00516bcc
     PUSH 0x591105                       ; 00516bd2 | = "question.kfm"
@@ -50,7 +52,7 @@ section .text
     PUSH EAX                            ; 00516bdd
     MOV dword ptr [EBX + 0x14c],0x5a1d74 ; 00516bde | PTR_core_simbox.cpp_CSimBox_setup_FUN_00516c60_005a1d74
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00516be8
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00516bed
     MOV ESI,0x591112                    ; 00516bf0 | = "none"
     LEA EDI,[EBX + 0x2d4]               ; 00516bf5

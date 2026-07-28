@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,char *param_2)
+; undefined4 core_setutil_cpp_C3DSLight_apply_FUN_00515350(int param_1,CDemonLight *param_2)
 ;
 ;
 ; XREF[1]:
@@ -44,20 +44,20 @@ section .text
     LEA EAX,[EBP + 0x110]               ; 00515383
     PUSH EAX                            ; 00515389
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0051538a
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x11c]     ; 0051538f
     MOV dword ptr [EBP + 0x138],EAX     ; 00515395
     FLD float ptr [EBX + 0x120]         ; 0051539b
     FMUL double ptr [0x00590e61]        ; 005153a1 | DOUBLE_00590e61
     ADD ESP,0x8                         ; 005153a7
     CALL crt_math.c_round_FUN_00563a30  ; 005153aa
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBP + 0x2fa4]      ; 005153af
     PUSH dword ptr [EBX + 0x124]        ; 005153b5
     PUSH EBP                            ; 005153bb
     LEA ESI,[EBX + 0x4]                 ; 005153bc
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 ; 005153bf
-        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080()
+        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight * this_ptr, float intensity)
     ADD ESP,0x8                         ; 005153c4
     MOV dword ptr [EBX + 0x11e8],0x0    ; 005153c7
     MOV EDI,EBP                         ; 005153d1
@@ -90,7 +90,7 @@ section .text
     PUSH EBP                            ; 00515411
         ;   Label: LAB_00515411
     CALL core_dlight.cpp_CDemonLight_allocateFilter_FUN_00450170 ; 00515412
-        ;   XREF to: 00450170 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_allocateFilter_FUN_00450170()
+        ;   XREF to: 00450170 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_allocateFilter_FUN_00450170(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00515417
     POP EBP                             ; 0051541a
     POP EDI                             ; 0051541b

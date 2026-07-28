@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(int param_1)
+; int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a64
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9af0
-;   core_netgame.cpp_FUN_004e99f0 at 004e9a64
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Initializing_network_0058bbd2
@@ -48,11 +50,11 @@ section .text
     LEA EBX,[ESI + 0x170]               ; 004e9d6b
     PUSH EBX                            ; 004e9d71
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110 ; 004e9d72
-        ;   XREF to: 00549110 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110()
+        ;   XREF to: 00549110 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110(_SOCKET * socket_handle)
     ADD ESP,0x4                         ; 004e9d77
     PUSH EBX                            ; 004e9d7a
     CALL support_trisock.cpp_createUDPSocket_FUN_00548f30 ; 004e9d7b
-        ;   XREF to: 00548f30 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createUDPSocket_FUN_00548f30()
+        ;   XREF to: 00548f30 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_createUDPSocket_FUN_00548f30(_SOCKET * socket_handle)
     ADD ESP,0x4                         ; 004e9d80
     TEST EAX,EAX                        ; 004e9d83
     JZ 0x004e9e21                       ; 004e9d85
@@ -60,7 +62,7 @@ section .text
     PUSH 0x0                            ; 004e9d8b
     PUSH EBX                            ; 004e9d8d
     CALL support_trisock.cpp_setSocketBlocking_FUN_00549240 ; 004e9d8e
-        ;   XREF to: 00549240 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_setSocketBlocking_FUN_00549240()
+        ;   XREF to: 00549240 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_setSocketBlocking_FUN_00549240(_SOCKET * socket_handle, int blocking_mode)
     ADD ESP,0x8                         ; 004e9d93
     TEST EAX,EAX                        ; 004e9d96
     JZ 0x004e9e3b                       ; 004e9d98
@@ -68,7 +70,7 @@ section .text
     PUSH 0x1ddf                         ; 004e9d9e
     PUSH EBX                            ; 004e9da3
     CALL support_trisock.cpp_bindSocket_FUN_00548f70 ; 004e9da4
-        ;   XREF to: 00548f70 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_bindSocket_FUN_00548f70()
+        ;   XREF to: 00548f70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindSocket_FUN_00548f70(_SOCKET * socket_handle, uint16_t port)
     ADD ESP,0x8                         ; 004e9da9
     TEST EAX,EAX                        ; 004e9dac
     JZ 0x004e9e55                       ; 004e9dae
@@ -84,7 +86,7 @@ section .text
     PUSH EAX                            ; 004e9dcc
     PUSH EBX                            ; 004e9dcd
     CALL support_trisock.cpp_getSocketName_FUN_005491e0 ; 004e9dce
-        ;   XREF to: 005491e0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_getSocketName_FUN_005491e0()
+        ;   XREF to: 005491e0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_getSocketName_FUN_005491e0(_SOCKET * socket_handle, SNetworkAddr * out_address)
     ADD ESP,0x8                         ; 004e9dd3
     TEST EAX,EAX                        ; 004e9dd6
     JZ 0x004e9e6f                       ; 004e9dd8
@@ -92,11 +94,11 @@ section .text
     PUSH ESI                            ; 004e9dde
     MOV EBP,0x1                         ; 004e9ddf
     CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0 ; 004e9de4
-        ;   XREF to: 004ea6e0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0()
+        ;   XREF to: 004ea6e0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e9de9
     MOV dword ptr [0x01cea3f8],EBP      ; 004e9dec | DAT_01cea3f8
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e9df2
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004e9df7
     MOV EBX,0x12                        ; 004e9df9
     SAR EDX,0x1f                        ; 004e9dfe

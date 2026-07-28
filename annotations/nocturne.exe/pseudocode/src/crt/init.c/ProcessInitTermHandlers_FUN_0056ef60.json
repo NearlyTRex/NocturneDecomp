@@ -1,0 +1,177 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 22,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "00567458",
+      "from_addr": "00567498",
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056df10",
+      "from_addr": "0056df1c",
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_0056df10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ef60",
+    "address_range": [
+      [
+        "0056ef60",
+        "0056efb5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_init.c_ProcessInitTermHandlers_FUN_0056ef60",
+    "signature": "void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0056ef60(int max_priority)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ef50",
+      "is_variadic": false,
+      "name": "crt_util.c_invokeRuntimeHandler_FUN_0056ef50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c2302",
+      "name": "g_FirstInitHandler",
+      "type": "RuntimeHandlerEntry",
+      "value": null
+    },
+    {
+      "addr": "005c2303",
+      "name": "g_ExitHandlerTableStart",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c2308",
+      "name": "g_InitHandlers",
+      "type": "RuntimeHandlerEntry[160]",
+      "value": null
+    },
+    {
+      "addr": "005c2309",
+      "name": "g_InitHandlers[0].priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c230a",
+      "name": "g_InitHandlers[0].func",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c26ce",
+      "name": "RuntimeHandlerEntry_005c26ce",
+      "type": "RuntimeHandlerEntry",
+      "value": null
+    },
+    {
+      "addr": "005c26d0",
+      "name": "RuntimeHandlerEntry_005c26ce.func",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0056df1c",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_WinMainBootstrap_FUN_0056df10",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00567498",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005674a8",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 21,
+      "INT_ADD": 9,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 11,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 136
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": []
+}

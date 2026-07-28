@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 244,
+    "complexity_score": 397,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 74,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_ref",
+      "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 258
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -185,14 +189,14 @@
       "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
     },
     {
+      "addr": "00472de0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0"
+    },
+    {
       "addr": "00472490",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490"
-    },
-    {
-      "addr": "00472de0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00472de0"
     }
   ],
   "globals": [
@@ -481,51 +485,83 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = param_2 * 0xac + param_1 + 0x37b50;",
+      "text": "iVar1 = param_2 * 0xac + param_1 + 0x37b50;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_2 * 0xac + param_1 + 0x37b50;",
+      "text": "iVar1 = param_2 * 0xac + param_1 + 0x37b50;",
       "type": "unnamed_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xffffffa8",
+      "severity": "moderate",
+      "text": "((CMatrix3x3f *)(iVar1 + 0x78),(CVector3f *)&stack0xffffffa8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xffffffa8",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,(CVector3f *)&stack0xffffffa8,(CVector3f *)(iVar1 + 0xa0));",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 31,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,local_58,iVar3 + 0xa0);",
+      "text": "(DAT_005ae704,(CVector3f *)&stack0xffffffa8,(CVector3f *)(iVar1 + 0xa0));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 47,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + local_1c,&local_64);",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c),",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + local_20,&local_4c);",
-      "type": "undefined_data"
+      "description": "Direct stack address reference",
+      "line": 48,
+      "match": "&stack0xffffff9c",
+      "severity": "moderate",
+      "text": "(CVector3i *)&stack0xffffff9c);",
+      "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 56,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(DAT_005ae704,iVar2,local_28);",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_20),",
       "type": "undefined_data"
     },
     {
@@ -533,32 +569,104 @@
       "line": 60,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(DAT_005ae704,iVar2,local_18);",
+      "text": "(DAT_005ae704,vertex_index1,local_28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 61,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,local_28,local_24);",
+      "text": "pCVar4 = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,vertex_index1,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,vertex_index1,unaff_EDI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(DAT_005ae704,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "(DAT_005ae704,unaff_EBP,unaff_EDI);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 74,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);",
-      "type": "undefined_data"
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "fVar2 = (float10)(int)pCVar4 * (float10)3.1415926535000001 * (float10)0.083333333333333301;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar4->vertex_buffer_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)&pCVar4->vertex_buffer_ptr",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonRenderer *)((int)&pCVar4->vertex_buffer_ptr + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 70,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonRenderer *)((int)&pCVar4->vertex_buffer_ptr + 2);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

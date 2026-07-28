@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_00480810(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_00480810(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 004802fa
@@ -32,7 +35,7 @@ section .text
         ;   Label: LAB_0048082e
     PUSH ESI                            ; 0048082f
     CALL crt_string.c__stricmp_FUN_00564520 ; 00480830
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00480835
     TEST EAX,EAX                        ; 00480838
     JZ 0x00480854                       ; 0048083a

@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0052bb3d (CONDITIONAL_JUMP)  ; LAB_0052bb3d
     PUSH EAX                            ; 0052bb93
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052bb94
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052bb99
     PUSH EAX                            ; 0052bb9c
     PUSH 0x594104                       ; 0052bb9d | = "Stop hardware sfx secondary buffer"

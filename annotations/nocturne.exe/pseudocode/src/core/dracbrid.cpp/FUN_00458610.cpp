@@ -9,12 +9,12 @@
 void core_dracbrid_cpp_FUN_00458610(void)
 
 {
-  int iVar1;
+  CDraculaBride *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbe54);
-  if (iVar1 == 0) {
+  this_ptr = (CDraculaBride *)FUN_0056497c(0xbe54);
+  if (this_ptr == (CDraculaBride *)0x0) {
     return;
   }
-  core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(iVar1);
+  core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(this_ptr);
   return;
 }

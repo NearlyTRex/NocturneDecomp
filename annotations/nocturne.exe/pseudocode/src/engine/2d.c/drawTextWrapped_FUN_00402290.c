@@ -2,50 +2,51 @@
 // Address: 00402290
 // Address Range: [[00402290, 00402310]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(byte *param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(char *text,int x_start,int y_start,int x_max,int y_max)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(byte *param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl engine_2d_c_drawTextWrapped_FUN_00402290(char *text,int x_start,int y_start,int x_max,int y_max)
 
 {
-  byte bVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
+  char cVar1;
+  byte bVar2;
+  int iVar3;
+  uint uVar4;
   int iVar5;
+  int x_pos;
   int iVar6;
-  byte *pbVar7;
+  char *pcVar7;
   
-  uVar3 = 0xffffffff;
-  pbVar7 = param_1;
+  uVar4 = 0xffffffff;
+  pcVar7 = text;
   do {
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    bVar1 = *pbVar7;
-    pbVar7 = pbVar7 + 1;
-  } while (bVar1 != 0);
-  iVar4 = 0;
-  iVar5 = param_2;
-  if (0 < (int)(~uVar3 - 1)) {
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar7 + 1;
+  } while (cVar1 != '\0');
+  iVar5 = 0;
+  x_pos = x_start;
+  if (0 < (int)(~uVar4 - 1)) {
     do {
-      if ((*param_1 == 10) && (param_3 = param_3 + 0xb, iVar5 = param_2, param_5 < param_3)) {
+      if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, y_max < y_start)) {
         return;
       }
-      bVar1 = *param_1;
-      iVar6 = iVar5;
-      if ((0x1f < bVar1) && (bVar1 < 0x100)) {
-        iVar2 = engine_2d_c_drawCharacter_FUN_00401c40((uint)bVar1,iVar5,param_3);
-        iVar6 = iVar5 + iVar2;
-        if ((param_4 < iVar5 + iVar2) &&
-           (param_3 = param_3 + 0xb, iVar6 = param_2, param_5 < param_3)) {
+      bVar2 = *text;
+      iVar6 = x_pos;
+      if ((0x1f < bVar2) && (bVar2 < 0x100)) {
+        iVar3 = engine_2d_c_drawCharacter_FUN_00401c40((uint)bVar2,x_pos,y_start);
+        iVar6 = x_pos + iVar3;
+        if ((x_max < x_pos + iVar3) && (y_start = y_start + 0xb, iVar6 = x_start, y_max < y_start))
+        {
           return;
         }
       }
-      iVar4 = iVar4 + 1;
-      param_1 = param_1 + 1;
-      iVar5 = iVar6;
-    } while (iVar4 < (int)(~uVar3 - 1));
+      iVar5 = iVar5 + 1;
+      text = text + 1;
+      x_pos = iVar6;
+    } while (iVar5 < (int)(~uVar4 - 1));
   }
   return;
 }

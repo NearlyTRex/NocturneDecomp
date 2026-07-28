@@ -2,17 +2,19 @@
 // Address: 00487370
 // Address Range: [[00487370, 0048739d]]
 // Convention: unknown
-// Signature: int core_fire_cpp_CToss_ctor_FUN_00487370(int param_1)
+// Signature: float * core_fire_cpp_CToss_ctor_FUN_00487370(int param_1)
 
 #include "nocturne.h"
 
-int core_fire_cpp_CToss_ctor_FUN_00487370(int param_1)
+float * core_fire_cpp_CToss_ctor_FUN_00487370(int param_1)
 
 {
-  int iVar1;
+  CKeyFramedModelInstance *pCVar1;
+  CBox *pCVar2;
   
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(param_1 + 4);
-  iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x17c);
-  *(uint *)(iVar1 + 0x25c) = 0;
-  return iVar1 + -0x180;
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(param_1 + 4));
+  pCVar2 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar1 + 1));
+  pCVar2[1].position.y = 0.0;
+  return &pCVar2[-1].scrape_points[0].raytrace_intersection;
 }

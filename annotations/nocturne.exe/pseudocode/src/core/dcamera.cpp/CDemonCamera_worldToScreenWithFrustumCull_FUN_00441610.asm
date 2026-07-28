@@ -13,9 +13,9 @@
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 00442098
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 at 0044579e
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920 at 00444b76
-;   core_dcamera.cpp_FUN_00444600 at 004446f0
-;   core_dcamera.cpp_FUN_00445750 at 0044579e
+;   core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_00444600 at 004446f0
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004a37e0 at 004a3743
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00441620 | DAT_005ae704
     PUSH EDX                            ; 00441626 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441627
-        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0()
+        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     MOV ECX,EAX                         ; 0044162c
     ADD ESP,0x4                         ; 0044162e
     TEST EAX,EAX                        ; 00441631

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)
+; void core_mirror_cpp_clipPolygonAgainstPlane_FUN_004d6420(SClipPlane *param_1,CVector3f *param_2,uint param_3,int param_4,int *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004d74a0 at 004d7530
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0 at 004d7530
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_1_004d6408 = 004d64f5
@@ -127,7 +127,7 @@ section .text
     PUSH EBP                            ; 004d64fe
     PUSH ESI                            ; 004d64ff
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004d62f0 ; 004d6500
-        ;   XREF to: 004d62f0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004d62f0()
+        ;   XREF to: 004d62f0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004d62f0(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004d6505
     INC EDX                             ; 004d6507
     ADD ESP,0x10                        ; 004d6508
@@ -157,7 +157,7 @@ section .text
     PUSH EDX                            ; 004d6538
     PUSH ESI                            ; 004d6539
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004d62f0 ; 004d653a
-        ;   XREF to: 004d62f0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004d62f0()
+        ;   XREF to: 004d62f0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004d62f0(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004d653f
     INC EDX                             ; 004d6541
     ADD ESP,0x10                        ; 004d6542

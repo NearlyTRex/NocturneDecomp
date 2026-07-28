@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
+; void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1f4]:1  local_1f4
@@ -740,7 +740,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x204]     ; 00431057
     PUSH EAX                            ; 0043105e
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0043105f
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00431064
     MOV dword ptr [ESP + 0x200],EAX     ; 00431067
     TEST EAX,EAX                        ; 0043106e

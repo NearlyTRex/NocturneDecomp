@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 0052b84a
         ;   Label: LAB_0052b84a
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b84b
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b850
     PUSH EAX                            ; 0052b853
     PUSH 0x594687                       ; 0052b854 | = "Get active sfx secondary buffer status"

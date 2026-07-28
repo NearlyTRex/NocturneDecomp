@@ -1,12 +1,12 @@
 // Name: core_litecone.cpp_CLightCone_ctor_FUN_004c80f0
 // Address: 004c80f0
 // Address Range: [[004c80f0, 004c8181]]
-// Convention: unknown
-// Signature: int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
 
 #include "nocturne.h"
 
-int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
+int __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
 
 {
   char cVar1;

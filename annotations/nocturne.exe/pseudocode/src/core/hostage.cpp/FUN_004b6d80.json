@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 3418,
+    "complexity_score": 3535,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 623,
-    "suspect_count": 278,
+    "pseudocode_lines": 690,
+    "suspect_count": 280,
     "suspect_types": [
+      "raw_address_pointer_store",
+      "stack_param",
+      "sub84_truncation",
+      "suspect_float",
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2279
+    "total_lines": 2346
   },
   "cross_references": [],
   "function": {
@@ -148,7 +154,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hostage.cpp_FUN_004b6d80",
-    "signature": "void core_hostage_cpp_FUN_004b6d80(int param_1,float param_2)"
+    "signature": "void core_hostage_cpp_FUN_004b6d80(CHostage *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -1170,30 +1176,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_004b6d80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 50,
-          "line": 162,
-          "message": "Uninitialized variable: local_e8",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 50,
-          "line": 163,
-          "message": "Uninitialized variable: local_e4",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1208,7 +1190,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_hostage_cpp_FUN_004b6d80(int param_1,float param_2)",
+      "text": "void core_hostage_cpp_FUN_004b6d80(CHostage *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -1216,15 +1198,23 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_hostage_cpp_FUN_004b6d80(int param_1,float param_2)",
+      "text": "void core_hostage_cpp_FUN_004b6d80(CHostage *param_1,float param_2)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_fffffe40",
+      "severity": "moderate",
+      "text": "ulonglong in_stack_fffffe40;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x1f924)) {",
+      "text": "switch(param_1->hostage_state) {",
       "type": "unnamed_param"
     },
     {
@@ -1232,7 +1222,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2de0) = 0x42480000;",
+      "text": "(param_1->base).base.ai_detection_range_max = 50.0;",
       "type": "unnamed_param"
     },
     {
@@ -1240,7 +1230,7 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2ddc) = 0x41a00000;",
+      "text": "(param_1->base).base.ai_detection_range_min = 20.0;",
       "type": "unnamed_param"
     },
     {
@@ -1248,7 +1238,7 @@
       "line": 93,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2de0) = 0x42960000;",
+      "text": "(param_1->base).base.ai_detection_range_max = 75.0;",
       "type": "unnamed_param"
     },
     {
@@ -1256,7 +1246,7 @@
       "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2ddc) = 0x42200000;",
+      "text": "(param_1->base).base.ai_detection_range_min = 40.0;",
       "type": "unnamed_param"
     },
     {
@@ -1264,7 +1254,7 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2de0) = 0x47c34f80;",
+      "text": "(param_1->base).base.ai_detection_range_max = 99999.0;",
       "type": "unnamed_param"
     },
     {
@@ -1272,7 +1262,7 @@
       "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2ddc) = 0x47c34f80;",
+      "text": "(param_1->base).base.ai_detection_range_min = 99999.0;",
       "type": "unnamed_param"
     },
     {
@@ -1280,7 +1270,7 @@
       "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x2434) <= 0.0) {",
+      "text": "if ((param_1->base).base.hit_points <= 0.0) {",
       "type": "unnamed_param"
     },
     {
@@ -1288,7 +1278,7 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2de0) = 0x47c34f80;",
+      "text": "(param_1->base).base.ai_detection_range_max = 99999.0;",
       "type": "unnamed_param"
     },
     {
@@ -1296,7 +1286,7 @@
       "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2ddc) = 0x47c34f80;",
+      "text": "(param_1->base).base.ai_detection_range_min = 99999.0;",
       "type": "unnamed_param"
     },
     {
@@ -1304,7 +1294,7 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
+      "text": "iVar12 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -1312,7 +1302,7 @@
       "line": 105,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar7 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
+      "text": "iVar12 = core_charactr_cpp_FUN_004259f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -1328,7 +1318,7 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23ac) = 0;",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -1336,15 +1326,7 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.y =",
       "type": "unnamed_param"
     },
     {
@@ -1352,15 +1334,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -1368,159 +1342,191 @@
       "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = param_1 + 0x150;",
+      "text": "(param_1->base).base.model.accumulated_root_motion.x =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2590) != 0) {",
+      "text": "(param_1->base).base.model.accumulated_root_motion.y;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = &(param_1->base).base.model.motion_controller;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_fffffe40",
+      "severity": "moderate",
+      "text": "while (y_pos = (int *)in_stack_fffffe40, 0.0 < local_1a0) {",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s escaping from %s\\n\",param_1,",
+      "text": "pCVar17 = (param_1->base).base.grabbed_by;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x2590));",
+      "text": "(PTR_DAT_005ad350,\"%s escaping from %s\\n\",param_1,pCVar17);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_160 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 125,
-      "match": "param_1",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "local_15c = param_1;",
-      "type": "unnamed_param"
+      "text": "local_194._4_4_ =",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unknown/mangled field access",
       "line": 127,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x2590) + 0x14c) + 0x100))",
-      "type": "unresolved_funcptr"
+      "match": "._52_4_",
+      "severity": "mild",
+      "text": "local_194._52_4_ = param_1;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 127,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x2590) + 0x14c) + 0x100))",
+      "text": "local_194._52_4_ = param_1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 128,
+      "match": "._56_4_",
+      "severity": "mild",
+      "text": "local_194._56_4_ = param_1;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x2590),local_194);",
+      "text": "local_194._56_4_ = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar4 = (CCharacter *)(param_1->base).base.grabbed_by;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_18 = (float)local_194._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 143,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_ec,&local_140);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1 + 0x24f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 174,
-      "match": "code *",
+      "match": "in_stack_fffffe40",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);",
-      "type": "unresolved_funcptr"
+      "text": "(pCVar4,(CDemonActor *)local_194,(int)in_stack_fffffe40);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)param_1,uVar13);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 148,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,1,0);",
+      "text": "((CDemonActor *)param_1,&local_ec,&local_140);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 151,
+      "match": "*(CDemonActor **)(iVar21 + 0x14cd70 + 0x01E57284",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(iVar21 + 0x14cd70 + 0x01E57284),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 177,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar17 = (param_1->base).base.carry_hands[1].carry_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 179,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 179,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(((param_1->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 180,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1,uVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x242c) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
+      "match": "in_stack_fffffe40",
+      "severity": "moderate",
+      "text": "in_stack_fffffe40 = 1;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 186,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = param_2 * fVar1;",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)param_1,uVar13);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
-      "match": "param_2",
+      "line": 190,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2430) = param_2 * fVar1;",
+      "text": "(param_1->base).base.walk_step_speed = (param_1->base).base.model.accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 190,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.walk_step_speed = (param_1->base).base.model.accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -1528,23 +1534,15 @@
       "line": 192,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x2434) <= 0.0) {",
+      "text": "(param_1->base).base.turn_speed = param_2 * fVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
+      "line": 192,
+      "match": "param_2",
       "severity": "mild",
-      "text": "(param_1 + 0x150,5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 197,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0x150,8), local_18 <= 0.0)) {",
+      "text": "(param_1->base).base.turn_speed = param_2 * fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -1552,15 +1550,23 @@
       "line": 198,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);",
+      "text": "if ((param_1->base).base.hit_points <= 0.0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2590) == 0) {",
+      "text": "(&(param_1->base).base.model,5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 203,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model,8), local_18 <= 0.0)) {",
       "type": "unnamed_param"
     },
     {
@@ -1568,47 +1574,23 @@
       "line": 205,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = param_1 + 0x150;",
+      "text": "(&(param_1->base).base.model.motion_controller,6,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar14 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
+      "text": "pCVar17 = (param_1->base).base.grabbed_by;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar14 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 215,
+      "line": 213,
       "match": "param_1",
       "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x1f924)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 217,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 217,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar7 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
+      "text": "pCVar2 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
@@ -1616,23 +1598,15 @@
       "line": 220,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_e0 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);",
+      "text": "iVar12 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 221,
-      "match": "param_1",
+      "line": 220,
+      "match": "param_2",
       "severity": "mild",
-      "text": "local_dc = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 222,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_d8 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);",
+      "text": "iVar12 = core_charactr_cpp_FUN_00428c00(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -1640,23 +1614,31 @@
       "line": 223,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((0.0 < *(float *)(param_1 + 0x1f570)) &&",
+      "text": "switch(param_1->hostage_state) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 224,
+      "line": 225,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1 + 0x1f570) <=",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 225,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1 + 0x1f574), puVar6 = PTR_DAT_005ad350,",
+      "text": "local_e0 = *(float *)(iVar12 + 0x20) - (param_1->base).base.base.location.position.x;",
       "type": "unnamed_param"
     },
     {
@@ -1664,7 +1646,15 @@
       "line": 229,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 1;",
+      "text": "local_dc = *(float *)(iVar12 + 0x24) - (param_1->base).base.base.location.position.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 230,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_d8 = *(float *)(iVar12 + 0x28) - (param_1->base).base.base.location.position.z;",
       "type": "unnamed_param"
     },
     {
@@ -1672,7 +1662,7 @@
       "line": 231,
       "match": "param_1",
       "severity": "mild",
-      "text": "(puVar6,\"%s rescued, entering follow mode\\n\",param_1);",
+      "text": "if (((0.0 < param_1->rescue_distance) &&",
       "type": "unnamed_param"
     },
     {
@@ -1680,23 +1670,23 @@
       "line": 232,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f5f8);",
+      "text": "(param_1->rescue_distance <=",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 236,
+      "line": 235,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1 + 0x1f928);",
+      "text": "(0x01C03A10,param_1->rescue_condition),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 238,
+      "line": 237,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = *(float *)(param_1 + 0x20) - *(float *)(iVar7 + 0x20),",
+      "text": "param_1->hostage_state = 1;",
       "type": "unnamed_param"
     },
     {
@@ -1704,31 +1694,23 @@
       "line": 239,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x28) - *(float *)(iVar7 + 0x28),",
+      "text": "(puVar11,\"%s rescued, entering follow mode\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 242,
+      "line": 241,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x20,iVar7);",
+      "text": "(0x01C03A10,param_1->hero_found_me_event);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 245,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f930) = uVar10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 246,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f930) == 0) {",
+      "text": "pCVar18 = (CWayPoint *)param_1->goal_way_point;",
       "type": "unnamed_param"
     },
     {
@@ -1736,15 +1718,7 @@
       "line": 247,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 247,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar7 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
+      "text": "(fVar5 = (param_1->base).base.base.location.position.x -",
       "type": "unnamed_param"
     },
     {
@@ -1752,23 +1726,7 @@
       "line": 249,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = core_charactr_cpp_FUN_0042af70(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 249,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar7 = core_charactr_cpp_FUN_0042af70(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 252,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),0x40a00000,",
+      "text": "fVar3 = (param_1->base).base.base.location.position.z -",
       "type": "unnamed_param"
     },
     {
@@ -1776,15 +1734,23 @@
       "line": 253,
       "match": "param_1",
       "severity": "mild",
-      "text": "0x41200000,param_1 + 0x1f91c);",
+      "text": "((CWayPoint *)&(param_1->base).base.base.location,pCVar18);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 254,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1f91c) = iVar7;",
+      "text": "param_1->next_way_point = (CDemonActor *)pCVar18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 257,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->next_way_point == (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -1792,71 +1758,79 @@
       "line": 258,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar8 = *(uint *)(param_1 + 0x1f91c);",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
-      "match": "param_1",
+      "line": 258,
+      "match": "param_2",
       "severity": "mild",
-      "text": "iVar7 = param_1 + 0x150;",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 271,
+      "line": 260,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 2;",
+      "text": "iVar12 = core_charactr_cpp_FUN_0042af70(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 273,
+      "line": 260,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar12 = core_charactr_cpp_FUN_0042af70(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 263,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "((CCharacter *)param_1,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),5.0,",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 263,
       "match": "param_1",
       "severity": "mild",
-      "text": "(puVar6,\"%s left behind!\\n\",param_1);",
+      "text": "((CCharacter *)param_1,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),5.0,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 274,
+      "line": 264,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f65c)",
+      "text": "10.0,&param_1->follow_state);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 276,
+      "line": 267,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2dbc) = 0;",
+      "text": "param_1->follow_state = iVar12;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 281,
+      "line": 269,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 3;",
+      "text": "uVar7 = param_1->follow_state;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 283,
+      "line": 270,
       "match": "param_1",
       "severity": "mild",
-      "text": "(puVar6,\"%s was led close enough, going home!\\n\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 284,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f788);",
+      "text": "pCVar2 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
@@ -1864,7 +1838,15 @@
       "line": 285,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2dbc) = 0;",
+      "text": "param_1->hostage_state = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 287,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(puVar11,\"%s left behind!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1872,39 +1854,31 @@
       "line": 289,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar14 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
+      "text": "(0x01C03A10,param_1->hero_left_me_event);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 289,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar14 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 292,
+      "line": 290,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),0x40800000,0x41200000,",
+      "text": "(param_1->base).base.hero_proximity_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 293,
+      "line": 295,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 + 0x1f91c);",
+      "text": "param_1->hostage_state = 3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 294,
+      "line": 297,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar8 = *(uint *)(param_1 + 0x1f91c);",
+      "text": "(puVar11,\"%s was led close enough, going home!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1912,71 +1886,71 @@
       "line": 299,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 1;",
+      "text": "(0x01C03A10,param_1->going_to_sit_down_event);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 311,
+      "line": 300,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);",
+      "text": "(param_1->base).base.hero_proximity_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 304,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s was left behind, but now can follow again!\\n\",param_1);",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 316,
+      "line": 304,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar12 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 307,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "((CCharacter *)param_1,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),4.0,10.0",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 307,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f6c0);",
+      "text": "((CCharacter *)param_1,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),4.0,10.0",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 320,
+      "line": 308,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f930) == 0) {",
+      "text": ",&param_1->follow_state);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 321,
+      "line": 309,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 2;",
+      "text": "uVar7 = param_1->follow_state;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 314,
       "match": "param_1",
       "severity": "mild",
-      "text": "(puVar6,\"%s doesn't know next waypoint going home.  Help me!\\n\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 327,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(param_1 + 0x1f930),0x3f800000,0xbf800000,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 327,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)(param_1 + 0x1f930),0x3f800000,0xbf800000,",
+      "text": "param_1->hostage_state = 1;",
       "type": "unnamed_param"
     },
     {
@@ -1984,15 +1958,7 @@
       "line": 328,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 + 0x1f91c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 329,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x1f91c)) {",
+      "text": "(&(param_1->base).base.model.motion_controller,0,1);",
       "type": "unnamed_param"
     },
     {
@@ -2000,39 +1966,15 @@
       "line": 332,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s reached waypoint %s!\\n\",param_1,",
+      "text": "(PTR_DAT_005ad350,\"%s was left behind, but now can follow again!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f930));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 335,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f930) == *(int *)(param_1 + 0x1f928)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 335,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f930) == *(int *)(param_1 + 0x1f928)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 336,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 4;",
+      "text": "(0x01C03A10,param_1->hero_came_back_event);",
       "type": "unnamed_param"
     },
     {
@@ -2040,7 +1982,7 @@
       "line": 338,
       "match": "param_1",
       "severity": "mild",
-      "text": "(puVar6,\"%s rescued and taken home!\\n\",param_1);",
+      "text": "if (param_1->next_way_point == (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -2048,31 +1990,95 @@
       "line": 339,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f930) = 0;",
+      "text": "param_1->hostage_state = 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 343,
+      "line": 341,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x20,*(int *)(param_1 + 0x1f928));",
+      "text": "(puVar11,\"%s doesn't know next waypoint going home.  Help me!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 343,
+      "line": 345,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x20,*(int *)(param_1 + 0x1f928));",
+      "text": "((CCharacter *)param_1,param_1->next_way_point,1.0,-1.0,&param_1->follow_state);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 344,
+      "line": 345,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f930) = uVar10;",
+      "text": "((CCharacter *)param_1,param_1->next_way_point,1.0,-1.0,&param_1->follow_state);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 345,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCharacter *)param_1,param_1->next_way_point,1.0,-1.0,&param_1->follow_state);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 346,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "switch(param_1->follow_state) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 349,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(PTR_DAT_005ad350,\"%s reached waypoint %s!\\n\",param_1,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 350,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->next_way_point);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 352,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CWayPoint *)param_1->next_way_point == (CWayPoint *)param_1->goal_way_point) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 352,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CWayPoint *)param_1->next_way_point == (CWayPoint *)param_1->goal_way_point) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 353,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->hostage_state = 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 355,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(puVar11,\"%s rescued and taken home!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -2080,15 +2086,7 @@
       "line": 356,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 358,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(puVar6,\"%s got confused going home.  Help me!\\n\",param_1);",
+      "text": "param_1->next_way_point = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -2096,7 +2094,15 @@
       "line": 360,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f7ec);",
+      "text": "((CWayPoint *)&(param_1->base).base.base.location,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 361,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CWayPoint *)param_1->goal_way_point);",
       "type": "unnamed_param"
     },
     {
@@ -2104,79 +2110,7 @@
       "line": 362,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1 + 0x1f5d8,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 363,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f930) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 370,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f92c) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 371,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x242c) < param_2 * (float)0.5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 371,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x242c) < param_2 * (float)0.5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 372,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x242c) = param_2 * (float)0.5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 372,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x242c) = param_2 * (float)0.5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 376,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_8c,*(int *)(param_1 + 0x1f92c) + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 376,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_8c,*(int *)(param_1 + 0x1f92c) + 0x20);",
+      "text": "param_1->next_way_point = (CDemonActor *)pCVar18;",
       "type": "unnamed_param"
     },
     {
@@ -2184,15 +2118,7 @@
       "line": 377,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x2414) != puVar12) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 378,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2414) = *puVar12;",
+      "text": "param_1->hostage_state = 2;",
       "type": "unnamed_param"
     },
     {
@@ -2200,31 +2126,31 @@
       "line": 379,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2418) = puVar12[1];",
+      "text": "(puVar11,\"%s got confused going home.  Help me!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 380,
+      "line": 383,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x241c) = puVar12[2];",
+      "text": "(0x01C03A10,param_1->sit_down_event);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 382,
+      "line": 385,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar11 = (float *)(param_1 + 0x2414);",
+      "text": "(0x01C03A10,param_1->rescue_event,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 384,
+      "line": 386,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_9c = *(float *)(param_1 + 0x241c);",
+      "text": "param_1->hostage_state = 4;",
       "type": "unnamed_param"
     },
     {
@@ -2232,55 +2158,39 @@
       "line": 387,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x242c) < local_198) {",
+      "text": "param_1->next_way_point = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 388,
+      "line": 393,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = *(float *)(param_1 + 0x242c) / local_198;",
+      "text": "if (param_1->sit_down_way_point != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 390,
-      "match": "param_1",
+      "line": 394,
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2418) = *(float *)(param_1 + 0x2418) * local_30;",
+      "text": "fVar5 = param_2 * (float)0.5;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 390,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2418) = *(float *)(param_1 + 0x2418) * local_30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 391,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x241c) = *(float *)(param_1 + 0x241c) * local_30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 391,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x241c) = *(float *)(param_1 + 0x241c) * local_30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 395,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "y_pos = SUB84(__BITCAST_UINT64((double)fVar5),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 396,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_14c,param_1 + 0x2414);",
+      "text": "if ((param_1->base).base.walk_step_speed < fVar5) {",
       "type": "unnamed_param"
     },
     {
@@ -2288,7 +2198,7 @@
       "line": 397,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2410) = *(uint *)(iVar7 + 4);",
+      "text": "(param_1->base).base.walk_step_speed = fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -2296,7 +2206,7 @@
       "line": 400,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(*(int *)(param_1 + 0x1f92c) + 0x34) -",
+      "text": "((CDemonActor *)param_1,&local_8c,",
       "type": "unnamed_param"
     },
     {
@@ -2304,39 +2214,31 @@
       "line": 401,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34));",
+      "text": "&(param_1->sit_down_way_point->location).position);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 403,
+      "line": 402,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_18 - *(float *)(param_1 + 0x2410));",
+      "text": "pCVar15 = &(param_1->base).base.position_delta;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 404,
+      "line": 405,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2410) = (1.0 - fVar1) * local_18 + *(float *)(param_1 + 0x2410);",
+      "text": "(param_1->base).base.position_delta.y = pCVar19->y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 404,
+      "line": 406,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2410) = (1.0 - fVar1) * local_18 + *(float *)(param_1 + 0x2410);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 407,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x2410));",
+      "text": "(param_1->base).base.position_delta.z = pCVar19->z;",
       "type": "unnamed_param"
     },
     {
@@ -2344,7 +2246,7 @@
       "line": 408,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2410) = local_18;",
+      "text": "pCVar15 = &(param_1->base).base.position_delta;",
       "type": "unnamed_param"
     },
     {
@@ -2352,31 +2254,7 @@
       "line": 410,
       "match": "param_1",
       "severity": "mild",
-      "text": "(ABS(*(float *)(param_1 + 0x2410)) < (float)0.017453292519444399)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 411,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x1f920) == 0) || (*(int *)(param_1 + 0x1f920) == 4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 411,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x1f920) == 0) || (*(int *)(param_1 + 0x1f920) == 4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 412,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);",
+      "text": "local_9c = (param_1->base).base.position_delta.z;",
       "type": "unnamed_param"
     },
     {
@@ -2384,7 +2262,23 @@
       "line": 413,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f924) = 5;",
+      "text": "if ((param_1->base).base.walk_step_speed < local_198) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 414,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_30 = (param_1->base).base.walk_step_speed / local_198;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 415,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = (param_1->base).base.position_delta.y;",
       "type": "unnamed_param"
     },
     {
@@ -2392,7 +2286,7 @@
       "line": 416,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,10,1);",
+      "text": "fVar3 = (param_1->base).base.position_delta.z;",
       "type": "unnamed_param"
     },
     {
@@ -2400,31 +2294,23 @@
       "line": 418,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,param_1 + 0x1f7ec);",
+      "text": "(param_1->base).base.position_delta.y = fVar5 * local_30;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 420,
+      "line": 419,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01C03A10,param_1 + 0x1f5d8,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 421,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f92c) = 0;",
+      "text": "(param_1->base).base.position_delta.z = fVar3 * local_30;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 423,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = param_2 * (float)3.1415926535000001;",
+      "text": "(local_14c,&(param_1->base).base.position_delta);",
       "type": "unnamed_param"
     },
     {
@@ -2432,15 +2318,7 @@
       "line": 425,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x2410) < local_40) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 426,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2410) = local_40;",
+      "text": "(param_1->base).base.turn_angle_accumulator = *(float *)(iVar12 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -2448,7 +2326,7 @@
       "line": 428,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (local_3c < *(float *)(param_1 + 0x2410)) {",
+      "text": "((param_1->sit_down_way_point->orient).vec.y -",
       "type": "unnamed_param"
     },
     {
@@ -2456,23 +2334,71 @@
       "line": 429,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2410) = local_3c;",
+      "text": "(param_1->base).base.base.orient.vec.y);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 435,
+      "line": 431,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar8 = *(uint *)(param_1 + 0x25a8);",
+      "text": "(local_18 - (param_1->base).base.turn_angle_accumulator);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 438,
+      "line": 432,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,1,1);",
+      "text": "(param_1->base).base.turn_angle_accumulator =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 433,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(1.0 - fVar5) * local_18 + (param_1->base).base.turn_angle_accumulator;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 436,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->base).base.turn_angle_accumulator);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 437,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.turn_angle_accumulator = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 439,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(ABS((param_1->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 440,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->hostage_type == 0) || (param_1->hostage_type == 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 440,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->hostage_type == 0) || (param_1->hostage_type == 4)) {",
       "type": "unnamed_param"
     },
     {
@@ -2480,15 +2406,23 @@
       "line": 442,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);",
+      "text": "(&(param_1->base).base.model.motion_controller,0,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 446,
+      "line": 443,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);",
+      "text": "param_1->hostage_state = 5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 447,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.motion_controller,10,1);",
       "type": "unnamed_param"
     },
     {
@@ -2496,7 +2430,7 @@
       "line": 450,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);",
+      "text": "(0x01C03A10,param_1->sit_down_event);",
       "type": "unnamed_param"
     },
     {
@@ -2504,31 +2438,71 @@
       "line": 452,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
+      "text": "(0x01C03A10,param_1->rescue_event,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 458,
+      "line": 453,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,local_d4,*(int *)(param_1 + 0x2590) + 0x20);",
+      "text": "param_1->sit_down_way_point = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 458,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_d4,*(int *)(param_1 + 0x2590) + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 468,
+      "line": 455,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_38 = param_2 * (float)3.1415926535000001;",
+      "text": "local_3c = param_2 * (float)3.1415926535000001;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 457,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->base).base.turn_angle_accumulator < local_40) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 458,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.turn_angle_accumulator = local_40;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 460,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (local_3c < (param_1->base).base.turn_angle_accumulator) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 461,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.turn_angle_accumulator = local_3c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 467,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar7 = (param_1->base).base.is_walking;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 471,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.motion_controller,1,1);",
       "type": "unnamed_param"
     },
     {
@@ -2536,31 +2510,7 @@
       "line": 476,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_19c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 476,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + local_19c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 477,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 478,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1 + 0x2590);",
+      "text": "(&(param_1->base).base.model.motion_controller,0,1);",
       "type": "unnamed_param"
     },
     {
@@ -2568,31 +2518,7 @@
       "line": 481,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,local_98,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 482,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar7 = (**(code **)(iVar14 + 0x108))(iVar7,param_1,uVar10);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 482,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = (**(code **)(iVar14 + 0x108))(iVar7,param_1,uVar10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 484,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2590) = 0;",
+      "text": "(&(param_1->base).base.model.motion_controller,2,1);",
       "type": "unnamed_param"
     },
     {
@@ -2600,7 +2526,7 @@
       "line": 486,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0,1);",
+      "text": "(&(param_1->base).base.model.motion_controller,0,1);",
       "type": "unnamed_param"
     },
     {
@@ -2608,103 +2534,23 @@
       "line": 488,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x2590) == 0) goto LAB_004b7534;",
+      "text": "(PTR_DAT_005ad350,\"%s confused while walking to scriptDest!\\n\",param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 491,
+      "line": 494,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23ac) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 492,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 492,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 493,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 493,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 496,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((0.0 < *(float *)(param_1 + 0x2434)) && (*(int *)(param_1 + 0x1f920) == 1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 496,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((0.0 < *(float *)(param_1 + 0x2434)) && (*(int *)(param_1 + 0x1f920) == 1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 497,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(param_2 * 0.2f), iVar7 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 499,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0x150,\"Bip01 L Forearm\",0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 503,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0x150,local_bc,iVar7);",
+      "text": "((CDemonActor *)param_1,&local_d4,&(pCVar17->location).position);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 504,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_158,uVar10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 508,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_134,&local_11c);",
+      "text": "local_38 = param_2 * (float)3.1415926535000001;",
       "type": "unnamed_param"
     },
     {
@@ -2712,7 +2558,23 @@
       "line": 512,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);",
+      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.y + local_19c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 512,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.base.orient.vec.y = (param_1->base).base.base.orient.vec.y + local_19c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 513,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
@@ -2720,7 +2582,7 @@
       "line": 514,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);",
+      "text": "pCVar4 = (CCharacter *)(param_1->base).base.grabbed_by;",
       "type": "unnamed_param"
     },
     {
@@ -2728,71 +2590,15 @@
       "line": 517,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0xdc) == 0)) {",
+      "text": "(&(param_1->base).base.model,&local_98,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 518,
+      "line": 520,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2dcc) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 521,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 521,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 521,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2424) = *(float *)(param_1 + 0x2424) - param_2 * (float)32;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 522,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_104 = *(float *)(param_1 + 0x2420) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 522,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_104 = *(float *)(param_1 + 0x2420) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 523,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_100 = *(float *)(param_1 + 0x2424) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 523,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_100 = *(float *)(param_1 + 0x2424) * param_2;",
+      "text": "(param_1->base).base.grabbed_by = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -2800,23 +2606,7 @@
       "line": 524,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_fc = *(float *)(param_1 + 0x2428) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 524,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_fc = *(float *)(param_1 + 0x2428) * param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 525,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_128 = local_104 + *(float *)(param_1 + 0x2414);",
+      "text": "(&(param_1->base).base.model.motion_controller,0,1);",
       "type": "unnamed_param"
     },
     {
@@ -2824,23 +2614,7 @@
       "line": 526,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_124 = local_100 + *(float *)(param_1 + 0x2418);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 527,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_120 = local_fc + *(float *)(param_1 + 0x241c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 528,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_b0 = local_128 + *(float *)(param_1 + 0x23a4);",
+      "text": "else if ((param_1->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_004b7534;",
       "type": "unnamed_param"
     },
     {
@@ -2848,7 +2622,7 @@
       "line": 529,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_ac = local_124 + *(float *)(param_1 + 0x23a8);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -2856,7 +2630,7 @@
       "line": 530,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_a8 = local_120 + *(float *)(param_1 + 0x23ac);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.y =",
       "type": "unnamed_param"
     },
     {
@@ -2864,7 +2638,7 @@
       "line": 531,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x241c) = 0;",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -2872,15 +2646,7 @@
       "line": 532,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2418) = *(uint *)(param_1 + 0x241c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 532,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2418) = *(uint *)(param_1 + 0x241c);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.x =",
       "type": "unnamed_param"
     },
     {
@@ -2888,39 +2654,7 @@
       "line": 533,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x2418);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 533,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2414) = *(float *)(param_1 + 0x2418);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 534,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23ac) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 535,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 535,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.y;",
       "type": "unnamed_param"
     },
     {
@@ -2928,7 +2662,7 @@
       "line": 536,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23a8);",
+      "text": "if (((0.0 < (param_1->base).base.hit_points) && (param_1->hostage_type == 1)) &&",
       "type": "unnamed_param"
     },
     {
@@ -2936,31 +2670,15 @@
       "line": 536,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23a8);",
+      "text": "if (((0.0 < (param_1->base).base.hit_points) && (param_1->hostage_type == 1)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 537,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "local_f8 = *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 538,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_f4 = *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 539,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_f0 = *(float *)(param_1 + 0x28);",
+      "text": "(iVar12 = core_actor_cpp_randomChance_FUN_0040dea0(param_2 * 0.2f), iVar12 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -2968,55 +2686,7 @@
       "line": 540,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_b0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 541,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2dcc) = *(float *)(param_1 + 0x2dcc) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 541,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2dcc) = *(float *)(param_1 + 0x2dcc) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 541,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2dcc) = *(float *)(param_1 + 0x2dcc) + param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 542,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((double)param_2 * 0.59999999999999998 <=",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 545,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(dVar3 = (double)*(float *)(param_1 + 0x20) - (double)local_f8,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 546,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar4 = (double)*(float *)(param_1 + 0x24) - (double)local_f4,",
+      "text": "pCVar2 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
@@ -3024,87 +2694,7 @@
       "line": 547,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar5 = (double)*(float *)(param_1 + 0x28) - (double)local_f0,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 548,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3) <= (double)param_2 * 0.40000000000000002))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 553,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_80,param_1 + 0x2414);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 553,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,local_80,param_1 + 0x2414);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 554,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20) = *pfVar11 + *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 554,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20) = *pfVar11 + *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 555,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = pfVar11[1] + *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 555,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = pfVar11[1] + *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 556,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = pfVar11[2] + *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 556,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = pfVar11[2] + *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 558,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2dcc) = 0;",
+      "text": "((CDemonActor *)param_1,&local_158,pCVar15);",
       "type": "unnamed_param"
     },
     {
@@ -3112,15 +2702,7 @@
       "line": 560,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(param_1 + 0x150);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 561,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1f920) == 1) {",
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,&local_134,local_11c);",
       "type": "unnamed_param"
     },
     {
@@ -3128,47 +2710,31 @@
       "line": 565,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x24f0),g_CWeaponActorType_02ddf970.name_hash);",
+      "text": "core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 569,
+      "line": 568,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,0x10), local_18 <= 0.0)) || (local_4c != 0)) {",
+      "text": "(&(param_1->base).base.model.motion_controller);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 570,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_2 / local_48 + *(float *)(param_1 + 0x1f94c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 570,
+      "line": 571,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 / local_48 + *(float *)(param_1 + 0x1f94c);",
+      "text": "((param_1->base).base.base.standing_platform == (CPlatform *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 573,
+      "line": 572,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x1f94c) - param_2 / local_48;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 573,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x1f94c) - param_2 / local_48;",
+      "text": "(param_1->base).base.walk_stuck_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -3176,7 +2742,7 @@
       "line": 575,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1f94c) = fVar1;",
+      "text": "(param_1->base).base.velocity.y =",
       "type": "unnamed_param"
     },
     {
@@ -3184,7 +2750,15 @@
       "line": 576,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)(param_1 + 0x1f94c)) {",
+      "text": "(param_1->base).base.velocity.y - param_2 * (float)32;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 576,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1->base).base.velocity.y - param_2 * (float)32;",
       "type": "unnamed_param"
     },
     {
@@ -3192,7 +2766,15 @@
       "line": 577,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (1.0 < *(float *)(param_1 + 0x1f94c)) {",
+      "text": "local_104 = (param_1->base).base.velocity.x * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 577,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_104 = (param_1->base).base.velocity.x * param_2;",
       "type": "unnamed_param"
     },
     {
@@ -3200,7 +2782,23 @@
       "line": 578,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f94c) = 0x3f800000;",
+      "text": "local_100 = (param_1->base).base.velocity.y * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 578,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_100 = (param_1->base).base.velocity.y * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 579,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar15 = &(param_1->base).base.position_delta;",
       "type": "unnamed_param"
     },
     {
@@ -3208,7 +2806,23 @@
       "line": 580,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = param_1 + 0x150;",
+      "text": "local_fc = (param_1->base).base.velocity.z * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 580,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_fc = (param_1->base).base.velocity.z * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 581,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar19 = &(param_1->base).base.model.accumulated_root_motion;",
       "type": "unnamed_param"
     },
     {
@@ -3216,7 +2830,23 @@
       "line": 583,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1f948) * (float)0.65000000000000002 +",
+      "text": "local_124 = local_100 + (param_1->base).base.position_delta.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 584,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_120 = local_fc + (param_1->base).base.position_delta.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 586,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_b0.y = local_124 + (param_1->base).base.model.accumulated_root_motion.y;",
       "type": "unnamed_param"
     },
     {
@@ -3224,7 +2854,7 @@
       "line": 587,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7,_DAT_01cae1a0,local_58,*(uint *)(param_1 + 0x1f94c),",
+      "text": "local_b0.z = local_120 + (param_1->base).base.model.accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -3232,7 +2862,23 @@
       "line": 588,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f934),core_skeleton_cpp_FUN_0051b650);",
+      "text": "(param_1->base).base.position_delta.z = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 589,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.position_delta.y = (param_1->base).base.position_delta.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 589,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.position_delta.y = (param_1->base).base.position_delta.z;",
       "type": "unnamed_param"
     },
     {
@@ -3240,7 +2886,7 @@
       "line": 590,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7,_DAT_01cae1a0,local_58,*(uint *)(param_1 + 0x1f94c),",
+      "text": "pCVar15->x = (param_1->base).base.position_delta.y;",
       "type": "unnamed_param"
     },
     {
@@ -3248,7 +2894,7 @@
       "line": 591,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f938),core_skeleton_cpp_FUN_0051b650);",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -3256,23 +2902,7 @@
       "line": 592,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((1.0 <= *(float *)(param_1 + 0x1f94c)) && (0.0 < *(float *)(param_1 + 0x1f948))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 592,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((1.0 <= *(float *)(param_1 + 0x1f94c)) && (0.0 < *(float *)(param_1 + 0x1f948))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 593,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(fVar1 = param_2 / local_54 + *(float *)(param_1 + 0x1f948),",
+      "text": "pCVar1 = &(param_1->base).base.base.location;",
       "type": "unnamed_param"
     },
     {
@@ -3280,7 +2910,7 @@
       "line": 593,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = param_2 / local_54 + *(float *)(param_1 + 0x1f948),",
+      "text": "(param_1->base).base.model.accumulated_root_motion.y =",
       "type": "unnamed_param"
     },
     {
@@ -3288,7 +2918,7 @@
       "line": 594,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x1f948) = fVar1, 1.0 < fVar1)) {",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -3296,7 +2926,23 @@
       "line": 595,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f948) = 0x3f800000;",
+      "text": "pCVar19->x = (param_1->base).base.model.accumulated_root_motion.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 597,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_f4 = (param_1->base).base.base.location.position.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 598,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_f0 = (param_1->base).base.base.location.position.z;",
       "type": "unnamed_param"
     },
     {
@@ -3304,7 +2950,7 @@
       "line": 599,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f948) = 0;",
+      "text": "core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050((CCharacter *)param_1,&local_b0);",
       "type": "unnamed_param"
     },
     {
@@ -3312,39 +2958,31 @@
       "line": 600,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f94c) = 0;",
+      "text": "(param_1->base).base.walk_stuck_timer = (param_1->base).base.walk_stuck_timer + param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 603,
+      "line": 600,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(param_1,param_2,bVar13);",
+      "text": "(param_1->base).base.walk_stuck_timer = (param_1->base).base.walk_stuck_timer + param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 603,
+      "line": 600,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(param_1,param_2,bVar13);",
+      "text": "(param_1->base).base.walk_stuck_timer = (param_1->base).base.walk_stuck_timer + param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 604,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 604,
+      "line": 601,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
+      "text": "if (((double)param_2 * 0.59999999999999998 <=",
       "type": "unnamed_param"
     },
     {
@@ -3352,39 +2990,47 @@
       "line": 605,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((1.0 <= *(float *)(param_1 + 0x1f948)) &&",
+      "text": "dVar9 = (double)(param_1->base).base.base.location.position.y - (double)local_f4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 606,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dVar10 = (double)(param_1->base).base.base.location.position.z - (double)local_f0,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 607,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x24f0),g_CWeaponActorType_02ddf970.name_hash),",
+      "text": "SQRT(dVar10 * dVar10 + dVar9 * dVar9 + dVar8 * dVar8) <= (double)param_2 * 0.40000000000000002))",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 611,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar7 + 0x14c) + 0xdc))(iVar7);",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 612,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,local_80,&(param_1->base).base.position_delta);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 612,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,local_80,&(param_1->base).base.position_delta);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 613,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0xc,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 614,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f94c) = 0;",
+      "text": "pCVar1 = &(param_1->base).base.base.location;",
       "type": "unnamed_param"
     },
     {
@@ -3392,7 +3038,15 @@
       "line": 615,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f948) = 0;",
+      "text": "(param_1->base).base.base.location.position.y =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 616,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfVar16[1] + (param_1->base).base.base.location.position.y;",
       "type": "unnamed_param"
     },
     {
@@ -3400,40 +3054,368 @@
       "line": 617,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)(param_1 + 0x1f920) == 1) &&",
+      "text": "(param_1->base).base.base.location.position.z =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 619,
+      "line": 618,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x24f0),g_CWeaponActorType_02ddf970.name_hash),",
+      "text": "pfVar16[2] + (param_1->base).base.base.location.position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 623,
+      "line": 620,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1f948) = 0x3c23d70a;",
+      "text": "(param_1->base).base.walk_stuck_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Uninitialized variable: local_e8",
-      "line": 162,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_10c = *(float *)(iVar9 + 0x24) - local_e8;",
-      "type": "static_uninitvar"
+      "description": "Unnamed function parameter",
+      "line": 622,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Uninitialized variable: local_e4",
-      "line": 163,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_108 = *(float *)(iVar9 + 0x28) - local_e4;",
-      "type": "static_uninitvar"
+      "description": "Unnamed function parameter",
+      "line": 624,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->hostage_type == 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 628,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->base).base.carry_hands[1].carry_actor,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 635,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar5 = param_2 / (float)local_48 + param_1->gun_blend_weight;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 635,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_2 / (float)local_48 + param_1->gun_blend_weight;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 638,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = param_1->gun_blend_weight - param_2 / (float)local_48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 638,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar5 = param_1->gun_blend_weight - param_2 / (float)local_48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 640,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_blend_weight = fVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 641,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0.0 < param_1->gun_blend_weight) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 642,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (1.0 < param_1->gun_blend_weight) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 643,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_blend_weight = 1.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 645,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 648,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress * (float)0.65000000000000002 +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 652,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar2,_DAT_01cae1a0,local_58,param_1->gun_blend_weight,param_1->bone_indices[0],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 652,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar2,_DAT_01cae1a0,local_58,param_1->gun_blend_weight,param_1->bone_indices[0],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 655,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar2,_DAT_01cae1a0,local_58,param_1->gun_blend_weight,param_1->bone_indices[1],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 655,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar2,_DAT_01cae1a0,local_58,param_1->gun_blend_weight,param_1->bone_indices[1],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 657,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((1.0 <= param_1->gun_blend_weight) && (0.0 < param_1->gun_raise_progress)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 657,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((1.0 <= param_1->gun_blend_weight) && (0.0 < param_1->gun_raise_progress)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 658,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(fVar5 = param_2 / local_54 + param_1->gun_raise_progress,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 658,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(fVar5 = param_2 / local_54 + param_1->gun_raise_progress,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 659,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress = fVar5, 1.0 < fVar5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 660,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress = 1.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 664,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 665,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_blend_weight = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 669,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCharacter *)param_1,param_2,uVar13);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 669,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CCharacter *)param_1,param_2,uVar13);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 670,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 670,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 671,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((1.0 <= param_1->gun_raise_progress) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 673,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->base).base.carry_hands[1].carry_actor,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 676,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "pCVar17[4].location.position.y = 8.40779e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 680,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.motion_controller,0xc,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 681,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_blend_weight = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 682,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 684,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((param_1->hostage_type == 1) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 686,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->base).base.carry_hands[1].carry_actor,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 690,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->gun_raise_progress = 0.01;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 404,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar15->x = pCVar19->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 110,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 529,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 588,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 591,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(param_1->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "vtable_info": {

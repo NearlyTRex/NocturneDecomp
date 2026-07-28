@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawString_FUN_004026b0(byte *param_1,int param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl engine_2d_c_drawString_FUN_004026b0(char *text,int x_pos,int y_pos,int color)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
+; int              Stack[0x10]:4   color
 ;
 ; XREF[1]:
 ;   engine_console.cpp_CConsole_render_FUN_0043aec0 at 0043af32
@@ -49,7 +54,7 @@ section .text
     PUSH EBP                            ; 004026ea
     PUSH EAX                            ; 004026eb
     CALL engine_2d.c_drawCharacterMaskedColor_FUN_00402040 ; 004026ec
-        ;   XREF to: 00402040 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacterMaskedColor_FUN_00402040()
+        ;   XREF to: 00402040 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMaskedColor_FUN_00402040(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 004026f1
     ADD EBP,EAX                         ; 004026f4
     INC EBX                             ; 004026f6

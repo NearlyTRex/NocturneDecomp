@@ -19,7 +19,7 @@ uint FUN_0056f220(uint param_1)
     iVar1 = param_1 * 4;
     if ((PTR_DAT_005c1fe4[iVar1 + 1] & 0x40) == 0) {
       PTR_DAT_005c1fe4[iVar1 + 1] = PTR_DAT_005c1fe4[iVar1 + 1] | 0x40;
-      iVar2 = FUN_005705c0(param_1);
+      iVar2 = IsSpecialDevice(param_1);
       if (iVar2 != 0) {
         PTR_DAT_005c1fe4[iVar1 + 1] = PTR_DAT_005c1fe4[iVar1 + 1] | 0x20;
       }

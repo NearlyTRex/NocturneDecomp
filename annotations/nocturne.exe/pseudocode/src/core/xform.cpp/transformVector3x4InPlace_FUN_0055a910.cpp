@@ -2,11 +2,11 @@
 // Address: 0055a910
 // Address Range: [[0055a910, 0055a993]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(float *param_1,float *param_2)
+// Signature: CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(CVector3f *input_output_vector,CMatrix3x4f *matrix)
 
 #include "nocturne.h"
 
-float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(float *param_1,float *param_2)
+CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(CVector3f *input_output_vector,CMatrix3x4f *matrix)
 
 {
   float fVar1;
@@ -20,24 +20,28 @@ float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(float *par
   float fVar9;
   float fVar10;
   float fVar11;
-  float local_c [3];
+  CVector3f local_c;
   
-  fVar1 = param_2[5];
-  fVar2 = *param_1;
-  fVar3 = param_2[4];
-  fVar4 = param_2[6];
-  fVar5 = param_2[7];
-  fVar6 = param_1[1];
-  fVar7 = param_2[9];
-  fVar8 = *param_1;
-  fVar9 = param_2[8];
-  fVar10 = param_2[10];
-  fVar11 = param_2[0xb];
-  if (param_1 == local_c) {
-    return param_1;
+  fVar1 = matrix->m[1].x;
+  fVar2 = input_output_vector->x;
+  fVar3 = matrix->m[1].w;
+  fVar4 = matrix->m[1].y;
+  fVar5 = matrix->m[1].z;
+  fVar6 = input_output_vector->y;
+  fVar7 = matrix->m[2].x;
+  fVar8 = input_output_vector->x;
+  fVar9 = matrix->m[2].w;
+  fVar10 = matrix->m[2].y;
+  fVar11 = matrix->m[2].z;
+  if (input_output_vector == &local_c) {
+    return input_output_vector;
   }
-  *param_1 = param_1[2] * param_2[2] + *param_1 * *param_2 + param_1[1] * param_2[1] + param_2[3];
-  param_1[1] = param_1[2] * fVar4 + fVar2 * fVar3 + param_1[1] * fVar1 + fVar5;
-  param_1[2] = param_1[2] * fVar10 + fVar8 * fVar9 + fVar6 * fVar7 + fVar11;
-  return param_1;
+  input_output_vector->x =
+       input_output_vector->z * matrix->m[0].y +
+       input_output_vector->x * matrix->m[0].w + input_output_vector->y * matrix->m[0].x +
+       matrix->m[0].z;
+  input_output_vector->y =
+       input_output_vector->z * fVar4 + fVar2 * fVar3 + input_output_vector->y * fVar1 + fVar5;
+  input_output_vector->z = input_output_vector->z * fVar10 + fVar8 * fVar9 + fVar6 * fVar7 + fVar11;
+  return input_output_vector;
 }

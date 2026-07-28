@@ -2,53 +2,54 @@
 // Address: 0044b430
 // Address Range: [[0044b430, 0044b4ff]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(int param_1,uint param_2)
+void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
-  uint *puVar1;
-  int iVar2;
+  CVector3f *pCVar1;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   
   iVar4 = -1;
   iVar3 = 0;
-  if (0 < *(int *)(param_1 + 0x28)) {
+  if (0 < this_ptr->triangle_count) {
     iVar5 = 0;
     do {
-      iVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00449720
-                        (*(int *)(param_1 + 0x2c) + iVar5,param_2);
-      if (iVar2 != 0) {
+      uVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00449720
+                        ((STriangleRef *)
+                         ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar5),cylinder);
+      if (uVar2 != 0) {
         iVar4 = iVar3;
       }
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 0x20;
-    } while (iVar3 < *(int *)(param_1 + 0x28));
+    } while (iVar3 < this_ptr->triangle_count);
   }
   if (-1 < iVar4) {
-    puVar1 = *(uint **)(iVar4 * 0x20 + *(int *)(param_1 + 0x2c));
-    if (puVar1 != (uint *)&DAT_014b89e8) {
-      _DAT_014b89e8 = *puVar1;
-      _DAT_014b89f0 = puVar1[2];
-      _DAT_014b89ec = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[0];
+    if (pCVar1 != (CVector3f *)&DAT_014b89e8) {
+      _DAT_014b89e8 = pCVar1->x;
+      _DAT_014b89f0 = pCVar1->z;
+      _DAT_014b89ec = pCVar1->y;
     }
-    puVar1 = *(uint **)(iVar4 * 0x20 + 4 + *(int *)(param_1 + 0x2c));
-    if (puVar1 != (uint *)&DAT_014b89f4) {
-      _DAT_014b89f4 = *puVar1;
-      _DAT_014b89fc = puVar1[2];
-      _DAT_014b89f8 = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[1];
+    if (pCVar1 != (CVector3f *)&DAT_014b89f4) {
+      _DAT_014b89f4 = pCVar1->x;
+      _DAT_014b89fc = pCVar1->z;
+      _DAT_014b89f8 = pCVar1->y;
     }
-    puVar1 = *(uint **)(*(int *)(param_1 + 0x2c) + 8 + iVar4 * 0x20);
-    if (puVar1 != (uint *)&DAT_014b8a00) {
-      _DAT_014b8a04 = puVar1[1];
-      _DAT_014b8a08 = puVar1[2];
-      _DAT_014b8a00 = *puVar1;
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[2];
+    if (pCVar1 != (CVector3f *)&DAT_014b8a00) {
+      _DAT_014b8a04 = pCVar1->y;
+      _DAT_014b8a08 = pCVar1->z;
+      _DAT_014b8a00 = pCVar1->x;
       return;
     }
   }

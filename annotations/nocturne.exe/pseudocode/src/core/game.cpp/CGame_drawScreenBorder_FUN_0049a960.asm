@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(void)
+; void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049cff1
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cff1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c
@@ -29,7 +31,7 @@ section .text
     PUSH EDX                            ; 0049a96b
     MOV dword ptr [0x01c00c70],EDX      ; 0049a96c | DAT_01c00c70
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a972
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0049a977
     MOV EAX,[0x005b761c]                ; 0049a97a | DAT_005b761c
     PUSH 0x1                            ; 0049a97f
@@ -38,7 +40,7 @@ section .text
     PUSH 0x1                            ; 0049a985
     PUSH 0x1                            ; 0049a987
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a989
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049a98e | DAT_005b7620
     ADD ESP,0x10                        ; 0049a993
     DEC EAX                             ; 0049a996
@@ -49,7 +51,7 @@ section .text
     PUSH EAX                            ; 0049a9a0
     PUSH 0x0                            ; 0049a9a1
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a9a3
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049a9a8 | DAT_005b7620
     ADD ESP,0x10                        ; 0049a9ad
     SUB EAX,0x2                         ; 0049a9b0
@@ -60,7 +62,7 @@ section .text
     PUSH EAX                            ; 0049a9be
     PUSH 0x1                            ; 0049a9bf
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a9c1
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049a9c6 | DAT_005b7620
     ADD ESP,0x10                        ; 0049a9cb
     SUB EAX,0x2                         ; 0049a9ce
@@ -69,7 +71,7 @@ section .text
     PUSH 0x1                            ; 0049a9d4
     PUSH 0x0                            ; 0049a9d6
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a9d8
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049a9dd | DAT_005b7620
     ADD ESP,0x10                        ; 0049a9e2
     SUB EAX,0x3                         ; 0049a9e5
@@ -78,7 +80,7 @@ section .text
     PUSH 0x2                            ; 0049a9eb
     PUSH 0x1                            ; 0049a9ed
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a9ef
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049a9f4 | DAT_005b7620
     ADD ESP,0x10                        ; 0049a9f9
     SUB EAX,0x2                         ; 0049a9fc
@@ -89,7 +91,7 @@ section .text
     PUSH 0x1                            ; 0049aa07
     PUSH EAX                            ; 0049aa09
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049aa0a
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     MOV EAX,[0x005b7620]                ; 0049aa0f | DAT_005b7620
     ADD ESP,0x10                        ; 0049aa14
     SUB EAX,0x3                         ; 0049aa17
@@ -100,7 +102,7 @@ section .text
     PUSH 0x2                            ; 0049aa24
     PUSH EAX                            ; 0049aa26
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049aa27
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0049aa2c
     RET                                 ; 0049aa2f
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(char *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x488]:8  local_488
@@ -26,9 +26,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_00522480 at 00522659
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522b65
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b19
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 00522659
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526a61
 ;
 ; Referenced Globals:
@@ -96,7 +96,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00521e6c
     PUSH EDX                            ; 00521e6f
     CALL crt_string.c_splitpath_FUN_00566498 ; 00521e70
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 00521e75
     PUSH 0x5922e8                       ; 00521e78 | = "klp"
     LEA EAX,[ESP + 0x354]               ; 00521e7d
@@ -106,13 +106,13 @@ section .text
     LEA EAX,[ESP + 0x25c]               ; 00521e89
     PUSH EAX                            ; 00521e90
     CALL crt_file.c_makepath_FUN_0056626c ; 00521e91
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00521e96
     LEA EAX,[ESP + 0x24c]               ; 00521e99
     PUSH EAX                            ; 00521ea0
     PUSH 0x5922ec                       ; 00521ea1 | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00521ea6
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00521eab
     TEST EAX,EAX                        ; 00521eae
     JLE 0x00521ebf                      ; 00521eb0
@@ -128,13 +128,13 @@ section .text
     LEA EAX,[ESP + 0x158]               ; 00521ed0
     PUSH EAX                            ; 00521ed7
     CALL crt_file.c_makepath_FUN_0056626c ; 00521ed8
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00521edd
     LEA EAX,[ESP + 0x148]               ; 00521ee0
     PUSH EAX                            ; 00521ee7
     PUSH 0x5922f6                       ; 00521ee8 | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00521eed
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     MOV EBX,EAX                         ; 00521ef2
     ADD ESP,0x8                         ; 00521ef4
     TEST EAX,EAX                        ; 00521ef7
@@ -153,7 +153,7 @@ section .text
     PUSH EAX                            ; 00521f0e
     PUSH 0x5922ff                       ; 00521f0f | = "sound"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00521f14
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00521f19
     MOV dword ptr [ESP + 0x468],EAX     ; 00521f1c
     TEST EAX,EAX                        ; 00521f23
@@ -161,7 +161,7 @@ section .text
         ;   XREF to: 00521efb (CONDITIONAL_JUMP)  ; LAB_00521efb
     PUSH EAX                            ; 00521f27
     CALL crt_stdio.c_ftell_FUN_00566e70 ; 00521f28
-        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
+        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00566e70(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521f2d
     ADD EBX,EAX                         ; 00521f30
     MOV EAX,dword ptr [EBP + 0x14]      ; 00521f32
@@ -182,7 +182,7 @@ section .text
         ;   Label: LAB_00521f7d
     PUSH EDI                            ; 00521f84
     CALL crt_stdio.c_ftell_FUN_00566e70 ; 00521f85
-        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_00566e70()
+        ;   XREF to: 00566e70 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_00566e70(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521f8a
     CMP EAX,dword ptr [ESP + 0x464]     ; 00521f8d
     JGE 0x00522464                      ; 00521f94
@@ -195,7 +195,7 @@ section .text
     PUSH EAX                            ; 00521fac
     MOV dword ptr [ESP + 0x45c],EBX     ; 00521fad
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00521fb4
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00521fb9
     TEST EAX,EAX                        ; 00521fbc
     JZ 0x00522464                       ; 00521fbe
@@ -204,7 +204,7 @@ section .text
     LEA EBX,[ESP + 0x20]                ; 00521fc9
     PUSH EBX                            ; 00521fcd
     CALL crt_string.c_strstr_FUN_00566fe0 ; 00521fce
-        ;   XREF to: 00566fe0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_strstr_FUN_00566fe0()
+        ;   XREF to: 00566fe0 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strstr_FUN_00566fe0(char * haystack_str, char * needle_str)
     ADD ESP,0x8                         ; 00521fd3
     TEST EAX,EAX                        ; 00521fd6
     JZ 0x00521fdd                       ; 00521fd8
@@ -265,7 +265,7 @@ section .text
     PUSH ESI                            ; 00522038
     PUSH EBX                            ; 00522039
     CALL crt_string.c_memmove_FUN_00566170 ; 0052203a
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0052203f
     JMP 0x00522019                      ; 00522042
         ;   XREF to: 00522019 (UNCONDITIONAL_JUMP)  ; LAB_00522019
@@ -557,7 +557,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 00522404
     PUSH EAX                            ; 00522408
     CALL crt_string.c__stricmp_FUN_00564520 ; 00522409
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0052240e
     TEST EAX,EAX                        ; 00522411
     JNZ 0x00522427                      ; 00522413
@@ -587,7 +587,7 @@ section .text
         ;   Label: LAB_00522464
     PUSH ESI                            ; 0052246b
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0052246c
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00522471
     MOV ESP,EBP                         ; 00522474
     POP EBP                             ; 00522476

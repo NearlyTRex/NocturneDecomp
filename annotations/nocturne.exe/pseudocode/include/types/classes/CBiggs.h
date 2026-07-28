@@ -7,15 +7,15 @@
 #include "types/classes/CMorph.h"
 
 // Structure: CBiggs
-// Ghidra size: 0xccd0 (52432 bytes)
+// Ghidra size: 0xcb38 (52024 bytes)
 #pragma pack(push, 1)
 typedef struct CBiggs {
     CEnemy base; // 0x0
-    CKeyFramedModelInstance model; // 0xbebc
-    int morphing; // 0xc038
-    float morph_timer; // 0xc03c
-    CMorph morph; // 0xc040
-    char morph_event[100]; // 0xcc6c
+    CKeyFramedModelInstance model; // 0xbd24
+    int morphing; // 0xbea0
+    float morph_timer; // 0xbea4
+    CMorph morph; // 0xbea8
+    char morph_event[100]; // 0xcad4
 } CBiggs;
 #pragma pack(pop)
 

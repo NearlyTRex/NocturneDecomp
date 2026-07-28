@@ -2,24 +2,23 @@
 // Address: 004151e0
 // Address Range: [[004151e0, 00415228]]
 // Convention: unknown
-// Signature: undefined4 core_beast_cpp_FUN_004151e0(int param_1,undefined4 *param_2)
+// Signature: undefined4 core_beast_cpp_FUN_004151e0(int param_1,CVector3f *param_2)
 
 #include "nocturne.h"
 
-uint core_beast_cpp_FUN_004151e0(int param_1,uint *param_2)
+uint core_beast_cpp_FUN_004151e0(int param_1,CVector3f *param_2)
 
 {
-  uint *puVar1;
-  byte local_10 [12];
+  CVector3f *pCVar1;
+  CVector3f local_10;
   
-  puVar1 = (uint *)
-           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-                     (param_1 + 0x150,local_10,0);
-  if (param_2 == puVar1) {
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                     ((CDeformableModelInstance *)(param_1 + 0x150),&local_10,0);
+  if (param_2 == pCVar1) {
     return 1;
   }
-  *param_2 = *puVar1;
-  param_2[1] = puVar1[1];
-  param_2[2] = puVar1[2];
+  param_2->x = pCVar1->x;
+  param_2->y = pCVar1->y;
+  param_2->z = pCVar1->z;
   return 1;
 }

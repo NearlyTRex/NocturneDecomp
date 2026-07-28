@@ -2,32 +2,35 @@
 // Address: 00473f10
 // Address Range: [[00473f10, 00473fc1]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(int *param_1,int param_2,int param_3)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(CStrList *this_ptr,int start_index,int end_index)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(int *param_1,int param_2,int param_3)
+void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(CStrList *this_ptr,int start_index,int end_index)
 
 {
   int iVar1;
+  int iVar2;
   
-  if (((param_2 < 0) || (*param_1 <= param_3)) || (param_3 < param_2)) {
+  if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
     INT_01cc4804 = 0xa03;
     core_main_c_FUN_004c8440("CStrList::remove - invalid range");
   }
-  if (param_2 <= param_3) {
-    iVar1 = param_2 * 4;
+  if (start_index <= end_index) {
+    iVar2 = start_index * 4;
     do {
-      if (*(int *)(param_1[2] + iVar1) != 0) {
-        FUN_005638d0(*(int *)(param_1[2] + iVar1));
+      iVar1 = *(int *)((int)this_ptr->data_array + iVar2);
+      if (iVar1 != 0) {
+        FUN_005638d0(iVar1);
       }
-      iVar1 = iVar1 + 4;
-    } while (iVar1 <= param_3 * 4);
+      iVar2 = iVar2 + 4;
+    } while (iVar2 <= end_index * 4);
   }
-  iVar1 = *param_1 - ((param_3 - param_2) + 1);
-  *param_1 = iVar1;
+  iVar2 = this_ptr->item_count - ((end_index - start_index) + 1);
+  this_ptr->item_count = iVar2;
   memmove
-            (param_1[2] + param_2 * 4,param_3 * 4 + 4 + param_1[2],(iVar1 - param_2) * 4);
+            (this_ptr->data_array + start_index,this_ptr->data_array + end_index + 1,
+             (iVar2 - start_index) * 4);
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT_PTR param_1)
+; CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT device_id)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ;
@@ -25,7 +27,7 @@ section .text
         ;   Label: sound_sndwav.cpp_getWavOutDevice_FUN_0052c760
     PUSH 0x2dc9440                      ; 0052c763
     CALL sound_sndwav.cpp_CWavOutDevice_close_FUN_0052c290 ; 0052c768
-        ;   XREF to: 0052c290 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_CWavOutDevice_close_FUN_0052c290()
+        ;   XREF to: 0052c290 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_CWavOutDevice_close_FUN_0052c290(CWavOutDevice * this_ptr)
     ADD ESP,0x4                         ; 0052c76d
     TEST EAX,EAX                        ; 0052c770
     JNZ 0x0052c778                      ; 0052c772

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_addVector_FUN_00417fc0(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_bodypart_cpp_addVector_FUN_00417fc0(CVector3f *a,CVector3f *dst,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   dst
+; CVector3f *      Stack[0xc]:4   b
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_FUN_004196b0 at 004198b5

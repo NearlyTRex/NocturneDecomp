@@ -2,21 +2,21 @@
 // Address: 00409fc0
 // Address Range: [[00409fc0, 00409ffe]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(int param_1)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(int param_1)
+void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor *this_ptr)
 
 {
-  int iVar1;
+  CPathMap *this_ptr_00;
   
-  *(uint *)(param_1 + 0x114) = 0;
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xbc))(param_1);
-  if (iVar1 == 0) {
+  this_ptr->blood_effect_timer = 0;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(this_ptr);
+  this_ptr_00 = (*((this_ptr->vtable)._ub)->getPathMap)(this_ptr);
+  if (this_ptr_00 == (CPathMap *)0x0) {
     return;
   }
-  core_path_cpp_FUN_004f0360(iVar1,param_1 + 0x20,1);
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(this_ptr_00,&(this_ptr->location).position,1);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stone_cpp_FUN_00534d00(undefined4 param_1)
+; void core_stone_cpp_FUN_00534d00(CBoxActor *param_1)
 ;
 ;
 ; XREF[1]:
@@ -21,7 +21,7 @@ section .text
         ;   Label: core_stone.cpp_FUN_00534d00
     PUSH EDX                            ; 00534d04
     CALL core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300 ; 00534d05
-        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300()
+        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; CBoxActor * core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor * this_ptr)
     MOV dword ptr [EAX + 0x14c],0x5a25d4 ; 00534d0a | PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_005a25d4
     ADD ESP,0x4                         ; 00534d14
     MOV dword ptr [EAX + 0x664],0x0     ; 00534d17

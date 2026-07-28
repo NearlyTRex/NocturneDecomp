@@ -9,12 +9,12 @@
 void core_filmreel_cpp_FUN_00481c00(void)
 
 {
-  int iVar1;
+  CFilmReel *this_ptr;
   
-  iVar1 = FUN_0056497c(0x314);
-  if (iVar1 == 0) {
+  this_ptr = (CFilmReel *)FUN_0056497c(0x314);
+  if (this_ptr == (CFilmReel *)0x0) {
     return;
   }
-  core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(iVar1);
+  core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(this_ptr);
   return;
 }

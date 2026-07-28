@@ -2,19 +2,19 @@
 // Address: 004b01c0
 // Address Range: [[004b01c0, 004b01f3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004b01c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+// Signature: void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004b01c0(CGore *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004b01c0(uint param_1,uint param_2,uint param_3,int param_4)
+void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004b01c0(CGore *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)
 
 {
-  uint uVar1;
+  CBloodSplat *this_ptr_00;
   
-  if (param_4 == 2) {
+  if (blood_type == 2) {
     return;
   }
-  uVar1 = core_gore_cpp_CGore_allocateBloodSplat_FUN_004b0140(param_1);
-  core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(uVar1,param_2,param_3,param_4);
+  this_ptr_00 = core_gore_cpp_CGore_allocateBloodSplat_FUN_004b0140(this_ptr);
+  core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(this_ptr_00,position,normal,blood_type);
   return;
 }

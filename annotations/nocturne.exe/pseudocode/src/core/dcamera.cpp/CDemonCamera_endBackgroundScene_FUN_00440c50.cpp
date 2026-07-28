@@ -2,13 +2,13 @@
 // Address: 00440c50
 // Address Range: [[00440c50, 00440d3b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(int param_1,int param_2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemonCamera *this_ptr,int restore_zbuffer)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(int param_1,int param_2)
+void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemonCamera *this_ptr,int restore_zbuffer)
 
 {
   int iVar1;
@@ -38,18 +38,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(int p
     _DAT_01c00624 = _DAT_01410274;
     _DAT_01c00630 = _DAT_01410278;
     _DAT_01c0063c = _DAT_0141027c;
-    if (param_2 != 0) {
+    if (restore_zbuffer != 0) {
       iVar4 = 0;
-      if (0 < *(int *)(param_1 + 0x140)) {
+      if (0 < (int)this_ptr->max_distance) {
         do {
-          iVar5 = *(int *)(param_1 + 0x13c) * iVar4;
-          iVar1 = *(int *)(param_1 + 0x148) + iVar4;
-          iVar2 = *(int *)(param_1 + 0x13c) * 4;
+          iVar5 = *(int *)(this_ptr->camera_name + 0xfc) * iVar4;
+          iVar1 = this_ptr->framebuffer_height + iVar4;
+          iVar2 = *(int *)(this_ptr->camera_name + 0xfc) * 4;
           iVar4 = iVar4 + 1;
           core_dstrender_cpp_memcpyMMX_FUN_00465341
-                    (iVar5 * 4 + *(int *)(param_1 + 0x15c),
+                    ((void *)(iVar5 * 4 + (int)this_ptr->zbuffer_aligned),
                      *(int *)(&DAT_01bd4260 + iVar1 * 4) + iVar2,iVar2);
-        } while (iVar4 < *(int *)(param_1 + 0x140));
+        } while (iVar4 < (int)this_ptr->max_distance);
       }
       if (_DAT_01c02594 != 0) {
         engine_special_cpp_masterZBuffer_FUN_00532c70(0);

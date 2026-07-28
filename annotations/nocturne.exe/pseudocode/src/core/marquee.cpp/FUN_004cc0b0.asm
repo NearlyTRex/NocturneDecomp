@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004cc0c2
         ;   Label: LAB_004cc0c2
     CALL core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 ; 004cc0c3
-        ;   XREF to: 004cc0e0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0()
+        ;   XREF to: 004cc0e0 (UNCONDITIONAL_CALL)  ; CMarquee * core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0(CMarquee * this_ptr)
     ADD ESP,0x4                         ; 004cc0c8
     RET                                 ; 004cc0cb
 

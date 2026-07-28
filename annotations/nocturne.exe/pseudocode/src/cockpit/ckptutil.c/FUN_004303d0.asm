@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 004303fa
     MOV dword ptr [ESP + 0x64],EAX      ; 004303fb
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004303ff
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00430404
     MOV dword ptr [ESP + 0x54],EAX      ; 00430407
     TEST EAX,EAX                        ; 0043040b

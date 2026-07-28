@@ -69,7 +69,7 @@ def export_annotations(currentProgram, folder, strict=False, deep_analysis=False
     export_entry_points(currentProgram, folder)
     export_memory_layout(currentProgram, folder)
     export_metadata(currentProgram, folder)
-    export_type_info(currentProgram, folder)
+    export_type_info(currentProgram, folder, strict=strict)
     export_vtables(currentProgram, folder)
     export_switch_tables(currentProgram, folder)
     export_code_caves(currentProgram, folder)

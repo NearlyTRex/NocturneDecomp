@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(int param_1)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[50]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040aabc
@@ -11,8 +13,8 @@
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a122
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 00418972
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fd2c
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 0042384b
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422eed
-;   core_bugs.cpp_FUN_00423790 at 0042384b
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427b9d
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570 at 0042657f
 ;   ... and 40 more

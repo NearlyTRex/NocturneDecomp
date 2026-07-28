@@ -6,7 +6,7 @@
 ;
 ; XREF[18]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a83a
-;   core_boxactor.cpp_FUN_0041ef90 at 0041efba
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041efba
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429907
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 004288c1
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 0042578b

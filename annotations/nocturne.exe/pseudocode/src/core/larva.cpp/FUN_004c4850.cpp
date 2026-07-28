@@ -9,12 +9,12 @@
 void core_larva_cpp_FUN_004c4850(void)
 
 {
-  int iVar1;
+  CLarva *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd30);
-  if (iVar1 == 0) {
+  this_ptr = (CLarva *)FUN_0056497c(0xbd30);
+  if (this_ptr == (CLarva *)0x0) {
     return;
   }
-  core_larva_cpp_CLarva_ctor_FUN_004c4880(iVar1);
+  core_larva_cpp_CLarva_ctor_FUN_004c4880(this_ptr);
   return;
 }

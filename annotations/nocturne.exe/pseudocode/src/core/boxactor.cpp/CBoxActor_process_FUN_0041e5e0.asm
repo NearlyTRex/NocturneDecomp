@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(int param_1,float param_2)
+; void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(CBoxActor *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
 ; undefined        Stack[-0xa0]:1  local_a0
@@ -65,7 +68,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0041e5f2
     PUSH EAX                            ; 0041e5f8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0041e5f9
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x304]         ; 0041e5fe
     ADD ESP,0x4                         ; 0041e604
     MOV ESI,dword ptr [EAX + 0x100]     ; 0041e607
@@ -80,7 +83,7 @@ section .text
     FLD double ptr [ESP + 0xc0]         ; 0041e632
     ADD ESP,0x8                         ; 0041e639
     CALL crt_math.c_round_FUN_00563a30  ; 0041e63c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc4]        ; 0041e641
     MOV EAX,dword ptr [ESP + 0xc4]      ; 0041e648
     MOV dword ptr [ESP + 0xc8],EAX      ; 0041e64f
@@ -177,7 +180,7 @@ section .text
     MOV ESI,dword ptr [0x005bed68]      ; 0041e7ab | DAT_005bed68
     PUSH ESI                            ; 0041e7b1
     CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0 ; 0041e7b2
-        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0()
+        ;   XREF to: 0052eba0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0041e7b7
     TEST EAX,EAX                        ; 0041e7ba
     JZ 0x0041e7f4                       ; 0041e7bc
@@ -210,7 +213,7 @@ section .text
     JMP 0x0041e682                      ; 0041e7ef
         ;   XREF to: 0041e682 (UNCONDITIONAL_JUMP)  ; LAB_0041e682
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 0041e7f4
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
         ;   Label: LAB_0041e7f4
     PUSH 0x2                            ; 0041e7f9
     PUSH 0x3f800000                     ; 0041e7fb
@@ -223,7 +226,7 @@ section .text
     SUB ESP,0x8                         ; 0041e818
     FSTP double ptr [ESP]               ; 0041e81b
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005262d0 ; 0041e81e
-        ;   XREF to: 005262d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005262d0()
+        ;   XREF to: 005262d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005262d0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0041e823
     LEA EDX,[EBX + 0x2cc]               ; 0041e826
     PUSH EDX                            ; 0041e82c
@@ -233,7 +236,7 @@ section .text
     ADD ESP,0x8                         ; 0041e837
     MOV dword ptr [EBX + 0x2f4],EAX     ; 0041e83a
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 0041e840
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     JMP 0x0041e7be                      ; 0041e845
         ;   XREF to: 0041e7be (UNCONDITIONAL_JUMP)  ; LAB_0041e7be
     LEA EDX,[EBX + 0x20]                ; 0041e84a
@@ -250,7 +253,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0041e86b
     PUSH EAX                            ; 0041e86e
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 0041e86f
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     LEA EDX,[EBX + 0x30]                ; 0041e874
     LEA EAX,[EBX + 0x398]               ; 0041e877
     ADD ESP,0x8                         ; 0041e87d
@@ -266,7 +269,7 @@ section .text
     PUSH EBX                            ; 0041e894
         ;   Label: LAB_0041e894
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0041e895
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041e89a
     LEA EDX,[ESP + 0x40]                ; 0041e89d
     PUSH EDX                            ; 0041e8a1
@@ -353,7 +356,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0041e9b6
     PUSH EAX                            ; 0041e9ba
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0041e9bb
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 0041e9c0
     LEA EAX,[ESP + 0x4]                 ; 0041e9c3
     FLD float ptr [ESP]                 ; 0041e9c7
@@ -369,7 +372,7 @@ section .text
     PUSH EAX                            ; 0041e9ea | DAT_01e57284
     FSTP float ptr [ESP + 0x18]         ; 0041e9eb
     CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880 ; 0041e9ef
-        ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880()
+        ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041e9f4
     MOV ESP,EBP                         ; 0041e9f7
     POP EBP                             ; 0041e9f9

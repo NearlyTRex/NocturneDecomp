@@ -1,15 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(undefined4 param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   left_x
+; int              Stack[0xc]:4   right_x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   color_mode
+; int              Stack[0x18]:4   color_value
+; char *           Stack[0x1c]:4   text
 ;
 ; XREF[6]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d8f4
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a69b7
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6aaa
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d537
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7092
-;   core_game.cpp_FUN_0049cc10 at 0049d537
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80 at 00490eda
 ;
 ; Called Functions:
@@ -50,7 +58,7 @@ section .text
     PUSH EAX                            ; 00490e1d
     PUSH EDI                            ; 00490e1e
     CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0 ; 00490e1f
-        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0()
+        ;   XREF to: 00490af0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 00490e24
     POP EDI                             ; 00490e27
     POP ESI                             ; 00490e28

@@ -11,6 +11,8 @@
 void core_fire_cpp_FUN_0048ce20(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,10,&g_CBulletTrailTypeInfo_0059d3c0);
   return;
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   light_scale
+; int              Stack[0xc]:4   color_scale
+; int              Stack[0x10]:4   fog_scale
 ;
 ; XREF[6]:
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5b54

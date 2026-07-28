@@ -9,10 +9,11 @@
 void cockpit_pkbitmap_cpp_FUN_004f49d8(void)
 
 {
-  uint uVar1;
+  void *pvVar1;
   int unaff_EBP;
+  ulong unaff_ESI;
   
-  uVar1 = realloc(*(uint *)(unaff_EBP + 0x14));
-  *(uint *)(unaff_EBP + 0x14) = uVar1;
+  pvVar1 = realloc(*(void **)(unaff_EBP + 0x14),unaff_ESI);
+  *(void **)(unaff_EBP + 0x14) = pvVar1;
   return;
 }

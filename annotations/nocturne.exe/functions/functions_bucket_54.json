@@ -11,12 +11,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_special.cpp_clearZBufferNative_FUN_0052eed4",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"0056c4d4",
@@ -81,9 +76,10 @@
         "start":"0056ead4"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056ead4",
-    "ret":"undefined1",
+    "name":"crt_exception.c_TopLevelExceptionFilter_FUN_0056ead4",
+    "ret":"long",
     "vars":{
       "locals":[
         {
@@ -119,8 +115,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"ExceptionInfo",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_EXCEPTION_POINTERS*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -133,13 +154,29 @@
         "start":"0056fcd4"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056fcd4",
-    "ret":"undefined1",
+    "name":"crt_startup.c_ExitApplication_FUN_0056fcd4",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"exit_code",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

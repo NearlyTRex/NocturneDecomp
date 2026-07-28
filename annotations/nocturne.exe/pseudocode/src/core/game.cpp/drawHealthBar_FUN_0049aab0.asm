@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_drawHealthBar_FUN_0049aab0(int param_1,undefined4 param_2,int param_3,undefined4 param_4,float param_5)
+; void core_game_cpp_drawHealthBar_FUN_0049aab0(int param_1,int param_2,int param_3,int param_4,float param_5)
 ;
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 0049aafa
     PUSH ESI                            ; 0049aafb
     CALL engine_2d.c_fillRectWithBorder_FUN_00403ef0 ; 0049aafc
-        ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectWithBorder_FUN_00403ef0()
+        ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403ef0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 0049ab01
     MOV EAX,dword ptr [ESP + 0x24]      ; 0049ab04
     SUB EAX,ESI                         ; 0049ab08
@@ -60,7 +60,7 @@ section .text
     FILD dword ptr [ESP + 0x4]          ; 0049ab0f
     FMUL float ptr [ESP + 0x2c]         ; 0049ab13
     CALL crt_math.c_round_FUN_00563a30  ; 0049ab17
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 0049ab1c
     MOV EBP,dword ptr [ESP]             ; 0049ab1f
     TEST EBP,EBP                        ; 0049ab22
@@ -81,7 +81,7 @@ section .text
     PUSH EDI                            ; 0049ab38
     PUSH ESI                            ; 0049ab39
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 0049ab3a
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0049ab3f
     ADD ESP,0x8                         ; 0049ab42
     POP EBP                             ; 0049ab45

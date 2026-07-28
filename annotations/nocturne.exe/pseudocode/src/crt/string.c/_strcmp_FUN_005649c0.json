@@ -2,28 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 282,
+    "complexity_score": 148,
     "cross_reference_count": 31,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 21,
+    "pseudocode_lines": 63,
+    "suspect_count": 8,
     "suspect_types": [
-      "concat_reconstruction",
-      "param_count_too_few",
-      "register_param",
-      "unnamed_param"
+      "pointer_cast"
     ],
-    "total_lines": 144
+    "total_lines": 155
   },
   "cross_references": [
-    {
-      "addr": "0056c750",
-      "from_addr": "0056c83c",
-      "name": "FUN_0056c750",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0040ed80",
       "from_addr": "0040ed9f",
@@ -75,7 +66,7 @@
     {
       "addr": "004571f0",
       "from_addr": "004572fd",
-      "name": "core_dpart.cpp_FUN_004571f0",
+      "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -93,7 +84,7 @@
     {
       "addr": "0047a2b0",
       "from_addr": "0047a2bb",
-      "name": "core_event.cpp_FUN_0047a2b0",
+      "name": "core_event.cpp_parseComparisonOp_FUN_0047a2b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +126,13 @@
     {
       "addr": "00507f80",
       "from_addr": "0050820a",
-      "name": "core_set.cpp_FUN_00507f80",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c750",
+      "from_addr": "0056c83c",
+      "name": "crt_io.c_analyze_file_type_FUN_0056c750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -215,7 +212,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_string.c__strcmp_FUN_005649c0",
-    "signature": "ulonglong __cdecl crt_string_c__strcmp_FUN_005649c0(uint *param_1,uint *param_2)"
+    "signature": "int __cdecl crt_string_c__strcmp_FUN_005649c0(char *str1,char *str2)"
   },
   "function_calls": [],
   "globals": [],
@@ -334,10 +331,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.222222222222222,
@@ -370,184 +367,92 @@
     "pcode_op_count": 448
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ulonglong __cdecl _strcmp(uint *param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "ulonglong __cdecl _strcmp(uint *param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "uint in_EDX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_1 != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar4 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 36,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "return CONCAT44(in_EDX,-(uint)bVar5) | 1;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar4 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar4 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar4 = param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 54,
-      "match": "in_EDX",
-      "severity": "mild",
-      "text": "return (ulonglong)in_EDX << 0x20;",
-      "type": "register_param"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 36,
-      "match": "CONCAT44",
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)str1",
       "severity": "moderate",
-      "text": "return CONCAT44(in_EDX,-(uint)bVar5) | 1;",
-      "type": "concat_reconstruction"
+      "text": "uVar2 = *(uint *)((int)str1 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)str2",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)str2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)str1",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)str1 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)str2",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)str2 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)str1",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)str1 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint *)((int)str2",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)str2 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(char *)((int)str1",
+      "severity": "moderate",
+      "text": "str1 = (char *)((int)str1 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(char *)((int)str2",
+      "severity": "moderate",
+      "text": "str2 = (char *)((int)str2 + 0x10);",
+      "type": "pointer_cast"
     }
   ]
 }

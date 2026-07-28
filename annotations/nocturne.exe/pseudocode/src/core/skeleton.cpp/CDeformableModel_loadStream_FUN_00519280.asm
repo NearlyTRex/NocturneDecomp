@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)
+; void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(CDeformableModel *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined        Stack[-0x88]:1  local_88
@@ -81,7 +84,7 @@ section .text
     PUSH EDI                            ; 00519297
         ;   Label: LAB_00519297
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519298
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051929d
     TEST EAX,EAX                        ; 005192a0
     JL 0x005192a9                       ; 005192a2
@@ -138,7 +141,7 @@ section .text
     PUSH EDI                            ; 00519332
         ;   Label: LAB_00519332
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519333
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519338
     TEST EAX,EAX                        ; 0051933b
     JL 0x00519344                       ; 0051933d
@@ -177,12 +180,12 @@ section .text
     PUSH EBX                            ; 00519388
     MOV EDI,ESI                         ; 00519389
     CALL core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0 ; 0051938b
-        ;   XREF to: 00517da0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0()
+        ;   XREF to: 00517da0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, ...)
     ADD ESP,0x14                        ; 00519390
     PUSH EDI                            ; 00519393
         ;   Label: LAB_00519393
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519394
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519399
     TEST EAX,EAX                        ; 0051939c
     JL 0x005193a5                       ; 0051939e
@@ -235,7 +238,7 @@ section .text
     PUSH EDI                            ; 00519404
         ;   Label: LAB_00519404
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519405
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051940a
     TEST EAX,EAX                        ; 0051940d
     JL 0x00519416                       ; 0051940f
@@ -268,7 +271,7 @@ section .text
     PUSH EDI                            ; 00519450
         ;   Label: LAB_00519450
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519451
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519456
     TEST EAX,EAX                        ; 00519459
     JL 0x00519462                       ; 0051945b
@@ -305,7 +308,7 @@ section .text
     PUSH 0x1                            ; 005194a3
     PUSH EBX                            ; 005194a5
     CALL core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0 ; 005194a6
-        ;   XREF to: 00517da0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0()
+        ;   XREF to: 00517da0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, ...)
     ADD ESP,0x14                        ; 005194ab
     MOV EDX,dword ptr [ESP + 0x44]      ; 005194ae
     PUSH EDX                            ; 005194b2
@@ -323,7 +326,7 @@ section .text
     PUSH EDI                            ; 005194ca
         ;   Label: LAB_005194ca
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005194cb
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005194d0
     TEST EAX,EAX                        ; 005194d3
     JL 0x005194dc                       ; 005194d5
@@ -346,7 +349,7 @@ section .text
     PUSH EDI                            ; 005194fc
         ;   Label: LAB_005194fc
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005194fd
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519502
     TEST EAX,EAX                        ; 00519505
     JL 0x0051950e                       ; 00519507
@@ -507,7 +510,7 @@ section .text
     PUSH EDI                            ; 00519684
         ;   Label: LAB_00519684
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519685
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051968a
     TEST EAX,EAX                        ; 0051968d
     JL 0x00519696                       ; 0051968f
@@ -603,7 +606,7 @@ section .text
     PUSH EDI                            ; 0051976a
         ;   Label: LAB_0051976a
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0051976b
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519770
     TEST EAX,EAX                        ; 00519773
     JL 0x0051977c                       ; 00519775
@@ -699,7 +702,7 @@ section .text
     PUSH EDI                            ; 00519865
         ;   Label: LAB_00519865
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519866
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051986b
     TEST EAX,EAX                        ; 0051986e
     JL 0x00519877                       ; 00519870
@@ -744,7 +747,7 @@ section .text
     PUSH EDI                            ; 005198bd
         ;   Label: LAB_005198bd
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005198be
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005198c3
     TEST EAX,EAX                        ; 005198c6
     JL 0x005198cf                       ; 005198c8
@@ -794,7 +797,7 @@ section .text
     PUSH EDI                            ; 00519929
         ;   Label: LAB_00519929
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0051992a
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051992f
     TEST EAX,EAX                        ; 00519932
     JL 0x0051993b                       ; 00519934
@@ -837,7 +840,7 @@ section .text
     PUSH EDI                            ; 00519987
         ;   Label: LAB_00519987
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519988
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051998d
     TEST EAX,EAX                        ; 00519990
     JL 0x00519999                       ; 00519992
@@ -868,7 +871,7 @@ section .text
     PUSH EDI                            ; 005199d2
         ;   Label: LAB_005199d2
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005199d3
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005199d8
     TEST EAX,EAX                        ; 005199db
     JL 0x005199e4                       ; 005199dd
@@ -896,7 +899,7 @@ section .text
     PUSH EDI                            ; 00519a14
         ;   Label: LAB_00519a14
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00519a15
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00519a1a
     TEST EAX,EAX                        ; 00519a1d
     JL 0x00519a26                       ; 00519a1f
@@ -945,7 +948,7 @@ section .text
         ;   XREF to: 00519aa3 (CONDITIONAL_JUMP)  ; LAB_00519aa3
     PUSH EBX                            ; 00519a9a
     CALL core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 ; 00519a9b
-        ;   XREF to: 0051ad20 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20()
+        ;   XREF to: 0051ad20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00519aa0
     TEST byte ptr [ESI + 0xc],0x20      ; 00519aa3
         ;   Label: LAB_00519aa3

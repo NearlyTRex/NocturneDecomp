@@ -1,0 +1,631 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 240,
+    "complexity_score": 588,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 88,
+    "suspect_count": 47,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 328
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042dcc0",
+    "address_range": [
+      [
+        "0042dcc0",
+        "0042def0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_0042dcc0",
+    "signature": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d130",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_FUN_0042d130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b7624",
+      "name": "DAT_005b7624",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa0",
+      "name": "DAT_01bd2fa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa4",
+      "name": "DAT_01bd2fa4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c58",
+      "name": "DAT_01c00c58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c60",
+      "name": "DAT_01c00c60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.844559585492228,
+    "instruction_count": 193,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 4,
+      "BRANCH": 8,
+      "CALL": 1,
+      "CALLIND": 4,
+      "CBRANCH": 18,
+      "COPY": 134,
+      "INT_ADD": 109,
+      "INT_AND": 194,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 160,
+      "INT_LEFT": 6,
+      "INT_LESS": 22,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 19,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 35,
+      "INT_SLESS": 79,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 49,
+      "INT_XOR": 9,
+      "LOAD": 64,
+      "POPCOUNT": 73,
+      "RETURN": 1,
+      "STORE": 39
+    },
+    "pcode_op_count": 1128
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar2;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar6 = _DAT_01c00c60 - param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar8 = _DAT_01c00c58 - param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcVar2 = (code *)cockpit_ckptutil_c_FUN_0042d130();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005b7624",
+      "severity": "mild",
+      "text": "if (DAT_005b7624 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iStack_18 = param_3 + *(int *)(&DAT_01bd2fa0 + param_4 * 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iStack_18 = param_3 + *(int *)(&DAT_01bd2fa0 + param_4 * 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "iStack_18 = param_3 + *(int *)(&DAT_01bd2fa0 + param_4 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (0 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*pcVar2)(iStack_18,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(*pcVar2)(iStack_18,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "while (piVar4 = (int *)(param_2 + iStack_28), iVar9 < *piVar4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*pcVar2)(iVar3 + iStack_18,param_1 + iVar3,(iVar5 - iVar3) + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "} while (iStack_28 < param_6 * 0x84);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iStack_1c = *(int *)(&DAT_01bd2fa0 + param_4 * 4) + param_3 * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iStack_1c = *(int *)(&DAT_01bd2fa0 + param_4 * 4) + param_3 * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_01bd2fa0",
+      "severity": "mild",
+      "text": "iStack_1c = *(int *)(&DAT_01bd2fa0 + param_4 * 4) + param_3 * 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (0 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*pcVar2)(iStack_1c,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(*pcVar2)(iStack_1c,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "while (piVar4 = (int *)(param_2 + iStack_2c), iVar9 < *piVar4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*pcVar2)(iVar3 * 2 + iStack_1c,param_1 + iVar3,(iVar5 - iVar3) + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_1 = param_1 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "} while (iStack_2c < param_6 * 0x84);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iVar7 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar4 + iVar7 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar3 + -1;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

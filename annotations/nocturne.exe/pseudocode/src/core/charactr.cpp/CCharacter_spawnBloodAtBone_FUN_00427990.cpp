@@ -2,32 +2,32 @@
 // Address: 00427990
 // Address Range: [[00427990, 00427a1e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(int param_1,int param_2,uint param_3,uint param_4)
+void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 
 {
   int iVar1;
-  uint uVar2;
-  byte local_28 [12];
-  byte local_1c [12];
-  uint local_10;
-  uint local_c;
-  uint local_8;
+  CVector3f *input_local_point;
+  CVector3f local_28;
+  CVector3f local_1c;
+  CVector3f local_10;
   
-  if (*(int *)(param_1 + 0x2290 + param_2 * 4) == 0) {
-    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(param_4);
+  if ((this_ptr->model).part_data.visibility_flags[part_index] == 0) {
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(chance);
     if (iVar1 != 0) {
-      uVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-                        (param_1 + 0x150,local_1c,param_3);
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_28,uVar2);
-      local_10 = 0;
-      local_c = 0x40e00000;
-      local_8 = 0;
+      input_local_point =
+           core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                     (&this_ptr->model,&local_1c,bone_index);
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                (&this_ptr->base,&local_28,input_local_point);
+      local_10.x = 0.0;
+      local_10.y = 7.0;
+      local_10.z = 0.0;
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                (INT_005b96c4,local_28,&local_10,*(uint *)(param_1 + 0x2608));
+                ((CGore *)INT_005b96c4,&local_28,&local_10,this_ptr->blood_type);
       return;
     }
   }

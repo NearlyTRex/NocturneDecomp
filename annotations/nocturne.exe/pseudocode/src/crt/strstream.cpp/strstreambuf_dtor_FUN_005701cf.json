@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 54,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [
+    {
+      "addr": "0056b5ad",
+      "from_addr": "0056b5de",
+      "name": "crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005701cf",
+    "address_range": [
+      [
+        "005701cf",
+        "00570247"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf",
+    "signature": "strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf(strstreambuf *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571d9f",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_streambuf_destructor_FUN_00571d9f"
+    },
+    {
+      "addr": "0056445f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_0056445f"
+    },
+    {
+      "addr": "00564494",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00564494"
+    },
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a4884",
+      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884",
+      "type": "undefined1*",
+      "value": "0056ff82"
+    },
+    {
+      "addr": "005a4af0",
+      "name": "g_strstreambufTypeInfo_005a4af0",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056b5de",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.155555555555556,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 33,
+      "INT_ADD": 16,
+      "INT_AND": 25,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 16,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 187
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambuf *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(uint)pvVar1",
+      "severity": "moderate",
+      "text": "if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(uint)pvVar1",
+      "severity": "moderate",
+      "text": "if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 36,
+        "vtable_addr": "005a4884"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005a4af4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

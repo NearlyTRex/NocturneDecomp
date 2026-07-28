@@ -2,13 +2,13 @@
 // Address: 00402e70
 // Address Range: [[00402e70, 00402e79]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_setTextColor_FUN_00402e70(undefined4 param_1)
+// Signature: void __cdecl engine_2d_c_setTextColor_FUN_00402e70(int color)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_setTextColor_FUN_00402e70(uint param_1)
+void __cdecl engine_2d_c_setTextColor_FUN_00402e70(int color)
 
 {
-  DAT_005acaa8 = param_1;
+  DAT_005acaa8 = color;
   return;
 }

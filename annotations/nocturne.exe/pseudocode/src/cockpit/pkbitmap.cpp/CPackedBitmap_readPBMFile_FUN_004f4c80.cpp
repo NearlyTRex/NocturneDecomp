@@ -2,16 +2,18 @@
 // Address: 004f4c80
 // Address Range: [[004f4c80, 004f4e36]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int param_1,undefined4 param_2,int param_3)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int param_1,uint param_2,int param_3)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 
 {
-  uint uVar1;
+  ulong size;
+  SIZE_T SVar1;
   int iVar2;
   int *piVar3;
+  ushort *buffer;
   int iVar4;
   byte *pbVar5;
   byte *pbVar6;
@@ -27,10 +29,10 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int par
   int iStack_14;
   
   bVar9 = 0;
-  cockpit_pkbitmap_cpp_FUN_004f3f50(param_1);
+  cockpit_pkbitmap_cpp_FUN_004f3f50(this_ptr);
   do {
-    iVar2 = _fread(abStack_2c,0x1c,1,param_2);
-    if (iVar2 != 1) goto LAB_004f4d0f;
+    SVar1 = _fread(abStack_2c,0x1c,1,file_handle);
+    if (SVar1 != 1) goto LAB_004f4d0f;
     iVar4 = 4;
     bVar7 = false;
     iVar2 = 0;
@@ -49,36 +51,35 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int par
       iVar2 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
     }
     if (((iVar2 == 0) && (iStack_28 != 0)) && (iStack_24 != 0)) {
-      *(int *)(param_1 + 0x18) = iStack_28;
-      *(int *)(param_1 + 0x1c) = iStack_24;
+      this_ptr->width = iStack_28;
+      this_ptr->height = iStack_24;
       if (((iStack_20 != 0) || (iStack_1c != 0)) ||
-         ((*(int *)(param_1 + 0x18) + -1 != iStack_18 ||
-          (*(int *)(param_1 + 0x1c) + -1 != iStack_14)))) goto LAB_004f4cca;
-      iVar2 = shape_memdbg_cpp_malloc_FUN_00564c18((*(int *)(param_1 + 0x1c) + 1) * 4);
-      *(int *)(param_1 + 0x20) = iVar2;
-      if (iVar2 != 0) {
-        iVar2 = _fread(*(uint *)(param_1 + 0x20),(*(int *)(param_1 + 0x1c) + 1) * 4,1,
-                           param_2);
-        if (iVar2 == 1) {
+         ((this_ptr->width + -1 != iStack_18 || (this_ptr->height + -1 != iStack_14))))
+      goto LAB_004f4cca;
+      piVar3 = shape_memdbg_cpp_malloc_FUN_00564c18((this_ptr->height + 1) * 4);
+      this_ptr->row_offsets = piVar3;
+      if (piVar3 != (int *)0x0) {
+        SVar1 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
+        if (SVar1 == 1) {
           iVar2 = 0;
-          if (0 < *(int *)(param_1 + 0x1c)) {
-            piVar3 = *(int **)(param_1 + 0x20);
+          if (0 < this_ptr->height) {
+            piVar3 = this_ptr->row_offsets;
             do {
               if (piVar3[1] < *piVar3) goto LAB_004f4cca;
               iVar2 = iVar2 + 1;
               piVar3 = piVar3 + 1;
-            } while (iVar2 < *(int *)(param_1 + 0x1c));
+            } while (iVar2 < this_ptr->height);
           }
-          uVar1 = *(uint *)(*(int *)(param_1 + 0x20) + *(int *)(param_1 + 0x1c) * 4);
-          if (param_3 != 0) {
-            _fseek(param_2,uVar1,1);
+          size = this_ptr->row_offsets[this_ptr->height];
+          if (skip_data_load != 0) {
+            _fseek(file_handle,size,1);
             return;
           }
-          iVar2 = malloc(uVar1);
-          *(int *)(param_1 + 0x14) = iVar2;
-          if (iVar2 == 0) goto LAB_004f4ced;
-          iVar2 = _fread(iVar2,uVar1,1,param_2);
-          if (iVar2 == 1) {
+          buffer = (ushort *)malloc(size);
+          this_ptr->packed_data = buffer;
+          if (buffer == (ushort *)0x0) goto LAB_004f4ced;
+          SVar1 = _fread(buffer,size,1,file_handle);
+          if (SVar1 == 1) {
             return;
           }
         }

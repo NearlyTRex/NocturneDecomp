@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_skipWhitespace_FUN_004fe070(char *param_1)
+; char * __cdecl core_script_cpp_skipWhitespace_FUN_004fe070(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_findLabelIndex_FUN_00504c10 at 00504c4b

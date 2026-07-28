@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(int param_1)
+; void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 at 004d91b7

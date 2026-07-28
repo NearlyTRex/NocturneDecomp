@@ -9,12 +9,12 @@
 void core_svetlana_cpp_FUN_00541980(void)
 
 {
-  int iVar1;
+  CSvetlana *this_ptr;
   
-  iVar1 = FUN_0056497c(0x950c0);
-  if (iVar1 == 0) {
+  this_ptr = (CSvetlana *)FUN_0056497c(0x950c0);
+  if (this_ptr == (CSvetlana *)0x0) {
     return;
   }
-  core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(iVar1);
+  core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(this_ptr);
   return;
 }

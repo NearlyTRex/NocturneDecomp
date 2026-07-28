@@ -2,29 +2,29 @@
 // Address: 004ee2f0
 // Address Range: [[004ee2f0, 004ee365]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(undefined4 param_1,int param_2,int param_3)
+// Signature: char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound)
 
 #include "nocturne.h"
 
-uint __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(uint param_1,int param_2,int param_3)
+char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound)
 
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
+  char *pcVar3;
   
-  if (param_3 < param_2) {
-    return param_1;
+  if (upper_bound < lower_bound) {
+    return key;
   }
-  iVar1 = (param_3 + param_2) / 2;
-  iVar2 = _strcmp(param_1,*(uint *)(iVar1 * 4 + 0x1d1681c));
+  iVar1 = (upper_bound + lower_bound) / 2;
+  iVar2 = _strcmp(key,*(char **)(iVar1 * 4 + 0x1d1681c));
   if (-1 < iVar2) {
     if (iVar2 < 1) {
-      return *(uint *)(iVar1 * 4 + 0x1d16fec);
+      return *(char **)(iVar1 * 4 + 0x1d16fec);
     }
-    uVar3 = support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(param_1,iVar1 + 1,param_3);
-    return uVar3;
+    pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(key,iVar1 + 1,upper_bound);
+    return pcVar3;
   }
-  uVar3 = support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(param_1,param_2,iVar1 + -1);
-  return uVar3;
+  pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(key,lower_bound,iVar1 + -1);
+  return pcVar3;
 }

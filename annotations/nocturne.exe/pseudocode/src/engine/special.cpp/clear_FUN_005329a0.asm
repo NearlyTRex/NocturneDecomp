@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_clear_FUN_005329a0(void)
+; int __cdecl engine_special_cpp_clear_FUN_005329a0(void)
 ;
 ;
 ; XREF[2]:

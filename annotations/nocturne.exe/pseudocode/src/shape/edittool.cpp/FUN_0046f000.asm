@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 0046f016
     MOV dword ptr [0x01bcd9b8],EDX      ; 0046f017 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0046f01d
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0046f022
     MOV [0x01bcd9bc],EAX                ; 0046f025 | DAT_01bcd9bc
     RET                                 ; 0046f02a

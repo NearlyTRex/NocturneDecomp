@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(int param_1,int *param_2)
+; void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(CDemonLight *this_ptr,CRect *source_rect)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; CRect *          Stack[0x8]:4   source_rect
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 at 0044eba7

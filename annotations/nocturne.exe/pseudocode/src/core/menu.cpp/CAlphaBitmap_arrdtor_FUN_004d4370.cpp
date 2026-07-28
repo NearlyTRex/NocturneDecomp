@@ -2,13 +2,15 @@
 // Address: 004d4370
 // Address Range: [[004d4370, 004d4384]]
 // Convention: __cdecl
-// Signature: void __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(undefined4 param_1)
+// Signature: CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(CAlphaBitmap *objs,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(uint param_1)
+CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(CAlphaBitmap *objs,uint flags)
 
 {
-  __arrfini(param_1,8,&g_CAlphaBitmapTypeInfo_0059df00);
-  return;
+  CAlphaBitmap *pCVar1;
+  
+  pCVar1 = (CAlphaBitmap *)__arrfini(objs,8,&g_CAlphaBitmapTypeInfo_0059df00);
+  return pCVar1;
 }

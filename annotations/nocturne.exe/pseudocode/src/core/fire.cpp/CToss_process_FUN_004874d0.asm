@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(int *param_1)
+; void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
 ;
+; Parameters:
+; CToss *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -83,7 +85,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 00487545
     PUSH ESI                            ; 0048754b
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0048754c
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00487551
     ADD ESP,0x28                        ; 00487554
     POP ESI                             ; 00487557
@@ -99,7 +101,7 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 00487574
     PUSH EAX                            ; 00487577
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00487578
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048757d
     FLD float ptr [ESP + 0x8]           ; 00487580
     FADD float ptr [EAX + 0x34c]        ; 00487584
@@ -144,7 +146,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 004875fa | DAT_005b80f0
     PUSH EDX                            ; 00487600
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 00487601
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 00487606
     ADD ESP,0x28                        ; 00487609
     POP ESI                             ; 0048760c
@@ -154,7 +156,7 @@ section .text
         ;   Label: LAB_0048760f
     PUSH ESI                            ; 00487613
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 00487614
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX]             ; 00487619
     ADD ESP,0x8                         ; 0048761b
     TEST EAX,EAX                        ; 0048761e

@@ -2,14 +2,16 @@
 // Address: 004e2ea0
 // Address Range: [[004e2ea0, 004e2ecf]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(int param_1,int param_2)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(CMP3Decoder *this_ptr,int num_bytes)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(int param_1,int param_2)
+void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(CMP3Decoder *this_ptr,int num_bytes)
 
 {
-  *(int *)(param_1 + 0x1314) = *(int *)(param_1 + 0x1314) + param_2 * -8;
-  *(int *)(param_1 + 0x1318) = *(int *)(param_1 + 0x1318) - param_2;
+  (this_ptr->memory_bitstream).total_bits_read =
+       (this_ptr->memory_bitstream).total_bits_read + num_bytes * -8;
+  (this_ptr->memory_bitstream).current_dword_index =
+       (this_ptr->memory_bitstream).current_dword_index - num_bytes;
   return;
 }

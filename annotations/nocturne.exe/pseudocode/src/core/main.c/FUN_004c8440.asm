@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_004c8440(undefined4 param_1)
+; void core_main_c_FUN_004c8440(char *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[531]:
 ;   cockpit_ckptutil.c_FUN_0042e7b0 at 0042e96f
-;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ebea
 ;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee5e
 ;   cockpit_ckptutil.c_FUN_0042f050 at 0042f0e8
 ;   cockpit_ckptutil.c_FUN_00430210 at 004302c4
@@ -16,6 +15,7 @@
 ;   cockpit_ckptutil.c_FUN_00430630 at 0043075b
 ;   cockpit_ckptutil.c_FUN_00431260 at 004313a3
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d575
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebea
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d29b
 ;   ... and 521 more
 ;
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [0x01cc4808],ECX      ; 004c846f | DAT_01cc4808
     XOR ESI,ESI                         ; 004c8475
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 004c8477
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004c847c
     MOV DH,0x5c                         ; 004c847f
     MOV dword ptr [ESP + 0x4],ESI       ; 004c8481
@@ -95,7 +95,7 @@ section .text
     CALL engine_2d.c_FUN_004012a0       ; 004c84b9
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004012a0()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
-        ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_endPeriod_FUN_00558a20()
+        ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     PUSH 0x1cc3700                      ; 004c84c3
     CALL wincore_winrun.cpp_FUN_00559500 ; 004c84c8
         ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00559500()
@@ -105,7 +105,7 @@ section .text
     POP ESI                             ; 004c84d4
     RET                                 ; 004c84d5
     CALL crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 ; 004c84d6
-        ;   XREF to: 00566f90 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c_notifyAbnormalTermination_FUN_00566f90()
+        ;   XREF to: 00566f90 (UNCONDITIONAL_CALL)  ; void crt_watcom.c_notifyAbnormalTermination_FUN_00566f90()
         ;   Label: LAB_004c84d6
     JMP 0x004c8452                      ; 004c84db
         ;   XREF to: 004c8452 (UNCONDITIONAL_JUMP)  ; LAB_004c8452

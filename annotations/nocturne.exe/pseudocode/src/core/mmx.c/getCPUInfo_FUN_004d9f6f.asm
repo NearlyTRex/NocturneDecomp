@@ -29,9 +29,9 @@ section .text
     JZ 0x004d9fc0                       ; 004d9f7e
         ;   XREF to: 004d9fc0 (CONDITIONAL_JUMP)  ; LAB_004d9fc0
     CALL core_mmx.c_detectIntelProcessor_FUN_004d9eac ; 004d9f80
-        ;   XREF to: 004d9eac (UNCONDITIONAL_CALL)  ; undefined core_mmx.c_detectIntelProcessor_FUN_004d9eac()
+        ;   XREF to: 004d9eac (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectIntelProcessor_FUN_004d9eac()
     CALL core_mmx.c_detectMMXSupport_FUN_004d9f59 ; 004d9f85
-        ;   XREF to: 004d9f59 (UNCONDITIONAL_CALL)  ; undefined core_mmx.c_detectMMXSupport_FUN_004d9f59()
+        ;   XREF to: 004d9f59 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_004d9f59()
     MOVZX EAX,byte ptr [0x005bb118]     ; 004d9f8a | DAT_005bb118
     MOV dword ptr [EDI],EAX             ; 004d9f91
     MOVZX EAX,byte ptr [0x005bb119]     ; 004d9f93 | DAT_005bb119

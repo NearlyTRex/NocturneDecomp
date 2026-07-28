@@ -1,11 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
+; CDrawSurface *   Stack[0x18]:4   parent_surface
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e3cc
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e3cc
 ;   core_script.cpp_FUN_004fe9d0 at 004fea0e
 ;
 ; Called Functions:
@@ -33,7 +40,7 @@ section .text
     PUSH EBP                            ; 0045b4a0
     PUSH EBX                            ; 0045b4a1
     CALL cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0 ; 0045b4a2
-        ;   XREF to: 0045b4c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0()
+        ;   XREF to: 0045b4c0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 0045b4a7
     MOV EAX,EBX                         ; 0045b4aa
     POP EBP                             ; 0045b4ac

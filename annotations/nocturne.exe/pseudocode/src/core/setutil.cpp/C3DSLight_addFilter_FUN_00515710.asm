@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00515710(int param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00515710(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filter_name
+; float            Stack[0xc]:4   duration
+; int              Stack[0x10]:4   filter_mode
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005008a4

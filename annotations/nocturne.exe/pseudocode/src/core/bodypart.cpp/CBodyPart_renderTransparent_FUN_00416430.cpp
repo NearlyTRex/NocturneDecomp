@@ -2,35 +2,35 @@
 // Address: 00416430
 // Address Range: [[00416430, 004164f4]]
 // Convention: unknown
-// Signature: undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)
+// Signature: undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)
 
 #include "nocturne.h"
 
-uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)
+uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)
 
 {
-  int iVar1;
+  SBodyPartFire *pSVar1;
   int iVar2;
   
-  if ((*(int *)(param_1 + 0xf14) != 0) &&
-     ((*(int *)(param_1 + 0x150) < 2 || (*(int *)(param_1 + 0x744) != 0)))) {
-    if (*(int *)(param_1 + 0xc9c) != 0) {
-      *(uint *)(0x01E57284 + 0x15a8a0) = *(uint *)(param_1 + 0xc98);
-      core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
+  if ((param_1->is_visible != 0) &&
+     ((param_1->render_in_background < 2 || (param_1->fire_count != 0)))) {
+    if (param_1->transparent_geometry_flag != 0) {
+      *(int *)(0x01E57284 + 0x15a8a0) = param_1->dont_use_normals;
+      core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-                (DAT_005ae704,*(uint *)(param_1 + 0xca8));
+                (DAT_005ae704,param_1->render_alpha);
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(param_1,0x2e7);
-      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+      core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);
       *(uint *)(0x01E57284 + 0x15a8a0) = 0;
     }
-    iVar1 = 0;
-    if (0 < *(int *)(param_1 + 0x744)) {
-      iVar2 = param_1 + 0x754;
+    iVar2 = 0;
+    if (0 < param_1->fire_count) {
+      pSVar1 = param_1->fires;
       do {
-        core_flame_cpp_FUN_0048d5d0(iVar2);
-        iVar1 = iVar1 + 1;
-        iVar2 = iVar2 + 0x2a8;
-      } while (iVar1 < *(int *)(param_1 + 0x744));
+        core_flame_cpp_FUN_0048d5d0(&pSVar1->flame);
+        iVar2 = iVar2 + 1;
+        pSVar1 = (SBodyPartFire *)(&pSVar1->flame + 1);
+      } while (iVar2 < param_1->fire_count);
     }
     return 1;
   }

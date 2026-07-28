@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043fa50(int param_1)
+; void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043fa50(SFogGrid *fog)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
@@ -44,7 +46,7 @@ section .text
     PUSH EDX                            ; 0043fa62
     XOR EBP,EBP                         ; 0043fa63
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0043fa65
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0043fa6a
     MOV ECX,0x1000                      ; 0043fa6d
     MOV EAX,dword ptr [ESP + 0x50]      ; 0043fa72
@@ -67,7 +69,7 @@ section .text
     ADD EBX,0x100                       ; 0043faa2
         ;   Label: LAB_0043faa2
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0043faa8
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV byte ptr [EBX + 0xffffff00],AL  ; 0043faad
     CMP EBX,ESI                         ; 0043fab3
     JNZ 0x0043faa2                      ; 0043fab5

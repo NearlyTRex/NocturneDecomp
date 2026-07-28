@@ -2,13 +2,15 @@
 // Address: 005657c0
 // Address Range: [[005657c0, 005657cd]]
 // Convention: __watcallStack
-// Signature: void __watcallStack crt_stdio_c_remove_FUN_005657c0(undefined4 param_1)
+// Signature: int __watcallStack crt_stdio_c_remove_FUN_005657c0(char *filename)
 
 #include "nocturne.h"
 
-void __watcallStack remove(uint param_1)
+int __watcallStack remove(char *filename)
 
 {
-  FUN_0056bbf0(param_1);
-  return;
+  int iVar1;
+  
+  iVar1 = FUN_0056bbf0(filename);
+  return iVar1;
 }

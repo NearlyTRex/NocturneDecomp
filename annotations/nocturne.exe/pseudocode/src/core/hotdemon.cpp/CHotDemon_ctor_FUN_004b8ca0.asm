@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(undefined4 param_1)
+; CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(CHotDemon *this_ptr)
 ;
+; Parameters:
+; CHotDemon *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_hotdemon.cpp_FUN_004b8c70 at 004b8c83
@@ -27,7 +29,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b8ca1
     PUSH EDX                            ; 004b8ca5
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004b8ca6
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004b8cab
     PUSH 0x585df7                       ; 004b8cae | = "hotdemon.dfm"
     MOV EBX,EAX                         ; 004b8cb3

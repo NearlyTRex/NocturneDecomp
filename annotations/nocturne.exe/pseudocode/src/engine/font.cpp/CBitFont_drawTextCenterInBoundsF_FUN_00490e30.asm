@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; void engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,char *param_7)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -42,7 +42,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 00490e5f
     PUSH EAX                            ; 00490e63
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80 ; 00490e64
-        ;   XREF to: 00490e80 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80()
+        ;   XREF to: 00490e80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(CBitFont * this_ptr, int left_x, int right_x, int y_pos, ...)
     ADD ESP,0x20                        ; 00490e69
     XOR EDX,EDX                         ; 00490e6c
     MOV dword ptr [ESP],EDX             ; 00490e6e

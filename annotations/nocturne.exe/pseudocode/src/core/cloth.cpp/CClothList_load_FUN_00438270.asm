@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_load_FUN_00438270(int *param_1)
+; void __cdecl core_cloth_cpp_CClothList_load_FUN_00438270(CClothList *this_ptr)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004243a7
@@ -54,7 +56,7 @@ section .text
         ;   XREF to: 004382ae (CONDITIONAL_JUMP)  ; LAB_004382ae
     PUSH EAX                            ; 004382a5
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 004382a6
-        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_ctor_FUN_00435100()
+        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     ADD ESP,0x4                         ; 004382ab
     MOV dword ptr [EBX + 0x194],EAX     ; 004382ae
         ;   Label: LAB_004382ae
@@ -76,7 +78,7 @@ section .text
     ADD EBX,0x4                         ; 004382e2
     INC EDI                             ; 004382e5
     CALL core_cloth.cpp_CCloth_load_FUN_00435240 ; 004382e6
-        ;   XREF to: 00435240 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_load_FUN_00435240()
+        ;   XREF to: 00435240 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_CCloth_load_FUN_00435240(CCloth * this_ptr, char * filename)
     ADD ESI,0x28                        ; 004382eb
     MOV EAX,dword ptr [EBP]             ; 004382ee
     ADD ESP,0x8                         ; 004382f1
@@ -93,7 +95,7 @@ section .text
         ;   Label: LAB_004382fd
     PUSH EAX                            ; 004382ff
     CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 00438300
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00435160(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00438305
     PUSH EAX                            ; 00438308
     CALL crt_unknown.c_FUN_00564494     ; 00438309

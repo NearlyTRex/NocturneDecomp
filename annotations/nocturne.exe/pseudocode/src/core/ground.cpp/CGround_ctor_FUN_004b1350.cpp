@@ -1,24 +1,24 @@
 // Name: core_ground.cpp_CGround_ctor_FUN_004b1350
 // Address: 004b1350
 // Address Range: [[004b1350, 004b13a5]]
-// Convention: unknown
-// Signature: void core_ground_cpp_CGround_ctor_FUN_004b1350(int *param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004b1350(CGround *this_ptr,int width,int height)
 
 #include "nocturne.h"
 
-void core_ground_cpp_CGround_ctor_FUN_004b1350(int *param_1,int param_2,int param_3)
+CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004b1350(CGround *this_ptr,int width,int height)
 
 {
-  param_1[4] = 0x1e;
-  param_1[5] = 0x1e;
-  *param_1 = param_2;
-  param_1[9] = 0;
-  param_1[10] = 0;
-  param_1[7] = 8;
-  param_1[8] = 1;
-  param_1[1] = param_3;
-  param_1[6] = param_1[4] * param_1[5];
-  param_1[3] = param_3 + -1;
-  param_1[2] = param_2 + -1;
-  return;
+  this_ptr->grid_width = 0x1e;
+  this_ptr->grid_height = 0x1e;
+  this_ptr->width = width;
+  this_ptr->terrain_data = (SGroundCell *)0x0;
+  this_ptr->texture_list = (CTextureList *)0x0;
+  this_ptr->vertical_scale = 8;
+  this_ptr->height_scale = 1;
+  this_ptr->height = height;
+  this_ptr->total_cells = this_ptr->grid_width * this_ptr->grid_height;
+  this_ptr->height_minus_1 = height + -1;
+  this_ptr->width_minus_1 = width + -1;
+  return this_ptr;
 }

@@ -1,0 +1,619 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 204,
+    "complexity_score": 394,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 89,
+    "suspect_count": 28,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strchr",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 293
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044d550",
+    "address_range": [
+      [
+        "0044d550",
+        "0044d792"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dimage.cpp_CDemonImage_load_FUN_0044d550",
+    "signature": "void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044d460",
+      "is_variadic": false,
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_0044d460"
+    },
+    {
+      "addr": "0044d4f0",
+      "is_variadic": false,
+      "name": "core_dimage.cpp_CDemonImage_packColor_FUN_0044d4f0"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057c3d6",
+      "name": "s_rb_0057c3d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c3d9",
+      "name": "s_art_0057c3d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c3dd",
+      "name": "s_core_dimage_cpp_0057c3dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c3f0",
+      "name": "s_CDemonImage_load_Unable_0057c3f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c41a",
+      "name": "s_core_dimage_cpp_0057c41a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c42d",
+      "name": "s_CDemonImage_load_Unable_0057c42d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c45b",
+      "name": "s_ACT_0057c45b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c45c",
+      "name": "s_ACT_0057c45b+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057c45d",
+      "name": "s_ACT_0057c45b+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057c45e",
+      "name": "s_ACT_0057c45b+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057c460",
+      "name": "s_rb_0057c460",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c463",
+      "name": "s_art_0057c463",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c467",
+      "name": "s_core_dimage_cpp_0057c467",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c47a",
+      "name": "s_CDemonImage_load_Unable_0057c47a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "PTR_01cc4800",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "INT_01cc4804",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.048484848484849,
+    "instruction_count": 165,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 12,
+      "COPY": 118,
+      "INT_ADD": 63,
+      "INT_AND": 149,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 93,
+      "INT_LEFT": 4,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 25,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 51,
+      "INT_SUB": 57,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 31,
+      "POPCOUNT": 44,
+      "RETURN": 1,
+      "STORE": 52
+    },
+    "pcode_op_count": 833
+  },
+  "stack_frame": {
+    "frame_size": 288,
+    "local_size": 288,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_11b",
+        "offset": -283,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044d568",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044d5f1",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *param_1,char *param_2,SIZE_T param_3,SIZE_T param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cVar1 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->width = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1->width = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->height = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_1->height = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dimage_cpp_CDemonImage_allocMemory_FUN_0044d460(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(param_1->data,param_3,param_4,p_Var4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "_fread(param_1->data,param_3,param_4,p_Var4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "_fread(param_1->data,param_3,param_4,p_Var4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(&param_1->palette,0x100,3,p_Var4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_14 = (CDemonImage *)(param_1->color_values + 0x80);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar7 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar9 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,local_1c,(uint)bVar2,local_18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_01bf7720",
+      "severity": "mild",
+      "text": "(&DAT_01bf7720)[(uint)(bVar2 >> 3) * 0x20 + (local_1c >> 3) * 0x400 + (local_18 >> 3)];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 21,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 57,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via pointer arithmetic on its own `color_cube_lookup` field (which decays to a pointer), `+ CONST`; `offsetof(color_cube_lookup) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar7`. Replace those `pCVar7->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 85,
+      "match": "pCVar7 = (T *)(pCVar7->color_cube_lookup + CONST)",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonImage *)(pCVar7->color_cube_lookup + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `color_cube_lookup` field (which decays to a pointer), `+ CONST`; `offsetof(color_cube_lookup) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 86,
+      "match": "pCVar5 = (T *)(pCVar5->color_cube_lookup + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonImage *)(pCVar5->color_cube_lookup + 3);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 41,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

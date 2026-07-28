@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00555a72
         ;   Label: LAB_00555a72
     CALL core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90 ; 00555a73
-        ;   XREF to: 00555a90 (UNCONDITIONAL_CALL)  ; undefined core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90()
+        ;   XREF to: 00555a90 (UNCONDITIONAL_CALL)  ; CWerewolf * core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90(CWerewolf * this_ptr)
     ADD ESP,0x4                         ; 00555a78
     RET                                 ; 00555a7b
 

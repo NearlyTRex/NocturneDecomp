@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,char *param_5)
+; int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 ;
+; Parameters:
+; CIni *           Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   section
+; char *           Stack[0xc]:4   key
+; char *           Stack[0x10]:4   value
+; char *           Stack[0x14]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x314]:1  local_314
 ; undefined        Stack[-0x214]:1  local_214
@@ -80,7 +86,7 @@ section .text
         ;   Label: LAB_004bd4db
     PUSH ESI                            ; 004bd4e0
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004bd4e1
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004bd4e6
     MOV EBX,EAX                         ; 004bd4e9
     TEST EAX,EAX                        ; 004bd4eb
@@ -126,7 +132,7 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 004bd559
     PUSH EAX                            ; 004bd560
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004bd561
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004bd566
     MOV ESI,EAX                         ; 004bd569
     TEST EAX,EAX                        ; 004bd56b
@@ -153,7 +159,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bd5a3
     PUSH EAX                            ; 004bd5a7
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004bd5a8
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004bd5ad
     MOV EAX,ESP                         ; 004bd5b0
     PUSH EAX                            ; 004bd5b2
@@ -184,7 +190,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bd5f1
     PUSH EAX                            ; 004bd5f5
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004bd5f6
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004bd5fb
     TEST EAX,EAX                        ; 004bd5fe
     JNZ 0x004bd689                      ; 004bd600
@@ -211,16 +217,16 @@ section .text
     PUSH EBX                            ; 004bd63f
         ;   Label: LAB_004bd63f
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004bd640
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bd645
     PUSH ESI                            ; 004bd648
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004bd649
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bd64e
     MOV EAX,dword ptr [ESP + 0x328]     ; 004bd651
     PUSH EAX                            ; 004bd658
     CALL crt_stdio.c_remove_FUN_005657c0 ; 004bd659
-        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_remove_FUN_005657c0()
+        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005657c0(char * filename)
     ADD ESP,0x4                         ; 004bd65e
     MOV EDX,dword ptr [ESP + 0x328]     ; 004bd661
     PUSH EDX                            ; 004bd668
@@ -248,7 +254,7 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 004bd698
     PUSH EAX                            ; 004bd69f
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004bd6a0
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bd6a5
     TEST EAX,EAX                        ; 004bd6a8
     JNZ 0x004bd6cf                      ; 004bd6aa
@@ -284,7 +290,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bd702
     PUSH EAX                            ; 004bd706
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004bd707
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     MOV DH,byte ptr [EBX + 0xc]         ; 004bd70c
     ADD ESP,0xc                         ; 004bd70f
     TEST DH,0x10                        ; 004bd712
@@ -296,7 +302,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004bd721
     PUSH EAX                            ; 004bd725
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004bd726
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004bd72b
     TEST EAX,EAX                        ; 004bd72e
     JZ 0x004bd63f                       ; 004bd730

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00415d02
         ;   Label: LAB_00415d02
     CALL core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 ; 00415d03
-        ;   XREF to: 00415d20 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20()
+        ;   XREF to: 00415d20 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00415d08
     RET                                 ; 00415d0b
 

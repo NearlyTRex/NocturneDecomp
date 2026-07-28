@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(int *param_1)
+; void __cdecl engine_pod_cpp_CPod_cleanup_FUN_004f8b40(CPod *this_ptr)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004c90e0 at 004c9386
@@ -50,7 +52,7 @@ section .text
         ;   Label: LAB_004f8b73
     PUSH EAX                            ; 004f8b75
     CALL engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 ; 004f8b76
-        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
+        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f8b7b
     PUSH EAX                            ; 004f8b7e
     CALL crt_unknown.c_FUN_00564494     ; 004f8b7f

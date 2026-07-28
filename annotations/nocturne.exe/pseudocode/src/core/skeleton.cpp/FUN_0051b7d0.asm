@@ -27,7 +27,7 @@ section .text
     PUSH EDX                            ; 0051b7e1
         ;   Label: LAB_0051b7e1
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0051b7e2
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0051b7e7
     MOV dword ptr [EBX + 0x2234],0x0    ; 0051b7ea
     POP EBX                             ; 0051b7f4

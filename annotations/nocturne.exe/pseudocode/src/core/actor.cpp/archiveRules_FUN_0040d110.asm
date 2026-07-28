@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(int *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(CRuleList *rules,char *property_name)
 ;
+; Parameters:
+; CRuleList *      Stack[0x4]:4   rules
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[2]:
 ;   core_door.cpp_CDoor_archive_FUN_00455ee0 at 004560a7
@@ -49,7 +52,7 @@ section .text
         ;   Label: LAB_0040d125
     PUSH ESI                            ; 0040d12b
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040d12c
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040d131
     MOV ESI,EAX                         ; 0040d134
     TEST EAX,EAX                        ; 0040d136
@@ -73,13 +76,13 @@ section .text
     PUSH EBX                            ; 0040d161
     PUSH 0x577e8b                       ; 0040d162 | = "rule count"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d167
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d16c
     PUSH EBX                            ; 0040d16f
         ;   Label: LAB_0040d16f
     PUSH 0x577e96                       ; 0040d170 | = "ruleCount"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040d175
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040d17a
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040d17d
     MOV EDX,dword ptr [EAX]             ; 0040d181
@@ -104,7 +107,7 @@ section .text
     PUSH EBX                            ; 0040d1ac
     PUSH 0x577eb5                       ; 0040d1ad | = "rule"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d1b2
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d1b7
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040d1ba
         ;   Label: LAB_0040d1ba
@@ -119,7 +122,7 @@ section .text
         ;   Label: LAB_0040d1cb
     PUSH EDX                            ; 0040d1d1
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040d1d2
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040d1d7
     MOV ESI,EAX                         ; 0040d1da
     TEST EAX,EAX                        ; 0040d1dc
@@ -137,7 +140,7 @@ section .text
         ;   Label: LAB_0040d1ea
     PUSH 0x577e70                       ; 0040d1eb | = "Rule list opening brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d1f0
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d1f5
     JMP 0x0040d13e                      ; 0040d1f8
         ;   XREF to: 0040d13e (UNCONDITIONAL_JUMP)  ; LAB_0040d13e
@@ -145,7 +148,7 @@ section .text
         ;   Label: LAB_0040d1fd
     PUSH 0x577eba                       ; 0040d1fe | = "Rule list closing brace"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040d203
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040d208
     CMP ESI,0xa                         ; 0040d20b
     JNZ 0x0040d1cb                      ; 0040d20e
@@ -166,7 +169,7 @@ section .text
     ADD ESP,0x10                        ; 0040d22c
     PUSH 0x1                            ; 0040d22f
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040d231
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040d236
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040d239
     MOV EBX,dword ptr [EAX]             ; 0040d23d
@@ -209,7 +212,7 @@ section .text
     PUSH -0x1                           ; 0040d2a0
         ;   Label: LAB_0040d2a0
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040d2a2
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 0040d2a7
     PUSH 0x5acc90                       ; 0040d2aa | DAT_005acc90
     PUSH 0x577f00                       ; 0040d2af | = "%s}\n"

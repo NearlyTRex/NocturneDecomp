@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5)
+; float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xf0]:8  local_f0
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 00453a33
     MOV EBX,EAX                         ; 00453a34
     CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080 ; 00453a36
-        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080()
+        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel * this_ptr, int frame_index)
     ADD ESP,0x8                         ; 00453a3b
     MOV dword ptr [ESP + 0xb8],EAX      ; 00453a3e
     MOV EAX,EBX                         ; 00453a45
@@ -195,7 +195,7 @@ section .text
     PUSH EAX                            ; 00453b59
     LEA EBX,[ESP + 0xbc]                ; 00453b5a
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 00453b61
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     LEA EAX,[ESP + 0xa4]                ; 00453b66
     ADD ESP,0x10                        ; 00453b6d
     CMP EAX,EBX                         ; 00453b70

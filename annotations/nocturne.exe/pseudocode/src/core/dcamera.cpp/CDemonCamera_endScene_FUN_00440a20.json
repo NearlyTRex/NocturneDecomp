@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -139,15 +139,15 @@
   },
   "cross_references": [
     {
-      "addr": "005088f0",
-      "from_addr": "00508c15",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
+      "addr": "00507f80",
+      "from_addr": "00508070",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00507f80",
-      "from_addr": "00508070",
-      "name": "core_set.cpp_FUN_00507f80",
+      "addr": "005088f0",
+      "from_addr": "00508c15",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -173,7 +173,7 @@
     ],
     "convention": "unknown",
     "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20",
-    "signature": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(int param_1,int param_2)"
+    "signature": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -319,7 +319,7 @@
       {
         "call_addr": "00508070",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00507f80",
+        "caller": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,7 +330,7 @@
       {
         "call_addr": "0050844e",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00507f80",
+        "caller": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -400,7 +400,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(int param_1,int param_2)",
+      "text": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -408,7 +408,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(int param_1,int param_2)",
+      "text": "void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -416,7 +416,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x11e4) == 0) {",
+      "text": "if (param_1->scene_open_flag == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -424,7 +424,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x11e4) = 0;",
+      "text": "param_1->scene_open_flag = 0;",
       "type": "unnamed_param"
     },
     {
@@ -432,7 +432,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x168) == 0) && (param_2 == 0)) {",
+      "text": "if ((param_1->skip_clear_buffer_flag == 0) && (param_2 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -440,7 +440,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x168) == 0) && (param_2 == 0)) {",
+      "text": "if ((param_1->skip_clear_buffer_flag == 0) && (param_2 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +448,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x140)) {",
+      "text": "if (0 < (int)param_1->max_distance) {",
       "type": "unnamed_param"
     },
     {
@@ -456,7 +456,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "_memcpy(*(int *)(param_1 + 0x13c) << 2);",
+      "text": "_memcpy(*(int *)(param_1->camera_name + 0xfc) << 2);",
       "type": "unnamed_param"
     },
     {
@@ -464,7 +464,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x140));",
+      "text": "} while (iVar1 < (int)param_1->max_distance);",
       "type": "unnamed_param"
     },
     {

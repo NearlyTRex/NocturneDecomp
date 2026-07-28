@@ -2,15 +2,15 @@
 // Address: 004930b0
 // Address Range: [[004930b0, 004930d1]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(int param_1,int param_2)
+// Signature: int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont *font,int char_code)
 
 #include "nocturne.h"
 
-uint __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(int param_1,int param_2)
+int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont *font,int char_code)
 
 {
-  if ((-1 < param_2) && (param_2 < 0x100)) {
-    return *(uint *)(param_2 * 4 + param_1 + 0x2568);
+  if ((-1 < char_code) && (char_code < 0x100)) {
+    return font->char_widths[char_code];
   }
   return 0;
 }

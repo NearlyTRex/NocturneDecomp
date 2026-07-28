@@ -2,29 +2,29 @@
 // Address: 00456700
 // Address Range: [[00456700, 00456746]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *param_1,char *param_2,char *param_3)
+// Signature: void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *dest_path,char *directory,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *param_1,char *param_2,char *param_3)
+void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *dest_path,char *directory,char *filename)
 
 {
   char cVar1;
   
-  if ((param_2 != (char *)0x0) && (*param_2 != '\0')) {
-    _sprintf(param_1,"%s\\%s",param_2,param_3);
+  if ((directory != (char *)0x0) && (*directory != '\0')) {
+    _sprintf(dest_path,"%s\\%s",directory,filename);
     return;
   }
   do {
-    cVar1 = *param_3;
-    *param_1 = cVar1;
+    cVar1 = *filename;
+    *dest_path = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = param_3[1];
-    param_3 = param_3 + 2;
-    param_1[1] = cVar1;
-    param_1 = param_1 + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
+    dest_path[1] = cVar1;
+    dest_path = dest_path + 2;
   } while (cVar1 != '\0');
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CCrater_load_FUN_00487d50(int param_1,undefined4 param_2)
+; void __cdecl core_fire_cpp_CCrater_load_FUN_00487d50(CCrater *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CCrater *        Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(int param_1,int param_2,undefined4 param_3,int param_4)
+; int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
+; int              Stack[0xc]:4   hero_type
+; CCharacter *     Stack[0x10]:4   existing_actor
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -70,7 +75,7 @@ section .text
     PUSH EBX                            ; 004d9980
     PUSH ESI                            ; 004d9981
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004d9982
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004d9987
     ADD ESP,0x8                         ; 004d9989
     TEST EAX,EAX                        ; 004d998c
@@ -128,7 +133,7 @@ section .text
     LEA EAX,[EBP + 0x150]               ; 004d9a10
     PUSH EAX                            ; 004d9a16
     CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990 ; 004d9a17
-        ;   XREF to: 004e1990 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990()
+        ;   XREF to: 004e1990 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
     ADD ESP,0xc                         ; 004d9a1c
     PUSH 0x0                            ; 004d9a1f
     PUSH 0x0                            ; 004d9a21
@@ -143,7 +148,7 @@ section .text
     MOV EBX,dword ptr [0x005baf90]      ; 004d9a39 | DAT_005baf90
     PUSH EBX                            ; 004d9a3f
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004d9a40
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d9a45
     JMP 0x004d999a                      ; 004d9a48
         ;   XREF to: 004d999a (UNCONDITIONAL_JUMP)  ; LAB_004d999a
@@ -152,7 +157,7 @@ section .text
     PUSH EDX                            ; 004d9a51
     PUSH EBX                            ; 004d9a52
     CALL core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 ; 004d9a53
-        ;   XREF to: 004b6080 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080()
+        ;   XREF to: 004b6080 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlaceholder * this_ptr, EHeroType hero_type)
     ADD ESP,0x8                         ; 004d9a58
     MOV dword ptr [ESP],EAX             ; 004d9a5b
     JMP 0x004d9a35                      ; 004d9a5e

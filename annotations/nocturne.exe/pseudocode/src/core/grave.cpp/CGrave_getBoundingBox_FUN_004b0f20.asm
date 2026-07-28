@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,undefined4 *param_2)
+; int * core_grave_cpp_CGrave_getBoundingBox_FUN_004b0f20(int param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 004b0f8a (CONDITIONAL_JUMP)  ; LAB_004b0f8a
     PUSH EAX                            ; 004b0f40
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004b0f41
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b0f46
     ADD EAX,0x338                       ; 004b0f49
     MOV EDX,EBX                         ; 004b0f4e
@@ -70,11 +70,11 @@ section .text
     FLD float ptr [ECX + 0x2cc]         ; 004b0f8a
         ;   Label: LAB_004b0f8a
     CALL crt_math.c_round_FUN_00563a30  ; 004b0f90
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EAX                            ; 004b0f95
     FISTP dword ptr [ESP + 0x4]         ; 004b0f96
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004b0f9a
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b0f9f
     MOV EDX,dword ptr [ESP]             ; 004b0fa2
     MOV ECX,EAX                         ; 004b0fa5

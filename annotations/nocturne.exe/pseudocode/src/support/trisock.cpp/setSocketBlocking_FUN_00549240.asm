@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_trisock_cpp_setSocketBlocking_FUN_00549240(undefined4 *param_1,int param_2)
+; int __cdecl support_trisock_cpp_setSocketBlocking_FUN_00549240(_SOCKET *socket_handle,int blocking_mode)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; int              Stack[0x8]:4   blocking_mode
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d8e

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(int param_1)
+; void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004b1910(CGround *this_ptr)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
@@ -378,7 +380,7 @@ section .text
     PUSH ESI                            ; 004b1cd6
     INC EBX                             ; 004b1cd7
     CALL core_ground.cpp_CGround_transformAndStoreVertex_FUN_004b1820 ; 004b1cd8
-        ;   XREF to: 004b1820 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_transformAndStoreVertex_FUN_004b1820()
+        ;   XREF to: 004b1820 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_transformAndStoreVertex_FUN_004b1820(CGround * this_ptr, int column, int row)
     ADD ESP,0xc                         ; 004b1cdd
     CMP EBX,EBP                         ; 004b1ce0
     JLE 0x004b1cca                      ; 004b1ce2

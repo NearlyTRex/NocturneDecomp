@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 337,
+    "complexity_score": 414,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 37,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 87,
-    "suspect_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 119,
+    "suspect_count": 28,
     "suspect_types": [
       "unnamed_param",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 364
+    "total_lines": 396
   },
   "cross_references": [],
   "function": {
@@ -146,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_succubus.cpp_FUN_00540c20",
-    "signature": "void core_succubus_cpp_FUN_00540c20(int param_1)"
+    "signature": "void core_succubus_cpp_FUN_00540c20(CEnemy *param_1)"
   },
   "function_calls": [
     {
@@ -505,8 +506,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -514,50 +523,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_succubus_cpp_FUN_00540c20(int param_1)",
+      "text": "void core_succubus_cpp_FUN_00540c20(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,\"succubusx.dfm\");",
+      "text": "pCVar1 = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,\"succubus.dfm\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(param_1 + 0xbd24,pcVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1 + 0x150;",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(param_1 + 1,pcVar3);",
       "type": "unnamed_param"
     },
     {
@@ -565,15 +550,15 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0xbd24;",
+      "text": "core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_CClothList_load_FUN_00438270(param_1 + 0xdfd8);",
+      "text": "pCVar1 = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -581,79 +566,55 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1 + 0x30;",
+      "text": "this_ptr = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1 + 0x20;",
+      "text": "this_ptr_00 = (CClothList *)(param_1[1].base.model.part_data.visibility_flags + 9);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_CClothList_setup_FUN_00438510(param_1 + 0xdfd8,iVar6,iVar5,iVar2,iVar5,iVar6);",
+      "text": "euler = &(param_1->base).base.orient;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x2a8c,iVar6,iVar5,0x3d4ccccd,*(uint *)(param_1 + 0x240c),iVar2);",
+      "text": "position = &(param_1->base).base.location;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x2a8c,iVar6,iVar5,0x3d4ccccd,*(uint *)(param_1 + 0x240c),iVar2);",
+      "text": "(&(param_1->base).cloth_list,&position->position,&euler->vec,0.05,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x7fc) = *(float *)(param_1 + 0x7fc) + 0.4f;",
+      "text": "(param_1->base).closest_distance_threshold,(CDeformableModelInstance *)this_ptr);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x7fc) = *(float *)(param_1 + 0x7fc) + 0.4f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = param_1 + 0xe1a4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar5,1,*(uint *)(param_1 + 0xe16c),0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar5,1,*(uint *)(param_1 + 0xe16c),0);",
+      "text": "(param_1->base).model.bone_transform.pose_data.root_position.z =",
       "type": "unnamed_param"
     },
     {
@@ -661,23 +622,7 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xedcc) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xe19c) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xe1a0) = 0;",
+      "text": "(param_1->base).model.bone_transform.pose_data.root_position.z + 0.4f;",
       "type": "unnamed_param"
     },
     {
@@ -685,15 +630,103 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xe194) = 0;",
+      "text": "this_ptr_01 = (CMorph *)(param_1[1].base.descriptive_name + 0x40);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xe198) = 0x40a00000;",
+      "text": "(this_ptr_01,1,*(CKeyFramedModel **)(param_1[1].base.descriptive_name + 8),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(this_ptr_01,1,*(CKeyFramedModel **)(param_1[1].base.descriptive_name + 8),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.fires[0x10].size = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).descriptive_name[0x34] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).descriptive_name[0x35] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).descriptive_name[0x36] = -0x60;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 118,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).descriptive_name[0x37] = '@';",
       "type": "unnamed_param"
     }
   ],

@@ -87,7 +87,7 @@ section .text
     JNZ 0x005297fb                      ; 00529553
         ;   XREF to: 005297fb (CONDITIONAL_JUMP)  ; LAB_005297fb
     CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10 ; 00529559
-        ;   XREF to: 00522d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10()
+        ;   XREF to: 00522d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10()
     MOV ECX,dword ptr [ESP + 0x78]      ; 0052955e
     XOR EAX,EAX                         ; 00529562
     TEST ECX,ECX                        ; 00529564
@@ -155,7 +155,7 @@ section .text
     PUSH EDX                            ; 00529623
     PUSH EAX                            ; 00529624
     CALL crt_string.c_memmove_FUN_00566170 ; 00529625
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,[0x02dc8334]                ; 0052962a | DAT_02dc8334
     MOV EDX,dword ptr [0x02dc8330]      ; 0052962f | DAT_02dc8330
     DEC EAX                             ; 00529635
@@ -170,7 +170,7 @@ section .text
     ADD EBX,0x4                         ; 0052964b
     INC EDI                             ; 0052964e
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052964f
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ECX,dword ptr [0x005bea68]      ; 00529654 | DAT_005bea68
     ADD ESP,0xc                         ; 0052965a
     CMP EDI,ECX                         ; 0052965d
@@ -264,7 +264,7 @@ section .text
     ADD EAX,EDX                         ; 0052975e
     PUSH EAX                            ; 00529760
     CALL sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330 ; 00529761
-        ;   XREF to: 00523330 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330()
+        ;   XREF to: 00523330 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330(float * input_samples, ushort * output_buffer, int bits_per_sample, int num_samples, ...)
     ADD ESP,0x14                        ; 00529766
     MOV EAX,dword ptr [ESP + EBX*0x1 + 0x2c] ; 00529769
     ADD EBX,0x4                         ; 0052976d

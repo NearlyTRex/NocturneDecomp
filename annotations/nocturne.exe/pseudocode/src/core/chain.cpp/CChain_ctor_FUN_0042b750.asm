@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_chain_cpp_CChain_ctor_FUN_0042b750(undefined4 param_1)
+; CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042b750(CChain *this_ptr)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_chain.cpp_FUN_0042b720 at 0042b733
@@ -44,7 +46,7 @@ section .text
     ADD EAX,0x284                       ; 0042b766
     PUSH EAX                            ; 0042b76b
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0042b76c
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffd7c]          ; 0042b771
     MOV dword ptr [EDX + 0x14c],0x59b244 ; 0042b777 | PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244
     MOV dword ptr [EDX + 0x150],0xa     ; 0042b781

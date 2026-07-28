@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 178,
+    "complexity_score": 48,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 72
   },
@@ -26,19 +24,19 @@
     {
       "addr": "004bd790",
       "from_addr": "004bd7f4",
-      "name": "engine_ini.cpp_FUN_004bd790",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055a210",
-      "from_addr": "0055a291",
-      "name": "wincore_winvideo.cpp_FUN_0055a210",
+      "name": "engine_ini.cpp_getProfileInteger_FUN_004bd790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055a510",
       "from_addr": "0055a5f0",
       "name": "wincore_winvideo.cpp_FUN_0055a510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a210",
+      "from_addr": "0055a291",
+      "name": "wincore_winvideo.cpp_openMovie_FUN_0055a210",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdlib.c_atoi_FUN_00566f30",
-    "signature": "int __cdecl crt_stdlib_c_atoi_FUN_00566f30(byte *param_1)"
+    "signature": "int __cdecl crt_stdlib_c_atoi_FUN_00566f30(char *string_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -91,7 +89,7 @@
       {
         "call_addr": "0055a291",
         "call_type": "direct",
-        "caller": "wincore_winvideo.cpp_FUN_0055a210",
+        "caller": "wincore_winvideo.cpp_openMovie_FUN_0055a210",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +100,7 @@
       {
         "call_addr": "004bd7f4",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004bd790",
+        "caller": "engine_ini.cpp_getProfileInteger_FUN_004bd790",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,10 +110,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.705882352941177,
@@ -148,128 +146,37 @@
     "pcode_op_count": 194
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "string_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl atoi(byte *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_005c168c",
       "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "text": "while (((&DAT_005c168c)[(byte)(*string_ptr + 1)] & 2) != 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 0x20) != 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_005c168c",
       "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 0x20) != 0) {",
+      "text": "while (((&DAT_005c168c)[(byte)(*string_ptr + 1)] & 0x20) != 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -10,11 +10,11 @@ void core_dcube_cpp_FUN_0044adf0(int *param_1)
 
 {
   if (param_1[9] != 0) {
-    shape_memdbg_cpp_free_FUN_00564486(param_1[9] + -4);
+    shape_memdbg_cpp_free_FUN_00564486((void *)(param_1[9] + -4));
     param_1[9] = 0;
   }
-  if (param_1[0xb] != 0) {
-    shape_memdbg_cpp_free_FUN_00564486(param_1[0xb]);
+  if ((void *)param_1[0xb] != (void *)0x0) {
+    shape_memdbg_cpp_free_FUN_00564486((void *)param_1[0xb]);
     param_1[0xb] = 0;
   }
   if (param_1[0xc] != 0) {

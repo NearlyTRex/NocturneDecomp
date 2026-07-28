@@ -1,16 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(byte *param_1,byte *param_2,int param_3)
+; int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,char *target_string,int case_sensitive)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   pattern
+; char *           Stack[0x8]:4   target_string
+; int              Stack[0xc]:4   case_sensitive
 ;
 ; XREF[7]:
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 at 0042a2de
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 at 004a90ff
 ;   core_sound.cpp_FUN_0052d030 at 0052d076
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 at 0052c962
+;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0 at 005485d5
 ;   core_trigger.cpp_FUN_00547b30 at 00548046
-;   core_trigger.cpp_FUN_005485a0 at 005485d5
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 at 004f8e48
 ;
 ; Called Functions:
@@ -70,7 +74,7 @@ section .text
     PUSH EBX                            ; 004775f7
     PUSH ESI                            ; 004775f8
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 004775f9
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004775b0(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 004775fe
     TEST EAX,EAX                        ; 00477601
     JNZ 0x0047760d                      ; 00477603
@@ -104,14 +108,14 @@ section .text
     MOV AL,byte ptr [ESI]               ; 00477625
     PUSH EAX                            ; 00477627
     CALL crt_ctype.c_tolower_FUN_00564860 ; 00477628
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     MOV EDI,EAX                         ; 0047762d
     XOR EAX,EAX                         ; 0047762f
     ADD ESP,0x4                         ; 00477631
     MOV AL,byte ptr [EBX]               ; 00477634
     PUSH EAX                            ; 00477636
     CALL crt_ctype.c_tolower_FUN_00564860 ; 00477637
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     ADD ESP,0x4                         ; 0047763c
     CMP EDI,EAX                         ; 0047763f
     JZ 0x004775dc                       ; 00477641

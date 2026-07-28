@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(int param_1,int param_2)
+; int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(CMP3Decoder *this_ptr,int sample_offset)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   sample_offset
 ;
 ; XREF[2]:
 ;   sound_mp3.cpp_FUN_004e7ed0 at 004e81d8
@@ -33,7 +36,7 @@ section .text
     MOV ECX,dword ptr [EDI]             ; 004e843c
     PUSH ECX                            ; 004e843e
     CALL crt_stdio.c_fseek_FUN_0056582c ; 004e843f
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     MOV dword ptr [EDI + 0x10],0x0      ; 004e8444
     MOV dword ptr [EDI + 0x14],0x0      ; 004e844b
     MOV dword ptr [EDI + 0xc],0x0       ; 004e8452
@@ -54,14 +57,14 @@ section .text
     PUSH EAX                            ; 004e84b9
     MOV dword ptr [EBX + 0x7354],0x40   ; 004e84ba
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004e84c4
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004e84c9
     PUSH 0x1200                         ; 004e84cc
     PUSH 0x0                            ; 004e84d1
     LEA EAX,[EBX + 0x7430]              ; 004e84d3
     PUSH EAX                            ; 004e84d9
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004e84da
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004e84df
     CMP ESI,0x900                       ; 004e84e2
     JL 0x004e8503                       ; 004e84e8
@@ -70,7 +73,7 @@ section .text
         ;   Label: LAB_004e84ea
     PUSH EBX                            ; 004e84ec
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 ; 004e84ed
-        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0()
+        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 004e84f2
     TEST EAX,EAX                        ; 004e84f5
     JLE 0x004e8517                      ; 004e84f7
@@ -101,7 +104,7 @@ section .text
         ;   Label: LAB_004e851e
     PUSH EBX                            ; 004e851f
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 ; 004e8520
-        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0()
+        ;   XREF to: 004e85b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 004e8525
     MOV dword ptr [EBX + 0x108],EAX     ; 004e8528
     TEST EAX,EAX                        ; 004e852e

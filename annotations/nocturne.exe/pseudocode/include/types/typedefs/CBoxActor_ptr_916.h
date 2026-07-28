@@ -10,17 +10,16 @@ struct CBoxActor;
 // Full base definition required for offsetof() in adj().
 #include "types/classes/CBoxActor.h"
 // Adjusted pointer: CBoxActor_ptr_916
-// Points to CBox at offset 0x394 in CBoxActor
+// Points to CBoxActor at offset 0x394 in CBoxActor
 // 32-bit pointer to CBoxActor
-struct CBox;
 struct CBoxActor_ptr_916 {
     void *_raw;
     typedef CBoxActor base_type;
     CBoxActor_ptr_916() : _raw(0) {}
     template<typename T> CBoxActor_ptr_916(T* p) : _raw((void*)p) {}
     template<typename T> CBoxActor_ptr_916& operator=(T* p) { _raw = (void*)p; return *this; }
-    CBox* operator->() const { return (CBox*)_raw; }
-    CBoxActor* adj() const { return (CBoxActor*)((char*)_raw - offsetof(CBoxActor, physics_box)); }
+    CBoxActor* operator->() const { return (CBoxActor*)_raw; }
+    CBoxActor* adj() const { return (CBoxActor*)((char*)_raw - offsetof(CBoxActor, physics_box.position.z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

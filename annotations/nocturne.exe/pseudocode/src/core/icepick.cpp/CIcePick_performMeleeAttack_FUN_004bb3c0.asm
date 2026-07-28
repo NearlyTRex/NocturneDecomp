@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(int param_1,undefined4 param_2)
+; void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004bb3c0(CCharacter *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -50,7 +50,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 004bb3d5
     PUSH EAX                            ; 004bb3db
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004bb3dc
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004bb3e1
     PUSH EAX                            ; 004bb3e4
     LEA EAX,[ESP + 0x40]                ; 004bb3e5
@@ -58,7 +58,7 @@ section .text
     PUSH ESI                            ; 004bb3ea
     XOR EDI,EDI                         ; 004bb3eb
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004bb3ed
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004bb3f2
     XOR ECX,ECX                         ; 004bb3f5
     XOR EBP,EBP                         ; 004bb3f7
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_004bb41f
     PUSH EAX                            ; 004bb421
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 004bb422
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 004bb427
     PUSH 0x43020000                     ; 004bb42a
     PUSH 0x42b40000                     ; 004bb42f

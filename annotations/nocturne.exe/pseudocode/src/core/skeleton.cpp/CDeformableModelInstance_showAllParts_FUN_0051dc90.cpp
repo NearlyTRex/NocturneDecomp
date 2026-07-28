@@ -2,21 +2,21 @@
 // Address: 0051dc90
 // Address Range: [[0051dc90, 0051dcaa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_0051dc90(CDeformableModelInstance *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
+  CDeformableModelInstance *pCVar1;
+  int *piVar2;
   
-  iVar2 = param_1;
+  pCVar1 = this_ptr;
   do {
-    iVar1 = iVar2 + 4;
-    *(uint *)(iVar2 + 0x2140) = 1;
-    iVar2 = iVar1;
-  } while (iVar1 != param_1 + 0x78);
+    piVar2 = &(pCVar1->motion_controller).current_motion_index;
+    (pCVar1->part_data).visibility_flags[0] = 1;
+    pCVar1 = (CDeformableModelInstance *)piVar2;
+  } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
   return;
 }

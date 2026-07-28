@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_CBoxActor_onDropped_FUN_0041f0f0(int param_1,int param_2)
+; void core_boxactor_cpp_CBoxActor_onDropped_FUN_0041f0f0(CBoxActor *param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 0041f0f8
     MOV dword ptr [EBX + 0x310],0x0     ; 0041f0f9
     CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0 ; 0041f103
-        ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0()
+        ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f108
     MOV EDX,dword ptr [ESP + 0x18]      ; 0041f10b
     TEST EDX,EDX                        ; 0041f10f
@@ -45,7 +45,7 @@ section .text
     MOV dword ptr [ESP + 0x14],ECX      ; 0041f131
     MOV dword ptr [ESP + 0x10],EDI      ; 0041f135
     CALL core_box.cpp_CBox_setupVelocities_FUN_0041cb40 ; 0041f139
-        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupVelocities_FUN_0041cb40()
+        ;   XREF to: 0041cb40 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_0041cb40(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
     ADD ESP,0xc                         ; 0041f13e
     POP EDI                             ; 0041f141
     ADD ESP,0xc                         ; 0041f142

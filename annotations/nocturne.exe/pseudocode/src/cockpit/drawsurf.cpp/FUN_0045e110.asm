@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045e110(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void cockpit_drawsurf_cpp_FUN_0045e110(CDrawSurface *param_1,int param_2,char *param_3)
 ;
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0045e0f0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0045e0f0
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ECX                            ; 0045e11a
     MOV EBX,dword ptr [ESP + 0x10]      ; 0045e11b
     PUSH EBX                            ; 0045e11f
-    CALL cockpit_drawsurf.cpp_FUN_0045e0f0 ; 0045e120
-        ;   XREF to: 0045e0f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045e0f0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0045e0f0 ; 0045e120
+        ;   XREF to: 0045e0f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0045e0f0(CDrawSurface * this_ptr, char * text, int y)
     ADD ESP,0xc                         ; 0045e125
     POP EBX                             ; 0045e128
     RET                                 ; 0045e129

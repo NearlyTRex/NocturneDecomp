@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(undefined4 param_1)
+; CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(CGabriella *this_ptr)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_FUN_00495670 at 00495683
@@ -35,7 +37,7 @@ section .text
     ADD EAX,0x1fa7c                     ; 004956b0
     PUSH EAX                            ; 004956b5
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 004956b6
-        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_ctor_FUN_00435100()
+        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffe0584]          ; 004956bb
     MOV dword ptr [EBX + 0x14c],0x59dcf4 ; 004956c1 | PTR_core_gabriela.cpp_CGabriella_setup_FUN_004957c0_0059dcf4
     MOV dword ptr [EBX + 0x1fa3c],0x0   ; 004956cb
@@ -72,7 +74,7 @@ section .text
     ADD EAX,0x150                       ; 004957a5
     PUSH EAX                            ; 004957aa
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004957ab
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004957b0
     MOV EAX,EBX                         ; 004957b3
     POP EBP                             ; 004957b5

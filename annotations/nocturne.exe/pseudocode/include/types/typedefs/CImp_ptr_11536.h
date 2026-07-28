@@ -19,7 +19,7 @@ struct CImp_ptr_11536 {
     template<typename T> CImp_ptr_11536(T* p) : _raw((void*)p) {}
     template<typename T> CImp_ptr_11536& operator=(T* p) { _raw = (void*)p; return *this; }
     CImp* operator->() const { return (CImp*)_raw; }
-    CImp* adj() const { return (CImp*)((char*)_raw - offsetof(CImp, base.base.collision_test_normals)); }
+    CImp* adj() const { return (CImp*)((char*)_raw - offsetof(CImp, base.base.collision_test_normals[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

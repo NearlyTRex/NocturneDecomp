@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(int param_1,int param_2,int param_3)
+; void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004c07b0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   item_to_remove
+; int              Stack[0xc]:4   should_delete_actor
 ;
 ; XREF[6]:
 ;   core_inv.cpp_CInventory_clear_FUN_004bee80 at 004beea3
@@ -79,7 +83,7 @@ section .text
     ADD ECX,ESI                         ; 004c0827
     PUSH ECX                            ; 004c0829
     CALL crt_string.c_memmove_FUN_00566170 ; 004c082a
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004c082f
     CMP dword ptr [ESP + 0x1c],0x0      ; 004c0832
     JZ 0x004c07fa                       ; 004c0837

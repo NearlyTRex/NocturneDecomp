@@ -1,0 +1,129 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 38,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
+    "suspect_types": [
+      "concat_reconstruction",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "00572d90",
+      "from_addr": "00572da9",
+      "name": "FUN_00572d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573db0",
+      "from_addr": "00573e1d",
+      "name": "FUN_00573db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056626c",
+      "from_addr": "005662fa",
+      "name": "crt_file.c_makepath_FUN_0056626c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566498",
+      "from_addr": "005664dc",
+      "name": "crt_string.c_splitpath_FUN_00566498",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570870",
+      "from_addr": "00570888",
+      "name": "crt_string.c_strpbrk_FUN_00570870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056d9f0",
+    "address_range": [
+      [
+        "0056d9f0",
+        "0056da2b"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_string.c_mbtowc_peek_FUN_0056d9f0",
+    "signature": "int __watcallStack crt_string_c_mbtowc_peek_FUN_0056d9f0(char *str)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02de5c30",
+      "name": "DAT_02de5c30",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.0,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 5,
+      "INT_AND": 33,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 6,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 11,
+      "INT_SUB": 2,
+      "INT_XOR": 3,
+      "LOAD": 8,
+      "POPCOUNT": 9,
+      "RETURN": 2
+    },
+    "pcode_op_count": 133
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 8,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "return (uint)CONCAT11(*str,str[1]);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

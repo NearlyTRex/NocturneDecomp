@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(int param_1,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_ptr,int screen_height)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   screen_height
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50 at 0043ff82
@@ -36,7 +39,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 00440018
     PUSH EBX                            ; 0044001c
     CALL core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 ; 0044001d
-        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_free_FUN_004401d0()
+        ;   XREF to: 004401d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00440022
     CMP ESI,0x1e0                       ; 00440025
     JLE 0x00440032                      ; 0044002b
@@ -91,7 +94,7 @@ section .text
     ADD EAX,0x1010                      ; 004400f4
     PUSH EAX                            ; 004400f9
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004400fa
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004400ff
     MOV dword ptr [EBX + 0x160],EAX     ; 00440102
     TEST EAX,EAX                        ; 00440108
@@ -112,7 +115,7 @@ section .text
     ADD EAX,0x1010                      ; 00440143
     PUSH EAX                            ; 00440148
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00440149
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0044014e
     MOV dword ptr [EBX + 0x164],EAX     ; 00440151
     TEST EAX,EAX                        ; 00440157

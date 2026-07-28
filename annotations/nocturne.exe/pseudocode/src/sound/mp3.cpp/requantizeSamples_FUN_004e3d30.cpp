@@ -2,11 +2,11 @@
 // Address: 004e3d30
 // Address Range: [[004e3d30, 004e3e6a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_2,int param_3,int param_4)
+// Signature: void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_2,int param_3,int param_4)
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 {
   int iVar1;
@@ -21,14 +21,14 @@ void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_
   int local_28;
   int local_18;
   
-  iVar1 = *(int *)(param_4 + 0x10);
+  iVar1 = frame->channel_count;
   local_28 = 0;
   do {
     local_18 = 0;
     if (0 < iVar1) {
-      puVar9 = (uint *)(local_28 + param_1);
-      pfVar4 = (float *)(local_28 + param_2);
-      piVar5 = (int *)(local_28 + param_3);
+      puVar9 = (uint *)((int)&quantized_samples->codes + local_28);
+      pfVar4 = (float *)((int)&dequantized_samples->codes + local_28);
+      piVar5 = (int *)((int)allocation->bit_allocations + local_28);
       pfVar6 = pfVar4;
       do {
         if (*piVar5 == 0) {
@@ -36,8 +36,8 @@ void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_
         }
         else {
           bVar3 = (byte)*piVar5;
-          if ((*(uint *)(local_28 + local_18 * 0x180 + param_1) >> ((byte)*piVar5 & 0x1f) & 1) == 1)
-          {
+          if ((*(uint *)((int)&quantized_samples[local_18].codes + local_28) >>
+               ((byte)*piVar5 & 0x1f) & 1) == 1) {
             *pfVar6 = 0.0;
           }
           else {

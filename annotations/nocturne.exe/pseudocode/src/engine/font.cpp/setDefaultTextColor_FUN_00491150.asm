@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_setDefaultTextColor_FUN_00491150(undefined4 param_1)
+; void __cdecl engine_font_cpp_setDefaultTextColor_FUN_00491150(int text_color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   text_color
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d804

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0(int param_1,int *param_2)
+; int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0(CDemonLight *this_ptr,CRect *rect)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; CRect *          Stack[0x8]:4   rect
 ;
 ; XREF[1]:
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0 at 0041ce5d

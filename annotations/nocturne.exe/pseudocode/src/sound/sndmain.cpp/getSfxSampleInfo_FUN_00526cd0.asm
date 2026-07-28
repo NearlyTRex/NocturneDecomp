@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(undefined4 param_1,undefined4 *param_2)
+; int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint sfx_handle,CSfxSample *output_buffer)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; CSfxSample *     Stack[0x8]:4   output_buffer
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e3e
-;   core_game.cpp_FUN_0049cc10 at 0049d3ed
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d3ed
 ;   core_tommygun.cpp_FUN_005464a0 at 00546648
 ;
 ; Called Functions:
@@ -36,7 +39,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x74]      ; 00526cef
     MOVSD.REP ES:EDI,ESI                ; 00526cf2
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526cf4
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 00526cf9
     POP ESI                             ; 00526cfe
     POP EDI                             ; 00526cff

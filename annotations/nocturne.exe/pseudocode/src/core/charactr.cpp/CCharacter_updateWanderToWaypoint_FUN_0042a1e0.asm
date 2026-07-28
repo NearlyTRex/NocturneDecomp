@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(int param_1,float param_2,char *param_3)
+; int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0(CCharacter *this_ptr,float delta_time,char *pattern)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; char *           Stack[0xc]:4   pattern
 ; Local Variables:
 ; undefined4       Stack[-0x1f80]:4  local_1f80
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -106,7 +110,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1f94]    ; 0042a2d6
     PUSH EDX                            ; 0042a2dd
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 0042a2de
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004775b0(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 0042a2e3
     TEST EAX,EAX                        ; 0042a2e6
     JNZ 0x0042a3b7                      ; 0042a2e8
@@ -143,7 +147,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0042a357
     PUSH EAX                            ; 0042a35a
     CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 ; 0042a35b
-        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680()
+        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint * this_ptr, CWayPoint * start_waypoint)
     ADD ESP,0x8                         ; 0042a360
     MOV dword ptr [EDI + 0x25e8],EAX    ; 0042a363
     CMP dword ptr [EDI + 0x25e8],0x0    ; 0042a369
@@ -213,7 +217,7 @@ section .text
     PUSH EAX                            ; 0042a432
     PUSH 0x0                            ; 0042a433
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0042a435
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     LEA EBX,[EAX*0x4 + 0x0]             ; 0042a43a
     ADD ESP,0x8                         ; 0042a441
     MOV EDX,dword ptr [ESP + EBX*0x1]   ; 0042a444
@@ -230,7 +234,7 @@ section .text
         ;   Label: LAB_0042a456
     PUSH EBP                            ; 0042a457
     CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 ; 0042a458
-        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680()
+        ;   XREF to: 00552680 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint * this_ptr, CWayPoint * start_waypoint)
     ADD ESP,0x8                         ; 0042a45d
     MOV dword ptr [EDI + 0x25e8],EAX    ; 0042a460
     TEST EAX,EAX                        ; 0042a466
@@ -268,7 +272,7 @@ section .text
     PUSH EAX                            ; 0042a4ba
     PUSH EDI                            ; 0042a4bb
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 0042a4bc
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0042a4c1
     TEST EAX,EAX                        ; 0042a4c4
     JZ 0x0042a4d7                       ; 0042a4c6

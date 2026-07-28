@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(int param_1,undefined4 param_2,undefined4 param_3)
+; int core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *param_1,CVector3f *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 0040da01
     PUSH EBX                            ; 0040da02
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0040da03
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0040da08
     MOV EAX,[0x01fb860c]                ; 0040da0b | DAT_01fb860c
     FLD float ptr [ESP]                 ; 0040da10
@@ -82,7 +82,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0040da64 | DAT_005be368
     PUSH ECX                            ; 0040da6a | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0040da6b
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040da70
     LEA EAX,[ESP + 0x8]                 ; 0040da73
     PUSH 0x0                            ; 0040da77
@@ -110,7 +110,7 @@ section .text
     PUSH EDI                            ; 0040dabd | DAT_01e57284
     FSTP float ptr [ESP + 0x28]         ; 0040dabe
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0040dac2
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040dac7
     FLD float ptr [ESP + 0x24]          ; 0040daca
     FADD double ptr [0x00578019]        ; 0040dace | DOUBLE_00578019

@@ -1,0 +1,160 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "00564c53",
+      "from_addr": "00564cd6",
+      "name": "crt_iostream.cpp_istream_get_FUN_00564c53",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b2b4",
+    "address_range": [
+      [
+        "0056b2b4",
+        "0056b326"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_fgetcInternal_FUN_0056b2b4",
+    "signature": "_FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_0056b2b4(_FILE *stream,byte *output_byte)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b327",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00564cd6",
+        "call_type": "direct",
+        "caller": "crt_iostream.cpp_istream_get_FUN_00564c53",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7777777777777777,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 40,
+      "INT_ADD": 24,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 10,
+      "LOAD": 19,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 170
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "output_byte",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))(iVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&stream->_cnt` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)&stream->_cnt",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&stream->_ptr",
+      "severity": "moderate",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 10,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);",
+      "type": "pointer_cast"
+    }
+  ]
+}

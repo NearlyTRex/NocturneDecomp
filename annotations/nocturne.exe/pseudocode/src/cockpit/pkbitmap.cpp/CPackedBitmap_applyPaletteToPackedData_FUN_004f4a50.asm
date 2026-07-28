@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(int param_1,int param_2)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; uchar *          Stack[0x8]:4   palette_buffer
 ;
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00 at 004f4a24
 ;   cockpit_pkbitmap.cpp_FUN_004f5110 at 004f5241
-;   cockpit_pkbmpset.cpp_FUN_004f5b70 at 004f5b8e
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_004f5b70 at 004f5b8e
 ;
 ; *****************************************************************************
 

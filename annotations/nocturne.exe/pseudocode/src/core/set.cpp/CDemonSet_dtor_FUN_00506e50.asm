@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_CDemonSet_dtor_FUN_00506e50(int param_1)
+; int core_set_cpp_CDemonSet_dtor_FUN_00506e50(CDemonSet *param_1)
 ;
 ;
 ; Called Functions:
@@ -20,7 +20,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00506e51
     PUSH EBX                            ; 00506e55
     CALL core_set.cpp_CDemonSet_clear_FUN_00506ec0 ; 00506e56
-        ;   XREF to: 00506ec0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_clear_FUN_00506ec0()
+        ;   XREF to: 00506ec0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clear_FUN_00506ec0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00506e5b
     PUSH 0x0                            ; 00506e5e
     ADD EBX,0x15b02c                    ; 00506e60

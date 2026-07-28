@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 273,
+    "complexity_score": 288,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
+      "shadow_pointer_walk",
       "unnamed_param"
     ],
     "total_lines": 114
@@ -195,7 +196,7 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_FUN_00427730",
-    "signature": "void core_charactr_cpp_FUN_00427730(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6)"
+    "signature": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,int param_4,float param_5,int param_6)"
   },
   "function_calls": [
     {
@@ -397,7 +398,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +406,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -413,7 +414,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -421,7 +422,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -429,7 +430,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -437,7 +438,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00427730(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "void core_charactr_cpp_FUN_00427730(CCharacter *param_1,CVector3f *param_2,uint param_3,int param_4,float param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -445,7 +446,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x2f08) < 0x32) &&",
+      "text": "if ((param_1->fire_count < 0x32) &&",
       "type": "unnamed_param"
     },
     {
@@ -461,7 +462,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CHero\"), iVar1 == 0)) &&",
+      "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(&param_1->base,\"CHero\"), iVar1 == 0))",
       "type": "unnamed_param"
     },
     {
@@ -469,7 +470,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(char *)(param_1 + 0x23b0) != '\\0')))) {",
+      "text": "&& ((param_1->model).model_name[0] != '\\0')))) {",
       "type": "unnamed_param"
     },
     {
@@ -477,7 +478,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,param_2);",
+      "text": "(&param_1->model,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -485,7 +486,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_1 + 0x150,param_2);",
+      "text": "(&param_1->model,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -493,7 +494,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1;",
+      "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -501,7 +502,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x2f08)) {",
+      "text": "if (0 < param_1->fire_count) {",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +510,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)(param_1 + 0x2f08));",
+      "text": "} while (iVar2 < param_1->fire_count);",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +518,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f0c) = param_4;",
+      "text": "param_1->pending_flame_type = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -525,7 +526,7 @@
       "line": 27,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f0c) = param_4;",
+      "text": "param_1->pending_flame_type = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -533,7 +534,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f10) = param_5;",
+      "text": "param_1->flame_scale = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -541,7 +542,7 @@
       "line": 28,
       "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2f10) = param_5;",
+      "text": "param_1->flame_scale = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -549,7 +550,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x150,iVar2);",
+      "text": "(&param_1->model);",
       "type": "unnamed_param"
     },
     {
@@ -557,7 +558,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(param_1,uVar4);",
+      "text": "core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_004266a0(param_1,skeleton,iVar1);",
       "type": "unnamed_param"
     },
     {
@@ -565,8 +566,16 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xfc) = 1;",
+      "text": "(param_1->base).is_transparent = 1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 9,

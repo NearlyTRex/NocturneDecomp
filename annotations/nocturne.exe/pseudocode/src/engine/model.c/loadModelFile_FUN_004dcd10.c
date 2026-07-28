@@ -2,72 +2,76 @@
 // Address: 004dcd10
 // Address Range: [[004dcd10, 004dcedd]]
 // Convention: __cdecl
-// Signature: char * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *filename)
 
 #include "nocturne.h"
 
-char * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *param_1)
+SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *filename)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  char *pcVar4;
+  char cVar1;
+  ulong size;
+  _FILE *file;
+  SMRGLHeaderExtended *pSVar2;
+  SIZE_T SVar3;
+  int iVar4;
   char *pcVar5;
+  char *pcVar6;
   byte local_5c [80];
   
-  pcVar5 = param_1;
+  pcVar6 = filename;
   do {
-    pcVar4 = pcVar5;
+    pcVar5 = pcVar6;
+    if (*pcVar6 == '.') goto LAB_004dcd36;
+    if (*pcVar6 == '\0') break;
+    pcVar5 = pcVar6 + 1;
     if (*pcVar5 == '.') goto LAB_004dcd36;
-    if (*pcVar5 == '\0') break;
-    pcVar4 = pcVar5 + 1;
-    if (*pcVar4 == '.') goto LAB_004dcd36;
-    pcVar5 = pcVar5 + 2;
-  } while (*pcVar4 != '\0');
-  pcVar4 = (char *)0x0;
+    pcVar6 = pcVar6 + 2;
+  } while (*pcVar5 != '\0');
+  pcVar5 = (char *)0x0;
 LAB_004dcd36:
-  if (pcVar4 != (char *)0x0) {
-    iVar1 = toupper(pcVar4[1]);
-    if (iVar1 == 0x54) {
-      pcVar5 = (char *)engine_boss_c_modelStructNotSupported2_FUN_0041a540(param_1);
-      return pcVar5;
+  if (pcVar5 != (char *)0x0) {
+    iVar4 = toupper((uint)(byte)pcVar5[1]);
+    if (iVar4 == 0x54) {
+      pSVar2 = engine_boss_c_modelStructNotSupported2_FUN_0041a540(filename);
+      return pSVar2;
     }
   }
-  iVar1 = engine_dosio_cpp_getFileSize_FUN_004568c0("models",param_1);
-  if (iVar1 == 0) {
-    _sprintf(local_5c,"Unable to get file size: %s",param_1);
+  size = engine_dosio_cpp_getFileSize_FUN_004568c0("models",filename);
+  if (size == 0) {
+    _sprintf(local_5c,"Unable to get file size: %s",filename);
     PTR_01cc4800 = "..\\engine\\model.c";
     INT_01cc4804 = 0xf0;
     core_main_c_FUN_004c8440(local_5c);
   }
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,"rb");
-  if (iVar2 == 0) {
-    _sprintf(local_5c,"Unable to open model: %s",param_1);
+  file = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rb");
+  if (file == (_FILE *)0x0) {
+    _sprintf(local_5c,"Unable to open model: %s",filename);
     INT_01cc4804 = 0xf5;
     PTR_01cc4800 = "..\\engine\\model.c";
     core_main_c_FUN_004c8440(local_5c);
   }
-  pcVar5 = (char *)malloc(iVar1);
-  if (pcVar5 == (char *)0x0) {
-    _sprintf(local_5c,"Out of model memory: %s",param_1);
+  pSVar2 = (SMRGLHeaderExtended *)malloc(size);
+  if (pSVar2 == (SMRGLHeaderExtended *)0x0) {
+    _sprintf(local_5c,"Out of model memory: %s",filename);
     PTR_01cc4800 = "..\\engine\\model.c";
     INT_01cc4804 = 0x100;
     core_main_c_FUN_004c8440(local_5c);
   }
-  iVar3 = _fread(pcVar5,1,iVar1,iVar2);
-  if (iVar3 != iVar1) {
-    _sprintf(local_5c,"Model file read error: %s",param_1);
+  SVar3 = _fread(pSVar2,1,size,file);
+  if (SVar3 != size) {
+    _sprintf(local_5c,"Model file read error: %s",filename);
     INT_01cc4804 = 0x107;
     PTR_01cc4800 = "..\\engine\\model.c";
     core_main_c_FUN_004c8440(local_5c);
   }
-  _fclose(iVar2);
-  if ((*pcVar5 != '\x14') && (*pcVar5 != ' ')) {
-    _sprintf(local_5c,"Invalid model: %s",param_1);
+  _fclose(file);
+  cVar1 = (char)(pSVar2->base).type;
+  if ((cVar1 != '\x14') && (cVar1 != ' ')) {
+    _sprintf(local_5c,"Invalid model: %s",filename);
     PTR_01cc4800 = "..\\engine\\model.c";
     INT_01cc4804 = 0x10d;
     core_main_c_FUN_004c8440(local_5c);
   }
-  return pcVar5;
+  return pSVar2;
 }

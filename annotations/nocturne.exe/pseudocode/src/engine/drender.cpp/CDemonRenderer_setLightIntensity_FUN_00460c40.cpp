@@ -2,16 +2,16 @@
 // Address: 00460c40
 // Address Range: [[00460c40, 00460c64]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(undefined4 param_1,float param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(CDemonRenderer *this_ptr,float intensity)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(uint param_1,float param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(CDemonRenderer *this_ptr,float intensity)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)round((float10)param_2 * (float10)65536);
-  engine_light_cpp_setAmbientLightLevel_FUN_004c69d0((int)ROUND(fVar1));
+  dVar1 = round((double)(intensity * (float)65536));
+  engine_light_cpp_setAmbientLightLevel_FUN_004c69d0((int)ROUND(dVar1));
   return;
 }

@@ -2,13 +2,13 @@
 // Address: 0052df90
 // Address Range: [[0052df90, 0052dfdb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_sound_cpp_CSound_shutdown_FUN_0052df90(void)
+// Signature: void __cdecl core_sound_cpp_CSound_shutdown_FUN_0052df90(CSound *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_sound_cpp_CSound_shutdown_FUN_0052df90(void)
+void __cdecl core_sound_cpp_CSound_shutdown_FUN_0052df90(CSound *this_ptr)
 
 {
   uint *puVar1;

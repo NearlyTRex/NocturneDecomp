@@ -11,14 +11,12 @@ void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2
 {
   float *pfVar1;
   float fVar2;
-  byte local_6c [52];
+  CMatrix3x3f local_6c;
   uint local_38;
   uint local_34;
   uint local_30;
   byte local_2c [12];
-  float local_20;
-  float local_1c;
-  float local_18;
+  CVector3f local_20;
   uint local_10;
   float local_c;
   
@@ -31,21 +29,21 @@ void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2
   *param_1 = 2.0f * local_c;
   local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41980000);
   param_1[7] = local_c;
-  local_20 = *param_3;
-  local_1c = param_3[1];
-  local_18 = param_3[2];
+  local_20.x = *param_3;
+  local_20.y = param_3[1];
+  local_20.z = param_3[2];
   local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd567750,0x3d567750);
-  local_1c = local_c + local_1c;
+  local_20.y = local_c + local_20.y;
   local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xbd567750,0x3d567750);
-  local_20 = local_c + local_20;
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_6c,&local_20);
+  local_20.x = local_c + local_20.x;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_6c,&local_20);
   local_30 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40a33333,0x40cccccd);
   local_38 = 0;
   local_34 = 0;
   local_10 = local_30;
   local_c = (float)local_30;
   pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                              (local_6c,local_2c,&local_38);
+                              (&local_6c,local_2c,&local_38);
   if (param_1 + 4 != pfVar1) {
     param_1[4] = *pfVar1;
     param_1[5] = pfVar1[1];

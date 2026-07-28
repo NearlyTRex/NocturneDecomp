@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_FUN_00546e10(int param_1,float param_2)
+; void core_trash_cpp_FUN_00546e10(CDemonActor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1bc]:4  local_1bc
@@ -85,7 +85,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-;   core_setcolid.cpp_FUN_00510a40
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
@@ -107,7 +107,7 @@ section .text
     PUSH 0x42c80000                     ; 00546e25
     PUSH ESI                            ; 00546e2a
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 ; 00546e2b
-        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0()
+        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 00546e30
     TEST EAX,EAX                        ; 00546e33
     JZ 0x00547625                       ; 00546e35
@@ -459,8 +459,8 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00547396 | DAT_005be368
     PUSH dword ptr [EBX + 0x20]         ; 0054739c
     PUSH EDX                            ; 0054739f | DAT_01e57284
-    CALL core_setcolid.cpp_FUN_00510a40 ; 005473a0
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00510a40()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 005473a0
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40()
     MOV dword ptr [ESP + 0x1c4],EAX     ; 005473a5
     XOR EDI,EDI                         ; 005473ac
     FLD float ptr [ESP + 0x1c4]         ; 005473ae
@@ -628,7 +628,7 @@ section .text
     PUSH EAX                            ; 005475ef
     MOVSD.REP ES:EDI,ESI                ; 005475f0
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 005475f2
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005475f7
     MOV EDI,dword ptr [ESP + 0x1a0]     ; 005475fa
     CMP EAX,EDI                         ; 00547601
@@ -643,7 +643,7 @@ section .text
     PUSH EBX                            ; 00547615
         ;   Label: LAB_00547615
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00547616
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054761b
     MOV ESP,EBP                         ; 0054761e
         ;   Label: LAB_0054761e
@@ -657,7 +657,7 @@ section .text
     PUSH 0x42c80000                     ; 0054762b
     PUSH EBX                            ; 00547630
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 ; 00547631
-        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0()
+        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 00547636
     TEST EAX,EAX                        ; 00547639
     JNZ 0x0054761e                      ; 0054763b

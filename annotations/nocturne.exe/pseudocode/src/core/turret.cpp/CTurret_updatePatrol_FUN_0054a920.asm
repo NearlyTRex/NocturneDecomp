@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(int param_1,float param_2)
+; void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ;
@@ -133,7 +136,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x778]     ; 0054aa45
     PUSH ECX                            ; 0054aa4b
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0054aa4c
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0054aa51
     CMP EBX,EAX                         ; 0054aa54
     JNZ 0x0054aa99                      ; 0054aa56

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,float *param_2)
+; void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_ptr,SClothVertex *vertex)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; SClothVertex *   Stack[0x8]:4   vertex
 ; Local Variables:
 ; undefined4       Stack[-0x130]:4  local_130
 ; undefined4       Stack[-0x12c]:4  local_12c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
+; float * core_fire_cpp_CToss_dtor_FUN_0048ca90(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x180                       ; 0048ca96
     PUSH EAX                            ; 0048ca9b
     CALL core_box.cpp_CBox_dtor_FUN_0041a6c0 ; 0048ca9c
-        ;   XREF to: 0041a6c0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_dtor_FUN_0041a6c0()
+        ;   XREF to: 0041a6c0 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041a6c0(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0048caa1
     SUB EAX,0x180                       ; 0048caa4
     RET                                 ; 0048caa9

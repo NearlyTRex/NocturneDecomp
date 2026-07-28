@@ -2,86 +2,89 @@
 // Address: 0056582c
 // Address Range: [[0056582c, 00565a12]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_stdio_c_fseek_FUN_0056582c(undefined4 *param_1,int param_2,uint param_3)
+// Signature: int __cdecl crt_stdio_c_fseek_FUN_0056582c(_FILE *file,long offset,int whence)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005658f8) */
 
-uint __cdecl _fseek(uint *param_1,int param_2,uint param_3)
+int __cdecl _fseek(_FILE *file,long offset,int whence)
 
 {
-  uint uVar1;
-  int iVar2;
+  byte bVar1;
+  char *pcVar2;
   int iVar3;
+  int iVar4;
+  long lVar5;
   
-  (*(code *)PTR_FUN_005c1ac0)(param_1[4]);
-  if ((*(byte *)(param_1 + 3) & 6) != 0) {
-    if ((*(byte *)((int)param_1 + 0xd) & 0x10) == 0) {
-      if (param_3 == 1) {
-        param_2 = param_2 - param_1[1];
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
+  bVar1 = (byte)file->_flag;
+  if ((bVar1 & 6) != 0) {
+    if ((file->_flag & 0x1000) == 0) {
+      if (whence == 1) {
+        offset = offset - file->_cnt;
       }
-      uVar1 = *(uint *)(param_1[2] + 8);
-      param_1[1] = 0;
-      *param_1 = uVar1;
+      pcVar2 = file->_link->__reserve_end;
+      file->_cnt = 0;
+      file->_ptr = pcVar2;
     }
     else {
-      iVar2 = FUN_00568890(param_1);
-      if (iVar2 != 0) {
-        if ((param_3 == 0) && (param_2 < 0)) {
-          FUN_00568e80(9);
+      iVar3 = FUN_00568890(file);
+      if (iVar3 != 0) {
+        if ((whence == 0) && (offset < 0)) {
+          setErrno(9);
         }
-        (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-        return 0xffffffff;
+        (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+        return -1;
       }
     }
-    *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0xeb;
-    iVar2 = FUN_005689c0(param_1[4],param_2,param_3);
-    if (iVar2 == -1) {
-      (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-      return 0xffffffff;
+    *(byte *)&file->_flag = (byte)file->_flag & 0xeb;
+    iVar3 = lseek(file->_handle,offset,whence);
+    if (iVar3 == -1) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+      return -1;
     }
     goto LAB_005659ff;
   }
-  if (param_3 == 0) {
-    iVar2 = FUN_0056bc10(param_1[4]);
-    iVar2 = FUN_005657d0(param_2 - (iVar2 - param_1[1]),param_1);
-    if (iVar2 == 0) goto LAB_005659ff;
-    iVar2 = FUN_005689c0(param_1[4],param_2,0);
-    if (iVar2 == -1) {
-      (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-      return 0xffffffff;
+  if (whence == 0) {
+    lVar5 = tell(file->_handle);
+    iVar3 = seek_within_buffer(offset - (lVar5 - file->_cnt),file);
+    if (iVar3 == 0) goto LAB_005659ff;
+    iVar3 = lseek(file->_handle,offset,0);
+    if (iVar3 == -1) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+      return -1;
     }
   }
   else {
-    if (1 < param_3) {
-      if (param_3 != 2) {
-        FUN_00568e80(9);
-        (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-        return 0xffffffff;
+    if (1 < (uint)whence) {
+      if (whence != 2) {
+        setErrno(9);
+        (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+        return -1;
       }
-      *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0xef;
-      uVar1 = *(uint *)(param_1[2] + 8);
-      param_1[1] = 0;
-      *param_1 = uVar1;
-      iVar2 = FUN_005689c0(param_1[4],param_2,2);
-      if (iVar2 == -1) {
-        (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-        return 0xffffffff;
+      *(byte *)&file->_flag = bVar1 & 0xef;
+      pcVar2 = file->_link->__reserve_end;
+      file->_cnt = 0;
+      file->_ptr = pcVar2;
+      iVar3 = lseek(file->_handle,offset,2);
+      if (iVar3 == -1) {
+        (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+        return -1;
       }
       goto LAB_005659ff;
     }
-    iVar2 = param_1[1];
-    iVar3 = FUN_005657d0(param_2,param_1);
-    if (iVar3 == 0) goto LAB_005659ff;
-    iVar2 = FUN_005689c0(param_1[4],param_2 - iVar2,param_3);
-    if (iVar2 == -1) {
-      (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
-      return 0xffffffff;
+    iVar3 = file->_cnt;
+    iVar4 = seek_within_buffer(offset,file);
+    if (iVar4 == 0) goto LAB_005659ff;
+    iVar3 = lseek(file->_handle,offset - iVar3,whence);
+    if (iVar3 == -1) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+      return -1;
     }
   }
-  FUN_00565814(param_1);
+  seek_within_buffer(file);
 LAB_005659ff:
-  (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
   return 0;
 }

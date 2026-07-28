@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(void)
+; void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(CFireEffect *this_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a62d1
@@ -55,7 +57,7 @@ section .text
     MOV EBX,0x1c0a140                   ; 0048a39b
     MOV dword ptr [0x01c5c700],EDX      ; 0048a3a0 | DAT_01c5c700
     CALL core_fire.cpp_updateTextureAnimCounts_FUN_00486d40 ; 0048a3a6
-        ;   XREF to: 00486d40 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_updateTextureAnimCounts_FUN_00486d40()
+        ;   XREF to: 00486d40 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_updateTextureAnimCounts_FUN_00486d40()
     LEA ESI,[EBX + 0x16000]             ; 0048a3ab
     MOV EAX,dword ptr [EBX]             ; 0048a3b1 | DAT_01c0a140 | DAT_01c0a16c
         ;   Label: LAB_0048a3b1
@@ -95,7 +97,7 @@ section .text
         ;   XREF to: 0048a404 (CONDITIONAL_JUMP)  ; LAB_0048a404
     PUSH EBX                            ; 0048a3fb | DAT_01c4e958 | DAT_01c4e9b4
     CALL core_fire.cpp_CMuzzleFlash_process_FUN_00484ed0 ; 0048a3fc
-        ;   XREF to: 00484ed0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CMuzzleFlash_process_FUN_00484ed0()
+        ;   XREF to: 00484ed0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_process_FUN_00484ed0(CMuzzleFlash * this_ptr)
     ADD ESP,0x4                         ; 0048a401
     ADD EBX,0x5c                        ; 0048a404
         ;   Label: LAB_0048a404
@@ -115,7 +117,7 @@ section .text
         ;   XREF to: 0048a42f (CONDITIONAL_JUMP)  ; LAB_0048a42f
     PUSH EBX                            ; 0048a426
     CALL core_fire.cpp_CStake_process_FUN_004836b0 ; 0048a427
-        ;   XREF to: 004836b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CStake_process_FUN_004836b0()
+        ;   XREF to: 004836b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_process_FUN_004836b0(CStake * this_ptr)
     ADD ESP,0x4                         ; 0048a42c
     MOV EDI,dword ptr [0x01c23d48]      ; 0048a42f | DAT_01c23d48
         ;   Label: LAB_0048a42f
@@ -153,7 +155,7 @@ section .text
         ;   XREF to: 0048a486 (CONDITIONAL_JUMP)  ; LAB_0048a486
     PUSH EBX                            ; 0048a47d
     CALL core_fire.cpp_CBulletTrail_process_FUN_004856a0 ; 0048a47e
-        ;   XREF to: 004856a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletTrail_process_FUN_004856a0()
+        ;   XREF to: 004856a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletTrail_process_FUN_004856a0(CBulletTrail * this_ptr)
     ADD ESP,0x4                         ; 0048a483
     ADD EBX,0x24                        ; 0048a486
         ;   Label: LAB_0048a486
@@ -207,7 +209,7 @@ section .text
     PUSH ESI                            ; 0048a4f0
         ;   Label: LAB_0048a4f0
     CALL core_fire.cpp_CBulletHole_process_FUN_00482e90 ; 0048a4f1
-        ;   XREF to: 00482e90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_process_FUN_00482e90()
+        ;   XREF to: 00482e90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_process_FUN_00482e90(CBulletHole * this_ptr)
     INC EBX                             ; 0048a4f6
     MOV EDX,dword ptr [0x01c20140]      ; 0048a4f7 | DAT_01c20140
     ADD ESP,0x4                         ; 0048a4fd
@@ -223,7 +225,7 @@ section .text
     PUSH EBX                            ; 0048a51b | DAT_01c5d724
         ;   Label: LAB_0048a51b
     CALL core_fire.cpp_CExplosion_process_FUN_00486f90 ; 0048a51c
-        ;   XREF to: 00486f90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CExplosion_process_FUN_00486f90()
+        ;   XREF to: 00486f90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_process_FUN_00486f90(CExplosion * this_ptr)
     ADD EBX,0x1c                        ; 0048a521
     ADD ESP,0x4                         ; 0048a524
     CMP EBX,ESI                         ; 0048a527
@@ -234,7 +236,7 @@ section .text
     PUSH EBX                            ; 0048a536
         ;   Label: LAB_0048a536
     CALL core_fire.cpp_CToss_process_FUN_004874d0 ; 0048a537
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CToss_process_FUN_004874d0()
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_process_FUN_004874d0(CToss * this_ptr)
     ADD EBX,0x3e4                       ; 0048a53c
     ADD ESP,0x4                         ; 0048a542
     CMP EBX,ESI                         ; 0048a545
@@ -245,7 +247,7 @@ section .text
     PUSH EBX                            ; 0048a554
         ;   Label: LAB_0048a554
     CALL core_fire.cpp_CCrater_process_FUN_00487a20 ; 0048a555
-        ;   XREF to: 00487a20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_process_FUN_00487a20()
+        ;   XREF to: 00487a20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_process_FUN_00487a20(CCrater * this_ptr)
     ADD EBX,0x70                        ; 0048a55a
     ADD ESP,0x4                         ; 0048a55d
     CMP EBX,ESI                         ; 0048a560
@@ -262,12 +264,12 @@ section .text
     JNZ 0x0048a587                      ; 0048a57b
         ;   XREF to: 0048a587 (CONDITIONAL_JUMP)  ; LAB_0048a587
     CALL core_fire.cpp_initProcess_FUN_00487fd0 ; 0048a57d
-        ;   XREF to: 00487fd0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_initProcess_FUN_00487fd0()
+        ;   XREF to: 00487fd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_initProcess_FUN_00487fd0()
     MOV ESI,0x1                         ; 0048a582
     PUSH EBX                            ; 0048a587 | DAT_01c62ebc | DAT_01c62ee0
         ;   Label: LAB_0048a587
     CALL core_fire.cpp_CGunFlame_process_FUN_00488430 ; 0048a588
-        ;   XREF to: 00488430 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CGunFlame_process_FUN_00488430()
+        ;   XREF to: 00488430 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_process_FUN_00488430(CGunFlame * this_ptr)
     ADD ESP,0x4                         ; 0048a58d
     ADD EBX,0x24                        ; 0048a590
         ;   Label: LAB_0048a590
@@ -279,7 +281,7 @@ section .text
     PUSH EBX                            ; 0048a5a2
         ;   Label: LAB_0048a5a2
     CALL core_fire.cpp_CLightningBolt_process_FUN_00488bb0 ; 0048a5a3
-        ;   XREF to: 00488bb0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLightningBolt_process_FUN_00488bb0()
+        ;   XREF to: 00488bb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_process_FUN_00488bb0(CLightningBolt * this_ptr)
     ADD EBX,0x2c                        ; 0048a5a8
     ADD ESP,0x4                         ; 0048a5ab
     CMP EBX,ESI                         ; 0048a5ae
@@ -290,7 +292,7 @@ section .text
     PUSH EBX                            ; 0048a5bd
         ;   Label: LAB_0048a5bd
     CALL core_fire.cpp_CTrail_process_FUN_00489310 ; 0048a5be
-        ;   XREF to: 00489310 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CTrail_process_FUN_00489310()
+        ;   XREF to: 00489310 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_process_FUN_00489310(CTrail * this_ptr)
     ADD EBX,0x24                        ; 0048a5c3
     ADD ESP,0x4                         ; 0048a5c6
     CMP EBX,ESI                         ; 0048a5c9
@@ -354,7 +356,7 @@ section .text
     PUSH EBX                            ; 0048a640 | DAT_01c0a16c
         ;   Label: LAB_0048a640
     CALL core_fire.cpp_CSmokeParticle_process_FUN_00482820 ; 0048a641
-        ;   XREF to: 00482820 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSmokeParticle_process_FUN_00482820()
+        ;   XREF to: 00482820 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_process_FUN_00482820(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0048a646
     JMP 0x0048a3bb                      ; 0048a649
         ;   XREF to: 0048a3bb (UNCONDITIONAL_JUMP)  ; LAB_0048a3bb

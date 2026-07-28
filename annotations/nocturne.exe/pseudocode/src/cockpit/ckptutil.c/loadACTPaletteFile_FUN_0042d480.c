@@ -2,19 +2,20 @@
 // Address: 0042d480
 // Address Range: [[0042d480, 0042d5b5]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *param_1,undefined4 *param_2)
+// Signature: void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *base_filename,uchar *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *param_1,uint *param_2)
+void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *base_filename,uchar *output_buffer)
 
 {
   char cVar1;
-  int iVar2;
+  _FILE *file;
+  SIZE_T SVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
-  uint *puVar6;
+  uchar *puVar6;
   char *pcVar7;
   byte bVar8;
   char acStack_ac [80];
@@ -24,12 +25,12 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *param_1,ui
   pcVar7 = acStack_ac;
   pcVar5 = acStack_ac;
   do {
-    cVar1 = *param_1;
+    cVar1 = *base_filename;
     *pcVar7 = cVar1;
     pcVar4 = acStack_ac;
     if (cVar1 == '\0') break;
-    cVar1 = param_1[1];
-    param_1 = param_1 + 2;
+    cVar1 = base_filename[1];
+    base_filename = base_filename + 2;
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
     pcVar4 = acStack_ac;
@@ -66,28 +67,28 @@ LAB_0042d4f3:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",acStack_ac,"rb");
-  if (iVar2 == 0) {
-    puVar6 = (uint *)0x1c00948;
-    for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *param_2 = *puVar6;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-      param_2 = param_2 + (uint)bVar8 * -2 + 1;
+  file = engine_dosio_cpp_getFile_FUN_00456a60("art",acStack_ac,"rb");
+  if (file == (_FILE *)0x0) {
+    puVar6 = (uchar *)0x1c00948;
+    for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(uint *)output_buffer = *(uint *)puVar6;
+      puVar6 = puVar6 + (uint)bVar8 * -8 + 4;
+      output_buffer = output_buffer + (uint)bVar8 * -8 + 4;
     }
-    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)param_2 = *(byte *)puVar6;
-      puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
-      param_2 = (uint *)((int)param_2 + (uint)bVar8 * -2 + 1);
+    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *output_buffer = *puVar6;
+      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+      output_buffer = output_buffer + (uint)bVar8 * -2 + 1;
     }
     return;
   }
-  iVar3 = _fread(param_2,0x100,3,iVar2);
-  if (iVar3 != 3) {
+  SVar2 = _fread(output_buffer,0x100,3,file);
+  if (SVar2 != 3) {
     _sprintf(auStack_5c,"Error reading %s.",acStack_ac);
     PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     INT_01cc4804 = 0x135;
     core_main_c_FUN_004c8440(auStack_5c);
   }
-  _fclose(iVar2);
+  _fclose(file);
   return;
 }

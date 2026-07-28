@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
+; void core_melee_cpp_CMelee_process_FUN_004cf0c0(CWeapon *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
@@ -27,7 +27,7 @@ section .text
     PUSH dword ptr [ESP + 0x2c]         ; 004cf0c8
     PUSH EBX                            ; 004cf0cc
     CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 004cf0cd
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00554030(CWeapon * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x588]     ; 004cf0d2
     ADD ESP,0x8                         ; 004cf0d8
     TEST EDX,EDX                        ; 004cf0db
@@ -69,7 +69,7 @@ section .text
     PUSH EAX                            ; 004cf142
     PUSH EBX                            ; 004cf143
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cf144
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004cf149
     MOV ESI,dword ptr [EBX + 0x584]     ; 004cf14c
     PUSH ESI                            ; 004cf152
@@ -79,7 +79,7 @@ section .text
     MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | INT_005b96c4
     PUSH EDI                            ; 004cf163
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004cf164
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 004cf169
     POP ESI                             ; 004cf16c
     POP EDI                             ; 004cf16d

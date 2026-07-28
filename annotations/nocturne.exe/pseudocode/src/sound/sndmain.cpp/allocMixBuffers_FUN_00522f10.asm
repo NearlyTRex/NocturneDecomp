@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00522f10(int param_1,int param_2)
+; void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00522f10(int requested_size,int num_buffers)
 ;
+; Parameters:
+; int              Stack[0x4]:4   requested_size
+; int              Stack[0x8]:4   num_buffers
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -67,7 +70,7 @@ section .text
     MOV dword ptr [0x02dc832c],EDX      ; 00522f66 | DAT_02dc832c
     MOV dword ptr [0x02dc8330],EBX      ; 00522f6c | DAT_02dc8330
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00522f72
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV [0x02dc835c],EAX                ; 00522f77 | DAT_02dc835c
     MOV EAX,[0x005bea68]                ; 00522f7c | DAT_005bea68
     IMUL EAX,ESI                        ; 00522f81
@@ -77,7 +80,7 @@ section .text
     MOV EAX,[0x02dc8380]                ; 00522f8a | DAT_02dc8380
     PUSH EAX                            ; 00522f8f
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00522f90
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     IMUL ESI,dword ptr [0x005bea68]     ; 00522f95 | DAT_005bea68
     ADD ESP,0x8                         ; 00522f9c
     PUSH ESI                            ; 00522f9f
@@ -85,7 +88,7 @@ section .text
     PUSH ECX                            ; 00522fa6
     MOV [0x02dc8380],EAX                ; 00522fa7 | DAT_02dc8380
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00522fac
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV EBX,dword ptr [0x02dc8330]      ; 00522fb1 | DAT_02dc8330
     MOV ESI,dword ptr [0x02dc835c]      ; 00522fb7 | DAT_02dc835c
     ADD ESP,0x8                         ; 00522fbd

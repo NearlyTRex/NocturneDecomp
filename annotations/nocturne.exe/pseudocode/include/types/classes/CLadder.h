@@ -8,16 +8,16 @@
 #include "types/enums/EGroundType.h"
 
 // Structure: CLadder
-// Ghidra size: 0x300 (768 bytes)
+// Ghidra size: 0x2f8 (760 bytes)
 #pragma pack(push, 1)
 typedef struct CLadder {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    CVector3f ladder_size; // 0x2d4
-    struct CDemonActor* master_actor; // 0x2e0
-    CVector3f relative_position; // 0x2e4
-    CVector3f cached_euler_angles; // 0x2f0
-    EGroundType ground_type; // 0x2fc
+    CKeyFramedModelInstance model; // 0x150
+    CVector3f ladder_size; // 0x2cc
+    struct CDemonActor* master_actor; // 0x2d8
+    CVector3f relative_position; // 0x2dc
+    CVector3f cached_euler_angles; // 0x2e8
+    EGroundType ground_type; // 0x2f4
 } CLadder;
 #pragma pack(pop)
 

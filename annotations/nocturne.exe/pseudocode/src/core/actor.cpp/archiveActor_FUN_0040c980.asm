@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveActor_FUN_0040c980(undefined4 *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveActor_FUN_0040c980(CDemonActor **actor_ptr,char *property_name)
 ;
+; Parameters:
+; CDemonActor * *  Stack[0x4]:4   actor_ptr
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[35]:
 ;   core_ammobox.cpp_FUN_0040f390 at 0040f43e
@@ -51,7 +54,7 @@ section .text
     MOV ESI,dword ptr [0x005baf90]      ; 0040c99f | DAT_005baf90
     PUSH ESI                            ; 0040c9a5 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 ; 0040c9a6
-        ;   XREF to: 004d8aa0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0()
+        ;   XREF to: 004d8aa0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission * this_ptr, _FILE * file, CDemonActor * current_actor, char * property_description)
     ADD ESP,0x10                        ; 0040c9ab
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040c9ae
     MOV dword ptr [EDX],EAX             ; 0040c9b2
@@ -80,7 +83,7 @@ section .text
     MOV EAX,[0x005baf90]                ; 0040c9ec | DAT_005baf90
     PUSH EAX                            ; 0040c9f1 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00 ; 0040c9f2
-        ;   XREF to: 004d8c00 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00()
+        ;   XREF to: 004d8c00 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission * this_ptr, CDemonActor * actor_ptr, _FILE * file, CDemonActor * current_actor, ...)
     ADD ESP,0x14                        ; 0040c9f7
     POP EDI                             ; 0040c9fa
     POP EBP                             ; 0040c9fb

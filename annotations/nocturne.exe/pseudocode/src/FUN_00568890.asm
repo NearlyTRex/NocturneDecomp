@@ -7,24 +7,24 @@
 ; XREF[9]:
 ;   FUN_0056ae10 at 0056aebf
 ;   FUN_0056aefc at 0056af27
-;   FUN_0056b35c at 0056b3a5
-;   FUN_0056dd60 at 0056dd71
-;   FUN_00573660 at 005736e7
+;   crt_stdio.c_fflush_FUN_0056dd60 at 0056dd71
 ;   crt_stdio.c_fputc_FUN_00566cc0 at 00566d81
+;   crt_stdio.c_fputs_FUN_00573660 at 005736e7
 ;   crt_stdio.c_fseek_FUN_0056582c at 0056585c
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563b98
-;   crt_unknown.c_FUN_005634b0 at 005634dc
+;   crt_stdio.c_prepare_stream_for_write_FUN_0056b35c at 0056b3a5
+;   crt_unknown.c_fclose_FUN_005634b0 at 005634dc
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_005671e4
-;   FUN_005689c0
-;   FUN_00568e80
+;   crt_errno.c_setErrno_FUN_00568e80
+;   crt_stdio.c_flushFileBuffers_FUN_0056f1c0
+;   crt_stdio.c_lseek_FUN_005689c0
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   FUN_00569fb0
-;   FUN_0056f1c0
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10]      ; 0056889b
     PUSH EDX                            ; 0056889e
     XOR EDI,EDI                         ; 0056889f
-    CALL dword ptr [0x005c1ac0]         ; 005688a1 | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 005688a1 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV AH,byte ptr [EBX + 0xd]         ; 005688a7
     ADD ESP,0x4                         ; 005688aa
     TEST AH,0x10                        ; 005688ad
@@ -89,8 +89,8 @@ section .text
     JNZ 0x0056892b                      ; 00568911
         ;   XREF to: 0056892b (CONDITIONAL_JUMP)  ; LAB_0056892b
     PUSH 0xc                            ; 00568913
-    CALL FUN_00568e80                   ; 00568915
-        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00568e80()
+    CALL crt_errno.c_setErrno_FUN_00568e80 ; 00568915
+        ;   XREF to: 00568e80 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00568e80(int error_code)
     MOV AH,byte ptr [EBX + 0xc]         ; 0056891a
     MOV EDI,0xffffffff                  ; 0056891d
     OR AH,0x20                          ; 00568922
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 00568954
     MOV ESI,dword ptr [EBX + 0x10]      ; 00568955
     PUSH ESI                            ; 00568958
-    CALL FUN_005689c0                   ; 00568959
-        ;   XREF to: 005689c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005689c0()
+    CALL crt_stdio.c_lseek_FUN_005689c0 ; 00568959
+        ;   XREF to: 005689c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_lseek_FUN_005689c0(int file_handle_index, long distance_to_move, int move_method)
     ADD ESP,0xc                         ; 0056895e
     CMP EAX,-0x1                        ; 00568961
         ;   Label: LAB_00568961
@@ -147,8 +147,8 @@ section .text
         ;   XREF to: 005689a0 (CONDITIONAL_JUMP)  ; LAB_005689a0
     MOV EDX,dword ptr [EBX + 0x10]      ; 0056898d
     PUSH EDX                            ; 00568990
-    CALL FUN_0056f1c0                   ; 00568991
-        ;   XREF to: 0056f1c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f1c0()
+    CALL crt_stdio.c_flushFileBuffers_FUN_0056f1c0 ; 00568991
+        ;   XREF to: 0056f1c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_flushFileBuffers_FUN_0056f1c0(int file_handle_index)
     ADD ESP,0x4                         ; 00568996
     CMP EAX,-0x1                        ; 00568999
     JNZ 0x005689a0                      ; 0056899c
@@ -157,7 +157,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10]      ; 005689a0
         ;   Label: LAB_005689a0
     PUSH ECX                            ; 005689a3
-    CALL dword ptr [0x005c1ac4]         ; 005689a4 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 005689a4 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 005689aa
     MOV EAX,EDI                         ; 005689ad
     ADD ESP,0x4                         ; 005689af

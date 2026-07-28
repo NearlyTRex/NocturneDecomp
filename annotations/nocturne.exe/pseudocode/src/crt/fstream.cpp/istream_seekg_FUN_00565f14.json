@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 174,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 14,
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 55
+    "total_lines": 56
   },
   "cross_references": [
     {
@@ -27,7 +25,7 @@
     {
       "addr": "00456b20",
       "from_addr": "00456be3",
-      "name": "engine_dosio.cpp_FUN_00456b20",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,13 +39,13 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_istream_seekg_FUN_00565f14",
-    "signature": "int * __cdecl crt_fstream_cpp_istream_seekg_FUN_00565f14(int *param_1,undefined4 param_2)"
+    "signature": "_istream * __cdecl crt_fstream_cpp_istream_seekg_FUN_00565f14(void *this_ptr,int offset)"
   },
   "function_calls": [
     {
       "addr": "0056b327",
       "is_variadic": false,
-      "name": "FUN_0056b327"
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
     },
     {
       "addr": "0056ce57",
@@ -73,7 +71,7 @@
       {
         "call_addr": "00456be3",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00456b20",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,11 +80,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0588235294117645,
@@ -115,128 +113,52 @@
     "pcode_op_count": 138
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * __cdecl crt_fstream_cpp_istream_seekg_FUN_00565f14(int *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int * __cdecl crt_fstream_cpp_istream_seekg_FUN_00565f14(int *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0056ce57(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 9,
-      "match": "(int *)((int)param_1",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
+      "text": "iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,param_2,0,1);",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,offset,0,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,param_2,0,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056b327(*(int *)(*param_1 + 4) + (int)param_1,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056b327(*(int *)(*param_1 + 4) + (int)param_1,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 10,
       "match": "(int *)(iVar1 + 0x28)",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,param_2,0,1);",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,offset,0,1);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

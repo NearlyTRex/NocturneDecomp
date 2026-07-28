@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int param_1,int param_2,int param_3)
+; int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int width,int height,int bits_per_pixel)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
+; int              Stack[0xc]:4   bits_per_pixel
 ;
 ; XREF[7]:
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870 at 0049d89f
@@ -128,7 +132,7 @@ section .text
     IMUL EAX,ECX                        ; 00552edb
     PUSH EAX                            ; 00552ede
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552edf
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552ee4
     MOV [0x005c5010],EAX                ; 00552ee7 | DAT_005c5010
     TEST EAX,EAX                        ; 00552eec
@@ -149,7 +153,7 @@ section .text
     ADD EAX,0x40                        ; 00552f22
     PUSH EAX                            ; 00552f25
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552f26
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552f2b
     MOV [0x02ddf560],EAX                ; 00552f2e | DAT_02ddf560
     TEST EAX,EAX                        ; 00552f33
@@ -221,7 +225,7 @@ section .text
     MOV EBX,0x6218                      ; 00552fd9
     MOV ESI,0x2                         ; 00552fde
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00552fe3
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDX,0x6c                        ; 00552fe8
     ADD ESP,0xc                         ; 00552fed
     MOV ECX,0x21                        ; 00552ff0
@@ -272,7 +276,7 @@ section .text
     LEA EAX,[ESP + 0x74]                ; 00553070
     PUSH EAX                            ; 00553074
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00553075
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0055307a
     PUSH 0x2ddf558                      ; 0055307d | DAT_02ddf558
     LEA ECX,[ESP + 0x70]                ; 00553082
@@ -333,17 +337,17 @@ section .text
     PUSH 0x0                            ; 00553132
     PUSH 0x0                            ; 00553134
     CALL engine_2d.c_setupViewportAndClipping_FUN_00401e30 ; 00553136
-        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_setupViewportAndClipping_FUN_00401e30()
+        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401e30(int left, int top, int right, int bottom)
     ADD ESP,0x10                        ; 0055313b
     XOR ESI,ESI                         ; 0055313e
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 ; 00553140
-        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
+        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 00553145
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_00553145
     INC ESI                             ; 0055314a
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055314b
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CMP ESI,0x3                         ; 00553150
     JL 0x00553145                       ; 00553153
         ;   XREF to: 00553145 (CONDITIONAL_JUMP)  ; LAB_00553145

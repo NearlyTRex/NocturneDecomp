@@ -1,14 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5)
+; int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   addr
+; char *           Stack[0xc]:4   name
+; int              Stack[0x10]:4   hero_number
+; int              Stack[0x14]:4   aim_mode
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600 at 004ecc48
+;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a4f
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9ae1
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eaa18
-;   core_netgame.cpp_FUN_004e99f0 at 004e9a4f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c124
@@ -50,7 +56,7 @@ section .text
     PUSH EBX                            ; 004eb471
     MOV dword ptr [ESI + 0x1c],EDX      ; 004eb472
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004eb475
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004eb47a
     MOV EDI,EBX                         ; 004eb47d
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004eb47f

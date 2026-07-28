@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004b8c82
         ;   Label: LAB_004b8c82
     CALL core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0 ; 004b8c83
-        ;   XREF to: 004b8ca0 (UNCONDITIONAL_CALL)  ; undefined core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0()
+        ;   XREF to: 004b8ca0 (UNCONDITIONAL_CALL)  ; CHotDemon * core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0(CHotDemon * this_ptr)
     ADD ESP,0x4                         ; 004b8c88
     RET                                 ; 004b8c8b
 

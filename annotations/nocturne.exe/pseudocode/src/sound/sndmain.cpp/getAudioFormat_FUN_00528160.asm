@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_getAudioFormat_FUN_00528160(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+; void __cdecl sound_sndmain_cpp_getAudioFormat_FUN_00528160(int *bits_per_sample,int *channels,int *sample_rate)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   bits_per_sample
+; int *            Stack[0x8]:4   channels
+; int *            Stack[0xc]:4   sample_rate
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_FUN_005289f0 at 00528a8e

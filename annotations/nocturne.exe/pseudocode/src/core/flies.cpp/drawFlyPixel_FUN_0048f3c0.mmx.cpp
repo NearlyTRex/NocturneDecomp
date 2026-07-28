@@ -2,13 +2,13 @@
 // Address: 0048f3c0
 // Address Range: [[0048f3c0, 0048f446]]
 // Convention: __cdecl
-// Signature: void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,uint param_3)
+// Signature: void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int param_1,int param_2,uint param_3)
+void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 {
 __asm {
         mov EBP,ESP

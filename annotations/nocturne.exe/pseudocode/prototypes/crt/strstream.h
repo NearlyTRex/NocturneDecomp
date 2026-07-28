@@ -5,20 +5,64 @@
 
 // Original: crt_strstream.cpp_ostrstream_ctor_FUN_00564d92
 // Address: 00564d92
-int * __cdecl ostrstream::ctor(undefined4 *param_1,byte param_2,char *param_3,undefined4 param_4,byte param_5);
+_ostrstream * __cdecl ostrstream::ctor(void *this_ptr,int flags,char *buffer,int buffer_size,int mode);
 
 // Original: crt_strstream.cpp_ostrstream_tellp_FUN_00564e6b
 // Address: 00564e6b
-undefined4 __cdecl ostrstream::tellp(int *param_1);
+int __cdecl ostrstream::tellp(void *this_ptr);
 
 // Original: crt_strstream.cpp_ostrstream_dtor_FUN_00564e98
 // Address: 00564e98
-int * __cdecl ostrstream::dtor(int *param_1,byte param_2);
+_ostrstream * __cdecl ostrstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_istrstream_ctor_FUN_00564f32
 // Address: 00564f32
-void __cdecl istrstream::ctor(undefined4 *param_1,byte param_2,undefined4 param_3,undefined4 param_4);
+_istrstream * __cdecl istrstream::ctor(void *this_ptr,int ctor_flags,char *buffer,int size);
 
 // Original: crt_strstream.cpp_istrstream_dtor_FUN_00564fd8
 // Address: 00564fd8
-int * __cdecl istrstream::dtor(int *param_1,byte param_2);
+_istrstream * __cdecl istrstream::dtor(void *this_ptr,uint flags);
+
+// Original: crt_strstream.cpp_strstreambase_ctor_FUN_0056b405
+// Address: 0056b405
+strstreambase * __cdecl strstreambase::ctor(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
+
+// Original: crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad
+// Address: 0056b5ad
+strstreambase * __cdecl strstreambase::dtor(strstreambase *this_ptr,uint flags);
+
+// Original: crt_strstream.cpp_strstreambuf_init_FUN_0056fe65
+// Address: 0056fe65
+void strstreambuf::init(streambuf *param_1,char *param_2,int param_3,char *param_4);
+
+// Original: crt_strstream.cpp_strstreambuf_overflow_FUN_0057000d
+// Address: 0057000d
+int strstreambuf::overflow(int param_1,int param_2);
+
+// Original: crt_strstream.cpp_strstreambuf_underflow_FUN_00570075
+// Address: 00570075
+uint strstreambuf::underflow(int param_1);
+
+// Original: crt_strstream.cpp_strstreambuf_setbuf_FUN_005700c0
+// Address: 005700c0
+void strstreambuf::setbuf(int param_1,undefined4 param_2,int param_3);
+
+// Original: crt_strstream.cpp_strstreambuf_seekoff_FUN_005700d0
+// Address: 005700d0
+int strstreambuf::seekoff(int param_1,int param_2,int param_3,uint param_4);
+
+// Original: crt_strstream.cpp_strstreambuf_sync_FUN_005701cc
+// Address: 005701cc
+undefined4 strstreambuf::sync(void);
+
+// Original: crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf
+// Address: 005701cf
+strstreambuf * __cdecl strstreambuf::dtor(strstreambuf *this_ptr,uint flags);
+
+// Original: crt_strstream.cpp_strstreambuf_ctor_FUN_00570248
+// Address: 00570248
+streambuf * strstreambuf::ctor(streambuf *param_1);
+
+// Original: crt_strstream.cpp_strstreambuf_doallocate_FUN_00570272
+// Address: 00570272
+undefined4 strstreambuf::doallocate(streambuf *param_1);

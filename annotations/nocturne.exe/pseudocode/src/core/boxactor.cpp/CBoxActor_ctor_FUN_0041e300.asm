@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(undefined4 param_1)
+; CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f315
@@ -33,12 +35,12 @@ section .text
     ADD EAX,0x150                       ; 0041e30e
     PUSH EAX                            ; 0041e313
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0041e314
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041e319
     ADD EAX,0x23c                       ; 0041e31c
     PUSH EAX                            ; 0041e321
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 0041e322
-        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_ctor_FUN_0041a610()
+        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     LEA EBX,[EAX + 0xfffffc74]          ; 0041e327
     MOV dword ptr [EBX + 0x14c],0x59aad4 ; 0041e32d | PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_0059aad4
     MOV dword ptr [EBX + 0x388],0x0     ; 0041e337
@@ -65,7 +67,7 @@ section .text
     PUSH EAX                            ; 0041e3cc
     MOV dword ptr [EBX + 0x5e8],0x0     ; 0041e3cd
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041e3d7
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x5e0],0xffffffff ; 0041e3dc
     MOV dword ptr [EBX + 0x5ec],0x1     ; 0041e3e6
     MOV dword ptr [EBX + 0x5f0],0x1     ; 0041e3f0

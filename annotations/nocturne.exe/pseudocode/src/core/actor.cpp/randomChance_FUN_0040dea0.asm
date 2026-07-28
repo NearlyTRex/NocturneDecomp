@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_actor_cpp_randomChance_FUN_0040dea0(float param_1)
+; int __cdecl core_actor_cpp_randomChance_FUN_0040dea0(float probability_threshold)
 ;
+; Parameters:
+; float            Stack[0x4]:4   probability_threshold
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
@@ -41,7 +43,7 @@ section .text
     JZ 0x0040dedd                       ; 0040deaf
         ;   XREF to: 0040dedd (CONDITIONAL_JUMP)  ; LAB_0040dedd
     CALL core_actor.cpp_generateRandomValue_FUN_0040dd30 ; 0040deb1
-        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_generateRandomValue_FUN_0040dd30()
+        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040dd30()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040deb6
     FILD dword ptr [ESP + 0x4]          ; 0040deba
     FMUL float ptr [0x00578065]         ; 0040debe | FLOAT_00578065
@@ -56,7 +58,7 @@ section .text
     ADD ESP,0x8                         ; 0040ded9
     RET                                 ; 0040dedc
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0040dedd
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_0040dedd
     MOV dword ptr [ESP + 0x4],EAX       ; 0040dee2
     FILD dword ptr [ESP + 0x4]          ; 0040dee6

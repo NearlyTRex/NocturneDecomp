@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawLine_FUN_004015a0(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl engine_2d_c_drawLine_FUN_004015a0(int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -15,7 +20,7 @@
 ;   engine_2d.c_clipAndDrawLine_FUN_00403990 at 00403bb5
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290 at 004094fe
 ;   engine_console.cpp_CConsole_render_FUN_0043aec0 at 0043afb9
-;   engine_font.cpp_FUN_00493760 at 0049382d
+;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 at 0049382d
 ;   shape_edittool.cpp_CInputString_draw_FUN_0046f680 at 0046f7cd
 ;   shape_edittool.cpp_FUN_004759d0 at 00475a93
 ;
@@ -71,7 +76,7 @@ section .text
         ;   Label: LAB_004015f4
     PUSH ESI                            ; 004015f5
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004015f6
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 004015fb
     TEST EDI,EDI                        ; 004015fe
     JLE 0x00401605                      ; 00401600
@@ -115,7 +120,7 @@ section .text
         ;   Label: LAB_00401645
     PUSH ESI                            ; 00401646
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00401647
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 0040164c
     TEST EDI,EDI                        ; 0040164f
     JLE 0x0040165e                      ; 00401651

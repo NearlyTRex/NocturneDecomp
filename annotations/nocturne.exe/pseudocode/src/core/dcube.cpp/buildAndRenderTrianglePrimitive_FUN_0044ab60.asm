@@ -63,7 +63,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0044abba | DAT_005be368
     PUSH EDX                            ; 0044abc0 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 ; 0044abc1
-        ;   XREF to: 0050df40 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40()
+        ;   XREF to: 0050df40 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count)
     ADD ESP,0xc                         ; 0044abc6
     ADD ESP,0x28                        ; 0044abc9
     POP ESI                             ; 0044abcc

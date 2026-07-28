@@ -9,12 +9,12 @@
 void core_drip_cpp_FUN_00462030(void)
 
 {
-  int iVar1;
+  CDrip *this_ptr;
   
-  iVar1 = FUN_0056497c(0x334);
-  if (iVar1 == 0) {
+  this_ptr = (CDrip *)FUN_0056497c(0x334);
+  if (this_ptr == (CDrip *)0x0) {
     return;
   }
-  core_drip_cpp_CDrip_ctor_FUN_00462060(iVar1);
+  core_drip_cpp_CDrip_ctor_FUN_00462060(this_ptr);
   return;
 }

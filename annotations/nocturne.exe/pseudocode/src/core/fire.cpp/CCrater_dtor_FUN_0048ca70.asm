@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_fire_cpp_CCrater_dtor_FUN_0048ca70(int param_1)
+; float * core_fire_cpp_CCrater_dtor_FUN_0048ca70(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x1c                        ; 0048ca76
     PUSH EAX                            ; 0048ca79
     CALL core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0 ; 0048ca7a
-        ;   XREF to: 004389e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0()
+        ;   XREF to: 004389e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 0048ca7f
     SUB EAX,0x1c                        ; 0048ca82
     RET                                 ; 0048ca85

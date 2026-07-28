@@ -2,11 +2,11 @@
 // Address: 004736d0
 // Address Range: [[004736d0, 00473799]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(undefined4 param_1,char *param_2)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools *this_ptr,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(uint param_1,char *param_2)
+void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools *this_ptr,char *output_buffer)
 
 {
   char cVar1;
@@ -15,18 +15,20 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
   uint uVar4;
   char *pcVar5;
   int iVar6;
-  uint local_22;
-  int local_1e;
+  _heapinfo local_28;
+  int local_18;
   
   iVar3 = 0;
   iVar6 = 0;
+  local_28._segment = 0;
+  local_28._pentry = (void *)0x0;
   uVar4 = 0;
-  while (iVar2 = _heapwalk(), iVar2 == 0) {
-    if (local_1e == 0) {
+  while (iVar2 = _heapwalk(&local_28), iVar2 == 0) {
+    if (local_28._useflag == 0) {
       iVar3 = iVar3 + 1;
-      iVar6 = iVar6 + local_22;
-      if (uVar4 < local_22) {
-        uVar4 = local_22;
+      iVar6 = iVar6 + local_28._size;
+      if (uVar4 < local_28._size) {
+        uVar4 = local_28._size;
       }
     }
   }
@@ -36,8 +38,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
     break;
   case 4:
     if (0 < iVar3) {
-      _sprintf(param_2,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,(double)iVar6 * 0.0009765625,
-                 (double)(int)uVar4 * 0.0009765625);
+      local_18 = iVar6;
+      _sprintf(output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,
+                 (double)iVar6 * 0.0009765625,(double)(int)uVar4 * 0.0009765625);
       return;
     }
   case 1:
@@ -45,14 +48,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
   }
   do {
     cVar1 = *pcVar5;
-    *param_2 = cVar1;
+    *output_buffer = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    param_2[1] = cVar1;
-    param_2 = param_2 + 2;
+    output_buffer[1] = cVar1;
+    output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   return;
 }

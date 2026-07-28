@@ -1,33 +1,37 @@
 // Name: core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00518ec0
 // Address: 00518ec0
 // Address Range: [[00518ec0, 00518f55]]
-// Convention: unknown
-// Signature: void core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00518ec0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00518ec0(CDeformableModel *this_ptr,int lod_level)
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00518ec0(int param_1,int param_2)
+void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00518ec0(CDeformableModel *this_ptr,int lod_level)
 
 {
   ushort *puVar1;
-  int iVar2;
+  SInputFace *pSVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
   
-  iVar5 = 0;
-  for (iVar4 = 0; iVar3 = param_1 + param_2 * 4, iVar4 < *(int *)(iVar3 + 0x54); iVar4 = iVar4 + 1)
-  {
-    iVar2 = *(int *)(iVar3 + 0x7c);
+  iVar4 = 0;
+  iVar3 = 0;
+  while( true ) {
+    if (this_ptr->tri_count[lod_level] <= iVar3) break;
+    pSVar2 = this_ptr->tri_data_ptr[lod_level];
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
-              (DAT_005ae704,*(ushort *)(iVar5 + iVar2),*(ushort *)(iVar5 + 2 + iVar2));
+              (DAT_005ae704,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar4)
+               ,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar4));
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
-              (DAT_005ae704,*(ushort *)(iVar5 + 2 + iVar2),*(ushort *)(iVar5 + 4 + iVar2));
-    puVar1 = (ushort *)(iVar5 + iVar2);
-    iVar3 = iVar5 + 4;
-    iVar5 = iVar5 + 0x12;
+              (DAT_005ae704,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar4)
+               ,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar4));
+    this_ptr = (CDeformableModel *)
+               (uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar4);
+    puVar1 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar4);
+    iVar4 = iVar4 + 0x12;
+    iVar3 = iVar3 + 1;
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
-              (DAT_005ae704,*(ushort *)(iVar3 + iVar2),*puVar1);
+              (DAT_005ae704,(uint)*puVar1,(int)this_ptr);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
   return;

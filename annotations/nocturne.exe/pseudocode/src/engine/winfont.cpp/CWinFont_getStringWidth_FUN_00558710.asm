@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_winfont_cpp_CWinFont_getStringWidth_FUN_00558710(int param_1,LPCSTR param_2)
+; undefined4 engine_winfont_cpp_CWinFont_getStringWidth_FUN_00558710(CWinFont *param_1,LPCSTR param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -26,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 0055871c
     PUSH EDX                            ; 00558720
     CALL engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0 ; 00558721
-        ;   XREF to: 005584d0 (UNCONDITIONAL_CALL)  ; undefined engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0()
+        ;   XREF to: 005584d0 (UNCONDITIONAL_CALL)  ; int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFont * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 00558726
     TEST EAX,EAX                        ; 00558729
     JNZ 0x00558732                      ; 0055872b

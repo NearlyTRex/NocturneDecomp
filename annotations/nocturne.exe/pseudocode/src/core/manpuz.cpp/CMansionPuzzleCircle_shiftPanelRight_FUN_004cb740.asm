@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(int param_1,int param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_FUN_004cb010 at 004cb2a3
@@ -68,17 +71,17 @@ section .text
         ;   Label: LAB_004cb79d
     ADD EBX,0x58                        ; 004cb7a4
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 004cb7a7
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     PUSH EBX                            ; 004cb7ac
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0 ; 004cb7ad
-        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0()
+        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 004cb7b2
     PUSH 0x5880ce                       ; 004cb7b5 | = "manpuz-doorslide.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004cb7ba
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 004cb7bf
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 004cb7c2
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     POP EBP                             ; 004cb7c7
     POP ESI                             ; 004cb7c8
     POP EBX                             ; 004cb7c9

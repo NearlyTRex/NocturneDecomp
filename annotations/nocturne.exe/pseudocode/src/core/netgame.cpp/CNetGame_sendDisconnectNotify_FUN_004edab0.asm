@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   dest_addr
+; int              Stack[0xc]:4   payload
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined1       Stack[-0xc]:1  local_c
@@ -34,7 +38,7 @@ section .text
     PUSH EBX                            ; 004edad2
     MOV dword ptr [ESP + 0xc],EDX       ; 004edad3
     CALL core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0 ; 004edad7
-        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0()
+        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 004edadc
     ADD ESP,0xc                         ; 004edadf
     POP EBX                             ; 004edae2

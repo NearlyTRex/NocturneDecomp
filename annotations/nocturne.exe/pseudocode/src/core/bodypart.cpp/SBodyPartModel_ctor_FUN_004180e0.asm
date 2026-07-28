@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bodypart_cpp_SBodyPartModel_ctor_FUN_004180e0(int param_1)
+; char * core_bodypart_cpp_SBodyPartModel_ctor_FUN_004180e0(int param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     ADD EAX,0x18                        ; 004180e4
     PUSH EAX                            ; 004180e7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004180e8
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004180ed
     SUB EAX,0x18                        ; 004180f0
     RET                                 ; 004180f3

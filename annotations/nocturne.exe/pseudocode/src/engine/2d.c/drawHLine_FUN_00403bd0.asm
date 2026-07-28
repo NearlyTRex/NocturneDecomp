@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_2d_c_drawHLine_FUN_00403bd0(int param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_drawHLine_FUN_00403bd0(int x1,int y,int x2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   x2
 ;
 ; XREF[6]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb69e
@@ -78,7 +82,7 @@ section .text
     ADD EDX,EAX                         ; 00403c38
     PUSH EDX                            ; 00403c3a
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00403c3b
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00403c40
     LEA EAX,[EAX]                       ; 00403c43
     LEA EDX,[EDX]                       ; 00403c49

@@ -1,30 +1,33 @@
 // Name: core_ladder.cpp_CLadder_ctor_FUN_004c4290
 // Address: 004c4290
 // Address Range: [[004c4290, 004c4335]]
-// Convention: unknown
-// Signature: int core_ladder_cpp_CLadder_ctor_FUN_004c4290(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_004c4290(CLadder *this_ptr)
 
 #include "nocturne.h"
 
-int core_ladder_cpp_CLadder_ctor_FUN_004c4290(uint param_1)
+CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_004c4290(CLadder *this_ptr)
 
 {
   int iVar1;
+  CKeyFramedModelInstance *this_ptr_00;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
-  *(byte ***)(iVar1 + -4) = &PTR_core_ladder_cpp_FUN_004c4340_0059f954;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,"null.kfm");
-  *(uint *)(iVar1 + 0x17c) = 0x40000000;
-  *(uint *)(iVar1 + 0x180) = 0x41200000;
-  *(uint *)(iVar1 + 0x184) = 0;
-  *(uint *)(iVar1 + 0x188) = 0;
-  *(uint *)(iVar1 + 0x194) = 0;
-  *(uint *)(iVar1 + 400) = *(uint *)(iVar1 + 0x194);
-  *(uint *)(iVar1 + 0x18c) = *(uint *)(iVar1 + 400);
-  *(uint *)(iVar1 + 0x1a0) = 0;
-  *(uint *)(iVar1 + 0x19c) = *(uint *)(iVar1 + 0x1a0);
-  *(uint *)(iVar1 + 0x198) = *(uint *)(iVar1 + 0x19c);
-  *(uint *)(iVar1 + 0x1a4) = 0;
-  return iVar1 + -0x150;
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(iVar1 + 0x150));
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_ladder_cpp_FUN_004c4340_0059f954;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(this_ptr_00,"null.kfm")
+  ;
+  this_ptr_00[1].part_visibility_flags[0] = 0x40000000;
+  this_ptr_00[1].part_visibility_flags[1] = 0x41200000;
+  this_ptr_00[1].part_visibility_flags[2] = 0;
+  this_ptr_00[1].part_visibility_flags[3] = 0;
+  this_ptr_00[1].part_visibility_flags[6] = 0;
+  this_ptr_00[1].part_visibility_flags[5] = this_ptr_00[1].part_visibility_flags[6];
+  this_ptr_00[1].part_visibility_flags[4] = this_ptr_00[1].part_visibility_flags[5];
+  this_ptr_00[1].part_visibility_flags[9] = 0;
+  this_ptr_00[1].part_visibility_flags[8] = this_ptr_00[1].part_visibility_flags[9];
+  this_ptr_00[1].part_visibility_flags[7] = this_ptr_00[1].part_visibility_flags[8];
+  this_ptr_00[1].part_visibility_flags[10] = 0;
+  return (CLadder *)(this_ptr_00[-1].part_visibility_flags + 0xb);
 }

@@ -27,7 +27,7 @@ section .text
     PUSH EAX                            ; 0056850a
         ;   Label: LAB_0056850a
     CALL crt_ctype.c_tolower_FUN_00564860 ; 0056850b
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     ADD ESP,0x4                         ; 00568510
     CMP EAX,0x61                        ; 00568513
     JL 0x00568521                       ; 00568516

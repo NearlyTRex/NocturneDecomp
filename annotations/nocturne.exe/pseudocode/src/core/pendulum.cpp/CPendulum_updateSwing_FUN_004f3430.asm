@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(int param_1,float param_2)
+; void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum *this_ptr,float delta_time)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70
 ; undefined4       Stack[-0x68]:4  local_68
@@ -130,7 +133,7 @@ section .text
     PUSH EBX                            ; 004f3528
     FSTP float ptr [EBX + 0x38]         ; 004f3529
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004f352c
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f3531
     LEA EAX,[EBX + 0x408]               ; 004f3534
     PUSH EAX                            ; 004f353a
@@ -138,7 +141,7 @@ section .text
     PUSH EAX                            ; 004f353f
     PUSH EBX                            ; 004f3540
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004f3541
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x414]               ; 004f3546
     ADD ESP,0xc                         ; 004f354c
     CMP EDX,EAX                         ; 004f354f
@@ -519,7 +522,7 @@ section .text
     MOV EAX,[0x005bed68]                ; 004f393c | DAT_005bed68
     PUSH EAX                            ; 004f3941
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 004f3942
-        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90()
+        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
     ADD ESP,0x10                        ; 004f3947
     JMP 0x004f368e                      ; 004f394a
         ;   XREF to: 004f368e (UNCONDITIONAL_JUMP)  ; LAB_004f368e
@@ -595,7 +598,7 @@ section .text
     MOV ECX,dword ptr [0x005bed68]      ; 004f3a00 | DAT_005bed68
     PUSH ECX                            ; 004f3a06
     CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 ; 004f3a07
-        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90()
+        ;   XREF to: 0052ea90 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
     ADD ESP,0x10                        ; 004f3a0c
     MOV ESP,EBP                         ; 004f3a0f
     POP EBP                             ; 004f3a11

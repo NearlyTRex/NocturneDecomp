@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(int param_1,float *param_2)
+; int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(CDeformableModelInstance *this_ptr,CVector3f *point)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   point
 ; Local Variables:
 ; undefined8       Stack[-0xd0]:8  local_d0
 ; undefined8       Stack[-0xc8]:8  local_c8
@@ -59,7 +62,7 @@ section .text
     PUSH EDX                            ; 0051e9f5
     XOR ESI,ESI                         ; 0051e9f6
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051e9f8
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     MOV ECX,0x7149f2ca                  ; 0051e9fd
     ADD ESP,0x4                         ; 0051ea02
     MOV EDI,dword ptr [EAX + 0x28558]   ; 0051ea05

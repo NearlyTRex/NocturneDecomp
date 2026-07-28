@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00456800(char *param_1)
+; int __cdecl engine_dosio_cpp_findFileNormally_FUN_00456800(SFoundFileInfo *info)
 ;
+; Parameters:
+; SFoundFileInfo * Stack[0x4]:4   info
 ; Local Variables:
 ; undefined        Stack[-0x150]:1  local_150
 ; undefined1       Stack[-0x14f]:1  local_14f
@@ -47,7 +49,7 @@ section .text
     PUSH EAX                            ; 0045682d
     LEA ESI,[ESP + 0xc]                 ; 0045682e
     CALL crt_stdlib.c__fullpath_FUN_00565d00 ; 00456832
-        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__fullpath_FUN_00565d00()
+        ;   XREF to: 00565d00 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c__fullpath_FUN_00565d00(char * buffer, char * path, SIZE_T buffer_size)
     ADD ESP,0xc                         ; 00456837
     CMP EAX,ESI                         ; 0045683a
     JNZ 0x00456818                      ; 0045683c
@@ -56,7 +58,7 @@ section .text
     PUSH EAX                            ; 00456845
     PUSH ESI                            ; 00456846
     CALL crt_io.c_getFileStat_FUN_00565dc0 ; 00456847
-        ;   XREF to: 00565dc0 (UNCONDITIONAL_CALL)  ; undefined crt_io.c_getFileStat_FUN_00565dc0()
+        ;   XREF to: 00565dc0 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00565dc0(char * filename, _stat * file_info)
     ADD ESP,0x8                         ; 0045684c
     TEST EAX,EAX                        ; 0045684f
     JNZ 0x00456818                      ; 00456851

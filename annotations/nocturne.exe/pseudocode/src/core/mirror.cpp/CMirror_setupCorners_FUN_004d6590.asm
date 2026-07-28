@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004d6590(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5)
+; void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004d6590(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4)
 ;
+; Parameters:
+; CMirror *        Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   corner1
+; CVector3f *      Stack[0xc]:4   corner2
+; CVector3f *      Stack[0x10]:4   corner3
+; CVector3f *      Stack[0x14]:4   corner4
 ;
 ; XREF[1]:
 ;   core_glass.cpp_CGlass_setup_FUN_004abc90 at 004ac041

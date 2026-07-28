@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(int *param_1,int param_2)
+; void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *this_ptr,EWeatherType type)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
+; EWeatherType     Stack[0x8]:4   type
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

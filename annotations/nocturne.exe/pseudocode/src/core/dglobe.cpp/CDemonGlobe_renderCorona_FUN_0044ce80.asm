@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
+; void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *this_ptr)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x64]:1  local_64
 ; undefined4       Stack[-0x60]:4  local_60
@@ -29,7 +31,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_00445750 at 0044593e
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750 at 0044593e
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c389 = 0.00390625
@@ -71,14 +73,14 @@ section .text
     MOV EDX,dword ptr [0x005ae700]      ; 0044ce8d | DAT_005ae700
     PUSH EDX                            ; 0044ce93 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0044ce94
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0044ce99
     LEA EAX,[ESP + 0x4c]                ; 0044ce9c
     PUSH EAX                            ; 0044cea0
     MOV ECX,dword ptr [0x005ae704]      ; 0044cea1 | DAT_005ae704
     PUSH ECX                            ; 0044cea7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 0044cea8
-        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30()
+        ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0044cead
     LEA EAX,[ESP + 0x40]                ; 0044ceb0
     FLD float ptr [ESP + 0x4c]          ; 0044ceb4
@@ -147,7 +149,7 @@ section .text
     PUSH EAX                            ; 0044cf7e
     ADD ESI,0xc                         ; 0044cf7f
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044cf82
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD EDI,0x30                        ; 0044cf87
     ADD ESP,0x8                         ; 0044cf8a
     CMP ESI,0x2e8                       ; 0044cf8d
@@ -179,11 +181,11 @@ section .text
     ADD EBX,0x24                        ; 0044cfff
     PUSH EAX                            ; 0044d002
     CALL crt_math.c_round_FUN_00563a30  ; 0044d003
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH ESI                            ; 0044d008 | DAT_01b4d738
     FISTP dword ptr [ESP + 0x28]        ; 0044d009
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80 ; 0044d00d
-        ;   XREF to: 00460e80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80()
+        ;   XREF to: 00460e80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0044d012
     CMP EBX,0xbd0                       ; 0044d015
     JNZ 0x0044cf97                      ; 0044d01b
@@ -204,7 +206,7 @@ section .text
     JMP 0x0044cee4                      ; 0044d041
         ;   XREF to: 0044cee4 (UNCONDITIONAL_JUMP)  ; LAB_0044cee4
     CALL core_dcamera.cpp_initializeCoronaBuffers_FUN_00444140 ; 0044d046
-        ;   XREF to: 00444140 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_initializeCoronaBuffers_FUN_00444140()
+        ;   XREF to: 00444140 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_initializeCoronaBuffers_FUN_00444140()
         ;   Label: LAB_0044d046
     ADD ESP,0x5c                        ; 0044d04b
     POP EBP                             ; 0044d04e

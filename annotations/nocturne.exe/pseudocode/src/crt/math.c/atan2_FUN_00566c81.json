@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 95,
+    "complexity_score": 26,
     "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 7,
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unknown_type",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 23
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -124,13 +122,13 @@
     ],
     "convention": "__fpureg",
     "name": "crt_math.c_atan2_FUN_00566c81",
-    "signature": "void __fpureg crt_math_c_atan2_FUN_00566c81(unkbyte10 param_1,unkbyte10 param_2)"
+    "signature": "float10 __fpureg crt_math_c_atan2_FUN_00566c81(float10 y,float10 x)"
   },
   "function_calls": [
     {
       "addr": "0056dc98",
       "is_variadic": false,
-      "name": "FUN_0056dc98"
+      "name": "crt_math.c_atan2_FUN_0056dc98"
     }
   ],
   "globals": [
@@ -145,8 +143,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "skipped",
-    "declared_params": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "estimated_params": 2,
     "skip_reason": "fpu_or_no_param_convention"
   },
   "pcode_summary": {
@@ -181,60 +179,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/unresolved type",
-      "line": 2,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
-      "type": "unknown_type"
-    },
-    {
-      "description": "Unknown/unresolved type",
-      "line": 2,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)",
-      "type": "unknown_type"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 7,
       "match": "DAT_005c1d98",
       "severity": "mild",
       "text": "if ((DAT_005c1d98 & 1) == 0) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fpatan(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fpatan(param_1,param_2);",
-      "type": "unnamed_param"
     }
   ]
 }

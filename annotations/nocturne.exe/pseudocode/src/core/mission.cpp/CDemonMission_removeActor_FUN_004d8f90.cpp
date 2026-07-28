@@ -2,17 +2,17 @@
 // Address: 004d8f90
 // Address Range: [[004d8f90, 004d8fba]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(undefined4 param_1,int param_2,int param_3)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission *this_ptr,CDemonActor *actor,int should_delete)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(uint param_1,int param_2,int param_3)
+void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission *this_ptr,CDemonActor *actor,int should_delete)
 
 {
-  if (param_2 != 0) {
-    core_mission_cpp_FUN_004d8cd0(param_1,param_2);
-    if (param_3 != 0) {
-      core_actor_cpp_FUN_00409cd0(param_2);
+  if (actor != (CDemonActor *)0x0) {
+    core_mission_cpp_FUN_004d8cd0(this_ptr,actor);
+    if (should_delete != 0) {
+      core_actor_cpp_FUN_00409cd0(actor);
       return;
     }
   }

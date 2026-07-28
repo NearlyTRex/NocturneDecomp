@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(undefined4 param_1,float *param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer *this_ptr,CVector3f *world_position)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -17,8 +20,8 @@
 ;   core_boxactor.cpp_FUN_0041eaf0 at 0041eb28
 ;   core_crate.cpp_FUN_0043cbc0 at 0043cbd4
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b005
+;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060 at 0044d07a
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044ce94
-;   core_dglobe.cpp_FUN_0044d060 at 0044d07a
 ;   ... and 52 more
 ;
 ; Referenced Globals:
@@ -39,21 +42,21 @@ section .text
     FLD float ptr [EAX]                 ; 00460a0d
     FMUL ST1                            ; 00460a0f
     CALL crt_math.c_round_FUN_00563a30  ; 00460a11
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x4]         ; 00460a16
     FLD float ptr [EAX + 0x4]           ; 00460a1a
     FMUL ST1                            ; 00460a1d
     CALL crt_math.c_round_FUN_00563a30  ; 00460a1f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00460a24
     FMUL float ptr [EAX + 0x8]          ; 00460a28
     MOV EAX,ESP                         ; 00460a2b
     CALL crt_math.c_round_FUN_00563a30  ; 00460a2d
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EAX                            ; 00460a32
     FISTP dword ptr [ESP + 0x10]        ; 00460a33
     CALL engine_3d.c_processCameraRelativePoint_FUN_004044d0 ; 00460a37
-        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processCameraRelativePoint_FUN_004044d0()
+        ;   XREF to: 004044d0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f * input_point)
     ADD ESP,0x4                         ; 00460a3c
     ADD ESP,0x10                        ; 00460a3f
     RET                                 ; 00460a42

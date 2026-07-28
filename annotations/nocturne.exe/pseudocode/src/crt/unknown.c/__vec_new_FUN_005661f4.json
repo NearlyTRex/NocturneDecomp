@@ -1,0 +1,128 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "00566234",
+      "from_addr": "00566244",
+      "name": "crt_memory.c___vec_new_FUN_00566234",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005661f4",
+    "address_range": [
+      [
+        "005661f4",
+        "00566219"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c___vec_new_FUN_005661f4",
+    "signature": "void * __cdecl crt_unknown_c___vec_new_FUN_005661f4(void *dest,int element_count,WatcomTypeInfo *type_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005661c2",
+      "is_variadic": false,
+      "name": "crt_unknown.c___arrinit_dispatch_FUN_005661c2"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00566244",
+        "call_type": "direct",
+        "caller": "crt_memory.c___vec_new_FUN_00566234",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.066666666666666,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 8,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 61
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "element_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void *)((int)dest",
+      "severity": "moderate",
+      "text": "((void *)((int)dest + 4),element_count,type_info);",
+      "type": "pointer_cast"
+    }
+  ]
+}

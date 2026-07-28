@@ -2656,6 +2656,7 @@ static undefined1* DAT_005717D4 = (undefined1*)0x00571815; // caseD_3
 
 // void* constants
 static void* DAT_00575520 = (void*)0x00175D80;
+static void* DAT_005755AC = (void*)0x00176024;
 
 // word constants
 static word DAT_005756A6 = 0x1;

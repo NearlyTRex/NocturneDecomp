@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(int param_1)
+; int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(CDemonSet *set_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   set_ptr
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005024cb

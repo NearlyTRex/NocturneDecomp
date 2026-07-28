@@ -2,34 +2,35 @@
 // Address: 0044cde0
 // Address Range: [[0044cde0, 0044ce79]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int param_1,float param_2)
+// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe *this_ptr,float radius)
 
 #include "nocturne.h"
 
-void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int param_1,float param_2)
+void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe *this_ptr,float radius)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  float fVar1;
+  float fVar2;
+  double dVar3;
+  double dVar4;
   float unaff_retaddr;
   
-  fVar1 = (float10)5.5951060894592141e-315._0_4_;
-  fVar2 = (float10)65536;
-  *(float *)(param_1 + 0x30) = param_2;
-  fVar1 = (float10)round((float10)param_2 * fVar1);
-  fVar2 = (float10)round((float10)param_2 * (float10)param_2 * fVar2);
-  *(int *)(param_1 + 0x10) = (int)ROUND(fVar2);
-  *(int *)(param_1 + 0xc) = (int)ROUND(fVar1);
-  if (*(int *)(param_1 + 0x10) < 0x10000) {
-    *(uint *)(param_1 + 0x10) = 0x10000;
+  fVar2 = radius * 5.5951060894592141e-315._0_4_;
+  fVar1 = (float)65536;
+  this_ptr->radius = radius;
+  dVar3 = round((double)fVar2);
+  dVar4 = round((double)(radius * radius * fVar1));
+  this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);
+  this_ptr->linear_radius_scaled = (int)ROUND(dVar3);
+  if (this_ptr->quadratic_radius_scaled < 0x10000) {
+    this_ptr->quadratic_radius_scaled = 0x10000;
   }
-  *(float *)(param_1 + 0x18) = unaff_retaddr * unaff_retaddr;
-  fVar1 = (float10)65536;
-  *(float *)(param_1 + 0x34) = 1.0 / unaff_retaddr;
-  *(float *)(param_1 + 0x38) = 1.0 / (unaff_retaddr * unaff_retaddr);
-  fVar1 = (float10)round
-                             (((float10)*(byte *)(param_1 + 0x1c) * fVar1) /
-                              (float10)(*(int *)(param_1 + 0x10) >> 0x10));
-  *(int *)(param_1 + 0x14) = (int)ROUND(fVar1);
+  this_ptr->radius_squared = unaff_retaddr * unaff_retaddr;
+  dVar3 = (double)(this_ptr->intensity).bytes[0] * 65536;
+  this_ptr->inverse_radius = 1.0 / unaff_retaddr;
+  this_ptr->inverse_radius_squared = 1.0 / (unaff_retaddr * unaff_retaddr);
+  dVar3 = round(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
+  ;
+  this_ptr->falloff_value = (int)ROUND(dVar3);
   return;
 }

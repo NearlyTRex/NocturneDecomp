@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,undefined4 param_2)
+; void engine_console_cpp_CConsole_printf_FUN_0043ac60(int *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1014]:1  local_1014
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 0043ac93
     LEA EDI,[ESP + 0xc]                 ; 0043ac94
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0043ac98
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0043ac9d
     XOR ECX,ECX                         ; 0043aca0
     XOR EBX,EBX                         ; 0043aca2
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_0043aced
     PUSH 0x5ad358                       ; 0043acf2 | = "console.txt"
     CALL crt_stdio.c_fopen_FUN_0056568c ; 0043acf7
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     MOV EBX,EAX                         ; 0043acfc
     ADD ESP,0x8                         ; 0043acfe
     TEST EAX,EAX                        ; 0043ad01
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0xc                         ; 0043ad13
     PUSH EBX                            ; 0043ad16
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0043ad17
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0043ad1c
     ADD ESP,0x1004                      ; 0043ad1f
     POP EBP                             ; 0043ad25

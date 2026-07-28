@@ -9,63 +9,63 @@ void __cdecl staticInit(void);
 
 // Original: core_mirror.cpp_computePlaneFromTriangle_FUN_004d6170
 // Address: 004d6170
-void __cdecl computePlaneFromTriangle(float *param_1,float *param_2,float *param_3,float *param_4);
+void __cdecl computePlaneFromTriangle(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
 
 // Original: core_mirror.cpp_computePlaneIntersection_FUN_004d62f0
 // Address: 004d62f0
-void __cdecl computePlaneIntersection(float *param_1,float *param_2,float *param_3,float *param_4);
+void __cdecl computePlaneIntersection(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
 
 // Original: core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420
 // Address: 004d6420
-void clipPolygonAgainstPlane(float *param_1,float *param_2,uint param_3,int param_4,int *param_5);
+void clipPolygonAgainstPlane(SClipPlane *param_1,CVector3f *param_2,uint param_3,int param_4,int *param_5);
 
 // Original: core_mirror.cpp_CMirror_ctor_FUN_004d6550
 // Address: 004d6550
-int __cdecl CMirror::ctor(int param_1);
+CMirror * __cdecl CMirror::ctor(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirror_dtor_FUN_004d6570
 // Address: 004d6570
-int __cdecl CMirror::dtor(int param_1);
+CMirror * __cdecl CMirror::dtor(CMirror *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_CMirror_setupCorners_FUN_004d6590
 // Address: 004d6590
-void __cdecl CMirror::setupCorners(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5);
+void __cdecl CMirror::setupCorners(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 
 // Original: core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610
 // Address: 004d6610
-void __cdecl CMirrorReflection::setupMirrorCamera(int param_1);
+void __cdecl CMirrorReflection::setupMirrorCamera(CMirrorReflection *this_ptr);
 
-// Original: core_mirror.cpp_FUN_004d6650
+// Original: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650
 // Address: 004d6650
-void FUN_004d6650(float *param_1,float *param_2,undefined4 param_3,float param_4);
+void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
 
 // Original: core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480
 // Address: 004d7480
-undefined4 CMirrorReflection::applyMirrorTransform(int param_1,undefined4 param_2,undefined4 param_3);
+CVector3f * CMirrorReflection::applyMirrorTransform(int param_1,CVector3f *param_2,CVector3f *param_3);
 
-// Original: core_mirror.cpp_FUN_004d74a0
+// Original: core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0
 // Address: 004d74a0
-undefined4 FUN_004d74a0(int param_1,int param_2);
+uint __cdecl CMirror::reflectAndClipPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 
 // Original: core_mirror.cpp_FUN_004d76e0
 // Address: 004d76e0
-void FUN_004d76e0(int param_1,undefined4 param_2);
+void FUN_004d76e0(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
 
 // Original: core_mirror.cpp_FUN_004d7720
 // Address: 004d7720
-void FUN_004d7720(int param_1,undefined4 param_2);
+void FUN_004d7720(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
 
-// Original: core_mirror.cpp_FUN_004d7760
+// Original: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760
 // Address: 004d7760
-void FUN_004d7760(int param_1,int param_2);
+void CMirror::renderMirroredPrimitive(CMirror *param_1,int param_2);
 
-// Original: core_mirror.cpp_FUN_004d77f0
+// Original: core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004d77f0
 // Address: 004d77f0
-undefined4 FUN_004d77f0(float *param_1);
+int CMirror::renderMirrorQuad(float *param_1);
 
 // Original: core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 // Address: 004d7980
-void __cdecl CMirror::renderMirrorQuadDepth(float *param_1);
+void __cdecl CMirror::renderMirrorQuadDepth(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30
 // Address: 004d7b30
@@ -85,7 +85,7 @@ undefined4 FUN_004d7d80(undefined4 param_1);
 
 // Original: core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90
 // Address: 004d7d90
-void __cdecl SClipPlane::arrdtor(undefined4 param_1);
+SClipPlane * __cdecl SClipPlane::arrdtor(SClipPlane *objs,uint flags);
 
 // Original: core_mirror.cpp_FUN_004d7db0
 // Address: 004d7db0

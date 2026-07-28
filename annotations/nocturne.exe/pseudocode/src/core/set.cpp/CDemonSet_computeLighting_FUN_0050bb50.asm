@@ -1,16 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)
+; void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_position
+; CVector3i *      Stack[0xc]:4   surface_normal
+; int              Stack[0x10]:4   start_vertex_index
+; int              Stack[0x14]:4   vertex_count
 ;
 ; XREF[8]:
 ;   core_chain.cpp_FUN_0042c4c0 at 0042c7d0
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50 at 0048325f
 ;   core_fire.cpp_CGlassParticle_render_FUN_004853c0 at 0048554a
+;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 00489c61
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 0048a00e
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482c14
-;   core_fire.cpp_FUN_00489990 at 00489c61
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae432
 ;   core_weather.cpp_CWeather_renderParticles_FUN_00555020 at 0055523e
 ;

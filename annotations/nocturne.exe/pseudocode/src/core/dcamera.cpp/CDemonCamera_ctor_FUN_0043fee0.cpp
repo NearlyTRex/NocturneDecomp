@@ -2,19 +2,22 @@
 // Address: 0043fee0
 // Address Range: [[0043fee0, 0043ff2a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(int param_1)
+// Signature: CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(int param_1)
+CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(CDemonCamera *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x160) = 0;
-  *(uint *)(param_1 + 0x15c) = 0;
-  *(uint *)(param_1 + 0x164) = 0;
-  *(uint *)(param_1 + 0x11e8) = 0;
-  *(uint *)(param_1 + 0x11e4) = 0;
-  *(uint *)(param_1 + 0x100) = 0x4479f99a;
-  *(uint *)(param_1 + 0x158) = 0;
-  return;
+  this_ptr->framebuffer_raw = (void *)0x0;
+  this_ptr->zbuffer_aligned = (void *)0x0;
+  this_ptr->zbuffer_raw = (void *)0x0;
+  this_ptr->corona_blend_factor = 0;
+  this_ptr->scene_open_flag = 0;
+  this_ptr->camera_name[0xc0] = -0x66;
+  this_ptr->camera_name[0xc1] = -7;
+  this_ptr->camera_name[0xc2] = 'y';
+  this_ptr->camera_name[0xc3] = 'D';
+  this_ptr->framebuffer_aligned = (void *)0x0;
+  return this_ptr;
 }

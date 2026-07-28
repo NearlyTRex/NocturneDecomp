@@ -11,26 +11,27 @@
 ulonglong sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint param_1,uint param_2)
 
 {
+  CSfxSlot *this_ptr;
   int iVar1;
-  int iVar2;
-  ulonglong uVar3;
+  ulonglong uVar2;
   
-  iVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(param_1,1);
-  if (iVar1 == 0) {
-    uVar3 = 0xbff0000000000000;
+  this_ptr = (CSfxSlot *)sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(param_1,1);
+  if (this_ptr == (CSfxSlot *)0x0) {
+    uVar2 = 0xbff0000000000000;
   }
   else {
-    if ((*(int *)(iVar1 + 0x6c) != 0) && (_DAT_02dc8318 != 0)) {
-      iVar2 = sound_sndmain_cpp_FUN_005257e0(iVar1);
-      if (iVar2 == 0) {
+    if (((this_ptr->options).dead != 0) && (_DAT_02dc8318 != 0)) {
+      iVar1 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(this_ptr);
+      if (iVar1 == 0) {
         sound_sndmain_cpp_unlockSound_FUN_00528890();
         return 0xbff0000000000000;
       }
     }
-    uVar3 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
-                      (*(uint *)(iVar1 + 0x74),*(uint *)(iVar1 + 0x60),
-                       *(uint *)(iVar1 + 100),*(uint *)(iVar1 + 0x68),param_2);
+    uVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
+                      (this_ptr->playback_state,*(uint *)&(this_ptr->options).trigger_time,
+                       *(uint *)((int)&(this_ptr->options).trigger_time + 4),
+                       (this_ptr->options).trigger_id,param_2);
     sound_sndmain_cpp_unlockSound_FUN_00528890();
   }
-  return uVar3;
+  return uVar2;
 }

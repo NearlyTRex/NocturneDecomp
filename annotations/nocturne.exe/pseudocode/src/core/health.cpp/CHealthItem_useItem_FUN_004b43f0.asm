@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_health_cpp_CHealthItem_useItem_FUN_004b43f0(int param_1,int param_2)
+; int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004b43f0(CHealthItem *this_ptr,CCharacter *user)
 ;
+; Parameters:
+; CHealthItem *    Stack[0x4]:4   this_ptr
+; CCharacter *     Stack[0x8]:4   user
 ;
 ; XREF[1]:
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c176a

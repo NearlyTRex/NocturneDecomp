@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_dcamera_cpp_FUN_00447f20(int param_1,undefined4 *param_2)
+; CBoundingBox3D * core_dcamera_cpp_FUN_00447f20(int param_1,CBoundingBox3D *param_2)
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00507f80 at 00508092
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508092
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bde4 = 0.00390625
@@ -205,7 +205,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xf8]      ; 00448187
     PUSH ECX                            ; 0044818e
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 0044818f
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00448194
     MOV ESI,dword ptr [ESP + 0xd8]      ; 00448197
         ;   Label: LAB_00448197

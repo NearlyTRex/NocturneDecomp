@@ -2,13 +2,13 @@
 // Address: 00563cc0
 // Address Range: [[00563cc0, 00563cdf]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_memory_c_memset_FUN_00563cc0(undefined4 param_1)
+// Signature: void * __cdecl crt_memory_c_memset_FUN_00563cc0(void *dest,int value,ulong count)
 
 #include "nocturne.h"
 
-uint __cdecl memset(uint param_1)
+void * __cdecl memset(void *dest,int value,ulong count)
 
 {
   FUN_0056a0c0();
-  return param_1;
+  return dest;
 }

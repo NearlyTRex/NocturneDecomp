@@ -9,12 +9,12 @@
 void core_vehicle_cpp_FUN_0054e570(void)
 
 {
-  int iVar1;
+  CVehicle *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1070);
-  if (iVar1 == 0) {
+  this_ptr = (CVehicle *)FUN_0056497c(0x1070);
+  if (this_ptr == (CVehicle *)0x0) {
     return;
   }
-  core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(iVar1);
+  core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(this_ptr);
   return;
 }

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00462922
         ;   Label: LAB_00462922
     CALL core_drone.cpp_CDrone_ctor_FUN_00462940 ; 00462923
-        ;   XREF to: 00462940 (UNCONDITIONAL_CALL)  ; undefined core_drone.cpp_CDrone_ctor_FUN_00462940()
+        ;   XREF to: 00462940 (UNCONDITIONAL_CALL)  ; CDrone * core_drone.cpp_CDrone_ctor_FUN_00462940(CDrone * this_ptr)
     ADD ESP,0x4                         ; 00462928
     RET                                 ; 0046292b
 

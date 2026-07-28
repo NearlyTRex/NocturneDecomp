@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_00479990(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_00479990(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start
+; CVector3f *      Stack[0xc]:4   end
+; SDamageInfo *    Stack[0x10]:4   damage_info
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;
@@ -71,7 +76,7 @@ section .text
     FMUL double ptr [0x0057f357]        ; 004799f1 | DOUBLE_0057f357
     PUSH 0x0                            ; 004799f7
     CALL crt_math.c_round_FUN_00563a30  ; 004799f9
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x18]        ; 004799fe
     MOV EDI,dword ptr [ESP + 0x18]      ; 00479a02
     PUSH EDI                            ; 00479a06
@@ -81,7 +86,7 @@ section .text
     MOV EAX,[0x005b96c4]                ; 00479a0e | INT_005b96c4
     PUSH EAX                            ; 00479a13
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 00479a14
-        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
+        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     MOV EAX,0x1                         ; 00479a19
     ADD ESP,0x14                        ; 00479a1e
     MOV ESP,EBP                         ; 00479a21

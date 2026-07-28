@@ -14,7 +14,7 @@ void cockpit_pkbitmap_cpp_FUN_004f4f10(void)
   int iVar1;
   uint *puVar2;
   uint *puVar3;
-  int in_stack_00000008;
+  _FILE *in_stack_00000008;
   uint local_10 [2];
   
   puVar2 = &DAT_005be180;
@@ -29,8 +29,8 @@ void cockpit_pkbitmap_cpp_FUN_004f4f10(void)
     puVar2 = (uint *)((int)puVar2 + 1);
     puVar3 = (uint *)((int)puVar3 + 1);
   }
-  _fwrite(local_10,8,1);
-  if ((*(byte *)(in_stack_00000008 + 0xc) & 0x20) == 0) {
+  _fwrite(local_10,8,1,in_stack_00000008);
+  if ((in_stack_00000008->_flag & 0x20) == 0) {
     return;
   }
   PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";

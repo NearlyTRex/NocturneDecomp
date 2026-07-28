@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_executeCommands_FUN_0047ab70(undefined4 param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_executeCommands_FUN_0047ab70(CEventList *this_ptr,char *commands)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   commands
 ;
 ; XREF[17]:
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850 at 0044b99b
@@ -36,7 +39,7 @@ section .text
     PUSH EBX                            ; 0047ab7c
     MOV dword ptr [0x01c08b5c],EDX      ; 0047ab7d | DAT_01c08b5c
     CALL core_event.cpp_CEventList_executeCommandString_FUN_0047ab90 ; 0047ab83
-        ;   XREF to: 0047ab90 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommandString_FUN_0047ab90()
+        ;   XREF to: 0047ab90 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList * this_ptr, char * command_string)
     ADD ESP,0x8                         ; 0047ab88
     POP EBX                             ; 0047ab8b
     RET                                 ; 0047ab8c

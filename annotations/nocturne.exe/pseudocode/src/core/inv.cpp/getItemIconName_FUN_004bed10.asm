@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_inv_cpp_getItemIconName_FUN_004bed10(undefined4 param_1)
+; char * __cdecl core_inv_cpp_getItemIconName_FUN_004bed10(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bf436
@@ -43,7 +45,7 @@ section .text
         ;   Label: LAB_004bed36
     PUSH EDI                            ; 004bed37
     CALL crt_string.c__stricmp_FUN_00564520 ; 004bed38
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bed3d
     TEST EAX,EAX                        ; 004bed40
     JZ 0x004bed71                       ; 004bed42

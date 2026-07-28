@@ -19,7 +19,7 @@ struct CBride_ptr_12060 {
     template<typename T> CBride_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CBride_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CBride* operator->() const { return (CBride*)_raw; }
-    CBride* adj() const { return (CBride*)((char*)_raw - offsetof(CBride, base.base.fires)); }
+    CBride* adj() const { return (CBride*)((char*)_raw - offsetof(CBride, base.base.fires[0].offset)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

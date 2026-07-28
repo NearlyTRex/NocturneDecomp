@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(int param_1)
+; int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
 ;
+; Parameters:
+; HWND             Stack[0x4]:4   window_handle
 ; Local Variables:
 ; undefined        Stack[-0x1e64]:1  local_1e64
 ;
@@ -91,7 +93,7 @@ section .text
         ;   Label: LAB_005317e1
     PUSH EAX                            ; 005317e6
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 005317e7
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005317ec
     MOV EDX,EAX                         ; 005317ef
     TEST EAX,EAX                        ; 005317f1
@@ -106,14 +108,14 @@ section .text
     MOV EAX,ESP                         ; 0053180d
     PUSH EAX                            ; 0053180f
     CALL engine_special.cpp_CExternalRenderer_ctor_FUN_00532da0 ; 00531810
-        ;   XREF to: 00532da0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_CExternalRenderer_ctor_FUN_00532da0()
+        ;   XREF to: 00532da0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_CExternalRenderer_ctor_FUN_00532da0(CExternalRenderer * this_ptr)
     ADD ESP,0x4                         ; 00531815
     MOV EAX,ESP                         ; 00531818
     PUSH EAX                            ; 0053181a
     LEA EAX,[ESP + 0x1dcc]              ; 0053181b
     PUSH EAX                            ; 00531822
     CALL engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 ; 00531823
-        ;   XREF to: 00532df0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_CExternalRenderer_validate_FUN_00532df0()
+        ;   XREF to: 00532df0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_CExternalRenderer_validate_FUN_00532df0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)
     ADD ESP,0x8                         ; 00531828
     TEST EAX,EAX                        ; 0053182b
     JZ 0x0053226d                       ; 0053182d
@@ -122,7 +124,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531838 | DAT_02dc9e08
     PUSH ESI                            ; 0053183e
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 0053183f
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531844
     MOV [0x02dc9d74],EAX                ; 00531847 | DAT_02dc9d74
     TEST EAX,EAX                        ; 0053184c
@@ -141,7 +143,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531878 | DAT_02dc9e08
     PUSH EAX                            ; 0053187d
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 0053187e
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531883
     MOV [0x02dc9d78],EAX                ; 00531886 | DAT_02dc9d78
     TEST EAX,EAX                        ; 0053188b
@@ -160,7 +162,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 005318b7 | DAT_02dc9e08
     PUSH ESI                            ; 005318bd
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 005318be
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005318c3
     MOV [0x02dc9d7c],EAX                ; 005318c6 | DAT_02dc9d7c
     TEST EAX,EAX                        ; 005318cb
@@ -179,7 +181,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 005318f7 | DAT_02dc9e08
     PUSH EAX                            ; 005318fc
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 005318fd
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531902
     MOV [0x02dc9d80],EAX                ; 00531905 | DAT_02dc9d80
     TEST EAX,EAX                        ; 0053190a
@@ -198,7 +200,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531936 | DAT_02dc9e08
     PUSH ESI                            ; 0053193c
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 0053193d
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531942
     MOV [0x02dc9d84],EAX                ; 00531945 | DAT_02dc9d84
     TEST EAX,EAX                        ; 0053194a
@@ -217,7 +219,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531976 | DAT_02dc9e08
     PUSH EAX                            ; 0053197b
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 0053197c
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531981
     MOV [0x02dc9d88],EAX                ; 00531984 | DAT_02dc9d88
     TEST EAX,EAX                        ; 00531989
@@ -236,7 +238,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 005319b5 | DAT_02dc9e08
     PUSH ESI                            ; 005319bb
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 005319bc
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 005319c1
     MOV [0x02dc9d8c],EAX                ; 005319c4 | DAT_02dc9d8c
     TEST EAX,EAX                        ; 005319c9
@@ -255,7 +257,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 005319f5 | DAT_02dc9e08
     PUSH EAX                            ; 005319fa
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 005319fb
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531a00
     MOV [0x02dc9d90],EAX                ; 00531a03 | DAT_02dc9d90
     TEST EAX,EAX                        ; 00531a08
@@ -274,7 +276,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531a34 | DAT_02dc9e08
     PUSH ESI                            ; 00531a3a
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531a3b
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531a40
     MOV [0x02dc9d94],EAX                ; 00531a43 | DAT_02dc9d94
     TEST EAX,EAX                        ; 00531a48
@@ -293,7 +295,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531a74 | DAT_02dc9e08
     PUSH EAX                            ; 00531a79
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531a7a
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531a7f
     MOV [0x02dc9d98],EAX                ; 00531a82 | DAT_02dc9d98
     TEST EAX,EAX                        ; 00531a87
@@ -312,7 +314,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531ab3 | DAT_02dc9e08
     PUSH ESI                            ; 00531ab9
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531aba
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531abf
     MOV [0x02dc9d9c],EAX                ; 00531ac2 | DAT_02dc9d9c
     TEST EAX,EAX                        ; 00531ac7
@@ -331,7 +333,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531af3 | DAT_02dc9e08
     PUSH EAX                            ; 00531af8
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531af9
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531afe
     MOV [0x02dc9da0],EAX                ; 00531b01 | DAT_02dc9da0
     TEST EAX,EAX                        ; 00531b06
@@ -350,7 +352,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531b32 | DAT_02dc9e08
     PUSH ESI                            ; 00531b38
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531b39
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531b3e
     MOV [0x02dc9da4],EAX                ; 00531b41 | DAT_02dc9da4
     TEST EAX,EAX                        ; 00531b46
@@ -369,7 +371,7 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531b72 | DAT_02dc9e08
     PUSH EAX                            ; 00531b77
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531b78
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531b7d
     MOV [0x02dc9da8],EAX                ; 00531b80 | DAT_02dc9da8
     TEST EAX,EAX                        ; 00531b85
@@ -388,7 +390,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e08]      ; 00531bb1 | DAT_02dc9e08
     PUSH ESI                            ; 00531bb7
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531bb8
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531bbd
     MOV [0x02dc9dac],EAX                ; 00531bc0 | DAT_02dc9dac
     TEST EAX,EAX                        ; 00531bc5
@@ -407,21 +409,21 @@ section .text
     MOV EAX,[0x02dc9e08]                ; 00531bf1 | DAT_02dc9e08
     PUSH EAX                            ; 00531bf6
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531bf7
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531bfc
     PUSH 0x594e7e                       ; 00531bff | = "APIDLLdrawPolyList2"
     MOV EDX,dword ptr [0x02dc9e08]      ; 00531c04 | DAT_02dc9e08
     PUSH EDX                            ; 00531c0a
     MOV [0x02dc9db0],EAX                ; 00531c0b | DAT_02dc9db0
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531c10
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531c15
     PUSH 0x594e92                       ; 00531c18 | = "APIDLLaddParticle"
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531c1d | DAT_02dc9e08
     PUSH ECX                            ; 00531c23
     MOV [0x02dc9db4],EAX                ; 00531c24 | DAT_02dc9db4
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531c29
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531c2e
     MOV [0x02dc9db8],EAX                ; 00531c31 | DAT_02dc9db8
     TEST EAX,EAX                        ; 00531c36
@@ -440,7 +442,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531c62 | DAT_02dc9e08
     PUSH EBP                            ; 00531c68
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531c69
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531c6e
     MOV [0x02dc9dbc],EAX                ; 00531c71 | DAT_02dc9dbc
     TEST EAX,EAX                        ; 00531c76
@@ -459,7 +461,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531ca1 | DAT_02dc9e08
     PUSH ECX                            ; 00531ca7
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531ca8
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531cad
     MOV [0x02dc9dc0],EAX                ; 00531cb0 | DAT_02dc9dc0
     TEST EAX,EAX                        ; 00531cb5
@@ -478,7 +480,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531ce1 | DAT_02dc9e08
     PUSH EBP                            ; 00531ce7
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531ce8
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531ced
     MOV [0x02dc9dc4],EAX                ; 00531cf0 | DAT_02dc9dc4
     TEST EAX,EAX                        ; 00531cf5
@@ -497,7 +499,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531d20 | DAT_02dc9e08
     PUSH ECX                            ; 00531d26
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531d27
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531d2c
     MOV [0x02dc9dc8],EAX                ; 00531d2f | DAT_02dc9dc8
     TEST EAX,EAX                        ; 00531d34
@@ -516,7 +518,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531d60 | DAT_02dc9e08
     PUSH EBP                            ; 00531d66
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531d67
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531d6c
     MOV [0x02dc9dcc],EAX                ; 00531d6f | DAT_02dc9dcc
     TEST EAX,EAX                        ; 00531d74
@@ -535,7 +537,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531d9f | DAT_02dc9e08
     PUSH ECX                            ; 00531da5
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531da6
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531dab
     MOV [0x02dc9dd0],EAX                ; 00531dae | DAT_02dc9dd0
     TEST EAX,EAX                        ; 00531db3
@@ -554,7 +556,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531ddf | DAT_02dc9e08
     PUSH EBP                            ; 00531de5
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531de6
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531deb
     MOV [0x02dc9dd4],EAX                ; 00531dee | DAT_02dc9dd4
     TEST EAX,EAX                        ; 00531df3
@@ -573,7 +575,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531e1e | DAT_02dc9e08
     PUSH ECX                            ; 00531e24
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531e25
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531e2a
     MOV [0x02dc9dd8],EAX                ; 00531e2d | DAT_02dc9dd8
     TEST EAX,EAX                        ; 00531e32
@@ -592,7 +594,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531e5e | DAT_02dc9e08
     PUSH EBP                            ; 00531e64
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531e65
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531e6a
     MOV [0x02dc9ddc],EAX                ; 00531e6d | DAT_02dc9ddc
     TEST EAX,EAX                        ; 00531e72
@@ -611,7 +613,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531e9d | DAT_02dc9e08
     PUSH ECX                            ; 00531ea3
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531ea4
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531ea9
     MOV [0x02dc9de0],EAX                ; 00531eac | DAT_02dc9de0
     TEST EAX,EAX                        ; 00531eb1
@@ -630,7 +632,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531edd | DAT_02dc9e08
     PUSH EBP                            ; 00531ee3
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531ee4
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531ee9
     MOV [0x02dc9de4],EAX                ; 00531eec | DAT_02dc9de4
     TEST EAX,EAX                        ; 00531ef1
@@ -649,7 +651,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531f1c | DAT_02dc9e08
     PUSH ECX                            ; 00531f22
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531f23
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531f28
     MOV [0x02dc9de8],EAX                ; 00531f2b | DAT_02dc9de8
     TEST EAX,EAX                        ; 00531f30
@@ -668,7 +670,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531f5c | DAT_02dc9e08
     PUSH EBP                            ; 00531f62
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531f63
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531f68
     MOV [0x02dc9dec],EAX                ; 00531f6b | DAT_02dc9dec
     TEST EAX,EAX                        ; 00531f70
@@ -687,7 +689,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 00531f9b | DAT_02dc9e08
     PUSH ECX                            ; 00531fa1
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531fa2
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531fa7
     MOV [0x02dc9df0],EAX                ; 00531faa | DAT_02dc9df0
     TEST EAX,EAX                        ; 00531faf
@@ -706,7 +708,7 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 00531fdb | DAT_02dc9e08
     PUSH EBP                            ; 00531fe1
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00531fe2
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00531fe7
     MOV [0x02dc9df4],EAX                ; 00531fea | DAT_02dc9df4
     TEST EAX,EAX                        ; 00531fef
@@ -725,7 +727,7 @@ section .text
     MOV ECX,dword ptr [0x02dc9e08]      ; 0053201a | DAT_02dc9e08
     PUSH ECX                            ; 00532020
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00532021
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00532026
     MOV [0x02dc9df8],EAX                ; 00532029 | DAT_02dc9df8
     TEST EAX,EAX                        ; 0053202e
@@ -744,14 +746,14 @@ section .text
     MOV EBP,dword ptr [0x02dc9e08]      ; 0053205a | DAT_02dc9e08
     PUSH EBP                            ; 00532060
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00532061
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 00532066
     PUSH 0x594fee                       ; 00532069 | = "APIDLLunlockHoldBuffer"
     MOV [0x02dc9dfc],EAX                ; 0053206e | DAT_02dc9dfc
     MOV EAX,[0x02dc9e08]                ; 00532073 | DAT_02dc9e08
     PUSH EAX                            ; 00532078
     CALL wincore_wddvmem.cpp_getProcAddress_FUN_00553d40 ; 00532079
-        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_getProcAddress_FUN_00553d40()
+        ;   XREF to: 00553d40 (UNCONDITIONAL_CALL)  ; FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_00553d40(HMODULE hModule, LPCSTR lpProcName)
     ADD ESP,0x8                         ; 0053207e
     MOV ESI,0x1c00628                   ; 00532081
     PUSH 0x8c                           ; 00532086
@@ -764,7 +766,7 @@ section .text
     MOV EBP,0x1c00630                   ; 005320a4
     MOV dword ptr [0x02dc9e04],EDX      ; 005320a9 | INT_02dc9e04
     CALL crt_memory.c_memset_FUN_00563cc0 ; 005320af
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ECX,0x1c00624                   ; 005320b4
     MOV EAX,0x1c00634                   ; 005320b9
     ADD ESP,0xc                         ; 005320be
@@ -863,7 +865,7 @@ section .text
         ;   Label: LAB_00532287
     PUSH EDX                            ; 0053228d
     CALL engine_special.cpp_selectCard_FUN_00532d00 ; 0053228e
-        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_selectCard_FUN_00532d00()
+        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_00532d00(int card_index)
     MOV EAX,0x1                         ; 00532293
     ADD ESP,0x4                         ; 00532298
     ADD ESP,0x3c1c                      ; 0053229b

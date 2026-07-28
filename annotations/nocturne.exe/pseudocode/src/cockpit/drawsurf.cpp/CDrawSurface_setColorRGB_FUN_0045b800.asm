@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_0045b800(uint param_1,uint param_2,uint param_3)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_0045b800(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e41a
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e41a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d8cd

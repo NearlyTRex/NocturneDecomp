@@ -43,7 +43,7 @@ section .text
     POP EBX                             ; 0052a992
     RET                                 ; 0052a993
     CALL sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810 ; 0052a994
-        ;   XREF to: 00529810 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810()
+        ;   XREF to: 00529810 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810()
         ;   Label: LAB_0052a994
     MOV EAX,0x1                         ; 0052a999
     JMP 0x0052a98c                      ; 0052a99e
@@ -87,7 +87,7 @@ section .text
     PUSH EAX                            ; 0052a9f5
         ;   Label: LAB_0052a9f5
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a9f6
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a9fb
     PUSH EAX                            ; 0052a9fe
     PUSH 0x59422c                       ; 0052a9ff | = "Get position of secondary buffer"
@@ -111,7 +111,7 @@ section .text
     JMP 0x0052a9df                      ; 0052aa2d
         ;   XREF to: 0052a9df (UNCONDITIONAL_JUMP)  ; LAB_0052a9df
     CALL sound_snddx.cpp_fillStreamBuffer_FUN_00529c10 ; 0052aa2f
-        ;   XREF to: 00529c10 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_fillStreamBuffer_FUN_00529c10()
+        ;   XREF to: 00529c10 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_fillStreamBuffer_FUN_00529c10()
         ;   Label: LAB_0052aa2f
     TEST EAX,EAX                        ; 0052aa34
     JNZ 0x0052a9e0                      ; 0052aa36

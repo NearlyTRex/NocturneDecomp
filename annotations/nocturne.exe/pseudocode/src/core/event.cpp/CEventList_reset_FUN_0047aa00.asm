@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_reset_FUN_0047aa00(undefined4 *param_1)
+; void __cdecl core_event_cpp_CEventList_reset_FUN_0047aa00(CEventList *this_ptr)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_ctor_FUN_0047a9e0 at 0047a9e6

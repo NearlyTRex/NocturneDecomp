@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(undefined4 *param_1,char *param_2)
+; int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   cache
+; char *           Stack[0x8]:4   texture_name
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
 ; undefined1       Stack[-0x113]:1  local_113
@@ -55,7 +58,7 @@ section .text
     PUSH EDX                            ; 00544f08
     PUSH 0x596708                       ; 00544f09 | = "art"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00544f0e
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00544f13
     MOV dword ptr [ESP + 0x100],EAX     ; 00544f16
     CMP EAX,0x1000                      ; 00544f1d
@@ -130,7 +133,7 @@ section .text
     PUSH 0x59679c                       ; 00544fb8 | = "art"
     LEA EDI,[EBX + 0x13008]             ; 00544fbd
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00544fc3
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 00544fc8
     ADD ESP,0xc                         ; 00544fca
     TEST EAX,EAX                        ; 00544fcd
@@ -146,11 +149,11 @@ section .text
     ADD EAX,EDI                         ; 00544fef
     PUSH EAX                            ; 00544ff1
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00544ff2
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00544ff7
     PUSH ESI                            ; 00544ffa
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00544ffb
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00545000
     MOV EAX,dword ptr [EBX + 0xd3008]   ; 00545003
         ;   Label: LAB_00545003
@@ -205,7 +208,7 @@ section .text
         ;   Label: LAB_0054508b
     PUSH EDI                            ; 00545092
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00545093
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EDX,dword ptr [EBX + 0xd3008]   ; 00545098
     MOV dword ptr [EBX + EDX*0x4 + 0x1008],EAX ; 0054509e
     MOV EAX,dword ptr [EBX + 0xd3008]   ; 005450a5
@@ -273,7 +276,7 @@ section .text
     PUSH EAX                            ; 00545132
     PUSH 0x596811                       ; 00545133 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00545138
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 0054513d
     ADD ESP,0xc                         ; 0054513f
     TEST EAX,EAX                        ; 00545142
@@ -287,7 +290,7 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x1008] ; 00545157
     PUSH EDX                            ; 0054515e
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0054515f
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00545164
     MOV ESI,dword ptr [ESP + 0x11c]     ; 00545167
         ;   Label: LAB_00545167
@@ -340,7 +343,7 @@ section .text
     PUSH EAX                            ; 005451bd
     PUSH 0x59681d                       ; 005451be | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 005451c3
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005451c8
     MOV ESI,EAX                         ; 005451cb
     TEST EAX,EAX                        ; 005451cd
@@ -364,7 +367,7 @@ section .text
         ;   Label: LAB_005451f8
     PUSH EDI                            ; 005451ff
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00545200
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EDX,dword ptr [EBX + 0xd3008]   ; 00545205
     ADD ESP,0x4                         ; 0054520b
     MOV dword ptr [EBX + EDX*0x4 + 0x2008],EAX ; 0054520e
@@ -376,11 +379,11 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x2008] ; 0054521e
     PUSH EDX                            ; 00545225
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00545226
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0054522b
     PUSH ESI                            ; 0054522e
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0054522f
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00545234
     MOV EAX,dword ptr [EBX + 0xd3008]   ; 00545237
         ;   Label: LAB_00545237
@@ -469,11 +472,11 @@ section .text
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x1008] ; 00545319
     PUSH EDI                            ; 00545320
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00545321
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00545326
     PUSH ESI                            ; 00545329
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0054532a
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0054532f
     JMP 0x00545167                      ; 00545332
         ;   XREF to: 00545167 (UNCONDITIONAL_JUMP)  ; LAB_00545167

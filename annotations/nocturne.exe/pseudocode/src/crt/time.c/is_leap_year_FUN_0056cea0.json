@@ -1,0 +1,185 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 12,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "0056ced8",
+      "from_addr": "0056cef9",
+      "name": "FUN_0056ced8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565fb0",
+      "from_addr": "0056601b",
+      "name": "crt_time.c__mktime_FUN_00565fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d034",
+      "from_addr": "0056d094",
+      "name": "crt_time.c_determine_dst_status_FUN_0056d034",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d340",
+      "from_addr": "0056d3f8",
+      "name": "crt_time.c_gmtime_r_FUN_0056d340",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056cea0",
+    "address_range": [
+      [
+        "0056cea0",
+        "0056ced7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_is_leap_year_FUN_0056cea0",
+    "signature": "int __cdecl crt_time_c_is_leap_year_FUN_0056cea0(int year)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0056601b",
+        "call_type": "direct",
+        "caller": "crt_time.c__mktime_FUN_00565fb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d094",
+        "call_type": "direct",
+        "caller": "crt_time.c_determine_dst_status_FUN_0056d034",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d195",
+        "call_type": "direct",
+        "caller": "crt_time.c_determine_dst_status_FUN_0056d034",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d2b6",
+        "call_type": "direct",
+        "caller": "crt_time.c_determine_dst_status_FUN_0056d034",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056cef9",
+        "call_type": "direct",
+        "caller": "FUN_0056ced8",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d3f8",
+        "call_type": "direct",
+        "caller": "crt_time.c_gmtime_r_FUN_0056d340",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d426",
+        "call_type": "direct",
+        "caller": "crt_time.c_gmtime_r_FUN_0056d340",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.208333333333333,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 3,
+      "COPY": 24,
+      "INT_ADD": 7,
+      "INT_AND": 13,
+      "INT_DIV": 2,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 2,
+      "INT_OR": 2,
+      "INT_REM": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 1,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 7,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 1,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 101
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "year",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

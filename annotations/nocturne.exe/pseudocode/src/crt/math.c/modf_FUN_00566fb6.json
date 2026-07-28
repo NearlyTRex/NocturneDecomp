@@ -32,7 +32,7 @@
     {
       "addr": "004e3f80",
       "from_addr": "004e3ff1",
-      "name": "sound_mp3.cpp_FUN_004e3f80",
+      "name": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_004e3f80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +103,7 @@
       {
         "call_addr": "004e3ff1",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_004e3f80",
+        "caller": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_004e3f80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +118,7 @@
       {
         "call_addr": "004e405b",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_004e3f80",
+        "caller": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_004e3f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "text": "dVar1 = round(__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
       "type": "unnamed_param"
     },
     {
@@ -203,7 +203,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "text": "dVar1 = round(__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
       "type": "unnamed_param"
     },
     {
@@ -211,7 +211,7 @@
       "line": 7,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "fVar1 = (float10)round((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
+      "text": "dVar1 = round(__BITCAST_DOUBLE(CONCAT44(param_2,param_1)));",
       "type": "bitcast_double_pair"
     },
     {
@@ -219,7 +219,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (double)fVar1;",
+      "text": "*param_2 = dVar1;",
       "type": "unnamed_param"
     },
     {
@@ -227,7 +227,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - dVar1;",
       "type": "unnamed_param"
     },
     {
@@ -235,7 +235,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - dVar1;",
       "type": "unnamed_param"
     },
     {
@@ -243,7 +243,7 @@
       "line": 9,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "return (double)((float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - fVar1);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(param_2,param_1)) - dVar1;",
       "type": "bitcast_double_pair"
     },
     {

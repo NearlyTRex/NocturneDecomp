@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(undefined4 *param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 ;
+; Parameters:
+; SMRGLSkyTexture * Stack[0x4]:4   sky_texture
+; int              Stack[0x8]:4   u_coord
+; int              Stack[0xc]:4   v_coord
+; int              Stack[0x10]:4   vertex_index
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -105,16 +110,16 @@ section .text
     PUSH EAX                            ; 004634f7
     FXCH                                ; 004634f8
     CALL crt_math.c_round_FUN_00563a30  ; 004634fa
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     LEA EAX,[ESI*0x4 + 0x0]             ; 004634ff
     FISTP dword ptr [ESP + 0xc]         ; 00463506
     SUB EAX,ESI                         ; 0046350a
     FXCH                                ; 0046350c
     CALL crt_math.c_round_FUN_00563a30  ; 0046350e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00463513
     CALL crt_math.c_round_FUN_00563a30  ; 00463515
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0046351a
     FISTP dword ptr [ESP + 0x8]         ; 0046351c
     MOV ESI,EAX                         ; 00463520
@@ -124,7 +129,7 @@ section .text
     ADD EAX,ESI                         ; 0046352b
     PUSH EAX                            ; 0046352d
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046352e
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 00463533
     MOV dword ptr [ESI + 0x5c5034],EAX  ; 00463535 | DAT_005c5034
     MOV dword ptr [ESI + 0x5c5038],EAX  ; 0046353b | DAT_005c5038

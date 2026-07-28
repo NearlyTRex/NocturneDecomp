@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004d6170(float *param_1,float *param_2,float *param_3,float *param_4)
+; void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004d6170(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   out_plane
+; CVector3f *      Stack[0x8]:4   vertex_a
+; CVector3f *      Stack[0xc]:4   vertex_b
+; CVector3f *      Stack[0x10]:4   vertex_c
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -22,7 +27,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004d6650 at 004d6673
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650 at 004d6673
 ;
 ; *****************************************************************************
 

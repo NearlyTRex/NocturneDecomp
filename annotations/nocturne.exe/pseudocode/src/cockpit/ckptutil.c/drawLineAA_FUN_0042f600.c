@@ -1,107 +1,100 @@
 // Name: cockpit_ckptutil.c_drawLineAA_FUN_0042f600
 // Address: 0042f600
 // Address Range: [[0042f600, 0042f8b1]]
-// Convention: unknown
-// Signature: void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int y1,int color)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int param_3,int param_4,uint param_5)
+void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int y1,int color)
 
 {
-  int iVar1;
-  int iVar2;
-  float fVar3;
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int x;
   uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  float fVar7;
-  int iStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  float fStack_34;
+  int iVar5;
   
-  iVar1 = param_1;
-  iVar2 = param_2;
-  fVar7 = 0.00390625;
-  if (param_4 < param_2) {
-    param_2 = param_4;
-    param_1 = param_3;
-    param_3 = iVar1;
-    param_4 = iVar2;
+  iVar5 = y0;
+  x = x0;
+  if (y1 < y0) {
+    y0 = y1;
+    x = x1;
+    x1 = x0;
+    y1 = iVar5;
   }
   if ((DAT_005ad280 != 0) ||
-     (((((_DAT_01c00c58 <= param_1 || (_DAT_01c00c58 <= param_3)) &&
-        ((param_1 <= _DAT_01c00c60 || (param_3 <= _DAT_01c00c60)))) &&
-       ((_DAT_01c00c5c <= param_2 || (_DAT_01c00c5c <= param_4)))) &&
-      ((param_2 <= _DAT_01c00c64 || (param_4 <= _DAT_01c00c64)))))) {
-    cockpit_ckptutil_c_putPixel_FUN_00430140(param_1,param_2,param_5,0x3b800000);
-    uStack_18 = param_3 - param_1;
-    if ((int)uStack_18 < 0) {
-      uStack_18 = -uStack_18;
-      iStack_1c = -1;
+     (((((_DAT_01c00c58 <= x || (_DAT_01c00c58 <= x1)) &&
+        ((x <= _DAT_01c00c60 || (x1 <= _DAT_01c00c60)))) &&
+       ((_DAT_01c00c5c <= y0 || (_DAT_01c00c5c <= y1)))) &&
+      ((y0 <= _DAT_01c00c64 || (y1 <= _DAT_01c00c64)))))) {
+    cockpit_ckptutil_c_putPixel_FUN_00430140(x,y0,color);
+    uVar1 = x1 - x;
+    if ((int)uVar1 < 0) {
+      uVar1 = -uVar1;
+      iVar5 = -1;
     }
     else {
-      iStack_1c = 1;
+      iVar5 = 1;
     }
-    uStack_14 = param_4 - param_2;
-    if (uStack_14 != 0) {
-      if (uStack_18 == 0) {
+    uVar2 = y1 - y0;
+    if (uVar2 != 0) {
+      if (uVar1 == 0) {
         do {
-          param_2 = param_2 + 1;
-          cockpit_ckptutil_c_putPixel_FUN_00430140(param_1,param_2,param_5);
-          uStack_14 = uStack_14 - 1;
-        } while (uStack_14 != 0);
+          y0 = y0 + 1;
+          cockpit_ckptutil_c_putPixel_FUN_00430140(x,y0,color);
+          x0 = x0 + -1;
+        } while (x0 != 0);
         return;
       }
-      if (uStack_18 != uStack_14) {
-        if ((int)uStack_14 < (int)uStack_18) {
-          uVar4 = (uStack_14 * 0x10000) / uStack_18;
-          uVar6 = 0;
-          while (uStack_18 = uStack_18 - 1, uStack_18 != 0) {
-            uVar5 = uVar6 + uVar4 & 0xffff;
-            if (uVar5 <= uVar6) {
-              param_2 = param_2 + 1;
+      if (uVar1 != uVar2) {
+        if ((int)uVar2 < (int)uVar1) {
+          uVar3 = (uVar2 * 0x10000) / uVar1;
+          uVar2 = 0;
+          while (uVar1 = uVar1 - 1, uVar1 != 0) {
+            uVar4 = uVar2 + uVar3 & 0xffff;
+            if (uVar4 <= uVar2) {
+              y0 = y0 + 1;
             }
-            param_1 = param_1 + iStack_1c;
-            fVar3 = (float)(uVar5 >> 8 ^ 0xff) * fVar7;
-            cockpit_ckptutil_c_FUN_0042fd60
-                      (param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
-            cockpit_ckptutil_c_FUN_0042fd60(param_1,param_2 + 1,fVar3,param_5);
-            uVar6 = uVar5;
+            x = x + iVar5;
+            cockpit_ckptutil_c_FUN_0042fd60(x,y0,((float)(uVar4 >> 8) + 1.0) * fStack_34,color);
+            cockpit_ckptutil_c_FUN_0042fd60(x,y0 + 1,(float)(uVar4 >> 8 ^ 0xff) * fStack_34,color);
+            uVar2 = uVar4;
           }
         }
         else {
-          uVar4 = (uStack_18 << 0x10) / uStack_14;
-          uVar6 = 0;
-          while (uStack_14 = uStack_14 - 1, uStack_14 != 0) {
-            uVar5 = uVar6 + uVar4 & 0xffff;
-            if (uVar5 <= uVar6) {
-              param_1 = param_1 + iStack_1c;
+          uVar3 = (uVar1 << 0x10) / uVar2;
+          uVar1 = 0;
+          while (uVar2 = uVar2 - 1, uVar2 != 0) {
+            uVar4 = uVar1 + uVar3 & 0xffff;
+            if (uVar4 <= uVar1) {
+              x = x + iVar5;
             }
-            param_2 = param_2 + 1;
-            fVar3 = (float)(uVar5 >> 8 ^ 0xff) * fVar7;
+            y0 = y0 + 1;
+            cockpit_ckptutil_c_FUN_0042fd60(x,y0,((float)(uVar4 >> 8) + 1.0) * fStack_34,color);
             cockpit_ckptutil_c_FUN_0042fd60
-                      (param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
-            cockpit_ckptutil_c_FUN_0042fd60(iStack_1c + param_1,param_2,fVar3,param_5);
-            uVar6 = uVar5;
+                      (iVar5 + x,y0,(float)(uVar4 >> 8 ^ 0xff) * fStack_34,color);
+            uVar1 = uVar4;
           }
         }
-        cockpit_ckptutil_c_putPixel_FUN_00430140(param_3,param_4,param_5);
+        cockpit_ckptutil_c_putPixel_FUN_00430140(x1,y1,color);
         return;
       }
       do {
-        param_2 = param_2 + 1;
-        param_1 = param_1 + iStack_1c;
-        cockpit_ckptutil_c_putPixel_FUN_00430140(param_1,param_2,param_5);
-        uStack_14 = uStack_14 - 1;
-      } while (uStack_14 != 0);
+        y0 = y0 + 1;
+        x = x + iVar5;
+        cockpit_ckptutil_c_putPixel_FUN_00430140(x,y0,color);
+        x0 = x0 + -1;
+      } while (x0 != 0);
       return;
     }
-    while (uStack_18 = uStack_18 - 1, uStack_18 != 0xffffffff) {
-      param_1 = param_1 + iStack_1c;
-      cockpit_ckptutil_c_putPixel_FUN_00430140(param_1,param_2,param_5);
+    while (uVar1 = uVar1 - 1, uVar1 != 0xffffffff) {
+      x = x + iVar5;
+      cockpit_ckptutil_c_putPixel_FUN_00430140(x,y0,color);
     }
   }
   return;

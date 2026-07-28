@@ -2,17 +2,22 @@
 // Address: 004df7c0
 // Address Range: [[004df7c0, 004df7f2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0(CMorphModel *this_ptr,int part_index,CKeyFramedModel *model_ptr,int frame_index)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0(uint param_1,uint param_2,int param_3,uint param_4)
+void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0(CMorphModel *this_ptr,int part_index,CKeyFramedModel *model_ptr,int frame_index)
 
 {
-  uint uVar1;
+  CVector3i *vertex_buffer;
+  int start_offset;
+  int vertex_count;
   
-  uVar1 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080
-                    (param_3,param_4,0,*(uint *)(param_3 + 0x104));
-  core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(param_1,param_2,uVar1);
+  vertex_count = model_ptr->vertex_count;
+  start_offset = 0;
+  vertex_buffer =
+       core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(model_ptr,frame_index);
+  core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660
+            (this_ptr,part_index,vertex_buffer,start_offset,vertex_count);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_process_FUN_005497f0(int param_1,float param_2)
+; void core_turret_cpp_CTurret_process_FUN_005497f0(CTurret *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
@@ -39,7 +39,7 @@
 ;   core_main.c_FUN_004c8440
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0054a920
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
-;   core_xform.cpp_FUN_0055d610
+;   core_xform.cpp_eulerToQuaternion_FUN_0055d610
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -85,7 +85,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 00549846 | DAT_005b7650
     PUSH EDX                            ; 0054984c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0054984d
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00549852
     TEST EAX,EAX                        ; 00549855
     JZ 0x00549946                       ; 00549857
@@ -96,7 +96,7 @@ section .text
     PUSH ECX                            ; 00549873
     FSTP float ptr [EBX + 0x774]        ; 00549874
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0054987a
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0054987f
     PUSH 0x596d1d                       ; 00549882 | = "turret-ani?.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00549887
@@ -151,7 +151,7 @@ section .text
     PUSH dword ptr [ESP]                ; 0054992b
     PUSH ESI                            ; 0054992e
     CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130 ; 0054992f
-        ;   XREF to: 00527130 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130()
+        ;   XREF to: 00527130 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 00549934
     TEST EAX,EAX                        ; 00549937
     JZ 0x00549c38                       ; 00549939
@@ -191,7 +191,7 @@ section .text
     PUSH EAX                            ; 005499b0
     MOV dword ptr [EBX + 0x2f4],0x0     ; 005499b1
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005499bb
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 005499c0
     TEST EAX,EAX                        ; 005499c3
     JNZ 0x005499e2                      ; 005499c5
@@ -205,7 +205,7 @@ section .text
         ;   Label: LAB_005499e2
     PUSH EBX                            ; 005499e5
     CALL core_turret.cpp_CTurret_updateTargeting_FUN_0054a110 ; 005499e6
-        ;   XREF to: 0054a110 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_updateTargeting_FUN_0054a110()
+        ;   XREF to: 0054a110 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_updateTargeting_FUN_0054a110(CTurret * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005499eb
     MOV dword ptr [EBX + 0x774],0x0     ; 005499ee
     JMP 0x0054989a                      ; 005499f8
@@ -219,7 +219,7 @@ section .text
     PUSH ESI                            ; 00549a1e
     MOV dword ptr [EBX + 0x2f4],0x0     ; 00549a1f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00549a29
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00549a2e
     TEST EAX,EAX                        ; 00549a31
     JZ 0x00549a58                       ; 00549a33
@@ -245,7 +245,7 @@ section .text
     PUSH EDI                            ; 00549a86
     FSTP float ptr [EBX + 0x774]        ; 00549a87
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00549a8d
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00549a92
     PUSH 0x596d2d                       ; 00549a95 | = "turret-ani?.wav"
     JMP 0x00549887                      ; 00549a9a
@@ -254,7 +254,7 @@ section .text
         ;   Label: LAB_00549a9f
     PUSH EBX                            ; 00549aa2
     CALL core_turret.cpp_CTurret_updatePatrol_FUN_0054a920 ; 00549aa3
-        ;   XREF to: 0054a920 (UNCONDITIONAL_CALL)  ; undefined core_turret.cpp_CTurret_updatePatrol_FUN_0054a920()
+        ;   XREF to: 0054a920 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_updatePatrol_FUN_0054a920(CTurret * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00549aa8
     JMP 0x0054989a                      ; 00549aab
         ;   XREF to: 0054989a (UNCONDITIONAL_JUMP)  ; LAB_0054989a
@@ -299,8 +299,8 @@ section .text
     PUSH ESI                            ; 00549b46
     LEA ESI,[ESP + 0xbc]                ; 00549b47
     LEA EDI,[ESP + 0x6c]                ; 00549b4e
-    CALL core_xform.cpp_FUN_0055d610    ; 00549b52
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00549b52
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
     LEA ESI,[ESP + 0xbc]                ; 00549b57
     ADD ESP,0x4                         ; 00549b5e
     MOVSD ES:EDI,ESI                    ; 00549b61
@@ -310,8 +310,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xdc]      ; 00549b65
     PUSH EDI                            ; 00549b6c
     LEA ESI,[ESP + 0x8c]                ; 00549b6d
-    CALL core_xform.cpp_FUN_0055d610    ; 00549b74
-        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d610()
+    CALL core_xform.cpp_eulerToQuaternion_FUN_0055d610 ; 00549b74
+        ;   XREF to: 0055d610 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_eulerToQuaternion_FUN_0055d610()
     LEA EDI,[ESP + 0xac]                ; 00549b79
     LEA ESI,[ESP + 0x8c]                ; 00549b80
     ADD ESP,0x4                         ; 00549b87
@@ -345,7 +345,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00549bdd
     MOVSD ES:EDI,ESI                    ; 00549bde
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0 ; 00549bdf
-        ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0()
+        ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0(CVector3f * out_euler, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 00549be4
     MOV EDX,dword ptr [ESP + 0xe0]      ; 00549be7
     CMP EAX,EDX                         ; 00549bee
@@ -360,7 +360,7 @@ section .text
     PUSH EBX                            ; 00549c02
         ;   Label: LAB_00549c02
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00549c03
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00549c08
     JMP 0x0054989a                      ; 00549c0b
         ;   XREF to: 0054989a (UNCONDITIONAL_JUMP)  ; LAB_0054989a
@@ -417,7 +417,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8ac]     ; 00549ca5
     PUSH EDX                            ; 00549cab
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00549cac
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 00549cb1
     PUSH 0x596d86                       ; 00549cb4 | = "turret-tail.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00549cb9

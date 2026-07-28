@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004dd912
         ;   Label: LAB_004dd912
     CALL core_moloch.cpp_CMoloch_ctor_FUN_004dd930 ; 004dd913
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; undefined core_moloch.cpp_CMoloch_ctor_FUN_004dd930()
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; CMoloch * core_moloch.cpp_CMoloch_ctor_FUN_004dd930(CMoloch * this_ptr)
     ADD ESP,0x4                         ; 004dd918
     RET                                 ; 004dd91b
 

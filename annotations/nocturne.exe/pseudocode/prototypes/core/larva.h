@@ -17,31 +17,31 @@ CDemonActorType * FUN_004c4870(void);
 
 // Original: core_larva.cpp_CLarva_ctor_FUN_004c4880
 // Address: 004c4880
-int CLarva::ctor(undefined4 param_1);
+CLarva * __cdecl CLarva::ctor(CLarva *this_ptr);
 
 // Original: core_larva.cpp_CLarva_setup_FUN_004c4910
 // Address: 004c4910
-void CLarva::setup(int param_1);
+void CLarva::setup(CEnemy *param_1);
 
 // Original: core_larva.cpp_FUN_004c4970
 // Address: 004c4970
-void FUN_004c4970(int param_1,float param_2);
+void FUN_004c4970(CPathMap *param_1,float param_2);
 
 // Original: core_larva.cpp_FUN_004c5250
 // Address: 004c5250
-void FUN_004c5250(int param_1);
+void FUN_004c5250(CEnemy *param_1);
 
 // Original: core_larva.cpp_CLarva_processDamage_FUN_004c5310
 // Address: 004c5310
-void CLarva::processDamage(int param_1,int param_2);
+void CLarva::processDamage(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_larva.cpp_FUN_004c54f0
 // Address: 004c54f0
-undefined4 FUN_004c54f0(int param_1,undefined4 *param_2);
+undefined4 FUN_004c54f0(int param_1,CVector3f *param_2);
 
 // Original: core_larva.cpp_FUN_004c5540
 // Address: 004c5540
-int FUN_004c5540(int param_1,byte param_2);
+CDemonActor * FUN_004c5540(CDemonActor *param_1,byte param_2);
 
 // Original: core_larva.cpp_FUN_004c5630
 // Address: 004c5630

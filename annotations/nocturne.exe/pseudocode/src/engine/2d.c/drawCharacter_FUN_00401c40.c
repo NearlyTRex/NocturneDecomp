@@ -2,13 +2,13 @@
 // Address: 00401c40
 // Address Range: [[00401c40, 00401d96]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int param_3)
+// Signature: int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int char_code,int x_pos,int y_pos)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int param_3)
+int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int char_code,int x_pos,int y_pos)
 
 {
   byte bVar1;
@@ -22,21 +22,22 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int p
   uint *puVar9;
   uint uVar10;
   int iVar11;
+  int iVar12;
   
-  iVar5 = (param_1 + -0x20) * 0x91;
+  iVar5 = (char_code + -0x20) * 0x91;
   uVar10 = (uint)(byte)(&DAT_005a4b80)[iVar5];
-  if ((((param_2 < _DAT_01c00c58) || (param_3 < _DAT_01c00c5c)) ||
-      ((int)((_DAT_01c00c60 + 1) - uVar10) < param_2)) || (_DAT_01c00c64 + -10 < param_3)) {
+  if ((((x_pos < _DAT_01c00c58) || (y_pos < _DAT_01c00c5c)) ||
+      ((int)((_DAT_01c00c60 + 1) - uVar10) < x_pos)) || (_DAT_01c00c64 + -10 < y_pos)) {
     iVar5 = 0;
   }
   else {
-    param_3 = param_3 * 4;
+    iVar12 = y_pos * 4;
     pbVar2 = &DAT_005a4b81 + iVar5;
-    iVar5 = param_3 + 0x2c;
+    iVar5 = iVar12 + 0x2c;
     if (DAT_005b7624 == 8) {
       do {
         iVar11 = 0;
-        pbVar6 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_3) + param_2);
+        pbVar6 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x_pos);
         pbVar7 = pbVar6;
         if (uVar10 != 0) {
           do {
@@ -48,14 +49,14 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int p
             pbVar7 = pbVar6;
           } while (iVar11 < (int)uVar10);
         }
-        param_3 = param_3 + 4;
+        iVar12 = iVar12 + 4;
         *pbVar6 = 0;
-      } while (param_3 != iVar5);
+      } while (iVar12 != iVar5);
     }
     else if (DAT_005b7624 == 0x10) {
       do {
         iVar11 = 0;
-        puVar3 = (ushort *)(*(int *)(&DAT_01bd2fa0 + param_3) + param_2 * 2);
+        puVar3 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x_pos * 2);
         puVar4 = puVar3;
         if (uVar10 != 0) {
           do {
@@ -67,14 +68,14 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int p
             puVar4 = puVar3;
           } while (iVar11 < (int)uVar10);
         }
-        param_3 = param_3 + 4;
+        iVar12 = iVar12 + 4;
         *puVar3 = 0;
-      } while (param_3 != iVar5);
+      } while (iVar12 != iVar5);
     }
     else {
       do {
         iVar11 = 0;
-        puVar8 = (uint *)(*(int *)(&DAT_01bd2fa0 + param_3) + param_2 * 4);
+        puVar8 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x_pos * 4);
         puVar9 = puVar8;
         if (uVar10 != 0) {
           do {
@@ -86,9 +87,9 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int param_1,int param_2,int p
             puVar9 = puVar8;
           } while (iVar11 < (int)uVar10);
         }
-        param_3 = param_3 + 4;
+        iVar12 = iVar12 + 4;
         *puVar8 = 0;
-      } while (param_3 != iVar5);
+      } while (iVar12 != iVar5);
     }
     iVar5 = uVar10 + 1;
   }

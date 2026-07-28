@@ -9,9 +9,10 @@
       }
     ],
     "conv":"__fpustack_safe",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_math.c_pow_FUN_00565ad6",
-    "ret":"undefined1",
+    "ret":"float10",
     "vars":{
       "locals":[
         {
@@ -79,8 +80,48 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"base",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        },
+        {
+          "name":"exp",
+          "storage":{
+            "reg":"ST1",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001110",
+                "offset":4368,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },

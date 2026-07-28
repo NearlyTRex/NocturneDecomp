@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_FUN_00408fc0(byte *param_1)
+; void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 004091a2 (CONDITIONAL_JUMP)  ; LAB_004091a2
     PUSH EDI                            ; 00408ffc
     CALL engine_3d.c_transformAndBufferVertices_FUN_00404530 ; 00408ffd
-        ;   XREF to: 00404530 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_transformAndBufferVertices_FUN_00404530()
+        ;   XREF to: 00404530 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended * mrgl)
     MOV ESI,dword ptr [0x005b7644]      ; 00409002 | DAT_005b7644
     ADD ESP,0x4                         ; 00409008
     TEST ESI,ESI                        ; 0040900b
@@ -73,7 +73,7 @@ section .text
     PUSH EDI                            ; 0040900f
         ;   Label: LAB_0040900f
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 00409010
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     ADD EDI,EAX                         ; 00409015
     MOV DL,byte ptr [EDI]               ; 00409017
     ADD ESP,0x4                         ; 00409019
@@ -94,7 +94,7 @@ section .text
     PUSH 0x761ec8                       ; 0040903e | DAT_00761ec8
     PUSH 0x5c5014                       ; 00409043 | DAT_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00409048
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0040904d
     XOR EDX,EDX                         ; 00409050
         ;   Label: LAB_00409050
@@ -121,7 +121,7 @@ section .text
     PUSH EDI                            ; 00409081
         ;   Label: LAB_00409081
     CALL engine_3d.c_processVertexLighting_FUN_00404730 ; 00409082
-        ;   XREF to: 00404730 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processVertexLighting_FUN_00404730()
+        ;   XREF to: 00404730 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processVertexLighting_FUN_00404730(SMRGLHeaderExtended * mrgl)
     ADD ESP,0x4                         ; 00409087
     JMP 0x0040900f                      ; 0040908a
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f
@@ -140,7 +140,7 @@ section .text
     PUSH 0x761ec8                       ; 004090a7 | DAT_00761ec8
     PUSH 0x5c5014                       ; 004090ac | DAT_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 004090b1
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004090b6
     XOR EDX,EDX                         ; 004090b9
         ;   Label: LAB_004090b9
@@ -148,7 +148,7 @@ section .text
     PUSH EDI                            ; 004090c1
         ;   Label: LAB_004090c1
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 004090c2
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 004090c7
     JMP 0x0040900f                      ; 004090ca
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f
@@ -178,7 +178,7 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 004090fc
     PUSH EAX                            ; 004090ff
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00409100
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00409105
     TEST EAX,EAX                        ; 00409108
     JZ 0x0040900f                       ; 0040910a
@@ -211,7 +211,7 @@ section .text
     PUSH EDI                            ; 00409166
         ;   Label: LAB_00409166
     CALL engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00408880 ; 00409167
-        ;   XREF to: 00408880 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00408880()
+        ;   XREF to: 00408880 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0040916c
     JMP 0x0040900f                      ; 0040916f
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f

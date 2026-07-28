@@ -55,7 +55,7 @@ section .text
     MOV EBX,dword ptr [0x005b80f0]      ; 004d609e | DAT_005b80f0
     PUSH EBX                            ; 004d60a4
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 004d60a5
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004d60aa
     POP EBX                             ; 004d60ad
     RET                                 ; 004d60ae

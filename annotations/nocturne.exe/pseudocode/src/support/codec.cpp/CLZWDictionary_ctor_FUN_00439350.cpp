@@ -2,15 +2,15 @@
 // Address: 00439350
 // Address Range: [[00439350, 00439367]]
 // Convention: __cdecl
-// Signature: void __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(undefined4 *param_1)
+// Signature: CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(CLZWDictionary *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(uint *param_1)
+CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00439350(CLZWDictionary *this_ptr)
 
 {
-  param_1[3] = 0;
-  param_1[4] = 0;
-  *param_1 = param_1[3];
-  return;
+  this_ptr->entry_count = 0;
+  this_ptr->node_table = (CLZWDictionaryNode *)0x0;
+  this_ptr->table_capacity = this_ptr->entry_count;
+  return this_ptr;
 }

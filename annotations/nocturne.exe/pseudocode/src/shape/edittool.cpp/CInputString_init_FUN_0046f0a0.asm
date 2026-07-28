@@ -1,12 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(char *param_1,int param_2,uint param_3,undefined4 param_4)
+; void __cdecl shape_edittool_cpp_CInputString_init_FUN_0046f0a0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   source_string
+; int              Stack[0xc]:4   max_length
+; int              Stack[0x10]:4   mask_mode
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 00470f6a
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f848
-;   shape_edittool.cpp_FUN_00470eb0 at 00470f6a
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -30,7 +35,7 @@ section .text
     PUSH 0x0                            ; 0046f0c6
     PUSH EBX                            ; 0046f0c8
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0046f0c9
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046f0ce
     MOV ECX,dword ptr [ESP + 0xc]       ; 0046f0d1
     TEST ECX,ECX                        ; 0046f0d5
@@ -53,7 +58,7 @@ section .text
     PUSH ECX                            ; 0046f10a
     PUSH EBX                            ; 0046f10b
     CALL crt_string.c__strncpy_FUN_00565f70 ; 0046f10c
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0046f111
     MOV EDI,EBX                         ; 0046f114
     SUB ECX,ECX                         ; 0046f116

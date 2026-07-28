@@ -1,0 +1,83 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "00564570",
+      "from_addr": "005645d5",
+      "name": "crt_stdio.c_fgetc_FUN_00564570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00564640",
+    "address_range": [
+      [
+        "00564640",
+        "0056466e"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_unknown.c_FillBufferAndGetChar_FUN_00564640",
+    "signature": "int __watcallStack crt_unknown_c_FillBufferAndGetChar_FUN_00564640(_FILE *file)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564670",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FillInputBuffer_FUN_00564670"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.25,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 17,
+      "INT_ADD": 10,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 4,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 85
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": []
+}

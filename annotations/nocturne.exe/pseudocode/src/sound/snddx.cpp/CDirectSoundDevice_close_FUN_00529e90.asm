@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(int *param_1)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice *this_ptr)
 ;
+; Parameters:
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0 at 0052bf05

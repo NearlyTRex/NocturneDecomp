@@ -1,0 +1,362 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 13,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0040b300",
+      "from_addr": "0040b630",
+      "name": "core_actor.cpp_FUN_0040b300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043d1c0",
+      "from_addr": "0043d547",
+      "name": "core_crossbow.cpp_FUN_0043d1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477890",
+      "from_addr": "00477d3e",
+      "name": "core_elephant.cpp_FUN_00477890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b27c0",
+      "from_addr": "004b2f07",
+      "name": "core_gun.cpp_FUN_004b27c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c71a0",
+      "from_addr": "004c7720",
+      "name": "core_lightgun.cpp_FUN_004c71a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515ea0",
+      "from_addr": "005163a6",
+      "name": "core_shotgun.cpp_FUN_00515ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545c30",
+      "from_addr": "005463c1",
+      "name": "core_tommygun.cpp_FUN_00545c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ab10",
+      "from_addr": "0054af53",
+      "name": "core_turret.cpp_CTurret_fire_FUN_0054ab10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005485a0",
+    "address_range": [
+      [
+        "005485a0",
+        "005485dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0",
+    "signature": "int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0(CTrigger *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "004775b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004775b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0040b630",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_FUN_0040b300",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040bbe6",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_FUN_0040b300",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043d547",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_FUN_0043d1c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00477d3e",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_FUN_00477890",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b2f07",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_FUN_004b27c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c7720",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004c71a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005163a6",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_FUN_00515ea0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005463c1",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_00545c30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054af53",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_fire_FUN_0054ab10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.764705882352941,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 10,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -2,62 +2,60 @@
 // Address: 0047aa50
 // Address Range: [[0047aa50, 0047ab64]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(undefined4 *param_1)
+// Signature: void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(CEventList *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(uint *param_1)
+void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(CEventList *this_ptr)
 
 {
   float fVar1;
-  int iVar2;
-  int iVar3;
-  uint *puVar4;
-  uint *puVar5;
-  float fVar6;
-  uint *puVar7;
-  int iVar8;
-  uint *local_14;
+  float fVar2;
+  SEventNameBlock *pSVar3;
+  int iVar4;
+  int iVar5;
+  CEventList *pCVar6;
+  char (*pacVar7) [32];
+  char (*local_14) [32];
   
-  param_1[0x321] = *param_1;
-  puVar5 = param_1 + 0x322;
-  puVar4 = param_1;
-  for (iVar3 = 800; puVar4 = puVar4 + 1, iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *puVar4;
-    puVar5 = puVar5 + 1;
+  pSVar3 = &this_ptr->current_events;
+  (this_ptr->current_events).count = (this_ptr->events).count;
+  pCVar6 = this_ptr;
+  for (iVar4 = 800; pacVar7 = pSVar3->names, pCVar6 = (CEventList *)(pCVar6->events).names,
+      iVar4 != 0; iVar4 = iVar4 + -1) {
+    pSVar3 = (SEventNameBlock *)*pacVar7;
+    *(uint *)*pacVar7 = *(uint *)*(char (*) [32])pCVar6;
   }
-  for (iVar3 = 0; iVar8 = 0x01C775EC, iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(byte *)puVar5 = *(byte *)puVar4;
-    puVar4 = (uint *)((int)puVar4 + 1);
-    puVar5 = (uint *)((int)puVar5 + 1);
+  for (iVar4 = 0; iVar5 = 0x01C775EC, iVar4 != 0; iVar4 = iVar4 + -1) {
+    (*pacVar7)[0] = (*(char (*) [32])pCVar6)[0];
+    pCVar6 = (CEventList *)(*(char (*) [32])pCVar6 + 1);
+    pacVar7 = (char (*) [32])(*pacVar7 + 1);
   }
-  *param_1 = 0;
-  fVar6 = *(float *)(iVar8 + 0x264);
-  iVar3 = 0;
-  if (0 < (int)param_1[0xc84]) {
-    puVar5 = param_1 + 0xc85;
-    puVar7 = param_1 + 0xcd5;
-    local_14 = param_1 + 0xc8d;
-    puVar4 = param_1;
+  (this_ptr->events).count = 0;
+  fVar1 = *(float *)(iVar5 + 0x264);
+  iVar4 = 0;
+  if (0 < (this_ptr->timers).count) {
+    pacVar7 = (this_ptr->timers).names;
+    local_14 = (this_ptr->timers).names + 1;
+    pCVar6 = this_ptr;
     do {
-      fVar1 = (float)puVar4[0xcd5];
-      iVar8 = iVar3 * 4;
-      puVar4[0xcd5] = fVar1 - fVar6;
-      if (fVar1 - fVar6 <= 0.0) {
-        iVar2 = param_1[0xc84];
-        param_1[0xc84] = iVar2 + -1;
+      fVar2 = (pCVar6->timers).durations[0] - fVar1;
+      (pCVar6->timers).durations[0] = fVar2;
+      if (fVar2 <= 0.0) {
+        iVar5 = (this_ptr->timers).count + -1;
+        (this_ptr->timers).count = iVar5;
+        memmove(pacVar7,local_14,(iVar5 - iVar4) * 0x20);
         memmove
-                  (puVar5,local_14,((iVar2 + -1) - iVar3) * 0x20,fVar6,puVar7,iVar8);
-        memmove
-                  ((int)puVar7 + iVar8,iVar8 + 4 + (int)puVar7,(param_1[0xc84] - iVar3) * 4);
+                  ((this_ptr->timers).durations + iVar4,(this_ptr->timers).durations + iVar4 + 1,
+                   ((this_ptr->timers).count - iVar4) * 4);
       }
       else {
-        puVar5 = puVar5 + 8;
-        iVar3 = iVar3 + 1;
-        local_14 = local_14 + 8;
-        puVar4 = puVar4 + 1;
+        pacVar7 = pacVar7 + 1;
+        iVar4 = iVar4 + 1;
+        local_14 = local_14 + 1;
+        pCVar6 = (CEventList *)(pCVar6->events).names;
       }
-    } while (iVar3 < (int)param_1[0xc84]);
+    } while (iVar4 < (this_ptr->timers).count);
   }
   return;
 }

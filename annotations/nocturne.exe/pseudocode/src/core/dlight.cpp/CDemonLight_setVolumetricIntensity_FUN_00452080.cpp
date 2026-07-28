@@ -2,34 +2,32 @@
 // Address: 00452080
 // Address Range: [[00452080, 00452106]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight *this_ptr,float intensity)
 
 #include "nocturne.h"
 
-void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(int param_1,uint param_2)
+void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight *this_ptr,float intensity)
 
 {
-  float10 fVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
+  double dVar1;
+  int iVar2;
+  int iVar3;
   
-  *(uint *)(param_1 + 0x2fa8) = param_2;
-  if (0x100 < *(int *)(param_1 + 0x1cc0)) {
-    uVar4 = 0;
-    uVar3 = 0;
-    uVar2 = 0x4520b3;
-    fVar1 = (float10)round
-                               ((float10)*(float *)(param_1 + 0x2fa8) * (float10)3);
+  this_ptr->volumetric_intensity = intensity;
+  if (0x100 < this_ptr->shadow_map_width) {
+    iVar3 = 0;
+    iVar2 = 0x4520b3;
+    dVar1 = round
+                      ((double)(this_ptr->volumetric_intensity * (float)3));
     core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-              (param_1,(&DAT_005ad53c)[(int)ROUND(fVar1)],0,uVar2,uVar3,uVar4);
+              (this_ptr,(CDemonFilter *)(&DAT_005ad53c)[(int)ROUND(dVar1)],0,iVar2,iVar3);
     return;
   }
-  uVar3 = 0;
-  uVar2 = 0x4520e8;
-  fVar1 = (float10)round
-                             ((float10)*(float *)(param_1 + 0x2fa8) * (float10)7);
+  iVar3 = 0;
+  iVar2 = 0x4520e8;
+  dVar1 = round
+                    ((double)(this_ptr->volumetric_intensity * (float)7));
   core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-            (param_1,(&DAT_005ad51c)[(int)ROUND(fVar1)],0,uVar2,uVar3);
+            (this_ptr,(CDemonFilter *)(&DAT_005ad51c)[(int)ROUND(dVar1)],0,iVar2,iVar3);
   return;
 }

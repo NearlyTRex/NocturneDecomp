@@ -2,111 +2,112 @@
 // Address: 00426e80
 // Address Range: [[00426e80, 004270da]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
-  int *piVar3;
-  int iVar4;
-  int iVar5;
-  byte *pbVar6;
-  int iVar7;
+  float fVar3;
+  CDemonRenderer *pCVar4;
+  CSkeleton *pCVar5;
+  int iVar6;
+  uchar *puVar7;
   int iVar8;
-  byte *pbVar9;
-  byte *pbVar10;
-  int iVar11;
-  float10 fVar12;
+  CCharacter *pCVar9;
+  uchar *puVar10;
+  uchar *puVar11;
+  CDeformableModelInstance *this_ptr_00;
+  CDeformableModel *pCVar12;
+  double dVar13;
   float local_30;
-  int local_20;
+  CDeformableModel *local_20;
   int local_1c;
   int local_18;
   
-  if (*(int *)(param_1 + 0x2f08) == 0) {
+  if (this_ptr->fire_count == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005ad1fc);
-  iVar11 = param_1 + 0x150;
-  if (*(int *)(param_1 + 0xb640) != 0) {
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad1fc);
+  this_ptr_00 = &this_ptr->model;
+  if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
-              (iVar11,0xffffffff,0xc9,0,1);
+              (this_ptr_00,-1,0xc9,0,1);
     return;
   }
-  iVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(iVar11);
-  local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(iVar11);
-  iVar11 = *(int *)(param_1 + 0x2380);
-  iVar5 = 0;
-  if (0 < *(int *)(iVar4 + 0x28558)) {
-    iVar7 = 0;
+  pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr_00);
+  local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr_00);
+  iVar1 = (this_ptr->model).cached_skinned_lod_index;
+  iVar6 = 0;
+  if (0 < pCVar5->bone_count) {
+    iVar8 = 0;
     do {
-      *(uint *)((int)&DAT_00765aa0 + iVar7) = 0;
-      iVar5 = iVar5 + 1;
-      iVar7 = iVar7 + 4;
-    } while (iVar5 < *(int *)(iVar4 + 0x28558));
+      *(uint *)((int)&DAT_00765aa0 + iVar8) = 0;
+      iVar6 = iVar6 + 1;
+      iVar8 = iVar8 + 4;
+    } while (iVar6 < pCVar5->bone_count);
   }
-  fVar2 = 3.0f;
-  iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x2f08)) {
-    fVar1 = (float)65535;
-    iVar7 = param_1;
+  fVar3 = 3.0f;
+  iVar6 = 0;
+  if (0 < this_ptr->fire_count) {
+    fVar2 = (float)65535;
+    pCVar9 = this_ptr;
     do {
-      (&DAT_00765aa0)[*(int *)(iVar7 + 0x2f18)] =
-           (float)(&DAT_00765aa0)[*(int *)(iVar7 + 0x2f18)] +
-           (*(float *)(iVar7 + 0x2f28) * fVar1) / fVar2;
-      iVar5 = iVar5 + 1;
-      iVar7 = iVar7 + 0x18;
-    } while (iVar5 < *(int *)(param_1 + 0x2f08));
+      iVar8 = pCVar9->fires[0].bone_index;
+      (&DAT_00765aa0)[iVar8] =
+           (float)(&DAT_00765aa0)[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;
+      iVar6 = iVar6 + 1;
+      pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
+    } while (iVar6 < this_ptr->fire_count);
   }
-  iVar7 = 0;
+  iVar6 = 0;
   iVar8 = 0;
-  iVar5 = local_20;
-  if (0 < *(int *)(iVar4 + 0x28558)) {
+  pCVar12 = local_20;
+  if (0 < pCVar5->bone_count) {
     do {
-      if ((float)65535 <= (float)(&DAT_00765aa0)[iVar7]) {
+      if ((float)65535 <= (float)(&DAT_00765aa0)[iVar6]) {
         iVar8 = iVar8 + 1;
       }
-      if (*(int *)(iVar5 + 0x288c) == -1) {
+      if (*(int *)(pCVar12->texture_sets[1].textures[0x3d].textures[1].texture_name + 4) == -1) {
         iVar8 = iVar8 + 1;
       }
-      iVar7 = iVar7 + 1;
-      iVar5 = iVar5 + 4;
-    } while (iVar7 < *(int *)(iVar4 + 0x28558));
+      iVar6 = iVar6 + 1;
+      pCVar12 = (CDeformableModel *)pCVar12->lod_info;
+    } while (iVar6 < pCVar5->bone_count);
   }
-  if (iVar8 == *(int *)(iVar4 + 0x28558)) {
-    *(uint *)(param_1 + 0xb644) = 0x3f800000;
-    *(uint *)(param_1 + 0xb640) = 1;
+  if (iVar8 == pCVar5->bone_count) {
+    this_ptr->burn_alpha = 1.0;
+    this_ptr->is_fully_burned = 1;
   }
   local_1c = 0;
   local_18 = 0;
-  for (iVar4 = 0; local_20 = local_20 + iVar11 * 4, iVar4 < *(int *)(local_20 + 0x2c);
-      iVar4 = iVar4 + 1) {
-    pbVar10 = (byte *)(*(int *)(local_20 + 0x40) + local_1c);
+  for (iVar6 = 0; iVar6 < local_20->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
+    puVar11 = local_20->vertex_data_ptr[iVar1]->bone_indices + local_1c + -1;
     local_30 = 0.0;
-    pbVar6 = pbVar10;
-    pbVar9 = pbVar10;
-    for (iVar5 = 0; piVar3 = DAT_005ae704, iVar5 < (int)(uint)*pbVar10; iVar5 = iVar5 + 1) {
-      fVar12 = (float10)round
-                                  ((float10)*(float *)(pbVar6 + 4) *
-                                   (float10)(float)(&DAT_00765aa0)[pbVar9[1]]);
-      local_18 = (int)ROUND(fVar12);
-      pbVar6 = pbVar6 + 4;
-      pbVar9 = pbVar9 + 1;
+    puVar7 = puVar11;
+    puVar10 = puVar11;
+    for (iVar8 = 0; pCVar4 = DAT_005ae704, iVar8 < (int)(uint)*puVar11; iVar8 = iVar8 + 1) {
+      dVar13 = round
+                         ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00765aa0)[puVar10[1]]));
+      local_18 = (int)ROUND(dVar13);
+      puVar7 = puVar7 + 4;
+      puVar10 = puVar10 + 1;
       local_30 = (float)local_18 + 6.101353e-39;
     }
     if ((float)65535 < local_30) {
       local_30 = 65535.0;
     }
-    fVar12 = (float10)round((float10)local_30);
-    local_20 = local_1c + 0x34;
+    dVar13 = round((double)local_30);
+    local_20 = (CDeformableModel *)(local_1c + 0x34);
     local_1c = local_18 + 0x30;
-    *(int *)(*piVar3 + local_18 + 0x2c) = (int)ROUND(fVar12);
-    local_18 = (int)ROUND(fVar12);
+    *(int *)((int)&pCVar4->vertex_buffer_ptr->a + local_18) = (int)ROUND(dVar13);
+    local_18 = (int)ROUND(dVar13);
   }
   core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
-            (param_1 + 0x150,0xffffffff,0x163,0,1);
+            (&this_ptr->model,-1,0x163,0,1);
   return;
 }

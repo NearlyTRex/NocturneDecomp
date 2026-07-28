@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_pkbitmap_cpp_FUN_004f5110(int *param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f5110(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   cockpit_pkbmpset.cpp_FUN_004f59d0 at 004f59f7
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_004f59d0 at 004f59f7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058d423
@@ -45,7 +45,7 @@ section .text
     PUSH EDX                            ; 004f5134
     PUSH 0x58d426                       ; 004f5135 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004f513a
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004f513f
     MOV EBX,EAX                         ; 004f5142
     TEST EAX,EAX                        ; 004f5144
@@ -66,7 +66,7 @@ section .text
     MOV ESI,EAX                         ; 004f5168
     MOV dword ptr [ESP + 0x168],EAX     ; 004f516a
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004f5171
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f5176
     MOV EAX,dword ptr [EDI]             ; 004f5179
     XOR EBX,EBX                         ; 004f517b
@@ -79,7 +79,7 @@ section .text
     PUSH ESI                            ; 004f5189
     INC EBX                             ; 004f518a
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0 ; 004f518b
-        ;   XREF to: 004f3fc0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0()
+        ;   XREF to: 004f3fc0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0(CPackedBitmap * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f5190
     MOV ECX,dword ptr [EDI]             ; 004f5193
     ADD ESI,0x24                        ; 004f5195
@@ -126,7 +126,7 @@ section .text
     PUSH ESI                            ; 004f520d
     XOR EBX,EBX                         ; 004f520e
     CALL cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0 ; 004f5210
-        ;   XREF to: 0042d3f0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0()
+        ;   XREF to: 0042d3f0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0(char * filename, uchar * output_palette)
     MOV EAX,dword ptr [EDI]             ; 004f5215
     ADD ESP,0x8                         ; 004f5217
     TEST EAX,EAX                        ; 004f521a
@@ -153,7 +153,7 @@ section .text
     PUSH EAX                            ; 004f523f
     PUSH ESI                            ; 004f5240
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50 ; 004f5241
-        ;   XREF to: 004f4a50 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50()
+        ;   XREF to: 004f4a50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap * this_ptr, uchar * palette_buffer)
     ADD ESP,0x8                         ; 004f5246
     INC EBX                             ; 004f5249
     MOV EDX,dword ptr [EDI]             ; 004f524a

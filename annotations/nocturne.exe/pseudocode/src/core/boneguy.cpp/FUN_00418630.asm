@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_boneguy_cpp_FUN_00418630(undefined4 param_1)
+; int core_boneguy_cpp_FUN_00418630(CEnemy *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -49,14 +49,14 @@ section .text
     PUSH ESI                            ; 00418639
     PUSH EBX                            ; 0041863a
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0041863b
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00418640
     PUSH 0x59aa00                       ; 00418643 | g_SBoneGuyBoxTypeInfo_0059aa00
     PUSH 0x14                           ; 00418648
     ADD EAX,0xbda4                      ; 0041864a
     PUSH EAX                            ; 0041864f
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00418650
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00418655
     LEA EBX,[EAX + 0xffff425c]          ; 00418658
     PUSH 0x579186                       ; 0041865e | = "boneguy.dfm"
@@ -101,12 +101,12 @@ section .text
     PUSH EAX                            ; 00418704
     MOV dword ptr [EBX + 0xbda0],0x0    ; 00418705
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0041870f
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00418714
     PUSH 0xff                           ; 00418717
     PUSH 0x0                            ; 0041871c
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0041871e
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     MOV dword ptr [EBX + 0xbd28],0x0    ; 00418723
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 0041872d
     MOV dword ptr [EBX + 0xbd30],0x0    ; 00418737
@@ -144,23 +144,23 @@ section .text
     PUSH EAX                            ; 004187af
     FSTP float ptr [ESP + 0x1c]         ; 004187b0
     CALL core_boneguy.cpp_hsvToRgb_FUN_00418480 ; 004187b4
-        ;   XREF to: 00418480 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00418480()
+        ;   XREF to: 00418480 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_00418480(CColor3f * out_rgb, CColor3f * in_hsv)
     ADD ESP,0x8                         ; 004187b9
     FLD float ptr [0x0057919e]          ; 004187bc | DAT_0057919e
     FLD float ptr [ESP]                 ; 004187c2
     FMUL ST1                            ; 004187c5
     CALL crt_math.c_round_FUN_00563a30  ; 004187c7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x108]       ; 004187cc
     FLD float ptr [ESP + 0x4]           ; 004187d2
     FMUL ST1                            ; 004187d6
     CALL crt_math.c_round_FUN_00563a30  ; 004187d8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x10c]       ; 004187dd
     FMUL float ptr [ESP + 0x8]          ; 004187e3
     MOV EAX,EBX                         ; 004187e7
     CALL crt_math.c_round_FUN_00563a30  ; 004187e9
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x110]       ; 004187ee
     ADD ESP,0x1c                        ; 004187f4
     POP EBX                             ; 004187f7

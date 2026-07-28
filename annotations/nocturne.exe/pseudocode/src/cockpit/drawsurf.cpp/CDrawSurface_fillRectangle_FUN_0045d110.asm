@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x1
+; int              Stack[0xc]:4   y1
+; int              Stack[0x10]:4   x2
+; int              Stack[0x14]:4   y2
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -11,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0045d2b0 at 0045d2c2
+;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0 at 0045d2c2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057da56
@@ -89,7 +95,7 @@ section .text
     PUSH EDI                            ; 0045d174
     INC ESI                             ; 0045d175
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20 ; 0045d176
-        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20()
+        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20(int start_x, int end_x, int y)
     ADD ESP,0xc                         ; 0045d17b
     CMP ESI,EBP                         ; 0045d17e
     JLE 0x0045d172                      ; 0045d180
@@ -121,7 +127,7 @@ section .text
     ADD EBX,0x4                         ; 0045d1b6
     INC ESI                             ; 0045d1b9
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0045d1ba
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0045d1bf
     CMP EBX,EBP                         ; 0045d1c2
     JLE 0x0045d1a2                      ; 0045d1c4

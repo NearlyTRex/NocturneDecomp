@@ -2,25 +2,26 @@
 // Address: 004e1150
 // Address Range: [[004e1150, 004e1193]]
 // Convention: __cdecl
-// Signature: int __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(int param_1,uint param_2)
+// Signature: CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(CMotionController *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-int __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(int param_1,uint param_2)
+CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(CMotionController *this_ptr,uint flags)
 
 {
-  uint uVar1;
+  void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&g_CMotionControllerTypeInfo_005a0d30);
-    shape_memdbg_cpp_free_FUN_00564486(uVar1);
-    return param_1;
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CMotionControllerTypeInfo_005a0d30);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    return this_ptr;
   }
-  *(byte ***)(param_1 + 0x50) =
-       &PTR_core_motion_cpp_CMotionController_dtor_FUN_004e1150_005a0d24;
-  if ((param_2 & 2) == 0) {
-    return param_1;
+  this_ptr->vtable =
+       (CMotionController_vtable *)&PTR_core_motion_cpp_CMotionController_dtor_FUN_004e1150_005a0d24
+  ;
+  if ((flags & 2) == 0) {
+    return this_ptr;
   }
-  FUN_00564494(param_1);
-  return param_1;
+  FUN_00564494(this_ptr);
+  return this_ptr;
 }

@@ -11,7 +11,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_memory.c___arrfini_FUN_0056494f",
-    "ret":"undefined1",
+    "ret":"void*",
     "vars":{
       "locals":[
         {
@@ -63,8 +63,65 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"obj_array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"obj_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"type_info",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomTypeInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -95,12 +152,54 @@
         "start":"005701cf"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005701cf",
-    "ret":"undefined1",
+    "name":"crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf",
+    "ret":"strstreambuf*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"strstreambuf*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -114,7 +213,7 @@
       }
     ],
     "importable":true,
-    "name":"FUN_00571d4f",
+    "name":"crt_iostream.cpp_streambuf_setbuf_FUN_00571d4f",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{

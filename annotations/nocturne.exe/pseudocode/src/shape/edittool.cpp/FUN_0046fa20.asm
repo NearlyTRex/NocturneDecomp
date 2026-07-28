@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_FUN_0046fa20(undefined4 param_1)
+; CEditorTools * shape_edittool_cpp_FUN_0046fa20(CEditorTools *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 0046fa31
         ;   Label: LAB_0046fa31
     CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0 ; 0046fa32
-        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0()
+        ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools * this_ptr)
     MOV ECX,dword ptr [0x01bcd07c]      ; 0046fa37 | DAT_01bcd07c
     ADD ESP,0x4                         ; 0046fa3d
     TEST ECX,ECX                        ; 0046fa40

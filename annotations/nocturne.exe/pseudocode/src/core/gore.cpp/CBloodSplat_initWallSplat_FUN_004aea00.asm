@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(undefined4 *param_1,float *param_2,float *param_3)
+; void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)
 ;
+; Parameters:
+; CBloodSplat *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   normal
+; int              Stack[0x10]:4   blood_type
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0 at 004b01e8
@@ -47,20 +52,20 @@ section .text
     FSQRT                               ; 004aea3a
     FLD float ptr [EDI + 0x4]           ; 004aea3c
     CALL crt_math.c_atan2_FUN_00566c81  ; 004aea3f
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     MOV dword ptr [ESI + 0x20],0x0      ; 004aea44
     FCHS                                ; 004aea4b
     FSTP float ptr [ESI + 0x18]         ; 004aea4d
     FLD float ptr [EDI + 0x8]           ; 004aea50
     FLD float ptr [EDI]                 ; 004aea53
     CALL crt_math.c_atan2_FUN_00566c81  ; 004aea55
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     PUSH 0x3                            ; 004aea5a
     LEA EBX,[ESI + 0x2c]                ; 004aea5c
     PUSH 0x0                            ; 004aea5f
     FSTP float ptr [ESI + 0x1c]         ; 004aea61
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004aea64
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004aea69
     MOV dword ptr [ESI + 0x28],EAX      ; 004aea6c
     MOV EAX,EBP                         ; 004aea6f

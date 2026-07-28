@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041e430(int param_1)
+; void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_0041e430(CBoxActor *this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -26,16 +28,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0041e435
     PUSH EBX                            ; 0041e439
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0041e43a
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041e43f
     LEA ESI,[EBX + 0x150]               ; 0041e442
     PUSH ESI                            ; 0041e448
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041e449
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041e44e
     PUSH ESI                            ; 0041e451
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0041e452
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x308]         ; 0041e457
     FLDZ                                ; 0041e45d
     ADD ESP,0x4                         ; 0041e45f
@@ -73,7 +75,7 @@ section .text
     PUSH EBX                            ; 0041e4b2
         ;   Label: LAB_0041e4b2
     CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0 ; 0041e4b3
-        ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0()
+        ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041e4b8
     MOV dword ptr [EBX + 0x320],0x0     ; 0041e4bb
     ADD ESP,0x4                         ; 0041e4c5

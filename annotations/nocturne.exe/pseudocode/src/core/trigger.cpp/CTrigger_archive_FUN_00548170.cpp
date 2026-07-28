@@ -2,67 +2,71 @@
 // Address: 00548170
 // Address Range: [[00548170, 00548400]]
 // Convention: __cdecl
-// Signature: void __cdecl core_trigger_cpp_CTrigger_archive_FUN_00548170(int param_1)
+// Signature: void __cdecl core_trigger_cpp_CTrigger_archive_FUN_00548170(CTrigger *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_trigger_cpp_CTrigger_archive_FUN_00548170(int param_1)
+void __cdecl core_trigger_cpp_CTrigger_archive_FUN_00548170(CTrigger *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x164,"triggerState");
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x158,"triggerSize");
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x154,"triggerType");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x21c,"onName");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x280,"offName");
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->trigger_state,"triggerState");
+  core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->trigger_size,"triggerSize");
+  core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->event_type,"triggerType");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->on_event,"onName");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->off_event,"offName");
   if (INT_005c1130 < 7) {
     if (1 < INT_005c1130) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x16c,"whoTriggers");
-      core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x170,"actorTriggerName");
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->hero_triggers_me,"whoTriggers")
+      ;
+      core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->actor_name,"actorTriggerName");
     }
     if (2 < INT_005c1130) {
-      core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x214,"lightMin");
-      core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x218,"lightMax");
+      core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->light_min,"lightMin");
+      core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->light_max,"lightMax");
     }
-    if ((3 < INT_005c1130) && (*(int *)(param_1 + 0x16c) == 5)) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2ec,"laserType");
+    if ((3 < INT_005c1130) && (this_ptr->hero_triggers_me == 5)) {
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->laser_type,"laserType");
     }
     if (4 < INT_005c1130) {
-      if (*(int *)(param_1 + 0x16c) == 1) {
-        core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1c0,"actorTriggerTypes");
+      if (this_ptr->hero_triggers_me == 1) {
+        core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->actor_type,"actorTriggerTypes")
+        ;
       }
-      if (*(int *)(param_1 + 0x16c) == 7) {
-        core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2f0,"hitPoints");
+      if (this_ptr->hero_triggers_me == 7) {
+        core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->hit_points,"hitPoints");
       }
     }
     if (5 < INT_005c1130) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x210,"pressurePlate");
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->pressure_plate,"pressurePlate")
+      ;
       return;
     }
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x16c,"whoTriggers");
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x170,"actorTriggerName");
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1c0,"actorTriggerTypes");
-    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x214,"lightMin");
-    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x218,"lightMax");
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2ec,"laserType");
-    core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2f0,"hitPoints");
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x210,"pressurePlate");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->hero_triggers_me,"whoTriggers");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->actor_name,"actorTriggerName");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->actor_type,"actorTriggerTypes");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->light_min,"lightMin");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->light_max,"lightMax");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->laser_type,"laserType");
+    core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->hit_points,"hitPoints");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->pressure_plate,"pressurePlate");
     if (INT_005c1130 < 8) {
-      core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00548680(param_1);
+      core_trigger_cpp_CTrigger_calculateTestRadius_FUN_00548680(this_ptr);
     }
     else {
-      core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x150,"testRadius");
+      core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->test_radius,"testRadius");
     }
     if (8 < INT_005c1130) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2f8,"autoAimAtMe");
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->auto_aim_at_me,"autoAimAtMe");
     }
     if (9 < INT_005c1130) {
-      core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x168,"shape");
+      core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->shape,"shape");
     }
     if (10 < INT_005c1130) {
-      core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2fc,"damageActorWildcard");
+      core_actor_cpp_archiveString_FUN_0040c6d0
+                (this_ptr->damage_actor_wildcard_name,"damageActorWildcard");
       return;
     }
   }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(char *param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(CIniFile *this_ptr,char *key,char *value)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; char *           Stack[0xc]:4   value
 ;
 ; XREF[4]:
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0 at 004be391
@@ -46,7 +50,7 @@ section .text
     ADD EBX,0x100                       ; 004bd9bf
     PUSH EBX                            ; 004bd9c5
     CALL engine_ini.cpp_writeProfileString_FUN_004bd830 ; 004bd9c6
-        ;   XREF to: 004bd830 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_writeProfileString_FUN_004bd830()
+        ;   XREF to: 004bd830 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_writeProfileString_FUN_004bd830(char * section, char * key, char * value, char * filename)
     ADD ESP,0x10                        ; 004bd9cb
     POP EBP                             ; 004bd9ce
     POP EBX                             ; 004bd9cf

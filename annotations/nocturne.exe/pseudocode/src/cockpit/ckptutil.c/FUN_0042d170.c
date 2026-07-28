@@ -9,5 +9,5 @@
 code * cockpit_ckptutil_c_FUN_0042d170(void)
 
 {
-  return cockpit_ckptutil_c_FUN_0042d100;
+  return cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042d100;
 }

@@ -2,48 +2,42 @@
 // Address: 00453e10
 // Address Range: [[00453e10, 00453efe]]
 // Convention: __cdecl
-// Signature: uint __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(int param_1,int param_2,undefined4 param_3,float *param_4)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector)
 
 #include "nocturne.h"
 
-uint __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(int param_1,int param_2,uint param_3,float *param_4)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector)
 
 {
-  float fVar1;
-  float fVar2;
-  uint uVar3;
-  int iVar4;
-  int iVar5;
+  int iVar1;
+  CDemonTriangle *triangle;
   
-  if (*(int *)(param_1 + 0x100) <= param_2) {
-    param_2 = *(int *)(param_1 + 0x100) + -1;
+  if (this_ptr->frame_count <= frame_index) {
+    frame_index = this_ptr->frame_count + -1;
   }
-  if (param_2 < 0) {
-    param_2 = 0;
+  if (frame_index < 0) {
+    frame_index = 0;
   }
-  if ((*(float *)(param_1 + 0x364) == *param_4) && (*(float *)(param_1 + 0x368) == param_4[1])) {
-    fVar1 = *(float *)(param_1 + 0x36c);
-    fVar2 = param_4[2];
-    uVar3 = (uint)(ushort)((ushort)(fVar1 < fVar2) << 8 | (ushort)(NAN(fVar1) || NAN(fVar2)) << 10 |
-                          (ushort)(fVar1 == fVar2) << 0xe);
-    if ((fVar1 == fVar2) != 0) goto LAB_00453e56;
+  if ((((float)this_ptr->texture_list[8].textures[0].base.type != transform_vector->x) ||
+      ((float)this_ptr->texture_list[8].textures[0].base.count != transform_vector->y)) ||
+     (*(float *)this_ptr->texture_list[8].textures[0].texture_name != transform_vector->z)) {
+    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(this_ptr,transform_vector);
   }
-  uVar3 = core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(param_1,param_4);
-LAB_00453e56:
-  if (*(int *)(param_1 + 0x358) == 0) {
+  if (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) == 0) {
     PTR_01cc4800 = "..\\core\\dmodel.cpp";
     INT_01cc4804 = 0x40e;
-    uVar3 = core_main_c_FUN_004c8440("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",param_1);
+    core_main_c_FUN_004c8440("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",this_ptr);
   }
-  iVar5 = *(int *)(param_1 + 0x358) + param_2 * *(int *)(param_1 + 0x354) * 0x38;
-  iVar4 = 0;
-  if (0 < *(int *)(param_1 + 0x354)) {
+  triangle = (CDemonTriangle *)
+             (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) +
+             frame_index * *(int *)this_ptr->texture_list[7].textures[2].texture_name * 0x38);
+  iVar1 = 0;
+  if (0 < *(int *)this_ptr->texture_list[7].textures[2].texture_name) {
     do {
-      iVar4 = iVar4 + 1;
-      core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(iVar5,param_3);
-      uVar3 = *(uint *)(param_1 + 0x354);
-      iVar5 = iVar5 + 0x38;
-    } while (iVar4 < (int)uVar3);
+      iVar1 = iVar1 + 1;
+      core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(triangle,cylinder);
+      triangle = triangle + 1;
+    } while (iVar1 < *(int *)this_ptr->texture_list[7].textures[2].texture_name);
   }
-  return uVar3;
+  return;
 }

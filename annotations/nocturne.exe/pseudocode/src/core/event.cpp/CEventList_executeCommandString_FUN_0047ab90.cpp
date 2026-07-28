@@ -2,13 +2,13 @@
 // Address: 0047ab90
 // Address Range: [[0047ab90, 0047ac47]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(undefined4 param_1,char *param_2)
+// Signature: int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList *this_ptr,char *command_string)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(uint param_1,char *param_2)
+int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList *this_ptr,char *command_string)
 
 {
   char cVar1;
@@ -18,12 +18,12 @@ uint __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(uint pa
   char local_6c [100];
   
   do {
-    while (((&DAT_005c168c)[(byte)(*param_2 + 1)] & 2) != 0) {
-      param_2 = param_2 + 1;
+    while (((&DAT_005c168c)[(byte)(*command_string + 1)] & 2) != 0) {
+      command_string = command_string + 1;
     }
-    cVar1 = *param_2;
+    cVar1 = *command_string;
     pcVar2 = local_6c;
-    pcVar4 = param_2;
+    pcVar4 = command_string;
     if (cVar1 == '\0') {
       return 1;
     }
@@ -34,13 +34,13 @@ uint __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(uint pa
       cVar1 = pcVar4[1];
       pcVar4 = pcVar4 + 1;
     }
-    while ((param_2 = pcVar4 + 1, local_6c < pcVar2 &&
+    while ((command_string = pcVar4 + 1, local_6c < pcVar2 &&
            (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
       pcVar2 = pcVar2 + -1;
     }
     if (local_6c < pcVar2) {
       *pcVar2 = '\0';
-      iVar3 = core_event_cpp_CEventList_executeCommand_FUN_0047ac50(param_1,local_6c);
+      iVar3 = core_event_cpp_CEventList_executeCommand_FUN_0047ac50(this_ptr,local_6c);
       if (iVar3 == 0) {
         if (_DAT_01c08b5c != 0) {
           return 0;

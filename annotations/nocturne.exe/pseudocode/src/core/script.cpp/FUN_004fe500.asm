@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004fe500(int param_1)
+; void core_script_cpp_FUN_004fe500(CScript *param_1)
 ;
 ;
 ; XREF[2]:
@@ -24,11 +24,11 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 004fe505
     PUSH EAX                            ; 004fe508
     CALL shape_edittool.cpp_CStrList_clear_FUN_00473c50 ; 004fe509
-        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_clear_FUN_00473c50()
+        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_clear_FUN_00473c50(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004fe50e
     PUSH EBX                            ; 004fe511
     CALL core_script.cpp_CScript_freeParsedLines_FUN_004fe550 ; 004fe512
-        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_freeParsedLines_FUN_004fe550()
+        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_freeParsedLines_FUN_004fe550(CScript * this_ptr)
     MOV EDX,dword ptr [EBX + 0x20]      ; 004fe517
     ADD ESP,0x4                         ; 004fe51a
     TEST EDX,EDX                        ; 004fe51d

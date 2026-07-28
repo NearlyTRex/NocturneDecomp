@@ -37,36 +37,36 @@ section .text
     SUB ESP,0x100                       ; 004c8513
     XOR ESI,ESI                         ; 004c8519
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004c851b
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004c851b
     PUSH ESI                            ; 004c8520
     PUSH ESI                            ; 004c8521
     PUSH 0x587b08                       ; 004c8522 | = "Nocturne(R) Debug/editor Menu"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004c8527
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004c852c
     PUSH 0x16                           ; 004c852f
     PUSH ESI                            ; 004c8531
     PUSH 0x587b26                       ; 004c8532 | = "1. Play a mission"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004c8537
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004c853c
     PUSH 0xbb                           ; 004c853f
     PUSH ESI                            ; 004c8544
     PUSH 0x587b38                       ; 004c8545 | = "Z. Display memory usage info"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004c854a
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004c854f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004c8552
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004c8557
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00558b00 ; 004c855c
-        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
+        ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     AND EAX,0xff                        ; 004c8561
     PUSH EAX                            ; 004c8566
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004c8567
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004c856c
     MOV EBX,EAX                         ; 004c856f
     CMP EAX,0x34                        ; 004c8571
@@ -80,7 +80,7 @@ section .text
     JNZ 0x004c851b                      ; 004c857e
         ;   XREF to: 004c851b (CONDITIONAL_JUMP)  ; LAB_004c851b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004c8580
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     ADD ESP,0x100                       ; 004c8585
     POP EDI                             ; 004c858b
     POP ESI                             ; 004c858c
@@ -101,7 +101,7 @@ section .text
     MOV EDX,dword ptr [0x005b6d50]      ; 004c85a4 | DAT_005b6d50
     PUSH EDX                            ; 004c85aa
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0 ; 004c85ab
-        ;   XREF to: 004736d0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0()
+        ;   XREF to: 004736d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 004c85b0
     MOV EAX,ESP                         ; 004c85b3
     PUSH EAX                            ; 004c85b5

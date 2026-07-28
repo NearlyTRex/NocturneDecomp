@@ -2,13 +2,13 @@
 // Address: 0044e830
 // Address Range: [[0044e830, 0044e91d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int param_1)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemonLight *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int param_1)
+void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemonLight *this_ptr)
 
 {
   uint uVar1;
@@ -19,7 +19,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int p
   byte bVar6;
   
   bVar6 = 0;
-  if (*(int *)(param_1 + 0x11e4) == 0) {
+  if ((this_ptr->base).scene_open_flag == 0) {
     PTR_01cc4800 = "..\\core\\dlight.cpp";
     INT_01cc4804 = 0x1af;
     core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
@@ -28,7 +28,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int p
   if (_DAT_01ab99f0 == 1) {
     puVar4 = (uint *)&DAT_01bd2fa0;
     puVar5 = (uint *)&DAT_01ab99f4;
-    for (uVar1 = *(uint *)(param_1 + 0x1cc4) & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
+    for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
       *puVar5 = *puVar4;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
@@ -38,20 +38,20 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int p
       puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);
       puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
     }
-    if (*(int *)(param_1 + 0x2f9c) == 0) {
+    if (this_ptr->master_zbuffer == (void *)0x0) {
       PTR_01cc4800 = "..\\core\\dlight.cpp";
       INT_01cc4804 = 0x1bc;
       core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - No master Z buffer");
     }
     iVar2 = 0;
-    if (0 < *(int *)(param_1 + 0x1cc4)) {
+    if (0 < this_ptr->shadow_map_height) {
       iVar3 = 0;
       do {
-        *(int *)(&DAT_01bd2fa0 + iVar3) =
-             *(int *)(param_1 + 0x2f9c) + *(int *)(param_1 + 0x1cc0) * iVar2 * 2;
+        *(void **)(&DAT_01bd2fa0 + iVar3) =
+             (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
-      } while (iVar2 < *(int *)(param_1 + 0x1cc4));
+      } while (iVar2 < this_ptr->shadow_map_height);
     }
     engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,1);
   }

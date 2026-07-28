@@ -7,12 +7,12 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[6]:
-;   core_skeleton.cpp_FUN_00518f60 at 00519054
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 00519054
 ;   engine_3d.c_FUN_00409210 at 00409275
 ;   engine_3d.c_drawLineStrip2D_FUN_00405870 at 004058f6
-;   shape_edittool.cpp_FUN_00472de0 at 00472e8e
-;   shape_edittool.cpp_FUN_00473080 at 00473180
-;   shape_edittool.cpp_FUN_00473190 at 00473380
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 at 00472e8e
+;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 at 00473380
+;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_00473080 at 00473180
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006af5b4
@@ -270,11 +270,11 @@ section .text
     PUSH 0x4e1e                         ; 004094be
     MOVSD.REP ES:EDI,ESI                ; 004094c3 | DAT_006af5e4 | DAT_006af5e8
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004094c5
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
     ADD ESP,0x4                         ; 004094ca
     PUSH 0x4e1f                         ; 004094cd
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 004094d2
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
     MOV EAX,[0x006af5f8]                ; 004094d7 | DAT_006af5f8
     ADD ESP,0x4                         ; 004094dc
     SAR EAX,0x10                        ; 004094df
@@ -289,7 +289,7 @@ section .text
     SAR EAX,0x10                        ; 004094fa
     PUSH EAX                            ; 004094fd
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 004094fe
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00409503
     ADD ESP,0x30                        ; 00409506
     POP EBP                             ; 00409509

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(undefined4 param_1,int *param_2,int param_3,int *param_4)
+; int core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -49,7 +49,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x44]      ; 00442c6d
     PUSH ECX                            ; 00442c71
     CALL core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0 ; 00442c72
-        ;   XREF to: 004425f0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0()
+        ;   XREF to: 004425f0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, int intensity)
     ADD ESP,0x10                        ; 00442c77
     ADD ESP,0x2c                        ; 00442c7a
     POP ESI                             ; 00442c7d

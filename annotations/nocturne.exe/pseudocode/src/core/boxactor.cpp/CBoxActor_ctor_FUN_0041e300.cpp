@@ -2,43 +2,49 @@
 // Address: 0041e300
 // Address Range: [[0041e300, 0041e425]]
 // Convention: __cdecl
-// Signature: int __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(undefined4 param_1)
+// Signature: CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(uint param_1)
+CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor *this_ptr)
 
 {
   int iVar1;
+  CKeyFramedModelInstance *pCVar2;
+  CBox *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
-  iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x23c);
-  *(byte ***)(iVar1 + -0x240) = &PTR_core_boxactor_cpp_CBoxActor_setup_FUN_0041e430_0059aad4;
-  *(uint *)(iVar1 + -4) = 0;
-  *(uint *)(iVar1 + -0x88) = 0x41a00000;
-  *(uint *)(iVar1 + -0x84) = 0;
-  *(uint *)(iVar1 + -0x8c) = 0;
-  *(uint *)(iVar1 + -0x90) = *(uint *)(iVar1 + -0x8c);
-  *(uint *)(iVar1 + -0x94) = *(uint *)(iVar1 + -0x90);
-  *(byte *)(iVar1 + -0xc0) = 0;
-  *(byte *)(iVar1 + -0xac) = 0;
-  *(uint *)(iVar1 + -0x98) = 0;
-  *(uint *)(iVar1 + -0x80) = 0;
-  *(uint *)(iVar1 + -0x78) = 0;
-  *(uint *)(iVar1 + -0x7c) = 0;
-  *(uint *)(iVar1 + -0x74) = 0;
-  *(byte *)(iVar1 + -0x68) = 0;
-  *(uint *)(iVar1 + -0x70) = 0;
-  *(uint *)(iVar1 + 0x25c) = 0;
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar1 + 0x150));
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar2[1].model_name + 0x48));
+  pCVar3[-1].rotation_matrix.m[0].x =
+       (float)&PTR_core_boxactor_cpp_CBoxActor_setup_FUN_0041e430_0059aad4;
+  pCVar3[-1].is_valid = 0;
+  pCVar3[-1].scrape_points[5].previous_position.x = 20.0;
+  pCVar3[-1].scrape_points[5].previous_position.y = 0.0;
+  pCVar3[-1].scrape_points[5].transformed_position.z = 0.0;
+  pCVar3[-1].scrape_points[5].transformed_position.y =
+       pCVar3[-1].scrape_points[5].transformed_position.z;
+  pCVar3[-1].scrape_points[5].transformed_position.x =
+       pCVar3[-1].scrape_points[5].transformed_position.y;
+  *(byte *)&pCVar3[-1].scrape_points[4].transformed_position.z = 0;
+  *(byte *)&pCVar3[-1].scrape_points[4].raytrace_normal.x = 0;
+  pCVar3[-1].scrape_points[5].local_position.z = 0.0;
+  pCVar3[-1].scrape_points[5].previous_position.z = 0.0;
+  pCVar3[-1].scrape_points[5].raytrace_normal.x = 0.0;
+  pCVar3[-1].scrape_points[5].raytrace_intersection = 0.0;
+  pCVar3[-1].scrape_points[5].raytrace_normal.y = 0.0;
+  *(byte *)&pCVar3[-1].scrape_points[6].local_position.y = 0;
+  pCVar3[-1].scrape_points[5].raytrace_normal.z = 0.0;
+  pCVar3[1].position.y = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar1 + -0x23c,"question.kfm");
-  *(uint *)(iVar1 + 0x254) = 0xffffffff;
-  *(uint *)(iVar1 + 0x260) = 1;
-  *(uint *)(iVar1 + 0x264) = 1;
-  *(uint *)(iVar1 + 0x268) = 0;
-  *(byte *)(iVar1 + 0x26c) = 0;
-  *(uint *)(iVar1 + 0x2d0) = 0;
-  *(uint *)(iVar1 + 0x2d4) = 0;
-  return iVar1 + -0x38c;
+            ((CKeyFramedModelInstance *)&pCVar3[-1].rotation_matrix.m[0].y,"question.kfm");
+  pCVar3->is_valid = -1;
+  pCVar3[1].position.z = 1.4013e-45;
+  pCVar3[1].orientation.x = 1.4013e-45;
+  pCVar3[1].orientation.y = 0.0;
+  *(byte *)&pCVar3[1].orientation.z = 0;
+  pCVar3[1].angular_velocity.z = 0.0;
+  pCVar3[1].angular_velocity_temp.x = 0.0;
+  return (CBoxActor *)&pCVar3[-2].scrape_points[2].local_position.z;
 }

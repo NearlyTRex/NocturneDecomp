@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(int param_1)
+; CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(CSfxSample *this_ptr)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e30
-;   core_game.cpp_FUN_0049cc10 at 0049d3dd
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d3dd
 ;   core_sound.cpp_FUN_0052ebc0 at 0052ebd1
 ;   core_tommygun.cpp_FUN_005464a0 at 00546634
 ;   sound_sndmain.cpp_FUN_00523890 at 00523895
@@ -31,7 +33,7 @@ section .text
     PUSH 0x0                            ; 00525b7a
     PUSH EBX                            ; 00525b7c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00525b7d
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     FLD double ptr [0x005bea88]         ; 00525b82 | DAT_005bea88
     FLD float ptr [0x005a216c]          ; 00525b88 | FLOAT_005a216c
     FMUL ST1                            ; 00525b8e

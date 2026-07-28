@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 338,
+    "complexity_score": 54,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 29,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 119
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -53,23 +50,23 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_ostream_put_FUN_00564ce5",
-    "signature": "int * __cdecl crt_iostream_cpp_ostream_put_FUN_00564ce5(int *param_1,byte param_2)"
+    "signature": "_ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_00564ce5(_ostream *this_ptr,int character)"
   },
   "function_calls": [
     {
-      "addr": "0056b327",
-      "is_variadic": false,
-      "name": "FUN_0056b327"
-    },
-    {
       "addr": "0056b35c",
       "is_variadic": false,
-      "name": "FUN_0056b35c"
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_0056b35c"
+    },
+    {
+      "addr": "0056b327",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
     },
     {
       "addr": "0056b3c2",
       "is_variadic": false,
-      "name": "FUN_0056b3c2"
+      "name": "crt_stdio.c_stream_flush_FUN_0056b3c2"
     }
   ],
   "globals": [],
@@ -177,10 +174,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.257142857142857,
@@ -211,10 +208,10 @@
     "pcode_op_count": 298
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 24,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -223,244 +220,31 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "_ostream *"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * __cdecl crt_iostream_cpp_ostream_put_FUN_00564ce5(int *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int * __cdecl crt_iostream_cpp_ostream_put_FUN_00564ce5(int *param_1,byte param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(*(int *)(*param_1 + 4) + 0x10 + (int)param_1) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(*(int *)(*param_1 + 4) + 0x10 + (int)param_1) == 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "(((*(int *)((int)param_1 + *(int *)(*param_1 + 4) + 8) == 0 &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*(int *)((int)param_1 + *(int *)(*param_1 + 4) + 8) == 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*(int *)((int)param_1 + *(int *)(*param_1 + 4) + 8) == 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x4000) == 0)) ||",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x4000) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x4000) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar2 = FUN_0056b35c(param_1), iVar2 != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(int *)((int)param_1",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*pbVar1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)(iVar2 + 0x28) + 0xc))(iVar2,param_2);",
+      "text": "uVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0xc))(iVar1,character & 0xff);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar3 = (**(code **)(*(int *)(iVar2 + 0x28) + 0xc))(iVar2,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056b327(*(int *)(*param_1 + 4) + (int)param_1,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056b327(*(int *)(*param_1 + 4) + (int)param_1,2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "if ((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x2000) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x2000) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)param_1 + *(int *)(*param_1 + 4) + 0xc) & 0x2000) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056b3c2(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 14,
-      "match": "(byte **)(iVar2 + 0x20)",
-      "severity": "moderate",
-      "text": "pbVar1 = *(byte **)(iVar2 + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 15,
-      "match": "(byte **)(iVar2 + 0x1c)",
-      "severity": "moderate",
-      "text": "if (pbVar1 < *(byte **)(iVar2 + 0x1c)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 16,
-      "match": "(byte **)(iVar2 + 0x20)",
-      "severity": "moderate",
-      "text": "*(byte **)(iVar2 + 0x20) = pbVar1 + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 21,
-      "match": "(int *)(iVar2 + 0x28)",
-      "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)(iVar2 + 0x28) + 0xc))(iVar2,param_2);",
-      "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

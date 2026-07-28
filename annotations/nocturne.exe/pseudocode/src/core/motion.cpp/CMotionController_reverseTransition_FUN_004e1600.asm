@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(int param_1)
+; void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(CMotionController *this_ptr)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0 at 004e1427

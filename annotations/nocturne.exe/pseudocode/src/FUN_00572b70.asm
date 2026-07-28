@@ -15,11 +15,11 @@
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_00566e10
+;   crt_env.c_putenv_internal_FUN_00573930
+;   crt_stdlib.c_strtol_FUN_005738ac
 ;   crt_string.c__strncpy_FUN_00565f70
 ;   FUN_0056e09c
 ;   FUN_0056f278
-;   FUN_005738ac
-;   FUN_00573930
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x10                        ; 00572b74
     PUSH 0x599288                       ; 00572b77 | = "C_FILE_INFO"
     CALL crt_env.c_getenv_FUN_00566e10  ; 00572b7c
-        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
+        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_00566e10(char * name)
     ADD ESP,0x4                         ; 00572b81
     MOV EBX,EAX                         ; 00572b84
     TEST EAX,EAX                        ; 00572b86
@@ -72,7 +72,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 00572bb9
     PUSH EBX                            ; 00572bbd
     CALL crt_string.c__strncpy_FUN_00565f70 ; 00572bbe
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00572bc3
     PUSH 0x10                           ; 00572bc6
     PUSH 0x0                            ; 00572bc8
@@ -81,8 +81,8 @@ section .text
     PUSH EBX                            ; 00572bd0
     MOV byte ptr [ESP + ESI*0x1 + 0xc],DL ; 00572bd1
     LEA ESI,[EDI + 0x1]                 ; 00572bd5
-    CALL FUN_005738ac                   ; 00572bd8
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined FUN_005738ac()
+    CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572bd8
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
     MOV DL,0x3a                         ; 00572bdd
     ADD ESP,0xc                         ; 00572bdf
     MOV EBP,EAX                         ; 00572be2
@@ -114,7 +114,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 00572c04
     PUSH EBX                            ; 00572c08
     CALL crt_string.c__strncpy_FUN_00565f70 ; 00572c09
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00572c0e
     PUSH 0x10                           ; 00572c11
     PUSH 0x0                            ; 00572c13
@@ -123,8 +123,8 @@ section .text
     PUSH EBX                            ; 00572c1b
     MOV byte ptr [ESP + ESI*0x1 + 0xc],DH ; 00572c1c
     LEA ESI,[EDI + 0x1]                 ; 00572c20
-    CALL FUN_005738ac                   ; 00572c23
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined FUN_005738ac()
+    CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572c23
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
     MOV dword ptr [ESP + 0x18],EAX      ; 00572c28
     ADD ESP,0xc                         ; 00572c2c
     MOV DL,0x2a                         ; 00572c2f
@@ -156,7 +156,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 00572c51
     PUSH EBX                            ; 00572c55
     CALL crt_string.c__strncpy_FUN_00565f70 ; 00572c56
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00572c5b
     PUSH 0x10                           ; 00572c5e
     XOR BL,BL                           ; 00572c60
@@ -164,8 +164,8 @@ section .text
     MOV byte ptr [ESP + ESI*0x1 + 0x8],BL ; 00572c64
     LEA EBX,[ESP + 0x8]                 ; 00572c68
     PUSH EBX                            ; 00572c6c
-    CALL FUN_005738ac                   ; 00572c6d
-        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined FUN_005738ac()
+    CALL crt_stdlib.c_strtol_FUN_005738ac ; 00572c6d
+        ;   XREF to: 005738ac (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_strtol_FUN_005738ac()
     ADD ESP,0xc                         ; 00572c72
     PUSH EBP                            ; 00572c75
     MOV EDX,dword ptr [ESP + 0x10]      ; 00572c76
@@ -185,8 +185,8 @@ section .text
         ;   XREF to: 00572b8e (UNCONDITIONAL_JUMP)  ; LAB_00572b8e
     PUSH 0x599294                       ; 00572c99 | = "C_FILE_INFO="
         ;   Label: LAB_00572c99
-    CALL FUN_00573930                   ; 00572c9e
-        ;   XREF to: 00573930 (UNCONDITIONAL_CALL)  ; undefined FUN_00573930()
+    CALL crt_env.c_putenv_internal_FUN_00573930 ; 00572c9e
+        ;   XREF to: 00573930 (UNCONDITIONAL_CALL)  ; int crt_env.c_putenv_internal_FUN_00573930(char * envstr)
     ADD ESP,0x4                         ; 00572ca3
     ADD ESP,0x10                        ; 00572ca6
         ;   Label: LAB_00572ca6

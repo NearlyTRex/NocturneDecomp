@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(int param_1,int param_2)
+; void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *this_ptr,SCurtainVertex *vertex)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
+; SCurtainVertex * Stack[0x8]:4   vertex
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x154]:4  local_154

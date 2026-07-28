@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeather *this_ptr,float flash_timer,int play_sound)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   flash_timer
+; int              Stack[0xc]:4   play_sound
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined        Stack[-0x94]:1  local_94
@@ -92,13 +96,13 @@ section .text
     PUSH 0x1fba938                      ; 00554da4 | DAT_01fba938
     FSTP float ptr [EBX + 0x2c]         ; 00554da9
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 00554dac
-        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0()
+        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00554db1
     LEA EAX,[ESP + 0x44]                ; 00554db4
     PUSH EAX                            ; 00554db8
     PUSH 0x1fba938                      ; 00554db9 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 00554dbe
-        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0()
+        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00554dc3
     FLD float ptr [ESP + 0x68]          ; 00554dc6
     FADD float ptr [ESP + 0x44]         ; 00554dca
@@ -158,7 +162,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00554e72
     PUSH EAX                            ; 00554e76
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00554e77
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00554e7c
     MOV EAX,dword ptr [ESP + 0x80]      ; 00554e7f
     MOV dword ptr [ESP + 0x34],EAX      ; 00554e86
@@ -207,7 +211,7 @@ section .text
     MOV EAX,[0x005b80f0]                ; 00554f04 | DAT_005b80f0
     PUSH EAX                            ; 00554f09
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420 ; 00554f0a
-        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420()
+        ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 00554f0f
     MOV EAX,[0x01fb96f0]                ; 00554f12 | DAT_01fb96f0
         ;   Label: LAB_00554f12
@@ -221,7 +225,7 @@ section .text
     PUSH EDX                            ; 00554f3e
     MOV dword ptr [EBX + 0x30],EAX      ; 00554f3f
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00554f42
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00554f47
     TEST EAX,EAX                        ; 00554f4a
     JZ 0x00554f6a                       ; 00554f4c
@@ -254,7 +258,7 @@ section .text
         ;   Label: LAB_00554f86
     PUSH 0x1fb8508                      ; 00554f89
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 00554f8e
-        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740()
+        ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00554f93
     CMP dword ptr [EBP + 0x18],0x0      ; 00554f96
     JNZ 0x00554fa2                      ; 00554f9a
@@ -272,7 +276,7 @@ section .text
     MOV EDI,dword ptr [0x005bed68]      ; 00554fad | DAT_005bed68
     PUSH EDI                            ; 00554fb3
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 00554fb4
-        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 00554fb9
     MOV ESP,EBP                         ; 00554fbc
     POP EBP                             ; 00554fbe

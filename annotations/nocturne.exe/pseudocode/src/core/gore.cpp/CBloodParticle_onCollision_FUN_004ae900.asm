@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_gore_cpp_CBloodParticle_onCollision_FUN_004ae900(int param_1,int param_2)
+; undefined4 core_gore_cpp_CBloodParticle_onCollision_FUN_004ae900(CVector3f *param_1,CVector3f *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -33,7 +33,7 @@ section .text
     MOV EBP,dword ptr [0x005b96c4]      ; 004ae91d | INT_005b96c4
     PUSH EBP                            ; 004ae923
     CALL core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190 ; 004ae924
-        ;   XREF to: 004b0190 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190()
+        ;   XREF to: 004b0190 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createGroundBloodSplat_FUN_004b0190(CGore * this_ptr, CVector3f * position, int blood_type)
     ADD ESP,0xc                         ; 004ae929
     MOV EAX,0x1                         ; 004ae92c
     POP EBP                             ; 004ae931
@@ -49,7 +49,7 @@ section .text
     MOV ESI,dword ptr [0x005b96c4]      ; 004ae93c | INT_005b96c4
     PUSH ESI                            ; 004ae942
     CALL core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0 ; 004ae943
-        ;   XREF to: 004b01c0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0()
+        ;   XREF to: 004b01c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0(CGore * this_ptr, CVector3f * position, CVector3f * normal, int blood_type)
     ADD ESP,0x10                        ; 004ae948
     POP EBX                             ; 004ae94b
     POP ESI                             ; 004ae94c

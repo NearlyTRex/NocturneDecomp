@@ -2,28 +2,27 @@
 // Address: 00459f70
 // Address Range: [[00459f70, 0045a191]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,float *param_2,float param_3,undefined4 param_4)
+// Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background)
 
 #include "nocturne.h"
 
-void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,float *param_2,float param_3,uint param_4)
+void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background)
 
 {
-  int iVar1;
-  float *pfVar2;
+  CDeformableModel *pCVar1;
+  CBoundingBox3D *pCVar2;
+  int part_index;
+  CVector3f *initial_velocity;
   float local_b0;
-  byte local_ac [40];
-  byte local_84 [24];
+  CMatrix3x3f local_ac;
+  CBoundingBox3D local_84;
   uint local_6c;
   uint local_68;
   float local_64;
-  byte auStack_60 [12];
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
-  float local_48 [3];
-  float local_3c;
-  float local_38;
+  CVector3f CStack_60;
+  CVector3f CStack_54;
+  CVector3f local_48;
+  CVector3f local_3c;
   float fStack_30;
   float fStack_2c;
   float fStack_28;
@@ -32,55 +31,59 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,fl
   float local_1c;
   float local_18;
   
-  local_b0 = param_3;
-  if (*(char *)(param_1 + 0x23b0) != '\0') {
-    iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1 + 0x150);
-    local_24 = *(int *)(iVar1 + 0xc00);
+  local_b0 = spread_angle;
+  if ((this_ptr->base).base.model.model_name[0] != '\0') {
+    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                       (&(this_ptr->base).base.model);
+    local_24 = pCVar1->texture_sets[0].textures[0x28].textures[0].base.type;
     if (1 < local_24) {
-      if (param_3 < 0.0) {
+      if (spread_angle < 0.0) {
         local_b0 = 20.0;
       }
-      iVar1 = 0;
+      part_index = 0;
       if (0 < local_24) {
         do {
-          pfVar2 = param_2;
-          if ((param_2 != (float *)0x0) && (0.0 < local_b0)) {
-            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_3c,param_2);
+          initial_velocity = direction;
+          if ((direction != (CVector3f *)0x0) && (0.0 < local_b0)) {
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_3c,direction);
             local_20 = -local_b0;
             local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
             ;
-            local_38 = local_18 + local_38;
+            local_3c.y = local_18 + local_3c.y;
             local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(local_20,local_b0)
             ;
-            local_3c = local_18 + local_3c;
-            core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_ac,&local_3c);
-            local_64 = SQRT(param_2[2] * param_2[2] + *param_2 * *param_2 + param_2[1] * param_2[1])
-            ;
+            local_3c.x = local_18 + local_3c.x;
+            core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_ac,&local_3c);
+            local_64 = SQRT(direction->z * direction->z +
+                            direction->x * direction->x + direction->y * direction->y);
             local_6c = 0;
             local_68 = 0;
             local_1c = local_64;
-            core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(local_ac,local_48,&local_6c);
-            pfVar2 = local_48;
+            core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_ac,&local_48,&local_6c);
+            initial_velocity = &local_48;
           }
-          core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_0045a1a0(param_1,iVar1,pfVar2,param_4);
-          iVar1 = iVar1 + 1;
-        } while (iVar1 < local_24);
+          core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_0045a1a0
+                    (this_ptr,part_index,initial_velocity,render_in_background);
+          part_index = part_index + 1;
+        } while (part_index < local_24);
       }
     }
   }
-  pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_84);
-  fStack_30 = *pfVar2 + pfVar2[3];
-  fStack_2c = pfVar2[1] + pfVar2[4];
-  fStack_54 = fStack_30 * 5.2220990168285998e-315._0_4_;
-  fStack_50 = fStack_2c * 5.2220990168285998e-315._0_4_;
-  fStack_28 = pfVar2[2] + pfVar2[5];
-  fStack_4c = fStack_28 * 5.2220990168285998e-315._0_4_;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_60,&fStack_54);
-  if (*(int *)(param_1 + 0xb640) == 0) {
+  pCVar2 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+                     ((CDemonActor *)this_ptr,&local_84);
+  fStack_30 = (pCVar2->min).x + (pCVar2->max).x;
+  fStack_2c = (pCVar2->min).y + (pCVar2->max).y;
+  CStack_54.x = fStack_30 * 5.2220990168285998e-315._0_4_;
+  CStack_54.y = fStack_2c * 5.2220990168285998e-315._0_4_;
+  fStack_28 = (pCVar2->min).z + (pCVar2->max).z;
+  CStack_54.z = fStack_28 * 5.2220990168285998e-315._0_4_;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+            ((CDemonActor *)this_ptr,&CStack_60,&CStack_54);
+  if ((this_ptr->base).base.is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              (INT_005b96c4,auStack_60,param_2,100,*(uint *)(param_1 + 0x2608));
+              ((CGore *)INT_005b96c4,&CStack_60,direction,100,(this_ptr->base).base.blood_type);
     return;
   }
-  *(uint *)(param_1 + 0x2f08) = 0;
+  (this_ptr->base).base.fire_count = 0;
   return;
 }

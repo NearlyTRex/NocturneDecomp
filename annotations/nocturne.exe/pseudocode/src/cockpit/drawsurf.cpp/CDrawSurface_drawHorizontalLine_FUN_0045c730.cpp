@@ -2,69 +2,71 @@
 // Address: 0045c730
 // Address Range: [[0045c730, 0045c84a]]
 // Convention: __cdecl
-// Signature: int __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(int param_1,int param_2,int param_3,int param_4)
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(int param_1,int param_2,int param_3,int param_4)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 
 {
-  int iVar1;
-  ushort *puVar2;
-  uint *puVar3;
+  int start_x_00;
+  int end_x_00;
+  ushort *puVar1;
+  int *piVar2;
+  int iVar3;
   
-  param_4 = param_4 + *(int *)(param_1 + 8);
-  param_2 = param_2 + *(int *)(param_1 + 8);
-  param_3 = param_3 + *(int *)(param_1 + 0xc);
-  if ((*(int *)(param_1 + 0x14) <= param_3) && (param_3 <= *(int *)(param_1 + 0x1c))) {
-    if (param_2 < *(int *)(param_1 + 0x10)) {
-      param_2 = *(int *)(param_1 + 0x10);
+  end_x_00 = end_x + this_ptr->x;
+  start_x_00 = start_x + this_ptr->x;
+  iVar3 = y + this_ptr->y;
+  if ((this_ptr->clip_top <= iVar3) && (iVar3 <= this_ptr->clip_bottom)) {
+    if (start_x_00 < this_ptr->clip_left) {
+      start_x_00 = this_ptr->clip_left;
     }
-    if (*(int *)(param_1 + 0x18) < param_4) {
-      param_4 = *(int *)(param_1 + 0x18);
+    if (this_ptr->clip_right < end_x_00) {
+      end_x_00 = this_ptr->clip_right;
     }
-    if (param_2 <= param_4) {
+    if (start_x_00 <= end_x_00) {
       if (_DAT_01b4d71c != 0) {
-        iVar1 = cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
-                          (param_2,param_4,param_3);
-        return iVar1;
+        cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
+                  (start_x_00,end_x_00,iVar3);
+        return;
       }
-      param_3 = param_3 * 4;
+      iVar3 = iVar3 * 4;
       if (DAT_005b7624 < 0x10) {
         if (DAT_005b7624 == 8) {
-          iVar1 = memset
-                            (*(int *)(&DAT_01bd2fa0 + param_3) + param_2,_DAT_01b4d710,
-                             (param_4 - param_2) + 1);
-          return iVar1;
+          memset
+                    ((void *)(*(int *)(&DAT_01bd2fa0 + iVar3) + start_x_00),_DAT_01b4d710,
+                     (end_x_00 - start_x_00) + 1);
+          return;
         }
       }
       else {
         if (DAT_005b7624 < 0x11) {
-          puVar2 = (ushort *)(param_2 * 2 + *(int *)(&DAT_01bd2fa0 + param_3));
+          puVar1 = (ushort *)(start_x_00 * 2 + *(int *)(&DAT_01bd2fa0 + iVar3));
           do {
-            param_2 = param_2 + 1;
-            *puVar2 = _DAT_01b4d710;
-            puVar2 = puVar2 + 1;
-          } while (param_2 <= param_4);
-          return param_2;
+            start_x_00 = start_x_00 + 1;
+            *puVar1 = _DAT_01b4d710;
+            puVar1 = puVar1 + 1;
+          } while (start_x_00 <= end_x_00);
+          return;
         }
         if (DAT_005b7624 == 0x20) {
-          puVar3 = (uint *)(param_2 * 4 + *(int *)(&DAT_01bd2fa0 + param_3));
+          piVar2 = (int *)(start_x_00 * 4 + *(int *)(&DAT_01bd2fa0 + iVar3));
           do {
-            param_2 = param_2 + 1;
-            *puVar3 = _DAT_01b4d710;
-            puVar3 = puVar3 + 1;
-          } while (param_2 <= param_4);
-          return param_2;
+            start_x_00 = start_x_00 + 1;
+            *piVar2 = _DAT_01b4d710;
+            piVar2 = piVar2 + 1;
+          } while (start_x_00 <= end_x_00);
+          return;
         }
       }
       PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
       INT_01cc4804 = 0x3a5;
-      iVar1 = core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
-      return iVar1;
+      core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
+      return;
     }
   }
-  return param_2;
+  return;
 }

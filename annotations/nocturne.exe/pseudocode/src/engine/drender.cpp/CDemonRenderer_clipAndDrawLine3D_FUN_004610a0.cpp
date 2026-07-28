@@ -2,18 +2,18 @@
 // Address: 004610a0
 // Address Range: [[004610a0, 0046139f]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(int *param_1,int param_2,int param_3)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(int *param_1,int param_2,int param_3)
+void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 
 {
   int iVar1;
   int iVar2;
-  uint *puVar3;
+  SRenderVertex *pSVar3;
   int *piVar4;
   int *piVar5;
   byte bVar6;
@@ -25,18 +25,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(in
   
   bVar6 = 0;
   _DAT_01c00c70 = DAT_006b0260;
-  piVar4 = (int *)(*param_1 + param_2 * 0x30);
-  piVar5 = aiStack_40;
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index1;
+  piVar4 = aiStack_40;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar5 = *piVar4;
+    *piVar4 = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
     piVar4 = piVar4 + 1;
-    piVar5 = piVar5 + 1;
   }
-  puVar3 = (uint *)(*param_1 + param_3 * 0x30);
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index2;
   piVar4 = aiStack_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
+    *piVar4 = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
     piVar4 = piVar4 + 1;
   }
   if (((uStack_30 & uStack_90 & 0x80000000) == 0) || ((char)(uStack_30 & uStack_90) == '\0')) {
@@ -134,27 +134,30 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(in
           (-aiStack_a0[1] == aiStack_a0[2] || -aiStack_a0[2] < aiStack_a0[1])))))) &&
        ((0 < aiStack_40[2] && (0 < aiStack_a0[2])))) {
       piVar4 = aiStack_40;
-      piVar5 = (int *)(*param_1 + 0xea5a0);
+      pSVar3 = this_ptr->vertex_buffer_ptr + 0x4e1e;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *piVar5 = *piVar4;
+        (pSVar3->projected_vertex).transformed_x = *piVar4;
         piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
       }
       piVar4 = aiStack_a0;
-      puVar3 = (uint *)(*param_1 + 0xea5d0);
+      pSVar3 = this_ptr->vertex_buffer_ptr + 19999;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = *piVar4;
+        (pSVar3->projected_vertex).transformed_x = *piVar4;
         piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
       }
       engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(0x4e1e);
       engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(19999);
-      engine_prim_c_replaceWWithDepth_FUN_004f99d0(*param_1 + 0xea5a0,2);
-      iVar1 = *param_1;
+      engine_prim_c_replaceWWithDepth_FUN_004f99d0(this_ptr->vertex_buffer_ptr + 0x4e1e,2);
+      pSVar3 = this_ptr->vertex_buffer_ptr;
       engine_2d_c_drawLine3D_FUN_00401710
-                (*(int *)(iVar1 + 0xea5b0) >> 0x10,*(int *)(iVar1 + 0xea5b4) >> 0x10,
-                 *(uint *)(iVar1 + 0xea5a8),*(int *)(iVar1 + 0xea5e0) >> 0x10,
-                 *(int *)(iVar1 + 0xea5e4) >> 0x10,*(uint *)(iVar1 + 0xea5d8));
+                (pSVar3[0x4e1e].projected_vertex.screen_x >> 0x10,
+                 pSVar3[0x4e1e].projected_vertex.screen_y >> 0x10,
+                 pSVar3[0x4e1e].projected_vertex.transformed_z,
+                 pSVar3[19999].projected_vertex.screen_x >> 0x10,
+                 pSVar3[19999].projected_vertex.screen_y >> 0x10,
+                 pSVar3[19999].projected_vertex.transformed_z);
       return;
     }
   }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(int param_1,int param_2,undefined4 param_3,int param_4)
+; void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004c0850(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   specific_weapon
+; int              Stack[0xc]:4   weapon_category
+; int              Stack[0x10]:4   direction
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -50,7 +55,7 @@ section .text
     PUSH ESI                            ; 004c0875
     XOR EBX,EBX                         ; 004c0876
     CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20 ; 004c0878
-        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20()
+        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory * this_ptr, int reset_both)
     MOV ECX,dword ptr [ESI + 0x8]       ; 004c087d
     ADD ESP,0x8                         ; 004c0880
     TEST ECX,ECX                        ; 004c0883
@@ -78,7 +83,7 @@ section .text
     MOV EDX,dword ptr [ESI + EBX*0x4 + 0xc] ; 004c08ab
     PUSH EDX                            ; 004c08af
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c08b0
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c08b5
     MOV EDI,EAX                         ; 004c08b8
     MOV dword ptr [ESP],EAX             ; 004c08ba
@@ -118,7 +123,7 @@ section .text
     PUSH EAX                            ; 004c08ea
     PUSH ESI                            ; 004c08eb
     CALL core_inv.cpp_CInventory_isWeaponInCategory_FUN_004c1bf0 ; 004c08ec
-        ;   XREF to: 004c1bf0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_isWeaponInCategory_FUN_004c1bf0()
+        ;   XREF to: 004c1bf0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004c1bf0(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)
     ADD ESP,0xc                         ; 004c08f1
     TEST EAX,EAX                        ; 004c08f4
     JZ 0x004c08c1                       ; 004c08f6
@@ -150,7 +155,7 @@ section .text
     PUSH ESI                            ; 004c0934
     MOV dword ptr [ESI + 0x330],EAX     ; 004c0935
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 ; 004c093b
-        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90()
+        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004c0940
     ADD ESP,0x4                         ; 004c0943
     POP EBP                             ; 004c0946

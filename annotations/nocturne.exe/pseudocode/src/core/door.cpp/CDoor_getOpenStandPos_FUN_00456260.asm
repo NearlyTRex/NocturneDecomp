@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(int param_1,float *param_2,float *param_3,undefined4 param_4)
+; CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_pos
+; CVector3f *      Stack[0xc]:4   direction
+; CVector3f *      Stack[0x10]:4   actor_pos
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
 ; undefined4       Stack[-0x5c]:4  local_5c
@@ -79,7 +84,7 @@ section .text
     PUSH EAX                            ; 004562bc
     PUSH EDI                            ; 004562bd
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004562be
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLDZ                                ; 004562c3
     ADD ESP,0xc                         ; 004562c5
     LEA ESI,[EDI + 0x9b4]               ; 004562c8

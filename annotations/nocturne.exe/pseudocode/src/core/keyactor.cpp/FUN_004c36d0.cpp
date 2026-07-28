@@ -2,11 +2,11 @@
 // Address: 004c36d0
 // Address Range: [[004c36d0, 004c36eb]]
 // Convention: unknown
-// Signature: undefined4 core_keyactor_cpp_FUN_004c36d0(undefined4 param_1,undefined4 param_2)
+// Signature: undefined4 core_keyactor_cpp_FUN_004c36d0(undefined4 param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_keyactor_cpp_FUN_004c36d0(uint param_1,uint param_2)
+uint core_keyactor_cpp_FUN_004c36d0(uint param_1,CDemonActor *param_2)
 
 {
   int iVar1;

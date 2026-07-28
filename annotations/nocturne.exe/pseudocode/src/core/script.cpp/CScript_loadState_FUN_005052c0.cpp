@@ -2,79 +2,80 @@
 // Address: 005052c0
 // Address Range: [[005052c0, 005055e6]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(int param_1,uint param_2)
+void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
-  int iVar2;
+  uint uVar1;
+  int *piVar2;
   int iVar3;
-  byte local_118 [256];
+  char local_118 [256];
   int local_18;
-  int local_14;
+  uint local_14;
   
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%d\n",&local_18);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&local_18);
   if (6 < local_18) {
     PTR_01cc4800 = "..\\core\\script.cpp";
     INT_01cc4804 = 0xf56;
     core_main_c_FUN_004c8440("CScript::loadState - file version is newer than .EXE");
   }
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%d\n",0x01C775EC + 0x228);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",0x01C775EC + 0x228);
   if (1 < local_18) {
-    _fgets(local_118,0xff,param_2);
-    _fscanf(param_2,"%d\n",0x01C775EC + 0x22c);
+    _fgets(local_118,0xff,file_handle);
+    _fscanf(file_handle,"%d\n",0x01C775EC + 0x22c);
   }
   if (2 < local_18) {
-    _fgets(local_118,0xff,param_2);
-    _fscanf(param_2,"%d\n",0x01C775EC + 0x230);
+    _fgets(local_118,0xff,file_handle);
+    _fscanf(file_handle,"%d\n",0x01C775EC + 0x230);
   }
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%g\n",&DAT_01e56c20);
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%d\n",param_1 + 0x40);
-  _fgets(local_118,0xff,param_2);
-  *(byte *)(param_1 + 0x4c) = 0;
-  _fscanf(param_2,"\"%[^\"]",param_1 + 0x4c);
-  _fscanf(param_2,"\"\n",param_1 + 0x4c);
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%g\n",param_1 + 0x44);
-  _fgets(local_118,0xff,param_2);
-  _fscanf(param_2,"%g\n",param_1 + 0x48);
-  _fgets(local_118,0xff,param_2);
-  core_script_cpp_readActorReference_FUN_00505200(param_2,param_1 + 4);
-  _fgets(local_118,0xff,param_2);
-  iVar1 = core_script_cpp_readActorReference_FUN_00505200(param_2,param_1 + 0xc);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%g\n",&DAT_01e56c20);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&(this_ptr->script_text).data_array);
+  _fgets(local_118,0xff,file_handle);
+  *(byte *)&this_ptr->cmd_timer = 0;
+  _fscanf(file_handle,"\"%[^\"]",&this_ptr->cmd_timer);
+  _fscanf(file_handle,"\"\n",&this_ptr->cmd_timer);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%g\n",&(this_ptr->script_text).vtable);
+  _fgets(local_118,0xff,file_handle);
+  _fscanf(file_handle,"%g\n",&this_ptr->next_cmd);
+  _fgets(local_118,0xff,file_handle);
+  core_script_cpp_readActorReference_FUN_00505200
+            (file_handle,(CDemonActor *)&this_ptr->who_is_speaking);
+  _fgets(local_118,0xff,file_handle);
+  core_script_cpp_readActorReference_FUN_00505200(file_handle,(CDemonActor *)&this_ptr->focus_actor)
+  ;
   if (4 < local_18) {
-    _fgets(local_118,0xff,param_2);
-    iVar1 = _fscanf(param_2,"%d\n",param_1 + 0x14);
+    _fgets(local_118,0xff,file_handle);
+    _fscanf(file_handle,"%d\n",&this_ptr->focus_actor_locked);
   }
   if (3 < local_18) {
-    _fgets(local_118,0xff,param_2);
+    _fgets(local_118,0xff,file_handle);
     iVar3 = 0;
-    iVar1 = _fscanf(param_2,"%d\n",param_1 + 0x454);
-    if (0 < *(int *)(param_1 + 0x454)) {
-      iVar2 = param_1 + 0x458;
+    _fscanf(file_handle,"%d\n",&this_ptr->message_duration);
+    if (0 < (int)this_ptr->message_duration) {
+      piVar2 = &this_ptr->saved_cmd_index;
       do {
         iVar3 = iVar3 + 1;
-        _fscanf(param_2,"%d\n",iVar2);
-        iVar1 = *(int *)(param_1 + 0x454);
-        iVar2 = iVar2 + 4;
-      } while (iVar3 < iVar1);
+        _fscanf(file_handle,"%d\n",piVar2);
+        piVar2 = piVar2 + 1;
+      } while (iVar3 < (int)this_ptr->message_duration);
     }
   }
   if (5 < local_18) {
-    _fgets(local_118,0xff,param_2);
-    _fscanf(param_2,"%u\n",&local_14);
-    iVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(param_1);
-    if (iVar1 != local_14) {
-      iVar1 = shape_edittool_cpp_FUN_0046fb40(0x01BCD074,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
-      return iVar1;
+    _fgets(local_118,0xff,file_handle);
+    _fscanf(file_handle,"%u\n",&local_14);
+    uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(this_ptr);
+    if (uVar1 != local_14) {
+      shape_edittool_cpp_FUN_0046fb40(0x01BCD074,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
+      return;
     }
   }
-  return iVar1;
+  return;
 }

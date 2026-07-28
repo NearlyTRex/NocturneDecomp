@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_004cc000(undefined4 param_1)
+; CDemonTriangle * __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_004cc000(CDemonTriangle *objs,uint flags)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   objs
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_SGem_dtor_FUN_004cbef0 at 004cbefa
@@ -23,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cc007
     PUSH EDX                            ; 004cc00b
     CALL crt_memory.c___arrfini_FUN_0056494f ; 004cc00c
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004cc011
     RET                                 ; 004cc014
 

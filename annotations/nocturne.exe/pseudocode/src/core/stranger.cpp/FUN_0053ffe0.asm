@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_FUN_0053ffe0(int param_1)
+; void core_stranger_cpp_FUN_0053ffe0(CStranger *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -277,7 +277,7 @@ section .text
         ;   Label: LAB_0054027f
     PUSH EBX                            ; 00540281
     CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 ; 00540282
-        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660()
+        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStranger * this_ptr, int hand_index)
     MOV EAX,dword ptr [EBX + 0x1fa94]   ; 00540287
     MOV ECX,dword ptr [EAX + 0x2d4]     ; 0054028d
     ADD ESP,0x8                         ; 00540293
@@ -297,7 +297,7 @@ section .text
     PUSH EBP                            ; 005402c1
     PUSH EBX                            ; 005402c2
     CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 ; 005402c3
-        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660()
+        ;   XREF to: 0053a660 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStranger * this_ptr, int hand_index)
     MOV EDX,dword ptr [EBX + 0x1fa98]   ; 005402c8
     ADD ESP,0x8                         ; 005402ce
     TEST EDX,EDX                        ; 005402d1

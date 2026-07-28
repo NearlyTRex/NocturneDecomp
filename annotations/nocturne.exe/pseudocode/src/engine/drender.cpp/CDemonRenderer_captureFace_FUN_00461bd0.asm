@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(int *param_1,ushort *param_2,undefined4 param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; STrianglePackedIndices * Stack[0x8]:4   triangle_indices
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[4]:
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0 at 00461b64
@@ -128,7 +132,7 @@ section .text
     PUSH EBX                            ; 00461cfe
         ;   Label: LAB_00461cfe
     CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0 ; 00461cff
-        ;   XREF to: 004f9cb0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0()
+        ;   XREF to: 004f9cb0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0(STrianglePackedIndices * triangle)
     ADD ESP,0x4                         ; 00461d04
     TEST EAX,EAX                        ; 00461d07
     JNZ 0x00461c40                      ; 00461d09

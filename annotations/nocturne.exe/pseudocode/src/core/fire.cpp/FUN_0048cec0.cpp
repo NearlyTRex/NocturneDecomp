@@ -11,6 +11,8 @@
 void core_fire_cpp_FUN_0048cec0(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,0x100,&g_CBulletHoleTypeInfo_0059d320);
   return;
 }

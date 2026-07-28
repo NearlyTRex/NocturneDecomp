@@ -2,20 +2,19 @@
 // Address: 00544440
 // Address Range: [[00544440, 0054446f]]
 // Convention: unknown
-// Signature: undefined4 core_tentacle_cpp_FUN_00544440(int param_1)
+// Signature: int core_tentacle_cpp_FUN_00544440(CCharacter *param_1)
 
 #include "nocturne.h"
 
-uint core_tentacle_cpp_FUN_00544440(int param_1)
+int core_tentacle_cpp_FUN_00544440(CCharacter *param_1)
 
 {
   int iVar1;
-  uint uVar2;
   
-  iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x68))(param_1);
+  iVar1 = (*((param_1->base).vtable._ub)->shouldIgnoreForTargeting)(&param_1->base);
   if ((iVar1 != 0) && (*(int *)(0x01CC9450 + 4) == 0)) {
     return 0;
   }
-  uVar2 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);
-  return uVar2;
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);
+  return iVar1;
 }

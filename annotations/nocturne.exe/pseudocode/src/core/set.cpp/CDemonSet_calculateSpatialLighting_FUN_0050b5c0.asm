@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(int param_1,undefined4 param_2,int param_3)
+; int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *param_1,undefined4 param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
@@ -65,7 +65,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x60]      ; 0050b5e8
     PUSH ESI                            ; 0050b5ec
     CALL core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0 ; 0050b5ed
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0()
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
         ;   Label: LAB_0050b5ed
     ADD ESP,0x18                        ; 0050b5f2
     XOR EDI,EDI                         ; 0050b5f5

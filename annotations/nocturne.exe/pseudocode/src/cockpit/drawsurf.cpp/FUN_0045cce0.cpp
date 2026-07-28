@@ -11,6 +11,9 @@
 void cockpit_drawsurf_cpp_FUN_0045cce0(void)
 
 {
-  cockpit_drawsurf_cpp_FUN_0045cc70();
+  CDrawSurface *in_stack_00000004;
+  
+  cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70
+            (in_stack_00000004,0,0,in_stack_00000004->width + -1,in_stack_00000004->height + -1);
   return;
 }

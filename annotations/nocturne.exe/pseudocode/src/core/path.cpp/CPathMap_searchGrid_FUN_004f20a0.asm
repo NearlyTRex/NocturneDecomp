@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(undefined4 param_1,undefined4 param_2)
+; uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(CPathMap *this_ptr,int start_height)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   start_height
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -13,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f1242
-;   core_path.cpp_FUN_004f2050 at 004f208e
+;   core_path.cpp_CPathMap_setupPathSearch_FUN_004f2050 at 004f208e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc6f
@@ -54,7 +57,7 @@ section .text
     PUSH 0x1e40098                      ; 004f20b4
     MOV ESI,0x1                         ; 004f20b9
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004f20be
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ECX,dword ptr [0x01e3161c]      ; 004f20c3 | DAT_01e3161c
     MOV EBX,dword ptr [0x01e31620]      ; 004f20c9 | DAT_01e31620
     ADD ESP,0xc                         ; 004f20cf
@@ -114,7 +117,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 004f219a
     PUSH EDX                            ; 004f219e
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f219f
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f21a4
     MOV EBP,EAX                         ; 004f21a7
     MOV ECX,dword ptr [ESP + 0xc]       ; 004f21a9
@@ -127,7 +130,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 004f21b9
     PUSH EDI                            ; 004f21bd
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f21be
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f21c3
     MOV EDI,EAX                         ; 004f21c6
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f21c8
@@ -140,7 +143,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x38]      ; 004f21d8
     PUSH ECX                            ; 004f21dc
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f21dd
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f21e2
     MOV ESI,EAX                         ; 004f21e5
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f21e7
@@ -153,7 +156,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x38]      ; 004f21f7
     PUSH ECX                            ; 004f21fb
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f21fc
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     MOV EDX,dword ptr [0x01e3161c]      ; 004f2201 | DAT_01e3161c
     ADD ESP,0x10                        ; 004f2207
     MOV ECX,EAX                         ; 004f220a

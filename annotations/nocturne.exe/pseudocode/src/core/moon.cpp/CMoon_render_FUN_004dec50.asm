@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
+; void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 ;
+; Parameters:
+; CMoon *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x5c]:4  local_5c
 ; undefined4       Stack[-0x58]:4  local_58
@@ -78,28 +80,28 @@ section .text
     SUB ESP,0x4c                        ; 004dec56
     MOV ESI,dword ptr [EBP + 0x14]      ; 004dec59
     CALL sound_sndmain.cpp_processAudio_FUN_005288f0 ; 004dec5c
-        ;   XREF to: 005288f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_processAudio_FUN_005288f0()
+        ;   XREF to: 005288f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_processAudio_FUN_005288f0()
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004dec61
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004dec66
-        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBufferNative_FUN_0052eed4()
+        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     PUSH 0x2dd1184                      ; 004dec6b | DAT_02dd1184
     MOV EDX,dword ptr [0x005ae704]      ; 004dec70 | DAT_005ae704
     PUSH EDX                            ; 004dec76 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 004dec77
-        ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700()
+        ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 004dec7c
     MOV ECX,dword ptr [0x005ae704]      ; 004dec7f | DAT_005ae704
     PUSH 0x42e00000                     ; 004dec85
     PUSH ECX                            ; 004dec8a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004dec8b
-        ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00()
+        ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004dec90
     PUSH 0x2dd1184                      ; 004dec93 | DAT_02dd1184
     MOV EBX,dword ptr [0x005ae704]      ; 004dec98 | DAT_005ae704
     PUSH EBX                            ; 004dec9e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 004dec9f
-        ;   XREF to: 00460780 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780()
+        ;   XREF to: 00460780 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     FLD double ptr [0x0058a936]         ; 004deca4 | DOUBLE_0058a936
     FLD float ptr [ESI + 0x4]           ; 004decaa
     FADD ST0,ST1                        ; 004decad
@@ -119,7 +121,7 @@ section .text
     MOV dword ptr [EBP + -0x44],EDI     ; 004decd5
     FSTP float ptr [EBP + -0x48]        ; 004decd8
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004decdb
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV EAX,[0x005be368]                ; 004dece0 | DAT_005be368
     ADD ESP,0x8                         ; 004dece5
     MOV dword ptr [EAX + 0x15aa88],0x1  ; 004dece8 | DAT_01fb1d0c
@@ -132,7 +134,7 @@ section .text
     PUSH EAX                            ; 004ded1f | DAT_01e57284
     MOV dword ptr [EAX + 0x15aa98],0x280 ; 004ded20 | DAT_01fb1d1c
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 004ded2a
-        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340()
+        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 004ded2f
     PUSH 0x205                          ; 004ded32
     PUSH 0x0                            ; 004ded37
@@ -140,7 +142,7 @@ section .text
     LEA EAX,[ESI + 0x8]                 ; 004ded3b
     PUSH EAX                            ; 004ded3e
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 ; 004ded3f
-        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040()
+        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     MOV EAX,[0x005be368]                ; 004ded44 | DAT_005be368
     MOV dword ptr [EAX + 0x15aa8c],0xffffb7bc ; 004ded49 | DAT_01fb1d10
     MOV dword ptr [EAX + 0x15aa90],0xffffb7bc ; 004ded53 | DAT_01fb1d14
@@ -171,7 +173,7 @@ section .text
     PUSH dword ptr [EBX + 0x1ccdef0]    ; 004dedaf
     PUSH EAX                            ; 004dedb5
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004dedb6
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     FLD float ptr [EBP + -0x34]         ; 004dedbb
     FLD float ptr [EBP + -0x30]         ; 004dedbe
     FLD float ptr [EBP + -0x2c]         ; 004dedc1
@@ -195,7 +197,7 @@ section .text
     PUSH EDI                            ; 004dedfc | DAT_01b4d738
     FSTP float ptr [EBP + -0x3c]        ; 004dedfd
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004dee00
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004dee05
     PUSH 0x0                            ; 004dee08
     LEA EAX,[EBP + -0x40]               ; 004dee0a
@@ -203,24 +205,24 @@ section .text
     MOV EAX,[0x005ae704]                ; 004dee0e | DAT_005ae704
     PUSH EAX                            ; 004dee13 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004dee14
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004dee19
     FLD float ptr [EBX + 0x1ccdef4]     ; 004dee1c
     PUSH -0x1                           ; 004dee22
     CALL crt_math.c_round_FUN_00563a30  ; 004dee24
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH 0x0                            ; 004dee29
     FISTP dword ptr [EBP + -0x4]        ; 004dee2b
     MOV EDX,dword ptr [EBP + -0x4]      ; 004dee2e
     PUSH EDX                            ; 004dee31
     PUSH 0x1cce1bc                      ; 004dee32
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 ; 004dee37
-        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040()
+        ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 004dee3c
     MOV ECX,dword ptr [0x005ae704]      ; 004dee3f | DAT_005ae704
     PUSH ECX                            ; 004dee45 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004dee46
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     IMUL EAX,dword ptr [EBX + 0x1ccdeec],0xc ; 004dee4b
     MOV EAX,dword ptr [ESI + EAX*0x1]   ; 004dee52
     MOV dword ptr [EBP + -0x4],EAX      ; 004dee55
@@ -240,7 +242,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004dee88 | DAT_005be368
         ;   Label: LAB_004dee88
     CALL crt_math.c_round_FUN_00563a30  ; 004dee8e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBP + -0x4]        ; 004dee93
     MOV EAX,dword ptr [EBP + -0x4]      ; 004dee96
     MOV dword ptr [EDX + 0x15aa98],EAX  ; 004dee99
@@ -328,10 +330,10 @@ section .text
     PUSH 0x1                            ; 004defd0
         ;   Label: LAB_004defd0
     CALL engine_3d.c_setBlendMode_FUN_004083c0 ; 004defd2
-        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setBlendMode_FUN_004083c0()
+        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_004083c0(int blend_mode)
     FLD float ptr [0x01ccdec4]          ; 004defd7 | DAT_01ccdec4
     CALL crt_math.c_round_FUN_00563a30  ; 004defdd
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBP + -0xc]        ; 004defe2
     MOV ESI,dword ptr [EBP + -0xc]      ; 004defe5
     ADD ESP,0x4                         ; 004defe8
@@ -351,11 +353,11 @@ section .text
     ADD EAX,0x1ccdc64                   ; 004df00d
     PUSH EAX                            ; 004df012
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710 ; 004df013
-        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710()
+        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004df018
     PUSH 0x0                            ; 004df01b
     CALL engine_3d.c_setBlendMode_FUN_004083c0 ; 004df01d
-        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setBlendMode_FUN_004083c0()
+        ;   XREF to: 004083c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_004083c0(int blend_mode)
     ADD ESP,0x4                         ; 004df022
     MOV ESP,EBP                         ; 004df025
     POP EBP                             ; 004df027

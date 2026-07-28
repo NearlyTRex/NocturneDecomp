@@ -9,12 +9,12 @@
 void core_simbox_cpp_FUN_00516b70(void)
 
 {
-  int iVar1;
+  CSimBox *this_ptr;
   
-  iVar1 = FUN_0056497c(0x5c4);
-  if (iVar1 == 0) {
+  this_ptr = (CSimBox *)FUN_0056497c(0x5c4);
+  if (this_ptr == (CSimBox *)0x0) {
     return;
   }
-  core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(iVar1);
+  core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(this_ptr);
   return;
 }

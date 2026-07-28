@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(int param_1,undefined4 param_2,float *param_3)
+; CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   output_local_point
+; CVector3f *      Stack[0xc]:4   input_world_point
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
@@ -12,7 +16,7 @@
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a828
 ;   core_actor.cpp_FUN_0040b300 at 0040b656
 ;   core_baron.cpp_FUN_00410cc0 at 00410cfd
-;   core_boxactor.cpp_FUN_0041ef90 at 0041efab
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041efab
 ;   core_boxactor.cpp_FUN_0041f190 at 0041f1b1
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90 at 0042cb5f
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260 at 00428273

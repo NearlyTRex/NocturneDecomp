@@ -2,11 +2,11 @@
 // Address: 0055cd70
 // Address Range: [[0055cd70, 0055cec4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(float *param_1,float *param_2)
+// Signature: CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in)
 
 #include "nocturne.h"
 
-void __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(float *param_1,float *param_2)
+CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in)
 
 {
   float fVar1;
@@ -18,25 +18,25 @@ void __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(float *param_1,fl
   float fVar7;
   float fVar8;
   
-  fVar1 = param_2[1];
+  fVar1 = quat_in->x;
   fVar4 = (float)2 /
-          (param_2[3] * param_2[3] +
-          param_2[2] * param_2[2] + *param_2 * *param_2 + param_2[1] * param_2[1]);
-  fVar2 = param_2[2];
+          (quat_in->z * quat_in->z +
+          quat_in->y * quat_in->y + quat_in->w * quat_in->w + quat_in->x * quat_in->x);
+  fVar2 = quat_in->y;
   fVar5 = fVar2 * fVar4;
-  fVar6 = param_2[3] * fVar4;
-  fVar3 = *param_2;
+  fVar6 = quat_in->z * fVar4;
+  fVar3 = quat_in->w;
   fVar7 = fVar3 * fVar1 * fVar4;
   fVar4 = fVar1 * fVar1 * fVar4;
-  fVar8 = param_2[3] * fVar6;
-  param_1[4] = fVar1 * fVar5 + fVar3 * fVar6;
-  param_1[8] = fVar1 * fVar6 - fVar3 * fVar5;
-  param_1[1] = fVar1 * fVar5 - fVar3 * fVar6;
-  param_1[9] = fVar2 * fVar6 + fVar7;
-  param_1[2] = fVar1 * fVar6 + fVar3 * fVar5;
-  param_1[6] = fVar2 * fVar6 - fVar7;
-  *param_1 = 1.0 - (fVar2 * fVar5 + fVar8);
-  param_1[5] = 1.0 - (fVar4 + fVar8);
-  param_1[10] = 1.0 - (fVar4 + fVar2 * fVar5);
-  return;
+  fVar8 = quat_in->z * fVar6;
+  matrix_out->m[1].w = fVar1 * fVar5 + fVar3 * fVar6;
+  matrix_out->m[2].w = fVar1 * fVar6 - fVar3 * fVar5;
+  matrix_out->m[0].x = fVar1 * fVar5 - fVar3 * fVar6;
+  matrix_out->m[2].x = fVar2 * fVar6 + fVar7;
+  matrix_out->m[0].y = fVar1 * fVar6 + fVar3 * fVar5;
+  matrix_out->m[1].y = fVar2 * fVar6 - fVar7;
+  matrix_out->m[0].w = 1.0 - (fVar2 * fVar5 + fVar8);
+  matrix_out->m[1].x = 1.0 - (fVar4 + fVar8);
+  matrix_out->m[2].y = 1.0 - (fVar4 + fVar2 * fVar5);
+  return quat_in;
 }

@@ -2,32 +2,33 @@
 // Address: 004d2b40
 // Address Range: [[004d2b40, 004d2c7d]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(uint *param_1)
+// Signature: int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description)
 
 #include "nocturne.h"
 
-uint __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(uint *param_1)
+int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description)
 
 {
   int iVar1;
-  uint uVar2;
+  EInputCodeType EVar2;
   
   iVar1 = *(int *)(0x01C775EC + 0xbc);
   if (iVar1 == 0) {
-    uVar2 = *param_1;
-    if (uVar2 < 0x209) {
-      if (((uVar2 < 0x204) && (uVar2 < 0x201)) && (uVar2 != 0x200)) {
+    EVar2 = *key_code_ptr;
+    if (EVar2 < DIJ_BUTTON8) {
+      if (((EVar2 < DIJ_BUTTON3) && (EVar2 < DIM_RBUTTON)) && (EVar2 != DIM_LBUTTON)) {
         return 0;
       }
     }
-    else if (0x209 < uVar2) {
-      if (uVar2 < 0x252) {
-        if ((((0x20a < uVar2) && (0x20b < uVar2)) && (0x20c < uVar2)) && (uVar2 != 0x251)) {
+    else if (DIJ_BUTTON8 < EVar2) {
+      if (EVar2 < DIJ_RIGHT) {
+        if ((((DIJ_BUTTON9 < EVar2) && (DIJ_BUTTON10 < EVar2)) && (DIM_MBUTTON < EVar2)) &&
+           (EVar2 != DIJ_LEFT)) {
           return 0;
         }
       }
-      else if (((0x252 < uVar2) && (0x253 < uVar2)) &&
-              ((0x254 < uVar2 && ((0x255 < uVar2 && (uVar2 != 0x256)))))) {
+      else if (((DIJ_RIGHT < EVar2) && (DIJ_UP < EVar2)) &&
+              ((DIJ_DOWN < EVar2 && ((DIM_XAXIS < EVar2 && (EVar2 != DIM_YAXIS)))))) {
         return 0;
       }
     }
@@ -35,49 +36,50 @@ uint __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(uint *param_1)
   else {
     if (iVar1 != 1) {
       if (iVar1 == 2) {
-        uVar2 = *param_1;
-        if (0x20b < uVar2) {
-          if (uVar2 < 0x20d) {
+        EVar2 = *key_code_ptr;
+        if (DIJ_BUTTON10 < EVar2) {
+          if (EVar2 < (DIM_MBUTTON|DIK_ESCAPE)) {
             return 1;
           }
-          if (uVar2 < 0x255) {
+          if (EVar2 < DIM_XAXIS) {
             return 0;
           }
-          if (uVar2 < 0x256) {
+          if (EVar2 < DIM_YAXIS) {
             return 1;
           }
-          if (uVar2 == 0x256) {
+          if (EVar2 == DIM_YAXIS) {
             return 1;
           }
           return 0;
         }
-        if (0x1ff < uVar2) {
-          if (uVar2 < 0x201) {
+        if (0x1ff < EVar2) {
+          if (EVar2 < DIM_RBUTTON) {
             return 1;
           }
-          if (uVar2 == 0x201) {
+          if (EVar2 == DIM_RBUTTON) {
             return 1;
           }
         }
       }
       return 0;
     }
-    uVar2 = *param_1;
-    if (uVar2 < 0x208) {
-      if (uVar2 < 0x204) {
-        if (uVar2 < 0x202) {
+    EVar2 = *key_code_ptr;
+    if (EVar2 < DIJ_BUTTON7) {
+      if (EVar2 < DIJ_BUTTON3) {
+        if (EVar2 < DIJ_BUTTON1) {
           return 0;
         }
         return 1;
       }
     }
-    else if (0x208 < uVar2) {
-      if (uVar2 < 0x251) {
-        if (((0x209 < uVar2) && (0x20a < uVar2)) && (uVar2 != 0x20b)) {
+    else if (DIJ_BUTTON7 < EVar2) {
+      if (EVar2 < DIJ_LEFT) {
+        if (((DIJ_BUTTON8 < EVar2) && (DIJ_BUTTON9 < EVar2)) && (EVar2 != DIJ_BUTTON10)) {
           return 0;
         }
       }
-      else if ((((0x251 < uVar2) && (0x252 < uVar2)) && (0x253 < uVar2)) && (uVar2 != 0x254)) {
+      else if ((((DIJ_LEFT < EVar2) && (DIJ_RIGHT < EVar2)) && (DIJ_UP < EVar2)) &&
+              (EVar2 != DIJ_DOWN)) {
         return 0;
       }
     }

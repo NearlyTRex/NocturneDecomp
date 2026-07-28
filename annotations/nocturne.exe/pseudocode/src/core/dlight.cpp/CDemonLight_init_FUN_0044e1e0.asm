@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -45,7 +47,7 @@ section .text
     ADD EDX,0x210                       ; 0044e201
     PUSH EDX                            ; 0044e207
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0044e208
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0044e20d
     MOV dword ptr [EBX + 0x2f98],EAX    ; 0044e210
     TEST EAX,EAX                        ; 0044e216
@@ -66,14 +68,14 @@ section .text
     SAR EAX,0x3                         ; 0044e244
     PUSH EAX                            ; 0044e247
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0044e248
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     FLD float ptr [EBX + 0x2fa8]        ; 0044e24d
     FMUL double ptr [0x0057c586]        ; 0044e253 | DOUBLE_0057c586
     ADD ESP,0x4                         ; 0044e259
     MOV dword ptr [EBX + 0x2fa0],EAX    ; 0044e25c
     PUSH 0x0                            ; 0044e262
     CALL crt_math.c_round_FUN_00563a30  ; 0044e264
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH 0x0                            ; 0044e269
     FISTP dword ptr [ESP + 0x8]         ; 0044e26b
     MOV EAX,dword ptr [ESP + 0x8]       ; 0044e26f
@@ -82,7 +84,7 @@ section .text
     PUSH EDX                            ; 0044e27c
     PUSH EBX                            ; 0044e27d
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 0044e27e
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 0044e283
     ADD ESP,0x4                         ; 0044e286
     POP EBP                             ; 0044e289

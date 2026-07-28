@@ -1,0 +1,163 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "00568890",
+      "from_addr": "00568991",
+      "name": "FUN_00568890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f1c0",
+    "address_range": [
+      [
+        "0056f1c0",
+        "0056f21c"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_flushFileBuffers_FUN_0056f1c0",
+    "signature": "int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0056f1c0(int file_handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056c73c",
+      "is_variadic": false,
+      "name": "crt_errno.c___set_errno_FUN_0056c73c"
+    },
+    {
+      "addr": "00568e80",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
+    },
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    },
+    {
+      "addr": "EXTERNAL:00000052",
+      "is_variadic": false,
+      "name": "FlushFileBuffers"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754d4",
+      "name": "PTR_FlushFileBuffers_005754d4",
+      "type": "void*",
+      "value": "00175c1e"
+    },
+    {
+      "addr": "005c1ac0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1ac4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1f54",
+      "name": "DAT_005c1f54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1f90",
+      "name": "DAT_005c1f90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.212121212121212,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CALLIND": 3,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 11,
+      "INT_AND": 16,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file_handle_index);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_005c1f54 + file_handle_index * 4));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file_handle_index);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 13,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "00565ca4",
+      "from_addr": "00565cc6",
+      "name": "crt_math.c_acos_FUN_00565ca4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565c76",
+      "from_addr": "00565c80",
+      "name": "crt_math.c_asin_FUN_00565c76",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056c5a8",
+    "address_range": [
+      [
+        "0056c5a8",
+        "0056c5e5"
+      ]
+    ],
+    "convention": "__fpureg_safe",
+    "is_ebp_frame": true,
+    "name": "crt_math.c_sqrt_FUN_0056c5a8",
+    "signature": "double __fpureg_safe crt_math_c_sqrt_FUN_0056c5a8(double value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005707db",
+      "is_variadic": false,
+      "name": "crt_math.c_handle_math_error_FUN_005707db"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "skipped",
+    "declared_params": 1,
+    "estimated_params": 1,
+    "skip_reason": "fpu_or_no_param_convention"
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.714285714285714,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLOTHER": 2,
+      "CBRANCH": 2,
+      "COPY": 45,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 9,
+      "INT_AND": 9,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 132
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
+}

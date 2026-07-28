@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int param_1,float param_2,int param_3)
+; void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(CGabriella *this_ptr,float delta_time,int is_holstering)
 ;
+; Parameters:
+; CGabriella *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
+; int              Stack[0xc]:4   is_holstering
 ; Local Variables:
 ; undefined4       Stack[-0x13c]:4  local_13c
 ; undefined4       Stack[-0x138]:4  local_138
@@ -137,7 +141,7 @@ section .text
         ;   Label: LAB_004991d5
     PUSH EAX                            ; 004991db
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004991dc
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004991e1
     ADD ESP,0x4                         ; 004991e4
     CMP EAX,0x2                         ; 004991e7
@@ -253,7 +257,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0049936b
     PUSH EAX                            ; 0049936f
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00499370
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00499375
     LEA ESI,[ESP + 0x4]                 ; 00499378
     MOV EAX,dword ptr [EBX + 0x1fa60]   ; 0049937c
@@ -285,14 +289,14 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1fa60]   ; 004993d8
     PUSH EDX                            ; 004993de
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004993df
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004993e4
     PUSH EAX                            ; 004993e7
     LEA EAX,[ESP + 0xc8]                ; 004993e8
     PUSH EAX                            ; 004993ef
     PUSH EBX                            ; 004993f0
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004993f1
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 004993f6
     MOV ECX,dword ptr [0x01c713b0]      ; 004993f9 | DAT_01c713b0
     PUSH ECX                            ; 004993ff
@@ -301,7 +305,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00499408
     PUSH EAX                            ; 0049940e
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 ; 0049940f
-        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0()
+        ;   XREF to: 0051d2a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00499414
     FLD float ptr [ESP + 0xc4]          ; 00499417
     FSUB float ptr [EAX]                ; 0049941e

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045dcd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void cockpit_drawsurf_cpp_FUN_0045dcd0(CDrawSurface *param_1,int param_2,int param_3,char *param_4)
 ;
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_0045dca0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH EBX                            ; 0045dce0
     MOV ESI,dword ptr [ESP + 0x18]      ; 0045dce1
     PUSH ESI                            ; 0045dce5
-    CALL cockpit_drawsurf.cpp_FUN_0045dca0 ; 0045dce6
-        ;   XREF to: 0045dca0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_0045dca0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0 ; 0045dce6
+        ;   XREF to: 0045dca0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0(CDrawSurface * this_ptr, char * text, int x, int y)
     ADD ESP,0x10                        ; 0045dceb
     POP ESI                             ; 0045dcee
     POP EBX                             ; 0045dcef

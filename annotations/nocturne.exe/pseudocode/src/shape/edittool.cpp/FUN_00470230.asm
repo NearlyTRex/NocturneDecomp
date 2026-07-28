@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,undefined4 param_2)
+; bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x17c]:1  local_17c
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 00470255
     PUSH 0x1bcb4d0                      ; 00470256
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 0047025b
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00470260
     MOV EAX,ESP                         ; 00470263
     XOR ECX,ECX                         ; 00470265
@@ -53,27 +53,27 @@ section .text
     ADD ESP,0x4                         ; 00470274
     PUSH 0x57e5e5                       ; 00470277 | = "[Y]es, I know what I'm doing and I ha..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0047027c
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 00470281
     PUSH EAX                            ; 00470284
     LEA EAX,[ESP + 0x4]                 ; 00470285
     PUSH EAX                            ; 00470289
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 0047028a
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0047028f
     PUSH 0x57e625                       ; 00470292 | = "[N]o, please, I didn't mean to do it!"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 00470297
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 0047029c
     PUSH EAX                            ; 0047029f
     LEA EAX,[ESP + 0x4]                 ; 004702a0
     PUSH EAX                            ; 004702a4
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004702a5
-        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
+        ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_00473cb0(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004702aa
     PUSH 0x57e64b                       ; 004702ad | = "yn"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004702b2
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004702b7
     LEA EDI,[ESP + 0x14]                ; 004702ba
     MOV ESI,EAX                         ; 004702be
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004702f8
     PUSH EAX                            ; 004702fc
     CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004702fd
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_00474cf0(CPickList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00470302
     MOV EAX,EDI                         ; 00470305
     ADD ESP,0x174                       ; 00470307

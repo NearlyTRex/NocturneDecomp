@@ -2,15 +2,15 @@
 // Address: 004e18a0
 // Address Range: [[004e18a0, 004e18c4]]
 // Convention: __cdecl
-// Signature: int __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(int *param_1)
+// Signature: char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(int *param_1)
+char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController *this_ptr)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
-  iVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1);
-  return *(int *)(iVar1 + 0x24) * 0x1e + *param_1 + 4;
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);
+  return this_ptr->motion_list_ptr->state_names[pSVar1->state_index];
 }

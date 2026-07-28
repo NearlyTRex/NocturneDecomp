@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 29,
+    "complexity_score": 4,
     "cross_reference_count": 195,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [
@@ -28,6 +26,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0045cde0",
+      "from_addr": "0045ce0f",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0045c1e0",
       "from_addr": "0045c218",
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0",
@@ -36,13 +40,7 @@
     {
       "addr": "0045cc70",
       "from_addr": "0045ccc5",
-      "name": "cockpit_drawsurf.cpp_FUN_0045cc70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045cde0",
-      "from_addr": "0045ce0f",
-      "name": "cockpit_drawsurf.cpp_FUN_0045cde0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,6 +254,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0044d060",
+      "from_addr": "0044d1c8",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0044ce80",
       "from_addr": "0044d003",
       "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80",
@@ -265,12 +269,6 @@
       "addr": "0044cd90",
       "from_addr": "0044cda9",
       "name": "core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0044d060",
-      "from_addr": "0044d1c8",
-      "name": "core_dglobe.cpp_FUN_0044d060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -342,7 +340,7 @@
     {
       "addr": "004571f0",
       "from_addr": "004573e1",
-      "name": "core_dpart.cpp_FUN_004571f0",
+      "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -382,6 +380,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046baa0",
+      "from_addr": "0046bb0f",
+      "name": "core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004680b0",
       "from_addr": "00468101",
       "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0",
@@ -400,9 +404,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00469ce0",
+      "from_addr": "00469da8",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00468af0",
       "from_addr": "00468b9d",
       "name": "core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046bd90",
+      "from_addr": "0046bdff",
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -412,39 +428,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046b650",
+      "from_addr": "0046b68a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046b700",
       "from_addr": "0046b73a",
       "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00469ce0",
-      "from_addr": "00469da8",
-      "name": "core_dtrace.cpp_FUN_00469ce0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b650",
-      "from_addr": "0046b68a",
-      "name": "core_dtrace.cpp_FUN_0046b650",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046baa0",
-      "from_addr": "0046bb0f",
-      "name": "core_dtrace.cpp_FUN_0046baa0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046bd90",
-      "from_addr": "0046bdff",
-      "name": "core_dtrace.cpp_FUN_0046bd90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0046e9f0",
       "from_addr": "0046ead0",
-      "name": "core_dtri.cpp_FUN_0046e9f0",
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -772,15 +770,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f16d0",
-      "from_addr": "004f1755",
-      "name": "core_path.cpp_FUN_004f16d0",
+      "addr": "004f18c0",
+      "from_addr": "004f1aff",
+      "name": "core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f18c0",
-      "from_addr": "004f1aff",
-      "name": "core_path.cpp_FUN_004f18c0",
+      "addr": "004f16d0",
+      "from_addr": "004f1755",
+      "name": "core_path.cpp_renderGridQuad_FUN_004f16d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -816,7 +814,7 @@
     {
       "addr": "005159a0",
       "from_addr": "00515acd",
-      "name": "core_setutil.cpp_FUN_005159a0",
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1000,21 +998,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004cdf70",
-      "from_addr": "004cdf8b",
-      "name": "engine_matrix.c_FUN_004cdf70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004cdfa0",
       "from_addr": "004ce0cc",
       "name": "engine_matrix.c_FUN_004cdfa0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cea50",
-      "from_addr": "004ceab4",
-      "name": "engine_matrix.c_FUN_004cea50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1036,21 +1022,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004cea50",
+      "from_addr": "004ceab4",
+      "name": "engine_matrix.c_projectToScreen_FUN_004cea50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cdf70",
+      "from_addr": "004cdf8b",
+      "name": "engine_matrix.c_vectorLength3DToInt_FUN_004cdf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dcf60",
       "from_addr": "004dd1c6",
-      "name": "engine_model.c_FUN_004dcf60",
+      "name": "engine_model.c_getMRGLBounds_FUN_004dcf60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00472de0",
+      "from_addr": "00472e3b",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00471760",
       "from_addr": "004717c5",
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00472de0",
-      "from_addr": "00472e3b",
-      "name": "shape_edittool.cpp_FUN_00472de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1132,15 +1130,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005235b0",
-      "from_addr": "005235d4",
-      "name": "sound_sndmain.cpp_FUN_005235b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00528e60",
       "from_addr": "00529276",
       "name": "sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005235b0",
+      "from_addr": "005235d4",
+      "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005235b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1196,7 +1194,7 @@
     ],
     "convention": "__fpureg_safe",
     "name": "crt_math.c_round_FUN_00563a30",
-    "signature": "float10 __fpureg_safe crt_math_c_round_FUN_00563a30(float10 param_1)"
+    "signature": "double __fpureg_safe crt_math_c_round_FUN_00563a30(double value)"
   },
   "function_calls": [],
   "globals": [],
@@ -1204,8 +1202,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "skipped",
-    "declared_params": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "estimated_params": 1,
     "skip_reason": "fpu_or_no_param_convention"
   },
   "pcode_summary": {
@@ -1252,22 +1250,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float10 __fpureg_safe round(float10 param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return ROUND(param_1);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

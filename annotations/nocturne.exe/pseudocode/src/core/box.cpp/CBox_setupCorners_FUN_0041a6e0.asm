@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041a6e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 param_5)
+; void __cdecl core_box_cpp_CBox_setupCorners_FUN_0041a6e0(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   orientation
+; CVector3f *      Stack[0x10]:4   extents
+; float            Stack[0x14]:4   volume
 ;
 ; XREF[7]:
 ;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70 at 00417e9d
@@ -151,7 +157,7 @@ section .text
     PUSH EAX                            ; 0041a8fe
     FSTP float ptr [EAX + 0x228]        ; 0041a8ff
     CALL core_box.cpp_CBox_updateTransform_FUN_0041aaa0 ; 0041a905
-        ;   XREF to: 0041aaa0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_updateTransform_FUN_0041aaa0()
+        ;   XREF to: 0041aaa0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_updateTransform_FUN_0041aaa0(CBox * this_ptr, CVector3f * new_position, CVector3f * new_orientation, float speed)
     ADD ESP,0x10                        ; 0041a90a
     RET                                 ; 0041a90d
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
 ;   core_batman.cpp_FUN_00414340 at 004143e7
@@ -47,7 +49,7 @@ section .text
         ;   Label: LAB_00425c30
     PUSH ECX                            ; 00425c36 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00425c37
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00425c3c
     TEST EAX,EAX                        ; 00425c3f
     JNZ 0x00425c6b                      ; 00425c41
@@ -57,7 +59,7 @@ section .text
         ;   XREF to: 00425c55 (CONDITIONAL_JUMP)  ; LAB_00425c55
     PUSH EBX                            ; 00425c4c
     CALL core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 ; 00425c4d
-        ;   XREF to: 00426e80 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80()
+        ;   XREF to: 00426e80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00425c52
     FLDZ                                ; 00425c55
         ;   Label: LAB_00425c55
@@ -73,7 +75,7 @@ section .text
     PUSH EBX                            ; 00425c6b
         ;   Label: LAB_00425c6b
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 ; 00425c6c
-        ;   XREF to: 004265a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0()
+        ;   XREF to: 004265a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCharacter * this_ptr)
     MOV EAX,[0x005b9354]                ; 00425c71 | DAT_005b9354 | DAT_01c775ec
     MOV EDI,dword ptr [EAX + 0x21c]     ; 00425c76 | DAT_01c77808
     ADD ESP,0x4                         ; 00425c7c
@@ -92,13 +94,13 @@ section .text
     LEA ESI,[EBX + 0x150]               ; 00425c8e
     PUSH ESI                            ; 00425c94
     CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 ; 00425c95
-        ;   XREF to: 0051d9d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0()
+        ;   XREF to: 0051d9d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 00425c9a
     PUSH ESI                            ; 00425c9d
     LEA EAX,[EBX + 0x2a8c]              ; 00425c9e
     PUSH EAX                            ; 00425ca4
     CALL core_cloth.cpp_CClothList_render_FUN_004385a0 ; 00425ca5
-        ;   XREF to: 004385a0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_render_FUN_004385a0()
+        ;   XREF to: 004385a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_render_FUN_004385a0(CClothList * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 00425caa
     POP ESI                             ; 00425cad
     JMP 0x00425c30                      ; 00425cae
@@ -106,7 +108,7 @@ section .text
     PUSH EBX                            ; 00425cb0
         ;   Label: LAB_00425cb0
     CALL core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 ; 00425cb1
-        ;   XREF to: 00425cc0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0()
+        ;   XREF to: 00425cc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00425cb6
     POP EDI                             ; 00425cb9
     POP EBX                             ; 00425cba

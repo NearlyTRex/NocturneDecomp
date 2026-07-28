@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00528610(void)
+; int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00528610(void)
 ;
 ;
 ; XREF[1]:

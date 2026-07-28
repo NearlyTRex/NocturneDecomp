@@ -15,9 +15,9 @@ void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void)
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   float afStackY_1000 [997];
   float local_60;
   float local_54;
@@ -55,12 +55,13 @@ void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void)
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  fVar5 = (float10)-65536;
-  fVar6 = (float10)round((float10)local_60 * fVar5);
-  fVar7 = (float10)round((float10)local_54 * fVar5);
-  fVar5 = (float10)round((float10)local_48 * fVar5);
-  _DAT_01c78cb4 = (int)ROUND(fVar6);
-  _DAT_01c78cb8 = (int)ROUND(fVar7);
-  _DAT_01c78cbc = (int)ROUND(fVar5);
+  dVar6 = (double)local_54 * -65536;
+  dVar7 = (double)local_48 * -65536;
+  dVar5 = round((double)local_60 * -65536);
+  dVar6 = round(dVar6);
+  dVar7 = round(dVar7);
+  _DAT_01c78cb4 = (int)ROUND(dVar5);
+  _DAT_01c78cb8 = (int)ROUND(dVar6);
+  _DAT_01c78cbc = (int)ROUND(dVar7);
   return;
 }

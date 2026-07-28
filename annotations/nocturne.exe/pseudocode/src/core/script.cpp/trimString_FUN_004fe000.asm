@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_trimString_FUN_004fe000(char *param_1)
+; void __cdecl core_script_cpp_trimString_FUN_004fe000(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504f65
@@ -73,7 +75,7 @@ section .text
     PUSH ESI                            ; 004fe059
     DEC EBX                             ; 004fe05a
     CALL crt_string.c_memmove_FUN_00566170 ; 004fe05b
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004fe060
     JMP 0x004fe039                      ; 004fe063
         ;   XREF to: 004fe039 (UNCONDITIONAL_JUMP)  ; LAB_004fe039

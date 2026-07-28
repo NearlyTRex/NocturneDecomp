@@ -2,95 +2,94 @@
 // Address: 00482c80
 // Address Range: [[00482c80, 00482e84]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(float *param_1,float *param_2,float *param_3)
+// Signature: void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(float *param_1,float *param_2,float *param_3)
+void __cdecl core_fire_cpp_CBulletHole_init_FUN_00482c80(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor)
 
 {
-  float fVar1;
-  float *pfVar2;
-  int iVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
-  float10 fVar7;
+  int iVar1;
+  CVector3f *pCVar2;
+  float *pfVar3;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
+  float10 fVar6;
   uint uStack_114;
   uint uStack_110;
-  byte auStack_e4 [48];
-  uint auStack_b4 [12];
-  uint auStack_84 [14];
+  CMatrix3x4f CStack_e4;
+  CMatrix3x4f CStack_b4;
+  float afStack_84 [14];
   float local_4c;
-  float local_48;
-  float local_44;
+  CVector3f local_48;
   float local_34;
   float local_30;
   float local_2c;
-  byte auStack_24 [20];
+  CVector3f CStack_24;
   
-  bVar6 = 0;
-  if (param_1 != param_2) {
-    *param_1 = *param_2;
-    param_1[1] = param_2[1];
-    param_1[2] = param_2[2];
+  bVar5 = 0;
+  if (this_ptr != (CBulletHole *)hit_position) {
+    (this_ptr->position).x = hit_position->x;
+    (this_ptr->position).y = hit_position->y;
+    (this_ptr->position).z = hit_position->z;
   }
-  local_4c = *param_3 * 0.1f;
-  local_48 = param_3[1] * 0.1f;
-  local_44 = 0.1f * param_3[2];
-  local_34 = *param_1 + local_4c;
-  local_30 = param_1[1] + local_48;
-  local_2c = param_1[2] + local_44;
-  if (param_1 != &local_34) {
-    *param_1 = local_34;
-    param_1[1] = local_30;
-    param_1[2] = local_2c;
+  local_4c = surface_normal->x * 0.1f;
+  local_48.x = surface_normal->y * 0.1f;
+  local_48.y = 0.1f * surface_normal->z;
+  local_34 = (this_ptr->position).x + local_4c;
+  local_30 = (this_ptr->position).y + local_48.x;
+  local_2c = (this_ptr->position).z + local_48.y;
+  if (this_ptr != (CBulletHole *)&local_34) {
+    (this_ptr->position).x = local_34;
+    (this_ptr->position).y = local_30;
+    (this_ptr->position).z = local_2c;
   }
   uStack_110 = 0x482d3f;
-  fVar7 = (float10)atan2
-                             ((float10)param_3[1],
-                              SQRT((float10)*param_3 * (float10)*param_3 +
-                                   (float10)param_3[2] * (float10)param_3[2]));
-  param_1[7] = 0.0;
-  param_1[5] = (float)-fVar7;
+  fVar6 = atan2
+                    ((float10)surface_normal->y,
+                     SQRT((float10)surface_normal->x * (float10)surface_normal->x +
+                          (float10)surface_normal->z * (float10)surface_normal->z));
+  (this_ptr->euler_angles).z = 0.0;
+  (this_ptr->euler_angles).x = (float)-fVar6;
   uStack_114 = 0x482d56;
-  fVar7 = (float10)atan2((float10)*param_3,(float10)param_3[2]);
-  param_1[6] = (float)fVar7;
-  fVar1 = (float)core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
-  param_1[3] = 1.4013e-45;
-  param_1[8] = fVar1;
-  param_1[4] = (float)param_2;
-  if (param_2 != (float *)0x0) {
+  fVar6 = atan2((float10)surface_normal->x,(float10)surface_normal->z);
+  (this_ptr->euler_angles).y = (float)fVar6;
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
+  this_ptr->active = 1;
+  this_ptr->texture_index = iVar1;
+  this_ptr->actor_ptr = (CDemonActor *)hit_position;
+  if (hit_position != (CVector3f *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (&uStack_114,param_1,param_1 + 5);
+              (&uStack_114,this_ptr,&this_ptr->euler_angles);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
-              (auStack_e4,(int)param_1[4] + 0x20,(int)param_1[4] + 0x30);
-    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&uStack_114,auStack_e4);
-    puVar4 = auStack_84;
-    puVar5 = auStack_b4;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+              (&CStack_e4,&(this_ptr->actor_ptr->location).position,
+               &(this_ptr->actor_ptr->orient).vec);
+    core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&uStack_114,&CStack_e4);
+    pfVar3 = afStack_84;
+    pCVar4 = &CStack_b4;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      pCVar4->m[0].w = *pfVar3;
+      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
-    pfVar2 = (float *)core_xform_cpp_getTranslation_FUN_0055bc00(auStack_b4,&local_48);
-    if (param_1 + 9 != pfVar2) {
-      param_1[9] = *pfVar2;
-      param_1[10] = pfVar2[1];
-      param_1[0xb] = pfVar2[2];
+    pCVar2 = core_xform_cpp_getTranslation_FUN_0055bc00(&CStack_b4,&local_48);
+    if (&this_ptr->transformed_pos != pCVar2) {
+      (this_ptr->transformed_pos).x = pCVar2->x;
+      (this_ptr->transformed_pos).y = pCVar2->y;
+      (this_ptr->transformed_pos).z = pCVar2->z;
     }
-    pfVar2 = (float *)core_xform_cpp_matrixToEulerAngles_FUN_0055b180(auStack_b4,auStack_24);
-    if (param_1 + 5 != pfVar2) {
-      param_1[5] = *pfVar2;
-      param_1[6] = pfVar2[1];
-      param_1[7] = pfVar2[2];
+    pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&CStack_b4,&CStack_24);
+    if (&this_ptr->euler_angles != pCVar2) {
+      (this_ptr->euler_angles).x = pCVar2->x;
+      (this_ptr->euler_angles).y = pCVar2->y;
+      (this_ptr->euler_angles).z = pCVar2->z;
     }
-    pfVar2 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                                (param_1[4],&local_30,param_3);
-    if (param_1 + 0xc != pfVar2) {
-      param_1[0xc] = *pfVar2;
-      param_1[0xd] = pfVar2[1];
-      param_1[0xe] = pfVar2[2];
+    pfVar3 = (float *)core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                                (this_ptr->actor_ptr,&local_30,surface_normal);
+    if (&this_ptr->actor_local_space != (CVector3f *)pfVar3) {
+      (this_ptr->actor_local_space).x = *pfVar3;
+      (this_ptr->actor_local_space).y = pfVar3[1];
+      (this_ptr->actor_local_space).z = pfVar3[2];
       return;
     }
   }

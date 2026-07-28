@@ -2,40 +2,39 @@
 // Address: 004ea370
 // Address Range: [[004ea370, 004ea6da]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int param_2)
+// Signature: int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_ptr,int sync_stage)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int param_2)
+int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_ptr,int sync_stage)
 
 {
   float fVar1;
   int iVar2;
-  int *piVar3;
+  CNetGame *pCVar3;
   float local_198;
-  byte local_194 [256];
-  byte local_94 [100];
-  uint local_30;
-  byte local_2c;
+  char local_194 [256];
+  char local_94 [100];
+  SNetPacketHeader local_30;
   int local_2b;
   int local_24;
-  int *local_20;
+  SNetPlayer *local_20;
   float local_1c;
   int local_18;
   int local_14;
   
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  if (param_2 < 1) {
+  if (sync_stage < 1) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x337;
     core_main_c_FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
   }
-  if (*param_1 == 0) {
+  if (this_ptr->connection_type == CONNECTION_NONE) {
     return 1;
   }
-  param_1[1] = 2;
+  this_ptr->network_mode = NET_MODE_SYNCING;
   iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
   _DAT_01cea3f4 = iVar2 / 0x12 - _DAT_01cea3f4;
   if (_DAT_01cea3f4 < 0) {
@@ -46,36 +45,36 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
   }
   _DAT_01cea3f8 = _DAT_01cea3f8 + _DAT_01cea3f4;
   _DAT_01cea3f4 = iVar2 / 0x12;
-  param_1[param_1[0x45] * 0x1e + 0x17] = param_2;
-  if (*param_1 == 1) {
+  this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
+  if (this_ptr->connection_type == CONNECTION_HOST) {
     local_24 = _DAT_01cea3f8 + -0x1e0000;
-    local_20 = param_1 + 8;
+    local_20 = this_ptr->players;
     while( true ) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(local_194,"Syncing stage %d.",param_2);
+      _sprintf(local_194,"Syncing stage %d.",sync_stage);
       engine_2d_c_drawText_FUN_00402600(local_194,0,0xb);
       engine_2d_c_drawText_FUN_00402600("Waiting on:",0,0x16);
       local_1c = 1.4013e-45;
       local_18 = 0x21;
       iVar2 = 0;
-      piVar3 = param_1;
-      if (0 < param_1[7]) {
+      pCVar3 = this_ptr;
+      if (0 < this_ptr->player_count) {
         do {
-          if (piVar3[0x17] < param_2) {
+          if (pCVar3->players[0].local_sync_stage < sync_stage) {
             local_1c = 0.0;
-            engine_2d_c_drawText_FUN_00402600(local_20 + iVar2 * 0x1e,0,local_18);
-            _sprintf(local_194,"%d",piVar3[0x17]);
+            engine_2d_c_drawText_FUN_00402600(local_20[iVar2].name,0,local_18);
+            _sprintf(local_194,"%d",pCVar3->players[0].local_sync_stage);
             engine_2d_c_drawText_FUN_00402600(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
           iVar2 = iVar2 + 1;
-          piVar3 = piVar3 + 0x1e;
-        } while (iVar2 < param_1[7]);
+          pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
+        } while (iVar2 < this_ptr->player_count);
       }
       fVar1 = local_1c;
       if (local_1c != 0.0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-      core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
+      core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
       local_14 = _DAT_01cea3f8 - local_24;
       local_198 = (float)local_14 * (float)1.52587890625e-05;
       if (local_198 < 0.0) {
@@ -86,22 +85,22 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
       }
       if ((float)0.10000000000000001 < local_198) {
         local_24 = _DAT_01cea3f8;
-        local_2c = 8;
-        local_30 = 9;
-        local_2b = param_2;
+        local_30.type = PACKET_SYNC_STAGE_REQ;
+        local_30.size = 9;
+        local_2b = sync_stage;
         iVar2 = 0;
-        piVar3 = param_1;
-        if (0 < param_1[7]) {
+        pCVar3 = this_ptr;
+        if (0 < this_ptr->player_count) {
           do {
-            if (piVar3[0x17] < param_2) {
-              core_netgame_cpp_CNetGame_send_FUN_004eb350(param_1,iVar2,&local_30);
+            if (pCVar3->players[0].local_sync_stage < sync_stage) {
+              core_netgame_cpp_CNetGame_send_FUN_004eb350(this_ptr,iVar2,&local_30);
             }
             else {
-              core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,iVar2,0x40000000);
+              core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(this_ptr,iVar2,2.0);
             }
             iVar2 = iVar2 + 1;
-            piVar3 = piVar3 + 0x1e;
-          } while (iVar2 < param_1[7]);
+            pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
+          } while (iVar2 < this_ptr->player_count);
         }
       }
       iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
@@ -111,16 +110,16 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
       }
     }
   }
-  else if (*param_1 == 2) {
-    if (3 < param_2) {
+  else if (this_ptr->connection_type == CONNECTION_CLIENT) {
+    if (3 < sync_stage) {
       return 1;
     }
-    while (_DAT_01cea400 < param_2) {
+    while (_DAT_01cea400 < sync_stage) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(local_94,"Waiting on sync code %d from server...",param_2);
+      _sprintf(local_94,"Waiting on sync code %d from server...",sync_stage);
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-      core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
+      core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
       iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403f50();

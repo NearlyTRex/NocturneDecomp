@@ -2,20 +2,24 @@
 // Address: 00435100
 // Address Range: [[00435100, 00435157]]
 // Convention: __cdecl
-// Signature: int __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(undefined4 param_1)
+// Signature: CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(uint param_1)
+CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
+  void *pvVar2;
   
-  iVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(param_1);
-  iVar1 = __arrinit(iVar1 + 0x398,800,&g_SClothVertexTypeInfo_0059b3a0);
-  iVar1 = __arrinit(iVar1 + 0x377b8,0x32,&g_SClothBoneTypeInfo_0059b3c0);
-  *(uint *)(iVar1 + 0x2fac) = 0;
-  *(uint *)(iVar1 + -4) = 0;
-  *(uint *)(iVar1 + -0xc) = 0;
-  return iVar1 + -0x37b50;
+  pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(&this_ptr->model);
+  pvVar2 = __arrinit
+                     (&pCVar1->texture_list[8].textures[2].base.count,800,
+                      &g_SClothVertexTypeInfo_0059b3a0);
+  pvVar2 = __arrinit
+                     ((void *)((int)pvVar2 + 0x377b8),0x32,&g_SClothBoneTypeInfo_0059b3c0);
+  *(uint *)((int)pvVar2 + 0x2fac) = 0;
+  *(uint *)((int)pvVar2 + -4) = 0;
+  *(uint *)((int)pvVar2 + -0xc) = 0;
+  return (CCloth *)((int)pvVar2 + -0x37b50);
 }

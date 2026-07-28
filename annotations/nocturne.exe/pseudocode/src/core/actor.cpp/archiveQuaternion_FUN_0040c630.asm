@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(float *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040c630(CQuaternion4f *quat_ptr,char *property_type)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat_ptr
+; char *           Stack[0x8]:4   property_type
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
@@ -59,7 +62,7 @@ section .text
     PUSH EDI                            ; 0040c669
     PUSH 0x5acc48                       ; 0040c66a | = "Quaternion"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c66f
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c674
     POP EDI                             ; 0040c677
     POP EBX                             ; 0040c678
@@ -70,7 +73,7 @@ section .text
     PUSH ESI                            ; 0040c67f
     PUSH 0x5acc48                       ; 0040c680 | = "Quaternion"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c685
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c68a
     POP ESI                             ; 0040c68d
     JMP 0x0040c665                      ; 0040c68e

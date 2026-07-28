@@ -2,15 +2,15 @@
 // Address: 0040e320
 // Address Range: [[0040e320, 0040e338]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(undefined4 *param_1)
+// Signature: CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(uint *param_1)
+CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr)
 
 {
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  return;
+  this_ptr->opa = (char *)0x0;
+  this_ptr->act = (uint *)0x0;
+  this_ptr->raw = (char *)0x0;
+  return this_ptr;
 }

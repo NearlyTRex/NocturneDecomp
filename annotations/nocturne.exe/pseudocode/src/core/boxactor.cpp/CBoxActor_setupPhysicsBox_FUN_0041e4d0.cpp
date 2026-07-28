@@ -2,50 +2,44 @@
 // Address: 0041e4d0
 // Address Range: [[0041e4d0, 0041e5d6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(int param_1)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(int param_1)
+void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor *this_ptr)
 
 {
-  float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  byte auStack_34 [12];
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
+  float fVar1;
+  CBoundingBox3D CStack_4c;
+  CVector3f CStack_34;
+  CVector3f CStack_28;
   float fStack_1c;
   float fStack_18;
   float fStack_14;
-  float fStack_10;
-  float fStack_c;
-  float fStack_8;
+  CVector3f CStack_10;
   
-  *(uint *)(param_1 + 0x5e0) = 0;
-  if ((0.0 < *(float *)(param_1 + 0x388)) && (*(byte **)(param_1 + 0x68) == &DAT_0078a123)) {
-    if (*(int *)(param_1 + 0x2c8) != 0) {
-      (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&fStack_4c);
-      fStack_1c = fStack_4c + fStack_40;
-      fStack_18 = fStack_48 + fStack_3c;
-      fStack_28 = fStack_1c * 0.5f;
-      fStack_24 = fStack_18 * 0.5f;
-      fStack_14 = fStack_44 + fStack_38;
-      fStack_20 = fStack_14 * 0.5f;
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_34,&fStack_28);
-      fStack_10 = fStack_40 - fStack_4c;
-      fStack_c = fStack_3c - fStack_48;
-      fStack_8 = fStack_38 - fStack_44;
+  fVar1 = this_ptr->weight_in_pounds;
+  (this_ptr->physics_box).is_valid = 0;
+  if ((0.0 < fVar1) && ((byte *)(this_ptr->base).validation_magic == &DAT_0078a123)) {
+    if ((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) {
+      (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_4c);
+      fStack_1c = CStack_4c.min.x + CStack_4c.max.x;
+      fStack_18 = CStack_4c.min.y + CStack_4c.max.y;
+      CStack_28.x = fStack_1c * 0.5f;
+      CStack_28.y = fStack_18 * 0.5f;
+      fStack_14 = CStack_4c.min.z + CStack_4c.max.z;
+      CStack_28.z = fStack_14 * 0.5f;
+      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                (&this_ptr->base,&CStack_34,&CStack_28);
+      CStack_10.x = CStack_4c.max.x - CStack_4c.min.x;
+      CStack_10.y = CStack_4c.max.y - CStack_4c.min.y;
+      CStack_10.z = CStack_4c.max.z - CStack_4c.min.z;
       core_box_cpp_CBox_setupCorners_FUN_0041a6e0
-                (param_1 + 0x38c,auStack_34,param_1 + 0x30,&fStack_10,
-                 *(uint *)(param_1 + 0x388));
+                (&this_ptr->physics_box,&CStack_34,&(this_ptr->base).orient.vec,&CStack_10,
+                 this_ptr->weight_in_pounds);
       return;
     }
-    *(uint *)(param_1 + 0x5e0) = 0xffffffff;
+    (this_ptr->physics_box).is_valid = -1;
   }
   return;
 }

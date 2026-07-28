@@ -25,7 +25,7 @@ section .text
     MOV ESI,dword ptr [0x01c02580]      ; 0040434c | DAT_01c02580
     PUSH ESI                            ; 00404352
     CALL engine_2d.c_mapFrameBuffer_FUN_00404120 ; 00404353
-        ;   XREF to: 00404120 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_mapFrameBuffer_FUN_00404120()
+        ;   XREF to: 00404120 (UNCONDITIONAL_CALL)  ; int engine_2d.c_mapFrameBuffer_FUN_00404120(void * frame_buffer, int width, int height, int bits_per_pixel, ...)
     ADD ESP,0x14                        ; 00404358
     POP ESI                             ; 0040435b
     RET                                 ; 0040435c

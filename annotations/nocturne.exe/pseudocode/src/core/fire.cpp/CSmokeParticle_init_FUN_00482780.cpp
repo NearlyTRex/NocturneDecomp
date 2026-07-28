@@ -2,37 +2,37 @@
 // Address: 00482780
 // Address Range: [[00482780, 00482812]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4,undefined4 param_5)
+// Signature: void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(uint *param_1,uint *param_2,uint param_3,uint *param_4,uint param_5)
+void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 {
-  uint *puVar1;
-  uint uVar2;
+  CVector3f *pCVar1;
+  float fVar2;
   
-  if (param_1 + 1 != param_2) {
-    param_1[1] = *param_2;
-    param_1[2] = param_2[1];
-    param_1[3] = param_2[2];
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  puVar1 = param_1 + 7;
-  if (param_4 == (uint *)0x0) {
-    param_1[9] = 0;
-    param_1[8] = param_1[9];
-    *puVar1 = param_1[8];
+  pCVar1 = &this_ptr->wind_influence;
+  if (wind_influence == (CVector3f *)0x0) {
+    (this_ptr->wind_influence).z = 0.0;
+    (this_ptr->wind_influence).y = (this_ptr->wind_influence).z;
+    pCVar1->x = (this_ptr->wind_influence).y;
   }
-  else if (puVar1 != param_4) {
-    *puVar1 = *param_4;
-    param_1[8] = param_4[1];
-    param_1[9] = param_4[2];
+  else if (pCVar1 != wind_influence) {
+    pCVar1->x = wind_influence->x;
+    (this_ptr->wind_influence).y = wind_influence->y;
+    (this_ptr->wind_influence).z = wind_influence->z;
   }
-  param_1[6] = 0;
-  param_1[5] = param_3;
-  uVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f733333,0x3f866666);
-  *param_1 = 1;
-  param_1[4] = uVar2;
-  param_1[10] = param_5;
+  this_ptr->age = 0.0;
+  this_ptr->drag_factor = drag_factor;
+  fVar2 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f733333,0x3f866666);
+  this_ptr->active = 1;
+  this_ptr->vertical_accel = fVar2;
+  this_ptr->alpha_value = alpha_value;
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(int param_1)
+; void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_00554660(CWeapon *this_ptr)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_weapon.cpp_CWeapon_setup_FUN_00553f10 at 00553f2e
@@ -70,7 +72,7 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 005546df
     FSTP float ptr [ESP + 0x44]         ; 005546e3
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 005546e7
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005546ec
     LEA EAX,[ESP + 0x24]                ; 005546ef
     FLD float ptr [ESP + 0xc]           ; 005546f3
@@ -96,7 +98,7 @@ section .text
     ADD EBX,0x300                       ; 00554730
     PUSH EBX                            ; 00554736
     CALL core_box.cpp_CBox_setupCorners_FUN_0041a6e0 ; 00554737
-        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_setupCorners_FUN_0041a6e0()
+        ;   XREF to: 0041a6e0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041a6e0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 0055473c
     ADD ESP,0x48                        ; 0055473f
     POP EBX                             ; 00554742

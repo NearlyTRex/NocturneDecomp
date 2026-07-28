@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(int param_1)
+; void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_00490460(CBitFont *this_ptr)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dfont.cpp_FUN_0044c560 at 0044c5ad

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_emitter_cpp_CEmitter_ctor_FUN_004783c0(undefined4 param_1)
+; CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004783c0(CEmitter *this_ptr)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_emitter.cpp_FUN_00478390 at 004783a3
@@ -40,7 +42,7 @@ section .text
     ADD EAX,0x240                       ; 004783d0
     PUSH EAX                            ; 004783d5
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004783d6
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xfffffdc0]          ; 004783db
     MOV dword ptr [EBX + 0x14c],0x59cc74 ; 004783e1 | PTR_core_emitter.cpp_CEmitter_setup_FUN_00478520_0059cc74
     MOV dword ptr [EBX + 0x154],0x3f800000 ; 004783eb
@@ -97,7 +99,7 @@ section .text
     PUSH EAX                            ; 004784bb
     MOV dword ptr [EBX + 0x440],0x0     ; 004784bc
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004784c6
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x3bc],0x41a00000 ; 004784cb
     MOV dword ptr [EBX + 0x3c0],0x0     ; 004784d5
     MOV dword ptr [EBX + 0x3c4],0x0     ; 004784df

@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(int param_1,byte param_2)
+; CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(CWeapon *this_ptr,uint flags)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[13]:
-;   core_baron.cpp_FUN_00411610 at 0041161f
+;   core_baron.cpp_CBaronWeapon_dtor_FUN_00411610 at 0041161f
 ;   core_crossbow.cpp_FUN_0043d870 at 0043d896
-;   core_dynamite.cpp_FUN_0046ef30 at 0046ef3f
+;   core_dynamite.cpp_CDynamite_dtor_FUN_0046ef30 at 0046ef3f
 ;   core_elephant.cpp_FUN_00478310 at 0047831f
 ;   core_flamegun.cpp_FUN_0048ecb0 at 0048ecbf
 ;   core_flashlit.cpp_FUN_0048ee00 at 0048ee0f
@@ -43,13 +46,13 @@ section .text
     PUSH EBX                            ; 00553eb4
     MOV dword ptr [EBX + 0xfffffe4c],0x5a4154 ; 00553eb5 | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a4154
     CALL core_box.cpp_CBox_dtor_FUN_0041a6c0 ; 00553ebf
-        ;   XREF to: 0041a6c0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_dtor_FUN_0041a6c0()
+        ;   XREF to: 0041a6c0 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041a6c0(CBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00553ec4
     PUSH 0x1                            ; 00553ec7
     LEA EBX,[EAX + 0xfffffd00]          ; 00553ec9
     PUSH EBX                            ; 00553ecf
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 00553ed0
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00553ed5
     MOV DL,byte ptr [ESP + 0xc]         ; 00553ed8
     MOV EBX,EAX                         ; 00553edc
@@ -63,11 +66,11 @@ section .text
         ;   Label: LAB_00553ee7
     PUSH EBX                            ; 00553eec
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00553eed
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00553ef2
     PUSH EAX                            ; 00553ef5
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00553ef6
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00553efb
     MOV EAX,EBX                         ; 00553efe
     POP EBX                             ; 00553f00

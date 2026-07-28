@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(undefined4 param_1)
+; CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *this_ptr)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_svetlana.cpp_FUN_00541980 at 00541993
@@ -30,12 +32,12 @@ section .text
     ADD EAX,0x1fa44                     ; 005419be
     PUSH EAX                            ; 005419c3
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 005419c4
-        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_ctor_FUN_00435100()
+        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005419c9
     ADD EAX,0x3ab30                     ; 005419cc
     PUSH EAX                            ; 005419d1
     CALL core_cloth.cpp_CCloth_ctor_FUN_00435100 ; 005419d2
-        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_ctor_FUN_00435100()
+        ;   XREF to: 00435100 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_00435100(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005419d7
     LEA EBX,[EAX + 0xfffa5a8c]          ; 005419da
     PUSH 0x5961f3                       ; 005419e0 | = "svetlana.dfm"

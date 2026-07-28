@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __cdecl core_xform_cpp_determinant_FUN_0055bcb0(float *param_1)
+; double __cdecl core_xform_cpp_determinant_FUN_0055bcb0(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;

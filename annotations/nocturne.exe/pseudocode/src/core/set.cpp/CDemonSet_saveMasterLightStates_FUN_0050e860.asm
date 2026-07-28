@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(undefined4 param_1,int *param_2)
+; int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(CDemonSet *this_ptr,int *light_state_buffer)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   light_state_buffer
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3d59

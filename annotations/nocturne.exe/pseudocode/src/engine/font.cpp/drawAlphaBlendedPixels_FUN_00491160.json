@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 599,
+    "complexity_score": 349,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 50,
+    "suspect_count": 26,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 127
   },
@@ -157,7 +155,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160",
-    "signature": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(undefined4 *param_1,byte *param_2,int param_3,int param_4,undefined4 param_5)"
+    "signature": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)"
   },
   "function_calls": [],
   "globals": [
@@ -217,10 +215,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.916666666666667,
@@ -256,54 +254,50 @@
     "pcode_op_count": 284
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "src_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "color_table",
+        "offset": 12,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_color",
+        "offset": 20,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *param_1,byte *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *param_1,byte *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *param_1,byte *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *param_1,byte *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *param_1,byte *param_2,int param_3,int param_4,uint param_5)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 16,
@@ -361,51 +355,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*param_2 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)((uint)*param_2 * 4 + param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)((uint)*param_2 * 4 + param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)param_5 >> 0x18) << 0x30)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 35,
       "match": "int3",
       "severity": "mild",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)param_5 >> 0x18) << 0x30)",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(blend_color >> 0x18) << 0x30)",
       "type": "nonstandard_int"
     },
     {
@@ -413,32 +367,8 @@
       "line": 35,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)param_5 >> 0x18) << 0x30)",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(blend_color >> 0x18) << 0x30)",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "CONCAT14((char)((uint)param_5 >> 0x10),param_5)) >>",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "CONCAT14((char)((uint)param_5 >> 0x10),param_5)) >>",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "0x20),param_5) >> 0x18);",
-      "type": "unnamed_param"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -453,7 +383,7 @@
       "line": 40,
       "match": "int3",
       "severity": "mild",
-      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30)",
+      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28",
       "type": "nonstandard_int"
     },
     {
@@ -461,12 +391,12 @@
       "line": 40,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30)",
+      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 44,
+      "line": 43,
       "match": "uint5",
       "severity": "mild",
       "text": "uVar15 = (uint5)uVar6 & 0xffffffff00;",
@@ -474,98 +404,18 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 45,
+      "line": 44,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar10 = (ushort)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar10 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uVar10 = (byte)param_5 * uVar16 + ((ushort)uVar2 & 0xff) * (short)uVar20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uVar17 = ((ushort)CONCAT41(uVar5,(char)((uint)param_5 >> 8)) & 0xff) * uVar17 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = CONCAT13((uVar14 != 0) * (uVar14 < 0x100) * (char)(uVar13 >> 8) - (0xff < uVar14),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar9 = param_4 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "bVar3 = 0 < param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = iVar9;",
-      "type": "unnamed_param"
     },
     {
       "description": "Ghidra CONCAT34 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 35,
       "match": "CONCAT34",
       "severity": "moderate",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)param_5 >> 0x18) << 0x30)",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(blend_color >> 0x18) << 0x30)",
       "type": "concat_reconstruction"
     },
     {
@@ -573,7 +423,7 @@
       "line": 37,
       "match": "CONCAT14",
       "severity": "moderate",
-      "text": "CONCAT14((char)((uint)param_5 >> 0x10),param_5)) >>",
+      "text": "CONCAT14((char)(blend_color >> 0x10),blend_color)) >>",
       "type": "concat_reconstruction"
     },
     {
@@ -581,36 +431,36 @@
       "line": 40,
       "match": "CONCAT34",
       "severity": "moderate",
-      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30)",
+      "text": "uVar6 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "CONCAT14",
       "severity": "moderate",
-      "text": "CONCAT14((char)((uint)uVar2 >> 0x10),uVar2)) >> 0x20),",
+      "text": "),CONCAT14((char)(uVar2 >> 0x10),uVar2)) >>",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT25 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 48,
+      "line": 47,
       "match": "CONCAT25",
       "severity": "moderate",
-      "text": "uVar18 = (ushort)((short)(CONCAT25(uVar10,CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)) >> 0x20",
+      "text": "uVar18 = (ushort)((short)(CONCAT25(uVar10,CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20) *",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT21 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 49,
+      "line": 48,
       "match": "CONCAT21",
       "severity": "moderate",
-      "text": ") * (short)CONCAT21(uVar4,(char)uVar8)) >> 8;",
+      "text": "(short)CONCAT21(uVar4,(char)uVar8)) >> 8;",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT26 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "CONCAT26",
       "severity": "moderate",
       "text": "uVar20 = CONCAT26(uVar19,CONCAT24(uVar18,CONCAT22(uVar17,uVar16))) ^ 0xff00ff00ff00ff;",
@@ -618,26 +468,26 @@
     },
     {
       "description": "Ghidra CONCAT41 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "CONCAT41",
       "severity": "moderate",
-      "text": "uVar17 = ((ushort)CONCAT41(uVar5,(char)((uint)param_5 >> 8)) & 0xff) * uVar17 +",
+      "text": "uVar17 = ((ushort)CONCAT41(uVar5,(char)(blend_color >> 8)) & 0xff) * uVar17 +",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT43 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "CONCAT43",
       "severity": "moderate",
-      "text": "((ushort)(CONCAT43(uVar6,CONCAT12((char)((uint)uVar2 >> 8),(ushort)uVar2)) >> 0x10) &",
+      "text": "((ushort)(CONCAT43(uVar6,CONCAT12((char)(uVar2 >> 8),(ushort)uVar2)) >> 0x10) & 0xff)",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 62,
+      "line": 61,
       "match": "CONCAT13",
       "severity": "moderate",
-      "text": "*param_1 = CONCAT13((uVar14 != 0) * (uVar14 < 0x100) * (char)(uVar13 >> 8) - (0xff < uVar14),",
+      "text": "*dest_buffer = CONCAT13((uVar14 != 0) * (uVar14 < 0x100) * (char)(uVar13 >> 8) -",
       "type": "concat_reconstruction"
     },
     {
@@ -653,19 +503,8 @@
       "line": 65,
       "match": "CONCAT11",
       "severity": "moderate",
-      "text": "CONCAT11((uVar18 != 0) * (uVar18 < 0x100) * (char)(uVar17 >> 8) -",
+      "text": "CONCAT11((uVar18 != 0) * (uVar18 < 0x100) *",
       "type": "concat_reconstruction"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

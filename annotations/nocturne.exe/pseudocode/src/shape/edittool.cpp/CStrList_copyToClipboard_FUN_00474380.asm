@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param_1)
+; void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *this_ptr)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -46,7 +48,7 @@ section .text
         ;   Label: LAB_00474395
     PUSH EBX                            ; 00474396
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00474397
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0047439c
     MOV EDI,EAX                         ; 0047439f
     SUB ECX,ECX                         ; 004743a1
@@ -68,7 +70,7 @@ section .text
         ;   Label: LAB_004743c0
     PUSH EBP                            ; 004743c1
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004743c2
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004743c7
     MOV dword ptr [ESP],EAX             ; 004743ca
     TEST EAX,EAX                        ; 004743cd
@@ -96,7 +98,7 @@ section .text
         ;   Label: LAB_00474403
     PUSH EBX                            ; 00474404
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00474405
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0047440a
     PUSH EAX                            ; 0047440d
     PUSH 0x57eddf                       ; 0047440e | = "%s\n"
@@ -120,12 +122,12 @@ section .text
     PUSH EBX                            ; 0047443a
     MOV byte ptr [EDI],0x0              ; 0047443b
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10 ; 0047443e
-        ;   XREF to: 00472d10 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10()
+        ;   XREF to: 00472d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 00474443
     MOV ESI,dword ptr [ESP]             ; 00474446
     PUSH ESI                            ; 00474449
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0047444a
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0047444f
     ADD ESP,0x4                         ; 00474452
     POP EBP                             ; 00474455

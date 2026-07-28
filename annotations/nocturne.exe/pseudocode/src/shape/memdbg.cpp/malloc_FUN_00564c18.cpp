@@ -2,13 +2,15 @@
 // Address: 00564c18
 // Address Range: [[00564c18, 00564c25]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_memdbg_cpp_malloc_FUN_00564c18(undefined4 param_1)
+// Signature: void * __cdecl shape_memdbg_cpp_malloc_FUN_00564c18(SIZE_T size)
 
 #include "nocturne.h"
 
-void __cdecl shape_memdbg_cpp_malloc_FUN_00564c18(uint param_1)
+void * __cdecl shape_memdbg_cpp_malloc_FUN_00564c18(SIZE_T size)
 
 {
-  FUN_0056497c(param_1);
-  return;
+  void *pvVar1;
+  
+  pvVar1 = (void *)FUN_0056497c(size);
+  return pvVar1;
 }

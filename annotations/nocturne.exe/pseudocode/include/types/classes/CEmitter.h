@@ -9,32 +9,32 @@
 #include "types/classes/CVector3f.h"
 
 // Structure: CEmitter
-// Ghidra size: 0x494 (1172 bytes)
+// Ghidra size: 0x48c (1164 bytes)
 #pragma pack(push, 1)
 typedef struct CEmitter {
     CDemonActor base; // 0x0
-    int emitter_type; // 0x158
-    CVector3f emitter_size; // 0x15c
-    int emitter_state; // 0x168
-    char event_on[100]; // 0x16c
-    char event_off[100]; // 0x1d0
-    float max_emit_time; // 0x234
-    int laser_type; // 0x238
-    CColor3i laser_color; // 0x23c
-    CKeyFramedModelInstance model; // 0x248
-    float rock_speed; // 0x3c4
-    int periodic_flag; // 0x3c8
-    float max_wait_time; // 0x3cc
-    struct CDemonActor* dest_actor; // 0x3d0
-    char wav_name[100]; // 0x3d4
-    uint sfx_handle; // 0x438
-    int sfx_type; // 0x43c
-    float emit_timer; // 0x440
-    float emit_period; // 0x444
-    float state_timer; // 0x448
-    CDemonGlobe globe; // 0x44c
-    int was_active; // 0x48c
-    int prev_emitter_state; // 0x490
+    int emitter_type; // 0x150
+    CVector3f emitter_size; // 0x154
+    int emitter_state; // 0x160
+    char event_on[100]; // 0x164
+    char event_off[100]; // 0x1c8
+    float max_emit_time; // 0x22c
+    int laser_type; // 0x230
+    CColor3i laser_color; // 0x234
+    CKeyFramedModelInstance model; // 0x240
+    float rock_speed; // 0x3bc
+    int periodic_flag; // 0x3c0
+    float max_wait_time; // 0x3c4
+    struct CDemonActor* dest_actor; // 0x3c8
+    char wav_name[100]; // 0x3cc
+    uint sfx_handle; // 0x430
+    int sfx_type; // 0x434
+    float emit_timer; // 0x438
+    float emit_period; // 0x43c
+    float state_timer; // 0x440
+    CDemonGlobe globe; // 0x444
+    int was_active; // 0x484
+    int prev_emitter_state; // 0x488
 } CEmitter;
 #pragma pack(pop)
 

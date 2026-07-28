@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(undefined4 *param_1)
+; int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   header
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ;
@@ -12,8 +14,8 @@
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c3ff4
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3abd
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080 at 004c40ea
-;   engine_model.c_FUN_004dd690 at 004dd6ca
 ;   engine_model.c_byteswapMRGLData_FUN_004dcc90 at 004dcca0
+;   engine_model.c_loadMRGLTextures_FUN_004dd690 at 004dd6ca
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004dd40c = 004dd53f

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(int param_1,float param_2)
+; void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70
 ; undefined4       Stack[-0x64]:4  local_64
@@ -78,7 +81,7 @@ section .text
         ;   Label: LAB_0042ac02
     PUSH ESI                            ; 0042ac08
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 0042ac09
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0042ac0e
     ADD ESP,0x4                         ; 0042ac11
     TEST EAX,EAX                        ; 0042ac14
@@ -103,13 +106,13 @@ section .text
     PUSH EAX                            ; 0042ac4f
     FSTP float ptr [EBX + 0x2c4c]       ; 0042ac50
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ac56
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ac5b
     PUSH 0x0                            ; 0042ac5e
     PUSH 0x57a47d                       ; 0042ac60 | = "Bip01 head"
     PUSH EAX                            ; 0042ac65
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042ac66
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ac6b
     CMP EAX,-0x1                        ; 0042ac6e
     JZ 0x0042abfb                       ; 0042ac71
@@ -132,21 +135,21 @@ section .text
     MOV dword ptr [EBP + -0x2c],ECX     ; 0042ac9d
     MOV dword ptr [EBP + -0x28],ESI     ; 0042aca0
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042aca3
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0042aca8
     PUSH EAX                            ; 0042acab
     LEA EAX,[EBP + -0x18]               ; 0042acac
     PUSH EAX                            ; 0042acaf
     PUSH EBX                            ; 0042acb0
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0042acb1
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0042acb6
     LEA EAX,[EBP + -0x18]               ; 0042acb9
     PUSH EAX                            ; 0042acbc
     MOV EDI,dword ptr [0x005be368]      ; 0042acbd | DAT_005be368
     PUSH EDI                            ; 0042acc3 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0042acc4
-        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50()
+        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042acc9
     TEST EAX,EAX                        ; 0042accc
     JNZ 0x0042abfb                      ; 0042acce
@@ -190,13 +193,13 @@ section .text
     ADD ESP,0xc                         ; 0042ad41
     PUSH ESI                            ; 0042ad44
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0042ad45
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ad4a
     PUSH EDI                            ; 0042ad4d
     PUSH 0x57a472                       ; 0042ad4e | = "Bip01 head"
     PUSH EAX                            ; 0042ad53
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 0042ad54
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ad59
     CMP EAX,-0x1                        ; 0042ad5c
     JZ 0x0042ac25                       ; 0042ad5f
@@ -219,14 +222,14 @@ section .text
     MOV dword ptr [EBP + -0x4c],EDI     ; 0042ad8f
     MOV dword ptr [EBP + -0x50],ESI     ; 0042ad92
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0042ad95
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0042ad9a
     PUSH EAX                            ; 0042ad9d
     LEA EAX,[EBP + -0x24]               ; 0042ad9e
     PUSH EAX                            ; 0042ada1
     PUSH EBX                            ; 0042ada2
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0042ada3
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0042ada8
     PUSH 0x8000                         ; 0042adab
     LEA EAX,[EBP + -0xc]                ; 0042adb0
@@ -237,7 +240,7 @@ section .text
     MOV EAX,[0x005b80f0]                ; 0042adbd | DAT_005b80f0
     PUSH EAX                            ; 0042adc2
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0042adc3
-        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0()
+        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 0042adc8
     JMP 0x0042ac25                      ; 0042adcb
         ;   XREF to: 0042ac25 (UNCONDITIONAL_JUMP)  ; LAB_0042ac25

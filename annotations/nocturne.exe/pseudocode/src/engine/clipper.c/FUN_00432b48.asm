@@ -70,7 +70,7 @@ section .text
     PUSH EBX                            ; 00432bb9 | DAT_00767328
     PUSH EDX                            ; 00432bba
     CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 00432bbb
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
+        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexNearClip_FUN_00431930(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EBX,dword ptr [0x00766c70]      ; 00432bc0 | DAT_00766c70
     INC EBX                             ; 00432bc6
     ADD ESP,0xc                         ; 00432bc7

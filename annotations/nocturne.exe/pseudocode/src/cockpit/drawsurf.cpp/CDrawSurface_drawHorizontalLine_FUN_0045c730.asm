@@ -1,12 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(CDrawSurface *this_ptr,int start_x,int y,int end_x)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   start_x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   end_x
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10 at 0045cb2c
-;   cockpit_drawsurf.cpp_FUN_0045d310 at 0045d522
+;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_0045d310 at 0045d522
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d9bf
@@ -82,7 +87,7 @@ section .text
     ADD EDX,EAX                         ; 0045c7a9
     PUSH EDX                            ; 0045c7ab
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0045c7ac
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0045c7b1
     LEA EAX,[EAX]                       ; 0045c7b4
     LEA EDX,[EDX]                       ; 0045c7ba
@@ -97,7 +102,7 @@ section .text
     PUSH ECX                            ; 0045c7c6
     PUSH EAX                            ; 0045c7c7
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20 ; 0045c7c8
-        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20()
+        ;   XREF to: 0045bc20 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20(int start_x, int end_x, int y)
     ADD ESP,0xc                         ; 0045c7cd
     POP EBP                             ; 0045c7d0
     POP EDI                             ; 0045c7d1

@@ -2,25 +2,25 @@
 // Address: 0045cff0
 // Address Range: [[0045cff0, 0045d061]]
 // Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_FUN_0045cff0(undefined4 param_1,int param_2,int param_3,uint param_4,uint param_5)
+// Signature: void cockpit_drawsurf_cpp_FUN_0045cff0(CDrawSurface *param_1,int param_2,int param_3,uint param_4,uint param_5)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_FUN_0045cff0(uint param_1,int param_2,int param_3,uint param_4,uint param_5)
+void cockpit_drawsurf_cpp_FUN_0045cff0(CDrawSurface *param_1,int param_2,int param_3,uint param_4,uint param_5)
 
 {
-  int iVar1;
-  int iVar2;
+  int x2;
+  int y2;
   
-  iVar1 = (int)param_4 / 2 + param_2;
+  x2 = (int)param_4 / 2 + param_2;
   if ((param_4 & 1) == 0) {
-    iVar1 = iVar1 + -1;
+    x2 = x2 + -1;
   }
-  iVar2 = (int)param_5 / 2 + param_3;
+  y2 = (int)param_5 / 2 + param_3;
   if ((param_5 & 1) == 0) {
-    iVar2 = iVar2 + -1;
+    y2 = y2 + -1;
   }
-  cockpit_drawsurf_cpp_FUN_0045cde0
-            (param_1,param_2 - (int)param_4 / 2,param_3 - (int)param_5 / 2,iVar1,iVar2);
+  cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0
+            (param_1,param_2 - (int)param_4 / 2,param_3 - (int)param_5 / 2,x2,y2);
   return;
 }

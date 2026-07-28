@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(int param_1)
+; undefined4 __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],ESI      ; 004ba8e4
     XOR ESI,ESI                         ; 004ba8e8
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004ba8ea
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004ba8ef
     XOR EDI,EDI                         ; 004ba8f2
     MOV EAX,[0x005be368]                ; 004ba8f4 | DAT_005be368
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 004ba93b
     PUSH EBX                            ; 004ba93c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004ba93d
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ba942
     TEST EAX,EAX                        ; 004ba945
     JZ 0x004ba9a7                       ; 004ba947
@@ -148,7 +148,7 @@ section .text
     PUSH EAX                            ; 004ba9dc
     FSTP float ptr [EAX + 0xfffffed8]   ; 004ba9dd
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004ba9e3
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004ba9e8
     ADD ESP,0xc                         ; 004ba9ed
     MOV ESP,EBP                         ; 004ba9f0

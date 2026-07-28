@@ -11,128 +11,142 @@
 void core_inivar_cpp_FUN_004bdb80(void)
 
 {
-  int iVar1;
-  byte local_204 [512];
+  CGame *pCVar1;
+  DWORD DVar2;
+  CIniFile local_204;
   
-  iVar1 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
-  if (iVar1 != 0) {
+  DVar2 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
+  if (DVar2 != 0) {
     PTR_01cc4800 = "..\\core\\inivar.cpp";
     INT_01cc4804 = 0x54;
     core_main_c_FUN_004c8440("Please copy Nocturne to your hard drive");
   }
-  engine_ini_cpp_CIniFile_ctor_FUN_004bd860(local_204,".\\system\\nocturne.ini",0);
-  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Graphics");
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gamePIXX",0x01C775EC);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gamePIXY",0x01C775EC + 4);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gameBPP",0x01C775EC + 8);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"useDirect3D",&INT_02dc9d60);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"useAGPFlag",&DAT_02dc9d6c);
+  engine_ini_cpp_CIniFile_ctor_FUN_004bd860(&local_204,".\\system\\nocturne.ini",(char *)0x0);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Graphics");
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"gamePIXX",0x01C775EC);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"gamePIXY",&DAT_005b9354->game_pixy);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"gameBPP",&DAT_005b9354->game_bpp);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useDirect3D",&INT_02dc9d60);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useAGPFlag",&DAT_02dc9d6c);
   engine_ini_cpp_CIniFile_getString_FUN_004bd910
-            (local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gamma",0x01C775EC + 0x224);
+            (&local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"gamma",&DAT_005b9354->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"heroNumber",0x01C775EC + 0xc0);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"haloMode",0x01C775EC + 0xc);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"firstTimeFlag",&DAT_01cae37c);
+            (&local_204,"heroNumber",&DAT_005b9354->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"subtitleMode",0x01C775EC + 0x10);
+            (&local_204,"haloMode",&DAT_005b9354->halo_mode);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"firstTimeFlag",&DAT_01cae37c)
+  ;
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"bloodFlag",0x01C775EC + 0x14);
+            (&local_204,"subtitleMode",&DAT_005b9354->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"nudityFlag",0x01C775EC + 0x18);
+            (&local_204,"bloodFlag",&DAT_005b9354->blood_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"foulLanguageFlag",0x01C775EC + 0x1c);
+            (&local_204,"nudityFlag",&DAT_005b9354->nudity_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"shadowFlag",0x01C775EC + 0x24);
+            (&local_204,"foulLanguageFlag",&DAT_005b9354->foul_language_flag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"quimbyFlag",0x01C775EC + 0x20);
-  iVar1 = 0x01C775EC;
-  if (*(int *)(0x01C775EC + 0x20) != 0) {
-    *(uint *)(0x01C775EC + 0x18) = 0;
-    *(uint *)(iVar1 + 0x1c) = 0;
-    *(uint *)(iVar1 + 0x14) = 0;
+            (&local_204,"shadowFlag",&DAT_005b9354->shadow_flag);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"quimbyFlag",&DAT_005b9354->quimby_flag);
+  pCVar1 = 0x01C775EC;
+  if (0x01C775EC->quimby_flag != 0) {
+    0x01C775EC->nudity_flag = 0;
+    pCVar1->foul_language_flag = 0;
+    pCVar1->blood_flag = 0;
   }
   _DAT_01cc64a4 = 0;
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"currentBoard",&DAT_01cc64a4);
-  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Sound");
-  sound_sndmain_cpp_FUN_005289f0(local_204);
-  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Control");
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"currentBoard",&DAT_01cc64a4);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Sound");
+  sound_sndmain_cpp_FUN_005289f0(&local_204);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"gameControl",0x01C775EC + 0xbc);
+            (&local_204,"gameControl",&DAT_005b9354->game_control);
   core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(0x01C775EC);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyWalk",0x01C775EC + 0x28);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyBackup",0x01C775EC + 0x2c);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyRun",0x01C775EC + 0x30);
+            (&local_204,"keyWalk",&DAT_005b9354->key_walk);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyStrafe",0x01C775EC + 0x34);
+            (&local_204,"keyBackup",&DAT_005b9354->key_backup);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyStrafeLeft",0x01C775EC + 0x38);
+            (&local_204,"keyRun",&DAT_005b9354->key_run);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyStrafeRight",0x01C775EC + 0x3c);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyRight",0x01C775EC + 0x40)
-  ;
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyLeft",0x01C775EC + 0x44);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyFire",0x01C775EC + 0x48);
+            (&local_204,"keyStrafe",&DAT_005b9354->key_strafe);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyUseItem",0x01C775EC + 0x4c);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyLight",0x01C775EC + 0x50)
-  ;
+            (&local_204,"keyStrafeLeft",&DAT_005b9354->key_strafe_left);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyInfrared",0x01C775EC + 0x54);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyDraw",0x01C775EC + 0x58);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"keyJump",0x01C775EC + 0x5c);
+            (&local_204,"keyStrafeRight",&DAT_005b9354->key_strafe_right);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyPointUp",0x01C775EC + 0x60);
+            (&local_204,"keyRight",&DAT_005b9354->key_right);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyPointDown",0x01C775EC + 100);
+            (&local_204,"keyLeft",&DAT_005b9354->key_left);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyWeapon1",0x01C775EC + 0x68);
+            (&local_204,"keyFire",&DAT_005b9354->key_fire);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyWeapon2",0x01C775EC + 0x6c);
+            (&local_204,"keyUseItem",&DAT_005b9354->key_use_item);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyWeapon3",0x01C775EC + 0x70);
+            (&local_204,"keyLight",&DAT_005b9354->key_light);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyWeapon4",0x01C775EC + 0x74);
+            (&local_204,"keyInfrared",&DAT_005b9354->key_infrared);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyWeapon5",0x01C775EC + 0x78);
+            (&local_204,"keyDraw",&DAT_005b9354->key_draw);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyNextWeapon",0x01C775EC + 0x7c);
+            (&local_204,"keyJump",&DAT_005b9354->key_jump);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyPrevWeapon",0x01C775EC + 0x80);
+            (&local_204,"keyPointUp",&DAT_005b9354->key_point_up);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyNextItem",0x01C775EC + 0x84);
+            (&local_204,"keyPointDown",&DAT_005b9354->key_point_down);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyPrevItem",0x01C775EC + 0x88);
+            (&local_204,"keyWeapon1",&DAT_005b9354->key_weapon_1);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyItemDesc",0x01C775EC + 0x8c);
+            (&local_204,"keyWeapon2",&DAT_005b9354->key_weapon_2);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"keyNextAmmo",0x01C775EC + 0x90);
+            (&local_204,"keyWeapon3",&DAT_005b9354->key_weapon_3);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"invertMouseYAxis",0x01C775EC + 0x94);
+            (&local_204,"keyWeapon4",&DAT_005b9354->key_weapon_4);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"alwaysRun",0x01C775EC + 0x98);
+            (&local_204,"keyWeapon5",&DAT_005b9354->key_weapon_5);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"xMouseSensitivity",0x01C775EC + 0x9c);
+            (&local_204,"keyNextWeapon",&DAT_005b9354->key_next_weapon);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"yMouseSensitivity",0x01C775EC + 0xa0);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"xCenter",0x01C775EC + 0xa4);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"yCenter",0x01C775EC + 0xa8);
+            (&local_204,"keyPrevWeapon",&DAT_005b9354->key_prev_weapon);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"xStickMin",0x01C775EC + 0xac);
+            (&local_204,"keyNextItem",&DAT_005b9354->key_next_item);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"xStickMax",0x01C775EC + 0xb0);
+            (&local_204,"keyPrevItem",&DAT_005b9354->key_prev_item);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"yStickMin",0x01C775EC + 0xb4);
+            (&local_204,"keyItemDesc",&DAT_005b9354->key_item_desc);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"yStickMax",0x01C775EC + 0xb8);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"aimMode",0x01C775EC + 0xc4);
+            (&local_204,"keyNextAmmo",&DAT_005b9354->key_next_ammo);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"autoUseHealth",0x01C775EC + 200);
-  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Debug");
+            (&local_204,"invertMouseYAxis",&DAT_005b9354->invert_mouse_y_axis);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"logConsoleFlag",PTR_DAT_005ad350);
+            (&local_204,"alwaysRun",&DAT_005b9354->always_run);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
-            (local_204,"headOfHorrorCheat",0x01C775EC + 0x214);
+            (&local_204,"xMouseSensitivity",&DAT_005b9354->x_mouse_sensitivity);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"yMouseSensitivity",&DAT_005b9354->y_mouse_sensitivity);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"xCenter",&DAT_005b9354->x_center);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"yCenter",&DAT_005b9354->y_center);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"xStickMin",&DAT_005b9354->x_stick_min);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"xStickMax",&DAT_005b9354->x_stick_max);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"yStickMin",&DAT_005b9354->y_stick_min);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"yStickMax",&DAT_005b9354->y_stick_max);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"aimMode",&DAT_005b9354->aim_mode);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"autoUseHealth",&DAT_005b9354->auto_use_health);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Debug");
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"logConsoleFlag",PTR_DAT_005ad350);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
+            (&local_204,"headOfHorrorCheat",&DAT_005b9354->head_of_horror_cheat);
   return;
 }

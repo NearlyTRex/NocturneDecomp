@@ -2,11 +2,11 @@
 // Address: 00548f70
 // Address Range: [[00548f70, 00548fb5]]
 // Convention: __cdecl
-// Signature: bool __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(undefined4 param_1,ushort param_2)
+// Signature: int __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(_SOCKET *socket_handle,uint16_t port)
 
 #include "nocturne.h"
 
-bool __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(uint param_1,ushort param_2)
+int __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(_SOCKET *socket_handle,uint16_t port)
 
 {
   ushort uVar1;
@@ -15,11 +15,11 @@ bool __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(uint param_1,ushort par
   uint uStack_14;
   uint uStack_10;
   
-  uStack_14 = (uint)param_2;
+  uStack_14 = (uint)port;
   uStack_10 = CONCAT22(uStack_10._2_2_,2);
   uVar1 = Ordinal_9();
   uStack_14 = CONCAT22(uVar1,(ushort)uStack_14);
   uStack_10 = 0;
   iVar2 = Ordinal_2(*unaff_retaddr,&uStack_14,0x10);
-  return iVar2 == 0;
+  return (uint)(iVar2 == 0);
 }

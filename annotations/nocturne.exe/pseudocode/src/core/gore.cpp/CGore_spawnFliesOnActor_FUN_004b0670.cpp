@@ -2,18 +2,18 @@
 // Address: 004b0670
 // Address Range: [[004b0670, 004b06a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(uint param_1,int param_2,uint param_3,uint param_4,uint param_5)
+void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size)
 
 {
   int iVar1;
   
   iVar1 = core_gore_cpp_CGore_spawnFlies_FUN_004b0580
-                    (param_1,param_2 + 0x20,param_3,param_4,param_5);
-  *(uint *)(iVar1 + 0x2c) = *(uint *)(param_2 + 0x2c);
-  *(int *)(iVar1 + 0x2a00) = param_2;
+                    (this_ptr,&actor->location,gather_count,spawn_rate,box_size);
+  *(int *)(iVar1 + 0x2c) = (actor->location).area_id;
+  *(CDemonActor **)(iVar1 + 0x2a00) = actor;
   return;
 }

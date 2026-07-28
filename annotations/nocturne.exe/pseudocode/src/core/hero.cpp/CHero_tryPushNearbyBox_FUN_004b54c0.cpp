@@ -2,96 +2,94 @@
 // Address: 004b54c0
 // Address Range: [[004b54c0, 004b56e5]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
+// Signature: int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
+int __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(CHero *this_ptr)
 
 {
   int iVar1;
+  CDemonActor *this_ptr_00;
   uint uVar2;
+  CBoxActor *this_ptr_01;
   int iVar3;
   int iVar4;
-  int iVar5;
-  float local_80;
-  float fStack_7c;
-  float fStack_78;
-  float fStack_74;
-  float fStack_70;
-  float fStack_6c;
+  CBoundingBox3D local_80;
   float fStack_68;
   float fStack_64;
   float fStack_60;
-  byte auStack_5c [12];
-  float fStack_50;
-  float fStack_4c;
-  float fStack_48;
+  CVector3f CStack_5c;
+  CVector3f CStack_50;
   float fStack_44;
   uint uStack_40;
   float fStack_3c;
-  byte auStack_38 [4];
-  float fStack_34;
-  float fStack_30;
+  CVector3f CStack_38;
   byte auStack_2c [12];
   float fStack_20;
   float fStack_1c;
   float fStack_18;
   float fStack_14;
   
-  iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_004294f0(param_1);
+  iVar1 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_004294f0(&this_ptr->base);
   if (iVar1 == 0) {
-    if (*(int *)(param_1 + 0x1fa0c) == 0) {
+    if (this_ptr->pushed_object == (CBoxActor *)0x0) {
       iVar1 = 0;
-      for (iVar5 = 0; iVar5 < *(int *)(0x01E57284 + 0x14cd6c); iVar5 = iVar5 + 1) {
-        iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar1 + 0x14cd70 + 0x01E57284),
-                           g_CBoxActorActorType_00764800.name_hash);
-        if (((iVar3 != 0) && (*(int *)(iVar3 + 0x314) != 0)) && (*(int *)(iVar3 + 0x318) == 0)) {
-          (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_80);
-          fStack_68 = local_80 + fStack_74;
-          fStack_64 = fStack_7c + fStack_70;
-          fStack_50 = fStack_68 * 0.5f;
-          fStack_4c = fStack_64 * 0.5f;
-          fStack_60 = fStack_78 + fStack_6c;
-          fStack_48 = fStack_60 * 0.5f;
-          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(iVar3,auStack_5c,&fStack_50);
-          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,auStack_38,auStack_5c);
-          fStack_20 = fStack_74 - local_80;
-          fStack_18 = fStack_6c - fStack_78;
+      for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
+        this_ptr_01 = (CBoxActor *)
+                      core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(iVar1 + 0x14cd70 + 0x01E57284),
+                                 g_CBoxActorActorType_00764800.name_hash);
+        if (((this_ptr_01 != (CBoxActor *)0x0) && (this_ptr_01->can_be_pushed != 0)) &&
+           (this_ptr_01->pushed_by_actor == (CDemonActor *)0x0)) {
+          (*((this_ptr_01->base).vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr_01,&local_80);
+          fStack_68 = local_80.min.x + local_80.max.x;
+          fStack_64 = local_80.min.y + local_80.max.y;
+          CStack_50.x = fStack_68 * 0.5f;
+          CStack_50.y = fStack_64 * 0.5f;
+          fStack_60 = local_80.min.z + local_80.max.z;
+          CStack_50.z = fStack_60 * 0.5f;
+          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                    ((CDemonActor *)this_ptr_01,&CStack_5c,&CStack_50);
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                    ((CDemonActor *)this_ptr,&CStack_38,&CStack_5c);
+          fStack_20 = local_80.max.x - local_80.min.x;
+          fStack_18 = local_80.max.z - local_80.min.z;
           fStack_44 = fStack_20 * 0.5f;
           fStack_3c = fStack_18 * 0.5f;
           uStack_40 = 0;
-          fStack_1c = fStack_70 - fStack_7c;
-          if (((fStack_30 - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=
-                (float)1.2) && (1.0 <= (double)fStack_34)) &&
-             ((double)fStack_34 <= 5)) {
-            iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-                              (auStack_2c,auStack_38);
+          fStack_1c = local_80.max.y - local_80.min.y;
+          if (((CStack_38.z - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=
+                (float)1.2) && (1.0 <= (double)CStack_38.y)) &&
+             ((double)CStack_38.y <= 5)) {
+            iVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+                              (auStack_2c,&CStack_38);
             fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                         (*(uint *)(iVar4 + 4));
+                                         (*(uint *)(iVar3 + 4));
             if (ABS(fStack_14) <= (float)0.61086523818055505) {
-              *(int *)(param_1 + 0x1fa0c) = iVar3;
+              this_ptr->pushed_object = this_ptr_01;
               break;
             }
           }
         }
         iVar1 = iVar1 + 4;
       }
-      if (*(int *)(param_1 + 0x1fa0c) == 0) goto LAB_004b5550;
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(int *)(param_1 + 0x1fa0c),g_CBoxActorActorType_00764800.name_hash);
-      if (iVar1 != 0) {
-        *(int *)(iVar1 + 0x318) = param_1;
-        uVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x28))(iVar1,iVar1 + 0x324);
-        *(uint *)(iVar1 + 800) = uVar2;
+      if (this_ptr->pushed_object == (CBoxActor *)0x0) goto LAB_004b5550;
+      this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
+                              (&this_ptr->pushed_object->base,
+                               g_CBoxActorActorType_00764800.name_hash);
+      if (this_ptr_00 != (CDemonActor *)0x0) {
+        *(CHero **)this_ptr_00[2].create_event = this_ptr;
+        uVar2 = (*((this_ptr_00->vtable)._ub)->playAmbientSound)
+                          (this_ptr_00,this_ptr_00[2].create_event + 0xc);
+        *(uint *)(this_ptr_00[2].create_event + 8) = uVar2;
       }
     }
-    uVar2 = 1;
+    iVar1 = 1;
   }
   else {
 LAB_004b5550:
-    uVar2 = 0;
+    iVar1 = 0;
   }
-  return uVar2;
+  return iVar1;
 }

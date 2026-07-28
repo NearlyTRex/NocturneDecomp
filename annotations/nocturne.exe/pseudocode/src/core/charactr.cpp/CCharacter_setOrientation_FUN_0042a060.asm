@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(int param_1,undefined4 *param_2)
+; void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060(CCharacter *this_ptr,UOrientationVector *orientation)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; UOrientationVector * Stack[0x8]:4   orientation
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ; undefined        Stack[-0x2c]:1  local_2c
@@ -58,7 +61,7 @@ section .text
     PUSH EBX                            ; 0042a0ae
         ;   Label: LAB_0042a0ae
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0042a0af
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042a0b4
     LEA EAX,[ESP + 0x18]                ; 0042a0b7
     PUSH EAX                            ; 0042a0bb

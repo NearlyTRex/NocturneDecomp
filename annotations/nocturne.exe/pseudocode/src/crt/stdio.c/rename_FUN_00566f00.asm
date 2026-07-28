@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_stdio_c_rename_FUN_00566f00(LPCSTR param_1,LPCSTR param_2)
+; DWORD crt_stdio_c_rename_FUN_00566f00(LPCSTR param_1,LPCSTR param_2)
 ;
 ;
 ; XREF[2]:
@@ -30,7 +30,7 @@ section .text
     JNZ 0x00566f1d                      ; 00566f14
         ;   XREF to: 00566f1d (CONDITIONAL_JUMP)  ; LAB_00566f1d
     CALL crt_errno.c___set_errno_FUN_0056c73c ; 00566f16
-        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; undefined crt_errno.c___set_errno_FUN_0056c73c()
+        ;   XREF to: 0056c73c (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c___set_errno_FUN_0056c73c()
     POP EBX                             ; 00566f1b
     RET                                 ; 00566f1c
     XOR EAX,EAX                         ; 00566f1d

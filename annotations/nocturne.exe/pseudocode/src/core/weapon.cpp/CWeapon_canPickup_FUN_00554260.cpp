@@ -2,31 +2,34 @@
 // Address: 00554260
 // Address Range: [[00554260, 005542fd]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,undefined4 param_2)
+// Signature: int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDemonActor *picker)
 
 #include "nocturne.h"
 
-uint __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(int param_1,uint param_2)
+int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_00554260(CWeapon *this_ptr,CDemonActor *picker)
 
 {
-  int iVar1;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  int iVar4;
   
-  if (((((*(int *)(param_1 + 0x2fc) == 0) && (*(int *)(param_1 + 0x2cc) == 0)) &&
-       (*(int *)(param_1 + 0x554) != 0)) &&
-      ((float)0.5 <
-       SQRT(*(float *)(param_1 + 0x354) * *(float *)(param_1 + 0x354) +
-            *(float *)(param_1 + 0x34c) * *(float *)(param_1 + 0x34c) +
-            *(float *)(param_1 + 0x350) * *(float *)(param_1 + 0x350)))) ||
-     (*(int *)(param_1 + 0x2fc) != 0)) {
+  if (((((this_ptr->carried_by_actor == (CDemonActor *)0x0) && (this_ptr->weapon_state == 0)) &&
+       ((this_ptr->physics_box).is_valid != 0)) &&
+      (fVar1 = (this_ptr->physics_box).linear_velocity_local.y,
+      fVar2 = (this_ptr->physics_box).linear_velocity_local.x,
+      fVar3 = (this_ptr->physics_box).linear_velocity_local.z,
+      (float)0.5 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1))) ||
+     (this_ptr->carried_by_actor != (CDemonActor *)0x0)) {
     return 0;
   }
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CIcePick");
-  if (iVar1 == 0) {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CHero");
-    if (iVar1 != 0) {
+  iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(picker,"CIcePick");
+  if (iVar4 == 0) {
+    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(picker,"CHero");
+    if (iVar4 != 0) {
       return 2;
     }
-    if ((*(int *)(param_1 + 0x2cc) != 0) && (*(int *)(param_1 + 0x2cc) != 3)) {
+    if ((this_ptr->weapon_state != 0) && (this_ptr->weapon_state != 3)) {
       return 0;
     }
   }

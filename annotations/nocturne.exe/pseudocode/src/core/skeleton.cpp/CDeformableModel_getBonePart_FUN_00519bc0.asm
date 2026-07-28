@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_00519bc0(int param_1,int param_2)
+; int __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_00519bc0(CDeformableModel *this_ptr,int bone_index)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0 at 00426830

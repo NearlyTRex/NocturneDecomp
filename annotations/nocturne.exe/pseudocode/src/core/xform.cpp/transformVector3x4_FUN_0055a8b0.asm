@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_xform_cpp_transformVector3x4_FUN_0055a8b0(float *param_1,float *param_2,float *param_3)
+; CVector3f * __cdecl core_xform_cpp_transformVector3x4_FUN_0055a8b0(CVector3f *output_vector,CVector3f *input_vector,CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   output_vector
+; CVector3f *      Stack[0x8]:4   input_vector
+; CMatrix3x4f *    Stack[0xc]:4   matrix
 ;
 ; XREF[52]:
 ;   core_baron.cpp_FUN_00410490 at 0041087b

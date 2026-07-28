@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(int param_1,undefined4 param_2,float param_3)
+; void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(CMotionController *this_ptr,int target_motion_index,float target_frame_number)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   target_motion_index
+; float            Stack[0xc]:4   target_frame_number
 ;
 ; XREF[7]:
 ;   core_boneguy.cpp_FUN_00418a00 at 00418a6b
@@ -41,7 +45,7 @@ section .text
     PUSH EBX                            ; 004e19b9
     MOV dword ptr [EBX + 0x8],EAX       ; 004e19ba
     CALL core_motion.cpp_CMotionController_clearTweenState_FUN_004e19f0 ; 004e19bd
-        ;   XREF to: 004e19f0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_clearTweenState_FUN_004e19f0()
+        ;   XREF to: 004e19f0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_clearTweenState_FUN_004e19f0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e19c2
     ADD ESP,0x4                         ; 004e19c5
     POP EBX                             ; 004e19c8

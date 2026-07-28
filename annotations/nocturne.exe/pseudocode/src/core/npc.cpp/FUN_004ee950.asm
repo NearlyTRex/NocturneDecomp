@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_npc_cpp_FUN_004ee950(undefined4 param_1)
+; int * core_npc_cpp_FUN_004ee950(CCharacter *param_1)
 ;
 ;
 ; XREF[7]:
@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_priest_dfm_0058cac0
-;   undefined1* PTR_core_npc.cpp_FUN_004ee9e0_005a0eb4 = 004ee9e0
+;   undefined1* PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_005a0eb4 = 004ee9e0
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00423f40
@@ -31,14 +31,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004ee951
     PUSH EBX                            ; 004ee955
     CALL core_charactr.cpp_CCharacter_ctor_FUN_00423f40 ; 004ee956
-        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_ctor_FUN_00423f40()
+        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00423f40(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004ee95b
     ADD EAX,0xbc8c                      ; 004ee95e
     PUSH EAX                            ; 004ee963
     CALL core_path.cpp_CPathMap_ctor_FUN_004efd50 ; 004ee964
-        ;   XREF to: 004efd50 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_ctor_FUN_004efd50()
+        ;   XREF to: 004efd50 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_ctor_FUN_004efd50(CPathMap * this_ptr)
     LEA EBX,[EAX + 0xffff4374]          ; 004ee969
-    MOV dword ptr [EBX + 0x14c],0x5a0eb4 ; 004ee96f | PTR_core_npc.cpp_FUN_004ee9e0_005a0eb4
+    MOV dword ptr [EBX + 0x14c],0x5a0eb4 ; 004ee96f | PTR_core_npc.cpp_CNPC_setup_FUN_004ee9e0_005a0eb4
     ADD ESP,0x4                         ; 004ee979
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004ee97c
     PUSH 0x58cac0                       ; 004ee986 | = "priest.dfm"

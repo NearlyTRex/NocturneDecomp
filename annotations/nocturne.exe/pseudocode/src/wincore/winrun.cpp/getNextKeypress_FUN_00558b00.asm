@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00558b00(void)
+; int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00558b00(void)
 ;
 ;
 ; XREF[13]:
@@ -9,8 +9,8 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6e6a
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e5b6
 ;   core_main.c_FUN_004c8510 at 004c855c
-;   core_main.c_FUN_004c8eb0 at 004c9084
 ;   core_main.c_FUN_004c90e0 at 004c92e4
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c9084
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50 at 004cff86
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d960d
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507c60
@@ -44,7 +44,7 @@ section .text
     JNZ 0x00558b2f                      ; 00558b1b
         ;   XREF to: 00558b2f (CONDITIONAL_JUMP)  ; LAB_00558b2f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00558b1d
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EAX,[0x02de0848]                ; 00558b22 | DAT_02de0848
     CMP EAX,dword ptr [0x02de084c]      ; 00558b27 | DAT_02de084c
     JZ 0x00558b14                       ; 00558b2d

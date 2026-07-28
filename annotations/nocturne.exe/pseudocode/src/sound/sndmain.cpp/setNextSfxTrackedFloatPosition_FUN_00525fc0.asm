@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f *position_source_ptr)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   position_source_ptr
 ;
 ; XREF[7]:
 ;   core_dracbrid.cpp_FUN_0045ab40 at 0045afb3

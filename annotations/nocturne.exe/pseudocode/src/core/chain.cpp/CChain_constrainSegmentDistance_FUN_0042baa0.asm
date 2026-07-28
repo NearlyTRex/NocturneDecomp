@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042baa0(int param_1,float *param_2,float *param_3)
+; void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042baa0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b)
 ;
+; Parameters:
+; CChain *         Stack[0x4]:4   this_ptr
+; SChainVertex *   Stack[0x8]:4   vertex_a
+; SChainVertex *   Stack[0xc]:4   vertex_b
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64

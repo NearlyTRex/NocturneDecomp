@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(int param_1,float param_2,float *param_3,float *param_4,float param_5)
+; float core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xcc]:4  local_cc
@@ -152,12 +152,12 @@ section .text
     PUSH EAX                            ; 00510110
     FSTP float ptr [ESP + 0x94]         ; 00510111
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 00510118
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0051011d
     LEA EAX,[ESP + 0x4]                 ; 00510120
     PUSH EAX                            ; 00510124
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 00510125
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 0051012a
     MOV EAX,dword ptr [EDI + 0x15f298]  ; 0051012d
     MOV dword ptr [ESP + 0x4],EAX       ; 00510133
@@ -184,7 +184,7 @@ section .text
     PUSH ESI                            ; 00510193
     PUSH EDI                            ; 00510194
     CALL core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0 ; 00510195
-        ;   XREF to: 005103f0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0()
+        ;   XREF to: 005103f0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0051019a
     TEST EAX,EAX                        ; 0051019d
     JZ 0x00510225                       ; 0051019f
@@ -375,7 +375,7 @@ section .text
     PUSH EAX                            ; 005103d2
     FSTP float ptr [ESP + 0xac]         ; 005103d3
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 005103da
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 005103df
     JMP 0x005101a5                      ; 005103e2
         ;   XREF to: 005101a5 (UNCONDITIONAL_JUMP)  ; LAB_005101a5

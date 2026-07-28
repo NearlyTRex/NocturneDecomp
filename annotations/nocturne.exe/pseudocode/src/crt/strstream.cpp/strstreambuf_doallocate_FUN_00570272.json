@@ -1,0 +1,637 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 176,
+    "complexity_score": 719,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 94,
+    "suspect_count": 60,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 270
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00570272",
+    "address_range": [
+      [
+        "00570272",
+        "0057040f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_strstream.cpp_strstreambuf_doallocate_FUN_00570272",
+    "signature": "undefined4 crt_strstream_cpp_strstreambuf_doallocate_FUN_00570272(streambuf *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571df8",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_setBuffer_FUN_00571df8"
+    },
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    },
+    {
+      "addr": "00564c18",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_malloc_FUN_00564c18"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.089041095890411,
+    "instruction_count": 146,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BRANCH": 9,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 13,
+      "COPY": 127,
+      "INT_ADD": 77,
+      "INT_AND": 108,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 83,
+      "INT_LESS": 15,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 40,
+      "INT_SUB": 48,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 43,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "STORE": 44
+    },
+    "pcode_op_count": 743
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint crt_strstream_cpp_strstreambuf_doallocate_FUN_00570272(streambuf *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((uint)param_1[1].__get_ptr & 2) != 0) && (((uint)param_1[1].__get_ptr & 1) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((uint)param_1[1].__get_ptr & 2) != 0) && (((uint)param_1[1].__get_ptr & 1) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ptr = param_1->__reserve_base;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = (int)param_1->__reserve_end - (int)ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = param_1[1].__get_base;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].__reserve_base == (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 32,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "new_buffer = (char *)(*(code *)param_1[1].__reserve_base)(local_18);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "new_buffer = (char *)(*(code *)param_1[1].__reserve_base)(local_18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,new_buffer,local_18 + (int)new_buffer,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar8 = param_1->__get_base;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar1 = param_1->__get_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = (int)param_1->__get_end - (int)ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__get_base = new_buffer + ((int)pcVar8 - (int)ptr);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__get_ptr = new_buffer + ((int)pcVar1 - (int)ptr);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__get_end = new_buffer + iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar8 = param_1->__put_base;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_base = new_buffer;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_ptr = new_buffer;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_end = local_18 + (int)new_buffer;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar7 = param_1->__put_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar9 = param_1->__put_end;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_base = pcVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_ptr = pcVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_end = new_buffer + (int)(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_ptr = param_1->__put_ptr + (int)(pcVar7 + (-iVar2 - (int)ptr));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->__put_ptr = param_1->__put_ptr + (int)(pcVar7 + (-iVar2 - (int)ptr));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].__reserve_end == (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 90,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)param_1[1].__reserve_end)(ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)param_1[1].__reserve_end)(ptr);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "iVar6 = (int)param_1->__reserve_end - (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)local_18",
+      "severity": "moderate",
+      "text": "if ((int)local_18 <= iVar6) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `new_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)new_buffer",
+      "severity": "moderate",
+      "text": "crt_iostream_cpp_setBuffer_FUN_00571df8(param_1,new_buffer,local_18 + (int)new_buffer,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "iVar2 = (int)param_1->__get_end - (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pcVar8",
+      "severity": "moderate",
+      "text": "uVar3 = iVar2 - ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "uVar3 = iVar2 - ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)pcVar8",
+      "severity": "moderate",
+      "text": "pcVar9 = new_buffer + ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "pcVar9 = new_buffer + ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)pcVar8",
+      "severity": "moderate",
+      "text": "param_1->__get_base = new_buffer + ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "param_1->__get_base = new_buffer + ((int)pcVar8 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "param_1->__get_ptr = new_buffer + ((int)pcVar1 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "param_1->__get_ptr = new_buffer + ((int)pcVar1 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `new_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)new_buffer",
+      "severity": "moderate",
+      "text": "param_1->__put_end = local_18 + (int)new_buffer;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)pcVar8",
+      "severity": "moderate",
+      "text": "iVar2 = (int)pcVar8 - (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "iVar2 = (int)pcVar8 - (int)ptr;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "pcVar5 = pcVar9 + (-iVar2 - (int)ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(uint)pcVar5",
+      "severity": "moderate",
+      "text": "for (uVar4 = (uint)pcVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 75,
+      "match": "(uint)pcVar5",
+      "severity": "moderate",
+      "text": "for (uVar4 = (uint)pcVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)))",
+      "severity": "moderate",
+      "text": "param_1->__put_end = new_buffer + (int)(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(local_18 + (-iVar6 - (int)ptr))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)(local_18 + (-iVar6 - (int)ptr))",
+      "severity": "moderate",
+      "text": "param_1->__put_end = new_buffer + (int)(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 82,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "param_1->__put_end = new_buffer + (int)(pcVar9 + (int)(local_18 + (-iVar6 - (int)ptr)));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pcVar7 + (-iVar2 - (int)ptr))` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)(pcVar7 + (-iVar2 - (int)ptr))",
+      "severity": "moderate",
+      "text": "param_1->__put_ptr = param_1->__put_ptr + (int)(pcVar7 + (-iVar2 - (int)ptr));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)ptr",
+      "severity": "moderate",
+      "text": "param_1->__put_ptr = param_1->__put_ptr + (int)(pcVar7 + (-iVar2 - (int)ptr));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 70,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = (uint)pcVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 75,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = (uint)pcVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 26,
+      "match": "(char *)(iVar6 + 0x200)",
+      "severity": "moderate",
+      "text": "local_18 = (char *)(iVar6 + 0x200);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0057031d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 71,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0057031d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005703c8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 149,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005703c8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 40,
+        "vtable_addr": "005a4884"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

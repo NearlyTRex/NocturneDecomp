@@ -9,12 +9,12 @@
 void core_lightgun_cpp_FUN_004c6e00(void)
 
 {
-  int iVar1;
+  CLightGun *this_ptr;
   
-  iVar1 = FUN_0056497c(0x588);
-  if (iVar1 == 0) {
+  this_ptr = (CLightGun *)FUN_0056497c(0x588);
+  if (this_ptr == (CLightGun *)0x0) {
     return;
   }
-  core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(iVar1);
+  core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(this_ptr);
   return;
 }

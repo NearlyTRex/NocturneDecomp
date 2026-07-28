@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_transformAndBufferVertices_FUN_00404530(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended *mrgl)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -58,7 +60,7 @@ section .text
         ;   Label: LAB_00404583
     PUSH ESI                            ; 00404584
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00404585
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x01c038f4]                ; 0040458a | DAT_01c038f4
     MOV dword ptr [ESI + 0x2c],EAX      ; 0040458f | DAT_005c5040
     MOV AH,byte ptr [ESI + 0x13]        ; 00404592 | DAT_005c5024+3

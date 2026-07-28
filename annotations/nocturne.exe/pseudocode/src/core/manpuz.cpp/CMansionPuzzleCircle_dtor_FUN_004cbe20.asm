@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20(int param_1,byte param_2)
+; CDemonActor * core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20(CDemonActor *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -48,7 +48,7 @@ section .text
     LEA EBX,[EAX + 0xfffffa18]          ; 004cbe5f
     PUSH EBX                            ; 004cbe65
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004cbe66
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbe6b
     MOV DL,byte ptr [ESP + 0xc]         ; 004cbe6e
     MOV EBX,EAX                         ; 004cbe72
@@ -62,11 +62,11 @@ section .text
         ;   Label: LAB_004cbe7d
     PUSH EBX                            ; 004cbe82
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004cbe83
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004cbe88
     PUSH EAX                            ; 004cbe8b
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004cbe8c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004cbe91
     MOV EAX,EBX                         ; 004cbe94
     POP EBX                             ; 004cbe96

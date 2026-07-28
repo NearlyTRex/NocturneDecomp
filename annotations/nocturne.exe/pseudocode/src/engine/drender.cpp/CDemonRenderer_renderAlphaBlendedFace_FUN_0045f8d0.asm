@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0(int *param_1,ushort *param_2)
+; void engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0(CDemonRenderer *param_1,ushort *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -61,7 +61,7 @@ section .text
     PUSH 0x3                            ; 0045f94e
     PUSH ECX                            ; 0045f950
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f951
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0045f956
     POP EBP                             ; 0045f959
     POP EDI                             ; 0045f95a

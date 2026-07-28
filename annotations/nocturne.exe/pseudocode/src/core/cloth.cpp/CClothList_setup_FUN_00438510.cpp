@@ -2,24 +2,24 @@
 // Address: 00438510
 // Address Range: [[00438510, 0043854e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(int *param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 
 {
-  int *piVar1;
+  CClothList *pCVar1;
   int iVar2;
   
   iVar2 = 0;
-  piVar1 = param_1;
-  if (0 < *param_1) {
+  pCVar1 = this_ptr;
+  if (0 < this_ptr->count) {
     do {
       iVar2 = iVar2 + 1;
-      core_cloth_cpp_CCloth_setup_FUN_004359e0(piVar1[0x65],param_2,param_3,param_4);
-      piVar1 = piVar1 + 1;
-    } while (iVar2 < *param_1);
+      core_cloth_cpp_CCloth_setup_FUN_004359e0(pCVar1->cloths[0],position,euler,model_ptr);
+      pCVar1 = (CClothList *)pCVar1->filenames;
+    } while (iVar2 < this_ptr->count);
   }
   return;
 }

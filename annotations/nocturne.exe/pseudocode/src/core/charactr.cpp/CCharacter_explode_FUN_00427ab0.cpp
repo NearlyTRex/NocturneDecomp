@@ -2,32 +2,30 @@
 // Address: 00427ab0
 // Address Range: [[00427ab0, 00427b57]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(int param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(int param_1,uint param_2,uint param_3)
+void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
 
 {
-  float *pfVar1;
-  byte auStack_40 [24];
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  byte auStack_1c [12];
+  CBoundingBox3D *pCVar1;
+  CBoundingBox3D CStack_40;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   float fStack_10;
   float fStack_c;
   float fStack_8;
   
-  pfVar1 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_40);
-  fStack_10 = *pfVar1 + pfVar1[3];
-  fStack_c = pfVar1[1] + pfVar1[4];
-  fStack_28 = fStack_10 * 0.5f;
-  fStack_24 = fStack_c * 0.5f;
-  fStack_8 = pfVar1[2] + pfVar1[5];
-  fStack_20 = fStack_8 * 0.5f;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_1c,&fStack_28);
-  core_fire_cpp_FUN_0048c0d0(0x01C08D04,auStack_1c,0x40000000,0x44bb8000,0x40800000);
-  core_charactr_cpp_CCharacter_dismember_FUN_00427b60(param_1,param_2,param_3,0);
+  pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_40);
+  fStack_10 = (pCVar1->min).x + (pCVar1->max).x;
+  fStack_c = (pCVar1->min).y + (pCVar1->max).y;
+  CStack_28.x = fStack_10 * 0.5f;
+  CStack_28.y = fStack_c * 0.5f;
+  fStack_8 = (pCVar1->min).z + (pCVar1->max).z;
+  CStack_28.z = fStack_8 * 0.5f;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(&this_ptr->base,&CStack_1c,&CStack_28);
+  core_fire_cpp_FUN_0048c0d0(0x01C08D04,&CStack_1c,0x40000000,0x44bb8000,0x40800000);
+  core_charactr_cpp_CCharacter_dismember_FUN_00427b60(this_ptr,impact_point,impact_force,0);
   return;
 }

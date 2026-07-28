@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_004470f0 at 004474c0
+;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 004474c0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd2fa0
@@ -68,7 +68,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00447c43
     PUSH EBX                            ; 00447c47
     CALL core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0 ; 00447c48
-        ;   XREF to: 004652d0 (UNCONDITIONAL_CALL)  ; undefined core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0()
+        ;   XREF to: 004652d0 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0(uint * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
     ADD ESP,0x10                        ; 00447c4d
     ADD ESP,0x4                         ; 00447c50
     POP EBP                             ; 00447c53

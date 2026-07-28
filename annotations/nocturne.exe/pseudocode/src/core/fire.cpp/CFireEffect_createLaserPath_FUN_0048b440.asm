@@ -1,8 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(undefined4 param_1,float *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,float param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10)
+; void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_position
+; CVector3f *      Stack[0xc]:4   velocity
+; float            Stack[0x10]:4   beam_width
+; float            Stack[0x14]:4   reticle_intensity
+; CVector3f *      Stack[0x18]:4   reflection_normal
+; float            Stack[0x1c]:4   total_time
+; int              Stack[0x20]:4   red
+; int              Stack[0x24]:4   green
+; int              Stack[0x28]:4   blue
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  local_84
@@ -194,7 +205,7 @@ section .text
     PUSH EAX                            ; 0048b5e5
     PUSH ESI                            ; 0048b5e6
     CALL core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370 ; 0048b5e7
-        ;   XREF to: 0048b370 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370()
+        ;   XREF to: 0048b370 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     LEA EDX,[ESP + 0x70]                ; 0048b5ec
     LEA EAX,[ESP + 0x40]                ; 0048b5f0
     ADD ESP,0x28                        ; 0048b5f4
@@ -259,7 +270,7 @@ section .text
     PUSH EAX                            ; 0048b699
     PUSH ESI                            ; 0048b69a
     CALL core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370 ; 0048b69b
-        ;   XREF to: 0048b370 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370()
+        ;   XREF to: 0048b370 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     ADD ESP,0x28                        ; 0048b6a0
     MOV ESP,EBP                         ; 0048b6a3
     POP EBP                             ; 0048b6a5

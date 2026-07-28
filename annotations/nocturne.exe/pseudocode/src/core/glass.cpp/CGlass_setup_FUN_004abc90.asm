@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
+; void core_glass_cpp_CGlass_setup_FUN_004abc90(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xd8]:4  local_d8
@@ -90,14 +90,14 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004abc9f
     PUSH EBX                            ; 004abca2
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 004abca3
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004abca8
     LEA EAX,[EBX + 0x15c]               ; 004abcab
     PUSH EAX                            ; 004abcb1
     MOV EDX,dword ptr [0x005ae704]      ; 004abcb2 | DAT_005ae704
     PUSH EDX                            ; 004abcb8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004abcb9
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ECX,dword ptr [EBX + 0x1e0]     ; 004abcbe
     ADD ESP,0x8                         ; 004abcc4
     TEST ECX,ECX                        ; 004abcc7
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_004abccf
     FMUL double ptr [0x00584fa0]        ; 004abcd5 | DOUBLE_00584fa0
     CALL crt_math.c_round_FUN_00563a30  ; 004abcdb
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc4]        ; 004abce0
     MOV EAX,dword ptr [ESP + 0xc4]      ; 004abce7
     INC EAX                             ; 004abcee
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_004abd04
     FMUL double ptr [0x00584fa0]        ; 004abd0a | DOUBLE_00584fa0
     CALL crt_math.c_round_FUN_00563a30  ; 004abd10
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc4]        ; 004abd15
     MOV EAX,dword ptr [ESP + 0xc4]      ; 004abd1c
     INC EAX                             ; 004abd23
@@ -353,7 +353,7 @@ section .text
     LEA EAX,[EBX + 0x1e4]               ; 004ac03a
     PUSH EAX                            ; 004ac040
     CALL core_mirror.cpp_CMirror_setupCorners_FUN_004d6590 ; 004ac041
-        ;   XREF to: 004d6590 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirror_setupCorners_FUN_004d6590()
+        ;   XREF to: 004d6590 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_setupCorners_FUN_004d6590(CMirror * this_ptr, CVector3f * corner1, CVector3f * corner2, CVector3f * corner3, ...)
     ADD ESP,0x14                        ; 004ac046
     JMP 0x004abccf                      ; 004ac049
         ;   XREF to: 004abccf (UNCONDITIONAL_JUMP)  ; LAB_004abccf
@@ -386,7 +386,7 @@ section .text
     FXCH                                ; 004ac09b
     FADD ST0,ST1                        ; 004ac09d
     CALL crt_math.c_round_FUN_00563a30  ; 004ac09f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc4]        ; 004ac0a4
     MOV EAX,dword ptr [ESP + 0xc4]      ; 004ac0ab
     MOV dword ptr [ECX + 0x5dc],EAX     ; 004ac0b2
@@ -400,7 +400,7 @@ section .text
     ADD ECX,0x4                         ; 004ac0dd
     FADDP                               ; 004ac0e0
     CALL crt_math.c_round_FUN_00563a30  ; 004ac0e2
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc4]        ; 004ac0e7
     MOV EAX,dword ptr [ESP + 0xc4]      ; 004ac0ee
     ADD EDX,0xc                         ; 004ac0f5
@@ -502,7 +502,7 @@ section .text
     LEA EAX,[EBX + 0x17c]               ; 004ac275
     PUSH EAX                            ; 004ac27b
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ac27c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac281
     TEST EAX,EAX                        ; 004ac284
     JNZ 0x004ac28f                      ; 004ac286
@@ -533,7 +533,7 @@ section .text
     LEA EDI,[EBX + 0x374]               ; 004ac2cd
     PUSH EDI                            ; 004ac2d3
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004ac2d4
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac2d9
     TEST EAX,EAX                        ; 004ac2dc
     JNZ 0x004ac2c1                      ; 004ac2de
@@ -542,7 +542,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004ac2e5
     PUSH EAX                            ; 004ac2eb
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ac2ec
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac2f1
     TEST EAX,EAX                        ; 004ac2f4
     JZ 0x004ac3be                       ; 004ac2f6
@@ -552,7 +552,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004ac301
     PUSH EAX                            ; 004ac307
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ac308
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac30d
     TEST EAX,EAX                        ; 004ac310
     JNZ 0x004ac339                      ; 004ac312
@@ -580,7 +580,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004ac33e
     PUSH EAX                            ; 004ac344
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ac345
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac34a
     TEST EAX,EAX                        ; 004ac34d
     JNZ 0x004ac376                      ; 004ac34f
@@ -608,7 +608,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004ac37b
     PUSH EAX                            ; 004ac381
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ac382
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ac387
     TEST EAX,EAX                        ; 004ac38a
     JNZ 0x004ac2c1                      ; 004ac38c

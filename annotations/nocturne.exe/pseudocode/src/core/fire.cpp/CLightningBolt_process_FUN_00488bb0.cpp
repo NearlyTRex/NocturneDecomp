@@ -2,17 +2,17 @@
 // Address: 00488bb0
 // Address Range: [[00488bb0, 00488be7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CLightningBolt_process_FUN_00488bb0(int param_1)
+// Signature: void __cdecl core_fire_cpp_CLightningBolt_process_FUN_00488bb0(CLightningBolt *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CLightningBolt_process_FUN_00488bb0(int param_1)
+void __cdecl core_fire_cpp_CLightningBolt_process_FUN_00488bb0(CLightningBolt *this_ptr)
 
 {
-  if ((0.0 < *(float *)(param_1 + 0x14)) &&
-     (*(float *)(param_1 + 0x14) = *(float *)(param_1 + 0x14) - *(float *)(0x01C775EC + 0x264),
-     *(float *)(param_1 + 0x14) < 0.0)) {
-    *(uint *)(param_1 + 0x14) = 0;
+  if ((0.0 < this_ptr->lifetime) &&
+     (this_ptr->lifetime = this_ptr->lifetime - *(float *)(0x01C775EC + 0x264),
+     this_ptr->lifetime < 0.0)) {
+    this_ptr->lifetime = 0.0;
     return;
   }
   return;

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_clearZBox_FUN_00532b70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; int __cdecl engine_special_cpp_clearZBox_FUN_00532b70(int left,int right,int top,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   right
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   bottom
 ;
 ; XREF[1]:
 ;   engine_special.cpp_fillDepthRegion_FUN_0052efc2 at 0052efdc

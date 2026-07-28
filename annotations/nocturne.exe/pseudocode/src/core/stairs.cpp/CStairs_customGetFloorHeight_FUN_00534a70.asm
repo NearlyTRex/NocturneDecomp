@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; undefined4 core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(int param_1,CVector3f *param_2,float param_3,float *param_4)
 ;
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
     PUSH ECX                            ; 00534aa2
     PUSH ESI                            ; 00534aa3
     CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110 ; 00534aa4
-        ;   XREF to: 0046d110 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110()
+        ;   XREF to: 0046d110 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 00534aa9
     TEST EAX,EAX                        ; 00534aac
     JZ 0x00534ab5                       ; 00534aae

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(int param_1)
+; char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CDemonActor_load_FUN_0040c160 at 0040c172

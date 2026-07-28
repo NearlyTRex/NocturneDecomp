@@ -13,8 +13,8 @@ void CDemonPod::load(int param_1);
 
 // Original: core_podmain.cpp_CDemonPod_ctor_FUN_004f93c0
 // Address: 004f93c0
-void CDemonPod::ctor(undefined4 param_1);
+void CDemonPod::ctor(CPod *param_1);
 
 // Original: core_podmain.cpp_FUN_004f93e0
 // Address: 004f93e0
-undefined4 FUN_004f93e0(undefined4 param_1,byte param_2);
+CPod * FUN_004f93e0(CPod *param_1,byte param_2);

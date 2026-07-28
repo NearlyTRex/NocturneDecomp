@@ -2,11 +2,11 @@
 // Address: 004afe00
 // Address Range: [[004afe00, 004afe76]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(void)
+// Signature: void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(void)
+void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
 
 {
   int iVar1;
@@ -15,7 +15,9 @@ void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(void)
   if ((*(int *)(0x01C775EC + 0x14) != 0) &&
      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar1 == 0)
      ) {
-    core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(0x01E57284,0,0,0,0,0);
+    core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
+              (0x01E57284,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+               (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     puVar2 = (byte *)0x1c78cec;
     core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(0x1c78cec);
     do {

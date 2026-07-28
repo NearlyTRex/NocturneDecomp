@@ -58,7 +58,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005271de
     MOV dword ptr [EAX + 0x54],EBX      ; 005271e2
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 005271e5
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 005271ea
     POP ESI                             ; 005271ef
     POP EBX                             ; 005271f0

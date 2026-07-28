@@ -2,30 +2,31 @@
 // Address: 00474300
 // Address Range: [[00474300, 00474373]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(int *param_1,int param_2,int param_3)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(CStrList *this_ptr,int index1,int index2)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(int *param_1,int param_2,int param_3)
+void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(CStrList *this_ptr,int index1,int index2)
 
 {
-  uint uVar1;
-  uint *puVar2;
+  char *pcVar1;
+  char **ppcVar2;
   
-  if ((((param_2 < 0) || (*param_1 <= param_2)) || (param_3 < 0)) || (*param_1 <= param_3)) {
+  if ((((index1 < 0) || (this_ptr->item_count <= index1)) || (index2 < 0)) ||
+     (this_ptr->item_count <= index2)) {
     PTR_01cc4800 = "..\\shape\\edittool.cpp";
     INT_01cc4804 = 0xab6;
     core_main_c_FUN_004c8440("CStrList::swap - invalid indices");
-    if (param_2 == param_3) {
+    if (index1 == index2) {
       return;
     }
   }
-  else if (param_2 == param_3) {
+  else if (index1 == index2) {
     return;
   }
-  puVar2 = (uint *)(param_2 * 4 + param_1[2]);
-  uVar1 = *puVar2;
-  *puVar2 = *(uint *)(param_1[2] + param_3 * 4);
-  *(uint *)(param_1[2] + param_3 * 4) = uVar1;
+  ppcVar2 = this_ptr->data_array + index1;
+  pcVar1 = *ppcVar2;
+  *ppcVar2 = this_ptr->data_array[index2];
+  this_ptr->data_array[index2] = pcVar1;
   return;
 }

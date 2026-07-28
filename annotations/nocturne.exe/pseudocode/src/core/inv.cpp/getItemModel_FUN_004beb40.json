@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 171,
+    "complexity_score": 172,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 178
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -165,7 +165,7 @@
     ],
     "convention": "unknown",
     "name": "core_inv.cpp_getItemModel_FUN_004beb40",
-    "signature": "int core_inv_cpp_getItemModel_FUN_004beb40(undefined4 param_1)"
+    "signature": "CDemonActor * core_inv_cpp_getItemModel_FUN_004beb40(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -405,12 +405,12 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_inv_cpp_getItemModel_FUN_004beb40(uint param_1)",
+      "text": "CDemonActor * core_inv_cpp_getItemModel_FUN_004beb40(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CWeapon\");",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CAmmo\"),",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CKeyActor\"),",
@@ -434,7 +434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CBoxActor\"),",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CHealthItem\"),",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CGasMask\"),",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "((iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CFilmReel\"),",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CTrap\"),",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_1,\"CBattery\"),",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"getModel - Can't classify : %s\",param_1);",
@@ -490,10 +490,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1,uVar2);",
+      "text": "pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1,class_name_hash);",
       "type": "unnamed_param"
     },
     {

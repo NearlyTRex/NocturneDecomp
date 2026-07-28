@@ -2,34 +2,35 @@
 // Address: 00468a20
 // Address Range: [[00468a20, 00468ae1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20(undefined4 *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,undefined4 param_7,undefined4 param_8)
+// Signature: void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20(uint *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,uint param_7,uint param_8)
+void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)
 
 {
   float fVar1;
   float fVar2;
   
-  param_1[4] = param_2;
-  param_1[5] = param_3;
-  param_1[6] = param_4;
-  param_1[7] = param_5;
-  param_1[8] = param_6;
-  param_1[9] = param_8;
-  param_1[10] = param_7;
-  fVar1 = SQRT(param_5 * param_5 + param_4 * param_4);
-  fVar2 = param_6 / fVar1 + 1.0;
-  param_1[0xb] = param_3 * param_5 + param_2 * param_4;
-  *param_1 = 0x3f8147ae;
-  param_1[0xc] = fVar2 * param_5 * param_5 + fVar2 * param_4 * param_4 + (float)param_1[0xb];
+  this_ptr->center_x = start_x;
+  this_ptr->center_z = start_z;
+  this_ptr->dir_x = dir_x;
+  this_ptr->dir_z = dir_z;
+  this_ptr->radius = radius;
+  this_ptr->top_y = top_y;
+  this_ptr->bottom_y = bottom_y;
+  fVar1 = SQRT(dir_z * dir_z + dir_x * dir_x);
+  fVar2 = radius / fVar1 + 1.0;
+  this_ptr->sweep_slab_near = start_z * dir_z + start_x * dir_x;
+  this_ptr->closest_t = 1.01;
+  this_ptr->sweep_slab_far =
+       fVar2 * dir_z * dir_z + fVar2 * dir_x * dir_x + this_ptr->sweep_slab_near;
   if (0.0 < fVar1) {
-    param_1[0xd] = param_4 * (1.0 / fVar1);
-    param_1[0xe] = param_5 * (1.0 / fVar1);
+    this_ptr->normal_x = dir_x * (1.0 / fVar1);
+    this_ptr->normal_z = dir_z * (1.0 / fVar1);
     return;
   }
-  param_1[0xe] = 0;
-  param_1[0xd] = 0;
+  this_ptr->normal_z = 0.0;
+  this_ptr->normal_x = 0.0;
   return;
 }

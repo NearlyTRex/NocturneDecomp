@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)
+; SMRGLKeyframeModel * engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(SMRGLKeyframeModel *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
@@ -203,17 +203,17 @@ section .text
     MOV EDX,dword ptr [EAX + 0x8]       ; 004c3e57
     FXCH                                ; 004c3e5a
     CALL crt_math.c_round_FUN_00563a30  ; 004c3e5c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x1c]        ; 004c3e61
     FXCH                                ; 004c3e65
     CALL crt_math.c_round_FUN_00563a30  ; 004c3e67
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 004c3e6c
     CALL crt_math.c_round_FUN_00563a30  ; 004c3e6e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004c3e73
     CALL crt_math.c_round_FUN_00563a30  ; 004c3e75
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 004c3e7a
     FISTP dword ptr [ESP + 0x18]        ; 004c3e7c
     FISTP dword ptr [ESP + 0x14]        ; 004c3e80
@@ -339,13 +339,13 @@ section .text
     PUSH EBX                            ; 004c3fe9
     PUSH ESI                            ; 004c3fea
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 004c3feb
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 004c3ff0
         ;   Label: LAB_004c3ff0
     PUSH EBX                            ; 004c3ff3
         ;   Label: LAB_004c3ff3
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004c3ff4
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     SHR EAX,0x2                         ; 004c3ff9
     SHL EAX,0x2                         ; 004c3ffc
     ADD EBX,EAX                         ; 004c3fff
@@ -371,7 +371,7 @@ section .text
     PUSH EAX                            ; 004c4028
         ;   Label: LAB_004c4028
     CALL engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 ; 004c4029
-        ;   XREF to: 004c3aa0 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0()
+        ;   XREF to: 004c3aa0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0(SMRGLKeyframeModel * keyframe_model)
     ADD ESP,0x4                         ; 004c402e
     JMP 0x004c3ca9                      ; 004c4031
         ;   XREF to: 004c3ca9 (UNCONDITIONAL_JUMP)  ; LAB_004c3ca9
@@ -396,7 +396,7 @@ section .text
         ;   Label: LAB_004c4069
     PUSH ESI                            ; 004c406a
     CALL engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760 ; 004c406b
-        ;   XREF to: 004c3760 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760()
+        ;   XREF to: 004c3760 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760(CVector3i * vertex_data, SMRGLPrimitiveTriangleIndex * texture)
     JMP 0x004c3ff0                      ; 004c4070
         ;   XREF to: 004c3ff0 (UNCONDITIONAL_JUMP)  ; LAB_004c3ff0
     CMP ECX,0x19                        ; 004c4075

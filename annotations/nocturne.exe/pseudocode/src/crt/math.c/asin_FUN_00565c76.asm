@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __fpustack_safe crt_math_c_asin_FUN_00565c76(void)
+; float10 __fpustack_safe crt_math_c_asin_FUN_00565c76(float10 sine_value)
 ;
 ;
 ; XREF[5]:
@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_00566c81
-;   FUN_0056c5a8
+;   crt_math.c_sqrt_FUN_0056c5a8
 ;
 ; *****************************************************************************
 
@@ -25,14 +25,14 @@ section .text
     FLD1                                ; 00565c7a
     FSUBRP                              ; 00565c7c
     MOV AL,0x2                          ; 00565c7e
-    CALL FUN_0056c5a8                   ; 00565c80
-        ;   XREF to: 0056c5a8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056c5a8()
+    CALL crt_math.c_sqrt_FUN_0056c5a8   ; 00565c80
+        ;   XREF to: 0056c5a8 (UNCONDITIONAL_CALL)  ; double crt_math.c_sqrt_FUN_0056c5a8(double value)
     CMP AL,0x0                          ; 00565c85
     JNZ 0x00565c90                      ; 00565c87
         ;   XREF to: 00565c90 (CONDITIONAL_JUMP)  ; LAB_00565c90
     FXCH                                ; 00565c89
     CALL crt_math.c_atan2_FUN_00566c81  ; 00565c8b
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     RET                                 ; 00565c90
         ;   Label: LAB_00565c90
 

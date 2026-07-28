@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxFlagBits_FUN_00526270(uint param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxFlagBits_FUN_00526270(uint flag_mask)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   flag_mask
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0 at 00480f00

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(int param_1)
+; void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -115,7 +117,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 0049b1b6
     PUSH ECX                            ; 0049b1ba
     CALL crt_string.c_memmove_FUN_00566170 ; 0049b1bb
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x388]     ; 0049b1c0
     SUB EAX,ESI                         ; 0049b1c6
     ADD ESP,0xc                         ; 0049b1c8
@@ -132,7 +134,7 @@ section .text
     ADD EAX,ECX                         ; 0049b1eb
     PUSH EAX                            ; 0049b1ed
     CALL crt_string.c_memmove_FUN_00566170 ; 0049b1ee
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x388]     ; 0049b1f3
     SUB EAX,ESI                         ; 0049b1f9
     ADD ESP,0xc                         ; 0049b1fb
@@ -147,7 +149,7 @@ section .text
     ADD EAX,ECX                         ; 0049b214
     PUSH EAX                            ; 0049b216
     CALL crt_string.c_memmove_FUN_00566170 ; 0049b217
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0049b21c
     CMP ESI,dword ptr [EBX + 0x388]     ; 0049b21f
     JL 0x0049b13a                       ; 0049b225

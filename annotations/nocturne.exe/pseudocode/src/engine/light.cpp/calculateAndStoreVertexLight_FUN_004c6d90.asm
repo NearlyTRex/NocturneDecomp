@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(int param_1,undefined4 *param_2)
+; void engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(int param_1,int *param_2)
 ;
 ;
 ; XREF[1]:
@@ -27,7 +27,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004c6d9d
     PUSH EBX                            ; 004c6d9f
     CALL engine_light.cpp_calculatePhongLighting_FUN_004c6a70 ; 004c6da0
-        ;   XREF to: 004c6a70 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculatePhongLighting_FUN_004c6a70()
+        ;   XREF to: 004c6a70 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculatePhongLighting_FUN_004c6a70(int world_x, int world_y, int world_z)
     ADD ESP,0xc                         ; 004c6da5
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c6da8
     MOV ECX,EAX                         ; 004c6dac

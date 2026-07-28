@@ -2,113 +2,113 @@
 // Address: 004bd0a0
 // Address Range: [[004bd0a0, 004bd2a8]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4,char *param_5,int param_6,undefined4 param_7)
+// Signature: int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)
 
 #include "nocturne.h"
 
-uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)
+int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)
 
 {
   char cVar1;
   byte bVar2;
   bool bVar3;
-  int iVar4;
-  int iVar5;
-  uint uVar6;
+  _FILE *stream;
+  char *pcVar4;
+  char *pcVar5;
+  int iVar6;
+  uint uVar7;
   char *unaff_EBP;
-  char *pcVar7;
-  char *pcVar8;
-  byte bVar9;
+  byte bVar8;
   char local_210 [256];
-  byte local_110 [256];
+  char local_110 [256];
   
-  bVar9 = 0;
+  bVar8 = 0;
   bVar3 = false;
-  iVar4 = _fopen(param_7,"rt");
-  if (iVar4 == 0) {
+  stream = _fopen(filename,"rt");
+  if (stream == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\ini.cpp";
     INT_01cc4804 = 0x57;
     core_main_c_FUN_004c8440("cIni::getProfileString: Unable to open input");
   }
-  _sprintf(local_110,"[%s]\n",param_2);
+  _sprintf(local_110,"[%s]\n",section);
   do {
-    if (((*(byte *)(iVar4 + 0xc) & 0x10) != 0) ||
-       (iVar5 = _fgets(local_210,0xff,iVar4), iVar5 == 0))
+    if (((stream->_flag & 0x10) != 0) ||
+       (pcVar5 = _fgets(local_210,0xff,stream), pcVar5 == (char *)0x0))
     goto LAB_004bd11f;
-    iVar5 = _strcmp(local_210,local_110);
-  } while (iVar5 != 0);
-  bVar2 = *(byte *)(iVar4 + 0xc);
+    iVar6 = _strcmp(local_210,local_110);
+  } while (iVar6 != 0);
+  bVar2 = (byte)stream->_flag;
   bVar3 = false;
   do {
     if (((bVar2 & 0x10) != 0) ||
-       (iVar5 = _fgets(local_210,0xff,iVar4), pcVar8 = local_210, iVar5 == 0
-       )) goto LAB_004bd11f;
+       (pcVar4 = _fgets(local_210,0xff,stream), pcVar5 = local_210,
+       pcVar4 == (char *)0x0)) goto LAB_004bd11f;
     do {
-      unaff_EBP = pcVar8;
-      if (*pcVar8 == '=') goto LAB_004bd1ee;
-      if (*pcVar8 == '\0') break;
-      unaff_EBP = pcVar8 + 1;
+      unaff_EBP = pcVar5;
+      if (*pcVar5 == '=') goto LAB_004bd1ee;
+      if (*pcVar5 == '\0') break;
+      unaff_EBP = pcVar5 + 1;
       if (*unaff_EBP == '=') goto LAB_004bd1ee;
-      pcVar8 = pcVar8 + 2;
+      pcVar5 = pcVar5 + 2;
     } while (*unaff_EBP != '\0');
     unaff_EBP = (char *)0x0;
 LAB_004bd1ee:
     if (unaff_EBP != (char *)0x0) {
       *unaff_EBP = '\0';
     }
-    iVar5 = _strcmp(local_210,param_3);
-    if (iVar5 == 0) break;
-    bVar2 = *(byte *)(iVar4 + 0xc);
+    iVar6 = _strcmp(local_210,key);
+    if (iVar6 == 0) break;
+    bVar2 = (byte)stream->_flag;
   } while( true );
   bVar3 = true;
 LAB_004bd11f:
-  _fclose(iVar4);
+  _fclose(stream);
   if (bVar3) {
-    pcVar7 = unaff_EBP + 1;
-    uVar6 = 0xffffffff;
-    pcVar8 = pcVar7;
+    pcVar4 = unaff_EBP + 1;
+    uVar7 = 0xffffffff;
+    pcVar5 = pcVar4;
     do {
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      cVar1 = *pcVar8;
-      pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      cVar1 = *pcVar5;
+      pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    pcVar7[~uVar6 - 2] = '\0';
-    if ((int)(~uVar6 - 2) < param_6) {
+    pcVar4[~uVar7 - 2] = '\0';
+    if ((int)(~uVar7 - 2) < buffer_size) {
       do {
-        cVar1 = *pcVar7;
-        *param_5 = cVar1;
+        cVar1 = *pcVar4;
+        *output_buffer = cVar1;
         if (cVar1 == '\0') {
           return 1;
         }
-        cVar1 = pcVar7[1];
-        pcVar7 = pcVar7 + 2;
-        param_5[1] = cVar1;
-        param_5 = param_5 + 2;
+        cVar1 = pcVar4[1];
+        pcVar4 = pcVar4 + 2;
+        output_buffer[1] = cVar1;
+        output_buffer = output_buffer + 2;
       } while (cVar1 != '\0');
       return 1;
     }
   }
   else {
-    uVar6 = 0xffffffff;
-    pcVar8 = param_4;
+    uVar7 = 0xffffffff;
+    pcVar5 = default_value;
     do {
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      cVar1 = *pcVar8;
-      pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      cVar1 = *pcVar5;
+      pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    if ((int)(~uVar6 - 1) < param_6) {
+    if ((int)(~uVar7 - 1) < buffer_size) {
       do {
-        cVar1 = *param_4;
-        *param_5 = cVar1;
+        cVar1 = *default_value;
+        *output_buffer = cVar1;
         if (cVar1 == '\0') {
           return 1;
         }
-        cVar1 = param_4[1];
-        param_4 = param_4 + 2;
-        param_5[1] = cVar1;
-        param_5 = param_5 + 2;
+        cVar1 = default_value[1];
+        default_value = default_value + 2;
+        output_buffer[1] = cVar1;
+        output_buffer = output_buffer + 2;
       } while (cVar1 != '\0');
       return 1;
     }

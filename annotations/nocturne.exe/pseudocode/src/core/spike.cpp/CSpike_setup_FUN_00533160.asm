@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_CSpike_setup_FUN_00533160(int param_1)
+; void core_spike_cpp_CSpike_setup_FUN_00533160(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -29,11 +29,11 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00533168
     PUSH EAX                            ; 0053316e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0053316f
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00533174
     PUSH EBX                            ; 00533177
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00533178
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     FLD float ptr [EBX + 0x2e4]         ; 0053317d
     FMUL float ptr [EBX + 0x554]        ; 00533183
     ADD ESP,0x4                         ; 00533189

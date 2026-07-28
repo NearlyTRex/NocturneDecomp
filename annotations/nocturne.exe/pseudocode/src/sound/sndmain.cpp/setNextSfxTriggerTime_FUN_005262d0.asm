@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0(double trigger_time,int trigger_id)
 ;
+; Parameters:
+; double           Stack[0x4]:8   trigger_time
+; int              Stack[0xc]:4   trigger_id
 ;
 ; XREF[6]:
 ;   core_boneguy.cpp_FUN_00418a00 at 00419020

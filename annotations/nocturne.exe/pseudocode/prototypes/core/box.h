@@ -5,43 +5,43 @@
 
 // Original: core_box.cpp_CBox_ctor_FUN_0041a610
 // Address: 0041a610
-void __cdecl CBox::ctor(int param_1);
+CBox * __cdecl CBox::ctor(CBox *this_ptr);
 
 // Original: core_box.cpp_CBox_dtor_FUN_0041a6c0
 // Address: 0041a6c0
-int __cdecl CBox::dtor(int param_1);
+CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 
 // Original: core_box.cpp_CBox_setupCorners_FUN_0041a6e0
 // Address: 0041a6e0
-void __cdecl CBox::setupCorners(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 param_5);
+void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
-// Original: core_box.cpp_FUN_0041a910
+// Original: core_box.cpp_CBox_setupN_FUN_0041a910
 // Address: 0041a910
-void FUN_0041a910(int param_1,undefined4 param_2,undefined4 param_3,int param_4,float *param_5,undefined4 param_6);
+void CBox::setupN(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
 
 // Original: core_box.cpp_CBox_updateTransform_FUN_0041aaa0
 // Address: 0041aaa0
-void __cdecl CBox::updateTransform(float *param_1,float *param_2,float *param_3,float param_4);
+void __cdecl CBox::updateTransform(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 
 // Original: core_box.cpp_CBox_process_FUN_0041acb0
 // Address: 0041acb0
-void __cdecl CBox::process(undefined4 param_1,float param_2);
+void __cdecl CBox::process(CBox *this_ptr,float delta_time);
 
 // Original: core_box.cpp_CBox_processPhysics_FUN_0041ad10
 // Address: 0041ad10
-void __cdecl CBox::processPhysics(float *param_1,float param_2);
+void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
 // Original: core_box.cpp_CBox_loadFromFile_FUN_0041c850
 // Address: 0041c850
-void __cdecl CBox::loadFromFile(int param_1,undefined4 param_2);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_0041c9e0
 // Address: 0041c9e0
-void __cdecl CBox::saveToFile(float *param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CBox::saveToFile(CBox *this_ptr,_FILE *file_handle,char *indent_prefix);
 
 // Original: core_box.cpp_CBox_setupVelocities_FUN_0041cb40
 // Address: 0041cb40
-void __cdecl CBox::setupVelocities(int param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 
 // Original: core_box.cpp_FUN_0041cbc0
 // Address: 0041cbc0
@@ -53,72 +53,72 @@ undefined4 FUN_0041cbd0(undefined4 param_1);
 
 // Original: core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
 // Address: 0041cbe0
-void __cdecl SScrape::arrdtor(undefined4 param_1);
+SScrape * __cdecl SScrape::arrdtor(SScrape *objs,uint flags);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
 // Address: 0041cc00
-void __cdecl CBoundingBox3D::expand(float *param_1,float *param_2);
+void __cdecl CBoundingBox3D::expand(CBoundingBox3D *this_ptr,CVector3f *point);
 
 // Original: core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70
 // Address: 0041cc70
-undefined4 * __cdecl CBoundingBox3D::getCorner(undefined4 *param_1,undefined4 *param_2,uint param_3);
+CVector3f * __cdecl CBoundingBox3D::getCorner(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0
 // Address: 0041cce0
-undefined4 __cdecl CBoundingBox3D::isVisibleWithShadow(void);
+int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
 // Address: 0041ceb0
-undefined4 __cdecl CBoundingBox3D::isVisible(float *param_1,int param_2);
+int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_0041d050
 // Address: 0041d050
-undefined4 FUN_0041d050(float *param_1);
+undefined4 FUN_0041d050(CBoundingBox3D *param_1);
 
 // Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
 // Address: 0041d450
-float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(float *param_1);
+float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
 // Address: 0041d550
 float CBoundingBox3D::doesRayIntersect(float *param_1,float *param_2,float *param_3,float *param_4);
 
-// Original: core_box.cpp_FUN_0041d980
+// Original: core_box.cpp_CBoundingBox3D_normalize_FUN_0041d980
 // Address: 0041d980
-void FUN_0041d980(float *param_1);
+void CBoundingBox3D::normalize(float *param_1);
 
-// Original: core_box.cpp_FUN_0041d9d0
+// Original: core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_0041d9d0
 // Address: 0041d9d0
-void FUN_0041d9d0(float *param_1,int param_2,float *param_3);
+void CBoundingBox3D::computeFromPoints(float *param_1,int param_2,float *param_3);
 
-// Original: core_box.cpp_FUN_0041daa0
+// Original: core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0
 // Address: 0041daa0
-void FUN_0041daa0(float *param_1,int param_2,int *param_3);
+void CBoundingBox3D::computeFromVertices(float *param_1,int param_2,int *param_3);
 
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0
 // Address: 0041dbc0
-void __cdecl CBoundingBox3D::reset(undefined4 *param_1);
+void __cdecl CBoundingBox3D::reset(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041dbf0
+// Original: core_box.cpp_CBoundingBox3D_isInverted_FUN_0041dbf0
 // Address: 0041dbf0
-undefined4 FUN_0041dbf0(void);
+undefined4 CBoundingBox3D::isInverted(void);
 
 // Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20
 // Address: 0041dc20
-undefined4 __cdecl CBoundingBox3D::doesBoxIntersect(float *param_1,float *param_2);
+int __cdecl CBoundingBox3D::doesBoxIntersect(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 
 // Original: core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041dc70
 // Address: 0041dc70
-undefined4 __cdecl CBoundingBox3D::getMaximumBound(int param_1);
+float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0
 // Address: 0041dcc0
-void __cdecl CBoundingBox3D::render(float *param_1);
+void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160
 // Address: 0041e160
-float * __cdecl CBoundingBox3D::clampPoint(float *param_1,float *param_2,float *param_3);
+CVector3f * __cdecl CBoundingBox3D::clampPoint(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point);
 
 // Original: core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200
 // Address: 0041e200
-bool __cdecl CBoundingBox3D::doesSphereIntersect(undefined4 param_1,float *param_2,float param_3);
+int __cdecl CBoundingBox3D::doesSphereIntersect(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);

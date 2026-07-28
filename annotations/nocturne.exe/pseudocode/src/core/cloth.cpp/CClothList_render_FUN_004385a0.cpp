@@ -2,31 +2,32 @@
 // Address: 004385a0
 // Address Range: [[004385a0, 00438614]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(int *param_1,int param_2)
+// Signature: void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(int *param_1,int param_2)
+void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 
 {
-  int *piVar1;
+  CClothList *pCVar1;
   int iVar2;
   
-  if ((param_2 != 0) && (iVar2 = 0, piVar1 = param_1, 0 < *param_1)) {
+  if ((model_ptr != (CDeformableModelInstance *)0x0) &&
+     (iVar2 = 0, pCVar1 = this_ptr, 0 < this_ptr->count)) {
     do {
       iVar2 = iVar2 + 1;
-      core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(piVar1[0x65],param_2);
-      piVar1 = piVar1 + 1;
-    } while (iVar2 < *param_1);
+      core_cloth_cpp_CCloth_saveJoinedLight_FUN_00437cc0(pCVar1->cloths[0],model_ptr);
+      pCVar1 = (CClothList *)pCVar1->filenames;
+    } while (iVar2 < this_ptr->count);
   }
   iVar2 = 0;
-  piVar1 = param_1;
-  if (0 < *param_1) {
+  pCVar1 = this_ptr;
+  if (0 < this_ptr->count) {
     do {
       iVar2 = iVar2 + 1;
-      core_cloth_cpp_CCloth_render_FUN_00437db0(piVar1[0x65],param_2);
-      piVar1 = piVar1 + 1;
-    } while (iVar2 < *param_1);
+      core_cloth_cpp_CCloth_render_FUN_00437db0(pCVar1->cloths[0],model_ptr);
+      pCVar1 = (CClothList *)pCVar1->filenames;
+    } while (iVar2 < this_ptr->count);
   }
   return;
 }

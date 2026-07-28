@@ -2,105 +2,108 @@
 // Address: 0056626c
 // Address Range: [[0056626c, 0056643f]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_file_c_makepath_FUN_0056626c(byte *param_1,byte *param_2,char *param_3,char *param_4,byte *param_5)
+// Signature: void __cdecl crt_file_c_makepath_FUN_0056626c(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 #include "nocturne.h"
 
-void __cdecl makepath(byte *param_1,byte *param_2,char *param_3,char *param_4,byte *param_5)
+void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 {
-  byte bVar1;
-  uint uVar2;
-  int iVar3;
-  byte *pbVar4;
-  uint uVar5;
-  byte *pbVar6;
+  char cVar1;
+  int iVar2;
+  byte *pbVar3;
+  uint uVar4;
+  char *pcVar5;
+  char *pcVar6;
+  uint *puVar7;
   uint local_18;
-  byte *local_14;
+  char *local_14;
   
-  local_14 = param_1;
+  local_14 = path_buffer;
   local_18 = 0;
-  if ((param_2 != (byte *)0x0) && (*param_2 != 0)) {
-    if ((*param_2 == 0x5c) && (pbVar4 = param_2, pbVar6 = param_1, param_2[1] == 0x5c)) {
+  if ((drive != (char *)0x0) && (*drive != '\0')) {
+    if ((*drive == '\\') && (pcVar5 = drive, pcVar6 = path_buffer, drive[1] == '\\')) {
       do {
-        bVar1 = *pbVar4;
-        *pbVar6 = bVar1;
-        if (bVar1 == 0) break;
-        bVar1 = pbVar4[1];
-        pbVar6[1] = bVar1;
-        pbVar4 = pbVar4 + 2;
-        pbVar6 = pbVar6 + 2;
-      } while (bVar1 != 0);
-      uVar5 = 0xffffffff;
+        cVar1 = *pcVar5;
+        *pcVar6 = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = pcVar5[1];
+        pcVar6[1] = cVar1;
+        pcVar5 = pcVar5 + 2;
+        pcVar6 = pcVar6 + 2;
+      } while (cVar1 != '\0');
+      uVar4 = 0xffffffff;
       do {
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        bVar1 = *param_2;
-        param_2 = param_2 + 1;
-      } while (bVar1 != 0);
-      param_1 = param_1 + (~uVar5 - 1);
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        cVar1 = *drive;
+        drive = drive + 1;
+      } while (cVar1 != '\0');
+      path_buffer = path_buffer + (~uVar4 - 1);
     }
     else {
-      *param_1 = *param_2;
-      param_1[1] = 0x3a;
-      param_1 = param_1 + 2;
+      *path_buffer = *drive;
+      path_buffer[1] = ':';
+      path_buffer = path_buffer + 2;
     }
   }
-  *param_1 = 0;
-  if ((param_3 != (char *)0x0) && (*param_3 != '\0')) {
+  *path_buffer = 0;
+  if ((directory != (char *)0x0) && (*directory != '\0')) {
     do {
-      uVar2 = FUN_0056d9f0(param_3,&local_18);
-      uVar2 = FUN_00566250(uVar2);
-      FUN_0056da30(uVar2,param_1);
-      iVar3 = FUN_0056da50(param_1);
-      param_1[iVar3] = 0;
-      param_1 = (byte *)FUN_0056da80(param_1);
-      param_3 = (char *)FUN_0056da80(param_3);
-    } while (*param_3 != '\0');
+      puVar7 = &local_18;
+      iVar2 = mbtowc_peek(directory);
+      iVar2 = normalize_path_separator(iVar2,(int *)puVar7);
+      wchar_to_bytes((wchar_t)iVar2,path_buffer);
+      iVar2 = mblen(path_buffer);
+      path_buffer[iVar2] = 0;
+      path_buffer = (char *)mbtowc_next(path_buffer);
+      directory = (char *)mbtowc_next(directory);
+    } while (*directory != '\0');
     if (local_18 == 0) {
       local_18 = 0x5c;
     }
-    pbVar4 = (byte *)FUN_0056dab0(local_14,param_1);
-    if (*pbVar4 == local_18) {
-      param_1 = param_1 + -1;
+    pbVar3 = (byte *)mb_get_last_char(local_14,path_buffer);
+    if (*pbVar3 == local_18) {
+      path_buffer = path_buffer + -1;
     }
     else {
-      *param_1 = (byte)local_18;
+      *path_buffer = (byte)local_18;
     }
   }
   if (local_18 == 0) {
     local_18 = 0x5c;
   }
-  if (param_4 == (char *)0x0) {
-    if (*param_1 == local_18) {
-      param_1 = param_1 + 1;
+  if (filename == (char *)0x0) {
+    if ((byte)*path_buffer == local_18) {
+      path_buffer = path_buffer + 1;
     }
   }
   else {
-    uVar2 = FUN_0056d9f0(param_4);
-    uVar5 = FUN_00566250(uVar2,&local_18);
-    if ((uVar5 != local_18) && (*param_1 == local_18)) {
-      param_1 = param_1 + 1;
+    iVar2 = mbtowc_peek(filename);
+    uVar4 = normalize_path_separator(iVar2,(int *)&local_18);
+    if ((uVar4 != local_18) && ((byte)*path_buffer == local_18)) {
+      path_buffer = path_buffer + 1;
     }
-    for (; *param_4 != '\0'; param_4 = (char *)FUN_0056da80(param_4)) {
-      uVar2 = FUN_0056d9f0(param_4,&local_18);
-      uVar2 = FUN_00566250(uVar2);
-      FUN_0056da30(uVar2,param_1);
-      iVar3 = FUN_0056da50(param_1);
-      param_1[iVar3] = 0;
-      param_1 = (byte *)FUN_0056da80(param_1);
-    }
-  }
-  if ((param_5 != (byte *)0x0) && (*param_5 != 0)) {
-    if (*param_5 != 0x2e) {
-      *param_1 = 0x2e;
-      param_1 = param_1 + 1;
-    }
-    for (; *param_5 != 0; param_5 = param_5 + 1) {
-      *param_1 = *param_5;
-      param_1 = param_1 + 1;
+    for (; *filename != '\0'; filename = (char *)mbtowc_next(filename)) {
+      puVar7 = &local_18;
+      iVar2 = mbtowc_peek(filename);
+      iVar2 = normalize_path_separator(iVar2,(int *)puVar7);
+      wchar_to_bytes((wchar_t)iVar2,path_buffer);
+      iVar2 = mblen(path_buffer);
+      path_buffer[iVar2] = 0;
+      path_buffer = (char *)mbtowc_next(path_buffer);
     }
   }
-  *param_1 = 0;
+  if ((extension != (char *)0x0) && (*extension != '\0')) {
+    if (*extension != '.') {
+      *path_buffer = 0x2e;
+      path_buffer = path_buffer + 1;
+    }
+    for (; *extension != 0; extension = extension + 1) {
+      *path_buffer = *extension;
+      path_buffer = path_buffer + 1;
+    }
+  }
+  *path_buffer = 0;
   return;
 }

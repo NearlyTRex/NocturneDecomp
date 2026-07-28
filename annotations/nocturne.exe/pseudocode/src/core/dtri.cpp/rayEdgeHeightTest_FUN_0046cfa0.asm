@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0046cfa0(float *param_1,float *param_2,float param_3,float *param_4)
+; int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0046cfa0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   vertex1
+; CVector3f *      Stack[0x8]:4   vertex2
+; float            Stack[0xc]:4   ray_radius
+; float *          Stack[0x10]:4   out_height
 ; Local Variables:
 ; undefined8       Stack[-0x60]:8  local_60
 ; undefined8       Stack[-0x58]:8  local_58

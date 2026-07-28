@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(int param_1,int param_2,int param_3)
+; void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   primitive_array
+; int              Stack[0xc]:4   primitive_count
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60 at 0044abc1
@@ -96,7 +100,7 @@ section .text
     POP EBX                             ; 0050dfca
     RET                                 ; 0050dfcb
     CALL engine_special.cpp_sync_FUN_00532b30 ; 0050dfcc
-        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_sync_FUN_00532b30()
+        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_00532b30()
         ;   Label: LAB_0050dfcc
     POP EBP                             ; 0050dfd1
     POP EDI                             ; 0050dfd2

@@ -18,7 +18,7 @@ ushort FUN_00571858(void)
   bVar4 = 0;
   iVar2 = 8;
   do {
-    iVar1 = (*(code *)PTR_FUN_005c1abc)();
+    iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
     iVar3 = iVar2 + 8;
     *(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)(&DAT_005c20d8 + iVar2);
     *(uint *)(iVar1 + iVar2 + 0x5c + (uint)bVar4 * -8) =
@@ -26,6 +26,6 @@ ushort FUN_00571858(void)
     iVar2 = iVar3;
   } while (iVar3 != 0x68);
   DAT_005c1f6c = FUN_005715ac;
-  DAT_005c1f70 = FUN_005717d8;
+  DAT_005c1f70 = processSignal;
   return in_DS;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)
+; void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -60,7 +63,7 @@ section .text
     PUSH EBX                            ; 00517610
         ;   Label: LAB_00517610
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517611
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00517616
     TEST EAX,EAX                        ; 00517619
     JL 0x00517622                       ; 0051761b
@@ -113,7 +116,7 @@ section .text
     PUSH EBX                            ; 005176a1
         ;   Label: LAB_005176a1
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005176a2
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005176a7
     TEST EAX,EAX                        ; 005176aa
     JL 0x005176b3                       ; 005176ac
@@ -139,13 +142,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x30]      ; 005176d9
     PUSH EDI                            ; 005176dd
     CALL core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0 ; 005176de
-        ;   XREF to: 005173c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0()
+        ;   XREF to: 005173c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton * this_ptr, int bone_count, int frame_count)
     ADD ESP,0xc                         ; 005176e3
     MOV EBX,dword ptr [ESP + 0x2c]      ; 005176e6
     PUSH EBX                            ; 005176ea
         ;   Label: LAB_005176ea
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005176eb
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005176f0
     TEST EAX,EAX                        ; 005176f3
     JL 0x005176fc                       ; 005176f5
@@ -188,7 +191,7 @@ section .text
     PUSH ESI                            ; 00517754
         ;   Label: LAB_00517754
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517755
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051775a
     TEST EAX,EAX                        ; 0051775d
     JL 0x00517766                       ; 0051775f
@@ -255,7 +258,7 @@ section .text
     PUSH EDI                            ; 005177f9
         ;   Label: LAB_005177f9
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 005177fa
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 005177ff
     TEST EAX,EAX                        ; 00517802
     JL 0x0051780b                       ; 00517804
@@ -300,7 +303,7 @@ section .text
     PUSH ESI                            ; 00517864
         ;   Label: LAB_00517864
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517865
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051786a
     TEST EAX,EAX                        ; 0051786d
     JL 0x00517876                       ; 0051786f
@@ -360,7 +363,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 00517901
     PUSH ECX                            ; 00517905
     CALL core_motion.cpp_CMotionList_load_FUN_004e0920 ; 00517906
-        ;   XREF to: 004e0920 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_load_FUN_004e0920()
+        ;   XREF to: 004e0920 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionList_load_FUN_004e0920(CMotionList * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0051790b
     CMP dword ptr [ESP],0x3             ; 0051790e
     JL 0x0051795d                       ; 00517912
@@ -369,7 +372,7 @@ section .text
     PUSH ESI                            ; 00517918
         ;   Label: LAB_00517918
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00517919
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0051791e
     TEST EAX,EAX                        ; 00517921
     JL 0x0051792a                       ; 00517923
@@ -388,7 +391,7 @@ section .text
     PUSH EBX                            ; 0051793e
         ;   Label: LAB_0051793e
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0051793f
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00517944
     TEST EAX,EAX                        ; 00517947
     JL 0x00517950                       ; 00517949

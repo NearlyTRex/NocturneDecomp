@@ -2,11 +2,11 @@
 // Address: 0040ed80
 // Address Range: [[0040ed80, 0040ef57]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *param_2)
+// Signature: void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo *this_ptr,char *weapon_class_name)
 
 #include "nocturne.h"
 
-void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *param_2)
+void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo *this_ptr,char *weapon_class_name)
 
 {
   char cVar1;
@@ -14,9 +14,9 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *p
   char *pcVar3;
   char *pcVar4;
   
-  pcVar4 = (char *)(param_1 + 0x2cc);
-  pcVar3 = param_2;
-  if (pcVar4 != param_2) {
+  pcVar4 = this_ptr->weapon_class_name;
+  pcVar3 = weapon_class_name;
+  if (pcVar4 != weapon_class_name) {
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;
@@ -27,69 +27,69 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *p
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = _strcmp(param_2,"CGun");
+  iVar2 = _strcmp(weapon_class_name,"CGun");
   if (iVar2 == 0) {
-    switch(*(uint *)(param_1 + 0x310)) {
-    case 1:
+    switch(this_ptr->ammo_type) {
+    case AMMO_TYPE_HOLY:
       pcVar4 = "holybullet.kfm";
       break;
-    case 2:
+    case AMMO_TYPE_WOOD:
       pcVar4 = "woodbullet.kfm";
       break;
-    case 3:
+    case AMMO_TYPE_SILVER:
       pcVar4 = "silverbullet.kfm";
       break;
-    case 4:
+    case AMMO_TYPE_GOLD:
       pcVar4 = "goldbullet.kfm";
       break;
     default:
       pcVar4 = "gatbullet.kfm";
       break;
-    case 7:
+    case AMMO_TYPE_LITHIUM:
       pcVar4 = "lithiumbullet.kfm";
       break;
-    case 8:
+    case AMMO_TYPE_MERCURY:
       pcVar4 = "mercurybullet.kfm";
     }
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(param_1 + 0x150,pcVar4);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(&this_ptr->model,pcVar4);
   }
-  iVar2 = _strcmp(param_2,"CShotgun");
+  iVar2 = _strcmp(weapon_class_name,"CShotgun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-              (param_1 + 0x150,"shell.kfm");
+              (&this_ptr->model,"shell.kfm");
   }
-  iVar2 = _strcmp(param_2,"CCrossbow");
+  iVar2 = _strcmp(weapon_class_name,"CCrossbow");
   if (iVar2 == 0) {
-    if (*(int *)(param_1 + 0x310) == 1) {
+    if (this_ptr->ammo_type == AMMO_TYPE_HOLY) {
       pcVar4 = "holystake.kfm";
     }
     else {
       pcVar4 = "stake.kfm";
     }
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(param_1 + 0x150,pcVar4);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(&this_ptr->model,pcVar4);
   }
-  iVar2 = _strcmp(param_2,"CDynamite");
+  iVar2 = _strcmp(weapon_class_name,"CDynamite");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-              (param_1 + 0x150,"dynamitebundle.kfm");
+              (&this_ptr->model,"dynamitebundle.kfm");
   }
-  iVar2 = _strcmp(param_2,"CTommyGun");
+  iVar2 = _strcmp(weapon_class_name,"CTommyGun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-              (param_1 + 0x150,"tommybullet.kfm");
+              (&this_ptr->model,"tommybullet.kfm");
   }
-  iVar2 = _strcmp(param_2,"CFlameThrower");
+  iVar2 = _strcmp(weapon_class_name,"CFlameThrower");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-              (param_1 + 0x150,"fgunammo.kfm");
+              (&this_ptr->model,"fgunammo.kfm");
   }
-  iVar2 = _strcmp(param_2,"CElephantGun");
+  iVar2 = _strcmp(weapon_class_name,"CElephantGun");
   if (iVar2 != 0) {
-    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
+    core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
     return;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (param_1 + 0x150,"eleshell.kfm");
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);
+            (&this_ptr->model,"eleshell.kfm");
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->model);
   return;
 }

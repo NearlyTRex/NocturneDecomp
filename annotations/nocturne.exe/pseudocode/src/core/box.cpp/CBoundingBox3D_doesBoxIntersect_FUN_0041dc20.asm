@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(float *param_1,float *param_2)
+; int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   other
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a80e
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050efa6
-;   core_setcolid.cpp_FUN_00510a40 at 00510d57
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510d57
 ;
 ; *****************************************************************************
 

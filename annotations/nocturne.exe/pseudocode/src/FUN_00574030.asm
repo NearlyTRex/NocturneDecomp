@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00574030(undefined2 *param_1,char *param_2,int param_3)
+; int FUN_00574030(wchar_t *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
-;   FUN_00573930 at 00573ac8
 ;   FUN_00574680 at 005746bc
+;   crt_env.c_putenv_internal_FUN_00573930 at 00573ac8
 ;
 ; Called Functions:
-;   FUN_0056da80
-;   FUN_0056f040
+;   crt_locale.c_mbtowc_FUN_0056f040
+;   crt_string.c_mbtowc_next_FUN_0056da80
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x2                            ; 0057404f
     PUSH EBX                            ; 00574051
     PUSH EDI                            ; 00574052
-    CALL FUN_0056f040                   ; 00574053
-        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f040()
+    CALL crt_locale.c_mbtowc_FUN_0056f040 ; 00574053
+        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mbtowc_FUN_0056f040(wchar_t * wide_char, char * mb_string, SIZE_T max_bytes)
     ADD ESP,0xc                         ; 00574058
     CMP EAX,-0x1                        ; 0057405b
     JNZ 0x0057406c                      ; 0057405e
@@ -56,8 +56,8 @@ section .text
     PUSH EBX                            ; 0057406c
         ;   Label: LAB_0057406c
     DEC EBP                             ; 0057406d
-    CALL FUN_0056da80                   ; 0057406e
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0057406e
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     ADD EDI,0x2                         ; 00574073
     INC ESI                             ; 00574076
     ADD ESP,0x4                         ; 00574077
@@ -71,15 +71,15 @@ section .text
     PUSH 0x2                            ; 00574083
     PUSH EBX                            ; 00574085
     PUSH 0x0                            ; 00574086
-    CALL FUN_0056f040                   ; 00574088
-        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f040()
+    CALL crt_locale.c_mbtowc_FUN_0056f040 ; 00574088
+        ;   XREF to: 0056f040 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mbtowc_FUN_0056f040(wchar_t * wide_char, char * mb_string, SIZE_T max_bytes)
     ADD ESP,0xc                         ; 0057408d
     CMP EAX,-0x1                        ; 00574090
     JZ 0x005740a5                       ; 00574093
         ;   XREF to: 005740a5 (CONDITIONAL_JUMP)  ; LAB_005740a5
     PUSH EBX                            ; 00574095
-    CALL FUN_0056da80                   ; 00574096
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00574096
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     INC ESI                             ; 0057409b
     ADD ESP,0x4                         ; 0057409c
     MOV EBX,EAX                         ; 0057409f

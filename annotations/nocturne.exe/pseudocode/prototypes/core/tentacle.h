@@ -17,27 +17,27 @@ CDemonActorType * FUN_00543b50(void);
 
 // Original: core_tentacle.cpp_FUN_00543b60
 // Address: 00543b60
-int FUN_00543b60(undefined4 param_1);
+CEnemy * FUN_00543b60(CEnemy *param_1);
 
 // Original: core_tentacle.cpp_CTentacle_setup_FUN_00543bc0
 // Address: 00543bc0
-void CTentacle::setup(int param_1);
+void CTentacle::setup(CEnemy *param_1);
 
 // Original: core_tentacle.cpp_FUN_00543c50
 // Address: 00543c50
-void FUN_00543c50(int param_1,float param_2);
+void FUN_00543c50(CTentacle *param_1,float param_2);
 
 // Original: core_tentacle.cpp_FUN_00544440
 // Address: 00544440
-undefined4 FUN_00544440(int param_1);
+int FUN_00544440(CCharacter *param_1);
 
 // Original: core_tentacle.cpp_CTentacle_archive_FUN_00544470
 // Address: 00544470
-void CTentacle::archive(int param_1);
+void CTentacle::archive(CEnemy *param_1);
 
 // Original: core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0
 // Address: 005444f0
-undefined4 __cdecl CTentacle::findNearbyTarget(int param_1,undefined4 param_2);
+int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
 // Original: core_tentacle.cpp_FUN_005445c0
 // Address: 005445c0
@@ -53,4 +53,4 @@ void CTentacle::computeGripBoneMatrix(int param_1);
 
 // Original: core_tentacle.cpp_FUN_00544850
 // Address: 00544850
-int FUN_00544850(int param_1,byte param_2);
+CDemonActor * FUN_00544850(CDemonActor *param_1,byte param_2);

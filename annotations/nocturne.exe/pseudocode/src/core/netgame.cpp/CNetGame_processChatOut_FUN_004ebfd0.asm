@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(CNetGame *this_ptr,char *message,int target_player)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   message
+; int              Stack[0xc]:4   target_player
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebdfb
@@ -52,7 +56,7 @@ section .text
     LEA EAX,[EDX + 0x1]                 ; 004ec00b
     MOV [0x01d06610],EAX                ; 004ec00e | DAT_01d06610
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ec013
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ec018
     MOV ECX,0x12                        ; 004ec01a
     SAR EDX,0x1f                        ; 004ec01f
@@ -82,7 +86,7 @@ section .text
     MOV dword ptr [0x01cea3f8],EDI      ; 004ec066 | DAT_01cea3f8
     MOV dword ptr [EBP],EDI             ; 004ec06c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004ec06f
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDI,dword ptr [0x01cea3f8]      ; 004ec074 | DAT_01cea3f8
     ADD ESP,0xc                         ; 004ec07a
     TEST EBX,EBX                        ; 004ec07d
@@ -103,14 +107,14 @@ section .text
     MOV dword ptr [0x01cea3f8],EDI      ; 004ec0b1 | DAT_01cea3f8
     MOV byte ptr [EAX + EBP*0x1 + 0x8],0x1 ; 004ec0b7
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004ec0bc
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004ec0c1
     PUSH 0xff                           ; 004ec0c4
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004ec0c9
     PUSH EAX                            ; 004ec0cd
     PUSH EBX                            ; 004ec0ce
     CALL crt_string.c__strncpy_FUN_00565f70 ; 004ec0cf
-        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strncpy_FUN_00565f70()
+        ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_00565f70(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 004ec0d4
     PUSH EBX                            ; 004ec0d7
     LEA EAX,[ESI + 0x8]                 ; 004ec0d8
@@ -129,7 +133,7 @@ section .text
     PUSH EAX                            ; 004ec0fa
     PUSH ESI                            ; 004ec0fb
     CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_004ec500 ; 004ec0fc
-        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_addChatHistory_FUN_004ec500()
+        ;   XREF to: 004ec500 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
     MOV EDI,dword ptr [0x01cea3f8]      ; 004ec101 | DAT_01cea3f8
     ADD ESP,0x14                        ; 004ec107
     POP EBP                             ; 004ec10a

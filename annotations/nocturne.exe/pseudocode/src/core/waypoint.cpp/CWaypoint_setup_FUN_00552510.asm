@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(int param_1)
+; void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CTrigger *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00552516
     PUSH ESI                            ; 0055251a
     CALL core_trigger.cpp_CTrigger_setup_FUN_00547a00 ; 0055251b
-        ;   XREF to: 00547a00 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_setup_FUN_00547a00()
+        ;   XREF to: 00547a00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_setup_FUN_00547a00(CTrigger * this_ptr)
     XOR EBX,EBX                         ; 00552520
     MOV EDX,dword ptr [ESI + 0x368]     ; 00552522
     ADD ESP,0x4                         ; 00552528
@@ -77,7 +77,7 @@ section .text
     ADD ESI,0x78                        ; 00552581
     PUSH ESI                            ; 00552584
     CALL crt_string.c__stricmp_FUN_00564520 ; 00552585
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055258a
     TEST EAX,EAX                        ; 0055258d
     JZ 0x00552575                       ; 0055258f
@@ -85,7 +85,7 @@ section .text
     PUSH 0x59776d                       ; 00552591 | = "true"
     PUSH ESI                            ; 00552596
     CALL crt_string.c__stricmp_FUN_00564520 ; 00552597
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055259c
     TEST EAX,EAX                        ; 0055259f
     JZ 0x00552575                       ; 005525a1

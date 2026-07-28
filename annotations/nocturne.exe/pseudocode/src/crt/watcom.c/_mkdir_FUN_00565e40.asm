@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_watcom_c__mkdir_FUN_00565e40(LPCSTR param_1)
+; int __cdecl crt_watcom_c__mkdir_FUN_00565e40(char *path)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   path
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3c46
-;   engine_dosio.cpp_FUN_00456b20 at 00456b77
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456aac
+;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b77
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateDirectoryA_00575490 = 00175ae2

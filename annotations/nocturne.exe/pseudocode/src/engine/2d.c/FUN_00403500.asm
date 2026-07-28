@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00403500(undefined4 param_1)
+; void engine_2d_c_FUN_00403500(char *param_1)
 ;
 ;
 ; XREF[1]:
@@ -32,7 +32,7 @@ section .text
     PUSH EDX                            ; 0040350a
     PUSH 0x57720a                       ; 0040350b | = "fog"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00403510
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00403515
     MOV EBX,EAX                         ; 00403518
     TEST EAX,EAX                        ; 0040351a
@@ -44,11 +44,11 @@ section .text
     PUSH 0x100                          ; 00403521
     PUSH 0x1bf5620                      ; 00403526
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 0040352b
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00403530
     PUSH EBX                            ; 00403533
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00403534
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00403539
     POP EBX                             ; 0040353c
     RET                                 ; 0040353d

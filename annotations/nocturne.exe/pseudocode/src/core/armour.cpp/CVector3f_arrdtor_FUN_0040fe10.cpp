@@ -2,13 +2,15 @@
 // Address: 0040fe10
 // Address Range: [[0040fe10, 0040fe24]]
 // Convention: __cdecl
-// Signature: void __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(undefined4 param_1)
+// Signature: CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f *objs,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(uint param_1)
+CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f *objs,uint flags)
 
 {
-  __arrfini(param_1,0xf,&g_CVectorTypeInfo_005993b0);
-  return;
+  CVector3f *pCVar1;
+  
+  pCVar1 = (CVector3f *)__arrfini(objs,0xf,&g_CVectorTypeInfo_005993b0);
+  return pCVar1;
 }

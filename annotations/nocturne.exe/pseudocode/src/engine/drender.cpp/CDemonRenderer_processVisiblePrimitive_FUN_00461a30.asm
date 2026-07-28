@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(int param_1,int param_2,undefined4 param_3)
+; void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer *param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x18]:2  local_18
@@ -36,7 +36,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00461a42
     PUSH EAX                            ; 00461a45
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00461a46
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00461a4b
     TEST EAX,EAX                        ; 00461a4e
     JNZ 0x00461a57                      ; 00461a50
@@ -76,7 +76,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 00461abd
     PUSH EBX                            ; 00461ac1
     CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 ; 00461ac2
-        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0()
+        ;   XREF to: 00461bd0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     ADD ESP,0xc                         ; 00461ac7
     ADD ESP,0x14                        ; 00461aca
     POP EBX                             ; 00461acd

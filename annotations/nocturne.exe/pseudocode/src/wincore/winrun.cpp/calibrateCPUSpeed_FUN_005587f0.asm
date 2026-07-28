@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EBP + -0x8],EAX      ; 00558840
     MOV dword ptr [EBP + -0x4],EAX      ; 00558843
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00558846
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_00558846
     PUSH EAX                            ; 0055884b
     MOV EBX,0x0                         ; 0055884c
@@ -176,7 +176,7 @@ section .text
     JC 0x00558851                       ; 00558980
         ;   XREF to: 00558851 (CONDITIONAL_JUMP)  ; LAB_00558851
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00558986
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     POP EBX                             ; 0055898b
     SUB EAX,EBX                         ; 0055898c
     MOV EBX,EAX                         ; 0055898e

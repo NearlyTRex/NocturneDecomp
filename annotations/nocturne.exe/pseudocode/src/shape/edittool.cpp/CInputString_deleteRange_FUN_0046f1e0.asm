@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(int param_1,int param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString *this_ptr,int start_pos,int end_pos)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   start_pos
+; int              Stack[0xc]:4   end_pos
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0046f2a0 at 0046f2c6
@@ -45,7 +49,7 @@ section .text
     PUSH EAX                            ; 0046f213
     SUB ESI,EDI                         ; 0046f214
     CALL crt_string.c_memmove_FUN_00566170 ; 0046f216
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV ECX,dword ptr [EBX + 0x130]     ; 0046f21b
     ADD ESP,0xc                         ; 0046f221
     SUB ECX,ESI                         ; 0046f224

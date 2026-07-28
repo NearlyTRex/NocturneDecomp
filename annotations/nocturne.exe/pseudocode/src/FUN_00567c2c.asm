@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte * FUN_00567c2c(byte *param_1,int param_2)
+; byte * FUN_00567c2c(byte *param_1,void *param_2)
 ;
 ;
 ; XREF[1]:
@@ -27,7 +27,7 @@ section .text
     PUSH ESI                            ; 00567c3a
     INC EBX                             ; 00567c3b
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00567c3c
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     XOR EAX,EAX                         ; 00567c41
     MOV AL,byte ptr [EBX + -0x1]        ; 00567c43
     ADD ESP,0xc                         ; 00567c46

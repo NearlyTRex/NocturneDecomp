@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+; int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   left_x
+; int              Stack[0xc]:4   right_x
+; int              Stack[0x10]:4   y_pos
+; int              Stack[0x14]:4   color_mode
+; int              Stack[0x18]:4   color_value
+; char *           Stack[0x1c]:4   format_string
+; va_list_t        Stack[0x20]:4   args
 ; Local Variables:
 ; undefined        Stack[-0x1010]:1  local_1010
 ;
@@ -30,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490e9a
     PUSH EAX                            ; 00490e9e
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00490e9f
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00490ea4
     MOV EAX,ESP                         ; 00490ea7
     PUSH EAX                            ; 00490ea9
@@ -47,7 +56,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x102c]    ; 00490ed2
     PUSH EDX                            ; 00490ed9
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0 ; 00490eda
-        ;   XREF to: 00490de0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0()
+        ;   XREF to: 00490de0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x1c                        ; 00490edf
     ADD ESP,0x1000                      ; 00490ee2
     POP EBP                             ; 00490ee8

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dog_cpp_FUN_00454660(undefined4 param_1)
+; CEnemy * core_dog_cpp_FUN_00454660(CEnemy *param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00454661
     PUSH EDX                            ; 00454665
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00454666
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0045466b
     PUSH 0x57cf31                       ; 0045466e | = "dog.dfm"
     MOV EBX,EAX                         ; 00454673

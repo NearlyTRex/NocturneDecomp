@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample *sample)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   sample
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 at 00523a70
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005243cd
-;   sound_sndmain.cpp_FUN_00522480 at 005227a4
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005227a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8318

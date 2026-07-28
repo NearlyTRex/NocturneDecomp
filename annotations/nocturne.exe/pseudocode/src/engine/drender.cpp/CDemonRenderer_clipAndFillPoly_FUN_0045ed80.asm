@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; int *            Stack[0xc]:4   vertex_indices
 ;
 ; XREF[24]:
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 at 0045f130
@@ -69,7 +73,7 @@ section .text
         ;   Label: LAB_0045edb4
     PUSH ESI                            ; 0045edb5
     CALL engine_drender.cpp_renderTriangleSimple_FUN_00458080 ; 0045edb6
-        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleSimple_FUN_00458080()
+        ;   XREF to: 00458080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_00458080(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0045edbb
         ;   Label: LAB_0045edbb
     POP EBP                             ; 0045edbe
@@ -93,7 +97,7 @@ section .text
         ;   Label: LAB_0045ede8
     PUSH ESI                            ; 0045ede9
     CALL engine_drender.cpp_renderTriangleTextured_FUN_00457a00 ; 0045edea
-        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_renderTriangleTextured_FUN_00457a00()
+        ;   XREF to: 00457a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00457a00(int * vertex_indices, int vertex_count)
     JMP 0x0045edbb                      ; 0045edef
         ;   XREF to: 0045edbb (UNCONDITIONAL_JUMP)  ; LAB_0045edbb
     CMP dword ptr [EDI + 0x4],0x0       ; 0045edf1
@@ -113,7 +117,7 @@ section .text
     PUSH ESI                            ; 0045ee12
     PUSH EBX                            ; 0045ee13
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 0045ee14
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0045ee19
     POP EBP                             ; 0045ee1c
     POP EDI                             ; 0045ee1d
@@ -133,7 +137,7 @@ section .text
     PUSH ECX                            ; 0045ee36
     PUSH 0x766c74                       ; 0045ee37 | DAT_00766c74
     CALL engine_3d.c_rasterizeTriangle_FUN_005628c0 ; 0045ee3c
-        ;   XREF to: 005628c0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_rasterizeTriangle_FUN_005628c0()
+        ;   XREF to: 005628c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005628c0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0045ee41
     POP EBP                             ; 0045ee44
     POP EDI                             ; 0045ee45

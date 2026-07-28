@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(int *param_1)
+; void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter *this_ptr)
 ;
+; Parameters:
+; CDemonFilter *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190 at 0044c278
@@ -28,13 +30,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0044bf21
     PUSH EBX                            ; 0044bf25
     CALL core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0044bf70 ; 0044bf26
-        ;   XREF to: 0044bf70 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0044bf70()
+        ;   XREF to: 0044bf70 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0044bf70(CDemonFilter * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 0044bf2b
     IMUL EAX,dword ptr [EBX + 0x4]      ; 0044bf2d
     ADD ESP,0x4                         ; 0044bf31
     PUSH EAX                            ; 0044bf34
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0044bf35
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0044bf3a
     MOV dword ptr [EBX + 0x48],EAX      ; 0044bf3d
     TEST EAX,EAX                        ; 0044bf40

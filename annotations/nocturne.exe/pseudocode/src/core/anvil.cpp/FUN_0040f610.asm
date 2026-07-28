@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_anvil_cpp_FUN_0040f610(int param_1,float param_2)
+; void core_anvil_cpp_FUN_0040f610(CDemonActor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [0x005b7650]      ; 0040f61f | DAT_005b7650
     PUSH EDX                            ; 0040f625
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0040f626
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0040f62b
     TEST EAX,EAX                        ; 0040f62e
     JNZ 0x0040f6a3                      ; 0040f630
@@ -100,7 +100,7 @@ section .text
     MOV ESI,0x461c3f9a                  ; 0040f6eb
     MOV EDI,0x8                         ; 0040f6f0
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0040f6f5
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     LEA EDX,[ESP + 0xc]                 ; 0040f6fa
     ADD ESP,0x4                         ; 0040f6fe
     MOV EAX,[0x01cae0e8]                ; 0040f701 | DAT_01cae0e8

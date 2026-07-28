@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_0056497c(int param_1)
+; void * crt_unknown_c_FUN_0056497c(ulong param_1)
 ;
 ;
 ; XREF[129]:
@@ -38,7 +38,7 @@ section .text
     PUSH EBX                            ; 00564986
         ;   Label: LAB_00564986
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00564987
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0056498c
     MOV ESI,EAX                         ; 0056498f
     TEST EAX,EAX                        ; 00564991

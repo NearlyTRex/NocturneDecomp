@@ -12,9 +12,10 @@ void core_course_cpp_FUN_0043b5b0(void)
 
 {
   int iVar1;
+  _FILE *in_stack_00000004;
   
   do {
-    iVar1 = _fgetc();
+    iVar1 = _fgetc(in_stack_00000004);
     if (iVar1 < 0) {
       return;
     }

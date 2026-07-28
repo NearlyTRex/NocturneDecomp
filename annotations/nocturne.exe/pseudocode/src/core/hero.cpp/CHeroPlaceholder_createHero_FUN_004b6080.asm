@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,undefined4 param_2)
+; CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 ;
+; Parameters:
+; CHeroPlaceholder * Stack[0x4]:4   this_ptr
+; EHeroType        Stack[0x8]:4   hero_type
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a53
@@ -53,12 +56,12 @@ section .text
     PUSH ESI                            ; 004b60a0
     PUSH 0x5858f3                       ; 004b60a1 | = "CGabriella"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b60a6
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
         ;   Label: LAB_004b60a6
     ADD ESP,0x4                         ; 004b60ab
     PUSH EAX                            ; 004b60ae
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b60af
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b60b4
     MOV EBX,EAX                         ; 004b60b7
     TEST EBX,EBX                        ; 004b60b9
@@ -78,7 +81,7 @@ section .text
     MOV EAX,[0x005baf90]                ; 004b60e1 | DAT_005baf90
     PUSH EAX                            ; 004b60e6
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004b60e7
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b60ec
     MOV EAX,dword ptr [ESP + 0x14]      ; 004b60ef
     LEA EDX,[EBX + 0x20]                ; 004b60f3
@@ -105,7 +108,7 @@ section .text
     PUSH EBX                            ; 004b612b
         ;   Label: LAB_004b612b
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004b612c
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004b6131
     MOV EAX,EBX                         ; 004b6134
     POP EBP                             ; 004b6136

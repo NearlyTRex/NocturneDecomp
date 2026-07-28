@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510(int param_1)
+; SMRGLHeaderExtended * engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510(SMRGLHeaderPrimitive *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -35,7 +35,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00408526
     PUSH EAX                            ; 00408529
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0040852a
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0040852f
     TEST EAX,EAX                        ; 00408532
     JZ 0x00408581                       ; 00408534
@@ -101,7 +101,7 @@ section .text
     MOV [0x01c039a0],EAX                ; 004085e7 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDX      ; 004085ec | DAT_01c039a4
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 004085f2
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 004085f7
     MOV ESI,dword ptr [EBX + 0x4]       ; 004085fa
     LEA EAX,[EBX + 0x18]                ; 004085fd
@@ -128,11 +128,11 @@ section .text
     PUSH EBX                            ; 00408635
         ;   Label: LAB_00408635
     CALL engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30 ; 00408636
-        ;   XREF to: 00406f30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30()
+        ;   XREF to: 00406f30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0040863b
     PUSH EBX                            ; 0040863e
     CALL engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80 ; 0040863f
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80()
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00408644
     POP EBX                             ; 00408647
     RET                                 ; 00408648

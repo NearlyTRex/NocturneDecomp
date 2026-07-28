@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970(int param_1,float param_2,undefined4 param_3)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970(CDeformableModelInstance *this_ptr,float scale_factor,int target_bone_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   target_bone_index
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_FUN_004270e0 at 004271a3
@@ -24,7 +28,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0051d978
     PUSH ESI                            ; 0051d97c
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051d97d
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     XOR EBX,EBX                         ; 0051d982
     ADD ESP,0x4                         ; 0051d984
     MOV EDX,dword ptr [EAX + 0x28558]   ; 0051d987
@@ -37,7 +41,7 @@ section .text
     PUSH EBX                            ; 0051d994
     PUSH EDI                            ; 0051d995
     CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10 ; 0051d996
-        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10()
+        ;   XREF to: 00517b10 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0051d99b
     TEST EAX,EAX                        ; 0051d99e
     JL 0x0051d9b2                       ; 0051d9a0

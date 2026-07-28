@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(float *param_1,float *param_2)
+; void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D *this_ptr,CVector3f *point)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   point
 ;
 ; XREF[13]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 at 0040a5e4

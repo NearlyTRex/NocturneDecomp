@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,byte param_6)
+; int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   dialog_title
+; char *           Stack[0xc]:4   search_directory
+; char *           Stack[0x10]:4   file_pattern
+; char *           Stack[0x14]:4   output_filename
+; uint             Stack[0x18]:4   flags
 ; Local Variables:
 ; undefined        Stack[-0x684]:1  local_684
 ; undefined        Stack[-0x484]:1  local_484
@@ -52,7 +59,7 @@ section .text
     LEA EAX,[ESP + 0x408]               ; 00470581
     PUSH EAX                            ; 00470588
     CALL shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 ; 00470589
-        ;   XREF to: 004746b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0()
+        ;   XREF to: 004746b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0(CStrList * this_ptr, char * directory_path, char * file_pattern)
     ADD ESP,0xc                         ; 0047058e
     CMP dword ptr [ESP + 0x400],0x1     ; 00470591
     JL 0x004706d4                       ; 00470599
@@ -60,7 +67,7 @@ section .text
     LEA EAX,[ESP + 0x400]               ; 0047059f
     PUSH EAX                            ; 004705a6
     CALL shape_edittool.cpp_CStrList_sortAll_FUN_00473fd0 ; 004705a7
-        ;   XREF to: 00473fd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_sortAll_FUN_00473fd0()
+        ;   XREF to: 00473fd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_00473fd0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004705ac
     MOV AH,byte ptr [ESP + 0x69c]       ; 004705af
     MOV EDI,0xffffffff                  ; 004705b6
@@ -80,7 +87,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004705d9
     PUSH EAX                            ; 004705e0
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090 ; 004705e1
-        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090()
+        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 004705e6
     PUSH 0x1                            ; 004705e9
     PUSH EBX                            ; 004705eb
@@ -89,7 +96,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004705f4
     PUSH EAX                            ; 004705fb
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090 ; 004705fc
-        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090()
+        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 00470601
     LEA EAX,[ESP + 0x200]               ; 00470604
     PUSH EAX                            ; 0047060b
@@ -100,13 +107,13 @@ section .text
     LEA EAX,[ESP + 0x580]               ; 00470615
     PUSH EAX                            ; 0047061c
     CALL crt_file.c_makepath_FUN_0056626c ; 0047061d
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00470622
     PUSH ESI                            ; 00470625
     LEA EAX,[ESP + 0x574]               ; 00470626
     PUSH EAX                            ; 0047062d
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047062e
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00470633
     TEST EAX,EAX                        ; 00470636
     JNZ 0x004706ff                      ; 00470638
@@ -132,7 +139,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 0047066b
     PUSH EAX                            ; 00470672
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090 ; 00470673
-        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090()
+        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 00470678
     PUSH 0x1                            ; 0047067b
     PUSH EBX                            ; 0047067d
@@ -141,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 00470686
     PUSH EAX                            ; 0047068d
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090 ; 0047068e
-        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090()
+        ;   XREF to: 00474090 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_00474090(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 00470693
     LEA EAX,[ESP + 0x200]               ; 00470696
     PUSH EAX                            ; 0047069d
@@ -151,14 +158,14 @@ section .text
     PUSH 0x0                            ; 004706a5
     PUSH ESI                            ; 004706a7
     CALL crt_file.c_makepath_FUN_0056626c ; 004706a8
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004706ad
     PUSH 0x0                            ; 004706b0
     LEA EAX,[ESP + 0x404]               ; 004706b2
     PUSH EAX                            ; 004706b9
     MOV EBX,0x1                         ; 004706ba
     CALL shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 ; 004706bf
-        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CPickList_dtor_FUN_00474cf0()
+        ;   XREF to: 00474cf0 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_00474cf0(CPickList * this_ptr, uint flags)
         ;   Label: LAB_004706bf
     ADD ESP,0x8                         ; 004706c4
     MOV EAX,EBX                         ; 004706c7
@@ -171,7 +178,7 @@ section .text
     PUSH 0x57e682                       ; 004706d4 | = "No files found"
         ;   Label: LAB_004706d4
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004706d9
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004706de
     PUSH EAX                            ; 004706e1
     MOV EAX,dword ptr [ESP + 0x68c]     ; 004706e2

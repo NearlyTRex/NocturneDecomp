@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 604,
+    "complexity_score": 89,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 55,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "alloc_magic_size",
+      "pointer_cast"
     ],
-    "total_lines": 202
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -143,27 +143,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e00b0",
-      "from_addr": "004e00f9",
-      "name": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e0110",
-      "from_addr": "004e0159",
-      "name": "core_morph.cpp_FUN_004e0110",
+      "addr": "004e0240",
+      "from_addr": "004e0280",
+      "name": "core_morph.cpp_CMorph_addQuadPartToModel_FUN_004e0240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e01f0",
       "from_addr": "004e0230",
-      "name": "core_morph.cpp_FUN_004e01f0",
+      "name": "core_morph.cpp_CMorph_addTriPartToModel_FUN_004e01f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e0240",
-      "from_addr": "004e0280",
-      "name": "core_morph.cpp_FUN_004e0240",
+      "addr": "004e0110",
+      "from_addr": "004e0159",
+      "name": "core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_004e0110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e00b0",
+      "from_addr": "004e00f9",
+      "name": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -177,7 +177,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)"
   },
   "function_calls": [
     {
@@ -193,7 +193,7 @@
     {
       "addr": "004df800",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_004df800"
+      "name": "core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800"
     },
     {
       "addr": "00564a70",
@@ -267,7 +267,7 @@
       {
         "call_addr": "004e0230",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_004e01f0",
+        "caller": "core_morph.cpp_CMorph_addTriPartToModel_FUN_004e01f0",
         "estimated_params": 8,
         "instructions_analyzed": 26,
         "method": "push_count",
@@ -278,7 +278,7 @@
       {
         "call_addr": "004e0280",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_004e0240",
+        "caller": "core_morph.cpp_CMorph_addQuadPartToModel_FUN_004e0240",
         "estimated_params": 8,
         "instructions_analyzed": 26,
         "method": "push_count",
@@ -289,7 +289,7 @@
       {
         "call_addr": "004e0159",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_004e0110",
+        "caller": "core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_004e0110",
         "estimated_params": 8,
         "instructions_analyzed": 16,
         "method": "push_count",
@@ -298,11 +298,11 @@
         "stack_params": 8
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
     "estimated_params": 8,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.2556390977443606,
@@ -337,480 +337,94 @@
     "pcode_op_count": 832
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 36,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 32,
     "return_addr_offset": 0,
-    "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "CMorphModel_addPartFromPolygon_FUN_004df2f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "AssignmentAddressToInteger",
-          "column": 9,
-          "line": 35,
-          "message": "Assigning a pointer to an integer is not portable.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "AssignmentAddressToInteger",
-          "column": 9,
-          "line": 37,
-          "message": "Assigning a pointer to an integer is not portable.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_data",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_data",
+        "offset": 20,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_stride",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_list",
+        "offset": 28,
+        "size": 4,
+        "type": "SMRGLTextureLod *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_index_list",
+        "offset": 32,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 21,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (4 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar4 = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "for (iVar2 = param_4; 0 < iVar2; iVar2 = iVar2 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "iVar4 = iVar4 + param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 3] = param_1[0x15];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 3] = param_1[0x15];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 3] = param_1[0x15];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 1] = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 1] = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 1] = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 4] = param_1[0x17];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 4] = param_1[0x17];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 4] = param_1[0x17];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 2] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 * 4 + 2] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = realloc(param_1[0x16],param_1[0x15] << 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = realloc(param_1[0x16],param_1[0x15] << 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x16] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Allocation size hardcodes 0x10 == sizeof(SMorphPoint). Replace the magic with sizeof(SMorphPoint) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = realloc(param_1[0x18],param_1[0x17] * 0x3c);",
-      "type": "unnamed_param"
+      "match": "(SMorphPoint*) alloc stride 0x10",
+      "severity": "moderate",
+      "text": "(SMorphPoint *)realloc(this_ptr->points,this_ptr->num_points << 4)",
+      "type": "alloc_magic_size"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = realloc(param_1[0x18],param_1[0x17] * 0x3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x18] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = *param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = *param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1[0x16] == 0) || (param_1[0x18] == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1[0x16] == 0) || (param_1[0x18] == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*param_1 + -1,param_3,0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*param_1 + -1,param_3,0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,*param_1 + -1,param_3,0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,*param_1 + -1,param_3,0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
-      "type": "param_count_too_few"
+      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->num_faces * 0x3c)",
+      "type": "alloc_magic_size"
     }
   ]
 }

@@ -15,7 +15,7 @@ void core_minecar_cpp_FUN_004d6040(int param_1,float param_2)
      param_2 < 0.0)) {
     *(uint *)(param_1 + 0x720) = 0x3dcccccd;
     core_fire_cpp_CFireEffect_createSpark_FUN_0048ae90
-              (0x01C08D04,param_1 + 0x20,0,0x4000,0x10000,0,0xffff);
+              (0x01C08D04,(CVector3f *)(param_1 + 0x20),(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     return;
   }
   return;

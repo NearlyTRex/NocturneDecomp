@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(int param_1,int param_2)
+; void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(CStranger *this_ptr,int hand_index)
 ;
+; Parameters:
+; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined        Stack[-0xe4]:1  local_e4
@@ -92,7 +95,7 @@ section .text
     PUSH EAX                            ; 0053a725
     MOV ESI,dword ptr [EBX + 0x14c]     ; 0053a726
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 0053a72c
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0053a731
     PUSH EAX                            ; 0053a734
     LEA EAX,[ESP + 0x104]               ; 0053a735
@@ -100,7 +103,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 0053a73d
     PUSH EAX                            ; 0053a741
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 0053a742
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 0053a747
     PUSH EAX                            ; 0053a74a
     PUSH EBX                            ; 0053a74b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_FUN_0042af70(int param_1,float param_2)
+; undefined4 core_charactr_cpp_FUN_0042af70(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x114]:4  local_114
@@ -101,7 +101,7 @@ section .text
     PUSH EAX                            ; 0042afde
     PUSH EDI                            ; 0042afdf
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 0042afe0
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0042afe5
     TEST EAX,EAX                        ; 0042afe8
     JNZ 0x0042afba                      ; 0042afea
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_0042aff3
     PUSH ESI                            ; 0042aff6
     CALL core_hero.cpp_closestHeroToPoint_FUN_004b4500 ; 0042aff7
-        ;   XREF to: 004b4500 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_closestHeroToPoint_FUN_004b4500()
+        ;   XREF to: 004b4500 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_closestHeroToPoint_FUN_004b4500(CLocation * location)
     ADD ESP,0x4                         ; 0042affc
     MOV EBX,EAX                         ; 0042afff
     PUSH ESI                            ; 0042b001
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 0042b00d
     PUSH EBX                            ; 0042b00e
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0042b00f
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0042b014
     LEA EAX,[ESP + 0x74]                ; 0042b017
     PUSH EAX                            ; 0042b01b
@@ -202,7 +202,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0042b130
     PUSH EAX                            ; 0042b134
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0042b135
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV ECX,0x40d00000                  ; 0042b13a
     ADD ESP,0x8                         ; 0042b13f
     MOV dword ptr [ESP + 0x8],ECX       ; 0042b142
@@ -254,7 +254,7 @@ section .text
     PUSH EBX                            ; 0042b1dd
     PUSH EDI                            ; 0042b1de
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 0042b1df
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0042b1e4
     TEST EAX,EAX                        ; 0042b1e7
     JL 0x0042b39a                       ; 0042b1e9
@@ -349,7 +349,7 @@ section .text
     MOV dword ptr [ESP + 0xc4],ECX      ; 0042b327
     MOV dword ptr [ESP + 0xcc],ECX      ; 0042b32e
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0042b335
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EDX,0x40900000                  ; 0042b33a
     ADD ESP,0x8                         ; 0042b33f
     MOV dword ptr [ESP],EDX             ; 0042b342
@@ -443,7 +443,7 @@ section .text
     PUSH EBX                            ; 0042b45a
     PUSH EDI                            ; 0042b45b
     CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 ; 0042b45c
-        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0()
+        ;   XREF to: 004247f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0042b461
     TEST EAX,EAX                        ; 0042b464
     JL 0x0042b3ba                       ; 0042b466

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_actor_cpp_matchClassTerm_FUN_0040d600(undefined4 param_1,int *param_2)
+; int __cdecl core_actor_cpp_matchClassTerm_FUN_0040d600(CDemonActorType *type_ptr,char **parse_pos)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; char * *         Stack[0x8]:4   parse_pos
 ;
 ; XREF[1]:
 ;   core_actor.cpp_matchClassExpression_FUN_0040d720 at 0040d763
@@ -48,7 +51,7 @@ section .text
     PUSH EBP                            ; 0040d637
     MOV dword ptr [EBX],EDI             ; 0040d638
     CALL core_actor.cpp_matchClassTerm_FUN_0040d600 ; 0040d63a
-        ;   XREF to: 0040d600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040d600()
+        ;   XREF to: 0040d600 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040d600(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040d63f
     MOV EDI,EAX                         ; 0040d642
     TEST EAX,EAX                        ; 0040d644
@@ -74,7 +77,7 @@ section .text
     PUSH EBP                            ; 0040d65c
     MOV dword ptr [EBX],EDI             ; 0040d65d
     CALL core_actor.cpp_matchClassExpression_FUN_0040d720 ; 0040d65f
-        ;   XREF to: 0040d720 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassExpression_FUN_0040d720()
+        ;   XREF to: 0040d720 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassExpression_FUN_0040d720(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040d664
     MOV EDI,EAX                         ; 0040d667
     TEST EAX,EAX                        ; 0040d669
@@ -127,7 +130,7 @@ section .text
     AND EAX,0xff                        ; 0040d6bc
     PUSH EAX                            ; 0040d6c1
     CALL crt_ctype.c_tolower_FUN_00564860 ; 0040d6c2
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     MOV EDX,ESI                         ; 0040d6c7
     SHL EDX,0x7                         ; 0040d6c9
     SHR ESI,0x19                        ; 0040d6cc
@@ -150,7 +153,7 @@ section .text
     PUSH EAX                            ; 0040d6f7
     PUSH EBP                            ; 0040d6f8
     CALL core_actor.cpp_checkNameHash_FUN_0040d810 ; 0040d6f9
-        ;   XREF to: 0040d810 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_checkNameHash_FUN_0040d810()
+        ;   XREF to: 0040d810 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040d810(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040d6fe
     MOV EDI,EAX                         ; 0040d701
     MOV EAX,EDI                         ; 0040d703

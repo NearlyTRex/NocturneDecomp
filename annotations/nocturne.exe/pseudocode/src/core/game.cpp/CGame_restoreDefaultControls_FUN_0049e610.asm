@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(int param_1)
+; void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_ctor_FUN_0049a650 at 0049a6af

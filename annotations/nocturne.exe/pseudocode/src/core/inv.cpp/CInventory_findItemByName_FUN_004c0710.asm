@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004c0710(int param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004c0710(CInventory *this_ptr,char *item_name)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   item_name
 ;
 ; XREF[4]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e9d6
@@ -35,7 +38,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc]       ; 004c0728
     PUSH EAX                            ; 004c072b
     CALL crt_string.c__stricmp_FUN_00564520 ; 004c072c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004c0731
     TEST EAX,EAX                        ; 004c0734
     JZ 0x004c074a                       ; 004c0736

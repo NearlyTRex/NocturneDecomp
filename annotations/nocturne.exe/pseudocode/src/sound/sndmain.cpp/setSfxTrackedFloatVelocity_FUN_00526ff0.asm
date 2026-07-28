@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_00526ff0(undefined4 param_1,undefined4 param_2)
+; int __cdecl sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_00526ff0(uint sfx_handle,CVector3f *velocity_source_ptr)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; CVector3f *      Stack[0x8]:4   velocity_source_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createFireball_FUN_0048b270 at 0048b304
@@ -61,7 +64,7 @@ section .text
     ADD ESP,0xc                         ; 00527042
     MOV ESI,EAX                         ; 00527045
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00527047
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00527047
     MOV EAX,ESI                         ; 0052704c
     POP ESI                             ; 0052704e

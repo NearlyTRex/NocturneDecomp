@@ -9,10 +9,11 @@
 uint core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004b9680(int param_1)
 
 {
-  int iVar1;
+  SMotion *pSVar1;
   
-  iVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-  switch(*(uint *)(iVar1 + 0x24)) {
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                     ((CMotionController *)(param_1 + 0x150));
+  switch(pSVar1->state_index) {
   case 4:
   case 10:
     return 1;

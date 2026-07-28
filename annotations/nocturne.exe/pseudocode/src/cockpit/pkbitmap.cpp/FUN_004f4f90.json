@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 268,
+    "complexity_score": 324,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 83,
-    "suspect_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 89,
+    "suspect_count": 21,
     "suspect_types": [
+      "alloc_magic_size",
       "param_count_too_few",
+      "stack_ref",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 240
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -154,7 +156,7 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbitmap.cpp_FUN_004f4f90",
-    "signature": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)"
+    "signature": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)"
   },
   "function_calls": [
     {
@@ -366,7 +368,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -374,7 +376,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -382,7 +384,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -390,7 +392,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
@@ -398,20 +400,28 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "CPackedBitmap * cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _fread(local_20,8,1,param_2);",
+      "text": "SVar1 = _fread(local_20,8,1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 32,
       "match": "DAT_005be180",
       "severity": "mild",
       "text": "pbVar6 = (byte *)&DAT_005be180;",
@@ -419,63 +429,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
-      "text": "uVar2 = local_1c / param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uVar3 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((-1 < param_5) && (iVar1 != param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((-1 < param_5) && (iVar1 != param_5)) {",
+      "text": "uVar3 = local_1c / param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 55,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar4 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((-1 < param_5) && (iVar2 != param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((-1 < param_5) && (iVar2 != param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
       "match": "param_2",
       "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(local_14,param_2,uVar3);",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(local_14,param_2,iVar4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_3",
+      "line": 61,
+      "match": "param_6",
       "severity": "mild",
-      "text": "if (1 < (int)param_3) {",
+      "text": "if (1 < param_6) {",
       "type": "unnamed_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "((CPackedBitmap *)&stack0xffffffb0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "((CPackedBitmap *)&stack0xffffffb0,param_2,1);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(auStack_44,param_2,1);",
+      "text": "((CPackedBitmap *)&stack0xffffffb0,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 69,
       "match": "param_3",
       "severity": "mild",
       "text": "} while (iVar4 < (int)param_3);",
@@ -483,11 +509,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = uVar2;",
+      "text": "*param_1 = uVar3;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom array-new allocation hardcodes 0x24 == sizeof(CPackedBitmap) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CPackedBitmap) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 48,
+      "match": "(CPackedBitmap *) array-new alloc stride 0x24",
+      "severity": "moderate",
+      "text": "array_memory = shape_memdbg_cpp_malloc_FUN_00564c18(uVar3 * 0x24 + 4)",
+      "type": "alloc_magic_size"
     },
     {
       "call_site_count": 1,

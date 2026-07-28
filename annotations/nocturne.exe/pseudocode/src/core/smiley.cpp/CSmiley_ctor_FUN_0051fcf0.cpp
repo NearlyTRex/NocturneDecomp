@@ -1,32 +1,34 @@
 // Name: core_smiley.cpp_CSmiley_ctor_FUN_0051fcf0
 // Address: 0051fcf0
 // Address Range: [[0051fcf0, 0051fd87]]
-// Convention: unknown
-// Signature: int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(CSmiley *this_ptr)
 
 #include "nocturne.h"
 
-int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(uint param_1)
+CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(CSmiley *this_ptr)
 
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  CSmiley *pCVar3;
   
-  iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_core_smiley_cpp_CSmiley_setup_FUN_0051fd90_005a1fb4;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar3 + 0x150,"smiley.dfm");
-  *(uint *)(iVar3 + 0xbd24) = 0;
-  *(uint *)(iVar3 + 0xbd28) = 0x42c80000;
-  *(uint *)(iVar3 + 0x2dd4) = 0x3f19999a;
-  *(uint *)(iVar3 + 0x2dd8) = 0x3f666666;
-  *(uint *)(iVar3 + 0xbd58) = 0;
+  pCVar3 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_smiley_cpp_CSmiley_setup_FUN_0051fd90_005a1fb4;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
+            (&(pCVar3->base).base.model,"smiley.dfm");
+  pCVar3->attack_cooldown = 0.0;
+  pCVar3->guard_distance = 100.0;
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
+  (pCVar3->base).base.collision_cylinder_radius = 0.9;
+  pCVar3->attack_hit_count = 0;
   fVar1 = 50.0f;
-  *(uint *)(iVar3 + 0xbd5c) = 0;
+  pCVar3->dismember_hit_count = 0;
   fVar2 = 100.0f;
-  *(uint *)(iVar3 + 0xbd60) = 0;
-  *(uint *)(iVar3 + 0xbd64) = 1;
-  *(float *)(iVar3 + 0x2ddc) = fVar1;
-  *(float *)(iVar3 + 0x2de0) = fVar2;
-  return iVar3;
+  pCVar3->dismember_cooldown = 0.0;
+  pCVar3->model_variant = 1;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
+  return pCVar3;
 }

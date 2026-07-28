@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(int param_1,undefined4 *param_2,undefined4 *param_3)
+; void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   linear_velocity
+; CVector3f *      Stack[0xc]:4   angular_velocity
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

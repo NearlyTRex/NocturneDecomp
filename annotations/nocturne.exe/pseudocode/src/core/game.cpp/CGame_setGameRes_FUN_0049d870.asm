@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(undefined4 *param_1)
+; void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dced
@@ -52,7 +54,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0049d89c
     PUSH EDX                            ; 0049d89e
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 0049d89f
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 0049d8a4
     TEST EAX,EAX                        ; 0049d8a7
     JNZ 0x0049d8fc                      ; 0049d8a9
@@ -66,7 +68,7 @@ section .text
     MOV EDI,dword ptr [EBX]             ; 0049d8c0
     PUSH EDI                            ; 0049d8c2
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 0049d8c3
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 0049d8c8
     TEST EAX,EAX                        ; 0049d8cb
     JNZ 0x0049d8fc                      ; 0049d8cd
@@ -86,13 +88,13 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 0049d8f9
     CALL engine_2d.c_resetGraphicsSystem_FUN_00403760 ; 0049d8fc
-        ;   XREF to: 00403760 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_resetGraphicsSystem_FUN_00403760()
+        ;   XREF to: 00403760 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00403760()
         ;   Label: LAB_0049d8fc
     MOV EDI,dword ptr [0x005b7620]      ; 0049d901 | DAT_005b7620
     PUSH EDI                            ; 0049d907
     PUSH 0x1fb8508                      ; 0049d908
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_00440010 ; 0049d90d
-        ;   XREF to: 00440010 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_init_FUN_00440010()
+        ;   XREF to: 00440010 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_00440010(CDemonCamera * this_ptr, int screen_height)
     MOV EBP,dword ptr [0x005b7620]      ; 0049d912 | DAT_005b7620
     ADD ESP,0x8                         ; 0049d918
     CMP EBP,0x180                       ; 0049d91b
@@ -106,7 +108,7 @@ section .text
     PUSH EDX                            ; 0049d928
         ;   Label: LAB_0049d928
     CALL engine_special.cpp_selectCard_FUN_00532d00 ; 0049d929
-        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_selectCard_FUN_00532d00()
+        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_00532d00(int card_index)
     ADD ESP,0x4                         ; 0049d92e
     JMP 0x0049d886                      ; 0049d931
         ;   XREF to: 0049d886 (UNCONDITIONAL_JUMP)  ; LAB_0049d886

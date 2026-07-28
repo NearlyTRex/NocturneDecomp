@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(undefined4 param_1)
+; CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(CWerewolf *this_ptr)
 ;
+; Parameters:
+; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_werewolf.cpp_FUN_00555a60 at 00555a73
@@ -27,7 +29,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00555a91
     PUSH EDX                            ; 00555a95
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00555a96
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00555a9b
     PUSH 0x597cd3                       ; 00555a9e | = "wolfbrn.dfm"
     MOV EBX,EAX                         ; 00555aa3

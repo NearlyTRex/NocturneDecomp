@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0(int param_1,int param_2)
+; int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0(CActorDestination *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850 at 0044b8e5
@@ -44,7 +47,7 @@ section .text
     PUSH EAX                            ; 0044bae7
     PUSH ESI                            ; 0044bae8
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0044bae9
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0044baee
     TEST EAX,EAX                        ; 0044baf1
     JZ 0x0044badc                       ; 0044baf3

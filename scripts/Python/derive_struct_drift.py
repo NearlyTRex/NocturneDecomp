@@ -66,9 +66,20 @@ MAX_FIELD_OFFSET = 0x200000
 
 
 def _displacements(op_str):
-    """Numeric displacements appearing inside memory operands, in order."""
+    """Numeric displacements appearing inside memory operands, in order.
+
+    Stack-relative operands are excluded. Watcom addresses locals off esp with
+    no frame pointer, so `[esp + 0x144]` is a stack slot, not a field -- yet it
+    is shaped exactly like one. Counting them was ~47% of all observations: a
+    pair of functions whose frames happen to match contributes a flood of phantom
+    "this offset did not move" evidence, and a pair whose frames differ by N
+    contributes a phantom shift of N at every slot. That is where the spurious
+    -0x1c and -0x40 segments came from.
+    """
     out = []
     for mem in _MEMOP.findall(op_str):
+        if "esp" in mem or "ebp" in mem:
+            continue
         out.extend(_NUM.findall(mem))
     return out
 
@@ -89,9 +100,18 @@ def _insns(image, addr):
     return out
 
 
-def observe(a_img, b_img, pairs):
-    """class -> Counter of (nocedit_offset, nocturne_offset) sightings."""
+def observe(a_img, b_img, pairs, include_unshifted=False):
+    """class -> Counter of (nocedit_offset, nocturne_offset) sightings.
+
+    Returns field sightings and vtable-slot sightings separately. `call [edx +
+    0x120]` is a virtual dispatch: edx holds the vtable pointer, so 0x120 indexes
+    the vtable, not the object. Mixing the two conflates unrelated address spaces
+    and was the source of the phantom -0x1c segment on every actor class -- that
+    shift is real, but it is seven virtual methods dropped from the actor vtable,
+    not twenty-eight bytes removed from the struct.
+    """
     obs = defaultdict(Counter)
+    vobs = defaultdict(Counter)
     methods = Counter()
     compared = Counter()
     for p in pairs:
@@ -107,7 +127,12 @@ def observe(a_img, b_img, pairs):
             continue
         compared[cls] += 1
         for (m1, o1), (m2, o2) in zip(A, B):
-            if m1 != m2 or o1 == o2:
+            if m1 != m2:
+                continue
+            # An identical operand is normally nothing to say, but it is the only
+            # evidence that an offset did *not* move -- and without a "did not
+            # move" bound every boundary is open-ended on the low side.
+            if o1 == o2 and not include_unshifted:
                 continue
             # Same instruction shape, differing only in literals.
             if _NUM.sub("#", o1) != _NUM.sub("#", o2):
@@ -117,13 +142,14 @@ def observe(a_img, b_img, pairs):
                 continue
             for x, y in zip(dx, dy):
                 vx, vy = int(x, 0), int(y, 0)
-                if vx == vy:
+                if vx == vy and not include_unshifted:
                     continue
                 if a_img.is_mapped_va(vx) and b_img.is_mapped_va(vy):
                     continue                      # relocated absolute address
                 if 0 < vx < MAX_FIELD_OFFSET:
-                    obs[cls][(vx, vy)] += 1
-    return obs, methods, compared
+                    sink = vobs if m1 in ("call", "jmp") else obs
+                    sink[cls][(vx, vy)] += 1
+    return obs, vobs, methods, compared
 
 
 def segment(counter, min_support=2):
@@ -175,6 +201,13 @@ def main():
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping")
     ap.add_argument("--out", help="write the drift spec as JSON")
+    ap.add_argument("--include-unshifted", action="store_true",
+                    help="also record offsets that did NOT move, which bound a "
+                         "boundary from below (noisier: only for --dump-observations)")
+    ap.add_argument("--dump-observations", metavar="PATH",
+                    help="write the raw (nocedit_offset, nocturne_offset) sightings, "
+                         "which the segmented output discards. Needed to pool a base "
+                         "class's observations across its subclasses.")
     ap.add_argument("--min-observations", type=int, default=8,
                     help="ignore classes with fewer sightings (default: 8)")
     ap.add_argument("--class", dest="only", help="detail one class")
@@ -187,7 +220,20 @@ def main():
     a_img = sm.Image(mapping["from"])
     b_img = sm.Image(mapping["to"])
 
-    obs, methods, compared = observe(a_img, b_img, mapping["pairs"])
+    obs, vobs, methods, compared = observe(a_img, b_img, mapping["pairs"],
+                                           include_unshifted=args.include_unshifted)
+
+    if args.dump_observations:
+        with open(args.dump_observations, "w") as fh:
+            json.dump({"from": mapping["from"], "to": mapping["to"],
+                       "observations": {cls: {"%d,%d" % pair: n
+                                              for pair, n in counter.items()}
+                                        for cls, counter in obs.items()},
+                       "vtable_observations": {cls: {"%d,%d" % pair: n
+                                                     for pair, n in counter.items()}
+                                               for cls, counter in vobs.items()}}, fh)
+        print("wrote %s (%d classes, %d distinct sightings)"
+              % (args.dump_observations, len(obs), sum(len(c) for c in obs.values())))
 
     results = {}
     for cls, counter in obs.items():

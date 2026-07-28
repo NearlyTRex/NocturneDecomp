@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_clearScreenRegion_FUN_0052ef37(undefined4 param_1)
+; undefined4 engine_special_cpp_clearScreenRegion_FUN_0052ef37(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
         ;   XREF to: 0052ef52 (CONDITIONAL_JUMP)  ; LAB_0052ef52
     PUSH dword ptr [EBP + 0x8]          ; 0052ef45
     CALL engine_special.cpp_drawFullScreenQuad_FUN_005329c0 ; 0052ef48
-        ;   XREF to: 005329c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawFullScreenQuad_FUN_005329c0()
+        ;   XREF to: 005329c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawFullScreenQuad_FUN_005329c0(int color)
     POP EAX                             ; 0052ef4d
     POP EDI                             ; 0052ef4e
     POP ESI                             ; 0052ef4f

@@ -118,7 +118,7 @@ section .text
     CALL dword ptr [0x02dc9ddc]         ; 005538da | DAT_02dc9ddc
     ADD ESP,0x8                         ; 005538e0
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005538e3
-        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
+        ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
     POP EBP                             ; 005538e8
     POP EDI                             ; 005538e9
     POP EBX                             ; 005538ea
@@ -132,7 +132,7 @@ section .text
     JMP 0x005537fe                      ; 005538fa
         ;   XREF to: 005537fe (UNCONDITIONAL_JUMP)  ; LAB_005537fe
     CALL wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620 ; 005538ff
-        ;   XREF to: 00553620 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620()
+        ;   XREF to: 00553620 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620()
         ;   Label: LAB_005538ff
     POP EBP                             ; 00553904
     POP EDI                             ; 00553905

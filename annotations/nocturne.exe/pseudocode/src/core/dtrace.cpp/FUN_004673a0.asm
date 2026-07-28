@@ -26,11 +26,11 @@ section .text
     MOV EDX,dword ptr [EBX + 0x50]      ; 004673aa
     PUSH EDX                            ; 004673ad
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004673ae
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004673b3
     PUSH EAX                            ; 004673b6
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004673b7
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     MOV dword ptr [EBX + 0x50],0x0      ; 004673bc
     MOV dword ptr [EBX + 0x48],0x0      ; 004673c3
     MOV EAX,dword ptr [EBX + 0x48]      ; 004673ca

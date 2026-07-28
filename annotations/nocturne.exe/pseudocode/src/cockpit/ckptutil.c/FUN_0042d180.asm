@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 cockpit_ckptutil_c_FUN_0042d180(void)
+; void * cockpit_ckptutil_c_FUN_0042d180(void)
 ;
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d370
+;   cockpit_ckptutil.c_applyActPalette_FUN_0042d370
 ;   cockpit_ckptutil.c_FUN_00431260
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240
 ;   crt_memory.c_malloc_FUN_005635b0
@@ -31,7 +31,7 @@ section .text
     PUSH EDI                            ; 0042d19a
     PUSH EBP                            ; 0042d19b
     CALL cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 ; 0042d19c
-        ;   XREF to: 0042d240 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_readBitmapFile_FUN_0042d240()
+        ;   XREF to: 0042d240 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_0042d240(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 0042d1a1
     MOV ECX,dword ptr [ESP + 0x28]      ; 0042d1a4
     PUSH ECX                            ; 0042d1a8
@@ -40,8 +40,8 @@ section .text
     PUSH EBP                            ; 0042d1ab
     MOV EBX,EAX                         ; 0042d1ac
     MOV EDI,EAX                         ; 0042d1ae
-    CALL cockpit_ckptutil.c_FUN_0042d370 ; 0042d1b0
-        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d370()
+    CALL cockpit_ckptutil.c_applyActPalette_FUN_0042d370 ; 0042d1b0
+        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_applyActPalette_FUN_0042d370(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
     ADD ESP,0x10                        ; 0042d1b5
     MOV ESI,dword ptr [ESP + 0x20]      ; 0042d1b8
     TEST ESI,ESI                        ; 0042d1bc
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 0042d1e1
         ;   Label: LAB_0042d1e1
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0042d1e2
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0042d1e7
     MOV EDI,EAX                         ; 0042d1ea
     TEST EAX,EAX                        ; 0042d1ec

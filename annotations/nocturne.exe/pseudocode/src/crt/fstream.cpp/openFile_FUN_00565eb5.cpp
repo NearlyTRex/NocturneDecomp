@@ -2,24 +2,25 @@
 // Address: 00565eb5
 // Address Range: [[00565eb5, 00565f13]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 #include "nocturne.h"
 
-void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(int *param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 {
+  FileEmbeddedData *embedded_data;
   int iVar1;
   
-  iVar1 = *(int *)(*param_1 + 4) + (int)param_1;
-  if (*(int *)(iVar1 + 4) != 0) {
-    iVar1 = FUN_0056cd9b(*(int *)(iVar1 + 4),param_2,param_3,param_4);
+  embedded_data = (FileEmbeddedData *)(*(int *)(*(int *)stream_obj + 4) + (int)stream_obj);
+  if (embedded_data->stream != (_FILE *)0x0) {
+    iVar1 = FUN_0056cd9b(embedded_data->stream,filename,open_mode,buffer_size);
     if (iVar1 != 0) {
-      FUN_00565e94((int)param_1 + *(int *)(*param_1 + 4),0);
+      ios_clear((int)stream_obj + *(int *)(*(int *)stream_obj + 4),0);
       return;
     }
-    iVar1 = (int)param_1 + *(int *)(*param_1 + 4);
+    embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));
   }
-  FUN_0056b327(iVar1,2);
+  reportStreamError(embedded_data,2);
   return;
 }

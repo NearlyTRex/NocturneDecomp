@@ -2,22 +2,24 @@
 // Address: 004e2e40
 // Address Range: [[004e2e40, 004e2e96]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(int param_1,int param_2)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(CMP3Decoder *this_ptr,int num_bits)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(int param_1,int param_2)
+void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(CMP3Decoder *this_ptr,int num_bits)
 
 {
   uint uVar1;
   
-  uVar1 = *(int *)(param_1 + 0x531c) + param_2;
-  *(uint *)(param_1 + 0x531c) = uVar1;
-  *(int *)(param_1 + 0x1314) = *(int *)(param_1 + 0x1314) - param_2;
+  uVar1 = (this_ptr->memory_bitstream).bits_available + num_bits;
+  (this_ptr->memory_bitstream).bits_available = uVar1;
+  (this_ptr->memory_bitstream).total_bits_read =
+       (this_ptr->memory_bitstream).total_bits_read - num_bits;
   while (7 < uVar1) {
-    *(int *)(param_1 + 0x531c) = *(int *)(param_1 + 0x531c) + -8;
-    uVar1 = *(uint *)(param_1 + 0x531c);
-    *(int *)(param_1 + 0x1318) = *(int *)(param_1 + 0x1318) + -1;
+    (this_ptr->memory_bitstream).bits_available = (this_ptr->memory_bitstream).bits_available - 8;
+    uVar1 = (this_ptr->memory_bitstream).bits_available;
+    (this_ptr->memory_bitstream).current_dword_index =
+         (this_ptr->memory_bitstream).current_dword_index - 1;
   }
   return;
 }

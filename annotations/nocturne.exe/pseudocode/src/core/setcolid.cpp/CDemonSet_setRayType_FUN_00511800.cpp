@@ -2,15 +2,15 @@
 // Address: 00511800
 // Address Range: [[00511800, 00511839]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(int param_1,int param_2)
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet *this_ptr,int ray_type)
 
 #include "nocturne.h"
 
-void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(int param_1,int param_2)
+void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(CDemonSet *this_ptr,int ray_type)
 
 {
-  *(int *)(param_1 + 0x15f298) = param_2;
-  if (param_2 != 3) {
+  this_ptr->vdir_boxes[0xeb].rotation_matrix.m[0].x = (float)ray_type;
+  if (ray_type != 3) {
     return;
   }
   PTR_01cc4800 = "..\\core\\setcolid.cpp";

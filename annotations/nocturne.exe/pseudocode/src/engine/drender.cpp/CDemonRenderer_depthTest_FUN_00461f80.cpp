@@ -2,30 +2,32 @@
 // Address: 00461f80
 // Address Range: [[00461f80, 00461fed]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(int param_1,int param_2)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(int param_1,int param_2)
+int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr)
 
 {
   int iVar1;
   int iVar2;
   
-  if ((*(byte *)(param_2 + 0x13) & 0x80) != 0) {
+  if ((int)((vertex_ptr->projected_vertex).screen_x & -0x80000000) != 0) {
     return 0;
   }
-  if (*(int *)(param_1 + 4) == 0) {
-    engine_prim_c_replaceWWithDepth_FUN_004f99d0(param_2,1);
+  if (this_ptr->face_count == 0) {
+    engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertex_ptr,1);
   }
-  iVar1 = (*(int *)(param_2 + 0x10) >> 0x10) * 4;
-  iVar2 = (*(int *)(param_2 + 0x14) >> 0x10) * 4;
-  if (*(int *)(param_1 + 4) == 0) {
-    if (*(int *)(param_2 + 8) < *(int *)(*(int *)(&DAT_01bd4260 + iVar2) + iVar1)) {
+  iVar1 = ((vertex_ptr->projected_vertex).screen_x >> 0x10) * 4;
+  iVar2 = ((vertex_ptr->projected_vertex).screen_y >> 0x10) * 4;
+  if (this_ptr->face_count == 0) {
+    if ((vertex_ptr->projected_vertex).transformed_z <
+        *(int *)(*(int *)(&DAT_01bd4260 + iVar2) + iVar1)) {
       return 0;
     }
   }
-  else if (*(int *)(param_2 + 8) < *(int *)(*(int *)(&DAT_01bd2fa0 + iVar2) + iVar1)) {
+  else if ((vertex_ptr->projected_vertex).transformed_z <
+           *(int *)(*(int *)(&DAT_01bd2fa0 + iVar2) + iVar1)) {
     return 0;
   }
   return 1;

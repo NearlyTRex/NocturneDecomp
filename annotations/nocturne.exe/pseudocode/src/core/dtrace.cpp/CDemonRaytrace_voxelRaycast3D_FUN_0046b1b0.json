@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 400,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
-    "suspect_count": 28,
+    "pseudocode_lines": 116,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_unreachable"
     ],
-    "total_lines": 534
+    "total_lines": 545
   },
   "cross_references": [
     {
@@ -155,7 +154,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0",
-    "signature": "undefined4 __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(int param_1,float *param_2,float *param_3)"
+    "signature": "int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)"
   },
   "function_calls": [
     {
@@ -204,11 +203,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.052770448548813,
@@ -262,10 +261,10 @@
     "pcode_op_count": 2673
   },
   "stack_frame": {
-    "frame_size": 140,
+    "frame_size": 152,
     "local_size": 140,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -449,6 +448,27 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "start_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -476,85 +496,85 @@
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 81,
-          "line": 79,
+          "column": 75,
+          "line": 90,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 70,
-          "line": 80,
+          "column": 64,
+          "line": 91,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 73,
-          "line": 81,
+          "column": 66,
+          "line": 92,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 62,
-          "line": 82,
+          "column": 55,
+          "line": 93,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 63,
-          "line": 83,
+          "column": 56,
+          "line": 94,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 57,
-          "line": 84,
+          "column": 50,
+          "line": 95,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 36,
-          "line": 68,
+          "column": 26,
+          "line": 78,
           "message": "Uninitialized variable: local_6c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 36,
-          "line": 69,
+          "column": 26,
+          "line": 79,
           "message": "Uninitialized variable: local_5c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 36,
-          "line": 70,
+          "column": 26,
+          "line": 80,
           "message": "Uninitialized variable: local_58",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 19,
-          "line": 72,
+          "column": 16,
+          "line": 83,
           "message": "Uninitialized variable: local_54",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 95,
+          "line": 106,
           "message": "Uninitialized variable: iStack_74",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 39,
-          "line": 96,
+          "line": 107,
           "message": "Uninitialized variable: local_68",
           "severity": "error"
         }
@@ -585,7 +605,7 @@
       "line": 4,
       "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0046b581) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0046b348) */",
       "type": "warning_unreachable"
     },
     {
@@ -593,7 +613,7 @@
       "line": 5,
       "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0046b348) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0046b581) */",
       "type": "warning_unreachable"
     },
     {
@@ -645,144 +665,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(int param_1,float *param_2,float *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(int param_1,float *param_2,float *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(int param_1,float *param_2,float *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar12 = *(float *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar8 = *(float *)(param_1 + 0x2c) * 0.125f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_60 = (*param_2 - *(float *)(param_1 + 0x10)) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_60 = (*param_2 - *(float *)(param_1 + 0x10)) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(1.0 / (*(float *)(param_1 + 0x28) * 0.125f));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar9 = *(float *)(param_1 + 0x30) * 0.125f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar4 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar5 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar6 = param_3[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar7 = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 92,
       "match": "DAT_005b6d08",
       "severity": "mild",
       "text": "(&DAT_005b6d08)[(int)local_60 % 8]) != 0)) {",
@@ -790,15 +674,15 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 79,
+      "line": 90,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(param_1,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -",
+      "text": "(this_ptr,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 80,
+      "line": 91,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)local_60 >> 0x1f) << 2 < 0)) >> 3,",
@@ -806,7 +690,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 81,
+      "line": 92,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)(((int)local_5c + ((int)local_5c >> 0x1f) * -8) -",
@@ -814,7 +698,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 82,
+      "line": 93,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)local_5c >> 0x1f) << 2 < 0)) >> 3,",
@@ -822,7 +706,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 83,
+      "line": 94,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(int)((local_54 + (local_54 >> 0x1f) * -8) -",
@@ -830,7 +714,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 84,
+      "line": 95,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)((local_54 >> 0x1f) << 2 < 0)) >> 3);",
@@ -838,47 +722,47 @@
     },
     {
       "description": "Uninitialized variable: local_6c",
-      "line": 68,
+      "line": 78,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fVar17 = (float10)round((float10)local_6c);",
+      "text": "dVar22 = round((double)local_6c);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_5c",
-      "line": 69,
+      "line": 79,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fVar18 = (float10)round((float10)local_5c);",
+      "text": "dVar23 = round((double)local_5c);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_58",
-      "line": 70,
+      "line": 80,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "fVar19 = (float10)round((float10)local_58);",
+      "text": "dVar24 = round((double)local_58);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_54",
-      "line": 72,
+      "line": 83,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "&& (iVar10 = local_54, fVar1 = (fVar1 - fVar12) * (1.0 / fVar8),",
+      "text": "(iVar15 = local_54, fVar1 = (fVar1 - fVar17) * fVar14, fVar17 = (fVar2 - fVar3) * fVar13,",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: iStack_74",
-      "line": 95,
+      "line": 106,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iVar10 = local_54 + iStack_74;",
+      "text": "iVar15 = local_54 + iStack_74;",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_68",
-      "line": 96,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "fVar1 = (float)((int)local_50 + local_68);",

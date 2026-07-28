@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_0046282f
     PUSH EAX                            ; 00462834
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00462835
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x350]     ; 0046283a
     MOV EDX,dword ptr [EAX]             ; 00462840
     MOV dword ptr [EBX],EDX             ; 00462842

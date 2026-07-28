@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(undefined4 param_1,int param_2)
+; CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint *this_ptr,CWayPoint *start_waypoint)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
+; CWayPoint *      Stack[0x8]:4   start_waypoint
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -48,7 +51,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 0055269b
     PUSH EDX                            ; 0055269f
     CALL core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0 ; 005526a0
-        ;   XREF to: 005523b0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0()
+        ;   XREF to: 005523b0 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint * this_ptr, CLocation * from_location, int use_tight_bounds)
     ADD ESP,0xc                         ; 005526a5
     TEST EAX,EAX                        ; 005526a8
     JNZ 0x005526de                      ; 005526aa
@@ -89,7 +92,7 @@ section .text
     PUSH 0x2ddd5d4                      ; 0055270e | DAT_02ddd5d4
     MOV dword ptr [ESP + 0x18],EAX      ; 00552713
     CALL crt_string.c_memmove_FUN_00566170 ; 00552717
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0055271c
     MOV EAX,dword ptr [ESP + 0xc]       ; 0055271f
     XOR EBP,EBP                         ; 00552723
@@ -181,7 +184,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 005527f9
     PUSH ECX                            ; 005527fd
     CALL core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0 ; 005527fe
-        ;   XREF to: 005523b0 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0()
+        ;   XREF to: 005523b0 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint * this_ptr, CLocation * from_location, int use_tight_bounds)
     ADD ESP,0xc                         ; 00552803
     TEST EAX,EAX                        ; 00552806
     JZ 0x005527e3                       ; 00552808

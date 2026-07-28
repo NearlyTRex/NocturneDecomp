@@ -36,7 +36,7 @@ section .text
     ADD EBX,0x150                       ; 0053bf71
     PUSH EBX                            ; 0053bf77
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 0053bf78
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0053bf7d
     POP EBX                             ; 0053bf80
     RET                                 ; 0053bf81

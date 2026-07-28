@@ -9,13 +9,15 @@
 uint * core_bat_cpp_FUN_00411ea0(int param_1,uint *param_2)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
   uint *puVar2;
-  float10 fVar3;
+  double dVar3;
   
-  fVar3 = (float10)round((float10)*(float *)(param_1 + 0x17c));
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x180);
-  puVar2 = (uint *)((int)ROUND(fVar3) * 0x18 + *(int *)(iVar1 + 0x350));
+  dVar3 = round((double)*(float *)(param_1 + 0x17c));
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x180));
+  puVar2 = (uint *)((int)ROUND(dVar3) * 0x18 + pCVar1->texture_list[7].textures[2].base.count)
+  ;
   *param_2 = *puVar2;
   param_2[1] = puVar2[1];
   param_2[2] = puVar2[2];

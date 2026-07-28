@@ -2,11 +2,11 @@
 // Address: 00523330
 // Address Range: [[00523330, 005234a7]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *param_1,undefined2 *param_2,uint param_3,int param_4,int param_5)
+// Signature: void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)
+void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 
 {
   float fVar1;
@@ -16,19 +16,19 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *param_1
   int local_18;
   int local_14;
   
-  local_30 = param_2;
-  if (param_3 < 8) {
+  local_30 = output_buffer;
+  if ((uint)bits_per_sample < 8) {
 LAB_0052347d:
     PTR_01cc4800 = "..\\sound\\sndmain.cpp";
     INT_01cc4804 = 0x554;
-    core_main_c_FUN_004c8440("convertMixBufToOutput - invalid bits: %d",param_3);
+    core_main_c_FUN_004c8440("convertMixBufToOutput - invalid bits: %d",bits_per_sample);
     return;
   }
-  if (param_3 < 9) {
+  if ((uint)bits_per_sample < 9) {
     local_18 = 0;
-    if (0 < param_4) {
+    if (0 < num_samples) {
       do {
-        fVar1 = *param_1;
+        fVar1 = *input_samples;
         if (fVar1 <= (float)-1) {
           *(byte *)local_30 = 0;
         }
@@ -39,18 +39,18 @@ LAB_0052347d:
         else {
           *(byte *)local_30 = 0xff;
         }
-        local_30 = (ushort *)((int)local_30 + param_5);
-        param_1 = param_1 + 1;
+        local_30 = (ushort *)((int)local_30 + output_stride);
+        input_samples = input_samples + 1;
         local_18 = local_18 + 1;
-      } while (local_18 < param_4);
+      } while (local_18 < num_samples);
     }
   }
   else {
-    if (param_3 != 0x10) goto LAB_0052347d;
+    if (bits_per_sample != 0x10) goto LAB_0052347d;
     local_14 = 0;
-    if (0 < param_4) {
+    if (0 < num_samples) {
       do {
-        fVar1 = *param_1;
+        fVar1 = *input_samples;
         if (fVar1 <= (float)-1) {
           *local_30 = 0x8001;
         }
@@ -61,10 +61,10 @@ LAB_0052347d:
         else {
           *local_30 = 0x7fff;
         }
-        local_30 = (ushort *)((int)local_30 + param_5);
-        param_1 = param_1 + 1;
+        local_30 = (ushort *)((int)local_30 + output_stride);
+        input_samples = input_samples + 1;
         local_14 = local_14 + 1;
-      } while (local_14 < param_4);
+      } while (local_14 < num_samples);
     }
   }
   return;

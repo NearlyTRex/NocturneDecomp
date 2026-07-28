@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 238,
+    "complexity_score": 59,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 21,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 59
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -156,6 +154,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00489990",
+      "from_addr": "00489c61",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_00489990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00489d00",
       "from_addr": "0048a00e",
       "name": "core_fire.cpp_CRainDrop_render_FUN_00489d00",
@@ -165,12 +169,6 @@
       "addr": "00482950",
       "from_addr": "00482c14",
       "name": "core_fire.cpp_CSmokeParticle_render_FUN_00482950",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00489990",
-      "from_addr": "00489c61",
-      "name": "core_fire.cpp_FUN_00489990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,7 +194,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50",
-    "signature": "undefined4 * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count)"
   },
   "function_calls": [
     {
@@ -361,7 +359,7 @@
       {
         "call_addr": "00489c61",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00489990",
+        "caller": "core_fire.cpp_CPopcorn_render_FUN_00489990",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -382,10 +380,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.975,
@@ -419,184 +417,81 @@
     "pcode_op_count": 199
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "start_vertex_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(uint param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(uint param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(uint param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(uint param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(uint param_1,uint param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,param_2,param_3,param_4,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,param_2,param_3,param_4,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,param_2,param_3,param_4,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(param_1,param_2,param_3,param_4,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar1 = &DAT_005c5044 + param_4 * 0xc;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 9,
       "match": "DAT_005c5044",
       "severity": "mild",
-      "text": "puVar1 = &DAT_005c5044 + param_4 * 0xc;",
+      "text": "puVar1 = &DAT_005c5044 + start_vertex_index * 0xc;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "while (param_5 = param_5 + -1, 0 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "while (param_5 = param_5 + -1, 0 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "while (param_5 = param_5 + -1, 0 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar1[8] = (&DAT_005c5034)[param_4 * 0xc];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_005c5034",
       "severity": "mild",
-      "text": "puVar1[8] = (&DAT_005c5034)[param_4 * 0xc];",
+      "text": "puVar1[8] = (&DAT_005c5034)[start_vertex_index * 0xc];",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar1[9] = (&DAT_005c5038)[param_4 * 0xc];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_005c5038",
       "severity": "mild",
-      "text": "puVar1[9] = (&DAT_005c5038)[param_4 * 0xc];",
+      "text": "puVar1[9] = (&DAT_005c5038)[start_vertex_index * 0xc];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "puVar1[10] = (&DAT_005c503c)[param_4 * 0xc];",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005c503c",
       "severity": "mild",
-      "text": "puVar1[10] = (&DAT_005c503c)[param_4 * 0xc];",
+      "text": "puVar1[10] = (&DAT_005c503c)[start_vertex_index * 0xc];",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 12,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(int param_1,float param_2)
+; void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(CCharacter *this_ptr,float delta_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined        Stack[-0x1c0]:1  local_1c0
 ; undefined4       Stack[-0x28]:4  local_28
@@ -13,7 +16,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_FUN_0042a150 at 0042a184
-;   core_gabriela.cpp_FUN_004980d0 at 004980ec
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 004980ec
 ;   core_mobster.cpp_FUN_004da790 at 004da7d9
 ;
 ; Called Functions:
@@ -129,7 +132,7 @@ section .text
     PUSH EAX                            ; 00429351
     MOVSD.REP ES:EDI,ESI                ; 00429352
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 00429354
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 00429359
     MOV EDX,dword ptr [ESP + 0x264]     ; 0042935c
     MOV EDX,dword ptr [EDX + 0x8]       ; 00429363
@@ -144,7 +147,7 @@ section .text
     PUSH EAX                            ; 00429380
     FSTP float ptr [EDX + 0x28]         ; 00429381
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 00429384
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 00429389
     MOV EDX,dword ptr [ESP + 0x264]     ; 0042938c
     MOV EDX,dword ptr [EDX + 0x8]       ; 00429393
@@ -163,7 +166,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x8]       ; 004293b4
     PUSH ECX                            ; 004293b7
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 004293b8
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004293bd
     JMP 0x00429278                      ; 004293c0
         ;   XREF to: 00429278 (UNCONDITIONAL_JUMP)  ; LAB_00429278

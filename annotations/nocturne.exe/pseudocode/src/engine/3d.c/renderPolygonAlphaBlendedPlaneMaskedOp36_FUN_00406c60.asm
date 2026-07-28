@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[1]:
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 004084fc
@@ -33,7 +35,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00406c6a
     PUSH EAX                            ; 00406c6d
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00406c6e
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00406c73
     TEST EAX,EAX                        ; 00406c76
     JZ 0x00406cc5                       ; 00406c78
@@ -100,7 +102,7 @@ section .text
     MOV dword ptr [0x01c039a0],EBP      ; 00406d29 | DAT_01c039a0
     MOV [0x01c039a4],EAX                ; 00406d2f | DAT_01c039a4
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 00406d34
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00406d39
     MOV ESI,dword ptr [EBX + 0x4]       ; 00406d3c
     LEA EAX,[EBX + 0x18]                ; 00406d3f

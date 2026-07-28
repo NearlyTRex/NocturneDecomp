@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0(int *param_1,int *param_2,int *param_3)
+; void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v1
+; SRenderVertex *  Stack[0x8]:4   v2
+; SRenderVertex *  Stack[0xc]:4   output
 ;
 ; XREF[5]:
 ;   engine_clipper.c_FUN_00433e1d at 00433e70

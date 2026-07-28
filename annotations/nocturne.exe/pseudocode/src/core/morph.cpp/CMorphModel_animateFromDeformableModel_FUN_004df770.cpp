@@ -2,22 +2,21 @@
 // Address: 004df770
 // Address Range: [[004df770, 004df7bb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004df770(undefined4 param_1,undefined4 param_2,int param_3)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004df770(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004df770(uint param_1,uint param_2,int param_3)
+void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_004df770(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr)
 
 {
   int iVar1;
-  int iVar2;
+  CDeformableModel *pCVar2;
   
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(param_3);
-  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(param_3,0);
-  iVar1 = *(int *)(param_3 + 0x2230);
-  iVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_3);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(model_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(model_ptr,0);
+  iVar1 = model_ptr->cached_skinned_lod_index;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(model_ptr);
   core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660
-            (param_1,param_2,*(uint *)(param_3 + 0x2234),0,
-             *(uint *)(iVar2 + 0x2c + iVar1 * 4));
+            (this_ptr,part_index,model_ptr->skinned_vertices_buffer,0,pCVar2->vertex_count[iVar1]);
   return;
 }

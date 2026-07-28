@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(int param_1,undefined4 *param_2)
+; undefined4 core_zombie_cpp_CZombie_canBeAttracted_FUN_00561bf0(CDemonActor *param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -65,7 +65,7 @@ section .text
     PUSH EAX                            ; 00561c34
     PUSH EBX                            ; 00561c35
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00561c36
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00561c3b
     MOV ECX,dword ptr [ESI + 0xbdbc]    ; 00561c3e
     PUSH ECX                            ; 00561c44
@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 00561c49
     PUSH EBX                            ; 00561c4a
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00561c4b
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00561c50
     FLD float ptr [ESP + 0x1c]          ; 00561c53
     FLD float ptr [ESP + 0x18]          ; 00561c57
@@ -103,7 +103,7 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 00561c9d
     FSTP float ptr [ESP + 0x38]         ; 00561ca1
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00561ca5
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00561caa
     CMP EDI,EAX                         ; 00561cad
     JZ 0x00561cc1                       ; 00561caf

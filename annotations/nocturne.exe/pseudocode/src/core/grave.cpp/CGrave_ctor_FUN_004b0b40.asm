@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_grave_cpp_CGrave_ctor_FUN_004b0b40(undefined4 param_1)
+; CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004b0b40(CGrave *this_ptr)
 ;
+; Parameters:
+; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_grave.cpp_FUN_004b0b10 at 004b0b23
@@ -30,7 +32,7 @@ section .text
     ADD EAX,0x150                       ; 004b0b4e
     PUSH EAX                            ; 004b0b53
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004b0b54
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b0b59
     LEA EBX,[EAX + 0xfffffeb0]          ; 004b0b5c
     PUSH 0x5851fd                       ; 004b0b62 | = "grave1.kfm"
@@ -38,7 +40,7 @@ section .text
     PUSH EAX                            ; 004b0b6d
     MOV dword ptr [EBX + 0x14c],0x59e5d4 ; 004b0b6e | PTR_core_grave.cpp_FUN_004b0bd0_0059e5d4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004b0b78
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x0     ; 004b0b7d
     MOV dword ptr [EBX + 0x2d0],0x41f00000 ; 004b0b87
     MOV dword ptr [EBX + 0x2d4],0x0     ; 004b0b91

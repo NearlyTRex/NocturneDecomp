@@ -2,41 +2,40 @@
 // Address: 004b3f40
 // Address Range: [[004b3f40, 004b3fd8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CCharacter *param_1,int param_2)
 
 #include "nocturne.h"
 
-void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(int param_1,uint param_2)
+void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CCharacter *param_1,int param_2)
 
 {
+  CCharacter *this_ptr;
+  CVector3f *input_local_point;
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
-  byte auStack_64 [4];
-  uint local_60;
-  int local_30;
-  int local_2c;
-  byte local_28 [12];
-  byte local_1c [12];
+  int iVar2;
+  SDamageInfo SStack_64;
+  CVector3f local_28;
+  CVector3f local_1c;
   
-  uVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-                    (param_1 + 0x150,local_28,param_2);
-  iVar4 = 0;
-  iVar3 = 0;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1c,uVar2);
+  input_local_point =
+       core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
+                 (&param_1->model,&local_28,param_2);
+  iVar2 = 0;
+  iVar1 = 0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+            (&param_1->base,&local_1c,input_local_point);
   while( true ) {
-    if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar4) break;
-    iVar1 = *(int *)(iVar3 + 0x14ecb4 + 0x01E57284);
-    if (iVar1 != param_1) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_64);
-      local_60 = 0x41200000;
-      local_30 = param_1;
-      local_2c = param_1;
-      (**(code **)(*(int *)(iVar1 + 0x14c) + 0xf8))(iVar1,local_1c,0x3f000000,auStack_64);
+    if (*(int *)(0x01E57284 + 0x14ecb0) <= iVar2) break;
+    this_ptr = *(CCharacter **)(iVar1 + 0x14ecb4 + 0x01E57284);
+    if (this_ptr != param_1) {
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_64);
+      SStack_64.damage_amount = 10.0;
+      SStack_64.attacker = &param_1->base;
+      SStack_64.wielder = &param_1->base;
+      (*(((this_ptr->base).vtable._uc)->_uc).isGrabbable)(this_ptr,(CDemonActor *)&local_1c);
     }
-    iVar4 = iVar4 + 1;
-    iVar3 = iVar3 + 4;
+    iVar2 = iVar2 + 1;
+    iVar1 = iVar1 + 4;
   }
   return;
 }

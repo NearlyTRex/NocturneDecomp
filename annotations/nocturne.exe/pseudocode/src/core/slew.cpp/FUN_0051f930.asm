@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049cd4f
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cd4f
 ;
 ; *****************************************************************************
 

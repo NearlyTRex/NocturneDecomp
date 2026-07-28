@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(int *param_1)
+; void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9b7b
@@ -56,12 +58,12 @@ section .text
         ;   Label: LAB_004d8f1c
     PUSH ECX                            ; 004d8f22 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0 ; 004d8f23
-        ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0()
+        ;   XREF to: 005119b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d8f28
     MOV EBX,dword ptr [0x005be368]      ; 004d8f2b | DAT_005be368
     PUSH EBX                            ; 004d8f31 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0 ; 004d8f32
-        ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0()
+        ;   XREF to: 0050e6b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d8f37
     POP EBP                             ; 004d8f3a
     POP EDI                             ; 004d8f3b

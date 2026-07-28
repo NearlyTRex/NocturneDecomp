@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_init_FUN_004e9910(int param_1)
+; void __cdecl core_netgame_cpp_CNetGame_init_FUN_004e9910(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004c85f0 at 004c8d4a
@@ -36,22 +38,22 @@ section .text
     PUSH EDI                            ; 004e9911
     PUSH 0x58ba99                       ; 004e9912 | = "netlog.txt"
     CALL crt_stdio.c_remove_FUN_005657c0 ; 004e9917
-        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_remove_FUN_005657c0()
+        ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005657c0(char * filename)
     MOV EDX,0x1                         ; 004e991c
     ADD ESP,0x4                         ; 004e9921
     MOV dword ptr [0x01cea3f8],EDX      ; 004e9924 | DAT_01cea3f8
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e992a
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004e992f
     MOV ESI,0x12                        ; 004e9931
     SAR EDX,0x1f                        ; 004e9936
     IDIV ESI                            ; 004e9939
     MOV [0x01cea3f4],EAX                ; 004e993b | DAT_01cea3f4
     CALL support_trisock.cpp_startupWinsock_FUN_00549280 ; 004e9940
-        ;   XREF to: 00549280 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_startupWinsock_FUN_00549280()
+        ;   XREF to: 00549280 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_startupWinsock_FUN_00549280()
     PUSH 0x58baa4                       ; 004e9945 | = "USERNAME"
     CALL crt_env.c_getenv_FUN_00566e10  ; 004e994a
-        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
+        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_00566e10(char * name)
     ADD ESP,0x4                         ; 004e994f
     MOV ESI,EAX                         ; 004e9952
     TEST EAX,EAX                        ; 004e9954
@@ -88,7 +90,7 @@ section .text
     MOV dword ptr [0x01cea40c],ECX      ; 004e998a | DAT_01cea40c
     MOV dword ptr [0x01d06610],ECX      ; 004e9990 | DAT_01d06610
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004e9996
-        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90()
+        ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004e999b
     POP EDI                             ; 004e999e
     POP ESI                             ; 004e999f
@@ -96,7 +98,7 @@ section .text
     PUSH 0x58baad                       ; 004e99a1 | = "COMPUTERNAME"
         ;   Label: LAB_004e99a1
     CALL crt_env.c_getenv_FUN_00566e10  ; 004e99a6
-        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
+        ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_00566e10(char * name)
     ADD ESP,0x4                         ; 004e99ab
     MOV ESI,EAX                         ; 004e99ae
     JMP 0x004e9958                      ; 004e99b0

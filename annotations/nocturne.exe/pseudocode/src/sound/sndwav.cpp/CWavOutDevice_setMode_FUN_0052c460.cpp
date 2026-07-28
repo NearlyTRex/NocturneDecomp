@@ -16,7 +16,7 @@ uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint para
   LPVOID pvVar3;
   MMRESULT MVar4;
   int iVar5;
-  float10 fVar6;
+  double dVar6;
   uint uStack_28;
   uint *puStack_24;
   DWORD DStack_20;
@@ -35,13 +35,12 @@ uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint para
   _DAT_02dc9430 = param_3;
   uStack_28._0_2_ = 0xc4aa;
   uStack_28._2_2_ = 0x52;
-  fStack_14 = (float)sound_sndmain_cpp_getMaxSwLatency_FUN_00528970();
+  fStack_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_00528970();
   uStack_28._0_2_ = 0xc4c7;
   uStack_28._2_2_ = 0x52;
-  fVar6 = (float10)round
-                             (((float10)(int)_DAT_02dc942c * (float10)fStack_14) /
-                              (float10)_DAT_02dc943c);
-  _DAT_02dc9434 = (uint)ROUND(fVar6);
+  dVar6 = round
+                    ((double)(((float)(int)_DAT_02dc942c * fStack_14) / (float)_DAT_02dc943c));
+  _DAT_02dc9434 = (uint)ROUND(dVar6);
   _DAT_02dc9434 = _DAT_02dc9434 + 0xf & 0xfffffff0;
   _DAT_02dc9438 =
        _DAT_02dc9434 *

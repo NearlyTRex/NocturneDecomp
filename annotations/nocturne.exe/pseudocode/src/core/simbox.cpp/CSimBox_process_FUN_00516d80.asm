@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,undefined4 param_2)
+; void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
@@ -41,7 +41,7 @@ section .text
     MOV ESI,dword ptr [0x005b7650]      ; 00516daa | DAT_005b7650
     PUSH ESI                            ; 00516db0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00516db1
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00516db6
     TEST EAX,EAX                        ; 00516db9
     JZ 0x00516e40                       ; 00516dbb
@@ -112,7 +112,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x8]       ; 00516e77
     MOV dword ptr [ESI + 0x8],EDX       ; 00516e7a
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00516e7d
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516e82
     FILD dword ptr [ESP + 0xc]          ; 00516e86
     FMUL float ptr [0x00591119]         ; 00516e8a | FLOAT_00591119
@@ -120,7 +120,7 @@ section .text
     FMUL double ptr [0x00591125]        ; 00516e96 | DOUBLE_00591125
     FSTP float ptr [EBX + 0x30]         ; 00516e9c
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00516e9f
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516ea4
     FILD dword ptr [ESP + 0xc]          ; 00516ea8
     FMUL float ptr [0x00591119]         ; 00516eac | FLOAT_00591119
@@ -128,7 +128,7 @@ section .text
     FMUL double ptr [0x0059112d]        ; 00516eb8 | DOUBLE_0059112d
     FSTP float ptr [EBX + 0x38]         ; 00516ebe
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00516ec1
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV dword ptr [ESP + 0xc],EAX       ; 00516ec6
     FILD dword ptr [ESP + 0xc]          ; 00516eca
     FMUL float ptr [0x00591119]         ; 00516ece | FLOAT_00591119
@@ -153,7 +153,7 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 00516f04
     PUSH ESI                            ; 00516f08
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 00516f09
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x20]                ; 00516f0e
     MOV EDX,dword ptr [ESI]             ; 00516f11
     MOV dword ptr [EAX],EDX             ; 00516f13

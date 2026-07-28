@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(undefined4 *param_1)
+; void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(SBitBuffer *bit_buffer)
 ;
+; Parameters:
+; SBitBuffer *     Stack[0x4]:4   bit_buffer
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWCompress_init_FUN_00439880 at 004398a1

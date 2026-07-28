@@ -2,14 +2,14 @@
 // Address: 00548d30
 // Address Range: [[00548d30, 00548d44]]
 // Convention: __cdecl
-// Signature: void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00548d30(undefined4 *param_1,undefined4 *param_2,undefined2 param_3)
+// Signature: void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00548d30(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port)
 
 #include "nocturne.h"
 
-void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00548d30(uint *param_1,uint *param_2,ushort param_3)
+void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00548d30(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port)
 
 {
-  *param_1 = *param_2;
-  *(ushort *)(param_1 + 1) = param_3;
+  dest_addr->ip_address = *ip_address_ptr;
+  dest_addr->port = port;
   return;
 }

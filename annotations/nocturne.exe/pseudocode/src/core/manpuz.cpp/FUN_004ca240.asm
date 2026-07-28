@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004ca240(int param_1,undefined4 param_2)
+; void core_manpuz_cpp_FUN_004ca240(int param_1,SIntersectXZCylinder *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -33,7 +33,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 004ca24e
     PUSH EAX                            ; 004ca254
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004ca255
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0x338]               ; 004ca25a
     ADD ESP,0x4                         ; 004ca260
     MOV EAX,dword ptr [EBX]             ; 004ca263
@@ -80,7 +80,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004ca2c5 | DAT_005be368
     PUSH ECX                            ; 004ca2cb | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710 ; 004ca2cc
-        ;   XREF to: 00510710 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710()
+        ;   XREF to: 00510710 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
     ADD ESP,0x14                        ; 004ca2d1
     ADD EBX,0x64                        ; 004ca2d4
     CMP EBX,ESI                         ; 004ca2d7

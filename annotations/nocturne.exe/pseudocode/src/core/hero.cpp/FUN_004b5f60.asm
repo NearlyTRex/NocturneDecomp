@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004b5f72
         ;   Label: LAB_004b5f72
     CALL core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90 ; 004b5f73
-        ;   XREF to: 004b5f90 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90()
+        ;   XREF to: 004b5f90 (UNCONDITIONAL_CALL)  ; CHeroPlaceholder * core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder * this_ptr)
     ADD ESP,0x4                         ; 004b5f78
     RET                                 ; 004b5f7b
 

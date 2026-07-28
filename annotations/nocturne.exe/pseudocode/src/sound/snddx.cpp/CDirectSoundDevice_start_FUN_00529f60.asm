@@ -64,7 +64,7 @@ section .text
     JLE 0x00529fe4                      ; 00529fca
         ;   XREF to: 00529fe4 (CONDITIONAL_JUMP)  ; LAB_00529fe4
     CALL sound_snddx.cpp_fillStreamBuffer_FUN_00529c10 ; 00529fcc
-        ;   XREF to: 00529c10 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_fillStreamBuffer_FUN_00529c10()
+        ;   XREF to: 00529c10 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_fillStreamBuffer_FUN_00529c10()
         ;   Label: LAB_00529fcc
     TEST EAX,EAX                        ; 00529fd1
     JZ 0x0052a05b                       ; 00529fd3
@@ -80,7 +80,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4]       ; 00529fe9
     PUSH EBX                            ; 00529fed
     CALL sound_sndmain.cpp_startSoundThread_FUN_005286d0 ; 00529fee
-        ;   XREF to: 005286d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSoundThread_FUN_005286d0()
+        ;   XREF to: 005286d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_005286d0(double latency_seconds)
     ADD ESP,0x8                         ; 00529ff3
     TEST EAX,EAX                        ; 00529ff6
     JZ 0x0052a05b                       ; 00529ff8
@@ -108,7 +108,7 @@ section .text
         ;   XREF to: 0052a0b6 (CONDITIONAL_JUMP)  ; LAB_0052a0b6
     PUSH EAX                            ; 0052a02d
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a02e
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a033
     PUSH EAX                            ; 0052a036
     PUSH 0x594146                       ; 0052a037 | = "Play the secondary buffer"
@@ -148,7 +148,7 @@ section .text
     PUSH EAX                            ; 0052a089
         ;   Label: LAB_0052a089
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052a08a
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052a08f
     PUSH EAX                            ; 0052a092
     PUSH 0x594127                       ; 0052a093 | = "Position secondary buffer to 0"

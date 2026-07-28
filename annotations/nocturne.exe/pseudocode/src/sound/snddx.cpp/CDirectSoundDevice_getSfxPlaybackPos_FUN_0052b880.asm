@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x74]      ; 0052b8e9
     PUSH ECX                            ; 0052b8ec
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 0052b8ed
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     MOV EBX,EAX                         ; 0052b8f2
     ADD ESP,0x4                         ; 0052b8f4
     XOR EDX,EDX                         ; 0052b8f7
@@ -99,7 +99,7 @@ section .text
     PUSH EAX                            ; 0052b950
         ;   Label: LAB_0052b950
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052b951
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052b956
     PUSH EAX                            ; 0052b959
     PUSH 0x5946f7                       ; 0052b95a | = "Get playback cursor of hardware sfx s..."

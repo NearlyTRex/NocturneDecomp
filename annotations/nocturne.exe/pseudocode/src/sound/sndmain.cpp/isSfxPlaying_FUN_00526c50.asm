@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(undefined4 param_1)
+; int __cdecl sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[53]:
 ;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411dab
@@ -27,7 +29,7 @@
 section .text
 
     CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0 ; 00526c50
-        ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()
+        ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()
         ;   Label: sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
     TEST EAX,EAX                        ; 00526c55
     JZ 0x00526c78                       ; 00526c57
@@ -43,7 +45,7 @@ section .text
         ;   XREF to: 00526c6d (CONDITIONAL_JUMP)  ; LAB_00526c6d
     RET                                 ; 00526c6c
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526c6d
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00526c6d
     MOV EAX,0x1                         ; 00526c72
     RET                                 ; 00526c77

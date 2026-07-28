@@ -36,7 +36,7 @@ uint sound_sndwav_cpp_enumerateWavOutDevice_FUN_0052c6c0(UINT_PTR param_1,char *
   param_2[0x10d] = '\0';
   param_2[0x10e] = '\0';
   param_2[0x10f] = '\0';
-  pcVar3 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("WavOutWrite: ");
+  pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("WavOutWrite: ");
   pcVar6 = param_2;
   do {
     cVar1 = *pcVar3;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(int param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640(CDemonMission *this_ptr,char *actor_name)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   actor_name
 ;
 ; XREF[1]:
 ;   core_inv.cpp_CInventory_load_FUN_004c1190 at 004c1300
@@ -47,7 +50,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x854]     ; 004d867a
     PUSH EBP                            ; 004d8680
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d8681
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d8686
     TEST EAX,EAX                        ; 004d8689
     JNZ 0x004d86a3                      ; 004d868b

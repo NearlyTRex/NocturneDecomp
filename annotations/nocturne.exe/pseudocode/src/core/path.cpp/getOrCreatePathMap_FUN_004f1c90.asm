@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(undefined4 *param_1)
+; CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x28]:4  local_28
@@ -25,9 +27,9 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   core_path.cpp_FUN_004f0360
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   crt_unknown.c_FUN_00564bb0
+;   crt_unknown.c__atexit_FUN_00564bb0
 ;
 ; *****************************************************************************
 
@@ -112,8 +114,8 @@ section .text
     PUSH EAX                            ; 004f1d6f
     ADD EBX,0x1d468a0                   ; 004f1d70
     PUSH EBX                            ; 004f1d76
-    CALL core_path.cpp_FUN_004f0360     ; 004f1d77
-        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f0360()
+    CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360 ; 004f1d77
+        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_004f0360(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 004f1d7c
     MOV EAX,EBX                         ; 004f1d7f
     ADD ESP,0x24                        ; 004f1d81
@@ -130,11 +132,11 @@ section .text
     PUSH 0x1d468a0                      ; 004f1d95
     MOV byte ptr [0x01e312f0],DL        ; 004f1d9a | DAT_01e312f0
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004f1da0
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004f1da5
     PUSH 0x5be0a8                       ; 004f1da8 | DAT_005be0a8
-    CALL crt_unknown.c_FUN_00564bb0     ; 004f1dad
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 004f1dad
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004f1db2
     JMP 0x004f1caa                      ; 004f1db5
         ;   XREF to: 004f1caa (UNCONDITIONAL_JUMP)  ; LAB_004f1caa

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005284e0(void)
+; int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005284e0(void)
 ;
 ;
 ; XREF[4]:

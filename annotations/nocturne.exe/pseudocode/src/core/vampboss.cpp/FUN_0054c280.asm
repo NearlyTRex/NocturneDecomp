@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0054c292
         ;   Label: LAB_0054c292
     CALL core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 ; 0054c293
-        ;   XREF to: 0054c2b0 (UNCONDITIONAL_CALL)  ; undefined core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0()
+        ;   XREF to: 0054c2b0 (UNCONDITIONAL_CALL)  ; CVampireBoss * core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampireBoss * this_ptr)
     ADD ESP,0x4                         ; 0054c298
     RET                                 ; 0054c29b
 

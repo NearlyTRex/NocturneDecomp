@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004b0b22
         ;   Label: LAB_004b0b22
     CALL core_grave.cpp_CGrave_ctor_FUN_004b0b40 ; 004b0b23
-        ;   XREF to: 004b0b40 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_CGrave_ctor_FUN_004b0b40()
+        ;   XREF to: 004b0b40 (UNCONDITIONAL_CALL)  ; CGrave * core_grave.cpp_CGrave_ctor_FUN_004b0b40(CGrave * this_ptr)
     ADD ESP,0x4                         ; 004b0b28
     RET                                 ; 004b0b2b
 

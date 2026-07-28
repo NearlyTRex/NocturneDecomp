@@ -19,7 +19,7 @@ struct CBiggs_ptr_13260 {
     template<typename T> CBiggs_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CBiggs_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CBiggs* operator->() const { return (CBiggs*)_raw; }
-    CBiggs* adj() const { return (CBiggs*)((char*)_raw - offsetof(CBiggs, base.base.flames)); }
+    CBiggs* adj() const { return (CBiggs*)((char*)_raw - offsetof(CBiggs, base.base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

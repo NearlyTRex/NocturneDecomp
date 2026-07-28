@@ -1,13 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(int param_1,float *param_2,int param_3,uint param_4)
+; CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; CBoundingBox3D * Stack[0x8]:4   output_bbox
+; SCollisionInfo * Stack[0xc]:4   collision_info
+; int              Stack[0x10]:4   bounding_box_type
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a783
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050ef95
-;   core_setcolid.cpp_FUN_00510a40 at 00510d46
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 at 00510d46
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -46,7 +51,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0040a57f
     PUSH EAX                            ; 0040a583
     CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70 ; 0040a584
-        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70()
+        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0040a589
     PUSH EAX                            ; 0040a58c
     LEA EAX,[ESP + 0x40]                ; 0040a58d
@@ -80,7 +85,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0040a5c5
     PUSH EAX                            ; 0040a5c9
     CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70 ; 0040a5ca
-        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70()
+        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0040a5cf
     PUSH EAX                            ; 0040a5d2
     LEA EAX,[ESP + 0x34]                ; 0040a5d3
@@ -93,7 +98,7 @@ section .text
     PUSH ESI                            ; 0040a5e2
     INC EBX                             ; 0040a5e3
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 0040a5e4
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040a5e9
     CMP EBX,0x8                         ; 0040a5ec
     JL 0x0040a5bf                       ; 0040a5ef

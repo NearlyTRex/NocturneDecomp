@@ -29,7 +29,7 @@ void core_conveyor_cpp_FUN_0043b110(int param_1)
     *(uint *)(param_1 + 0x318) = *(uint *)(param_1 + 0x324);
     *(uint *)(param_1 + 0x31c) = *(uint *)(param_1 + 0x328);
   }
-  core_xform_cpp_FUN_0055d610(param_1 + 0x30);
+  core_xform_cpp_eulerToQuaternion_FUN_0055d610(param_1 + 0x30);
   puVar1 = (uint *)(param_1 + 0x340 + (uint)bVar5 * -8);
   *(uint *)(param_1 + 0x33c) = local_1c;
   puVar2 = puVar1 + (uint)bVar5 * -2 + 1;

@@ -11,6 +11,8 @@
 void core_fire_cpp_FUN_0048ce60(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,0x14,&g_CMuzzleFlashTypeInfo_0059d380);
   return;
 }

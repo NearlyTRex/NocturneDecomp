@@ -15,33 +15,33 @@ struct CDemonActor;
 #include "types/structs/SSwarmVertex.h"
 
 // Structure: CBugs
-// Ghidra size: 0x199f8 (104952 bytes)
+// Ghidra size: 0x19860 (104544 bytes)
 #pragma pack(push, 1)
 typedef struct CBugs {
     CEnemy base; // 0x0
-    EBugsState state; // 0xbebc
-    int count; // 0xbec0
-    SBug bugs[400]; // 0xbec4
-    int model_count; // 0x122c4
-    CKeyFramedModelInstance models[4]; // 0x122c8
-    float ground_heights[12][12]; // 0x128b8
-    struct CDemonActor* swarm_target; // 0x12af8
-    struct CDeformableModelInstance* deformable_model_ptr; // 0x12afc
-    CMatrix3x4f model_world_matrix; // 0x12b00
-    int lod_index; // 0x12b30
-    int swarm_vertex_count; // 0x12b34
-    SSwarmVertex swarm_vertices[700]; // 0x12b38
-    int allow_chase; // 0x19898
-    int allow_swarm; // 0x1989c
-    char allow_chase_event[100]; // 0x198a0
-    char allow_swarm_event[100]; // 0x19904
-    char animate_event[100]; // 0x19968
-    CBoundingBox3D bounds; // 0x199cc
-    int grid_cell_x; // 0x199e4
-    int grid_cell_z; // 0x199e8
-    float grid_origin_x; // 0x199ec
-    float grid_origin_z; // 0x199f0
-    float damage_timer; // 0x199f4
+    EBugsState state; // 0xbd24
+    int count; // 0xbd28
+    SBug bugs[400]; // 0xbd2c
+    int model_count; // 0x1212c
+    CKeyFramedModelInstance models[4]; // 0x12130
+    float ground_heights[12][12]; // 0x12720
+    struct CDemonActor* swarm_target; // 0x12960
+    struct CDeformableModelInstance* deformable_model_ptr; // 0x12964
+    CMatrix3x4f model_world_matrix; // 0x12968
+    int lod_index; // 0x12998
+    int swarm_vertex_count; // 0x1299c
+    SSwarmVertex swarm_vertices[700]; // 0x129a0
+    int allow_chase; // 0x19700
+    int allow_swarm; // 0x19704
+    char allow_chase_event[100]; // 0x19708
+    char allow_swarm_event[100]; // 0x1976c
+    char animate_event[100]; // 0x197d0
+    CBoundingBox3D bounds; // 0x19834
+    int grid_cell_x; // 0x1984c
+    int grid_cell_z; // 0x19850
+    float grid_origin_x; // 0x19854
+    float grid_origin_z; // 0x19858
+    float damage_timer; // 0x1985c
 } CBugs;
 #pragma pack(pop)
 

@@ -2,11 +2,11 @@
 // Address: 004b82d0
 // Address Range: [[004b82d0, 004b831e]]
 // Convention: unknown
-// Signature: void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int param_2)
+// Signature: void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(char *param_1,int param_2)
 
 #include "nocturne.h"
 
-void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int param_2)
+void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(char *param_1,int param_2)
 
 {
   int iVar1;
@@ -16,7 +16,10 @@ void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int par
     iVar1 = _stricmp(param_1,"ScatDazzle");
     if (iVar1 != 0) {
       if (param_2 != 0) {
-        *(uint *)(param_1 + 0x2404) = 1;
+        param_1[0x2404] = '\x01';
+        param_1[0x2405] = '\0';
+        param_1[0x2406] = '\0';
+        param_1[0x2407] = '\0';
       }
       core_npc_cpp_FUN_004eece0(param_1,param_2);
       return;

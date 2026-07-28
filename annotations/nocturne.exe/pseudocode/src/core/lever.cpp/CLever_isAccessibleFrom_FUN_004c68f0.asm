@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004c68f0(int param_1,undefined4 param_2)
+; int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004c68f0(CLever *this_ptr,CVector3f *world_position)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004b52f0 at 004b53f5
+;   core_hero.cpp_CHero_tryPullLever_FUN_004b52f0 at 004b53f5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -44,7 +47,7 @@ section .text
     PUSH EAX                            ; 004c691c
     PUSH EBX                            ; 004c691d
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004c691e
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     MOV ESI,dword ptr [EBX + 0x804]     ; 004c6923
     ADD ESP,0xc                         ; 004c6929
     TEST ESI,ESI                        ; 004c692c

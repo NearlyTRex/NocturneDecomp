@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_004f9870(int param_1,int param_2)
+; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_004f9870(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[7]:
-;   engine_3d.c_FUN_00409590 at 004097f1
+;   engine_3d.c_clipAndDrawLine3D_FUN_00409590 at 004097f1
 ;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 0056306b
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0 at 00562bd0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 0045819a

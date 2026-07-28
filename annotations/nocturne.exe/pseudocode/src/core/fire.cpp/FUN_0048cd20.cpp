@@ -11,6 +11,8 @@
 void core_fire_cpp_FUN_0048cd20(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,10,&g_CLightningBoltTypeInfo_0059d4c0);
   return;
 }

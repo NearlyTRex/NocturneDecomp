@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
+;   crt_string.c_wcstombs_FUN_00570bd0
 ;   crt_unknown.c_FUN_005638d0
-;   FUN_00570bd0
 ;   FUN_005713e0
 ;   SetEnvironmentVariableA
 ;   SetEnvironmentVariableW
@@ -52,7 +52,7 @@ section .text
     LEA ESI,[EAX + 0x1]                 ; 005745a4
     PUSH ESI                            ; 005745a7
     CALL crt_memory.c_malloc_FUN_005635b0 ; 005745a8
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EDI,EAX                         ; 005745ad
     ADD ESP,0x4                         ; 005745af
     MOV EBP,EAX                         ; 005745b2
@@ -71,7 +71,7 @@ section .text
     LEA ESI,[EAX + 0x1]                 ; 005745cf
     PUSH ESI                            ; 005745d2
     CALL crt_memory.c_malloc_FUN_005635b0 ; 005745d3
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 005745d8
     MOV EBX,EAX                         ; 005745db
     TEST EAX,EAX                        ; 005745dd
@@ -92,8 +92,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005745f2
     PUSH EDI                            ; 005745f6
     PUSH EBP                            ; 005745f7
-    CALL FUN_00570bd0                   ; 005745f8
-        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00570bd0()
+    CALL crt_string.c_wcstombs_FUN_00570bd0 ; 005745f8
+        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; int crt_string.c_wcstombs_FUN_00570bd0(char * dest, wchar_t * src, SIZE_T dest_size)
     ADD ESP,0xc                         ; 005745fd
     CMP EAX,-0x1                        ; 00574600
     JNZ 0x00574622                      ; 00574603
@@ -124,8 +124,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00574627
     PUSH EAX                            ; 0057462b
     PUSH EBX                            ; 0057462c
-    CALL FUN_00570bd0                   ; 0057462d
-        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00570bd0()
+    CALL crt_string.c_wcstombs_FUN_00570bd0 ; 0057462d
+        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; int crt_string.c_wcstombs_FUN_00570bd0(char * dest, wchar_t * src, SIZE_T dest_size)
     ADD ESP,0xc                         ; 00574632
     CMP EAX,-0x1                        ; 00574635
     JNZ 0x0057464a                      ; 00574638

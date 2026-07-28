@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,undefined4 *param_2)
+; int * core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_004cbc50(int param_1,int *param_2)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     ADD EAX,0x150                       ; 004cbc59
     PUSH EAX                            ; 004cbc5e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004cbc5f
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD EAX,0x338                       ; 004cbc64
     MOV EDX,dword ptr [EAX]             ; 004cbc69
     LEA ECX,[EAX + 0x4]                 ; 004cbc6b

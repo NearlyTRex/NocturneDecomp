@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(int param_1,int param_2)
+; int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(CEnemy *this_ptr,CDemonActor *target)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;
 ; XREF[2]:
-;   core_enemy.cpp_FUN_00479b60 at 00479d4e
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_00479b60 at 00479d4e
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db72a
 ;
 ; Referenced Globals:
@@ -50,7 +53,7 @@ section .text
     PUSH EAX                            ; 00479ae3
     PUSH ESI                            ; 00479ae4
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00479ae5
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00479aea
     MOV EDX,ESP                         ; 00479aed
     PUSH EDX                            ; 00479aef
@@ -64,7 +67,7 @@ section .text
     PUSH EAX                            ; 00479b06
     PUSH EBX                            ; 00479b07
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00479b08
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00479b0d
     PUSH EAX                            ; 00479b10
     LEA EAX,[ESP + 0x40]                ; 00479b11
@@ -72,14 +75,14 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00479b16
     PUSH EAX                            ; 00479b1a
     CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 ; 00479b1b
-        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160()
+        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D * this_ptr, CVector3f * out_point, CVector3f * in_point)
     ADD ESP,0xc                         ; 00479b20
     PUSH EAX                            ; 00479b23
     LEA EAX,[ESP + 0x1c]                ; 00479b24
     PUSH EAX                            ; 00479b28
     PUSH EBX                            ; 00479b29
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00479b2a
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00479b2f
     LEA EAX,[ESP + 0x18]                ; 00479b32
     PUSH EAX                            ; 00479b36
@@ -88,7 +91,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 00479b3c | DAT_005be368
     PUSH EDX                            ; 00479b42 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0 ; 00479b43
-        ;   XREF to: 0050fae0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0()
+        ;   XREF to: 0050fae0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 00479b48
     TEST EAX,EAX                        ; 00479b4b
     SETZ AL                             ; 00479b4d

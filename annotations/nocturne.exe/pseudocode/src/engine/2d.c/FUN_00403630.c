@@ -10,7 +10,7 @@ void engine_2d_c_FUN_00403630(char *param_1)
 
 {
   char cVar1;
-  int iVar2;
+  _FILE *p_Var2;
   char *pcVar3;
   char *pcVar4;
   char local_5c [80];
@@ -43,20 +43,20 @@ LAB_00403672:
     core_main_c_FUN_004c8440("hose!");
   }
   _sprintf(pcVar4,".map");
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"rb");
-  if (iVar2 != 0) {
-    _fread(&DAT_01bf7720,1,0x8000,iVar2);
-    _fclose(iVar2);
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"rb");
+  if (p_Var2 != (_FILE *)0x0) {
+    _fread(&DAT_01bf7720,1,0x8000,p_Var2);
+    _fclose(p_Var2);
     return;
   }
   engine_2d_c_buildColorLookupTable_FUN_00403570();
-  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
-  if (iVar2 == 0) {
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
+  if (p_Var2 == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\2d.c";
     INT_01cc4804 = 0x775;
     core_main_c_FUN_004c8440("Unable to write quick map!");
   }
-  _fwrite(&DAT_01bf7720,1,0x8000,iVar2);
-  _fclose(iVar2);
+  _fwrite(&DAT_01bf7720,1,0x8000,p_Var2);
+  _fclose(p_Var2);
   return;
 }

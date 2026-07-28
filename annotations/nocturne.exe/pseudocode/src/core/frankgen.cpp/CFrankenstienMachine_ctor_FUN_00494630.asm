@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(undefined4 param_1)
+; CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_frankgen.cpp_FUN_00494600 at 00494613
@@ -28,17 +30,17 @@ section .text
     ADD EAX,0x17c                       ; 0049463d
     PUSH EAX                            ; 00494642
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00494643
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00494648
     ADD EAX,0x17c                       ; 0049464b
     PUSH EAX                            ; 00494650
     CALL core_course.cpp_CCourse_ctor_FUN_0043b5d0 ; 00494651
-        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_ctor_FUN_0043b5d0()
+        ;   XREF to: 0043b5d0 (UNCONDITIONAL_CALL)  ; CCourse * core_course.cpp_CCourse_ctor_FUN_0043b5d0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 00494656
     ADD EAX,0xc                         ; 00494659
     PUSH EAX                            ; 0049465c
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0049465d
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     MOV dword ptr [EAX + 0xfffffe48],0x59db84 ; 00494662 | PTR_core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0_0059db84
     MOV dword ptr [EAX + 0xfffffe50],0x0 ; 0049466c
     MOV byte ptr [EAX + 0xfffffe54],0x0 ; 00494676

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004e33d0(undefined4 param_1,int param_2,int param_3,int param_4)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004e33d0(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
+; SMpegSubbandAllocation * Stack[0x8]:4   allocation_indices
+; SMpegSubbandScalefactors * Stack[0xc]:4   scalefactors
+; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -67,7 +72,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004e3432
     PUSH ECX                            ; 004e3436
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e3437
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0()
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 004e343c
     MOV dword ptr [EBX],EAX             ; 004e343f
     JMP 0x004e3406                      ; 004e3441

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void)
+; CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void)
 ;
 ;
 ; XREF[2]:
@@ -44,7 +44,7 @@ section .text
     MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | DAT_01fa3ff4 | DAT_01fa3ff8
     PUSH EBP                            ; 00495263
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00495264
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00495269
     TEST EAX,EAX                        ; 0049526c
     JNZ 0x00495170                      ; 0049526e

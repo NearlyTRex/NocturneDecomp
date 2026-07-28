@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(undefined4 param_1,undefined4 param_2)
+; int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer *this_ptr,int render_alpha)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_alpha
 ;
 ; XREF[42]:
 ;   core_baron.cpp_FUN_004110f0 at 00411233
@@ -28,7 +31,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
     PUSH EDX                            ; 00461014
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00461015
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0046101a
     RET                                 ; 0046101d
 

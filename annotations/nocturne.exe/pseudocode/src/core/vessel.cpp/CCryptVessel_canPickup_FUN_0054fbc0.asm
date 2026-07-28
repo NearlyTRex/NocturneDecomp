@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,undefined4 param_2)
+; undefined4 core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -33,7 +33,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054fbe0
     PUSH EBX                            ; 0054fbe4
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0054fbe5
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0054fbea
     TEST EAX,EAX                        ; 0054fbed
     JZ 0x0054fbd9                       ; 0054fbef

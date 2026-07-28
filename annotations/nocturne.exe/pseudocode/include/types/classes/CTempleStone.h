@@ -8,11 +8,11 @@ struct CDemonActor;
 #include "types/classes/CBoxActor.h"
 
 // Structure: CTempleStone
-// Ghidra size: 0x670 (1648 bytes)
+// Ghidra size: 0x668 (1640 bytes)
 #pragma pack(push, 1)
 typedef struct CTempleStone {
     CBoxActor base; // 0x0
-    struct CDemonActor* dest_actor; // 0x66c
+    struct CDemonActor* dest_actor; // 0x664
 } CTempleStone;
 #pragma pack(pop)
 

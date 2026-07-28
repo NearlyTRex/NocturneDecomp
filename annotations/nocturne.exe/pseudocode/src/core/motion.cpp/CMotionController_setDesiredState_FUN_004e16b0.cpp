@@ -2,35 +2,35 @@
 // Address: 004e16b0
 // Address Range: [[004e16b0, 004e1737]]
 // Convention: __cdecl
-// Signature: void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(undefined4 *param_1,int param_2,int param_3)
+// Signature: void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 #include "nocturne.h"
 
-void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(uint *param_1,int param_2,int param_3)
+void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 {
-  if (param_2 < 0) {
-    param_1[10] = 0xffffffff;
+  if (desired_state_index < 0) {
+    this_ptr->state_index = -1;
     return;
   }
-  if (*(int *)*param_1 <= param_2) {
+  if (this_ptr->motion_list_ptr->state_count <= desired_state_index) {
     PTR_01cc4800 = "..\\core\\motion.cpp";
     INT_01cc4804 = 0x274;
     core_main_c_FUN_004c8440("CMotionController::setDesiredState - invalid state index");
   }
-  if (param_2 != param_1[10]) {
-    if (param_1[0xb] != 0) {
-      if (param_1[8] == 0) {
-        core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(param_1);
+  if (desired_state_index != this_ptr->state_index) {
+    if (this_ptr->in_transition != (SMotionTransition *)0x0) {
+      if (this_ptr->tween_direction == 0) {
+        core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(this_ptr);
       }
-      param_1[0xb] = 0;
+      this_ptr->in_transition = (SMotionTransition *)0x0;
     }
-    param_1[9] = 0;
-    param_1[10] = param_2;
+    this_ptr->tween_set_new_state = 0;
+    this_ptr->state_index = desired_state_index;
   }
-  if (param_3 == 0) {
+  if (force_immediate == 0) {
     return;
   }
-  core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(param_1);
+  core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(this_ptr);
   return;
 }

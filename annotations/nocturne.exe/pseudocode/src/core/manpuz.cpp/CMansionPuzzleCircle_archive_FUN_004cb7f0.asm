@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(int param_1)
+; void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -33,7 +33,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 004cb7f5
     PUSH ESI                            ; 004cb7f9
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004cb7fa
-        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_archive_FUN_0040d2d0()
+        ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
     MOV EDX,dword ptr [0x005bad50]      ; 004cb7ff | INT_005bad50
     ADD ESP,0x4                         ; 004cb805
     CMP EDX,0x2                         ; 004cb808
@@ -58,17 +58,17 @@ section .text
     ADD EAX,EDX                         ; 004cb846
     PUSH EAX                            ; 004cb848
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb849
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb84e
     PUSH 0x588109                       ; 004cb851 | = "r"
     PUSH ESI                            ; 004cb856
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb857
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb85c
     PUSH 0x58810b                       ; 004cb85f | = "g"
     PUSH EDI                            ; 004cb864
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb865
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb86a
     PUSH 0x58810d                       ; 004cb86d | = "b"
     INC EBX                             ; 004cb872
@@ -76,7 +76,7 @@ section .text
     ADD ESI,0x64                        ; 004cb874
     ADD EDI,0x64                        ; 004cb877
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004cb87a
-        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
+        ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb87f
     ADD EBP,0x64                        ; 004cb882
     CMP EBX,0xc                         ; 004cb885
@@ -94,7 +94,7 @@ section .text
     LEA EAX,[ESI + 0x5c4]               ; 004cb897
     PUSH EAX                            ; 004cb89d
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 004cb89e
-        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
+        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040c450(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb8a3
     PUSH 0x5880eb                       ; 004cb8a6 | = "pGemOrient"
     LEA EAX,[ESI + 0x5d0]               ; 004cb8ab
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESI + 0x5dc]               ; 004cb8bf
     PUSH EAX                            ; 004cb8c5
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 004cb8c6
-        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
+        ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040c450(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cb8cb
     JMP 0x004cb811                      ; 004cb8ce
         ;   XREF to: 004cb811 (UNCONDITIONAL_JUMP)  ; LAB_004cb811

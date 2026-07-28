@@ -1,18 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl crt_iostream_cpp_istream_get_FUN_00564c53(int *param_1,undefined1 *param_2)
+; _istream * __cdecl crt_iostream_cpp_istream_get_FUN_00564c53(_istream *this_ptr,char *c)
 ;
+; Parameters:
+; _istream *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   c
 ;
 ; XREF[4]:
 ;   support_codec.cpp_CCodec_process_FUN_00438f90 at 00438fc8
 ;   support_codec.cpp_CLZWCompress_process_FUN_004398c0 at 00439911
-;   support_codec.cpp_FUN_00438a40 at 00438a65
 ;   support_codec.cpp_readBitsFromStream_FUN_00438ab0 at 00438b69
+;   support_codec.cpp_readByteWithCount_FUN_00438a40 at 00438a65
 ;
 ; Called Functions:
-;   FUN_0056b227
-;   FUN_0056b2b4
+;   crt_stdio.c_fgetcInternal_FUN_0056b2b4
+;   crt_stdio.c_stream_setup_FUN_0056b227
 ;
 ; *****************************************************************************
 
@@ -40,8 +43,8 @@ section .text
     PUSH 0x1                            ; 00564c77
         ;   Label: LAB_00564c77
     PUSH EAX                            ; 00564c79
-    CALL FUN_0056b227                   ; 00564c7a
-        ;   XREF to: 0056b227 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b227()
+    CALL crt_stdio.c_stream_setup_FUN_0056b227 ; 00564c7a
+        ;   XREF to: 0056b227 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_0056b227(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 00564c7f
     TEST EAX,EAX                        ; 00564c82
     JZ 0x00564ce0                       ; 00564c84
@@ -90,8 +93,8 @@ section .text
         ;   Label: LAB_00564cd0
     PUSH EBP                            ; 00564cd4
     PUSH EBX                            ; 00564cd5
-    CALL FUN_0056b2b4                   ; 00564cd6
-        ;   XREF to: 0056b2b4 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b2b4()
+    CALL crt_stdio.c_fgetcInternal_FUN_0056b2b4 ; 00564cd6
+        ;   XREF to: 0056b2b4 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fgetcInternal_FUN_0056b2b4(_FILE * stream, byte * output_byte)
     ADD ESP,0x8                         ; 00564cdb
     JMP 0x00564cb8                      ; 00564cde
         ;   XREF to: 00564cb8 (UNCONDITIONAL_JUMP)  ; LAB_00564cb8

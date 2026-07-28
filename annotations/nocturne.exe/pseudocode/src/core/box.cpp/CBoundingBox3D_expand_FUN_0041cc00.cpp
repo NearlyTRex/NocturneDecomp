@@ -2,31 +2,31 @@
 // Address: 0041cc00
 // Address Range: [[0041cc00, 0041cc6b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(float *param_1,float *param_2)
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D *this_ptr,CVector3f *point)
 
 #include "nocturne.h"
 
-void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(float *param_1,float *param_2)
+void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D *this_ptr,CVector3f *point)
 
 {
-  if (*param_2 < *param_1) {
-    *param_1 = *param_2;
+  if (point->x < (this_ptr->min).x) {
+    (this_ptr->min).x = point->x;
   }
-  if (param_1[3] < *param_2) {
-    param_1[3] = *param_2;
+  if ((this_ptr->max).x < point->x) {
+    (this_ptr->max).x = point->x;
   }
-  if (param_2[1] < param_1[1]) {
-    param_1[1] = param_2[1];
+  if (point->y < (this_ptr->min).y) {
+    (this_ptr->min).y = point->y;
   }
-  if (param_1[4] < param_2[1]) {
-    param_1[4] = param_2[1];
+  if ((this_ptr->max).y < point->y) {
+    (this_ptr->max).y = point->y;
   }
-  if (param_2[2] < param_1[2]) {
-    param_1[2] = param_2[2];
+  if (point->z < (this_ptr->min).z) {
+    (this_ptr->min).z = point->z;
   }
-  if (param_2[2] <= param_1[5]) {
+  if (point->z <= (this_ptr->max).z) {
     return;
   }
-  param_1[5] = param_2[2];
+  (this_ptr->max).z = point->z;
   return;
 }

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00481ef2
         ;   Label: LAB_00481ef2
     CALL core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 ; 00481ef3
-        ;   XREF to: 00481f10 (UNCONDITIONAL_CALL)  ; undefined core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10()
+        ;   XREF to: 00481f10 (UNCONDITIONAL_CALL)  ; CFilmProjector * core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10(CFilmProjector * this_ptr)
     ADD ESP,0x4                         ; 00481ef8
     RET                                 ; 00481efb
 

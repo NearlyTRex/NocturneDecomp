@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(undefined4 param_1)
+; CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *this_ptr)
 ;
+; Parameters:
+; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gargoyle.cpp_FUN_004a7320 at 004a7333
@@ -26,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004a7351
     PUSH EDX                            ; 004a7355
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 004a7356
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004a735b
     PUSH 0x58482a                       ; 004a735e | = "gargoyle.dfm"
     MOV EBX,EAX                         ; 004a7363

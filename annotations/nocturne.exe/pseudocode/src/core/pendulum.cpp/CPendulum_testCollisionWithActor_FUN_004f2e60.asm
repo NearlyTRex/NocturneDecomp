@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
+; CDemonActor *    Stack[0xc]:4   left_hand_actor
+; CDemonActor *    Stack[0x10]:4   right_hand_actor
 ;
 ; XREF[1]:
 ;   core_pendulum.cpp_CPendulum_process_FUN_004f3a20 at 004f3b43
@@ -35,7 +40,7 @@ section .text
     MOV EAX,ESP                         ; 004f2e72
     PUSH EAX                            ; 004f2e74
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 004f2e75
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 004f2e7a
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004f2e7d
     TEST EDX,EDX                        ; 004f2e80
@@ -204,7 +209,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004f3082
     PUSH EAX                            ; 004f3088
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004f3089
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f308e
     FLD float ptr [ESP + 0x1c]          ; 004f3091
     FMUL ST0                            ; 004f3095
@@ -411,7 +416,7 @@ section .text
     MOV EBX,dword ptr [0x005b96c4]      ; 004f331d | INT_005b96c4
     PUSH EBX                            ; 004f3323
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004f3324
-        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
+        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 004f3329
     MOV ESP,EBP                         ; 004f332c
     POP EBP                             ; 004f332e

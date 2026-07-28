@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(int param_1,char *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[12]:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 004115cd
@@ -52,7 +55,7 @@ section .text
         ;   Label: LAB_004d8c98
     PUSH ESI                            ; 004d8c99
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004d8c9a
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d8c9f
     JMP 0x004d8c73                      ; 004d8ca2
         ;   XREF to: 004d8c73 (UNCONDITIONAL_JUMP)  ; LAB_004d8c73

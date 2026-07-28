@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1abc = 005671dc
+;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
 ;
 ; Called Functions:
-;   FUN_005671dc
+;   crt_thread.c_GetTLS_FUN_005671dc
 ;   FUN_0056d488
 ;
 ; *****************************************************************************
@@ -17,7 +17,7 @@ section .text
 
     NOP                                 ; 0056d4ab
         ;   Label: FUN_0056d4ab
-    CALL dword ptr [0x005c1abc]         ; 0056d4ac | PTR_FUN_005c1abc
+    CALL dword ptr [0x005c1abc]         ; 0056d4ac | PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc
     ADD EAX,0x14                        ; 0056d4b2
     PUSH EAX                            ; 0056d4b5
     MOV EDX,dword ptr [ESP + 0x8]       ; 0056d4b6

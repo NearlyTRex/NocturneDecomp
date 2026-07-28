@@ -1,14 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(int param_1,int param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(CInputString *this_ptr,int x_pos,int y_pos)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x_pos
+; int              Stack[0xc]:4   y_pos
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004710e2
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8bd
-;   shape_edittool.cpp_FUN_00470eb0 at 004710e2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e584
@@ -56,7 +60,7 @@ section .text
     PUSH 0xffff                         ; 0046f6b1
         ;   Label: LAB_0046f6b1
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0046f6b6
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     MOV ESI,dword ptr [EBX + 0x13c]     ; 0046f6bb
     ADD ESP,0x4                         ; 0046f6c1
     TEST ESI,ESI                        ; 0046f6c4
@@ -79,7 +83,7 @@ section .text
     PUSH 0x2a                           ; 0046f701
     PUSH 0x1bcd9c8                      ; 0046f703
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0046f708
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046f70d
     PUSH -0x1                           ; 0046f710
     MOV ECX,dword ptr [0x01bcdde0]      ; 0046f712 | DAT_01bcdde0
@@ -93,11 +97,11 @@ section .text
     PUSH ESI                            ; 0046f72e
     MOV byte ptr [EAX + 0x1bcd9c8],DL   ; 0046f72f
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0046f735
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
         ;   Label: LAB_0046f735
     ADD ESP,0x18                        ; 0046f73a
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 0046f73d
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     TEST EAX,0x40000                    ; 0046f742
     JNZ 0x0046f7aa                      ; 0046f747
         ;   XREF to: 0046f7aa (CONDITIONAL_JUMP)  ; LAB_0046f7aa
@@ -111,14 +115,14 @@ section .text
         ;   Label: LAB_0046f751
     PUSH EBX                            ; 0046f752
     CALL shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0 ; 0046f753
-        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0()
+        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0(CInputString * this_ptr, int char_index)
     ADD ESP,0x8                         ; 0046f758
     LEA ESI,[EDI + EAX*0x1]             ; 0046f75b
     MOV EAX,dword ptr [EBX + 0x134]     ; 0046f75e
     PUSH EAX                            ; 0046f764
     PUSH EBX                            ; 0046f765
     CALL shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0 ; 0046f766
-        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0()
+        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0(CInputString * this_ptr, int char_index)
     ADD EAX,EDI                         ; 0046f76b
     ADD ESP,0x8                         ; 0046f76d
     CMP ESI,EAX                         ; 0046f770
@@ -136,7 +140,7 @@ section .text
     PUSH EBP                            ; 0046f787
     PUSH ESI                            ; 0046f788
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 0046f789
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0046f78e
     JMP 0x0046f6b1                      ; 0046f791
         ;   XREF to: 0046f6b1 (UNCONDITIONAL_JUMP)  ; LAB_0046f6b1
@@ -158,7 +162,7 @@ section .text
     PUSH EAX                            ; 0046f7ba
     PUSH EBX                            ; 0046f7bb
     CALL shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0 ; 0046f7bc
-        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0()
+        ;   XREF to: 0046f5c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CInputString_calcX_FUN_0046f5c0(CInputString * this_ptr, int char_index)
     ADD ESP,0x8                         ; 0046f7c1
     MOV EDX,dword ptr [ESP]             ; 0046f7c4
     PUSH EDX                            ; 0046f7c7
@@ -167,7 +171,7 @@ section .text
     PUSH EBP                            ; 0046f7cb
     PUSH EAX                            ; 0046f7cc
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0046f7cd
-        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine_FUN_004015a0()
+        ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0046f7d2
     ADD ESP,0x4                         ; 0046f7d5
     POP EBP                             ; 0046f7d8

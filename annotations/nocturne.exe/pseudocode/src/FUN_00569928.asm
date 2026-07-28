@@ -17,6 +17,9 @@
 ;   undefined4 DAT_02de5c30
 ;
 ; Called Functions:
+;   crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0
+;   crt_stdlib.c_i64toa_FUN_0056f3e0
+;   crt_stdlib.c_utoa_FUN_0056f4f0
 ;   FUN_0056963c
 ;   FUN_0056966c
 ;   FUN_005696e8
@@ -24,9 +27,6 @@
 ;   FUN_00569850
 ;   FUN_0056986c
 ;   FUN_00569f8c
-;   FUN_0056f3a0
-;   FUN_0056f3e0
-;   FUN_0056f4f0
 ;
 ; *****************************************************************************
 
@@ -548,8 +548,8 @@ section .text
     PUSH EAX                            ; 00569d52
     LEA EAX,[ESP + 0x8]                 ; 00569d53
     PUSH EAX                            ; 00569d57
-    CALL FUN_0056f3e0                   ; 00569d58
-        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f3e0()
+    CALL crt_stdlib.c_i64toa_FUN_0056f3e0 ; 00569d58
+        ;   XREF to: 0056f3e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_i64toa_FUN_0056f3e0()
     MOV CL,byte ptr [EBX + 0x15]        ; 00569d5d
     ADD ESP,0xc                         ; 00569d60
     CMP CL,0x58                         ; 00569d63
@@ -579,8 +579,8 @@ section .text
     ADD EAX,ESI                         ; 00569d8d
     PUSH EAX                            ; 00569d8f
     PUSH ECX                            ; 00569d90
-    CALL FUN_0056f4f0                   ; 00569d91
-        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f4f0()
+    CALL crt_stdlib.c_utoa_FUN_0056f4f0 ; 00569d91
+        ;   XREF to: 0056f4f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_utoa_FUN_0056f4f0()
     MOV DH,byte ptr [EBX + 0x15]        ; 00569d96
     ADD ESP,0xc                         ; 00569d99
     CMP DH,0x58                         ; 00569d9c
@@ -713,8 +713,8 @@ section .text
     PUSH EAX                            ; 00569ea9
     LEA EAX,[ESP + 0xc]                 ; 00569eaa
     PUSH EAX                            ; 00569eae
-    CALL FUN_0056f3a0                   ; 00569eaf
-        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f3a0()
+    CALL crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0 ; 00569eaf
+        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0(wchar_t wide_char, char * output_buffer)
     ADD ESP,0x8                         ; 00569eb4
     CMP EAX,-0x1                        ; 00569eb7
     JZ 0x00569f7d                       ; 00569eba
@@ -767,8 +767,8 @@ section .text
     AND EAX,0xffff                      ; 00569f2c
     PUSH EAX                            ; 00569f31
     PUSH ESI                            ; 00569f32
-    CALL FUN_0056f3a0                   ; 00569f33
-        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f3a0()
+    CALL crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0 ; 00569f33
+        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0(wchar_t wide_char, char * output_buffer)
     ADD ESP,0x8                         ; 00569f38
     MOV EDX,EAX                         ; 00569f3b
     CMP EAX,-0x1                        ; 00569f3d

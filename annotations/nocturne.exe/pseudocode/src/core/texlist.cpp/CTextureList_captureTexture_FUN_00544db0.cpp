@@ -10,6 +10,6 @@ void core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0(int param_1,uint 
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(param_2 & 0xfff) * 0x18 + param_1 + 4);
+            (DAT_005ae704,(SMRGLTextureBasic *)((param_2 & 0xfff) * 0x18 + param_1 + 4));
   return;
 }

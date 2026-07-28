@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_lever_cpp_CLever_ctor_FUN_004c6040(undefined4 param_1)
+; CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004c6040(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_lever.cpp_FUN_004c6010 at 004c6023
@@ -31,7 +33,7 @@ section .text
     ADD EAX,0x150                       ; 004c604e
     PUSH EAX                            ; 004c6053
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c6054
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c6059
     LEA EBX,[EAX + 0x2c8]               ; 004c605c
     PUSH EBX                            ; 004c6062
@@ -44,7 +46,7 @@ section .text
     PUSH EAX                            ; 004c607c
     MOV dword ptr [EBX + 0x14c],0x59fc44 ; 004c607d | PTR_core_lever.cpp_CLever_setup_FUN_004c6110_0059fc44
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c6087
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 004c608c
     MOV byte ptr [EBX + 0x2d8],0x0      ; 004c6096
     MOV byte ptr [EBX + 0x33c],0x0      ; 004c609d

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(int param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission *this_ptr,char *name)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[9]:
 ;   core_event.cpp_resolveActorByName_FUN_0047a390 at 0047a465
@@ -35,7 +38,7 @@ section .text
         ;   Label: LAB_004d90b4
     PUSH EBX                            ; 004d90b5
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d90b6
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d90bb
     TEST EAX,EAX                        ; 004d90be
     JZ 0x004d90d1                       ; 004d90c0

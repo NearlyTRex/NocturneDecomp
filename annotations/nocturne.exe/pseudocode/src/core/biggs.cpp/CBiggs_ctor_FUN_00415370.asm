@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_biggs_cpp_CBiggs_ctor_FUN_00415370(undefined4 param_1)
+; CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_00415370(CBiggs *this_ptr)
 ;
+; Parameters:
+; CBiggs *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_biggs.cpp_FUN_00415340 at 00415353
@@ -36,17 +38,17 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00415373
     PUSH EBX                            ; 00415377
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00415378
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0041537d
     ADD EAX,0xbd24                      ; 00415380
     PUSH EAX                            ; 00415385
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00415386
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041538b
     ADD EAX,0x184                       ; 0041538e
     PUSH EAX                            ; 00415393
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 00415394
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_004e0050(CMorph * this_ptr)
     ADD ESP,0x4                         ; 00415399
     LEA EBX,[EAX + 0xffff4158]          ; 0041539c
     PUSH 0x578dcd                       ; 004153a2 | = "biggs.dfm"
@@ -62,7 +64,7 @@ section .text
     MOV ESI,0x578de4                    ; 004153cc | = "bigAlien"
     LEA EDI,[EBX + 0xcad4]              ; 004153d1
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004153d7
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     FLD float ptr [0x0059a598]          ; 004153dc | FLOAT_0059a598
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004153e2
     FLD float ptr [0x0059a59c]          ; 004153ec | FLOAT_0059a59c

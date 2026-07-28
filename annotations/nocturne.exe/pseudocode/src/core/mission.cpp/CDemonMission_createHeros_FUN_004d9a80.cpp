@@ -2,15 +2,16 @@
 // Address: 004d9a80
 // Address Range: [[004d9a80, 004d9c12]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,undefined4 param_2)
+// Signature: int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,uint param_2)
+int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 
 {
+  CDemonActor *actor_ptr;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -26,7 +27,7 @@ uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1
     _DAT_01cae0d4 = 1;
     _DAT_01cae0e8 = *0x01CEA280;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
-                      (param_1,0,*(uint *)(0x01C775EC + 0xc0),param_2);
+                      (this_ptr,0,*(int *)(0x01C775EC + 0xc0),existing_hero);
     if (iVar4 == 0) {
       return 0;
     }
@@ -46,7 +47,8 @@ uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1
       iVar2 = 0;
       do {
         iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
-                          (param_1,iVar4,*(uint *)(iVar3 + 0x34 + (int)0x01CEA280),0);
+                          (this_ptr,iVar4,*(int *)(iVar3 + 0x34 + (int)0x01CEA280),
+                           (CCharacter *)0x0);
         if (iVar1 == 0) {
           return 0;
         }
@@ -61,17 +63,17 @@ uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1
     _DAT_01cae0e8 = 0x01CEA280[0x45];
   }
   *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0xbc90) = 0;
-  iVar4 = *(int *)(param_1 + 0x514);
-  while (iVar4 != 0) {
-    iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(iVar4,"CHeroPlaceholder");
-    if (iVar2 == 0) {
-      iVar4 = *(int *)(iVar4 + 0x144);
+  actor_ptr = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
+  while (actor_ptr != (CDemonActor *)0x0) {
+    iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(actor_ptr,"CHeroPlaceholder");
+    if (iVar4 == 0) {
+      actor_ptr = actor_ptr->next_actor;
     }
     else {
-      core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(param_1,iVar4,1);
-      iVar4 = *(int *)(param_1 + 0x514);
+      core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(this_ptr,actor_ptr,1);
+      actor_ptr = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
     }
   }
-  core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(param_1);
+  core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(this_ptr);
   return 1;
 }

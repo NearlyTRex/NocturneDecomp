@@ -2,49 +2,51 @@
 // Address: 00566170
 // Address Range: [[00566170, 005661c1]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_string_c_memmove_FUN_00566170(undefined4 *param_1,undefined4 *param_2,uint param_3)
+// Signature: void * __cdecl crt_string_c_memmove_FUN_00566170(void *dest,void *src,SIZE_T n)
 
 #include "nocturne.h"
 
-void __cdecl memmove(uint *param_1,uint *param_2,uint param_3)
+void * __cdecl memmove(void *dest,void *src,SIZE_T n)
 
 {
   uint uVar1;
-  uint *puVar2;
+  ushort *puVar2;
   ushort *puVar3;
+  uint *puVar4;
   
-  if (param_2 != param_1) {
-    if ((param_2 < param_1) && (param_1 < (uint *)((int)param_2 + param_3))) {
-      uVar1 = param_3 >> 1;
-      puVar2 = (uint *)((int)param_2 + param_3);
-      puVar3 = (ushort *)((int)param_1 + param_3);
+  if (src != dest) {
+    if ((src < dest) && (dest < (ushort *)((int)src + n))) {
+      uVar1 = n >> 1;
+      puVar2 = (ushort *)((int)src + n);
+      puVar3 = (ushort *)((int)dest + n);
       while( true ) {
         if (uVar1 == 0) break;
         uVar1 = uVar1 - 1;
-        puVar3[-1] = *(ushort *)((int)puVar2 - 2U);
-        puVar2 = (uint *)((int)puVar2 - 2U);
+        puVar3[-1] = puVar2[-1];
+        puVar2 = puVar2 + -1;
         puVar3 = puVar3 + -1;
       }
-      uVar1 = (uint)((param_3 & 1) != 0);
+      uVar1 = (uint)((n & 1) != 0);
       while( true ) {
         puVar3 = (ushort *)((int)puVar3 + -1);
-        puVar2 = (uint *)((int)puVar2 - 1);
+        puVar2 = (ushort *)((int)puVar2 - 1);
         if (uVar1 == 0) break;
         uVar1 = uVar1 - 1;
         *(byte *)puVar3 = *(byte *)puVar2;
       }
-      return;
+      return dest;
     }
-    for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *param_1 = *param_2;
-      param_2 = param_2 + 1;
-      param_1 = param_1 + 1;
+    puVar4 = dest;
+    for (uVar1 = n >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
+      *puVar4 = *(uint *)src;
+      src = (uint *)((int)src + 4);
+      puVar4 = puVar4 + 1;
     }
-    for (param_3 = param_3 & 3; param_3 != 0; param_3 = param_3 - 1) {
-      *(byte *)param_1 = *(byte *)param_2;
-      param_2 = (uint *)((int)param_2 + 1);
-      param_1 = (uint *)((int)param_1 + 1);
+    for (uVar1 = n & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+      *(byte *)puVar4 = *(byte *)src;
+      src = (uint *)((int)src + 1);
+      puVar4 = (uint *)((int)puVar4 + 1);
     }
   }
-  return;
+  return dest;
 }

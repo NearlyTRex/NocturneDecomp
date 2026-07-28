@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(int param_1)
+; CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(CPathMap *this_ptr,uint flags)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[8]:
-;   core_hero.cpp_FUN_004b4800 at 004b483e
+;   core_hero.cpp_CHero_dtor_FUN_004b4800 at 004b483e
 ;   core_hiram.cpp_CHiram_dtor_FUN_004b6670 at 004b6693
-;   core_hostage.cpp_FUN_004b8b70 at 004b8b89
+;   core_hostage.cpp_CHostage_dtor_FUN_004b8b70 at 004b8b89
 ;   core_hpriest.cpp_FUN_004b9bf0 at 004b9c09
 ;   core_npc.cpp_CNPC_dtor_FUN_004b68c0 at 004b68d9
 ;   core_passngr.cpp_FUN_004ef5c0 at 004ef613
@@ -68,7 +71,7 @@ section .text
     PUSH EAX                            ; 004efe27
     MOV dword ptr [0x01e312f8],EDI      ; 004efe28 | DAT_01e312f8
     CALL crt_string.c_memmove_FUN_00566170 ; 004efe2e
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EDI,dword ptr [0x01e312f8]      ; 004efe33 | DAT_01e312f8
     XOR EAX,EAX                         ; 004efe39
     ADD ESP,0xc                         ; 004efe3b

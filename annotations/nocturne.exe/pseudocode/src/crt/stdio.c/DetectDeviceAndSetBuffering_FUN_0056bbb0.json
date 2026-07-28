@@ -1,0 +1,173 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 86,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "00568ed0",
+      "from_addr": "00568ed7",
+      "name": "FUN_00568ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056551c",
+      "from_addr": "0056561f",
+      "name": "crt_unknown.c_OpenFileAndInitialize_FUN_0056551c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056bbb0",
+    "address_range": [
+      [
+        "0056bbb0",
+        "0056bbe2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0",
+    "signature": "void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_0056bbb0(_FILE *file)"
+  },
+  "function_calls": [
+    {
+      "addr": "005705c0",
+      "is_variadic": false,
+      "name": "crt_io.c_IsSpecialDevice_FUN_005705c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0056561f",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_OpenFileAndInitialize_FUN_0056551c",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00568ed7",
+        "call_type": "direct",
+        "caller": "FUN_00568ed0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.65,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 20,
+      "INT_ADD": 9,
+      "INT_AND": 15,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_OR": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&file->_flag",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)&file->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)&file->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 11,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 12,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 14,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;",
+      "type": "pointer_cast"
+    }
+  ]
+}

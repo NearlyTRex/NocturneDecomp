@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_parseDeathType_FUN_0047a760(undefined4 param_1,undefined4 *param_2)
+; int __cdecl core_event_cpp_parseDeathType_FUN_0047a760(char *type_name,int *out_type_id)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   type_name
+; int *            Stack[0x8]:4   out_type_id
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047be2d
@@ -36,7 +39,7 @@ section .text
     PUSH 0x57f4f4                       ; 0047a76a | = "generic"
     PUSH EBX                            ; 0047a76f
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a770
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a775
     TEST EAX,EAX                        ; 0047a778
     JNZ 0x0047a786                      ; 0047a77a
@@ -50,7 +53,7 @@ section .text
         ;   Label: LAB_0047a786
     PUSH EBX                            ; 0047a78b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a78c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a791
     TEST EAX,EAX                        ; 0047a794
     JNZ 0x0047a7a6                      ; 0047a796
@@ -64,7 +67,7 @@ section .text
         ;   Label: LAB_0047a7a6
     PUSH EBX                            ; 0047a7ab
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a7ac
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a7b1
     TEST EAX,EAX                        ; 0047a7b4
     JNZ 0x0047a7c6                      ; 0047a7b6
@@ -78,7 +81,7 @@ section .text
         ;   Label: LAB_0047a7c6
     PUSH EBX                            ; 0047a7cb
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a7cc
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a7d1
     TEST EAX,EAX                        ; 0047a7d4
     JNZ 0x0047a7e6                      ; 0047a7d6
@@ -92,7 +95,7 @@ section .text
         ;   Label: LAB_0047a7e6
     PUSH EBX                            ; 0047a7eb
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a7ec
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a7f1
     TEST EAX,EAX                        ; 0047a7f4
     JNZ 0x0047a806                      ; 0047a7f6
@@ -106,7 +109,7 @@ section .text
         ;   Label: LAB_0047a806
     PUSH EBX                            ; 0047a80b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a80c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a811
     TEST EAX,EAX                        ; 0047a814
     JNZ 0x0047a826                      ; 0047a816
@@ -120,7 +123,7 @@ section .text
         ;   Label: LAB_0047a826
     PUSH EBX                            ; 0047a82b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a82c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a831
     TEST EAX,EAX                        ; 0047a834
     JNZ 0x0047a846                      ; 0047a836
@@ -134,7 +137,7 @@ section .text
         ;   Label: LAB_0047a846
     PUSH EBX                            ; 0047a84b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a84c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a851
     TEST EAX,EAX                        ; 0047a854
     JNZ 0x0047a866                      ; 0047a856
@@ -148,7 +151,7 @@ section .text
         ;   Label: LAB_0047a866
     PUSH EBX                            ; 0047a86b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a86c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a871
     TEST EAX,EAX                        ; 0047a874
     JNZ 0x0047a886                      ; 0047a876
@@ -162,7 +165,7 @@ section .text
         ;   Label: LAB_0047a886
     PUSH EBX                            ; 0047a88b
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a88c
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a891
     TEST EAX,EAX                        ; 0047a894
     JNZ 0x0047a8a6                      ; 0047a896
@@ -176,7 +179,7 @@ section .text
         ;   Label: LAB_0047a8a6
     PUSH EBX                            ; 0047a8ab
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a8ac
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a8b1
     TEST EAX,EAX                        ; 0047a8b4
     JNZ 0x0047a8c6                      ; 0047a8b6
@@ -190,7 +193,7 @@ section .text
         ;   Label: LAB_0047a8c6
     PUSH EBX                            ; 0047a8cb
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047a8cc
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047a8d1
     TEST EAX,EAX                        ; 0047a8d4
     JNZ 0x0047a8e6                      ; 0047a8d6

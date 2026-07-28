@@ -47,7 +47,7 @@ section .text
     JZ 0x0040ddeb                       ; 0040ddbc
         ;   XREF to: 0040ddeb (CONDITIONAL_JUMP)  ; LAB_0040ddeb
     CALL core_actor.cpp_generateRandomValue_FUN_0040dd30 ; 0040ddbe
-        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_generateRandomValue_FUN_0040dd30()
+        ;   XREF to: 0040dd30 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040dd30()
     MOV dword ptr [ESP + 0xc],EAX       ; 0040ddc3
     FILD dword ptr [ESP + 0xc]          ; 0040ddc7
     FMUL float ptr [0x0057804d]         ; 0040ddcb | FLOAT_0057804d
@@ -61,7 +61,7 @@ section .text
     ADD ESP,0x10                        ; 0040dde7
     RET                                 ; 0040ddea
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0040ddeb
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_0040ddeb
     MOV dword ptr [ESP + 0xc],EAX       ; 0040ddf0
     FILD dword ptr [ESP + 0xc]          ; 0040ddf4

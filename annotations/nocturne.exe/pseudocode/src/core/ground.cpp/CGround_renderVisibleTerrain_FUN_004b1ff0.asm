@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004b1ff0(int param_1)
+; void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004b1ff0(CGround *this_ptr)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -93,7 +95,7 @@ section .text
     PUSH EBX                            ; 004b2079
     DEC ESI                             ; 004b207a
     CALL core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 ; 004b207b
-        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10()
+        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround * this_ptr, int world_column, int world_row)
     ADD ESP,0xc                         ; 004b2080
     TEST ESI,ESI                        ; 004b2083
     JGE 0x004b206d                      ; 004b2085
@@ -135,7 +137,7 @@ section .text
     PUSH EBX                            ; 004b20b3
     DEC ESI                             ; 004b20b4
     CALL core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 ; 004b20b5
-        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10()
+        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround * this_ptr, int world_column, int world_row)
     ADD ESP,0xc                         ; 004b20ba
     JMP 0x004b20a3                      ; 004b20bd
         ;   XREF to: 004b20a3 (UNCONDITIONAL_JUMP)  ; LAB_004b20a3
@@ -155,7 +157,7 @@ section .text
     PUSH EBX                            ; 004b20d6
     INC ESI                             ; 004b20d7
     CALL core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 ; 004b20d8
-        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10()
+        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround * this_ptr, int world_column, int world_row)
     ADD ESP,0xc                         ; 004b20dd
     TEST ESI,ESI                        ; 004b20e0
     JMP 0x004b209d                      ; 004b20e2
@@ -170,7 +172,7 @@ section .text
     PUSH EBX                            ; 004b20f0
     INC ESI                             ; 004b20f1
     CALL core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 ; 004b20f2
-        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10()
+        ;   XREF to: 004b1e10 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10(CGround * this_ptr, int world_column, int world_row)
     ADD ESP,0xc                         ; 004b20f7
     TEST ESI,ESI                        ; 004b20fa
     JMP 0x004b205f                      ; 004b20fc

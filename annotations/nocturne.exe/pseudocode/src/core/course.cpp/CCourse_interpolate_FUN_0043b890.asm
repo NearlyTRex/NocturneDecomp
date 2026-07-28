@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(int *param_1,float param_2,float *param_3,undefined4 *param_4)
+; void __cdecl core_course_cpp_CCourse_interpolate_FUN_0043b890(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   time
+; CVector3f *      Stack[0xc]:4   out_pos
+; CQuaternion4f *  Stack[0x10]:4   out_orient
 ; Local Variables:
 ; undefined8       Stack[-0x98]:8  local_98
 ; undefined8       Stack[-0x90]:8  local_90
@@ -217,7 +222,7 @@ section .text
         ;   Label: LAB_0043ba61
     FLD ST0                             ; 0043ba65
     CALL crt_math.c_round_FUN_00563a30  ; 0043ba67
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x78]        ; 0043ba6c
     MOV EAX,dword ptr [ESP + 0x78]      ; 0043ba70
     MOV ECX,dword ptr [ESI]             ; 0043ba74
@@ -267,7 +272,7 @@ section .text
         ;   Label: LAB_0043bae5
     FLD ST0                             ; 0043bae8
     CALL crt_math.c_round_FUN_00563a30  ; 0043baea
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x78]        ; 0043baef
     MOV EAX,dword ptr [ESP + 0x78]      ; 0043baf3
     MOV dword ptr [ESP + 0x7c],EAX      ; 0043baf7

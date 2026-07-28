@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(int param_1)
+; SMRGLTextureBasic * engine_texture_cpp_loadTextureAndGetData_FUN_005459d0(SMRGLTextureBasic *param_1)
 ;
 ;
 ; Called Functions:
@@ -15,7 +15,7 @@ section .text
         ;   Label: engine_texture.cpp_loadTextureAndGetData_FUN_005459d0
     PUSH EDX                            ; 005459d4
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 005459d5
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 005459da
     MOV EAX,dword ptr [ESP + 0x4]       ; 005459dd
     ADD EAX,0x48                        ; 005459e1

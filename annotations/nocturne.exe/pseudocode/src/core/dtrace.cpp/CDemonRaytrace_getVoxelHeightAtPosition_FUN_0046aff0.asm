@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0(int param_1,float *param_2)
+; float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0(CDemonRaytrace *this_ptr,CVector3f *world_position)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   world_position
 ;
 ; XREF[1]:
 ;   core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_0050fab0 at 0050fabd
@@ -37,7 +40,7 @@ section .text
     FDIV float ptr [EBX + 0x30]         ; 0046b016
     FXCH ST2                            ; 0046b019
     CALL crt_math.c_round_FUN_00563a30  ; 0046b01b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 0046b020
     MOV EAX,dword ptr [ESP + 0xc]       ; 0046b024
     MOV dword ptr [ESP + 0x1c],EAX      ; 0046b028
@@ -51,7 +54,7 @@ section .text
     FDIVP ST2,ST0                       ; 0046b043
     FXCH ST2                            ; 0046b045
     CALL crt_math.c_round_FUN_00563a30  ; 0046b047
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x14]        ; 0046b04c
     MOV EAX,dword ptr [ESP + 0x14]      ; 0046b050
     MOV dword ptr [ESP + 0x1c],EAX      ; 0046b054
@@ -64,7 +67,7 @@ section .text
     FDIVP                               ; 0046b06a
     FXCH ST3                            ; 0046b06c
     CALL crt_math.c_round_FUN_00563a30  ; 0046b06e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0046b073
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046b077
     MOV dword ptr [ESP + 0x1c],EAX      ; 0046b07b
@@ -76,15 +79,15 @@ section .text
     FMULP ST3                           ; 0046b08f
     FDIVRP ST2,ST0                      ; 0046b091
     CALL crt_math.c_round_FUN_00563a30  ; 0046b093
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0046b098
     MOV EDX,dword ptr [ESP + 0x10]      ; 0046b09c
     FXCH                                ; 0046b0a0
     CALL crt_math.c_round_FUN_00563a30  ; 0046b0a2
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x18]        ; 0046b0a7
     CALL crt_math.c_round_FUN_00563a30  ; 0046b0ab
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 0046b0b0
     TEST EDX,EDX                        ; 0046b0b3
     JL 0x0046b153                       ; 0046b0b5
@@ -116,7 +119,7 @@ section .text
     PUSH ECX                            ; 0046b0fa
     PUSH EBX                            ; 0046b0fb
     CALL core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0 ; 0046b0fc
-        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0()
+        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; CDemonCube * core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z)
     ADD ESP,0x10                        ; 0046b101
     TEST EAX,EAX                        ; 0046b104
     JZ 0x0046b167                       ; 0046b106

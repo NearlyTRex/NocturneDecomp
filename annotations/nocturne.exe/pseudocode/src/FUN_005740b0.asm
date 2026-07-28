@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_005740b0(int param_1)
+; int FUN_005740b0(wchar_t *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -14,13 +14,13 @@
 ;   undefined4 DAT_02de54a8
 ;
 ; Called Functions:
+;   crt_env.c_updateEnvironTable_FUN_00573afc
+;   crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0
 ;   crt_memory.c_malloc_FUN_005635b0
+;   crt_string.c_wcstombs_FUN_00570bd0
 ;   crt_unknown.c_FUN_005638d0
-;   FUN_0056c6d0
-;   FUN_00570bd0
 ;   FUN_005713e0
 ;   FUN_00571410
-;   FUN_00573afc
 ;   FUN_00574264
 ;   FUN_00574540
 ;   FUN_00574570
@@ -71,7 +71,7 @@ section .text
     LEA EAX,[EBP + 0x2]                 ; 005740fc
     PUSH EAX                            ; 005740ff
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00574100
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00574105
     MOV EBX,EAX                         ; 00574108
     MOV dword ptr [ESP + 0x8],EAX       ; 0057410a
@@ -107,7 +107,7 @@ section .text
     ADD EAX,0x2                         ; 0057414a
     PUSH EAX                            ; 0057414d
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0057414e
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV ESI,EAX                         ; 00574153
     ADD ESP,0x4                         ; 00574155
     MOV EBP,EAX                         ; 00574158
@@ -193,15 +193,15 @@ section .text
     IMUL EAX,ESI                        ; 005741fc
     PUSH EAX                            ; 005741ff
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00574200
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EBX,EAX                         ; 00574205
     ADD ESP,0x4                         ; 00574207
     TEST EAX,EAX                        ; 0057420a
     JNZ 0x00574225                      ; 0057420c
         ;   XREF to: 00574225 (CONDITIONAL_JUMP)  ; LAB_00574225
     PUSH 0x5                            ; 0057420e
-    CALL FUN_0056c6d0                   ; 00574210
-        ;   XREF to: 0056c6d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056c6d0()
+    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0 ; 00574210
+        ;   XREF to: 0056c6d0 (UNCONDITIONAL_CALL)  ; int crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0(DWORD windows_error)
     MOV EAX,0xffffffff                  ; 00574215
     ADD ESP,0x4                         ; 0057421a
     ADD ESP,0x14                        ; 0057421d
@@ -215,8 +215,8 @@ section .text
     PUSH ESI                            ; 0057422a
     PUSH EDI                            ; 0057422b
     PUSH EBX                            ; 0057422c
-    CALL FUN_00570bd0                   ; 0057422d
-        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00570bd0()
+    CALL crt_string.c_wcstombs_FUN_00570bd0 ; 0057422d
+        ;   XREF to: 00570bd0 (UNCONDITIONAL_CALL)  ; int crt_string.c_wcstombs_FUN_00570bd0(char * dest, wchar_t * src, SIZE_T dest_size)
     ADD ESP,0xc                         ; 00574232
     CMP EAX,-0x1                        ; 00574235
     JNZ 0x00574250                      ; 00574238
@@ -234,8 +234,8 @@ section .text
     RET                                 ; 0057424f
     PUSH EBX                            ; 00574250
         ;   Label: LAB_00574250
-    CALL FUN_00573afc                   ; 00574251
-        ;   XREF to: 00573afc (UNCONDITIONAL_CALL)  ; undefined FUN_00573afc()
+    CALL crt_env.c_updateEnvironTable_FUN_00573afc ; 00574251
+        ;   XREF to: 00573afc (UNCONDITIONAL_CALL)  ; int crt_env.c_updateEnvironTable_FUN_00573afc(char * envstr)
     ADD ESP,0x4                         ; 00574256
         ;   Label: LAB_00574256
     ADD ESP,0x14                        ; 00574259

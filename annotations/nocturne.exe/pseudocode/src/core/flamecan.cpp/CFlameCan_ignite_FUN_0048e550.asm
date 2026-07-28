@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(int param_1)
+; void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(CFlameCan *this_ptr)
 ;
+; Parameters:
+; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
 ;   core_actor.cpp_FUN_0040b300 at 0040bb68
@@ -44,7 +46,7 @@ section .text
     PUSH EDX                            ; 0048e583
     INC EBX                             ; 0048e584
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0048e585
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 0048e58a
     CMP EBX,0x5                         ; 0048e58d
     JL 0x0048e569                       ; 0048e590

@@ -2,86 +2,98 @@
 // Address: 0051d3c0
 // Address Range: [[0051d3c0, 0051d5dd]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(CDeformableModelInstance *this_ptr)
 
 {
   int iVar1;
-  int iVar2;
+  CDeformableModelInstance *pCVar2;
   int iVar3;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  int local_30;
-  int local_2c;
+  CDeformableModelInstance *pCVar4;
+  CVector3f local_3c;
+  CVector3f *local_30;
+  CSkeleton *local_2c;
   int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
+  CMatrix3x4f *local_24;
+  CSkeleton *local_20;
+  CQuaternion4f *local_1c;
   int local_18;
-  int local_14;
+  CMatrix3x4f *local_14;
   
-  local_2c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
-  iVar2 = 0;
-  if (0 < *(int *)(local_2c + 0x28558)) {
-    local_24 = param_1 + 0xe80;
+  local_2c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
+  iVar3 = 0;
+  if (0 < local_2c->bone_count) {
+    local_24 = (this_ptr->bone_transform).bone_world_matrices;
     local_18 = 0;
-    local_30 = param_1 + 0x58;
-    local_1c = param_1 + 0x6b0;
-    iVar1 = param_1;
-    iVar3 = param_1;
+    local_30 = this_ptr->transformed_vertices;
+    local_1c = (this_ptr->bone_transform).pose_data.bone_rotations;
+    pCVar2 = this_ptr;
+    pCVar4 = this_ptr;
     local_20 = local_2c;
     local_14 = local_24;
     do {
-      local_28 = iVar2 * 0x30;
+      local_28 = iVar3 * 0x30;
       core_xform_cpp_quaternionToMatrix3x3_FUN_0055cd70(local_24,local_1c);
-      if (*(int *)(iVar1 + 0xcf0) != 0x3f800000) {
-        *(float *)(param_1 + 0xe80 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe80 + local_28);
-        *(float *)(param_1 + 0xe84 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe84 + local_28);
-        *(float *)(param_1 + 0xe88 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe88 + local_28);
-        *(float *)(param_1 + 0xe90 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe90 + local_28);
-        *(float *)(param_1 + 0xe94 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe94 + local_28);
-        *(float *)(param_1 + 0xe98 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xe98 + local_28);
-        *(float *)(param_1 + 0xea0 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xea0 + local_28);
-        *(float *)(param_1 + 0xea4 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xea4 + local_28);
-        *(float *)(param_1 + 0xea8 + local_28) =
-             *(float *)(iVar1 + 0xcf0) * *(float *)(param_1 + 0xea8 + local_28);
+      if ((pCVar2->bone_transform).bone_scales[0] != 1.0) {
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28);
+        *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28) =
+             (pCVar2->bone_transform).bone_scales[0] *
+             *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28);
       }
-      if (*(int *)(local_20 + 0x2857c) < 0) {
-        *(float *)(iVar3 + 0xe8c) =
-             *(float *)(param_1 + 0x58 + local_18) + *(float *)(param_1 + 0x6a4);
-        *(float *)(iVar3 + 0xe9c) =
-             *(float *)(param_1 + 0x5c + local_18) + *(float *)(param_1 + 0x6a8);
-        *(float *)(iVar3 + 0xeac) =
-             *(float *)(param_1 + 0x60 + local_18) + *(float *)(param_1 + 0x6ac);
+      iVar1 = local_20->bone_list[0].parent_index;
+      if (iVar1 < 0) {
+        (pCVar4->bone_transform).bone_world_matrices[0].m[0].z =
+             *(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +
+             (this_ptr->bone_transform).pose_data.root_position.x;
+        (pCVar4->bone_transform).bone_world_matrices[0].m[1].z =
+             *(float *)((int)&this_ptr->transformed_vertices[0].y + local_18) +
+             (this_ptr->bone_transform).pose_data.root_position.y;
+        (pCVar4->bone_transform).bone_world_matrices[0].m[2].z =
+             *(float *)((int)&this_ptr->transformed_vertices[0].z + local_18) +
+             (this_ptr->bone_transform).pose_data.root_position.z;
       }
       else {
         core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                  (&local_3c,local_30 + local_18,*(int *)(local_20 + 0x2857c) * 0x30 + local_14);
-        *(uint *)(iVar3 + 0xe8c) = local_3c;
-        *(uint *)(iVar3 + 0xe9c) = local_38;
-        *(uint *)(iVar3 + 0xeac) = local_34;
+                  (&local_3c,(CVector3f *)((int)&local_30->x + local_18),local_14 + iVar1);
+        (pCVar4->bone_transform).bone_world_matrices[0].m[0].z = local_3c.x;
+        (pCVar4->bone_transform).bone_world_matrices[0].m[1].z = local_3c.y;
+        (pCVar4->bone_transform).bone_world_matrices[0].m[2].z = local_3c.z;
       }
-      iVar1 = iVar1 + 4;
-      iVar3 = iVar3 + 0x30;
-      iVar2 = iVar2 + 1;
-      local_24 = local_24 + 0x30;
-      local_1c = local_1c + 0x10;
+      pCVar2 = (CDeformableModelInstance *)&(pCVar2->motion_controller).current_motion_index;
+      pCVar4 = (CDeformableModelInstance *)(pCVar4->motion_controller).current_motion_name;
+      iVar3 = iVar3 + 1;
+      local_24 = local_24 + 1;
+      local_1c = local_1c + 1;
       local_18 = local_18 + 0xc;
-      local_20 = local_20 + 0x24;
-    } while (iVar2 < *(int *)(local_2c + 0x28558));
+      local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
+    } while (iVar3 < local_2c->bone_count);
   }
-  *(uint *)(param_1 + 0x2230) = 0xffffffff;
+  this_ptr->cached_skinned_lod_index = -1;
   return;
 }

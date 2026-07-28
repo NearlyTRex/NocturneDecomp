@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *param_1,undefined4 *param_2,byte *param_3,byte *param_4)
+; void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 ;
+; Parameters:
+; ushort *         Stack[0x4]:4   output_pixel
+; uint *           Stack[0x8]:4   texture_pixel
+; byte *           Stack[0xc]:4   texture_index
+; byte *           Stack[0x10]:4   lightmap_index
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_FUN_00447c60 at 00447cfd

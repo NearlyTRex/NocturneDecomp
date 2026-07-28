@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_invalidateSocket_FUN_00548ed0(undefined4 *param_1)
+; _SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_00548ed0(_SOCKET *socket_handle)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_004e9860 at 004e987f

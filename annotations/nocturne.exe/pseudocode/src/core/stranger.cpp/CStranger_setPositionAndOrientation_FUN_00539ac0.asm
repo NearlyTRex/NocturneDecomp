@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_00539ac0(undefined4 param_1,undefined4 param_2,int param_3)
+; void core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_00539ac0(CCharacter *param_1,CVector3f *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -38,7 +38,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 00539aef
     MOV dword ptr [ESP + 0x14],EDX      ; 00539af3
     CALL core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0 ; 00539af7
-        ;   XREF to: 004246e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0()
+        ;   XREF to: 004246e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0(CCharacter * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
     ADD ESP,0xc                         ; 00539afc
     ADD ESP,0xc                         ; 00539aff
     POP ESI                             ; 00539b02

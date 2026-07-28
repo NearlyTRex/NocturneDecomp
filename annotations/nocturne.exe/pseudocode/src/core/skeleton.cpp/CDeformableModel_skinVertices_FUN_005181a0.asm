@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_005181a0(int param_1,int param_2,int param_3,int *param_4)
+; void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_005181a0(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   lod_index
+; CMatrix3x4f *    Stack[0xc]:4   bone_matrices
+; int *            Stack[0x10]:4   output_buffer
+; SPartInstanceData * Stack[0x14]:4   part_data
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ; undefined4       Stack[-0x48]:4  local_48
@@ -83,7 +89,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00518225
     PUSH EAX                            ; 00518229
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0051822a
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     FLD float ptr [EAX]                 ; 0051822f
     FMUL float ptr [EBX]                ; 00518231
     ADD ESP,0xc                         ; 00518233
@@ -146,7 +152,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 005182de
     PUSH EAX                            ; 005182e2
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 005182e3
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     MOV EBX,EAX                         ; 005182e8
     LEA EAX,[ESP + 0x30]                ; 005182ea
     ADD ESP,0xc                         ; 005182ee

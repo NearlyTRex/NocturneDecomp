@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_water_cpp_CWater_ctor_FUN_005507a0(undefined4 *param_1)
+; CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005507a0(CWater *this_ptr)
 ;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_water.cpp_staticInit_FUN_00550730 at 00550735

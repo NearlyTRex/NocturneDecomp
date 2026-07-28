@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(undefined4 param_1)
+; CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder *this_ptr)
 ;
+; Parameters:
+; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004b5f60 at 004b5f73

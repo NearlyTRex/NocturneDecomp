@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(float *param_1,float param_2)
+; void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041ad10(CBox *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x440]:8  local_440
 ; undefined8       Stack[-0x438]:8  local_438
@@ -569,7 +572,7 @@ section .text
     PUSH EAX                            ; 0041b110
     FSTP float ptr [ESP + 0x2d4]        ; 0041b111
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0041b118
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0041b11d
     FLD float ptr [EBX + 0x1c]          ; 0041b120
     FMUL float ptr [ESP + 0x2c]         ; 0041b123
@@ -685,7 +688,7 @@ section .text
     FSTP float ptr [ESP + 0x70]         ; 0041b269
     MOVSD.REP ES:EDI,ESI                ; 0041b26d
     CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 ; 0041b26f
-        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0()
+        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA EDX,[EBX + 0xc]                 ; 0041b274
     ADD ESP,0x8                         ; 0041b277
     CMP EDX,EAX                         ; 0041b27a

@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(int param_1,undefined4 param_2)
+; int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_ptr,char *filename)
 ;
+; Parameters:
+; CPodFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[3]:
 ;   engine_pod.cpp_CPod_findFile_FUN_004f9200 at 004f921b
-;   engine_pod.cpp_FUN_004f9170 at 004f91af
+;   engine_pod.cpp_CPod_locateFile_FUN_004f9170 at 004f91af
 ;   engine_pod.cpp_findFilesByExtension_FUN_004f8b90 at 004f8cdd
 ;
 ; Called Functions:
@@ -42,7 +45,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004f8180
     PUSH EAX                            ; 004f8184
     CALL crt_string.c__stricmp_FUN_00564520 ; 004f8185
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004f818a
     TEST EAX,EAX                        ; 004f818d
     JZ 0x004f81a4                       ; 004f818f

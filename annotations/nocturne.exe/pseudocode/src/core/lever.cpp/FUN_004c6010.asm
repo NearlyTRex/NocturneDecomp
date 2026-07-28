@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c6022
         ;   Label: LAB_004c6022
     CALL core_lever.cpp_CLever_ctor_FUN_004c6040 ; 004c6023
-        ;   XREF to: 004c6040 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_CLever_ctor_FUN_004c6040()
+        ;   XREF to: 004c6040 (UNCONDITIONAL_CALL)  ; CLever * core_lever.cpp_CLever_ctor_FUN_004c6040(CLever * this_ptr)
     ADD ESP,0x4                         ; 004c6028
     RET                                 ; 004c602b
 

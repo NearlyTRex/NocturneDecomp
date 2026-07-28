@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int param_2,int param_3,ushort *param_4,int param_5,int param_6,undefined4 *param_7)
+; void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   tri_count
+; void *           Stack[0x10]:4   face_data
+; CVector3i *      Stack[0x14]:4   vertex_positions
+; int              Stack[0x18]:4   vertices_per_face
+; CVector3i *      Stack[0x1c]:4   vertex_normals
 ; Local Variables:
 ; undefined        Stack[-0x170]:1  local_170
 ; undefined4       Stack[-0x164]:4  local_164
@@ -95,8 +103,8 @@
 ;   ... and 26 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
 ;   core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10
-;   core_dcamera.cpp_FUN_00441440
 ;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -132,7 +140,7 @@ section .text
         ;   Label: LAB_0050c313
     PUSH EDI                            ; 0050c319 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050c31a
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050c31f
     TEST EAX,EAX                        ; 0050c322
     JNZ 0x0050c390                      ; 0050c324
@@ -328,8 +336,8 @@ section .text
     PUSH 0x1fb8508                      ; 0050c51d
     LEA ESI,[ESP + 0x74]                ; 0050c522
     LEA EDI,[ESP + 0x8c]                ; 0050c526
-    CALL core_dcamera.cpp_FUN_00441440  ; 0050c52d
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440 ; 0050c52d
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440()
     LEA ESI,[ESP + 0x74]                ; 0050c532
     ADD ESP,0x8                         ; 0050c536
     MOVSD ES:EDI,ESI                    ; 0050c539
@@ -446,8 +454,8 @@ section .text
     PUSH EAX                            ; 0050c673
     PUSH 0x1fb8508                      ; 0050c674
     LEA ESI,[ESP + 0x80]                ; 0050c679
-    CALL core_dcamera.cpp_FUN_00441440  ; 0050c680
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440 ; 0050c680
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440()
     ADD ESP,0x8                         ; 0050c685
     MOV EDI,dword ptr [ESP + 0x114]     ; 0050c688
     LEA ESI,[ESP + 0x78]                ; 0050c68f
@@ -480,7 +488,7 @@ section .text
     PUSH 0x1fb8508                      ; 0050c6e2
     LEA ESI,[ESP + 0x8]                 ; 0050c6e7
     CALL core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10 ; 0050c6eb
-        ;   XREF to: 00441a10 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10()
+        ;   XREF to: 00441a10 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
     ADD ESP,0x8                         ; 0050c6f0
     MOV ESI,ESP                         ; 0050c6f3
     MOV ECX,dword ptr [ESP + 0x128]     ; 0050c6f5
@@ -518,8 +526,8 @@ section .text
     PUSH 0x1fb8508                      ; 0050c75b
     LEA ESI,[ESP + 0x20]                ; 0050c760
     LEA EDI,[ESP + 0x98]                ; 0050c764
-    CALL core_dcamera.cpp_FUN_00441440  ; 0050c76b
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440 ; 0050c76b
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440()
     LEA ESI,[ESP + 0x20]                ; 0050c770
     ADD ESP,0x8                         ; 0050c774
     MOVSD ES:EDI,ESI                    ; 0050c777
@@ -568,8 +576,8 @@ section .text
     PUSH EAX                            ; 0050c7fe
     PUSH 0x1fb8508                      ; 0050c7ff
     LEA ESI,[ESP + 0x38]                ; 0050c804
-    CALL core_dcamera.cpp_FUN_00441440  ; 0050c808
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440 ; 0050c808
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440()
     ADD ESP,0x8                         ; 0050c80d
     MOV EDI,dword ptr [ESP + 0x118]     ; 0050c810
     LEA ESI,[ESP + 0x30]                ; 0050c817
@@ -703,7 +711,7 @@ section .text
     PUSH 0x0                            ; 0050c9d9
     PUSH 0x2045ab0                      ; 0050c9db | DAT_02045ab0
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0050c9e0
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0050c9e5
     XOR EBX,EBX                         ; 0050c9e8
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0050c9ea
@@ -1013,7 +1021,7 @@ section .text
     PUSH 0x0                            ; 0050ce1b
     PUSH 0x2045ab0                      ; 0050ce1d | DAT_02045ab0
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0050ce22
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0050ce27
     XOR EBX,EBX                         ; 0050ce2a
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0050ce2c

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(int param_1,float *param_2,int param_3)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0(CDeformableModelInstance *this_ptr,CVector3f *out_position,int bone_index)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_position
+; int              Stack[0xc]:4   bone_index
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70
 ; undefined        Stack[-0x40]:1  local_40
@@ -16,8 +20,8 @@
 ;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454ae0
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00459657
 ;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462e9a
+;   core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 at 00497891
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 0049745d
-;   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0 at 0049940f
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -62,7 +66,7 @@ section .text
     PUSH EDI                            ; 0051d2df
         ;   Label: LAB_0051d2df
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 0051d2e0
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051d2e5
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0051d2e8
     MOV EBP,EAX                         ; 0051d2ec
@@ -112,7 +116,7 @@ section .text
     PUSH EBX                            ; 0051d35f
     MOVSD.REP ES:EDI,ESI                ; 0051d360
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0051d362
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0051d367
     MOV EAX,EBX                         ; 0051d36a
     ADD ESP,0x60                        ; 0051d36c

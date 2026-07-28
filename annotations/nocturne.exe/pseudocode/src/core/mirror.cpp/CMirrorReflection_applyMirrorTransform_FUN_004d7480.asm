@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(int param_1,undefined4 param_2,undefined4 param_3)
+; CVector3f * core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480(int param_1,CVector3f *param_2,CVector3f *param_3)
 ;
 ;
 ; XREF[2]:
@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 004d7491
     PUSH EBX                            ; 004d7492
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 004d7493
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 004d7498
     MOV EAX,EBX                         ; 004d749b
     POP EBX                             ; 004d749d

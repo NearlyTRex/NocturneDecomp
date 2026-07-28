@@ -2,14 +2,14 @@
 // Address: 0048fbe0
 // Address Range: [[0048fbe0, 0048fc2d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(int param_1)
+// Signature: CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(CDemonActor *actor)
 
 #include "nocturne.h"
 
-int __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(int param_1)
+CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(CDemonActor *actor)
 
 {
-  int iVar1;
+  CFlies *pCVar1;
   int iVar2;
   int iVar3;
   
@@ -17,14 +17,15 @@ int __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(int param_1)
   iVar2 = 0;
   while( true ) {
     if (*(int *)(0x01E57284 + 0x14cd6c) <= iVar2) {
-      return 0;
+      return (CFlies *)0x0;
     }
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),
-                       g_CFliesActorType_01c70718.name_hash);
-    if ((iVar1 != 0) && (param_1 == *(int *)(iVar1 + 0x2a00))) break;
+    pCVar1 = (CFlies *)
+             core_actor_cpp_castToClassHash_FUN_0040d890
+                       (*(CDemonActor **)(iVar3 + 0x14cd70 + 0x01E57284),
+                        g_CFliesActorType_01c70718.name_hash);
+    if ((pCVar1 != (CFlies *)0x0) && (actor == pCVar1->follow_actor)) break;
     iVar2 = iVar2 + 1;
     iVar3 = iVar3 + 4;
   }
-  return iVar1;
+  return pCVar1;
 }

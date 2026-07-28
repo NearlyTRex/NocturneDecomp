@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_endScene_FUN_00532360(void)
+; int __cdecl engine_special_cpp_endScene_FUN_00532360(void)
 ;
 ;
 ; XREF[1]:

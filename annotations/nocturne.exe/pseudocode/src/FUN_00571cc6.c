@@ -35,7 +35,8 @@ LAB_00571d05:
     param_1[1] = 1;
     return uVar3;
   }
-  FUN_0056b327(*(int *)(*param_1 + 4) + (int)param_1,4);
+  reportStreamError
+            ((FileEmbeddedData *)(*(int *)(*param_1 + 4) + (int)param_1),4);
   param_1[1] = 0;
   return 0xffffffff;
 }

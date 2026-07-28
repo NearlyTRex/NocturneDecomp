@@ -19,7 +19,7 @@ struct CBatCreature_ptr_10900 {
     template<typename T> CBatCreature_ptr_10900(T* p) : _raw((void*)p) {}
     template<typename T> CBatCreature_ptr_10900& operator=(T* p) { _raw = (void*)p; return *this; }
     CBatCreature* operator->() const { return (CBatCreature*)_raw; }
-    CBatCreature* adj() const { return (CBatCreature*)((char*)_raw - offsetof(CBatCreature, base.base.cloth_list)); }
+    CBatCreature* adj() const { return (CBatCreature*)((char*)_raw - offsetof(CBatCreature, base.base.cloth_list.filenames[0][4])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

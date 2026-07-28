@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_0055d6b0(int *param_1,int *param_2,int *param_3)
+; void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_0055d6b0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex_a
+; SRenderVertex *  Stack[0x8]:4   vertex_b
+; SRenderVertex *  Stack[0xc]:4   vertex_out
 ;
 ; XREF[2]:
-;   core_xform.cpp_FUN_0055d9c0 at 0055da95
+;   core_xform.cpp_clipPolygonStage1_FUN_0055d9c0 at 0055da95
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040 at 0055e4db
 ;
 ; Referenced Globals:

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 778,
-    "complexity_score": 2800,
+    "complexity_score": 2802,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 1,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 360,
+    "pseudocode_lines": 362,
     "suspect_count": 239,
     "suspect_types": [
       "concat_reconstruction",
@@ -141,7 +141,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1138
+    "total_lines": 1140
   },
   "cross_references": [
     {
@@ -164,6 +164,21 @@
     "signature": "undefined8 FUN_00569928(byte *param_1,uint *param_2,int param_3)"
   },
   "function_calls": [
+    {
+      "addr": "0056f3a0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0"
+    },
+    {
+      "addr": "0056f3e0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_i64toa_FUN_0056f3e0"
+    },
+    {
+      "addr": "0056f4f0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_utoa_FUN_0056f4f0"
+    },
     {
       "addr": "0056963c",
       "is_variadic": false,
@@ -198,21 +213,6 @@
       "addr": "00569f8c",
       "is_variadic": false,
       "name": "FUN_00569f8c"
-    },
-    {
-      "addr": "0056f3a0",
-      "is_variadic": false,
-      "name": "FUN_0056f3a0"
-    },
-    {
-      "addr": "0056f3e0",
-      "is_variadic": false,
-      "name": "FUN_0056f3e0"
-    },
-    {
-      "addr": "0056f4f0",
-      "is_variadic": false,
-      "name": "FUN_0056f4f0"
     }
   ],
   "globals": [
@@ -1006,15 +1006,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = FUN_0056f3a0(param_1,*puVar4);",
+      "text": "((wchar_t)param_1,(char *)(uint)*puVar4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 161,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x20) = 0;",
@@ -1022,7 +1022,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(local_18,param_1);",
@@ -1030,7 +1030,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 164,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x20) = iVar6;",
@@ -1038,7 +1038,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(local_18,param_1);",
@@ -1046,7 +1046,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 173,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(int *)(param_3 + 4) == 0) {",
@@ -1054,7 +1054,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 174,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x80) == 0) {",
@@ -1062,7 +1062,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 175,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 4) = 8;",
@@ -1070,7 +1070,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 178,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 4) = 0xd;",
@@ -1078,15 +1078,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(byte *)(param_3 + 0x1e) = *(byte *)(param_3 + 0x1e) & 0xf9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 181,
       "match": "param_3",
       "severity": "mild",
       "text": "*(byte *)(param_3 + 0x1e) = *(byte *)(param_3 + 0x1e) & 0xf9;",
@@ -1095,9 +1087,9 @@
     {
       "description": "Unnamed function parameter",
       "line": 181,
-      "match": "param_2",
+      "match": "param_3",
       "severity": "mild",
-      "text": "puVar3 = (uint *)*param_2;",
+      "text": "*(byte *)(param_3 + 0x1e) = *(byte *)(param_3 + 0x1e) & 0xf9;",
       "type": "unnamed_param"
     },
     {
@@ -1105,12 +1097,20 @@
       "line": 182,
       "match": "param_2",
       "severity": "mild",
+      "text": "puVar3 = (uint *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 183,
+      "match": "param_2",
+      "severity": "mild",
       "text": "*param_2 = (uint)(puVar3 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 185,
       "match": "param_1",
       "severity": "mild",
       "text": "pbVar5 = param_1;",
@@ -1118,7 +1118,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 185,
+      "line": 186,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x80) != 0) {",
@@ -1126,18 +1126,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 187,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = (uint)(puVar3 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 187,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005696e8(puVar3[1] & 0xffff,param_1,4);",
       "type": "unnamed_param"
     },
     {
@@ -1145,7 +1137,7 @@
       "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[4] = 0x3a;",
+      "text": "FUN_005696e8(puVar3[1] & 0xffff,param_1,4);",
       "type": "unnamed_param"
     },
     {
@@ -1153,12 +1145,20 @@
       "line": 189,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1[4] = 0x3a;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 190,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pbVar5 = param_1 + 5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 193,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(char *)(param_3 + 0x15) == 'P') {",
@@ -1166,7 +1166,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 194,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00569f8c(param_1);",
@@ -1174,7 +1174,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 195,
+      "line": 196,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar9 = FUN_0056963c(param_1,local_18 & 0xffff,0xffffffff);",
@@ -1182,7 +1182,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 197,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x20) = uVar9;",
@@ -1190,7 +1190,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(local_18,param_1);",
@@ -1198,7 +1198,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 203,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 0;",
@@ -1206,7 +1206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 205,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x80) == 0) {",
@@ -1214,7 +1214,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 206,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x40) == 0) {",
@@ -1222,26 +1222,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)*param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 207,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (uint)(puVar3 + 1);",
+      "text": "puVar3 = (uint *)*param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 211,
+      "line": 208,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar3 = (uint *)*param_2;",
+      "text": "*param_2 = (uint)(puVar3 + 1);",
       "type": "unnamed_param"
     },
     {
@@ -1249,12 +1241,20 @@
       "line": 212,
       "match": "param_2",
       "severity": "mild",
+      "text": "puVar3 = (uint *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 213,
+      "match": "param_2",
+      "severity": "mild",
       "text": "*param_2 = (uint)(puVar3 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 216,
+      "line": 217,
       "match": "in_DS",
       "severity": "mild",
       "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
@@ -1262,7 +1262,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 216,
+      "line": 217,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
@@ -1270,7 +1270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 218,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = pbVar5;",
@@ -1278,7 +1278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 221,
+      "line": 222,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar3 = (uint *)*param_2;",
@@ -1286,7 +1286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 222,
+      "line": 223,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = (uint)(puVar3 + 2);",
@@ -1294,7 +1294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 224,
+      "line": 225,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (byte *)*puVar3;",
@@ -1302,7 +1302,7 @@
     },
     {
       "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 225,
+      "line": 226,
       "match": "CONCAT22((short)((uint)puVar8 >> 0x10",
       "severity": "severe",
       "text": "local_18 = CONCAT22((short)((uint)puVar8 >> 0x10),*(short *)(puVar3 + 1));",
@@ -1310,7 +1310,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 228,
+      "line": 229,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(char *)(param_3 + 0x15) == 'S') {",
@@ -1318,7 +1318,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 229,
+      "line": 230,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x10) == 0) {",
@@ -1326,7 +1326,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 230,
+      "line": 231,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = FUN_0056966c(param_1,local_18 & 0xffff,*(uint *)(param_3 + 8));",
@@ -1334,7 +1334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 230,
+      "line": 231,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar6 = FUN_0056966c(param_1,local_18 & 0xffff,*(uint *)(param_3 + 8));",
@@ -1342,7 +1342,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 233,
+      "line": 234,
       "match": "param_3",
       "severity": "mild",
       "text": "uVar9 = *(uint *)(param_3 + 8);",
@@ -1350,7 +1350,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = FUN_0056963c(param_1,local_18 & 0xffff,uVar9);",
@@ -1358,7 +1358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 239,
+      "line": 240,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 0x20) == 0) {",
@@ -1366,7 +1366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 240,
+      "line": 241,
       "match": "param_3",
       "severity": "mild",
       "text": "uVar9 = *(uint *)(param_3 + 8);",
@@ -1374,7 +1374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 244,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = FUN_0056966c(param_1,local_18 & 0xffff,*(uint *)(param_3 + 8));",
@@ -1382,18 +1382,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 244,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar6 = FUN_0056966c(param_1,local_18 & 0xffff,*(uint *)(param_3 + 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(param_3 + 8);",
       "type": "unnamed_param"
     },
     {
@@ -1401,12 +1393,20 @@
       "line": 246,
       "match": "param_3",
       "severity": "mild",
+      "text": "iVar7 = *(int *)(param_3 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 247,
+      "match": "param_3",
+      "severity": "mild",
       "text": "*(int *)(param_3 + 0x28) = iVar6;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 248,
+      "line": 249,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x28) = iVar7;",
@@ -1414,7 +1414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 249,
+      "line": 250,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(local_18,param_1);",
@@ -1422,7 +1422,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 257,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((*(byte *)(param_3 + 0x1e) & 1) != 0) &&",
@@ -1430,7 +1430,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 257,
+      "line": 258,
       "match": "in_ECX",
       "severity": "mild",
       "text": "(((puVar8 = in_ECX, (*(byte *)(param_3 + 0x1f) & 1) != 0 &&",
@@ -1438,18 +1438,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 257,
+      "line": 258,
       "match": "param_3",
       "severity": "mild",
       "text": "(((puVar8 = in_ECX, (*(byte *)(param_3 + 0x1f) & 1) != 0 &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 259,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
@@ -1457,23 +1449,23 @@
       "line": 260,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
+      "text": "iVar6 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 261,
-      "match": "param_1",
+      "match": "param_3",
       "severity": "mild",
-      "text": "param_1[iVar6] = 0x30;",
+      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 262,
-      "match": "param_3",
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)(param_3 + 0x20);",
+      "text": "param_1[iVar6] = 0x30;",
       "type": "unnamed_param"
     },
     {
@@ -1481,12 +1473,20 @@
       "line": 263,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
+      "text": "iVar6 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 264,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 265,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[iVar6] = *(byte *)(param_3 + 0x15);",
@@ -1494,18 +1494,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 264,
+      "line": 265,
       "match": "param_3",
       "severity": "mild",
       "text": "param_1[iVar6] = *(byte *)(param_3 + 0x15);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 270,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x20) = 1;",
       "type": "unnamed_param"
     },
     {
@@ -1513,15 +1505,15 @@
       "line": 271,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_3 + 0x1e) & 0x20) == 0) {",
+      "text": "*(uint *)(param_3 + 0x20) = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 272,
-      "match": "param_2",
+      "match": "param_3",
       "severity": "mild",
-      "text": "pbVar5 = (byte *)*param_2;",
+      "text": "if ((*(byte *)(param_3 + 0x1e) & 0x20) == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -1529,15 +1521,15 @@
       "line": 273,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (uint)(pbVar5 + 4);",
+      "text": "pbVar5 = (byte *)*param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 274,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "*param_1 = *pbVar5;",
+      "text": "*param_2 = (uint)(pbVar5 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -1545,15 +1537,15 @@
       "line": 275,
       "match": "param_1",
       "severity": "mild",
-      "text": "return CONCAT44(local_18,param_1);",
+      "text": "*param_1 = *pbVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
-      "match": "param_2",
+      "line": 276,
+      "match": "param_1",
       "severity": "mild",
-      "text": "puVar4 = (ushort *)*param_2;",
+      "text": "return CONCAT44(local_18,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1561,15 +1553,15 @@
       "line": 278,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (uint)(puVar4 + 2);",
+      "text": "puVar4 = (ushort *)*param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 281,
-      "match": "param_1",
+      "line": 279,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if (((iVar7 != -1) && (*param_1 = local_1c, iVar6 != 0)) &&",
+      "text": "*param_2 = (uint)(puVar4 + 2);",
       "type": "unnamed_param"
     },
     {
@@ -1577,23 +1569,7 @@
       "line": 283,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1] = local_1b;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 284,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 284,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;",
+      "text": "if (((iVar7 != -1) && (*param_1 = local_1c, iVar6 != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -1601,31 +1577,31 @@
       "line": 285,
       "match": "param_1",
       "severity": "mild",
-      "text": "return CONCAT44(local_18,param_1);",
+      "text": "param_1[1] = local_1b;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 293,
+      "line": 286,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 4) = 0;",
+      "text": "*(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 294,
+      "line": 286,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x20) = *(int *)(param_3 + 0x20) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 287,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = *(byte *)(param_3 + 0x15);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 294,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_1 = *(byte *)(param_3 + 0x15);",
+      "text": "return CONCAT44(local_18,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -1633,31 +1609,31 @@
       "line": 295,
       "match": "param_3",
       "severity": "mild",
+      "text": "*(uint *)(param_3 + 4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 296,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = *(byte *)(param_3 + 0x15);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 296,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_1 = *(byte *)(param_3 + 0x15);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_3",
+      "severity": "mild",
       "text": "*(uint *)(param_3 + 0x20) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 320,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((*(char *)(param_3 + 0x15) == 'o') && (uVar9 = 8, (*(byte *)(param_3 + 0x1e) & 1) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 320,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((*(char *)(param_3 + 0x15) == 'o') && (uVar9 = 8, (*(byte *)(param_3 + 0x1e) & 1) != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 321,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
@@ -1665,12 +1641,36 @@
       "line": 322,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
+      "text": "if ((*(char *)(param_3 + 0x15) == 'o') && (uVar9 = 8, (*(byte *)(param_3 + 0x1e) & 1) != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 322,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((*(char *)(param_3 + 0x15) == 'o') && (uVar9 = 8, (*(byte *)(param_3 + 0x1e) & 1) != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 323,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar6 = *(int *)(param_3 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 324,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x20) = iVar6 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 325,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[iVar6] = 0x30;",
@@ -1678,7 +1678,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 328,
+      "line": 330,
       "match": "in_DS",
       "severity": "mild",
       "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
@@ -1686,7 +1686,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 328,
+      "line": 330,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
@@ -1694,7 +1694,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 331,
       "match": "param_1",
       "severity": "mild",
       "text": "pbVar5 = param_1 + *(int *)(param_3 + 0x20);",
@@ -1702,7 +1702,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 331,
       "match": "param_3",
       "severity": "mild",
       "text": "pbVar5 = param_1 + *(int *)(param_3 + 0x20);",
@@ -1710,7 +1710,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 332,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1f) & 1) == 0) {",
@@ -1718,7 +1718,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 331,
+      "line": 333,
       "match": "in_ECX",
       "severity": "mild",
       "text": "if ((*(int *)(param_3 + 8) != 0) || (in_ECX != (uint *)0x0)) {",
@@ -1726,7 +1726,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 331,
+      "line": 333,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(int *)(param_3 + 8) != 0) || (in_ECX != (uint *)0x0)) {",
@@ -1734,31 +1734,31 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 332,
+      "line": 334,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "FUN_0056f4f0(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
+      "text": "utoa(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
       "type": "register_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 332,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0056f4f0(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
+      "text": "utoa(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 332,
+      "line": 334,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_0056f4f0(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
+      "text": "utoa(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 335,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(char *)(param_3 + 0x15) == 'X') {",
@@ -1766,7 +1766,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 336,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00569f8c(param_1);",
@@ -1774,7 +1774,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 343,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (((*(int *)(param_3 + 8) == 0) && (local_24 == 0)) && (local_20 == (uint *)0x0)) {",
@@ -1782,23 +1782,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 348,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0056f3e0(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);",
+      "text": "i64toa(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 348,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_0056f3e0(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);",
+      "text": "i64toa(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 349,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(char *)(param_3 + 0x15) == 'X') {",
@@ -1806,7 +1806,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 348,
+      "line": 350,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00569f8c(param_1);",
@@ -1814,7 +1814,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 353,
+      "line": 355,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x28) = iVar6;",
@@ -1822,7 +1822,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 354,
+      "line": 356,
       "match": "param_3",
       "severity": "mild",
       "text": "if (iVar6 < *(int *)(param_3 + 8)) {",
@@ -1830,15 +1830,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 355,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + 0x24) = *(int *)(param_3 + 8) - iVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 355,
+      "line": 357,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x24) = *(int *)(param_3 + 8) - iVar6;",
@@ -1847,6 +1839,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 357,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x24) = *(int *)(param_3 + 8) - iVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 359,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = pbVar5;",
@@ -1854,7 +1854,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 358,
+      "line": 360,
       "match": "param_3",
       "severity": "mild",
       "text": "if (*(int *)(param_3 + 8) == -1) {",
@@ -1862,7 +1862,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 359,
+      "line": 361,
       "match": "param_3",
       "severity": "mild",
       "text": "FUN_0056986c(param_3);",
@@ -1870,7 +1870,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 363,
+      "line": 365,
       "match": "param_1",
       "severity": "mild",
       "text": "return CONCAT44(local_18,param_1);",
@@ -2070,7 +2070,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + 1)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 182,
+      "line": 183,
       "match": "(uint)(puVar3 + 1)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar3 + 1);",
@@ -2078,7 +2078,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + 2)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 186,
+      "line": 187,
       "match": "(uint)(puVar3 + 2)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar3 + 2);",
@@ -2086,7 +2086,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + 1)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 207,
+      "line": 208,
       "match": "(uint)(puVar3 + 1)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar3 + 1);",
@@ -2094,7 +2094,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + 1)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 212,
+      "line": 213,
       "match": "(uint)(puVar3 + 1)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar3 + 1);",
@@ -2102,7 +2102,7 @@
     },
     {
       "description": "Pointer value `(puVar3 + 2)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 222,
+      "line": 223,
       "match": "(uint)(puVar3 + 2)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar3 + 2);",
@@ -2110,7 +2110,7 @@
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 225,
+      "line": 226,
       "match": "(uint)puVar8",
       "severity": "moderate",
       "text": "local_18 = CONCAT22((short)((uint)puVar8 >> 0x10),*(short *)(puVar3 + 1));",
@@ -2118,7 +2118,7 @@
     },
     {
       "description": "Pointer value `(pbVar5 + 4)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 273,
+      "line": 274,
       "match": "(uint)(pbVar5 + 4)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(pbVar5 + 4);",
@@ -2126,7 +2126,7 @@
     },
     {
       "description": "Pointer value `(puVar4 + 2)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 278,
+      "line": 279,
       "match": "(uint)(puVar4 + 2)",
       "severity": "moderate",
       "text": "*param_2 = (uint)(puVar4 + 2);",
@@ -2166,7 +2166,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 161,
+      "line": 162,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(local_18,param_1);",
@@ -2174,7 +2174,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 164,
+      "line": 165,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(local_18,param_1);",
@@ -2182,39 +2182,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 197,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "return CONCAT44(local_18,param_1);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 216,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 249,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "return CONCAT44(local_18,param_1);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 275,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "return CONCAT44(local_18,param_1);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 285,
+      "line": 198,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(local_18,param_1);",
@@ -2222,7 +2190,7 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 328,
+      "line": 217,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
@@ -2230,7 +2198,39 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 360,
+      "line": 250,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(local_18,param_1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 276,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(local_18,param_1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 287,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(local_18,param_1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 330,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_18 = CONCAT22(local_18._2_2_,in_DS);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 362,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(local_18,pbVar5);",
@@ -2238,7 +2238,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 363,
+      "line": 365,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(local_18,param_1);",

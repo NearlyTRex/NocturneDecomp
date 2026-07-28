@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(int param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_resolveActorByName_FUN_0047a390 at 0047a3af
@@ -30,7 +33,7 @@ section .text
     PUSH EDX                            ; 00480b3c
     PUSH EDI                            ; 00480b3d
     CALL core_event.cpp_CEventList_findActorVariable_FUN_00480ba0 ; 00480b3e
-        ;   XREF to: 00480ba0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findActorVariable_FUN_00480ba0()
+        ;   XREF to: 00480ba0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findActorVariable_FUN_00480ba0(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 00480b43
     TEST EAX,EAX                        ; 00480b46
     JL 0x00480b6c                       ; 00480b48
@@ -65,7 +68,7 @@ section .text
     MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 00480b7a
     PUSH EBP                            ; 00480b81
     CALL crt_string.c__stricmp_FUN_00564520 ; 00480b82
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00480b87
     TEST EAX,EAX                        ; 00480b8a
     JNZ 0x00480b73                      ; 00480b8c

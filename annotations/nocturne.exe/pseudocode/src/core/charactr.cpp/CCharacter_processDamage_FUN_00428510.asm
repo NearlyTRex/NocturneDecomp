@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(int param_1,undefined4 *param_2)
+; void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(CCharacter *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined        Stack[-0x28]:1  local_28
@@ -91,7 +94,7 @@ section .text
     PUSH ECX                            ; 0042856f
     PUSH EBX                            ; 00428570
     CALL core_charactr.cpp_CCharacter_explode_FUN_00427ab0 ; 00428571
-        ;   XREF to: 00427ab0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_explode_FUN_00427ab0()
+        ;   XREF to: 00427ab0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_explode_FUN_00427ab0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
     ADD ESP,0xc                         ; 00428576
     CMP dword ptr [ESI + 0x28],0x5      ; 00428579
         ;   Label: LAB_00428579
@@ -103,7 +106,7 @@ section .text
     PUSH EAX                            ; 00428587
     PUSH EBX                            ; 00428588
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00428589
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0042858e
     PUSH 0x0                            ; 00428591
     PUSH 0x3f800000                     ; 00428593
@@ -132,12 +135,12 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004285c2
     PUSH EAX                            ; 004285c6
     CALL crt_math.c_round_FUN_00563a30  ; 004285c7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EBX                            ; 004285cc
     FISTP dword ptr [ESP + 0x28]        ; 004285cd
     MOV EDI,dword ptr [ESP + 0x28]      ; 004285d1
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004285d5
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004285da
     MOV EBP,dword ptr [EBX + 0x2608]    ; 004285dd
     PUSH EBP                            ; 004285e3
@@ -150,7 +153,7 @@ section .text
     MOV EAX,[0x005b96c4]                ; 004285ef | INT_005b96c4
     PUSH EAX                            ; 004285f4
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004285f5
-        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
+        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 004285fa
     POP EDI                             ; 004285fd
     CMP dword ptr [EBX + 0x243c],0x1    ; 004285fe
@@ -171,7 +174,7 @@ section .text
     MOV ESI,dword ptr [0x005b9354]      ; 00428633 | DAT_005b9354
     PUSH ESI                            ; 00428639 | DAT_01c775ec
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0 ; 0042863a
-        ;   XREF to: 004a3ab0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0()
+        ;   XREF to: 004a3ab0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame * this_ptr, char * name, int value, float duration)
     ADD ESP,0x10                        ; 0042863f
     FLD float ptr [EBX + 0x2434]        ; 00428642
         ;   Label: LAB_00428642
@@ -193,14 +196,14 @@ section .text
     PUSH ECX                            ; 00428661
     PUSH EBX                            ; 00428662
     CALL core_charactr.cpp_CCharacter_dismember_FUN_00427b60 ; 00428663
-        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismember_FUN_00427b60()
+        ;   XREF to: 00427b60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_00427b60(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 00428668
     JMP 0x00428579                      ; 0042866b
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579
     PUSH EBX                            ; 00428670
         ;   Label: LAB_00428670
     CALL core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 ; 00428671
-        ;   XREF to: 00427310 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310()
+        ;   XREF to: 00427310 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00428676
     JMP 0x00428579                      ; 00428679
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579
@@ -243,7 +246,7 @@ section .text
     PUSH EBX                            ; 004286be
         ;   Label: LAB_004286be
     CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0 ; 004286bf
-        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0()
+        ;   XREF to: 004291f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004286c4
     ADD ESP,0x1c                        ; 004286c7
     POP EBP                             ; 004286ca

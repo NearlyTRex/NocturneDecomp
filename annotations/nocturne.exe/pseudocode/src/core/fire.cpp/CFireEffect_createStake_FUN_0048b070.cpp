@@ -2,28 +2,26 @@
 // Address: 0048b070
 // Address Range: [[0048b070, 0048b1ba]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(undefined4 param_1,float *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(uint param_1,float *param_2,uint param_3,uint param_4,uint param_5)
+void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 {
   bool bVar1;
   float *pfVar2;
-  byte local_5c [40];
+  CMatrix3x3f local_5c;
   uint local_34;
   uint local_30;
   uint local_2c;
   byte local_28 [12];
-  float local_1c;
-  float local_18;
-  float local_14;
+  CVector3f local_1c;
   
   bVar1 = false;
-  switch(param_5) {
+  switch(ground_type) {
   case 0:
   case 1:
   case 2:
@@ -41,23 +39,25 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(uint param_1,flo
   case 6:
     goto switchD_0048b08a_caseD_6;
   }
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_5c,param_3);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_5c,orientation_angles);
   local_34 = 0;
   local_30 = 0;
   local_2c = 0x3f333333;
   pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                              (local_5c,local_28,&local_34);
-  local_1c = *param_2 - *pfVar2;
-  local_18 = param_2[1] - pfVar2[1];
-  local_14 = param_2[2] - pfVar2[2];
+                              (&local_5c,local_28,&local_34);
+  local_1c.x = impact_position->x - *pfVar2;
+  local_1c.y = impact_position->y - pfVar2[1];
+  local_1c.z = impact_position->z - pfVar2[2];
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_00483320
-              (_DAT_01c23d4c * 0x260 + 0x1c23d50,&local_1c,param_3,param_4);
+              ((CStake *)(_DAT_01c23d4c * 0x260 + 0x1c23d50),&local_1c,orientation_angles,
+               surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00
-              (0x02DC9450,param_1,"a-wood?.wav",&local_1c,0x3e6b851f);
-    core_fire_cpp_CStake_init_FUN_004832b0(_DAT_01c23d4c * 0x260 + 0x1c23d50,&local_1c,param_3);
+              (0x02DC9450,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
+    core_fire_cpp_CStake_init_FUN_004832b0
+              ((CStake *)(_DAT_01c23d4c * 0x260 + 0x1c23d50),&local_1c,orientation_angles);
   }
   _DAT_01c23d4c = _DAT_01c23d4c + 1;
   if (0xff < _DAT_01c23d4c) {

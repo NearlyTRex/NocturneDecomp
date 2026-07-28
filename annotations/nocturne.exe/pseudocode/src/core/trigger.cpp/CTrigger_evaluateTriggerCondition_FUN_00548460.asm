@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_00548460(int param_1,undefined4 param_2,undefined4 param_3)
+; undefined4 core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_00548460(CDemonActor *param_1,undefined4 param_2,CVector3f *param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
@@ -36,7 +36,7 @@ section .text
     PUSH EDX                            ; 0054848d
     PUSH ESI                            ; 0054848e
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0054848f
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00548494
     MOV EDX,ESP                         ; 00548497
     PUSH EDX                            ; 00548499

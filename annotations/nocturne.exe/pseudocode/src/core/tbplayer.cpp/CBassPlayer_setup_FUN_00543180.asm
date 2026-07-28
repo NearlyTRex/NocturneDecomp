@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(int param_1)
+; void core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CNPC *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -9,7 +9,7 @@
 ;   TerminatedCString s_Bip01_R_Hand_005964ad
 ;
 ; Called Functions:
-;   core_npc.cpp_FUN_004ee9e0
+;   core_npc.cpp_CNPC_setup_FUN_004ee9e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
 ;
@@ -22,27 +22,27 @@ section .text
     PUSH ESI                            ; 00543181
     MOV EBX,dword ptr [ESP + 0xc]       ; 00543182
     PUSH EBX                            ; 00543186
-    CALL core_npc.cpp_FUN_004ee9e0      ; 00543187
-        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee9e0()
+    CALL core_npc.cpp_CNPC_setup_FUN_004ee9e0 ; 00543187
+        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_setup_FUN_004ee9e0(CNPC * this_ptr)
     ADD ESP,0x4                         ; 0054318c
     LEA EAX,[EBX + 0x150]               ; 0054318f
     PUSH EAX                            ; 00543195
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 00543196
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054319b
     PUSH 0x1                            ; 0054319e
     PUSH 0x5964a0                       ; 005431a0 | = "Bip01 L Hand"
     PUSH EAX                            ; 005431a5
     MOV ESI,EAX                         ; 005431a6
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 005431a8
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 005431ad
     PUSH 0x1                            ; 005431b0
     PUSH 0x5964ad                       ; 005431b2 | = "Bip01 R Hand"
     PUSH ESI                            ; 005431b7
     MOV dword ptr [EBX + 0x1f570],EAX   ; 005431b8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 005431be
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     MOV dword ptr [EBX + 0x24a8],0x0    ; 005431c3
     MOV dword ptr [EBX + 0x1f574],EAX   ; 005431cd
     MOV EAX,dword ptr [EBX + 0x1f570]   ; 005431d3

@@ -29,4 +29,4 @@ void FUN_004d60b0(undefined4 param_1);
 
 // Original: core_minecar.cpp_FUN_004d60d0
 // Address: 004d60d0
-int FUN_004d60d0(int param_1,byte param_2);
+CDemonActor * FUN_004d60d0(CDemonActor *param_1,byte param_2);

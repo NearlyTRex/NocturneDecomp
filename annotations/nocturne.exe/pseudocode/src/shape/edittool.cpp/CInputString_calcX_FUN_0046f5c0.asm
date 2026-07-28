@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(int param_1,uint param_2)
+; int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(CInputString *this_ptr,int char_index)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   char_index
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -60,7 +63,7 @@ section .text
     PUSH 0x2a                           ; 0046f617
     PUSH 0x1bcd9c8                      ; 0046f619
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0046f61e
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046f623
     XOR AH,AH                           ; 0046f626
     PUSH 0x1bcd9c8                      ; 0046f628

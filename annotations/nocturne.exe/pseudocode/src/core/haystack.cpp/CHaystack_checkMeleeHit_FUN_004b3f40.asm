@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(int param_1,undefined4 param_2)
+; void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004b3f40(CCharacter *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
@@ -40,7 +40,7 @@ section .text
     LEA EAX,[EBP + 0x150]               ; 004b3f55
     PUSH EAX                            ; 004b3f5b
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004b3f5c
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004b3f61
     PUSH EAX                            ; 004b3f64
     LEA EAX,[ESP + 0x4c]                ; 004b3f65
@@ -49,7 +49,7 @@ section .text
     XOR EDI,EDI                         ; 004b3f6b
     XOR ESI,ESI                         ; 004b3f6d
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004b3f6f
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004b3f74
     MOV EBX,dword ptr [0x005be368]      ; 004b3f77 | DAT_005be368
         ;   Label: LAB_004b3f77
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_004b3f96
     PUSH EAX                            ; 004b3f98
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 004b3f99
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     MOV EAX,0x41200000                  ; 004b3f9e
     ADD ESP,0x4                         ; 004b3fa3
     MOV dword ptr [ESP + 0x4],EAX       ; 004b3fa6

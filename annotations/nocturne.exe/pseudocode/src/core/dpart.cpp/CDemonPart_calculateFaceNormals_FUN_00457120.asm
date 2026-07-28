@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120(int param_1)
+; void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120(CDemonPart *this_ptr)
 ;
+; Parameters:
+; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dpart.cpp_FUN_004571f0 at 00457441
+;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0 at 00457441
 ;
 ; Called Functions:
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
@@ -55,7 +57,7 @@ section .text
     MOV EBP,dword ptr [ESI + 0x2c]      ; 00457193
     PUSH EBP                            ; 00457196
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 00457197
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     MOV EAX,dword ptr [ESI + 0x34]      ; 0045719c
     ADD ESP,0x8                         ; 0045719f
     LEA EDX,[EAX + EBX*0x1]             ; 004571a2

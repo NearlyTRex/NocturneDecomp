@@ -1,0 +1,185 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 89,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [
+    {
+      "addr": "0056af50",
+      "from_addr": "0056af69",
+      "name": "FUN_0056af50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056fc30",
+    "address_range": [
+      [
+        "0056fc30",
+        "0056fc95"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_WriteConsoleChar_FUN_0056fc30",
+    "signature": "int __watcallStack crt_stdio_c_WriteConsoleChar_FUN_0056fc30(int character)"
+  },
+  "function_calls": [
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    },
+    {
+      "addr": "005714ec",
+      "is_variadic": false,
+      "name": "FUN_005714ec"
+    },
+    {
+      "addr": "EXTERNAL:00000097",
+      "is_variadic": false,
+      "name": "WriteConsoleA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005755e8",
+      "name": "PTR_WriteConsoleA_005755e8",
+      "type": "void*",
+      "value": "0017612e"
+    },
+    {
+      "addr": "005c1ac0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1ac4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1d54",
+      "name": "DAT_005c1d54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1d90",
+      "name": "DAT_005c1d90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.117647058823529,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 5,
+      "CBRANCH": 1,
+      "COPY": 26,
+      "INT_ADD": 11,
+      "INT_AND": 15,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 140
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_005c1d90 == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005c1d90",
+      "severity": "mild",
+      "text": "if (DAT_005c1d90 == (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005c1d54",
+      "severity": "mild",
+      "text": "uVar1 = (*DAT_005c1d54)(1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005c1d90",
+      "severity": "mild",
+      "text": "(*DAT_005c1d90)(uVar1,character);",
+      "type": "undefined_data"
+    }
+  ]
+}

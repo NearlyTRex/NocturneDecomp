@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_CEmitter_setup_FUN_00478520(int param_1)
+; void core_emitter_cpp_CEmitter_setup_FUN_00478520(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00478521
     PUSH EBX                            ; 00478525
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00478526
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     FLD float ptr [EBX + 0x22c]         ; 0047852b
     ADD ESP,0x4                         ; 00478531
     MOV EDX,dword ptr [EBX + 0x150]     ; 00478534
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_00478570
     PUSH EAX                            ; 00478576
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00478577
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0047857c
     JMP 0x00478545                      ; 0047857f
         ;   XREF to: 00478545 (UNCONDITIONAL_JUMP)  ; LAB_00478545

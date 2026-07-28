@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(int param_1,int param_2)
+; void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *param_1,int param_2)
 ;
 ;
 ; XREF[4]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508070
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508c15
-;   core_set.cpp_FUN_00507f80 at 00508070
 ;   core_set.cpp_FUN_00509a80 at 00509f95
 ;   core_set.cpp_FUN_0050aba0 at 0050acde
 ;
@@ -47,7 +47,7 @@ section .text
     JZ 0x00440a4c                       ; 00440a45
         ;   XREF to: 00440a4c (CONDITIONAL_JUMP)  ; LAB_00440a4c
     CALL engine_special.cpp_endScene_FUN_00532360 ; 00440a47
-        ;   XREF to: 00532360 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_endScene_FUN_00532360()
+        ;   XREF to: 00532360 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_endScene_FUN_00532360()
     MOV EBP,dword ptr [EBX + 0x168]     ; 00440a4c
         ;   Label: LAB_00440a4c
     TEST EBP,EBP                        ; 00440a52
@@ -90,11 +90,11 @@ section .text
         ;   Label: LAB_00440ac0
     PUSH EBP                            ; 00440ac6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 00440ac7
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00440acc
     PUSH EBX                            ; 00440acf
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270 ; 00440ad0
-        ;   XREF to: 00440270 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270()
+        ;   XREF to: 00440270 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00440ad5
     POP EBP                             ; 00440ad8
     POP ESI                             ; 00440ad9
@@ -114,7 +114,7 @@ section .text
     PUSH EBP                            ; 00440b04
         ;   Label: LAB_00440b04
     CALL engine_special.cpp_masterZBuffer_FUN_00532c70 ; 00440b05
-        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_masterZBuffer_FUN_00532c70()
+        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00532c70(int z_buffer_mode)
     ADD ESP,0x4                         ; 00440b0a
     JMP 0x00440a6e                      ; 00440b0d
         ;   XREF to: 00440a6e (UNCONDITIONAL_JUMP)  ; LAB_00440a6e

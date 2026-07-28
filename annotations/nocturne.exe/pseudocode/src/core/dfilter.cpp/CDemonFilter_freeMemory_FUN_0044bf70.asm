@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(int param_1)
+; void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(CDemonFilter *this_ptr)
 ;
+; Parameters:
+; CDemonFilter *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20 at 0044bf26

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(undefined4 *param_1)
+; CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6692

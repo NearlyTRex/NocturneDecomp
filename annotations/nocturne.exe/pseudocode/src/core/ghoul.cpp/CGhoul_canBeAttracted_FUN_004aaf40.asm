@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(int param_1,undefined4 *param_2)
+; undefined4 core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004aaf40(CDemonActor *param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
@@ -80,7 +80,7 @@ section .text
     PUSH EAX                            ; 004aaf97
     PUSH EBX                            ; 004aaf98
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004aaf99
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004aaf9e
     MOV ECX,dword ptr [0x01c78c20]      ; 004aafa1 | DAT_01c78c20
     PUSH ECX                            ; 004aafa7
@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 004aafae
     PUSH EBX                            ; 004aafaf
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004aafb0
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     FLD float ptr [EAX]                 ; 004aafb5
     FADD float ptr [ESI]                ; 004aafb7
     ADD ESP,0xc                         ; 004aafb9
@@ -117,7 +117,7 @@ section .text
     PUSH EBX                            ; 004ab004
     FSTP float ptr [ESP + 0x54]         ; 004ab005
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004ab009
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004ab00e
     MOV EBP,dword ptr [0x01c78c24]      ; 004ab011 | DAT_01c78c24
     PUSH EBP                            ; 004ab017
@@ -126,7 +126,7 @@ section .text
     PUSH EAX                            ; 004ab01e
     PUSH EBX                            ; 004ab01f
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 004ab020
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     FLD float ptr [EAX]                 ; 004ab025
     FADD float ptr [ESI]                ; 004ab027
     ADD ESP,0xc                         ; 004ab029
@@ -179,7 +179,7 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 004ab0d2
     FSTP float ptr [ESP + 0x3c]         ; 004ab0d6
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004ab0da
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004ab0df
     CMP EDI,EAX                         ; 004ab0e2
     JZ 0x004ab0f6                       ; 004ab0e4

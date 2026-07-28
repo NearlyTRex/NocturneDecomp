@@ -11,13 +11,13 @@
 void core_skeleton_cpp_FUN_0051f650(void)
 
 {
-  byte *puVar1;
+  CDeformableModel *this_ptr;
   
-  puVar1 = (byte *)0x268cef4;
+  this_ptr = (CDeformableModel *)0x268cef4;
   do {
-    core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(puVar1);
-    puVar1 = puVar1 + 0x2ac0;
-  } while (puVar1 != &DAT_02737ef4);
+    core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(this_ptr);
+    this_ptr = (CDeformableModel *)(this_ptr->texture_sets[1].textures[0x45].textures + 1);
+  } while (this_ptr != (CDeformableModel *)&DAT_02737ef4);
   _DAT_0268cef0 = 0;
   return;
 }

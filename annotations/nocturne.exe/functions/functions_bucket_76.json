@@ -9,12 +9,38 @@
       }
     ],
     "conv":"__fpustack_safe",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_math.c_asin_FUN_00565c76",
-    "ret":"undefined1",
+    "ret":"float10",
     "vars":{
+      "params":[
+        {
+          "name":"sine_value",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },
@@ -27,13 +53,45 @@
         "start":"0056af76"
       }
     ],
+    "conv":"__watcallStack",
     "importable":true,
-    "name":"FUN_0056af76",
-    "ret":"undefined1",
+    "name":"crt_cpp.c_reportPureVirtualError_FUN_0056af76",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"error_message",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"exit_code",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -46,7 +104,7 @@
       }
     ],
     "importable":true,
-    "name":"FUN_005747f6",
+    "name":"crt_iostream.cpp_streambuf_sync_FUN_005747f6",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{

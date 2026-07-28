@@ -12,43 +12,41 @@ void core_inv_cpp_FUN_004c0640(void)
 
 {
   char cVar1;
-  int iVar2;
+  CAmmo *pCVar2;
+  CAmmo *this_ptr;
   char *pcVar3;
-  uint uVar4;
-  char *pcVar5;
-  char *pcVar6;
-  uint in_stack_00000004;
-  int in_stack_00000008;
+  CInventory *in_stack_00000004;
+  CDemonActor *in_stack_00000008;
   
-  if (*(int *)(in_stack_00000008 + 0x564) == -1) {
+  if (in_stack_00000008[4].location.position.y == -NAN) {
     return;
   }
-  iVar2 = FUN_0056497c(0x314);
-  pcVar3 = (char *)0x0;
-  if (iVar2 != 0) {
-    pcVar3 = (char *)core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(iVar2);
+  pCVar2 = (CAmmo *)FUN_0056497c(0x314);
+  this_ptr = (CAmmo *)0x0;
+  if (pCVar2 != (CAmmo *)0x0) {
+    this_ptr = core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(pCVar2);
   }
-  if (pcVar3 == (char *)0x0) {
+  if (this_ptr == (CAmmo *)0x0) {
     PTR_01cc4800 = "..\\core\\inv.cpp";
     INT_01cc4804 = 0x2fd;
     core_main_c_FUN_004c8440("Out of memory");
   }
-  *(uint *)(pcVar3 + 0x30c) = *(uint *)(in_stack_00000008 + 0x560);
-  *(uint *)(pcVar3 + 0x310) = *(uint *)(in_stack_00000008 + 0x564);
-  uVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0();
-  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pcVar3,uVar4);
-  (*(code *)**(uint **)(pcVar3 + 0x14c))(pcVar3);
-  pcVar5 = "Some_ammo";
-  pcVar6 = pcVar3;
+  this_ptr->ammo_count = (int)in_stack_00000008[4].location.position.x;
+  this_ptr->ammo_type = (EAmmoType)in_stack_00000008[4].location.position.y;
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(in_stack_00000008);
+  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(this_ptr,pcVar3);
+  (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
+  pcVar3 = "Some_ammo";
+  pCVar2 = this_ptr;
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar3;
+    (pCVar2->base).actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    (pCVar2->base).actor_name[1] = cVar1;
+    pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_CInventory_addItem_FUN_004bf360(in_stack_00000004,pcVar3,0);
+  core_inv_cpp_CInventory_addItem_FUN_004bf360(in_stack_00000004,&this_ptr->base,0);
   return;
 }

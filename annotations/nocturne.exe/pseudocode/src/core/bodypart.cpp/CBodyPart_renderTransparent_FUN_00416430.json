@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -146,7 +146,7 @@
     ],
     "convention": "unknown",
     "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00416430",
-    "signature": "undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)"
+    "signature": "undefined4 core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)"
   },
   "function_calls": [
     {
@@ -250,7 +250,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)",
+      "text": "uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +258,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xf14) != 0) &&",
+      "text": "if ((param_1->is_visible != 0) &&",
       "type": "unnamed_param"
     },
     {
@@ -266,7 +266,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "((*(int *)(param_1 + 0x150) < 2 || (*(int *)(param_1 + 0x744) != 0)))) {",
+      "text": "((param_1->render_in_background < 2 || (param_1->fire_count != 0)))) {",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +274,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "((*(int *)(param_1 + 0x150) < 2 || (*(int *)(param_1 + 0x744) != 0)))) {",
+      "text": "((param_1->render_in_background < 2 || (param_1->fire_count != 0)))) {",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +282,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xc9c) != 0) {",
+      "text": "if (param_1->transparent_geometry_flag != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +290,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(0x01E57284 + 0x15a8a0) = *(uint *)(param_1 + 0xc98);",
+      "text": "*(int *)(0x01E57284 + 0x15a8a0) = param_1->dont_use_normals;",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +298,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -306,7 +306,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(DAT_005ae704,*(uint *)(param_1 + 0xca8));",
+      "text": "(DAT_005ae704,param_1->render_alpha);",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +314,7 @@
       "line": 14,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,*(uint *)(param_1 + 0xca8));",
+      "text": "(DAT_005ae704,param_1->render_alpha);",
       "type": "undefined_data"
     },
     {
@@ -330,7 +330,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -338,7 +338,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x744)) {",
+      "text": "if (0 < param_1->fire_count) {",
       "type": "unnamed_param"
     },
     {
@@ -346,7 +346,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0x754;",
+      "text": "pSVar1 = param_1->fires;",
       "type": "unnamed_param"
     },
     {
@@ -354,7 +354,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x744));",
+      "text": "} while (iVar2 < param_1->fire_count);",
       "type": "unnamed_param"
     }
   ],

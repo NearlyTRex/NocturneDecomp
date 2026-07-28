@@ -9,12 +9,12 @@
 void core_dest_cpp_FUN_0044b770(void)
 
 {
-  int iVar1;
+  CActorDestination *this_ptr;
   
-  iVar1 = FUN_0056497c(0x1ec);
-  if (iVar1 == 0) {
+  this_ptr = (CActorDestination *)FUN_0056497c(0x1ec);
+  if (this_ptr == (CActorDestination *)0x0) {
     return;
   }
-  core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(iVar1);
+  core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(this_ptr);
   return;
 }

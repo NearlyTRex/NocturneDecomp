@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00481840(int *param_1)
+; int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00481840(CRuleList *this_ptr)
 ;
+; Parameters:
+; CRuleList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00481890 at 00481895
@@ -34,7 +36,7 @@ section .text
     MOV EBP,dword ptr [0x005b7650]      ; 00481854 | DAT_005b7650
     PUSH EBP                            ; 0048185a
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0048185b
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 00481860
     TEST EAX,EAX                        ; 00481863
     JNZ 0x0048187b                      ; 00481865

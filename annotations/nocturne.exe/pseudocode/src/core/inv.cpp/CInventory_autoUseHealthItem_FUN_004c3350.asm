@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(int param_1)
+; void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_0053e860 at 0053e937
@@ -47,7 +49,7 @@ section .text
     MOV EBP,dword ptr [ESI + 0xc]       ; 004c3374
     PUSH EBP                            ; 004c3377
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c3378
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c337d
     TEST EAX,EAX                        ; 004c3380
     JNZ 0x004c33db                      ; 004c3382
@@ -76,7 +78,7 @@ section .text
     PUSH ECX                            ; 004c33ae
     PUSH EDX                            ; 004c33af
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c33b0
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004c33b5
     ADD ESP,0x8                         ; 004c33b7
     TEST EAX,EAX                        ; 004c33ba
@@ -91,14 +93,14 @@ section .text
     PUSH EBX                            ; 004c33d2
     PUSH EDI                            ; 004c33d3
     CALL core_inv.cpp_CInventory_select_FUN_004c1580 ; 004c33d4
-        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_select_FUN_004c1580()
+        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004c1580(CInventory * this_ptr, CDemonActor * actor_ptr)
     JMP 0x004c33a0                      ; 004c33d9
         ;   XREF to: 004c33a0 (UNCONDITIONAL_JUMP)  ; LAB_004c33a0
     PUSH EAX                            ; 004c33db
         ;   Label: LAB_004c33db
     PUSH EDI                            ; 004c33dc
     CALL core_inv.cpp_CInventory_select_FUN_004c1580 ; 004c33dd
-        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_select_FUN_004c1580()
+        ;   XREF to: 004c1580 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_select_FUN_004c1580(CInventory * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004c33e2
     PUSH 0x587549                       ; 004c33e5 | = "Auto use health\n"
     MOV EAX,[0x005ad350]                ; 004c33ea | PTR_DAT_005ad350

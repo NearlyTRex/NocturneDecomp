@@ -107,7 +107,7 @@ section .text
         ;   XREF to: 0040d438 (CONDITIONAL_JUMP)  ; LAB_0040d438
     PUSH EAX                            ; 0040d481
     CALL crt_ctype.c_tolower_FUN_00564860 ; 0040d482
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     MOV EDX,EBX                         ; 0040d487
     SHL EDX,0x7                         ; 0040d489
     SHR EBX,0x19                        ; 0040d48c

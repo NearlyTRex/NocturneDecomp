@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_gore_cpp_CGore_save_FUN_004b08d0(undefined4 param_1,undefined4 param_2)
+; int __cdecl core_gore_cpp_CGore_save_FUN_004b08d0(CGore *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_mission.cpp_FUN_004d8720 at 004d8a4c

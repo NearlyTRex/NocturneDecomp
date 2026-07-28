@@ -2,39 +2,44 @@
 // Address: 00415d20
 // Address Range: [[00415d20, 00415e36]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(undefined4 param_1)
+// Signature: CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(uint param_1)
+CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart *this_ptr)
 
 {
   int iVar1;
+  void *pvVar2;
+  CBox *pCVar3;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = __arrinit(iVar1 + 0x288,3,&g_SBodyPartModelTypeInfo_0059a820);
-  iVar1 = __arrinit(iVar1 + 0x4c0,2,&g_SBodyPartFireTypeInfo_0059a840);
-  iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x56c);
-  *(byte ***)(iVar1 + -0xb68) = &PTR_core_bodypart_cpp_CBodyPart_setup_FUN_00416500_0059a744;
-  *(uint *)(iVar1 + 0x25c) = 0;
-  *(uint *)(iVar1 + -0xb48) = 0;
-  *(uint *)(iVar1 + -0xb44) = 0;
-  *(uint *)(iVar1 + -0xb40) = 0;
-  *(uint *)(iVar1 + -0xb3c) = 0;
-  *(uint *)(iVar1 + -0xb38) = 0;
-  *(uint *)(iVar1 + -0xb34) = 0;
-  *(uint *)(iVar1 + -0xb30) = 0;
-  *(uint *)(iVar1 + -0xb64) = 0;
-  *(uint *)(iVar1 + -0xa34) = 0;
-  *(uint *)(iVar1 + -0xa38) = *(uint *)(iVar1 + -0xa34);
-  *(uint *)(iVar1 + -0xa3c) = *(uint *)(iVar1 + -0xa38);
-  *(uint *)(iVar1 + -0x570) = 0;
-  *(uint *)(iVar1 + -0xa30) = 0;
-  *(uint *)(iVar1 + -0x10) = 0x40a00000;
-  *(uint *)(iVar1 + -0x14) = 0;
-  *(uint *)(iVar1 + -0xc) = 0xffff;
-  *(uint *)(iVar1 + 0x260) = 0;
-  *(uint *)(iVar1 + -8) = 0;
-  *(uint *)(iVar1 + -4) = 0;
-  return;
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pvVar2 = __arrinit
+                     ((void *)(iVar1 + 0x288),3,&g_SBodyPartModelTypeInfo_0059a820);
+  pvVar2 = __arrinit
+                     ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo_0059a840);
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)((int)pvVar2 + 0x56c));
+  pCVar3[-5].linear_velocity_local.y =
+       (float)&PTR_core_bodypart_cpp_CBodyPart_setup_FUN_00416500_0059a744;
+  pCVar3[1].position.y = 0.0;
+  pCVar3[-5].angular_velocity.x = 0.0;
+  pCVar3[-5].angular_velocity.y = 0.0;
+  pCVar3[-5].angular_velocity.z = 0.0;
+  pCVar3[-5].angular_velocity_temp.x = 0.0;
+  pCVar3[-5].angular_velocity_temp.y = 0.0;
+  pCVar3[-5].angular_velocity_temp.z = 0.0;
+  pCVar3[-5].angular_momentum.x = 0.0;
+  pCVar3[-5].linear_velocity_local.z = 0.0;
+  pCVar3[-5].scrape_points[4].local_position.x = 0.0;
+  pCVar3[-5].scrape_points[3].raytrace_normal.z = pCVar3[-5].scrape_points[4].local_position.x;
+  pCVar3[-5].scrape_points[3].raytrace_normal.y = pCVar3[-5].scrape_points[3].raytrace_normal.z;
+  pCVar3[-3].scrape_points[4].transformed_position.z = 0.0;
+  pCVar3[-5].scrape_points[4].local_position.y = 0.0;
+  pCVar3[-1].scrape_points[7].raytrace_normal.x = 5.0;
+  pCVar3[-1].scrape_points[7].raytrace_intersection = 0.0;
+  pCVar3[-1].scrape_points[7].raytrace_normal.y = 9.18341e-41;
+  pCVar3[1].position.z = 0.0;
+  pCVar3[-1].scrape_points[7].raytrace_normal.z = 0.0;
+  pCVar3[-1].is_valid = 0;
+  return (CBodyPart *)&pCVar3[-6].scrape_points[3].transformed_position;
 }

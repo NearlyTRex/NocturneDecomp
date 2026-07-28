@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(int param_1)
+; void support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetworkAddr *param_1)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x18]:2  local_18
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_00548fc0 at 00548fce
+;   support_trisock.cpp_connectSocket_FUN_00548fc0 at 00548fce
 ;   support_trisock.cpp_performSocketOperation_FUN_00549090 at 005490ce
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     PUSH ESI                            ; 00548de0
     MOV word ptr [ESP + 0x6],AX         ; 00548de1
     CALL support_trisock.cpp_getIPAddress_FUN_00548d20 ; 00548de6
-        ;   XREF to: 00548d20 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_getIPAddress_FUN_00548d20()
+        ;   XREF to: 00548d20 (UNCONDITIONAL_CALL)  ; uint support_trisock.cpp_getIPAddress_FUN_00548d20(SNetworkAddr * net_addr)
     ADD ESP,0x4                         ; 00548deb
     PUSH 0x8                            ; 00548dee
     LEA EDX,[ESP + 0x4]                 ; 00548df0
@@ -46,7 +46,7 @@ section .text
     MOV EDI,EBX                         ; 00548dfd
     LEA ESI,[ESP + 0xc]                 ; 00548dff
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00548e03
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00548e08
     MOVSD ES:EDI,ESI                    ; 00548e0b
     MOVSD ES:EDI,ESI                    ; 00548e0c

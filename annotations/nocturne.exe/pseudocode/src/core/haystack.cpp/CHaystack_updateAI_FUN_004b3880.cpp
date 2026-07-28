@@ -16,11 +16,12 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
   float fVar3;
   int iVar4;
   float *pfVar5;
-  int iVar6;
+  SMotion *pSVar6;
+  CPathMap *this_ptr;
+  int iVar7;
   float local_8c;
   float local_88;
-  byte local_84 [4];
-  float local_80;
+  CVector3f local_84;
   float local_78;
   float local_74;
   float local_70;
@@ -44,8 +45,8 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
   bVar2 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  memset(param_1 + 0xbc94,0,0x2c);
+  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  memset((void *)(param_1 + 0xbc94),0,0x2c);
   if (*(int *)(param_1 + 0x1fa38) != 0) {
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     local_48 = *(float *)(param_1 + 0x20) - *(float *)(iVar4 + 0x20);
@@ -63,12 +64,12 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
       }
       else {
         bVar2 = true;
-        iVar6 = iVar4;
+        iVar7 = iVar4;
       }
     }
-    local_78 = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 0x20);
-    local_74 = *(float *)(iVar6 + 0x24) - *(float *)(param_1 + 0x24);
-    local_70 = *(float *)(iVar6 + 0x28) - *(float *)(param_1 + 0x28);
+    local_78 = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
+    local_74 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
+    local_70 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
     if (&local_48 != &local_78) {
       local_48 = local_78;
       local_44 = local_74;
@@ -77,19 +78,19 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
     fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
     local_18 = fVar1;
     if ((float)6 <= fVar1) {
-      iVar4 = 0;
+      this_ptr = (CPathMap *)0x0;
       if (!bVar2) {
         iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
+        this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x14c) + 0xbc))(iVar4);
       }
-      if (iVar4 == 0) {
-        iVar4 = core_path_cpp_getPathMap_FUN_004f1e00(iVar6 + 0x20);
+      if (this_ptr == (CPathMap *)0x0) {
+        this_ptr = core_path_cpp_getPathMap_FUN_004f1e00((CLocation *)(iVar7 + 0x20));
       }
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
-                        (iVar4,param_1 + 0x20,local_84,*(uint *)(param_1 + 0x6c));
+                        (this_ptr,(CVector3f *)(param_1 + 0x20),&local_84,*(int *)(param_1 + 0x6c));
       if (iVar4 != 0) {
         local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
-                                    (local_80 - *(float *)(param_1 + 0x34));
+                                    (local_84.y - *(float *)(param_1 + 0x34));
         fVar3 = local_14 * (float)0.31830988619288902 * (float)4;
         local_24 = -local_1c;
         *(float *)(param_1 + 0xbcb8) = fVar3;
@@ -114,15 +115,17 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
           *(uint *)(param_1 + 0xbcac) = 1;
         }
         else {
-          iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-          if ((*(int *)(iVar4 + 0x24) != 2) && (*(int *)(iVar4 + 0x24) != 1)) {
+          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                             ((CMotionController *)(param_1 + 0x150));
+          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
             *(uint *)(param_1 + 0xbca0) = 1;
           }
         }
       }
       else {
-        iVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(param_1 + 0x150);
-        if ((*(int *)(iVar4 + 0x24) == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
+        pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
+                           ((CMotionController *)(param_1 + 0x150));
+        if ((pSVar6->state_index == 10) && (*(int *)(param_1 + 0x1fa3c) != 0)) {
           *(uint *)(param_1 + 0xbcac) = 1;
         }
       }
@@ -147,9 +150,9 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(int param_1,float
         }
       }
     }
-    local_6c = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 0x20);
-    local_68 = *(float *)(iVar6 + 0x24) - *(float *)(param_1 + 0x24);
-    local_64 = *(float *)(iVar6 + 0x28) - *(float *)(param_1 + 0x28);
+    local_6c = *(float *)(iVar7 + 0x20) - *(float *)(param_1 + 0x20);
+    local_68 = *(float *)(iVar7 + 0x24) - *(float *)(param_1 + 0x24);
+    local_64 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
     if (&local_48 != &local_6c) {
       local_48 = local_6c;
       local_44 = local_68;

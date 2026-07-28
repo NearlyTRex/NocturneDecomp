@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(undefined4 *param_1)
+; void __cdecl core_morph_cpp_CMorphModel_free_FUN_004df290(CMorphModel *this_ptr)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_morph.cpp_CMorphModel_dtor_FUN_004df270 at 004df276
 ;   core_morph.cpp_CMorph_free_FUN_004e0090 at 004e0095
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004e0170 at 004e018d
 ;   core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_004e01b0 at 004e01cd
+;   core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_004e0110 at 004e0130
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0 at 004e00d0
-;   core_morph.cpp_FUN_004e0110 at 004e0130
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005638d0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(float *param_1)
+; CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_004701a0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_004701a0(CEditorTools *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -36,7 +36,7 @@ section .text
     PUSH EAX                            ; 004701b8
     MOV dword ptr [0x01bcd9b8],EDX      ; 004701b9 | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004701bf
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004701c4
     MOV ECX,0x5                         ; 004701c7
     MOV EDX,dword ptr [0x005b761c]      ; 004701cc | DAT_005b761c
@@ -53,7 +53,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004701ea
     PUSH EDI                            ; 004701ee
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 004701ef
-        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
+        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 004701f4
     POP EDI                             ; 004701f7
     POP ESI                             ; 004701f8

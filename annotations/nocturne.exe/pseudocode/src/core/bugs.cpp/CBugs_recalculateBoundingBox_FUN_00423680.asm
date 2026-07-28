@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(int param_1)
+; void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs *this_ptr)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004224f1
@@ -57,7 +59,7 @@ section .text
     PUSH EBP                            ; 004236d2
     INC ESI                             ; 004236d3
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 004236d4
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD EBX,0x40                        ; 004236d9
     MOV ECX,dword ptr [EDI + 0xbd28]    ; 004236dc
     ADD ESP,0x8                         ; 004236e2

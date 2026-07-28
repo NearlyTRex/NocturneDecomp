@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(int param_1)
+; void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -105,7 +107,7 @@ section .text
     FLD float ptr [EBX + 0x338]         ; 004c2219
     FMUL float ptr [0x00587469]         ; 004c221f | FLOAT_00587469
     CALL crt_math.c_round_FUN_00563a30  ; 004c2225
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x20]        ; 004c222a
     MOV EAX,[0x005b761c]                ; 004c222e | DAT_005b761c
         ;   Label: LAB_004c222e
@@ -137,7 +139,7 @@ section .text
     SUB EAX,ESI                         ; 004c2281
     PUSH EAX                            ; 004c2283
     CALL core_inv.cpp_drawItemIconBackground_FUN_004c1f90 ; 004c2284
-        ;   XREF to: 004c1f90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_drawItemIconBackground_FUN_004c1f90()
+        ;   XREF to: 004c1f90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_drawItemIconBackground_FUN_004c1f90(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004c2289
         ;   Label: LAB_004c2289
     MOV ESI,dword ptr [ESP + 0x20]      ; 004c228c
@@ -152,7 +154,7 @@ section .text
     PUSH EAX                            ; 004c22a7
     PUSH EBX                            ; 004c22a8
     CALL core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 ; 004c22a9
-        ;   XREF to: 004c0b40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40()
+        ;   XREF to: 004c0b40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, ...)
     ADD ESP,0x1c                        ; 004c22ae
     CMP dword ptr [EBX + 0x334],0x0     ; 004c22b1
         ;   Label: LAB_004c22b1
@@ -197,7 +199,7 @@ section .text
     FLD float ptr [EBX + 0x33c]         ; 004c2334
     FMUL float ptr [0x00587469]         ; 004c233a | FLOAT_00587469
     CALL crt_math.c_round_FUN_00563a30  ; 004c2340
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x24]        ; 004c2345
     MOV EAX,[0x005b761c]                ; 004c2349 | DAT_005b761c
         ;   Label: LAB_004c2349
@@ -229,7 +231,7 @@ section .text
     SUB EAX,ESI                         ; 004c239c
     PUSH EAX                            ; 004c239e
     CALL core_inv.cpp_drawItemIconBackground_FUN_004c1f90 ; 004c239f
-        ;   XREF to: 004c1f90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_drawItemIconBackground_FUN_004c1f90()
+        ;   XREF to: 004c1f90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_drawItemIconBackground_FUN_004c1f90(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004c23a4
         ;   Label: LAB_004c23a4
     MOV ESI,dword ptr [ESP + 0x24]      ; 004c23a7
@@ -244,7 +246,7 @@ section .text
     PUSH EAX                            ; 004c23bf
     PUSH EBX                            ; 004c23c0
     CALL core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 ; 004c23c1
-        ;   XREF to: 004c0b40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40()
+        ;   XREF to: 004c0b40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, ...)
     ADD ESP,0x1c                        ; 004c23c6
     ADD ESP,0x2c                        ; 004c23c9
         ;   Label: LAB_004c23c9
@@ -254,7 +256,7 @@ section .text
     POP EBX                             ; 004c23cf
     RET                                 ; 004c23d0
     CALL core_inv.cpp_loadAssets_FUN_004befa0 ; 004c23d1
-        ;   XREF to: 004befa0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_loadAssets_FUN_004befa0()
+        ;   XREF to: 004befa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_loadAssets_FUN_004befa0()
         ;   Label: LAB_004c23d1
     JMP 0x004c2195                      ; 004c23d6
         ;   XREF to: 004c2195 (UNCONDITIONAL_JUMP)  ; LAB_004c2195

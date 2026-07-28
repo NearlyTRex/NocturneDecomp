@@ -2,59 +2,62 @@
 // Address: 004880d0
 // Address Range: [[004880d0, 00488218]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(int param_1)
+// Signature: void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(int param_1)
+void __cdecl core_fire_cpp_CGunFlame_init_FUN_004880d0(CGunFlame *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *this_ptr_00;
+  CFlameCan *this_ptr_01;
+  float fVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  byte local_40 [28];
-  float *local_24;
+  CVector3f local_40 [2];
+  CVector3f *local_24;
   int local_20;
   
-  iVar5 = 0;
+  iVar4 = 0;
   if (0 < _DAT_01c09e08) {
     local_20 = 0;
     do {
-      iVar6 = *(int *)(&DAT_01c09e0c + local_20);
-      if (((*(int *)(param_1 + 0x20) == 2) || (*(int *)(iVar6 + 0x261c) != 0)) &&
-         (fVar2 = *(float *)(iVar6 + 0x20) - *(float *)(param_1 + 4),
-         fVar4 = *(float *)(iVar6 + 0x24) - *(float *)(param_1 + 8),
-         fVar3 = *(float *)(iVar6 + 0x28) - *(float *)(param_1 + 0xc),
-         fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= 5.4526381103294656e-315._0_4_)) {
-        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(iVar6 + 0x150);
+      this_ptr_00 = *(CDemonActor **)(&DAT_01c09e0c + local_20);
+      if (((this_ptr->flame_type == 2) || (*(int *)(this_ptr_00[0x1d].actor_name + 0xc) != 0)) &&
+         (fVar1 = (this_ptr_00->location).position.x - (this_ptr->position).x,
+         fVar3 = (this_ptr_00->location).position.y - (this_ptr->position).y,
+         fVar2 = (this_ptr_00->location).position.z - (this_ptr->position).z,
+         fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= 5.4526381103294656e-315._0_4_)) {
+        core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                  ((CDeformableModelInstance *)(this_ptr_00 + 1));
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                  (iVar6,local_40,(float *)(param_1 + 4));
-        core_charactr_cpp_FUN_00427730(iVar6,local_40,0,0,0x3f800000,*(int *)(param_1 + 0x20) == 2);
+                  (this_ptr_00,local_40,&this_ptr->position);
+        core_charactr_cpp_FUN_00427730
+                  (this_ptr_00,local_40,0,0,0x3f800000,this_ptr->flame_type == 2);
       }
       local_20 = local_20 + 4;
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < _DAT_01c09e08);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < _DAT_01c09e08);
   }
-  iVar5 = 0;
+  iVar4 = 0;
   if (0 < _DAT_01c09ed4) {
-    local_24 = (float *)(param_1 + 4);
-    iVar6 = 0;
+    local_24 = &this_ptr->position;
+    iVar5 = 0;
     do {
-      iVar1 = *(int *)(&DAT_01c09ed8 + iVar6);
-      fVar2 = *(float *)(iVar1 + 0x20) - *local_24;
-      fVar4 = *(float *)(iVar1 + 0x24) - local_24[1];
-      fVar3 = *(float *)(iVar1 + 0x28) - local_24[2];
-      if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <= (float)25) {
-        core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(iVar1);
+      this_ptr_01 = *(CFlameCan **)(&DAT_01c09ed8 + iVar5);
+      fVar1 = (this_ptr_01->base).location.position.x - local_24->x;
+      fVar3 = (this_ptr_01->base).location.position.y - local_24->y;
+      fVar2 = (this_ptr_01->base).location.position.z - local_24->z;
+      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= (float)25) {
+        core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr_01);
       }
-      iVar5 = iVar5 + 1;
-      iVar6 = iVar6 + 4;
-    } while (iVar5 < _DAT_01c09ed4);
+      iVar4 = iVar4 + 1;
+      iVar5 = iVar5 + 4;
+    } while (iVar4 < _DAT_01c09ed4);
   }
   return;
 }

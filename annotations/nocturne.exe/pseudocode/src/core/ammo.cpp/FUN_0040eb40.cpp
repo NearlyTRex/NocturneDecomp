@@ -9,12 +9,12 @@
 void core_ammo_cpp_FUN_0040eb40(void)
 
 {
-  int iVar1;
+  CAmmo *this_ptr;
   
-  iVar1 = FUN_0056497c(0x314);
-  if (iVar1 == 0) {
+  this_ptr = (CAmmo *)FUN_0056497c(0x314);
+  if (this_ptr == (CAmmo *)0x0) {
     return;
   }
-  core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(iVar1);
+  core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(this_ptr);
   return;
 }

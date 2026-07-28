@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_CDoor_setup_FUN_004551f0(int param_1)
+; void core_door_cpp_CDoor_setup_FUN_004551f0(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -27,17 +27,17 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004551f6
     PUSH EAX                            ; 004551fc
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004551fd
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00455202
     PUSH EBX                            ; 00455205
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00455206
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0045520b
     PUSH 0x57d047                       ; 0045520e | = "defaultDoorOpen"
     LEA ESI,[EBX + 0x2e0]               ; 00455213
     PUSH ESI                            ; 00455219
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0045521a
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045521f
     TEST EAX,EAX                        ; 00455222
     JNZ 0x00455235                      ; 00455224
@@ -53,7 +53,7 @@ section .text
     LEA ESI,[EBX + 0x344]               ; 0045523a
     PUSH ESI                            ; 00455240
     CALL crt_string.c__strcmp_FUN_005649c0 ; 00455241
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00455246
     TEST EAX,EAX                        ; 00455249
     JZ 0x00455250                       ; 0045524b

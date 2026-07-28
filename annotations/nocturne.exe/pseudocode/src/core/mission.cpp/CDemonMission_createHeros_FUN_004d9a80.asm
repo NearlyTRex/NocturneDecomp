@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1,undefined4 param_2)
+; int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004a4b50 at 004a4eac
@@ -77,7 +80,7 @@ section .text
     PUSH EDI                            ; 004d9ad5
     PUSH EBP                            ; 004d9ad6
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 ; 004d9ad7
-        ;   XREF to: 004d9920 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920()
+        ;   XREF to: 004d9920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 004d9adc
     TEST EAX,EAX                        ; 004d9adf
     JZ 0x004d9b88                       ; 004d9ae1
@@ -112,7 +115,7 @@ section .text
         ;   Label: LAB_004d9b4e
     PUSH EBX                            ; 004d9b53
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004d9b54
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d9b59
     TEST EAX,EAX                        ; 004d9b5c
     JZ 0x004d9c08                       ; 004d9b5e
@@ -121,7 +124,7 @@ section .text
     PUSH EBX                            ; 004d9b66
     PUSH EBP                            ; 004d9b67
     CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d9b68
-        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90()
+        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 004d9b6d
     MOV EBX,dword ptr [EBP + 0x514]     ; 004d9b70
     TEST EBX,EBX                        ; 004d9b76
@@ -131,7 +134,7 @@ section .text
     PUSH EBP                            ; 004d9b7a
         ;   Label: LAB_004d9b7a
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 ; 004d9b7b
-        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0()
+        ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemonMission * this_ptr)
     MOV EAX,0x1                         ; 004d9b80
     ADD ESP,0x4                         ; 004d9b85
     POP EBP                             ; 004d9b88
@@ -152,7 +155,7 @@ section .text
     MOV dword ptr [0x01cae0e8],ECX      ; 004d9ba5 | DAT_01cae0e8
     MOV dword ptr [0x01cae0d4],EDX      ; 004d9bab | DAT_01cae0d4
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 ; 004d9bb1
-        ;   XREF to: 004d9920 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920()
+        ;   XREF to: 004d9920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 004d9bb6
     TEST EAX,EAX                        ; 004d9bb9
     JZ 0x004d9b88                       ; 004d9bbb

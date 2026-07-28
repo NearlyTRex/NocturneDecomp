@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_gore_cpp_CFootstep_dtor_FUN_004b09d0(int param_1)
+; float * core_gore_cpp_CFootstep_dtor_FUN_004b09d0(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x8                         ; 004b09d6
     PUSH EAX                            ; 004b09d9
     CALL core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410 ; 004b09da
-        ;   XREF to: 0045b410 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410()
+        ;   XREF to: 0045b410 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 004b09df
     SUB EAX,0x8                         ; 004b09e2
     RET                                 ; 004b09e5

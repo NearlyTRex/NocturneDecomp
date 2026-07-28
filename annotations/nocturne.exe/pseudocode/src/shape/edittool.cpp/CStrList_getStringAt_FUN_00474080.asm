@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(int param_1,int param_2)
+; char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(CStrList *this_ptr,int index)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; XREF[16]:
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9cb4

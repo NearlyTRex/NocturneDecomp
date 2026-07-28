@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_font_cpp_CBitFont_drawText_FUN_00490980(int param_1,char *param_2,int param_3,int param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl engine_font_cpp_CBitFont_drawText_FUN_00490980(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   text
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   color_mode
+; int              Stack[0x18]:4   color_value
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,14 +18,14 @@
 ; XREF[28]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049ac5e
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b56d
-;   core_game.cpp_FUN_0049b3a0 at 0049b3c1
-;   core_game.cpp_FUN_0049b420 at 0049b473
+;   core_game.cpp_drawCreditsLine_FUN_0049b3a0 at 0049b3c1
+;   core_game.cpp_drawKeyBindingEntry_FUN_0049b420 at 0049b473
 ;   core_inv.cpp_FUN_004c2470 at 004c2650
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f60
-;   core_main.c_FUN_004c8dc0 at 004c8e01
-;   core_main.c_FUN_004c8eb0 at 004c8f66
 ;   core_main.c_FUN_004c90e0 at 004c91b5
-;   core_menu.cpp_FUN_004cf810 at 004cf877
+;   core_main.c_drawCenteredText_FUN_004c8dc0 at 004c8e01
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f66
+;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf962
 ;   ... and 18 more
 ;
 ; Referenced Globals:
@@ -94,7 +101,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x3194]    ; 004909ef
     PUSH ECX                            ; 004909f5
     CALL engine_palette.cpp_CFont_drawText_FUN_004eefd0 ; 004909f6
-        ;   XREF to: 004eefd0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_CFont_drawText_FUN_004eefd0()
+        ;   XREF to: 004eefd0 (UNCONDITIONAL_CALL)  ; int engine_palette.cpp_CFont_drawText_FUN_004eefd0(CFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004909fb
     MOV ESI,EAX                         ; 004909fe
     CMP EAX,-0x1                        ; 00490a00
@@ -111,7 +118,7 @@ section .text
     PUSH EBX                            ; 00490a16
     MOV dword ptr [EBX + 0x3190],0x0    ; 00490a17
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00490a21
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00490a26
     MOV ESI,EAX                         ; 00490a29
     MOV dword ptr [EBX + 0x3190],0x1    ; 00490a2b

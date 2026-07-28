@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_CPickList_sort_FUN_004761a0(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004761a0(CPickList *this_ptr,int sort_type,int sort_order)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   sort_type
+; int              Stack[0xc]:4   sort_order
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_FUN_00470730 at 0047099c
@@ -37,7 +41,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004761ba
     PUSH EBP                            ; 004761be
     CALL shape_edittool.cpp_CStrList_sort_FUN_00474010 ; 004761bf
-        ;   XREF to: 00474010 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_sort_FUN_00474010()
+        ;   XREF to: 00474010 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_00474010(CStrList * this_ptr, int sort_type, int sort_order)
     ADD ESP,0xc                         ; 004761c4
     POP EBP                             ; 004761c7
     POP EDI                             ; 004761c8

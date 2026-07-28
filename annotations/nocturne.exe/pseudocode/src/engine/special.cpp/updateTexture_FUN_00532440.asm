@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_updateTexture_FUN_00532440(undefined4 param_1,undefined4 param_2)
+; int __cdecl engine_special_cpp_updateTexture_FUN_00532440(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 ;
+; Parameters:
+; SMRGLTextureBasic * Stack[0x4]:4   tex
+; SRGBColorPalette * Stack[0x8]:4   palette_data
 ;
 ; XREF[3]:
-;   engine_texture.cpp_FUN_00545a10 at 00545a2a
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 005459bc
 ;   engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40 at 00545a58
+;   engine_texture.cpp_updateTextureWithPalette_FUN_00545a10 at 00545a2a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b762c

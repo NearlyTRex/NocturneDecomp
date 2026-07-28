@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(int *param_1,uint param_2,uint param_3)
+; void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(CGround *this_ptr,int column,int row)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   column
+; int              Stack[0xc]:4   row
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -50,7 +54,7 @@ section .text
     PUSH EDX                            ; 004b184c
     PUSH ESI                            ; 004b184d
     CALL core_ground.cpp_CGround_getVertexIndex_FUN_004b1800 ; 004b184e
-        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_getVertexIndex_FUN_004b1800()
+        ;   XREF to: 004b1800 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_getVertexIndex_FUN_004b1800(CGround * this_ptr, int column, int row)
     MOV EDX,dword ptr [ESI + 0x1c]      ; 004b1853
     IMUL EDX,EBP                        ; 004b1856
     ADD ESP,0xc                         ; 004b1859
@@ -79,7 +83,7 @@ section .text
     PUSH EDI                            ; 004b18a1
     MOV dword ptr [ESP + 0xc],EBX       ; 004b18a2
     CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004b18a6
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformPoint_FUN_00530a25()
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
     MOV dword ptr [EDI + 0x20],0x3fff   ; 004b18ab | DAT_005c5034
     MOV dword ptr [EDI + 0x24],0x3fff   ; 004b18b2 | DAT_005c5038
     ADD ESP,0x8                         ; 004b18b9

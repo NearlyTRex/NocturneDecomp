@@ -2,11 +2,11 @@
 // Address: 00528980
 // Address Range: [[00528980, 005289ef]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float param_1)
+// Signature: void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float latency)
 
 #include "nocturne.h"
 
-void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float param_1)
+void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float latency)
 
 {
   int iVar1;
@@ -17,11 +17,11 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00528980(float param_1)
     INT_01cc4804 = 0x1329;
     core_main_c_FUN_004c8440("setMaxSwSoundLatency - can't do this while sound is active");
   }
-  if (param_1 < (float)0.050000000000000003) {
-    param_1 = 0.05;
+  if (latency < (float)0.050000000000000003) {
+    latency = 0.05;
   }
-  if (param_1 <= (float)2) {
-    DAT_005bea98 = param_1;
+  if (latency <= (float)2) {
+    DAT_005bea98 = latency;
     return;
   }
   DAT_005bea98 = 2.0;

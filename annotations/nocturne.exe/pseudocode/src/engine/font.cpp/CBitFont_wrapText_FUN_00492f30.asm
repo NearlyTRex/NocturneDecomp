@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_00492f30(undefined4 param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6)
+; int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_00492f30(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   source_text
+; char *           Stack[0xc]:4   dest_buffer
+; int              Stack[0x10]:4   max_lines
+; int              Stack[0x14]:4   line_width
+; int              Stack[0x18]:4   max_pixel_width
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -46,7 +53,7 @@ section .text
     PUSH 0x0                            ; 00492f4b
     PUSH EDI                            ; 00492f4d
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00492f4e
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00492f53
     TEST EBX,EBX                        ; 00492f56
     JZ 0x00492f99                       ; 00492f58

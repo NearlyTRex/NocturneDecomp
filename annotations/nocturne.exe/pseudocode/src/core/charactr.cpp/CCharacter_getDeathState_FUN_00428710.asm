@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(int param_1)
+; EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_getDeathState_FUN_00540890 at 005408b0
@@ -36,11 +38,11 @@ section .text
     ADD EBX,0x150                       ; 00428728
     PUSH EBX                            ; 0042872e
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 0042872f
-        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0()
+        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00428734
     PUSH EAX                            ; 00428737
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 00428738
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0042873d
     TEST EAX,EAX                        ; 00428740
     JNZ 0x0042874b                      ; 00428742
@@ -52,11 +54,11 @@ section .text
         ;   Label: LAB_0042874b
     PUSH EBX                            ; 00428750
     CALL core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0 ; 00428751
-        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0()
+        ;   XREF to: 004e18a0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00428756
     PUSH EAX                            ; 00428759
     CALL crt_string.c__stricmp_FUN_00564520 ; 0042875a
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0042875f
     TEST EAX,EAX                        ; 00428762
     JNZ 0x0042876d                      ; 00428764

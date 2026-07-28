@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 117,
+    "complexity_score": 398,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 92,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 213,
+    "suspect_count": 17,
     "suspect_types": [
+      "negative_offset",
+      "pointer_truncation",
       "unnamed_param"
     ],
-    "total_lines": 322
+    "total_lines": 443
   },
   "cross_references": [
     {
@@ -153,7 +155,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_FUN_005350c0",
-    "signature": "int core_stranger_cpp_FUN_005350c0(undefined4 param_1)"
+    "signature": "CCharacter * core_stranger_cpp_FUN_005350c0(undefined4 param_1)"
   },
   "function_calls": [
     {
@@ -377,16 +379,136 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_stranger_cpp_FUN_005350c0(uint param_1)",
+      "text": "CCharacter * core_stranger_cpp_FUN_005350c0(uint param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = core_hero_cpp_FUN_004b46d0(param_1);",
+      "text": "iVar5 = core_hero_cpp_FUN_004b46d0(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 107,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(float *)(pCVar6[-1].model_name + 0x10) = fVar4;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 116,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)(pCVar6[-1].model_name + 0x14);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 117,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(pCVar6[-1].model_name + 0x3c);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 118,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "uVar3 = *(uint *)(pCVar6[-1].model_name + 0x34);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 119,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x20) = *(uint *)(pCVar6[-1].model_name + 0x1c);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 119,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x20) = *(uint *)(pCVar6[-1].model_name + 0x1c);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 120,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x18) = uVar1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 121,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x40) = uVar2;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 122,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0x38) = uVar3;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 145,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0xa8) = *(uint *)(pCVar6[-1].model_name + 0xac);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 145,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0xa8) = *(uint *)(pCVar6[-1].model_name + 0xac);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 146,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0xa4) = *(uint *)(pCVar6[-1].model_name + 0xa8);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 146,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar6[-1].model_name + 0xa4) = *(uint *)(pCVar6[-1].model_name + 0xa8);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 176,
+      "match": "pCVar6[-2].",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(*(int *)(pCVar6[-2].model_name + 0x10) + 0x150),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&PTR_core_stranger_cpp_FUN_00535450_005a2744` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&PTR_core_stranger_cpp_FUN_00535450_005a2744",
+      "severity": "moderate",
+      "text": "pCVar6[-0x155].part_visibility_flags[0xe] = (int)&PTR_core_stranger_cpp_FUN_00535450_005a2744;",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

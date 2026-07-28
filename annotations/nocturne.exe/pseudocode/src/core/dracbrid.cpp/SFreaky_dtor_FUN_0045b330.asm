@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_dracbrid_cpp_SFreaky_dtor_FUN_0045b330(int param_1)
+; float * core_dracbrid_cpp_SFreaky_dtor_FUN_0045b330(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x20                        ; 0045b336
     PUSH EAX                            ; 0045b339
     CALL core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410 ; 0045b33a
-        ;   XREF to: 0045b410 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410()
+        ;   XREF to: 0045b410 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 0045b33f
     SUB EAX,0x20                        ; 0045b342
     RET                                 ; 0045b345

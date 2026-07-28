@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(int param_1,float param_2)
+; void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(CAmmoBox *this_ptr,float open_pct)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   open_pct
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c
 ;

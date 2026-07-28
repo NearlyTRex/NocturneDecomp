@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00523b70(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00523b70(CSfxSample *this_ptr)
 ;
+; Parameters:
+; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 00523929

@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "globals.h"
 #include "constants.h"
+#include "prototypes/prototypes_560000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -174,13 +175,13 @@ static undefined1* DAT_005C3F94 = (undefined1*)0x0056BF87; // LAB_0056bf87
 static undefined1* DAT_005C3F98 = (undefined1*)0x0056BF8D; // FUN_0056bf8d
 static undefined1* DAT_005C3F9C = (undefined1*)0x0056BF93; // FUN_0056bf93
 static undefined1* DAT_005C3FA0 = (undefined1*)0x0056BF99; // FUN_0056bf99
-static undefined1* DAT_005C3FA4 = (undefined1*)0x0056BF9F; // FUN_0056bf9f
+static undefined1* DAT_005C3FA4 = (undefined1*)crt_math_c_dispatch_divide_FUN_0056bf9f;
 static undefined1* DAT_005C3FA8 = (undefined1*)0x0056BFBB; // FUN_0056bfbb
 static undefined1* DAT_005C3FAC = (undefined1*)0x0056BFC0; // LAB_0056bfc0
 static undefined1* DAT_005C3FB0 = (undefined1*)0x0056BFD6; // FUN_0056bfd6
 static undefined1* DAT_005C3FB4 = (undefined1*)0x0056BFDB; // LAB_0056bfdb
 static undefined1* DAT_005C3FB8 = (undefined1*)0x0056BFF7; // FUN_0056bff7
-static undefined1* DAT_005C3FBC = (undefined1*)0x0056C007; // FUN_0056c007
+static undefined1* DAT_005C3FBC = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c007;
 static undefined1* DAT_005C3FC0 = (undefined1*)0x0056C01B; // FUN_0056c01b
 static undefined1* DAT_005C3FC4 = (undefined1*)0x0056C02B; // FUN_0056c02b
 static undefined1* DAT_005C3FC8 = (undefined1*)0x0056C04B; // FUN_0056c04b
@@ -188,7 +189,7 @@ static undefined1* DAT_005C3FCC = (undefined1*)0x0056C050; // LAB_0056c050
 static undefined1* DAT_005C3FD0 = (undefined1*)0x0056C06A; // FUN_0056c06a
 static undefined1* DAT_005C3FD4 = (undefined1*)0x0056C06F; // LAB_0056c06f
 static undefined1* DAT_005C3FD8 = (undefined1*)0x0056C08F; // FUN_0056c08f
-static undefined1* DAT_005C3FDC = (undefined1*)0x0056C0A3; // FUN_0056c0a3
+static undefined1* DAT_005C3FDC = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c0a3;
 static undefined1* DAT_005C3FE0 = (undefined1*)0x0056C0BB; // FUN_0056c0bb
 static undefined1* DAT_005C3FE4 = (undefined1*)0x0056C0CF; // FUN_0056c0cf
 static undefined1* DAT_005C3FE8 = (undefined1*)0x0056C0EF; // FUN_0056c0ef
@@ -204,7 +205,7 @@ static undefined1* DAT_005C400C = (undefined1*)0x0056C198; // LAB_0056c198
 static undefined1* DAT_005C4010 = (undefined1*)0x0056C1B2; // FUN_0056c1b2
 static undefined1* DAT_005C4014 = (undefined1*)0x0056C1B7; // LAB_0056c1b7
 static undefined1* DAT_005C4018 = (undefined1*)0x0056C1D7; // FUN_0056c1d7
-static undefined1* DAT_005C401C = (undefined1*)0x0056C1EB; // FUN_0056c1eb
+static undefined1* DAT_005C401C = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c1eb;
 static undefined1* DAT_005C4020 = (undefined1*)0x0056C203; // FUN_0056c203
 static undefined1* DAT_005C4024 = (undefined1*)0x0056C217; // FUN_0056c217
 static undefined1* DAT_005C4028 = (undefined1*)0x0056C237; // FUN_0056c237
@@ -212,7 +213,7 @@ static undefined1* DAT_005C402C = (undefined1*)0x0056C23C; // LAB_0056c23c
 static undefined1* DAT_005C4030 = (undefined1*)0x0056C256; // FUN_0056c256
 static undefined1* DAT_005C4034 = (undefined1*)0x0056C25B; // LAB_0056c25b
 static undefined1* DAT_005C4038 = (undefined1*)0x0056C27B; // FUN_0056c27b
-static undefined1* DAT_005C403C = (undefined1*)0x0056C28F; // FUN_0056c28f
+static undefined1* DAT_005C403C = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c28f;
 static undefined1* DAT_005C4040 = (undefined1*)0x0056C2A7; // FUN_0056c2a7
 static undefined1* DAT_005C4044 = (undefined1*)0x0056C2BB; // FUN_0056c2bb
 static undefined1* DAT_005C4048 = (undefined1*)0x0056C2DB; // FUN_0056c2db
@@ -220,7 +221,7 @@ static undefined1* DAT_005C404C = (undefined1*)0x0056C2E0; // LAB_0056c2e0
 static undefined1* DAT_005C4050 = (undefined1*)0x0056C2FA; // FUN_0056c2fa
 static undefined1* DAT_005C4054 = (undefined1*)0x0056C2FF; // LAB_0056c2ff
 static undefined1* DAT_005C4058 = (undefined1*)0x0056C31F; // FUN_0056c31f
-static undefined1* DAT_005C405C = (undefined1*)0x0056C333; // FUN_0056c333
+static undefined1* DAT_005C405C = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c333;
 static undefined1* DAT_005C4060 = (undefined1*)0x0056C34B; // FUN_0056c34b
 static undefined1* DAT_005C4064 = (undefined1*)0x0056C35F; // FUN_0056c35f
 static undefined1* DAT_005C4068 = (undefined1*)0x0056C37F; // FUN_0056c37f
@@ -228,7 +229,7 @@ static undefined1* DAT_005C406C = (undefined1*)0x0056C384; // LAB_0056c384
 static undefined1* DAT_005C4070 = (undefined1*)0x0056C39E; // FUN_0056c39e
 static undefined1* DAT_005C4074 = (undefined1*)0x0056C3A3; // LAB_0056c3a3
 static undefined1* DAT_005C4078 = (undefined1*)0x0056C3C3; // FUN_0056c3c3
-static undefined1* DAT_005C407C = (undefined1*)0x0056C3D7; // FUN_0056c3d7
+static undefined1* DAT_005C407C = (undefined1*)crt_math_c_fdiv_thunk_FUN_0056c3d7;
 static undefined1* DAT_005C4080 = (undefined1*)0x0056C3EF; // FUN_0056c3ef
 static undefined1* DAT_005C4098 = (undefined1*)0x00570EBB; // FUN_00570ebb
 static undefined1* DAT_005C409C = (undefined1*)0x00570EC8; // FUN_00570ec8

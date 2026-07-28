@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_mmx_c_detectCPUFeatures_FUN_004d9e70(void)
+; void __cdecl core_mmx_c_detectCPUFeatures_FUN_004d9e70(void)
 ;
 ;
 ; XREF[1]:
@@ -26,9 +26,9 @@ section .text
     PUSH EAX                            ; 004d9e70
         ;   Label: core_mmx.c_detectCPUFeatures_FUN_004d9e70
     CALL core_mmx.c_detectIntelProcessor_FUN_004d9eac ; 004d9e71
-        ;   XREF to: 004d9eac (UNCONDITIONAL_CALL)  ; undefined core_mmx.c_detectIntelProcessor_FUN_004d9eac()
+        ;   XREF to: 004d9eac (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectIntelProcessor_FUN_004d9eac()
     CALL core_mmx.c_detectMMXSupport_FUN_004d9f59 ; 004d9e76
-        ;   XREF to: 004d9f59 (UNCONDITIONAL_CALL)  ; undefined core_mmx.c_detectMMXSupport_FUN_004d9f59()
+        ;   XREF to: 004d9f59 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_004d9f59()
     XOR EAX,EAX                         ; 004d9e7b
     MOV AL,[0x005bb121]                 ; 004d9e7d | DAT_005bb121
     MOV [0x01c03948],EAX                ; 004d9e82 | DAT_01c03948

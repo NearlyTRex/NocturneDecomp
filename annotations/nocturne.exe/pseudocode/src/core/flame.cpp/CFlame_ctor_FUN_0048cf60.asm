@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(undefined4 param_1)
+; CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0048cf60(CFlame *this_ptr)
 ;
+; Parameters:
+; CFlame *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

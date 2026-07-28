@@ -2,18 +2,24 @@
 // Address: 00435160
 // Address Range: [[00435160, 004351a1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(int param_1)
+// Signature: CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(CCloth *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(int param_1)
+CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(CCloth *this_ptr,uint flags)
 
 {
-  int iVar1;
+  SClothBone *pSVar1;
+  SClothVertex *pSVar2;
+  CCloth *pCVar3;
   
-  core_cloth_cpp_FUN_00435210(param_1);
-  iVar1 = core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(param_1 + 0x37b50,0);
-  iVar1 = core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(iVar1 + -0x377b8,0);
-  core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630(iVar1 + -0x398,1);
-  return;
+  core_cloth_cpp_FUN_00435210(this_ptr);
+  pSVar1 = core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20
+                     ((SClothBone *)&this_ptr->vertices[0x2d5].secondary_velocity.z,0);
+  pSVar2 = core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00
+                     ((SClothVertex *)&pSVar1[-0x52a].local_matrix.m[0].z,0);
+  pCVar3 = (CCloth *)
+           core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630
+                     ((CKeyFramedModel *)&pSVar2[-4].collide_bone_index,1);
+  return pCVar3;
 }

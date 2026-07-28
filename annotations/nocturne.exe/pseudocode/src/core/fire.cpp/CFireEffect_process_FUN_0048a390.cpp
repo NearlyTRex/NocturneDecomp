@@ -2,148 +2,156 @@
 // Address: 0048a390
 // Address Range: [[0048a390, 0048a64d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(void)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(CFireEffect *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(void)
+void __cdecl core_fire_cpp_CFireEffect_process_FUN_0048a390(CFireEffect *this_ptr)
 
 {
   bool bVar1;
-  int *piVar2;
-  byte *puVar3;
-  int iVar4;
-  uint *puVar5;
-  int iVar6;
+  CSmokeParticle *this_ptr_00;
+  byte *puVar2;
+  CMuzzleFlash *this_ptr_01;
+  CStake *this_ptr_02;
+  CBulletTrail *this_ptr_03;
+  CExplosion *this_ptr_04;
+  CToss *this_ptr_05;
+  CCrater *this_ptr_06;
+  CGunFlame *this_ptr_07;
+  CLightningBolt *this_ptr_08;
+  CTrail *this_ptr_09;
+  int iVar3;
+  CBulletHole *this_ptr_10;
   
-  piVar2 = (int *)&DAT_01c0a140;
+  this_ptr_00 = (CSmokeParticle *)&DAT_01c0a140;
   _DAT_01c5c700 = 0;
   core_fire_cpp_updateTextureAnimCounts_FUN_00486d40();
   do {
-    if (*piVar2 != 0) {
-      core_fire_cpp_CSmokeParticle_process_FUN_00482820(piVar2);
+    if (this_ptr_00->active != 0) {
+      core_fire_cpp_CSmokeParticle_process_FUN_00482820(this_ptr_00);
     }
-    piVar2 = piVar2 + 0xb;
-  } while (piVar2 != (int *)&DAT_01c20140);
-  puVar3 = (byte *)0x1c49d54;
+    this_ptr_00 = this_ptr_00 + 1;
+  } while (this_ptr_00 != (CSmokeParticle *)&DAT_01c20140);
+  puVar2 = (byte *)0x1c49d54;
   do {
-    if (0.0 < *(float *)(puVar3 + 0x18)) {
-      (**(code **)(*(int *)(puVar3 + 0x34) + 4))(puVar3);
+    if (0.0 < *(float *)(puVar2 + 0x18)) {
+      (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
     }
-    puVar3 = puVar3 + 0x4c;
-  } while (puVar3 != &DAT_01c4e954);
-  piVar2 = (int *)&DAT_01c4e958;
+    puVar2 = puVar2 + 0x4c;
+  } while (puVar2 != &DAT_01c4e954);
+  this_ptr_01 = (CMuzzleFlash *)&DAT_01c4e958;
   do {
-    if (*piVar2 != 0) {
-      core_fire_cpp_CMuzzleFlash_process_FUN_00484ed0(piVar2);
+    if (this_ptr_01->frames_remaining != 0) {
+      core_fire_cpp_CMuzzleFlash_process_FUN_00484ed0(this_ptr_01);
     }
-    piVar2 = piVar2 + 0x17;
-  } while (piVar2 != (int *)&DAT_01c4f088);
-  iVar6 = 0;
+    this_ptr_01 = this_ptr_01 + 1;
+  } while (this_ptr_01 != (CMuzzleFlash *)&DAT_01c4f088);
+  iVar3 = 0;
   if (0 < _DAT_01c23d48) {
-    iVar4 = 0x1c23d50;
+    this_ptr_02 = (CStake *)0x1c23d50;
     do {
-      if (*(int *)(iVar4 + 600) != 0) {
-        core_fire_cpp_CStake_process_FUN_004836b0(iVar4);
+      if ((this_ptr_02->physics_box).is_valid != 0) {
+        core_fire_cpp_CStake_process_FUN_004836b0(this_ptr_02);
       }
-      iVar6 = iVar6 + 1;
-      iVar4 = iVar4 + 0x260;
-    } while (iVar6 < _DAT_01c23d48);
+      iVar3 = iVar3 + 1;
+      this_ptr_02 = this_ptr_02 + 1;
+    } while (iVar3 < _DAT_01c23d48);
   }
-  iVar6 = 0x1c4f08c;
+  iVar3 = 0x1c4f08c;
   do {
-    if (0.0 < *(float *)(iVar6 + 0x18)) {
-      (**(code **)(*(int *)(iVar6 + 0x34) + 4))(iVar6);
+    if (0.0 < *(float *)(iVar3 + 0x18)) {
+      (**(code **)(*(int *)(iVar3 + 0x34) + 4))(iVar3);
     }
-    iVar6 = iVar6 + 0x9c;
-  } while (iVar6 != 0x1c58c8c);
-  puVar3 = (byte *)0x1c58c90;
+    iVar3 = iVar3 + 0x9c;
+  } while (iVar3 != 0x1c58c8c);
+  this_ptr_03 = (CBulletTrail *)0x1c58c90;
   do {
-    if (*(int *)(puVar3 + 0x20) != 0) {
-      core_fire_cpp_CBulletTrail_process_FUN_004856a0(puVar3);
+    if (this_ptr_03->frames_remaining != 0) {
+      core_fire_cpp_CBulletTrail_process_FUN_004856a0(this_ptr_03);
     }
-    puVar3 = puVar3 + 0x24;
-  } while (puVar3 != &DAT_01c58df8);
-  puVar3 = (byte *)0x1c58dfc;
+    this_ptr_03 = this_ptr_03 + 1;
+  } while (this_ptr_03 != (CBulletTrail *)&DAT_01c58df8);
+  puVar2 = (byte *)0x1c58dfc;
   do {
-    if (0.0 < *(float *)(puVar3 + 0x18)) {
-      (**(code **)(*(int *)(puVar3 + 0x34) + 4))(puVar3);
+    if (0.0 < *(float *)(puVar2 + 0x18)) {
+      (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
     }
-    puVar3 = puVar3 + 0x9c;
-  } while (puVar3 != &DAT_01c5b4fc);
-  puVar3 = (byte *)0x1c5b500;
+    puVar2 = puVar2 + 0x9c;
+  } while (puVar2 != &DAT_01c5b4fc);
+  puVar2 = (byte *)0x1c5b500;
   do {
-    if (0.0 < *(float *)(puVar3 + 0x18)) {
-      (**(code **)(*(int *)(puVar3 + 0x34) + 4))(puVar3);
+    if (0.0 < *(float *)(puVar2 + 0x18)) {
+      (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
     }
-    puVar3 = puVar3 + 0x48;
-  } while (puVar3 != &DAT_01c5c700);
-  iVar6 = 0;
+    puVar2 = puVar2 + 0x48;
+  } while (puVar2 != &DAT_01c5c700);
+  iVar3 = 0;
   if (0 < _DAT_01c20140) {
-    puVar3 = &DAT_01c20148;
+    this_ptr_10 = (CBulletHole *)&DAT_01c20148;
     do {
-      core_fire_cpp_CBulletHole_process_FUN_00482e90(puVar3);
-      iVar6 = iVar6 + 1;
-      puVar3 = puVar3 + 0x3c;
-    } while (iVar6 < _DAT_01c20140);
+      core_fire_cpp_CBulletHole_process_FUN_00482e90(this_ptr_10);
+      iVar3 = iVar3 + 1;
+      this_ptr_10 = this_ptr_10 + 1;
+    } while (iVar3 < _DAT_01c20140);
   }
-  puVar3 = (byte *)0x1c5d708;
+  this_ptr_04 = (CExplosion *)0x1c5d708;
   do {
-    core_fire_cpp_CExplosion_process_FUN_00486f90(puVar3);
-    puVar3 = puVar3 + 0x1c;
-  } while (puVar3 != &DAT_01c5d820);
-  puVar3 = (byte *)0x1c5d824;
+    core_fire_cpp_CExplosion_process_FUN_00486f90(this_ptr_04);
+    this_ptr_04 = this_ptr_04 + 1;
+  } while (this_ptr_04 != (CExplosion *)&DAT_01c5d820);
+  this_ptr_05 = (CToss *)0x1c5d824;
   do {
-    core_fire_cpp_CToss_process_FUN_004874d0(puVar3);
-    puVar3 = puVar3 + 0x3e4;
-  } while (puVar3 != &DAT_01c625f4);
-  puVar3 = (byte *)0x1c625f8;
+    core_fire_cpp_CToss_process_FUN_004874d0(this_ptr_05);
+    this_ptr_05 = this_ptr_05 + 1;
+  } while (this_ptr_05 != (CToss *)&DAT_01c625f4);
+  this_ptr_06 = (CCrater *)0x1c625f8;
   do {
-    core_fire_cpp_CCrater_process_FUN_00487a20(puVar3);
-    puVar3 = puVar3 + 0x70;
-  } while (puVar3 != &DAT_01c62eb8);
-  puVar5 = (uint *)&DAT_01c62ebc;
+    core_fire_cpp_CCrater_process_FUN_00487a20(this_ptr_06);
+    this_ptr_06 = this_ptr_06 + 1;
+  } while (this_ptr_06 != (CCrater *)&DAT_01c62eb8);
+  this_ptr_07 = (CGunFlame *)&DAT_01c62ebc;
   bVar1 = false;
   do {
-    if ((*puVar5 & 0x7fffffff) != 0) {
+    if (ABS(this_ptr_07->lifetime) != 0.0) {
       if (!bVar1) {
         core_fire_cpp_initProcess_FUN_00487fd0();
         bVar1 = true;
       }
-      core_fire_cpp_CGunFlame_process_FUN_00488430(puVar5);
+      core_fire_cpp_CGunFlame_process_FUN_00488430(this_ptr_07);
     }
-    puVar5 = puVar5 + 9;
-  } while (puVar5 != (uint *)&DAT_01c6750c);
-  puVar3 = (byte *)0x1c67510;
+    this_ptr_07 = this_ptr_07 + 1;
+  } while (this_ptr_07 != (CGunFlame *)&DAT_01c6750c);
+  this_ptr_08 = (CLightningBolt *)0x1c67510;
   do {
-    core_fire_cpp_CLightningBolt_process_FUN_00488bb0(puVar3);
-    puVar3 = puVar3 + 0x2c;
-  } while (puVar3 != &DAT_01c676c8);
-  puVar3 = (byte *)0x1c676cc;
+    core_fire_cpp_CLightningBolt_process_FUN_00488bb0(this_ptr_08);
+    this_ptr_08 = this_ptr_08 + 1;
+  } while (this_ptr_08 != (CLightningBolt *)&DAT_01c676c8);
+  this_ptr_09 = (CTrail *)0x1c676cc;
   do {
-    core_fire_cpp_CTrail_process_FUN_00489310(puVar3);
-    puVar3 = puVar3 + 0x24;
-  } while (puVar3 != &DAT_01c684dc);
-  puVar3 = (byte *)0x1c684e0;
+    core_fire_cpp_CTrail_process_FUN_00489310(this_ptr_09);
+    this_ptr_09 = this_ptr_09 + 1;
+  } while (this_ptr_09 != (CTrail *)&DAT_01c684dc);
+  puVar2 = (byte *)0x1c684e0;
   do {
-    (**(code **)(*(int *)(puVar3 + 0x34) + 4))(puVar3);
-    puVar3 = puVar3 + 0x58;
-  } while (puVar3 != &DAT_01c69610);
-  puVar3 = (byte *)0x1c69614;
+    (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
+    puVar2 = puVar2 + 0x58;
+  } while (puVar2 != &DAT_01c69610);
+  puVar2 = (byte *)0x1c69614;
   do {
-    if (0.0 < *(float *)(puVar3 + 0x18)) {
-      (**(code **)(*(int *)(puVar3 + 0x34) + 4))(puVar3);
+    if (0.0 < *(float *)(puVar2 + 0x18)) {
+      (**(code **)(*(int *)(puVar2 + 0x34) + 4))(puVar2);
     }
-    puVar3 = puVar3 + 0x38;
-  } while (puVar3 != &DAT_01c6ce14);
-  iVar6 = 0x1c6ce18;
+    puVar2 = puVar2 + 0x38;
+  } while (puVar2 != &DAT_01c6ce14);
+  iVar3 = 0x1c6ce18;
   do {
-    if (0.0 < *(float *)(iVar6 + 0x18)) {
-      (**(code **)(*(int *)(iVar6 + 0x34) + 4))(iVar6);
+    if (0.0 < *(float *)(iVar3 + 0x18)) {
+      (**(code **)(*(int *)(iVar3 + 0x34) + 4))(iVar3);
     }
-    iVar6 = iVar6 + 0x38;
-  } while ((CDemonActorType *)iVar6 != &g_CFlameActorType_01c70618);
+    iVar3 = iVar3 + 0x38;
+  } while ((CDemonActorType *)iVar3 != &g_CFlameActorType_01c70618);
   return;
 }

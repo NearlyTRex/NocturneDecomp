@@ -2,85 +2,92 @@
 // Address: 0042a800
 // Address Range: [[0042a800, 0042a9c1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(int param_1)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(int param_1)
+void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(CCharacter *this_ptr)
 
 {
   float fVar1;
-  int iVar2;
+  char *pcVar2;
+  CMotionList *this_ptr_00;
   int iVar3;
-  int iVar4;
-  int *piVar5;
+  CCharacter *pCVar4;
+  CCharacter *pCVar5;
   int iVar6;
-  int local_20;
-  int local_18;
+  SLayerAction *pSVar7;
+  char *pcVar8;
+  CCharacter *local_20;
+  CCharacter *local_18;
   
-  if (*(char *)(param_1 + 0x23b0) != '\0') {
-    iVar4 = 0;
-    iVar2 = param_1;
+  if ((this_ptr->model).model_name[0] != '\0') {
+    iVar6 = 0;
+    pCVar4 = this_ptr;
     do {
-      iVar2 = iVar2 + 0x50;
-      iVar6 = iVar4 * 0x50 + param_1;
+      pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[1].z;
+      pcVar8 = (this_ptr->base).actor_name + iVar6 * 0x50;
       do {
-        iVar3 = iVar6 + 4;
-        *(uint *)(iVar6 + 0xb64c) = 0x501502f9;
-        iVar6 = iVar3;
-      } while (iVar3 != iVar2);
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < 0x14);
-    iVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1 + 0x150);
-    iVar4 = 0;
-    if (0 < *(int *)(param_1 + 0x2620)) {
-      iVar6 = param_1 + 0x262c;
+        pcVar2 = pcVar8 + 4;
+        *(uint *)((int)pcVar8 + 0xb64c) = 0x501502f9;
+        pcVar8 = pcVar2;
+      } while ((CCharacter *)pcVar2 != pCVar4);
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < 0x14);
+    this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
+                            (&(this_ptr->model).motion_controller);
+    iVar6 = 0;
+    if (0 < this_ptr->layer_action_count) {
+      pcVar8 = this_ptr->layer_actions[0].motion_name;
       do {
-        piVar5 = (int *)(iVar4 * 0x38 + param_1 + 0x2624);
-        iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(iVar2,iVar6,1);
-        piVar5[0xb] = iVar3;
-        piVar5[0xc] = *(int *)(iVar2 + 0x9cc + iVar3 * 0x54c);
-        piVar5[0xd] = (int)((float)piVar5[0xc] / *(float *)(iVar2 + 0x988 + piVar5[0xb] * 0x54c));
-        if (-1 < piVar5[10]) {
-          *(int *)(param_1 + *piVar5 * 0x50 + 0xb64c + piVar5[1] * 4) = piVar5[0xd];
+        pSVar7 = this_ptr->layer_actions + iVar6;
+        iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr_00,pcVar8,1);
+        pSVar7->motion_index = iVar3;
+        pSVar7->frame_count = this_ptr_00->motions[iVar3].frame_count;
+        pSVar7->duration =
+             (float)pSVar7->frame_count / this_ptr_00->motions[pSVar7->motion_index].fps;
+        if (-1 < pSVar7->direction) {
+          this_ptr->motion_transition_costs[pSVar7->from_bone_index][pSVar7->to_bone_index] =
+               pSVar7->duration;
         }
-        if (piVar5[10] < 1) {
-          *(int *)(param_1 + piVar5[1] * 0x50 + 0xb64c + *piVar5 * 4) = piVar5[0xd];
+        if (pSVar7->direction < 1) {
+          this_ptr->motion_transition_costs[pSVar7->to_bone_index][pSVar7->from_bone_index] =
+               pSVar7->duration;
         }
-        iVar4 = iVar4 + 1;
-        iVar6 = iVar6 + 0x38;
-      } while (iVar4 < *(int *)(param_1 + 0x2620));
+        iVar6 = iVar6 + 1;
+        pcVar8 = pcVar8 + 0x38;
+      } while (iVar6 < this_ptr->layer_action_count);
     }
-    iVar4 = 0;
-    iVar2 = param_1;
+    iVar6 = 0;
+    pCVar4 = this_ptr;
     do {
-      iVar6 = iVar2 + iVar4;
-      iVar4 = iVar4 + 4;
-      iVar2 = iVar2 + 0x50;
-      *(uint *)(iVar6 + 0xb64c) = 0;
-    } while (iVar4 != 0x50);
-    local_20 = param_1;
+      iVar3 = iVar6 + 4;
+      *(uint *)((int)pCVar4->motion_transition_costs[0] + iVar6) = 0;
+      iVar6 = iVar3;
+      pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[1].z;
+    } while (iVar3 != 0x50);
+    local_20 = this_ptr;
     do {
-      iVar4 = 0;
+      iVar6 = 0;
       local_18 = local_20;
-      iVar2 = param_1;
+      pCVar4 = this_ptr;
       do {
-        iVar2 = iVar2 + 0x50;
-        iVar3 = iVar4 * 0x50 + param_1;
-        iVar6 = local_20;
+        pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[1].z;
+        pcVar8 = (this_ptr->base).actor_name + iVar6 * 0x50;
+        pCVar5 = local_20;
         do {
-          fVar1 = *(float *)(local_18 + 0xb64c) + *(float *)(iVar3 + 0xb64c);
-          if (fVar1 < *(float *)(iVar6 + 0xb64c)) {
-            *(float *)(iVar6 + 0xb64c) = fVar1;
+          fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar8 + 0xb64c);
+          if (fVar1 < pCVar5->motion_transition_costs[0][0]) {
+            pCVar5->motion_transition_costs[0][0] = fVar1;
           }
-          iVar3 = iVar3 + 4;
-          iVar6 = iVar6 + 4;
-        } while (iVar3 != iVar2);
-        iVar4 = iVar4 + 1;
-        local_18 = local_18 + 4;
-      } while (iVar4 < 0x14);
-      local_20 = local_20 + 0x50;
-    } while (local_20 != param_1 + 0x640);
+          pcVar8 = pcVar8 + 4;
+          pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 4);
+        } while ((CCharacter *)pcVar8 != pCVar4);
+        iVar6 = iVar6 + 1;
+        local_18 = (CCharacter *)((local_18->base).actor_name + 4);
+      } while (iVar6 < 0x14);
+      local_20 = (CCharacter *)&(local_20->base).orient_matrix.m[1].z;
+    } while (local_20 != (CCharacter *)((this_ptr->model).transformed_vertices + 0x62));
   }
   return;
 }

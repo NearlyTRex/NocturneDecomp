@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(undefined4 *param_1,byte *param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   dest_buffer
+; uchar *          Stack[0x8]:4   src_indices
+; uint *           Stack[0xc]:4   color_table
+; int              Stack[0x10]:4   pixel_count
+; uint             Stack[0x14]:4   blend_color
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0 at 00492953

@@ -1,11 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_clipLineGlobal_FUN_00403940(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl engine_2d_c_clipLineGlobal_FUN_00403940(int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00477390 at 0047748b
+;   shape_edittool.cpp_CEdCheck_render_FUN_00477390 at 0047748b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c58
@@ -42,7 +47,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 0040396f
     PUSH EDX                            ; 00403973
     CALL engine_2d.c_clipAndDrawLine_FUN_00403990 ; 00403974
-        ;   XREF to: 00403990 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clipAndDrawLine_FUN_00403990()
+        ;   XREF to: 00403990 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipAndDrawLine_FUN_00403990(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x20                        ; 00403979
     POP EBP                             ; 0040397c
     POP EDI                             ; 0040397d

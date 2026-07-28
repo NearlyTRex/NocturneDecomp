@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler
+; CDeformableModelInstance * Stack[0x10]:4   model_ptr
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004243c3
@@ -39,7 +44,7 @@ section .text
     ADD EBX,0x4                         ; 00438538
     INC ESI                             ; 0043853b
     CALL core_cloth.cpp_CCloth_setup_FUN_004359e0 ; 0043853c
-        ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_setup_FUN_004359e0()
+        ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_004359e0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     MOV ECX,dword ptr [EDI]             ; 00438541
     ADD ESP,0x10                        ; 00438543
     CMP ESI,ECX                         ; 00438546

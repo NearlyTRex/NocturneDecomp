@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
+; int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
 ;
 ;
 ; XREF[3]:
@@ -48,7 +48,7 @@ section .text
     PUSH EDI                            ; 00527e42
     PUSH EBP                            ; 00527e43
     CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00528480 ; 00527e44
-        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
+        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
     TEST EAX,EAX                        ; 00527e49
     JNZ 0x00527e52                      ; 00527e4b
         ;   XREF to: 00527e52 (CONDITIONAL_JUMP)  ; LAB_00527e52
@@ -58,13 +58,13 @@ section .text
     POP EBX                             ; 00527e50
     RET                                 ; 00527e51
     CALL sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0 ; 00527e52
-        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
+        ;   XREF to: 00526ca0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0()
         ;   Label: LAB_00527e52
     TEST EAX,EAX                        ; 00527e57
     JNZ 0x00527e6e                      ; 00527e59
         ;   XREF to: 00527e6e (CONDITIONAL_JUMP)  ; LAB_00527e6e
     CALL sound_sndmain.cpp_isSoundBusy_FUN_00528490 ; 00527e5b
-        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundBusy_FUN_00528490()
+        ;   XREF to: 00528490 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00528490()
     TEST EAX,EAX                        ; 00527e60
     JZ 0x00527e78                       ; 00527e62
         ;   XREF to: 00527e78 (CONDITIONAL_JUMP)  ; LAB_00527e78
@@ -75,7 +75,7 @@ section .text
     POP EBX                             ; 00527e6c
     RET                                 ; 00527e6d
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_00528080 ; 00527e6e
-        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
+        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
         ;   Label: LAB_00527e6e
     POP EBP                             ; 00527e73
     POP EDI                             ; 00527e74
@@ -83,7 +83,7 @@ section .text
     POP EBX                             ; 00527e76
     RET                                 ; 00527e77
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00527e78
-        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
+        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
         ;   Label: LAB_00527e78
     MOV EDX,dword ptr [0x005bea6c]      ; 00527e7d | DAT_005bea6c
     PUSH EDX                            ; 00527e83
@@ -92,7 +92,7 @@ section .text
     MOV EBX,dword ptr [0x005bea64]      ; 00527e8b | DAT_005bea64
     PUSH EBX                            ; 00527e91
     CALL sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0 ; 00527e92
-        ;   XREF to: 005280c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0()
+        ;   XREF to: 005280c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sample, int channels, int sample_rate)
     ADD ESP,0xc                         ; 00527e97
     TEST EAX,EAX                        ; 00527e9a
     JZ 0x00528069                       ; 00527e9c
@@ -117,7 +117,7 @@ section .text
     ADD ESI,0x4                         ; 00527ed2
     INC EBX                             ; 00527ed5
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00527ed6
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDX,dword ptr [0x005bea68]      ; 00527edb | DAT_005bea68
     ADD ESP,0xc                         ; 00527ee1
     CMP EBX,EDX                         ; 00527ee4
@@ -222,7 +222,7 @@ section .text
     CALL dword ptr [EBX + 0x28]         ; 00528030
     ADD ESP,0x10                        ; 00528033
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00528036
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV [0x02dc84c0],EAX                ; 0052803b | DAT_02dc84c0
     MOV EAX,[0x02dc8318]                ; 00528040 | DAT_02dc8318
     PUSH EAX                            ; 00528045
@@ -235,7 +235,7 @@ section .text
     MOV EBP,0x1                         ; 00528052
     MOV dword ptr [0x02dc831c],EBP      ; 00528057 | DAT_02dc831c
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052805d
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,EBP                         ; 00528062
     POP EBP                             ; 00528064
     POP EDI                             ; 00528065
@@ -243,7 +243,7 @@ section .text
     POP EBX                             ; 00528067
     RET                                 ; 00528068
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00528069
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00528069
     XOR EAX,EAX                         ; 0052806e
     POP EBP                             ; 00528070

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setutil_cpp_FUN_00514470(int param_1)
+; void core_setutil_cpp_FUN_00514470(void *param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     PUSH 0x0                            ; 00514483
     PUSH EBX                            ; 00514485
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00514486
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0x140],0x41e00000 ; 0051448b
     MOV dword ptr [EBX + 0x17c],0xc3960000 ; 00514495
     MOV dword ptr [EBX + 0x180],0x0     ; 0051449f

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,undefined4 param_2)
+; void support_codec_cpp_flushBitBuffer_FUN_00438d60(int *param_1,_ostream *param_2)
 ;
 ;
 ; XREF[1]:
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 00438d77
     PUSH ESI                            ; 00438d78
     CALL crt_iostream.cpp_ostream_put_FUN_00564ce5 ; 00438d79
-        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_put_FUN_00564ce5()
+        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_00564ce5(_ostream * this_ptr, int character)
     MOV ECX,dword ptr [EBX + 0x4]       ; 00438d7e
     MOV EDI,dword ptr [EBX]             ; 00438d81
     SHR ECX,0x8                         ; 00438d83
@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 00438da4
     PUSH ESI                            ; 00438da5
     CALL crt_iostream.cpp_ostream_put_FUN_00564ce5 ; 00438da6
-        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_put_FUN_00564ce5()
+        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_00564ce5(_ostream * this_ptr, int character)
     MOV dword ptr [EBX + 0x4],0x0       ; 00438dab
     ADD ESP,0x8                         ; 00438db2
     MOV dword ptr [EBX],0x0             ; 00438db5

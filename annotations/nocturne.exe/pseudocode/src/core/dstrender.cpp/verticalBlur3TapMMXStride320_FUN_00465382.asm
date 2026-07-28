@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00465382(undefined8 *param_1,undefined8 *param_2,int param_3)
+; void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00465382(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 ;
+; Parameters:
+; ulonglong *      Stack[0x4]:4   output_buffer
+; ulonglong *      Stack[0x8]:4   input_buffer
+; int              Stack[0xc]:4   pixel_count
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810 at 004448d5

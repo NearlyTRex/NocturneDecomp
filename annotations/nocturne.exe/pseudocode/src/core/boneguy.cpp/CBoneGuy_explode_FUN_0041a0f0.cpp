@@ -2,90 +2,102 @@
 // Address: 0041a0f0
 // Address Range: [[0041a0f0, 0041a30c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
+// Signature: void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(CBoneGuy *this_ptr)
 
 {
-  int iVar1;
-  uint *puVar2;
-  uint *puVar3;
-  uint *puVar4;
-  byte bVar5;
-  uint auStackY_1824 [1520];
-  uint local_48;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
+  UOrientationVector *pUVar1;
+  int iVar2;
+  CBodyPart *body_part;
+  SBoneGuyBox *pSVar3;
+  CBoneGuy *pCVar4;
+  CLocation *pCVar5;
+  CVector3f *pCVar6;
+  uint *puVar7;
+  uint *puVar8;
+  byte bVar9;
+  float afStackY_1824 [1520];
+  float local_48;
+  CVector3f local_38;
+  UOrientationVector *local_2c;
+  CVector3f *local_28;
+  CDeformableModel *local_24;
+  SBoneGuyBox *local_20;
+  CBoneGuy *local_1c;
   int local_18;
-  uint local_14;
+  float local_14;
   
-  bVar5 = 0;
-  core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0(param_1);
-  *(uint *)(param_1 + 0xc344) = 1;
-  *(uint *)(param_1 + 0xc348) = 0;
-  local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1 + 0x150);
-  iVar1 = *(int *)(local_24 + 0xc00);
-  *(int *)(param_1 + 0xbda0) = iVar1;
-  if (0x14 < iVar1) {
+  bVar9 = 0;
+  core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0((CCharacter *)this_ptr);
+  this_ptr->blown_up = 1;
+  this_ptr->recombine_interpolation = 0.0;
+  local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
+                       (&(this_ptr->base).base.model);
+  iVar2 = local_24->texture_sets[0].textures[0x28].textures[0].base.type;
+  this_ptr->box_count = iVar2;
+  if (0x14 < iVar2) {
     PTR_01cc4800 = "..\\core\\boneguy.cpp";
     INT_01cc4804 = 0x443;
     core_main_c_FUN_004c8440("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;
-  if (0 < *(int *)(local_24 + 0xc00)) {
-    local_20 = param_1 + 0xbda4;
-    local_2c = param_1 + 0x30;
-    local_28 = param_1 + 0x20;
-    puVar3 = (uint *)(param_1 + 0xbdb0);
-    local_1c = param_1;
+  if (0 < local_24->texture_sets[0].textures[0x28].textures[0].base.type) {
+    local_20 = this_ptr->boxes;
+    local_2c = &(this_ptr->base).base.base.orient;
+    local_28 = &(this_ptr->base).base.base.location.position;
+    pCVar6 = &this_ptr->boxes[0].orient;
+    local_1c = this_ptr;
     do {
-      local_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000);
-      local_14 = local_38;
-      local_34 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41200000);
-      local_14 = local_34;
-      local_30 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000);
-      local_14 = local_30;
-      iVar1 = core_bodypart_cpp_createBodyPart_FUN_00415b30
-                        (local_28,local_2c,&stack0xffffffc8,param_1,1,1,2);
-      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(param_1,iVar1,local_18,0);
-      *(uint *)(iVar1 + 0xcac) = 1;
-      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(iVar1);
-      *(int *)(local_1c + 0xbde8) = iVar1;
-      puVar2 = (uint *)(local_18 * 0x48 + local_20);
-      if (puVar2 != (uint *)(iVar1 + 0x20)) {
-        *puVar2 = *(uint *)(iVar1 + 0x20);
-        puVar2[1] = *(uint *)(iVar1 + 0x24);
-        puVar2[2] = *(uint *)(iVar1 + 0x28);
+      local_38.x = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+      ;
+      local_14 = local_38.x;
+      local_38.y = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41200000);
+      local_14 = local_38.y;
+      local_38.z = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0xc0a00000,0x40a00000)
+      ;
+      local_14 = local_38.z;
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00415b30
+                            (local_28,local_2c,&local_38,(CDemonActor *)this_ptr,1,1,2);
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
+                ((CCharacter *)this_ptr,body_part,local_18,0);
+      body_part->dont_pick_me_up = 1;
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(body_part);
+      local_1c->boxes[0].body_part = body_part;
+      pCVar5 = &(body_part->base).location;
+      pSVar3 = local_20 + local_18;
+      if (pSVar3 != (SBoneGuyBox *)pCVar5) {
+        (pSVar3->pos).x = (pCVar5->position).x;
+        (pSVar3->pos).y = (body_part->base).location.position.y;
+        (pSVar3->pos).z = (body_part->base).location.position.z;
       }
-      if (puVar3 != (uint *)(iVar1 + 0x30)) {
-        *puVar3 = *(uint *)(iVar1 + 0x30);
-        puVar3[1] = *(uint *)(iVar1 + 0x34);
-        puVar3[2] = *(uint *)(iVar1 + 0x38);
+      pUVar1 = &(body_part->base).orient;
+      if (pCVar6 != (CVector3f *)pUVar1) {
+        pCVar6->x = (pUVar1->vec).x;
+        pCVar6->y = (body_part->base).orient.vec.y;
+        pCVar6->z = (body_part->base).orient.vec.z;
       }
-      puVar3 = puVar3 + 0x12;
-      core_xform_cpp_FUN_0055d610(iVar1 + 0x30);
-      iVar1 = local_1c + 0x48;
+      pCVar6 = pCVar6 + 6;
+      core_xform_cpp_eulerToQuaternion_FUN_0055d610(&(body_part->base).orient);
+      pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);
       local_18 = local_18 + 1;
-      puVar2 = (uint *)(local_1c + 0xbdd0 + (uint)bVar5 * -8);
-      *(uint *)(local_1c + 0xbdcc) = local_48;
-      puVar4 = puVar2 + (uint)bVar5 * -2 + 1;
-      *puVar2 = *(uint *)(&stack0xffffffbc + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      puVar4[(uint)bVar5 * -2 + 1] =
+      puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xbdd0);
+      local_1c->boxes[0].start_orient.w = local_48;
+      puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
+      *puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);
+      *puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+      puVar8[(uint)bVar9 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-            ((uint)bVar5 * -2 + 1) * 4);
-      local_1c = iVar1;
-    } while (local_18 < *(int *)(local_24 + 0xc00));
+            ((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
+            ((uint)bVar9 * -2 + 1) * 4);
+      local_1c = pCVar4;
+    } while (local_18 < local_24->texture_sets[0].textures[0x28].textures[0].base.type);
   }
-  (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"boneguy-fallapart.wav");
+  (*((this_ptr->base).base.base.vtable._ub)->playSound)
+            ((CDemonActor *)this_ptr,"boneguy-fallapart.wav");
   return;
 }

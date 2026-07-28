@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(int param_1,int param_2,int param_3)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   u_offset
+; int              Stack[0xc]:4   v_offset
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -43,7 +47,7 @@ section .text
         ;   Label: LAB_0051f098
     PUSH ESI                            ; 0051f09c
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051f09d
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     MOV EDX,dword ptr [ESI + 0x2230]    ; 0051f0a2
     MOV ECX,dword ptr [EAX + EDX*0x4 + 0x2c] ; 0051f0a8
     MOV EDX,dword ptr [ESI + 0x2234]    ; 0051f0ac
@@ -146,11 +150,11 @@ section .text
         ;   Label: LAB_0051f19b
     FILD dword ptr [EDX]                ; 0051f19e
     CALL crt_math.c_atan2_FUN_00566c81  ; 0051f1a0
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     FMUL double ptr [0x00591dcb]        ; 0051f1a5 | DOUBLE_00591dcb
     MOV EAX,dword ptr [ESP + 0x20]      ; 0051f1ab
     CALL crt_math.c_round_FUN_00563a30  ; 0051f1af
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 0051f1b4
     MOV EBX,dword ptr [ESP]             ; 0051f1b7
     ADD EAX,EBX                         ; 0051f1ba

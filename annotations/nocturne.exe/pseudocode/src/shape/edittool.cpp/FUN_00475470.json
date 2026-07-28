@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 401,
-    "complexity_score": 1009,
+    "complexity_score": 1172,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 149,
-    "suspect_count": 84,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 157,
+    "suspect_count": 98,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 550
+    "total_lines": 558
   },
   "cross_references": [
     {
@@ -155,7 +158,7 @@
     ],
     "convention": "unknown",
     "name": "shape_edittool.cpp_FUN_00475470",
-    "signature": "void shape_edittool_cpp_FUN_00475470(int *param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_3)"
   },
   "function_calls": [
     {
@@ -397,7 +400,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_00475470(int *param_1,uint param_2,uint param_3)",
+      "text": "void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +408,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_00475470(int *param_1,uint param_2,uint param_3)",
+      "text": "void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -413,15 +416,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_00475470(int *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x44] = _DAT_01bcd9bc + 1;",
+      "text": "void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -429,7 +424,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x45] = 8;",
+      "text": "param_1[0x11].item_count = _DAT_01bcd9bc + 1;",
       "type": "unnamed_param"
     },
     {
@@ -437,7 +432,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x29] = 1;",
+      "text": "param_1[0x11].capacity = 8;",
       "type": "unnamed_param"
     },
     {
@@ -445,55 +440,55 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "memset(param_1 + 0x1f,0,0x28);",
+      "text": "param_1[10].capacity = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *param_1) {",
+      "text": "memset(&param_1[7].vtable,0,0x28);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar3 = (char *)shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,local_14);",
+      "text": "if (0 < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar5 = param_1;",
+      "text": "pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(param_1,local_14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x29] < iVar10) {",
+      "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x29] = iVar10;",
+      "text": "if (param_1[10].capacity < iVar10) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (local_14 < *param_1);",
+      "text": "param_1[10].capacity = iVar10;",
       "type": "unnamed_param"
     },
     {
@@ -501,71 +496,79 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar5 = param_1;",
+      "text": "} while (local_14 < param_1->item_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (iVar10 = 0; iVar10 < param_1[0x29] + -1; iVar10 = iVar10 + 1) {",
+      "text": "pCVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "for (iVar10 = 0; iVar10 < param_1[10].capacity + -1; iVar10 = iVar10 + 1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 65,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "piVar5[0x1f] = piVar5[0x1f] + DAT_005b761c / 0x28;",
+      "text": "pCVar5[7].vtable = (CStrList_vtable *)((int)&(pCVar5[7].vtable)->dtor + DAT_005b761c / 0x28);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x4a] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar5 = param_1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < param_1[0x29]) {",
+      "text": "iVar10 = param_1[10].capacity;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = param_1[0x4a] + piVar5[0x1f];",
+      "text": "param_1[0x12].data_array = (char **)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = param_1[0x4a] + piVar5[0x1f];",
+      "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar10 < param_1[0x29]);",
+      "text": "iVar10 = param_1[10].capacity;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(char **)((int)param_1",
+      "severity": "moderate",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable);",
       "type": "unnamed_param"
     },
     {
@@ -573,47 +576,23 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = param_1[0x4a] + param_1[0x45] * 2;",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x4a] = param_1[0x4a] + param_1[0x45] * 2;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(char **)((int)param_1",
+      "severity": "moderate",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + param_1[0x11].capacity * 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = param_1[0x4a] + param_1[0x45] * 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar10 = (DAT_005b7620 + _DAT_01bcd9bc * -4) / param_1[0x44];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "iVar10 = (DAT_005b7620 + _DAT_01bcd9bc * -4) / param_1[0x44];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x49] = iVar10;",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + param_1[0x11].capacity * 2);",
       "type": "unnamed_param"
     },
     {
@@ -621,111 +600,103 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x49] = 1;",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + param_1[0x11].capacity * 2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + param_1[0x11].capacity * 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar10 = (DAT_005b7620 + _DAT_01bcd9bc * -4) / param_1[0x11].item_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "iVar10 = (DAT_005b7620 + _DAT_01bcd9bc * -4) / param_1[0x11].item_count;",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 < param_1[0x49]) {",
+      "text": "param_1[0x12].capacity = iVar10;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 < param_1[0x49]) {",
+      "text": "param_1[0x12].capacity = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x49] = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x49] = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "iVar10 = DAT_005b761c * 7 >> 0x1f;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = ((int)((DAT_005b761c * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) / param_1[0x4a];",
+      "text": "if (param_1->item_count < param_1[0x12].capacity) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
       "line": 86,
-      "match": "DAT_005b761c",
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = ((int)((DAT_005b761c * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) / param_1[0x4a];",
-      "type": "undefined_data"
+      "text": "if (param_1->item_count < param_1[0x12].capacity) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4b] = iVar10;",
+      "text": "param_1[0x12].capacity = param_1->item_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].capacity = param_1->item_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 89,
-      "match": "param_1",
+      "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "param_1[0x4b] = 1;",
-      "type": "unnamed_param"
+      "text": "iVar10 = DAT_005b761c * 7 >> 0x1f;",
+      "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 91,
-      "match": "param_1",
+      "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "iVar10 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar10 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar10 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
+      "text": "(((int)((DAT_005b761c * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (iVar10 < param_1[0x4b]) {",
+      "text": "(int)param_1[0x12].data_array);",
       "type": "unnamed_param"
     },
     {
@@ -733,7 +704,7 @@
       "line": 93,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4b] = iVar10;",
+      "text": "param_1[0x12].vtable = pCVar4;",
       "type": "unnamed_param"
     },
     {
@@ -741,15 +712,7 @@
       "line": 95,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[4] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x4b] = 1;",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)0x1;",
       "type": "unnamed_param"
     },
     {
@@ -757,7 +720,23 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5b] = 0;",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
       "type": "unnamed_param"
     },
     {
@@ -765,23 +744,7 @@
       "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x49] * param_1[0x4b] < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[0x49] * param_1[0x4b] < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[0x49] * param_1[0x4b] < *param_1) {",
+      "text": "if ((int)pCVar4 < (int)param_1[0x12].vtable) {",
       "type": "unnamed_param"
     },
     {
@@ -789,23 +752,55 @@
       "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x4b] < 2) {",
+      "text": "param_1[0x12].vtable = pCVar4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5b] = 1;",
+      "text": "if (param_1[1].item_count != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5b] = 2;",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)0x1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x16].vtable = (CStrList_vtable *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x12].capacity * (int)param_1[0x12].vtable < param_1->item_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x12].capacity * (int)param_1[0x12].vtable < param_1->item_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[0x12].capacity * (int)param_1[0x12].vtable < param_1->item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -813,15 +808,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = param_1[0x4a] * param_1[0x4b] + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar10 = param_1[0x4a] * param_1[0x4b] + 8;",
+      "text": "if ((int)param_1[0x12].vtable < 2) {",
       "type": "unnamed_param"
     },
     {
@@ -829,23 +816,31 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1[0x49] * param_1[0x44] + 6;",
+      "text": "param_1[0x16].vtable = (CStrList_vtable *)0x1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1[0x49] * param_1[0x44] + 6;",
+      "text": "param_1[0x16].vtable = (CStrList_vtable *)0x2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x5b] == 1) {",
+      "text": "iVar10 = (int)param_1[0x12].data_array * (int)param_1[0x12].vtable + 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar10 = (int)param_1[0x12].data_array * (int)param_1[0x12].vtable + 8;",
       "type": "unnamed_param"
     },
     {
@@ -853,23 +848,23 @@
       "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (param_1[0x5b] == 2) {",
+      "text": "iVar9 = param_1[0x12].capacity * param_1[0x11].item_count + 6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar9 = param_1[0x12].capacity * param_1[0x11].item_count + 6;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 119,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "(0x01BCD074,iVar10,iVar4,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(0x01BCD074,iVar10,iVar4,param_2,param_3);",
+      "text": "if (param_1[0x16].vtable == (CStrList_vtable *)0x1) {",
       "type": "unnamed_param"
     },
     {
@@ -877,103 +872,47 @@
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x5b] == 1) {",
+      "text": "else if (param_1[0x16].vtable == (CStrList_vtable *)0x2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_1",
+      "line": 126,
+      "match": "param_2",
       "severity": "mild",
-      "text": "if (param_1[0x5b] != 2) goto LAB_0047587b;",
+      "text": "(0x01BCD074,iVar10,iVar9,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_1",
+      "line": 126,
+      "match": "param_3",
       "severity": "mild",
-      "text": "(param_1 + 0x4e,iVar6,iVar9,_DAT_01c00c60,_DAT_01c00c64);",
+      "text": "(0x01BCD074,iVar10,iVar9,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x49] = iVar4 / param_1[0x44];",
+      "text": "if (param_1[0x16].vtable == (CStrList_vtable *)0x1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x49] = iVar4 / param_1[0x44];",
+      "text": "if (param_1[0x16].vtable != (CStrList_vtable *)0x2) goto LAB_0047587b;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4b] = iVar10 / param_1[0x4a];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x4b] = iVar10 / param_1[0x4a];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*param_1 + param_1[0x49] + -1) / param_1[0x49];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (iVar4 < param_1[0x4b]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x4b] = iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 142,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[0x4b] < 1) {",
+      "text": "((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,_DAT_01c00c60,_DAT_01c00c64);",
       "type": "unnamed_param"
     },
     {
@@ -981,31 +920,39 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4b] = 1;",
+      "text": "param_1[0x12].capacity = iVar9 / param_1[0x11].item_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x48] = param_1[0x49] * param_1[0x4b];",
+      "text": "param_1[0x12].capacity = iVar9 / param_1[0x11].item_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(CStrList_vtable *)(iVar10 / (int)param_1",
+      "severity": "moderate",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 144,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x48] = param_1[0x49] * param_1[0x4b];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 145,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x48] = param_1[0x49] * param_1[0x4b];",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);",
       "type": "unnamed_param"
     },
     {
@@ -1013,7 +960,23 @@
       "line": 146,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x47] = 0;",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 146,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 146,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1->item_count + param_1[0x12].capacity + -1) / param_1[0x12].capacity);",
       "type": "unnamed_param"
     },
     {
@@ -1021,23 +984,23 @@
       "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = iVar10 / param_1[0x4b];",
+      "text": "if ((int)pCVar4 < (int)param_1[0x12].vtable) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 148,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x4a] = iVar10 / param_1[0x4b];",
+      "text": "param_1[0x12].vtable = pCVar4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 150,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x2a) = 0;",
+      "text": "if ((int)param_1[0x12].vtable < 1) {",
       "type": "unnamed_param"
     },
     {
@@ -1045,8 +1008,160 @@
       "line": 151,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x43] = 0;",
+      "text": "param_1[0x12].vtable = (CStrList_vtable *)0x1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].item_count = param_1[0x12].capacity * (int)param_1[0x12].vtable;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].item_count = param_1[0x12].capacity * (int)param_1[0x12].vtable;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].item_count = param_1[0x12].capacity * (int)param_1[0x12].vtable;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 154,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x11].vtable = (CStrList_vtable *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(char **)(iVar10 / (int)param_1",
+      "severity": "moderate",
+      "text": "param_1[0x12].data_array = (char **)(iVar10 / (int)param_1[0x12].vtable);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].data_array = (char **)(iVar10 / (int)param_1[0x12].vtable);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 155,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x12].data_array = (char **)(iVar10 / (int)param_1[0x12].vtable);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 157,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)&param_1[10].data_array = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x10].vtable = (CStrList_vtable *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pCVar5[7].vtable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pCVar5[7].vtable",
+      "severity": "moderate",
+      "text": "if ((int)pCVar5[7].vtable < (int)pCVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "if ((int)pCVar5[7].vtable < (int)pCVar4) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5[7].vtable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)pCVar5[7].vtable",
+      "severity": "moderate",
+      "text": "param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + (int)pCVar5[7].vtable);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "if ((int)pCVar4 < 1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "if ((int)pCVar4 < (int)param_1[0x12].vtable) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 147,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "if ((int)pCVar4 < (int)param_1[0x12].vtable) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar5[7].vtable = (CStrList_vtable *)((int)&(pCVar5[7].vtable)->dtor + DAT_005b761c / 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 49,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CStrList *)&pCVar5->capacity;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 66,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CStrList *)&pCVar5->capacity;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CStrList *)&pCVar5->capacity;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 1,

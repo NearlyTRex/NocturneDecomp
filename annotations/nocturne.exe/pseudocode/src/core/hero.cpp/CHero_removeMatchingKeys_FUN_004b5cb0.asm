@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004b5cb0(int param_1,undefined4 param_2)
+; void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004b5cb0(CHero *this_ptr,uint key_mask)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   key_mask
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502f9c
@@ -21,7 +24,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 004b5cb9
     PUSH EAX                            ; 004b5cbe
     CALL core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280 ; 004b5cbf
-        ;   XREF to: 004c3280 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280()
+        ;   XREF to: 004c3280 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280(CInventory * this_ptr, uint key_mask)
     ADD ESP,0x8                         ; 004b5cc4
     RET                                 ; 004b5cc7
 

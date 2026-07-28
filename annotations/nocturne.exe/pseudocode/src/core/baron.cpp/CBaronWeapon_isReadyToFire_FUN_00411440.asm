@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(int param_1)
+; longlong core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_0041147c
     PUSH EAX                            ; 00411482
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00411483
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 00411488
     ADD ESP,0x4                         ; 0041148b
     CMP EAX,0x3                         ; 0041148e

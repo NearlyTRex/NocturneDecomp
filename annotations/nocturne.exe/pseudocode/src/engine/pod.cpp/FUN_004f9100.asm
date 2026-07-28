@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_pod_cpp_FUN_004f9100(void)
+; int engine_pod_cpp_FUN_004f9100(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x220]:1  local_220
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
 ;   engine_pod.cpp_FUN_004f7a80
 ;   engine_pod.cpp_FUN_004f7ae0
-;   engine_pod.cpp_FUN_004f8240
 ;
 ; *****************************************************************************
 
@@ -36,15 +36,15 @@ section .text
         ;   XREF to: 004f9151 (CONDITIONAL_JUMP)  ; LAB_004f9151
     MOV EAX,ESP                         ; 004f912b
     PUSH EAX                            ; 004f912d
-    CALL engine_pod.cpp_FUN_004f8240    ; 004f912e
-        ;   XREF to: 004f8240 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f8240()
+    CALL engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 ; 004f912e
+        ;   XREF to: 004f8240 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 004f9133
     PUSH 0x0                            ; 004f9136
     MOV EBX,EAX                         ; 004f9138
     LEA EAX,[ESP + 0x4]                 ; 004f913a
     PUSH EAX                            ; 004f913e
     CALL engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 ; 004f913f
-        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
+        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f9144
     MOV EAX,EBX                         ; 004f9147
     ADD ESP,0x21c                       ; 004f9149
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 004f9156
     XOR EBX,EBX                         ; 004f9157
     CALL engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 ; 004f9159
-        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
+        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f915e
     MOV EAX,EBX                         ; 004f9161
     ADD ESP,0x21c                       ; 004f9163

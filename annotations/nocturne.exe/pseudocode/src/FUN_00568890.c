@@ -16,14 +16,14 @@ int FUN_00568890(uint *param_1)
   int iVar5;
   
   iVar5 = 0;
-  (*(code *)PTR_FUN_005c1ac0)(param_1[4]);
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1[4]);
   if ((*(byte *)((int)param_1 + 0xd) & 0x10) == 0) {
     if ((*(int *)(param_1[2] + 8) != 0) &&
        (*(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0xef,
        (*(byte *)((int)param_1 + 0xd) & 0x20) == 0)) {
       iVar3 = 0;
       if (param_1[1] != 0) {
-        iVar3 = FUN_005689c0(param_1[4],-param_1[1],1);
+        iVar3 = lseek(param_1[4],-param_1[1],1);
       }
       if (iVar3 == -1) {
         *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x20;
@@ -42,7 +42,7 @@ int FUN_00568890(uint *param_1)
           iVar5 = -1;
         }
         else if (iVar2 == 0) {
-          FUN_00568e80(0xc);
+          setErrno(0xc);
           iVar5 = -1;
           *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x20;
         }
@@ -55,9 +55,9 @@ int FUN_00568890(uint *param_1)
   param_1[1] = 0;
   *param_1 = uVar1;
   if (((iVar5 == 0) && ((*(byte *)(param_1[2] + 0x10) & 1) != 0)) &&
-     (iVar3 = FUN_0056f1c0(param_1[4]), iVar3 == -1)) {
+     (iVar3 = flushFileBuffers(param_1[4]), iVar3 == -1)) {
     iVar5 = -1;
   }
-  (*(code *)PTR_FUN_005c1ac4)(param_1[4]);
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1[4]);
   return iVar5;
 }

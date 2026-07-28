@@ -2,49 +2,52 @@
 // Address: 004ec600
 // Address Range: [[004ec600, 004ecc7a]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *param_1,undefined4 *param_2)
+// Signature: int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame *this_ptr,UNetPacket *packet)
 
 #include "nocturne.h"
 
-uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *param_1,uint *param_2)
+int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame *this_ptr,UNetPacket *packet)
 
 {
   char cVar1;
   uint uVar2;
   uint uVar3;
-  int iVar4;
+  SNetworkAddr *pSVar4;
   int iVar5;
-  int *piVar6;
-  char *pcVar7;
-  int *piVar8;
-  int *piVar9;
-  uint *puVar10;
-  int iVar11;
-  int *piVar12;
+  int iVar6;
+  SNetPlayer *pSVar7;
+  char *pcVar8;
+  EHeroType *pEVar9;
+  EHeroType *pEVar10;
+  SNetPlayer *pSVar11;
+  uint *puVar12;
   int *piVar13;
-  int *piVar14;
-  byte bVar15;
-  int aiStackY_208c [1986];
-  int local_167;
+  int iVar14;
+  char *pcVar15;
+  EHeroType *pEVar16;
+  SNetPlayer *pSVar17;
+  byte bVar18;
+  EHeroType aEStackY_208c [1986];
+  uint local_167;
   char local_163 [80];
   int local_113;
   char local_10f [20];
-  int local_fb [2];
-  int aiStack_f3 [13];
-  int local_bc;
-  int aiStack_b8 [4];
-  int local_a8;
+  SNetworkAddr local_fb;
+  EHeroType aEStack_f3 [13];
+  uint local_bc;
+  EHeroType aEStack_b8 [4];
+  EHeroType local_a8;
   int local_a4;
-  byte local_a0 [4];
+  int local_a0;
   ushort local_9c;
-  int local_98;
-  int local_94;
-  int local_90;
-  int local_8c;
+  uint local_98;
+  float local_94;
+  uint local_90;
+  uint local_8c;
   int local_88;
-  int local_84;
+  uint local_84;
   int local_80;
-  int local_7c;
+  uint local_7c;
   int local_78;
   int local_74;
   int local_70;
@@ -55,219 +58,221 @@ uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *pa
   int local_5c;
   int local_58;
   int local_54;
-  int local_50;
-  int local_4c;
-  int local_48;
+  float local_50;
+  float local_4c;
+  float local_48;
   int local_44 [5];
-  int *local_30;
-  int *local_2c;
-  int *local_28;
+  SNetworkAddr *local_30;
+  CNetGame *local_2c;
+  SNetPlayer *local_28;
   uint local_24;
-  int *local_20;
-  int *local_1c;
+  SNetPlayer *local_20;
+  SNetworkAddr *local_1c;
   int local_18;
   int local_14;
   
-  bVar15 = 0;
-  if ((*param_1 != 2) || (param_1[1] != 1)) {
+  bVar18 = 0;
+  if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
+     ) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x7e6;
     core_main_c_FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
-  puVar10 = (uint *)&stack0xfffffe90;
-  for (iVar5 = 0x2c; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar10 = *param_2;
-    param_2 = param_2 + (uint)bVar15 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar15 * -2 + 1;
+  piVar13 = (int *)&stack0xfffffe90;
+  for (iVar6 = 0x2c; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *piVar13 = (packet->header).size;
+    packet = (UNetPacket *)((int)packet + (uint)bVar18 * -8 + 4);
+    piVar13 = piVar13 + (uint)bVar18 * -2 + 1;
   }
-  *(byte *)puVar10 = *(byte *)param_2;
-  iVar5 = -1;
-  param_1[0x5b] = local_167;
+  *(char *)piVar13 = packet->raw[0];
+  iVar6 = -1;
+  this_ptr->random_seed = local_167;
   local_44[4] = -1;
-  iVar11 = 0;
+  iVar14 = 0;
   if (0 < local_113) {
-    piVar12 = local_fb;
+    pSVar4 = &local_fb;
     do {
-      if (((short)piVar12[1] == (short)param_1[param_1[0x45] * 0x1e + 0x10]) &&
-         (*piVar12 == param_1[param_1[0x45] * 0x1e + 0xf])) {
-        iVar5 = iVar11;
+      if ((pSVar4->port == this_ptr->players[this_ptr->local_player_index].addr.port) &&
+         (pSVar4->ip_address == this_ptr->players[this_ptr->local_player_index].addr.ip_address)) {
+        iVar6 = iVar14;
       }
-      if (((short)piVar12[1] == (short)param_1[param_1[0x44] * 0x1e + 0x10]) &&
-         (*piVar12 == param_1[param_1[0x44] * 0x1e + 0xf])) {
-        local_44[4] = iVar11;
+      if ((pSVar4->port == this_ptr->players[this_ptr->server_player_index].addr.port) &&
+         (pSVar4->ip_address == this_ptr->players[this_ptr->server_player_index].addr.ip_address)) {
+        local_44[4] = iVar14;
       }
-      iVar11 = iVar11 + 1;
-      piVar12 = piVar12 + 10;
-    } while (iVar11 < local_113);
+      iVar14 = iVar14 + 1;
+      pSVar4 = pSVar4 + 5;
+    } while (iVar14 < local_113);
   }
-  if ((local_44[4] < 0) || (iVar5 < 0)) {
+  if ((local_44[4] < 0) || (iVar6 < 0)) {
     return 0;
   }
-  pcVar7 = local_163;
-  piVar12 = param_1 + 0x46;
+  pcVar8 = local_163;
+  pcVar15 = this_ptr->mission_name;
   do {
-    cVar1 = *pcVar7;
-    *(char *)piVar12 = cVar1;
+    cVar1 = *pcVar8;
+    *pcVar15 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    *(char *)((int)piVar12 + 1) = cVar1;
-    piVar12 = (int *)((int)piVar12 + 2);
+    cVar1 = pcVar8[1];
+    pcVar8 = pcVar8 + 2;
+    pcVar15[1] = cVar1;
+    pcVar15 = pcVar15 + 2;
   } while (cVar1 != '\0');
   local_24 = 0;
-  if (0 < param_1[7]) {
+  if (0 < this_ptr->player_count) {
     local_44[2] = 0;
-    local_28 = param_1 + 8;
-    local_30 = param_1 + 0xf;
-    local_2c = param_1;
+    local_28 = this_ptr->players;
+    local_30 = &this_ptr->players[0].addr;
+    local_2c = this_ptr;
     do {
       uVar3 = local_24;
-      iVar5 = 0;
+      iVar6 = 0;
       if (0 < local_113) {
-        piVar12 = local_fb;
+        pSVar4 = &local_fb;
         do {
-          if (((short)piVar12[1] == (short)local_30[1]) && (*piVar12 == *local_30)) break;
-          iVar5 = iVar5 + 1;
-          piVar12 = piVar12 + 10;
-        } while (iVar5 < local_113);
+          if ((pSVar4->port == local_30->port) && (pSVar4->ip_address == local_30->ip_address))
+          break;
+          iVar6 = iVar6 + 1;
+          pSVar4 = pSVar4 + 5;
+        } while (iVar6 < local_113);
       }
-      if (iVar5 == local_113) {
-        if (local_24 == param_1[0x45]) {
+      if (iVar6 == local_113) {
+        if (local_24 == this_ptr->local_player_index) {
           PTR_01cc4800 = "..\\core\\netgame.cpp";
           INT_01cc4804 = 0x811;
           core_main_c_FUN_004c8440("Hell froze");
         }
-        core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(param_1,local_24);
+        core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(this_ptr,local_24);
       }
       else {
-        *(int *)((int)local_44 + local_44[2]) = iVar5;
-        pcVar7 = local_10f + iVar5 * 0x28;
-        piVar12 = local_28;
-        if (uVar3 == param_1[0x45]) {
-          DAT_005bdee4 = uVar3 ^ param_1[0x45];
-          iVar11 = _strcmp(local_28,pcVar7);
-          if (iVar11 != 0) {
+        *(int *)((int)local_44 + local_44[2]) = iVar6;
+        pcVar8 = local_10f + iVar6 * 0x28;
+        pSVar11 = local_28;
+        if (uVar3 == this_ptr->local_player_index) {
+          DAT_005bdee4 = uVar3 ^ this_ptr->local_player_index;
+          iVar14 = _strcmp(local_28->name,pcVar8);
+          if (iVar14 != 0) {
             DAT_005bdee4 = 1;
           }
-          if (local_2c[0x19] == aiStack_f3[iVar5 * 10 + 2]) {
+          if (local_2c->players[0].ready_flag == aEStack_f3[iVar6 * 10 + 2]) {
             if (DAT_005bdee4 == 0) goto LAB_004ecb76;
           }
           else {
             DAT_005bdee4 = 1;
           }
-          core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(param_1);
+          core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(this_ptr);
         }
         else {
           do {
-            cVar1 = *pcVar7;
-            *(char *)piVar12 = cVar1;
+            cVar1 = *pcVar8;
+            pSVar11->name[0] = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            *(char *)((int)piVar12 + 1) = cVar1;
-            piVar12 = (int *)((int)piVar12 + 2);
+            cVar1 = pcVar8[1];
+            pcVar8 = pcVar8 + 2;
+            pSVar11->name[1] = cVar1;
+            pSVar11 = (SNetPlayer *)(pSVar11->name + 2);
           } while (cVar1 != '\0');
-          param_1[uVar3 * 0x1e + 0x19] = aiStack_f3[iVar5 * 10 + 2];
-          param_1[uVar3 * 0x1e + 0xd] = aiStack_f3[iVar5 * 10];
-          param_1[uVar3 * 0x1e + 0xe] = aiStack_f3[iVar5 * 10 + 1];
+          this_ptr->players[uVar3].ready_flag = aEStack_f3[iVar6 * 10 + 2];
+          this_ptr->players[uVar3].hero_number = aEStack_f3[iVar6 * 10];
+          this_ptr->players[uVar3].aim_mode = aEStack_f3[iVar6 * 10 + 1];
         }
 LAB_004ecb76:
-        local_28 = local_28 + 0x1e;
-        local_2c = local_2c + 0x1e;
+        local_28 = local_28 + 1;
+        local_2c = (CNetGame *)&local_2c->players[0].player_input.action_state.fire;
         local_24 = local_24 + 1;
-        local_10f[iVar5 * 0x28] = '\0';
-        local_30 = local_30 + 0x1e;
+        local_10f[iVar6 * 0x28] = '\0';
+        local_30 = local_30 + 0xf;
         local_44[2] = local_44[2] + 4;
       }
-    } while ((int)local_24 < param_1[7]);
+    } while ((int)local_24 < this_ptr->player_count);
   }
-  iVar5 = 0;
+  iVar6 = 0;
   if (0 < local_113) {
-    iVar11 = 0;
+    iVar14 = 0;
     do {
-      if (local_10f[iVar11] == '\0') break;
-      iVar4 = core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440
-                        (param_1,(int)local_fb + iVar11,local_10f + iVar11,
-                         *(uint *)((int)aiStack_f3 + iVar11),
-                         *(uint *)((int)aiStack_f3 + iVar11 + 4));
-      param_1[iVar4 * 0x1e + 0x19] = *(int *)((int)aiStack_f3 + iVar11 + 8);
-      local_44[iVar4] = iVar5;
-      iVar5 = iVar5 + 1;
-      iVar11 = iVar11 + 0x28;
-    } while (iVar5 < local_113);
+      if (local_10f[iVar14] == '\0') break;
+      iVar5 = core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440
+                        (this_ptr,(SNetworkAddr *)((int)&local_fb.ip_address + iVar14),
+                         local_10f + iVar14,*(int *)((int)aEStack_f3 + iVar14),
+                         *(int *)((int)aEStack_f3 + iVar14 + 4));
+      this_ptr->players[iVar5].ready_flag = *(int *)((int)aEStack_f3 + iVar14 + 8);
+      local_44[iVar5] = iVar6;
+      iVar6 = iVar6 + 1;
+      iVar14 = iVar14 + 0x28;
+    } while (iVar6 < local_113);
   }
-  param_1[0x44] = local_44[param_1[0x44]];
-  param_1[0x45] = local_44[param_1[0x45]];
-  local_44[3] = param_1[7] + -1;
-  if (-1 < param_1[7] + -1) {
-    local_20 = param_1 + 8;
+  this_ptr->server_player_index = local_44[this_ptr->server_player_index];
+  this_ptr->local_player_index = local_44[this_ptr->local_player_index];
+  local_44[3] = this_ptr->player_count + -1;
+  if (-1 < local_44[3]) {
+    local_20 = this_ptr->players;
     do {
       local_18 = 0;
       if (0 < local_44[3]) {
         local_14 = 0;
-        local_1c = local_20 + 7;
-        piVar12 = local_20;
+        local_1c = &local_20->addr;
+        pSVar11 = local_20;
         do {
-          iVar5 = local_18;
-          piVar6 = piVar12 + 0x1e;
+          iVar6 = local_18;
+          pSVar7 = pSVar11 + 1;
           if (*(int *)((int)local_44 + local_14 + 4) < *(int *)((int)local_44 + local_14)) {
-            puVar10 = (uint *)((int)local_44 + local_14 + 4);
+            puVar12 = (uint *)((int)local_44 + local_14 + 4);
             uVar2 = *(uint *)((int)local_44 + local_14);
-            *(uint *)((int)local_44 + local_14) = *puVar10;
-            *puVar10 = uVar2;
-            piVar14 = local_20 + iVar5 * 0x1e;
-            piVar8 = piVar14 + (uint)bVar15 * -2 + 1;
-            local_bc = *piVar14;
-            piVar13 = aiStack_b8 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1;
-            piVar9 = piVar8 + (uint)bVar15 * -2 + 1;
-            aiStack_b8[(uint)bVar15 * -2] = *piVar8;
-            *piVar13 = *piVar9;
-            piVar13[(uint)bVar15 * -2 + 1] = piVar9[(uint)bVar15 * -2 + 1];
-            (piVar13 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1] =
-                 (piVar9 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
-            local_a8 = piVar14[5];
-            local_a4 = piVar14[6];
-            core_netgame_cpp_assignInt1_FUN_004edfa0(local_a0,local_1c);
-            local_9c = (short)local_1c[1];
-            local_98 = piVar14[9];
-            local_94 = piVar14[10];
-            local_90 = piVar14[0xb];
-            local_8c = piVar14[0xc];
-            local_88 = piVar14[0xd];
-            local_84 = piVar14[0xe];
-            local_80 = piVar14[0xf];
-            local_7c = piVar14[0x10];
-            local_78 = piVar14[0x11];
-            local_74 = piVar14[0x12];
-            local_70 = piVar12[0x13];
-            local_6c = piVar12[0x14];
-            local_68 = piVar12[0x15];
-            local_64 = piVar12[0x16];
-            local_60 = piVar12[0x17];
-            local_5c = piVar12[0x18];
-            local_58 = piVar12[0x19];
-            local_54 = piVar12[0x1a];
-            local_50 = piVar12[0x1b];
-            local_4c = piVar12[0x1c];
-            local_48 = piVar12[0x1d];
-            piVar12 = piVar6;
-            for (iVar5 = 0x1e; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar14 = *piVar12;
-              piVar12 = piVar12 + (uint)bVar15 * -2 + 1;
-              piVar14 = piVar14 + (uint)bVar15 * -2 + 1;
+            *(uint *)((int)local_44 + local_14) = *puVar12;
+            *puVar12 = uVar2;
+            pSVar17 = local_20 + iVar6;
+            pEVar9 = (EHeroType *)((int)pSVar17 + (uint)bVar18 * -8 + 4);
+            local_bc = *(uint *)pSVar17->name;
+            pEVar16 = aEStack_b8 + (uint)bVar18 * -2 + (uint)bVar18 * -2 + 1;
+            pEVar10 = pEVar9 + (uint)bVar18 * -2 + 1;
+            aEStack_b8[(uint)bVar18 * -2] = *pEVar9;
+            *pEVar16 = *pEVar10;
+            pEVar16[(uint)bVar18 * -2 + 1] = pEVar10[(uint)bVar18 * -2 + 1];
+            (pEVar16 + (uint)bVar18 * -2 + 1)[(uint)bVar18 * -2 + 1] =
+                 (pEVar10 + (uint)bVar18 * -2 + 1)[(uint)bVar18 * -2 + 1];
+            local_a8 = pSVar17->hero_number;
+            local_a4 = pSVar17->aim_mode;
+            core_netgame_cpp_assignInt1_FUN_004edfa0(&local_a0,(int *)local_1c);
+            local_9c = local_1c->port;
+            local_98 = pSVar17->last_arrival_time;
+            local_94 = pSVar17->ping_quality;
+            local_90 = pSVar17->last_ping_sent;
+            local_8c = pSVar17->last_ping_response;
+            local_88 = pSVar17->player_id;
+            local_84 = pSVar17->last_update_time;
+            local_80 = pSVar17->local_sync_stage;
+            local_7c = pSVar17->state_change_time;
+            local_78 = pSVar17->ready_flag;
+            local_74 = pSVar17->sim_frame_index;
+            local_70 = (pSVar11->player_input).action_state.walk;
+            local_6c = (pSVar11->player_input).action_state.backup;
+            local_68 = (pSVar11->player_input).action_state.run;
+            local_64 = (pSVar11->player_input).action_state.fire;
+            local_60 = (pSVar11->player_input).action_state.use_item;
+            local_5c = (pSVar11->player_input).action_state.light;
+            local_58 = (pSVar11->player_input).action_state.draw;
+            local_54 = (pSVar11->player_input).action_state.jump;
+            local_50 = (pSVar11->player_input).strafe_speed;
+            local_4c = (pSVar11->player_input).turn_speed;
+            local_48 = (pSVar11->player_input).look_up_down_speed;
+            pSVar11 = pSVar7;
+            for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *(uint *)pSVar17->name = *(uint *)pSVar11->name;
+              pSVar11 = (SNetPlayer *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
+              pSVar17 = (SNetPlayer *)((int)pSVar17 + (uint)bVar18 * -8 + 4);
             }
-            piVar12 = &local_bc;
-            piVar14 = piVar6;
-            for (iVar5 = 0x1e; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar14 = *piVar12;
-              piVar12 = piVar12 + (uint)bVar15 * -2 + 1;
-              piVar14 = piVar14 + (uint)bVar15 * -2 + 1;
+            puVar12 = &local_bc;
+            pSVar11 = pSVar7;
+            for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *(uint *)pSVar11->name = *puVar12;
+              puVar12 = puVar12 + (uint)bVar18 * -2 + 1;
+              pSVar11 = (SNetPlayer *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
             }
           }
           local_18 = local_18 + 1;
           local_14 = local_14 + 4;
-          local_1c = local_1c + 0x1e;
-          piVar12 = piVar6;
+          local_1c = local_1c + 0xf;
+          pSVar11 = pSVar7;
         } while (local_18 < local_44[3]);
       }
       local_44[3] = local_44[3] + -1;

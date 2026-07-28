@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(undefined4 param_1,char *param_2)
+; int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventList *this_ptr,char *command_string)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   command_string
 ; Local Variables:
 ; undefined1       Stack[-0x6c]:1  local_6c
 ;
@@ -94,7 +97,7 @@ section .text
     PUSH ESI                            ; 0047ac00
     MOV byte ptr [EAX],0x0              ; 0047ac01
     CALL core_event.cpp_CEventList_executeCommand_FUN_0047ac50 ; 0047ac04
-        ;   XREF to: 0047ac50 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommand_FUN_0047ac50()
+        ;   XREF to: 0047ac50 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommand_FUN_0047ac50(CEventList * this_ptr, char * command_buffer)
     ADD ESP,0x8                         ; 0047ac09
     TEST EAX,EAX                        ; 0047ac0c
     JNZ 0x0047ab9d                      ; 0047ac0e

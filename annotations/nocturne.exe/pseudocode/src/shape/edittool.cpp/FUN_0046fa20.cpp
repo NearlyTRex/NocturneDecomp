@@ -2,13 +2,13 @@
 // Address: 0046fa20
 // Address Range: [[0046fa20, 0046fa76]]
 // Convention: unknown
-// Signature: undefined4 shape_edittool_cpp_FUN_0046fa20(undefined4 param_1)
+// Signature: CEditorTools * shape_edittool_cpp_FUN_0046fa20(CEditorTools *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint shape_edittool_cpp_FUN_0046fa20(uint param_1)
+CEditorTools * shape_edittool_cpp_FUN_0046fa20(CEditorTools *param_1)
 
 {
   while (0 < _DAT_01bcd07c) {

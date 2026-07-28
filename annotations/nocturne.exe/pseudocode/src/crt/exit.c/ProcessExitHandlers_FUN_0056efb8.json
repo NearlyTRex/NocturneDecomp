@@ -1,0 +1,148 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 24,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "005674b0",
+      "from_addr": "005674e0",
+      "name": "crt_exit.c_ExitProcess_FUN_005674b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fcd4",
+      "from_addr": "0056fced",
+      "name": "crt_startup.c_ExitApplication_FUN_0056fcd4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056efb8",
+    "address_range": [
+      [
+        "0056efb8",
+        "0056f01a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_exit.c_ProcessExitHandlers_FUN_0056efb8",
+    "signature": "void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0056efb8(uchar min_priority,uchar max_priority)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ef50",
+      "is_variadic": false,
+      "name": "crt_util.c_invokeRuntimeHandler_FUN_0056ef50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c26ce",
+      "name": "RuntimeHandlerEntry_005c26ce",
+      "type": "RuntimeHandlerEntry",
+      "value": null
+    },
+    {
+      "addr": "005c26cf",
+      "name": "RuntimeHandlerEntry_005c26ce.priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c26d4",
+      "name": "RuntimeHandlerEntry_ARRAY_005c26d4",
+      "type": "RuntimeHandlerEntry[6]",
+      "value": null
+    },
+    {
+      "addr": "005c26d5",
+      "name": "RuntimeHandlerEntry_ARRAY_005c26d4[0].priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c26d6",
+      "name": "RuntimeHandlerEntry_ARRAY_005c26d4[0].func",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c26f8",
+      "name": "RuntimeHandlerEntry_005c26f8",
+      "type": "RuntimeHandlerEntry",
+      "value": null
+    },
+    {
+      "addr": "005c26f9",
+      "name": "RuntimeHandlerEntry_005c26f8.priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c26fa",
+      "name": "RuntimeHandlerEntry_005c26f8.func",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.184210526315789,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 6,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 12,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": []
+}

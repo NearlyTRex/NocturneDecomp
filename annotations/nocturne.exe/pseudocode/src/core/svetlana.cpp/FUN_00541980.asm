@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00541992
         ;   Label: LAB_00541992
     CALL core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0 ; 00541993
-        ;   XREF to: 005419b0 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0()
+        ;   XREF to: 005419b0 (UNCONDITIONAL_CALL)  ; CSvetlana * core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana * this_ptr)
     ADD ESP,0x4                         ; 00541998
     RET                                 ; 0054199b
 

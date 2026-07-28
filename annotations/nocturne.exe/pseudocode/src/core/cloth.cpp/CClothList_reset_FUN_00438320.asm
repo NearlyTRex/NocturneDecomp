@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_reset_FUN_00438320(int *param_1)
+; void __cdecl core_cloth_cpp_CClothList_reset_FUN_00438320(CClothList *this_ptr)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CClothList_dtor_FUN_00438250 at 00438256
@@ -36,7 +38,7 @@ section .text
     PUSH 0x0                            ; 0043833b
     PUSH EAX                            ; 0043833d
     CALL core_cloth.cpp_CCloth_dtor_FUN_00435160 ; 0043833e
-        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
+        ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00435160(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00438343
     PUSH EAX                            ; 00438346
     CALL crt_unknown.c_FUN_00564494     ; 00438347
@@ -56,14 +58,14 @@ section .text
     PUSH EAX                            ; 00438363
     MOV dword ptr [EDI],0x0             ; 00438364
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0043836a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0043836f
     PUSH 0x28                           ; 00438372
     PUSH 0x0                            ; 00438374
     ADD EDI,0x194                       ; 00438376
     PUSH EDI                            ; 0043837c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0043837d
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00438382
     POP EDI                             ; 00438385
     POP ESI                             ; 00438386

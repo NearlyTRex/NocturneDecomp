@@ -9,7 +9,7 @@
 ;   undefined2 DAT_005c1f4c
 ;
 ; Called Functions:
-;   FUN_0056af76
+;   crt_cpp.c_reportPureVirtualError_FUN_0056af76
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EBX,0x1                         ; 00566ee5
     PUSH 0x598af4                       ; 00566eea | = "pure virtual function called!"
     MOV word ptr [0x005c1f4c],BX        ; 00566eef | DAT_005c1f4c
-    CALL FUN_0056af76                   ; 00566ef6
-        ;   XREF to: 0056af76 (UNCONDITIONAL_CALL)  ; undefined FUN_0056af76()
+    CALL crt_cpp.c_reportPureVirtualError_FUN_0056af76 ; 00566ef6
+        ;   XREF to: 0056af76 (UNCONDITIONAL_CALL)  ; void crt_cpp.c_reportPureVirtualError_FUN_0056af76(char * error_message, int exit_code)
     ADD ESP,0x8                         ; 00566efb
     POP EBX                             ; 00566efe
     RET                                 ; 00566eff

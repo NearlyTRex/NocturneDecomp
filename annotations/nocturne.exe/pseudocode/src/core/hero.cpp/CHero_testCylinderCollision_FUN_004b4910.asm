@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hero_cpp_CHero_testCylinderCollision_FUN_004b4910(int param_1,undefined4 param_2,undefined4 param_3)
+; int core_hero_cpp_CHero_testCylinderCollision_FUN_004b4910(CDemonActor *param_1,SCollisionReturnInfo *param_2,float param_3)
 ;
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@ section .text
     PUSH ESI                            ; 004b493a
     PUSH EDX                            ; 004b493b
     CALL core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390 ; 004b493c
-        ;   XREF to: 0040a390 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390()
+        ;   XREF to: 0040a390 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_0040a390(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
     ADD ESP,0xc                         ; 004b4941
     POP ESI                             ; 004b4944
     RET                                 ; 004b4945

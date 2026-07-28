@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(int param_1,char *param_2)
+; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance *this_ptr,char *filename)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[66]:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 at 0040ca31
@@ -49,7 +52,7 @@ section .text
     PUSH EDX                            ; 004545a7
     MOV dword ptr [EDX + 0x178],0x0     ; 004545a8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0 ; 004545b2
-        ;   XREF to: 004544b0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0()
+        ;   XREF to: 004544b0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004545b7
     POP EDI                             ; 004545ba
     POP ESI                             ; 004545bb

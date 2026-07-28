@@ -19,7 +19,7 @@ struct CNPC_ptr_13260 {
     template<typename T> CNPC_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CNPC_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CNPC* operator->() const { return (CNPC*)_raw; }
-    CNPC* adj() const { return (CNPC*)((char*)_raw - offsetof(CNPC, base.flames)); }
+    CNPC* adj() const { return (CNPC*)((char*)_raw - offsetof(CNPC, base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

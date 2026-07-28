@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_load_FUN_0048c7d0(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_fire_cpp_CFireEffect_load_FUN_0048c7d0(CFireEffect *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ; undefined4       Stack[-0x10]:4  local_10
@@ -34,14 +37,14 @@ section .text
     PUSH ECX                            ; 0048c7e9
     MOV dword ptr [ESP + 0x104],EDX     ; 0048c7ea
     CALL core_fire.cpp_CFireEffect_init_FUN_0048a150 ; 0048c7f1
-        ;   XREF to: 0048a150 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_init_FUN_0048a150()
+        ;   XREF to: 0048a150 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_0048a150(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 0048c7f6
     PUSH EDI                            ; 0048c7f9
     PUSH 0xff                           ; 0048c7fa
     LEA EBX,[ESP + 0x8]                 ; 0048c7ff
     PUSH EBX                            ; 0048c803
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0048c804
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0048c809
     LEA EBX,[ESP + 0x100]               ; 0048c80c
     PUSH EBX                            ; 0048c813
@@ -56,7 +59,7 @@ section .text
         ;   Label: LAB_0048c82d
     PUSH EBX                            ; 0048c82e
     CALL core_fire.cpp_CCrater_load_FUN_00487d50 ; 0048c82f
-        ;   XREF to: 00487d50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CCrater_load_FUN_00487d50()
+        ;   XREF to: 00487d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_load_FUN_00487d50(CCrater * this_ptr, _FILE * file_handle)
     ADD EBX,0x70                        ; 0048c834
     ADD ESP,0x8                         ; 0048c837
     CMP EBX,ESI                         ; 0048c83a

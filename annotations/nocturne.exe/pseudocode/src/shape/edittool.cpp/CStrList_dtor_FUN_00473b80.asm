@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00473b80(int param_1,byte param_2)
+; CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00473b80(CStrList *this_ptr,uint flags)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
 ;   core_script.cpp_FUN_004fe4d0 at 004fe4e4
@@ -31,7 +34,7 @@ section .text
     PUSH EBX                            ; 00473b8c
     MOV dword ptr [EBX + 0xc],0x59ca74  ; 00473b8d | PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74
     CALL shape_edittool.cpp_CStrList_clear_FUN_00473c50 ; 00473b94
-        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_clear_FUN_00473c50()
+        ;   XREF to: 00473c50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_clear_FUN_00473c50(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00473b99
     TEST byte ptr [ESP + 0xc],0x2       ; 00473b9c
     JNZ 0x00473bc2                      ; 00473ba1
@@ -43,11 +46,11 @@ section .text
         ;   Label: LAB_00473ba7
     PUSH EBX                            ; 00473bac
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00473bad
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00473bb2
     PUSH EAX                            ; 00473bb5
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00473bb6
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00473bbb
     MOV EAX,EBX                         ; 00473bbe
     POP EBX                             ; 00473bc0

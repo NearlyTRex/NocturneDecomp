@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(void)
+; void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(CSpark *this_ptr)
 ;
+; Parameters:
+; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x54]:4  local_54
@@ -99,13 +101,13 @@ section .text
     FMULP ST3                           ; 0048388c
     FXCH                                ; 0048388e
     CALL crt_math.c_round_FUN_00563a30  ; 00483890
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00483895
     CALL crt_math.c_round_FUN_00563a30  ; 00483897
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 0048389c
     CALL crt_math.c_round_FUN_00563a30  ; 0048389e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004838a3
     FISTP dword ptr [0x01c08d14]        ; 004838a5 | DAT_01c08d14
     FXCH                                ; 004838ab

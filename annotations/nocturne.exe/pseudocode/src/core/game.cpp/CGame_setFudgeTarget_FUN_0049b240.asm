@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_0049b240(int param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_0049b240(CGame *this_ptr,CVector3f *fudge_target,float fudge_step)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   fudge_target
+; float            Stack[0xc]:4   fudge_step
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_FUN_004c9cf0 at 004c9df3

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte __cdecl engine_2d_c_computeOutcode_FUN_00403900(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; int __cdecl engine_2d_c_computeOutcode_FUN_00403900(int x,int y,int x_min,int y_min,int x_max,int y_max)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   x_min
+; int              Stack[0x10]:4   y_min
+; int              Stack[0x14]:4   x_max
+; int              Stack[0x18]:4   y_max
 ;
 ; XREF[1]:
 ;   engine_2d.c_clipAndDrawLine_FUN_00403990 at 004039b5

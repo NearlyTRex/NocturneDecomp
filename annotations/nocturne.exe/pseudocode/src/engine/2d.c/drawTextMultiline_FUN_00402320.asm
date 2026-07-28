@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(byte *param_1,int param_2,int param_3,undefined4 param_4,int param_5)
+; void __cdecl engine_2d_c_drawTextMultiline_FUN_00402320(char *text,int x_start,int y_start,int x_max,int y_max)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x_start
+; int              Stack[0xc]:4   y_start
+; int              Stack[0x10]:4   x_max
+; int              Stack[0x14]:4   y_max
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -59,7 +65,7 @@ section .text
     SUB EBX,0x20                        ; 00402361
     IMUL EBX,EBX,0x91                   ; 00402364
     CALL engine_2d.c_drawCharacter_FUN_00401c40 ; 0040236a
-        ;   XREF to: 00401c40 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacter_FUN_00401c40()
+        ;   XREF to: 00401c40 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401c40(int char_code, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040236f
     MOV BL,byte ptr [EBX + 0x5a4b80]    ; 00402372 | DAT_005a4b80
     AND EBX,0xff                        ; 00402378

@@ -2,15 +2,15 @@
 // Address: 0050e340
 // Address Range: [[0050e340, 0050e362]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(int param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale)
 
 {
-  *(uint *)(param_1 + 0x15aaa0) = param_2;
-  *(uint *)(param_1 + 0x15aaa4) = param_3;
-  *(uint *)(param_1 + 0x15aaa8) = param_4;
+  this_ptr->renderable_actors[0x76c] = (CDemonActor *)light_scale;
+  this_ptr->renderable_actors[0x76d] = (CDemonActor *)color_scale;
+  this_ptr->renderable_actors[0x76e] = (CDemonActor *)fog_scale;
   return;
 }

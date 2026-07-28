@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 53,
+    "complexity_score": 13,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [
@@ -23,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00456b20",
-      "from_addr": "00456b77",
-      "name": "engine_dosio.cpp_FUN_00456b20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00456a60",
       "from_addr": "00456aac",
       "name": "engine_dosio.cpp_getFile_FUN_00456a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00456b20",
+      "from_addr": "00456b77",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_watcom.c__mkdir_FUN_00565e40",
-    "signature": "undefined4 __cdecl crt_watcom_c__mkdir_FUN_00565e40(LPCSTR param_1)"
+    "signature": "int __cdecl crt_watcom_c__mkdir_FUN_00565e40(char *path)"
   },
   "function_calls": [
     {
@@ -90,7 +87,7 @@
       {
         "call_addr": "00456b77",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00456b20",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,10 +97,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.375,
@@ -126,40 +123,20 @@
     "pcode_op_count": 35
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl _mkdir(LPCSTR param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "BVar1 = CreateDirectoryA(param_1,(LPSECURITY_ATTRIBUTES)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -8,7 +8,7 @@
 ;   core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0
 ;   core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   crt_unknown.c_FUN_00564bb0
+;   crt_unknown.c__atexit_FUN_00564bb0
 ;
 ; *****************************************************************************
 
@@ -19,37 +19,37 @@ section .text
     PUSH 0x8                            ; 0044bc25
     PUSH 0x14b8a58                      ; 0044bc27
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0044bc2c
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0044bc31
     PUSH 0x5ad4dc                       ; 0044bc34
-    CALL crt_unknown.c_FUN_00564bb0     ; 0044bc39
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0044bc39
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0044bc3e
     PUSH 0x59ac90                       ; 0044bc41
     PUSH 0x4                            ; 0044bc46
     PUSH 0x14b8cb8                      ; 0044bc48
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0044bc4d
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0044bc52
     PUSH 0x5ad4ec                       ; 0044bc55
-    CALL crt_unknown.c_FUN_00564bb0     ; 0044bc5a
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0044bc5a
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0044bc5f
     PUSH 0x14b8de8                      ; 0044bc62
     CALL core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0 ; 0044bc67
-        ;   XREF to: 0044bca0 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0()
+        ;   XREF to: 0044bca0 (UNCONDITIONAL_CALL)  ; CFilterCache * core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0(CFilterCache * this_ptr)
     ADD ESP,0x4                         ; 0044bc6c
     PUSH 0x5ad4fc                       ; 0044bc6f
-    CALL crt_unknown.c_FUN_00564bb0     ; 0044bc74
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0044bc74
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0044bc79
     PUSH 0x14b98ec                      ; 0044bc7c
     CALL core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0 ; 0044bc81
-        ;   XREF to: 0044c2b0 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0()
+        ;   XREF to: 0044c2b0 (UNCONDITIONAL_CALL)  ; CFilterFx * core_dfilter.cpp_CFilterFX_ctor_FUN_0044c2b0(CFilterFx * this_ptr)
     ADD ESP,0x4                         ; 0044bc86
     PUSH 0x5ad50c                       ; 0044bc89
-    CALL crt_unknown.c_FUN_00564bb0     ; 0044bc8e
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
+    CALL crt_unknown.c__atexit_FUN_00564bb0 ; 0044bc8e
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0044bc93
     RET                                 ; 0044bc96
 

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_005689c0 at 005689f1
 ;   FUN_00569fb0 at 00569ff3
-;   FUN_00572f40 at 00572f85
-;   FUN_0057301c at 00573052
-;   FUN_005733e0 at 00573420
+;   crt_io.c_extend_file_for_append_FUN_00572f40 at 00572f85
+;   crt_io.c_write_FUN_0057301c at 00573052
+;   crt_stdio.c_lseek_FUN_005689c0 at 005689f1
+;   crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0 at 00573420
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1f90
@@ -18,7 +18,7 @@
 ;   void* PTR_DAT_005c1fe4 = 005c1f94
 ;
 ; Called Functions:
-;   FUN_005705c0
+;   crt_io.c_IsSpecialDevice_FUN_005705c0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     OR DH,0x40                          ; 0056f250
     PUSH EBX                            ; 0056f253
     MOV byte ptr [EAX + 0x1],DH         ; 0056f254 | DAT_005c1f95
-    CALL FUN_005705c0                   ; 0056f257
-        ;   XREF to: 005705c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005705c0()
+    CALL crt_io.c_IsSpecialDevice_FUN_005705c0 ; 0056f257
+        ;   XREF to: 005705c0 (UNCONDITIONAL_CALL)  ; int crt_io.c_IsSpecialDevice_FUN_005705c0(int handle_index)
     ADD ESP,0x4                         ; 0056f25c
     TEST EAX,EAX                        ; 0056f25f
     JZ 0x0056f26d                       ; 0056f261

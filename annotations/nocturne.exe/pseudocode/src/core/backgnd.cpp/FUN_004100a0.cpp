@@ -9,13 +9,14 @@
 uint core_backgnd_cpp_FUN_004100a0(int param_1,int param_2)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
   
   if (*(int *)(param_1 + 0x2cc) == 0) {
     return 0;
   }
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  if (*(int *)(iVar1 + 0x358) != 0) {
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  if (*(int *)(pCVar1->texture_list[7].textures[2].texture_name + 4) != 0) {
     *(int *)(param_2 + 0x24) = param_1 + 0x150;
   }
   return 1;

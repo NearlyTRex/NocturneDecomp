@@ -9,12 +9,12 @@
 void core_ladder_cpp_FUN_004c4260(void)
 
 {
-  int iVar1;
+  CLadder *this_ptr;
   
-  iVar1 = FUN_0056497c(0x2f8);
-  if (iVar1 == 0) {
+  this_ptr = (CLadder *)FUN_0056497c(0x2f8);
+  if (this_ptr == (CLadder *)0x0) {
     return;
   }
-  core_ladder_cpp_CLadder_ctor_FUN_004c4290(iVar1);
+  core_ladder_cpp_CLadder_ctor_FUN_004c4290(this_ptr);
   return;
 }

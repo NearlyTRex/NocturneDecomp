@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0(int param_1,undefined4 param_2)
+; int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0(CDemonMission *this_ptr,int is_loading)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   is_loading
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;
@@ -33,7 +36,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004d86ea
     PUSH EAX                            ; 004d86ee
     CALL crt_file.c_makepath_FUN_0056626c ; 004d86ef
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004d86f4
     MOV EDX,dword ptr [ESP + 0x10c]     ; 004d86f7
     PUSH EDX                            ; 004d86fe

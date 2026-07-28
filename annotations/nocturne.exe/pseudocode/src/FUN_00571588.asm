@@ -9,7 +9,7 @@
 ;   FUN_00571718 at 00571755
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1abc = 005671dc
+;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
         ;   Label: LAB_00571597
     POP EBX                             ; 0057159e
     RET                                 ; 0057159f
-    CALL dword ptr [0x005c1abc]         ; 005715a0 | PTR_FUN_005c1abc
+    CALL dword ptr [0x005c1abc]         ; 005715a0 | PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc
         ;   Label: LAB_005715a0
     MOV EAX,dword ptr [EAX + EBX*0x8 + 0x5c] ; 005715a6
     POP EBX                             ; 005715aa

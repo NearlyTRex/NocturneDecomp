@@ -2,11 +2,11 @@
 // Address: 00516d80
 // Address Range: [[00516d80, 00516f46]]
 // Convention: unknown
-// Signature: void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,undefined4 param_2)
+// Signature: void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
 
 #include "nocturne.h"
 
-void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
+void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,float param_2)
 
 {
   int iVar1;
@@ -15,7 +15,8 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
   int iStack_c;
   
   if ((*(int *)(param_1 + 0x2cc) == 1) && (*(int *)(param_1 + 0x5a4) == 0)) {
-    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,param_1 + 0x2d4);
+    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                      (0x01C03A10,(char *)(param_1 + 0x2d4));
     if (iVar1 != 0) {
       *(uint *)(param_1 + 0x5a4) = 1;
       if ((uint *)(param_1 + 0x39c) != (uint *)(param_1 + 0x338)) {
@@ -57,8 +58,8 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
     }
   }
   if (*(int *)(param_1 + 0x5a4) != 0) {
-    core_box_cpp_CBox_process_FUN_0041acb0((uint *)(param_1 + 0x350),param_2);
-    *(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x350);
+    core_box_cpp_CBox_process_FUN_0041acb0((CBox *)(param_1 + 0x350),param_2);
+    *(float *)(param_1 + 0x20) = (((CBox *)(param_1 + 0x350))->position).x;
     *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x354);
     *(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x358);
     if ((uint *)(param_1 + 0x30) != (uint *)(param_1 + 0x35c)) {

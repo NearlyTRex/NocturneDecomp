@@ -1,27 +1,39 @@
 // Name: core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0
 // Address: 005419b0
 // Address Range: [[005419b0, 00541a37]]
-// Convention: unknown
-// Signature: int core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *this_ptr)
 
 #include "nocturne.h"
 
-int core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(uint param_1)
+CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(CSvetlana *this_ptr)
 
 {
-  int iVar1;
+  SMRGLTextureBasic *pSVar1;
+  int iVar2;
+  CCloth *pCVar3;
   
-  iVar1 = core_hero_cpp_FUN_004b46d0(param_1);
-  iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x1fa44);
-  iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x3ab30);
-  *(byte ***)(iVar1 + -0x5a428) = &PTR_core_svetlana_cpp_CSvetlana_setup_FUN_00541a40_005a2a74;
-  *(uint *)(iVar1 + -0x3ab38) = 0;
-  *(uint *)(iVar1 + -0x3ab34) = 0;
+  iVar2 = core_hero_cpp_FUN_004b46d0(this_ptr);
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100((CCloth *)(iVar2 + 0x1fa44));
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100
+                     ((CCloth *)(pCVar3->vertices[0x300].connected_indices + 9));
+  pCVar3[-2].vertices[0x1cf].connected_indices[2] =
+       (int)&PTR_core_svetlana_cpp_CSvetlana_setup_FUN_00541a40_005a2a74;
+  pSVar1 = pCVar3[-1].model.texture_list[0x123].textures;
+  pSVar1[2].texture_name[4] = '\0';
+  pSVar1[2].texture_name[5] = '\0';
+  pSVar1[2].texture_name[6] = '\0';
+  pSVar1[2].texture_name[7] = '\0';
+  pSVar1 = pCVar3[-1].model.texture_list[0x123].textures;
+  pSVar1[2].texture_name[8] = '\0';
+  pSVar1[2].texture_name[9] = '\0';
+  pSVar1[2].texture_name[10] = '\0';
+  pSVar1[2].texture_name[0xb] = '\0';
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (iVar1 + -0x5a424,"svetlana.dfm");
-  *(uint *)(iVar1 + 0x3ab40) = 0x3f800000;
-  *(uint *)(iVar1 + 0x3ab3c) = 0;
-  *(uint *)(iVar1 + 0x3ab38) = *(uint *)(iVar1 + 0x3ab3c);
-  *(uint *)(iVar1 + 0x3ab34) = *(uint *)(iVar1 + 0x3ab38);
-  return iVar1 + -0x5a574;
+            (pCVar3[-2].vertices[0x1cf].connected_indices + 3,"svetlana.dfm");
+  pCVar3->vertices[0x300].connected_indices[0xd] = 0x3f800000;
+  pCVar3->vertices[0x300].connected_indices[0xc] = 0;
+  pCVar3->vertices[0x300].connected_indices[0xb] = pCVar3->vertices[0x300].connected_indices[0xc];
+  pCVar3->vertices[0x300].connected_indices[10] = pCVar3->vertices[0x300].connected_indices[0xb];
+  return (CSvetlana *)&pCVar3[-2].vertices[0x1ce].force;
 }

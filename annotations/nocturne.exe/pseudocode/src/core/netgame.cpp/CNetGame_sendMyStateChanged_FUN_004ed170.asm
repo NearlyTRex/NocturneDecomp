@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(int *param_1)
+; void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined1       Stack[-0x38]:1  local_38
@@ -58,7 +60,7 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed1a6
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ed1a9
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: LAB_004ed1a9
     MOV EDX,EAX                         ; 004ed1ae
     MOV ESI,0x12                        ; 004ed1b0
@@ -136,7 +138,7 @@ section .text
     PUSH ESI                            ; 004ed287
     PUSH EBX                            ; 004ed288
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004ed289
-        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_004eb350()
+        ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EAX,dword ptr [EBX + 0x114]     ; 004ed28e
     SHL EAX,0x3                         ; 004ed294
     MOV EDX,EAX                         ; 004ed297

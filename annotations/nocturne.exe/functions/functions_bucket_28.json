@@ -182,9 +182,11 @@
         "start":"0056c5a8"
       }
     ],
+    "conv":"__fpureg_safe",
+    "custom_storage":true,
     "importable":true,
-    "name":"FUN_0056c5a8",
-    "ret":"undefined1",
+    "name":"crt_math.c_sqrt_FUN_0056c5a8",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -252,8 +254,33 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },
@@ -266,12 +293,54 @@
         "start":"0056d628"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056d628",
-    "ret":"undefined1",
+    "name":"crt_string.c_parse_uint_FUN_0056d628",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"str",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"result",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_FUN_004c9cf0(int param_1,undefined4 param_2)
+; void core_manpuz_cpp_FUN_004c9cf0(CMansionPuzzleCircle *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     PUSH 0x41f00000                     ; 004c9cf8
     PUSH EAX                            ; 004c9cfd
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0 ; 004c9cfe
-        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0()
+        ;   XREF to: 004b45b0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 004c9d03
     TEST EAX,EAX                        ; 004c9d06
     JZ 0x004c9dfc                       ; 004c9d08
@@ -42,7 +42,7 @@ section .text
     PUSH ESI                            ; 004c9d15
     PUSH EBX                            ; 004c9d16
     CALL core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90 ; 004c9d17
-        ;   XREF to: 004cac90 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90()
+        ;   XREF to: 004cac90 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(CMansionPuzzleCircle * this_ptr, int panel_index, float delta_time)
     INC ESI                             ; 004c9d1c
     ADD ESP,0xc                         ; 004c9d1d
     CMP ESI,0xc                         ; 004c9d20
@@ -54,7 +54,7 @@ section .text
     PUSH ESI                            ; 004c9d2b
     PUSH EBX                            ; 004c9d2c
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900 ; 004c9d2d
-        ;   XREF to: 004cb900 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900()
+        ;   XREF to: 004cb900 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900(CMansionPuzzleCircle * this_ptr, int reflector_index, float delta_time)
     INC ESI                             ; 004c9d32
     ADD ESP,0xc                         ; 004c9d33
     CMP ESI,0x2                         ; 004c9d36
@@ -66,7 +66,7 @@ section .text
     PUSH ESI                            ; 004c9d41
     PUSH EBX                            ; 004c9d42
     CALL core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0 ; 004c9d43
-        ;   XREF to: 004cb2d0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0()
+        ;   XREF to: 004cb2d0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0(CMansionPuzzleCircle * this_ptr, int panel_index, float delta_time)
     INC ESI                             ; 004c9d48
     ADD ESP,0xc                         ; 004c9d49
     CMP ESI,0xc                         ; 004c9d4c
@@ -126,21 +126,21 @@ section .text
     LEA EAX,[EBX + 0x136c]              ; 004c9dc1
     PUSH EAX                            ; 004c9dc7
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9dc8
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c9dcd
     LEA EAX,[EBX + 0x13c0]              ; 004c9dd0
     PUSH EAX                            ; 004c9dd6
     ADD EBX,0x13cc                      ; 004c9dd7
     PUSH EBX                            ; 004c9ddd
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c9dde
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c9de3
     PUSH 0x3c8efa35                     ; 004c9de6
     PUSH ESI                            ; 004c9deb
     MOV EDX,dword ptr [0x005b9354]      ; 004c9dec | DAT_005b9354
     PUSH EDX                            ; 004c9df2 | DAT_01c775ec
     CALL core_game.cpp_CGame_setFudgeTarget_FUN_0049b240 ; 004c9df3
-        ;   XREF to: 0049b240 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_setFudgeTarget_FUN_0049b240()
+        ;   XREF to: 0049b240 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setFudgeTarget_FUN_0049b240(CGame * this_ptr, CVector3f * fudge_target, float fudge_step)
     ADD ESP,0xc                         ; 004c9df8
     POP ESI                             ; 004c9dfb
     POP EBX                             ; 004c9dfc

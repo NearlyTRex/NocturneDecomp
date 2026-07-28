@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_inv_cpp_loadItem_FUN_004bed80(int param_1,undefined4 param_2)
+; int __cdecl core_inv_cpp_loadItem_FUN_004bed80(SInventoryItemInfo *item_info,_FILE *file_handle)
 ;
+; Parameters:
+; SInventoryItemInfo * Stack[0x4]:4   item_info
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004bf229

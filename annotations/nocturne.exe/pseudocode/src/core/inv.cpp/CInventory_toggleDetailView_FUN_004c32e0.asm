@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004c32e0(int param_1)
+; void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004c32e0(CInventory *this_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f216
@@ -51,7 +53,7 @@ section .text
     PUSH EBX                            ; 004c332c
         ;   Label: LAB_004c332c
     CALL core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70 ; 004c332d
-        ;   XREF to: 004c1d70 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70()
+        ;   XREF to: 004c1d70 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004c3332
     JMP 0x004c331b                      ; 004c3335
         ;   XREF to: 004c331b (UNCONDITIONAL_JUMP)  ; LAB_004c331b
@@ -59,7 +61,7 @@ section .text
         ;   Label: LAB_004c3337
     PUSH EBX                            ; 004c3339
     CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20 ; 004c333a
-        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20()
+        ;   XREF to: 004c1d20 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory * this_ptr, int reset_both)
     ADD ESP,0x8                         ; 004c333f
     POP EBX                             ; 004c3342
     RET                                 ; 004c3343

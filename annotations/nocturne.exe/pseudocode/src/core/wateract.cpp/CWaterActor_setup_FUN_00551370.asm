@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_CWaterActor_setup_FUN_00551370(int param_1)
+; void core_wateract_cpp_CWaterActor_setup_FUN_00551370(CWaterActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
@@ -48,7 +48,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0055137c
     PUSH EDI                            ; 0055137f
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00551380
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     FLD float ptr [EDI + 0x160]         ; 00551385
     FMUL float ptr [EDI + 0x274]        ; 0055138b
     ADD ESP,0x4                         ; 00551391
@@ -68,11 +68,11 @@ section .text
     FLD float ptr [EDI + 0x150]         ; 005513bf
     FMULP ST2                           ; 005513c5
     CALL crt_math.c_round_FUN_00563a30  ; 005513c7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 005513cc
     MOV EAX,dword ptr [ESP + 0xc]       ; 005513d0
     CALL crt_math.c_round_FUN_00563a30  ; 005513d4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     INC EAX                             ; 005513d9
     FISTP dword ptr [ESP + 0x3c]        ; 005513da
     MOV dword ptr [ESP + 0x14],EAX      ; 005513de
@@ -140,7 +140,7 @@ section .text
     FMUL ST2                            ; 005514ed
     FADD ST0,ST3                        ; 005514ef
     CALL crt_math.c_round_FUN_00563a30  ; 005514f1
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 005514f6
     MOV EAX,dword ptr [ESP + 0xc]       ; 005514fa
     MOV dword ptr [ECX + EDI*0x1 + 0x2ac],EAX ; 005514fe
@@ -152,7 +152,7 @@ section .text
     FMUL ST2                            ; 0055151d
     FADD ST0,ST3                        ; 0055151f
     CALL crt_math.c_round_FUN_00563a30  ; 00551521
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 00551526
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0055152a
     MOV dword ptr [ECX + EDI*0x1 + 0x2b0],EAX ; 0055152e
@@ -230,7 +230,7 @@ section .text
     PUSH EDI                            ; 00551640
         ;   Label: LAB_00551640
     CALL core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00551920 ; 00551641
-        ;   XREF to: 00551920 (UNCONDITIONAL_CALL)  ; undefined core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00551920()
+        ;   XREF to: 00551920 (UNCONDITIONAL_CALL)  ; void core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_00551920(CWaterActor * this_ptr)
     MOV dword ptr [EDI + 0x2b220],0x0   ; 00551646
     ADD ESP,0x4                         ; 00551650
     MOV dword ptr [EDI + 0x2b224],0x0   ; 00551653
@@ -296,7 +296,7 @@ section .text
     FMUL ST4                            ; 0055171f
     FMUL ST3                            ; 00551721
     CALL crt_math.c_round_FUN_00563a30  ; 00551723
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 00551728
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0055172c
     ADD ESI,0x20000                     ; 00551730
@@ -313,7 +313,7 @@ section .text
     INC ECX                             ; 00551752
     FXCH                                ; 00551753
     CALL crt_math.c_round_FUN_00563a30  ; 00551755
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 0055175a
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0055175e
     FADD ST0,ST1                        ; 00551762

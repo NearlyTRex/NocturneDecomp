@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_CLever_process_FUN_004c6190(int param_1,float param_2)
+; void core_lever_cpp_CLever_process_FUN_004c6190(CLever *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -68,7 +68,7 @@ section .text
     MOV EBP,dword ptr [0x005b7650]      ; 004c6216 | DAT_005b7650
     PUSH EBP                            ; 004c621c
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c621d
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
         ;   Label: LAB_004c621d
     ADD ESP,0x8                         ; 004c6222
     MOV EAX,dword ptr [EBX + 0x408]     ; 004c6225
@@ -89,7 +89,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004c624f | DAT_01fa3ff4 | DAT_01fa3ff8
     PUSH EDX                            ; 004c6256
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c6257
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c625c
     TEST EAX,EAX                        ; 004c625f
     JNZ 0x004c62ee                      ; 004c6261
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_004c62da
     PUSH EAX                            ; 004c62e0
     CALL core_lever.cpp_CLever_setState_FUN_004c6390 ; 004c62e1
-        ;   XREF to: 004c6390 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_CLever_setState_FUN_004c6390()
+        ;   XREF to: 004c6390 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_004c6390(CLever * this_ptr, float new_state)
     ADD ESP,0x8                         ; 004c62e6
     JMP 0x004c6233                      ; 004c62e9
         ;   XREF to: 004c6233 (UNCONDITIONAL_JUMP)  ; LAB_004c6233
@@ -144,7 +144,7 @@ section .text
     PUSH dword ptr [ECX + 0x2d4]        ; 004c62fc
     PUSH EAX                            ; 004c6302
     CALL core_lever.cpp_CLever_setState_FUN_004c6390 ; 004c6303
-        ;   XREF to: 004c6390 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_CLever_setState_FUN_004c6390()
+        ;   XREF to: 004c6390 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_004c6390(CLever * this_ptr, float new_state)
     ADD ESP,0x8                         ; 004c6308
     INC EDI                             ; 004c630b
     ADD ESI,0x4                         ; 004c630c
@@ -168,7 +168,7 @@ section .text
     MOV EDI,dword ptr [0x005b7650]      ; 004c633e | DAT_005b7650
     PUSH EDI                            ; 004c6344
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c6345
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004c634a
     FLD float ptr [EBX + 0x2d4]         ; 004c634d
         ;   Label: LAB_004c634d
@@ -193,7 +193,7 @@ section .text
     MOV EBP,dword ptr [0x005b7650]      ; 004c6376 | DAT_005b7650
     PUSH EBP                            ; 004c637c
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c637d
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004c6382
     ADD ESP,0x8                         ; 004c6385
     POP EBP                             ; 004c6388

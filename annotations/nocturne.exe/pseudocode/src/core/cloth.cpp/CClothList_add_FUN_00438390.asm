@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_add_FUN_00438390(int *param_1,char *param_2)
+; void __cdecl core_cloth_cpp_CClothList_add_FUN_00438390(CClothList *this_ptr,char *filename)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_FUN_005350c0 at 00535437

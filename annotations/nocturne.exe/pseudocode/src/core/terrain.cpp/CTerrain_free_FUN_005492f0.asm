@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(void)
+; void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(CTerrain *this_ptr)
 ;
+; Parameters:
+; CTerrain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_clear_FUN_00506ec0 at 00506ef8
@@ -23,7 +25,7 @@ section .text
         ;   Label: core_terrain.cpp_CTerrain_free_FUN_005492f0
     PUSH EDX                            ; 005492f6
     CALL core_ground.cpp_CGround_free_FUN_004b1470 ; 005492f7
-        ;   XREF to: 004b1470 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_free_FUN_004b1470()
+        ;   XREF to: 004b1470 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_free_FUN_004b1470(CGround * this_ptr)
     XOR ECX,ECX                         ; 005492fc
     ADD ESP,0x4                         ; 005492fe
     MOV dword ptr [0x02dd10cc],ECX      ; 00549301 | DAT_02dd10cc

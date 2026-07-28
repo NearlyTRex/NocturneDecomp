@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(int param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(CDemonRenderer *this_ptr,int enabled)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   enabled
 ;
 ; XREF[3]:
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5909

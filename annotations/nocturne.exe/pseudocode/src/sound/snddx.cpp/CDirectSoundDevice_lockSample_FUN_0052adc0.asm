@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+; int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)
 ;
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 0052addf (CONDITIONAL_JUMP)  ; LAB_0052addf
     PUSH EBX                            ; 0052adf4
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 0052adf5
-        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40()
+        ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0052adfa
     PUSH 0x0                            ; 0052adfd
     LEA EDX,[EBX + 0x15c]               ; 0052adff
@@ -74,7 +74,7 @@ section .text
     PUSH EAX                            ; 0052ae4f
         ;   Label: LAB_0052ae4f
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052ae50
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052ae55
     PUSH EAX                            ; 0052ae58
     PUSH 0x5942e8                       ; 0052ae59 | = "Lock hw sample buffer"

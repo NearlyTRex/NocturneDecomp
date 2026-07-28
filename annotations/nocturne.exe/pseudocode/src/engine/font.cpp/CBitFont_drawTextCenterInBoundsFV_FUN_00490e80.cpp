@@ -2,17 +2,18 @@
 // Address: 00490e80
 // Address Range: [[00490e80, 00490eec]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,uint param_7,uint param_8)
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)
 
 {
-  byte local_1010 [4096];
+  int iVar1;
+  char local_1010 [4096];
   
-  _vsprintf(local_1010,param_7,param_8);
-  engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
-            (param_1,param_2,param_3,param_4,param_5,param_6,local_1010);
-  return;
+  _vsprintf(local_1010,format_string,args);
+  iVar1 = engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
+                    (this_ptr,left_x,right_x,y_pos,color_mode,color_value,local_1010);
+  return iVar1;
 }

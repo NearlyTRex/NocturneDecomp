@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 45,
+    "complexity_score": 5,
     "cross_reference_count": 96,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 19
   },
   "cross_references": [
@@ -23,21 +20,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00568560",
-      "from_addr": "005685de",
-      "name": "FUN_00568560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056aa38",
       "from_addr": "0056ab05",
       "name": "FUN_0056aa38",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c864",
-      "from_addr": "0056c977",
-      "name": "FUN_0056c864",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,18 +35,6 @@
       "addr": "00570f60",
       "from_addr": "00571020",
       "name": "FUN_00570f60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00572f40",
-      "from_addr": "00572fae",
-      "name": "FUN_00572f40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573afc",
-      "from_addr": "00573c26",
-      "name": "FUN_00573afc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,15 +80,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040bd40",
-      "from_addr": "0040bd4e",
-      "name": "core_actor.cpp_FUN_0040bd40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0040bd90",
       "from_addr": "0040be07",
       "name": "core_actor.cpp_FUN_0040bd90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bd40",
+      "from_addr": "0040bd4e",
+      "name": "core_actor.cpp_copyToActorDebugBuffer_FUN_0040bd40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -347,9 +320,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00573afc",
+      "from_addr": "00573c26",
+      "name": "crt_env.c_updateEnvironTable_FUN_00573afc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572f40",
+      "from_addr": "00572fae",
+      "name": "crt_io.c_extend_file_for_append_FUN_00572f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c864",
+      "from_addr": "0056c977",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0056df10",
       "from_addr": "0056df39",
       "name": "crt_startup.cpp_WinMainBootstrap_FUN_0056df10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568560",
+      "from_addr": "005685de",
+      "name": "crt_stdio.c___allocfp_FUN_00568560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -479,21 +476,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052a280",
+      "from_addr": "0052a2ce",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_0052a280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052a450",
       "from_addr": "0052a4b9",
       "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052a280",
-      "from_addr": "0052a2ce",
-      "name": "sound_snddx.cpp_FUN_0052a280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0052bbd0",
       "from_addr": "0052bc7e",
-      "name": "sound_snddx.cpp_FUN_0052bbd0",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -603,7 +600,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c_memset_FUN_00563cc0",
-    "signature": "undefined4 __cdecl crt_memory_c_memset_FUN_00563cc0(undefined4 param_1)"
+    "signature": "void * __cdecl crt_memory_c_memset_FUN_00563cc0(void *dest,int value,ulong count)"
   },
   "function_calls": [
     {
@@ -728,10 +725,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.25,
@@ -757,40 +754,34 @@
     "pcode_op_count": 99
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl memset(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -17,43 +17,43 @@ CDemonActorType * FUN_00458630(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_00458640
 // Address: 00458640
-int CDraculaBride::ctor(undefined4 param_1);
+CDraculaBride * __cdecl CDraculaBride::ctor(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730
 // Address: 00458730
-void CDraculaBride::setup(int param_1);
+void CDraculaBride::setup(CEnemy *param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90
 // Address: 00458a90
-void CDraculaBride::process(int param_1,float param_2);
+void CDraculaBride::process(CPathMap *param_1,float param_2);
 
 // Original: core_dracbrid.cpp_CDraculaBride_explode_FUN_00459f70
 // Address: 00459f70
-void __cdecl CDraculaBride::explode(int param_1,float *param_2,float param_3,undefined4 param_4);
+void __cdecl CDraculaBride::explode(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
 
 // Original: core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0
 // Address: 0045a1a0
-void __cdecl CDraculaBride::dismemberPart(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CDraculaBride::dismemberPart(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 
 // Original: core_dracbrid.cpp_FUN_0045a240
 // Address: 0045a240
-undefined4 FUN_0045a240(int param_1,undefined4 param_2);
+ECollisionType FUN_0045a240(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_dracbrid.cpp_FUN_0045a260
 // Address: 0045a260
-int FUN_0045a260(int param_1);
+int FUN_0045a260(CCharacter *param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450
 // Address: 0045a450
-int CDraculaBride::archive(int param_1);
+void CDraculaBride::archive(CEnemy *param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0
 // Address: 0045a6a0
-void __cdecl CDraculaBride::checkHeartShot(int param_1,int *param_2);
+void __cdecl CDraculaBride::checkHeartShot(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0
 // Address: 0045a6f0
-void CDraculaBride::processDamage(int param_1,int param_2);
+void CDraculaBride::processDamage(CDraculaBride *param_1,SDamageInfo *param_2);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_0045a9a0
 // Address: 0045a9a0
@@ -61,15 +61,15 @@ undefined4 CDraculaBride::getDeathState(int param_1);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0045a9e0
 // Address: 0045a9e0
-undefined4 CDraculaBride::getTargetPoints(int param_1,undefined4 *param_2);
+undefined4 CDraculaBride::getTargetPoints(int param_1,CVector3f *param_2);
 
 // Original: core_dracbrid.cpp_FUN_0045ab40
 // Address: 0045ab40
-void FUN_0045ab40(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_0045ab40(CDemonActor *param_1,undefined4 param_2,float param_3);
 
 // Original: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020
 // Address: 0045b020
-void __cdecl CDraculaBride::updateFreakySounds(int param_1,float param_2);
+void __cdecl CDraculaBride::updateFreakySounds(CDraculaBride *this_ptr,float delta_time);
 
 // Original: core_dracbrid.cpp_SFreaky_ctor_FUN_0045b310
 // Address: 0045b310
@@ -77,16 +77,16 @@ int SFreaky::ctor(int param_1);
 
 // Original: core_dracbrid.cpp_SFreaky_dtor_FUN_0045b330
 // Address: 0045b330
-int SFreaky::dtor(int param_1);
+float * SFreaky::dtor(int param_1);
 
 // Original: core_dracbrid.cpp_FUN_0045b350
 // Address: 0045b350
-int FUN_0045b350(int param_1,byte param_2);
+CDemonActor * FUN_0045b350(CDemonActor *param_1,byte param_2);
 
 // Original: core_dracbrid.cpp_CVector3f_arrdtor_FUN_0045b410
 // Address: 0045b410
-void __cdecl CVector3f::arrdtor(undefined4 param_1);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
 
-// Original: core_dracbrid.cpp_FUN_0045b430
+// Original: core_dracbrid.cpp_SFreaky_arrdtor_FUN_0045b430
 // Address: 0045b430
-void FUN_0045b430(undefined4 param_1);
+void SFreaky::arrdtor(void *param_1);

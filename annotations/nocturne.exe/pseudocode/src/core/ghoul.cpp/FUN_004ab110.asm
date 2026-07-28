@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_ghoul_cpp_FUN_004ab110(int param_1,undefined4 param_2)
+; CVector3f * core_ghoul_cpp_FUN_004ab110(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x7c]:1  local_7c
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [EBP + -0xc],ECX      ; 004ab15c
     MOV dword ptr [EBP + -0x4],EDI      ; 004ab15f
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 004ab162
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 004ab167
     MOV EAX,EBX                         ; 004ab16a
     MOV ESP,EBP                         ; 004ab16c

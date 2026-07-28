@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_004edd30 at 004edd65
+;   core_netgame.cpp_CNetGame_swapPlayerData_FUN_004edd30 at 004edd65
 ;
 ; *****************************************************************************
 

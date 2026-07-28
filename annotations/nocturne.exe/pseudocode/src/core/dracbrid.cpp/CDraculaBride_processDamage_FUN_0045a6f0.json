@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 428,
+    "complexity_score": 425,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 33,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 100,
+    "suspect_count": 32,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 375
+    "total_lines": 387
   },
   "cross_references": [],
   "function": {
@@ -146,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0",
-    "signature": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)"
+    "signature": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *param_1,SDamageInfo *param_2)"
   },
   "function_calls": [
     {
@@ -321,7 +320,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)",
+      "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -329,103 +328,71 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int param_2)",
+      "text": "void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDraculaBride *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x28) == 7) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)(param_2 + 4) = *(float *)(param_2 + 4) * (float)2;",
+      "text": "if (param_2->ammo_type == AMMO_TYPE_LITHIUM) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2->damage_amount = param_2->damage_amount * (float)2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
+      "text": "((CDemonActor *)param_1,&local_30,&param_2->impact_direction);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_30,param_2 + 0x1c);",
+      "text": "((CDemonActor *)param_1,&local_30,&param_2->impact_direction);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x30) == 0x68) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x30) == 0x6c) {",
+      "text": "if (param_2->damage_type == DAMAGE_TYPE_LAUNCH) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0x150,local_3c,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_24,uVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00427730(param_1,local_24,0,0,0x41200000,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
+      "text": "if (param_2->damage_type == DAMAGE_TYPE_BURN) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model,&local_3c,0);",
       "type": "unnamed_param"
     },
     {
@@ -433,15 +400,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);",
+      "text": "((CDemonActor *)param_1,&local_24,input_local_point);",
       "type": "unnamed_param"
     },
     {
@@ -449,15 +408,23 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1 + 0x150;",
+      "text": "core_charactr_cpp_FUN_00427730(param_1,&local_24,0,0,0x41200000,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2434) = fVar1;",
+      "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -465,36 +432,60 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2434) = 0;",
+      "text": "fVar1 = (param_1->base).base.hit_points - param_2->damage_amount;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (param_1->base).base.hit_points - param_2->damage_amount;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
+      "text": "this_ptr = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x28))(param_1,\"bride-launch.wav\");",
+      "text": "(param_1->base).base.hit_points = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).base.hit_points = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).base.base.vtable._ub)->playAmbientSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,\"bride-launch.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dracbrid_cpp_FUN_0045ab40(param_1,\"bride-die?.wav\",0x40000000);",
@@ -502,34 +493,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,uVar3,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,4,1);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -537,12 +512,28 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,5,1);",
+      "text": "(&(param_1->base).base.model.motion_controller,iVar4,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.motion_controller,4,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.motion_controller,5,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dracbrid_cpp_FUN_0045ab40(param_1,\"bride-hurt?.wav\",0x40000000);",
@@ -550,34 +541,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 97,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 101,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&param_1->base,param_2);",
       "type": "unnamed_param"
     }
   ],

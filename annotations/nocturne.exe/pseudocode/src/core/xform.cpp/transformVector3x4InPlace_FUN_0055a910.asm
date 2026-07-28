@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(float *param_1,float *param_2)
+; CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(CVector3f *input_output_vector,CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   input_output_vector
+; CMatrix3x4f *    Stack[0x8]:4   matrix
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8

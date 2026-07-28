@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_fillRectColor_FUN_00403e60(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl engine_2d_c_fillRectColor_FUN_00403e60(int x1,int y1,int x2,int y2,int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; int              Stack[0x14]:4   color
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -16,7 +22,7 @@
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfd35
 ;   core_script.cpp_FUN_004fe770 at 004fe81c
 ;   engine_2d.c_fillRectWithBorder_FUN_00403ef0 at 00403f0c
-;   engine_font.cpp_FUN_004933c0 at 004933ec
+;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 at 004937c1
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -84,7 +90,7 @@ section .text
     PUSH EBX                            ; 00403ec2
     PUSH EBP                            ; 00403ec3
     CALL engine_2d.c_drawHLine_FUN_00403bd0 ; 00403ec4
-        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawHLine_FUN_00403bd0()
+        ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00403bd0(int x1, int y, int x2)
     INC EBX                             ; 00403ec9
     ADD ESP,0xc                         ; 00403eca
     CMP EBX,ESI                         ; 00403ecd

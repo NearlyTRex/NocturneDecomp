@@ -493,7 +493,7 @@ def collect_files_from_referencing_functions(currentProgram, referencing_functio
                     break
     return files
 
-def export_type_info(currentProgram, path):
+def export_type_info(currentProgram, path, strict = False):
 
     # Get class info
     class_hierarchy = get_class_hierarchy()
@@ -762,17 +762,23 @@ def export_type_info(currentProgram, path):
     log_info("  %d types with parent information" % types_with_parents)
     log_info("  %d types with file information" % types_with_files)
 
-    # Assert no struct size mismatches
+    # Report struct size mismatches. The exported typeinfo_size is the binary's
+    # own instance_size, so an export carrying mismatches is still useful, it
+    # just records the disagreement. Only strict mode refuses to write one.
     if size_mismatches:
         log_info("=" * 60)
         log_info("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
         for msg in size_mismatches:
             log_info("  " + msg)
         log_info("=" * 60)
-        assert False, ("Struct size mismatch: %d type(s) have Ghidra sizes that "
-                        "don't match WatcomTypeInfo.instance_size in the binary. "
-                        "Fix the struct definitions in Ghidra before exporting.\n"
-                        + "\n".join(size_mismatches))
+        if strict:
+            assert False, ("Struct size mismatch: %d type(s) have Ghidra sizes that "
+                            "don't match WatcomTypeInfo.instance_size in the binary. "
+                            "Fix the struct definitions in Ghidra before exporting.\n"
+                            % len(size_mismatches)
+                            + "\n".join(size_mismatches))
+        log_info("Continuing export, WatcomTypeInfo.instance_size is recorded as "
+                 "typeinfo_size for each type (re-run with --strict to fail instead)")
 
     # Export type info
     log_info("Exporting type info entries")

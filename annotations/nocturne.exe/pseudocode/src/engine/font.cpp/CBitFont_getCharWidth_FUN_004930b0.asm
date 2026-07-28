@@ -1,15 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(int param_1,int param_2)
+; int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont *font,int char_code)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   font
+; int              Stack[0x8]:4   char_code
 ;
 ; XREF[5]:
-;   cockpit_drawsurf.cpp_FUN_0045e2e0 at 0045e2f3
+;   cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_0045e2e0 at 0045e2f3
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abeb
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b523
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 at 00492e2d
-;   engine_font.cpp_FUN_00493760 at 00493c18
+;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 at 00493c18
 ;
 ; *****************************************************************************
 

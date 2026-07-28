@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(int *param_1,int param_2)
+; void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *vertex_indices,int vertex_count)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   vertex_indices
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
 ; undefined4       Stack[-0x34]:4  local_34
@@ -94,7 +97,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004580f8
     PUSH EAX                            ; 004580fc
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 004580fd
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00458102
     MOV EBP,dword ptr [0x01b4cd30]      ; 00458105 | DAT_01b4cd30
         ;   Label: LAB_00458105
@@ -127,7 +130,7 @@ section .text
     ADD EAX,0x5c5014                    ; 00458157 | DAT_005c5014
     PUSH EAX                            ; 0045815c
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 0045815d
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 00458162
     TEST EAX,EAX                        ; 00458165
     JNZ 0x0045809e                      ; 00458167
@@ -154,7 +157,7 @@ section .text
     ADD EBX,0x4                         ; 00458196
     INC ESI                             ; 00458199
     CALL engine_prim.c_prepareDepthBuffer_FUN_004f9870 ; 0045819a
-        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_004f9870()
+        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_004f9870(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0045819f
     CMP ESI,EDI                         ; 004581a2
     JL 0x0045818b                       ; 004581a4
@@ -320,7 +323,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x60]      ; 0045836e
     MOV EBX,dword ptr [ESP + 0x58]      ; 00458372
     CALL engine_special.cpp_renderScanline_FUN_00530710 ; 00458376
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00530710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x01b4d768],0x0      ; 0045837b | DAT_01b4d768
     JNZ 0x00458105                      ; 00458382
         ;   XREF to: 00458105 (CONDITIONAL_JUMP)  ; LAB_00458105
@@ -364,7 +367,7 @@ section .text
     ADD EBX,0x4                         ; 004583f3
     INC ESI                             ; 004583f6
     CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 004583f7
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_004f99d0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004583fc
     CMP ESI,EDI                         ; 004583ff
     JL 0x004583e8                       ; 00458401

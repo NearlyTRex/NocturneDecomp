@@ -25,6 +25,6 @@ byte * FUN_0056f480(uint *param_1,byte *param_2,int param_3)
       local_14 = local_14 + 1;
     }
   }
-  FUN_0056f3e0(&local_18,puVar1,param_3);
+  i64toa(&local_18,puVar1,param_3);
   return param_2;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)
+; int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x3c]:4  local_3c
@@ -65,7 +67,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x334]     ; 004b598e
     PUSH EAX                            ; 004b5994
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004b5995
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004b599a
     TEST EAX,EAX                        ; 004b599d
     JZ 0x004b59b0                       ; 004b599f
@@ -94,7 +96,7 @@ section .text
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004b59cc | DAT_01fa3ff4
     PUSH EDX                            ; 004b59d3
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b59d4
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004b59d9
     ADD ESP,0x8                         ; 004b59db
     MOV dword ptr [EBP + -0x4],EAX      ; 004b59de
@@ -106,7 +108,7 @@ section .text
     PUSH EAX                            ; 004b59ee
     PUSH EBX                            ; 004b59ef
     CALL core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0 ; 004b59f0
-        ;   XREF to: 0044bab0 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0()
+        ;   XREF to: 0044bab0 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b59f5
     TEST EAX,EAX                        ; 004b59f8
     JZ 0x004b59b9                       ; 004b59fa
@@ -119,7 +121,7 @@ section .text
     PUSH EAX                            ; 004b5a08
     PUSH ESI                            ; 004b5a09
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004b5a0a
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLD float ptr [EBP + -0x28]         ; 004b5a0f
     FLD1                                ; 004b5a12
     ADD ESP,0xc                         ; 004b5a14

@@ -2,13 +2,13 @@
 // Address: 00466886
 // Address Range: [[00466886, 0046692f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *param_1,undefined4 *param_2,byte *param_3,byte *param_4)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *param_1,uint *param_2,byte *param_3,byte *param_4)
+void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 {
 __asm {
         mov EDI,dword ptr [EBP + 0x8]

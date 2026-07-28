@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0054b0f2
         ;   Label: LAB_0054b0f2
     CALL core_tvbat.cpp_CTVBat_ctor_FUN_0054b140 ; 0054b0f3
-        ;   XREF to: 0054b140 (UNCONDITIONAL_CALL)  ; undefined core_tvbat.cpp_CTVBat_ctor_FUN_0054b140()
+        ;   XREF to: 0054b140 (UNCONDITIONAL_CALL)  ; CTVBat * core_tvbat.cpp_CTVBat_ctor_FUN_0054b140(CTVBat * this_ptr)
     ADD ESP,0x4                         ; 0054b0f8
     RET                                 ; 0054b0fb
 

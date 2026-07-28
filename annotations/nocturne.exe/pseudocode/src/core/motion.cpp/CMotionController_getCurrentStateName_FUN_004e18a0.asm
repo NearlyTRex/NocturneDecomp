@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(int *param_1)
+; char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController *this_ptr)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 0042872f
@@ -19,7 +21,7 @@ section .text
         ;   Label: core_motion.cpp_CMotionController_getCurrentStateName_FUN_004e18a0
     PUSH EDX                            ; 004e18a4
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004e18a5
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004e18aa
     ADD EAX,EAX                         ; 004e18ad
     MOV EDX,EAX                         ; 004e18af

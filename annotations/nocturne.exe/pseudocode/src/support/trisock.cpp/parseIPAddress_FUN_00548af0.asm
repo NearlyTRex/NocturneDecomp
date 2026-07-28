@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(undefined4 param_1,undefined4 param_2)
+; uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(uint *result_ptr,char *dotted_decimal_string)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   result_ptr
+; char *           Stack[0x8]:4   dotted_decimal_string
 ;
 ; XREF[1]:
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5e86
@@ -28,7 +31,7 @@ section .text
     PUSH EDX                            ; 00548af9
     PUSH EBX                            ; 00548afa
     CALL support_trisock.cpp_parseIPComponents_FUN_00548bf0 ; 00548afb
-        ;   XREF to: 00548bf0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_parseIPComponents_FUN_00548bf0()
+        ;   XREF to: 00548bf0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_parseIPComponents_FUN_00548bf0(uint * result_ptr, char * dotted_decimal_string)
     ADD ESP,0x8                         ; 00548b00
     TEST EAX,EAX                        ; 00548b03
     JZ 0x00548b0b                       ; 00548b05

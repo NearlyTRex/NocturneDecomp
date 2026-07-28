@@ -44,16 +44,16 @@ section .text
     JLE 0x0052987b                      ; 00529822
         ;   XREF to: 0052987b (CONDITIONAL_JUMP)  ; LAB_0052987b
     CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10 ; 00529824
-        ;   XREF to: 00522d10 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10()
+        ;   XREF to: 00522d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10()
         ;   Label: LAB_00529824
     MOV EBX,dword ptr [0x02dc84c0]      ; 00529829 | DAT_02dc84c0
     XOR ESI,ESI                         ; 0052982f
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00529831
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV dword ptr [ESP],ESI             ; 00529836
     MOV [0x02dc84c0],EAX                ; 00529839 | DAT_02dc84c0
     CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0 ; 0052983e
-        ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()
+        ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()
     TEST EAX,EAX                        ; 00529843
     JNZ 0x005298a0                      ; 00529845
         ;   XREF to: 005298a0 (CONDITIONAL_JUMP)  ; LAB_005298a0
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 0052986b (CONDITIONAL_JUMP)  ; LAB_0052986b
     PUSH EBX                            ; 00529862
     CALL sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0 ; 00529863
-        ;   XREF to: 005256f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0()
+        ;   XREF to: 005256f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00529868
     ADD EBX,0x120                       ; 0052986b
         ;   Label: LAB_0052986b

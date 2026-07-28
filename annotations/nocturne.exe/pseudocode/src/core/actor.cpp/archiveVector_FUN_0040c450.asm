@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveVector_FUN_0040c450(float *param_1,undefined4 param_2)
+; void __cdecl core_actor_cpp_archiveVector_FUN_0040c450(CVector3f *vector_ptr,char *property_name)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   vector_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -65,7 +68,7 @@ section .text
     PUSH EDI                            ; 0040c485
     PUSH 0x5acc10                       ; 0040c486 | = "3D vector"
     CALL core_actor.cpp_archiveDescription_FUN_0040c3a0 ; 0040c48b
-        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDescription_FUN_0040c3a0()
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDescription_FUN_0040c3a0(char * property_description, char * property_name)
     ADD ESP,0x8                         ; 0040c490
     POP EDI                             ; 0040c493
     POP EBX                             ; 0040c494
@@ -76,7 +79,7 @@ section .text
     PUSH ESI                            ; 0040c49b
     PUSH 0x5acc10                       ; 0040c49c | = "3D vector"
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c4a1
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c4a6
     POP ESI                             ; 0040c4a9
     JMP 0x0040c481                      ; 0040c4aa

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_00484e10(undefined4 *param_1,undefined4 *param_2,undefined4 param_3)
+; void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_00484e10(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
+; Parameters:
+; CMuzzleFlash *   Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -37,21 +41,21 @@ section .text
     LEA EBX,[EDI + 0x1c]                ; 00484e1f
     PUSH EBX                            ; 00484e22
     CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90 ; 00484e23
-        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90()
+        ;   XREF to: 0044cd90 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00484e28
     PUSH 0x41000000                     ; 00484e2b
     MOV dword ptr [EBX + 0x3c],0x8000   ; 00484e30
     PUSH EBX                            ; 00484e37
     MOV byte ptr [EBX + 0x1c],0x20      ; 00484e38
     CALL core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0 ; 00484e3c
-        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; undefined core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0()
+        ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 00484e41
     PUSH EBX                            ; 00484e44
     MOV EDX,dword ptr [0x005be368]      ; 00484e45 | DAT_005be368
     PUSH EDX                            ; 00484e4b | DAT_01e57284
     MOV dword ptr [EBX + 0x20],0x0      ; 00484e4c
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00484e53
-        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0()
+        ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00484e58
     XOR ECX,ECX                         ; 00484e5b
     LEA EAX,[EDI + 0x4]                 ; 00484e5d
@@ -74,7 +78,7 @@ section .text
     PUSH EAX                            ; 00484e88
     LEA EBX,[EDI + 0x10]                ; 00484e89
     CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 ; 00484e8c
-        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0()
+        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00484e91
     CMP EBX,EAX                         ; 00484e94
     JNZ 0x00484ea5                      ; 00484e96

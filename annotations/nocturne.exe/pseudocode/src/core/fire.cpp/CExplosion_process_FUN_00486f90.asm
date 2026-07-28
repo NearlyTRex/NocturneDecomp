@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CExplosion_process_FUN_00486f90(int param_1)
+; void __cdecl core_fire_cpp_CExplosion_process_FUN_00486f90(CExplosion *this_ptr)
 ;
+; Parameters:
+; CExplosion *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 734,
-    "complexity_score": 2897,
+    "complexity_score": 2644,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 432,
-    "suspect_count": 243,
+    "pseudocode_lines": 424,
+    "suspect_count": 219,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1166
+    "total_lines": 1158
   },
   "cross_references": [
     {
@@ -206,7 +205,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
-    "signature": "int * __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(uint param_1,int *param_2)"
+    "signature": "void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_count,int *vertex_indices)"
   },
   "function_calls": [
     {
@@ -614,10 +613,10 @@
     "pcode_op_count": 3294
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -675,6 +674,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
       }
     ]
   },
@@ -688,184 +701,64 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int * __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(uint param_1,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int * __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(uint param_1,int *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_005b7644",
       "severity": "mild",
       "text": "if (DAT_005b7644 == 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24 = (int *)engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = (int *)engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "piVar5 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_005c5024",
       "severity": "mild",
-      "text": "if (((&DAT_005c5024)[iVar3 * 0xc] & 0x80000000) != 0) {",
+      "text": "if (((&DAT_005c5024)[iVar10 * 0xc] & 0x80000000) != 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Undefined global data reference",
       "line": 47,
-      "match": "(int *)((int)local_24",
-      "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_24 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
       "match": "DAT_005c5024",
       "severity": "mild",
-      "text": "uVar7 = uVar7 & (&DAT_005c5024)[iVar3 * 0xc];",
+      "text": "uVar6 = uVar6 & (&DAT_005c5024)[iVar10 * 0xc];",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while ((int)local_24 < (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uVar11 == param_1) && (cVar6 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 52,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar8 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 64,
-      "match": "*(uint **)(iVar3 * 4 + 0x767270",
+      "line": 63,
+      "match": "*(uint **)(iVar2 * 4 + 0x767270",
       "severity": "moderate",
-      "text": "*(uint **)(iVar3 * 4 + 0x767270) = &DAT_005c5014 + iVar8 * 0xc;",
+      "text": "*(uint **)(iVar2 * 4 + 0x767270) = &DAT_005c5014 + iVar9 * 0xc;",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005c5014",
       "severity": "mild",
-      "text": "*(uint **)(iVar3 * 4 + 0x767270) = &DAT_005c5014 + iVar8 * 0xc;",
+      "text": "*(uint **)(iVar2 * 4 + 0x767270) = &DAT_005c5014 + iVar9 * 0xc;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar3 < (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_006b0280",
       "severity": "mild",
       "text": "if (DAT_006b0280 != 0) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((int)param_1 < 4) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_00767274",
       "severity": "mild",
       "text": "(DAT_00767274,DAT_00767278,DAT_0076727c);",
@@ -873,7 +766,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_00767278",
       "severity": "mild",
       "text": "(DAT_00767274,DAT_00767278,DAT_0076727c);",
@@ -881,183 +774,95 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_0076727c",
       "severity": "mild",
       "text": "(DAT_00767274,DAT_00767278,DAT_0076727c);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar5 = (int *)(param_1 - 2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 81,
       "match": "DAT_00767274",
       "severity": "mild",
-      "text": "(DAT_00767274,",
+      "text": "(DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar9),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 81,
       "match": "DAT_00767278",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00767278 + iVar3),",
+      "text": "(DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar9),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 82,
       "match": "DAT_0076727c",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_0076727c + iVar3));",
+      "text": "*(SRenderVertex **)((int)&DAT_0076727c + iVar9));",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)piVar12",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&DAT_00767274,param_1,_DAT_01c039a0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 95,
       "match": "DAT_00767274",
       "severity": "mild",
-      "text": "(&DAT_00767274,param_1,_DAT_01c039a0);",
+      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,vertex_count,_DAT_01c039a0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_00766c70 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 98,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "DAT_00766c70 = param_1;",
+      "text": "DAT_00766c70 = vertex_count;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 100,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "puVar9 = &DAT_00766c74;",
+      "text": "puVar7 = &DAT_00766c74;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar13 = &DAT_005c5014 + *param_2 * 0xc;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 103,
       "match": "DAT_005c5014",
       "severity": "mild",
-      "text": "puVar13 = &DAT_005c5014 + *param_2 * 0xc;",
+      "text": "puVar11 = &DAT_005c5014 + *vertex_indices * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
-      "match": "(uint *)((int)puVar13",
+      "line": 112,
+      "match": "(uint *)((int)puVar11",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(uint *)((int)puVar15",
+      "line": 113,
+      "match": "(uint *)((int)puVar14",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(int *)((int)local_24",
-      "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_24 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while ((int)local_24 < (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_00767b3c = param_1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 123,
       "match": "DAT_00767b3c",
       "severity": "mild",
-      "text": "DAT_00767b3c = param_1;",
+      "text": "DAT_00767b3c = vertex_count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 124,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "DAT_00767b40 = 0;",
@@ -1065,7 +870,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 125,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "DAT_00767b44 = 0;",
@@ -1073,7 +878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 126,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "DAT_00767b48 = 0;",
@@ -1081,71 +886,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 127,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < (int)param_1) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 129,
       "match": "DAT_0076814c",
       "severity": "mild",
-      "text": "puVar9 = &DAT_0076814c;",
+      "text": "puVar7 = &DAT_0076814c;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_28 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 132,
       "match": "DAT_005c5014",
       "severity": "mild",
-      "text": "puVar13 = &DAT_005c5014 + *local_28 * 0xc;",
+      "text": "puVar11 = &DAT_005c5014 + *local_28 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(uint *)((int)puVar13",
+      "line": 141,
+      "match": "(uint *)((int)puVar11",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(uint *)((int)puVar15",
+      "line": 142,
+      "match": "(uint *)((int)puVar14",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar3 < (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 150,
       "match": "DAT_00767b3c",
       "severity": "mild",
       "text": "if (0 < (int)DAT_00767b3c) {",
@@ -1153,79 +934,95 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 151,
       "match": "DAT_0076814c",
       "severity": "mild",
-      "text": "piVar5 = &DAT_0076814c;",
+      "text": "pSVar8 = (SRenderVertex *)&DAT_0076814c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 154,
       "match": "DAT_00767b3c",
       "severity": "mild",
-      "text": "if (uVar7 == DAT_00767b3c) {",
+      "text": "if (uVar6 == DAT_00767b3c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 155,
+      "match": "DAT_00767b3c",
+      "severity": "mild",
+      "text": "uVar6 = uVar6 ^ DAT_00767b3c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 157,
+      "match": "DAT_0076814c",
+      "severity": "mild",
+      "text": "pSVar13 = (SRenderVertex *)(&DAT_0076814c + uVar6 * 0xc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 160,
-      "match": "DAT_00767b3c",
-      "severity": "mild",
-      "text": "uVar7 = uVar7 ^ DAT_00767b3c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 162,
-      "match": "DAT_0076814c",
-      "severity": "mild",
-      "text": "piVar4 = &DAT_0076814c + uVar7 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 164,
       "match": "DAT_00768154",
       "severity": "mild",
-      "text": "if ((int)(&DAT_00768154)[uVar7 * 0xc] <= *piVar4) {",
+      "text": "if ((int)(&DAT_00768154)[uVar6 * 0xc] <= (pSVar13->projected_vertex).transformed_x) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 170,
+      "line": 166,
       "match": "DAT_00767b4c",
       "severity": "mild",
-      "text": "piVar12 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
+      "text": "piVar4 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 170,
+      "line": 166,
       "match": "DAT_00767b40",
       "severity": "mild",
-      "text": "piVar12 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
+      "text": "piVar4 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 169,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 175,
       "match": "(int *)((int)piVar4",
       "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 179,
-      "match": "(int *)((int)piVar12",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 181,
+      "line": 177,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 177,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "DAT_00767b40 = DAT_00767b40 + 1;",
@@ -1234,25 +1031,41 @@
     {
       "description": "Undefined global data reference",
       "line": 181,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 185,
       "match": "DAT_00767b4c",
       "severity": "mild",
-      "text": "(piVar4,piVar5,&DAT_00767b4c + DAT_00767b40 * 0xc);",
+      "text": "(pSVar13,pSVar8,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
+      "line": 181,
       "match": "DAT_00767b40",
       "severity": "mild",
-      "text": "(piVar4,piVar5,&DAT_00767b4c + DAT_00767b40 * 0xc);",
+      "text": "(pSVar13,pSVar8,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 182,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 182,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 186,
+      "match": "DAT_00767b4c",
+      "severity": "mild",
+      "text": "piVar4 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
       "type": "undefined_data"
     },
     {
@@ -1260,84 +1073,76 @@
       "line": 186,
       "match": "DAT_00767b40",
       "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 186,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_00767b4c",
-      "severity": "mild",
-      "text": "piVar14 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 190,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "piVar14 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
+      "text": "piVar4 = &DAT_00767b4c + DAT_00767b40 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(int *)((int)piVar12",
+      "line": 189,
+      "match": "(SRenderVertex *)((int)pSVar12",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 194,
+      "match": "(SRenderVertex *)((int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 195,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 197,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 197,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 199,
-      "match": "(int *)((int)piVar14",
-      "severity": "moderate",
-      "text": "piVar14 = (int *)((int)piVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
       "match": "DAT_00767b4c",
       "severity": "mild",
-      "text": "(piVar5,piVar4,&DAT_00767b4c + DAT_00767b40 * 0xc);",
+      "text": "(pSVar8,pSVar13,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 199,
       "match": "DAT_00767b40",
       "severity": "mild",
-      "text": "(piVar5,piVar4,&DAT_00767b4c + DAT_00767b40 * 0xc);",
+      "text": "(pSVar8,pSVar13,(SRenderVertex *)(&DAT_00767b4c + DAT_00767b40 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 200,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 200,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "DAT_00767b40 = DAT_00767b40 + 1;",
@@ -1346,30 +1151,14 @@
     {
       "description": "Undefined global data reference",
       "line": 204,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "DAT_00767b40 = DAT_00767b40 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 206,
-      "match": "(int *)((int)local_14",
-      "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_14 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 209,
       "match": "DAT_00767b3c",
       "severity": "mild",
-      "text": "} while ((int)local_24 < (int)DAT_00767b3c);",
+      "text": "} while (local_14 < (int)DAT_00767b3c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 206,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "if (2 < (int)DAT_00767b40) {",
@@ -1377,7 +1166,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
+      "line": 208,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "if (0 < (int)DAT_00767b40) {",
@@ -1385,119 +1174,119 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 214,
+      "line": 209,
       "match": "DAT_00767b4c",
       "severity": "mild",
-      "text": "piVar5 = &DAT_00767b4c;",
+      "text": "pSVar8 = (SRenderVertex *)&DAT_00767b4c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 217,
+      "line": 212,
       "match": "DAT_00767b40",
       "severity": "mild",
-      "text": "if (uVar7 == DAT_00767b40) {",
+      "text": "if (uVar6 == DAT_00767b40) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 213,
+      "match": "DAT_00767b40",
+      "severity": "mild",
+      "text": "uVar6 = uVar6 ^ DAT_00767b40;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 215,
+      "match": "DAT_00767b4c",
+      "severity": "mild",
+      "text": "pSVar13 = (SRenderVertex *)(&DAT_00767b4c + uVar6 * 0xc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 218,
-      "match": "DAT_00767b40",
-      "severity": "mild",
-      "text": "uVar7 = uVar7 ^ DAT_00767b40;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 220,
-      "match": "DAT_00767b4c",
-      "severity": "mild",
-      "text": "piVar4 = &DAT_00767b4c + uVar7 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 222,
       "match": "DAT_00767b54",
       "severity": "mild",
-      "text": "if (*piVar4 <= (int)-(&DAT_00767b54)[uVar7 * 0xc]) {",
+      "text": "if ((pSVar13->projected_vertex).transformed_x <= (int)-(&DAT_00767b54)[uVar6 * 0xc]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 224,
       "match": "DAT_0076874c",
       "severity": "mild",
-      "text": "piVar12 = &DAT_0076874c + DAT_00767b44 * 0xc;",
+      "text": "piVar4 = &DAT_0076874c + DAT_00767b44 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 224,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "piVar12 = &DAT_0076874c + DAT_00767b44 * 0xc;",
+      "text": "piVar4 = &DAT_0076874c + DAT_00767b44 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 238,
+      "line": 227,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 232,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 233,
       "match": "(int *)((int)piVar4",
       "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Undefined global data reference",
+      "line": 235,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 235,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 239,
-      "match": "(int *)((int)piVar12",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 241,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 241,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 245,
       "match": "DAT_0076874c",
       "severity": "mild",
-      "text": "(piVar4,piVar5,&DAT_0076874c + DAT_00767b44 * 0xc);",
+      "text": "(pSVar13,pSVar8,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 239,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "(piVar4,piVar5,&DAT_0076874c + DAT_00767b44 * 0xc);",
+      "text": "(pSVar13,pSVar8,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 246,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 246,
+      "line": 240,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "DAT_00767b44 = DAT_00767b44 + 1;",
@@ -1505,39 +1294,87 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 250,
+      "line": 240,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 244,
       "match": "DAT_0076874c",
       "severity": "mild",
-      "text": "piVar14 = &DAT_0076874c + DAT_00767b44 * 0xc;",
+      "text": "piVar4 = &DAT_0076874c + DAT_00767b44 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 250,
+      "line": 244,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "piVar14 = &DAT_0076874c + DAT_00767b44 * 0xc;",
+      "text": "piVar4 = &DAT_0076874c + DAT_00767b44 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(SRenderVertex *)((int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(SRenderVertex *)((int)pSVar12",
+      "severity": "moderate",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 253,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 255,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 255,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 257,
+      "match": "DAT_0076874c",
+      "severity": "mild",
+      "text": "(pSVar8,pSVar13,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 257,
+      "match": "DAT_00767b44",
+      "severity": "mild",
+      "text": "(pSVar8,pSVar13,(SRenderVertex *)(&DAT_0076874c + DAT_00767b44 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 258,
-      "match": "(int *)((int)piVar12",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 259,
-      "match": "(int *)((int)piVar14",
-      "severity": "moderate",
-      "text": "piVar14 = (int *)((int)piVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 261,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "DAT_00767b44 = DAT_00767b44 + 1;",
@@ -1545,7 +1382,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 261,
+      "line": 258,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "DAT_00767b44 = DAT_00767b44 + 1;",
@@ -1553,39 +1390,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 263,
-      "match": "DAT_0076874c",
-      "severity": "mild",
-      "text": "(piVar5,piVar4,&DAT_0076874c + DAT_00767b44 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 263,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "(piVar5,piVar4,&DAT_0076874c + DAT_00767b44 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 264,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 264,
-      "match": "DAT_00767b44",
-      "severity": "mild",
-      "text": "DAT_00767b44 = DAT_00767b44 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 268,
+      "line": 262,
       "match": "DAT_00767b40",
       "severity": "mild",
       "text": "} while (local_20 < (int)DAT_00767b40);",
@@ -1593,7 +1398,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 270,
+      "line": 264,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "if (2 < (int)DAT_00767b44) {",
@@ -1601,7 +1406,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 272,
+      "line": 266,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "if (0 < (int)DAT_00767b44) {",
@@ -1609,127 +1414,127 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 273,
+      "line": 267,
       "match": "DAT_0076874c",
       "severity": "mild",
-      "text": "puVar9 = &DAT_0076874c;",
+      "text": "pSVar8 = (SRenderVertex *)&DAT_0076874c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 270,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "if (uVar7 == DAT_00767b44) {",
+      "text": "if (uVar6 == DAT_00767b44) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 271,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "uVar7 = uVar7 ^ DAT_00767b44;",
+      "text": "uVar6 = uVar6 ^ DAT_00767b44;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 280,
+      "line": 275,
       "match": "DAT_00768754",
       "severity": "mild",
-      "text": "if ((int)(&DAT_00768754)[uVar7 * 0xc] <= (int)(&DAT_00768750)[uVar7 * 0xc]) {",
+      "text": "if ((int)(&DAT_00768754)[uVar6 * 0xc] <= (int)(&DAT_00768750)[uVar6 * 0xc]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 280,
+      "line": 275,
       "match": "DAT_00768750",
       "severity": "mild",
-      "text": "if ((int)(&DAT_00768754)[uVar7 * 0xc] <= (int)(&DAT_00768750)[uVar7 * 0xc]) {",
+      "text": "if ((int)(&DAT_00768754)[uVar6 * 0xc] <= (int)(&DAT_00768750)[uVar6 * 0xc]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 288,
+      "line": 281,
       "match": "DAT_00768d4c",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
+      "text": "piVar4 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 288,
+      "line": 281,
       "match": "DAT_00767b48",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
+      "text": "piVar4 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
+      "line": 284,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 292,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 292,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 296,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
+      "match": "DAT_0076874c",
+      "severity": "mild",
+      "text": "((SRenderVertex *)(&DAT_0076874c + uVar6 * 0xc),pSVar8,",
+      "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Undefined global data reference",
       "line": 297,
-      "match": "(uint *)((int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 299,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 299,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 303,
-      "match": "DAT_0076874c",
-      "severity": "mild",
-      "text": "(&DAT_0076874c + uVar7 * 0xc,puVar9,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 304,
       "match": "DAT_00768d4c",
       "severity": "mild",
-      "text": "&DAT_00768d4c + DAT_00767b48 * 0xc);",
+      "text": "(SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 304,
+      "line": 297,
       "match": "DAT_00767b48",
       "severity": "mild",
-      "text": "&DAT_00768d4c + DAT_00767b48 * 0xc);",
+      "text": "(SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 305,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 305,
+      "line": 298,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "DAT_00767b48 = DAT_00767b48 + 1;",
@@ -1737,39 +1542,95 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 309,
+      "line": 298,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 302,
       "match": "DAT_00768d4c",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
+      "text": "piVar4 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 309,
+      "line": 302,
       "match": "DAT_00767b48",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
+      "text": "piVar4 = &DAT_00768d4c + DAT_00767b48 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 310,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 311,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 313,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 313,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 315,
+      "match": "DAT_0076874c",
+      "severity": "mild",
+      "text": "(pSVar8,(SRenderVertex *)(&DAT_0076874c + uVar6 * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 316,
+      "match": "DAT_00768d4c",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 316,
+      "match": "DAT_00767b48",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_00768d4c + DAT_00767b48 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 317,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 318,
-      "match": "(uint *)((int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 320,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "DAT_00767b48 = DAT_00767b48 + 1;",
@@ -1777,7 +1638,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 320,
+      "line": 317,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "DAT_00767b48 = DAT_00767b48 + 1;",
@@ -1785,47 +1646,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 322,
-      "match": "DAT_0076874c",
-      "severity": "mild",
-      "text": "(puVar9,&DAT_0076874c + uVar7 * 0xc,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 323,
-      "match": "DAT_00768d4c",
-      "severity": "mild",
-      "text": "&DAT_00768d4c + DAT_00767b48 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 323,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "&DAT_00768d4c + DAT_00767b48 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 324,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 324,
-      "match": "DAT_00767b48",
-      "severity": "mild",
-      "text": "DAT_00767b48 = DAT_00767b48 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 328,
+      "line": 321,
       "match": "DAT_00767b44",
       "severity": "mild",
       "text": "} while (local_1c < (int)DAT_00767b44);",
@@ -1833,7 +1654,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 330,
+      "line": 323,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "if (2 < (int)DAT_00767b48) {",
@@ -1841,7 +1662,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 332,
+      "line": 325,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "if (0 < (int)DAT_00767b48) {",
@@ -1849,79 +1670,127 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 333,
+      "line": 326,
       "match": "DAT_00768d4c",
       "severity": "mild",
-      "text": "puVar9 = &DAT_00768d4c;",
+      "text": "pSVar8 = (SRenderVertex *)&DAT_00768d4c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 336,
+      "line": 329,
       "match": "DAT_00767b48",
       "severity": "mild",
-      "text": "if (uVar7 == DAT_00767b48) {",
+      "text": "if (uVar6 == DAT_00767b48) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 330,
       "match": "DAT_00767b48",
       "severity": "mild",
-      "text": "uVar7 = uVar7 ^ DAT_00767b48;",
+      "text": "uVar6 = uVar6 ^ DAT_00767b48;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 340,
+      "line": 334,
       "match": "DAT_00768d50",
       "severity": "mild",
-      "text": "if ((int)(&DAT_00768d50)[uVar7 * 0xc] <= (int)-(&DAT_00768d54)[uVar7 * 0xc]) {",
+      "text": "if ((int)(&DAT_00768d50)[uVar6 * 0xc] <= (int)-(&DAT_00768d54)[uVar6 * 0xc]) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 334,
+      "match": "DAT_00768d54",
+      "severity": "mild",
+      "text": "if ((int)(&DAT_00768d50)[uVar6 * 0xc] <= (int)-(&DAT_00768d54)[uVar6 * 0xc]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 340,
-      "match": "DAT_00768d54",
-      "severity": "mild",
-      "text": "if ((int)(&DAT_00768d50)[uVar7 * 0xc] <= (int)-(&DAT_00768d54)[uVar7 * 0xc]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 348,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
+      "text": "piVar4 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 348,
+      "line": 340,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "puVar15 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
+      "text": "piVar4 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
+      "line": 343,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 348,
+      "match": "(SRenderVertex *)((int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 349,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 351,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 351,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 355,
+      "match": "DAT_00768d4c",
+      "severity": "mild",
+      "text": "((SRenderVertex *)(&DAT_00768d4c + uVar6 * 0xc),pSVar8,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 356,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));",
+      "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Undefined global data reference",
+      "line": 356,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 357,
-      "match": "(uint *)((int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 359,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = DAT_00766c70 + 1;",
@@ -1929,7 +1798,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 359,
+      "line": 357,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = DAT_00766c70 + 1;",
@@ -1937,79 +1806,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 363,
-      "match": "DAT_00768d4c",
-      "severity": "mild",
-      "text": "(&DAT_00768d4c + uVar7 * 0xc,puVar9,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 364,
+      "line": 361,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "text": "piVar4 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 364,
+      "line": 361,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "&DAT_00766c74 + DAT_00766c70 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 365,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 365,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_00766c74",
-      "severity": "mild",
-      "text": "puVar15 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "puVar15 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
+      "text": "piVar4 = &DAT_00766c74 + DAT_00766c70 * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 377,
-      "match": "(uint *)((int)puVar13",
+      "line": 364,
+      "match": "(SRenderVertex *)((int)pSVar13",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 378,
-      "match": "(uint *)((int)puVar15",
+      "line": 369,
+      "match": "(SRenderVertex *)((int)pSVar13",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 370,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 380,
+      "line": 372,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = DAT_00766c70 + 1;",
@@ -2017,7 +1854,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 380,
+      "line": 372,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = DAT_00766c70 + 1;",
@@ -2025,39 +1862,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 382,
+      "line": 374,
       "match": "DAT_00768d4c",
       "severity": "mild",
-      "text": "(puVar9,&DAT_00768d4c + uVar7 * 0xc,",
+      "text": "(pSVar8,(SRenderVertex *)(&DAT_00768d4c + uVar6 * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 383,
+      "line": 375,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "text": "(SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 383,
+      "line": 375,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "text": "(SRenderVertex *)(&DAT_00766c74 + DAT_00766c70 * 0xc));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 384,
-      "match": "DAT_00766c70",
-      "severity": "mild",
-      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 384,
+      "line": 376,
       "match": "DAT_00766c70",
       "severity": "mild",
       "text": "DAT_00766c70 = DAT_00766c70 + 1;",
@@ -2065,7 +1894,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 388,
+      "line": 376,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 380,
       "match": "DAT_00767b48",
       "severity": "mild",
       "text": "} while (local_18 < (int)DAT_00767b48);",
@@ -2073,474 +1910,458 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 390,
+      "line": 382,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "if (2 < (int)DAT_00766c70) {",
+      "text": "if (2 < DAT_00766c70) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 391,
+      "line": 383,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "local_24 = &DAT_00766c74;",
+      "text": "piVar4 = &DAT_00766c74;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 393,
+      "line": 385,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "if (0 < (int)DAT_00766c70) {",
+      "text": "if (0 < DAT_00766c70) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 421,
+      "line": 413,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "} while (iVar3 < (int)DAT_00766c70);",
+      "text": "} while (iVar2 < DAT_00766c70);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 428,
+      "line": 420,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "if (2 < (int)DAT_00766c70) {",
+      "text": "if (2 < DAT_00766c70) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 429,
+      "line": 422,
       "match": "DAT_00766c74",
       "severity": "mild",
-      "text": "piVar5 = (int *)engine_prim_c_renderScanlinePolygon_FUN_004fad00(&DAT_00766c74,DAT_00766c70)",
+      "text": "((SRenderVertex *)&DAT_00766c74,DAT_00766c70);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 429,
+      "line": 422,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "piVar5 = (int *)engine_prim_c_renderScanlinePolygon_FUN_004fad00(&DAT_00766c74,DAT_00766c70)",
+      "text": "((SRenderVertex *)&DAT_00766c74,DAT_00766c70);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_24 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "} while ((int)local_24 < (int)param_1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "if (0 < (int)piVar5 * 4) {",
-      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_00767278` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
+      "line": 81,
       "match": "(int)&DAT_00767278",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00767278 + iVar3),",
+      "text": "(DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar9),",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_0076727c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
+      "line": 82,
       "match": "(int)&DAT_0076727c",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_0076727c + iVar3));",
+      "text": "*(SRenderVertex **)((int)&DAT_0076727c + iVar9));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
-      "match": "(int)piVar12",
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)puVar11",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
-      "match": "(int)piVar5",
+      "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)puVar14",
       "severity": "moderate",
-      "text": "} while (iVar3 < (int)piVar5 * 4);",
+      "text": "puVar14 = (uint *)((int)puVar14 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
-      "match": "(int)puVar13",
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)puVar11",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
-      "match": "(int)puVar15",
+      "description": "Pointer value `puVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 142,
+      "match": "(int)puVar14",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + 1);",
+      "text": "puVar14 = (uint *)((int)puVar14 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 120,
-      "match": "(int)local_24",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 169,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_24 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
-      "match": "(int)local_24",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 174,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "} while ((int)local_24 < (int)param_1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 145,
-      "match": "(int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
-      "match": "(int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 158,
-      "match": "(int)local_14",
-      "severity": "moderate",
-      "text": "uVar7 = (int)local_14 + 1;",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 178,
+      "line": 175,
       "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 179,
-      "match": "(int)piVar12",
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 189,
+      "match": "(int)pSVar12",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 198,
-      "match": "(int)piVar12",
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 194,
+      "match": "(int)pSVar12",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 199,
-      "match": "(int)piVar14",
-      "severity": "moderate",
-      "text": "piVar14 = (int *)((int)piVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 206,
-      "match": "(int)local_14",
-      "severity": "moderate",
-      "text": "local_24 = (int *)((int)local_14 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 209,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "} while ((int)local_24 < (int)DAT_00767b3c);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 238,
+      "line": 195,
       "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 239,
-      "match": "(int)piVar12",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 227,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 258,
-      "match": "(int)piVar12",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 232,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "piVar12 = (int *)((int)piVar12 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 259,
-      "match": "(int)piVar14",
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 233,
+      "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "piVar14 = (int *)((int)piVar14 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 296,
-      "match": "(int)puVar13",
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 247,
+      "match": "(int)pSVar12",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 297,
-      "match": "(int)puVar15",
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 252,
+      "match": "(int)pSVar12",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 317,
-      "match": "(int)puVar13",
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 253,
+      "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 318,
-      "match": "(int)puVar15",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 284,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 356,
-      "match": "(int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 357,
-      "match": "(int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 377,
-      "match": "(int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 378,
-      "match": "(int)puVar15",
-      "severity": "moderate",
-      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 109,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 138,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 171,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 176,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 191,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 196,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 231,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 236,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 251,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 256,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 289,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 294,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 290,
+      "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 305,
+      "match": "(int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 310,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 315,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 311,
+      "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 343,
+      "match": "(int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 348,
+      "match": "(int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 349,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(int)piVar4",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 354,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 364,
+      "match": "(int)pSVar13",
       "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `pSVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 369,
+      "match": "(int)pSVar13",
+      "severity": "moderate",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 370,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 105,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 375,
+      "line": 134,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 167,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 172,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 187,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 192,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 225,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 230,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 245,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 250,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 282,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 287,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 303,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 308,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 341,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 346,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 362,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 367,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 84,
+      "line": 81,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_00767278 + iVar3),",
+      "text": "(DAT_00767274,*(SRenderVertex **)((int)&DAT_00767278 + iVar9),",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 85,
+      "line": 82,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&DAT_0076727c + iVar3));",
+      "text": "*(SRenderVertex **)((int)&DAT_0076727c + iVar9));",
       "type": "pointer_cast"
     },
     {

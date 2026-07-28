@@ -1,14 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 ;
+; Parameters:
+; CSmokeParticle * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   drag_factor
+; CVector3f *      Stack[0x10]:4   wind_influence
+; int              Stack[0x14]:4   alpha_value
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60 at 0048ac94
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 at 0048b02c
-;   core_fire.cpp_FUN_0048ab60 at 0048ac94
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0

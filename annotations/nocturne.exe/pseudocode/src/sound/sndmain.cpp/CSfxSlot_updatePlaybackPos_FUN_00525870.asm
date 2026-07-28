@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 at 00525090
-;   sound_sndmain.cpp_FUN_005257e0 at 00525855
+;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0 at 00525855
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593142

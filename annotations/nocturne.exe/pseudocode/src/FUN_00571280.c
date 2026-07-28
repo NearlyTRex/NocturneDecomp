@@ -15,7 +15,7 @@ uint FUN_00571280(uint param_1,int param_2)
   int iVar2;
   uint uVar3;
   
-  (*(code *)PTR_FUN_005c1ae8)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae8)();
   uVar3 = 1;
   puVar1 = (uint *)FUN_00565c50(1,0x10);
   if (puVar1 == (uint *)0x0) {
@@ -35,6 +35,6 @@ uint FUN_00571280(uint param_1,int param_2)
       uVar3 = 0;
     }
   }
-  (*(code *)PTR_FUN_005c1aec)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1aec)();
   return uVar3;
 }

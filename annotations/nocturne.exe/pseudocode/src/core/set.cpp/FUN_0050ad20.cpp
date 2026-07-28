@@ -41,6 +41,6 @@ void core_set_cpp_FUN_0050ad20(int param_1)
     } while (iVar4 < *(int *)(param_1 + 0x19644));
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
-  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(0x1fb8508);
+  core_dcamera_cpp_CDemonCamera_free_FUN_004401d0((CDemonCamera *)0x1fb8508);
   return;
 }

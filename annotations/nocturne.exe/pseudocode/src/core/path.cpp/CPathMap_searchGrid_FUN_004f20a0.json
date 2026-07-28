@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 365,
+    "complexity_score": 277,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
-    "suspect_count": 24,
+    "pseudocode_lines": 107,
+    "suspect_count": 16,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 463
+    "total_lines": 465
   },
   "cross_references": [
     {
@@ -147,7 +145,7 @@
     {
       "addr": "004f2050",
       "from_addr": "004f208e",
-      "name": "core_path.cpp_FUN_004f2050",
+      "name": "core_path.cpp_CPathMap_setupPathSearch_FUN_004f2050",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,7 +159,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_CPathMap_searchGrid_FUN_004f20a0",
-    "signature": "uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(undefined4 param_1,undefined4 param_2)"
+    "signature": "uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(CPathMap *this_ptr,int start_height)"
   },
   "function_calls": [
     {
@@ -361,7 +359,7 @@
       {
         "call_addr": "004f208e",
         "call_type": "direct",
-        "caller": "core_path.cpp_FUN_004f2050",
+        "caller": "core_path.cpp_CPathMap_setupPathSearch_FUN_004f2050",
         "estimated_params": 2,
         "instructions_analyzed": 16,
         "method": "push_count",
@@ -370,11 +368,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.701986754966887,
@@ -410,10 +408,10 @@
     "pcode_op_count": 1420
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -457,6 +455,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "start_height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -468,28 +480,28 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 33,
-          "line": 60,
+          "line": 62,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 33,
-          "line": 74,
+          "line": 76,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 33,
-          "line": 87,
+          "line": 89,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 33,
-          "line": 100,
+          "line": 102,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -508,35 +520,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_004f20a0(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_01e31630 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_01e3162c",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_01e3162c + iVar2);",
+      "text": "grid_x = *(int *)(&DAT_01e3162c + iVar1);",
       "type": "undefined_data"
     },
     {
@@ -544,7 +532,7 @@
       "line": 36,
       "match": "DAT_01e31630",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_01e31630 + iVar2);",
+      "text": "iVar8 = *(int *)(&DAT_01e31630 + iVar1);",
       "type": "undefined_data"
     },
     {
@@ -552,178 +540,135 @@
       "line": 38,
       "match": "DAT_01e31634",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_01e31634 + iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar2 + 1,iVar1,iVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar2,iVar1 + 1,iVar9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar2 + -1,iVar1,iVar9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(param_1,iVar2,iVar1 + -1,iVar9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_01e3162c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e3162c + iVar8) = iVar1;",
+      "text": "iVar1 = *(int *)(&DAT_01e31634 + iVar1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 58,
-      "match": "DAT_01e31630",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31630 + iVar8) = iVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01e31634",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31634 + iVar8) = iVar2 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
       "match": "DAT_01e3162c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01e3162c + iVar3) = iVar1 + 1;",
+      "text": "*(int *)(&DAT_01e3162c + iVar7) = grid_x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_01e31630",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31630 + iVar7) = iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_01e31634",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31634 + iVar7) = iVar1 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 72,
-      "match": "DAT_01e31630",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31630 + iVar3) = iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_01e31634",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31634 + iVar3) = iVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
       "match": "DAT_01e3162c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01e3162c + iVar3) = iVar1;",
+      "text": "*(int *)(&DAT_01e3162c + iVar2) = grid_x + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_01e31630",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31630 + iVar2) = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_01e31634",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31634 + iVar2) = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 85,
-      "match": "DAT_01e31630",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31630 + iVar3) = iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_01e31634",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01e31634 + iVar3) = iVar2 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
       "match": "DAT_01e3162c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01e3162c + iVar9) = iVar1 + -1;",
+      "text": "*(int *)(&DAT_01e3162c + iVar2) = grid_x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_01e31630",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31630 + iVar2) = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_01e31634",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31634 + iVar2) = iVar1 + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 99,
-      "match": "DAT_01e31630",
+      "match": "DAT_01e3162c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01e31630 + iVar9) = iVar6;",
+      "text": "*(int *)(&DAT_01e3162c + iVar8) = grid_x + -1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 101,
-      "match": "DAT_01e31634",
+      "match": "DAT_01e31630",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01e31634 + iVar9) = iVar2;",
+      "text": "*(int *)(&DAT_01e31630 + iVar8) = iVar5;",
       "type": "undefined_data"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_01e31634",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e31634 + iVar8) = iVar1;",
+      "type": "undefined_data"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 60,
+      "line": 62,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(uVar7 = iVar3 - iVar9 >> 0x1f, (int)((iVar3 - iVar9 ^ uVar7) - uVar7) < _DAT_01e312f4)) {",
+      "text": "(uVar6 = iVar2 - iVar8 >> 0x1f, (int)((iVar2 - iVar8 ^ uVar6) - uVar6) < _DAT_01e312f4)) {",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 74,
+      "line": 76,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(uVar7 = iVar4 - iVar9 >> 0x1f, (int)((iVar4 - iVar9 ^ uVar7) - uVar7) < _DAT_01e312f4)) {",
+      "text": "(uVar6 = iVar3 - iVar8 >> 0x1f, (int)((iVar3 - iVar8 ^ uVar6) - uVar6) < _DAT_01e312f4)) {",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 87,
+      "line": 89,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(uVar7 = iVar5 - iVar9 >> 0x1f, (int)((iVar5 - iVar9 ^ uVar7) - uVar7) < _DAT_01e312f4)) {",
+      "text": "(uVar6 = iVar4 - iVar8 >> 0x1f, (int)((iVar4 - iVar8 ^ uVar6) - uVar6) < _DAT_01e312f4)) {",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 100,
+      "line": 102,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(uVar7 = iVar6 - iVar9 >> 0x1f, (int)((iVar6 - iVar9 ^ uVar7) - uVar7) < _DAT_01e312f4)) {",
+      "text": "(uVar6 = iVar5 - iVar8 >> 0x1f, (int)((iVar5 - iVar8 ^ uVar6) - uVar6) < _DAT_01e312f4)) {",
       "type": "static_shift_too_many_bits"
     }
   ]

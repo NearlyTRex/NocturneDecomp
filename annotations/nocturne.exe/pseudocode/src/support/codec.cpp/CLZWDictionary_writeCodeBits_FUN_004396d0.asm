@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,undefined4 param_3,undefined4 param_4)
+; void support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_004396d0(int param_1,uint param_2,SBitBuffer *param_3,_ostream *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -60,7 +60,7 @@ section .text
     PUSH 0x1                            ; 00439710
     PUSH ESI                            ; 00439712
     CALL support_codec.cpp_writeBitsToStream_FUN_00438c40 ; 00439713
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00438c40()
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_00438c40(SBitBuffer * bit_buffer, int bit_count, int bit_value, _ostream * ostream)
     ADD ESP,0x10                        ; 00439718
     SAR EBX,0x1                         ; 0043971b
         ;   Label: LAB_0043971b
@@ -87,7 +87,7 @@ section .text
     PUSH ESI                            ; 0043973d
     SAR EBX,0x1                         ; 0043973e
     CALL support_codec.cpp_writeBitsToStream_FUN_00438c40 ; 00439740
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00438c40()
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_writeBitsToStream_FUN_00438c40(SBitBuffer * bit_buffer, int bit_count, int bit_value, _ostream * ostream)
     ADD ESP,0x10                        ; 00439745
     TEST EBX,EBX                        ; 00439748
     JNZ 0x0043972c                      ; 0043974a

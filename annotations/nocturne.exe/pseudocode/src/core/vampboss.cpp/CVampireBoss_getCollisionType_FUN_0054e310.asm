@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(int param_1,int *param_2)
+; ECollisionType core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_0054e310(CCharacter *param_1,SCollisionInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_0054e35f
     PUSH ESI                            ; 0054e360
     CALL core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0 ; 0054e361
-        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0()
+        ;   XREF to: 00427da0 (UNCONDITIONAL_CALL)  ; ECollisionType core_charactr.cpp_CCharacter_getCollisionType_FUN_00427da0(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 0054e366
     POP ESI                             ; 0054e369
     POP EBX                             ; 0054e36a

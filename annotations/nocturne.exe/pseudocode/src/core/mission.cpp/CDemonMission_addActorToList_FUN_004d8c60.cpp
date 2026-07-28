@@ -2,40 +2,31 @@
 // Address: 004d8c60
 // Address Range: [[004d8c60, 004d8cc8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(int param_1,char *param_2)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(int param_1,char *param_2)
+void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  if (param_2 != (char *)0x0) {
-    if (*param_2 == '\0') {
-      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(param_1,param_2);
+  if (actor != (CDemonActor *)0x0) {
+    if (actor->actor_name[0] == '\0') {
+      core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(this_ptr,actor);
     }
-    iVar1 = *(int *)(param_1 + 0x518);
-    if (iVar1 != 0) {
-      param_2[0x144] = '\0';
-      param_2[0x145] = '\0';
-      param_2[0x146] = '\0';
-      param_2[0x147] = '\0';
-      *(int *)(param_2 + 0x148) = iVar1;
-      *(char **)(*(int *)(param_1 + 0x518) + 0x144) = param_2;
-      *(char **)(param_1 + 0x518) = param_2;
+    pCVar1 = *(CDemonActor **)(this_ptr->set_names[3] + 0xd0);
+    if (pCVar1 != (CDemonActor *)0x0) {
+      actor->next_actor = (CDemonActor *)0x0;
+      actor->prev_actor = pCVar1;
+      *(CDemonActor **)(*(int *)(this_ptr->set_names[3] + 0xd0) + 0x144) = actor;
+      *(CDemonActor **)(this_ptr->set_names[3] + 0xd0) = actor;
       return;
     }
-    param_2[0x144] = '\0';
-    param_2[0x145] = '\0';
-    param_2[0x146] = '\0';
-    param_2[0x147] = '\0';
-    param_2[0x148] = '\0';
-    param_2[0x149] = '\0';
-    param_2[0x14a] = '\0';
-    param_2[0x14b] = '\0';
-    *(char **)(param_1 + 0x514) = param_2;
-    *(char **)(param_1 + 0x518) = param_2;
+    actor->next_actor = (CDemonActor *)0x0;
+    actor->prev_actor = (CDemonActor *)0x0;
+    *(CDemonActor **)(this_ptr->set_names[3] + 0xcc) = actor;
+    *(CDemonActor **)(this_ptr->set_names[3] + 0xd0) = actor;
   }
   return;
 }

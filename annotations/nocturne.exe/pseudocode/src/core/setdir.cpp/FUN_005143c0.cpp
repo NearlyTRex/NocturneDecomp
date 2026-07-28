@@ -11,6 +11,8 @@
 void core_setdir_cpp_FUN_005143c0(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,2000,&g_CBoundingBox3D_005993f0);
   return;
 }

@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_sprintf_FUN_00563c90(undefined4 param_1,undefined4 param_2)
+; void crt_stdio_c_sprintf_FUN_00563c90(char *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[159]:
-;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ebce
 ;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee3e
 ;   cockpit_ckptutil.c_FUN_0042f050 at 0042f0c8
 ;   cockpit_ckptutil.c_FUN_00430210 at 0043029b
@@ -15,6 +14,7 @@
 ;   cockpit_ckptutil.c_FUN_00430630 at 0043073b
 ;   cockpit_ckptutil.c_FUN_00431260 at 00431387
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d552
+;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebce
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d27b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f48fd
 ;   ... and 149 more
@@ -38,7 +38,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00563ca3
     PUSH EBX                            ; 00563ca7
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00563ca8
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00563cad
     ADD ESP,0x4                         ; 00563cb0
     POP EBX                             ; 00563cb3

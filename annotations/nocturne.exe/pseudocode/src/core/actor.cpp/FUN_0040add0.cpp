@@ -18,9 +18,7 @@ void core_actor_cpp_FUN_0040add0(int param_1)
   int iVar5;
   float *pfVar6;
   float local_9c [30];
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
+  CVector3i CStack_24;
   int iStack_18;
   uint uStack_14;
   
@@ -31,10 +29,11 @@ void core_actor_cpp_FUN_0040add0(int param_1)
   if (0 < iStack_18) {
     do {
       uStack_14 = (uint)DAT_01bff320;
-      iStack_24 = (int)ROUND(*pfVar6 * _DAT_005992b0);
-      iStack_20 = (int)ROUND(pfVar6[1] * _DAT_005992b0);
-      iStack_1c = (int)ROUND(pfVar6[2] * _DAT_005992b0);
-      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + 0xea5d0,&iStack_24);
+      CStack_24.x = (int)ROUND(*pfVar6 * _DAT_005992b0);
+      CStack_24.y = (int)ROUND(pfVar6[1] * _DAT_005992b0);
+      CStack_24.z = (int)ROUND(pfVar6[2] * _DAT_005992b0);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+                ((SProjectedVertex *)(*0x01B4D738 + 0xea5d0),&CStack_24);
       iVar5 = *0x01B4D738;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;

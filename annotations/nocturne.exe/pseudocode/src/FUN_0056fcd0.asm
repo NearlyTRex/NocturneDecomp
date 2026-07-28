@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0056fcd4 at 0056fcd4
-;   FUN_0056fd00 at 0056fd01
+;   crt_exit.c_FinalExitHandler_FUN_0056fd00 at 0056fd01
+;   crt_startup.c_ExitApplication_FUN_0056fcd4 at 0056fcd4
 ;
 ; *****************************************************************************
 

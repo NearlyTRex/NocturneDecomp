@@ -2,19 +2,19 @@
 // Address: 0040d810
 // Address Range: [[0040d810, 0040d82f]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(int param_1,int param_2)
+// Signature: int __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(CDemonActorType *type_ptr,uint name_hash)
 
 #include "nocturne.h"
 
-uint __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(int param_1,int param_2)
+int __cdecl core_actor_cpp_checkNameHash_FUN_0040d810(CDemonActorType *type_ptr,uint name_hash)
 
 {
   while( true ) {
-    if (param_1 == 0) {
+    if (type_ptr == (CDemonActorType *)0x0) {
       return 0;
     }
-    if (param_2 == *(int *)(param_1 + 0x38)) break;
-    param_1 = *(int *)(param_1 + 0x28);
+    if (name_hash == type_ptr->name_hash) break;
+    type_ptr = type_ptr->parent_type;
   }
   return 1;
 }

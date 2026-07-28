@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 593,
+    "complexity_score": 621,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
-    "suspect_count": 42,
+    "pseudocode_lines": 151,
+    "suspect_count": 45,
     "suspect_types": [
+      "bit_int_float_compare",
       "unnamed_param",
-      "unresolved_funcptr",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 524
+    "total_lines": 517
   },
   "cross_references": [],
   "function": {
@@ -147,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950",
-    "signature": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,float param_2)"
+    "signature": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -447,30 +448,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CFrankenstienMachine_process_FUN_00494950.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 42,
-          "line": 83,
-          "message": "Uninitialized variable: fStack_64",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 54,
-          "line": 83,
-          "message": "Uninitialized variable: fStack_58",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -485,7 +462,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,float param_2)",
+      "text": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -493,39 +470,79 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,float param_2)",
+      "text": "void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(CFrankenstienMachine *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "_DAT_01c71340 = *(float *)(param_1 + 0x154);",
+      "text": "_DAT_01c71340 = param_1->master_frame;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (iVar2 == param_1) {",
+      "text": "if (pCVar2 == param_1) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2 * 30.0f + *(float *)(param_1 + 0x154);",
+      "text": "fVar1 = param_2 * 30.0f + param_1->master_frame;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 * 30.0f + *(float *)(param_1 + 0x154);",
+      "text": "fVar1 = param_2 * 30.0f + param_1->master_frame;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = param_1->master_frame - 2300.0f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = param_1->master_frame - 2300.0f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->master_frame = pCVar2->master_frame;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->master_frame < _DAT_01c71340) {",
       "type": "unnamed_param"
     },
     {
@@ -533,23 +550,23 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) = fVar1;",
+      "text": "core_frankgen_cpp_FUN_004950a0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 2300.0f;",
+      "text": "switch(param_1->which_part) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x154) = *(float *)(param_1 + 0x154) - 2300.0f;",
+      "text": "fVar1 = param_1->master_frame;",
       "type": "unnamed_param"
     },
     {
@@ -557,31 +574,15 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x154) = *(uint *)(iVar2 + 0x154);",
+      "text": "local_10 = (param_1->master_frame + -1380.0f) * (float)0.01 *",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x154) < _DAT_01c71340) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_frankgen_cpp_FUN_004950a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x150)) {",
+      "text": "local_10 = (1580.0f - param_1->master_frame) * (float)0.01 *",
       "type": "unnamed_param"
     },
     {
@@ -589,151 +590,127 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x154);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_10 = (*(float *)(param_1 + 0x154) + -1380.0f) * (float)0.01 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_10 = (1580.0f - *(float *)(param_1 + 0x154)) * (float)0.01 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
       "text": "(param_1,local_10,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,local_10,param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 67,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_68);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_68);",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_68);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_68);",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_68);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,auStack_50,&uStack_2c);",
+      "text": "(&param_1->base,&CStack_50,&CStack_2c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((0x44e10000 < *(int *)(param_1 + 0x154)) && (*(int *)(param_1 + 0x154) < 0x44ed8000)) {",
+      "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((0x44e10000 < *(int *)(param_1 + 0x154)) && (*(int *)(param_1 + 0x154) < 0x44ed8000)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_80);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_80);",
+      "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_80);",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,auStack_20,&uStack_38);",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,&local_80);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x3f800000,\"frankx-bed1.wav\");",
+      "text": "(&param_1->base,&CStack_20,&CStack_38);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x43ed8000,\"frankx-bed2.wav\");",
+      "text": "(param_1,1.0,\"frankx-bed1.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x444a4000,\"frankx-bed3.wav\");",
+      "text": "(param_1,475.0,\"frankx-bed2.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44834000,\"frankx-bed4.wav\");",
+      "text": "(param_1,809.0,\"frankx-bed3.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,1050.0,\"frankx-bed4.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,1380.0,\"frankx-water-dip.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,2040.0,\"frankx-big-ramp-bed5.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -741,31 +718,23 @@
       "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44ac8000,\"frankx-water-dip.wav\");",
+      "text": "(param_1,131.0,\"frankx-crane1.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44ff0000,\"frankx-big-ramp-bed5.wav\");",
+      "text": "(param_1,527.0,\"frankx-crane2.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x43030000,\"frankx-crane1.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,0x4403c000,\"frankx-crane2.wav\");",
+      "text": "(param_1,1089.0,\"frankx-crane3.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -773,56 +742,72 @@
       "line": 137,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44882000,\"frankx-crane3.wav\");",
+      "text": "(param_1,864.0,\"frankx-arm.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44580000,\"frankx-arm.wav\");",
+      "text": "(param_1,1702.0,\"frankx-flap-up.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44d4c000,\"frankx-flap-up.wav\");",
+      "text": "(param_1,1881.0,\"frankx-flap-down.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0x44eb2000,\"frankx-flap-down.wav\");",
+      "text": "(param_1,1950.0,\"frankx-big-ramp.wav\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,0x44f3c000,\"frankx-big-ramp.wav\");",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_2c.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: fStack_64",
-      "line": 83,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_28 = (1.0 - fStack_c) * fStack_64 + fStack_58 * fStack_c;",
-      "type": "static_uninitvar"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 99,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_38.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: fStack_58",
-      "line": 83,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_28 = (1.0 - fStack_c) * fStack_64 + fStack_58 * fStack_c;",
-      "type": "static_uninitvar"
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ac8000 is the IEEE 754 bit pattern of 1380f. Rewrite in a .keep as a plain float compare against 1380f.",
+      "line": 44,
+      "match": "0x44ac8000 < (int)fVar1)",
+      "severity": "moderate",
+      "text": "if ((0x44ac8000 < (int)fVar1) && ((int)fVar1 < 0x44c58000)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44b90000 is the IEEE 754 bit pattern of 1480f. Rewrite in a .keep as a plain float compare against 1480f.",
+      "line": 45,
+      "match": "(int)fVar1 < 0x44b90000",
+      "severity": "moderate",
+      "text": "if ((int)fVar1 < 0x44b90000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
+      "line": 87,
+      "match": "0x44e10000 < (int)param_1->master_frame)",
+      "severity": "moderate",
+      "text": "if ((0x44e10000 < (int)param_1->master_frame) && ((int)param_1->master_frame < 0x44ed8000)) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "vtable_info": {

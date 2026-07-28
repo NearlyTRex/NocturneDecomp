@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_script_cpp_makeVector_FUN_00505880(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; CVector3f * __cdecl core_script_cpp_makeVector_FUN_00505880(CVector3f *out,float x,float y,float z)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   out
+; float            Stack[0x8]:4   x
+; float            Stack[0xc]:4   y
+; float            Stack[0x10]:4   z
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005014e4

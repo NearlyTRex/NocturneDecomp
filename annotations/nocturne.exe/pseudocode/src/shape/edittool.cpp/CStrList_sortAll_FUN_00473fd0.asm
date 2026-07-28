@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00473fd0(int *param_1)
+; void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00473fd0(CStrList *this_ptr)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004705a7

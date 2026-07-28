@@ -2,17 +2,16 @@
 // Address: 0040bff0
 // Address Range: [[0040bff0, 0040c035]]
 // Convention: __cdecl
-// Signature: undefined8 __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int param_1)
+// Signature: int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
 
 #include "nocturne.h"
 
-ulonglong __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int param_1)
+int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
 
 {
   char cVar1;
   int iVar2;
   uint uVar3;
-  uint in_EDX;
   char *pcVar4;
   
   uVar3 = 0xffffffff;
@@ -23,20 +22,13 @@ ulonglong __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int param_1
     cVar1 = *pcVar4;
     pcVar4 = pcVar4 + 1;
   } while (cVar1 != '\0');
-  param_1 = param_1 + (~uVar3 - 1);
-  if (param_1 < 0) {
-    param_1 = 0;
+  iVar2 = indent_delta + (~uVar3 - 1);
+  if (iVar2 < 0) {
+    iVar2 = 0;
   }
-  uVar3 = in_EDX & 0xffffff00;
-  (&DAT_005acc90)[param_1] = 0;
-  if (0 < param_1) {
-    uVar3 = CONCAT22((short)(in_EDX >> 0x10),0x900);
-    iVar2 = param_1;
-    do {
-      param_1 = iVar2 + -1;
-      (&DAT_005acc8f)[iVar2] = 9;
-      iVar2 = param_1;
-    } while (0 < param_1);
+  (&DAT_005acc90)[iVar2] = 0;
+  for (; 0 < iVar2; iVar2 = iVar2 + -1) {
+    (&DAT_005acc8f)[iVar2] = 9;
   }
-  return CONCAT44(uVar3,param_1);
+  return iVar2;
 }

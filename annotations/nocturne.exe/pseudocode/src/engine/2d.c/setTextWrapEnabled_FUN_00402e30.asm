@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402e30(undefined4 param_1)
+; void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402e30(int enabled)
 ;
+; Parameters:
+; int              Stack[0x4]:4   enabled
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d993

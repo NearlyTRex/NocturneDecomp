@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_werewolf_cpp_FUN_00557c70(int param_1,undefined4 *param_2)
+; undefined4 core_werewolf_cpp_FUN_00557c70(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -25,7 +25,7 @@ section .text
     LEA EAX,[EDX + 0x150]               ; 00557c88
     PUSH EAX                            ; 00557c8e
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00557c8f
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00557c94
     CMP EBX,EAX                         ; 00557c97
     JNZ 0x00557ca5                      ; 00557c99

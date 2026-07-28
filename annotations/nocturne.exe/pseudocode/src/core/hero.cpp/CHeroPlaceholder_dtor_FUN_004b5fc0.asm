@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_CHeroPlaceholder_dtor_FUN_004b5fc0(int param_1,byte param_2)
+; CDemonActor * core_hero_cpp_CHeroPlaceholder_dtor_FUN_004b5fc0(CDemonActor *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 004b5fce
     MOV dword ptr [EBX + 0x14c],0x59ec84 ; 004b5fcf | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004b5fd9
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b5fde
     MOV DL,byte ptr [ESP + 0xc]         ; 004b5fe1
     MOV EBX,EAX                         ; 004b5fe5
@@ -42,11 +42,11 @@ section .text
         ;   Label: LAB_004b5ff0
     PUSH EBX                            ; 004b5ff5
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004b5ff6
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004b5ffb
     PUSH EAX                            ; 004b5ffe
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004b5fff
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004b6004
     MOV EAX,EBX                         ; 004b6007
     POP EBX                             ; 004b6009

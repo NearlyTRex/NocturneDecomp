@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(int param_1,int param_2,undefined4 param_3)
+; undefined4 support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_00439760(int param_1,int param_2,_ostream *param_3)
 ;
 ;
 ; XREF[2]:
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 00439795
     PUSH EBP                            ; 00439796
     CALL crt_iostream.cpp_ostream_put_FUN_00564ce5 ; 00439797
-        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_put_FUN_00564ce5()
+        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_00564ce5(_ostream * this_ptr, int character)
     ADD ESP,0x8                         ; 0043979c
     MOV EAX,ESI                         ; 0043979f
     POP ESI                             ; 004397a1
@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 004397ad
     PUSH EBP                            ; 004397ae
     CALL crt_iostream.cpp_ostream_put_FUN_00564ce5 ; 004397af
-        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_ostream_put_FUN_00564ce5()
+        ;   XREF to: 00564ce5 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_00564ce5(_ostream * this_ptr, int character)
     MOV EAX,dword ptr [EDI + 0x10]      ; 004397b4
     ADD ESP,0x8                         ; 004397b7
     MOV EAX,dword ptr [EBX + EAX*0x1]   ; 004397ba

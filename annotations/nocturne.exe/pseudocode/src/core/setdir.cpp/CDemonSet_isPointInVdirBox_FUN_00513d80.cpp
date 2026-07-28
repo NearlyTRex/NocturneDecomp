@@ -2,14 +2,14 @@
 // Address: 00513d80
 // Address Range: [[00513d80, 00513e16]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(int param_1,int param_2,float *param_3)
+// Signature: int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point)
 
 #include "nocturne.h"
 
-uint __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(int param_1,int param_2,float *param_3)
+int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point)
 
 {
-  float *pfVar1;
+  CMatrix3x3f *pCVar1;
   float local_20;
   float local_1c;
   float local_18;
@@ -17,13 +17,14 @@ uint __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(int param_1
   float local_10;
   float local_c;
   
-  pfVar1 = (float *)(param_1 + 0x15b02c + param_2 * 0x44);
-  local_14 = *param_3 - *pfVar1;
-  local_10 = param_3[1] - pfVar1[1];
-  local_c = param_3[2] - pfVar1[2];
-  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(pfVar1 + 6,&local_20,&local_14);
-  if (((ABS(local_20) <= pfVar1[3]) && (ABS(local_1c) <= pfVar1[4])) && (ABS(local_18) <= pfVar1[5])
-     ) {
+  pCVar1 = &this_ptr->rooms[box_index + 5].rotation_matrix;
+  local_14 = point->x - pCVar1->m[0].x;
+  local_10 = point->y - pCVar1->m[0].y;
+  local_c = point->z - pCVar1->m[0].z;
+  core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
+            (pCVar1->m + 2,&local_20,&local_14);
+  if (((ABS(local_20) <= pCVar1->m[1].x) && (ABS(local_1c) <= pCVar1->m[1].y)) &&
+     (ABS(local_18) <= pCVar1->m[1].z)) {
     return 1;
   }
   return 0;

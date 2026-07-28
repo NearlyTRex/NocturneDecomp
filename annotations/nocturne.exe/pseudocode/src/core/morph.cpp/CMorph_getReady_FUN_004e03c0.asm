@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(int param_1)
+; void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc8]:4  local_c8
 ; undefined4       Stack[-0xc4]:4  local_c4
@@ -93,7 +95,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004e03ef
     PUSH EAX                            ; 004e03f3
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004e03f4
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004e03f9
     MOV EAX,dword ptr [ESP + 0xcc]      ; 004e03fc
     XOR EDI,EDI                         ; 004e0403
@@ -140,7 +142,7 @@ section .text
     INC ESI                             ; 004e0481
     ADD EBX,0x10                        ; 004e0482
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 004e0485
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 004e048a
     JMP 0x004e0469                      ; 004e048d
         ;   XREF to: 004e0469 (UNCONDITIONAL_JUMP)  ; LAB_004e0469
@@ -328,7 +330,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb4]      ; 004e0748
     PUSH EAX                            ; 004e074f
     CALL core_morph.cpp_CMorphModel_findNearestPoint_FUN_004dffc0 ; 004e0750
-        ;   XREF to: 004dffc0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_findNearestPoint_FUN_004dffc0()
+        ;   XREF to: 004dffc0 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_CMorphModel_findNearestPoint_FUN_004dffc0(CMorphModel * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004e0755
     MOV EDX,dword ptr [ESP + 0xb4]      ; 004e0758
     MOV EDX,dword ptr [EDX + 0x58]      ; 004e075f

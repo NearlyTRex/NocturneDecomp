@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dmodel_cpp_FUN_00452560(undefined4 param_1,int param_2)
+; void core_dmodel_cpp_FUN_00452560(_FILE *param_1,int param_2)
 ;
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
     PUSH EBX                            ; 0045256e
         ;   Label: LAB_0045256e
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0045256f
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 00452574
     TEST EAX,EAX                        ; 00452577
     JL 0x00452585                       ; 00452579

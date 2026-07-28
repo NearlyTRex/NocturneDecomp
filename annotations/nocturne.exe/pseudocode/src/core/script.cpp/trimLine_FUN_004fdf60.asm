@@ -56,7 +56,7 @@ section .text
     PUSH 0x58e01d                       ; 004fdf9f | = "//"
     PUSH EBX                            ; 004fdfa4
     CALL crt_string.c_strstr_FUN_00566fe0 ; 004fdfa5
-        ;   XREF to: 00566fe0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_strstr_FUN_00566fe0()
+        ;   XREF to: 00566fe0 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strstr_FUN_00566fe0(char * haystack_str, char * needle_str)
     ADD ESP,0x8                         ; 004fdfaa
     TEST EAX,EAX                        ; 004fdfad
     JZ 0x004fdfb4                       ; 004fdfaf

@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_0041ef90 at 0041f098
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041f098
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 0041f1af
     PUSH EDX                            ; 0041f1b0
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0041f1b1
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0041f1b6
     LEA EAX,[ESP + 0x24]                ; 0041f1b9
     PUSH EAX                            ; 0041f1bd
@@ -53,7 +53,7 @@ section .text
     ADD ESP,0x8                         ; 0041f1d8
     PUSH EAX                            ; 0041f1db
     CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 ; 0041f1dc
-        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160()
+        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D * this_ptr, CVector3f * out_point, CVector3f * in_point)
     MOV EDX,EAX                         ; 0041f1e1
     LEA EAX,[ESP + 0x30]                ; 0041f1e3
     ADD ESP,0xc                         ; 0041f1e7
@@ -75,7 +75,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x31c]     ; 0041f20d
     PUSH ESI                            ; 0041f213
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0041f214
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EAX]                 ; 0041f219
     ADD ESP,0xc                         ; 0041f21b
     FSTP float ptr [EBX + 0x20]         ; 0041f21e

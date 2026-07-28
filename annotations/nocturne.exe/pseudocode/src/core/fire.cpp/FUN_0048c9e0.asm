@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0048c9e0(undefined4 param_1)
+; void core_fire_cpp_FUN_0048c9e0(CParticle *param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0048c9e2
     PUSH EDX                            ; 0048c9e6
     CALL core_particle.cpp_CParticle_dtor_FUN_004ef030 ; 0048c9e7
-        ;   XREF to: 004ef030 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_dtor_FUN_004ef030()
+        ;   XREF to: 004ef030 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_004ef030(CParticle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0048c9ec
     RET                                 ; 0048c9ef
 

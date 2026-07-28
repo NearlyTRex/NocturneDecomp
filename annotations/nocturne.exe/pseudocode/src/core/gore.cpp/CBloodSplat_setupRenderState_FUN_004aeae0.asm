@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(void)
+; void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(CBloodSplat *this_ptr)
 ;
+; Parameters:
+; CBloodSplat *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004afe80 at 004afeaa
+;   core_gore.cpp_CGore_renderDecals_FUN_004afe80 at 004afeaa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -60,7 +62,7 @@ section .text
     MOV dword ptr [0x005c50bc],EBP      ; 004aeb4d | DAT_005c50bc
     MOV dword ptr [0x005c50c0],EBP      ; 004aeb53 | DAT_005c50c0
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004aeb59
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004aeb5e
     POP EBP                             ; 004aeb61
     POP EDI                             ; 004aeb62

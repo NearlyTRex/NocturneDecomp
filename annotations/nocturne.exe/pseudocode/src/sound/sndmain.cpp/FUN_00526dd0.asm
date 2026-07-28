@@ -38,7 +38,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 00526df9
     MOVSD.REP ES:EDI,ESI                ; 00526dfd
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526dff
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 00526e04
     POP EDI                             ; 00526e09
     POP ESI                             ; 00526e0a

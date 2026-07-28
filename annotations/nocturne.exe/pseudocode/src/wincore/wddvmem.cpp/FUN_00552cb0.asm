@@ -44,7 +44,7 @@ section .text
     ADD ESP,0x4                         ; 00552cd3
     MOV dword ptr [0x006af62c],EBP      ; 00552cd6 | DAT_006af62c
     CALL engine_special.cpp_kill_FUN_005322b0 ; 00552cdc
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005322b0()
         ;   Label: LAB_00552cdc
     MOV EAX,[0x02ddf55c]                ; 00552ce1 | DAT_02ddf55c
     TEST EAX,EAX                        ; 00552ce6

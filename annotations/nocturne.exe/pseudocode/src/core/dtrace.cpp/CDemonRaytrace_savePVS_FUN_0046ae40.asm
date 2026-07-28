@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(int param_1,int *param_2,int *param_3)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   output_count
+; int * *          Stack[0xc]:4   input_indices_array
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 at 00507d49
@@ -56,7 +60,7 @@ section .text
     MOV EDI,dword ptr [EAX]             ; 0046ae83
     PUSH EDI                            ; 0046ae85
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0046ae86
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 0046ae8b
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0046ae8e
     MOV dword ptr [EDX],EAX             ; 0046ae92

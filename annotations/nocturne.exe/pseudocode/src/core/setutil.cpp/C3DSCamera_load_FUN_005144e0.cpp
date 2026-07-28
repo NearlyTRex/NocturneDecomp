@@ -2,69 +2,78 @@
 // Address: 005144e0
 // Address Range: [[005144e0, 005147f0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint param_2)
+void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
-  byte local_110 [256];
+  int *piVar2;
+  char local_110 [256];
   
-  core_setutil_cpp_FUN_00514470(param_1);
+  core_setutil_cpp_FUN_00514470(this_ptr);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
-    _fgets(local_110,0xff,param_2);
+    _fgets(local_110,0xff,file_handle);
   }
-  _fgets(local_110,0xff,param_2);
-  sscanf(local_110,"%s\n",param_1);
+  _fgets(local_110,0xff,file_handle);
+  sscanf(local_110,"%s\n",this_ptr);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
-    _fgets(local_110,0xff,param_2);
+    _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x100,param_1 + 0x104,param_1 + 0x108);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
+             &(this_ptr->position).z);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
-    _fgets(local_110,0xff,param_2);
+    _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x10c,param_1 + 0x114,param_1 + 0x110);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->orientation,&(this_ptr->orientation).z,
+             &(this_ptr->orientation).y);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
-    _fgets(local_110,0xff,param_2);
+    _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(param_2,"%f\n",param_1 + 0x140);
-  _fgets(local_110,0xff,param_2);
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x118,param_1 + 0x11c,param_1 + 0x120);
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x124,param_1 + 0x128,param_1 + 300);
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x130,param_1 + 0x134,param_1 + 0x138);
+  _fscanf(file_handle,"%f\n",&this_ptr->is_panning);
+  _fgets(local_110,0xff,file_handle);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->rotation_matrix,
+             &(this_ptr->rotation_matrix).m[0].y,&(this_ptr->rotation_matrix).m[0].z);
+  _fscanf(file_handle,"%f,%f,%f\n",(this_ptr->rotation_matrix).m + 1,
+             &(this_ptr->rotation_matrix).m[1].y,&(this_ptr->rotation_matrix).m[1].z);
+  _fscanf(file_handle,"%f,%f,%f\n",(this_ptr->rotation_matrix).m + 2,
+             &(this_ptr->rotation_matrix).m[2].y,&(this_ptr->rotation_matrix).m[2].z);
   iVar1 = 0x01E57284;
   if (*(int *)(0x01E57284 + 0x15a8c4) < 0x12) {
-    *(uint *)(param_1 + 0x14c) = 1;
-    *(uint *)(param_1 + 0x150) = *(uint *)(iVar1 + 0x15a848);
-    *(uint *)(param_1 + 0x154) = *(uint *)(iVar1 + 0x15a84c);
-    *(uint *)(param_1 + 0x158) = *(uint *)(iVar1 + 0x15a850);
-    if ((uint *)(param_1 + 0x15c) != (uint *)(iVar1 + 0x15a854)) {
-      *(uint *)(param_1 + 0x15c) = *(uint *)(iVar1 + 0x15a854);
-      *(uint *)(param_1 + 0x160) = *(uint *)(iVar1 + 0x15a858);
-      *(uint *)(param_1 + 0x164) = *(uint *)(iVar1 + 0x15a85c);
+    this_ptr->camera_group = 1;
+    this_ptr->fog_enabled = *(int *)(iVar1 + 0x15a848);
+    (this_ptr->fog).color_index.r = *(int *)(iVar1 + 0x15a84c);
+    piVar2 = &(this_ptr->fog).color_index.b;
+    (this_ptr->fog).color_index.g = *(int *)(iVar1 + 0x15a850);
+    if (piVar2 != (int *)(iVar1 + 0x15a854)) {
+      *piVar2 = *(int *)(iVar1 + 0x15a854);
+      (this_ptr->fog).scroll.x = *(float *)(iVar1 + 0x15a858);
+      (this_ptr->fog).scroll.y = *(float *)(iVar1 + 0x15a85c);
     }
-    *(uint *)(param_1 + 0x168) = *(uint *)(iVar1 + 0x15a860);
-    *(uint *)(param_1 + 0x16c) = *(uint *)(iVar1 + 0x15a864);
-    *(uint *)(param_1 + 0x170) = *(uint *)(iVar1 + 0x15a868);
+    (this_ptr->fog).scroll.z = *(float *)(iVar1 + 0x15a860);
+    (this_ptr->fog).height_threshold = *(float *)(iVar1 + 0x15a864);
+    (this_ptr->fog).density_multiplier = *(float *)(iVar1 + 0x15a868);
   }
   else {
-    _fscanf(param_2,"%d\n",param_1 + 0x14c);
-    if (*(int *)(param_1 + 0x14c) == 0) {
+    _fscanf(file_handle,"%d\n",&this_ptr->camera_group);
+    if (this_ptr->camera_group == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00447d10
-                ((uint *)(param_1 + 0x150),param_2,*(uint *)(0x01E57284 + 0x15a8c4));
+                ((SFog *)&this_ptr->fog_enabled,file_handle,*(int *)(0x01E57284 + 0x15a8c4));
     }
   }
   if (0x16 < *(int *)(0x01E57284 + 0x15a8c4)) {
-    _fgets(local_110,0xff,param_2);
-    _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x178,param_1 + 0x17c,param_1 + 0x180);
-    _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x184,param_1 + 0x188,param_1 + 0x18c);
+    _fgets(local_110,0xff,file_handle);
+    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->reverb_preset,&this_ptr->box,
+               &(this_ptr->box).min.y);
+    _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->box).min.z,&(this_ptr->box).max,
+               &(this_ptr->box).max.y);
   }
   if (*(int *)(0x01E57284 + 0x15a8c4) < 0x17) {
     return;
   }
-  _fgets(local_110,0xff,param_2);
-  _fscanf(param_2,"%d\n",param_1 + 0x174);
+  _fgets(local_110,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&(this_ptr->fog).temperature);
   return;
 }

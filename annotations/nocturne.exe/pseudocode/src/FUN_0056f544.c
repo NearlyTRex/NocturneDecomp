@@ -17,6 +17,6 @@ byte * FUN_0056f544(int param_1,byte *param_2,int param_3)
     puVar1 = param_2 + 1;
     *param_2 = 0x2d;
   }
-  FUN_0056f4f0(param_1,puVar1,param_3);
+  utoa(param_1,puVar1,param_3);
   return param_2;
 }

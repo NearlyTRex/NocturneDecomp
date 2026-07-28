@@ -76,7 +76,7 @@ section .text
     PUSH EDX                            ; 0055defa
     PUSH EBP                            ; 0055defb
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055defc
-        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0()
+        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x00766c70]      ; 0055df01 | DAT_00766c70
     INC ESI                             ; 0055df07
     ADD ESP,0xc                         ; 0055df08

@@ -2,11 +2,11 @@
 // Address: 004f8150
 // Address Range: [[004f8150, 004f81bb]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(int param_1,undefined4 param_2)
+// Signature: int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(int param_1,uint param_2)
+int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_ptr,char *filename)
 
 {
   int iVar1;
@@ -14,14 +14,14 @@ int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(int param_1,uint 
   int iVar3;
   int iVar4;
   
-  iVar3 = *(int *)(param_1 + 0x208) + -1;
+  iVar3 = *(int *)this_ptr->author_info + -1;
   iVar4 = 0;
   if (-1 < iVar3) {
     do {
       while( true ) {
         iVar1 = (iVar4 + iVar3) / 2;
         iVar2 = _stricmp
-                          (param_2,*(uint *)(*(int *)(param_1 + 0x20c) + iVar1 * 0x14));
+                          (filename,*(char **)(*(int *)(this_ptr->author_info + 4) + iVar1 * 0x14));
         if (iVar2 == 0) {
           return iVar1;
         }

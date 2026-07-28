@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_selectCard_FUN_00532d00(undefined4 param_1)
+; int __cdecl engine_special_cpp_selectCard_FUN_00532d00(int card_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   card_index
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870 at 0049d929

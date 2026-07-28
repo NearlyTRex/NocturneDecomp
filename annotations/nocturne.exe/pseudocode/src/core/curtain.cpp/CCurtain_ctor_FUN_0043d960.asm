@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_curtain_cpp_CCurtain_ctor_FUN_0043d960(undefined4 param_1)
+; CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_0043d960(CCurtain *this_ptr)
 ;
+; Parameters:
+; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_curtain.cpp_FUN_0043d930 at 0043d943
@@ -40,7 +42,7 @@ section .text
     ADD EAX,0x200                       ; 0043d979
     PUSH EAX                            ; 0043d97e
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0043d97f
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffe00]          ; 0043d984
     MOV dword ptr [EDX + 0x14c],0x59bc94 ; 0043d98a | PTR_core_curtain.cpp_FUN_0043dad0_0059bc94
     MOV ESI,0x57b4c7                    ; 0043d994 | = "SGLASS.RAW"

@@ -1,11 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawLine3D_FUN_00401710(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl engine_2d_c_drawLine3D_FUN_00401710(int x1,int y1,uint z1,int x2,int y2,uint z2)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; uint             Stack[0xc]:4   z1
+; int              Stack[0x10]:4   x2
+; int              Stack[0x14]:4   y2
+; uint             Stack[0x18]:4   z2
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00409590 at 0040982b
+;   engine_3d.c_clipAndDrawLine3D_FUN_00409590 at 0040982b
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 at 0046138d
 ;
 ; Called Functions:
@@ -75,7 +82,7 @@ section .text
     PUSH ESI                            ; 00401798
     PUSH EDI                            ; 00401799
     CALL engine_2d.c_plotPixelWithDepth_FUN_00401680 ; 0040179a
-        ;   XREF to: 00401680 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixelWithDepth_FUN_00401680()
+        ;   XREF to: 00401680 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixelWithDepth_FUN_00401680(int x_coord, int y_coord, uint depth_value)
     ADD ESP,0xc                         ; 0040179f
     TEST EBP,EBP                        ; 004017a2
     JLE 0x004017ad                      ; 004017a4
@@ -131,7 +138,7 @@ section .text
     PUSH ESI                            ; 0040180d
     PUSH EDI                            ; 0040180e
     CALL engine_2d.c_plotPixelWithDepth_FUN_00401680 ; 0040180f
-        ;   XREF to: 00401680 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixelWithDepth_FUN_00401680()
+        ;   XREF to: 00401680 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixelWithDepth_FUN_00401680(int x_coord, int y_coord, uint depth_value)
     ADD ESP,0xc                         ; 00401814
     TEST EBP,EBP                        ; 00401817
     JLE 0x00401827                      ; 00401819

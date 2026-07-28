@@ -1,0 +1,238 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 128,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 86
+  },
+  "cross_references": [
+    {
+      "addr": "0056af50",
+      "from_addr": "0056af58",
+      "name": "FUN_0056af50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056fb98",
+    "address_range": [
+      [
+        "0056fb98",
+        "0056fc20"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98",
+    "signature": "undefined1 crt_stdio_c_DrainConsoleInputAndSetup_FUN_0056fb98(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056fa80",
+      "is_variadic": false,
+      "name": "crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0056fa80"
+    },
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    },
+    {
+      "addr": "005714e0",
+      "is_variadic": false,
+      "name": "FUN_005714e0"
+    },
+    {
+      "addr": "EXTERNAL:00000059",
+      "is_variadic": false,
+      "name": "GetConsoleMode"
+    },
+    {
+      "addr": "EXTERNAL:0000007f",
+      "is_variadic": false,
+      "name": "SetConsoleMode"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754f0",
+      "name": "PTR_GetConsoleMode_005754f0",
+      "type": "void*",
+      "value": "00175c94"
+    },
+    {
+      "addr": "00575588",
+      "name": "PTR_SetConsoleMode_00575588",
+      "type": "void*",
+      "value": "00175f74"
+    },
+    {
+      "addr": "005c1ac0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1ac4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1cf8",
+      "name": "DAT_005c1cf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1d54",
+      "name": "DAT_005c1d54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1d88",
+      "name": "DAT_005c1d88",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056af58",
+        "call_type": "direct",
+        "caller": "FUN_0056af50",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLIND": 7,
+      "CBRANCH": 2,
+      "COPY": 37,
+      "INT_ADD": 9,
+      "INT_AND": 21,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 188
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005c1cf8",
+      "severity": "mild",
+      "text": "iVar2 = DAT_005c1cf8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005c1cf8",
+      "severity": "mild",
+      "text": "if (DAT_005c1cf8 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_005c1d88 == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005c1d88",
+      "severity": "mild",
+      "text": "if (DAT_005c1d88 == (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005c1d54",
+      "severity": "mild",
+      "text": "uVar1 = (*DAT_005c1d54)(0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005c1d88",
+      "severity": "mild",
+      "text": "iVar2 = (*DAT_005c1d88)(uVar1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005c1cf8",
+      "severity": "mild",
+      "text": "DAT_005c1cf8 = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
-;   FUN_0056f852
+;   crt_string.c_strtod_main_FUN_0056f852
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x0                            ; 0056a18f
     MOV EDX,dword ptr [EBP + 0x8]       ; 0056a191
     PUSH EDX                            ; 0056a194
-    CALL FUN_0056f852                   ; 0056a195
-        ;   XREF to: 0056f852 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f852()
+    CALL crt_string.c_strtod_main_FUN_0056f852 ; 0056a195
+        ;   XREF to: 0056f852 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_strtod_main_FUN_0056f852()
     MOV dword ptr [EBP + -0x8],EAX      ; 0056a19a
     MOV dword ptr [EBP + -0x4],EDX      ; 0056a19d
     ADD ESP,0x8                         ; 0056a1a0

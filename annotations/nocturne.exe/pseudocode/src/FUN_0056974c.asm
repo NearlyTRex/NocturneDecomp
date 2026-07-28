@@ -10,7 +10,7 @@
 ;   FUN_00569928 at 00569b96
 ;
 ; Called Functions:
-;   FUN_0056dc68
+;   crt_stdio.c_IntegerToString_FUN_0056dc68
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EBX                            ; 00569782
     MOV AX,word ptr [ESP + 0xa]         ; 00569783
     PUSH EAX                            ; 00569788
-    CALL FUN_0056dc68                   ; 00569789
-        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc68()
+    CALL crt_stdio.c_IntegerToString_FUN_0056dc68 ; 00569789
+        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_0056dc68(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 0056978e
     MOV AH,byte ptr [EBX]               ; 00569791
     MOV ECX,EBX                         ; 00569793

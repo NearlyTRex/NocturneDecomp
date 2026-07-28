@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(int param_1)
+; void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -37,13 +39,13 @@ section .text
     PUSH EDI                            ; 004d8db9
     PUSH 0x589c5c                       ; 004d8dba | = "Setting up actors"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d8dbf
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d8dc4
     PUSH EAX                            ; 004d8dc7
     MOV EDX,dword ptr [0x005baca0]      ; 004d8dc8 | INT_005baca0
     PUSH EDX                            ; 004d8dce
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8dcf
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004d8dd4
     MOV EBX,dword ptr [ESP + 0x18]      ; 004d8dd7
     MOV EBX,dword ptr [EBX + 0x514]     ; 004d8ddb
@@ -100,13 +102,13 @@ section .text
     PUSH 0x0                            ; 004d8e50
     PUSH 0x589c80                       ; 004d8e52 | = "Setting up actors"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d8e57
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d8e5c
     PUSH EAX                            ; 004d8e5f
     MOV EAX,[0x005baca0]                ; 004d8e60 | INT_005baca0
     PUSH EAX                            ; 004d8e65
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8e66
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004d8e6b
     CMP ESI,dword ptr [ESP]             ; 004d8e6e
         ;   Label: LAB_004d8e6e
@@ -115,13 +117,13 @@ section .text
     PUSH 0x0                            ; 004d8e73
     PUSH 0x589c92                       ; 004d8e75 | = "Setting up actors"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d8e7a
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d8e7f
     PUSH EAX                            ; 004d8e82
     MOV ECX,dword ptr [0x005baca0]      ; 004d8e83 | INT_005baca0
     PUSH ECX                            ; 004d8e89
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8e8a
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004d8e8f
     MOV EBX,dword ptr [EBX + 0x144]     ; 004d8e92
         ;   Label: LAB_004d8e92
@@ -141,13 +143,13 @@ section .text
         ;   Label: LAB_004d8eb2
     PUSH 0x589c6e                       ; 004d8eb4 | = "Setting up actors"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d8eb9
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d8ebe
     PUSH EAX                            ; 004d8ec1
     MOV ECX,dword ptr [0x005baca0]      ; 004d8ec2 | INT_005baca0
     PUSH ECX                            ; 004d8ec8
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8ec9
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 004d8ece
     JMP 0x004d8e4c                      ; 004d8ed1
         ;   XREF to: 004d8e4c (UNCONDITIONAL_JUMP)  ; LAB_004d8e4c

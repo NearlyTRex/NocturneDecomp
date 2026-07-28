@@ -1,0 +1,99 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "00566450",
+      "from_addr": "0056646e",
+      "name": "crt_unknown.c_strncpy_safe_FUN_00566450",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056db40",
+    "address_range": [
+      [
+        "0056db40",
+        "0056db77"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_string.c_mbstrnlen_FUN_0056db40",
+    "signature": "int __watcallStack crt_string_c_mbstrnlen_FUN_0056db40(char *str,int max_bytes)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056da50",
+      "is_variadic": false,
+      "name": "crt_locale.c_mblen_FUN_0056da50"
+    },
+    {
+      "addr": "00570ca0",
+      "is_variadic": false,
+      "name": "crt_string.c_mbstring_termination_check_FUN_00570ca0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.814814814814815,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 21,
+      "INT_ADD": 10,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 130
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "max_bytes",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

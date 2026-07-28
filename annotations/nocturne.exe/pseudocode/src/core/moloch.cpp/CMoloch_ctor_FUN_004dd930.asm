@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_moloch_cpp_CMoloch_ctor_FUN_004dd930(undefined4 param_1)
+; CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_004dd930(CMoloch *this_ptr)
 ;
+; Parameters:
+; CMoloch *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_moloch.cpp_FUN_004dd900 at 004dd913
@@ -41,12 +43,12 @@ section .text
     ADD EAX,0x1fa3c                     ; 004dd940
     PUSH EAX                            ; 004dd945
     CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660 ; 004dd946
-        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660()
+        ;   XREF to: 0051b660 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004dd94b
     ADD EAX,0x2388                      ; 004dd94e
     PUSH EAX                            ; 004dd953
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 004dd954
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_004e0050(CMorph * this_ptr)
     ADD ESP,0x4                         ; 004dd959
     LEA EBX,[EAX + 0xfffde23c]          ; 004dd95c
     PUSH 0x58a712                       ; 004dd962 | = "moloch_h.dfm"

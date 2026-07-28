@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(int param_1)
+; void __cdecl core_trigger_cpp_CTrigger_setup_FUN_00547a00(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_waypoint.cpp_CWaypoint_setup_FUN_00552510 at 0055251b
@@ -26,7 +28,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00547a01
     PUSH EBX                            ; 00547a05
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00547a06
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV EAX,[0x005baf90]                ; 00547a0b | DAT_005baf90
     MOV dword ptr [EBX + 0xf8],0x0      ; 00547a10
     MOV EAX,dword ptr [EAX + 0x4]       ; 00547a1a | DAT_01cc9454
@@ -54,7 +56,7 @@ section .text
     PUSH EAX                            ; 00547a7a
     MOV dword ptr [EBX + 0x360],0x0     ; 00547a7b
     CALL crt_string.c__stricmp_FUN_00564520 ; 00547a85
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00547a8a
     TEST EAX,EAX                        ; 00547a8d
     JNZ 0x00547a98                      ; 00547a8f
@@ -65,7 +67,7 @@ section .text
     LEA EAX,[EBX + 0x280]               ; 00547a9d
     PUSH EAX                            ; 00547aa3
     CALL crt_string.c__stricmp_FUN_00564520 ; 00547aa4
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00547aa9
     TEST EAX,EAX                        ; 00547aac
     JNZ 0x00547ab7                      ; 00547aae

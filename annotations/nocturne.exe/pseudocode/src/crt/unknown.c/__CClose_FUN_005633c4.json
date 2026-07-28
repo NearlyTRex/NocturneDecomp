@@ -1,0 +1,130 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "0056deac",
+      "from_addr": "0056defc",
+      "name": "FUN_0056deac",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563380",
+      "from_addr": "005633b7",
+      "name": "crt_stdio.c_fclose_FUN_00563380",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005633c4",
+    "address_range": [
+      [
+        "005633c4",
+        "005633e9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c___CClose_FUN_005633c4",
+    "signature": "int __cdecl crt_unknown_c___CClose_FUN_005633c4(_FILE *file_handle,int close_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00568620",
+      "is_variadic": false,
+      "name": "crt_stdio.c___freefp_FUN_00568620"
+    },
+    {
+      "addr": "005634b0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_fclose_FUN_005634b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005633b7",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fclose_FUN_00563380",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056defc",
+        "call_type": "direct",
+        "caller": "FUN_0056deac",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 11,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "close_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

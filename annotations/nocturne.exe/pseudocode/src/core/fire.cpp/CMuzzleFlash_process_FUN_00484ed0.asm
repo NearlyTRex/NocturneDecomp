@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_00484ed0(int *param_1)
+; void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_00484ed0(CMuzzleFlash *this_ptr)
 ;
+; Parameters:
+; CMuzzleFlash *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_0048a390 at 0048a3fc
@@ -39,7 +41,7 @@ section .text
     MOV ESI,dword ptr [0x005b80f0]      ; 00484eef | DAT_005b80f0
     PUSH ESI                            ; 00484ef5
     CALL core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0 ; 00484ef6
-        ;   XREF to: 0048aae0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0()
+        ;   XREF to: 0048aae0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0(CFireEffect * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00484efb
     POP ESI                             ; 00484efe
     RET                                 ; 00484eff

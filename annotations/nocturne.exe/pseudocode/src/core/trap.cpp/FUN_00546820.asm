@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_trap_cpp_FUN_00546820(undefined4 param_1)
+; int * core_trap_cpp_FUN_00546820(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -30,7 +30,7 @@ section .text
     ADD EAX,0x150                       ; 0054682e
     PUSH EAX                            ; 00546833
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00546834
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00546839
     LEA EBX,[EAX + 0xfffffeb0]          ; 0054683c
     PUSH 0x596903                       ; 00546842 | = "beartrap.kfm"
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 0054684d
     MOV dword ptr [EBX + 0x14c],0x5a3424 ; 0054684e | PTR_core_trap.cpp_FUN_00546870_005a3424
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00546858
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054685d
     MOV EAX,EBX                         ; 00546860
     MOV dword ptr [EBX + 0x2d0],0x0     ; 00546862

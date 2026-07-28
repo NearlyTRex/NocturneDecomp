@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   sound_sndmain.cpp_FUN_005257e0
+;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
 ;   sound_sndmain.cpp_lockSound_FUN_00528800
 ;   sound_sndmain.cpp_unlockSound_FUN_00528890
 ;
@@ -31,7 +31,7 @@ section .text
     PUSH EDI                            ; 00527572
     PUSH EBP                            ; 00527573
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00527574
-        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
+        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
     MOV EDI,dword ptr [ESP + 0x14]      ; 00527579
     MOV EBX,0x2dbd374                   ; 0052757d
     XOR ESI,ESI                         ; 00527582
@@ -46,7 +46,7 @@ section .text
     JL 0x00527584                       ; 00527594
         ;   XREF to: 00527584 (CONDITIONAL_JUMP)  ; LAB_00527584
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00527596
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV byte ptr [EDI],0x0              ; 0052759b
     POP EBP                             ; 0052759e
     POP EDI                             ; 0052759f
@@ -58,8 +58,8 @@ section .text
     JZ 0x0052758a                       ; 005275a7
         ;   XREF to: 0052758a (CONDITIONAL_JUMP)  ; LAB_0052758a
     PUSH EBX                            ; 005275a9 | DAT_02dbd494
-    CALL sound_sndmain.cpp_FUN_005257e0 ; 005275aa
-        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005257e0()
+    CALL sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0 ; 005275aa
+        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005275af
     MOV EAX,dword ptr [EBX + 0x74]      ; 005275b2 | DAT_02dbd508
     SUB ESP,0x8                         ; 005275b5

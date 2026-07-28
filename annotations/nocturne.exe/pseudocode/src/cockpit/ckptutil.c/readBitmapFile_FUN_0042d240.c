@@ -2,44 +2,43 @@
 // Address: 0042d240
 // Address Range: [[0042d240, 0042d360]]
 // Convention: __cdecl
-// Signature: int __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(undefined4 param_1,int param_2,undefined4 param_3)
+// Signature: void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,void *buffer,int size)
 
 #include "nocturne.h"
 
-int __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(uint param_1,int param_2,uint param_3)
+void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,void *buffer,int size)
 
 {
-  int iVar1;
-  int iVar2;
+  _FILE *file;
+  SIZE_T SVar1;
   byte local_60 [80];
   
-  if (param_2 == 0) {
-    param_2 = malloc(param_3);
-    if (param_2 == 0) {
-      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).",param_3,param_1)
-      ;
+  if (buffer == (void *)0x0) {
+    buffer = malloc(size);
+    if (buffer == (void *)0x0) {
+      _sprintf(local_60,"Unable to allocate %u bytes for bitmap file (%s).",size,filename);
       PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
       INT_01cc4804 = 0xd2;
       core_main_c_FUN_004c8440(local_60);
     }
   }
-  iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"rb");
-  if (iVar1 == 0) {
-    _sprintf(local_60,"Unable to open bitmap file (%s).",param_1);
+  file = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb");
+  if (file == (_FILE *)0x0) {
+    _sprintf(local_60,"Unable to open bitmap file (%s).",filename);
     PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     INT_01cc4804 = 0xdb;
     core_main_c_FUN_004c8440(local_60);
   }
-  iVar2 = _fread(param_2,param_3,1,iVar1);
-  if (iVar2 == 1) {
-    _fclose(iVar1);
-    return param_2;
+  SVar1 = _fread(buffer,size,1,file);
+  if (SVar1 == 1) {
+    _fclose(file);
+    return buffer;
   }
-  _sprintf(local_60,"Unable to read bitmap file (%s).",param_1);
-  _fclose(iVar1);
+  _sprintf(local_60,"Unable to read bitmap file (%s).",filename);
+  _fclose(file);
   INT_01cc4804 = 0xe3;
   PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
   core_main_c_FUN_004c8440(local_60);
-  _fclose(iVar1);
-  return param_2;
+  _fclose(file);
+  return buffer;
 }

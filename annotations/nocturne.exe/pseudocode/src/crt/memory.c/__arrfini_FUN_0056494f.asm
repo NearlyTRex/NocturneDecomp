@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_memory_c___arrfini_FUN_0056494f(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___arrfini_FUN_0056494f(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   obj_array
+; int              Stack[0x8]:4   obj_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -22,7 +26,7 @@
 ;   ... and 71 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564915
+;   crt_unknown.c___arrdtor_FUN_00564915
 ;
 ; *****************************************************************************
 
@@ -38,8 +42,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00564965
     MOV EAX,ESP                         ; 00564969
     PUSH EAX                            ; 0056496b
-    CALL crt_unknown.c_FUN_00564915     ; 0056496c
-        ;   XREF to: 00564915 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564915()
+    CALL crt_unknown.c___arrdtor_FUN_00564915 ; 0056496c
+        ;   XREF to: 00564915 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c___arrdtor_FUN_00564915(WatcomTypeArrayInfo * destroy_info)
     ADD ESP,0x4                         ; 00564971
     MOV EAX,dword ptr [ESP + 0x10]      ; 00564974
     ADD ESP,0xc                         ; 00564978

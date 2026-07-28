@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CStrList_findString_FUN_00474140(int *param_1,undefined4 param_2)
+; int __cdecl shape_edittool_cpp_CStrList_findString_FUN_00474140(CStrList *this_ptr,char *search_string)
 ;
+; Parameters:
+; CStrList *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   search_string
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 004749a5
@@ -31,11 +34,11 @@ section .text
     PUSH EBX                            ; 00474154
     PUSH ESI                            ; 00474155
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 00474156
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 0047415b
     PUSH EAX                            ; 0047415e
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047415f
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00474164
     TEST EAX,EAX                        ; 00474167
     JZ 0x00474179                       ; 00474169

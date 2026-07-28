@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_FUN_0041fb00(undefined4 param_1)
+; void core_boxactor_cpp_FUN_0041fb00(void *param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041fb07
     PUSH EDX                            ; 0041fb0b
     CALL crt_memory.c___arrfini_FUN_0056494f ; 0041fb0c
-        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_0056494f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041fb11
     RET                                 ; 0041fb14
 

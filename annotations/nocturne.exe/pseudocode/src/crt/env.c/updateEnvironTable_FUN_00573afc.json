@@ -1,0 +1,332 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 197,
+    "complexity_score": 323,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 93,
+    "suspect_count": 20,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "register_param",
+      "stack_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 290
+  },
+  "cross_references": [
+    {
+      "addr": "005740b0",
+      "from_addr": "00574251",
+      "name": "FUN_005740b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573930",
+      "from_addr": "00573a66",
+      "name": "crt_env.c_putenv_internal_FUN_00573930",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00573afc",
+    "address_range": [
+      [
+        "00573afc",
+        "00573c9e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_env.c_updateEnvironTable_FUN_00573afc",
+    "signature": "int __cdecl crt_env_c_updateEnvironTable_FUN_00573afc(char *envstr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00573ca0",
+      "is_variadic": false,
+      "name": "crt_env.c_findEnvVar_FUN_00573ca0"
+    },
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "00563cc0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_00563cc0"
+    },
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00564a70"
+    },
+    {
+      "addr": "00566170",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_00566170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02de54a0",
+      "name": "DAT_02de54a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de54a4",
+      "name": "DAT_02de54a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00574251",
+        "call_type": "direct",
+        "caller": "FUN_005740b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573a66",
+        "call_type": "direct",
+        "caller": "crt_env.c_putenv_internal_FUN_00573930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.436708860759493,
+    "instruction_count": 158,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 16,
+      "BRANCH": 6,
+      "CALL": 6,
+      "CBRANCH": 16,
+      "COPY": 143,
+      "INT_2COMP": 1,
+      "INT_ADD": 67,
+      "INT_AND": 99,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 80,
+      "INT_LESS": 6,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 39,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 5,
+      "LOAD": 42,
+      "POPCOUNT": 38,
+      "RETURN": 5,
+      "STORE": 33
+    },
+    "pcode_op_count": 701
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "envstr",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = envstr + 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = in_EAX[1];",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (*in_EAX == '\\0') {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "bVar7 = in_EAX[1] == '\\0';",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "ptr[n] = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(byte *)((int)_DAT_02de54a0",
+      "severity": "moderate",
+      "text": "*(byte *)((int)_DAT_02de54a0 + n) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 66,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = (uint)(iVar2 * -4) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 71,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00573c09, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 129,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00573c09: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

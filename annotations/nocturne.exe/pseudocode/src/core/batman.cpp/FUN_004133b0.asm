@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004133c2
         ;   Label: LAB_004133c2
     CALL core_batman.cpp_CBatman_ctor_FUN_004133e0 ; 004133c3
-        ;   XREF to: 004133e0 (UNCONDITIONAL_CALL)  ; undefined core_batman.cpp_CBatman_ctor_FUN_004133e0()
+        ;   XREF to: 004133e0 (UNCONDITIONAL_CALL)  ; CBatman * core_batman.cpp_CBatman_ctor_FUN_004133e0(CBatman * this_ptr)
     ADD ESP,0x4                         ; 004133c8
     RET                                 ; 004133cb
 

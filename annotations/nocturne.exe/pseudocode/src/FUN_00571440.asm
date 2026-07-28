@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056fa80 at 0056fb0c
+;   crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0056fa80 at 0056fb0c
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(undefined4 param_1,undefined4 param_2)
+; int __cdecl sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(uint sfx_handle,float base_frequency)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; float            Stack[0x8]:4   base_frequency
 ;
 ; XREF[4]:
 ;   core_lightgun.cpp_FUN_004c79a0 at 004c7aa4
@@ -60,7 +63,7 @@ section .text
     CALL dword ptr [EDX + 0x40]         ; 00527172
     ADD ESP,0xc                         ; 00527175
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00527178
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00527178
     MOV EAX,0x1                         ; 0052717d
     POP ESI                             ; 00527182

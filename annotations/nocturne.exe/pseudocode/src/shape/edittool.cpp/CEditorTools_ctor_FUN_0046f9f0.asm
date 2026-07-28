@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(undefined4 param_1)
+; CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(CEditorTools *this_ptr)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_staticInit_FUN_0046ef80 at 0046ef85
@@ -27,7 +29,7 @@ section .text
     PUSH 0x1bcd080                      ; 0046f9fd
     MOV dword ptr [0x01bcd07c],EDX      ; 0046fa02 | DAT_01bcd07c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0046fa08
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046fa0d
     PUSH EBX                            ; 0046fa10
     CALL shape_edittool.cpp_FUN_0046fa80 ; 0046fa11

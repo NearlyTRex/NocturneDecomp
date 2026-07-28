@@ -2,18 +2,18 @@
 // Address: 00453080
 // Address Range: [[00453080, 004530be]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(int param_1,int param_2)
+// Signature: CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel *this_ptr,int frame_index)
 
 #include "nocturne.h"
 
-int __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(int param_1,int param_2)
+CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel *this_ptr,int frame_index)
 
 {
-  if (*(int *)(param_1 + 0x100) <= param_2) {
-    param_2 = *(int *)(param_1 + 0x100) + -1;
+  if (this_ptr->frame_count <= frame_index) {
+    frame_index = this_ptr->frame_count + -1;
   }
-  if (param_2 < 0) {
-    param_2 = 0;
+  if (frame_index < 0) {
+    frame_index = 0;
   }
-  return *(int *)(param_1 + 0x10c) + *(int *)(param_1 + 0x104) * param_2 * 0xc;
+  return this_ptr->vertex_list + this_ptr->vertex_count * frame_index;
 }

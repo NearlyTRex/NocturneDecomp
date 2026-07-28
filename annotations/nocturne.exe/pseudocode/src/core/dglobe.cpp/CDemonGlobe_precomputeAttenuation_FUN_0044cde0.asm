@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(int param_1,float param_2)
+; void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe *this_ptr,float radius)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
@@ -40,10 +43,10 @@ section .text
     MOV dword ptr [EDX + 0x30],EAX      ; 0044ce03
     FXCH                                ; 0044ce06
     CALL crt_math.c_round_FUN_00563a30  ; 0044ce08
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0044ce0d
     CALL crt_math.c_round_FUN_00563a30  ; 0044ce0f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EDX + 0x10]        ; 0044ce14
     MOV ECX,dword ptr [EDX + 0x10]      ; 0044ce17
     FISTP dword ptr [EDX + 0xc]         ; 0044ce1a
@@ -75,7 +78,7 @@ section .text
     FSTP float ptr [EDX + 0x34]         ; 0044ce5f
     FSTP float ptr [EDX + 0x38]         ; 0044ce62
     CALL crt_math.c_round_FUN_00563a30  ; 0044ce65
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EDX + 0x14]        ; 0044ce6a
     ADD ESP,0x8                         ; 0044ce6d
     RET                                 ; 0044ce70

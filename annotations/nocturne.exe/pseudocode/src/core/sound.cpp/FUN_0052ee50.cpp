@@ -11,6 +11,8 @@
 void core_sound_cpp_FUN_0052ee50(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,10,&g_STrainNoiseTypeInfo_005a22f0);
   return;
 }

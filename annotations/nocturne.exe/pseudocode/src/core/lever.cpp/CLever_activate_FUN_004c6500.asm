@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_lever_cpp_CLever_activate_FUN_004c6500(int param_1)
+; void __cdecl core_lever_cpp_CLever_activate_FUN_004c6500(CLever *this_ptr)
 ;
+; Parameters:
+; CLever *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

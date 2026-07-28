@@ -2,42 +2,42 @@
 // Address: 00439b30
 // Address Range: [[00439b30, 00439bef]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30(int *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5,int param_6)
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 
 #include "nocturne.h"
 
-uint __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30(int *param_1,uint param_2,uint param_3,int param_4,int *param_5,int param_6)
+int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint local_18;
-  int local_14;
+  int iVar1;
+  char *local_18;
+  char *local_14;
   
-  local_14 = param_4;
-  local_18 = param_2;
-  if (param_1[0xb] < 0) goto LAB_00439b93;
+  local_14 = output;
+  local_18 = input;
+  if (this_ptr->current_code < 0) goto LAB_00439b93;
   do {
-    uVar1 = support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0
-                      (param_1 + 1,param_1[0xb],&local_14);
-    if (-1 < param_1[10]) {
-      iVar2 = support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(param_1 + 1,uVar1,param_1[10]);
-      if (iVar2 != 0) {
-        param_1[0xb] = -1;
+    iVar1 = support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_004397d0
+                      (&this_ptr->lzw_dict,this_ptr->current_code,&local_14);
+    if (-1 < this_ptr->previous_code) {
+      iVar1 = support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0
+                        (&this_ptr->lzw_dict,iVar1,this_ptr->previous_code);
+      if (iVar1 != 0) {
+        this_ptr->current_code = -1;
       }
     }
-    iVar2 = param_1[0xb];
-    param_1[0xb] = -1;
-    param_1[10] = iVar2;
+    iVar1 = this_ptr->current_code;
+    this_ptr->current_code = -1;
+    this_ptr->previous_code = iVar1;
 LAB_00439b93:
-    iVar2 = support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_00439630
-                      (param_1 + 1,param_1 + 6,&local_18,param_3);
-    param_1[0xb] = iVar2;
-  } while (-1 < iVar2);
-  *param_5 = *param_5 - (local_14 - param_4);
-  if (param_6 != 0) {
-    iVar2 = (**(code **)(*param_1 + 0x20))(param_1,local_14,param_5);
-    if (iVar2 == 0) {
+    iVar1 = support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_00439630
+                      (&this_ptr->lzw_dict,&(this_ptr->lzw_dict).bit_state,&local_18,input_length);
+    this_ptr->current_code = iVar1;
+  } while (-1 < iVar1);
+  *output_length = *output_length - ((int)local_14 - (int)output);
+  if (enable_callback != 0) {
+    iVar1 = (*((this_ptr->base).vtable)->finalizeBuffer)(&this_ptr->base,local_14,output_length);
+    if (iVar1 == 0) {
       return 0;
     }
   }

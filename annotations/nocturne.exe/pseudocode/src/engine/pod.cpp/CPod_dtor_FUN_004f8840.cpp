@@ -2,25 +2,25 @@
 // Address: 004f8840
 // Address Range: [[004f8840, 004f886f] [004f8871, 004f8898]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(int param_1,byte param_2)
+// Signature: CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(CPod *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-int __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(int param_1,byte param_2)
+CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(CPod *this_ptr,uint flags)
 
 {
-  uint uVar1;
+  void *ptr;
   
-  if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&g_CPodTypeInfo_005a14a0);
-    shape_memdbg_cpp_free_FUN_00564486(uVar1);
-    return param_1;
+  if ((flags & 4) != 0) {
+    ptr = __vec_delete(this_ptr,&g_CPodTypeInfo_005a14a0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    return this_ptr;
   }
-  *(byte ***)(param_1 + 0x194) = &PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
-  engine_pod_cpp_CPod_cleanup_FUN_004f8b40(param_1);
-  if ((param_2 & 2) == 0) {
-    return param_1;
+  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
+  engine_pod_cpp_CPod_cleanup_FUN_004f8b40(this_ptr);
+  if ((flags & 2) == 0) {
+    return this_ptr;
   }
-  FUN_00564494(param_1);
-  return param_1;
+  FUN_00564494(this_ptr);
+  return this_ptr;
 }

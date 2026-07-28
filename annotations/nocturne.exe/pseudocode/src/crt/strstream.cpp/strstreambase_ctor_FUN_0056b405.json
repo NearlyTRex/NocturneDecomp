@@ -1,0 +1,269 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 135,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "00564f32",
+      "from_addr": "00564f4c",
+      "name": "crt_strstream.cpp_istrstream_ctor_FUN_00564f32",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564d92",
+      "from_addr": "00564dd1",
+      "name": "crt_strstream.cpp_ostrstream_ctor_FUN_00564d92",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b405",
+    "address_range": [
+      [
+        "0056b405",
+        "0056b490"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_strstream.cpp_strstreambase_ctor_FUN_0056b405",
+    "signature": "strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b503",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_ios_ctor_FUN_0056b503"
+    },
+    {
+      "addr": "0056fe12",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_streambuf_ctor_FUN_0056fe12"
+    },
+    {
+      "addr": "0056ff2a",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0056ff2a"
+    },
+    {
+      "addr": "0056fe65",
+      "is_variadic": false,
+      "name": "crt_strstream.cpp_strstreambuf_init_FUN_0056fe65"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a4884",
+      "name": "PTR_crt_iostream.cpp_streambuf_do_sgetn_FUN_0056ff82_005a4884",
+      "type": "undefined1*",
+      "value": "0056ff82"
+    },
+    {
+      "addr": "005a48b0",
+      "name": "DAT_005a48b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005a48bc",
+      "name": "PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc",
+      "type": "void*",
+      "value": "0056b5ad"
+    },
+    {
+      "addr": "005a48c4",
+      "name": "PTR_FUN_005a48c4",
+      "type": "void*",
+      "value": "0056b491"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00564f4c",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_istrstream_ctor_FUN_00564f32",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00564dd1",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_ostrstream_ctor_FUN_00564d92",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9583333333333335,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 1,
+      "COPY": 36,
+      "INT_ADD": 26,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 15,
+      "LOAD": 14,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 190
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambase *"
+      },
+      {
+        "is_param": true,
+        "name": "ctor_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pstart",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005a48b0",
+      "severity": "mild",
+      "text": "(this_ptr->_strstreambase_core).layout_info = (WatcomVirtualBaseDescriptor *)&DAT_005a48b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "piVar2[-2].",
+      "severity": "mild",
+      "text": "this_ptr = (strstreambase *)&piVar2[-2].__error_state;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "buffer_ptr[-1].",
+      "severity": "mild",
+      "text": "puVar3 = &buffer_ptr[-1].__flags;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)puVar3",
+      "severity": "moderate",
+      "text": "*(int *)((int)puVar3 + *(int *)(*puVar3 + 4) + -4) = *(int *)(*puVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(streambuf *)((int)puVar3",
+      "severity": "moderate",
+      "text": "((streambuf *)((int)puVar3 + *(int *)(*puVar3 + 4)),(char *)buffer_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "*(int *)((int)puVar3 + *(int *)(*puVar3 + 4) + -4) = *(int *)(*puVar3 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&buffer_ptr->__flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)&buffer_ptr->__flags",
+      "severity": "moderate",
+      "text": "*(byte ***)((int)&buffer_ptr->__flags + *(int *)(uVar1 + 4)) = &PTR_FUN_005a48c4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "((streambuf *)((int)puVar3 + *(int *)(*puVar3 + 4)),(char *)buffer_ptr);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte ***)((int)&buffer_ptr->__flags + *(int *)(uVar1 + 4)) = &PTR_FUN_005a48c4;",
+      "type": "pointer_cast"
+    }
+  ]
+}

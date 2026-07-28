@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(int param_1,float param_2,float param_3)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   start_frame
+; float            Stack[0xc]:4   end_frame
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -24,7 +28,7 @@ section .text
     LEA EAX,[EBX + 0x17c]               ; 004952b8
     PUSH EAX                            ; 004952be
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004952bf
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x154]         ; 004952c4
     ADD ESP,0x4                         ; 004952ca
     MOV EAX,dword ptr [EAX + 0x100]     ; 004952cd

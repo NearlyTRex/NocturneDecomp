@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,undefined4 param_2)
+; undefined4 core_melee_cpp_CMelee_canPickup_FUN_004cef40(int param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004cef58
     PUSH ECX                            ; 004cef5c
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004cef5d
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004cef62
     TEST EAX,EAX                        ; 004cef65
     JZ 0x004cef4d                       ; 004cef67

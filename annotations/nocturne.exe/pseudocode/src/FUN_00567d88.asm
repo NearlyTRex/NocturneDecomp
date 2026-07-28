@@ -27,11 +27,11 @@
 ;   void* PTR_FUN_005c1f8c = 0056f0f0
 ;
 ; Called Functions:
+;   crt_math.c_doubleToFloat_FUN_0056f100
 ;   FUN_00567540
 ;   FUN_0056754c
 ;   FUN_00568528
 ;   FUN_0056f0f0
-;   FUN_0056f100
 ;
 ; *****************************************************************************
 
@@ -368,8 +368,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 00568070
         ;   Label: LAB_00568070
     MOV EDX,dword ptr [ESP + 0x54]      ; 00568074
-    CALL FUN_0056f100                   ; 00568078
-        ;   XREF to: 0056f100 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f100()
+    CALL crt_math.c_doubleToFloat_FUN_0056f100 ; 00568078
+        ;   XREF to: 0056f100 (UNCONDITIONAL_CALL)  ; float crt_math.c_doubleToFloat_FUN_0056f100(double val)
     MOV dword ptr ES:[EBX],EAX          ; 0056807d
         ;   Label: LAB_0056807d
     MOV EAX,EDI                         ; 00568080

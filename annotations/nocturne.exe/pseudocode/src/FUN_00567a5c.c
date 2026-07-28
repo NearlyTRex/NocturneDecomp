@@ -16,11 +16,11 @@ int FUN_00567a5c(int param_1,int *param_2)
   uint *puVar3;
   uint uVar4;
   int iVar5;
-  byte uVar6;
+  char cVar6;
   int iVar7;
-  ushort *unaff_EDI;
-  byte local_20 [4];
-  byte local_1c;
+  char *unaff_EDI;
+  wchar_t local_20 [2];
+  char local_1c;
   byte local_1b;
   byte local_18;
   
@@ -36,18 +36,18 @@ int FUN_00567a5c(int param_1,int *param_2)
       if ((bVar1 & 8) == 0) {
         puVar3 = (uint *)*param_2;
         *param_2 = (int)(puVar3 + 1);
-        unaff_EDI = (ushort *)*puVar3;
+        unaff_EDI = (char *)*puVar3;
       }
       else {
         puVar3 = (uint *)*param_2;
         *param_2 = (int)(puVar3 + 1);
-        unaff_EDI = (ushort *)*puVar3;
+        unaff_EDI = (char *)*puVar3;
       }
     }
     else {
       puVar2 = (undefined6 *)*param_2;
       *param_2 = (int)(puVar2 + 1);
-      unaff_EDI = (ushort *)*puVar2;
+      unaff_EDI = (char *)*puVar2;
     }
   }
   iVar7 = 0;
@@ -61,22 +61,22 @@ int FUN_00567a5c(int param_1,int *param_2)
       do {
         iVar7 = iVar7 + 1;
         if ((*(byte *)(param_1 + 0x10) & 1) != 0) {
-          uVar6 = (byte)uVar4;
+          cVar6 = (char)uVar4;
           if (local_18 == 1) {
-            *(byte *)unaff_EDI = uVar6;
+            *unaff_EDI = cVar6;
           }
           else {
-            local_1c = uVar6;
+            local_1c = cVar6;
             if ((_DAT_02de5c30 != 0) && ((*(byte *)((uVar4 & 0xff) + 0x2de5c41) & 1) != 0)) {
               local_1b = FUN_00567540(param_1);
             }
-            iVar5 = FUN_0056f040(local_20,&local_1c,2);
+            iVar5 = mbtowc(local_20,&local_1c,2);
             if (iVar5 == -1) {
               return 0;
             }
-            *unaff_EDI = local_20._0_2_;
+            *(short *)unaff_EDI = local_20[0];
           }
-          unaff_EDI = (ushort *)((int)unaff_EDI + (uint)local_18);
+          unaff_EDI = unaff_EDI + local_18;
         }
         uVar4 = FUN_00568528(param_1);
         if (uVar4 == 0xffffffff) goto LAB_00567b98;
@@ -90,10 +90,11 @@ int FUN_00567a5c(int param_1,int *param_2)
 LAB_00567b98:
   if (((*(byte *)(param_1 + 0x10) & 1) != 0) && (0 < iVar7)) {
     if (local_18 == 1) {
-      *(byte *)unaff_EDI = 0;
+      *unaff_EDI = '\0';
     }
     else {
-      *unaff_EDI = 0;
+      unaff_EDI[0] = '\0';
+      unaff_EDI[1] = '\0';
     }
   }
   return iVar7;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(int param_1,char *param_2)
+; void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(CSkeleton *this_ptr,char *filename)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_FUN_0051f680 at 0051f716
@@ -53,7 +56,7 @@ section .text
     PUSH EBX                            ; 00517592
     PUSH 0x5911ee                       ; 00517593 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00517598
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0051759d
     MOV EDI,EAX                         ; 005175a0
     TEST EAX,EAX                        ; 005175a2
@@ -64,11 +67,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005175a7
     PUSH EBX                            ; 005175ab
     CALL core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 ; 005175ac
-        ;   XREF to: 005175f0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0()
+        ;   XREF to: 005175f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 005175b1
     PUSH EDI                            ; 005175b4
     CALL crt_stdio.c_fclose_FUN_00563380 ; 005175b5
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 005175ba
     POP EDI                             ; 005175bd
     POP ESI                             ; 005175be

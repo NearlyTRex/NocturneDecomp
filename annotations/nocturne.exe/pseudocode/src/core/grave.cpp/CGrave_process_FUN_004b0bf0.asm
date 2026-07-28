@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_CGrave_process_FUN_004b0bf0(int param_1,float param_2)
+; void core_grave_cpp_CGrave_process_FUN_004b0bf0(CGrave *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -52,14 +52,14 @@ section .text
     MOV ESI,dword ptr [0x005b7650]      ; 004b0c31 | DAT_005b7650
     PUSH ESI                            ; 004b0c37
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004b0c38
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004b0c3d
     TEST EAX,EAX                        ; 004b0c40
     JZ 0x004b0c0c                       ; 004b0c42
         ;   XREF to: 004b0c0c (CONDITIONAL_JUMP)  ; LAB_004b0c0c
     PUSH EBX                            ; 004b0c44
     CALL core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0 ; 004b0c45
-        ;   XREF to: 004b0dc0 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0()
+        ;   XREF to: 004b0dc0 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0(CGrave * this_ptr)
     ADD ESP,0x4                         ; 004b0c4a
     JMP 0x004b0c0c                      ; 004b0c4d
         ;   XREF to: 004b0c0c (UNCONDITIONAL_JUMP)  ; LAB_004b0c0c
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_004b0c4f
     PUSH EAX                            ; 004b0c55
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 004b0c56
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x2d0]         ; 004b0c5b
     MOV EAX,dword ptr [EAX + 0x100]     ; 004b0c61
     ADD ESP,0x4                         ; 004b0c67

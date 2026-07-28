@@ -2,59 +2,59 @@
 // Address: 00566498
 // Address Range: [[00566498, 00566564]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_string_c_splitpath_FUN_00566498(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5 )
+// Signature: void __cdecl crt_string_c_splitpath_FUN_00566498(char *path,char *drive,char *dir,char *fname,char *ext)
 
 #include "nocturne.h"
 
-void __cdecl splitpath(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5 )
+void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
 
 {
   char cVar1;
-  char *pcVar2;
-  int iVar3;
-  char *pcVar4;
-  char *pcVar5;
-  char *pcVar6;
+  char *str;
+  int iVar2;
+  char *pcVar3;
+  char *src;
+  char *src_00;
   
-  cVar1 = *param_1;
-  if ((cVar1 == '\0') || (param_1[1] != ':')) {
-    if (param_2 != (char *)0x0) {
-      *param_2 = '\0';
+  cVar1 = *path;
+  if ((cVar1 == '\0') || (path[1] != ':')) {
+    if (drive != (char *)0x0) {
+      *drive = '\0';
     }
   }
   else {
-    if (param_2 != (char *)0x0) {
-      param_2[2] = '\0';
-      *param_2 = cVar1;
-      param_2[1] = ':';
+    if (drive != (char *)0x0) {
+      drive[2] = '\0';
+      *drive = cVar1;
+      drive[1] = ':';
     }
-    param_1 = param_1 + 2;
+    path = path + 2;
   }
-  pcVar6 = (char *)0x0;
-  cVar1 = *param_1;
-  pcVar2 = param_1;
-  pcVar5 = param_1;
+  src_00 = (char *)0x0;
+  cVar1 = *path;
+  str = path;
+  src = path;
   while (cVar1 != '\0') {
-    iVar3 = FUN_0056d9f0(pcVar2);
-    if (iVar3 == 0x2e) {
-      pcVar4 = pcVar2 + 1;
-      pcVar6 = pcVar2;
+    iVar2 = mbtowc_peek(str);
+    if (iVar2 == 0x2e) {
+      pcVar3 = str + 1;
+      src_00 = str;
     }
     else {
-      pcVar4 = (char *)FUN_0056da80(pcVar2);
-      if ((iVar3 == 0x5c) || (iVar3 == 0x2f)) {
-        pcVar6 = (char *)0x0;
-        pcVar5 = pcVar4;
+      pcVar3 = (char *)mbtowc_next(str);
+      if ((iVar2 == 0x5c) || (iVar2 == 0x2f)) {
+        src_00 = (char *)0x0;
+        src = pcVar3;
       }
     }
-    pcVar2 = pcVar4;
-    cVar1 = *pcVar4;
+    str = pcVar3;
+    cVar1 = *pcVar3;
   }
-  FUN_00566450(param_3,param_1,(int)pcVar5 - (int)param_1,0xff);
-  if (pcVar6 == (char *)0x0) {
-    pcVar6 = pcVar2;
+  strncpy_safe(dir,path,(int)src - (int)path,0xff);
+  if (src_00 == (char *)0x0) {
+    src_00 = str;
   }
-  FUN_00566450(param_4,pcVar5,(int)pcVar6 - (int)pcVar5,0xff);
-  FUN_00566450(param_5,pcVar6,(int)pcVar2 - (int)pcVar6,0xff);
+  strncpy_safe(fname,src,(int)src_00 - (int)src,0xff);
+  strncpy_safe(ext,src_00,(int)str - (int)src_00,0xff);
   return;
 }

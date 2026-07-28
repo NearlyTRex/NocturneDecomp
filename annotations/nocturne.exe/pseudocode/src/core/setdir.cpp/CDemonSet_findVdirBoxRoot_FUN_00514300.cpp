@@ -2,25 +2,25 @@
 // Address: 00514300
 // Address Range: [[00514300, 0051433a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(int param_1,int param_2)
+// Signature: int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index)
 
 #include "nocturne.h"
 
-void __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(int param_1,int param_2)
+int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index)
 
 {
-  int iVar1;
-  int iVar2;
+  float fVar1;
+  float fVar2;
   
-  iVar2 = param_2;
+  fVar1 = (float)box_index;
   do {
-    iVar1 = iVar2;
-    iVar2 = *(int *)(iVar1 * 0x44 + param_1 + 0x15b06c);
-  } while (-1 < iVar2);
-  while (param_2 != iVar1) {
-    iVar2 = param_2 * 0x44;
-    param_2 = *(int *)(iVar2 + 0x15b06c + param_1);
-    *(int *)(iVar2 + 0x15b06c + param_1) = iVar1;
+    fVar2 = fVar1;
+    fVar1 = this_ptr->rooms[(int)fVar2 + 6].extents.z;
+  } while (-1 < (int)fVar1);
+  while ((float)box_index != fVar2) {
+    fVar1 = this_ptr->rooms[box_index + 6].extents.z;
+    this_ptr->rooms[box_index + 6].extents.z = fVar2;
+    box_index = (int)fVar1;
   }
-  return;
+  return (int)fVar2;
 }

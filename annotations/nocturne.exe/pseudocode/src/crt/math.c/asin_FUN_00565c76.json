@@ -2,15 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 9,
+    "complexity_score": 22,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 25
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_unreachable"
+    ],
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -54,7 +56,7 @@
     ],
     "convention": "__fpustack_safe",
     "name": "crt_math.c_asin_FUN_00565c76",
-    "signature": "void __fpustack_safe crt_math_c_asin_FUN_00565c76(void)"
+    "signature": "float10 __fpustack_safe crt_math_c_asin_FUN_00565c76(float10 sine_value)"
   },
   "function_calls": [
     {
@@ -65,7 +67,7 @@
     {
       "addr": "0056c5a8",
       "is_variadic": false,
-      "name": "FUN_0056c5a8"
+      "name": "crt_math.c_sqrt_FUN_0056c5a8"
     }
   ],
   "globals": [],
@@ -73,8 +75,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "skipped",
-    "declared_params": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "estimated_params": 1,
     "skip_reason": "fpu_or_no_param_convention"
   },
   "pcode_summary": {
@@ -110,5 +112,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00565c89) */",
+      "type": "warning_unreachable"
+    }
+  ]
 }

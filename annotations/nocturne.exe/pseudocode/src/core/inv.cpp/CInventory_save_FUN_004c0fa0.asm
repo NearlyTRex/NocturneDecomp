@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_save_FUN_004c0fa0(float *param_1,undefined4 param_2)
+; void __cdecl core_inv_cpp_CInventory_save_FUN_004c0fa0(CInventory *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -54,7 +57,7 @@ section .text
     ADD ESP,0xc                         ; 004c0fc4
     PUSH 0x1                            ; 004c0fc7
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 004c0fc9
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 004c0fce
     PUSH 0x5acc90                       ; 004c0fd1 | DAT_005acc90
     PUSH 0x587207                       ; 004c0fd6 | = "%s// fileVersion\n"
@@ -140,7 +143,7 @@ section .text
     PUSH EBP                            ; 004c10b6
     PUSH EBX                            ; 004c10b7
     CALL core_inv.cpp_CInventory_saveItems_FUN_004c1140 ; 004c10b8
-        ;   XREF to: 004c1140 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_saveItems_FUN_004c1140()
+        ;   XREF to: 004c1140 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_saveItems_FUN_004c1140(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004c10bd
     PUSH EDI                            ; 004c10c0 | DAT_005acc90
     PUSH 0x587282                       ; 004c10c1 | = "%s// actor data list\n"
@@ -173,7 +176,7 @@ section .text
     PUSH -0x1                           ; 004c1100
         ;   Label: LAB_004c1100
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 004c1102
-        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_adjustIndentationLevel_FUN_0040bff0()
+        ;   XREF to: 0040bff0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta)
     ADD ESP,0x4                         ; 004c1107
     MOV EBX,dword ptr [ESP + 0x4]       ; 004c110a
     PUSH EBX                            ; 004c110e | DAT_005acc90

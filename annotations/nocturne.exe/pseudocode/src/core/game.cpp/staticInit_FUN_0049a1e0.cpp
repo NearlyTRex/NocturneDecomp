@@ -9,11 +9,11 @@
 void __cdecl core_game_cpp_staticInit_FUN_0049a1e0(void)
 
 {
-  core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(&DAT_01c74640,0x100,0x100);
-  FUN_00564bb0(0x5b92c0);
-  core_game_cpp_CGame_ctor_FUN_0049a650(&DAT_01c775ec);
-  FUN_00564bb0(0x5b92d0);
+  core_dlight_cpp_CDemonLight_ctor_FUN_0044e110((CDemonLight *)&DAT_01c74640,0x100,0x100);
+  _atexit((WatcomStaticDestructorNode *)0x5b92c0);
+  core_game_cpp_CGame_ctor_FUN_0049a650((CGame *)&DAT_01c775ec);
+  _atexit((WatcomStaticDestructorNode *)0x5b92d0);
   shape_edittool_cpp_FUN_00474c90(&DAT_01c78424);
-  FUN_00564bb0(0x5b92e0);
+  _atexit((WatcomStaticDestructorNode *)0x5b92e0);
   return;
 }

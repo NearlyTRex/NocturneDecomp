@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(int param_1,int param_2)
+; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   opener
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0x10]:4  local_10
@@ -46,11 +49,11 @@ section .text
     PUSH EAX                            ; 004564c9
     PUSH EBX                            ; 004564ca
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 004564cb
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 004564d0
     PUSH 0x57d255                       ; 004564d3 | = "The door is locked from the other side."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004564d8
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004564dd
     MOV ESI,EAX                         ; 004564e0
     FLD float ptr [ESP + 0x8]           ; 004564e2
@@ -68,14 +71,14 @@ section .text
         ;   XREF to: 00456522 (CONDITIONAL_JUMP)  ; LAB_00456522
     PUSH EBX                            ; 00456505
     CALL core_door.cpp_CDoor_onLocked_FUN_00456650 ; 00456506
-        ;   XREF to: 00456650 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_onLocked_FUN_00456650()
+        ;   XREF to: 00456650 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00456650(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0045650b
     PUSH 0x40a00000                     ; 0045650e
     PUSH ESI                            ; 00456513
     MOV EAX,[0x005b9354]                ; 00456514 | DAT_005b9354
     PUSH EAX                            ; 00456519 | DAT_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 0045651a
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 0045651f
     XOR EAX,EAX                         ; 00456522
         ;   Label: LAB_00456522
@@ -93,14 +96,14 @@ section .text
         ;   XREF to: 00456522 (CONDITIONAL_JUMP)  ; LAB_00456522
     PUSH EBX                            ; 00456540
     CALL core_door.cpp_CDoor_onLocked_FUN_00456650 ; 00456541
-        ;   XREF to: 00456650 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_CDoor_onLocked_FUN_00456650()
+        ;   XREF to: 00456650 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00456650(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00456546
     PUSH 0x40a00000                     ; 00456549
     PUSH ESI                            ; 0045654e
     MOV ECX,dword ptr [0x005b9354]      ; 0045654f | DAT_005b9354
     PUSH ECX                            ; 00456555 | DAT_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 00456556
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 0045655b
     XOR EAX,EAX                         ; 0045655e
     MOV ESP,EBP                         ; 00456560

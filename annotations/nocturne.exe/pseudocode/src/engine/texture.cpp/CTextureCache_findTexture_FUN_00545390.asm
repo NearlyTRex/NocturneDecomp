@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_00545390(int param_1,int param_2,undefined4 param_3)
+; int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_00545390(CTextureCache *this_ptr,int hint_index,char *texture_name)
 ;
+; Parameters:
+; CTextureCache *  Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hint_index
+; char *           Stack[0xc]:4   texture_name
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 00545955
@@ -39,7 +43,7 @@ section .text
         ;   Label: LAB_005453bb
     PUSH ESI                            ; 005453bc
     CALL crt_string.c__strcmp_FUN_005649c0 ; 005453bd
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005453c2
     TEST EAX,EAX                        ; 005453c5
     JZ 0x005453fc                       ; 005453c7
@@ -65,7 +69,7 @@ section .text
     ADD EAX,ESI                         ; 005453ed
     PUSH EAX                            ; 005453ef
     CALL crt_string.c__strcmp_FUN_005649c0 ; 005453f0
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005453f5
     TEST EAX,EAX                        ; 005453f8
     JNZ 0x005453a9                      ; 005453fa

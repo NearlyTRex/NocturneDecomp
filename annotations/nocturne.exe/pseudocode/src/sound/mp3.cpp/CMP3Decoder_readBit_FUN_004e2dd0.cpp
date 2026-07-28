@@ -2,13 +2,15 @@
 // Address: 004e2dd0
 // Address Range: [[004e2dd0, 004e2ddf]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(undefined4 param_1)
+// Signature: uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(CMP3Decoder *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(uint param_1)
+uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(CMP3Decoder *this_ptr)
 
 {
-  sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(param_1,1);
-  return;
+  uint uVar1;
+  
+  uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(this_ptr,1);
+  return uVar1;
 }

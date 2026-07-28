@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 107,
+    "complexity_score": 132,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "pseudocode_lines": 27,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
       "stack_ref",
-      "unnamed_param",
-      "unresolved_funcptr",
+      "tautological_addr_guard",
+      "unaffected_reg",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 76
+    "total_lines": 81
   },
   "cross_references": [
     {
@@ -162,7 +162,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0",
-    "signature": "void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(int param_1)"
+    "signature": "void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(CLightGun *this_ptr)"
   },
   "function_calls": [
     {
@@ -275,11 +275,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.9791666666666665,
@@ -308,12 +308,37 @@
     "pcode_op_count": 191
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CLightGun_updateBeamLight_FUN_004c6ff0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 28,
+          "message": "Uninitialized variable: fStack_c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -325,47 +350,68 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))();",
-      "type": "unnamed_param"
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 15,
+      "line": 19,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x1c74758) {",
+      "text": "if (&stack0x00000000 != &DAT_01c74754) {",
       "type": "stack_ref"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_01c74754",
+      "severity": "mild",
+      "text": "if (&stack0x00000000 != &DAT_01c74754) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "_DAT_01c7474c = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_01c74750",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&DAT_01c74750,&(this_ptr->base).base.orient.vec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01c74640",
+      "severity": "mild",
+      "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080((CDemonLight *)&DAT_01c74640,1.0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&DAT_01c74754` is always TRUE (the address of `DAT_01c74754` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 19,
+      "match": "if ((T *)0x0 != &DAT_01c74754)",
+      "severity": "moderate",
+      "text": "if (&stack0x00000000 != &DAT_01c74754) {",
+      "type": "tautological_addr_guard"
+    },
+    {
+      "description": "Uninitialized variable: fStack_c",
+      "line": 28,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "_DAT_01c74748 = fStack_c;",
+      "type": "static_uninitvar"
     }
   ]
 }

@@ -2,32 +2,36 @@
 // Address: 004d9df0
 // Address Range: [[004d9df0, 004d9e48]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(int param_1)
+// Signature: int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(CDemonMission *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(int param_1)
+int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0(CDemonMission *this_ptr)
 
 {
+  CCharacter *this_ptr_00;
   int iVar1;
+  CDemonActor *actor_ptr;
   int iVar2;
-  int iVar3;
   
-  iVar2 = *(int *)(param_1 + 0x514);
-  iVar3 = 0;
+  actor_ptr = *(CDemonActor **)(this_ptr->set_names[3] + 0xcc);
+  iVar2 = 0;
   do {
-    if (iVar2 == 0) {
-      return iVar3;
+    if (actor_ptr == (CDemonActor *)0x0) {
+      return iVar2;
     }
-    while ((iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (iVar2,g_CEnemyActorType_01bcdebc.name_hash), iVar1 != 0 &&
-           (iVar1 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1), iVar1 != 0))) {
-      iVar3 = iVar3 + 1;
-      iVar2 = *(int *)(iVar2 + 0x144);
-      if (iVar2 == 0) {
-        return iVar3;
+    while ((this_ptr_00 = (CCharacter *)
+                          core_actor_cpp_castToClassHash_FUN_0040d890
+                                    (actor_ptr,g_CEnemyActorType_01bcdebc.name_hash),
+           this_ptr_00 != (CCharacter *)0x0 &&
+           (iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr_00),
+           iVar1 != 0))) {
+      iVar2 = iVar2 + 1;
+      actor_ptr = actor_ptr->next_actor;
+      if (actor_ptr == (CDemonActor *)0x0) {
+        return iVar2;
       }
     }
-    iVar2 = *(int *)(iVar2 + 0x144);
+    actor_ptr = actor_ptr->next_actor;
   } while( true );
 }

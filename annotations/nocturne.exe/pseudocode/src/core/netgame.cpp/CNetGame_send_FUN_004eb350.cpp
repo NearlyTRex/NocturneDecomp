@@ -2,19 +2,19 @@
 // Address: 004eb350
 // Address Range: [[004eb350, 004eb3b3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(int param_1,int param_2,undefined4 param_3)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)
 
 #include "nocturne.h"
 
-void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(int param_1,int param_2,uint param_3)
+void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)
 
 {
-  if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
+  if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x5c5;
     core_main_c_FUN_004c8440("CNetGame::send - invalid player index");
   }
-  core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(param_1,param_2 * 0x78 + param_1 + 0x3c,param_3)
-  ;
+  core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0
+            (this_ptr,&this_ptr->players[player_index].addr,packet);
   return;
 }

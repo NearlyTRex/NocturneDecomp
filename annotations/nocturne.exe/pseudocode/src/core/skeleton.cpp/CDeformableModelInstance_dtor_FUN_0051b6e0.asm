@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(int param_1,byte param_2)
+; CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(CDeformableModelInstance *this_ptr,uint flags)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[38]:
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd59
@@ -12,7 +15,7 @@
 ;   core_beast.cpp_FUN_00415250 at 004152b9
 ;   core_biggs.cpp_FUN_00415a30 at 00415aa9
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400 at 0041a479
-;   core_bride.cpp_FUN_00420f20 at 00420f89
+;   core_bride.cpp_CBride_dtor_FUN_00420f20 at 00420f89
 ;   core_bugs.cpp_FUN_00423d90 at 00423e09
 ;   core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 at 0042b639
 ;   ... and 28 more
@@ -48,13 +51,13 @@ section .text
     ADD EBX,0x58                        ; 0051b6fe
     PUSH EBX                            ; 0051b701
     CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0 ; 0051b702
-        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0()
+        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 0051b707
     PUSH 0x1                            ; 0051b70a
     LEA EBX,[EAX + -0x58]               ; 0051b70c
     PUSH EBX                            ; 0051b70f
     CALL core_motion.cpp_CMotionController_dtor_FUN_004e1150 ; 0051b710
-        ;   XREF to: 004e1150 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_dtor_FUN_004e1150()
+        ;   XREF to: 004e1150 (UNCONDITIONAL_CALL)  ; CMotionController * core_motion.cpp_CMotionController_dtor_FUN_004e1150(CMotionController * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051b715
     MOV DL,byte ptr [ESP + 0xc]         ; 0051b718
     MOV EBX,EAX                         ; 0051b71c
@@ -68,11 +71,11 @@ section .text
         ;   Label: LAB_0051b727
     PUSH EBX                            ; 0051b72c
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0051b72d
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0051b732
     PUSH EAX                            ; 0051b735
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0051b736
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0051b73b
     MOV EAX,EBX                         ; 0051b73e
     POP EBX                             ; 0051b740

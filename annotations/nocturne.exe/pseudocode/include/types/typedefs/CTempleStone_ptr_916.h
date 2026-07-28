@@ -19,7 +19,7 @@ struct CTempleStone_ptr_916 {
     template<typename T> CTempleStone_ptr_916(T* p) : _raw((void*)p) {}
     template<typename T> CTempleStone_ptr_916& operator=(T* p) { _raw = (void*)p; return *this; }
     CTempleStone* operator->() const { return (CTempleStone*)_raw; }
-    CTempleStone* adj() const { return (CTempleStone*)((char*)_raw - offsetof(CTempleStone, base.physics_box)); }
+    CTempleStone* adj() const { return (CTempleStone*)((char*)_raw - offsetof(CTempleStone, base.physics_box.position.z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

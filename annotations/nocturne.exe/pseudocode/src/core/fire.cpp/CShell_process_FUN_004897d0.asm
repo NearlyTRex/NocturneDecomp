@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CShell_process_FUN_004897d0(int param_1)
+; void core_fire_cpp_CShell_process_FUN_004897d0(CParticle *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 004897e9
         ;   Label: LAB_004897e9
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 004897ea
-        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_process_FUN_004ef120()
+        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
     MOV EAX,[0x005b9354]                ; 004897ef | DAT_005b9354
     ADD ESP,0x4                         ; 004897f4
     MOV EAX,dword ptr [EAX + 0x264]     ; 004897f7 | DAT_01c77850

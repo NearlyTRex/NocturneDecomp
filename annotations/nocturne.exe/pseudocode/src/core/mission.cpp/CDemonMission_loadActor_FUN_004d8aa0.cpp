@@ -2,65 +2,68 @@
 // Address: 004d8aa0
 // Address Range: [[004d8aa0, 004d8bfe]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4)
+// Signature: CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
 
 #include "nocturne.h"
 
-int __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(uint param_1,uint param_2,char *param_3,char *param_4)
+CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
-  int unaff_ESI;
-  byte local_dc [200];
-  int local_14;
+  CDemonActor *unaff_ESI;
+  char local_dc [200];
+  CDemonActor *local_14;
   
-  if (param_3 == (char *)0x0) {
-    param_3 = "(unknown)";
+  if (current_actor == (CDemonActor *)0x0) {
+    current_actor = (CDemonActor *)"(unknown)";
   }
-  if (param_4 == (char *)0x0) {
-    param_4 = "(unknown)";
+  if (property_description == (char *)0x0) {
+    property_description = "(unknown)";
   }
   do {
-    iVar1 = _fgetc(param_2);
-  } while (((&DAT_005c168c)[(byte)((char)iVar1 + 1)] & 2) != 0);
-  if (iVar1 == 0x22) {
-    iVar1 = _fgetc(param_2);
-    if (iVar1 != 0x22) {
-      _ungetc(iVar1,param_2);
-      iVar1 = _fscanf(param_2,"%[^\"]",local_dc);
-      if (iVar1 == 1) {
-        iVar1 = _stricmp(local_dc,"(none)");
-        if (iVar1 == 0) {
-          unaff_ESI = 0;
+    iVar2 = _fgetc(file);
+  } while (((&DAT_005c168c)[(byte)((char)iVar2 + 1)] & 2) != 0);
+  if (iVar2 == 0x22) {
+    iVar2 = _fgetc(file);
+    if (iVar2 != 0x22) {
+      _ungetc(iVar2,file);
+      iVar2 = _fscanf(file,"%[^\"]",local_dc);
+      if (iVar2 == 1) {
+        iVar2 = _stricmp(local_dc,"(none)");
+        if (iVar2 == 0) {
+          unaff_ESI = (CDemonActor *)0x0;
         }
         else {
-          unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(param_1,local_dc);
-          if (unaff_ESI == 0) {
+          unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(this_ptr,local_dc)
+          ;
+          if (unaff_ESI == (CDemonActor *)0x0) {
             shape_edittool_cpp_FUN_0046fcd0
-                      (0x01BCD074,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,param_3,param_4);
+                      (0x01BCD074,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,current_actor,
+                       property_description);
           }
         }
-        iVar2 = _fgetc(param_2);
-        iVar1 = unaff_ESI;
+        iVar2 = _fgetc(file);
+        pCVar1 = unaff_ESI;
         if (iVar2 == 0x22) goto LAB_004d8b28;
       }
     }
   }
   else {
-    _ungetc(iVar1,param_2);
-    iVar2 = _fscanf(param_2,"%x",&local_14);
-    iVar1 = local_14;
+    _ungetc(iVar2,file);
+    iVar2 = _fscanf(file,"%x",&local_14);
+    pCVar1 = local_14;
     if (iVar2 == 1) goto LAB_004d8b28;
   }
   do {
     PTR_01cc4800 = "..\\core\\mission.cpp";
     INT_01cc4804 = 0x22d;
-    core_main_c_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",param_3,param_4);
-    iVar1 = unaff_ESI;
+    core_main_c_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description)
+    ;
+    pCVar1 = unaff_ESI;
 LAB_004d8b28:
-    while (unaff_ESI = iVar1, iVar2 = _fgetc(param_2), iVar2 != -1) {
-      iVar1 = unaff_ESI;
+    while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {
+      pCVar1 = unaff_ESI;
       if (iVar2 == 10) {
         return unaff_ESI;
       }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(undefined4 *param_1)
+; uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(CFileBitStream *this_ptr)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004e3130 at 004e313d
@@ -92,7 +94,7 @@ section .text
     PUSH EAX                            ; 004e2a5e
     DEC ESI                             ; 004e2a5f
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004e2a60
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004e2a65
     CMP EAX,0x1                         ; 004e2a68
         ;   Label: LAB_004e2a68

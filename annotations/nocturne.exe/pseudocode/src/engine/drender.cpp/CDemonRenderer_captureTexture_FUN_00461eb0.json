@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 128,
+    "complexity_score": 63,
     "cross_reference_count": 71,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -188,7 +187,7 @@
     {
       "addr": "00443180",
       "from_addr": "004431f1",
-      "name": "core_dcamera.cpp_FUN_00443180",
+      "name": "core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -300,6 +299,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00489990",
+      "from_addr": "00489baa",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_00489990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00489d00",
       "from_addr": "00489f1a",
       "name": "core_fire.cpp_CRainDrop_render_FUN_00489d00",
@@ -321,12 +326,6 @@
       "addr": "00489360",
       "from_addr": "00489392",
       "name": "core_fire.cpp_CTrail_render_FUN_00489360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00489990",
-      "from_addr": "00489baa",
-      "name": "core_fire.cpp_FUN_00489990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -366,6 +365,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ada20",
+      "from_addr": "004adc6f",
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004ada20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ac440",
       "from_addr": "004ac4c5",
       "name": "core_glass.cpp_FUN_004ac440",
@@ -387,12 +392,6 @@
       "addr": "004ac9b0",
       "from_addr": "004aca27",
       "name": "core_glass.cpp_FUN_004ac9b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ada20",
-      "from_addr": "004adc6f",
-      "name": "core_glass.cpp_FUN_004ada20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -482,7 +481,7 @@
     {
       "addr": "004f18c0",
       "from_addr": "004f193a",
-      "name": "core_path.cpp_FUN_004f18c0",
+      "name": "core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -500,7 +499,7 @@
     {
       "addr": "005159a0",
       "from_addr": "00515b51",
-      "name": "core_setutil.cpp_FUN_005159a0",
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -572,9 +571,9 @@
         "00461f42"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0",
-    "signature": "void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,int param_2)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)"
   },
   "function_calls": [
     {
@@ -651,12 +650,27 @@
     "pcode_op_count": 232
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -666,54 +680,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_00545920(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1c) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x1b796d8) = *(uint *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar3 = (char *)(param_2 + 8);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

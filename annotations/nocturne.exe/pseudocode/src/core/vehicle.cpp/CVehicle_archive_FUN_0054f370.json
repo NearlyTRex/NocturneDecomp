@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 198,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 19,
     "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk",
       "unnamed_param"
     ],
-    "total_lines": 176
+    "total_lines": 181
   },
   "cross_references": [],
   "function": {
@@ -145,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_vehicle.cpp_CVehicle_archive_FUN_0054f370",
-    "signature": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(int param_1)"
+    "signature": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -313,13 +315,37 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CVehicle_archive_FUN_0054f370.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 48,
+          "line": 30,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 48,
+          "line": 31,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(int param_1)",
+      "text": "void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -332,26 +358,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,\"modelName\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x930,\"tireCount\");",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1),\"modelName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x930)) {",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040c900((int *)(param_1 + 7),\"tireCount\");",
       "type": "unnamed_param"
     },
     {
@@ -359,7 +377,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = param_1 + 0x944;",
+      "text": "if (0 < *(int *)param_1[7].actor_name) {",
       "type": "unnamed_param"
     },
     {
@@ -367,7 +385,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0x940;",
+      "text": "float_ptr_00 = param_1[7].actor_name + 0x14;",
       "type": "unnamed_param"
     },
     {
@@ -375,31 +393,39 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1 + 0x948;",
+      "text": "float_ptr = param_1[7].actor_name + 0x10;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x934 + iVar1 * 0x1b4,\"static_bpos\");",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(CVector3f *)((int)param_1",
+      "severity": "moderate",
+      "text": "((CVector3f *)((int)param_1 + iVar1 * 0x1b4 + 0x934),\"static_bpos\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CVector3f *)((int)param_1 + iVar1 * 0x1b4 + 0x934),\"static_bpos\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x930));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1024,\"curTime\");",
+      "text": "} while (iVar1 < *(int *)param_1[7].actor_name);",
       "type": "unnamed_param"
     },
     {
@@ -407,32 +433,80 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1028,\"totalTime\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)&param_1[0xc].health,\"curTime\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x102c,\"courseName\");",
+      "text": "((float *)&param_1[0xc].validation_magic,\"totalTime\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1068,\"lastMobsterLeft\");",
+      "text": "((char *)&param_1[0xc].direction_hint,\"courseName\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1068,\"lastMobsterRight\");",
+      "text": "((CDemonActor **)(param_1[0xc].create_event + 0x30),\"lastMobsterLeft\");",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor **)(param_1[0xc].create_event + 0x30),\"lastMobsterRight\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 18,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(param_1[7].actor_name + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 25,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates by self-indexing a constant element step, dereferencing a sibling array field (which decays to a pointer), then adding a constant; the sum equals the larger struct stride being walked. Replace `model_ptr->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "model_ptr = (T *)(model_ptr[N].FIELD + CONST)",
+      "severity": "moderate",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 30,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)float_ptr,\"radius\");",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 31,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040c880((float *)float_ptr_00,\"width\");",
+      "type": "static_invalid_pointer_cast"
     }
   ],
   "vtable_info": {

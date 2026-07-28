@@ -2,48 +2,47 @@
 // Address: 00417c90
 // Address Range: [[00417c90, 00417d6d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(int param_1,char *param_2)
+// Signature: int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(CBodyPart *this_ptr,char *texture_name)
 
 #include "nocturne.h"
 
-int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(int param_1,char *param_2)
+int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(CBodyPart *this_ptr,char *texture_name)
 
 {
   char cVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
+  char *pcVar4;
   
   iVar3 = 0;
-  if (0 < *(int *)(param_1 + 0x184)) {
-    iVar4 = param_1 + 400;
+  if (0 < this_ptr->texture_count) {
+    pcVar4 = this_ptr->textures[0].texture_name;
     do {
-      iVar2 = _stricmp(iVar4,param_2);
+      iVar2 = _stricmp(pcVar4,texture_name);
       if (iVar2 == 0) {
         return iVar3;
       }
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x18;
-    } while (iVar3 < *(int *)(param_1 + 0x184));
+      pcVar4 = pcVar4 + 0x18;
+    } while (iVar3 < this_ptr->texture_count);
   }
-  if (9 < *(int *)(param_1 + 0x184)) {
+  if (9 < this_ptr->texture_count) {
     PTR_01cc4800 = "..\\core\\bodypart.cpp";
     INT_01cc4804 = 0x47a;
     core_main_c_FUN_004c8440("Too many body part textures!");
   }
-  memset(*(int *)(param_1 + 0x184) * 0x18 + param_1 + 0x188,0,0x18);
-  pcVar5 = (char *)(param_1 + 0x188 + *(int *)(param_1 + 0x184) * 0x18 + 8);
+  memset(this_ptr->textures + this_ptr->texture_count,0,0x18);
+  pcVar4 = this_ptr->textures[this_ptr->texture_count].texture_name;
   do {
-    cVar1 = *param_2;
-    *pcVar5 = cVar1;
+    cVar1 = *texture_name;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
+    cVar1 = texture_name[1];
+    texture_name = texture_name + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar3 = *(int *)(param_1 + 0x184);
-  *(int *)(param_1 + 0x184) = iVar3 + 1;
+  iVar3 = this_ptr->texture_count;
+  this_ptr->texture_count = iVar3 + 1;
   return iVar3;
 }

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 289,
-    "complexity_score": 339,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 109,
-    "suspect_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 110,
+    "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memset"
     ],
-    "total_lines": 398
+    "total_lines": 399
   },
   "cross_references": [
     {
@@ -153,7 +154,7 @@
     ],
     "convention": "unknown",
     "name": "core_manpuz.cpp_FUN_004cb010",
-    "signature": "void core_manpuz_cpp_FUN_004cb010(int param_1,int param_2,float param_3)"
+    "signature": "void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)"
   },
   "function_calls": [
     {
@@ -376,7 +377,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_FUN_004cb010(int param_1,int param_2,float param_3)",
+      "text": "void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -384,7 +385,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_FUN_004cb010(int param_1,int param_2,float param_3)",
+      "text": "void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -392,12 +393,12 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_manpuz_cpp_FUN_004cb010(int param_1,int param_2,float param_3)",
+      "text": "void core_manpuz_cpp_FUN_004cb010(CMansionPuzzleCircle *param_1,int param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_3",
       "severity": "mild",
       "text": "local_28 = param_3 * 255.0f;",
@@ -405,18 +406,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);",
+      "text": "pSVar11 = param_1->gems + param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar12 = (float *)(param_1 + 0xa98 + param_2 * 0xb8);",
+      "text": "pSVar11 = param_1->gems + param_2;",
       "type": "unnamed_param"
     },
     {
@@ -424,7 +425,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_3c,pfVar12 + 9);",
+      "text": "(&param_1->base,&local_3c,&pSVar11->position);",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +449,7 @@
       "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "(piVar11 = (int *)(param_1 + 0x5e8 + param_2 * 100), *piVar11 != 0)) &&",
+      "text": "(pSVar10 = param_1->panels + param_2, pSVar10->exists != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -456,23 +457,7 @@
       "line": 94,
       "match": "param_2",
       "severity": "mild",
-      "text": "(piVar11 = (int *)(param_1 + 0x5e8 + param_2 * 100), *piVar11 != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
+      "text": "(pSVar10 = param_1->panels + param_2, pSVar10->exists != 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -480,12 +465,28 @@
       "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 99,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,iVar9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
@@ -493,26 +494,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 102,
       "match": "param_2",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -520,12 +505,28 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar10 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,uVar9);",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 105,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar9 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(param_1,iVar9);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);",
@@ -533,11 +534,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 108,
       "match": "param_2",
       "severity": "mild",
       "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(param_1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 40,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pSVar11->light).b = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "call_site_count": 1,

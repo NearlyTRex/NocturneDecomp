@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWCompress_process_FUN_004398c0(int param_1,int *param_2,int *param_3,undefined4 param_4)
+; int __cdecl support_codec_cpp_CLZWCompress_process_FUN_004398c0(CLZWCompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 ;
+; Parameters:
+; CLZWCompress *   Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x8]:4   istream
+; int *            Stack[0xc]:4   byte_count
+; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined        Stack[-0x14]:1  local_14
@@ -48,7 +53,7 @@ section .text
     PUSH ESI                            ; 004398f4
     PUSH EDI                            ; 004398f5
     CALL support_codec.cpp_CLZWDictionary_findCode_FUN_004394b0 ; 004398f6
-        ;   XREF to: 004394b0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_findCode_FUN_004394b0()
+        ;   XREF to: 004394b0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_findCode_FUN_004394b0(CLZWDictionary * this_ptr, int search_code, int start_index)
     ADD ESP,0xc                         ; 004398fb
     TEST EAX,EAX                        ; 004398fe
     JL 0x0043993e                       ; 00439900
@@ -62,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0043990c
     PUSH ECX                            ; 00439910
     CALL crt_iostream.cpp_istream_get_FUN_00564c53 ; 00439911
-        ;   XREF to: 00564c53 (UNCONDITIONAL_CALL)  ; undefined crt_iostream.cpp_istream_get_FUN_00564c53()
+        ;   XREF to: 00564c53 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_get_FUN_00564c53(_istream * this_ptr, char * c)
     ADD ESP,0x8                         ; 00439916
     MOV EAX,dword ptr [ESP + 0x20]      ; 00439919
     MOV EAX,dword ptr [EAX]             ; 0043991d
@@ -99,7 +104,7 @@ section .text
     PUSH EAX                            ; 00439960
     PUSH EDI                            ; 00439961
     CALL support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0 ; 00439962
-        ;   XREF to: 004394f0 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0()
+        ;   XREF to: 004394f0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary * this_ptr, int code, int parent_index)
     ADD ESP,0xc                         ; 00439967
     TEST EAX,EAX                        ; 0043996a
     JZ 0x00439980                       ; 0043996c

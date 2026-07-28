@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00516b82
         ;   Label: LAB_00516b82
     CALL core_simbox.cpp_CSimBox_ctor_FUN_00516ba0 ; 00516b83
-        ;   XREF to: 00516ba0 (UNCONDITIONAL_CALL)  ; undefined core_simbox.cpp_CSimBox_ctor_FUN_00516ba0()
+        ;   XREF to: 00516ba0 (UNCONDITIONAL_CALL)  ; CSimBox * core_simbox.cpp_CSimBox_ctor_FUN_00516ba0(CSimBox * this_ptr)
     ADD ESP,0x4                         ; 00516b88
     RET                                 ; 00516b8b
 

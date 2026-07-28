@@ -29,7 +29,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0041ef5c
     PUSH EAX                            ; 0041ef62
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0041ef63
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV ESI,dword ptr [EAX + 0x358]     ; 0041ef68
     ADD ESP,0x4                         ; 0041ef6e
     TEST ESI,ESI                        ; 0041ef71

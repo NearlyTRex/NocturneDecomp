@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
+; int __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
 ;
 ;
 ; XREF[1]:

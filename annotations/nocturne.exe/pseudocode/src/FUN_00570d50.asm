@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0056dc98 at 0056dcab
+;   crt_math.c_atan2_FUN_0056dc98 at 0056dcab
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4084
@@ -26,7 +26,7 @@
 ;   undefined4 DAT_005c410c
 ;
 ; Called Functions:
-;   FUN_0056bf67
+;   crt_math.c_function_dispatch_FUN_0056bf67
 ;
 ; *****************************************************************************
 
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 00570de0
         ;   Label: LAB_00570de0
     MOV EAX,0xf                         ; 00570de1
-    CALL FUN_0056bf67                   ; 00570de6
-        ;   XREF to: 0056bf67 (UNCONDITIONAL_CALL)  ; undefined FUN_0056bf67()
+    CALL crt_math.c_function_dispatch_FUN_0056bf67 ; 00570de6
+        ;   XREF to: 0056bf67 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_function_dispatch_FUN_0056bf67(int function_index)
     POP EAX                             ; 00570deb
     FLD float ptr [0x005c40c8]          ; 00570dec | DAT_005c40c8
     FMUL ST1                            ; 00570df2
@@ -102,8 +102,8 @@ section .text
     FADDP ST2,ST0                       ; 00570e17
     PUSH EAX                            ; 00570e19
     MOV EAX,0xf                         ; 00570e1a
-    CALL FUN_0056bf67                   ; 00570e1f
-        ;   XREF to: 0056bf67 (UNCONDITIONAL_CALL)  ; undefined FUN_0056bf67()
+    CALL crt_math.c_function_dispatch_FUN_0056bf67 ; 00570e1f
+        ;   XREF to: 0056bf67 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_function_dispatch_FUN_0056bf67(int function_index)
     POP EAX                             ; 00570e24
     FLD ST0                             ; 00570e25
     FMUL ST1                            ; 00570e27

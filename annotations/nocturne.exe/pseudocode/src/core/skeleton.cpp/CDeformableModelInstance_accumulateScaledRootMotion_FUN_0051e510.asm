@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(int param_1,undefined4 param_2,undefined4 param_3,float param_4)
+; void core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510(CDeformableModelInstance *param_1,float param_2,float param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x28]      ; 0051e520
     PUSH EDX                            ; 0051e524
     CALL core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590 ; 0051e525
-        ;   XREF to: 0051e590 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590()
+        ;   XREF to: 0051e590 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
     ADD ESP,0x10                        ; 0051e52a
     FLD float ptr [ESP + 0x28]          ; 0051e52d
     FLD float ptr [EAX]                 ; 0051e531

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_turret_cpp_CTurret_canPickup_FUN_0054b030(undefined4 param_1,undefined4 param_2)
+; int core_turret_cpp_CTurret_canPickup_FUN_0054b030(CWeapon *param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0054b047
     PUSH EBX                            ; 0054b04b
     CALL core_weapon.cpp_CWeapon_canPickup_FUN_00554260 ; 0054b04c
-        ;   XREF to: 00554260 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_canPickup_FUN_00554260()
+        ;   XREF to: 00554260 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_canPickup_FUN_00554260(CWeapon * this_ptr, CDemonActor * picker)
     ADD ESP,0x8                         ; 0054b051
     POP EBX                             ; 0054b054
     RET                                 ; 0054b055

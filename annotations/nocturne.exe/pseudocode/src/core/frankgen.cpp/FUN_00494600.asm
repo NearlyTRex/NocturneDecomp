@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00494612
         ;   Label: LAB_00494612
     CALL core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630 ; 00494613
-        ;   XREF to: 00494630 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630()
+        ;   XREF to: 00494630 (UNCONDITIONAL_CALL)  ; CFrankenstienMachine * core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_00494630(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 00494618
     RET                                 ; 0049461b
 

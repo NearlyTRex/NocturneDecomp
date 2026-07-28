@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *param_1,float param_2,float param_3)
+; void __cdecl core_spline_cpp_computeSplineBasis_FUN_00533ce0(float *out_basis,float t,float tension)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   out_basis
+; float            Stack[0x8]:4   t
+; float            Stack[0xc]:4   tension
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

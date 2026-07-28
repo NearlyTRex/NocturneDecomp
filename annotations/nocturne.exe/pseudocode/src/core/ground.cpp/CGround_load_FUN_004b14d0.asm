@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)
+; void __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(CGround *this_ptr,char *filename)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0xcc]:1  local_cc
 ; undefined1       Stack[-0xcb]:1  local_cb
@@ -132,7 +135,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xb0]      ; 004b1571
     PUSH ECX                            ; 004b1578 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004b1579
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b157e
     MOV ESI,EAX                         ; 004b1581
     TEST EAX,EAX                        ; 004b1583
@@ -174,7 +177,7 @@ section .text
     PUSH ESI                            ; 004b15e0
         ;   Label: LAB_004b15e0
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004b15e1
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004b15e6
     SHL EAX,0x7                         ; 004b15e9
         ;   Label: LAB_004b15e9
@@ -202,7 +205,7 @@ section .text
     MOV EBP,0x5853f8                    ; 004b161f | = "data"
     LEA EDI,[ESP + 0x54]                ; 004b1624
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004b1628
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,0x5853f1                    ; 004b162d | = "rb"
     ADD ESP,0x4                         ; 004b1632
     MOV DL,0x2e                         ; 004b1635
@@ -285,7 +288,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0xac]      ; 004b16da
     PUSH EDI                            ; 004b16e1 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004b16e2
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b16e7
     MOV ESI,EAX                         ; 004b16ea
     TEST EAX,EAX                        ; 004b16ec
@@ -330,7 +333,7 @@ section .text
     PUSH EAX                            ; 004b175a
     INC ESI                             ; 004b175b
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004b175c
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV ECX,dword ptr [EBX]             ; 004b1761
     ADD ESP,0x10                        ; 004b1763
     CMP ESI,ECX                         ; 004b1766
@@ -348,14 +351,14 @@ section .text
         ;   Label: LAB_004b1780
     PUSH ESI                            ; 004b1787
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004b1788
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004b178d
     MOV EDI,dword ptr [ESP + 0xd4]      ; 004b1790
     PUSH EDI                            ; 004b1797
     MOV EBP,dword ptr [EBX + 0x28]      ; 004b1798
     PUSH EBP                            ; 004b179b
     CALL core_texlist.cpp_CTextureList_load_FUN_00544950 ; 004b179c
-        ;   XREF to: 00544950 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_CTextureList_load_FUN_00544950()
+        ;   XREF to: 00544950 (UNCONDITIONAL_CALL)  ; void core_texlist.cpp_CTextureList_load_FUN_00544950(CTextureList * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004b17a1
     ADD ESP,0xbc                        ; 004b17a4
     POP EBP                             ; 004b17aa

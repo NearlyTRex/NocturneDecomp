@@ -99,7 +99,7 @@ section .text
     PUSH 0x58faef                       ; 00504ce9 | = "if"
     PUSH EDI                            ; 00504cee
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 00504cef
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00504cf4
     TEST EAX,EAX                        ; 00504cf7
     JZ 0x00504d2f                       ; 00504cf9
@@ -116,7 +116,7 @@ section .text
     PUSH 0x58faf2                       ; 00504d08 | = "else"
     PUSH EDI                            ; 00504d0d
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 00504d0e
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00504d13
     TEST EAX,EAX                        ; 00504d16
     JZ 0x00504d43                       ; 00504d18

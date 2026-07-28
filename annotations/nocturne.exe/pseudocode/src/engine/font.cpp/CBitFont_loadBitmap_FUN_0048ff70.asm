@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(int *param_1,char *param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_0048ff70(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   first_char
 ; Local Variables:
 ; undefined        Stack[-0x440]:1  local_440
 ; undefined        Stack[-0x314]:1  local_314
@@ -37,8 +43,8 @@
 ;   crt_string.c_strupr_FUN_00566ad0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
+;   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004931b0
-;   engine_font.cpp_FUN_00490470
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -87,7 +93,7 @@ section .text
     ADD EAX,EDX                         ; 0048ffcf
     PUSH EAX                            ; 0048ffd1
     CALL crt_string.c_strupr_FUN_00566ad0 ; 0048ffd2
-        ;   XREF to: 00566ad0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_strupr_FUN_00566ad0()
+        ;   XREF to: 00566ad0 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strupr_FUN_00566ad0(char * string)
     ADD ESP,0x4                         ; 0048ffd7
     MOV EDX,dword ptr [ESP + 0x44c]     ; 0048ffda
     MOV EDI,dword ptr [ESP + 0x450]     ; 0048ffe1
@@ -98,7 +104,7 @@ section .text
     PUSH 0x58177f                       ; 0048fff0 | = "art"
     MOV dword ptr [EBX + EAX*0x4 + 0x154],EDX ; 0048fff5
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 0048fffc
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 00490001
     CMP EAX,ESI                         ; 00490004
     JGE 0x0049003b                      ; 00490006
@@ -122,7 +128,7 @@ section .text
     PUSH ESI                            ; 0049003b
         ;   Label: LAB_0049003b
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 0049003c
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     MOV EDX,dword ptr [EBX]             ; 00490041
     MOV dword ptr [EBX + EDX*0x4 + 0x144],EAX ; 00490043
     MOV EAX,dword ptr [EBX]             ; 0049004a
@@ -154,7 +160,7 @@ section .text
     PUSH EDX                            ; 00490097
     PUSH EBP                            ; 00490098
     CALL cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 ; 00490099
-        ;   XREF to: 0042d240 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_readBitmapFile_FUN_0042d240()
+        ;   XREF to: 0042d240 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_0042d240(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 0049009e
     PUSH 0x0                            ; 004900a1
     LEA EAX,[ESP + 0x234]               ; 004900a3
@@ -164,7 +170,7 @@ section .text
     PUSH 0x0                            ; 004900b3
     PUSH EBP                            ; 004900b5
     CALL crt_string.c_splitpath_FUN_00566498 ; 004900b6
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 004900bb
     PUSH 0x5817f6                       ; 004900be | = "act"
     LEA EAX,[ESP + 0x234]               ; 004900c3
@@ -175,14 +181,14 @@ section .text
     LEA EAX,[ESP + 0x13c]               ; 004900d5
     PUSH EAX                            ; 004900dc
     CALL crt_file.c_makepath_FUN_0056626c ; 004900dd
-        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; undefined crt_file.c_makepath_FUN_0056626c()
+        ;   XREF to: 0056626c (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_0056626c(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004900e2
     PUSH 0x5817fa                       ; 004900e5 | = "rb"
     LEA EAX,[ESP + 0x130]               ; 004900ea
     PUSH EAX                            ; 004900f1
     PUSH 0x5817fd                       ; 004900f2 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004900f7
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004900fc
     MOV EDI,EAX                         ; 004900ff
     TEST EAX,EAX                        ; 00490101
@@ -192,21 +198,21 @@ section .text
     PUSH EDI                            ; 00490107
         ;   Label: LAB_00490107
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00490108
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     IMUL EDX,dword ptr [EBX],0x300      ; 0049010d
     ADD ESP,0x4                         ; 00490113
     ADD EDX,EBX                         ; 00490116
     PUSH EDI                            ; 00490118
     MOV byte ptr [EDX + ESI*0x1 + 0x164],AL ; 00490119
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00490120
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     IMUL EDX,dword ptr [EBX],0x300      ; 00490125
     ADD ESP,0x4                         ; 0049012b
     ADD EDX,EBX                         ; 0049012e
     PUSH EDI                            ; 00490130
     MOV byte ptr [EDX + ESI*0x1 + 0x165],AL ; 00490131
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 00490138
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     IMUL EDX,dword ptr [EBX],0x300      ; 0049013d
     ADD ESI,0x3                         ; 00490143
     ADD EDX,EBX                         ; 00490146
@@ -217,7 +223,7 @@ section .text
         ;   XREF to: 00490107 (CONDITIONAL_JUMP)  ; LAB_00490107
     PUSH EDI                            ; 0049015a
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0049015b
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00490160
     MOV ESI,dword ptr [ESP + 0x454]     ; 00490163
         ;   Label: LAB_00490163
@@ -229,15 +235,15 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0049017b
     PUSH EAX                            ; 0049017d
     PUSH EBX                            ; 0049017e
-    CALL engine_font.cpp_FUN_00490470   ; 0049017f
-        ;   XREF to: 00490470 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_00490470()
+    CALL engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470 ; 0049017f
+        ;   XREF to: 00490470 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470()
     MOV EDX,dword ptr [EBX]             ; 00490184
     ADD ESP,0x14                        ; 00490186
     INC EDX                             ; 00490189
     PUSH EBX                            ; 0049018a
     MOV dword ptr [EBX],EDX             ; 0049018b
     CALL engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 ; 0049018d
-        ;   XREF to: 004931b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_remapPalette_FUN_004931b0()
+        ;   XREF to: 004931b0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_remapPalette_FUN_004931b0(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 00490192
     ADD ESP,0x430                       ; 00490195
     POP EBP                             ; 0049019b

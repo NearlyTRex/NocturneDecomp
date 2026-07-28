@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(int param_1,float param_2)
+; void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,float delta_time)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaronWeapon_process_FUN_004113d0 at 004113e6
@@ -75,7 +78,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00554094
     PUSH ESI                            ; 00554098
     CALL core_box.cpp_CBox_process_FUN_0041acb0 ; 00554099
-        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_process_FUN_0041acb0()
+        ;   XREF to: 0041acb0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041acb0(CBox * this_ptr, float delta_time)
     LEA EAX,[EBX + 0x20]                ; 0055409e
     MOV EDX,dword ptr [ESI]             ; 005540a1
     MOV dword ptr [EAX],EDX             ; 005540a3
@@ -98,7 +101,7 @@ section .text
     PUSH EBX                            ; 005540d1
         ;   Label: LAB_005540d1
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 005540d2
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     MOV EAX,[0x01cae0e8]                ; 005540d7 | DAT_01cae0e8
     MOV EDX,dword ptr [EBX + 0x2fc]     ; 005540dc
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 005540e2
@@ -146,7 +149,7 @@ section .text
     MOV EAX,[0x005be368]                ; 0055415a | DAT_005be368
     PUSH EAX                            ; 0055415f | DAT_01e57284
     CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970 ; 00554160
-        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970()
+        ;   XREF to: 0050a970 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 00554165
     POP ESI                             ; 00554168
     POP EBX                             ; 00554169

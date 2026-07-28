@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_FUN_0040a2e0(int param_1,undefined4 param_2)
+; void core_actor_cpp_FUN_0040a2e0(CDemonActor *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@ section .text
     MOV EBX,dword ptr [0x005bed68]      ; 0040a2ef | DAT_005bed68
     PUSH EBX                            ; 0040a2f5
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0040a2f6
-        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0040a2fb
     POP EBX                             ; 0040a2fe
     RET                                 ; 0040a2ff

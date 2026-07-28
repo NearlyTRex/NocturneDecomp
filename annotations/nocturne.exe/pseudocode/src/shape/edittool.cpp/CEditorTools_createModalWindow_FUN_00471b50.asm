@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,byte param_7)
+; void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   left
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   right
+; int              Stack[0x14]:4   bottom
+; char *           Stack[0x18]:4   text_content
+; uint             Stack[0x1c]:4   window_flags
 ; Local Variables:
 ; undefined4       Stack[-0x12e8]:4  local_12e8
 ; undefined4       Stack[-0x28]:4  local_28
@@ -65,7 +73,7 @@ section .text
     PUSH EAX                            ; 00471b7b
     MOV dword ptr [0x01bcd9b8],EDX      ; 00471b7c | DAT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00471b82
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV EDI,dword ptr [0x01bcd07c]      ; 00471b87 | DAT_01bcd07c
     ADD ESP,0x8                         ; 00471b8d
     MOV [0x01bcd9bc],EAX                ; 00471b90 | DAT_01bcd9bc
@@ -155,7 +163,7 @@ section .text
     MOV EBP,dword ptr [0x01bcd070]      ; 00471cde | DAT_01bcd070
     PUSH EBP                            ; 00471ce4
     CALL engine_font.cpp_CBitFont_wrapText_FUN_00492f30 ; 00471ce5
-        ;   XREF to: 00492f30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_wrapText_FUN_00492f30()
+        ;   XREF to: 00492f30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_wrapText_FUN_00492f30(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, ...)
     ADD ESP,0x18                        ; 00471cea
     XOR ESI,ESI                         ; 00471ced
     MOV EBX,dword ptr [ESP + 0x12cc]    ; 00471cef
@@ -190,7 +198,7 @@ section .text
     PUSH EAX                            ; 00471d35
     MOV byte ptr [EBX],0x0              ; 00471d36
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00471d39
-        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60()
+        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)
     MOV EDX,dword ptr [0x01bcd9bc]      ; 00471d3e | DAT_01bcd9bc
     ADD ESP,0x8                         ; 00471d44
     ADD EDX,EAX                         ; 00471d47
@@ -238,7 +246,7 @@ section .text
         ;   XREF to: 00471dce (CONDITIONAL_JUMP)  ; LAB_00471dce
     NOP                                 ; 00471ddf
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00471de0
-        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_lockFrame_FUN_005322e0()
+        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
         ;   Label: LAB_00471de0
     MOV EDX,dword ptr [0x005b761c]      ; 00471de5 | DAT_005b761c
     MOV ECX,dword ptr [0x005b7624]      ; 00471deb | DAT_005b7624
@@ -294,7 +302,7 @@ section .text
     PUSH EBX                            ; 00471e7c
     MOV dword ptr [ESP + 0x12d8],EAX    ; 00471e7d
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00471e84
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00471e89
     MOV EDX,dword ptr [ESP + 0x12cc]    ; 00471e8c
     MOV dword ptr [EDX + 0x1c8],EAX     ; 00471e93
@@ -406,7 +414,7 @@ section .text
     MOV dword ptr [ESP + 0x1300],EBP    ; 00472037
     MOV dword ptr [ESP + 0x1304],ESI    ; 0047203e
     CALL engine_2d.c_setupViewportAndClipping_FUN_00401e30 ; 00472045
-        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_setupViewportAndClipping_FUN_00401e30()
+        ;   XREF to: 00401e30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401e30(int left, int top, int right, int bottom)
     ADD ESP,0x10                        ; 0047204a
     ADD ESP,0x12d8                      ; 0047204d
     POP EBP                             ; 00472053

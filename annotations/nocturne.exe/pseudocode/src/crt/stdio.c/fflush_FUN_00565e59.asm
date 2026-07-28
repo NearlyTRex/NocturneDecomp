@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_fflush_FUN_00565e59(int *param_1)
+; void __cdecl crt_stdio_c_fflush_FUN_00565e59(_FILE *stream)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004a3b90 at 004a3f6a
 ;   core_game.cpp_FUN_004a4170 at 004a4511
-;   engine_dosio.cpp_FUN_00456b20 at 00456b38
+;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b38
 ;
 ; Called Functions:
-;   FUN_0056b327
+;   crt_stdio.c_reportStreamError_FUN_0056b327
 ;   FUN_0056cd52
 ;
 ; *****************************************************************************
@@ -39,8 +41,8 @@ section .text
     PUSH 0x2                            ; 00565e7b
         ;   Label: LAB_00565e7b
     PUSH EAX                            ; 00565e7d
-    CALL FUN_0056b327                   ; 00565e7e
-        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b327()
+    CALL crt_stdio.c_reportStreamError_FUN_0056b327 ; 00565e7e
+        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_0056b327(FileEmbeddedData * embedded_data, uint error_flags)
         ;   Label: LAB_00565e7e
     ADD ESP,0x8                         ; 00565e83
     POP EBX                             ; 00565e86

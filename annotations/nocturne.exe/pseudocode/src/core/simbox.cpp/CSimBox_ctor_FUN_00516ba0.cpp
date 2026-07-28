@@ -1,43 +1,48 @@
 // Name: core_simbox.cpp_CSimBox_ctor_FUN_00516ba0
 // Address: 00516ba0
 // Address Range: [[00516ba0, 00516c5e]]
-// Convention: unknown
-// Signature: int core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(CSimBox *this_ptr)
 
 #include "nocturne.h"
 
-int core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(uint param_1)
+CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(CSimBox *this_ptr)
 
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
+  CKeyFramedModelInstance *pCVar3;
+  CBox *pCVar4;
+  char *pcVar5;
+  float *pfVar6;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  iVar2 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar2 + 0x200);
-  *(byte ***)(iVar2 + -0x204) = &PTR_core_simbox_cpp_CSimBox_setup_FUN_00516c60_005a1d74;
+  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+  pCVar4 = core_box_cpp_CBox_ctor_FUN_0041a610((CBox *)(pCVar3[1].model_name + 0xc));
+  pCVar4[-1].linear_velocity_local.z =
+       (float)&PTR_core_simbox_cpp_CSimBox_setup_FUN_00516c60_005a1d74;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x200,"question.kfm");
-  pcVar3 = "none";
-  pcVar4 = (char *)(iVar2 + -0x7c);
+            ((CKeyFramedModelInstance *)&pCVar4[-1].linear_velocity_temp,"question.kfm");
+  pcVar5 = "none";
+  pfVar6 = &pCVar4[-1].scrape_points[5].raytrace_intersection;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar5;
+    *(char *)pfVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    *(char *)((int)pfVar6 + 1) = cVar1;
+    pfVar6 = (float *)((int)pfVar6 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + -0x10) = 0;
-  *(uint *)(iVar2 + -0x14) = *(uint *)(iVar2 + -0x10);
-  *(uint *)(iVar2 + -0x18) = *(uint *)(iVar2 + -0x14);
-  *(uint *)(iVar2 + -4) = 0;
-  *(uint *)(iVar2 + -8) = *(uint *)(iVar2 + -4);
-  *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -8);
-  *(uint *)(iVar2 + -0x84) = 0;
-  *(uint *)(iVar2 + -0x80) = 0x42c80000;
-  return iVar2 + -0x350;
+  pCVar4[-1].scrape_points[7].raytrace_normal.x = 0.0;
+  pCVar4[-1].scrape_points[7].raytrace_intersection = pCVar4[-1].scrape_points[7].raytrace_normal.x;
+  pCVar4[-1].scrape_points[7].previous_position.z =
+       pCVar4[-1].scrape_points[7].raytrace_intersection;
+  pCVar4[-1].is_valid = 0;
+  pCVar4[-1].scrape_points[7].raytrace_normal.z = (float)pCVar4[-1].is_valid;
+  pCVar4[-1].scrape_points[7].raytrace_normal.y = pCVar4[-1].scrape_points[7].raytrace_normal.z;
+  pCVar4[-1].scrape_points[5].previous_position.y = 0.0;
+  pCVar4[-1].scrape_points[5].previous_position.z = 100.0;
+  return (CSimBox *)&pCVar4[-2].scrape_points[3].transformed_position.y;
 }

@@ -2,61 +2,60 @@
 // Address: 00480550
 // Address Range: [[00480550, 004806c2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(int param_1,char *param_2,float param_3)
+// Signature: void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(CEventList *this_ptr,char *name,float duration)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(int param_1,char *param_2,float param_3)
+void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(CEventList *this_ptr,char *name,float duration)
 
 {
-  int iVar1;
-  char cVar2;
+  char cVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
+  char (*pacVar4) [32];
   
-  if ((double)param_3 < 0.0) {
+  if ((double)duration < 0.0) {
     PTR_01cc4800 = "..\\core\\event.cpp";
     INT_01cc4804 = 0xa5d;
-    core_main_c_FUN_004c8440("CEventList::setTimerEvent - invalid duration for %s: %f",param_2,(double)param_3);
+    core_main_c_FUN_004c8440("CEventList::setTimerEvent - invalid duration for %s: %f",name,(double)duration);
   }
-  iVar3 = core_event_cpp_CEventList_findTimer_FUN_004808b0(param_1,param_2);
-  if (iVar3 < 0) {
-    if (0.0 < param_3) {
-      if (9 < *(int *)(param_1 + 0x3210)) {
+  iVar2 = core_event_cpp_CEventList_findTimer_FUN_004808b0(this_ptr,name);
+  if (iVar2 < 0) {
+    if (0.0 < duration) {
+      if (9 < (this_ptr->timers).count) {
         PTR_01cc4800 = "..\\core\\event.cpp";
         INT_01cc4804 = 0xa7e;
         core_main_c_FUN_004c8440("CEventList::setTimerEvent - too many timers!");
       }
-      pcVar5 = (char *)(*(int *)(param_1 + 0x3210) * 0x20 + param_1 + 0x3214);
+      pacVar4 = (this_ptr->timers).names + (this_ptr->timers).count;
       do {
-        cVar2 = *param_2;
-        *pcVar5 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = param_2[1];
-        param_2 = param_2 + 2;
-        pcVar5[1] = cVar2;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar2 != '\0');
-      *(float *)(param_1 + 0x3354 + *(int *)(param_1 + 0x3210) * 4) = param_3;
-      *(int *)(param_1 + 0x3210) = *(int *)(param_1 + 0x3210) + 1;
+        cVar1 = *name;
+        (*pacVar4)[0] = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = name[1];
+        name = name + 2;
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [32])(*pacVar4 + 2);
+      } while (cVar1 != '\0');
+      (this_ptr->timers).durations[(this_ptr->timers).count] = duration;
+      (this_ptr->timers).count = (this_ptr->timers).count + 1;
       return;
     }
   }
   else {
-    iVar1 = iVar3 * 4;
-    if (param_3 <= 0.0) {
-      iVar4 = *(int *)(param_1 + 0x3210) + -1;
-      *(int *)(param_1 + 0x3210) = iVar4;
+    if (duration <= 0.0) {
+      iVar3 = (this_ptr->timers).count + -1;
+      (this_ptr->timers).count = iVar3;
       memmove
-                (param_1 + 0x3214 + iVar3 * 0x20,iVar3 * 0x20 + 0x20 + param_1 + 0x3214,
-                 (iVar4 - iVar3) * 0x20);
+                ((this_ptr->timers).names + iVar2,
+                 ((STimerBlock *)(&this_ptr->persistent_events + 1))->names + iVar2 + 1,
+                 (iVar3 - iVar2) * 0x20);
       memmove
-                (param_1 + 0x3354 + iVar1,iVar1 + 4 + param_1 + 0x3354,
-                 (*(int *)(param_1 + 0x3210) - iVar3) * 4);
+                ((this_ptr->timers).durations + iVar2,(this_ptr->timers).durations + iVar2 + 1,
+                 ((this_ptr->timers).count - iVar2) * 4);
       return;
     }
-    *(float *)(iVar1 + 0x3354 + param_1) = param_3;
+    (this_ptr->timers).durations[iVar2] = duration;
   }
   return;
 }

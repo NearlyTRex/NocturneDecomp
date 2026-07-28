@@ -11,6 +11,8 @@
 void core_mirror_cpp_FUN_004d7db0(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,0x20,&g_CVectorTypeInfo_005993b0);
   return;
 }

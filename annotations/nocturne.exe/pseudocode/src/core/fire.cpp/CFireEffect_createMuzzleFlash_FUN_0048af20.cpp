@@ -2,13 +2,13 @@
 // Address: 0048af20
 // Address Range: [[0048af20, 0048af69]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(uint param_1,uint param_2,uint param_3)
+void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
   int iVar1;
@@ -18,6 +18,7 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(uint param
   if (0x13 < _DAT_01c4e954) {
     _DAT_01c4e954 = 0;
   }
-  core_fire_cpp_CMuzzleFlash_init_FUN_00484e10(&DAT_01c4e958 + iVar1,param_2,param_3);
+  core_fire_cpp_CMuzzleFlash_init_FUN_00484e10
+            ((CMuzzleFlash *)(&DAT_01c4e958 + iVar1),position,rotation_matrix);
   return;
 }

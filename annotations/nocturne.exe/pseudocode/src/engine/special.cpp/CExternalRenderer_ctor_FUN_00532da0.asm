@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_special_cpp_CExternalRenderer_ctor_FUN_00532da0(int param_1)
+; void __cdecl engine_special_cpp_CExternalRenderer_ctor_FUN_00532da0(CExternalRenderer *this_ptr)
 ;
+; Parameters:
+; CExternalRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_special.cpp_FUN_00530e60 at 00530ebb
@@ -22,7 +24,7 @@ section .text
     PUSH 0x0                            ; 00532daa
     PUSH EBX                            ; 00532dac
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00532dad
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV word ptr [EBX + 0x200],0x100    ; 00532db2
     MOV dword ptr [EBX + 0x208],0x0     ; 00532dbb
     MOV AH,byte ptr [EBX + 0x208]       ; 00532dc5

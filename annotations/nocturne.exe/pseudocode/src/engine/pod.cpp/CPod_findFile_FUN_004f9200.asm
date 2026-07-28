@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,undefined4 param_2)
+; undefined4 engine_pod_cpp_CPod_findFile_FUN_004f9200(int *param_1,char *param_2)
 ;
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x4]       ; 004f9217
     PUSH EAX                            ; 004f921a
     CALL engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150 ; 004f921b
-        ;   XREF to: 004f8150 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150()
+        ;   XREF to: 004f8150 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f9220
     TEST EAX,EAX                        ; 004f9223
     JGE 0x004f9238                      ; 004f9225

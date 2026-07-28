@@ -9,12 +9,12 @@
 void core_smiley_cpp_FUN_0051fcc0(void)
 
 {
-  int iVar1;
+  CSmiley *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd68);
-  if (iVar1 == 0) {
+  this_ptr = (CSmiley *)FUN_0056497c(0xbd68);
+  if (this_ptr == (CSmiley *)0x0) {
     return;
   }
-  core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(iVar1);
+  core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(this_ptr);
   return;
 }

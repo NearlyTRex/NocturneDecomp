@@ -5,28 +5,28 @@
 
 // Original: core_spline.cpp_computeSplineBasis_FUN_00533ce0
 // Address: 00533ce0
-void __cdecl computeSplineBasis(float *param_1,float param_2,float param_3);
+void __cdecl computeSplineBasis(float *out_basis,float t,float tension);
 
-// Original: core_spline.cpp_FUN_00533e70
+// Original: core_spline.cpp_evaluateSplineScalar_FUN_00533e70
 // Address: 00533e70
-float FUN_00533e70(void);
+float evaluateSplineScalar(void);
 
-// Original: core_spline.cpp_FUN_00533eb0
+// Original: core_spline.cpp_evaluateSplintInt_FUN_00533eb0
 // Address: 00533eb0
-int FUN_00533eb0(float *param_1,int param_2,int param_3,int param_4,int param_5);
+int evaluateSplintInt(float *param_1,int param_2,int param_3,int param_4,int param_5);
 
 // Original: core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10
 // Address: 00533f10
-float * __cdecl evaluateSplinePoint3D(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6);
+CVector3f * __cdecl evaluateSplinePoint3D(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3);
 
-// Original: core_spline.cpp_FUN_00534030
+// Original: core_spline.cpp_evaluateSplineTangentScalar_FUN_00534030
 // Address: 00534030
-float FUN_00534030(void);
+float evaluateSplineTangentScalar(void);
 
-// Original: core_spline.cpp_FUN_00534070
+// Original: core_spline.cpp_evaluateSplineTangentInt_FUN_00534070
 // Address: 00534070
-int FUN_00534070(int param_1,int param_2,int param_3,int param_4,int param_5);
+int evaluateSplineTangentInt(int param_1,int param_2,int param_3,int param_4,int param_5);
 
 // Original: core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0
 // Address: 005340d0
-float * __cdecl evaluateSplineTangent3D(int param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6);
+CVector3f * __cdecl evaluateSplineTangent3D(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3);

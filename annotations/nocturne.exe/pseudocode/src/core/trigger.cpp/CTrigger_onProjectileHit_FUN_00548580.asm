@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(int param_1)
+; void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
 ;   core_crossbow.cpp_FUN_0043d1c0 at 0043d53d

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(int *param_1,int *param_2,int *param_3)
+; void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex_a
+; SRenderVertex *  Stack[0x8]:4   vertex_b
+; SRenderVertex *  Stack[0xc]:4   vertex_out
 ;
 ; XREF[3]:
 ;   core_xform.cpp_FUN_0055de8e at 0055defc

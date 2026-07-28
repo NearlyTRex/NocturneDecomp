@@ -2,69 +2,61 @@
 // Address: 004f8da0
 // Address Range: [[004f8da0, 004f8ea5]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(int *param_1,char *param_2)
+// Signature: int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,CPodSearchContext *search_context)
 
 #include "nocturne.h"
 
-uint __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(int *param_1,char *param_2)
+int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,CPodSearchContext *search_context)
 
 {
   char cVar1;
-  int iVar2;
+  CPodFile *pCVar2;
   int iVar3;
   uint *puVar4;
   char *pcVar5;
-  char *pcVar6;
+  CPodSearchContext *pCVar6;
   
-  if (*(int *)(param_2 + 0x314) < *param_1) {
+  if (search_context->current_pod_index < this_ptr->pod_file_count) {
     do {
-      if (*(int *)(param_2 + 0x314) < 0) {
-        param_2[0x314] = '\0';
-        param_2[0x315] = '\0';
-        param_2[0x316] = '\0';
-        param_2[0x317] = '\0';
+      if (search_context->current_pod_index < 0) {
+        search_context->current_pod_index = 0;
       }
-      iVar2 = param_1[*(int *)(param_2 + 0x314) + 1];
+      pCVar2 = this_ptr->pod_files[search_context->current_pod_index];
       while( true ) {
-        if (*(int *)(param_2 + 0x318) < 0) {
-          param_2[0x318] = '\0';
-          param_2[0x319] = '\0';
-          param_2[0x31a] = '\0';
-          param_2[0x31b] = '\0';
+        if (search_context->current_file_index < 0) {
+          search_context->current_file_index = 0;
         }
-        if (*(int *)(iVar2 + 0x208) <= *(int *)(param_2 + 0x318)) break;
-        puVar4 = (uint *)(*(int *)(iVar2 + 0x20c) + *(int *)(param_2 + 0x318) * 0x14);
-        iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(param_2 + 0x214,*puVar4,0);
+        if (*(int *)pCVar2->author_info <= search_context->current_file_index) break;
+        puVar4 = (uint *)
+                 (*(int *)(pCVar2->author_info + 4) + search_context->current_file_index * 0x14);
+        iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
+                          (search_context->search_pattern,(char *)*puVar4,0);
         if (iVar3 != 0) {
           pcVar5 = (char *)*puVar4;
-          pcVar6 = param_2;
+          pCVar6 = search_context;
           goto LAB_004f8e64;
         }
-        *(int *)(param_2 + 0x318) = *(int *)(param_2 + 0x318) + 1;
+        search_context->current_file_index = search_context->current_file_index + 1;
       }
-      iVar2 = *(int *)(param_2 + 0x314);
-      param_2[0x318] = '\0';
-      param_2[0x319] = '\0';
-      param_2[0x31a] = '\0';
-      param_2[0x31b] = '\0';
-      *(int *)(param_2 + 0x314) = iVar2 + 1;
-    } while (*(int *)(param_2 + 0x314) < *param_1);
+      search_context->current_file_index = 0;
+      search_context->current_pod_index = search_context->current_pod_index + 1;
+    } while (search_context->current_pod_index < this_ptr->pod_file_count);
   }
-  *param_2 = '\0';
+  (search_context->current_file_info).found_path[0] = '\0';
   return 0;
   while( true ) {
     cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    (pCVar6->current_file_info).found_path[1] = cVar1;
+    pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).found_path + 2);
     if (cVar1 == '\0') break;
 LAB_004f8e64:
     cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    (pCVar6->current_file_info).found_path[0] = cVar1;
     if (cVar1 == '\0') break;
   }
   engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0
-            (iVar2,*(uint *)(param_2 + 0x318),param_2);
-  *(int *)(param_2 + 0x318) = *(int *)(param_2 + 0x318) + 1;
+            (pCVar2,search_context->current_file_index,search_context);
+  search_context->current_file_index = search_context->current_file_index + 1;
   return 1;
 }

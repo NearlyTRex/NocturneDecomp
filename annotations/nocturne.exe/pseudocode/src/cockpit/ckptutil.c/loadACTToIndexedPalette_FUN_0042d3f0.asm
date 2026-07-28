@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(undefined4 param_1,undefined1 *param_2)
+; void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(char *filename,uchar *output_palette)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; uchar *          Stack[0x8]:4   output_palette
 ;
 ; XREF[4]:
-;   cockpit_ckptutil.c_FUN_0042d370 at 0042d389
+;   cockpit_ckptutil.c_applyActPalette_FUN_0042d370 at 0042d389
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00 at 004f4a11
 ;   cockpit_pkbitmap.cpp_FUN_004f5110 at 004f5210
-;   cockpit_pkbmpset.cpp_FUN_004f5b20 at 004f5b31
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_004f5b20 at 004f5b31
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
@@ -27,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x314]     ; 0042d3fc
     PUSH EDX                            ; 0042d403
     CALL cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 ; 0042d404
-        ;   XREF to: 0042d480 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480()
+        ;   XREF to: 0042d480 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480(char * base_filename, uchar * output_buffer)
     ADD ESP,0x8                         ; 0042d409
     MOV ECX,ESP                         ; 0042d40c
     MOV EBX,dword ptr [ESP + 0x314]     ; 0042d40e

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(undefined4 *param_1)
+; void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(CPodFile *this_ptr)
 ;
+; Parameters:
+; CPodFile *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 at 004f7ac6

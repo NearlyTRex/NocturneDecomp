@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0056be50
+;   crt_math.c_fdiv_FUN_0056be50
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     FLD ST0                             ; 0056c1bf
     FSTP extended double ptr [ESP]      ; 0056c1c1
     FSTP extended double ptr [ESP + 0x20] ; 0056c1c4
-    CALL FUN_0056be50                   ; 0056c1c8
-        ;   XREF to: 0056be50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056be50()
+    CALL crt_math.c_fdiv_FUN_0056be50   ; 0056c1c8
+        ;   XREF to: 0056be50 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_fdiv_FUN_0056be50(float10 dividend, float10 divisor)
     FXCH ST3                            ; 0056c1cd
     FLD extended double ptr [ESP + 0x20] ; 0056c1cf
     ADD ESP,0x2c                        ; 0056c1d3

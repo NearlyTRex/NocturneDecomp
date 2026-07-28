@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_spike_cpp_CSpike_ctor_FUN_00533020(undefined4 param_1)
+; CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00533020(CSpike *this_ptr)
 ;
+; Parameters:
+; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_spike.cpp_FUN_00532ff0 at 00533003
@@ -46,7 +48,7 @@ section .text
     ADD EAX,0x150                       ; 00533030
     PUSH EAX                            ; 00533035
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00533036
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0053303b
     LEA EBX,[EAX + 0xfffffeb0]          ; 0053303e
     PUSH 0x595011                       ; 00533044 | = "bgate.kfm"
@@ -55,7 +57,7 @@ section .text
     MOV ESI,0x59501b                    ; 00533050 | = "none"
     MOV dword ptr [EBX + 0x14c],0x5a2334 ; 00533055 | PTR_core_spike.cpp_CSpike_setup_FUN_00533160_005a2334
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0053305f
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x0     ; 00533064
     ADD ESP,0x8                         ; 0053306e
     MOV dword ptr [EBX + 0x2d0],0x0     ; 00533071

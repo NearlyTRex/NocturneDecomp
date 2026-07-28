@@ -2,11 +2,11 @@
 // Address: 0051e9e0
 // Address Range: [[0051e9e0, 0051ed22]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(int param_1,float *param_2)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(CDeformableModelInstance *this_ptr,CVector3f *point)
 
 #include "nocturne.h"
 
-int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(int param_1,float *param_2)
+int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0(CDeformableModelInstance *this_ptr,CVector3f *point)
 
 {
   int iVar1;
@@ -18,69 +18,76 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_0051e
   float fVar7;
   float fVar8;
   float fVar9;
-  int iVar10;
-  int iVar11;
-  int iVar12;
-  int iVar13;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  CSkeleton *pCVar13;
+  CMatrix3x4f *pCVar14;
+  CMatrix3x4f *pCVar15;
+  int iVar16;
   int local_4c;
   float local_40;
-  int local_3c;
+  CSkeleton *local_3c;
   
-  iVar13 = 0;
-  iVar10 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);
+  iVar16 = 0;
+  pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(this_ptr);
   local_40 = 1e+30;
   local_4c = 0;
-  if (0 < *(int *)(iVar10 + 0x28558)) {
-    iVar12 = param_1 + 0xe80;
-    local_3c = iVar10;
+  if (0 < pCVar13->bone_count) {
+    pCVar14 = (this_ptr->bone_transform).bone_world_matrices;
+    pCVar15 = pCVar14;
+    local_3c = pCVar13;
     do {
-      iVar1 = *(int *)(local_3c + 0x2857c);
+      iVar1 = local_3c->bone_list[0].parent_index;
       if (-1 < iVar1) {
-        fVar2 = *(float *)(iVar12 + 0xc);
-        fVar3 = *(float *)(iVar12 + 0x1c);
-        fVar4 = *(float *)(iVar12 + 0x2c);
-        iVar11 = iVar1 * 0x30 + param_1 + 0xe80;
-        fVar5 = *(float *)(iVar11 + 0xc) - fVar2;
-        fVar6 = *(float *)(iVar11 + 0x1c) - fVar3;
-        fVar8 = *(float *)(iVar11 + 0x2c) - fVar4;
-        fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);
-        if (fVar7 <= 0.0) {
+        fVar2 = pCVar15->m[0].z;
+        fVar3 = pCVar15->m[1].z;
+        fVar4 = pCVar15->m[2].z;
+        fVar5 = pCVar14[iVar1].m[0].z;
+        fVar6 = pCVar14[iVar1].m[1].z;
+        fVar8 = fVar5 - fVar2;
+        fVar9 = fVar6 - fVar3;
+        fVar7 = pCVar14[iVar1].m[2].z;
+        fVar11 = fVar7 - fVar4;
+        fVar10 = SQRT(fVar11 * fVar11 + fVar8 * fVar8 + fVar9 * fVar9);
+        if (fVar10 <= 0.0) {
 LAB_0051ebc8:
-          fVar2 = (param_2[1] - fVar3) * (param_2[1] - fVar3) +
-                  (*param_2 - fVar2) * (*param_2 - fVar2);
-          fVar4 = param_2[2] - fVar4;
+          fVar2 = point->x - fVar2;
+          fVar3 = point->y - fVar3;
+          fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
+          fVar7 = point->z - fVar4;
         }
         else {
-          fVar9 = 1.0 / fVar7;
-          fVar5 = fVar5 * fVar9;
-          fVar6 = fVar6 * fVar9;
-          fVar8 = fVar8 * fVar9;
-          fVar9 = (param_2[2] * fVar8 + *param_2 * fVar5 + param_2[1] * fVar6) -
-                  (fVar4 * fVar8 + fVar2 * fVar5 + fVar3 * fVar6);
-          if (fVar9 <= 0.0) goto LAB_0051ebc8;
-          if (fVar9 < fVar7) {
-            fVar2 = *param_2 - (fVar2 + fVar5 * fVar9);
-            fVar3 = param_2[1] - (fVar3 + fVar6 * fVar9);
+          fVar12 = 1.0 / fVar10;
+          fVar8 = fVar8 * fVar12;
+          fVar9 = fVar9 * fVar12;
+          fVar11 = fVar11 * fVar12;
+          fVar12 = (point->z * fVar11 + point->x * fVar8 + point->y * fVar9) -
+                   (fVar4 * fVar11 + fVar2 * fVar8 + fVar3 * fVar9);
+          if (fVar12 <= 0.0) goto LAB_0051ebc8;
+          if (fVar12 < fVar10) {
+            fVar2 = point->x - (fVar2 + fVar8 * fVar12);
+            fVar3 = point->y - (fVar3 + fVar9 * fVar12);
             fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
-            fVar4 = param_2[2] - (fVar4 + fVar8 * fVar9);
+            fVar7 = point->z - (fVar4 + fVar11 * fVar12);
           }
           else {
-            fVar2 = *param_2 - *(float *)(iVar11 + 0xc);
-            fVar3 = param_2[1] - *(float *)(iVar11 + 0x1c);
-            fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
-            fVar4 = param_2[2] - *(float *)(iVar11 + 0x2c);
+            fVar5 = point->x - fVar5;
+            fVar6 = point->y - fVar6;
+            fVar2 = fVar6 * fVar6 + fVar5 * fVar5;
+            fVar7 = point->z - fVar7;
           }
         }
-        fVar2 = SQRT(fVar4 * fVar4 + fVar2);
+        fVar2 = SQRT(fVar7 * fVar7 + fVar2);
         if (fVar2 < local_40) {
           local_4c = iVar1;
           local_40 = fVar2;
         }
       }
-      local_3c = local_3c + 0x24;
-      iVar13 = iVar13 + 1;
-      iVar12 = iVar12 + 0x30;
-    } while (iVar13 < *(int *)(iVar10 + 0x28558));
+      local_3c = (CSkeleton *)((local_3c->motion_list).state_names[1] + 2);
+      iVar16 = iVar16 + 1;
+      pCVar15 = pCVar15 + 1;
+    } while (iVar16 < pCVar13->bone_count);
   }
   return local_4c;
 }

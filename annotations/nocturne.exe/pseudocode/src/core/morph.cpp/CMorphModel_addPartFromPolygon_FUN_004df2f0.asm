@@ -1,15 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8)
+; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; CVector3i *      Stack[0xc]:4   vertex_data
+; int              Stack[0x10]:4   poly_count
+; SMRGLHeaderPrimitive * Stack[0x14]:4   poly_data
+; int              Stack[0x18]:4   poly_stride
+; SMRGLTextureLod * Stack[0x1c]:4   texture_list
+; int *            Stack[0x20]:4   texture_index_list
 ;
 ; XREF[5]:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610 at 004df64e
+;   core_morph.cpp_CMorph_addQuadPartToModel_FUN_004e0240 at 004e0280
+;   core_morph.cpp_CMorph_addTriPartToModel_FUN_004e01f0 at 004e0230
+;   core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_004e0110 at 004e0159
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0 at 004e00f9
-;   core_morph.cpp_FUN_004e0110 at 004e0159
-;   core_morph.cpp_FUN_004e01f0 at 004e0230
-;   core_morph.cpp_FUN_004e0240 at 004e0280
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058aa7c
@@ -22,7 +31,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004c8440
 ;   core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660
-;   core_morph.cpp_FUN_004df800
+;   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800
 ;   crt_memory.c_realloc_FUN_00564a70
 ;
 ; *****************************************************************************
@@ -91,7 +100,7 @@ section .text
     PUSH ECX                            ; 004df385
     MOV dword ptr [ESI + 0x5c],EDX      ; 004df386
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004df389
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV dword ptr [ESI + 0x58],EAX      ; 004df38e
     MOV EAX,dword ptr [ESI + 0x5c]      ; 004df391
     SHL EAX,0x2                         ; 004df394
@@ -103,7 +112,7 @@ section .text
     MOV EBX,dword ptr [ESI + 0x60]      ; 004df3a2
     PUSH EBX                            ; 004df3a5
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004df3a6
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004df3ab
     MOV EDI,dword ptr [ESI]             ; 004df3ae
     MOV dword ptr [ESI + 0x60],EAX      ; 004df3b0
@@ -136,7 +145,7 @@ section .text
     PUSH EAX                            ; 004df3f3
     PUSH ESI                            ; 004df3f4
     CALL core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660 ; 004df3f5
-        ;   XREF to: 004df660 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660()
+        ;   XREF to: 004df660 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel * this_ptr, int part_index, CVector3i * vertex_buffer, int start_offset, ...)
     ADD ESP,0x14                        ; 004df3fa
     TEST EBP,EBP                        ; 004df3fd
         ;   Label: LAB_004df3fd
@@ -179,8 +188,8 @@ section .text
     DEC EAX                             ; 004df44f
     PUSH EAX                            ; 004df450
     PUSH ESI                            ; 004df451
-    CALL core_morph.cpp_FUN_004df800    ; 004df452
-        ;   XREF to: 004df800 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_004df800()
+    CALL core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800 ; 004df452
+        ;   XREF to: 004df800 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMorphModel * this_ptr, int part_index, SMRGLHeaderPrimitive * poly_data, int poly_stride, ...)
     ADD ESP,0x20                        ; 004df457
     POP EBP                             ; 004df45a
     POP EDI                             ; 004df45b

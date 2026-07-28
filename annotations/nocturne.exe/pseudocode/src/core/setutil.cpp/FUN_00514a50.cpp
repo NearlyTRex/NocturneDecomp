@@ -2,11 +2,11 @@
 // Address: 00514a50
 // Address Range: [[00514a50, 00514a61]]
 // Convention: unknown
-// Signature: undefined4 core_setutil_cpp_FUN_00514a50(undefined4 param_1)
+// Signature: C3DSLight * core_setutil_cpp_FUN_00514a50(C3DSLight *param_1)
 
 #include "nocturne.h"
 
-uint core_setutil_cpp_FUN_00514a50(uint param_1)
+C3DSLight * core_setutil_cpp_FUN_00514a50(C3DSLight *param_1)
 
 {
   core_setutil_cpp_C3DSLight_reset_FUN_00515800(param_1);

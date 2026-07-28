@@ -77,7 +77,7 @@ section .text
     LEA EAX,[ESP + 0x1ac]               ; 0052abb6
     PUSH EAX                            ; 0052abbd
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052abbe
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0052abc3
     MOV EDX,0x1                         ; 0052abc6
     MOV EAX,dword ptr [ESP + 0x1d4]     ; 0052abcb
@@ -107,7 +107,7 @@ section .text
     MOV word ptr [ESP + 0x1be],DI       ; 0052ac31
     MOV dword ptr [ESP + 0x1b8],ECX     ; 0052ac39
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052ac40
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     LEA EAX,[ESP + 0x1b0]               ; 0052ac45
     ADD ESP,0xc                         ; 0052ac4c
     MOV dword ptr [ESP + 0x1a0],EAX     ; 0052ac4f
@@ -162,7 +162,7 @@ section .text
     PUSH EAX                            ; 0052acf3
         ;   Label: LAB_0052acf3
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052acf4
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052acf9
     PUSH EAX                            ; 0052acfc
     PUSH 0x594257                       ; 0052acfd | = "Create secondary buffer"

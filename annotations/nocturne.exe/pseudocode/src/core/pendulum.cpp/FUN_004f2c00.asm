@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004f2c12
         ;   Label: LAB_004f2c12
     CALL core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30 ; 004f2c13
-        ;   XREF to: 004f2c30 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30()
+        ;   XREF to: 004f2c30 (UNCONDITIONAL_CALL)  ; CPendulum * core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30(CPendulum * this_ptr)
     ADD ESP,0x4                         ; 004f2c18
     RET                                 ; 004f2c1b
 

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_memory_c___arrinit_FUN_005644a7(int param_1,uint param_2,int param_3)
+; void * __cdecl crt_memory_c___arrinit_FUN_005644a7(void *array_start,int element_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   array_start
+; int              Stack[0x8]:4   element_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

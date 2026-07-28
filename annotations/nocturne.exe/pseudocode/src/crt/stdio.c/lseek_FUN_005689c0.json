@@ -1,0 +1,235 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 61,
+    "cross_reference_count": 9,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 87
+  },
+  "cross_references": [
+    {
+      "addr": "00568890",
+      "from_addr": "00568959",
+      "name": "FUN_00568890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571fd1",
+      "from_addr": "00572134",
+      "name": "crt_fstream.cpp_filebuf_overflow_FUN_00571fd1",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571efe",
+      "from_addr": "00571fae",
+      "name": "crt_fstream.cpp_filebuf_pbackfail_FUN_00571efe",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572338",
+      "from_addr": "0057236f",
+      "name": "crt_fstream.cpp_filebuf_seekoff_FUN_00572338",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005723ae",
+      "from_addr": "00572417",
+      "name": "crt_fstream.cpp_filebuf_sync_FUN_005723ae",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572f40",
+      "from_addr": "00572f55",
+      "name": "crt_io.c_extend_file_for_append_FUN_00572f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056582c",
+      "from_addr": "005658b7",
+      "name": "crt_stdio.c_fseek_FUN_0056582c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005733e0",
+      "from_addr": "00573593",
+      "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005634b0",
+      "from_addr": "00563508",
+      "name": "crt_unknown.c_fclose_FUN_005634b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005689c0",
+    "address_range": [
+      [
+        "005689c0",
+        "00568a49"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_lseek_FUN_005689c0",
+    "signature": "int __watcallStack crt_stdio_c_lseek_FUN_005689c0(int file_handle_index,long distance_to_move,int move_method)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056c73c",
+      "is_variadic": false,
+      "name": "crt_errno.c___set_errno_FUN_0056c73c"
+    },
+    {
+      "addr": "00568e80",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
+    },
+    {
+      "addr": "005671e4",
+      "is_variadic": false,
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+    },
+    {
+      "addr": "0056f220",
+      "is_variadic": false,
+      "name": "FUN_0056f220"
+    },
+    {
+      "addr": "0056f278",
+      "is_variadic": false,
+      "name": "FUN_0056f278"
+    },
+    {
+      "addr": "EXTERNAL:00000085",
+      "is_variadic": false,
+      "name": "SetFilePointer"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005755a0",
+      "name": "PTR_SetFilePointer_005755a0",
+      "type": "void*",
+      "value": "00175ff4"
+    },
+    {
+      "addr": "005c1ac0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1ac4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4",
+      "type": "void*",
+      "value": "005671e4"
+    },
+    {
+      "addr": "005c1f54",
+      "name": "DAT_005c1f54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1f90",
+      "name": "DAT_005c1f90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.326923076923077,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 4,
+      "CALLIND": 3,
+      "CBRANCH": 5,
+      "COPY": 45,
+      "INT_ADD": 18,
+      "INT_AND": 24,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 11,
+      "INT_SUB": 23,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 225
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "distance_to_move",
+        "offset": 8,
+        "size": 4,
+        "type": "long"
+      },
+      {
+        "is_param": true,
+        "name": "move_method",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file_handle_index);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005c1f54",
+      "severity": "mild",
+      "text": "DVar2 = SetFilePointer(*(HANDLE *)(DAT_005c1f54 + file_handle_index * 4),distance_to_move,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file_handle_index);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -9,8 +9,9 @@
 int core_fire_cpp_CCrater_ctor_FUN_0048ca50(int param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1 + 0x1c,3,&g_CVectorTypeInfo_005993b0);
-  return iVar1 + -0x1c;
+  pvVar1 = __arrinit
+                     ((void *)(param_1 + 0x1c),3,&g_CVectorTypeInfo_005993b0);
+  return (int)pvVar1 + -0x1c;
 }

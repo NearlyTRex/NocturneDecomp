@@ -2,7 +2,7 @@
 // Address: 004d9eac
 // Address Range: [[004d9eac, 004d9f58]]
 // Convention: __cdecl
-// Signature: undefined8 __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
+// Signature: void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
 
 #include "nocturne.h"
 
@@ -10,7 +10,7 @@
 /* WARNING: Removing unreachable block (ram,0x004d9eef) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-ulonglong __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
+void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
 
 {
   char cVar1;
@@ -18,10 +18,8 @@ ulonglong __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
   int *piVar3;
   uint *puVar4;
   byte bVar5;
-  uint in_EAX;
   uint uVar6;
   int iVar7;
-  uint in_EDX;
   char *pcVar8;
   char *pcVar9;
   byte in_CF;
@@ -86,5 +84,5 @@ ulonglong __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
       }
     }
   }
-  return CONCAT44(in_EDX,in_EAX);
+  return;
 }

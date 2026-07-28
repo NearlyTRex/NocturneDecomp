@@ -9,31 +9,31 @@ void __cdecl staticInit(void);
 
 // Original: core_main.c_FUN_004c8440
 // Address: 004c8440
-void FUN_004c8440(undefined4 param_1);
+void FUN_004c8440(char *param_1);
 
 // Original: core_main.c_FUN_004c8510
 // Address: 004c8510
 void FUN_004c8510(void);
 
-// Original: core_main.c_FUN_004d23d0
+// Original: core_main.c_enterMainGameMenu_FUN_004c85e0
 // Address: 004c85e0
-int FUN_004d23d0(void);
+int __cdecl enterMainGameMenu(void);
 
 // Original: core_main.c_FUN_004c85f0
 // Address: 004c85f0
 void FUN_004c85f0(void);
 
-// Original: core_main.c_FUN_004c8dc0
+// Original: core_main.c_drawCenteredText_FUN_004c8dc0
 // Address: 004c8dc0
-void FUN_004c8dc0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void drawCenteredText(char *param_1,undefined4 param_2,int param_3,int param_4);
 
-// Original: core_main.c_FUN_004c8e10
+// Original: core_main.c_waitWithSkip_FUN_004c8e10
 // Address: 004c8e10
-void FUN_004c8e10(int param_1);
+void waitWithSkip(int param_1);
 
-// Original: core_main.c_FUN_004c8eb0
+// Original: core_main.c_showPromoScreen_FUN_004c8eb0
 // Address: 004c8eb0
-void FUN_004c8eb0(void);
+void showPromoScreen(void);
 
 // Original: core_main.c_FUN_004c90e0
 // Address: 004c90e0

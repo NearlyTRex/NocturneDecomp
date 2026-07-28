@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(int param_1)
+; int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004a4170 at 004a48cc
@@ -58,7 +60,7 @@ section .text
         ;   XREF to: 004d9862 (CONDITIONAL_JUMP)  ; LAB_004d9862
     PUSH EBX                            ; 004d97a8
     CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0 ; 004d97a9
-        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0()
+        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d97ae
     LEA EAX,[EBX + 0x51c]               ; 004d97b1
     MOV dword ptr [EBX + 0x528],0xffffffff ; 004d97b7
@@ -70,7 +72,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 004d97d5
     MOV dword ptr [EAX],EDX             ; 004d97d8
     CALL core_event.cpp_CEventList_reset_FUN_0047aa00 ; 004d97da
-        ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_reset_FUN_0047aa00()
+        ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0047aa00(CEventList * this_ptr)
     MOV EAX,[0x005b9354]                ; 004d97df | DAT_005b9354
     MOV dword ptr [EAX + 0x228],0x0     ; 004d97e4 | DAT_01c77814
     MOV EAX,[0x01cae0e8]                ; 004d97ee | DAT_01cae0e8
@@ -80,25 +82,25 @@ section .text
     PUSH EDI                            ; 004d9800
     PUSH EBX                            ; 004d9801
     CALL core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 ; 004d9802
-        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_loadSet_FUN_004d9020()
+        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004d9807
     PUSH 0x0                            ; 004d980a
     PUSH 0x589ea6                       ; 004d980c | = "Loading script"
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d9811
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d9816
     PUSH EAX                            ; 004d9819
     MOV EBP,dword ptr [0x005baca0]      ; 004d981a | INT_005baca0
     PUSH EBP                            ; 004d9820
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d9821
-        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader * this_ptr, char * text, int clear_screen)
     MOV EAX,[0x005b9354]                ; 004d9826 | DAT_005b9354
     ADD ESP,0xc                         ; 004d982b
     MOV EDX,dword ptr [EAX + 0x234]     ; 004d982e | DAT_01c77820
     PUSH EDX                            ; 004d9834
     PUSH EBX                            ; 004d9835
     CALL core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 ; 004d9836
-        ;   XREF to: 004d86d0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0()
+        ;   XREF to: 004d86d0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0(CDemonMission * this_ptr, int is_loading)
     ADD ESP,0x8                         ; 004d983b
     TEST EAX,EAX                        ; 004d983e
     JNZ 0x004d987d                      ; 004d9840
@@ -143,12 +145,12 @@ section .text
     MOV EBX,dword ptr [0x005be220]      ; 004d988c | DAT_005be220
     PUSH EBX                            ; 004d9892 | DAT_01e56da0
     CALL core_script.cpp_CScript_executeInitSection_FUN_004ff170 ; 004d9893
-        ;   XREF to: 004ff170 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_executeInitSection_FUN_004ff170()
+        ;   XREF to: 004ff170 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_executeInitSection_FUN_004ff170(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d9898
     MOV ESI,dword ptr [0x005be368]      ; 004d989b | DAT_005be368
     PUSH ESI                            ; 004d98a1 | DAT_01e57284
     CALL core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0 ; 004d98a2
-        ;   XREF to: 005135f0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0()
+        ;   XREF to: 005135f0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet * this_ptr)
     MOV EAX,0x1                         ; 004d98a7
     ADD ESP,0x4                         ; 004d98ac
     POP EBP                             ; 004d98af

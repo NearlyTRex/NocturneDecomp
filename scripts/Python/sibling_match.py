@@ -44,6 +44,10 @@ ANNOTATIONS = os.path.join(REPO_ROOT, "annotations")
 UNNAMED_RE = re.compile(r"^(FUN_|thunk_FUN_|LAB_|SUB_|UndefinedFunction_)")
 # Trailing _FUN_<addr> that the export pipeline appends to every real name.
 ADDR_SUFFIX_RE = re.compile(r"_FUN_[0-9a-fA-F]{6,8}$")
+# Leading source file that the naming convention puts on every nocedit function:
+# "core_box.cpp_CBoundingBox3D_expand_FUN_00420240" -> "core_box.cpp". Covers
+# 6930 of nocedit's 6931 functions (only the raw `entry` point lacks one).
+TU_RE = re.compile(r"^(.*?\.(?:cpp|c|cxx|asm|h))_")
 
 # No Watcom function in either image comes close to this; it only bounds the
 # backward scan in func_containing().
@@ -67,6 +71,45 @@ def is_unnamed(name):
 def strip_addr_suffix(name):
     """core_box.cpp_CBoundingBox3D_expand_FUN_00420240 -> ..._expand"""
     return ADDR_SUFFIX_RE.sub("", name or "")
+
+
+def tu_of(name):
+    """Source file a function's name attributes it to, or None.
+
+    The naming convention carries the translation unit, which is the only
+    record of it that survives: Watcom emits no debug information here, so
+    nothing in the PE says which object file a function came from.
+    """
+    m = TU_RE.match(name or "")
+    return m.group(1) if m else None
+
+
+def split_qualified_name(name):
+    """`<tu>_<Class>_<method>_FUN_<addr>` -> (tu, core), either may be None.
+
+    `core` is the class-and-method part, which is the only portion worth
+    transferring between builds: the translation unit is a property of the
+    program being annotated (nocturne's units were assigned by hand and are
+    not nocedit's), and the address suffix belongs to whichever binary the
+    function lives in.
+
+    A name of `<tu>_FUN_<addr>` has a unit but no core -- the unit is known
+    and the function is not yet identified. `is_unnamed()` does *not* catch
+    those, because the string does not start with `FUN_`; use `core is None`
+    to test whether a function still needs a name.
+    """
+    if not name:
+        return None, None
+    tu = tu_of(name)
+    rest = name[len(tu) + 1:] if tu else name
+    # Strip `thunk_` before the address suffix, so a bare `thunk_FUN_<addr>`
+    # reduces to a placeholder rather than to the literal core "thunk".
+    if rest.startswith("thunk_"):
+        rest = rest[len("thunk_"):]
+    rest = ADDR_SUFFIX_RE.sub("", rest)
+    if not rest or UNNAMED_RE.match(rest):
+        return tu, None
+    return tu, rest
 
 
 # --------------------------------------------------------------------------
@@ -126,6 +169,8 @@ class Image:
         self._callgraph = None
         self._callsites = None
         self._body_index = None
+        self._addrs_sorted = None
+        self._cave_ranges = None
         self._shapes = {}
 
         if verbose:
@@ -170,6 +215,63 @@ class Image:
         if self._vtables is None:
             self._vtables = _load_buckets(self.program, "vtables")
         return self._vtables
+
+    @property
+    def cave_ranges(self):
+        """[(start, end)] of code caves recorded for this program.
+
+        Caves exist only in the Ghidra database -- the .exe files on disk are
+        untouched -- but a cave that has been allocated to a function is
+        attached to it as an extra *body fragment*, so anything reading
+        `func["body"]` sees bytes the original function never had. They must be
+        excluded from any cross-build body comparison: the cave is annotation
+        scaffolding for this build, not code the sibling could ever match.
+        """
+        if self._cave_ranges is None:
+            path = os.path.join(ANNOTATIONS, self.program, "code_caves.json")
+            ranges = []
+            try:
+                with open(path) as fh:
+                    for c in json.load(fh).get("caves", []):
+                        start = int(c["start"], 16)
+                        ranges.append((start, start + c.get("total_size", 0)))
+            except (OSError, ValueError, KeyError):
+                ranges = []
+            self._cave_ranges = sorted(ranges)
+        return self._cave_ranges
+
+    def in_cave(self, va):
+        i = bisect.bisect_right(self.cave_ranges, (va, float("inf"))) - 1
+        return i >= 0 and self.cave_ranges[i][0] <= va < self.cave_ranges[i][1]
+
+    # -- layout order ------------------------------------------------------
+
+    @property
+    def addrs_sorted(self):
+        """Every function's entry address, ascending -- the link-time order."""
+        if self._addrs_sorted is None:
+            self._addrs_sorted = sorted(
+                int(f["addr"], 16) for f in self.functions if "addr" in f)
+        return self._addrs_sorted
+
+    def tu_groups(self):
+        """source file -> [func_addr] in ascending address order.
+
+        The linker emits an object file's code as one contiguous run, and
+        within it the compiler preserves source order, so this list is (very
+        nearly) the order the functions appear in the .cpp. 216 of nocedit's
+        252 units contain no function from any other unit; the exceptions are
+        overwhelmingly `crt_*`, which come from libraries rather than the
+        project's own objects and are laid out per-archive-member instead.
+        """
+        out = defaultdict(list)
+        for f in self.functions:
+            tu = tu_of(f.get("name"))
+            if tu and "addr" in f:
+                out[tu].append(f["addr"].lower())
+        for addrs in out.values():
+            addrs.sort(key=lambda a: int(a, 16))
+        return dict(out)
 
     # -- address -> containing function ------------------------------------
 
@@ -322,9 +424,16 @@ def compute_shape(image, func):
     ranges = []
     for b in func.get("body", []) or []:
         try:
-            ranges.append((int(b["start"], 16), int(b["end"], 16)))
+            start, end = int(b["start"], 16), int(b["end"], 16)
         except (KeyError, ValueError):
             return None
+        # Cave fragments are this build's annotation scaffolding, not the
+        # function's own code. Including them compares bytes the sibling never
+        # had, which reads as a body edit that did not happen; and a cave in
+        # the unmapped runtime block would sink the whole function to None.
+        if image.in_cave(start):
+            continue
+        ranges.append((start, end))
     if not ranges:
         return None
 

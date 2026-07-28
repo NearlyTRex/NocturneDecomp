@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(int param_1,undefined4 param_2)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
+; CKeyFramedModelInstance * Stack[0xc]:4   instance
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 at 0045305f
@@ -39,7 +43,7 @@ section .text
     PUSH ECX                            ; 004530da
     PUSH EBX                            ; 004530db
     CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080 ; 004530dc
-        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080()
+        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel * this_ptr, int frame_index)
     ADD ESP,0x8                         ; 004530e1
     PUSH EAX                            ; 004530e4
     MOV EDI,dword ptr [EBX + 0x104]     ; 004530e5
@@ -66,7 +70,7 @@ section .text
     MOV EBX,dword ptr [0x005be368]      ; 00453120 | DAT_005be368
     PUSH EBX                            ; 00453126 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00453127
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0045312c
     POP EBP                             ; 0045312f
     POP EDI                             ; 00453130
@@ -86,7 +90,7 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0045314d | DAT_005be368
     PUSH EDI                            ; 00453153 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 00453154
-        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0()
+        ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00453159
     POP EBP                             ; 0045315c
     POP EDI                             ; 0045315d

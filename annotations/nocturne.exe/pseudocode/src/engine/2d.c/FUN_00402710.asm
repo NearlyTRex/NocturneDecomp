@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402710(byte *param_1,int param_2,undefined4 param_3)
+; void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 00402745
     PUSH EAX                            ; 00402746
     CALL engine_2d.c_drawCharacterHighlighted_FUN_004021a0 ; 00402747
-        ;   XREF to: 004021a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacterHighlighted_FUN_004021a0()
+        ;   XREF to: 004021a0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterHighlighted_FUN_004021a0(int char_code, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040274c
     ADD EBP,EAX                         ; 0040274f
     INC EBX                             ; 00402751

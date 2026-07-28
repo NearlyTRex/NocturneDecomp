@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(int param_1,float param_2)
+; void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(CGame *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[5]:
 ;   core_fire.cpp_CSpark_process_FUN_004836e0 at 0048372f
-;   core_game.cpp_FUN_0049cc10 at 0049cca6
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cca6
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980 at 004ed9b0
 ;   core_stranger.cpp_FUN_005357d0 at 0053584d
 ;   core_stranger.cpp_FUN_00535900 at 00535a60
@@ -43,7 +46,7 @@ section .text
     FLD float ptr [EBX + 0x264]         ; 004a5f1c
     FMUL float ptr [0x00584482]         ; 004a5f22 | FLOAT_00584482
     CALL crt_math.c_round_FUN_00563a30  ; 004a5f28
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [EBX + 0x260]       ; 004a5f2d
     MOV EBX,dword ptr [EBX + 0x260]     ; 004a5f33
     MOV dword ptr [0x01bd1d80],EBX      ; 004a5f39 | DAT_01bd1d80

@@ -2,47 +2,50 @@
 // Address: 004dfea0
 // Address Range: [[004dfea0, 004dffb0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(int param_1,float param_2)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(CMorphModel *this_ptr,float morph_t)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(int param_1,float param_2)
+void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(CMorphModel *this_ptr,float morph_t)
 
 {
-  longlong lVar1;
-  int iVar2;
+  int iVar1;
+  longlong lVar2;
   int iVar3;
   int iVar4;
-  float10 fVar5;
-  uint local_18;
+  SMRGLPrimitivePoly *poly;
+  double dVar5;
+  int local_18;
   
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
-  iVar2 = 0xffff - _DAT_01c038f4;
-  fVar5 = (float10)round
-                             ((float10)param_2 * (float10)65535 *
-                              ((float10)2.0f - (float10)param_2));
-  lVar1 = (longlong)iVar2 * (longlong)(int)ROUND(fVar5);
+  iVar3 = 0xffff - _DAT_01c038f4;
+  dVar5 = round
+                    ((double)(morph_t * (float)65535 * (2.0f - morph_t)));
+  lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-            (DAT_005ae704,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+            (DAT_005ae704,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   local_18 = -1;
-  iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x5c)) {
-    iVar3 = 0;
+  iVar3 = 0;
+  if (0 < this_ptr->num_faces) {
+    iVar4 = 0;
     do {
-      iVar4 = *(int *)(iVar3 + *(int *)(param_1 + 0x60));
-      if (iVar4 != local_18) {
+      iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
+                             base.type + iVar4);
+      if (iVar1 != local_18) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                  (DAT_005ae704,iVar4 * 0x48 + param_1 + 0x68);
-        local_18 = iVar4;
+                  (DAT_005ae704,this_ptr->textures[iVar1].textures);
+        local_18 = iVar1;
       }
-      iVar4 = *(int *)(param_1 + 0x60) + iVar3;
-      iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 0x3c;
-      engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(DAT_005ae704,iVar4,0x267);
-    } while (iVar2 < *(int *)(param_1 + 0x5c));
+      poly = (SMRGLPrimitivePoly *)
+             ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
+             iVar4);
+      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 0x3c;
+      engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460(DAT_005ae704,poly,0x267);
+    } while (iVar3 < this_ptr->num_faces);
   }
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(DAT_005ae704);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);

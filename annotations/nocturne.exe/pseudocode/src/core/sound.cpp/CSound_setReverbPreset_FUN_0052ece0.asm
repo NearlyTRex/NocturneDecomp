@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0052ece0(undefined4 param_1,int param_2)
+; void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0052ece0(CSound *this_ptr,int index)
 ;
+; Parameters:
+; CSound *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508d2d
@@ -42,7 +45,7 @@ section .text
     PUSH dword ptr [EAX + 0x5bed70]     ; 0052ed03 | DAT_005bed70
     PUSH EBX                            ; 0052ed09
     CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0 ; 0052ed0a
-        ;   XREF to: 0052ecb0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0()
+        ;   XREF to: 0052ecb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
     ADD ESP,0x10                        ; 0052ed0f
     POP EBX                             ; 0052ed12
     RET                                 ; 0052ed13

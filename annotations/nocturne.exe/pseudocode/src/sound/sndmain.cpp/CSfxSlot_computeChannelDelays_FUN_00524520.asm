@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520(int param_1)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -103,7 +105,7 @@ section .text
         ;   Label: LAB_005245d2
     FMUL double ptr [ESP]               ; 005245d5
     CALL crt_math.c_round_FUN_00563a30  ; 005245d8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 005245dd
     MOV EAX,dword ptr [ESP + 0x8]       ; 005245e1
     MOV dword ptr [EDX + 0xbc],EAX      ; 005245e5

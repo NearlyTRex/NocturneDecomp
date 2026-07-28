@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(undefined4 param_1)
+; CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(CCryptVessel *this_ptr)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vessel.cpp_FUN_0054f8f0 at 0054f903
@@ -42,17 +44,17 @@ section .text
     ADD EAX,0x150                       ; 0054f930
     PUSH EAX                            ; 0054f935
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0054f936
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054f93b
     ADD EAX,0x26c                       ; 0054f93e
     PUSH EAX                            ; 0054f943
     CALL core_flame.cpp_CFlame_ctor_FUN_0048cf60 ; 0054f944
-        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_ctor_FUN_0048cf60()
+        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; CFlame * core_flame.cpp_CFlame_ctor_FUN_0048cf60(CFlame * this_ptr)
     ADD ESP,0x4                         ; 0054f949
     ADD EAX,0x2a0                       ; 0054f94c
     PUSH EAX                            ; 0054f951
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0054f952
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054f957
     LEA EBX,[EAX + 0xfffff9a4]          ; 0054f95a
     PUSH 0x597448                       ; 0054f960 | = "vsslbase.kfm"
@@ -61,7 +63,7 @@ section .text
     MOV ESI,0x597455                    ; 0054f96c | = "none"
     MOV dword ptr [EBX + 0x14c],0x5a3d84 ; 0054f971 | PTR_core_vessel.cpp_FUN_0054fa80_005a3d84
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054f97b
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2cc],0x0     ; 0054f980
     ADD ESP,0x8                         ; 0054f98a
     MOV dword ptr [EBX + 0x2d0],0x0     ; 0054f98d
@@ -113,7 +115,7 @@ section .text
     PUSH EAX                            ; 0054fa37
     MOV dword ptr [EBX + 0x658],0x0     ; 0054fa38
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054fa42
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x7d8],0x1     ; 0054fa47
     MOV dword ptr [EBX + 0xfc],0x1      ; 0054fa51
     ADD ESP,0x8                         ; 0054fa5b

@@ -120,7 +120,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EBX       ; 004e271f
     FLD double ptr [ECX + EAX*0x8 + 0x5bbc48] ; 004e2723 | DAT_005bbc48
     CALL crt_math.c_round_FUN_00563a30  ; 004e272a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x10]        ; 004e272f
     CMP EDI,0x1                         ; 004e2733
     JNZ 0x004e27bd                      ; 004e2736

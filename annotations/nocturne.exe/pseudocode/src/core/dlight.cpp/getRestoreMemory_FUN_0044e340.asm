@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int param_1)
+; void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int pixel_count)
 ;
+; Parameters:
+; int              Stack[0x4]:4   pixel_count
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0 at 0044e3dd

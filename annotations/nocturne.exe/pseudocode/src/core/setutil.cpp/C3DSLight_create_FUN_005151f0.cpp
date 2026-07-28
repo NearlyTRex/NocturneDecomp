@@ -2,76 +2,75 @@
 // Address: 005151f0
 // Address Range: [[005151f0, 00515344]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(int param_1)
+// Signature: CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *this_ptr)
 
 #include "nocturne.h"
 
-char * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(int param_1)
+CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
-  char *pcVar4;
+  CDemonLight *pCVar2;
+  CDemonFilter *pCVar3;
+  CDemonLight *this_ptr_00;
+  char (*pacVar4) [40];
   int iVar5;
   char *pcVar6;
-  int iVar7;
-  char *pcVar8;
+  C3DSLight *pCVar7;
   
-  iVar2 = FUN_0056497c(0x2fac);
-  pcVar4 = (char *)0x0;
-  if (iVar2 != 0) {
-    pcVar4 = (char *)core_dlight_cpp_CDemonLight_ctor_FUN_0044e110
-                               (iVar2,*(uint *)(param_1 + 0x1808),
-                                *(uint *)(param_1 + 0x180c));
+  pCVar2 = (CDemonLight *)FUN_0056497c(0x2fac);
+  this_ptr_00 = (CDemonLight *)0x0;
+  if (pCVar2 != (CDemonLight *)0x0) {
+    this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_0044e110
+                            (pCVar2,(this_ptr->size).x,(this_ptr->size).y);
   }
-  if (pcVar4 == (char *)0x0) {
+  if (this_ptr_00 == (CDemonLight *)0x0) {
     PTR_01cc4800 = "..\\core\\setutil.cpp";
     INT_01cc4804 = 0x2c6;
     core_main_c_FUN_004c8440("C3DSLight::create - Out of memory!");
   }
-  core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(pcVar4);
-  if (*(int *)(param_1 + 0x11ec) < 1) {
-    pcVar4[0x1cb8] = '\x01';
-    pcVar4[0x1cb9] = '\0';
-    pcVar4[0x1cba] = '\0';
-    pcVar4[0x1cbb] = '\0';
+  core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(this_ptr_00);
+  if (this_ptr->filter_count < 1) {
+    this_ptr_00->shadow_bounds_mode = 1;
   }
   else {
-    *(uint *)(pcVar4 + 0x1cb8) = *(uint *)(param_1 + 0x11f0);
+    this_ptr_00->shadow_bounds_mode = this_ptr->blend_filter;
   }
-  if (pcVar4 + 0x104 != (char *)(param_1 + 0x104)) {
-    *(uint *)(pcVar4 + 0x104) = *(uint *)(param_1 + 0x104);
-    *(uint *)(pcVar4 + 0x108) = *(uint *)(param_1 + 0x108);
-    *(uint *)(pcVar4 + 0x10c) = *(uint *)(param_1 + 0x10c);
+  pcVar6 = (this_ptr_00->base).camera_name + 0xc4;
+  if ((CVector3f *)pcVar6 != &this_ptr->pos) {
+    *(float *)pcVar6 = (this_ptr->pos).x;
+    *(float *)((this_ptr_00->base).camera_name + 200) = (this_ptr->pos).y;
+    *(float *)((this_ptr_00->base).camera_name + 0xcc) = (this_ptr->pos).z;
   }
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(pcVar4 + 0x110,param_1 + 0x110);
-  *(uint *)(pcVar4 + 0x138) = *(uint *)(param_1 + 0x11c);
-  iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x11ec)) {
-    iVar5 = param_1 + 0x11f4;
-    iVar7 = param_1;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+            ((CMatrix3x3f *)((this_ptr_00->base).camera_name + 0xd0),&this_ptr->orient);
+  *(float *)((this_ptr_00->base).camera_name + 0xf8) = this_ptr->fov;
+  iVar5 = 0;
+  if (0 < this_ptr->filter_count) {
+    pacVar4 = this_ptr->filter_names;
+    pCVar7 = this_ptr;
     do {
-      iVar2 = iVar2 + 1;
-      uVar3 = core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
-                        (0x014B8DE8,iVar5,*(uint *)(param_1 + 0x11f0));
-      *(uint *)(iVar7 + 0x1810) = uVar3;
-      iVar5 = iVar5 + 0x28;
-      iVar7 = iVar7 + 4;
-    } while (iVar2 < *(int *)(param_1 + 0x11ec));
+      iVar5 = iVar5 + 1;
+      pCVar3 = (CDemonFilter *)
+               core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
+                         (0x014B8DE8,pacVar4,this_ptr->blend_filter);
+      pCVar7->filters[0] = pCVar3;
+      pacVar4 = pacVar4 + 1;
+      pCVar7 = (C3DSLight *)pCVar7->name;
+    } while (iVar5 < this_ptr->filter_count);
   }
-  pcVar6 = (char *)(param_1 + 4);
-  pcVar8 = pcVar4;
+  pcVar6 = this_ptr->name;
+  pCVar2 = this_ptr_00;
   do {
     cVar1 = *pcVar6;
-    *pcVar8 = cVar1;
+    *(char *)&(pCVar2->base).base.fixed_point_scale = cVar1;
     if (cVar1 == '\0') {
-      return pcVar4;
+      return this_ptr_00;
     }
     cVar1 = pcVar6[1];
     pcVar6 = pcVar6 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
+    *(char *)((int)&(pCVar2->base).base.fixed_point_scale + 1) = cVar1;
+    pCVar2 = (CDemonLight *)((int)&(pCVar2->base).base.fixed_point_scale + 2);
   } while (cVar1 != '\0');
-  return pcVar4;
+  return this_ptr_00;
 }

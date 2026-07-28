@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CRock_process_FUN_00484cc0(int param_1)
+; void core_fire_cpp_CRock_process_FUN_00484cc0(CParticle *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00484cc4
     PUSH EBX                            ; 00484cc8
     CALL core_particle.cpp_CParticle_process_FUN_004ef120 ; 00484cc9
-        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_process_FUN_004ef120()
+        ;   XREF to: 004ef120 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_004ef120(CParticle * this_ptr)
     LEA EAX,[EBX + 0xc]                 ; 00484cce
     FLD float ptr [EAX + 0x4]           ; 00484cd1
     FMUL ST0                            ; 00484cd4
@@ -44,7 +44,7 @@ section .text
     FMUL double ptr [0x00581134]        ; 00484cf7 | DOUBLE_00581134
     ADD ESP,0x4                         ; 00484cfd
     CALL crt_math.c_round_FUN_00563a30  ; 00484d00
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 00484d05
     MOV EDX,dword ptr [ESP]             ; 00484d08
     IMUL EDX                            ; 00484d0b

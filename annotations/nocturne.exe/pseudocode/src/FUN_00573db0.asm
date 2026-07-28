@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00573db0(undefined4 param_1)
+; void FUN_00573db0(wchar_t param_1)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xc]:1  local_c
@@ -16,10 +16,10 @@
 ;
 ; Called Functions:
 ;   CharUpperBuffA
-;   FUN_0056d9f0
-;   FUN_0056da30
-;   FUN_0056da50
-;   FUN_00574520
+;   crt_locale.c_fullwidth_toupper_FUN_00574520
+;   crt_locale.c_mblen_FUN_0056da50
+;   crt_locale.c_wchar_to_bytes_FUN_0056da30
+;   crt_string.c_mbtowc_peek_FUN_0056d9f0
 ;
 ; *****************************************************************************
 
@@ -33,13 +33,13 @@ section .text
     PUSH EAX                            ; 00573db7
     MOV EDX,dword ptr [ESP + 0x14]      ; 00573db8
     PUSH EDX                            ; 00573dbc
-    CALL FUN_0056da30                   ; 00573dbd
-        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da30()
+    CALL crt_locale.c_wchar_to_bytes_FUN_0056da30 ; 00573dbd
+        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; void crt_locale.c_wchar_to_bytes_FUN_0056da30(wchar_t character, char * output_buffer)
     ADD ESP,0x8                         ; 00573dc2
     MOV EAX,ESP                         ; 00573dc5
     PUSH EAX                            ; 00573dc7
-    CALL FUN_0056da50                   ; 00573dc8
-        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da50()
+    CALL crt_locale.c_mblen_FUN_0056da50 ; 00573dc8
+        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 00573dcd
     XOR DL,DL                           ; 00573dd0
     MOV EBX,dword ptr [0x005c2144]      ; 00573dd2 | DAT_005c2144
@@ -59,8 +59,8 @@ section .text
         ;   XREF to: 00573e0c (CONDITIONAL_JUMP)  ; LAB_00573e0c
     MOV ESI,dword ptr [ESP + 0x10]      ; 00573e00
     PUSH ESI                            ; 00573e04
-    CALL FUN_00574520                   ; 00573e05
-        ;   XREF to: 00574520 (UNCONDITIONAL_CALL)  ; undefined FUN_00574520()
+    CALL crt_locale.c_fullwidth_toupper_FUN_00574520 ; 00573e05
+        ;   XREF to: 00574520 (UNCONDITIONAL_CALL)  ; wchar_t crt_locale.c_fullwidth_toupper_FUN_00574520(wchar_t character)
     JMP 0x00573e22                      ; 00573e0a
         ;   XREF to: 00573e22 (UNCONDITIONAL_JUMP)  ; LAB_00573e22
     PUSH 0x1                            ; 00573e0c
@@ -70,8 +70,8 @@ section .text
     CALL dword ptr CS:[0x575414]        ; 00573e13 | PTR_CharUpperBuffA_00575414
     MOV EAX,ESP                         ; 00573e1a
     PUSH EAX                            ; 00573e1c
-    CALL FUN_0056d9f0                   ; 00573e1d
-        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
+    CALL crt_string.c_mbtowc_peek_FUN_0056d9f0 ; 00573e1d
+        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_0056d9f0(char * str)
     ADD ESP,0x4                         ; 00573e22
         ;   Label: LAB_00573e22
     ADD ESP,0x4                         ; 00573e25

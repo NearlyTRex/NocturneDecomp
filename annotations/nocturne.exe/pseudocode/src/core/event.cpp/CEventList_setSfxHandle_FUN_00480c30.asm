@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_00480c30(int param_1,char *param_2,undefined4 param_3)
+; void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_00480c30(CEventList *this_ptr,char *name,uint sfx_handle)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
+; uint             Stack[0xc]:4   sfx_handle
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c532
@@ -33,12 +37,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 00480c38
     PUSH EBX                            ; 00480c3c
     CALL core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 ; 00480c3d
-        ;   XREF to: 00480d60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60()
+        ;   XREF to: 00480d60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00480c42
     PUSH ESI                            ; 00480c45
     PUSH EBX                            ; 00480c46
     CALL core_event.cpp_CEventList_findSfxEntry_FUN_00480d10 ; 00480c47
-        ;   XREF to: 00480d10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findSfxEntry_FUN_00480d10()
+        ;   XREF to: 00480d10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findSfxEntry_FUN_00480d10(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 00480c4c
     MOV EDX,EAX                         ; 00480c4f
     TEST EAX,EAX                        ; 00480c51
@@ -97,7 +101,7 @@ section .text
     PUSH EBX                            ; 00480cd6
     MOV dword ptr [EBP],EAX             ; 00480cd7
     CALL core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 ; 00480cda
-        ;   XREF to: 00480d60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60()
+        ;   XREF to: 00480d60 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00480cdf
     POP EBP                             ; 00480ce2
     POP EDI                             ; 00480ce3

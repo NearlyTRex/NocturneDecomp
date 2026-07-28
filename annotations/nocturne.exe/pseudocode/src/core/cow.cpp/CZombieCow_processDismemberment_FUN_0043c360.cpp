@@ -2,91 +2,97 @@
 // Address: 0043c360
 // Address Range: [[0043c360, 0043c5d5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(int param_1,int *param_2)
+// Signature: void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(CZombieCow *this_ptr,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(int param_1,int *param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_0043c360(CZombieCow *this_ptr,SDamageInfo *damage_info)
 
 {
-  int *piVar1;
-  int iVar2;
-  uint uVar3;
-  int local_14;
+  CVector3f *initial_velocity;
+  int iVar1;
+  CBodyPart *body_part;
+  float local_14;
   
-  if ((0.0 < (float)param_2[0xb]) && (*param_2 == -1)) {
-    iVar2 = rand();
-    switch(iVar2 % 4) {
+  if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
+    iVar1 = rand();
+    switch(iVar1 % 4) {
     case 0:
-      iVar2 = *(int *)(param_1 + 0xbd30);
+      iVar1 = this_ptr->part_indices[0];
       break;
     case 1:
-      iVar2 = *(int *)(param_1 + 0xbd4c);
+      iVar1 = this_ptr->part_indices[7];
       break;
     case 2:
-      iVar2 = *(int *)(param_1 + 0xbd50);
+      iVar1 = this_ptr->part_indices[8];
       break;
     case 3:
-      iVar2 = *(int *)(param_1 + 0xbd54);
+      iVar1 = this_ptr->part_indices[9];
       break;
     default:
       goto switchD_0043c396_default;
     }
-    *param_2 = iVar2;
+    damage_info->hit_part_index = iVar1;
   }
 switchD_0043c396_default:
-  iVar2 = *param_2;
-  if ((((iVar2 == *(int *)(param_1 + 0xbd4c)) || (iVar2 == *(int *)(param_1 + 0xbd50))) ||
-      (iVar2 == *(int *)(param_1 + 0xbd54))) ||
-     ((iVar2 == *(int *)(param_1 + 0xbd30) || (iVar2 == *(int *)(param_1 + 0xbd48))))) {
-    local_14 = param_2[0xb];
+  iVar1 = damage_info->hit_part_index;
+  if ((((iVar1 == this_ptr->part_indices[7]) || (iVar1 == this_ptr->part_indices[8])) ||
+      (iVar1 == this_ptr->part_indices[9])) ||
+     ((iVar1 == this_ptr->part_indices[0] || (iVar1 == this_ptr->part_indices[6])))) {
+    local_14 = damage_info->dismember_prob;
     if (*(int *)(0x01C775EC + 0x1e0) != 0) {
-      local_14 = 0x3f800000;
+      local_14 = 1.0;
     }
     if (*(int *)(0x01C775EC + 0x14) == 0) {
-      local_14 = 0;
+      local_14 = 0.0;
     }
-    iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
-    if (iVar2 != 0) {
-      piVar1 = param_2 + 3;
-      uVar3 = core_bodypart_cpp_createBodyPart_FUN_00415b30
-                        (param_1 + 0x20,param_1 + 0x30,piVar1,param_1,0,0,0);
-      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(param_1,uVar3,*param_2,0);
-      if (*param_2 == *(int *)(param_1 + 0xbd48)) {
+    iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
+    if (iVar1 != 0) {
+      initial_velocity = &damage_info->impact_point;
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00415b30
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,initial_velocity,
+                             (CDemonActor *)this_ptr,0,0,0);
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
+                ((CCharacter *)this_ptr,body_part,damage_info->hit_part_index,0);
+      if (damage_info->hit_part_index == this_ptr->part_indices[6]) {
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd30),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[0],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd34),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd38),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[2],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd3c),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd40),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[4],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd44),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[5],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd4c),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[7],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd50),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[8],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40
-                  (param_1,*(uint *)(param_1 + 0xbd54),piVar1,0);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[9],initial_velocity,0);
       }
-      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(param_1,"limb?.wav");
-      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(uVar3);
-      if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd30) * 4) == 0) {
-        param_2[1] = 0x461c3c00;
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(body_part);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] == 0) {
+        damage_info->damage_amount = 9999.0;
       }
-      if (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd4c) * 4) == 0) {
-        param_2[1] = 0x461c3c00;
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[7]] == 0) {
+        damage_info->damage_amount = 9999.0;
       }
-      param_2[2] = (int)((float)param_2[2] * (float)7);
+      damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     }
   }
-  if (*(int *)(param_1 + 0xbd30) != *param_2) {
-    param_2[1] = (int)((float)param_2[1] * (float)0.5);
+  if (this_ptr->part_indices[0] != damage_info->hit_part_index) {
+    damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }
-  param_2[1] = (int)((float)param_2[1] * (float)2.5);
+  damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
   return;
 }

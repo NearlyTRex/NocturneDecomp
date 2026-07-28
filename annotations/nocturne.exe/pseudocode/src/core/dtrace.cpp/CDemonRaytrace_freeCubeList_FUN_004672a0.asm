@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004672a0(int param_1)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004672a0(CDemonRaytrace *this_ptr)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00467220 at 00467226
@@ -57,7 +59,7 @@ section .text
     PUSH 0x0                            ; 004672f8
     PUSH EAX                            ; 004672fa
     CALL core_dpart.cpp_CDemonPart_dtor_FUN_00456f40 ; 004672fb
-        ;   XREF to: 00456f40 (UNCONDITIONAL_CALL)  ; undefined core_dpart.cpp_CDemonPart_dtor_FUN_00456f40()
+        ;   XREF to: 00456f40 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_00456f40(CDemonPart * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00467300
     PUSH EAX                            ; 00467303
     CALL crt_unknown.c_FUN_00564494     ; 00467304

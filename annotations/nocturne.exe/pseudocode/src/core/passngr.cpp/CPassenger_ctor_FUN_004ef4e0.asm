@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(undefined4 param_1)
+; CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *this_ptr)
 ;
+; Parameters:
+; CPassenger *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_passngr.cpp_FUN_004ef4b0 at 004ef4c3
@@ -45,7 +47,7 @@ section .text
     PUSH EAX                            ; 004ef4f5
     MOV ESI,0x58cbd0                    ; 004ef4f6 | = "wolfbrn.dfm"
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 004ef4fb
-        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
+        ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_ctor_FUN_004e0050(CMorph * this_ptr)
     LEA EBX,[EAX + 0xfffe0984]          ; 004ef500
     ADD ESP,0x4                         ; 004ef506
     LEA EDI,[EBX + 0x1f5d4]             ; 004ef509

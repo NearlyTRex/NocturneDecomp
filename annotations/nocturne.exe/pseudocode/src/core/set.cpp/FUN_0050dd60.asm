@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01c777e0
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_0050d640
+;   core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0
 ;
@@ -34,7 +34,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0050dd79 | DAT_005ae704
     PUSH EBX                            ; 0050dd7f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050dd80
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050dd85
     TEST EAX,EAX                        ; 0050dd88
     JZ 0x0050ddad                       ; 0050dd8a
@@ -49,7 +49,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0050dd9b | DAT_005ae704
     PUSH EBX                            ; 0050dda1 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0 ; 0050dda2
-        ;   XREF to: 004613d0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0()
+        ;   XREF to: 004613d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0(CDemonRenderer * this_ptr, SMRGLPrimitiveTriangle * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0050dda7
     POP EBP                             ; 0050ddaa
         ;   Label: LAB_0050ddaa
@@ -65,8 +65,8 @@ section .text
     PUSH EDI                            ; 0050ddbd
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050ddbe
     PUSH EBP                            ; 0050ddc2
-    CALL core_set.cpp_FUN_0050d640      ; 0050ddc3
-        ;   XREF to: 0050d640 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050d640()
+    CALL core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640 ; 0050ddc3
+        ;   XREF to: 0050d640 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0050d640(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prims, int count, int alpha)
     ADD ESP,0x10                        ; 0050ddc8
     POP ESI                             ; 0050ddcb
     POP EDI                             ; 0050ddcc

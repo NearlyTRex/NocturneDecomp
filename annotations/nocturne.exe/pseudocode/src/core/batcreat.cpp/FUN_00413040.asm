@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_FUN_00413040(int param_1,int param_2)
+; void core_batcreat_cpp_FUN_00413040(CBatCreature *param_1,SDamageInfo *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
@@ -42,12 +42,12 @@ section .text
     MOV EDX,dword ptr [ESI + 0xbd64]    ; 0041304f
     PUSH EDX                            ; 00413055
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00413056
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 0041305b
     MOV ECX,dword ptr [ESI + 0xbd5c]    ; 0041305e
     PUSH ECX                            ; 00413064
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 00413065
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     MOV EBX,dword ptr [EDI + 0x28]      ; 0041306a
     ADD ESP,0x4                         ; 0041306d
     CMP EBX,0x7                         ; 00413070
@@ -65,14 +65,14 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 0041308d
     PUSH EAX                            ; 00413093
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00413094
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00413099
     PUSH EAX                            ; 0041309c
     LEA EAX,[ESP + 0x1c]                ; 0041309d
     PUSH EAX                            ; 004130a1
     PUSH ESI                            ; 004130a2
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004130a3
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004130a8
     PUSH 0x0                            ; 004130ab
     PUSH 0x41200000                     ; 004130ad
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_004130c4
     PUSH ESI                            ; 004130c5
     CALL core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 ; 004130c6
-        ;   XREF to: 00412de0 (UNCONDITIONAL_CALL)  ; undefined core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0()
+        ;   XREF to: 00412de0 (UNCONDITIONAL_CALL)  ; void core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0(CBatCreature * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004130cb
     ADD ESP,0x8                         ; 004130ce
     FSUBR float ptr [ESI + 0x2434]      ; 004130d1
@@ -103,7 +103,7 @@ section .text
     PUSH 0x2                            ; 004130f0
     PUSH 0x0                            ; 004130f2
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004130f4
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004130f9
     MOV EBP,EAX                         ; 004130fc
     TEST EAX,EAX                        ; 004130fe
@@ -113,7 +113,7 @@ section .text
     PUSH 0x4                            ; 00413104
     PUSH EBX                            ; 00413106
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00413107
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0041310c
     CMP EBP,0x1                         ; 0041310f
         ;   Label: LAB_0041310f
@@ -124,7 +124,7 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 00413117
     PUSH EAX                            ; 0041311d
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 0041311e
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 00413123
     CMP EBP,0x2                         ; 00413126
         ;   Label: LAB_00413126
@@ -135,13 +135,13 @@ section .text
     LEA EAX,[ESI + 0x150]               ; 0041312f
     PUSH EAX                            ; 00413135
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00413136
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0041313b
     MOV ECX,dword ptr [ESI + 0xbd60]    ; 0041313e
         ;   Label: LAB_0041313e
     PUSH ECX                            ; 00413144
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 00413145
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 0041314a
     TEST EAX,EAX                        ; 0041314d
     JZ 0x00413223                       ; 0041314f
@@ -150,7 +150,7 @@ section .text
         ;   Label: LAB_00413155
     PUSH ESI                            ; 00413156
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 00413157
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 0041315c
     ADD ESP,0x2c                        ; 0041315f
     POP EBP                             ; 00413162
@@ -171,7 +171,7 @@ section .text
     PUSH ESI                            ; 0041317f
     FSTP float ptr [EDI + 0x4]          ; 00413180
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00413183
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00413188
     MOV EBP,0x4000                      ; 0041318b
     PUSH 0xffff                         ; 00413190
@@ -186,7 +186,7 @@ section .text
     PUSH EAX                            ; 004131a5
     INC EBX                             ; 004131a6
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 004131a7
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004131ac
     CMP EBX,0x5                         ; 004131af
     JL 0x00413190                       ; 004131b2
@@ -197,7 +197,7 @@ section .text
         ;   Label: LAB_004131b9
     MOV dword ptr [ESI + 0x2434],0x0    ; 004131ba
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004131c4
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004131c9
     ADD ESP,0x4                         ; 004131cc
     CMP EAX,0x7                         ; 004131cf
@@ -210,12 +210,12 @@ section .text
     PUSH 0x7                            ; 004131df
     PUSH EBX                            ; 004131e1
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004131e2
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004131e7
     MOV EBX,dword ptr [ESI + 0xbd60]    ; 004131ea
     PUSH EBX                            ; 004131f0
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004131f1
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004131f6
     PUSH 0x578a67                       ; 004131f9 | = "batman-die.wav"
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004131fe
@@ -226,7 +226,7 @@ section .text
     PUSH EDI                            ; 00413211
     PUSH ESI                            ; 00413212
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 00413213
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00413218
     ADD ESP,0x2c                        ; 0041321b
     POP EBP                             ; 0041321e
@@ -244,7 +244,7 @@ section .text
     PUSH EDI                            ; 0041323b
     PUSH ESI                            ; 0041323c
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 0041323d
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00413242
     ADD ESP,0x2c                        ; 00413245
     POP EBP                             ; 00413248

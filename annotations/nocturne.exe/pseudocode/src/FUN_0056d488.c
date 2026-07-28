@@ -10,6 +10,6 @@ void FUN_0056d488(uint *param_1,int param_2)
 
 {
   *(uint *)(param_2 + 0x20) = 0;
-  FUN_0056d340(0x63df,*param_1,0,param_2);
+  gmtime_r(0x63df,*param_1,0,param_2);
   return;
 }

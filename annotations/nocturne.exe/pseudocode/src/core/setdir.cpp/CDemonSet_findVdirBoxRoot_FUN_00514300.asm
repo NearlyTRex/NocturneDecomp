@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(int param_1,int param_2)
+; int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   box_index
 ;
 ; XREF[3]:
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0 at 00514253

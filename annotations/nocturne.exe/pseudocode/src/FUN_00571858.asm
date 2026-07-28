@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1abc = 005671dc
+;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
 ;   undefined4 DAT_005c1f6c
 ;   undefined4 DAT_005c1f70
 ;   undefined4 DAT_005c20e0
@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005c20ec
 ;
 ; Called Functions:
-;   FUN_005671dc
+;   crt_thread.c_GetTLS_FUN_005671dc
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 0057185a
     PUSH ES                             ; 0057185b
     MOV EBX,0x8                         ; 0057185c
-    CALL dword ptr [0x005c1abc]         ; 00571861 | PTR_FUN_005c1abc
+    CALL dword ptr [0x005c1abc]         ; 00571861 | PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc
         ;   Label: LAB_00571861
     LEA ESI,[EAX + EBX*0x1]             ; 00571867
     MOV AX,DS                           ; 0057186a

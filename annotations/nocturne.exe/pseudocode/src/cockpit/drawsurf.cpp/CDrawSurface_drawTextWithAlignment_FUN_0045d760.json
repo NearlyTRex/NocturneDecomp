@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 909,
+    "complexity_score": 119,
     "cross_reference_count": 8,
     "function_call_count": 15,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 104,
-    "suspect_count": 79,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 411
   },
   "cross_references": [
+    {
+      "addr": "0045dd70",
+      "from_addr": "0045dd8c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_0045dd70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0045e000",
       "from_addr": "0045e024",
@@ -144,45 +148,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045da30",
-      "from_addr": "0045da4c",
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045db00",
-      "from_addr": "0045db1c",
-      "name": "cockpit_drawsurf.cpp_FUN_0045db00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045dbd0",
-      "from_addr": "0045dbec",
-      "name": "cockpit_drawsurf.cpp_FUN_0045dbd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045dca0",
-      "from_addr": "0045dcbc",
-      "name": "cockpit_drawsurf.cpp_FUN_0045dca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045dd70",
-      "from_addr": "0045dd8c",
-      "name": "cockpit_drawsurf.cpp_FUN_0045dd70",
+      "addr": "0045df20",
+      "from_addr": "0045df40",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_0045df20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045de40",
       "from_addr": "0045de60",
-      "name": "cockpit_drawsurf.cpp_FUN_0045de40",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0045de40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045df20",
-      "from_addr": "0045df40",
-      "name": "cockpit_drawsurf.cpp_FUN_0045df20",
+      "addr": "0045dbd0",
+      "from_addr": "0045dbec",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_0045dbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dca0",
+      "from_addr": "0045dcbc",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045db00",
+      "from_addr": "0045db1c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_0045db00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045da30",
+      "from_addr": "0045da4c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -196,7 +194,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)"
   },
   "function_calls": [
     {
@@ -359,7 +357,7 @@
       {
         "call_addr": "0045db1c",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045db00",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_0045db00",
         "estimated_params": 7,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -370,7 +368,7 @@
       {
         "call_addr": "0045dbec",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045dbd0",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_0045dbd0",
         "estimated_params": 7,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -381,7 +379,7 @@
       {
         "call_addr": "0045dcbc",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045dca0",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0045dca0",
         "estimated_params": 7,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -392,7 +390,7 @@
       {
         "call_addr": "0045dd8c",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045dd70",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_0045dd70",
         "estimated_params": 7,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -403,7 +401,7 @@
       {
         "call_addr": "0045de60",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045de40",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0045de40",
         "estimated_params": 7,
         "instructions_analyzed": 15,
         "method": "push_count",
@@ -414,7 +412,7 @@
       {
         "call_addr": "0045df40",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045df20",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_0045df20",
         "estimated_params": 7,
         "instructions_analyzed": 15,
         "method": "push_count",
@@ -424,10 +422,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
     "estimated_params": 7,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.590909090909091,
@@ -463,10 +461,10 @@
     "pcode_op_count": 1111
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 80,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -524,6 +522,55 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alignment_mode",
+        "offset": 28,
+        "size": 4,
+        "type": "ETextAlignment"
       }
     ]
   },
@@ -535,633 +582,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,uint param_7)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3 = param_3 + *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_5 = param_5 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_6 = param_6 + *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c58 = *(uint *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c60 = *(uint *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c5c = *(uint *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c00c64 = *(uint *)(param_1 + 0x1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "switch(param_7) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextRightAlignedColor_FUN_00402b60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 + -5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5 + -5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5 + -5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(param_2,param_3,param_5 + -5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredColor_FUN_00402cf0(param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredColor_FUN_00402cf0(param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredColor_FUN_00402cf0(param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextCenteredColor_FUN_00402cf0(param_2,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = (param_5 + -10 + param_6) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = (param_5 + -10 + param_6) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_5 = (param_5 + -10 + param_6) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextColor_FUN_00402a60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextColor_FUN_00402a60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_2d_c_drawTextColor_FUN_00402a60(param_2,param_3,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,param_3,param_4,(param_5 + -10 + param_6) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_2,param_3,param_4,(param_5 + -10 + param_6) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_2,param_3,param_4,(param_5 + -10 + param_6) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_2,param_3,param_4,(param_5 + -10 + param_6) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(param_2,param_3,param_4,(param_5 + -10 + param_6) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "switch(param_7) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - *(int *)(_DAT_01b4d718 + 0x3170) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - *(int *)(_DAT_01b4d718 + 0x3170) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5 - *(int *)(_DAT_01b4d718 + 0x3170) / 2,0xfffffffd,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5 - *(int *)(_DAT_01b4d718 + 0x3170) / 2,0xfffffffd,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = ((param_5 + param_6 + 1) - *(int *)(_DAT_01b4d718 + 0x3170)) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = ((param_5 + param_6 + 1) - *(int *)(_DAT_01b4d718 + 0x3170)) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_5 = ((param_5 + param_6 + 1) - *(int *)(_DAT_01b4d718 + 0x3170)) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_5,0xfffffffd,0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(_DAT_01b4d718,param_3,param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "((param_5 + param_6 + 1) - *(int *)(_DAT_01b4d718 + 0x3170)) / 2,0xfffffffd,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "((param_5 + param_6 + 1) - *(int *)(_DAT_01b4d718 + 0x3170)) / 2,0xfffffffd,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "0xffffffff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 8,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

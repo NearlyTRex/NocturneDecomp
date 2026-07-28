@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(int param_1,float param_2)
+; void core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CWeapon *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -37,7 +37,7 @@ section .text
     PUSH dword ptr [EBP + 0x14]         ; 0046edce
     PUSH EBX                            ; 0046edd1
     CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 0046edd2
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00554030(CWeapon * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x570]         ; 0046edd7
     FLDZ                                ; 0046eddd
     ADD ESP,0x8                         ; 0046eddf
@@ -64,7 +64,7 @@ section .text
     SUB ESP,0x4                         ; 0046ee19
     FSTP float ptr [ESP]                ; 0046ee1c
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0046ee1f
-        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_randomChance_FUN_0040dea0()
+        ;   XREF to: 0040dea0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040dea0(float probability_threshold)
     ADD ESP,0x4                         ; 0046ee24
     TEST EAX,EAX                        ; 0046ee27
     JNZ 0x0046ee5d                      ; 0046ee29
@@ -82,7 +82,7 @@ section .text
     PUSH ESI                            ; 0046ee3e
     MOV dword ptr [EBX + 0x570],0x0     ; 0046ee3f
     CALL core_sound.cpp_CSound_killSound_FUN_0052ebb0 ; 0046ee49
-        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_killSound_FUN_0052ebb0()
+        ;   XREF to: 0052ebb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0052ebb0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 0046ee4e
     MOV dword ptr [EBX + 0x580],0x0     ; 0046ee51
     JMP 0x0046ee2b                      ; 0046ee5b
@@ -132,7 +132,7 @@ section .text
     PUSH EAX                            ; 0046eed6
     PUSH EBX                            ; 0046eed7
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0046eed8
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EBX,EAX                         ; 0046eedd
     LEA EAX,[ESP + 0x44]                ; 0046eedf
     ADD ESP,0xc                         ; 0046eee3
@@ -156,7 +156,7 @@ section .text
     MOV EDX,dword ptr [0x005b80f0]      ; 0046ef16 | DAT_005b80f0
     PUSH EDX                            ; 0046ef1c
     CALL core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90 ; 0046ef1d
-        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90()
+        ;   XREF to: 0048ae90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 0046ef22
     MOV ESP,EBP                         ; 0046ef25
     POP EBP                             ; 0046ef27

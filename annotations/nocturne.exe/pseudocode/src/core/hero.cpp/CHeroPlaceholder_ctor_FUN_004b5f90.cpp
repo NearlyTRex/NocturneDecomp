@@ -2,18 +2,19 @@
 // Address: 004b5f90
 // Address Range: [[004b5f90, 004b5fbb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(undefined4 param_1)
+// Signature: CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(uint param_1)
+CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder *this_ptr)
 
 {
-  int iVar1;
+  CHeroPlaceholder *pCVar1;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  *(byte ***)(iVar1 + 0x14c) = &PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_0059ec84;
-  *(uint *)(iVar1 + 0xfc) = 1;
-  *(uint *)(iVar1 + 0x150) = 0;
-  return;
+  pCVar1 = (CHeroPlaceholder *)core_actor_cpp_FUN_00409d30(this_ptr);
+  (pCVar1->base).vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_actor_cpp_CDemonActor_setup_FUN_00409fc0_0059ec84;
+  (pCVar1->base).is_transparent = 1;
+  pCVar1->index = 0;
+  return pCVar1;
 }

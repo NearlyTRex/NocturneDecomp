@@ -2,27 +2,31 @@
 // Address: 00543050
 // Address Range: [[00543050, 005430c4]]
 // Convention: unknown
-// Signature: int core_svetlana_cpp_FUN_00543050(int param_1,byte param_2)
+// Signature: CHero * core_svetlana_cpp_FUN_00543050(CHero *param_1,byte param_2)
 
 #include "nocturne.h"
 
-int core_svetlana_cpp_FUN_00543050(int param_1,byte param_2)
+CHero * core_svetlana_cpp_FUN_00543050(CHero *param_1,byte param_2)
 
 {
-  int iVar1;
-  uint uVar2;
+  CCloth *pCVar1;
+  CHero *pCVar2;
+  void *ptr;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&g_CSvetlanaTypeInfo_005a2bc0);
-    shape_memdbg_cpp_free_FUN_00564486(uVar2);
+    ptr = __vec_delete(param_1,&g_CSvetlanaTypeInfo_005a2bc0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  iVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(param_1 + 0x5a574,0);
-  iVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(iVar1 + -0x3ab30,0);
-  iVar1 = core_hero_cpp_FUN_004b4800(iVar1 + -0x1fa44,1);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160
+                     ((CCloth *)(param_1[2].path_map.height_cache_tags[0x38] + 0x13),0);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160
+                     ((CCloth *)
+                      (pCVar1[-1].model.texture_list[0x123].textures[2].texture_name + 0xc),0);
+  pCVar2 = core_hero_cpp_CHero_dtor_FUN_004b4800((CHero *)(pCVar1[-1].vertices + 0x183),1);
   if ((param_2 & 2) == 0) {
-    return iVar1;
+    return pCVar2;
   }
-  FUN_00564494(iVar1);
-  return iVar1;
+  FUN_00564494(pCVar2);
+  return pCVar2;
 }

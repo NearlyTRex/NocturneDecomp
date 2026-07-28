@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_setup_FUN_00411760(int param_1)
+; void core_barrier_cpp_CBarrier_setup_FUN_00411760(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00411761
     PUSH EBX                            ; 00411765
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 00411766
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV EAX,[0x005baf90]                ; 0041176b | DAT_005baf90
     MOV EAX,dword ptr [EAX + 0x4]       ; 00411770 | DAT_01cc9454
     MOV dword ptr [EBX + 0xf8],0x0      ; 00411773

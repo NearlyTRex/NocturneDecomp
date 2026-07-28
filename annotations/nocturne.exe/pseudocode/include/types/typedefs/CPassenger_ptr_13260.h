@@ -19,7 +19,7 @@ struct CPassenger_ptr_13260 {
     template<typename T> CPassenger_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CPassenger_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CPassenger* operator->() const { return (CPassenger*)_raw; }
-    CPassenger* adj() const { return (CPassenger*)((char*)_raw - offsetof(CPassenger, base.base.flames)); }
+    CPassenger* adj() const { return (CPassenger*)((char*)_raw - offsetof(CPassenger, base.base.flames[0].base.actor_name[8])); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

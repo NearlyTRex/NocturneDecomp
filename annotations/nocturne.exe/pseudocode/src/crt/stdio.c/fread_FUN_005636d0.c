@@ -2,119 +2,122 @@
 // Address: 005636d0
 // Address Range: [[005636d0, 005638c6]]
 // Convention: __cdecl
-// Signature: uint __cdecl crt_stdio_c_fread_FUN_005636d0(char *param_1,uint param_2,int param_3,int *param_4)
+// Signature: SIZE_T __cdecl crt_stdio_c_fread_FUN_005636d0(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
 
 #include "nocturne.h"
 
-uint __cdecl _fread(char *param_1,uint param_2,int param_3,int *param_4)
+SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
 
 {
   char cVar1;
-  uint uVar2;
-  int iVar3;
-  uint uVar4;
-  char *pcVar5;
+  SIZE_T SVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
   char *pcVar6;
-  uint uVar7;
-  byte bVar8;
+  char *pcVar7;
+  uint uVar8;
+  byte bVar9;
   uint uStack_14;
   
-  bVar8 = 0;
-  (*(code *)PTR_FUN_005c1ac0)(param_4[4]);
-  if ((*(byte *)(param_4 + 3) & 1) == 0) {
-    FUN_00568e80(4);
-    *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x20;
-    (*(code *)PTR_FUN_005c1ac4)(param_4[4]);
-    uStack_14 = 0;
+  bVar9 = 0;
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
+  if ((file->_flag & 1) == 0) {
+    setErrno(4);
+    *(byte *)&file->_flag = (byte)file->_flag | 0x20;
+    (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+    SVar2 = 0;
   }
   else {
-    uVar7 = param_3 * param_2;
-    if (uVar7 == 0) {
-      (*(code *)PTR_FUN_005c1ac4)(param_4[4]);
+    uVar8 = count * size;
+    if (uVar8 == 0) {
+      (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
       return 0;
     }
-    if (*(int *)(param_4[2] + 8) == 0) {
-      FUN_00568ed0(param_4);
+    if (file->_link->__reserve_end == (char *)0x0) {
+      FUN_00568ed0(file);
     }
     uStack_14 = 0;
-    if ((*(byte *)(param_4 + 3) & 0x40) == 0) {
-      pcVar5 = param_1;
+    if ((file->_flag & 0x40) == 0) {
+      pcVar6 = buffer;
       do {
-        if ((param_4[1] == 0) && (iVar3 = FUN_00564670(param_4), iVar3 == 0)) break;
-        pcVar6 = (char *)*param_4;
-        param_4[1] = param_4[1] + -1;
-        *param_4 = (int)(pcVar6 + 1);
-        cVar1 = *pcVar6;
+        if ((file->_cnt == 0) &&
+           (iVar4 = FillInputBuffer(file), iVar4 == 0)) break;
+        pcVar7 = file->_ptr;
+        file->_cnt = file->_cnt + -1;
+        file->_ptr = pcVar7 + 1;
+        cVar1 = *pcVar7;
         if (cVar1 == '\r') {
-          if ((param_4[1] == 0) && (iVar3 = FUN_00564670(param_4), iVar3 == 0)) break;
-          param_4[1] = param_4[1] + -1;
-          pcVar6 = (char *)*param_4;
-          *param_4 = (int)(pcVar6 + 1);
-          cVar1 = *pcVar6;
+          if ((file->_cnt == 0) &&
+             (iVar4 = FillInputBuffer(file), iVar4 == 0)) break;
+          file->_cnt = file->_cnt + -1;
+          pcVar7 = file->_ptr;
+          file->_ptr = pcVar7 + 1;
+          cVar1 = *pcVar7;
         }
         if (cVar1 == '\x1a') {
-          *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x10;
+          *(byte *)&file->_flag = (byte)file->_flag | 0x10;
           break;
         }
-        pcVar6 = pcVar5 + 1;
+        pcVar7 = pcVar6 + 1;
         uStack_14 = uStack_14 + 1;
-        *pcVar5 = cVar1;
-        pcVar5 = pcVar6;
-      } while (pcVar6 != param_1 + uVar7);
+        *pcVar6 = cVar1;
+        pcVar6 = pcVar7;
+      } while (pcVar7 != (char *)(uVar8 + (int)buffer));
     }
     else {
       do {
         while( true ) {
-          uVar2 = param_4[1];
-          if (uVar2 != 0) {
-            if (uVar7 < uVar2) {
-              uVar2 = uVar7;
+          uVar3 = file->_cnt;
+          if (uVar3 != 0) {
+            if (uVar8 < uVar3) {
+              uVar3 = uVar8;
             }
-            pcVar5 = (char *)*param_4;
-            pcVar6 = param_1;
-            for (uVar4 = uVar2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-              *(uint *)pcVar6 = *(uint *)pcVar5;
-              pcVar5 = pcVar5 + (uint)bVar8 * -8 + 4;
-              pcVar6 = pcVar6 + (uint)bVar8 * -8 + 4;
+            pcVar6 = file->_ptr;
+            pcVar7 = buffer;
+            for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+              *(uint *)pcVar7 = *(uint *)pcVar6;
+              pcVar6 = pcVar6 + ((uint)bVar9 * -2 + 1) * 4;
+              pcVar7 = pcVar7 + ((uint)bVar9 * -2 + 1) * 4;
             }
-            for (uVar4 = uVar2 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-              *pcVar6 = *pcVar5;
-              pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
-              pcVar6 = pcVar6 + (uint)bVar8 * -2 + 1;
+            for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+              *pcVar7 = *pcVar6;
+              pcVar6 = pcVar6 + (uint)bVar9 * -2 + 1;
+              pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
             }
-            uVar7 = uVar7 - uVar2;
-            param_1 = param_1 + uVar2;
-            uStack_14 = uStack_14 + uVar2;
-            *param_4 = *param_4 + uVar2;
-            param_4[1] = param_4[1] - uVar2;
+            uVar8 = uVar8 - uVar3;
+            buffer = (void *)((int)buffer + uVar3);
+            uStack_14 = uStack_14 + uVar3;
+            file->_ptr = file->_ptr + uVar3;
+            file->_cnt = file->_cnt - uVar3;
           }
-          if (uVar7 == 0) goto LAB_005638a9;
-          if ((uVar7 < (uint)param_4[5]) && ((*(byte *)((int)param_4 + 0xd) & 4) == 0)) break;
-          *param_4 = *(int *)(param_4[2] + 8);
-          param_4[1] = 0;
-          uVar2 = uVar7;
-          if (((*(byte *)((int)param_4 + 0xd) & 4) == 0) && (0x200 < uVar7)) {
-            uVar2 = (uVar7 >> 8 & 0xfffffe) << 8;
+          if (uVar8 == 0) goto LAB_005638a9;
+          if ((uVar8 < file->_bufsize) && ((file->_flag & 0x400) == 0)) break;
+          file->_ptr = file->_link->__reserve_end;
+          file->_cnt = 0;
+          uVar3 = uVar8;
+          if (((file->_flag & 0x400) == 0) && (0x200 < uVar8)) {
+            uVar3 = (uVar8 >> 8 & 0xfffffe) << 8;
           }
-          iVar3 = FUN_00568f70(param_4[4],param_1,uVar2);
-          if (iVar3 == -1) {
-            *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x20;
+          iVar4 = FUN_00568f70(file->_handle,buffer,uVar3);
+          if (iVar4 == -1) {
+            *(byte *)&file->_flag = (byte)file->_flag | 0x20;
             goto LAB_005638a9;
           }
-          if (iVar3 == 0) {
-            *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x10;
+          if (iVar4 == 0) {
+            *(byte *)&file->_flag = (byte)file->_flag | 0x10;
             goto LAB_005638a9;
           }
-          param_1 = param_1 + iVar3;
-          uVar7 = uVar7 - iVar3;
-          uStack_14 = uStack_14 + iVar3;
+          buffer = (void *)((int)buffer + iVar4);
+          uVar8 = uVar8 - iVar4;
+          uStack_14 = uStack_14 + iVar4;
         }
-        iVar3 = FUN_00564670(param_4);
-      } while (iVar3 != 0);
+        iVar4 = FillInputBuffer(file);
+      } while (iVar4 != 0);
     }
 LAB_005638a9:
-    (*(code *)PTR_FUN_005c1ac4)(param_4[4]);
-    uStack_14 = uStack_14 / param_2;
+    (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
+    SVar2 = uStack_14 / size;
   }
-  return uStack_14;
+  return SVar2;
 }

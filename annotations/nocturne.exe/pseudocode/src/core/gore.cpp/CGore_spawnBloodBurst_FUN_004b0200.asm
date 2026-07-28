@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(undefined4 param_1,undefined4 param_2,float *param_3,int param_4,int param_5)
+; void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
 ;
+; Parameters:
+; CGore *          Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   direction
+; int              Stack[0x10]:4   count
+; int              Stack[0x14]:4   blood_type
 ; Local Variables:
 ; undefined4       Stack[-0x78]:4  local_78
 ; undefined        Stack[-0x74]:1  local_74
@@ -77,7 +83,7 @@ section .text
     PUSH EDX                            ; 004b022e
     INC EBX                             ; 004b022f
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004b0230
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 004b0235
     CMP EBX,ESI                         ; 004b0238
     JL 0x004b0224                       ; 004b023a
@@ -151,13 +157,13 @@ section .text
     FSQRT                               ; 004b02da
     FLD float ptr [ESP + 0x3c]          ; 004b02dc
     CALL crt_math.c_atan2_FUN_00566c81  ; 004b02e0
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     FLD float ptr [ESP + 0x40]          ; 004b02e5
     XOR EAX,EAX                         ; 004b02e9
     FLD float ptr [ESP + 0x38]          ; 004b02eb
     MOV dword ptr [ESP + 0x58],EAX      ; 004b02ef
     CALL crt_math.c_atan2_FUN_00566c81  ; 004b02f3
-        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_atan2_FUN_00566c81()
+        ;   XREF to: 00566c81 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_00566c81(float10 y, float10 x)
     XOR EBX,EBX                         ; 004b02f8
     FXCH                                ; 004b02fa
     FCHS                                ; 004b02fc
@@ -196,7 +202,7 @@ section .text
     PUSH EAX                            ; 004b036f
     FSTP float ptr [ESP + 0x50]         ; 004b0370
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004b0374
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004b0379
     MOV EAX,dword ptr [ESP + 0xc]       ; 004b037c
     MOV dword ptr [ESP + 0x44],EAX      ; 004b0380
@@ -241,7 +247,7 @@ section .text
     PUSH ECX                            ; 004b03fb
     INC EBX                             ; 004b03fc
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004b03fd
-        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
+        ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
     ADD ESP,0x10                        ; 004b0402
     CMP EBX,ESI                         ; 004b0405
     JGE 0x004b0240                      ; 004b0407

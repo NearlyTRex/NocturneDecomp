@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(int param_1,float param_2)
+; void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(CScat *this_ptr,float delta_time)
 ;
+; Parameters:
+; CScat *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -39,7 +42,7 @@ section .text
     PUSH EAX                            ; 004fca68
     PUSH EDI                            ; 004fca69
     CALL core_motion.cpp_CMotionController_advance_FUN_004e11c0 ; 004fca6a
-        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_advance_FUN_004e11c0()
+        ;   XREF to: 004e11c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_004e11c0(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 004fca6f
     CMP EAX,0x64                        ; 004fca72
     JZ 0x004fca94                       ; 004fca75
@@ -47,7 +50,7 @@ section .text
     PUSH EAX                            ; 004fca77
     PUSH ESI                            ; 004fca78
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 ; 004fca79
-        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processMotion_FUN_0042add0()
+        ;   XREF to: 0042add0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042add0(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004fca7e
         ;   Label: LAB_004fca7e
     FLD float ptr [EBP + 0x18]          ; 004fca81
@@ -70,7 +73,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x2590]    ; 004fca9b
     PUSH ECX                            ; 004fcaa1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004fcaa2
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004fcaa7
     ADD ESP,0x8                         ; 004fcaa9
     TEST EAX,EAX                        ; 004fcaac
@@ -79,7 +82,7 @@ section .text
     MOV EAX,ESP                         ; 004fcab0
     PUSH EAX                            ; 004fcab2
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 004fcab3
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     MOV EAX,0x40a00000                  ; 004fcab8
     ADD ESP,0x4                         ; 004fcabd
     MOV EDX,ESP                         ; 004fcac0

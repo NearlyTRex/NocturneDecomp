@@ -17,7 +17,7 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
   uint uVar4;
   int iVar5;
   int iVar6;
-  byte local_c4 [100];
+  char local_c4 [100];
   int *local_60;
   int local_5c;
   int local_58;
@@ -133,8 +133,8 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
       }
       _sprintf(local_c4,"%g",(double)*(float *)(&DAT_02663604 + local_3c * 4));
       iVar6 = local_2c;
-      engine_2d_c_drawText_FUN_00402600(local_c4,local_2c);
-      engine_2d_c_drawText_FUN_00402600(local_60 + local_3c * 0x68);
+      engine_2d_c_drawText_FUN_00402600(local_c4,local_2c,local_44);
+      engine_2d_c_drawText_FUN_00402600((char *)(local_60 + local_3c * 0x68),iVar6,local_4c);
       local_2c = iVar6 + 0x41;
       if (DAT_005b761c < iVar6 + 0x81) {
         local_2c = 2;

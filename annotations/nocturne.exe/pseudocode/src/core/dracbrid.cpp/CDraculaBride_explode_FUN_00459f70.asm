@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,float *param_2,float param_3,undefined4 param_4)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   direction
+; float            Stack[0xc]:4   spread_angle
+; int              Stack[0x10]:4   render_in_background
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined        Stack[-0xac]:1  local_ac
@@ -58,7 +63,7 @@ section .text
         ;   XREF to: 00459ffa (CONDITIONAL_JUMP)  ; LAB_00459ffa
     PUSH EAX                            ; 00459f9c
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 00459f9d
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00459fa2
     MOV EAX,dword ptr [EAX + 0xc00]     ; 00459fa5
     MOV dword ptr [ESP + 0x8c],EAX      ; 00459fab
@@ -91,7 +96,7 @@ section .text
         ;   Label: LAB_00459fe4
     PUSH EDI                            ; 00459fe5
     CALL core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 ; 00459fe6
-        ;   XREF to: 0045a1a0 (UNCONDITIONAL_CALL)  ; undefined core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0()
+        ;   XREF to: 0045a1a0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0(CDraculaBride * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 00459feb
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00459fee
     INC ESI                             ; 00459ff5
@@ -133,7 +138,7 @@ section .text
     PUSH EDI                            ; 0045a05c
     FSTP float ptr [ESP + 0x70]         ; 0045a05d
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0045a061
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV ECX,dword ptr [EDI + 0xb640]    ; 0045a066
     ADD ESP,0xc                         ; 0045a06c
     TEST ECX,ECX                        ; 0045a06f
@@ -186,7 +191,7 @@ section .text
     PUSH EAX                            ; 0045a10b
     FSTP float ptr [ESP + 0x7c]         ; 0045a10c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0045a110
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [EBX + 0x4]           ; 0045a115
     FMUL ST0                            ; 0045a118
     FLD float ptr [EBX]                 ; 0045a11a
@@ -228,7 +233,7 @@ section .text
     MOV EDI,dword ptr [0x005b96c4]      ; 0045a17c | INT_005b96c4
     PUSH EDI                            ; 0045a182
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0045a183
-        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
+        ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 0045a188
     MOV ESP,EBP                         ; 0045a18b
     POP EBP                             ; 0045a18d

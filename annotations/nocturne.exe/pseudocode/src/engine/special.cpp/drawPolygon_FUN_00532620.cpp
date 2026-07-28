@@ -2,20 +2,20 @@
 // Address: 00532620
 // Address Range: [[00532620, 00532648]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_special_cpp_drawPolygon_FUN_00532620(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: int __cdecl engine_special_cpp_drawPolygon_FUN_00532620(SRenderVertex *vertices,int vertex_count,int render_flags)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl engine_special_cpp_drawPolygon_FUN_00532620(uint param_1,uint param_2,uint param_3)
+int __cdecl engine_special_cpp_drawPolygon_FUN_00532620(SRenderVertex *vertices,int vertex_count,int render_flags)
 
 {
-  uint uVar1;
+  int iVar1;
   
   if (_DAT_01c02594 == 0) {
     return 0;
   }
-  uVar1 = (*_DAT_02dc9da8)(param_1,param_2,param_3);
-  return uVar1;
+  iVar1 = (*_DAT_02dc9da8)(vertices,vertex_count,render_flags);
+  return iVar1;
 }

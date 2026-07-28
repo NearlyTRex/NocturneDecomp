@@ -2,28 +2,29 @@
 // Address: 00555750
 // Address Range: [[00555750, 005557c4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(int *param_1,int param_2)
+// Signature: void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *this_ptr,EWeatherType type)
 
 #include "nocturne.h"
 
-void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(int *param_1,int param_2)
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *this_ptr,EWeatherType type)
 
 {
-  int iVar1;
+  float fVar1;
   
-  *param_1 = param_2;
-  if (param_2 == 1) {
-    param_1[1] = 0x42200000;
+  this_ptr->weather_type = type;
+  if (type == WEATHER_TYPE_RAIN) {
+    this_ptr->particle_speed = 40.0;
   }
   else {
-    param_1[1] = 0x40a00000;
+    this_ptr->particle_speed = 5.0;
   }
-  iVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41a00000);
-  param_1[9] = 0;
-  param_1[0xd] = 0x41200000;
-  param_1[10] = 0;
-  param_1[8] = iVar1;
-  iVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x40000000,param_1[0xd]);
-  param_1[0xb] = iVar1;
+  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x41200000,0x41a00000);
+  this_ptr->lightning_active = 0;
+  this_ptr->max_flash_interval = 10.0;
+  this_ptr->flash_timer = 0.0;
+  this_ptr->lightning_countdown = fVar1;
+  fVar1 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
+                           (0x40000000,this_ptr->max_flash_interval);
+  this_ptr->sub_flash_interval = fVar1;
   return;
 }

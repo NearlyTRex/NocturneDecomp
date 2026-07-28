@@ -1,21 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_ungetc_FUN_00564740(uint param_1,int *param_2)
+; int __cdecl crt_stdio_c_ungetc_FUN_00564740(int character,_FILE *stream)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; _FILE *          Stack[0x8]:4   stream
 ;
 ; XREF[4]:
 ;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c73a
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 at 004526af
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8b4a
-;   crt_unknown.c_FUN_005632b0 at 005632be
+;   crt_unknown.c_ungetc_helper_FUN_005632b0 at 005632be
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_005671e4
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   FUN_00568ed0
 ;
 ; *****************************************************************************
@@ -41,7 +44,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10]      ; 00564758
         ;   Label: LAB_00564758
     PUSH ECX                            ; 0056475b
-    CALL dword ptr [0x005c1ac0]         ; 0056475c | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 0056475c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV EAX,dword ptr [EBX + 0x8]       ; 00564762
     MOV ESI,dword ptr [EAX + 0xc]       ; 00564765
     ADD ESP,0x4                         ; 00564768
@@ -53,7 +56,7 @@ section .text
         ;   XREF to: 0056478b (CONDITIONAL_JUMP)  ; LAB_0056478b
     MOV EBP,dword ptr [EBX + 0x10]      ; 00564774
     PUSH EBP                            ; 00564777
-    CALL dword ptr [0x005c1ac4]         ; 00564778 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00564778 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     MOV EAX,0xffffffff                  ; 0056477e
     ADD ESP,0x4                         ; 00564783
     POP EBP                             ; 00564786
@@ -69,7 +72,7 @@ section .text
         ;   XREF to: 005647af (CONDITIONAL_JUMP)  ; LAB_005647af
     MOV EBP,dword ptr [EBX + 0x10]      ; 00564798
     PUSH EBP                            ; 0056479b
-    CALL dword ptr [0x005c1ac4]         ; 0056479c | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 0056479c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     MOV EAX,0xffffffff                  ; 005647a2
     ADD ESP,0x4                         ; 005647a7
     POP EBP                             ; 005647aa
@@ -84,7 +87,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x10]      ; 005647b5
         ;   Label: LAB_005647b5
     PUSH EDI                            ; 005647b8
-    CALL dword ptr [0x005c1ac4]         ; 005647b9 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 005647b9 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     MOV EAX,0xffffffff                  ; 005647bf
     ADD ESP,0x4                         ; 005647c4
     POP EBP                             ; 005647c7
@@ -148,7 +151,7 @@ section .text
     AND CH,0xef                         ; 00564841
     PUSH ESI                            ; 00564844
     MOV byte ptr [EBX + 0xc],CH         ; 00564845
-    CALL dword ptr [0x005c1ac4]         ; 00564848 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 00564848 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 0056484e
     XOR EAX,EAX                         ; 00564851
     MOV AL,byte ptr [ESP + 0x14]        ; 00564853

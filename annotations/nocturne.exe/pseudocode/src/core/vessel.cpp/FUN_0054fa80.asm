@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_FUN_0054fa80(int param_1)
+; void core_vessel_cpp_FUN_0054fa80(CDemonActor *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -22,17 +22,17 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0054fa84
     PUSH EBX                            ; 0054fa88
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0054fa89
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054fa8e
     LEA EAX,[EBX + 0x150]               ; 0054fa91
     PUSH EAX                            ; 0054fa97
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054fa98
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054fa9d
     LEA EAX,[EBX + 0x65c]               ; 0054faa0
     PUSH EAX                            ; 0054faa6
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054faa7
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054faac
     MOV EDX,ESP                         ; 0054faaf
     PUSH EDX                            ; 0054fab1

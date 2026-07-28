@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(int param_1,int param_2)
+; int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[5]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 at 00469a7d
+;   core_mirror.cpp_CMirror_renderMirrorQuad_FUN_004d77f0 at 004d7956
 ;   core_mirror.cpp_FUN_004d7720 at 004d7749
-;   core_mirror.cpp_FUN_004d77f0 at 004d7956
 ;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490 at 0050e4b7
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800 at 00550c4e
 ;
@@ -59,7 +62,7 @@ section .text
     PUSH 0x1                            ; 0045f1de
     PUSH EBX                            ; 0045f1e0
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0045f1e1
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070()
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0045f1e6
     LEA EAX,[ESI + 0x18]                ; 0045f1e9
         ;   Label: LAB_0045f1e9
@@ -68,7 +71,7 @@ section .text
     PUSH EDX                            ; 0045f1f0
     PUSH EBX                            ; 0045f1f1
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f1f2
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     MOV ECX,dword ptr [0x01c02594]      ; 0045f1f7 | DAT_01c02594
     ADD ESP,0xc                         ; 0045f1fd
     TEST ECX,ECX                        ; 0045f200
@@ -77,7 +80,7 @@ section .text
     PUSH EDI                            ; 0045f204
     PUSH EBX                            ; 0045f205
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0045f206
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070()
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0045f20b
     MOV EBX,dword ptr [0x005ae708]      ; 0045f20e | DAT_005ae708
         ;   Label: LAB_0045f20e
@@ -94,7 +97,7 @@ section .text
         ;   Label: LAB_0045f228
     PUSH EAX                            ; 0045f22b
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0045f22c
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0045f231
     TEST EAX,EAX                        ; 0045f234
     JNZ 0x0045f1ae                      ; 0045f236

@@ -2,13 +2,13 @@
 // Address: 00460fa0
 // Address Range: [[00460fa0, 00460fab]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(int param_1,undefined4 param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(CDemonRenderer *this_ptr,int enabled)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(int param_1,uint param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(CDemonRenderer *this_ptr,int enabled)
 
 {
-  *(uint *)(param_1 + 0xc) = param_2;
+  this_ptr->plane_culling_enabled = enabled;
   return;
 }

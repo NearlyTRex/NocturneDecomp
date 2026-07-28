@@ -2,12 +2,12 @@
 // Address: 00423d30
 // Address Range: [[00423d30, 00423d39]]
 // Convention: __cdecl
-// Signature: int __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(int param_1)
+// Signature: char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(int param_1)
+char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(CDeformableModelInstance *model_ptr)
 
 {
-  return param_1 + 0x2260;
+  return model_ptr->model_name;
 }

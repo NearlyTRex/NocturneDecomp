@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00479560(undefined4 param_1)
+; CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00479560(CEnemy *this_ptr)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
@@ -43,7 +45,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00479566
     PUSH EDX                            ; 0047956a
     CALL core_charactr.cpp_CCharacter_ctor_FUN_00423f40 ; 0047956b
-        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_ctor_FUN_00423f40()
+        ;   XREF to: 00423f40 (UNCONDITIONAL_CALL)  ; CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00423f40(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00479570
     PUSH 0x3f8ccccd                     ; 00479573
     MOV EBX,EAX                         ; 00479578
@@ -71,14 +73,14 @@ section .text
     PUSH 0xffffe001                     ; 0047961d
     FSTP float ptr [EBX + 0xbc8c]       ; 00479622
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00479628
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 0047962d
     PUSH 0x1fff                         ; 00479630
     ADD EAX,0x10000                     ; 00479635
     PUSH 0xffffe001                     ; 0047963a
     MOV dword ptr [EBX + 0x108],EAX     ; 0047963f
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00479645
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 0047964a
     PUSH 0x1fff                         ; 0047964d
     ADD EAX,0x10000                     ; 00479652
@@ -86,7 +88,7 @@ section .text
     MOV ESI,0x57f2be                    ; 0047965c | = "ene"
     MOV dword ptr [EBX + 0x10c],EAX     ; 00479661
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 00479667
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 0047966c
     ADD EAX,0x10000                     ; 0047966f
     LEA EDI,[EBX + 0x11c]               ; 00479674

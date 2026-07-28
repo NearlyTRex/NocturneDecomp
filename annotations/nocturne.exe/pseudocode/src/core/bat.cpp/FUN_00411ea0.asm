@@ -22,11 +22,11 @@ section .text
     FLD float ptr [EAX + 0x17c]         ; 00411eac
     ADD EAX,0x180                       ; 00411eb2
     CALL crt_math.c_round_FUN_00563a30  ; 00411eb7
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EAX                            ; 00411ebc
     FISTP dword ptr [ESP + 0x4]         ; 00411ebd
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00411ec1
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00411ec6
     MOV ECX,dword ptr [ESP]             ; 00411ec9
     MOV EDX,EAX                         ; 00411ecc

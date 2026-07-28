@@ -1,13 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0(int param_1,double param_2,int param_3,int param_4)
+; void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0(int intensity_position,double ratio,int sample_index,float *ratio_buffer)
 ;
+; Parameters:
+; int              Stack[0x4]:4   intensity_position
+; double           Stack[0x8]:8   ratio
+; int              Stack[0x10]:4   sample_index
+; float *          Stack[0x14]:4   ratio_buffer
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   sound_mp3.cpp_FUN_004e6160 at 004e657f
+;   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_004e6160 at 004e657f
 ;
 ; Called Functions:
 ;   crt_math.c_pow_FUN_00565ad6
@@ -44,7 +49,7 @@ section .text
     FILD dword ptr [ESP]                ; 004e60f9
     FLD double ptr [ESP + 0x14]         ; 004e60fc
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e6100
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     MOV dword ptr [EBX + 0x900],0x3f800000 ; 004e6105
     FSTP float ptr [EBX]                ; 004e610f
     ADD ESP,0x4                         ; 004e6111
@@ -66,7 +71,7 @@ section .text
     FILD dword ptr [ESP]                ; 004e6135
     FLD double ptr [ESP + 0x14]         ; 004e6138
     CALL crt_math.c_pow_FUN_00565ad6    ; 004e613c
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     MOV dword ptr [EBX],0x3f800000      ; 004e6141
     FSTP float ptr [EBX + 0x900]        ; 004e6147
     ADD ESP,0x4                         ; 004e614d

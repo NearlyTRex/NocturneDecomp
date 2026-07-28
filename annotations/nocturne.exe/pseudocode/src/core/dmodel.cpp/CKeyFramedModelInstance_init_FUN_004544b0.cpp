@@ -2,19 +2,19 @@
 // Address: 004544b0
 // Address Range: [[004544b0, 004544c6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(undefined4 *param_1)
+// Signature: CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(CKeyFramedModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(uint *param_1)
+CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_004544b0(CKeyFramedModelInstance *this_ptr)
 
 {
-  uint *puVar1;
+  char *pcVar1;
   
-  puVar1 = param_1 + 0x1e;
+  pcVar1 = this_ptr->model_name;
   do {
-    *param_1 = 1;
-    param_1 = param_1 + 1;
-  } while (param_1 != puVar1);
-  return;
+    this_ptr->part_visibility_flags[0] = 1;
+    this_ptr = (CKeyFramedModelInstance *)(this_ptr->part_visibility_flags + 1);
+  } while (this_ptr != (CKeyFramedModelInstance *)pcVar1);
+  return this_ptr;
 }

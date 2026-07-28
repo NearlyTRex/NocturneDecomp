@@ -13,8 +13,8 @@
 ;   sound_sndmain.cpp_FUN_00527190 at 005271e5
 ;   sound_sndmain.cpp_FUN_00527200 at 0052721e
 ;   sound_sndmain.cpp_FUN_00527570 at 00527596
-;   sound_sndmain.cpp_FUN_005278e0 at 00527905
 ;   sound_sndmain.cpp_FUN_00527950 at 0052799a
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 0052747d
 ;   ... and 22 more
 ;
 ; Referenced Globals:
@@ -46,7 +46,7 @@ section .text
     PUSH ESI                            ; 005288a8
     MOV dword ptr [0x02dc84bc],EDI      ; 005288a9 | DAT_02dc84bc
     CALL wincore_winrun.cpp_releaseMutex_FUN_00559c30 ; 005288af
-        ;   XREF to: 00559c30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_releaseMutex_FUN_00559c30()
+        ;   XREF to: 00559c30 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_00559c30(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 005288b4
     POP EDI                             ; 005288b7
     POP ESI                             ; 005288b8

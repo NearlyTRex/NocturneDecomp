@@ -1,22 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(int param_1,char *param_2)
+; int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont *param_1,byte *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[31]:
-;   cockpit_drawsurf.cpp_FUN_0045e340 at 0045e350
+;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0045e340 at 0045e350
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049b032
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bff0c
 ;   core_inv.cpp_FUN_004c2470 at 004c261b
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f13
 ;   core_main.c_FUN_004c85f0 at 004c8bfd
-;   core_main.c_FUN_004c8dc0 at 004c8dd0
-;   core_main.c_FUN_004c8eb0 at 004c8f38
 ;   core_main.c_FUN_004c90e0 at 004c9187
-;   core_menu.cpp_FUN_004cf810 at 004cf829
+;   core_main.c_drawCenteredText_FUN_004c8dc0 at 004c8dd0
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f38
+;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf90e
 ;   ... and 21 more
 ;
 ; Called Functions:
@@ -116,7 +116,7 @@ section .text
         ;   Label: LAB_00492e2b
     PUSH EDI                            ; 00492e2c
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0 ; 00492e2d
-        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0()
+        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * font, int char_code)
     MOV EDX,dword ptr [EDI + 0x3174]    ; 00492e32
     ADD ESP,0x8                         ; 00492e38
     ADD EAX,EDX                         ; 00492e3b

@@ -2,13 +2,13 @@
 // Address: 004b45b0
 // Address Range: [[004b45b0, 004b4623]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(float *param_1,float param_2)
+// Signature: int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,float radius)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(float *param_1,float param_2)
+int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,float radius)
 
 {
   int iVar1;
@@ -22,10 +22,10 @@ uint __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(float *param_1,flo
     do {
       iVar1 = *(int *)(iVar5 + 0x1cae0d8);
       if (iVar1 != 0) {
-        fVar2 = *(float *)(iVar1 + 0x20) - *param_1;
-        fVar4 = *(float *)(iVar1 + 0x24) - param_1[1];
-        fVar3 = *(float *)(iVar1 + 0x28) - param_1[2];
-        if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < param_2 * param_2) {
+        fVar2 = *(float *)(iVar1 + 0x20) - point->x;
+        fVar4 = *(float *)(iVar1 + 0x24) - point->y;
+        fVar3 = *(float *)(iVar1 + 0x28) - point->z;
+        if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < radius * radius) {
           return 1;
         }
       }

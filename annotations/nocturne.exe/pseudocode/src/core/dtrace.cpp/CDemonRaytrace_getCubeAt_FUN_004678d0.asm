@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(int param_1,int param_2,int param_3,int param_4)
+; CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   grid_x
+; int              Stack[0xc]:4   grid_y
+; int              Stack[0x10]:4   grid_z
 ;
 ; XREF[12]:
 ;   core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_0046bcf0 at 0046bd29
@@ -13,8 +18,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0 at 004683b7
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 at 00467dfd
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 at 004693f9
-;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0 at 00468c5c
-;   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0 at 0046b491
+;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100 at 0046c1b4
+;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0046bfe0 at 0046c095
 ;   ... and 2 more
 ;
 ; *****************************************************************************

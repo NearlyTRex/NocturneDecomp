@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 231,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 40,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 82,
     "suspect_count": 14,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 297
+    "total_lines": 298
   },
   "cross_references": [
     {
@@ -544,7 +544,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005b761c",
       "severity": "mild",
       "text": "iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_005b7620",
       "severity": "mild",
       "text": "iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);",
@@ -560,18 +560,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_005aca6c",
       "severity": "mild",
-      "text": "(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
+      "text": "(*(int *)(&DAT_005aca6c + DAT_006af628 * 8),*(int *)(&DAT_005aca70 + DAT_006af628 * 8),8",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_006af628",
       "severity": "mild",
-      "text": "(*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),",
+      "text": "(*(int *)(&DAT_005aca6c + DAT_006af628 * 8),*(int *)(&DAT_005aca70 + DAT_006af628 * 8),8",
       "type": "undefined_data"
     },
     {
@@ -579,7 +579,7 @@
       "line": 24,
       "match": "DAT_005aca70",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);",
+      "text": "(*(int *)(&DAT_005aca6c + DAT_006af628 * 8),*(int *)(&DAT_005aca70 + DAT_006af628 * 8),8",
       "type": "undefined_data"
     },
     {
@@ -587,12 +587,12 @@
       "line": 24,
       "match": "DAT_006af628",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_005aca70 + DAT_006af628 * 8),8);",
+      "text": "(*(int *)(&DAT_005aca6c + DAT_006af628 * 8),*(int *)(&DAT_005aca70 + DAT_006af628 * 8),8",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_006afabc",
       "severity": "mild",
       "text": "puVar5 = &DAT_006afabc;",
@@ -600,31 +600,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_006afa38",
-      "severity": "mild",
-      "text": "DAT_006afa38 = malloc(uVar4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_006afa38",
       "severity": "mild",
-      "text": "if (DAT_006afa38 == 0) {",
+      "text": "DAT_006afa38 = malloc(size);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 47,
       "match": "DAT_006afa38",
       "severity": "mild",
-      "text": "_fread(DAT_006afa38,uVar4,1,iVar3);",
+      "text": "if (DAT_006afa38 == (void *)0x0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 59,
+      "match": "DAT_006afa38",
+      "severity": "mild",
+      "text": "_fread(DAT_006afa38,size,1,p_Var4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
       "match": "DAT_006afa3c",
       "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_006afa3c + iVar3);",
@@ -632,15 +632,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_006afa38",
       "severity": "mild",
-      "text": "*(int *)(iVar3 + 0x6afe3c) = iVar7 + DAT_006afa38;",
+      "text": "*(int *)(iVar3 + 0x6afe3c) = iVar7 + (int)DAT_006afa38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 75,
       "match": "DAT_01c00c80",
       "severity": "mild",
       "text": "*(int *)(&DAT_01c00c80 + iVar3) = (int)(0xffffffff / uVar2);",

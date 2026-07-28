@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(undefined4 param_1)
+; CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_FUN_00415cf0 at 00415d03
@@ -33,19 +35,19 @@ section .text
     ADD EAX,0x288                       ; 00415d34
     PUSH EAX                            ; 00415d39
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00415d3a
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00415d3f
     PUSH 0x59a840                       ; 00415d42 | g_SBodyPartFireTypeInfo_0059a840
     PUSH 0x2                            ; 00415d47
     ADD EAX,0x4c0                       ; 00415d49
     PUSH EAX                            ; 00415d4e
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00415d4f
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00415d54
     ADD EAX,0x56c                       ; 00415d57
     PUSH EAX                            ; 00415d5c
     CALL core_box.cpp_CBox_ctor_FUN_0041a610 ; 00415d5d
-        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBox_ctor_FUN_0041a610()
+        ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041a610(CBox * this_ptr)
     SUB EAX,0xcb4                       ; 00415d62
     MOV dword ptr [EAX + 0x14c],0x59a744 ; 00415d67 | PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744
     MOV dword ptr [EAX + 0xf10],0x0     ; 00415d71

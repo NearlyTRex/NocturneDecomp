@@ -36,7 +36,7 @@ section .text
     ADD EAX,0x160                       ; 0048ef0a
     PUSH EAX                            ; 0048ef0f
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0048ef10
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffea0]          ; 0048ef15
     MOV ECX,0x40a00000                  ; 0048ef1b
     MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_core_flies.cpp_CFlies_setup_FUN_0048efb0_0059da34

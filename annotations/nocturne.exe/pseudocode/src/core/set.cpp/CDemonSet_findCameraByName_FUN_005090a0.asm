@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(int *param_1,undefined4 param_2)
+; int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c6b3
@@ -33,7 +36,7 @@ section .text
         ;   Label: LAB_005090b7
     PUSH ESI                            ; 005090b8
     CALL crt_string.c__stricmp_FUN_00564520 ; 005090b9
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 005090be
     TEST EAX,EAX                        ; 005090c1
     JZ 0x005090dc                       ; 005090c3

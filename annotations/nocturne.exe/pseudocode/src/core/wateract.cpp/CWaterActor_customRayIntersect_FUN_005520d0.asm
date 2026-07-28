@@ -81,7 +81,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00552179
     PUSH EAX                            ; 0055217d
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 0055217e
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 00552183
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00552186
     PUSH ECX                            ; 00552189

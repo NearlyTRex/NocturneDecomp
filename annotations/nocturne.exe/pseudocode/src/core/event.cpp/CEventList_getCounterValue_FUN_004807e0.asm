@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004807e0(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004807e0(CEventList *this_ptr,char *str)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   str
 ;
 ; XREF[4]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e695
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047bb8c
-;   core_event.cpp_FUN_0047a350 at 0047a381
+;   core_event.cpp_parseIntOrCounter_FUN_0047a350 at 0047a381
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d03
 ;
 ; Called Functions:

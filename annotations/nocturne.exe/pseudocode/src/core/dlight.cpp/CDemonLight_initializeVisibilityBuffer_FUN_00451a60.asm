@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 00441d78

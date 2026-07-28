@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(int param_1)
+; void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_stranger.cpp_FUN_00535900 at 00536e08

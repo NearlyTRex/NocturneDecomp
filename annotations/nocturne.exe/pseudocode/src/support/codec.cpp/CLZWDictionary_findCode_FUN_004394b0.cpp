@@ -2,27 +2,27 @@
 // Address: 004394b0
 // Address Range: [[004394b0, 004394eb]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(int param_1,int param_2,int param_3)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(CLZWDictionary *this_ptr,int search_code,int start_index)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(int param_1,int param_2,int param_3)
+int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(CLZWDictionary *this_ptr,int search_code,int start_index)
 
 {
   int iVar1;
-  int *piVar2;
+  CLZWDictionaryNode *pCVar2;
   
-  if (param_3 < 0) {
-    return param_2;
+  if (start_index < 0) {
+    return search_code;
   }
-  iVar1 = *(int *)(*(int *)(param_1 + 0x10) + 8 + param_3 * 0x10);
+  iVar1 = this_ptr->node_table[start_index].first_child;
   while( true ) {
     if (iVar1 < 0) {
       return -1;
     }
-    piVar2 = (int *)(iVar1 * 0x10 + *(int *)(param_1 + 0x10));
-    if (param_2 == *piVar2) break;
-    iVar1 = piVar2[3];
+    pCVar2 = this_ptr->node_table + iVar1;
+    if (search_code == pCVar2->code) break;
+    iVar1 = pCVar2->next_sibling;
   }
   return iVar1;
 }

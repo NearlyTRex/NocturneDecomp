@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004c4272
         ;   Label: LAB_004c4272
     CALL core_ladder.cpp_CLadder_ctor_FUN_004c4290 ; 004c4273
-        ;   XREF to: 004c4290 (UNCONDITIONAL_CALL)  ; undefined core_ladder.cpp_CLadder_ctor_FUN_004c4290()
+        ;   XREF to: 004c4290 (UNCONDITIONAL_CALL)  ; CLadder * core_ladder.cpp_CLadder_ctor_FUN_004c4290(CLadder * this_ptr)
     ADD ESP,0x4                         ; 004c4278
     RET                                 ; 004c427b
 

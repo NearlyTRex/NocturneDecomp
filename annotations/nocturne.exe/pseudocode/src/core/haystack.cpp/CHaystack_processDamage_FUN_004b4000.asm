@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(int param_1,int param_2)
+; void core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CCharacter *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -70,13 +70,13 @@ section .text
     PUSH ESI                            ; 004b4085
         ;   Label: LAB_004b4085
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b4086
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b408b
     PUSH EDI                            ; 004b408e
         ;   Label: LAB_004b408e
     PUSH EBX                            ; 004b408f
     CALL core_charactr.cpp_CCharacter_processDamage_FUN_00428510 ; 004b4090
-        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processDamage_FUN_00428510()
+        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_00428510(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004b4095
     POP EDI                             ; 004b4098
     POP ESI                             ; 004b4099
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_004b40ad
     MOV dword ptr [EBX + 0x2434],0x0    ; 004b40ae
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004b40b8
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b40bd
     ADD ESP,0x4                         ; 004b40c0
     CMP EAX,0x9                         ; 004b40c3
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 004b408e (CONDITIONAL_JUMP)  ; LAB_004b408e
     PUSH ESI                            ; 004b40c8
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004b40c9
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b40ce
     ADD ESP,0x4                         ; 004b40d1
     CMP EAX,0x8                         ; 004b40d4
@@ -113,7 +113,7 @@ section .text
     PUSH ESI                            ; 004b40dd
     MOV dword ptr [EBX + 0x2590],0x0    ; 004b40de
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b40e8
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004b40ed
     PUSH 0x0                            ; 004b40f0
     PUSH 0x42480000                     ; 004b40f2
@@ -122,12 +122,12 @@ section .text
     MOV EAX,[0x005b96c4]                ; 004b40fa | INT_005b96c4
     PUSH EAX                            ; 004b40ff
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004b4100
-        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()
+        ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 004b4105
     PUSH EDI                            ; 004b4108
     PUSH EBX                            ; 004b4109
     CALL core_charactr.cpp_CCharacter_processDamage_FUN_00428510 ; 004b410a
-        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_processDamage_FUN_00428510()
+        ;   XREF to: 00428510 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processDamage_FUN_00428510(CCharacter * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 004b410f
     POP EDI                             ; 004b4112
     POP ESI                             ; 004b4113

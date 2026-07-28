@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401da0(int param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401da0(int x_3d,int y_3d,int z_depth)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_3d
+; int              Stack[0x8]:4   y_3d
+; int              Stack[0xc]:4   z_depth
 ;
 ; XREF[2]:
 ;   engine_2d.c_FUN_00403780 at 004037c9
@@ -43,7 +47,7 @@ section .text
     SAR ESI,0x10                        ; 00401dd8
     PUSH ESI                            ; 00401ddb
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00401ddc
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00401de1
     POP ESI                             ; 00401de4
     POP EBX                             ; 00401de5

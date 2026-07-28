@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(int param_1,undefined4 param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer *this_ptr,int value)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   value
 ;
 ; XREF[8]:
 ;   core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_0044e830 at 0044e8e9

@@ -9,36 +9,36 @@
 int core_script_cpp_CScript_skipCommands_FUN_00504c70(int param_1,int param_2,int param_3)
 
 {
-  char *pcVar1;
-  bool bVar2;
+  char *str1;
+  bool bVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
   
-  iVar4 = 0;
-  bVar2 = true;
+  iVar3 = 0;
+  bVar1 = true;
   if (param_2 < *(int *)(param_1 + 0x28)) {
     do {
-      pcVar1 = *(char **)(*(int *)(param_1 + 0x2c) + 4 + param_2 * 8);
-      if (*pcVar1 == '{') {
+      str1 = *(char **)(*(int *)(param_1 + 0x2c) + 4 + param_2 * 8);
+      if (*str1 == '{') {
         param_2 = param_2 + 1;
-        iVar4 = iVar4 + 1;
+        iVar3 = iVar3 + 1;
       }
-      else if (*pcVar1 == '}') {
-        if (iVar4 == 0) {
-          if (!bVar2) {
+      else if (*str1 == '}') {
+        if (iVar3 == 0) {
+          if (!bVar1) {
             return param_2;
           }
           return param_2 + 1;
         }
         param_2 = param_2 + 1;
-        iVar4 = iVar4 + -1;
+        iVar3 = iVar3 + -1;
       }
-      else if (((iVar4 < 1) && (!bVar2)) ||
-              (iVar3 = _strnicmp(pcVar1,"if",2), iVar3 != 0)) {
-        if (((iVar4 < 1) && (param_3 == 0)) ||
-           (iVar3 = _strnicmp(pcVar1,"else",4), iVar3 != 0)) {
-          if (iVar4 == 0) {
-            if (!bVar2) {
+      else if (((iVar3 < 1) && (!bVar1)) ||
+              (iVar2 = _strnicmp(str1,"if",2), iVar2 != 0)) {
+        if (((iVar3 < 1) && (param_3 == 0)) ||
+           (iVar2 = _strnicmp(str1,"else",4), iVar2 != 0)) {
+          if (iVar3 == 0) {
+            if (!bVar1) {
               return param_2;
             }
             return param_2 + 1;
@@ -52,7 +52,7 @@ int core_script_cpp_CScript_skipCommands_FUN_00504c70(int param_1,int param_2,in
       else {
         param_2 = core_script_cpp_CScript_skipCommands_FUN_00504c70(param_1,param_2 + 1,1);
       }
-    } while ((-1 < param_2) && (bVar2 = false, param_2 < *(int *)(param_1 + 0x28)));
+    } while ((-1 < param_2) && (bVar1 = false, param_2 < *(int *)(param_1 + 0x28)));
   }
   return -1;
 }

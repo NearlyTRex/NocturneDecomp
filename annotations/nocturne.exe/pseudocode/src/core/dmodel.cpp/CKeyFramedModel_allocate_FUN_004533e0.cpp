@@ -9,10 +9,10 @@
 void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
 
 {
-  uint uVar1;
-  int *piVar2;
+  int iVar1;
+  void *pvVar2;
   int *piVar3;
-  int iVar4;
+  int *piVar4;
   
   core_dmodel_cpp_FUN_00452f10(param_1);
   *(uint *)(param_1 + 0x104) = param_2;
@@ -30,21 +30,21 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
     INT_01cc4804 = 0x2c1;
     core_main_c_FUN_004c8440("Too many parts!");
   }
-  uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18
-                    (*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
-  *(uint *)(param_1 + 0x10c) = uVar1;
-  uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) * 0x48);
-  *(uint *)(param_1 + 0x114) = uVar1;
-  uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) << 2);
-  iVar4 = *(int *)(param_1 + 0x100);
-  *(uint *)(param_1 + 0x118) = uVar1;
-  piVar2 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(iVar4 * 0x18 + 4);
-  piVar3 = piVar2;
-  if (piVar2 != (int *)0x0) {
-    piVar3 = piVar2 + 1;
-    *piVar2 = iVar4;
+  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18
+                     (*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
+  *(void **)(param_1 + 0x10c) = pvVar2;
+  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) * 0x48);
+  *(void **)(param_1 + 0x114) = pvVar2;
+  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x110) << 2);
+  iVar1 = *(int *)(param_1 + 0x100);
+  *(void **)(param_1 + 0x118) = pvVar2;
+  piVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0x18 + 4);
+  piVar4 = piVar3;
+  if (piVar3 != (int *)0x0) {
+    piVar4 = piVar3 + 1;
+    *piVar3 = iVar1;
   }
-  *(int **)(param_1 + 0x350) = piVar3;
+  *(int **)(param_1 + 0x350) = piVar4;
   if ((((*(int *)(param_1 + 0x10c) == 0) ||
        ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x114) == 0)))) ||
       ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||
@@ -62,9 +62,9 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
   else if (*(int *)(param_1 + 0x100) != 1) {
     return;
   }
-  iVar4 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x104) * 0xc);
-  *(int *)(param_1 + 0x108) = iVar4;
-  if (iVar4 != 0) {
+  pvVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(*(int *)(param_1 + 0x104) * 0xc);
+  *(void **)(param_1 + 0x108) = pvVar2;
+  if (pvVar2 != (void *)0x0) {
     return;
   }
   PTR_01cc4800 = "..\\core\\dmodel.cpp";

@@ -14,7 +14,7 @@ int sound_mp3_cpp_FUN_004e2480(int *param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  float10 fVar6;
+  double dVar6;
   uint uVar7;
   
   piVar2 = (int *)*param_1;
@@ -23,9 +23,8 @@ int sound_mp3_cpp_FUN_004e2480(int *param_1)
           param_1[4];
   iVar4 = param_1[6];
   uVar7 = 0x4e24ed;
-  fVar6 = (float10)round
-                             ((float10)*(double *)(&DAT_005bbc48 + piVar2[4] * 8 + iVar3 * 0x20));
-  iVar1 = (int)ROUND(fVar6);
+  dVar6 = round(*(double *)(&DAT_005bbc48 + piVar2[4] * 8 + iVar3 * 0x20));
+  iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
       if (param_1[3] == 0) {

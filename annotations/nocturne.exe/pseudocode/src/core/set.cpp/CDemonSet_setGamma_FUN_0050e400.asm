@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0050e400(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet *this_ptr,int gamma)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   gamma
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -35,7 +38,7 @@ section .text
     PUSH EDX                            ; 0050e40d
     PUSH 0x1fb8508                      ; 0050e40e
     CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70 ; 0050e413
-        ;   XREF to: 00447a70 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70()
+        ;   XREF to: 00447a70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDemonCamera * this_ptr, int gamma_value)
     ADD ESP,0x8                         ; 0050e418
     MOV EAX,dword ptr [EBP + 0x10]      ; 0050e41b
     MOV dword ptr [ESP + 0x8],EAX       ; 0050e41e
@@ -52,10 +55,10 @@ section .text
     FLD float ptr [ESP]                 ; 0050e446
     FXCH                                ; 0050e449
     CALL crt_math.c_pow_FUN_00565ad6    ; 0050e44b
-        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_pow_FUN_00565ad6()
+        ;   XREF to: 00565ad6 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_00565ad6(float10 base, float10 exp)
     FMUL double ptr [0x0059087a]        ; 0050e450 | DOUBLE_0059087a
     CALL crt_math.c_round_FUN_00563a30  ; 0050e456
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0050e45b
     CMP dword ptr [ESP + 0x4],0x100     ; 0050e45f
     JL 0x0050e484                       ; 0050e467

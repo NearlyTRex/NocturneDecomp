@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(int *param_1,int param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00475f80(CPickList *this_ptr,int item_index,int enable_flag)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   item_index
+; int              Stack[0xc]:4   enable_flag
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e2ba
@@ -68,7 +72,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x134]     ; 00475fe0
     PUSH EAX                            ; 00475fe6
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00475fe7
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00475fec
     MOV dword ptr [EBX + 0x134],EAX     ; 00475fef
     TEST EAX,EAX                        ; 00475ff5

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(int param_1,float *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,int param_7)
+; float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,SCollisionInfo *param_5,uint param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0040a781
     PUSH EDI                            ; 0040a782
     CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 ; 0040a783
-        ;   XREF to: 0040a540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540()
+        ;   XREF to: 0040a540 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)
     ADD ESP,0x10                        ; 0040a788
     MOV EDX,dword ptr [EBP + 0x2c]      ; 0040a78b
     TEST EDX,EDX                        ; 0040a78e
@@ -137,14 +137,14 @@ section .text
     PUSH EAX                            ; 0040a7f4
     FSTP float ptr [ESP + 0x80]         ; 0040a7f5
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 0040a7fc
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040a801
     LEA EAX,[ESP + 0x1c]                ; 0040a804
     PUSH EAX                            ; 0040a808
     LEA EAX,[ESP + 0x50]                ; 0040a809
     PUSH EAX                            ; 0040a80d
     CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20 ; 0040a80e
-        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20()
+        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 0040a813
     TEST EAX,EAX                        ; 0040a816
     JZ 0x0040a75f                       ; 0040a818
@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 0040a826
     PUSH EDI                            ; 0040a827
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 0040a828
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0040a82d
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0040a830
     PUSH ECX                            ; 0040a833
@@ -250,7 +250,7 @@ section .text
     PUSH EAX                            ; 0040a93a
     PUSH EDX                            ; 0040a93b
     CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20 ; 0040a93c
-        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20()
+        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 0040a941
     TEST EAX,EAX                        ; 0040a944
     JNZ 0x0040a81e                      ; 0040a946
@@ -319,7 +319,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x24]      ; 0040a9f6
     PUSH EDX                            ; 0040a9f9
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0040a9fa
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040a9ff
     PUSH EAX                            ; 0040aa02
     CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 ; 0040aa03
@@ -385,7 +385,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x20]      ; 0040aab8
     PUSH ECX                            ; 0040aabb
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0040aabc
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040aac1
     PUSH EAX                            ; 0040aac4
     CALL core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540 ; 0040aac5

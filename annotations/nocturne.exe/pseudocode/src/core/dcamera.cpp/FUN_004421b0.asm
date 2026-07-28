@@ -25,8 +25,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 0050807d
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b65
-;   core_set.cpp_FUN_00507f80 at 0050807d
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b803 = 0.00390625

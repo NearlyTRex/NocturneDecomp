@@ -11,6 +11,8 @@
 void core_weather_cpp_FUN_005559e0(void)
 
 {
-  __arrfini();
+  void *in_stack_00000004;
+  
+  __arrfini(in_stack_00000004,200,&g_CVectorTypeInfo_005993b0);
   return;
 }

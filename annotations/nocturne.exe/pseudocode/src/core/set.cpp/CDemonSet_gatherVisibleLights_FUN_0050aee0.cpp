@@ -2,13 +2,13 @@
 // Address: 0050aee0
 // Address Range: [[0050aee0, 0050b5b9]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5,undefined4 param_6)
+// Signature: int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1,float *param_2,uint param_3,float *param_4,float *param_5,uint param_6)
+int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 
 {
   float fVar1;
@@ -43,8 +43,8 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
   int local_1c;
   int local_18;
   
-  if (param_2 == (float *)0x0) {
-    _DAT_01fff07c = param_2;
+  if (position == (CVector3f *)0x0) {
+    _DAT_01fff07c = position;
     if (0 < _DAT_01fba2d8) {
       iVar8 = _DAT_01fba2d8 * 4;
       iVar4 = 0;
@@ -53,7 +53,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
         iVar7 = iVar5;
         if (*(int *)(*(int *)(iVar4 + 0x1fba2dc) + 0x1cb4) != 0) {
           iVar7 = iVar5 + 4;
-          _DAT_01fff07c = (float *)((int)_DAT_01fff07c + 1);
+          _DAT_01fff07c = (CVector3f *)((int)&_DAT_01fff07c->x + 1);
           *(int *)(&DAT_01fff080 + iVar5) = *(int *)(iVar4 + 0x1fba2dc);
         }
         iVar4 = iVar4 + 4;
@@ -100,17 +100,17 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
   }
   else {
     local_24 = 0;
-    _DAT_01fff07c = (float *)0x0;
+    _DAT_01fff07c = (CVector3f *)0x0;
     if (0 < _DAT_01fba2d8) {
       iVar8 = 0;
       do {
-        if ((*(int *)(*(int *)(iVar8 + 0x1fba2dc) + 0x1cb4) != 0) &&
+        if (((*(CDemonCamera **)(iVar8 + 0x1fba2dc))[1].rect_array[0x61].y_min != 0) &&
            (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
-                              (*(int *)(iVar8 + 0x1fba2dc),param_2,param_3,param_4,param_5),
-           iVar5 != 0)) {
+                              (*(CDemonCamera **)(iVar8 + 0x1fba2dc),position,orientation,aabb_min,
+                               aabb_max), iVar5 != 0)) {
           *(uint *)(&DAT_01fff080 + (int)_DAT_01fff07c * 4) =
                *(uint *)(iVar8 + 0x1fba2dc);
-          _DAT_01fff07c = (float *)((int)_DAT_01fff07c + 1);
+          _DAT_01fff07c = (CVector3f *)((int)&_DAT_01fff07c->x + 1);
         }
         local_24 = local_24 + 1;
         iVar8 = iVar8 + 4;
@@ -121,10 +121,10 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
     if (0 < _DAT_01fb9b54) {
       iVar8 = 0;
       do {
-        if ((*(int *)(*(int *)(&DAT_01fb9b58 + iVar8) + 0x1cb4) != 0) &&
+        if (((*(CDemonCamera **)(&DAT_01fb9b58 + iVar8))[1].rect_array[0x61].y_min != 0) &&
            (iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
-                              (*(int *)(&DAT_01fb9b58 + iVar8),param_2,param_3,param_4,param_5),
-           iVar5 != 0)) {
+                              (*(CDemonCamera **)(&DAT_01fb9b58 + iVar8),position,orientation,
+                               aabb_min,aabb_max), iVar5 != 0)) {
           *(uint *)(&DAT_01ffeefc + _DAT_01ffeef8 * 4) =
                *(uint *)(&DAT_01fb9b58 + iVar8);
           _DAT_01ffeef8 = _DAT_01ffeef8 + 1;
@@ -139,22 +139,22 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
       local_2c = 0;
       do {
         iVar8 = *(int *)(&DAT_01fba9a8 + local_2c);
-        local_64 = *(float *)(iVar8 + 0x104) - *param_2;
-        local_60 = *(float *)(iVar8 + 0x108) - param_2[1];
-        local_5c = *(float *)(iVar8 + 0x10c) - param_2[2];
+        local_64 = *(float *)(iVar8 + 0x104) - position->x;
+        local_60 = *(float *)(iVar8 + 0x108) - position->y;
+        local_5c = *(float *)(iVar8 + 0x10c) - position->z;
         pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
-                                    (param_6,local_a0,&local_64);
+                                    (rotation_matrix,local_a0,&local_64);
         if (&local_64 != pfVar6) {
           local_64 = *pfVar6;
           local_60 = pfVar6[1];
           local_5c = pfVar6[2];
         }
-        if ((((*param_4 <= local_64 + *(float *)(iVar8 + 0x11d4)) &&
-             (param_4[1] <= local_60 + *(float *)(iVar8 + 0x11d4))) &&
-            (param_4[2] <= local_5c + *(float *)(iVar8 + 0x11d4))) &&
-           (((local_64 - *(float *)(iVar8 + 0x11d4) <= *param_5 &&
-             (local_60 - *(float *)(iVar8 + 0x11d4) <= param_5[1])) &&
-            (local_5c - *(float *)(iVar8 + 0x11d4) <= param_5[2])))) {
+        if ((((aabb_min->x <= local_64 + *(float *)(iVar8 + 0x11d4)) &&
+             (aabb_min->y <= local_60 + *(float *)(iVar8 + 0x11d4))) &&
+            (aabb_min->z <= local_5c + *(float *)(iVar8 + 0x11d4))) &&
+           (((local_64 - *(float *)(iVar8 + 0x11d4) <= aabb_max->x &&
+             (local_60 - *(float *)(iVar8 + 0x11d4) <= aabb_max->y)) &&
+            (local_5c - *(float *)(iVar8 + 0x11d4) <= aabb_max->z)))) {
           *(int *)(&DAT_01fff228 + _DAT_01fff224 * 4) = iVar8;
           _DAT_01fff224 = _DAT_01fff224 + 1;
         }
@@ -169,7 +169,8 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
       iVar8 = 0;
       do {
         iVar5 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0
-                          (*(uint *)(iVar8 + 0x1fba2f0),param_2,param_6,param_4,param_5);
+                          (*(CDemonGlobe **)(iVar8 + 0x1fba2f0),position,rotation_matrix,aabb_min,
+                           aabb_max);
         if (iVar5 != 0) {
           *(uint *)(&DAT_01fff094 + _DAT_01fff090 * 4) = *(uint *)(iVar8 + 0x1fba2f0);
           _DAT_01fff090 = _DAT_01fff090 + 1;
@@ -184,7 +185,8 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
       iVar8 = 0;
       do {
         iVar5 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0
-                          (*(uint *)(&DAT_01fba7a8 + iVar8),param_2,param_6,param_4,param_5);
+                          (*(CDemonGlobe **)(&DAT_01fba7a8 + iVar8),position,rotation_matrix,
+                           aabb_min,aabb_max);
         local_74 = 0;
         if (iVar5 != 0) {
           _DAT_01fff090 = _DAT_01fff090 + 1;
@@ -196,11 +198,11 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
       } while (local_18 < _DAT_01fba7a4);
     }
     if (0 < _DAT_01fff224) {
-      local_ac = *param_5 - *param_4;
-      local_a8 = param_5[1] - param_4[1];
-      local_a4 = param_5[2] - param_4[2];
+      local_ac = aabb_max->x - aabb_min->x;
+      local_a8 = aabb_max->y - aabb_min->y;
+      local_a4 = aabb_max->z - aabb_min->z;
       pfVar6 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                  (param_6,local_58,&local_ac);
+                                  (rotation_matrix,local_58,&local_ac);
       iVar8 = 0;
       local_80 = 0.0;
       local_84 = 0.0;
@@ -219,9 +221,9 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(uint param_1
             iVar8 = iVar8 + 1;
           }
           else {
-            fVar3 = *(float *)(iVar4 + 0x104) - (*param_2 + *pfVar6);
-            fVar1 = *(float *)(iVar4 + 0x108) - (param_2[1] + pfVar6[1]);
-            fVar2 = *(float *)(iVar4 + 0x10c) - (param_2[2] + pfVar6[2]);
+            fVar3 = *(float *)(iVar4 + 0x104) - (position->x + *pfVar6);
+            fVar1 = *(float *)(iVar4 + 0x108) - (position->y + pfVar6[1]);
+            fVar2 = *(float *)(iVar4 + 0x10c) - (position->z + pfVar6[2]);
             fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
             if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
               fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + (int)CVector3f_01c70708.y) *

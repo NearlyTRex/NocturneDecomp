@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(int param_1,int param_2)
+; int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_FUN_004cb010 at 004cb279
@@ -61,7 +64,7 @@ section .text
         ;   Label: LAB_004cba99
     PUSH ESI                            ; 004cba9a
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0 ; 004cba9b
-        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0()
+        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 004cbaa0
     SHL EAX,0x2                         ; 004cbaa2
     SUB EAX,EDX                         ; 004cbaa5

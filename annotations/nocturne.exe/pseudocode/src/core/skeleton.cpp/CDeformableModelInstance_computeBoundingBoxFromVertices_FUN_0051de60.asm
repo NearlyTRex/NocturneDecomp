@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(CDeformableModelInstance *this_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
@@ -53,19 +55,19 @@ section .text
     MOV dword ptr [ESP + 0x8],ESI       ; 0051de86
     MOV dword ptr [ESP + 0x4],ESI       ; 0051de8a
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051de8e
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051de93
     PUSH 0x0                            ; 0051de96
     PUSH 0x0                            ; 0051de98
     PUSH EBP                            ; 0051de9a
     MOV ESI,dword ptr [EAX + 0x2c]      ; 0051de9b
     CALL core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0 ; 0051de9e
-        ;   XREF to: 0051b8f0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0()
+        ;   XREF to: 0051b8f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0(CDeformableModelInstance * this_ptr, int motion_index, float frame_number)
     ADD ESP,0xc                         ; 0051dea3
     PUSH 0x0                            ; 0051dea6
     PUSH EBP                            ; 0051dea8
     CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 ; 0051dea9
-        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50()
+        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051deae
     TEST ESI,ESI                        ; 0051deb1
     JLE 0x0051df31                      ; 0051deb3

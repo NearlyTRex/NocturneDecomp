@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(int param_1,undefined4 *param_2,undefined4 param_3)
+; void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(CBloodPool *this_ptr,CVector3f *position,int blood_type)
 ;
+; Parameters:
+; CBloodPool *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; int              Stack[0xc]:4   blood_type
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004b0480 at 004b04a2
+;   core_gore.cpp_CGore_createBloodPool_FUN_004b0480 at 004b04a2
 ;
 ; Referenced Globals:
 ;   float FLOAT_00585138 = 0.1000000
@@ -32,7 +36,7 @@ section .text
     PUSH 0x3                            ; 004af73d
     PUSH 0x0                            ; 004af73f
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 004af741
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     ADD ESP,0x8                         ; 004af746
     MOV EDX,dword ptr [0x005be368]      ; 004af749 | DAT_005be368
     PUSH 0x0                            ; 004af74f

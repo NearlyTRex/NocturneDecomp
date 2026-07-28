@@ -2,12 +2,12 @@
 // Address: 00477660
 // Address Range: [[00477660, 00477666]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(undefined4 *param_1)
+// Signature: int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(uint *param_1)
+int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr)
 
 {
-  return *param_1;
+  return this_ptr->item_count;
 }

@@ -51,13 +51,13 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 004270f2 | DAT_005ae704
     PUSH EDX                            ; 004270f8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004270f9
-        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000()
+        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004270fe
     PUSH 0xc000                         ; 00427101
     MOV ECX,dword ptr [0x005ae704]      ; 00427106 | DAT_005ae704
     PUSH ECX                            ; 0042710c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0042710d
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     MOV EAX,[0x01cae0e8]                ; 00427112 | DAT_01cae0e8
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00427117
     ADD ESP,0x8                         ; 0042711e
@@ -70,12 +70,12 @@ section .text
     FILD dword ptr [0x007658dc]         ; 00427136 | DAT_007658dc
     FADDP                               ; 0042713c
     CALL crt_math.c_round_FUN_00563a30  ; 0042713e
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [0x007658dc]        ; 00427143 | DAT_007658dc
     PUSH EDI                            ; 00427149
         ;   Label: LAB_00427149
     CALL crt_stdlib.c_rand_FUN_0056488c ; 0042714a
-        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_rand_FUN_0056488c()
+        ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
     MOV EDX,EAX                         ; 0042714f
     MOV ECX,0x6                         ; 00427151
     SAR EDX,0x1f                        ; 00427156
@@ -89,46 +89,46 @@ section .text
     ADD EAX,0x5ad140                    ; 00427179 | DAT_005ad140
     PUSH EAX                            ; 0042717e
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 0042717f
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00427184
     LEA EAX,[ESP + 0x4]                 ; 00427187
     PUSH EAX                            ; 0042718b
     LEA EBX,[ESI + 0x150]               ; 0042718c
     PUSH EBX                            ; 00427192
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90 ; 00427193
-        ;   XREF to: 0051ed90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90()
+        ;   XREF to: 0051ed90 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0051ed90(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 00427198
     PUSH -0x1                           ; 0042719b
     PUSH 0x3f8ccccd                     ; 0042719d
     PUSH EBX                            ; 004271a2
     CALL core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970 ; 004271a3
-        ;   XREF to: 0051d970 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970()
+        ;   XREF to: 0051d970 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970(CDeformableModelInstance * this_ptr, float scale_factor, int target_bone_index)
     ADD ESP,0xc                         ; 004271a8
     PUSH EBX                            ; 004271ab
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0 ; 004271ac
-        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0()
+        ;   XREF to: 0051d3c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004271b1
     LEA EAX,[ESI + 0x2388]              ; 004271b4
     PUSH EAX                            ; 004271ba
     PUSH EBX                            ; 004271bb
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 004271bc
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004271c1
     PUSH EAX                            ; 004271c4
     CALL core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700 ; 004271c5
-        ;   XREF to: 0051a700 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700()
+        ;   XREF to: 0051a700 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
     ADD ESP,0x8                         ; 004271ca
     PUSH EAX                            ; 004271cd
     PUSH EBX                            ; 004271ce
     CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0 ; 004271cf
-        ;   XREF to: 0051dad0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0()
+        ;   XREF to: 0051dad0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0051dad0(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 004271d4
     PUSH 0x0                            ; 004271d7
     MOV EDI,dword ptr [0x007658dc]      ; 004271d9 | DAT_007658dc
     PUSH EDI                            ; 004271df
     PUSH EBX                            ; 004271e0
     CALL core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080 ; 004271e1
-        ;   XREF to: 0051f080 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080()
+        ;   XREF to: 0051f080 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(CDeformableModelInstance * this_ptr, int u_offset, int v_offset)
     ADD ESP,0xc                         ; 004271e6
     XOR EAX,EAX                         ; 004271e9
     MOV EBX,0xb332                      ; 004271eb
@@ -158,13 +158,13 @@ section .text
     PUSH EAX                            ; 0042723b
     PUSH EBX                            ; 0042723c
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60 ; 0042723d
-        ;   XREF to: 0051ee60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60()
+        ;   XREF to: 0051ee60 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 00427242
     PUSH 0x0                            ; 00427245
     MOV EBP,dword ptr [0x005ae704]      ; 00427247 | DAT_005ae704
     PUSH EBP                            ; 0042724d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 0042724e
-        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000()
+        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 00427253
     ADD ESP,0x1aa0                      ; 00427256
     POP EBP                             ; 0042725c

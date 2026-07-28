@@ -15,9 +15,7 @@ int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
   int iVar2;
   char *pcVar3;
   char *pcVar4;
-  byte auStack_28 [4];
-  uint local_24;
-  char local_20 [16];
+  SMRGLTextureBasic SStack_28;
   
   iVar2 = *(int *)(param_1 + 0x14) + _DAT_01bd1d80;
   *(int *)(param_1 + 0x14) = iVar2;
@@ -26,8 +24,8 @@ int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
     *(uint *)(param_1 + 0x18) = 1;
     *(int *)(param_1 + 0xc) = iVar2;
   }
-  local_24 = 0;
-  pcVar4 = local_20;
+  SStack_28.base.count = 0;
+  pcVar4 = SStack_28.texture_name;
   pcVar3 = (char *)(*(int *)(param_1 + 0xc) * 0x20 + param_1 + 0x1c);
   do {
     cVar1 = *pcVar3;
@@ -38,7 +36,7 @@ int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(auStack_28);
+  engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&SStack_28);
   if (*(int *)(param_1 + 0x18) == 0) {
     return *(int *)(param_1 + 8) * 0x20 + param_1 + 0x1c;
   }

@@ -11,13 +11,14 @@ void engine_drender_cpp_FUN_00460d90(void)
 {
   uint *unaff_ESI;
   byte bVar1;
-  uint auStack_1000 [1022];
+  uint auStack_1000 [1019];
+  CVector3i CStack_14;
   
   bVar1 = 0;
-  engine_matrix_c_getCameraRotation_FUN_004ce790(auStack_1000 + 0x3fb);
+  engine_matrix_c_getCameraRotation_FUN_004ce790(&CStack_14);
   *unaff_ESI = 0x460da0;
-  unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_1000[(uint)bVar1 * -2 + 0x3fb];
+  unaff_ESI[(uint)bVar1 * -2 + 1] = *(uint *)((int)&CStack_14 + (uint)bVar1 * -8);
   (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       auStack_1000[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 0x3fc];
+       *(uint *)((int)&CStack_14 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 4);
   return;
 }

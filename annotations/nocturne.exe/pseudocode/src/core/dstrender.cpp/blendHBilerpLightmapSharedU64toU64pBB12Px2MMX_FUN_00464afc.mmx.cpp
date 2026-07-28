@@ -2,13 +2,13 @@
 // Address: 00464afc
 // Address Range: [[00464afc, 00464f35] [00464f40, 00464fd9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5)
+// Signature: void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc(ulonglong *param_1,ulonglong *param_2,byte *param_3,byte *param_4,int param_5)
+void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
         mov ECX,dword ptr [EBP + 0x18]

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x8c]:1  local_8c
 ; undefined        Stack[-0x5c]:1  local_5c
@@ -94,7 +96,7 @@ section .text
     PUSH EAX                            ; 00426633
     MOVSD.REP ES:EDI,ESI                ; 00426634
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 00426636
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0042663b
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0042663e
     MOV dword ptr [ESP + 0x6c],EAX      ; 00426642
@@ -109,18 +111,18 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 00426660 | DAT_005ae704
     PUSH ESI                            ; 00426666 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00426667
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0042666c
     PUSH -0x1                           ; 0042666f
     PUSH 0x0                            ; 00426671
     PUSH 0x7658e4                       ; 00426673 | DAT_007658e4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00426678
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042667d
     MOV EDI,dword ptr [0x005ae704]      ; 00426680 | DAT_005ae704
     PUSH EDI                            ; 00426686 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00426687
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0042668c
     JMP 0x004265e7                      ; 0042668f
         ;   XREF to: 004265e7 (UNCONDITIONAL_JUMP)  ; LAB_004265e7

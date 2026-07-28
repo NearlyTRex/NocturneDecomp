@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(float *param_1,float param_2,float param_3)
+; int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(CVector3f *point,float horizontal_radius,float vertical_tolerance)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   point
+; float            Stack[0x8]:4   horizontal_radius
+; float            Stack[0xc]:4   vertical_tolerance
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

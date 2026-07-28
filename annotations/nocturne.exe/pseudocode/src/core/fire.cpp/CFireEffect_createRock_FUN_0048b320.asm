@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0048b320(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; CKeyFramedModel * Stack[0x10]:4   model_ptr
 ;
 ; XREF[3]:
 ;   core_drip.cpp_FUN_00462300 at 0046263e
@@ -46,7 +51,7 @@ section .text
     PUSH EBP                            ; 0048b35e
     PUSH EAX                            ; 0048b35f
     CALL core_fire.cpp_CRock_setup_FUN_00484c90 ; 0048b360
-        ;   XREF to: 00484c90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CRock_setup_FUN_00484c90()
+        ;   XREF to: 00484c90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CRock_setup_FUN_00484c90(CRock * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 0048b365
     POP EBP                             ; 0048b368
     POP EDI                             ; 0048b369

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_door_cpp_FUN_004566b0(undefined4 param_1,byte param_2)
+; CDemonActor * core_door_cpp_FUN_004566b0(CDemonActor *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     PUSH 0x1                            ; 004566bc
     PUSH EBX                            ; 004566be
     CALL core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 ; 004566bf
-        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_dtor_FUN_00409ea0()
+        ;   XREF to: 00409ea0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004566c4
     MOV DL,byte ptr [ESP + 0xc]         ; 004566c7
     MOV EBX,EAX                         ; 004566cb
@@ -40,11 +40,11 @@ section .text
         ;   Label: LAB_004566d6
     PUSH EBX                            ; 004566db
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004566dc
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004566e1
     PUSH EAX                            ; 004566e4
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004566e5
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004566ea
     MOV EAX,EBX                         ; 004566ed
     POP EBX                             ; 004566ef

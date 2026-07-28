@@ -2,24 +2,22 @@
 // Address: 004c1b90
 // Address Range: [[004c1b90, 004c1bef]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(int param_1)
+// Signature: void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory *this_ptr,int ammo_type)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(int param_1)
+void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory *this_ptr,int ammo_type)
 
 {
-  uint uVar1;
+  char *weapon_class_name;
   
-  if (*(int *)(param_1 + 0x330) == 0) {
+  if (this_ptr->selected_weapon == (CWeapon *)0x0) {
     return;
   }
-  *(uint *)(*(int *)(param_1 + 0x458) + 0x30c) =
-       *(uint *)(*(int *)(param_1 + 0x330) + 0x560);
-  *(uint *)(*(int *)(param_1 + 0x458) + 0x310) =
-       *(uint *)(*(int *)(param_1 + 0x330) + 0x564);
-  uVar1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0
-                    (*(uint *)(param_1 + 0x330));
-  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(*(uint *)(param_1 + 0x458),uVar1);
+  this_ptr->ammo_ptr->ammo_count = this_ptr->selected_weapon->ammo_count;
+  this_ptr->ammo_ptr->ammo_type = this_ptr->selected_weapon->ammo_type;
+  weapon_class_name =
+       core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(&this_ptr->selected_weapon->base);
+  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(this_ptr->ammo_ptr,weapon_class_name);
   return;
 }

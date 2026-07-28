@@ -9,12 +9,12 @@
 void core_zombie_cpp_FUN_0055ea90(void)
 
 {
-  int iVar1;
+  CZombie *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbe14);
-  if (iVar1 == 0) {
+  this_ptr = (CZombie *)FUN_0056497c(0xbe14);
+  if (this_ptr == (CZombie *)0x0) {
     return;
   }
-  core_zombie_cpp_CZombie_ctor_FUN_0055eac0(iVar1);
+  core_zombie_cpp_CZombie_ctor_FUN_0055eac0(this_ptr);
   return;
 }

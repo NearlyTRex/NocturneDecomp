@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_FUN_004b48d0(int param_1)
+; void core_hero_cpp_FUN_004b48d0(CCharacter *param_1)
 ;
 ;
 ; XREF[9]:
@@ -30,17 +30,17 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004b48d5
     PUSH EAX                            ; 004b48db
     CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0 ; 004b48dc
-        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0()
+        ;   XREF to: 0051dcd0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b48e1
     PUSH EBX                            ; 004b48e4
     CALL core_charactr.cpp_CCharacter_setup_FUN_00424260 ; 004b48e5
-        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_setup_FUN_00424260()
+        ;   XREF to: 00424260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setup_FUN_00424260(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004b48ea
     ADD EBX,0x1f5a0                     ; 004b48ed
     PUSH EBX                            ; 004b48f3
     MOV dword ptr [EBX + 0xfffec6ec],0x0 ; 004b48f4
     CALL core_inv.cpp_CInventory_setupItems_FUN_004c1510 ; 004b48fe
-        ;   XREF to: 004c1510 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_setupItems_FUN_004c1510()
+        ;   XREF to: 004c1510 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_setupItems_FUN_004c1510(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004b4903
     POP EBX                             ; 004b4906
     RET                                 ; 004b4907

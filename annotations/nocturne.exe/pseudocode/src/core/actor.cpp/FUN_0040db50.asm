@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_actor_cpp_FUN_0040db50(int param_1,float *param_2,int param_3,float param_4)
+; uint core_actor_cpp_FUN_0040db50(CDemonActor *param_1,CVector3f *param_2,EGroundType param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x94]:8  local_94
@@ -83,7 +83,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0040dbc3 | DAT_005be368
     PUSH EDX                            ; 0040dbc9 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0040dbca
-        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50()
+        ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040dbcf
     TEST EAX,EAX                        ; 0040dbd2
     JZ 0x0040dbdb                       ; 0040dbd4
@@ -96,7 +96,7 @@ section .text
     MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | INT_005b96c4
     PUSH ECX                            ; 0040dbe9
     CALL core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730 ; 0040dbea
-        ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730()
+        ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(CGore * this_ptr, CVector3f * position, int * out_blood_type)
     ADD ESP,0xc                         ; 0040dbef
     TEST EAX,EAX                        ; 0040dbf2
     JZ 0x0040dcb8                       ; 0040dbf4
@@ -145,7 +145,7 @@ section .text
     FSTP double ptr [ESP]               ; 0040dc74
     PUSH EDI                            ; 0040dc77
     CALL core_ground.cpp_getGroundTypeCode_FUN_004b11b0 ; 0040dc78
-        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_getGroundTypeCode_FUN_004b11b0()
+        ;   XREF to: 004b11b0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004b11b0(EGroundType type)
     ADD ESP,0x4                         ; 0040dc7d
     PUSH EAX                            ; 0040dc80
     LEA EAX,[EBX + 0x11c]               ; 0040dc81
@@ -163,7 +163,7 @@ section .text
     MOV ECX,dword ptr [0x005bed68]      ; 0040dca1 | DAT_005bed68
     PUSH ECX                            ; 0040dca7
     CALL core_sound.cpp_CSound_playActorSound_FUN_0052ea60 ; 0040dca8
-        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playActorSound_FUN_0052ea60()
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_0052ea60(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0040dcad
     ADD ESP,0x7c                        ; 0040dcb0
     POP EBP                             ; 0040dcb3

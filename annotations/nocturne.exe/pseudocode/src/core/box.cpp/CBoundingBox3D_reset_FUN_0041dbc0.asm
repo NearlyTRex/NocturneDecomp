@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(undefined4 *param_1)
+; void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_0041dbc0(CBoundingBox3D *this_ptr)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051ef6e

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(undefined4 param_1,ushort param_2)
+; int __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(_SOCKET *socket_handle,uint16_t port)
 ;
+; Parameters:
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; uint16_t         Stack[0x8]:2   port
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9da4

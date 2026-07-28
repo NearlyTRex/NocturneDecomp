@@ -2,23 +2,24 @@
 // Address: 00565e59
 // Address Range: [[00565e59, 00565e93]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_fflush_FUN_00565e59(int *param_1)
+// Signature: void __cdecl crt_stdio_c_fflush_FUN_00565e59(_FILE *stream)
 
 #include "nocturne.h"
 
-void __cdecl _fflush(int *param_1)
+void __cdecl _fflush(_FILE *stream)
 
 {
   int iVar1;
+  FileEmbeddedData *embedded_data;
   
-  iVar1 = *(int *)(*param_1 + 4) + (int)param_1;
-  if (*(int *)(iVar1 + 4) != 0) {
-    iVar1 = FUN_0056cd52(*(int *)(iVar1 + 4));
+  embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
+  if (embedded_data->stream != (_FILE *)0x0) {
+    iVar1 = FUN_0056cd52(embedded_data->stream);
     if (iVar1 != 0) {
       return;
     }
-    iVar1 = (int)param_1 + *(int *)(*param_1 + 4);
+    embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
   }
-  FUN_0056b327(iVar1,2);
+  reportStreamError(embedded_data,2);
   return;
 }

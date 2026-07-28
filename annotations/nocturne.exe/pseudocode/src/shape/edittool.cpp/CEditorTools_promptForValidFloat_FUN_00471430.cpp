@@ -2,37 +2,38 @@
 // Address: 00471430
 // Address Range: [[00471430, 00471522]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(undefined4 param_1,undefined4 param_2,float *param_3,int param_4,float param_5,float param_6,byte param_7)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value)
 
 #include "nocturne.h"
 
-uint __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(uint param_1,uint param_2,float *param_3,int param_4,float param_5,float param_6,byte param_7)
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value)
 
 {
   int iVar1;
-  byte local_38 [32];
+  char local_38 [32];
   float local_18;
   
-  if ((param_7 & 1) == 0) {
-    local_38[0] = 0;
+  if ((show_current_value & 1U) == 0) {
+    local_38[0] = '\0';
   }
   else {
-    _sprintf(local_38,"%g",(double)*param_3);
+    _sprintf(local_38,"%g",(double)*result_ptr);
   }
   while( true ) {
     while( true ) {
       iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
-                        (param_1,param_2,local_38,0x1e,1);
+                        (this_ptr,prompt_text,local_38,0x1e,1);
       if (iVar1 == 0) {
         return 0;
       }
       iVar1 = sscanf();
       if (iVar1 == 1) break;
-      shape_edittool_cpp_FUN_0046fcd0();
+      shape_edittool_cpp_FUN_0046fcd0(this_ptr);
     }
-    if ((param_4 == 0) || ((param_5 <= local_18 && (local_18 <= param_6)))) break;
-    shape_edittool_cpp_FUN_0046fcd0(param_1,"Please enter a valid integer between %7g and %7g.");
+    if ((enable_range_check == 0) || ((min_value <= local_18 && (local_18 <= max_value)))) break;
+    shape_edittool_cpp_FUN_0046fcd0
+              (this_ptr,"Please enter a valid integer between %7g and %7g.",(double)min_value,(double)max_value);
   }
-  *param_3 = local_18;
+  *result_ptr = local_18;
   return 1;
 }

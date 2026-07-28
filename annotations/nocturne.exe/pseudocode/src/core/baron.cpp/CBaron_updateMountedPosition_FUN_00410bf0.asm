@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(int param_1)
+; void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(CBaron *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBaron *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -84,7 +87,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x1fb14]   ; 00410c70
     PUSH ESI                            ; 00410c76
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00410c77
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00410c7c
     TEST EAX,EAX                        ; 00410c7f
     JZ 0x00410c06                       ; 00410c81
@@ -100,7 +103,7 @@ section .text
     PUSH EDI                            ; 00410ca2
     PUSH EBX                            ; 00410ca3
     CALL core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0 ; 00410ca4
-        ;   XREF to: 00410bb0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0()
+        ;   XREF to: 00410bb0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00410ca9
     MOV ESP,EBP                         ; 00410cac
     POP EBP                             ; 00410cae

@@ -2,18 +2,17 @@
 // Address: 00460c00
 // Address Range: [[00460c00, 00460c1b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(undefined4 param_1,float param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer *this_ptr,float field_of_view)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(uint param_1,float param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer *this_ptr,float field_of_view)
 
 {
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)round
-                             (((float10)18 / (float10)param_2) *
-                              (float10)65536);
-  DAT_005b7648 = (int)ROUND(fVar1);
+  dVar1 = round
+                    ((double)(((float)18 / field_of_view) * (float)65536));
+  DAT_005b7648 = (int)ROUND(dVar1);
   return;
 }

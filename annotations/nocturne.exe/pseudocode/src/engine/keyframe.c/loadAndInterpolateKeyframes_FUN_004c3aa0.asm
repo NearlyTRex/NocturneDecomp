@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(int param_1)
+; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(SMRGLKeyframeModel *keyframe_model)
 ;
+; Parameters:
+; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c4029
-;   engine_model.c_FUN_004dd760 at 004dd76b
+;   engine_model.c_initializeMRGLModel_FUN_004dd760 at 004dd76b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_keyframe_c_005875dc
@@ -44,7 +46,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x14]      ; 004c3ab9
     PUSH ECX                            ; 004c3abc
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004c3abd
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004c3ac2
     MOV EBP,EAX                         ; 004c3ac5
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c3ac7
@@ -52,7 +54,7 @@ section .text
     ADD EAX,EBP                         ; 004c3ace
     PUSH EAX                            ; 004c3ad0
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004c3ad1
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004c3ad6
     ADD EBP,EAX                         ; 004c3ad9
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c3adb
@@ -70,7 +72,7 @@ section .text
     PUSH EBP                            ; 004c3af6
     PUSH EDI                            ; 004c3af7
     CALL engine_model.c_loadModelChunk_FUN_004dd790 ; 004c3af8
-        ;   XREF to: 004dd790 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelChunk_FUN_004dd790()
+        ;   XREF to: 004dd790 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelChunk_FUN_004dd790(char * filename, int model_size)
     ADD ESP,0x8                         ; 004c3afd
     MOV dword ptr [EBX + 0x118],EAX     ; 004c3b00
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c3b06
@@ -170,7 +172,7 @@ section .text
         ;   Label: LAB_004c3bee
     PUSH EAX                            ; 004c3bf1
     CALL engine_model.c_loadModelFile_FUN_004dcd10 ; 004c3bf2
-        ;   XREF to: 004dcd10 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelFile_FUN_004dcd10()
+        ;   XREF to: 004dcd10 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_004dcd10(char * filename)
     ADD ESP,0x4                         ; 004c3bf7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004c3bfa
     MOV dword ptr [EDX + 0x14],EAX      ; 004c3bfe

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_file_c___getfileattr_FUN_0056cce0(LPCSTR param_1)
+; DWORD __cdecl crt_file_c___getfileattr_FUN_0056cce0(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined4       Stack[-0x148]:4  local_148
 ;

@@ -1,0 +1,595 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 185,
+    "complexity_score": 328,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 68,
+    "suspect_count": 24,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 253
+  },
+  "cross_references": [
+    {
+      "addr": "004d7760",
+      "from_addr": "004d77be",
+      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d76e0",
+      "from_addr": "004d76ea",
+      "name": "core_mirror.cpp_FUN_004d76e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7720",
+      "from_addr": "004d772a",
+      "name": "core_mirror.cpp_FUN_004d7720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d74a0",
+    "address_range": [
+      [
+        "004d74a0",
+        "004d76dc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0",
+    "signature": "uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d6420",
+      "is_variadic": false,
+      "name": "core_mirror.cpp_clipPolygonAgainstPlane_FUN_004d6420"
+    },
+    {
+      "addr": "004cd240",
+      "is_variadic": false,
+      "name": "engine_matrix.c_projectCachedPoint_FUN_004cd240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a0880",
+      "name": "FLOAT_005a0880",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "005a0888",
+      "name": "FLOAT_005a0888",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "005ae704",
+      "name": "DAT_005ae704",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9120",
+      "name": "DAT_01cc9120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9124",
+      "name": "DAT_01cc9124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9128",
+      "name": "DAT_01cc9128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc912c",
+      "name": "DAT_01cc912c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9130",
+      "name": "DAT_01cc9130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9134",
+      "name": "DAT_01cc9134",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc9138",
+      "name": "DAT_01cc9138",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92a4",
+      "name": "DAT_01cc92a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92a8",
+      "name": "DAT_01cc92a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92ac",
+      "name": "DAT_01cc92ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92b0",
+      "name": "DAT_01cc92b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92b4",
+      "name": "DAT_01cc92b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92b8",
+      "name": "DAT_01cc92b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc92bc",
+      "name": "DAT_01cc92bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004d76ea",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_FUN_004d76e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d772a",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_FUN_004d7720",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d77be",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.680981595092025,
+    "instruction_count": 163,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 6,
+      "CBRANCH": 9,
+      "COPY": 232,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_MULT": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 64,
+      "INT_AND": 72,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 71,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 3,
+      "INT_SLESS": 35,
+      "INT_SUB": 44,
+      "INT_XOR": 3,
+      "LOAD": 36,
+      "POPCOUNT": 35,
+      "RETURN": 2,
+      "ROUND": 3,
+      "STORE": 51,
+      "SUBPIECE": 2,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 763
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "primitive",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "pfVar3 = (float *)&DAT_01cc9124;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piVar2 = (int *)(*DAT_005ae704 + (pSVar1->base).type * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01cc92a4",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01cc9120",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 1,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01cc92a4",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 2,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01cc9120",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 3,&DAT_01cc92a8,_DAT_01cc92a4,&DAT_01cc9124,&DAT_01cc9120)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_01cc9124",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_01cc92a4",
+      "severity": "mild",
+      "text": "(this_ptr->clip_planes + 4,&DAT_01cc9124,_DAT_01cc9120,&DAT_01cc92a8,&DAT_01cc92a4)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_01cc92a8",
+      "severity": "mild",
+      "text": "local_14 = (float *)&DAT_01cc92a8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "piVar2 = (int *)(*DAT_005ae704 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "*(uint *)(iVar6 + 0x10 + *DAT_005ae704) = 0xffffffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar5 = (SMRGLHeaderPrimitive *)&(pSVar5->base).count;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 66,
+      "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

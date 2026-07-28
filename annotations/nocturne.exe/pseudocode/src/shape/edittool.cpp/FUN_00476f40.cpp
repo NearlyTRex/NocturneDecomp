@@ -11,19 +11,19 @@
 void shape_edittool_cpp_FUN_00476f40(int param_1)
 
 {
+  char *text_string;
   int iVar1;
   int iVar2;
-  int iVar3;
   
   shape_edittool_cpp_draw3DBorder_FUN_00476260
-            (*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
-             *(uint *)(param_1 + 0xc),*(uint *)(param_1 + 0x10),
-             *(uint *)(param_1 + 0x14));
-  iVar1 = param_1 + 0x18;
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,iVar1);
-  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,iVar1);
+            (*(int *)(param_1 + 4),*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),
+             *(int *)(param_1 + 0x10),*(int *)(param_1 + 0x14));
+  text_string = (char *)(param_1 + 0x18);
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,text_string);
+  iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,text_string);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (_DAT_01bcd070,iVar1,((*(int *)(param_1 + 4) + *(int *)(param_1 + 0xc)) - iVar2) / 2,
-             ((*(int *)(param_1 + 8) + *(int *)(param_1 + 0x10)) - iVar3) / 2,0,0xffffffff);
+            (_DAT_01bcd070,text_string,
+             ((*(int *)(param_1 + 4) + *(int *)(param_1 + 0xc)) - iVar1) / 2,
+             ((*(int *)(param_1 + 8) + *(int *)(param_1 + 0x10)) - iVar2) / 2,0,-1);
   return;
 }

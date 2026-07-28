@@ -1,32 +1,57 @@
 // Name: core_lever.cpp_CLever_ctor_FUN_004c6040
 // Address: 004c6040
 // Address Range: [[004c6040, 004c6101]]
-// Convention: unknown
-// Signature: int core_lever_cpp_CLever_ctor_FUN_004c6040(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004c6040(CLever *this_ptr)
 
 #include "nocturne.h"
 
-int core_lever_cpp_CLever_ctor_FUN_004c6040(uint param_1)
+CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004c6040(CLever *this_ptr)
 
 {
   int iVar1;
+  CKeyFramedModelInstance *this_ptr_00;
   
-  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
-  core_event_cpp_FUN_00481620(iVar1 + 0x2c8);
-  *(byte ***)(iVar1 + -4) = &PTR_core_lever_cpp_CLever_setup_FUN_004c6110_0059fc44;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,"glever.kfm");
-  *(uint *)(iVar1 + 0x180) = 0;
-  *(byte *)(iVar1 + 0x188) = 0;
-  *(byte *)(iVar1 + 0x1ec) = 0;
-  *(byte *)(iVar1 + 0x250) = 0;
-  *(uint *)(iVar1 + 0x184) = 0;
-  *(uint *)(iVar1 + 0x2b4) = 1;
-  *(uint *)(iVar1 + 0x2b8) = 0;
-  *(uint *)(iVar1 + 700) = 0x17;
-  *(uint *)(iVar1 + 0x2c0) = 0;
-  *(uint *)(iVar1 + 0x2c4) = 0;
-  *(uint *)(iVar1 + 0x6b4) = 2;
-  *(uint *)(iVar1 + 0x6b8) = 1;
-  return iVar1 + -0x150;
+  iVar1 = core_actor_cpp_FUN_00409d30(this_ptr);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(iVar1 + 0x150));
+  core_event_cpp_FUN_00481620(this_ptr_00[1].model_name + 0xd4);
+  this_ptr_00[-1].model_ptr =
+       (CKeyFramedModel *)&PTR_core_lever_cpp_CLever_setup_FUN_004c6110_0059fc44;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (this_ptr_00,"glever.kfm");
+  this_ptr_00[1].part_visibility_flags[1] = 0;
+  *(byte *)(this_ptr_00[1].part_visibility_flags + 3) = 0;
+  *(byte *)(this_ptr_00[1].part_visibility_flags + 0x1c) = 0;
+  this_ptr_00[1].model_name[0x5c] = '\0';
+  this_ptr_00[1].part_visibility_flags[2] = 0;
+  this_ptr_00[1].model_name[0xc0] = '\x01';
+  this_ptr_00[1].model_name[0xc1] = '\0';
+  this_ptr_00[1].model_name[0xc2] = '\0';
+  this_ptr_00[1].model_name[0xc3] = '\0';
+  this_ptr_00[1].model_name[0xc4] = '\0';
+  this_ptr_00[1].model_name[0xc5] = '\0';
+  this_ptr_00[1].model_name[0xc6] = '\0';
+  this_ptr_00[1].model_name[199] = '\0';
+  this_ptr_00[1].model_name[200] = '\x17';
+  this_ptr_00[1].model_name[0xc9] = '\0';
+  this_ptr_00[1].model_name[0xca] = '\0';
+  this_ptr_00[1].model_name[0xcb] = '\0';
+  this_ptr_00[1].model_name[0xcc] = '\0';
+  this_ptr_00[1].model_name[0xcd] = '\0';
+  this_ptr_00[1].model_name[0xce] = '\0';
+  this_ptr_00[1].model_name[0xcf] = '\0';
+  this_ptr_00[1].model_name[0xd0] = '\0';
+  this_ptr_00[1].model_name[0xd1] = '\0';
+  this_ptr_00[1].model_name[0xd2] = '\0';
+  this_ptr_00[1].model_name[0xd3] = '\0';
+  this_ptr_00[4].model_name[0x4c] = '\x02';
+  this_ptr_00[4].model_name[0x4d] = '\0';
+  this_ptr_00[4].model_name[0x4e] = '\0';
+  this_ptr_00[4].model_name[0x4f] = '\0';
+  this_ptr_00[4].model_name[0x50] = '\x01';
+  this_ptr_00[4].model_name[0x51] = '\0';
+  this_ptr_00[4].model_name[0x52] = '\0';
+  this_ptr_00[4].model_name[0x53] = '\0';
+  return (CLever *)(this_ptr_00[-1].part_visibility_flags + 0xb);
 }

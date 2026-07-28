@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_004029f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_2d_c_FUN_004029f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1010]:1  local_1010
@@ -29,7 +29,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00402a17
     PUSH EAX                            ; 00402a1b
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00402a1c
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00402a21
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00402a24
     PUSH EBX                            ; 00402a2b

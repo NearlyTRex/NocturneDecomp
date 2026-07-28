@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 173,
+    "complexity_score": 231,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 15,
+    "pseudocode_lines": 21,
+    "suspect_count": 19,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "stack_param",
+      "suspect_float",
+      "unaffected_reg",
+      "unnamed_param"
     ],
-    "total_lines": 52
+    "total_lines": 60
   },
   "cross_references": [],
   "function": {
@@ -146,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260",
-    "signature": "undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,undefined4 param_2,undefined4 param_3,int param_4)"
+    "signature": "undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)"
   },
   "function_calls": [
     {
@@ -207,13 +209,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_checkCylinderCollisionWorld_FUN_00428260.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 5,
+          "line": 22,
+          "message": "Uninitialized variable: in_stack_0000001c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,uint param_2,uint param_3,int param_4)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -221,7 +240,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,uint param_2,uint param_3,int param_4)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
@@ -229,104 +248,144 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,uint param_2,uint param_3,int param_4)",
+      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,local_10,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,local_10,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xa4))(param_1,local_10,param_3);",
-      "type": "unresolved_funcptr"
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_0000001c;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xa4))(param_1,local_10,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xa4))(param_1,local_10,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xa4))(param_1,local_10,param_3);",
+      "text": "(&param_1->base,(CVector3f *)&local_10,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
-      "match": "param_4",
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_4 + 4) = 0;",
+      "text": "(&param_1->base,(CVector3f *)&local_10,param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (*((param_1->base).vtable._ub)->testCylinderCollision)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->base,(SCollisionReturnInfo *)&local_10,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(&param_1->base,(SCollisionReturnInfo *)&local_10,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,param_4);",
-      "type": "unresolved_funcptr"
+      "text": "in_stack_0000001c->actor_name[4] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_0000001c->actor_name[5] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_0000001c->actor_name[6] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_0000001c->actor_name[7] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 21,
+      "match": "6.108039e-39",
+      "severity": "mild",
+      "text": "local_10 = 6.108039e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,param_4);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,param_4);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).getGrabbed)(param_1,in_stack_0000001c,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0x100))(param_1,param_4);",
-      "type": "unnamed_param"
+      "description": "Uninitialized variable: in_stack_0000001c",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "in_stack_0000001c->actor_name[4] = '\\0';",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface )
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
+; CDrawSurface *   Stack[0x18]:4   parent_surface
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480 at 0045b4a2

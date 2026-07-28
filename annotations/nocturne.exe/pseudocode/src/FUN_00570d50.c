@@ -12,11 +12,10 @@ ulonglong FUN_00570d50(void)
 
 {
   uint in_EAX;
-  uint uVar1;
   uint in_EDX;
-  int extraout_EDX;
-  unkbyte10 in_ST0;
-  unkbyte10 in_ST1;
+  uint uVar1;
+  float10 in_ST0;
+  float10 in_ST1;
   ulonglong uVar2;
   uint uStack_2c;
   ushort uStack_28;
@@ -29,16 +28,16 @@ ulonglong FUN_00570d50(void)
   uStack_28 = (ushort)((unkuint10)in_ST1 >> 0x40);
   if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&
       ((uStack_28 & 0x7fff) != 0)) &&
-     (((uVar1 = uStack_1c & 0x7fff, (uStack_1c & 0x7fff) != 0 && ((uStack_28 & 0x7fff) != 0x7fff))
-      && (uVar1 != 0x7fff)))) {
-    FUN_0056bf67(uVar1);
-    FUN_0056bf67(uVar1);
+     ((((uStack_1c & 0x7fff) != 0 && ((uStack_28 & 0x7fff) != 0x7fff)) &&
+      ((uStack_1c & 0x7fff) != 0x7fff)))) {
+    uVar1 = (uint)(ABS(in_ST0) <= ABS(in_ST1));
+    function_dispatch(0xf);
+    function_dispatch(0xf);
                     /* WARNING: Could not recover jumptable at 0x00570ea9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     uVar2 = (*(code *)(&PTR_FUN_005c4094)
-                      [(extraout_EDX * 2 +
-                       (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) * 2 +
-                       (uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();
+                      [(uVar1 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) *
+                       2 + (uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();
     return uVar2;
   }
   fpatan(in_ST1,in_ST0);

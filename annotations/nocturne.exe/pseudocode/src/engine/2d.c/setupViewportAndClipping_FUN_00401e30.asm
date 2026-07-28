@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401e30(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl engine_2d_c_setupViewportAndClipping_FUN_00401e30(int left,int top,int right,int bottom)
 ;
+; Parameters:
+; int              Stack[0x4]:4   left
+; int              Stack[0x8]:4   top
+; int              Stack[0xc]:4   right
+; int              Stack[0x10]:4   bottom
 ;
 ; XREF[3]:
 ;   engine_matrix.c_pushViewport_FUN_004ce7c0 at 004ce8dc

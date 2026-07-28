@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,undefined4 param_3,int param_4)
+; void core_melee_cpp_FUN_004cefe0(int param_1,int param_2,undefined4 param_3,CDemonActor *param_4)
 ;
 ;
 ; Referenced Globals:
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 004cf006
     PUSH ESI                            ; 004cf007
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004cf008
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004cf00d
     TEST EAX,EAX                        ; 004cf010
     JNZ 0x004cf01d                      ; 004cf012

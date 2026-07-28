@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ;
 ; XREF[5]:
 ;   core_elephant.cpp_FUN_00477890 at 00477b66
@@ -47,7 +51,7 @@ section .text
     PUSH EDI                            ; 0048af5d
     PUSH EAX                            ; 0048af5e
     CALL core_fire.cpp_CMuzzleFlash_init_FUN_00484e10 ; 0048af5f
-        ;   XREF to: 00484e10 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CMuzzleFlash_init_FUN_00484e10()
+        ;   XREF to: 00484e10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_init_FUN_00484e10(CMuzzleFlash * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 0048af64
     POP EDI                             ; 0048af67
     POP ESI                             ; 0048af68

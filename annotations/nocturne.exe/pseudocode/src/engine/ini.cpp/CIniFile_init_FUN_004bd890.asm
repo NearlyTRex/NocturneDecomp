@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_ini_cpp_CIniFile_init_FUN_004bd890(char *param_1,char *param_2)
+; void __cdecl engine_ini_cpp_CIniFile_init_FUN_004bd890(char *dest,char *source)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest
+; char *           Stack[0x8]:4   source
 ;
 ; XREF[1]:
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860 at 004bd86b

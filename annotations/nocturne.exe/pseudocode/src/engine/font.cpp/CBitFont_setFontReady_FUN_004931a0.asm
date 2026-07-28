@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(int param_1,undefined4 param_2)
+; void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(CBitFont *this_ptr,int value)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   value
 ;
 ; XREF[1]:
 ;   core_dfont.cpp_FUN_0044c560 at 0044c60a

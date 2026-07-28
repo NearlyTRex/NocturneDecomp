@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weather_cpp_CWeather_createThunder_FUN_00554fd0(int param_1)
+; void __cdecl core_weather_cpp_CWeather_createThunder_FUN_00554fd0(CWeather *this_ptr)
 ;
+; Parameters:
+; CWeather *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
@@ -38,7 +40,7 @@ section .text
     PUSH EDX                            ; 00554ffe
     FSTP float ptr [EBX + 0x20]         ; 00554fff
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 00555002
-        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playSound_FUN_0052ea40()
+        ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     MOV dword ptr [EBX + 0x2c],0x0      ; 00555007
     ADD ESP,0xc                         ; 0055500e
     MOV dword ptr [EBX + 0x34],0x3f800000 ; 00555011

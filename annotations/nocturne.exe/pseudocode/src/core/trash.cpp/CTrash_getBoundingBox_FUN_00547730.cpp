@@ -10,7 +10,7 @@ float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(int param_1,float *par
 
 {
   float *pfVar1;
-  int iVar2;
+  CKeyFramedModel *pCVar2;
   float local_20;
   float local_1c;
   float local_18;
@@ -18,8 +18,9 @@ float * core_trash_cpp_CTrash_getBoundingBox_FUN_00547730(int param_1,float *par
   uint local_10;
   uint local_c;
   
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1 + 0x150);
-  pfVar1 = *(float **)(iVar2 + 0x350);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
+                     ((CKeyFramedModelInstance *)(param_1 + 0x150));
+  pfVar1 = (float *)pCVar2->texture_list[7].textures[2].base.count;
   *param_2 = *pfVar1;
   param_2[1] = pfVar1[1];
   param_2[2] = pfVar1[2];

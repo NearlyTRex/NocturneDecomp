@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_file_c_makepath_FUN_0056626c(byte *param_1,byte *param_2,char *param_3,char *param_4,byte *param_5)
+; void __cdecl crt_file_c_makepath_FUN_0056626c(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   path_buffer
+; char *           Stack[0x8]:4   drive
+; char *           Stack[0xc]:4   directory
+; char *           Stack[0x10]:4   filename
+; char *           Stack[0x14]:4   extension
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -19,12 +25,12 @@
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521e91
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00566250
-;   FUN_0056d9f0
-;   FUN_0056da30
-;   FUN_0056da50
-;   FUN_0056da80
-;   FUN_0056dab0
+;   crt_locale.c_mblen_FUN_0056da50
+;   crt_locale.c_wchar_to_bytes_FUN_0056da30
+;   crt_string.c_mb_get_last_char_FUN_0056dab0
+;   crt_string.c_mbtowc_next_FUN_0056da80
+;   crt_string.c_mbtowc_peek_FUN_0056d9f0
+;   crt_unknown.c_normalize_path_separator_FUN_00566250
 ;
 ; *****************************************************************************
 
@@ -107,31 +113,31 @@ section .text
     PUSH EAX                            ; 005662f4
     MOV EDI,dword ptr [ESP + 0x28]      ; 005662f5
     PUSH EDI                            ; 005662f9
-    CALL FUN_0056d9f0                   ; 005662fa
-        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
+    CALL crt_string.c_mbtowc_peek_FUN_0056d9f0 ; 005662fa
+        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_0056d9f0(char * str)
     ADD ESP,0x4                         ; 005662ff
     PUSH EAX                            ; 00566302
-    CALL crt_unknown.c_FUN_00566250     ; 00566303
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
+    CALL crt_unknown.c_normalize_path_separator_FUN_00566250 ; 00566303
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_normalize_path_separator_FUN_00566250(int ch, int * preferred_separator)
     ADD ESP,0x8                         ; 00566308
     PUSH EBX                            ; 0056630b
     PUSH EAX                            ; 0056630c
-    CALL FUN_0056da30                   ; 0056630d
-        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da30()
+    CALL crt_locale.c_wchar_to_bytes_FUN_0056da30 ; 0056630d
+        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; void crt_locale.c_wchar_to_bytes_FUN_0056da30(wchar_t character, char * output_buffer)
     ADD ESP,0x8                         ; 00566312
     PUSH EBX                            ; 00566315
-    CALL FUN_0056da50                   ; 00566316
-        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da50()
+    CALL crt_locale.c_mblen_FUN_0056da50 ; 00566316
+        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 0056631b
     PUSH EBX                            ; 0056631e
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 0056631f
-    CALL FUN_0056da80                   ; 00566323
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 00566323
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     ADD ESP,0x4                         ; 00566328
     PUSH EDI                            ; 0056632b
     MOV EBX,EAX                         ; 0056632c
-    CALL FUN_0056da80                   ; 0056632e
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 0056632e
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     ADD ESP,0x4                         ; 00566333
     MOV DH,byte ptr [EAX]               ; 00566336
     MOV dword ptr [ESP + 0x24],EAX      ; 00566338
@@ -146,8 +152,8 @@ section .text
         ;   Label: LAB_0056634d
     MOV ESI,dword ptr [ESP + 0x8]       ; 0056634e
     PUSH ESI                            ; 00566352
-    CALL FUN_0056dab0                   ; 00566353
-        ;   XREF to: 0056dab0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dab0()
+    CALL crt_string.c_mb_get_last_char_FUN_0056dab0 ; 00566353
+        ;   XREF to: 0056dab0 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mb_get_last_char_FUN_0056dab0(char * start, char * end)
     ADD ESP,0x8                         ; 00566358
     MOV AL,byte ptr [EAX]               ; 0056635b
     MOV EDI,dword ptr [ESP]             ; 0056635d
@@ -173,14 +179,14 @@ section .text
     JZ 0x00566406                       ; 00566387
         ;   XREF to: 00566406 (CONDITIONAL_JUMP)  ; LAB_00566406
     PUSH ECX                            ; 0056638d
-    CALL FUN_0056d9f0                   ; 0056638e
-        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
+    CALL crt_string.c_mbtowc_peek_FUN_0056d9f0 ; 0056638e
+        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_0056d9f0(char * str)
     ADD ESP,0x4                         ; 00566393
     MOV EDX,ESP                         ; 00566396
     PUSH EDX                            ; 00566398
     PUSH EAX                            ; 00566399
-    CALL crt_unknown.c_FUN_00566250     ; 0056639a
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
+    CALL crt_unknown.c_normalize_path_separator_FUN_00566250 ; 0056639a
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_normalize_path_separator_FUN_00566250(int ch, int * preferred_separator)
     ADD ESP,0x8                         ; 0056639f
     MOV EDX,dword ptr [ESP]             ; 005663a2
     CMP EAX,EDX                         ; 005663a5
@@ -201,31 +207,31 @@ section .text
     PUSH EAX                            ; 005663be
     MOV ESI,dword ptr [ESP + 0x2c]      ; 005663bf
     PUSH ESI                            ; 005663c3
-    CALL FUN_0056d9f0                   ; 005663c4
-        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
+    CALL crt_string.c_mbtowc_peek_FUN_0056d9f0 ; 005663c4
+        ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_0056d9f0(char * str)
     ADD ESP,0x4                         ; 005663c9
     PUSH EAX                            ; 005663cc
-    CALL crt_unknown.c_FUN_00566250     ; 005663cd
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
+    CALL crt_unknown.c_normalize_path_separator_FUN_00566250 ; 005663cd
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_normalize_path_separator_FUN_00566250(int ch, int * preferred_separator)
     ADD ESP,0x8                         ; 005663d2
     PUSH EBX                            ; 005663d5
     PUSH EAX                            ; 005663d6
-    CALL FUN_0056da30                   ; 005663d7
-        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da30()
+    CALL crt_locale.c_wchar_to_bytes_FUN_0056da30 ; 005663d7
+        ;   XREF to: 0056da30 (UNCONDITIONAL_CALL)  ; void crt_locale.c_wchar_to_bytes_FUN_0056da30(wchar_t character, char * output_buffer)
     ADD ESP,0x8                         ; 005663dc
     PUSH EBX                            ; 005663df
-    CALL FUN_0056da50                   ; 005663e0
-        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da50()
+    CALL crt_locale.c_mblen_FUN_0056da50 ; 005663e0
+        ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 005663e5
     PUSH EBX                            ; 005663e8
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 005663e9
-    CALL FUN_0056da80                   ; 005663ed
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005663ed
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     ADD ESP,0x4                         ; 005663f2
     PUSH ESI                            ; 005663f5
     MOV EBX,EAX                         ; 005663f6
-    CALL FUN_0056da80                   ; 005663f8
-        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined FUN_0056da80()
+    CALL crt_string.c_mbtowc_next_FUN_0056da80 ; 005663f8
+        ;   XREF to: 0056da80 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_mbtowc_next_FUN_0056da80()
     ADD ESP,0x4                         ; 005663fd
     MOV dword ptr [ESP + 0x28],EAX      ; 00566400
     JMP 0x005663b3                      ; 00566404

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_door_cpp_CDoor_ctor_FUN_00455050(undefined4 param_1)
+; CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00455050(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_door.cpp_FUN_00455020 at 00455033
@@ -45,7 +47,7 @@ section .text
     ADD EAX,0x150                       ; 00455060
     PUSH EAX                            ; 00455065
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00455066
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0045506b
     LEA EBX,[EAX + 0x320]               ; 0045506e
     PUSH EBX                            ; 00455074
@@ -58,7 +60,7 @@ section .text
     PUSH EAX                            ; 0045508e
     MOV dword ptr [EBX + 0x14c],0x59c284 ; 0045508f | PTR_core_door.cpp_CDoor_setup_FUN_004551f0_0059c284
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00455099
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d0],0x0     ; 0045509e
     ADD ESP,0x8                         ; 004550a8
     MOV dword ptr [EBX + 0x2d4],0x1     ; 004550ab

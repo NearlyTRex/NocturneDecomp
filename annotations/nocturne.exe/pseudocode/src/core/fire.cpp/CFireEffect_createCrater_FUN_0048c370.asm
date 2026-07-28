@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(CFireEffect *this_ptr,CVector3f *position,float radius)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   radius
 ;
 ; XREF[2]:
 ;   core_baron.cpp_FUN_00410cc0 at 00410da6

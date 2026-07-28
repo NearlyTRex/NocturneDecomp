@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_getFileSize_FUN_004568c0(undefined4 param_1,undefined4 param_2)
+; int __cdecl engine_dosio_cpp_getFileSize_FUN_004568c0(char *directory,char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x214]:1  local_214
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[27]:
-;   cockpit_pkbmpset.cpp_FUN_004f54c0 at 004f54ee
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0 at 004f54ee
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044346c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 at 0044bfcb
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b3d4
@@ -37,12 +40,12 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004568d6
     PUSH EAX                            ; 004568da
     CALL engine_dosio.cpp_getRelativeFilePath_FUN_00456700 ; 004568db
-        ;   XREF to: 00456700 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getRelativeFilePath_FUN_00456700()
+        ;   XREF to: 00456700 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_getRelativeFilePath_FUN_00456700(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 004568e0
     MOV EAX,ESP                         ; 004568e3
     PUSH EAX                            ; 004568e5
     CALL engine_dosio.cpp_findFile_FUN_004567a0 ; 004568e6
-        ;   XREF to: 004567a0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_004567a0()
+        ;   XREF to: 004567a0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_004567a0(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 004568eb
     TEST EAX,EAX                        ; 004568ee
     JZ 0x00456900                       ; 004568f0

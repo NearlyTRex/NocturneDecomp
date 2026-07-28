@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; CVector3f *      Stack[0xc]:4   initial_velocity
+; int              Stack[0x10]:4   render_in_background
 ;
 ; XREF[10]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412fa4
@@ -57,7 +62,7 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 00427e7a
     PUSH ESI                            ; 00427e7d
     CALL core_bodypart.cpp_createBodyPart_FUN_00415b30 ; 00427e7e
-        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_createBodyPart_FUN_00415b30()
+        ;   XREF to: 00415b30 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00415b30(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00427e83
     MOV EDI,dword ptr [ESP + 0x20]      ; 00427e86
     PUSH EDI                            ; 00427e8a
@@ -67,11 +72,11 @@ section .text
     PUSH EBX                            ; 00427e91
     MOV ESI,EAX                         ; 00427e92
     CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 ; 00427e94
-        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0()
+        ;   XREF to: 00427eb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 00427e99
     PUSH ESI                            ; 00427e9c
     CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 ; 00427e9d
-        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40()
+        ;   XREF to: 00416d40 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00427ea2
     POP EDI                             ; 00427ea5
     POP EBP                             ; 00427ea6

@@ -43,38 +43,38 @@ section .text
     ADD EAX,0x150                       ; 004c9440
     PUSH EAX                            ; 004c9445
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9446
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c944b
     ADD EAX,0x17c                       ; 004c944e
     PUSH EAX                            ; 004c9453
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9454
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c9459
     ADD EAX,0x17c                       ; 004c945c
     PUSH EAX                            ; 004c9461
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004c9462
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c9467
     PUSH 0x5a0210                       ; 004c946a | g_SPanelTypeInfo_005a0210
     PUSH 0xc                            ; 004c946f
     ADD EAX,0x1a0                       ; 004c9471
     PUSH EAX                            ; 004c9476
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c9477
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c947c
     PUSH 0x5a0230                       ; 004c947f | g_SGemTypeInfo_005a0230
     PUSH 0xc                            ; 004c9484
     ADD EAX,0x4b0                       ; 004c9486
     PUSH EAX                            ; 004c948b
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c948c
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9491
     PUSH 0x5a0250                       ; 004c9494 | g_SReflectorTypeInfo_005a0250
     PUSH 0x2                            ; 004c9499
     ADD EAX,0x8a0                       ; 004c949b
     PUSH EAX                            ; 004c94a0
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004c94a1
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c94a6
     LEA EBX,[EAX + 0xffffecc8]          ; 004c94a9
     PUSH 0x587ef3                       ; 004c94af | = "doorpuzz.kfm"
@@ -82,19 +82,19 @@ section .text
     PUSH EAX                            ; 004c94ba
     MOV dword ptr [EBX + 0x14c],0x5a0054 ; 004c94bb | PTR_core_manpuz.cpp_FUN_004c9580_005a0054
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94c5
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c94ca
     PUSH 0x587f00                       ; 004c94cd | = "puzz-rec.kfm"
     LEA EAX,[EBX + 0x2cc]               ; 004c94d2
     PUSH EAX                            ; 004c94d8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94d9
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c94de
     PUSH 0x587f0d                       ; 004c94e1 | = "mirrhack.kfm"
     LEA EAX,[EBX + 0x448]               ; 004c94e6
     PUSH EAX                            ; 004c94ec
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c94ed
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c94f2
     MOV ESI,0x587f1a                    ; 004c94f5 | = "headlite.raw"
     LEA EDI,[EBX + 0x14c0]              ; 004c94fa

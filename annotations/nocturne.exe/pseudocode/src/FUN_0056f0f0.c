@@ -9,6 +9,6 @@
 void FUN_0056f0f0(void)
 
 {
-  FUN_0056ddc0("Floating-point support not loaded\r\n",1);
+  HandleRuntimeError("Floating-point support not loaded\r\n",1);
   return;
 }

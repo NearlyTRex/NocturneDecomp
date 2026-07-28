@@ -64,11 +64,11 @@ section .text
         ;   Label: LAB_0041f728
     PUSH ESI                            ; 0041f72d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041f72e
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041f733
     PUSH ESI                            ; 0041f736
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041f737
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041f73c
     LEA EAX,[ESP + 0x40]                ; 0041f73f
     PUSH EAX                            ; 0041f743
@@ -143,11 +143,11 @@ section .text
         ;   Label: LAB_0041f856
     PUSH ESI                            ; 0041f85b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0041f85c
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041f861
     PUSH ESI                            ; 0041f864
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0041f865
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041f86a
     LEA ESI,[ESP + 0x28]                ; 0041f86d
     PUSH ESI                            ; 0041f871
@@ -231,7 +231,7 @@ section .text
     PUSH ESI                            ; 0041f9b1 | DAT_0076483c
     INC EBX                             ; 0041f9b2
     CALL core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 ; 0041f9b3
-        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90()
+        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90(CDemonFilter * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041f9b8
     ADD ESI,0x4c                        ; 0041f9bb
     CMP EBX,0x8                         ; 0041f9be
@@ -246,7 +246,7 @@ section .text
     ADD EDI,0x668                       ; 0041f9d8
     PUSH EDI                            ; 0041f9de
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 0041f9df
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 0041f9e4
     MOV ESP,EBP                         ; 0041f9e7
     POP EBP                             ; 0041f9e9

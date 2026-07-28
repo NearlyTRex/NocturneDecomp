@@ -29,11 +29,11 @@ section .text
     ADD EAX,0x150                       ; 004b4c40
     PUSH EAX                            ; 004b4c45
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 004b4c46
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004b4c4b
     PUSH EAX                            ; 004b4c4e
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 004b4c4f
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004b4c54
     TEST EAX,EAX                        ; 004b4c57
     JGE 0x004b4c30                      ; 004b4c59

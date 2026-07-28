@@ -2,69 +2,68 @@
 // Address: 0047a390
 // Address Range: [[0047a390, 0047a4bc]]
 // Convention: __cdecl
-// Signature: int __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *param_1,undefined4 param_2,undefined4 param_3)
+// Signature: CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,uint class_hash,char *class_name)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *param_1,uint param_2,uint param_3)
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,uint class_hash,char *class_name)
 
 {
   char cVar1;
+  CDemonActor *actor_ptr;
   int iVar2;
-  int iVar3;
-  uint uVar4;
-  char *pcVar5;
-  char *pcVar6;
+  char *pcVar3;
+  char *pcVar4;
   
-  if ((param_1 == (char *)0x0) || (*param_1 == '\0')) {
-    pcVar5 = "Must specify actor name";
-    pcVar6 = &DAT_01c08b60;
+  if ((name == (char *)0x0) || (*name == '\0')) {
+    pcVar3 = "Must specify actor name";
+    pcVar4 = &DAT_01c08b60;
     do {
-      cVar1 = *pcVar5;
-      *pcVar6 = cVar1;
+      cVar1 = *pcVar3;
+      *pcVar4 = cVar1;
       if (cVar1 == '\0') {
-        return 0;
+        return (CDemonActor *)0x0;
       }
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      cVar1 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      pcVar4[1] = cVar1;
+      pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    return 0;
+    return (CDemonActor *)0x0;
   }
-  if (*param_1 == '@') {
-    iVar2 = core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(0x01C03A10,param_1);
+  if (*name == '@') {
+    actor_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_00480b30(0x01C03A10,name);
   }
   else {
-    iVar2 = _stricmp(param_1,"$");
+    iVar2 = _stricmp(name,"$");
     if (iVar2 != 0) {
-      iVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(0x01CC9450,param_1);
-      if (iVar2 == 0) {
-        _sprintf(&DAT_01c08b60,"Actor \"%s\" does not exist.",param_1);
-        return 0;
+      actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(0x01CC9450,name);
+      if (actor_ptr == (CDemonActor *)0x0) {
+        _sprintf(&DAT_01c08b60,"Actor \"%s\" does not exist.",name);
+        return (CDemonActor *)0x0;
       }
       goto LAB_0047a41f;
     }
     if (*0x01CEA280 != 0) {
       _sprintf(&DAT_01c08b60,"Can't use '$' actor specifier in multi-player");
-      return 0;
+      return (CDemonActor *)0x0;
     }
-    iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    actor_ptr = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   }
-  if (iVar2 == 0) {
+  if (actor_ptr == (CDemonActor *)0x0) {
     return 0x0FFFFFFF;
   }
 LAB_0047a41f:
-  iVar3 = core_actor_cpp_isOfClassHash_FUN_0040d860(iVar2,param_2);
-  if (iVar3 != 0) {
-    return iVar2;
+  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040d860(actor_ptr,class_hash);
+  if (iVar2 != 0) {
+    return actor_ptr;
   }
-  if (*param_1 == '@') {
+  if (*name == '@') {
     return 0x0FFFFFFF;
   }
-  uVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar2,param_3);
-  _sprintf(&DAT_01c08b60,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",param_1,uVar4);
-  return 0;
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(actor_ptr);
+  _sprintf(&DAT_01c08b60,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",name,pcVar3,class_name);
+  return (CDemonActor *)0x0;
 }

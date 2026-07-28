@@ -24,7 +24,7 @@ section .text
     ADD EAX,0x1f5a0                     ; 004a3a9c
     PUSH EAX                            ; 004a3aa1
     CALL core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0 ; 004a3aa2
-        ;   XREF to: 004c1da0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0()
+        ;   XREF to: 004c1da0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004a3aa7
     RET                                 ; 004a3aaa
 

@@ -2,11 +2,11 @@
 // Address: 0040ca80
 // Address Range: [[0040ca80, 0040cafa]]
 // Convention: unknown
-// Signature: void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,undefined4 param_2)
+// Signature: void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,char *param_2)
 
 #include "nocturne.h"
 
-void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,uint param_2)
+void core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(int param_1,char *param_2)
 
 {
   char cVar1;

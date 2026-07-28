@@ -9,7 +9,7 @@
       }
     ],
     "importable":true,
-    "name":"core_dstrender.cpp_FUN_00463d98",
+    "name":"core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -29,10 +29,35 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_memdbg.cpp_malloc_FUN_00564c18",
-    "ret":"undefined1",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -48,10 +73,51 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_strstream.cpp_ostrstream_dtor_FUN_00564e98",
-    "ret":"undefined1",
+    "ret":"_ostrstream*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -67,7 +133,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_string.c_splitpath_FUN_00566498",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -87,9 +153,88 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"path",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"drive",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"dir",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"fname",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"ext",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -102,7 +247,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_00566b18",
+    "name":"crt_unknown.c_string_ungetc_FUN_00566b18",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -119,14 +264,10 @@
         "start":"00566f98"
       }
     ],
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00566f98",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"crt_unknown.c_reportAbnormalTermination_FUN_00566f98",
+    "ret":"void"
   },
   {
     "addr":"0056dc98",
@@ -137,9 +278,11 @@
         "start":"0056dc98"
       }
     ],
+    "conv":"__fpustack",
+    "custom_storage":true,
     "importable":true,
-    "name":"FUN_0056dc98",
-    "ret":"undefined1",
+    "name":"crt_math.c_atan2_FUN_0056dc98",
+    "ret":"float10",
     "vars":{
       "locals":[
         {
@@ -191,8 +334,48 @@
           "type":"undefined1[10]"
         }
       ],
+      "params":[
+        {
+          "name":"y",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "reg":"ST1",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001110",
+                "offset":4368,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },
@@ -206,11 +389,18 @@
       }
     ],
     "importable":true,
-    "name":"FUN_0056fb98",
+    "name":"crt_stdio.c_DrainConsoleInputAndSetup_FUN_0056fb98",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"AL",
+        "size":1,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":1
+          }
+        ]
       }
     }
   },

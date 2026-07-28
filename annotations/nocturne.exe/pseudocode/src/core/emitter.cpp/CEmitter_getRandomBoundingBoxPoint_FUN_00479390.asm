@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(int param_1,undefined4 param_2)
+; CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(CEmitter *this_ptr,CVector3f *out_point)
 ;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
 ;
 ; XREF[1]:
 ;   core_emitter.cpp_FUN_00478790 at 00478ba2
@@ -56,7 +59,7 @@ section .text
     PUSH ESI                            ; 00479403
     FSTP float ptr [ESP + 0x2c]         ; 00479404
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00479408
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0047940d
     MOV EAX,EBX                         ; 00479410
     ADD ESP,0x28                        ; 00479412

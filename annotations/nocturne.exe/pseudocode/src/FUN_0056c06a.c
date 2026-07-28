@@ -10,9 +10,11 @@ void FUN_0056c06a(void)
 
 {
   code *pcVar1;
+  float10 in_ST1;
+  float10 in_ST3;
   
   pcVar1 = (code *)swi(6);
   (*pcVar1)();
-  FUN_0056be50();
+  fdiv(in_ST1,in_ST3);
   return;
 }

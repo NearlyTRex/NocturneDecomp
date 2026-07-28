@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(int param_1,undefined4 param_2)
+; int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00561880(CZombie *this_ptr,int object_shape_type)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   object_shape_type
 ;
 ; XREF[1]:
 ;   core_zombie.cpp_FUN_00561010 at 00561208
@@ -21,7 +24,7 @@ section .text
     PUSH EDX                            ; 00561889
     PUSH EBX                            ; 0056188a
     CALL core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0 ; 0056188b
-        ;   XREF to: 005617e0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0()
+        ;   XREF to: 005617e0 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0(CZombie * this_ptr, int object_shape_type)
     ADD ESP,0x8                         ; 00561890
     TEST EAX,EAX                        ; 00561893
     JL 0x005618b2                       ; 00561895

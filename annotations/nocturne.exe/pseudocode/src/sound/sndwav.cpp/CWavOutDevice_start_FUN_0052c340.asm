@@ -39,7 +39,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2dc93a8] ; 0052c356
     PUSH EDI                            ; 0052c35c
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052c35d
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EAX,dword ptr [EBX + 0x2dc93a8] ; 0052c362
     MOV EDX,dword ptr [EBX + 0x2dc93c8] ; 0052c368
     MOV dword ptr [EAX],EDX             ; 0052c36e
@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 0052c388
     MOV dword ptr [EAX + 0x4],EDX       ; 0052c389
     CALL sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130 ; 0052c38c
-        ;   XREF to: 0052c130 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130()
+        ;   XREF to: 0052c130 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130(int buffer_index)
     ADD ESP,0x4                         ; 0052c391
     TEST EAX,EAX                        ; 0052c394
     JZ 0x0052c3d6                       ; 0052c396
@@ -70,7 +70,7 @@ section .text
     SUB ESP,0x8                         ; 0052c3ba
     FSTP double ptr [ESP]               ; 0052c3bd
     CALL sound_sndmain.cpp_startSoundThread_FUN_005286d0 ; 0052c3c0
-        ;   XREF to: 005286d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSoundThread_FUN_005286d0()
+        ;   XREF to: 005286d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_005286d0(double latency_seconds)
     ADD ESP,0x8                         ; 0052c3c5
     TEST EAX,EAX                        ; 0052c3c8
     JZ 0x0052c3d6                       ; 0052c3ca

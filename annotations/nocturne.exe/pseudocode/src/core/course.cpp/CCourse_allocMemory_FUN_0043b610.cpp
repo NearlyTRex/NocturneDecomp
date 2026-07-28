@@ -2,27 +2,27 @@
 // Address: 0043b610
 // Address Range: [[0043b610, 0043b680]]
 // Convention: __cdecl
-// Signature: void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int param_2)
+// Signature: void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(CCourse *this_ptr,int count)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0043b648) */
 
-void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int param_2)
+void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(CCourse *this_ptr,int count)
 
 {
   int *piVar1;
   
-  core_course_cpp_CCourse_free_FUN_0043b7c0(param_1);
-  *param_1 = param_2;
-  piVar1 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_2 * 0x1c + 4);
+  core_course_cpp_CCourse_free_FUN_0043b7c0(this_ptr);
+  this_ptr->len = count;
+  piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(count * 0x1c + 4);
   if (piVar1 == (int *)0x0) {
-    param_1[1] = 0;
+    this_ptr->frames = (CCourseFrame *)0x0;
   }
   else {
-    *piVar1 = param_2;
-    param_1[1] = (int)(piVar1 + 1);
-    if (piVar1 + 1 != (int *)0x0) {
+    *piVar1 = count;
+    this_ptr->frames = (CCourseFrame *)(piVar1 + 1);
+    if ((CCourseFrame *)(piVar1 + 1) != (CCourseFrame *)0x0) {
       return;
     }
   }

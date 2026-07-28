@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 334,
+    "complexity_score": 339,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 27,
+    "pseudocode_lines": 44,
+    "suspect_count": 28,
     "suspect_types": [
+      "pointer_cast",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 159
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -147,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "core_simbox.cpp_CSimBox_setup_FUN_00516c60",
-    "signature": "void core_simbox_cpp_CSimBox_setup_FUN_00516c60(int param_1)"
+    "signature": "void core_simbox_cpp_CSimBox_setup_FUN_00516c60(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -212,91 +212,93 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "CSimBox_setup_FUN_00516c60.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 39,
-          "message": "Uninitialized variable: fStack_1c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 39,
-          "message": "Uninitialized variable: fStack_28",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 40,
-          "message": "Uninitialized variable: fStack_18",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 26,
-          "line": 40,
-          "message": "Uninitialized variable: fStack_24",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_simbox_cpp_CSimBox_setup_FUN_00516c60(int param_1)",
+      "text": "void core_simbox_cpp_CSimBox_setup_FUN_00516c60(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x150);",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 1));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setup_FUN_00409fc0(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_44);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_44);",
+      "text": "pCVar1 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&CStack_44);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_44);",
+      "text": "pCVar1 = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&CStack_44);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "position = &param_1->location;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CBox *)(param_1[2].create_event + 0x38),&position->position,&(param_1->orient).vec,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CBox *)(param_1[2].create_event + 0x38),&position->position,&(param_1->orient).vec,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "&CStack_14,param_1[2].orient.vec.x);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CLocation *)&param_1[4].direction_hint != position) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4].direction_hint = (int)(position->position).x;",
       "type": "unnamed_param"
     },
     {
@@ -304,31 +306,31 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x20);",
+      "text": "param_1[4].lifecycle_state = (EActorLifecycleState)(param_1->location).position.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x350,puVar1,param_1 + 0x30,&fStack_14,*(uint *)(param_1 + 0x2d0));",
+      "text": "param_1[4].lifecycle_state = (EActorLifecycleState)(param_1->location).position.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x350,puVar1,param_1 + 0x30,&fStack_14,*(uint *)(param_1 + 0x2d0));",
+      "text": "param_1[4].create_prob = (param_1->location).position.z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x350,puVar1,param_1 + 0x30,&fStack_14,*(uint *)(param_1 + 0x2d0));",
+      "text": "param_1[4].create_prob = (param_1->location).position.z;",
       "type": "unnamed_param"
     },
     {
@@ -336,7 +338,15 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x5ac) != puVar1) {",
+      "text": "if ((UOrientationVector *)param_1[4].create_event != &param_1->orient) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((UOrientationVector *)param_1[4].create_event != &param_1->orient) {",
       "type": "unnamed_param"
     },
     {
@@ -344,7 +354,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5ac) = *puVar1;",
+      "text": "*(float *)param_1[4].create_event = (param_1->orient).vec.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)param_1[4].create_event = (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -352,7 +370,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b0) = *(uint *)(param_1 + 0x24);",
+      "text": "*(float *)(param_1[4].create_event + 4) = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +378,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b0) = *(uint *)(param_1 + 0x24);",
+      "text": "*(float *)(param_1[4].create_event + 4) = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +386,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b4) = *(uint *)(param_1 + 0x28);",
+      "text": "*(float *)(param_1[4].create_event + 8) = (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -376,7 +394,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b4) = *(uint *)(param_1 + 0x28);",
+      "text": "*(float *)(param_1[4].create_event + 8) = (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -384,47 +402,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x5b8) != (uint *)(param_1 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x5b8) != (uint *)(param_1 + 0x30)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b8) = *(uint *)(param_1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5b8) = *(uint *)(param_1 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5bc) = *(uint *)(param_1 + 0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5bc) = *(uint *)(param_1 + 0x34);",
+      "text": "if (param_1[2].location.area_id != 1) {",
       "type": "unnamed_param"
     },
     {
@@ -432,72 +410,32 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5c0) = *(uint *)(param_1 + 0x38);",
+      "text": "param_1[4].health = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5c0) = *(uint *)(param_1 + 0x38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2cc) != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5a4) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 43,
-      "match": "raw-offset struct copy",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 16,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x5b8) = *(uint *)(param_1 + 0x30);",
+      "text": "CStack_2c.min.x = (pCVar1->min).x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: fStack_1c",
-      "line": 39,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_10 = fStack_1c - fStack_28;",
-      "type": "static_uninitvar"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_2c.max.x = (pCVar1->max).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: fStack_28",
-      "line": 39,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_10 = fStack_1c - fStack_28;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_18",
-      "line": 40,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_c = fStack_18 - fStack_24;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_24",
-      "line": 40,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_c = fStack_18 - fStack_24;",
-      "type": "static_uninitvar"
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 30,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((CBox *)(param_1[2].create_event + 0x38),&position->position,&(param_1->orient).vec,",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

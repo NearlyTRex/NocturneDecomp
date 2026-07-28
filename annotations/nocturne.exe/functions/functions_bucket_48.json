@@ -44,12 +44,70 @@
         "start":"005632c8"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005632c8",
-    "ret":"undefined1",
+    "name":"crt_unknown.c_vfscanf_FUN_005632c8",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"file",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        },
+        {
+          "name":"format",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"args",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"va_list_t"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -81,7 +139,7 @@
       }
     ],
     "importable":true,
-    "name":"FUN_00570248",
+    "name":"crt_strstream.cpp_strstreambuf_ctor_FUN_00570248",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -116,12 +174,38 @@
         "start":"005738c8"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005738c8",
-    "ret":"undefined1",
+    "name":"crt_stdlib.c_charToDigit_FUN_005738c8",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"ch",
+          "storage":{
+            "offset":4,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":1
+              }
+            ]
+          },
+          "type":"char"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

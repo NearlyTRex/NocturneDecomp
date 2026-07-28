@@ -71,7 +71,7 @@ section .text
     PUSH EBX                            ; 00404106
     PUSH EAX                            ; 00404107
     CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 00404108
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColor_FUN_00532af0(int red, int green, int blue)
     ADD ESP,0xc                         ; 0040410d
     POP ESI                             ; 00404110
     POP EBX                             ; 00404111

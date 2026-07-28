@@ -1,16 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150(int *param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 0048684e
 ;   core_manpuz.cpp_FUN_004ca790 at 004cab7b
-;   core_path.cpp_FUN_004f16d0 at 004f18ab
-;   core_path.cpp_FUN_004f18c0 at 004f1c7e
+;   core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0 at 004f1c7e
+;   core_path.cpp_renderGridQuad_FUN_004f16d0 at 004f18ab
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
@@ -91,7 +94,7 @@ section .text
     PUSH EDX                            ; 004601ec
     PUSH EBX                            ; 004601ed
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 004601ee
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 004601f3
     ADD ESP,0x4                         ; 004601f6
         ;   Label: LAB_004601f6
@@ -105,7 +108,7 @@ section .text
     ADD EAX,0x8                         ; 00460202
     PUSH EAX                            ; 00460205
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00460206
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046020b
     TEST EAX,EAX                        ; 0046020e
     JZ 0x004601f6                       ; 00460210

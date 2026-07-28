@@ -1,82 +1,88 @@
 // Name: core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0
 // Address: 0054e5a0
 // Address Range: [[0054e5a0, 0054e7ea]]
-// Convention: unknown
-// Signature: int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle *this_ptr)
 
 #include "nocturne.h"
 
-int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(uint param_1)
+CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(CVehicle *this_ptr)
 
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
+  CKeyFramedModelInstance *pCVar3;
+  void *pvVar4;
+  CCourse *pCVar5;
+  char *pcVar6;
+  int *piVar7;
   
-  iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  iVar2 = __arrinit
-                    (iVar2 + 0x17c,4,&g_CKeyFramedModelInstanceTypeInfo_0059b030);
-  iVar2 = __arrinit(iVar2 + 0x668,4,&g_CTireTypeInfo_005a3d20);
-  iVar2 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar2 + 0x6e4);
-  *(byte ***)(iVar2 + -0xecc) = &PTR_core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0_005a3c44;
+  iVar2 = core_actor_cpp_FUN_00409d30(this_ptr);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                     ((CKeyFramedModelInstance *)(iVar2 + 0x150));
+  pvVar4 = __arrinit
+                     (pCVar3 + 1,4,&g_CKeyFramedModelInstanceTypeInfo_0059b030);
+  pvVar4 = __arrinit
+                     ((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo_005a3d20);
+  pCVar5 = core_course_cpp_CCourse_ctor_FUN_0043b5d0((CCourse *)((int)pvVar4 + 0x6e4));
+  pCVar5[-0x13c].frames = (CCourseFrame *)&PTR_core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0_005a3c44
+  ;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0xec8,"32ford.kfm");
-  *(uint *)(iVar2 + -0x6e8) = 4;
+            ((CKeyFramedModelInstance *)&pCVar5[-0x13c].loop,"32ford.kfm");
+  pCVar5[-0x94].loop = 4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x6d0,"32ltire.kfm");
+            ((CKeyFramedModelInstance *)&pCVar5[-0x92].loop,"32ltire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x368,"32ltire.kfm");
+            ((CKeyFramedModelInstance *)&pCVar5[-0x49].frames,"32ltire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x51c,"32rtire.kfm");
+            ((CKeyFramedModelInstance *)(pCVar5 + -0x6d),"32rtire.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x1b4,"32rtire.kfm");
-  *(uint *)(iVar2 + -0x6e4) = 0xc0200000;
-  *(uint *)(iVar2 + -0x6e0) = 0xc0200000;
-  *(uint *)(iVar2 + -0x6dc) = 0x40a00000;
-  *(uint *)(iVar2 + -0x6d8) = 0x3fa00000;
-  *(uint *)(iVar2 + -0x6d4) = 0x3e800000;
-  *(uint *)(iVar2 + -0x530) = 0x40200000;
-  *(uint *)(iVar2 + -0x52c) = 0xc0200000;
-  *(uint *)(iVar2 + -0x528) = 0x40a00000;
-  *(uint *)(iVar2 + -0x524) = 0x3fa00000;
-  *(uint *)(iVar2 + -0x520) = 0x3e800000;
-  *(uint *)(iVar2 + -0x37c) = 0xc0200000;
-  *(uint *)(iVar2 + -0x378) = 0xc0200000;
-  *(uint *)(iVar2 + -0x374) = 0xc0900000;
-  *(uint *)(iVar2 + -0x370) = 0x3fa00000;
-  *(uint *)(iVar2 + -0x36c) = 0x3e800000;
-  *(uint *)(iVar2 + -0x1c8) = 0x40200000;
-  *(uint *)(iVar2 + -0x1c4) = 0xc0200000;
-  *(uint *)(iVar2 + -0x1c0) = 0xc0900000;
-  *(uint *)(iVar2 + -0x1bc) = 0x3fa00000;
-  *(uint *)(iVar2 + -0x1b8) = 0x3e800000;
-  *(uint *)(iVar2 + -0x708) = 0x44fa0000;
-  *(uint *)(iVar2 + -0x748) = 0;
-  *(uint *)(iVar2 + -0x74c) = *(uint *)(iVar2 + -0x748);
-  *(uint *)(iVar2 + -0x750) = *(uint *)(iVar2 + -0x74c);
-  *(uint *)(iVar2 + -0x754) = 0;
-  *(uint *)(iVar2 + -0x758) = *(uint *)(iVar2 + -0x754);
-  *(uint *)(iVar2 + -0x75c) = *(uint *)(iVar2 + -0x758);
-  *(uint *)(iVar2 + -0x724) = 0;
-  pcVar3 = "chicpath.pth";
-  *(uint *)(iVar2 + -0x728) = *(uint *)(iVar2 + -0x724);
-  *(uint *)(iVar2 + -0x72c) = *(uint *)(iVar2 + -0x728);
-  *(uint *)(iVar2 + 0xc) = 0;
-  pcVar4 = (char *)(iVar2 + 0x14);
-  *(uint *)(iVar2 + 0x10) = 0x42c80000;
+            ((CKeyFramedModelInstance *)&pCVar5[-0x25].loop,"32rtire.kfm");
+  pCVar5[-0x93].len = -0x3fe00000;
+  pCVar5[-0x93].frames = (CCourseFrame *)0xc0200000;
+  pCVar5[-0x93].loop = 0x40a00000;
+  pCVar5[-0x92].len = 0x3fa00000;
+  pCVar5[-0x92].frames = (CCourseFrame *)0x3e800000;
+  pCVar5[-0x6f].frames = (CCourseFrame *)0x40200000;
+  pCVar5[-0x6f].loop = -0x3fe00000;
+  pCVar5[-0x6e].len = 0x40a00000;
+  pCVar5[-0x6e].frames = (CCourseFrame *)0x3fa00000;
+  pCVar5[-0x6e].loop = 0x3e800000;
+  pCVar5[-0x4b].loop = -0x3fe00000;
+  pCVar5[-0x4a].len = -0x3fe00000;
+  pCVar5[-0x4a].frames = (CCourseFrame *)0xc0900000;
+  pCVar5[-0x4a].loop = 0x3fa00000;
+  pCVar5[-0x49].len = 0x3e800000;
+  pCVar5[-0x26].len = 0x40200000;
+  pCVar5[-0x26].frames = (CCourseFrame *)0xc0200000;
+  pCVar5[-0x26].loop = -0x3f700000;
+  pCVar5[-0x25].len = 0x3fa00000;
+  pCVar5[-0x25].frames = (CCourseFrame *)0x3e800000;
+  pCVar5[-0x96].len = 0x44fa0000;
+  pCVar5[-0x9c].loop = 0;
+  pCVar5[-0x9c].frames = (CCourseFrame *)pCVar5[-0x9c].loop;
+  pCVar5[-0x9c].len = (int)pCVar5[-0x9c].frames;
+  pCVar5[-0x9d].loop = 0;
+  pCVar5[-0x9d].frames = (CCourseFrame *)pCVar5[-0x9d].loop;
+  pCVar5[-0x9d].len = (int)pCVar5[-0x9d].frames;
+  pCVar5[-0x99].loop = 0;
+  pcVar6 = "chicpath.pth";
+  pCVar5[-0x99].frames = (CCourseFrame *)pCVar5[-0x99].loop;
+  pCVar5[-0x99].len = (int)pCVar5[-0x99].frames;
+  pCVar5[1].len = 0;
+  piVar7 = &pCVar5[1].loop;
+  pCVar5[1].frames = (CCourseFrame *)0x42c80000;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar6;
+    *(char *)piVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    *(char *)((int)piVar7 + 1) = cVar1;
+    piVar7 = (int *)((int)piVar7 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + 0x4c) = 0;
-  *(uint *)(iVar2 + 0x50) = 0;
-  *(uint *)(iVar2 + 0x54) = 0;
-  return iVar2 + -0x1018;
+  pCVar5[6].frames = (CCourseFrame *)0x0;
+  pCVar5[6].loop = 0;
+  pCVar5[7].len = 0;
+  return (CVehicle *)&pCVar5[-0x158].loop;
 }

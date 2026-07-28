@@ -2,19 +2,20 @@
 // Address: 00529c10
 // Address Range: [[00529c10, 00529dd6]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
+// Signature: int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
+int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
+  char *pcVar4;
+  int iVar5;
   int *piStack_380;
   int iStack_37c;
   int iStack_378;
@@ -43,11 +44,11 @@ uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
     iStack_37c = _DAT_02dc9240 * _DAT_02dc9238;
     iStack_378 = _DAT_02dc9238;
     piStack_380 = _DAT_02dc921c;
-    iVar1 = (**(code **)(*_DAT_02dc921c + 0x2c))();
-    if (iVar1 != 0) {
-      uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
+    uVar1 = (**(code **)(*_DAT_02dc921c + 0x2c))();
+    if (uVar1 != 0) {
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
       _sprintf(&piStack_380,"DirectSux: Unable to %s.  (%s)","Lock secondary buffer",
-                 uVar4);
+                 pcVar4);
       sound_sndmain_cpp_FUN_00529980(&piStack_380);
       return 0;
     }
@@ -55,12 +56,12 @@ uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
       iVar2 = (int)((_DAT_02dc9228 + (_DAT_02dc9228 >> 0x1f) * -8) -
                    (uint)((_DAT_02dc9228 >> 0x1f) << 2 < 0)) >> 3;
       iVar3 = 0;
-      iVar1 = iStack_3c;
+      iVar5 = iStack_3c;
       if (0 < _DAT_02dc9230 * 4) {
         do {
-          *(int *)((int)aiStack_60 + iVar3) = iVar1;
+          *(int *)((int)aiStack_60 + iVar3) = iVar5;
           iVar3 = iVar3 + 4;
-          iVar1 = iVar1 + iVar2;
+          iVar5 = iVar5 + iVar2;
         } while (iVar3 < _DAT_02dc9230 * 4);
       }
       sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0
@@ -70,12 +71,12 @@ uint __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
       if (_DAT_02dc923c <= _DAT_02dc9240) {
         _DAT_02dc9240 = 0;
       }
-      iVar1 = (**(code **)(*_DAT_02dc921c + 0x4c))
+      uVar1 = (**(code **)(*_DAT_02dc921c + 0x4c))
                         (_DAT_02dc921c,iStack_3c,iStack_38,iStack_40,uStack_34);
-      if (iVar1 != 0) {
-        uVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
+      if (uVar1 != 0) {
+        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
         _sprintf(auStack_204,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
-                   ,uVar4);
+                   ,pcVar4);
         sound_sndmain_cpp_FUN_00529980(auStack_204);
         return 0;
       }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int param_1,undefined4 param_2,int param_3)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; int              Stack[0xc]:4   skip_data_load
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4eb5
@@ -49,7 +53,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004f4c9d
     PUSH EAX                            ; 004f4ca1
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f4ca2
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4ca7
     CMP EAX,0x1                         ; 004f4caa
     JNZ 0x004f4d0f                      ; 004f4cad
@@ -131,7 +135,7 @@ section .text
     SHL EAX,0x2                         ; 004f4d87
     PUSH EAX                            ; 004f4d8a
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004f4d8b
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004f4d90
     MOV dword ptr [EBX + 0x20],EAX      ; 004f4d93
     TEST EAX,EAX                        ; 004f4d96
@@ -146,7 +150,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x20]      ; 004f4da9
     PUSH EDI                            ; 004f4dac
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f4dad
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4db2
     CMP EAX,0x1                         ; 004f4db5
     JNZ 0x004f4d0f                      ; 004f4db8
@@ -178,7 +182,7 @@ section .text
         ;   XREF to: 004f4e23 (CONDITIONAL_JUMP)  ; LAB_004f4e23
     PUSH ESI                            ; 004f4df1
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004f4df2
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004f4df7
     MOV dword ptr [EBX + 0x14],EAX      ; 004f4dfa
     TEST EAX,EAX                        ; 004f4dfd
@@ -189,7 +193,7 @@ section .text
     PUSH ESI                            ; 004f4e08
     PUSH EAX                            ; 004f4e09
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f4e0a
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f4e0f
     CMP EAX,0x1                         ; 004f4e12
     JNZ 0x004f4d0f                      ; 004f4e15
@@ -205,7 +209,7 @@ section .text
     PUSH ESI                            ; 004f4e25
     PUSH EBP                            ; 004f4e26
     CALL crt_stdio.c_fseek_FUN_0056582c ; 004f4e27
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004f4e2c
     ADD ESP,0x1c                        ; 004f4e2f
     POP EBP                             ; 004f4e32

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)
+; void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -29,7 +29,7 @@ section .text
     PUSH ECX                            ; 00489656
     PUSH EBX                            ; 00489657
     CALL core_particle.cpp_CParticle_setup_FUN_004ef040 ; 00489658
-        ;   XREF to: 004ef040 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_setup_FUN_004ef040()
+        ;   XREF to: 004ef040 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_setup_FUN_004ef040(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
     LEA EAX,[EBX + 0x38]                ; 0048965d
     ADD ESP,0xc                         ; 00489660
     CMP EAX,ESI                         ; 00489663

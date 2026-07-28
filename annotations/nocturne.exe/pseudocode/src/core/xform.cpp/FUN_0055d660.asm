@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_FUN_0055d660(undefined4 param_1)
+; void core_xform_cpp_FUN_0055d660(CVector3f *param_1)
 ;
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV dword ptr [EBP + -0x8],ECX      ; 0055d67b
     MOV dword ptr [EBP + -0x4],ECX      ; 0055d67e
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 0055d681
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0055d686
     LEA ESI,[EBP + -0x4c]               ; 0055d689
     PUSH ESI                            ; 0055d68c

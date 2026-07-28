@@ -1,0 +1,227 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 80,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "0056c864",
+      "from_addr": "0056c8b7",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005687bc",
+      "from_addr": "00568828",
+      "name": "crt_io.c_getTempDirectory_FUN_005687bc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565d00",
+      "from_addr": "00565d49",
+      "name": "crt_stdlib.c__fullpath_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566440",
+      "from_addr": "00566440",
+      "name": "crt_watcom.c_getcwd_FUN_0056c5f0",
+      "type": "UNCONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "0056c5f0",
+    "address_range": [
+      [
+        "0056c5f0",
+        "0056c697"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_watcom.c_getcwd_FUN_0056c5f0",
+    "signature": "char * __cdecl crt_watcom_c_getcwd_FUN_0056c5f0(char *buffer,SIZE_T size)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056c73c",
+      "is_variadic": false,
+      "name": "crt_errno.c___set_errno_FUN_0056c73c"
+    },
+    {
+      "addr": "00568e80",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
+    },
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "EXTERNAL:0000005a",
+      "is_variadic": false,
+      "name": "GetCurrentDirectoryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754f4",
+      "name": "PTR_GetCurrentDirectoryA_005754f4",
+      "type": "void*",
+      "value": "00175ca6"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00565d49",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c__fullpath_FUN_00565d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056c8b7",
+        "call_type": "direct",
+        "caller": "crt_io.c_getFileStat_FUN_0056c864",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00568828",
+        "call_type": "direct",
+        "caller": "crt_io.c_getTempDirectory_FUN_005687bc",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.086956521739131,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "INT_ADD": 28,
+      "INT_AND": 52,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 39,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 19,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 3,
+      "STORE": 17
+    },
+    "pcode_op_count": 351
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 8,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0056c672",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar2 = DVar1 + 1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 41,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar2 = DVar1 + 1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0056c681, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 73,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0056c681: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_FUN_0042ee00(undefined4 param_1,int param_2,int param_3)
+; void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -49,7 +49,7 @@ section .text
     PUSH ESI                            ; 0042ee1f
     PUSH 0x57a92b                       ; 0042ee20 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0042ee25
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0042ee2a
     MOV EDI,EAX                         ; 0042ee2d
     TEST EAX,EAX                        ; 0042ee2f
@@ -158,7 +158,7 @@ section .text
     PUSH EDI                            ; 0042ef4e
         ;   Label: LAB_0042ef4e
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0042ef4f
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0042ef54
     ADD ESP,0x5c                        ; 0042ef57
     POP EBP                             ; 0042ef5a

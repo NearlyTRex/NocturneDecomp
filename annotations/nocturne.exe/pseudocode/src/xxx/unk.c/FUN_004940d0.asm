@@ -14,7 +14,7 @@
 ;   core_fire.cpp_FUN_0048c0d0 at 0048c148
 ;   core_flamegun.cpp_FUN_0048ea60 at 0048eaec
 ;   core_flamegun.cpp_FUN_0048eb30 at 0048ec46
-;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfc2
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5f8
 ;   ... and 14 more
 ;
 ; *****************************************************************************

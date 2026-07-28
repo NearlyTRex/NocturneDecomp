@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(int param_1)
+; int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(int buffer_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   buffer_index
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x14]:4  local_14

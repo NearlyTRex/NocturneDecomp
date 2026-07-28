@@ -2,37 +2,37 @@
 // Address: 00487e90
 // Address Range: [[00487e90, 00487fca]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CCrater_save_FUN_00487e90(undefined4 *param_1,undefined4 param_2)
+// Signature: void __cdecl core_fire_cpp_CCrater_save_FUN_00487e90(CCrater *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CCrater_save_FUN_00487e90(uint *param_1,uint param_2)
+void __cdecl core_fire_cpp_CCrater_save_FUN_00487e90(CCrater *this_ptr,_FILE *file_handle)
 
 {
-  float *pfVar1;
-  float *pfVar2;
-  float *pfVar3;
-  uint *puVar4;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  CVector3f *pCVar3;
+  CCrater *pCVar4;
   
-  _fprintf(param_2,"%d,%d,%f,%f\n",*param_1,param_1[1],(double)(float)param_1[2],
-             (double)(float)param_1[6]);
-  _fprintf(param_2,"%f,%f,%f\n",(double)(float)param_1[3],(double)(float)param_1[4],
-             (double)(float)param_1[5]);
-  puVar4 = param_1;
+  _fprintf(file_handle,"%d,%d,%f,%f\n",this_ptr->active,this_ptr->has_smoke,
+             (double)this_ptr->smoke_delay,(double)this_ptr->smoke_spawn_timer);
+  _fprintf(file_handle,"%f,%f,%f\n",(double)(this_ptr->center_position).x,
+             (double)(this_ptr->center_position).y,(double)(this_ptr->center_position).z);
+  pCVar4 = this_ptr;
   do {
-    pfVar1 = (float *)(puVar4 + 9);
-    pfVar2 = (float *)(puVar4 + 8);
-    pfVar3 = (float *)(puVar4 + 7);
-    puVar4 = puVar4 + 3;
-    _fprintf(param_2,"%f,%f,%f\n",(double)*pfVar3,(double)*pfVar2,(double)*pfVar1);
-  } while (puVar4 != param_1 + 9);
-  _fprintf(param_2,"%f,%f,%f\n",(double)(float)param_1[0x10],(double)(float)param_1[0x11],
-             (double)(float)param_1[0x12]);
-  _fprintf(param_2,"%f,%f,%f\n",(double)(float)param_1[0x13],(double)(float)param_1[0x14],
-             (double)(float)param_1[0x15]);
-  _fprintf(param_2,"%f,%f,%f\n",(double)(float)param_1[0x16],(double)(float)param_1[0x17],
-             (double)(float)param_1[0x18]);
-  _fprintf(param_2,"%f,%f,%f\n",(double)(float)param_1[0x19],(double)(float)param_1[0x1a],
-             (double)(float)param_1[0x1b]);
+    pCVar2 = pCVar4->smoke_positions;
+    pCVar3 = pCVar4->smoke_positions;
+    pCVar1 = pCVar4->smoke_positions;
+    pCVar4 = (CCrater *)&pCVar4->center_position;
+    _fprintf(file_handle,"%f,%f,%f\n",(double)pCVar1->x,(double)pCVar3->y,(double)pCVar2->z);
+  } while (pCVar4 != (CCrater *)&this_ptr->smoke_positions[0].z);
+  _fprintf(file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[0].x,
+             (double)this_ptr->corner_positions[0].y,(double)this_ptr->corner_positions[0].z);
+  _fprintf(file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[1].x,
+             (double)this_ptr->corner_positions[1].y,(double)this_ptr->corner_positions[1].z);
+  _fprintf(file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[2].x,
+             (double)this_ptr->corner_positions[2].y,(double)this_ptr->corner_positions[2].z);
+  _fprintf(file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[3].x,
+             (double)this_ptr->corner_positions[3].y,(double)this_ptr->corner_positions[3].z);
   return;
 }

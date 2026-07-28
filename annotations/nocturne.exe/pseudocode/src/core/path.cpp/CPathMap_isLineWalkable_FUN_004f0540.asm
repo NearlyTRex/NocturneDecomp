@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_004f0540(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+; int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_004f0540(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   start_x
+; int              Stack[0xc]:4   start_z
+; int              Stack[0x10]:4   start_height
+; int              Stack[0x14]:4   end_x
+; int              Stack[0x18]:4   end_z
+; int              Stack[0x1c]:4   end_height
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -77,7 +85,7 @@ section .text
     PUSH ECX                            ; 004f05b3
     PUSH EBP                            ; 004f05b4
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f05b5
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f05ba
     SUB EAX,EBX                         ; 004f05bd
     CDQ                                 ; 004f05bf
@@ -122,7 +130,7 @@ section .text
     PUSH EBP                            ; 004f060d
     MOV dword ptr [ESP + 0x18],EAX      ; 004f060e
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f0612
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f0617
     SUB EAX,EBX                         ; 004f061a
     CDQ                                 ; 004f061c
@@ -136,7 +144,7 @@ section .text
     PUSH EDI                            ; 004f062b
     PUSH EBP                            ; 004f062c
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f062d
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f0632
     MOV ECX,EAX                         ; 004f0635
     MOV dword ptr [ESP],EAX             ; 004f0637
@@ -197,7 +205,7 @@ section .text
     PUSH EDI                            ; 004f06c0
     PUSH EBP                            ; 004f06c1
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f06c2
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f06c7
     SUB EAX,EBX                         ; 004f06ca
     CDQ                                 ; 004f06cc
@@ -220,7 +228,7 @@ section .text
     PUSH EDI                            ; 004f06e8
     PUSH EBP                            ; 004f06e9
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f06ea
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f06ef
     SUB EAX,EBX                         ; 004f06f2
     CDQ                                 ; 004f06f4
@@ -234,7 +242,7 @@ section .text
     PUSH EDI                            ; 004f0707
     PUSH EBP                            ; 004f0708
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f0709
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f070e
     MOV ECX,EAX                         ; 004f0711
     MOV dword ptr [ESP],EAX             ; 004f0713

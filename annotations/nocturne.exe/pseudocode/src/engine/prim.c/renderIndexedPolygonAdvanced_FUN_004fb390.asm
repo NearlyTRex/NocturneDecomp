@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *param_1,int param_2)
+; void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex_indices,int vertex_count)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   vertex_indices
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x28]:4  local_28
@@ -79,7 +82,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fb3d7 | DAT_005c5014
     PUSH EAX                            ; 004fb3dc
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004fb3dd
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 004fb3e2
     TEST EAX,EAX                        ; 004fb3e5
     JZ 0x004fb481                       ; 004fb3e7
@@ -134,7 +137,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fb46c
     PUSH EAX                            ; 004fb470
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 004fb471
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 004fb476
     ADD ESP,0x58                        ; 004fb479
         ;   Label: LAB_004fb479
@@ -170,7 +173,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fb4cb | DAT_005c5014
     PUSH EAX                            ; 004fb4d0
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004fb4d1
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 004fb4d6
     TEST EAX,EAX                        ; 004fb4d9
     JNZ 0x004fb3fd                      ; 004fb4db
@@ -197,7 +200,7 @@ section .text
     ADD ESI,0x4                         ; 004fb50a
     INC EBX                             ; 004fb50d
     CALL engine_prim.c_prepareDepthBuffer_FUN_004f9870 ; 004fb50e
-        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_004f9870()
+        ;   XREF to: 004f9870 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_004f9870(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004fb513
     CMP EBX,EBP                         ; 004fb516
     JL 0x004fb4ff                       ; 004fb518
@@ -217,7 +220,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fb536 | DAT_005c5014
     PUSH EAX                            ; 004fb53b
     CALL engine_prim.c_normalizeTextureCoords_FUN_004f98e0 ; 004fb53c
-        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_004f98e0()
+        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_normalizeTextureCoords_FUN_004f98e0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004fb541
     INC EBX                             ; 004fb544
     MOV ECX,dword ptr [ESP + 0x70]      ; 004fb545
@@ -243,7 +246,7 @@ section .text
     ADD EBX,0x4                         ; 004fb576
     INC ESI                             ; 004fb579
     CALL engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960 ; 004fb57a
-        ;   XREF to: 004f9960 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960()
+        ;   XREF to: 004f9960 (UNCONDITIONAL_CALL)  ; void engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004fb57f
     CMP ESI,EBP                         ; 004fb582
     JL 0x004fb56b                       ; 004fb584
@@ -263,7 +266,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fb59e | DAT_005c5014
     PUSH EAX                            ; 004fb5a3
     CALL engine_prim.c_normalizeTextureCoords_FUN_004f98e0 ; 004fb5a4
-        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_004f98e0()
+        ;   XREF to: 004f98e0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_normalizeTextureCoords_FUN_004f98e0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004fb5a9
     INC ESI                             ; 004fb5ac
     MOV ECX,dword ptr [ESP + 0x70]      ; 004fb5ad
@@ -289,7 +292,7 @@ section .text
     ADD EBX,0x4                         ; 004fb5d7
     INC ESI                             ; 004fb5da
     CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 004fb5db
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_004f99d0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004fb5e0
     CMP ESI,EBP                         ; 004fb5e3
     JL 0x004fb5cc                       ; 004fb5e5
@@ -450,7 +453,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x50]      ; 004fb79e
     MOV EDI,EBP                         ; 004fb7a2
     CALL engine_special.cpp_renderScanline_FUN_00530710 ; 004fb7a4
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00530710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0x54]      ; 004fb7a9
     MOV EDX,dword ptr [ESP + 0x54]      ; 004fb7ad
     MOV EAX,dword ptr [EAX + 0xc]       ; 004fb7b1

@@ -1,0 +1,274 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0052ec90",
+    "address_range": [
+      [
+        "0052ec90",
+        "0052ecac"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_sound.cpp_CSound_getSoundModeName_FUN_0052ec90",
+    "signature": "undefined * core_sound_cpp_CSound_getSoundModeName_FUN_0052ec90(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00594bfe",
+      "name": "DAT_00594bfe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bed6c",
+      "name": "PTR_s_OFF_00594c3d_005bed6c",
+      "type": "void*",
+      "value": "00594c3d"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.3,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CBRANCH": 2,
+      "COPY": 7,
+      "INT_ADD": 4,
+      "INT_AND": 18,
+      "INT_EQUAL": 7,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 2
+    },
+    "pcode_op_count": 73
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "CSound_getSoundModeName_FUN_0052ec90.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 16,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if ((-1 < in_stack_00000008) && (in_stack_00000008 < 0x1b)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if ((-1 < in_stack_00000008) && (in_stack_00000008 < 0x1b)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "return (&PTR_s_OFF_00594c3d_005bed6c)[in_stack_00000008 * 4];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00594bfe",
+      "severity": "mild",
+      "text": "return &DAT_00594bfe;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 16,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((-1 < in_stack_00000008) && (in_stack_00000008 < 0x1b)) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

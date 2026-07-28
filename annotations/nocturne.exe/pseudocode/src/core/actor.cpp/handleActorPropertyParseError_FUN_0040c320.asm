@@ -1,17 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(undefined4 param_1,char *param_2)
+; void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(char *property_description,char *property_type)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   property_description
+; char *           Stack[0x8]:4   property_type
 ;
 ; XREF[13]:
-;   core_actor.cpp_FUN_0040cb00 at 0040cb65
-;   core_actor.cpp_FUN_0040ce80 at 0040cee5
+;   core_actor.cpp_archiveBox_FUN_0040ce80 at 0040cee5
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cfc7
 ;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3e0
 ;   core_actor.cpp_archiveFloat_FUN_0040c880 at 0040c8c9
 ;   core_actor.cpp_archiveInteger_FUN_0040c900 at 0040c94a
 ;   core_actor.cpp_archiveLocation_FUN_0040c590 at 0040c5e6
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00 at 0040cb65
 ;   core_actor.cpp_archiveOrientation_FUN_0040c4f0 at 0040c541
 ;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc7d
 ;   core_actor.cpp_archiveQuaternion_FUN_0040c630 at 0040c685
@@ -86,7 +89,7 @@ section .text
         ;   Label: LAB_0040c38b
     MOV EBX,EDX                         ; 0040c38c
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 0040c38e
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040c393
     JMP 0x0040c33c                      ; 0040c396
         ;   XREF to: 0040c33c (UNCONDITIONAL_JUMP)  ; LAB_0040c33c

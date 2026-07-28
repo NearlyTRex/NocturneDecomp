@@ -7,14 +7,14 @@
 #include "types/enums/EAmmoType.h"
 
 // Structure: CAmmo
-// Ghidra size: 0x31c (796 bytes)
+// Ghidra size: 0x314 (788 bytes)
 #pragma pack(push, 1)
 typedef struct CAmmo {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    char weapon_class_name[64]; // 0x2d4
-    int ammo_count; // 0x314
-    EAmmoType ammo_type; // 0x318
+    CKeyFramedModelInstance model; // 0x150
+    char weapon_class_name[64]; // 0x2cc
+    int ammo_count; // 0x30c
+    EAmmoType ammo_type; // 0x310
 } CAmmo;
 #pragma pack(pop)
 

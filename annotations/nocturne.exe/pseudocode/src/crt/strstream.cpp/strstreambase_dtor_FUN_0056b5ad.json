@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 57,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [
+    {
+      "addr": "0056b491",
+      "from_addr": "0056b4a0",
+      "name": "FUN_0056b491",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564fd8",
+      "from_addr": "0056501e",
+      "name": "crt_strstream.cpp_istrstream_dtor_FUN_00564fd8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564e98",
+      "from_addr": "00564ede",
+      "name": "crt_strstream.cpp_ostrstream_dtor_FUN_00564e98",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b5ad",
+    "address_range": [
+      [
+        "0056b5ad",
+        "0056b632"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad",
+    "signature": "strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad(strstreambase *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b633",
+      "is_variadic": false,
+      "name": "crt_iostream.cpp_ios_dtor_FUN_0056b633"
+    },
+    {
+      "addr": "0056445f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_0056445f"
+    },
+    {
+      "addr": "005701cf",
+      "is_variadic": false,
+      "name": "crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf"
+    },
+    {
+      "addr": "00564494",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00564494"
+    },
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a48bc",
+      "name": "PTR_crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc",
+      "type": "void*",
+      "value": "0056b5ad"
+    },
+    {
+      "addr": "005a48c4",
+      "name": "PTR_FUN_005a48c4",
+      "type": "void*",
+      "value": "0056b491"
+    },
+    {
+      "addr": "005a4980",
+      "name": "g_strstreambaseTypeInfo_005a4980",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0056501e",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_istrstream_dtor_FUN_00564fd8",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00564ede",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_ostrstream_dtor_FUN_00564e98",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056b4a0",
+        "call_type": "direct",
+        "caller": "FUN_0056b491",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 33,
+      "INT_ADD": 23,
+      "INT_AND": 21,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_MULT": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 14,
+      "LOAD": 12,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambase *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "psVar3[-1].",
+      "severity": "mild",
+      "text": "this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "piVar4[-2].",
+      "severity": "mild",
+      "text": "this_ptr = (strstreambase *)&piVar4[-2].__error_state;",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005a4984"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

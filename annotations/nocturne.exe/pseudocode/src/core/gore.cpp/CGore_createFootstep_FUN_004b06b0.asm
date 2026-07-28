@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_CGore_createFootstep_FUN_004b06b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6)
+; void core_gore_cpp_CGore_createFootstep_FUN_004b06b0(undefined4 param_1,CVector3f *param_2,UOrientationVector *param_3,int param_4,int param_5,int param_6)
 ;
 ;
 ; XREF[1]:
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 004b070e
     PUSH EDX                            ; 004b070f
     CALL core_gore.cpp_CFootstep_init_FUN_004af8a0 ; 004b0710
-        ;   XREF to: 004af8a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CFootstep_init_FUN_004af8a0()
+        ;   XREF to: 004af8a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_init_FUN_004af8a0(CFootstep * this_ptr, CVector3f * position, UOrientationVector * orientation, int is_bloody, ...)
     ADD ESP,0x18                        ; 004b0715
     POP EBP                             ; 004b0718
     POP EDI                             ; 004b0719

@@ -2,31 +2,30 @@
 // Address: 00565dd0
 // Address Range: [[00565dd0, 00565e12]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(LPCSTR param_1,byte param_2)
+// Signature: DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,DWORD file_attributes)
 
 #include "nocturne.h"
 
-uint __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(LPCSTR param_1,byte param_2)
+DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(char *filename,DWORD file_attributes)
 
 {
-  uint uVar1;
-  uint uVar2;
+  DWORD DVar1;
   DWORD dwFileAttributes;
-  BOOL BVar3;
+  BOOL BVar2;
   
-  uVar1 = __getfileattr(param_1);
-  if (uVar1 == 0xffffffff) {
-    uVar2 = __set_errno();
-    return uVar2;
+  DVar1 = __getfileattr(filename);
+  if (DVar1 == 0xffffffff) {
+    DVar1 = __set_errno();
+    return DVar1;
   }
-  dwFileAttributes = uVar1 & 0xfffffffe;
-  if ((param_2 & 0x80) == 0) {
+  dwFileAttributes = DVar1 & 0xfffffffe;
+  if ((file_attributes & 0x80) == 0) {
     dwFileAttributes = dwFileAttributes | 1;
   }
-  BVar3 = SetFileAttributesA(param_1,dwFileAttributes);
-  if (BVar3 == 0) {
-    uVar2 = __set_errno();
-    return uVar2;
+  BVar2 = SetFileAttributesA(filename,dwFileAttributes);
+  if (BVar2 == 0) {
+    DVar1 = __set_errno();
+    return DVar1;
   }
   return 0;
 }

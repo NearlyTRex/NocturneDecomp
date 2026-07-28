@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20(uint param_1,uint param_2,int param_3)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20(int start_x,int end_x,int y)
 ;
+; Parameters:
+; int              Stack[0x4]:4   start_x
+; int              Stack[0x8]:4   end_x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 at 0045c7c8

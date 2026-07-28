@@ -7,14 +7,14 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CKeyActor
-// Ghidra size: 0x31c (796 bytes)
+// Ghidra size: 0x314 (788 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyActor {
     CDemonActor base; // 0x0
-    CKeyFramedModelInstance model; // 0x158
-    int key_mask; // 0x2d4
-    float rotation_angle; // 0x2d8
-    CDemonGlobe globe; // 0x2dc
+    CKeyFramedModelInstance model; // 0x150
+    int key_mask; // 0x2cc
+    float rotation_angle; // 0x2d0
+    CDemonGlobe globe; // 0x2d4
 } CKeyActor;
 #pragma pack(pop)
 

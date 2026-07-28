@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004cd380(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004cd380(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   rot_x
+; int              Stack[0x8]:4   rot_y
+; int              Stack[0xc]:4   rot_z
+; int              Stack[0x10]:4   translate_x
+; int              Stack[0x14]:4   translate_y
+; int              Stack[0x18]:4   translate_z
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c

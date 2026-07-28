@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0042b732
         ;   Label: LAB_0042b732
     CALL core_chain.cpp_CChain_ctor_FUN_0042b750 ; 0042b733
-        ;   XREF to: 0042b750 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_ctor_FUN_0042b750()
+        ;   XREF to: 0042b750 (UNCONDITIONAL_CALL)  ; CChain * core_chain.cpp_CChain_ctor_FUN_0042b750(CChain * this_ptr)
     ADD ESP,0x4                         ; 0042b738
     RET                                 ; 0042b73b
 

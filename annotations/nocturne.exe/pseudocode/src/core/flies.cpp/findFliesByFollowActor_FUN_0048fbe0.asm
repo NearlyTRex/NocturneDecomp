@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(int param_1)
+; CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_0048fbe0(CDemonActor *actor)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040b090 at 0040b095
+;   core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090 at 0040b095
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368
@@ -50,7 +52,7 @@ section .text
     MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0048fc0d | DAT_01fa3ff4
     PUSH EBP                            ; 0048fc14
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0048fc15
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0048fc1a
     TEST EAX,EAX                        ; 0048fc1d
     JZ 0x0048fc00                       ; 0048fc1f

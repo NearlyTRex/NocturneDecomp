@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bodypart_cpp_SBodyPartFire_ctor_FUN_004180a0(int param_1)
+; int * core_bodypart_cpp_SBodyPartFire_ctor_FUN_004180a0(int param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     ADD EAX,0xc                         ; 004180a4
     PUSH EAX                            ; 004180a7
     CALL core_flame.cpp_CFlame_ctor_FUN_0048cf60 ; 004180a8
-        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_ctor_FUN_0048cf60()
+        ;   XREF to: 0048cf60 (UNCONDITIONAL_CALL)  ; CFlame * core_flame.cpp_CFlame_ctor_FUN_0048cf60(CFlame * this_ptr)
     ADD ESP,0x4                         ; 004180ad
     SUB EAX,0xc                         ; 004180b0
     RET                                 ; 004180b3

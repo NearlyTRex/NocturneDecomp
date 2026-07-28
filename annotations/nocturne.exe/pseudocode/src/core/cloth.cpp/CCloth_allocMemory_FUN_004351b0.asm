@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(int param_1)
+; void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(CCloth *this_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CCloth_load_FUN_00435240 at 0043549a
@@ -33,7 +35,7 @@ section .text
     SHL EAX,0x2                         ; 004351c4
     PUSH EAX                            ; 004351c7
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004351c8
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004351cd
     MOV dword ptr [EBX + 0x3aafc],EAX   ; 004351d0
     TEST EAX,EAX                        ; 004351d6

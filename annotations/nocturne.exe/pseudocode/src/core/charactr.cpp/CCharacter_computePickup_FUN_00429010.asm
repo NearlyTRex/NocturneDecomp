@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(int param_1,int param_2,float param_3)
+; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(CCharacter *this_ptr,int hand_index,float blend_time)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   blend_time
 ; Local Variables:
 ; undefined8       Stack[-0x168]:8  local_168
 ; undefined        Stack[-0x160]:1  local_160
@@ -62,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 0042904b
     PUSH EAX                            ; 0042904f
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 00429050
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00429055
     MOV EAX,dword ptr [EBP + 0x14]      ; 00429058
     ADD EAX,0x30                        ; 0042905b

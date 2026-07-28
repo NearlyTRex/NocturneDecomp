@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4)
+; void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   model_name
+; CVector3f *      Stack[0xc]:4   scale
+; CVector3f *      Stack[0x10]:4   position
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00428054
@@ -52,11 +57,11 @@ section .text
     LEA EBX,[EAX + 0x18]                ; 00417b11
     PUSH EBX                            ; 00417b14
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00417b15
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00417b1a
     PUSH EBX                            ; 00417b1d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00417b1e
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00417b23
     POP EBP                             ; 00417b26
         ;   Label: LAB_00417b26

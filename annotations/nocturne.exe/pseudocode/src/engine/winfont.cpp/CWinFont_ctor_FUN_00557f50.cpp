@@ -2,30 +2,31 @@
 // Address: 00557f50
 // Address Range: [[00557f50, 00557ffc]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(undefined4 param_1,LPCSTR param_2,int param_3,undefined4 param_4,undefined4 param_5)
+// Signature: CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 
 #include "nocturne.h"
 
-uint * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(uint param_1,LPCSTR param_2,int param_3,uint param_4,uint param_5)
+CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 
 {
-  uint *puVar1;
+  CWinFont *pCVar1;
   HFONT pHVar2;
   
-  puVar1 = (uint *)engine_palette_cpp_CFont_ctor_FUN_004eefb0(param_1);
-  *puVar1 = &PTR_engine_winfont_cpp_CWinFont_dtor_FUN_00558000_005a4484;
-  puVar1[1] = 0;
-  puVar1[3] = 0;
-  puVar1[4] = 0;
-  puVar1[5] = 0;
-  puVar1[0x48] = 0;
-  puVar1[0x49] = 0;
-  puVar1[0x4a] = 0;
-  puVar1[0x4b] = 0;
-  puVar1[0x4c] = 0;
-  pHVar2 = CreateFontA(-param_3,0,0,0,400,0,0,0,1,0,0,0,0,param_2);
-  puVar1[3] = pHVar2;
-  puVar1[0x4d] = param_4;
-  puVar1[0x4e] = param_5;
-  return puVar1;
+  pCVar1 = (CWinFont *)engine_palette_cpp_CFont_ctor_FUN_004eefb0(&this_ptr->base);
+  (pCVar1->base).vtable =
+       (CFont_vtable *)&PTR_engine_winfont_cpp_CWinFont_dtor_FUN_00558000_005a4484;
+  pCVar1->device_context_handle = (HDC)0x0;
+  pCVar1->font_handle = (HFONT)0x0;
+  pCVar1->object_handle = (HGDIOBJ)0x0;
+  pCVar1->ppv_bits = (void *)0x0;
+  pCVar1->right = 0;
+  pCVar1->top = 0;
+  pCVar1->bpp = 0;
+  pCVar1->cached_foreground_color = 0;
+  pCVar1->cached_background_color = 0;
+  pHVar2 = CreateFontA(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
+  pCVar1->font_handle = (HFONT)pHVar2;
+  pCVar1->y_offset1 = y_offset1;
+  pCVar1->y_offset2 = y_offset2;
+  return pCVar1;
 }

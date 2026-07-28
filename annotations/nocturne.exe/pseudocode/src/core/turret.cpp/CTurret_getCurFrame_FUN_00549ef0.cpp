@@ -9,7 +9,8 @@
 float core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(int param_1,int param_2)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
+  CKeyFramedModelInstance *this_ptr;
   float local_18;
   float local_14;
   
@@ -44,13 +45,13 @@ float core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(int param_1,int param_2)
       local_18 = 1.0;
     }
     if (param_2 == 0) {
-      param_1 = param_1 + 0x150;
+      this_ptr = (CKeyFramedModelInstance *)(param_1 + 0x150);
     }
     else {
-      param_1 = param_1 + 0x57c;
+      this_ptr = (CKeyFramedModelInstance *)(param_1 + 0x57c);
     }
-    iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(param_1);
-    local_14 = (float)(*(int *)(iVar1 + 0x100) + -1) * local_18;
+    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr);
+    local_14 = (float)(pCVar1->frame_count + -1) * local_18;
   }
   return local_14;
 }

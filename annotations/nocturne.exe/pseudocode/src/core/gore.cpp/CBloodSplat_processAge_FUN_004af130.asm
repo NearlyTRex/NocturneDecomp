@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004af130(int param_1)
+; void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004af130(CBloodSplat *this_ptr)
 ;
+; Parameters:
+; CBloodSplat *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_process_FUN_004b0030 at 004b006d

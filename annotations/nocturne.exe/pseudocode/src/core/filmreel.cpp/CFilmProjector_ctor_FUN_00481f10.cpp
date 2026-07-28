@@ -1,27 +1,31 @@
 // Name: core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10
 // Address: 00481f10
 // Address Range: [[00481f10, 00481fc9]]
-// Convention: unknown
-// Signature: int core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(CFilmProjector *this_ptr)
 
 #include "nocturne.h"
 
-int core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(uint param_1)
+CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(CFilmProjector *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
+  CActorDestination *pCVar2;
+  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
+  int *piVar5;
   
-  iVar2 = core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x1ec);
+  pCVar2 = core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(pCVar2 + 1));
   pcVar3 = "CFilmReel";
-  *(byte ***)(iVar2 + -0xa0) =
+  *(byte ***)(this_ptr_00[-1].model_name + 100) =
        &PTR_core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0_0059d064;
-  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"filmreel.kfm");
-  pcVar4 = (char *)(iVar2 + -0x98);
-  *(uint *)(iVar2 + 0x1e4) = 0;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+            (this_ptr_00,"filmreel.kfm");
+  pcVar4 = this_ptr_00[-1].model_name + 0x6c;
+  this_ptr_00[1].part_visibility_flags[0x1a] = 0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -31,19 +35,19 @@ int core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(uint param_1)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = "none";
-  *(uint *)(iVar2 + 0x1e8) = 0;
-  pcVar4 = (char *)(iVar2 + 0x180);
-  *(uint *)(iVar2 + 0x17c) = 0;
+  pcVar4 = "none";
+  this_ptr_00[1].part_visibility_flags[0x1b] = 0;
+  piVar5 = this_ptr_00[1].part_visibility_flags + 1;
+  this_ptr_00[1].part_visibility_flags[0] = 0;
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar4;
+    *(char *)piVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar5 + 1) = cVar1;
+    piVar5 = (int *)((int)piVar5 + 2);
   } while (cVar1 != '\0');
-  *(uint *)(iVar2 + 0x1ec) = 0;
-  return iVar2 + -0x1ec;
+  this_ptr_00[1].part_visibility_flags[0x1c] = 0;
+  return (CFilmProjector *)(this_ptr_00[-2].model_name + 0x94);
 }

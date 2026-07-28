@@ -20,11 +20,10 @@ void FUN_0056ddf0(void)
   puVar4 = &DAT_005c1894;
   iVar2 = _DAT_005c18a0;
   while (iVar2 != 0) {
-    puVar3 = (uint *)FUN_005635c0(0x1d);
+    puVar3 = InternalHeapAlloc(0x1d);
     if ((puVar3 == (uint *)0x0) &&
-       (puVar3 = (uint *)malloc(0x1d), puVar3 == (uint *)0x0))
-    {
-      FUN_0056ddc0("Not enough memory to allocate file structures\r\n",1);
+       (puVar3 = malloc(0x1d), puVar3 == (uint *)0x0)) {
+      HandleRuntimeError("Not enough memory to allocate file structures\r\n",1);
     }
     puVar3[1] = puVar4;
     *puVar3 = _DAT_02de4e20;

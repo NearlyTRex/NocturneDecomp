@@ -9,12 +9,12 @@
 void core_moloch_cpp_FUN_004dd900(void)
 
 {
-  int iVar1;
+  CMoloch *this_ptr;
   
-  iVar1 = FUN_0056497c(0x22a00);
-  if (iVar1 == 0) {
+  this_ptr = (CMoloch *)FUN_0056497c(0x22a00);
+  if (this_ptr == (CMoloch *)0x0) {
     return;
   }
-  core_moloch_cpp_CMoloch_ctor_FUN_004dd930(iVar1);
+  core_moloch_cpp_CMoloch_ctor_FUN_004dd930(this_ptr);
   return;
 }

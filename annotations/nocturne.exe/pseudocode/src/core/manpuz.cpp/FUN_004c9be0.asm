@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_manpuz_cpp_FUN_004c9be0(int param_1)
+; int core_manpuz_cpp_FUN_004c9be0(CMansionPuzzleCircle *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
@@ -37,7 +37,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x30]      ; 004c9be5
     PUSH ESI                            ; 004c9be9
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004c9bea
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 004c9bef
     PUSH 0x0                            ; 004c9bf2
     LEA EDX,[ESP + 0x4]                 ; 004c9bf4
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x8                         ; 004c9c03
     PUSH EAX                            ; 004c9c06
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 004c9c07
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 004c9c0c
     MOV EDI,EAX                         ; 004c9c0f
     TEST EAX,EAX                        ; 004c9c11
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 004c9c26 (CONDITIONAL_JUMP)  ; LAB_004c9c26
     PUSH ESI                            ; 004c9c15
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004c9c16
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c9c1b
     MOV EAX,EDI                         ; 004c9c1e
     ADD ESP,0x24                        ; 004c9c20
@@ -83,7 +83,7 @@ section .text
     ADD EAX,0xbb80                      ; 004c9c5f
     PUSH EAX                            ; 004c9c64
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004c9c65
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c9c6a
     XOR EBX,EBX                         ; 004c9c6d
     PUSH EBX                            ; 004c9c6f
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_004c9ca2
     PUSH ESI                            ; 004c9ca3
     CALL core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0 ; 004c9ca4
-        ;   XREF to: 004cabf0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0()
+        ;   XREF to: 004cabf0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 004c9ca9
     ADD ESP,0x8                         ; 004c9caa
     CMP EBX,0x2                         ; 004c9cad
@@ -122,7 +122,7 @@ section .text
     POP EBX                             ; 004c9cb2
     PUSH ESI                            ; 004c9cb3
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004c9cb4
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c9cb9
     MOV EAX,EDI                         ; 004c9cbc
     ADD ESP,0x24                        ; 004c9cbe
@@ -133,7 +133,7 @@ section .text
         ;   Label: LAB_004c9cc4
     PUSH ECX                            ; 004c9cca | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004c9ccb
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c9cd0
     TEST EAX,EAX                        ; 004c9cd3
     JNZ 0x004c9ca0                      ; 004c9cd5

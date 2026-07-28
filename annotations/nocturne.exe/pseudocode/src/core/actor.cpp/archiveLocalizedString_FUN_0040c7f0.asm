@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(undefined4 param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(char *string_buffer,char *localization_key)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   string_buffer
+; char *           Stack[0x8]:4   localization_key
 ; Local Variables:
 ; undefined1       Stack[-0x134]:1  local_134
 ; undefined1       Stack[-0x133]:1  local_133
@@ -70,7 +73,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x13c]     ; 0040c83d
     PUSH EDX                            ; 0040c844
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0040c845
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040c84a
     ADD ESP,0x12c                       ; 0040c84d
     POP EDI                             ; 0040c853

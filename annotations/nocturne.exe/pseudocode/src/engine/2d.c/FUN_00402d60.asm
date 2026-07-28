@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402d60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_2d_c_FUN_00402d60(int param_1,int param_2,int param_3,char *param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1010]:1  local_1010
@@ -29,7 +29,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00402d87
     PUSH EAX                            ; 00402d8b
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00402d8c
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00402d91
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00402d94
     PUSH EBX                            ; 00402d9b
@@ -42,7 +42,7 @@ section .text
     PUSH EAX                            ; 00402db2
     MOV dword ptr [ESP + 0x1010],ECX    ; 00402db3
     CALL engine_2d.c_drawTextCenteredColor_FUN_00402cf0 ; 00402dba
-        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextCenteredColor_FUN_00402cf0()
+        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_00402cf0(char * text, int left_x, int right_x, int y)
     ADD ESP,0x10                        ; 00402dbf
     ADD ESP,0x1004                      ; 00402dc2
     POP EDI                             ; 00402dc8

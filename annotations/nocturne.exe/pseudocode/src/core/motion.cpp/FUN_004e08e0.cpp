@@ -2,11 +2,11 @@
 // Address: 004e08e0
 // Address Range: [[004e08e0, 004e08f8]]
 // Convention: unknown
-// Signature: void core_motion_cpp_FUN_004e08e0(undefined4 param_1)
+// Signature: void core_motion_cpp_FUN_004e08e0(_FILE *param_1)
 
 #include "nocturne.h"
 
-void core_motion_cpp_FUN_004e08e0(uint param_1)
+void core_motion_cpp_FUN_004e08e0(_FILE *param_1)
 
 {
   int iVar1;

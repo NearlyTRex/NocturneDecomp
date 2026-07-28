@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_free_FUN_0043b7c0(undefined4 *param_1)
+; void __cdecl core_course_cpp_CCourse_free_FUN_0043b7c0(CCourse *this_ptr)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_course.cpp_CCourse_allocMemory_FUN_0043b610 at 0043b617
@@ -32,7 +34,7 @@ section .text
         ;   Label: LAB_0043b7db
     PUSH EAX                            ; 0043b7de
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0043b7df
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0043b7e4
     MOV dword ptr [EBX],0x0             ; 0043b7e7
     MOV dword ptr [EBX + 0x4],0x0       ; 0043b7ed

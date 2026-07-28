@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_004fee30(int param_1)
+; void core_script_cpp_FUN_004fee30(CScript *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004fee37
     PUSH EBX                            ; 004fee3b
     CALL core_script.cpp_CScript_freeParsedLines_FUN_004fe550 ; 004fee3c
-        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_freeParsedLines_FUN_004fe550()
+        ;   XREF to: 004fe550 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_freeParsedLines_FUN_004fe550(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fee41
     LEA EAX,[EBX + 0x30]                ; 004fee44
     XOR EBP,EBP                         ; 004fee47
@@ -52,7 +52,7 @@ section .text
         ;   Label: LAB_004fee4c
     PUSH EDX                            ; 004fee4f
     CALL shape_edittool.cpp_CStrList_getItemCount_FUN_00477660 ; 004fee50
-        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getItemCount_FUN_00477660()
+        ;   XREF to: 00477660 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_getItemCount_FUN_00477660(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004fee55
     CMP EBP,EAX                         ; 004fee58
     JL 0x004fee64                       ; 004fee5a
@@ -69,7 +69,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004fee6a
     PUSH ECX                            ; 004fee6e
     CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00474080 ; 004fee6f
-        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_getStringAt_FUN_00474080()
+        ;   XREF to: 00474080 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00474080(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004fee74
     PUSH EAX                            ; 004fee77
     CALL core_script.cpp_trimLine_FUN_004fdf60 ; 004fee78
@@ -86,7 +86,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x2c]      ; 004fee96
     PUSH ESI                            ; 004fee99
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004fee9a
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004fee9f
     MOV dword ptr [EBX + 0x2c],EAX      ; 004feea2
     TEST EAX,EAX                        ; 004feea5
@@ -116,7 +116,7 @@ section .text
     INC ECX                             ; 004feeea
     PUSH ECX                            ; 004feeeb
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004feeec
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV ECX,dword ptr [EBX + 0x28]      ; 004feef1
     MOV EDI,dword ptr [EBX + 0x2c]      ; 004feef4
     MOV dword ptr [EDI + ECX*0x8 + 0x4],EAX ; 004feef7

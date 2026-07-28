@@ -1,0 +1,402 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 137,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "00416570",
+      "from_addr": "004166f5",
+      "name": "core_bodypart.cpp_CBodyPart_archive_FUN_00416570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041ec60",
+      "from_addr": "0041ed90",
+      "name": "core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040ce80",
+    "address_range": [
+      [
+        "0040ce80",
+        "0040cf6b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_archiveBox_FUN_0040ce80",
+    "signature": "void __cdecl core_actor_cpp_archiveBox_FUN_0040ce80(CBox *box_ptr,char *property_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040bff0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040bff0"
+    },
+    {
+      "addr": "0040c320",
+      "is_variadic": false,
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040c320"
+    },
+    {
+      "addr": "0041c850",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_loadFromFile_FUN_0041c850"
+    },
+    {
+      "addr": "0041c9e0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_saveToFile_FUN_0041c9e0"
+    },
+    {
+      "addr": "00564570",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_00564570"
+    },
+    {
+      "addr": "005644f0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fprintf_FUN_005644f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00577d87",
+      "name": "s_sim_box_state_info_openi_00577d87",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577da8",
+      "name": "s_sim_box_state_info_closi_00577da8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577dc9",
+      "name": "s_s_s_00577dc9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577dd4",
+      "name": "s_s_00577dd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005acc90",
+      "name": "DAT_005acc90",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00763e84",
+      "name": "DAT_00763e84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00763e88",
+      "name": "DAT_00763e88",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004166f5",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_archive_FUN_00416570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041ed90",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.061728395061729,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 6,
+      "COPY": 63,
+      "INT_ADD": 26,
+      "INT_AND": 34,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 32,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 38,
+      "LOAD": 16,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 34
+    },
+    "pcode_op_count": 329
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "box_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_00763e88",
+      "severity": "mild",
+      "text": "if (DAT_00763e88 != 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_0041c9e0(box_ptr,DAT_00763e84,&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_0041c9e0(box_ptr,DAT_00763e84,&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_00763e84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_loadFromFile_FUN_0041c850(box_ptr,DAT_00763e84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_00763e84);",
+      "type": "undefined_data"
+    }
+  ]
+}

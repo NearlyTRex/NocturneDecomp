@@ -2,106 +2,113 @@
 // Address: 004c1850
 // Address Range: [[004c1850, 004c1b1e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1)
+// Signature: void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1)
+void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *this_ptr)
 
 {
+  CWeapon *actor_ptr;
   float fVar1;
   float fVar2;
-  int iVar3;
+  CDemonActor *pCVar3;
   int iVar4;
-  float *pfVar5;
+  CInventory *pCVar5;
   float local_20;
   float local_1c;
   
-  fVar1 = param_1[0xcc];
-  if (fVar1 != 0.0) {
-    if ((param_1[0x117] != *(float *)((int)fVar1 + 0x560)) &&
-       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (fVar1,g_CLightGunActorType_01cc3688.name_hash), iVar3 == 0)) {
-      core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(param_1,0);
+  actor_ptr = this_ptr->selected_weapon;
+  if (actor_ptr != (CWeapon *)0x0) {
+    if ((this_ptr->cached_ammo_count != actor_ptr->ammo_count) &&
+       (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (&actor_ptr->base,g_CLightGunActorType_01cc3688.name_hash),
+       pCVar3 == (CDemonActor *)0x0)) {
+      core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(this_ptr,0);
     }
-    param_1[0x117] = *(float *)((int)param_1[0xcc] + 0x560);
+    this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
   }
   if ((*(int *)(0x01C775EC + 0x244) == 0) && (*(int *)(0x01C775EC + 0x240) == 0)) {
     local_20 = 1.0 / 120.0f;
-    iVar3 = 0;
-    pfVar5 = param_1;
-    if (0 < (int)param_1[2]) {
+    iVar4 = 0;
+    pCVar5 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (pfVar5[3],g_CBatteryActorType_00764674.name_hash);
-        if (iVar4 != 0) {
-          local_20 = 1.0 / *(float *)(iVar4 + 0x2d0) + local_20;
+        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCVar5->items[0],g_CBatteryActorType_00764674.name_hash);
+        if (pCVar3 != (CDemonActor *)0x0) {
+          local_20 = 1.0 / pCVar3[2].orient.vec.x + local_20;
         }
-        iVar3 = iVar3 + 1;
-        pfVar5 = pfVar5 + 1;
-      } while (iVar3 < (int)param_1[2]);
+        iVar4 = iVar4 + 1;
+        pCVar5 = (CInventory *)&pCVar5->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
     fVar2 = (float)100;
-    fVar1 = *(float *)(0x01C775EC + 0x264) * fVar2 * local_20 + *param_1;
-    *param_1 = fVar1;
+    fVar1 = *(float *)(0x01C775EC + 0x264) * fVar2 * local_20 + this_ptr->battery_charge;
+    this_ptr->battery_charge = fVar1;
     if (fVar2 < fVar1) {
-      *param_1 = 100.0;
+      this_ptr->battery_charge = 100.0;
     }
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
     local_1c = 30.0f;
-    pfVar5 = param_1;
-    if (0 < (int)param_1[2]) {
+    pCVar5 = this_ptr;
+    if (0 < this_ptr->item_count) {
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (pfVar5[3],g_CBatteryActorType_00764674.name_hash);
-        if (iVar4 != 0) {
-          local_1c = local_1c + *(float *)(iVar4 + 0x2d4);
+        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (pCVar5->items[0],g_CBatteryActorType_00764674.name_hash);
+        if (pCVar3 != (CDemonActor *)0x0) {
+          local_1c = local_1c + pCVar3[2].orient.vec.y;
         }
-        iVar3 = iVar3 + 1;
-        pfVar5 = pfVar5 + 1;
-      } while (iVar3 < (int)param_1[2]);
+        iVar4 = iVar4 + 1;
+        pCVar5 = (CInventory *)&pCVar5->owner;
+      } while (iVar4 < this_ptr->item_count);
     }
-    fVar1 = *param_1 - (*(float *)(0x01C775EC + 0x264) * (float)100) / local_1c;
-    *param_1 = fVar1;
+    fVar1 = this_ptr->battery_charge -
+            (*(float *)(0x01C775EC + 0x264) * (float)100) / local_1c;
+    this_ptr->battery_charge = fVar1;
     if (fVar1 < 0.0) {
-      *param_1 = 0.0;
+      this_ptr->battery_charge = 0.0;
     }
   }
-  iVar3 = 0;
-  pfVar5 = param_1;
-  if (0 < (int)param_1[2]) {
+  iVar4 = 0;
+  pCVar5 = this_ptr;
+  if (0 < this_ptr->item_count) {
     do {
-      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (pfVar5[3],g_CLightGunActorType_01cc3688.name_hash);
-      if ((iVar4 != 0) && (*(int *)(iVar4 + 0x2cc) != 2)) {
-        (**(code **)(*(int *)(iVar4 + 0x14c) + 4))(iVar4,*(uint *)(0x01C775EC + 0x264));
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                         (pCVar5->items[0],g_CLightGunActorType_01cc3688.name_hash);
+      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.area_id != 2)) {
+        (*((pCVar3->vtable)._ub)->process)(pCVar3,*(float *)(0x01C775EC + 0x264));
       }
-      iVar3 = iVar3 + 1;
-      pfVar5 = pfVar5 + 1;
-    } while (iVar3 < (int)param_1[2]);
+      iVar4 = iVar4 + 1;
+      pCVar5 = (CInventory *)&pCVar5->owner;
+    } while (iVar4 < this_ptr->item_count);
   }
-  param_1[0xce] = param_1[0xce] - *(float *)(0x01C775EC + 0x264);
-  if (param_1[0xce] <= 0.0) {
-    param_1[0xce] = 0.0;
+  this_ptr->weapon_highlight_timer =
+       this_ptr->weapon_highlight_timer - *(float *)(0x01C775EC + 0x264);
+  if (this_ptr->weapon_highlight_timer <= 0.0) {
+    this_ptr->weapon_highlight_timer = 0.0;
   }
-  param_1[0xcf] = param_1[0xcf] - *(float *)(0x01C775EC + 0x264);
-  if (param_1[0xcf] <= 0.0) {
-    param_1[0xcf] = 0.0;
+  this_ptr->item_highlight_timer = this_ptr->item_highlight_timer - *(float *)(0x01C775EC + 0x264)
+  ;
+  if (this_ptr->item_highlight_timer <= 0.0) {
+    this_ptr->item_highlight_timer = 0.0;
   }
-  param_1[0xd0] = param_1[0xd0] - *(float *)(0x01C775EC + 0x264);
-  if (param_1[0xd0] <= 0.0) {
-    param_1[0xd0] = 0.0;
+  this_ptr->inventory_display_timer =
+       this_ptr->inventory_display_timer - *(float *)(0x01C775EC + 0x264);
+  if (this_ptr->inventory_display_timer <= 0.0) {
+    this_ptr->inventory_display_timer = 0.0;
   }
-  param_1[0xd1] = param_1[0xd1] - *(float *)(0x01C775EC + 0x264);
-  if (param_1[0xd1] <= 0.0) {
-    *(byte *)(param_1 + 0xd3) = 0;
-    param_1[0xd1] = 0.0;
+  this_ptr->message_display_timer =
+       this_ptr->message_display_timer - *(float *)(0x01C775EC + 0x264);
+  if (this_ptr->message_display_timer <= 0.0) {
+    this_ptr->message_text[0] = '\0';
+    this_ptr->message_display_timer = 0.0;
   }
-  param_1[0xd2] = param_1[0xd2] - *(float *)(0x01C775EC + 0x264);
-  if (param_1[0xd2] < 0.0) {
-    param_1[0xd2] = 0.0;
+  this_ptr->ammo_detail_timer = this_ptr->ammo_detail_timer - *(float *)(0x01C775EC + 0x264);
+  if (this_ptr->ammo_detail_timer < 0.0) {
+    this_ptr->ammo_detail_timer = 0.0;
     return;
   }
   return;

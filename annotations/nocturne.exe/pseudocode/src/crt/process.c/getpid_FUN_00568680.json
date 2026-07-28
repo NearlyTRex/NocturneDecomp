@@ -1,0 +1,94 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "005633fc",
+      "from_addr": "00563404",
+      "name": "crt_unknown.c__tempnam_FUN_005633fc",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00568680",
+    "address_range": [
+      [
+        "00568680",
+        "00568687"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_process.c_getpid_FUN_00568680",
+    "signature": "undefined1 __cdecl crt_process_c_getpid_FUN_00568680(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000005c",
+      "is_variadic": false,
+      "name": "GetCurrentProcessId"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754fc",
+      "name": "PTR_GetCurrentProcessId_005754fc",
+      "type": "void*",
+      "value": "00175cd2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00563404",
+        "call_type": "direct",
+        "caller": "crt_unknown.c__tempnam_FUN_005633fc",
+        "estimated_params": 0,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 1,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

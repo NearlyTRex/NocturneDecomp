@@ -2,13 +2,13 @@
 // Address: 0050d670
 // Address Range: [[0050d670, 0050d692]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(uint param_1,uint param_2,uint param_3,uint param_4)
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha)
 
 {
-  core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(param_1,param_2,param_3,param_4,0x48);
+  core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(this_ptr,prims,count,alpha,0x48);
   return;
 }

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,24 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 323,
-    "complexity_score": 555,
+    "complexity_score": 736,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 175,
-    "suspect_count": 34,
+    "pseudocode_lines": 146,
+    "suspect_count": 55,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
+      "stack_ref",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 498
+    "total_lines": 469
   },
   "cross_references": [],
   "function": {
@@ -153,7 +153,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_flies.cpp_FUN_0048f490",
-    "signature": "int core_flies_cpp_FUN_0048f490(int *param_1)"
+    "signature": "int core_flies_cpp_FUN_0048f490(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -397,22 +397,22 @@
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
-          "column": 20,
-          "line": 124,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
+          "column": 34,
+          "line": 96,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "uninitvar",
-          "column": 32,
-          "line": 141,
+          "column": 34,
+          "line": 109,
           "message": "Uninitialized variable: fStack_40",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 32,
-          "line": 142,
+          "column": 34,
+          "line": 110,
           "message": "Uninitialized variable: fStack_3c",
           "severity": "error"
         }
@@ -435,76 +435,116 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_flies_cpp_FUN_0048f490(int *param_1)",
+      "text": "int core_flies_cpp_FUN_0048f490(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 30,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "apiStack_a4[0] = DAT_005ae704;",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "apiStack_a4[0] = param_1;",
+      "text": "param_1[0x20].actor_name[0x14] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xa85] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(param_1[0x53] + 0x14))(param_1,local_58);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar4 = (**(code **)(param_1[0x53] + 0x14))(param_1,local_58);",
+      "text": "param_1[0x20].actor_name[0x15] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = (**(code **)(param_1[0x53] + 0x14))(param_1,local_58);",
+      "text": "param_1[0x20].actor_name[0x16] = '\\0';",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x20].actor_name[0x17] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,(CBoundingBox3D *)local_58);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,(CBoundingBox3D *)local_58);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x20].actor_name[0x14] = '\\x01';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x20].actor_name[0x15] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x20].actor_name[0x16] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x20].actor_name[0x17] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0xa85] = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "piVar1 = DAT_005ae704;",
+      "text": "pCVar2 = DAT_005ae704;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 62,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(DAT_005ae704,0,0);",
@@ -512,171 +552,299 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 68,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "*(uint *)(*DAT_005ae704 + 0x20) = 0;",
+      "text": "DAT_005ae704->vertex_buffer_ptr->r = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 82,
       "match": "DAT_005b9214",
       "severity": "mild",
-      "text": "apiStack_a4[0] = (int *)&DAT_005b9214;",
+      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005b9214);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < param_1[0x57]) {",
+      "text": "if (0 < *(int *)(param_1[1].actor_name + 0xc)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfStack_20 = (float *)(param_1 + 0x58);",
+      "text": "pcStack_20 = param_1[1].actor_name + 0x10;",
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(float *)((int)pcStack_20",
+      "severity": "moderate",
+      "text": "((float *)((int)pcStack_20 * 0x20 + 0x1c7075c),(CVector3f *)(local_58 + 0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "CStack_38.x = (int)ROUND((float)local_58._20_4_ * _DAT_0059da10);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 105,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&iStack_38);",
+      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&CStack_38);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 106,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "piVar1 = DAT_005ae704;",
+      "text": "pCVar2 = DAT_005ae704;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 107,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "puVar9 = (uint *)*DAT_005ae704;",
+      "text": "vertices = DAT_005ae704->vertex_buffer_ptr;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar4) && (iVar4 < DAT_005b761c)) && (-1 < iVar6)) && (iVar6 < DAT_005b7620)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar4) && (iVar4 < DAT_005b761c)) && (-1 < iVar6)) && (iVar6 < DAT_005b7620)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "else if ((iVar4 < DAT_005b761c + -1) && (iVar6 < DAT_005b7620 + -1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "else if ((iVar4 < DAT_005b761c + -1) && (iVar6 < DAT_005b7620 + -1)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(byte *)((int)puVar9",
+      "line": 126,
+      "match": "(SRenderVertex *)((int)pSVar7",
       "severity": "moderate",
-      "text": "if ((*(byte *)((int)puVar9 + 0x13) & 0x80) == 0) {",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 144,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (iVar3 < DAT_005b761c)) && (-1 < iVar7)) && (iVar7 < DAT_005b7620)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 144,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (iVar3 < DAT_005b761c)) && (-1 < iVar7)) && (iVar7 < DAT_005b7620)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 149,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "else if ((iVar3 < DAT_005b761c + -1) && (iVar7 < DAT_005b7620 + -1)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 149,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "else if ((iVar3 < DAT_005b761c + -1) && (iVar7 < DAT_005b7620 + -1)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 173,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iStack_28 < param_1[0x57]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "apiStack_a4[0] = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `pfStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
-      "match": "(int)pfStack_20",
-      "severity": "moderate",
-      "text": "if ((int)pfStack_20 < 0) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pfStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Complex pointer cast",
       "line": 127,
-      "match": "(int)pfStack_20",
+      "match": "(SRenderVertex *)((int)pSVar8",
       "severity": "moderate",
-      "text": "else if (0x3f < (int)pfStack_20) {",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(SRenderVertex *)((int)vertices",
+      "severity": "moderate",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(SRenderVertex *)((int)pSVar7",
+      "severity": "moderate",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 140,
+      "match": "&stack0xffffff5c",
+      "severity": "moderate",
+      "text": "(pCVar2,(SMRGLPrimitivePoly *)&stack0xffffff5c,999);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 145,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iStack_28 < *(int *)(param_1[1].actor_name + 0xc));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 148,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pcStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)pcStack_20",
+      "severity": "moderate",
+      "text": "if ((int)pcStack_20 < 0) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pfStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
-      "match": "(int)pfStack_20",
+      "description": "Pointer value `pcStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)pcStack_20",
       "severity": "moderate",
-      "text": "((int)pfStack_20 * 0x20 + 0x1c7075c,&fStack_44,pfVar2 + 1,pfVar2 + 4,pfVar2 + 7,",
+      "text": "else if (0x3f < (int)pcStack_20) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
-      "match": "(int)puVar9",
+      "description": "Pointer value `pcStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)pcStack_20",
       "severity": "moderate",
-      "text": "if ((*(byte *)((int)puVar9 + 0x13) & 0x80) == 0) {",
+      "text": "((float *)((int)pcStack_20 * 0x20 + 0x1c7075c),(CVector3f *)(local_58 + 0x14),",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1c7075c assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 62,
-      "match": "0x1c7075c",
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)pSVar7",
       "severity": "moderate",
-      "text": "iVar7 = 0x1c7075c;",
-      "type": "raw_address_constant"
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)pSVar8",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `vertices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)vertices",
+      "severity": "moderate",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)pSVar7",
+      "severity": "moderate",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 135,
+      "match": "(int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x",
+      "severity": "moderate",
+      "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 137,
+      "match": "(int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 138,
+      "match": "(int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 154,
+      "line": 124,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 160,
+      "line": 130,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 135,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 137,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 138,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 85,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(param_1[1].actor_name + 0xc)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 145,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "} while (iStack_28 < *(int *)(param_1[1].actor_name + 0xc));",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0048f806, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -695,27 +863,27 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 124,
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 96,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
-      "text": "pfStack_20 = (float *)(param_1 + 0x58);",
+      "text": "dVar10 = round((double)(*(float *)pcStack_20 * 64.0f));",
       "type": "static_invalid_pointer_cast"
     },
     {
       "description": "Uninitialized variable: fStack_40",
-      "line": 141,
+      "line": 109,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iStack_34 = (int)ROUND(fStack_40 * _DAT_0059da10);",
+      "text": "CStack_38.y = (int)ROUND(fStack_40 * _DAT_0059da10);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: fStack_3c",
-      "line": 142,
+      "line": 110,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iStack_30 = (int)ROUND(fStack_3c * _DAT_0059da10);",
+      "text": "CStack_38.z = (int)ROUND(fStack_3c * _DAT_0059da10);",
       "type": "static_uninitvar"
     }
   ],

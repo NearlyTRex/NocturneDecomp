@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(float *param_1,float *param_2,int param_3)
+; int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
+; CLocation *      Stack[0x8]:4   from_location
+; int              Stack[0xc]:4   use_tight_bounds
 ; Local Variables:
 ; undefined        Stack[-0x30]:1  local_30
 ; undefined4       Stack[-0x24]:4  local_24
@@ -115,7 +119,7 @@ section .text
     PUSH ECX                            ; 0055246b
     MOV dword ptr [ESP + 0x24],EAX      ; 0055246c
     CALL core_path.cpp_getPathMap_FUN_004f1e00 ; 00552470
-        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getPathMap_FUN_004f1e00()
+        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_004f1e00(CLocation * location)
     ADD ESP,0x4                         ; 00552475
     PUSH 0x0                            ; 00552478
     LEA EDX,[ESP + 0x4]                 ; 0055247a
@@ -124,7 +128,7 @@ section .text
     PUSH EDX                            ; 00552483
     PUSH EAX                            ; 00552484
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 00552485
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 0055248a
     CMP EAX,0x1                         ; 0055248d
     SETZ AL                             ; 00552490

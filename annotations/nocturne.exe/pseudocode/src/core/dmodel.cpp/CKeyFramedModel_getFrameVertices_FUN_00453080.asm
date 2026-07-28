@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(int param_1,int param_2)
+; CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel *this_ptr,int frame_index)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 at 00453a36

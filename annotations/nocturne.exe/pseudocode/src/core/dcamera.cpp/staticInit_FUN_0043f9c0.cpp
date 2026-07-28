@@ -9,8 +9,8 @@
 void __cdecl core_dcamera_cpp_staticInit_FUN_0043f9c0(void)
 
 {
-  __arrinit(0x9bb178,0x12d40,&g_CVectorTypeInfo_005993b0);
-  support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(0x12cdb28,0x10000,6);
-  FUN_00564bb0(0x5ad434);
+  __arrinit((void *)0x9bb178,0x12d40,&g_CVectorTypeInfo_005993b0);
+  support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0((CLZWDecompress *)0x12cdb28,0x10000,6);
+  _atexit((WatcomStaticDestructorNode *)0x5ad434);
   return;
 }

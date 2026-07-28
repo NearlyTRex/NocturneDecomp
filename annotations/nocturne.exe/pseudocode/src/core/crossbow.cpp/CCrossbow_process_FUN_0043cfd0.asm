@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(int param_1,undefined4 param_2)
+; void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(CWeapon *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -23,7 +23,7 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 0043cfd8
     PUSH EBX                            ; 0043cfdc
     CALL core_weapon.cpp_CWeapon_process_FUN_00554030 ; 0043cfdd
-        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_process_FUN_00554030()
+        ;   XREF to: 00554030 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_00554030(CWeapon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0043cfe2
     LEA EDX,[ESP + 0xc]                 ; 0043cfe5
     PUSH EDX                            ; 0043cfe9
@@ -36,7 +36,7 @@ section .text
     PUSH EAX                            ; 0043cfff
     PUSH EBX                            ; 0043d000
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0043d001
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x594]               ; 0043d006
     MOV ECX,dword ptr [EAX]             ; 0043d00c
     MOV dword ptr [EDX],ECX             ; 0043d00e
@@ -68,7 +68,7 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 0043d05b
     PUSH EAX                            ; 0043d05f
     CALL core_flame.cpp_CFlame_process_FUN_0048d0c0 ; 0043d060
-        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_CFlame_process_FUN_0048d0c0()
+        ;   XREF to: 0048d0c0 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_process_FUN_0048d0c0(CFlame * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX + 0x570]     ; 0043d065
     ADD ESP,0x8                         ; 0043d06b
     MOV dword ptr [EBX + 0xfc],EAX      ; 0043d06e

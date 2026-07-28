@@ -2,23 +2,23 @@
 // Address: 004401d0
 // Address Range: [[004401d0, 00440234]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(int param_1)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(int param_1)
+void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera *this_ptr)
 
 {
-  if (*(int *)(param_1 + 0x160) != 0) {
-    FUN_005638d0(*(int *)(param_1 + 0x160));
+  if (this_ptr->framebuffer_raw != (void *)0x0) {
+    FUN_005638d0(this_ptr->framebuffer_raw);
   }
-  *(uint *)(param_1 + 0x160) = 0;
-  *(uint *)(param_1 + 0x158) = 0;
-  if (*(int *)(param_1 + 0x164) != 0) {
-    FUN_005638d0(*(int *)(param_1 + 0x164));
+  this_ptr->framebuffer_raw = (void *)0x0;
+  this_ptr->framebuffer_aligned = (void *)0x0;
+  if (this_ptr->zbuffer_raw != (void *)0x0) {
+    FUN_005638d0(this_ptr->zbuffer_raw);
   }
-  *(uint *)(param_1 + 0x164) = 0;
-  *(uint *)(param_1 + 0x1d0) = 0;
-  *(uint *)(param_1 + 0x15c) = 0;
+  this_ptr->zbuffer_raw = (void *)0x0;
+  this_ptr->rect_array_count = 0;
+  this_ptr->zbuffer_aligned = (void *)0x0;
   return;
 }

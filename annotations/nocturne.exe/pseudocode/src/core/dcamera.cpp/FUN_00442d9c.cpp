@@ -15,7 +15,7 @@ void core_dcamera_cpp_FUN_00442d9c(void)
   uint *puVar4;
   int in_EDX;
   int unaff_EBP;
-  float10 fVar5;
+  double dVar5;
   float fStack00000004;
   float fStack00000008;
   float *in_stack_00000028;
@@ -52,58 +52,57 @@ void core_dcamera_cpp_FUN_00442d9c(void)
   *(int *)(unaff_EBP + 0x170) = (int)ROUND(*(float *)(unaff_EBP + 0x108) * 256.0f);
   *(int *)(unaff_EBP + 0x174) = (int)ROUND(*(float *)(unaff_EBP + 0x10c) * 256.0f);
   iVar1 = *(int *)(unaff_EBP + 0x14a4);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)in_stack_00000028[6]
-                              + (float10)*(int *)(unaff_EBP + 0x14a4) * (float10)*in_stack_00000028
-                                + (float10)*(int *)(unaff_EBP + 0x14a8) *
-                                  (float10)in_stack_00000028[3]);
-  *(int *)(unaff_EBP + 0x178) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028[6] +
+                             (float)*(int *)(unaff_EBP + 0x14a4) * *in_stack_00000028 +
+                             (float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028[3]));
+  *(int *)(unaff_EBP + 0x178) = (int)ROUND(dVar5);
   iVar2 = *(int *)(unaff_EBP + 0x14a4);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)pfVar3[7] +
-                              (float10)*(int *)(unaff_EBP + 0x14a8) * (float10)pfVar3[4] +
-                              (float10)iVar1 * (float10)pfVar3[1]);
-  *(int *)(unaff_EBP + 0x17c) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14ac) * pfVar3[7] +
+                             (float)*(int *)(unaff_EBP + 0x14a8) * pfVar3[4] +
+                             (float)iVar1 * pfVar3[1]));
+  *(int *)(unaff_EBP + 0x17c) = (int)ROUND(dVar5);
   iVar1 = *(int *)(unaff_EBP + 0x14b4);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)pfVar3[8] +
-                              (float10)*(int *)(unaff_EBP + 0x14a8) * (float10)pfVar3[5] +
-                              (float10)iVar2 * (float10)pfVar3[2]);
-  *(int *)(unaff_EBP + 0x180) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14ac) * pfVar3[8] +
+                             (float)*(int *)(unaff_EBP + 0x14a8) * pfVar3[5] +
+                             (float)iVar2 * pfVar3[2]));
+  *(int *)(unaff_EBP + 0x180) = (int)ROUND(dVar5);
   iVar2 = *(int *)(unaff_EBP + 0x14b0);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[6] +
-                              (float10)*(int *)(unaff_EBP + 0x14b0) * (float10)*pfVar3 +
-                              (float10)iVar1 * (float10)pfVar3[3]);
-  *(int *)(unaff_EBP + 0x184) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[6] +
+                             (float)*(int *)(unaff_EBP + 0x14b0) * *pfVar3 +
+                             (float)iVar1 * pfVar3[3]));
+  *(int *)(unaff_EBP + 0x184) = (int)ROUND(dVar5);
   iVar1 = *(int *)(unaff_EBP + 0x14b0);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[7] +
-                              (float10)*(int *)(unaff_EBP + 0x14b4) * (float10)pfVar3[4] +
-                              (float10)iVar2 * (float10)pfVar3[1]);
-  *(int *)(unaff_EBP + 0x188) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[7] +
+                             (float)*(int *)(unaff_EBP + 0x14b4) * pfVar3[4] +
+                             (float)iVar2 * pfVar3[1]));
+  *(int *)(unaff_EBP + 0x188) = (int)ROUND(dVar5);
   iVar2 = *(int *)(unaff_EBP + 0x14c0);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[8] +
-                              (float10)*(int *)(unaff_EBP + 0x14b4) * (float10)pfVar3[5] +
-                              (float10)iVar1 * (float10)pfVar3[2]);
-  *(int *)(unaff_EBP + 0x18c) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14b8) * pfVar3[8] +
+                             (float)*(int *)(unaff_EBP + 0x14b4) * pfVar3[5] +
+                             (float)iVar1 * pfVar3[2]));
+  *(int *)(unaff_EBP + 0x18c) = (int)ROUND(dVar5);
   iVar1 = *(int *)(unaff_EBP + 0x14bc);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[6] +
-                              (float10)*(int *)(unaff_EBP + 0x14bc) * (float10)*pfVar3 +
-                              (float10)iVar2 * (float10)pfVar3[3]);
-  *(int *)(unaff_EBP + 400) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[6] +
+                             (float)*(int *)(unaff_EBP + 0x14bc) * *pfVar3 +
+                             (float)iVar2 * pfVar3[3]));
+  *(int *)(unaff_EBP + 400) = (int)ROUND(dVar5);
   iVar2 = *(int *)(unaff_EBP + 0x14bc);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[7] +
-                              (float10)*(int *)(unaff_EBP + 0x14c0) * (float10)pfVar3[4] +
-                              (float10)iVar1 * (float10)pfVar3[1]);
-  *(int *)(unaff_EBP + 0x194) = (int)ROUND(fVar5);
-  fVar5 = (float10)round
-                             ((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[8] +
-                              (float10)*(int *)(unaff_EBP + 0x14c0) * (float10)pfVar3[5] +
-                              (float10)iVar2 * (float10)pfVar3[2]);
-  *(int *)(unaff_EBP + 0x198) = (int)ROUND(fVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[7] +
+                             (float)*(int *)(unaff_EBP + 0x14c0) * pfVar3[4] +
+                             (float)iVar1 * pfVar3[1]));
+  *(int *)(unaff_EBP + 0x194) = (int)ROUND(dVar5);
+  dVar5 = round
+                    ((double)((float)*(int *)(unaff_EBP + 0x14c4) * pfVar3[8] +
+                             (float)*(int *)(unaff_EBP + 0x14c0) * pfVar3[5] +
+                             (float)iVar2 * pfVar3[2]));
+  *(int *)(unaff_EBP + 0x198) = (int)ROUND(dVar5);
   return;
 }

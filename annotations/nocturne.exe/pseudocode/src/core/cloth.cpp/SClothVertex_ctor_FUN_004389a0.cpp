@@ -9,8 +9,9 @@
 int core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(int param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1 + 0xec,3,&g_CVectorTypeInfo_005993b0);
-  return iVar1 + -0xec;
+  pvVar1 = __arrinit
+                     ((void *)(param_1 + 0xec),3,&g_CVectorTypeInfo_005993b0);
+  return (int)pvVar1 + -0xec;
 }

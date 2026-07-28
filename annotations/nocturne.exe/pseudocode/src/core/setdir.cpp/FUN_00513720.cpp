@@ -2,74 +2,70 @@
 // Address: 00513720
 // Address Range: [[00513720, 005138a6]]
 // Convention: unknown
-// Signature: void core_setdir_cpp_FUN_00513720(int *param_1)
+// Signature: void core_setdir_cpp_FUN_00513720(CDemonSet *param_1)
 
 #include "nocturne.h"
 
-void core_setdir_cpp_FUN_00513720(int *param_1)
+void core_setdir_cpp_FUN_00513720(CDemonSet *param_1)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint *puVar3;
+  int value;
+  int iVar1;
+  uint *puVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
+  uint *puVar5;
   uint *puVar6;
-  uint *puVar7;
-  byte bVar8;
-  int *piVar9;
-  int *piVar10;
-  int *piVar11;
+  byte bVar7;
+  CVector3f *local_1c;
   uint *local_18;
-  int *local_14;
+  CVector3f *local_14;
   
-  bVar8 = 0;
-  uVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0,uVar1);
+  bVar7 = 0;
+  value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,0);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(DAT_005ae704,0,0,0x40,0x30);
-  iVar5 = 0;
-  if (0 < *param_1) {
-    piVar11 = param_1 + 0x44;
-    local_14 = param_1 + 0x41;
+  iVar4 = 0;
+  if (0 < param_1->camera_count) {
+    local_1c = &param_1->cameras[0].orientation;
+    local_14 = &param_1->cameras[0].position;
     local_18 = (uint *)&DAT_020875f8;
-    piVar9 = param_1 + 1;
     do {
-      piVar10 = piVar9;
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-                (0x01B4D738,local_14,uVar1,piVar9,piVar11);
+                (0x01B4D738,local_14);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                (0x01B4D738,piVar9[iVar5 * 0x68 + 0x50]);
-      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(0x01B4D738,piVar11);
-      engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(0x01B4D738,0x26635f8)
-      ;
+                (0x01B4D738,
+                 *(float *)((int)&param_1->cameras[0].rotation_matrix + iVar4 * 0x1a0 + 0x28));
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(0x01B4D738,local_1c);
+      engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
+                (0x01B4D738,(CVector3f *)0x26635f8);
       engine_special_cpp_clearZBufferNative_FUN_0052eed4();
-      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,0x461c3f9a,0);
-      iVar4 = 0;
-      puVar3 = local_18;
+      core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,9999.9,0);
+      iVar3 = 0;
+      puVar2 = local_18;
       do {
-        puVar6 = *(uint **)(&DAT_01bd4260 + iVar4);
-        puVar7 = puVar3;
-        for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-          puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+        puVar5 = *(uint **)(&DAT_01bd4260 + iVar3);
+        puVar6 = puVar2;
+        for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *puVar6 = *puVar5;
+          puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+          puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
         }
-        for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(byte *)puVar7 = *(byte *)puVar6;
-          puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
-          puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);
+        for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *(byte *)puVar6 = *(byte *)puVar5;
+          puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
+          puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
         }
-        iVar4 = iVar4 + 4;
-        puVar3 = puVar3 + 0x40;
-      } while (iVar4 != 0xc0);
-      iVar5 = iVar5 + 1;
-      piVar11 = piVar11 + 0x68;
+        iVar3 = iVar3 + 4;
+        puVar2 = puVar2 + 0x40;
+      } while (iVar3 != 0xc0);
+      iVar4 = iVar4 + 1;
+      local_1c = (CVector3f *)&local_1c[0x22].z;
       local_18 = local_18 + 0xc00;
-      local_14 = local_14 + 0x68;
-      piVar9 = piVar10;
-    } while (iVar5 < *param_1);
+      local_14 = (CVector3f *)&local_14[0x22].z;
+    } while (iVar4 < param_1->camera_count);
   }
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(DAT_005ae704);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,uVar1);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,value);
   return;
 }

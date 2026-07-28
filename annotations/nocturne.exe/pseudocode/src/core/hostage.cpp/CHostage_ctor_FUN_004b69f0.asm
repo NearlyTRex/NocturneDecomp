@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hostage_cpp_CHostage_ctor_FUN_004b69f0(undefined4 param_1)
+; CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004b69f0(CHostage *this_ptr)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_FUN_004b69c0 at 004b69d3

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(int *param_1)
+; void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a641e
@@ -54,7 +56,7 @@ section .text
     ADD EBX,0x4                         ; 004d92c9
     INC ESI                             ; 004d92cc
     CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d92cd
-        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90()
+        ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     MOV EDX,dword ptr [EDI + 0x52c]     ; 004d92d2
     ADD ESP,0xc                         ; 004d92d8
     CMP ESI,EDX                         ; 004d92db
@@ -101,27 +103,27 @@ section .text
     POP EBX                             ; 004d9360
     RET                                 ; 004d9361
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004d9362
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004d9362
     PUSH 0x0                            ; 004d9367
     PUSH 0x0                            ; 004d9369
     PUSH 0x589da6                       ; 004d936b | = "Changing sets..."
     CALL engine_2d.c_drawText_FUN_00402600 ; 004d9370
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004d9375
     PUSH 0xb                            ; 004d9378
     PUSH 0x0                            ; 004d937a
     PUSH 0x589db7                       ; 004d937c | = "Insert wipe here..."
     CALL engine_2d.c_drawText_FUN_00402600 ; 004d9381
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004d9386
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004d9389
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EBP,dword ptr [EDI + 0x528]     ; 004d938e
     PUSH EBP                            ; 004d9394
     PUSH EDI                            ; 004d9395
     CALL core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 ; 004d9396
-        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_loadSet_FUN_004d9020()
+        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 004d939b
     MOV EAX,[0x005be368]                ; 004d939e | DAT_005be368
     PUSH EAX                            ; 004d93a3 | DAT_01e57284

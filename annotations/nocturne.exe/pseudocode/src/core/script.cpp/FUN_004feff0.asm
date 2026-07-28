@@ -75,7 +75,7 @@ section .text
     MOV dword ptr [0x01e56c28],EDX      ; 004ff08a | DAT_01e56c28
     MOV dword ptr [EBX + 0x14],EDX      ; 004ff090
     CALL crt_string.c_splitpath_FUN_00566498 ; 004ff093
-        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
+        ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_00566498(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 004ff098
     MOV ESI,0x58e36d                    ; 004ff09b | = ".wav"
     MOV EDI,ESP                         ; 004ff0a0
@@ -104,7 +104,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004ff0c9
     PUSH EAX                            ; 004ff0cd
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ff0ce
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ff0d3
     TEST EAX,EAX                        ; 004ff0d6
     JNZ 0x004ff103                      ; 004ff0d8
@@ -137,7 +137,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004ff108
     PUSH EAX                            ; 004ff10c
     CALL crt_string.c__stricmp_FUN_00564520 ; 004ff10d
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ff112
     TEST EAX,EAX                        ; 004ff115
     JZ 0x004ff139                       ; 004ff117
@@ -148,7 +148,7 @@ section .text
     MOV ESI,dword ptr [0x005bed68]      ; 004ff11c | DAT_005bed68
     PUSH ESI                            ; 004ff122
     CALL core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0 ; 004ff123
-        ;   XREF to: 0052e9d0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0()
+        ;   XREF to: 0052e9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 004ff128
     MOV dword ptr [EBX + 0x18],0x0      ; 004ff12b
     ADD ESP,0x64                        ; 004ff132

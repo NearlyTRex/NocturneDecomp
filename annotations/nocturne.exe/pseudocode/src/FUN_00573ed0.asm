@@ -20,7 +20,7 @@
 ;   CloseHandle
 ;   CreateEventA
 ;   CreateThread
-;   FUN_0056dc68
+;   crt_stdio.c_IntegerToString_FUN_0056dc68
 ;   FUN_0056e5ac
 ;   FUN_0056e6e4
 ;   GetCurrentThread
@@ -74,8 +74,8 @@ section .text
     MOVSB ES:EDI,ESI                    ; 00573f39 | DAT_005992ac
     CALL dword ptr CS:[0x575500]        ; 00573f3a | PTR_GetCurrentThreadId_00575500
     PUSH EAX                            ; 00573f41
-    CALL FUN_0056dc68                   ; 00573f42
-        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc68()
+    CALL crt_stdio.c_IntegerToString_FUN_0056dc68 ; 00573f42
+        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_0056dc68(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 00573f47
     MOV EAX,ESP                         ; 00573f4a
     PUSH EAX                            ; 00573f4c

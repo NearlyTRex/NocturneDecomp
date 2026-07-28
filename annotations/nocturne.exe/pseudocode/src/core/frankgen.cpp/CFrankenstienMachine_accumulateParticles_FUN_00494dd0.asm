@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0(int param_1,float param_2,float param_3)
+; int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   emission_rate
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
 ; undefined8       Stack[-0x14]:8  local_14
@@ -37,7 +41,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 00494dff
     ADD ESP,0x8                         ; 00494e03
     CALL crt_math.c_round_FUN_00563a30  ; 00494e06
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00494e0b
     MOV EAX,dword ptr [ESP + 0x8]       ; 00494e0f
     MOV dword ptr [ESP + 0xc],EAX       ; 00494e13

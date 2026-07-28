@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_00480d10(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_00480d10(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_getSfxHandle_FUN_00480bf0 at 00480c04
@@ -32,7 +35,7 @@ section .text
         ;   Label: LAB_00480d2e
     PUSH ESI                            ; 00480d2f
     CALL crt_string.c__stricmp_FUN_00564520 ; 00480d30
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 00480d35
     TEST EAX,EAX                        ; 00480d38
     JZ 0x00480d57                       ; 00480d3a

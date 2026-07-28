@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0(int param_1,float param_2,undefined4 param_3)
+; void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0(CPlatform *this_ptr,float goal_param,float movement_rate)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   goal_param
+; float            Stack[0xc]:4   movement_rate
 ;
 ; XREF[2]:
 ;   core_platfrm.cpp_FUN_004f6170 at 004f61fa

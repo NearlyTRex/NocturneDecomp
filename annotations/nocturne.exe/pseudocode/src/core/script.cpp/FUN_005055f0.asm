@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_FUN_005055f0(int param_1,undefined4 param_2)
+; void core_script_cpp_FUN_005055f0(CScript *param_1,_FILE *param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
@@ -165,7 +165,7 @@ section .text
     PUSH EAX                            ; 00505755
     PUSH EDI                            ; 00505756
     CALL core_script.cpp_writeActorReference_FUN_00505280 ; 00505757
-        ;   XREF to: 00505280 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_writeActorReference_FUN_00505280()
+        ;   XREF to: 00505280 (UNCONDITIONAL_CALL)  ; void core_script.cpp_writeActorReference_FUN_00505280(_FILE * file_handle, CDemonActor * * actor)
     ADD ESP,0x8                         ; 0050575c
     PUSH 0x58fec7                       ; 0050575f | = "// focusActor\n"
     PUSH EDI                            ; 00505764
@@ -176,7 +176,7 @@ section .text
     PUSH EAX                            ; 00505770
     PUSH EDI                            ; 00505771
     CALL core_script.cpp_writeActorReference_FUN_00505280 ; 00505772
-        ;   XREF to: 00505280 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_writeActorReference_FUN_00505280()
+        ;   XREF to: 00505280 (UNCONDITIONAL_CALL)  ; void core_script.cpp_writeActorReference_FUN_00505280(_FILE * file_handle, CDemonActor * * actor)
     ADD ESP,0x8                         ; 00505777
     PUSH 0x58fed6                       ; 0050577a | = "// focusActorLocked\n"
     PUSH EDI                            ; 0050577f
@@ -231,7 +231,7 @@ section .text
     ADD ESP,0x8                         ; 005057fb
     PUSH EBP                            ; 005057fe
     CALL core_script.cpp_CScript_computeChecksum_FUN_00505820 ; 005057ff
-        ;   XREF to: 00505820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_computeChecksum_FUN_00505820()
+        ;   XREF to: 00505820 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_computeChecksum_FUN_00505820(CScript * this_ptr)
     ADD ESP,0x4                         ; 00505804
     PUSH EAX                            ; 00505807
     PUSH 0x58ff19                       ; 00505808 | = "%u\n"

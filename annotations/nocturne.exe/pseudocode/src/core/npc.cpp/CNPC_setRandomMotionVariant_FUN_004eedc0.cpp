@@ -2,48 +2,49 @@
 // Address: 004eedc0
 // Address Range: [[004eedc0, 004eee98]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(undefined4 param_1,char *param_2)
+// Signature: int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(CNPC *this_ptr,char *motion_name)
 
 #include "nocturne.h"
 
-uint __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(uint param_1,char *param_2)
+int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(CNPC *this_ptr,char *motion_name)
 
 {
   char cVar1;
-  uint uVar2;
+  CMotionList *this_ptr_00;
+  int iVar2;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  char *pcVar6;
+  char *pcVar4;
   char local_d8 [200];
   
-  iVar5 = 0;
-  uVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1);
-  pcVar6 = local_d8;
+  iVar3 = 0;
+  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
+                          ((CMotionController *)this_ptr);
+  pcVar4 = local_d8;
   while( true ) {
-    _sprintf(local_d8,"%s_%d",param_2,iVar5 + 1);
-    iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(uVar2,local_d8,0);
-    if (iVar3 < 0) break;
-    iVar5 = iVar5 + 1;
+    _sprintf(local_d8,"%s_%d",motion_name,iVar3 + 1);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr_00,local_d8,0);
+    if (iVar2 < 0) break;
+    iVar3 = iVar3 + 1;
   }
-  if (iVar5 == 0) {
+  if (iVar3 == 0) {
     do {
-      cVar1 = *param_2;
-      *pcVar6 = cVar1;
+      cVar1 = *motion_name;
+      *pcVar4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = param_2[1];
-      param_2 = param_2 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      cVar1 = motion_name[1];
+      motion_name = motion_name + 2;
+      pcVar4[1] = cVar1;
+      pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
   }
   else {
-    uVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(1,iVar5);
-    _sprintf(local_d8,"%s_%d",param_2,uVar4);
+    iVar3 = core_actor_cpp_getRandomInt_FUN_0040de00(1,iVar3);
+    _sprintf(local_d8,"%s_%d",motion_name,iVar3);
   }
-  iVar5 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(uVar2,local_d8,0);
-  if (-1 < iVar5) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1,iVar5,1);
+  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(this_ptr_00,local_d8,0);
+  if (-1 < iVar3) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
+              ((CMotionController *)this_ptr,iVar3,1);
     return 1;
   }
   return 0;

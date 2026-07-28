@@ -21,7 +21,7 @@ int FUN_00543150(undefined4 param_1);
 
 // Original: core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180
 // Address: 00543180
-void CBassPlayer::setup(int param_1);
+void CBassPlayer::setup(CNPC *param_1);
 
 // Original: core_tbplayer.cpp_FUN_005431f0
 // Address: 005431f0
@@ -49,7 +49,7 @@ int FUN_005433a0(undefined4 param_1);
 
 // Original: core_tbplayer.cpp_CDrummer_setup_FUN_005433d0
 // Address: 005433d0
-void CDrummer::setup(int param_1);
+void CDrummer::setup(CNPC *param_1);
 
 // Original: core_tbplayer.cpp_FUN_00543450
 // Address: 00543450
@@ -61,8 +61,8 @@ void CDrummer::processDamage(int param_1,int param_2);
 
 // Original: core_tbplayer.cpp_FUN_00543620
 // Address: 00543620
-int FUN_00543620(int param_1,byte param_2);
+CDemonActor * FUN_00543620(CDemonActor *param_1,byte param_2);
 
 // Original: core_tbplayer.cpp_FUN_005436f0
 // Address: 005436f0
-int FUN_005436f0(int param_1,byte param_2);
+CDemonActor * FUN_005436f0(CDemonActor *param_1,byte param_2);

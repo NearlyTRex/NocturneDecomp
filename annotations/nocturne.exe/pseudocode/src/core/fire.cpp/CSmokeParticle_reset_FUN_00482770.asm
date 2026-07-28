@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_00482770(undefined4 *param_1)
+; void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_00482770(CSmokeParticle *this_ptr)
 ;
+; Parameters:
+; CSmokeParticle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_init_FUN_0048a150 at 0048a167

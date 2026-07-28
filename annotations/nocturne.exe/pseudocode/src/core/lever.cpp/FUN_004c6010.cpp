@@ -9,12 +9,12 @@
 void core_lever_cpp_FUN_004c6010(void)
 
 {
-  int iVar1;
+  CLever *this_ptr;
   
-  iVar1 = FUN_0056497c(0x80c);
-  if (iVar1 == 0) {
+  this_ptr = (CLever *)FUN_0056497c(0x80c);
+  if (this_ptr == (CLever *)0x0) {
     return;
   }
-  core_lever_cpp_CLever_ctor_FUN_004c6040(iVar1);
+  core_lever_cpp_CLever_ctor_FUN_004c6040(this_ptr);
   return;
 }

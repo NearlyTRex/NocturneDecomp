@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0(int *param_1)
+; void __cdecl shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0(CEdScrollBar *this_ptr)
 ;
+; Parameters:
+; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 at 00476929

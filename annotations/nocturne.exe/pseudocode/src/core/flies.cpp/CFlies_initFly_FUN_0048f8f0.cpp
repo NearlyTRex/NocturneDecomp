@@ -2,45 +2,49 @@
 // Address: 0048f8f0
 // Address Range: [[0048f8f0, 0048f9a9]]
 // Convention: __cdecl
-// Signature: void __cdecl core_flies_cpp_CFlies_initFly_FUN_0048f8f0(int param_1,int param_2)
+// Signature: void __cdecl core_flies_cpp_CFlies_initFly_FUN_0048f8f0(CFlies *this_ptr,int fly_index)
 
 #include "nocturne.h"
 
-void __cdecl core_flies_cpp_CFlies_initFly_FUN_0048f8f0(int param_1,int param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_flies_cpp_CFlies_initFly_FUN_0048f8f0(CFlies *this_ptr,int fly_index)
 
 {
-  uint *puVar1;
-  uint *puVar2;
-  uint uVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte local_30 [12];
-  byte local_24 [12];
-  uint *local_18;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  CVector3f *pCVar3;
+  float fVar4;
+  SFly *pSVar5;
+  CVector3f *reference_point;
+  CVector3f local_30;
+  CVector3f local_24;
+  SFly *local_18;
   
-  puVar4 = (uint *)(param_1 + 0x160 + param_2 * 0x34);
-  local_18 = puVar4;
-  puVar1 = (uint *)core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(param_1,local_30,0);
-  if (puVar4 + 1 != puVar1) {
-    puVar4[1] = *puVar1;
-    puVar4[2] = puVar1[1];
-    puVar4[3] = puVar1[2];
+  pSVar5 = this_ptr->flies + fly_index;
+  local_18 = pSVar5;
+  pCVar2 = core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0
+                     (this_ptr,&local_30,(CVector3f *)0x0);
+  if (pSVar5->control_points != pCVar2) {
+    pSVar5->control_points[0].x = pCVar2->x;
+    pSVar5->control_points[0].y = pCVar2->y;
+    pSVar5->control_points[0].z = pCVar2->z;
   }
-  puVar4 = local_18 + 1;
-  puVar1 = local_18 + 4;
-  puVar5 = local_18 + 10;
+  reference_point = local_18->control_points;
+  pCVar2 = local_18->control_points;
+  pCVar1 = local_18->control_points;
   do {
-    puVar2 = (uint *)
-             core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(param_1,local_24,puVar4);
-    if (puVar1 != puVar2) {
-      *puVar1 = *puVar2;
-      puVar1[1] = puVar2[1];
-      puVar1[2] = puVar2[2];
+    pCVar2 = pCVar2 + 1;
+    pCVar3 = core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0
+                       (this_ptr,&local_24,reference_point);
+    if (pCVar2 != pCVar3) {
+      pCVar2->x = pCVar3->x;
+      pCVar2->y = pCVar3->y;
+      pCVar2->z = pCVar3->z;
     }
-    puVar4 = puVar4 + 3;
-    puVar1 = puVar1 + 3;
-  } while (puVar4 != puVar5);
-  uVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-  *local_18 = uVar3;
+    reference_point = reference_point + 1;
+  } while (reference_point != pCVar1 + 3);
+  fVar4 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
+  local_18->t = fVar4;
   return;
 }

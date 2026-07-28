@@ -2,39 +2,53 @@
 // Address: 004d4540
 // Address Range: [[004d4540, 004d4648]]
 // Convention: unknown
-// Signature: int core_mimic_cpp_FUN_004d4540(int param_1,byte param_2)
+// Signature: CDemonActor * core_mimic_cpp_FUN_004d4540(CDemonActor *param_1,byte param_2)
 
 #include "nocturne.h"
 
-int core_mimic_cpp_FUN_004d4540(int param_1,byte param_2)
+CDemonActor * core_mimic_cpp_FUN_004d4540(CDemonActor *param_1,byte param_2)
 
 {
-  int iVar1;
-  uint uVar2;
+  float fVar1;
+  CMorph *pCVar2;
+  CCloth *pCVar3;
+  CFlame *pCVar4;
+  SFire *pSVar5;
+  CVector3f *pCVar6;
+  CClothList *pCVar7;
+  CDeformableModelInstance *pCVar8;
+  CDemonActor *pCVar9;
+  void *ptr;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&g_CMimicTypeInfo_005a0740);
-    shape_memdbg_cpp_free_FUN_00564486(uVar2);
+    ptr = __vec_delete(param_1,&g_CMimicTypeInfo_005a0740);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  iVar1 = *(int *)(param_1 + 0x4757c);
-  *(byte ***)(param_1 + 0x14c) = &PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
-  if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x14c) + 200))(iVar1,2);
+  fVar1 = param_1[0x365].platform_orientation_delta.x;
+  (param_1->vtable)._ub = (CDemonActor_vtable *)&PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
+  if (fVar1 != 0.0) {
+    (**(code **)(*(int *)((int)fVar1 + 0x14c) + 200))(fVar1,2);
   }
-  *(uint *)(param_1 + 0x4757c) = 0;
-  iVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(param_1 + 0x4694c,0);
-  iVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(iVar1 + -0x3ab60,0);
-  iVar1 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(iVar1 + -0x8a28,0);
-  iVar1 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30(iVar1 + -0x4b0,0);
-  iVar1 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(iVar1 + -0x20c,0);
-  iVar1 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(iVar1 + -0xb4,0);
-  iVar1 = core_cloth_cpp_CClothList_dtor_FUN_00438250(iVar1 + -0x1c8,0);
-  iVar1 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(iVar1 + -0x293c,0);
-  iVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(iVar1 + -0x150,1);
+  param_1[0x365].platform_orientation_delta.x = 0.0;
+  pCVar2 = core_morph_cpp_CMorph_dtor_FUN_004e0070((CMorph *)(param_1[0x35c].create_event + 0x14),0)
+  ;
+  pCVar3 = core_cloth_cpp_CCloth_dtor_FUN_00435160
+                     ((CCloth *)pCVar2[-0x4e].models[1].textures[0xc].textures[2].texture_name,0);
+  pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
+                     ((CFlame *)(pCVar3[-1].vertices[0x2ce].bone_index + 2),0);
+  pSVar5 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
+                     ((SFire *)(pCVar4[-2].base.create_event + 0x10),0);
+  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10((CVector3f *)&pSVar5[-0x16].bone_index,0);
+  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(pCVar6 + -0xf,0);
+  pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar6 + -0x26),0);
+  pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
+                     ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
+  pCVar9 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                     ((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 9),1);
   if ((param_2 & 2) == 0) {
-    return iVar1;
+    return pCVar9;
   }
-  FUN_00564494(iVar1);
-  return iVar1;
+  FUN_00564494(pCVar9);
+  return pCVar9;
 }

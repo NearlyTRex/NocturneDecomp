@@ -2,13 +2,13 @@
 // Address: 004b0730
 // Address Range: [[004b0730, 004b081f]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(undefined4 param_1,float *param_2,undefined4 *param_3)
+// Signature: int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(CGore *this_ptr,CVector3f *position,int *out_blood_type)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(uint param_1,float *param_2,uint *param_3)
+int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(CGore *this_ptr,CVector3f *position,int *out_blood_type)
 
 {
   int iVar1;
@@ -18,10 +18,10 @@ uint __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(uint param
   if (0 < _DAT_01c9e038) {
     iVar1 = 0x1c9e03c;
     do {
-      if (((ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)0.5) &&
-          (ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)1.333)) &&
-         (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)1.333)) {
-        *param_3 = *(uint *)(iVar1 + 0x10);
+      if (((ABS(position->y - *(float *)(iVar1 + 8)) <= (float)0.5) &&
+          (ABS(position->x - *(float *)(iVar1 + 4)) <= (float)1.333)) &&
+         (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)1.333)) {
+        *out_blood_type = *(int *)(iVar1 + 0x10);
         return 1;
       }
       iVar2 = iVar2 + 1;
@@ -33,10 +33,10 @@ uint __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730(uint param
     iVar1 = 0x1c7ccf4;
     do {
       if (((*(int *)(iVar1 + 0x10) == 0) &&
-          (ABS(param_2[1] - *(float *)(iVar1 + 8)) <= (float)0.5)) &&
-         ((ABS(*param_2 - *(float *)(iVar1 + 4)) <= (float)0.5 &&
-          (ABS(param_2[2] - *(float *)(iVar1 + 0xc)) <= (float)0.5)))) {
-        *param_3 = *(uint *)(iVar1 + 0x14);
+          (ABS(position->y - *(float *)(iVar1 + 8)) <= (float)0.5)) &&
+         ((ABS(position->x - *(float *)(iVar1 + 4)) <= (float)0.5 &&
+          (ABS(position->z - *(float *)(iVar1 + 0xc)) <= (float)0.5)))) {
+        *out_blood_type = *(int *)(iVar1 + 0x14);
         return 1;
       }
       iVar2 = iVar2 + 1;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(int param_1)
+; void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416d40(CBodyPart *this_ptr)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
 ; undefined8       Stack[-0x98]:8  local_98
@@ -126,7 +128,7 @@ section .text
     PUSH EAX                            ; 00416dcd
     PUSH EDI                            ; 00416dce
     CALL core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730 ; 00416dcf
-        ;   XREF to: 00417730 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730()
+        ;   XREF to: 00417730 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(CBodyPart * this_ptr, CVector3i * out_bbox_min, CVector3i * out_bbox_max)
     ADD ESP,0xc                         ; 00416dd4
     MOV EDX,dword ptr [ESP + 0x4c]      ; 00416dd7
     MOV EBX,dword ptr [ESP + 0x40]      ; 00416ddb
@@ -330,7 +332,7 @@ section .text
     ADD EBX,0x2a8                       ; 00417091
     INC ESI                             ; 00417097
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00417098
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,dword ptr [EAX]             ; 0041709d
     MOV dword ptr [EBX + 0xfffffd58],EDX ; 0041709f
     MOV EDX,dword ptr [EAX + 0x4]       ; 004170a5
@@ -355,7 +357,7 @@ section .text
     PUSH EBX                            ; 004170eb
     XOR ESI,ESI                         ; 004170ec
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004170ee
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004170f3
     MOV EAX,dword ptr [EDI + 0x178]     ; 004170f6
     MOV dword ptr [ESP + 0x80],ESI      ; 004170fc
@@ -372,7 +374,7 @@ section .text
     MOV ECX,dword ptr [EDI + 0x170]     ; 00417123
     PUSH ECX                            ; 00417129
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 0041712a
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 0041712f
     MOV ESI,dword ptr [EBX + 0x4]       ; 00417132
     XOR EDX,EDX                         ; 00417135
@@ -449,13 +451,13 @@ section .text
     FMULP ST3                           ; 004171f9
     FXCH                                ; 004171fb
     CALL crt_math.c_round_FUN_00563a30  ; 004171fd
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00417202
     CALL crt_math.c_round_FUN_00563a30  ; 00417204
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00417209
     CALL crt_math.c_round_FUN_00563a30  ; 0041720b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00417210
     FISTP dword ptr [EDX]               ; 00417212
     FXCH                                ; 00417214

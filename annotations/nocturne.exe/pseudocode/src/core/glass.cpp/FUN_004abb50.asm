@@ -43,14 +43,14 @@ section .text
     ADD EAX,0x1e4                       ; 004abb5f
     PUSH EAX                            ; 004abb64
     CALL core_mirror.cpp_CMirror_ctor_FUN_004d6550 ; 004abb65
-        ;   XREF to: 004d6550 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_CMirror_ctor_FUN_004d6550()
+        ;   XREF to: 004d6550 (UNCONDITIONAL_CALL)  ; CMirror * core_mirror.cpp_CMirror_ctor_FUN_004d6550(CMirror * this_ptr)
     ADD ESP,0x4                         ; 004abb6a
     PUSH 0x5993b0                       ; 004abb6d | g_CVectorTypeInfo_005993b0
     PUSH 0x19                           ; 004abb72
     ADD EAX,0x1a0                       ; 004abb74
     PUSH EAX                            ; 004abb79
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004abb7a
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffc7c]          ; 004abb7f
     MOV dword ptr [EDX + 0x14c],0x59e3b4 ; 004abb85 | PTR_core_glass.cpp_CGlass_setup_FUN_004abc90_0059e3b4
     MOV ESI,0x584ebf                    ; 004abb8f | = "HEADLITE.RAW"

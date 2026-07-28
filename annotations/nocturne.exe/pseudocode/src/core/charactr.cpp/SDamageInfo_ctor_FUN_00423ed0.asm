@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(undefined4 *param_1)
+; SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo *this_ptr)
 ;
+; Parameters:
+; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[50]:
 ;   core_actor.cpp_FUN_0040b300 at 0040b54b

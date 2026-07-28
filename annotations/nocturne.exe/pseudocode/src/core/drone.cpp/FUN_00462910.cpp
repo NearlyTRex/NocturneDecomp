@@ -9,12 +9,12 @@
 void core_drone_cpp_FUN_00462910(void)
 
 {
-  int iVar1;
+  CDrone *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbd3c);
-  if (iVar1 == 0) {
+  this_ptr = (CDrone *)FUN_0056497c(0xbd3c);
+  if (this_ptr == (CDrone *)0x0) {
     return;
   }
-  core_drone_cpp_CDrone_ctor_FUN_00462940(iVar1);
+  core_drone_cpp_CDrone_ctor_FUN_00462940(this_ptr);
   return;
 }

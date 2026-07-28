@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fc7
@@ -97,7 +99,7 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 0044e8e2 | DAT_005ae704
     PUSH EBP                            ; 0044e8e8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e8e9
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070()
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e8ee
     POP EBP                             ; 0044e8f1
         ;   Label: LAB_0044e8f1

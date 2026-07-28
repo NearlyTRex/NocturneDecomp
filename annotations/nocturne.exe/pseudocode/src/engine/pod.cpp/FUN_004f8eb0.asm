@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pod_cpp_FUN_004f8eb0(undefined4 param_1,undefined4 param_2)
+; void engine_pod_cpp_FUN_004f8eb0(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x240]:4  local_240
@@ -36,7 +36,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
-;   engine_pod.cpp_FUN_004f77d0
+;   engine_pod.cpp_crc32UpdateByte_FUN_004f77d0
 ;   engine_pod.cpp_FUN_004f7a80
 ;   engine_pod.cpp_FUN_004f7ae0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 004f8f20
     MOV EBX,dword ptr [ESP + 0x4]       ; 004f8f21
     CALL engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0 ; 004f8f25
-        ;   XREF to: 004f80e0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0()
+        ;   XREF to: 004f80e0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 004f8f2a
     CMP EBX,0x1                         ; 004f8f2d
     JNZ 0x004f90ac                      ; 004f8f30
@@ -99,14 +99,14 @@ section .text
     PUSH EDI                            ; 004f8f48
     PUSH 0x58d9a8                       ; 004f8f49 | DAT_0058d9a8
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004f8f4e
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004f8f53
     PUSH 0x58d9a9                       ; 004f8f56 | = "rb"
     PUSH EDI                            ; 004f8f5b
     MOV ESI,EAX                         ; 004f8f5c
     MOV EBP,dword ptr [ESP + 0x22c]     ; 004f8f5e
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f8f65
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004f8f6a
     PUSH 0x0                            ; 004f8f6d
     PUSH EBP                            ; 004f8f6f
@@ -116,7 +116,7 @@ section .text
     MOV EDI,ESI                         ; 004f8f75
     MOV dword ptr [ESP + 0x22c],EAX     ; 004f8f77
     CALL crt_stdio.c_fseek_FUN_0056582c ; 004f8f7e
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004f8f83
     MOV EBP,0xffffffff                  ; 004f8f86
     MOV dword ptr [ESP + 0x22c],EBX     ; 004f8f8b
@@ -132,7 +132,7 @@ section .text
     MOV ESI,0x1e428d0                   ; 004f8fae
     XOR EBX,EBX                         ; 004f8fb3
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f8fb5
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f8fba
     MOV EAX,EBP                         ; 004f8fbd
     XOR EDX,EDX                         ; 004f8fbf
@@ -142,8 +142,8 @@ section .text
     PUSH EAX                            ; 004f8fc4
     INC ESI                             ; 004f8fc5
     INC EBX                             ; 004f8fc6
-    CALL engine_pod.cpp_FUN_004f77d0    ; 004f8fc7
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
+    CALL engine_pod.cpp_crc32UpdateByte_FUN_004f77d0 ; 004f8fc7
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_crc32UpdateByte_FUN_004f77d0(uint current_crc, uchar data_byte)
     ADD ESP,0x8                         ; 004f8fcc
     CMP EBX,0x10000                     ; 004f8fcf
     JC 0x004f8fbf                       ; 004f8fd5
@@ -161,7 +161,7 @@ section .text
     PUSH 0x1e428d0                      ; 004f8ff2 | DAT_01e428d0
     XOR ESI,ESI                         ; 004f8ff7
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f8ff9
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f8ffe
     MOV EBX,0x1e428d0                   ; 004f9001
     MOV dword ptr [ESP + 0x228],EDI     ; 004f9006
@@ -176,8 +176,8 @@ section .text
     PUSH EBP                            ; 004f901d
     INC EBX                             ; 004f901e
     INC ESI                             ; 004f901f
-    CALL engine_pod.cpp_FUN_004f77d0    ; 004f9020
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
+    CALL engine_pod.cpp_crc32UpdateByte_FUN_004f77d0 ; 004f9020
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_crc32UpdateByte_FUN_004f77d0(uint current_crc, uchar data_byte)
     ADD ESP,0x8                         ; 004f9025
     MOV EBP,EAX                         ; 004f9028
     CMP ESI,EDI                         ; 004f902a
@@ -188,14 +188,14 @@ section .text
         ;   Label: LAB_004f9030
     PUSH EAX                            ; 004f9037
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004f9038
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f903d
     PUSH 0x58dce9                       ; 004f9040 | = "rb+"
     MOV EDX,dword ptr [ESP + 0x24c]     ; 004f9045
     PUSH EDX                            ; 004f904c
     MOV dword ptr [ESP + 0x224],EBP     ; 004f904d
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f9054
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004f9059
     MOV EBX,EAX                         ; 004f905c
     MOV EAX,dword ptr [ESP + 0x224]     ; 004f905e
@@ -204,7 +204,7 @@ section .text
     PUSH EAX                            ; 004f906a
     PUSH EBX                            ; 004f906b
     CALL crt_stdio.c_fseek_FUN_0056582c ; 004f906c
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004f9071
     PUSH EBX                            ; 004f9074
     PUSH 0x1                            ; 004f9075
@@ -212,17 +212,17 @@ section .text
     LEA EAX,[ESP + 0x228]               ; 004f9079
     PUSH EAX                            ; 004f9080
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f9081
-        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_00563a50()
+        ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f9086
     PUSH EBX                            ; 004f9089
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004f908a
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f908f
     PUSH 0x0                            ; 004f9092
     LEA EAX,[ESP + 0x4]                 ; 004f9094
     PUSH EAX                            ; 004f9098
     CALL engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 ; 004f9099
-        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
+        ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004f909e
     ADD ESP,0x230                       ; 004f90a1
     POP EBP                             ; 004f90a7

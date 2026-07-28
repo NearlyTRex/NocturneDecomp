@@ -2,19 +2,19 @@
 // Address: 0041e200
 // Address Range: [[0041e200, 0041e257]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(undefined4 param_1,float *param_2,float param_3)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 
 #include "nocturne.h"
 
-bool __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(uint param_1,float *param_2,float param_3)
+int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 
 {
-  float local_20;
-  float local_1c;
-  float local_18;
+  CVector3f local_20 [2];
   
-  core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(param_1,&local_20,param_2);
-  return (local_18 - param_2[2]) * (local_18 - param_2[2]) +
-         (local_1c - param_2[1]) * (local_1c - param_2[1]) +
-         (local_20 - *param_2) * (local_20 - *param_2) <= param_3 * param_3;
+  core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(this_ptr,local_20,sphere_center);
+  local_20[0].x = local_20[0].x - sphere_center->x;
+  local_20[0].y = local_20[0].y - sphere_center->y;
+  local_20[0].z = local_20[0].z - sphere_center->z;
+  return (uint)(local_20[0].z * local_20[0].z +
+                local_20[0].y * local_20[0].y + local_20[0].x * local_20[0].x <= radius * radius);
 }

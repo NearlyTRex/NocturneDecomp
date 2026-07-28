@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00413250(int param_1,undefined4 *param_2)
+; undefined4 core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00413250(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 0041326e
     MOV EBX,0x1                         ; 0041326f
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00413274
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00413279
     CMP ESI,EAX                         ; 0041327c
     JNZ 0x00413288                      ; 0041327e

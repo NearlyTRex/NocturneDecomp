@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 004a03ba
         ;   Label: LAB_004a03ba
     CALL core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 ; 004a03bb
-        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_ctor_FUN_0040eb70()
+        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040eb70(CAmmo * this_ptr)
     MOV EBX,EAX                         ; 004a03c0
     ADD ESP,0x4                         ; 004a03c2
     TEST EBX,EBX                        ; 004a03c5
@@ -51,7 +51,7 @@ section .text
     MOV EDX,dword ptr [0x005baf90]      ; 004a03cc | DAT_005baf90
     PUSH EDX                            ; 004a03d2 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004a03d3
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004a03d8
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004a03db
     PUSH EBX                            ; 004a03e1
@@ -63,7 +63,7 @@ section .text
     PUSH EBX                            ; 004a03f0
     MOV dword ptr [EBX + 0x310],EAX     ; 004a03f1
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a03f7
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a03fc
     PUSH 0x1                            ; 004a03ff
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a0401
@@ -73,7 +73,7 @@ section .text
     ADD EBX,0x1f5a0                     ; 004a0419
     PUSH EBX                            ; 004a041f
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 004a0420
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004a0425
     POP EBX                             ; 004a0428
     RET                                 ; 004a0429

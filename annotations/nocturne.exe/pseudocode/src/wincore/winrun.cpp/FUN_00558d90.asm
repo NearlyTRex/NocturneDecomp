@@ -136,12 +136,12 @@ section .text
     JZ 0x00558ddf                       ; 00558e75
         ;   XREF to: 00558ddf (CONDITIONAL_JUMP)  ; LAB_00558ddf
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00558e7b
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV dword ptr [0x02de20a4],0x1      ; 00558e80 | DAT_02de20a4
     JMP 0x00558ddf                      ; 00558e8a
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf
     CALL wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70 ; 00558e8f
-        ;   XREF to: 00553b70 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70()
+        ;   XREF to: 00553b70 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70()
         ;   Label: LAB_00558e8f
     PUSH -0xf                           ; 00558e94
     PUSH EDI                            ; 00558e96
@@ -197,7 +197,7 @@ section .text
     AND EAX,0xffff                      ; 00558f12
     PUSH EAX                            ; 00558f17
     CALL wincore_winrun.cpp_enqueueInput_FUN_00558ba0 ; 00558f18
-        ;   XREF to: 00558ba0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_enqueueInput_FUN_00558ba0()
+        ;   XREF to: 00558ba0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_enqueueInput_FUN_00558ba0(int input_value)
     ADD ESP,0x4                         ; 00558f1d
     JMP 0x00558ddf                      ; 00558f20
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf
@@ -315,7 +315,7 @@ section .text
     PUSH EDX                            ; 00559080
         ;   Label: LAB_00559080
     CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 00559081
-        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
+        ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_0055a1c0(HWND window_handle)
     ADD ESP,0x4                         ; 00559086
     JMP 0x00558ddf                      ; 00559089
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf

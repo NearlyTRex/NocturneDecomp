@@ -34,7 +34,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x4]       ; 00476f58
     PUSH EBP                            ; 00476f5b
     CALL shape_edittool.cpp_draw3DBorder_FUN_00476260 ; 00476f5c
-        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_draw3DBorder_FUN_00476260()
+        ;   XREF to: 00476260 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_00476260(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 00476f61
     LEA ESI,[EBX + 0x18]                ; 00476f64
     PUSH ESI                            ; 00476f67
@@ -48,7 +48,7 @@ section .text
     PUSH EDX                            ; 00476f7d
     MOV EDI,EAX                         ; 00476f7e
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00476f80
-        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60()
+        ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)
     MOV EDX,dword ptr [EBX + 0x8]       ; 00476f85
     ADD EDX,dword ptr [EBX + 0x10]      ; 00476f88
     SUB EDX,EAX                         ; 00476f8b
@@ -73,7 +73,7 @@ section .text
     MOV EAX,[0x01bcd070]                ; 00476fb3 | DAT_01bcd070
     PUSH EAX                            ; 00476fb8
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00476fb9
-        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawText_FUN_00490980()
+        ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00476fbe
     POP EBP                             ; 00476fc1
     POP EDI                             ; 00476fc2

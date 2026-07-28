@@ -26,7 +26,7 @@ section .text
     ADD EAX,0x1f570                     ; 004b9b66
     PUSH EAX                            ; 004b9b6b
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004b9b6c
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040c6d0(char * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 004b9b71
     RET                                 ; 004b9b74
 

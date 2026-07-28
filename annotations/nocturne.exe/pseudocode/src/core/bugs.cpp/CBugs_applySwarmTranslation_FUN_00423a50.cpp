@@ -2,59 +2,71 @@
 // Address: 00423a50
 // Address Range: [[00423a50, 00423b6b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(int param_1,float *param_2)
+// Signature: void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(CBugs *this_ptr,CVector3f *new_position)
 
 #include "nocturne.h"
 
-void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(int param_1,float *param_2)
+/* WARNING: Type propagation algorithm not settling */
+
+void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_00423a50(CBugs *this_ptr,CVector3f *new_position)
 
 {
-  float fVar1;
+  CLocation *pCVar1;
   float fVar2;
   float fVar3;
-  float *pfVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  int iVar8;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  char *pcVar7;
+  CVector3f *pCVar8;
+  char *pcVar9;
+  int iVar10;
+  CBugs *pCVar11;
   
-  fVar1 = *param_2 - *(float *)(param_1 + 0x20);
-  fVar2 = param_2[1] - *(float *)(param_1 + 0x24);
-  fVar3 = param_2[2] - *(float *)(param_1 + 0x28);
-  *(float *)(param_1 + 0x20) = *param_2;
-  *(float *)(param_1 + 0x24) = param_2[1];
-  *(float *)(param_1 + 0x28) = param_2[2];
-  iVar7 = 0;
-  if (0 < *(int *)(param_1 + 0xbd28)) {
-    pfVar4 = (float *)(param_1 + 0xbd34);
+  pCVar1 = &(this_ptr->base).base.base.location;
+  fVar4 = new_position->x - (pCVar1->position).x;
+  fVar5 = new_position->y - (this_ptr->base).base.base.location.position.y;
+  fVar6 = new_position->z - (this_ptr->base).base.base.location.position.z;
+  (pCVar1->position).x = new_position->x;
+  (this_ptr->base).base.base.location.position.y = new_position->y;
+  (this_ptr->base).base.base.location.position.z = new_position->z;
+  iVar10 = 0;
+  if (0 < this_ptr->count) {
+    pCVar8 = &this_ptr->bugs[0].position;
     do {
-      *pfVar4 = *pfVar4 - fVar1;
-      pfVar4[1] = pfVar4[1] - fVar2;
-      pfVar4[2] = pfVar4[2] - fVar3;
-      pfVar4[6] = pfVar4[6] - fVar1;
-      pfVar4[7] = pfVar4[7] - fVar2;
-      iVar7 = iVar7 + 1;
-      pfVar4[8] = pfVar4[8] - fVar3;
-      pfVar4 = pfVar4 + 0x10;
-    } while (iVar7 < *(int *)(param_1 + 0xbd28));
+      pCVar8->x = pCVar8->x - fVar4;
+      pCVar8->y = pCVar8->y - fVar5;
+      fVar2 = pCVar8[2].x;
+      pCVar8->z = pCVar8->z - fVar6;
+      pCVar8[2].x = fVar2 - fVar4;
+      pCVar8[2].y = pCVar8[2].y - fVar5;
+      iVar10 = iVar10 + 1;
+      pCVar8[2].z = pCVar8[2].z - fVar6;
+      pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);
+    } while (iVar10 < this_ptr->count);
   }
-  *(float *)(param_1 + 0x19834) = *(float *)(param_1 + 0x19834) - fVar1;
-  *(float *)(param_1 + 0x19838) = *(float *)(param_1 + 0x19838) - fVar2;
-  *(float *)(param_1 + 0x1983c) = *(float *)(param_1 + 0x1983c) - fVar3;
-  iVar8 = 0;
-  *(float *)(param_1 + 0x19840) = *(float *)(param_1 + 0x19840) - fVar1;
-  *(float *)(param_1 + 0x19844) = *(float *)(param_1 + 0x19844) - fVar2;
-  *(float *)(param_1 + 0x19848) = *(float *)(param_1 + 0x19848) - fVar3;
-  iVar7 = param_1;
+  fVar2 = (this_ptr->bounds).min.y;
+  (this_ptr->bounds).min.x = (this_ptr->bounds).min.x - fVar4;
+  fVar3 = (this_ptr->bounds).min.z;
+  (this_ptr->bounds).min.y = fVar2 - fVar5;
+  (this_ptr->bounds).min.z = fVar3 - fVar6;
+  pCVar8 = &(this_ptr->bounds).max;
+  iVar10 = 0;
+  fVar2 = (this_ptr->bounds).max.y;
+  pCVar8->x = pCVar8->x - fVar4;
+  fVar4 = (this_ptr->bounds).max.z;
+  (this_ptr->bounds).max.y = fVar2 - fVar5;
+  (this_ptr->bounds).max.z = fVar4 - fVar6;
+  pCVar11 = this_ptr;
   do {
-    iVar7 = iVar7 + 0x30;
-    iVar5 = iVar8 * 0x30 + param_1;
+    pCVar11 = (CBugs *)&(pCVar11->base).base.base.orient;
+    pcVar9 = (this_ptr->base).base.base.actor_name + iVar10 * 0x30;
     do {
-      iVar6 = iVar5 + 4;
-      *(float *)(iVar5 + 0x12720) = *(float *)(iVar5 + 0x12720) - fVar2;
-      iVar5 = iVar6;
-    } while (iVar6 != iVar7);
-    iVar8 = iVar8 + 1;
-  } while (iVar8 < 0xc);
+      pcVar7 = pcVar9 + 4;
+      *(float *)((int)pcVar9 + 0x12720) = *(float *)((int)pcVar9 + 0x12720) - fVar5;
+      pcVar9 = pcVar7;
+    } while ((CBugs *)pcVar7 != pCVar11);
+    iVar10 = iVar10 + 1;
+  } while (iVar10 < 0xc);
   return;
 }

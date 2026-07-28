@@ -2,66 +2,68 @@
 // Address: 00492e60
 // Address Range: [[00492e60, 00492f2f]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(int param_1,char *param_2)
+// Signature: int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont *this_ptr,char *text_string)
 
 #include "nocturne.h"
 
-int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(int param_1,char *param_2)
+int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont *this_ptr,char *text_string)
 
 {
-  char cVar1;
+  byte bVar1;
   int iVar2;
   int iVar3;
-  char *pcVar4;
+  byte *pbVar4;
   char *pcVar5;
+  char *pcVar6;
   
-  pcVar4 = param_2;
-  if (*(int *)(param_1 + 0x3190) != 0) {
+  pcVar5 = text_string;
+  if (this_ptr->win_font_enabled != 0) {
     do {
-      pcVar5 = pcVar4;
-      if (*pcVar4 == '\n') goto LAB_00492ee4;
-      if (*pcVar4 == '\0') break;
-      pcVar5 = pcVar4 + 1;
+      pcVar6 = pcVar5;
       if (*pcVar5 == '\n') goto LAB_00492ee4;
-      pcVar4 = pcVar4 + 2;
-    } while (*pcVar5 != '\0');
-    pcVar5 = (char *)0x0;
+      if (*pcVar5 == '\0') break;
+      pcVar6 = pcVar5 + 1;
+      if (*pcVar6 == '\n') goto LAB_00492ee4;
+      pcVar5 = pcVar5 + 2;
+    } while (*pcVar6 != '\0');
+    pcVar6 = (char *)0x0;
 LAB_00492ee4:
-    if (pcVar5 == (char *)0x0) {
-      iVar3 = (**(code **)(**(int **)(param_1 + 0x3194) + 0xc))(*(int **)(param_1 + 0x3194),param_2)
-      ;
+    if (pcVar6 == (char *)0x0) {
+      iVar3 = (*((this_ptr->win_font_helper->base).vtable)->getStringHeight)
+                        (&this_ptr->win_font_helper->base,text_string);
       return iVar3;
     }
   }
-  cVar1 = *param_2;
+  bVar1 = *text_string;
   iVar3 = 0;
   while( true ) {
-    if (cVar1 == '\0') {
+    if (bVar1 == 0) {
       return iVar3;
     }
-    if (*param_2 == '\n') break;
-    iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(param_1,*param_2);
+    if (*text_string == 10) break;
+    iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,(uint)(byte)*text_string);
     if (iVar3 < iVar2) {
-      iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(param_1,*param_2);
+      iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,(uint)(byte)*text_string)
+      ;
     }
-    cVar1 = param_2[1];
-    param_2 = param_2 + 1;
+    bVar1 = text_string[1];
+    text_string = text_string + 1;
   }
-  iVar3 = *(int *)(param_1 + 0x3170);
+  iVar3 = this_ptr->current_line_height;
   do {
-    iVar3 = iVar3 + *(int *)(param_1 + 0x3178) + *(int *)(param_1 + 0x3170);
-    pcVar4 = param_2 + 1;
+    iVar3 = iVar3 + this_ptr->line_spacing + this_ptr->current_line_height;
+    pbVar4 = (byte *)(text_string + 1);
     do {
-      param_2 = pcVar4;
-      if (*pcVar4 == '\n') goto LAB_00492ebc;
-      if (*pcVar4 == '\0') break;
-      param_2 = pcVar4 + 1;
-      if (*param_2 == '\n') goto LAB_00492ebc;
-      pcVar4 = pcVar4 + 2;
-    } while (*param_2 != '\0');
-    param_2 = (char *)0x0;
+      text_string = (char *)pbVar4;
+      if (*pbVar4 == 10) goto LAB_00492ebc;
+      if (*pbVar4 == 0) break;
+      text_string = (char *)(pbVar4 + 1);
+      if (*text_string == 10) goto LAB_00492ebc;
+      pbVar4 = pbVar4 + 2;
+    } while (*text_string != 0);
+    text_string = (char *)0x0;
 LAB_00492ebc:
-    if (param_2 == (char *)0x0) {
+    if ((byte *)text_string == (byte *)0x0) {
       return iVar3;
     }
   } while( true );

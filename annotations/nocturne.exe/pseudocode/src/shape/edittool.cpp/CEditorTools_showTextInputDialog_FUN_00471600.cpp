@@ -2,13 +2,15 @@
 // Address: 00471600
 // Address Range: [[00471600, 00471622]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
+int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags)
 
 {
-  shape_edittool_cpp_FUN_0046f7e0(param_2,param_3,param_4,param_5,0);
-  return;
+  int iVar1;
+  
+  iVar1 = shape_edittool_cpp_FUN_0046f7e0(prompt_text,input_buffer,buffer_size,dialog_flags,0);
+  return iVar1;
 }

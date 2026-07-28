@@ -22,7 +22,7 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f68
 ;   core_main.c_FUN_004c8510 at 004c8552
 ;   core_main.c_FUN_004c85f0 at 004c8c5e
-;   core_main.c_FUN_004c8e10 at 004c8e28
+;   core_main.c_FUN_004c90e0 at 004c9207
 ;   ... and 34 more
 ;
 ; Referenced Globals:
@@ -77,7 +77,7 @@ section .text
     MOV EBX,dword ptr [0x005c5010]      ; 00553942 | DAT_005c5010
     MOV dword ptr [0x02ddf56c],EDX      ; 00553948 | DAT_02ddf56c
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 0055394e
-        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
+        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
     MOV ESI,dword ptr [0x005b7620]      ; 00553953 | DAT_005b7620
     XOR EDI,EDI                         ; 00553959
     TEST ESI,ESI                        ; 0055395b
@@ -113,7 +113,7 @@ section .text
     JL 0x00553961                       ; 0055399f
         ;   XREF to: 00553961 (CONDITIONAL_JUMP)  ; LAB_00553961
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 005539a1
-        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
+        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
         ;   Label: LAB_005539a1
     MOV dword ptr [0x02ddf56c],0x1      ; 005539a6 | DAT_02ddf56c
     MOV EBX,dword ptr [0x02ddf554]      ; 005539b0 | DAT_02ddf554
@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_005539be
     MOV dword ptr [0x02ddf564],ESI      ; 005539c0 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 005539c6
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 005539cb
     POP EBP                             ; 005539cd
     POP EDI                             ; 005539ce
@@ -138,7 +138,7 @@ section .text
     XOR ESI,ESI                         ; 005539d7
     MOV dword ptr [0x02ddf564],ESI      ; 005539d9 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 005539df
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 005539e4
     POP EBP                             ; 005539e6
     POP EDI                             ; 005539e7
@@ -162,7 +162,7 @@ section .text
     LEA EAX,[EBP + -0x7c]               ; 00553a14
     PUSH EAX                            ; 00553a17
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00553a18
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00553a1d
     PUSH 0x0                            ; 00553a20
     PUSH 0x1                            ; 00553a22
@@ -248,7 +248,7 @@ section .text
     XOR ESI,ESI                         ; 00553b1b
     MOV dword ptr [0x02ddf564],ESI      ; 00553b1d | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b23
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 00553b28
     POP EBP                             ; 00553b2a
     POP EDI                             ; 00553b2b
@@ -272,7 +272,7 @@ section .text
     XOR ESI,ESI                         ; 00553b51
     MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b59
-        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
+        ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
     MOV ESP,EBP                         ; 00553b5e
     POP EBP                             ; 00553b60
     POP EDI                             ; 00553b61

@@ -12,7 +12,7 @@ void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_00444140(void)
   int iVar1;
   int iVar2;
   
-  memset(0x146ba10,0x7f,0x4b000);
+  memset((void *)0x146ba10,0x7f,0x4b000);
   iVar2 = 0;
   do {
     iVar1 = iVar2 + 4;

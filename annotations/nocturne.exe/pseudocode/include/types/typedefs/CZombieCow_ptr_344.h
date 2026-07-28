@@ -19,7 +19,7 @@ struct CZombieCow_ptr_344 {
     template<typename T> CZombieCow_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CZombieCow_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CZombieCow* operator->() const { return (CZombieCow*)_raw; }
-    CZombieCow* adj() const { return (CZombieCow*)((char*)_raw - offsetof(CZombieCow, base.base.model)); }
+    CZombieCow* adj() const { return (CZombieCow*)((char*)_raw - offsetof(CZombieCow, base.base.model.motion_controller.current_frame_number)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_CChain_setup_FUN_0042b8f0(int param_1)
+; void core_chain_cpp_CChain_setup_FUN_0042b8f0(CChain *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -30,7 +30,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x40]      ; 0042b8f7
     PUSH EBP                            ; 0042b8fb
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0042b8fc
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV EDX,dword ptr [EBP + 0x15c]     ; 0042b901
     ADD ESP,0x4                         ; 0042b907
     TEST EDX,EDX                        ; 0042b90a
@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 0042b965
     PUSH EBP                            ; 0042b966
     CALL core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 ; 0042b967
-        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890()
+        ;   XREF to: 0042b890 (UNCONDITIONAL_CALL)  ; CVector3f * core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain * this_ptr, CVector3f * out_point)
     LEA EDX,[EBP + 0x20]                ; 0042b96c
     FLD float ptr [EAX]                 ; 0042b96f
     FSUB float ptr [EDX]                ; 0042b971

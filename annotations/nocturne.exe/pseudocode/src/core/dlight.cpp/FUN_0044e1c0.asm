@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_boxactor.cpp_FUN_0041fa10 at 0041fa25
+;   core_boxactor.cpp_CLightActor_dtor_FUN_0041fa10 at 0041fa25
 ;   core_set.cpp_FUN_0050ad20 at 0050adaa
 ;
 ; Called Functions:

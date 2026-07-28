@@ -2,11 +2,11 @@
 // Address: 005340d0
 // Address Range: [[005340d0, 005341e3]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6)
+// Signature: CVector3f * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 
 #include "nocturne.h"
 
-float * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6)
+CVector3f * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 
 {
   float *pfVar1;
@@ -30,28 +30,28 @@ float * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0(int param_1
   float fVar19;
   float fVar20;
   
-  pfVar1 = (float *)(param_1 + 0x1c);
-  fVar5 = param_6[1];
+  pfVar1 = basis + 7;
+  fVar5 = p3->y;
   fVar6 = *pfVar1;
-  fVar7 = param_6[2];
+  fVar7 = p3->z;
   fVar8 = *pfVar1;
-  pfVar2 = (float *)(param_1 + 0x18);
-  fVar9 = param_5[1];
+  pfVar2 = basis + 6;
+  fVar9 = p2->y;
   fVar10 = *pfVar2;
-  fVar11 = param_5[2];
+  fVar11 = p2->z;
   fVar12 = *pfVar2;
-  pfVar3 = (float *)(param_1 + 0x14);
-  fVar13 = param_4[1];
+  pfVar3 = basis + 5;
+  fVar13 = p1->y;
   fVar14 = *pfVar3;
-  fVar15 = param_4[2];
+  fVar15 = p1->z;
   fVar16 = *pfVar3;
-  pfVar4 = (float *)(param_1 + 0x10);
-  fVar17 = param_3[1];
+  pfVar4 = basis + 4;
+  fVar17 = p0->y;
   fVar18 = *pfVar4;
-  fVar19 = param_3[2];
+  fVar19 = p0->z;
   fVar20 = *pfVar4;
-  *param_2 = *param_3 * *pfVar4 + *param_4 * *pfVar3 + *param_5 * *pfVar2 + *param_6 * *pfVar1;
-  param_2[1] = fVar17 * fVar18 + fVar13 * fVar14 + fVar9 * fVar10 + fVar5 * fVar6;
-  param_2[2] = fVar19 * fVar20 + fVar15 * fVar16 + fVar11 * fVar12 + fVar7 * fVar8;
-  return param_2;
+  out->x = p0->x * *pfVar4 + p1->x * *pfVar3 + p2->x * *pfVar2 + p3->x * *pfVar1;
+  out->y = fVar17 * fVar18 + fVar13 * fVar14 + fVar9 * fVar10 + fVar5 * fVar6;
+  out->z = fVar19 * fVar20 + fVar15 * fVar16 + fVar11 * fVar12 + fVar7 * fVar8;
+  return out;
 }

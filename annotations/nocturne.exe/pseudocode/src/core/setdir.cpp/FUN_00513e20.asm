@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setdir_cpp_FUN_00513e20(int param_1,undefined4 param_2,undefined4 param_3)
+; undefined4 core_setdir_cpp_FUN_00513e20(CDemonSet *param_1,int param_2,CVector3f *param_3)
 ;
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 00513e31
     XOR EBX,EBX                         ; 00513e32
     CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300 ; 00513e34
-        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300()
+        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet * this_ptr, int box_index)
     ADD ESP,0x8                         ; 00513e39
     MOV ECX,dword ptr [ESI + 0x15b028]  ; 00513e3c
     MOV EDI,EAX                         ; 00513e42
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_00513e48
     PUSH ESI                            ; 00513e49
     CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300 ; 00513e4a
-        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300()
+        ;   XREF to: 00514300 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet * this_ptr, int box_index)
     ADD ESP,0x8                         ; 00513e4f
     CMP EAX,EDI                         ; 00513e52
     JZ 0x00513e66                       ; 00513e54
@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 00513e67
     PUSH ESI                            ; 00513e68
     CALL core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80 ; 00513e69
-        ;   XREF to: 00513d80 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80()
+        ;   XREF to: 00513d80 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet * this_ptr, int box_index, CVector3f * point)
     ADD ESP,0xc                         ; 00513e6e
     TEST EAX,EAX                        ; 00513e71
     JZ 0x00513e56                       ; 00513e73

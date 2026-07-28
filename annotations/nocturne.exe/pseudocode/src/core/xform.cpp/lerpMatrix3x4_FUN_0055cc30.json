@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,23 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 580,
+    "complexity_score": 458,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
-    "suspect_count": 46,
+    "pseudocode_lines": 73,
+    "suspect_count": 35,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "unaffected_reg",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "unrolled_memcpy"
     ],
-    "total_lines": 206
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -177,7 +177,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_lerpMatrix3x4_FUN_0055cc30",
-    "signature": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(undefined4 *param_1,undefined4 *param_2,float param_3)"
+    "signature": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)"
   },
   "function_calls": [
     {
@@ -502,13 +502,62 @@
   "static_analysis": {
     "analyzed_file": "lerpMatrix3x4_FUN_0055cc30.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 8,
       "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 15,
+          "line": 45,
+          "message": "Array 'afStack_6c[7]' accessed at index 12, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 15,
+          "line": 46,
+          "message": "Array 'afStack_6c[7]' accessed at index 13, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 67,
+          "line": 53,
+          "message": "Array 'afStack_6c[7]' accessed at index 8, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 25,
+          "line": 54,
+          "message": "Array 'afStack_6c[7]' accessed at index 9, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "pointerOutOfBounds",
+          "column": 70,
+          "line": 50,
+          "message": "Undefined behaviour, pointer arithmetic 'afStack_6c+0xb' is out of bounds.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 51,
+          "message": "Uninitialized variable: local_50",
+          "severity": "error"
+        },
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 91,
+          "line": 78,
           "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 36,
+          "line": 38,
+          "message": "Uninitialized variable: afStack_1c",
           "severity": "error"
         }
       ],
@@ -518,56 +567,48 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(uint *param_1,uint *param_2,float param_3)",
+      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(uint *param_1,uint *param_2,float param_3)",
+      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(uint *param_1,uint *param_2,float param_3)",
+      "text": "void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
-      "match": "auStackY_184c",
+      "line": 11,
+      "match": "afStackY_184c",
       "severity": "moderate",
-      "text": "uint auStackY_184c [1498];",
+      "text": "float afStackY_184c [1498];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 <= 0.0) {",
@@ -575,15 +616,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar3 = param_1;",
+      "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 28,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 < 1.0) {",
@@ -591,159 +632,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_matrixToQuaternion_FUN_0055cf10(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)((int)auStack_6c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_6c + (uint)bVar5 * 0xfffffff8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + ((uint)bVar5 * -2 + 4) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 5) * 4))",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "core_xform_cpp_matrixToQuaternion_FUN_0055cf10(param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_3c + (uint)bVar5 * 0xfffffff8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_3c + ((uint)bVar5 * -2 + -8) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_3c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_3c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_3c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)auStack_3c",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_3c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 43,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_xform_cpp_slerpQuaternion_FUN_0055d2d0(&local_70,&local_40,param_3);",
+      "text": "core_xform_cpp_slerpQuaternion_FUN_0055d2d0(&local_70,afStack_6c + 0xb,param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + (uint)bVar5 * 0xfffffff8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + ((uint)bVar5 * -2 + -8) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(uint *)((int)auStack_2c",
-      "severity": "moderate",
-      "text": "((uint *)((int)auStack_2c + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + -7) * 4))",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 51,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = 1.0 - param_3;",
@@ -751,95 +664,103 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_c4 = (float)param_2[3] * param_3 + (float)param_1[3] * fVar1;",
+      "text": "local_d0.m[0].z = param_2->m[0].z * param_3 + param_1->m[0].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 52,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_c4 = (float)param_2[3] * param_3 + (float)param_1[3] * fVar1;",
+      "text": "local_d0.m[0].z = param_2->m[0].z * param_3 + param_1->m[0].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_c4 = (float)param_2[3] * param_3 + (float)param_1[3] * fVar1;",
+      "text": "local_d0.m[0].z = param_2->m[0].z * param_3 + param_1->m[0].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_b4 = (float)param_2[7] * param_3 + (float)param_1[7] * fVar1;",
+      "text": "local_d0.m[1].z = param_2->m[1].z * param_3 + param_1->m[1].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 53,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_b4 = (float)param_2[7] * param_3 + (float)param_1[7] * fVar1;",
+      "text": "local_d0.m[1].z = param_2->m[1].z * param_3 + param_1->m[1].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_b4 = (float)param_2[7] * param_3 + (float)param_1[7] * fVar1;",
+      "text": "local_d0.m[1].z = param_2->m[1].z * param_3 + param_1->m[1].z * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_a4 = (float)param_2[0xb] * param_3 + fVar1 * (float)param_1[0xb];",
+      "text": "local_d0.m[2].z = param_2->m[2].z * param_3 + fVar1 * param_1->m[2].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 57,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_a4 = (float)param_2[0xb] * param_3 + fVar1 * (float)param_1[0xb];",
+      "text": "local_d0.m[2].z = param_2->m[2].z * param_3 + fVar1 * param_1->m[2].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_a4 = (float)param_2[0xb] * param_3 + fVar1 * (float)param_1[0xb];",
+      "text": "local_d0.m[2].z = param_2->m[2].z * param_3 + fVar1 * param_1->m[2].z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar3 = param_2;",
+      "text": "pCVar3 = param_2;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 84,
+      "line": 71,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = *puVar4;",
+      "text": "*unaff_ESI = *pfVar4;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 86,
+      "line": 73,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
@@ -847,15 +768,39 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 86,
+      "line": 73,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `&local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&local_30",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&local_30",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_30 + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2 + 8];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 77,
+      "line": 64,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -863,11 +808,27 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 83,
+      "line": 70,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_30 + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2 + 8];",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0055cc75, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -889,12 +850,60 @@
       "type": "param_count_too_few"
     },
     {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 91,
+      "description": "Array 'afStack_6c[7]' accessed at index 12, which is out of bounds.",
+      "line": 45,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "afStack_6c[(uint)bVar5 * -2 + 0xc] = afStack_6c[(uint)bVar5 * -2 + 4];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'afStack_6c[7]' accessed at index 13, which is out of bounds.",
+      "line": 46,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'afStack_6c[7]' accessed at index 8, which is out of bounds.",
+      "line": 53,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "*(float *)((int)&local_30 + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2 + 8];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'afStack_6c[7]' accessed at index 9, which is out of bounds.",
+      "line": 54,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "*pfVar4 = afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 9];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Uninitialized variable: local_50",
+      "line": 51,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*unaff_ESI = *puVar4;",
+      "text": "local_30.w = local_50;",
       "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 78,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*unaff_ESI = *pfVar4;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: afStack_1c",
+      "line": 38,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "afStack_6c[(uint)bVar5 * -2] = afStack_1c[(uint)bVar5 * -2];",
+      "type": "static_legacy_uninitvar"
     }
   ]
 }

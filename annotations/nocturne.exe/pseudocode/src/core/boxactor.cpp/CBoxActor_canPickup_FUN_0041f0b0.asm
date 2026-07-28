@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_boxactor_cpp_CBoxActor_canPickup_FUN_0041f0b0(int param_1,undefined4 param_2)
+; undefined4 core_boxactor_cpp_CBoxActor_canPickup_FUN_0041f0b0(int param_1,CDemonActor *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0041f0cd
     PUSH ECX                            ; 0041f0d1
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 0041f0d2
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0041f0d7
     TEST EAX,EAX                        ; 0041f0da
     JNZ 0x0041f0bd                      ; 0041f0dc

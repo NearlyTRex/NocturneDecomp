@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056720c at 00567241
+;   crt_startup.c_initialize_runtime_FUN_0056720c at 00567241
 ;
 ; Referenced Globals:
 ;   void* PTR_GetStdHandle_00575538 = 00175dee

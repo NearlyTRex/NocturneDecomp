@@ -2,11 +2,11 @@
 // Address: 00533f10
 // Address Range: [[00533f10, 00534020]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6)
+// Signature: CVector3f * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 
 #include "nocturne.h"
 
-float * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6)
+CVector3f * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 
 {
   float *pfVar1;
@@ -29,27 +29,27 @@ float * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10(float *param_
   float fVar18;
   float fVar19;
   
-  pfVar1 = param_1 + 3;
-  fVar4 = param_6[1];
+  pfVar1 = basis + 3;
+  fVar4 = p3->y;
   fVar5 = *pfVar1;
-  fVar6 = param_6[2];
+  fVar6 = p3->z;
   fVar7 = *pfVar1;
-  pfVar2 = param_1 + 2;
-  fVar8 = param_5[1];
+  pfVar2 = basis + 2;
+  fVar8 = p2->y;
   fVar9 = *pfVar2;
-  fVar10 = param_5[2];
+  fVar10 = p2->z;
   fVar11 = *pfVar2;
-  pfVar3 = param_1 + 1;
-  fVar12 = param_4[1];
+  pfVar3 = basis + 1;
+  fVar12 = p1->y;
   fVar13 = *pfVar3;
-  fVar14 = param_4[2];
+  fVar14 = p1->z;
   fVar15 = *pfVar3;
-  fVar16 = param_3[1];
-  fVar17 = *param_1;
-  fVar18 = param_3[2];
-  fVar19 = *param_1;
-  *param_2 = *param_3 * *param_1 + *param_4 * *pfVar3 + *param_5 * *pfVar2 + *param_6 * *pfVar1;
-  param_2[1] = fVar16 * fVar17 + fVar12 * fVar13 + fVar8 * fVar9 + fVar4 * fVar5;
-  param_2[2] = fVar18 * fVar19 + fVar14 * fVar15 + fVar10 * fVar11 + fVar6 * fVar7;
-  return param_2;
+  fVar16 = p0->y;
+  fVar17 = *basis;
+  fVar18 = p0->z;
+  fVar19 = *basis;
+  out->x = p0->x * *basis + p1->x * *pfVar3 + p2->x * *pfVar2 + p3->x * *pfVar1;
+  out->y = fVar16 * fVar17 + fVar12 * fVar13 + fVar8 * fVar9 + fVar4 * fVar5;
+  out->z = fVar18 * fVar19 + fVar14 * fVar15 + fVar10 * fVar11 + fVar6 * fVar7;
+  return out;
 }

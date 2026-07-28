@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(int param_1,undefined4 param_2)
+; void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight *this_ptr,float intensity)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   intensity
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
@@ -42,7 +45,7 @@ section .text
     FMUL double ptr [0x0057c94e]        ; 004520a6 | DOUBLE_0057c94e
     PUSH 0x0                            ; 004520ac
     CALL crt_math.c_round_FUN_00563a30  ; 004520ae
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0xc]         ; 004520b3
     MOV EDX,dword ptr [ESP + 0xc]       ; 004520b7
     PUSH 0x0                            ; 004520bb
@@ -50,7 +53,7 @@ section .text
     PUSH EBX                            ; 004520c4
     PUSH EAX                            ; 004520c5
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 004520c6
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 004520cb
     POP EBX                             ; 004520ce
     ADD ESP,0x4                         ; 004520cf
@@ -61,7 +64,7 @@ section .text
     FMUL double ptr [0x0057c946]        ; 004520db | DOUBLE_0057c946
     PUSH 0x0                            ; 004520e1
     CALL crt_math.c_round_FUN_00563a30  ; 004520e3
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 004520e8
     MOV EDX,dword ptr [ESP + 0x8]       ; 004520ec
     PUSH 0x0                            ; 004520f0
@@ -69,7 +72,7 @@ section .text
     PUSH ECX                            ; 004520f9
     PUSH EAX                            ; 004520fa
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 004520fb
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 00452100
     ADD ESP,0x4                         ; 00452103
     RET                                 ; 00452106

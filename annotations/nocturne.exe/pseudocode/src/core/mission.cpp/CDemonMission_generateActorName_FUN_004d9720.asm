@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(undefined4 param_1,char *param_2)
+; void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined1       Stack[-0x2b]:1  local_2b
@@ -37,7 +40,7 @@ section .text
     PUSH EDI                            ; 004d972a
     MOV byte ptr [EDI],0x0              ; 004d972b
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 004d972e
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004d9733
     MOV BL,byte ptr [EAX]               ; 004d9736
     MOV EDX,EAX                         ; 004d9738
@@ -52,7 +55,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 004d9748
     PUSH EDX                            ; 004d974c
     CALL core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680 ; 004d974d
-        ;   XREF to: 004d9680 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680()
+        ;   XREF to: 004d9680 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680(CDemonMission * this_ptr, char * out_buf, char * base_name)
     ADD ESP,0xc                         ; 004d9752
     MOV ESI,ESP                         ; 004d9755
     PUSH EDI                            ; 004d9757

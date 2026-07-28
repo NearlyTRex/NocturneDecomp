@@ -9,12 +9,12 @@
 void core_biggs_cpp_FUN_00415340(void)
 
 {
-  int iVar1;
+  CBiggs *this_ptr;
   
-  iVar1 = FUN_0056497c(0xcb38);
-  if (iVar1 == 0) {
+  this_ptr = (CBiggs *)FUN_0056497c(0xcb38);
+  if (this_ptr == (CBiggs *)0x0) {
     return;
   }
-  core_biggs_cpp_CBiggs_ctor_FUN_00415370(iVar1);
+  core_biggs_cpp_CBiggs_ctor_FUN_00415370(this_ptr);
   return;
 }

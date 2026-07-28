@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_FUN_0040f1a0(int param_1,undefined4 param_2)
+; void core_ammobox_cpp_FUN_0040f1a0(int param_1,CInventory *param_2)
 ;
 ;
 ; XREF[2]:
@@ -50,7 +50,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040f1bf
     PUSH EBX                            ; 0040f1c3
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 0040f1c4
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     MOV dword ptr [EBP + 0x318],0x0     ; 0040f1c9
     ADD ESP,0xc                         ; 0040f1d3
     MOV dword ptr [EBP + 0x30c],0x0     ; 0040f1d6
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 0040f1fd (CONDITIONAL_JUMP)  ; LAB_0040f1fd
     PUSH EAX                            ; 0040f1f4
     CALL core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 ; 0040f1f5
-        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_ctor_FUN_0040eb70()
+        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040eb70(CAmmo * this_ptr)
     ADD ESP,0x4                         ; 0040f1fa
     PUSH EDI                            ; 0040f1fd
         ;   Label: LAB_0040f1fd
@@ -89,7 +89,7 @@ section .text
     PUSH ESI                            ; 0040f22e
     PUSH EBX                            ; 0040f22f
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 0040f230
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 0040f235
     MOV EAX,dword ptr [EBP + 0x30c]     ; 0040f238
     PUSH EAX                            ; 0040f23e
@@ -106,7 +106,7 @@ section .text
     PUSH ESI                            ; 0040f260
     PUSH EBX                            ; 0040f261
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 0040f262
-        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80()
+        ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 0040f267
     MOV EDI,EBX                         ; 0040f26a
     MOV ESI,0x57838f                    ; 0040f26c | = "Some_ammo"
@@ -131,7 +131,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 0040f28e
     PUSH EDX                            ; 0040f292
     CALL core_inv.cpp_CInventory_addItem_FUN_004bf360 ; 0040f293
-        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_addItem_FUN_004bf360()
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004bf360(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0040f298
     MOV dword ptr [EBP + 0x30c],0x0     ; 0040f29b
     POP ESI                             ; 0040f2a5

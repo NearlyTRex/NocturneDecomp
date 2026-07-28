@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_004b8560
     PUSH EAX                            ; 004b8565
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004b8566
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b856b
     ADD ESP,0x4                         ; 004b856e
     CMP EAX,0xa                         ; 004b8571

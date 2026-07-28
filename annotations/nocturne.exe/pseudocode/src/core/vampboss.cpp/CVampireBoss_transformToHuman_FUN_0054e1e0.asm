@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(int param_1)
+; void __cdecl core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_0054e1e0(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054cd9f
@@ -27,7 +29,7 @@ section .text
     PUSH EAX                            ; 0054e1f2
     MOV dword ptr [EBX + 0xbe168],0x3   ; 0054e1f3
     CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960 ; 0054e1fd
-        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960()
+        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960(CMotionController * this_ptr, char * motion_name, float frame_number)
     ADD ESP,0xc                         ; 0054e202
     PUSH 0x59725c                       ; 0054e205 | = "voicuhuman.wav"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0054e20a

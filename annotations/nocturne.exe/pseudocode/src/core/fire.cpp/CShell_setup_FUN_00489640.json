@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,16 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 258,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_memcpy"
     ],
     "total_lines": 67
   },
@@ -153,7 +154,7 @@
     ],
     "convention": "unknown",
     "name": "core_fire.cpp_CShell_setup_FUN_00489640",
-    "signature": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)"
+    "signature": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)"
   },
   "function_calls": [
     {
@@ -240,7 +241,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,uint param_2,uint *param_3,uint param_4,uint param_5)",
+      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)",
       "type": "unnamed_param"
     },
     {
@@ -248,7 +249,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,uint param_2,uint *param_3,uint param_4,uint param_5)",
+      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)",
       "type": "unnamed_param"
     },
     {
@@ -256,7 +257,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,uint param_2,uint *param_3,uint param_4,uint param_5)",
+      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)",
       "type": "unnamed_param"
     },
     {
@@ -264,7 +265,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,uint param_2,uint *param_3,uint param_4,uint param_5)",
+      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)",
       "type": "unnamed_param"
     },
     {
@@ -272,7 +273,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(int param_1,uint param_2,uint *param_3,uint param_4,uint param_5)",
+      "text": "void core_fire_cpp_CShell_setup_FUN_00489640(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,float param_5)",
       "type": "unnamed_param"
     },
     {
@@ -304,7 +305,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x38) != param_3) {",
+      "text": "if (param_1 + 1 != param_3) {",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +313,7 @@
       "line": 8,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((uint *)(param_1 + 0x38) != param_3) {",
+      "text": "if (param_1 + 1 != param_3) {",
       "type": "unnamed_param"
     },
     {
@@ -320,7 +321,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *param_3;",
+      "text": "param_1[1].position.x = (param_3->position).x;",
       "type": "unnamed_param"
     },
     {
@@ -328,7 +329,7 @@
       "line": 9,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = *param_3;",
+      "text": "param_1[1].position.x = (param_3->position).x;",
       "type": "unnamed_param"
     },
     {
@@ -336,7 +337,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c) = param_3[1];",
+      "text": "param_1[1].position.y = (param_3->position).y;",
       "type": "unnamed_param"
     },
     {
@@ -344,7 +345,7 @@
       "line": 10,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c) = param_3[1];",
+      "text": "param_1[1].position.y = (param_3->position).y;",
       "type": "unnamed_param"
     },
     {
@@ -352,7 +353,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x40) = param_3[2];",
+      "text": "param_1[1].position.z = (param_3->position).z;",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +361,7 @@
       "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x40) = param_3[2];",
+      "text": "param_1[1].position.z = (param_3->position).z;",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +369,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x54) = param_5;",
+      "text": "param_1[1].gravity_acceleration = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -376,7 +377,7 @@
       "line": 13,
       "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x54) = param_5;",
+      "text": "param_1[1].gravity_acceleration = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -384,7 +385,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x44) = uVar1;",
+      "text": "param_1[1].velocity.x = fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -392,7 +393,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x50) = 0;",
+      "text": "param_1[1].lifetime_remaining = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +401,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x18) = 0x40400000;",
+      "text": "param_1->lifetime_remaining = 3.0;",
       "type": "unnamed_param"
     },
     {
@@ -408,8 +409,16 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x48) = uVar1;",
+      "text": "param_1[1].velocity.y = fVar1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 9,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "param_1[1].position.x = (param_3->position).x;",
+      "type": "unrolled_memcpy"
     },
     {
       "call_site_count": 1,

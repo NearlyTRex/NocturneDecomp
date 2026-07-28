@@ -12,7 +12,7 @@ void core_event_cpp_FUN_0047a5e0(char *param_1)
   char cVar1;
   char *pcVar2;
   uint uVar3;
-  int iVar4;
+  SIZE_T n;
   
   uVar3 = 0xffffffff;
   pcVar2 = param_1;
@@ -22,19 +22,19 @@ void core_event_cpp_FUN_0047a5e0(char *param_1)
     cVar1 = *pcVar2;
     pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
-  iVar4 = ~uVar3 - 1;
-  if (0 < iVar4) {
-    pcVar2 = param_1 + iVar4;
+  n = ~uVar3 - 1;
+  if (0 < (int)n) {
+    pcVar2 = param_1 + n;
     do {
       if (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
-      iVar4 = iVar4 + -1;
+      n = n - 1;
       pcVar2 = pcVar2 + -1;
-    } while (0 < iVar4);
+    } while (0 < (int)n);
   }
-  param_1[iVar4] = '\0';
+  param_1[n] = '\0';
   while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {
-    memmove(param_1,param_1 + 1,iVar4);
-    iVar4 = iVar4 + -1;
+    memmove(param_1,param_1 + 1,n);
+    n = n - 1;
   }
   return;
 }

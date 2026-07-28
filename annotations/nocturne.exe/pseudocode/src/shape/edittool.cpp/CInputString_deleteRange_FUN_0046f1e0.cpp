@@ -2,30 +2,31 @@
 // Address: 0046f1e0
 // Address Range: [[0046f1e0, 0046f24c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(int param_1,int param_2,int param_3)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString *this_ptr,int start_pos,int end_pos)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(int param_1,int param_2,int param_3)
+void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0046f1e0(CInputString *this_ptr,int start_pos,int end_pos)
 
 {
   int iVar1;
   
-  if (param_2 < 0) {
-    param_2 = 0;
+  if (start_pos < 0) {
+    start_pos = 0;
   }
-  if (*(int *)(param_1 + 0x130) < param_3) {
-    param_3 = *(int *)(param_1 + 0x130);
+  if (this_ptr->current_length < end_pos) {
+    end_pos = this_ptr->current_length;
   }
-  if (param_2 < param_3) {
+  if (start_pos < end_pos) {
     memmove
-              (param_1 + param_2,param_1 + param_3,*(int *)(param_1 + 0x130) - param_3);
-    iVar1 = *(int *)(param_1 + 0x130) - (param_3 - param_2);
-    *(int *)(param_1 + 0x130) = iVar1;
-    if (iVar1 < *(int *)(param_1 + 0x134)) {
-      *(int *)(param_1 + 0x134) = iVar1;
+              (this_ptr->string_data + start_pos,this_ptr->string_data + end_pos,
+               this_ptr->current_length - end_pos);
+    iVar1 = this_ptr->current_length - (end_pos - start_pos);
+    this_ptr->current_length = iVar1;
+    if (iVar1 < this_ptr->cursor_position) {
+      this_ptr->cursor_position = iVar1;
     }
-    *(byte *)(param_1 + *(int *)(param_1 + 0x130)) = 0;
+    this_ptr->string_data[this_ptr->current_length] = '\0';
   }
   return;
 }

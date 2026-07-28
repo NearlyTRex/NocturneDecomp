@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(undefined4 param_1,int *param_2)
+; void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(CDemonSet *this_ptr,int *light_state_buffer)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   light_state_buffer
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dca9

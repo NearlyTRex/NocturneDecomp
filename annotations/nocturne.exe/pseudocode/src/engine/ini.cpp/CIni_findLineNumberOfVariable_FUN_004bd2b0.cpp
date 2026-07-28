@@ -2,76 +2,76 @@
 // Address: 004bd2b0
 // Address Range: [[004bd2b0, 004bd47e]]
 // Convention: unknown
-// Signature: int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5)
 
 #include "nocturne.h"
 
-int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,uint param_3,uint param_4,uint param_5)
+int engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(uint *param_1,uint param_2,char *param_3,char *param_4,char *param_5)
 
 {
   byte bVar1;
   bool bVar2;
-  int iVar3;
+  _FILE *stream;
+  char *pcVar3;
   int iVar4;
-  int iVar5;
-  char *pcVar6;
-  char *pcVar7;
+  char *pcVar5;
+  int iVar6;
   char local_214 [256];
-  byte local_114 [256];
+  char local_114 [256];
   char *local_14;
   
-  iVar5 = 0;
+  iVar6 = 0;
   bVar2 = false;
   *param_1 = 1;
-  iVar3 = _fopen(param_4,"rt");
-  if (iVar3 == 0) {
+  stream = _fopen(param_4,"rt");
+  if (stream == (_FILE *)0x0) {
     PTR_01cc4800 = "..\\engine\\ini.cpp";
     INT_01cc4804 = 0xf5;
     core_main_c_FUN_004c8440("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   _sprintf(local_114,"[%s]\n",param_2);
-  while (((*(byte *)(iVar3 + 0xc) & 0x10) == 0 &&
-         (iVar4 = _fgets(local_214,0xff,iVar3), iVar4 != 0))) {
+  while (((stream->_flag & 0x10) == 0 &&
+         (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
     iVar4 = _strcmp(local_214,local_114);
     if (iVar4 == 0) {
-      bVar1 = *(byte *)(iVar3 + 0xc);
+      bVar1 = (byte)stream->_flag;
       bVar2 = false;
       goto LAB_004bd325;
     }
-    iVar5 = iVar5 + 1;
+    iVar6 = iVar6 + 1;
   }
 LAB_004bd3e0:
-  _fclose(iVar3);
+  _fclose(stream);
   if (bVar2) {
-    return iVar5;
+    return iVar6;
   }
   return 0;
 LAB_004bd325:
   if (((bVar1 & 0x10) != 0) ||
-     (iVar4 = _fgets(local_214,0xff,iVar3), pcVar7 = local_214, iVar4 == 0))
-  goto LAB_004bd3e0;
+     (pcVar3 = _fgets(local_214,0xff,stream), pcVar5 = local_214,
+     pcVar3 == (char *)0x0)) goto LAB_004bd3e0;
   do {
-    pcVar6 = pcVar7;
-    if (*pcVar7 == '\n') goto LAB_004bd362;
-    if (*pcVar7 == '\0') break;
-    pcVar6 = pcVar7 + 1;
-    if (*pcVar6 == '\n') goto LAB_004bd362;
-    pcVar7 = pcVar7 + 2;
-  } while (*pcVar6 != '\0');
-  pcVar6 = (char *)0x0;
+    pcVar3 = pcVar5;
+    if (*pcVar5 == '\n') goto LAB_004bd362;
+    if (*pcVar5 == '\0') break;
+    pcVar3 = pcVar5 + 1;
+    if (*pcVar3 == '\n') goto LAB_004bd362;
+    pcVar5 = pcVar5 + 2;
+  } while (*pcVar3 != '\0');
+  pcVar3 = (char *)0x0;
 LAB_004bd362:
-  pcVar7 = local_214;
-  if (pcVar6 != (char *)0x0) {
-    *pcVar6 = '\0';
-    pcVar7 = local_214;
+  pcVar5 = local_214;
+  if (pcVar3 != (char *)0x0) {
+    *pcVar3 = '\0';
+    pcVar5 = local_214;
   }
   do {
-    local_14 = pcVar7;
-    if (*pcVar7 == '=') goto LAB_004bd385;
-    if (*pcVar7 == '\0') break;
-    local_14 = pcVar7 + 1;
+    local_14 = pcVar5;
+    if (*pcVar5 == '=') goto LAB_004bd385;
+    if (*pcVar5 == '\0') break;
+    local_14 = pcVar5 + 1;
     if (*local_14 == '=') goto LAB_004bd385;
-    pcVar7 = pcVar7 + 2;
+    pcVar5 = pcVar5 + 2;
   } while (*local_14 != '\0');
   local_14 = (char *)0x0;
 LAB_004bd385:
@@ -87,7 +87,7 @@ LAB_004bd385:
     }
     goto LAB_004bd3e0;
   }
-  bVar1 = *(byte *)(iVar3 + 0xc);
-  iVar5 = iVar5 + 1;
+  bVar1 = (byte)stream->_flag;
+  iVar6 = iVar6 + 1;
   goto LAB_004bd325;
 }

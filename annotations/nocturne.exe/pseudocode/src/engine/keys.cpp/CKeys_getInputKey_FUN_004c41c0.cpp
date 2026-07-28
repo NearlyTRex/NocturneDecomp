@@ -2,15 +2,15 @@
 // Address: 004c41c0
 // Address Range: [[004c41c0, 004c41ca]]
 // Convention: __cdecl
-// Signature: undefined1 __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(void)
+// Signature: int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(CKeys *this_ptr)
 
 #include "nocturne.h"
 
-byte __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(void)
+int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(CKeys *this_ptr)
 
 {
-  byte uVar1;
+  uint uVar1;
   
   uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
-  return uVar1;
+  return uVar1 & 0xff;
 }

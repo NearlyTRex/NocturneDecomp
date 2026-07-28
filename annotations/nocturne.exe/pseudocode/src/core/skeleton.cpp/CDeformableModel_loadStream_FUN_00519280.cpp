@@ -2,20 +2,21 @@
 // Address: 00519280
 // Address Range: [[00519280, 00519adb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(CDeformableModel *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)
+void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
+  SMRGLTextureLod *pSVar1;
   int iVar2;
-  int *piVar3;
-  byte *pbVar4;
+  int iVar3;
+  float *pfVar4;
   int iVar5;
-  byte *pbVar6;
-  ushort *puVar7;
+  char *pcVar6;
+  SVert *pSVar7;
+  ushort *puVar8;
   uint local_8c;
   byte local_88 [4];
   byte local_84 [4];
@@ -25,35 +26,35 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *par
   ushort local_74 [2];
   byte local_70 [4];
   byte local_6c [4];
-  uint local_68;
+  int local_68;
   int local_64;
   int local_60;
-  uint local_5c;
-  uint local_58;
-  uint local_54;
+  int local_5c;
+  int local_58;
+  int local_54;
   uint local_50;
   uint local_4c;
   uint local_48;
-  uint local_44;
-  uint local_40;
+  int local_44;
+  int local_40;
   uint local_3c;
   uint local_38;
   uint local_34;
   byte local_30 [4];
   byte local_2c [4];
-  uint local_28;
+  int local_28;
   int local_24;
   int local_20;
-  int local_1c;
+  SInputFace *local_1c;
   int local_18;
   int local_14;
   
   do {
-    iVar1 = _fgetc(param_2);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
-  iVar1 = _fscanf(param_2,"%d\n",&local_64);
-  if (iVar1 == 1) goto LAB_005192e4;
+    iVar2 = _fgetc(file_handle);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
+  iVar2 = _fscanf(file_handle,"%d\n",&local_64);
+  if (iVar2 == 1) goto LAB_005192e4;
 LAB_005192c1:
   do {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
@@ -67,199 +68,228 @@ LAB_005192e4:
     }
     if (local_64 < 3) {
       do {
-        iVar1 = _fgetc(param_2);
-        if (iVar1 < 0) break;
-      } while (iVar1 != 10);
-      iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d\n",&local_50,&local_4c,&local_48,&local_44,
+        iVar2 = _fgetc(file_handle);
+        if (iVar2 < 0) break;
+      } while (iVar2 != 10);
+      iVar2 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d\n",&local_50,&local_4c,&local_48,&local_44,
                          &local_60,&local_40);
-      if (iVar1 != 6) goto LAB_005192c1;
-      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(param_1,1,1,local_44,local_40);
-      core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0(param_1,0,local_50,local_4c,local_48)
-      ;
+      if (iVar2 != 6) goto LAB_005192c1;
+      core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0(this_ptr,1,1,local_44,local_40);
+      core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0
+                (this_ptr,0,local_50,local_4c,local_48);
     }
     else {
       if (local_64 < 5) {
         do {
-          iVar1 = _fgetc(param_2);
-          if (iVar1 < 0) break;
-        } while (iVar1 != 10);
-        iVar1 = _fscanf(param_2,"%d,%d,%d,%d\n",&local_5c,&local_54,&local_60,&local_68);
-        if (iVar1 != 4) goto LAB_005192c1;
+          iVar2 = _fgetc(file_handle);
+          if (iVar2 < 0) break;
+        } while (iVar2 != 10);
+        iVar2 = _fscanf(file_handle,"%d,%d,%d,%d\n",&local_5c,&local_54,&local_60,&local_68);
+        if (iVar2 != 4) goto LAB_005192c1;
         local_58 = 1;
       }
       else {
         do {
-          iVar1 = _fgetc(param_2);
-          if (iVar1 < 0) break;
-        } while (iVar1 != 10);
-        iVar1 = _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_5c,&local_58,&local_54,&local_60,
+          iVar2 = _fgetc(file_handle);
+          if (iVar2 < 0) break;
+        } while (iVar2 != 10);
+        iVar2 = _fscanf(file_handle,"%d,%d,%d,%d,%d\n",&local_5c,&local_58,&local_54,&local_60,
                            &local_68);
-        if (iVar1 != 5) goto LAB_005192c1;
+        if (iVar2 != 5) goto LAB_005192c1;
       }
       core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00517da0
-                (param_1,local_5c,local_58,local_54,local_68);
+                (this_ptr,local_5c,local_58,local_54,local_68);
       do {
-        iVar1 = _fgetc(param_2);
-        if (iVar1 < 0) break;
-      } while (iVar1 != 10);
-      for (iVar1 = 0; iVar1 < *param_1; iVar1 = iVar1 + 1) {
-        iVar2 = _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_34,
-                           param_1 + iVar1 * 2 + 1,param_1 + iVar1 * 2 + 1 + 1);
-        if (iVar2 != 5) goto LAB_005192c1;
+        iVar2 = _fgetc(file_handle);
+        if (iVar2 < 0) break;
+      } while (iVar2 != 10);
+      for (iVar2 = 0; iVar2 < this_ptr->num_lods; iVar2 = iVar2 + 1) {
+        iVar3 = _fscanf(file_handle,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_34,
+                           this_ptr->lod_info + iVar2,&this_ptr->lod_info[iVar2].shadow_only_flag);
+        if (iVar3 != 5) goto LAB_005192c1;
         core_skeleton_cpp_CDeformableModel_allocLOD_FUN_00517ec0
-                  (param_1,iVar1,local_3c,local_38,local_34);
+                  (this_ptr,iVar2,local_3c,local_38,local_34);
       }
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = _fscanf(param_2,"%[^\n]\n",param_1 + 0xa87);
-    if (iVar1 != 1) goto LAB_005192c1;
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    iVar2 = _fscanf(file_handle,"%[^\n]\n",
+                       &this_ptr->texture_sets[1].textures[0x43].textures[0].base.count);
+    if (iVar2 != 1) goto LAB_005192c1;
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
     if (local_64 < 3) {
-      for (iVar1 = 0; iVar1 < param_1[0x300]; iVar1 = iVar1 + 1) {
-        piVar3 = param_1 + iVar1 * 0x18 + 0x301;
-        iVar2 = _fscanf(param_2,"\"%[^\"]\",%d,%d,%d\n",piVar3,piVar3 + 8,piVar3 + 0xd,piVar3 + 0x12);
-        if (iVar2 != 4) goto LAB_005192c1;
-        for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
-          iVar5 = _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
+      for (iVar2 = 0; iVar2 < this_ptr->texture_sets[0].textures[0x28].textures[0].base.type;
+          iVar2 = iVar2 + 1) {
+        iVar3 = (int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb44;
+        iVar3 = _fscanf(file_handle,"\"%[^\"]\",%d,%d,%d\n",iVar3,iVar3 + 0x20,iVar3 + 0x34,iVar3 + 0x48
+                          );
+        if (iVar3 != 4) goto LAB_005192c1;
+        for (iVar3 = 0;
+            iVar3 < *(int *)((int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb8c);
+            iVar3 = iVar3 + 1) {
+          iVar5 = _fscanf(file_handle,"%d\n",
+                             (int)this_ptr->texture_sets[0].textures +
+                             iVar3 * 4 + iVar2 * 0x60 + 0xb90);
           if (iVar5 != 1) goto LAB_005192c1;
         }
       }
     }
     else {
-      for (iVar1 = 0; iVar1 < param_1[0x300]; iVar1 = iVar1 + 1) {
-        piVar3 = param_1 + iVar1 * 0x18 + 0x301;
+      for (iVar2 = 0; iVar2 < this_ptr->texture_sets[0].textures[0x28].textures[0].base.type;
+          iVar2 = iVar2 + 1) {
+        iVar3 = (int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb44;
         if (local_64 < 6) {
-          _fscanf(param_2,"\"%[^\"]\", %d\n",piVar3,piVar3 + 0x12);
+          _fscanf(file_handle,"\"%[^\"]\", %d\n",iVar3,iVar3 + 0x48);
         }
         else {
-          _fscanf(param_2,"\"%[^\"]\", %d, %d\n",piVar3,piVar3 + 0x17,piVar3 + 0x12)
-          ;
+          _fscanf(file_handle,"\"%[^\"]\", %d, %d\n",iVar3,iVar3 + 0x5c,iVar3 + 0x48);
         }
-        for (iVar2 = 0; iVar2 < param_1[iVar1 * 0x18 + 0x313]; iVar2 = iVar2 + 1) {
-          _fscanf(param_2,"%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x314);
+        for (iVar3 = 0;
+            iVar3 < *(int *)((int)this_ptr->texture_sets[0].textures + iVar2 * 0x60 + 0xb8c);
+            iVar3 = iVar3 + 1) {
+          _fscanf(file_handle,"%d\n",
+                     (int)this_ptr->texture_sets[0].textures + iVar3 * 4 + iVar2 * 0x60 + 0xb90);
         }
-        for (iVar2 = 0; iVar2 < *param_1; iVar2 = iVar2 + 1) {
-          _fscanf(param_2,"%d,%d\n",param_1 + iVar1 * 0x18 + iVar2 + 0x309,
-                     param_1 + iVar1 * 0x18 + iVar2 + 0x30e);
-        }
-      }
-    }
-    do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (local_20 = 0; local_20 < *param_1; local_20 = local_20 + 1) {
-      for (local_18 = 0; local_18 < param_1[local_20 + 0xb]; local_18 = local_18 + 1) {
-        pbVar6 = (byte *)(param_1[local_20 + 0x10] + local_18 * 0x34);
-        iVar1 = _fscanf(param_2,"%d\n",local_30);
-        if (iVar1 != 1) goto LAB_005192c1;
-        *pbVar6 = local_30[0];
-        for (iVar1 = 0; iVar1 < (int)(uint)*pbVar6; iVar1 = iVar1 + 1) {
-          pbVar4 = pbVar6 + iVar1 * 0xc + 0x10;
-          iVar2 = _fscanf(param_2,"%d,%f,%f,%f,%f\n",local_2c,pbVar6 + iVar1 * 4 + 4,pbVar4,
-                             pbVar4 + 4,pbVar4 + 8);
-          if (iVar2 != 5) goto LAB_005192c1;
-          pbVar6[iVar1 + 1] = local_2c[0];
+        for (iVar3 = 0; iVar3 < this_ptr->num_lods; iVar3 = iVar3 + 1) {
+          _fscanf(file_handle,"%d,%d\n",
+                     (int)this_ptr->texture_sets[0].textures + iVar3 * 4 + iVar2 * 0x60 + 0xb64,
+                     (int)this_ptr->texture_sets[0].textures + iVar3 * 4 + iVar2 * 0x60 + 0xb78);
         }
       }
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (local_14 = 0; local_14 < *param_1; local_14 = local_14 + 1) {
-      for (iVar1 = 0; iVar2 = local_14, iVar1 < param_1[local_14 + 0x15] + param_1[local_14 + 0x1a];
-          iVar1 = iVar1 + 1) {
-        local_1c = param_1[local_14 + 0x1f] + iVar1 * 0x12;
-        iVar5 = _fscanf(param_2,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_28,local_74,&local_80,
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (local_20 = 0; local_20 < this_ptr->num_lods; local_20 = local_20 + 1) {
+      for (local_18 = 0; local_18 < this_ptr->vertex_count[local_20]; local_18 = local_18 + 1) {
+        pSVar7 = this_ptr->vertex_data_ptr[local_20] + local_18;
+        iVar2 = _fscanf(file_handle,"%d\n",local_30);
+        if (iVar2 != 1) goto LAB_005192c1;
+        pSVar7->num_bone_influences = local_30[0];
+        for (iVar2 = 0; iVar2 < (int)(uint)pSVar7->num_bone_influences; iVar2 = iVar2 + 1) {
+          pfVar4 = pSVar7->bone_weights + iVar2 * 3 + 3;
+          iVar3 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",local_2c,pSVar7->bone_weights + iVar2,
+                             pfVar4,pfVar4 + 1,pfVar4 + 2);
+          if (iVar3 != 5) goto LAB_005192c1;
+          pSVar7->bone_indices[iVar2] = local_2c[0];
+        }
+      }
+    }
+    do {
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (local_14 = 0; local_14 < this_ptr->num_lods; local_14 = local_14 + 1) {
+      for (iVar2 = 0; iVar3 = local_14,
+          iVar2 < this_ptr->tri_count[local_14] + this_ptr->cap_tri_count[local_14];
+          iVar2 = iVar2 + 1) {
+        local_1c = this_ptr->tri_data_ptr[local_14] + iVar2;
+        iVar5 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_28,local_74,&local_80,
                            &local_8c,local_70,local_7c,local_88,local_6c,local_78,local_84);
         if (iVar5 != 10) goto LAB_005192c1;
-        *(uint *)(param_1[iVar2 + 0x24] + iVar1 * 4) = local_28;
-        iVar2 = 0;
+        this_ptr->index_data_ptr[iVar3][iVar2] = local_28;
+        iVar3 = 0;
         do {
-          puVar7 = (ushort *)(iVar2 * 2 + local_1c);
-          *puVar7 = local_74[iVar2 * 2];
-          local_24 = *(int *)(local_7c + iVar2 * 4 + -4) >> 8;
-          puVar7[3] = (short)((uint)*(int *)(local_7c + iVar2 * 4 + -4) >> 8);
-          iVar5 = iVar2 * 4;
-          iVar2 = iVar2 + 1;
-          puVar7[6] = (short)((uint)*(uint *)(local_88 + iVar5 + -4) >> 8);
-        } while (iVar2 < 3);
+          puVar8 = &(local_1c->vertex_indices).vertex_index_0 + iVar3;
+          *puVar8 = local_74[iVar3 * 2];
+          local_24 = *(int *)(local_7c + iVar3 * 4 + -4) >> 8;
+          puVar8[3] = (ushort)((uint)*(int *)(local_7c + iVar3 * 4 + -4) >> 8);
+          iVar5 = iVar3 * 4;
+          iVar3 = iVar3 + 1;
+          puVar8[6] = (ushort)((uint)*(uint *)(local_88 + iVar5 + -4) >> 8);
+        } while (iVar3 < 3);
       }
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (iVar1 = 0; iVar1 < *param_1; iVar1 = iVar1 + 1) {
-      for (iVar2 = 0; iVar2 < param_1[iVar1 + 0x1a]; iVar2 = iVar2 + 1) {
-        iVar5 = _fscanf(param_2,"%d\n",param_1[iVar1 + 0x29] + iVar2 * 4);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (iVar2 = 0; iVar2 < this_ptr->num_lods; iVar2 = iVar2 + 1) {
+      for (iVar3 = 0; iVar3 < this_ptr->cap_tri_count[iVar2]; iVar3 = iVar3 + 1) {
+        iVar5 = _fscanf(file_handle,"%d\n",this_ptr->cap_index_ptr[iVar2] + iVar3);
         if (iVar5 != 1) goto LAB_005192c1;
       }
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (iVar1 = 0; iVar1 < param_1[0x2e]; iVar1 = iVar1 + 1) {
-      for (iVar2 = 0; iVar2 < param_1[0x2f]; iVar2 = iVar2 + 1) {
-        iVar5 = _fscanf(param_2,"%[^\n]\n",param_1 + iVar1 * 0x90 + iVar2 * 0x12 + 0x32);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (iVar2 = 0; iVar2 < this_ptr->num_texture_sets; iVar2 = iVar2 + 1) {
+      for (iVar3 = 0; iVar3 < this_ptr->num_textures; iVar3 = iVar3 + 1) {
+        iVar5 = _fscanf(file_handle,"%[^\n]\n",
+                           this_ptr->texture_sets[0].textures[iVar2 * 8 + iVar3].textures[0].
+                           texture_name);
         if (iVar5 != 1) goto LAB_005192c1;
       }
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (iVar1 = 0; iVar1 < local_60; iVar1 = iVar1 + 1) {
-      piVar3 = param_1 + iVar1 * 3 + 0x5d4;
-      iVar2 = _fscanf(param_2,"%f,%f,%f\n",piVar3,piVar3 + 1,piVar3 + 2)
-      ;
-      if (iVar2 != 3) goto LAB_005192c1;
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (iVar2 = 0; iVar2 < local_60; iVar2 = iVar2 + 1) {
+      pcVar6 = this_ptr->texture_sets[1].textures[0].textures[0].texture_name + iVar2 * 0xc + 8;
+      iVar3 = _fscanf(file_handle,"%f,%f,%f\n",pcVar6,pcVar6 + 4,pcVar6 + 8);
+      if (iVar3 != 3) goto LAB_005192c1;
     }
     if (local_64 < 2) {
-      param_1[0x5d3] = 0x3f800000;
-      param_1[0x5d2] = param_1[0x5d3];
-      param_1[0x5d1] = param_1[0x5d2];
+      pSVar1 = this_ptr->texture_sets[1].textures;
+      pSVar1->textures[0].texture_name[4] = '\0';
+      pSVar1->textures[0].texture_name[5] = '\0';
+      pSVar1->textures[0].texture_name[6] = -0x80;
+      pSVar1->textures[0].texture_name[7] = '?';
+      *(uint *)this_ptr->texture_sets[1].textures[0].textures[0].texture_name =
+           *(uint *)(this_ptr->texture_sets[1].textures[0].textures[0].texture_name + 4);
+      this_ptr->texture_sets[1].textures[0].textures[0].base.count =
+           *(int *)this_ptr->texture_sets[1].textures[0].textures[0].texture_name;
       break;
     }
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x5d1,param_1 + 0x5d2,param_1 + 0x5d3);
-  } while (iVar1 != 3);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    iVar2 = _fscanf(file_handle,"%f,%f,%f\n",
+                       &this_ptr->texture_sets[1].textures[0].textures[0].base.count,
+                       this_ptr->texture_sets[1].textures[0].textures[0].texture_name,
+                       this_ptr->texture_sets[1].textures[0].textures[0].texture_name + 4);
+  } while (iVar2 != 3);
   if (local_64 < 4) {
-    param_1[0x702] = 0;
-    param_1[0x701] = param_1[0x702];
-    param_1[0x700] = param_1[0x701];
+    this_ptr->texture_sets[1].textures[0x11].textures[0].base.type = 0;
+    *(int *)(this_ptr->texture_sets[1].textures[0x10].textures[2].texture_name + 0xc) =
+         this_ptr->texture_sets[1].textures[0x11].textures[0].base.type;
+    *(uint *)(this_ptr->texture_sets[1].textures[0x10].textures[2].texture_name + 8) =
+         *(uint *)(this_ptr->texture_sets[1].textures[0x10].textures[2].texture_name + 0xc);
   }
   else {
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    _fscanf(param_2,"%f,%f,%f\n",param_1 + 0x700,param_1 + 0x701,param_1 + 0x702);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    _fscanf(file_handle,"%f,%f,%f\n",
+               this_ptr->texture_sets[1].textures[0x10].textures[2].texture_name + 8,
+               this_ptr->texture_sets[1].textures[0x10].textures[2].texture_name + 0xc,
+               this_ptr->texture_sets[1].textures + 0x11);
   }
   if (6 < local_64) {
     do {
-      iVar1 = _fgetc(param_2);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    for (iVar1 = 0; iVar1 < local_60; iVar1 = iVar1 + 1) {
-      _fscanf(param_2,"%d\n",param_1 + iVar1 + 0x9bf);
+      iVar2 = _fgetc(file_handle);
+      if (iVar2 < 0) break;
+    } while (iVar2 != 10);
+    for (iVar2 = 0; iVar2 < local_60; iVar2 = iVar2 + 1) {
+      _fscanf(file_handle,"%d\n",
+                 this_ptr->texture_sets[1].textures[0x37].textures[2].texture_name + iVar2 * 4 + 0xc
+                );
     }
   }
   if (local_64 < 7) {
-    core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(param_1);
+    core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(this_ptr);
   }
-  if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0x596;
     core_main_c_FUN_004c8440("CDeformableModel::loadStream - error reading file!");

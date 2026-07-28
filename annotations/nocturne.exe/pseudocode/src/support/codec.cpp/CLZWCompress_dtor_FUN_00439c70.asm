@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(int param_1,byte param_2)
+; CCodec * support_codec_cpp_CLZWCompress_dtor_FUN_00439c70(CCodec *param_1,byte param_2)
 ;
 ;
 ; Referenced Globals:
@@ -28,13 +28,13 @@ section .text
     ADD EBX,0x4                         ; 00439c7e
     PUSH EBX                            ; 00439c81
     CALL support_codec.cpp_CLZWDictionary_dtor_FUN_00439370 ; 00439c82
-        ;   XREF to: 00439370 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_dtor_FUN_00439370()
+        ;   XREF to: 00439370 (UNCONDITIONAL_CALL)  ; CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_00439370(CLZWDictionary * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00439c87
     PUSH 0x1                            ; 00439c8a
     LEA EBX,[EAX + -0x4]                ; 00439c8c
     PUSH EBX                            ; 00439c8f
     CALL support_codec.cpp_CCodec_dtor_FUN_00438f30 ; 00439c90
-        ;   XREF to: 00438f30 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CCodec_dtor_FUN_00438f30()
+        ;   XREF to: 00438f30 (UNCONDITIONAL_CALL)  ; CCodec * support_codec.cpp_CCodec_dtor_FUN_00438f30(CCodec * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00439c95
     MOV DL,byte ptr [ESP + 0xc]         ; 00439c98
     MOV EBX,EAX                         ; 00439c9c
@@ -48,11 +48,11 @@ section .text
         ;   Label: LAB_00439ca7
     PUSH EBX                            ; 00439cac
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00439cad
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00439cb2
     PUSH EAX                            ; 00439cb5
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00439cb6
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00439cbb
     MOV EAX,EBX                         ; 00439cbe
     POP EBX                             ; 00439cc0

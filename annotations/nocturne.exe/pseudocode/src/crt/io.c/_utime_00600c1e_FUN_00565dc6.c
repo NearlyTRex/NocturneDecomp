@@ -2,69 +2,69 @@
 // Address: 00565dc6
 // Address Range: [[00565dc6, 00565dca]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_io_c__utime_00600c1e_FUN_00565dc6(LPCSTR param_1,undefined4 *param_2)
+// Signature: int __cdecl crt_io_c__utime_00600c1e_FUN_00565dc6(char *filename,_utimbuf *timestamps)
 
 #include "nocturne.h"
 
-uint __cdecl _utime_00600c1e(LPCSTR param_1,uint *param_2)
+int __cdecl _utime_00600c1e(char *filename,_utimbuf *timestamps)
 
 {
   HANDLE hFile;
-  uint uVar1;
+  DWORD DVar1;
   BOOL BVar2;
-  WORD *pWVar3;
-  SYSTEMTIME SStack_54;
-  SYSTEMTIME SStack_44;
-  _FILETIME _Stack_34;
-  _FILETIME _Stack_2c;
-  _FILETIME _Stack_24;
-  uint uStack_1c;
-  uint uStack_18;
-  _FILETIME _Stack_14;
+  _tm *p_Var3;
+  SYSTEMTIME SStack_50;
+  byte auStack_40 [14];
+  WORD WStack_32;
+  _FILETIME _Stack_30;
+  byte auStack_28 [8];
+  FILETIME FStack_20;
+  byte auStack_18 [12];
   
-  hFile = CreateFileA(param_1,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
+  hFile = CreateFileA(filename,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
-    uVar1 = __set_errno();
+    DVar1 = __set_errno();
   }
   else {
-    BVar2 = GetFileTime(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
+    BVar2 = GetFileTime(hFile,(LPFILETIME)(auStack_28 + 4),(LPFILETIME)(auStack_18 + 4),
+                        (LPFILETIME)(auStack_40 + 0xc));
     if (BVar2 == 0) {
       CloseHandle(hFile);
-      uVar1 = __set_errno();
-      return uVar1;
+      DVar1 = __set_errno();
+      return DVar1;
     }
-    if (param_2 == (uint *)0x0) {
-      uStack_1c = FUN_00570a30(0);
-      param_2 = &uStack_1c;
-      uStack_18 = uStack_1c;
+    if (timestamps == (_utimbuf *)0x0) {
+      auStack_18._0_4_ = _time((time_t *)0x0);
+      timestamps = (_utimbuf *)auStack_18;
+      auStack_18._4_4_ = auStack_18._0_4_;
     }
-    pWVar3 = (WORD *)_localtime(param_2 + 1);
-    SStack_54.wYear = pWVar3[10] + 0x76c;
-    SStack_54.wMonth = pWVar3[8] + 1;
-    SStack_54.wDay = pWVar3[6];
-    SStack_54.wHour = pWVar3[4];
-    SStack_54.wMinute = pWVar3[2];
-    SStack_54.wSecond = *pWVar3;
-    SStack_44.wMilliseconds = 0;
-    SStack_54.wMilliseconds = 0;
-    SStack_44.wYear = SStack_54.wYear;
-    SStack_44.wMonth = SStack_54.wMonth;
-    SStack_44.wDay = SStack_54.wDay;
-    SStack_44.wHour = SStack_54.wHour;
-    SStack_44.wMinute = SStack_54.wMinute;
-    SStack_44.wSecond = SStack_54.wSecond;
-    SystemTimeToFileTime(&SStack_54,&_Stack_2c);
-    LocalFileTimeToFileTime(&_Stack_2c,&_Stack_34);
-    SystemTimeToFileTime(&SStack_44,&_Stack_2c);
-    LocalFileTimeToFileTime(&_Stack_2c,&_Stack_14);
-    BVar2 = SetFileTime(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
+    p_Var3 = _localtime(&timestamps->modtime);
+    SStack_50.wYear = (short)p_Var3->tm_year + 0x76c;
+    SStack_50.wMonth = (short)p_Var3->tm_mon + 1;
+    SStack_50.wDay = (WORD)p_Var3->tm_mday;
+    SStack_50.wHour = (WORD)p_Var3->tm_hour;
+    SStack_50.wMinute = (WORD)p_Var3->tm_min;
+    SStack_50.wSecond = (WORD)p_Var3->tm_sec;
+    WStack_32 = 0;
+    SStack_50.wMilliseconds = 0;
+    auStack_40._0_2_ = SStack_50.wYear;
+    auStack_40._2_2_ = SStack_50.wMonth;
+    auStack_40._6_2_ = SStack_50.wDay;
+    auStack_40._8_2_ = SStack_50.wHour;
+    auStack_40._10_2_ = SStack_50.wMinute;
+    auStack_40._12_2_ = SStack_50.wSecond;
+    SystemTimeToFileTime(&SStack_50,(LPFILETIME)auStack_28);
+    LocalFileTimeToFileTime((FILETIME *)auStack_28,&_Stack_30);
+    SystemTimeToFileTime((SYSTEMTIME *)auStack_40,(LPFILETIME)auStack_28);
+    LocalFileTimeToFileTime((FILETIME *)auStack_28,(LPFILETIME)(auStack_18 + 8));
+    BVar2 = SetFileTime(hFile,&FStack_20,(FILETIME *)(auStack_18 + 8),&_Stack_30);
     if (BVar2 == 0) {
       CloseHandle(hFile);
-      uVar1 = __set_errno();
-      return uVar1;
+      DVar1 = __set_errno();
+      return DVar1;
     }
     CloseHandle(hFile);
-    uVar1 = 0;
+    DVar1 = 0;
   }
-  return uVar1;
+  return DVar1;
 }

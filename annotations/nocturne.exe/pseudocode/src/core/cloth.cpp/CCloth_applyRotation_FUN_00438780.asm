@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_00438620 at 00438642
+;   core_cloth.cpp_CClothList_applyRotation_FUN_00438620 at 00438642
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -48,7 +48,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004387d3
     PUSH EAX                            ; 004387d7
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004387d8
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004387dd
     MOV EAX,dword ptr [ESP + 0x60]      ; 004387e0
     MOV EDX,dword ptr [EAX + 0x104]     ; 004387e4

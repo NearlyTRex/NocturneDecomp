@@ -2,30 +2,32 @@
 // Address: 0046cba0
 // Address Range: [[0046cba0, 0046cf9c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(float *param_1,undefined4 *param_2)
+// Signature: void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder)
 
 #include "nocturne.h"
 
-void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(float *param_1,uint *param_2)
+void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder)
 
 {
-  byte bVar1;
-  byte bVar2;
-  byte bVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   float fVar4;
-  float fVar5;
-  uint uVar6;
-  uint uVar7;
-  int iVar8;
-  float *pfVar9;
-  float *pfVar10;
-  float *pfVar11;
-  bool bVar12;
+  byte bVar5;
+  byte bVar6;
+  byte bVar7;
+  uint uVar8;
+  uint uVar9;
+  int iVar10;
+  CDemonTriangle *pCVar11;
+  CDemonTriangle *pCVar12;
+  CDemonTriangle *vertex2;
+  bool bVar13;
   float local_7c [6];
   float local_64 [3];
   float local_58 [5];
   float local_44;
-  float *local_40;
+  CDemonTriangle *local_40;
   float local_3c;
   uint local_38;
   uint local_34;
@@ -34,134 +36,153 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0046cba0(float *param_1,uint
   float local_28;
   float local_24;
   
-  if (param_1[0xb] * (float)param_2[7] + param_1[9] * (float)param_2[6] <= 0.0) {
+  if ((triangle->normal).z * cylinder->dir_z + (triangle->normal).x * cylinder->dir_x <= 0.0) {
     return;
   }
-  pfVar10 = param_1 + 3;
-  local_40 = param_1 + 6;
-  fVar4 = *param_1 * (float)param_2[6] + param_1[2] * (float)param_2[7];
-  local_2c = *pfVar10 * (float)param_2[6] + param_1[5] * (float)param_2[7];
-  fVar5 = param_1[8] * (float)param_2[7] + *local_40 * (float)param_2[6];
-  pfVar9 = param_1;
-  local_3c = fVar4;
-  if (local_2c < fVar4) {
-    pfVar9 = pfVar10;
-    pfVar10 = param_1;
+  pCVar12 = (CDemonTriangle *)&triangle->vertex2;
+  local_40 = (CDemonTriangle *)&triangle->vertex3;
+  fVar1 = (triangle->vertex1).x * cylinder->dir_x + (triangle->vertex1).z * cylinder->dir_z;
+  local_2c = ((CVector3f *)pCVar12)->x * cylinder->dir_x + (triangle->vertex2).z * cylinder->dir_z;
+  fVar2 = (triangle->vertex3).z * cylinder->dir_z + ((CVector3f *)local_40)->x * cylinder->dir_x;
+  pCVar11 = triangle;
+  local_3c = fVar1;
+  if (local_2c < fVar1) {
+    pCVar11 = pCVar12;
+    pCVar12 = triangle;
     local_3c = local_2c;
-    local_2c = fVar4;
-    local_28 = fVar4;
+    local_2c = fVar1;
+    local_28 = fVar1;
   }
-  pfVar11 = pfVar10;
-  local_44 = fVar5;
-  if (fVar5 < local_2c) {
+  vertex2 = pCVar12;
+  local_44 = fVar2;
+  if (fVar2 < local_2c) {
     local_24 = local_2c;
     local_44 = local_2c;
-    pfVar11 = local_40;
-    local_40 = pfVar10;
-    local_2c = fVar5;
+    vertex2 = local_40;
+    local_40 = pCVar12;
+    local_2c = fVar2;
   }
-  pfVar10 = pfVar9;
+  pCVar12 = pCVar11;
   if (local_2c < local_3c) {
     local_3c = local_2c;
-    pfVar10 = pfVar11;
-    pfVar11 = pfVar9;
+    pCVar12 = vertex2;
+    vertex2 = pCVar11;
   }
-  if (local_44 < (float)param_2[0xb]) {
+  if (local_44 < cylinder->sweep_slab_near) {
     return;
   }
-  if ((float)param_2[0xc] < local_3c) {
+  if (cylinder->sweep_slab_far < local_3c) {
     return;
   }
-  bVar1 = (float)param_2[9] <= param_1[1];
-  if (param_1[1] <= (float)param_2[10]) {
-    bVar1 = bVar1 | 2;
+  bVar5 = cylinder->top_y <= (triangle->vertex1).y;
+  if ((triangle->vertex1).y <= cylinder->bottom_y) {
+    bVar5 = bVar5 | 2;
   }
-  local_38 = (uint)bVar1;
-  bVar2 = (float)param_2[9] <= param_1[4];
-  if (param_1[4] <= (float)param_2[10]) {
-    bVar2 = bVar2 | 2;
+  local_38 = (uint)bVar5;
+  bVar6 = cylinder->top_y <= (triangle->vertex2).y;
+  if ((triangle->vertex2).y <= cylinder->bottom_y) {
+    bVar6 = bVar6 | 2;
   }
-  local_30 = (uint)bVar2;
-  bVar3 = (float)param_2[9] <= param_1[7];
-  if (param_1[7] <= (float)param_2[10]) {
-    bVar3 = bVar3 | 2;
+  local_30 = (uint)bVar6;
+  bVar7 = cylinder->top_y <= (triangle->vertex3).y;
+  if ((triangle->vertex3).y <= cylinder->bottom_y) {
+    bVar7 = bVar7 | 2;
   }
-  local_34 = (uint)bVar3;
-  if ((bVar1 & bVar2 & bVar3) != 0) {
+  local_34 = (uint)bVar7;
+  if ((bVar5 & bVar6 & bVar7) != 0) {
     return;
   }
-  if (0.0 <= param_1[10]) {
-    bVar12 = ((bVar1 ^ bVar2) & 1) != 0;
-    if (bVar12) {
-      fVar4 = ((float)param_2[9] - param_1[1]) / (param_1[4] - param_1[1]);
-      local_7c[0] = (param_1[3] - *param_1) * fVar4 + *param_1;
-      local_58[0] = (param_1[5] - param_1[2]) * fVar4 + param_1[2];
+  if (0.0 <= (triangle->normal).y) {
+    bVar13 = ((bVar5 ^ bVar6) & 1) != 0;
+    if (bVar13) {
+      fVar1 = (cylinder->top_y - (triangle->vertex1).y) /
+              ((triangle->vertex2).y - (triangle->vertex1).y);
+      local_7c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar1 + (triangle->vertex1).x;
+      local_58[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar1 + (triangle->vertex1).z;
     }
-    uVar7 = (uint)bVar12;
-    uVar6 = uVar7;
-    if (((bVar2 ^ bVar3) & 1) != 0) {
-      fVar4 = ((float)param_2[9] - param_1[4]) / (param_1[7] - param_1[4]);
-      local_7c[uVar7] = (param_1[6] - param_1[3]) * fVar4 + param_1[3];
-      uVar6 = uVar7 + 1;
-      local_7c[uVar7 + 9] = (param_1[8] - param_1[5]) * fVar4 + param_1[5];
+    uVar9 = (uint)bVar13;
+    uVar8 = uVar9;
+    if (((bVar6 ^ bVar7) & 1) != 0) {
+      fVar1 = (cylinder->top_y - (triangle->vertex2).y) /
+              ((triangle->vertex3).y - (triangle->vertex2).y);
+      local_7c[uVar9] =
+           ((triangle->vertex3).x - (triangle->vertex2).x) * fVar1 + (triangle->vertex2).x;
+      uVar8 = uVar9 + 1;
+      local_7c[uVar9 + 9] =
+           ((triangle->vertex3).z - (triangle->vertex2).z) * fVar1 + (triangle->vertex2).z;
     }
-    uVar7 = uVar6;
-    if (((bVar3 ^ bVar1) & 1) != 0) {
-      fVar4 = ((float)param_2[9] - param_1[7]) / (param_1[1] - param_1[7]);
-      local_7c[uVar6] = (*param_1 - param_1[6]) * fVar4 + param_1[6];
-      uVar7 = uVar6 + 1;
-      local_7c[uVar6 + 9] = (param_1[2] - param_1[8]) * fVar4 + param_1[8];
+    uVar9 = uVar8;
+    if (((bVar7 ^ bVar5) & 1) != 0) {
+      fVar1 = (cylinder->top_y - (triangle->vertex3).y) /
+              ((triangle->vertex1).y - (triangle->vertex3).y);
+      local_7c[uVar8] =
+           ((triangle->vertex1).x - (triangle->vertex3).x) * fVar1 + (triangle->vertex3).x;
+      uVar9 = uVar8 + 1;
+      local_7c[uVar8 + 9] =
+           ((triangle->vertex1).z - (triangle->vertex3).z) * fVar1 + (triangle->vertex3).z;
     }
-    if (1 < uVar7) {
-      param_2[0xf] = local_7c[0];
-      param_2[0x10] = local_58[0];
-      param_2[0x11] = local_7c[1];
-      param_2[0x12] = local_58[1];
-      iVar8 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(param_2);
-      if (iVar8 != 0) goto LAB_0046cee8;
+    if (1 < uVar9) {
+      cylinder->edge_x1 = local_7c[0];
+      cylinder->edge_z1 = local_58[0];
+      cylinder->edge_x2 = local_7c[1];
+      cylinder->edge_z2 = local_58[1];
+      iVar10 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(cylinder);
+      if (iVar10 != 0) goto LAB_0046cee8;
     }
   }
-  if (param_1[10] <= 0.0) {
-    bVar12 = ((local_38 ^ local_30) & 2) != 0;
-    if (bVar12) {
-      fVar4 = ((float)param_2[10] - param_1[1]) / (param_1[4] - param_1[1]);
-      local_7c[3] = (param_1[3] - *param_1) * fVar4 + *param_1;
-      local_64[0] = (param_1[5] - param_1[2]) * fVar4 + param_1[2];
+  if ((triangle->normal).y <= 0.0) {
+    bVar13 = ((local_38 ^ local_30) & 2) != 0;
+    if (bVar13) {
+      fVar1 = (cylinder->bottom_y - (triangle->vertex1).y) /
+              ((triangle->vertex2).y - (triangle->vertex1).y);
+      local_7c[3] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar1 + (triangle->vertex1).x;
+      local_64[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar1 + (triangle->vertex1).z;
     }
-    uVar7 = (uint)bVar12;
-    uVar6 = uVar7;
+    uVar9 = (uint)bVar13;
+    uVar8 = uVar9;
     if (((local_30 ^ local_34) & 2) != 0) {
-      fVar4 = ((float)param_2[10] - param_1[4]) / (param_1[7] - param_1[4]);
-      local_7c[uVar7 + 3] = (param_1[6] - param_1[3]) * fVar4 + param_1[3];
-      uVar6 = uVar7 + 1;
-      local_7c[uVar7 + 6] = (param_1[8] - param_1[5]) * fVar4 + param_1[5];
+      fVar1 = (cylinder->bottom_y - (triangle->vertex2).y) /
+              ((triangle->vertex3).y - (triangle->vertex2).y);
+      local_7c[uVar9 + 3] =
+           ((triangle->vertex3).x - (triangle->vertex2).x) * fVar1 + (triangle->vertex2).x;
+      uVar8 = uVar9 + 1;
+      local_7c[uVar9 + 6] =
+           ((triangle->vertex3).z - (triangle->vertex2).z) * fVar1 + (triangle->vertex2).z;
     }
-    uVar7 = uVar6;
+    uVar9 = uVar8;
     if (((local_34 ^ local_38) & 2) != 0) {
-      fVar4 = ((float)param_2[10] - param_1[7]) / (param_1[1] - param_1[7]);
-      local_7c[uVar6 + 3] = (*param_1 - param_1[6]) * fVar4 + param_1[6];
-      uVar7 = uVar6 + 1;
-      local_7c[uVar6 + 6] = (param_1[2] - param_1[8]) * fVar4 + param_1[8];
+      fVar1 = (cylinder->bottom_y - (triangle->vertex3).y) /
+              ((triangle->vertex1).y - (triangle->vertex3).y);
+      local_7c[uVar8 + 3] =
+           ((triangle->vertex1).x - (triangle->vertex3).x) * fVar1 + (triangle->vertex3).x;
+      uVar9 = uVar8 + 1;
+      local_7c[uVar8 + 6] =
+           ((triangle->vertex1).z - (triangle->vertex3).z) * fVar1 + (triangle->vertex3).z;
     }
-    if (1 < uVar7) {
-      param_2[0xf] = local_7c[3];
-      param_2[0x10] = local_64[0];
-      param_2[0x11] = local_7c[4];
-      param_2[0x12] = local_64[1];
-      iVar8 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(param_2);
-      if (iVar8 != 0) {
+    if (1 < uVar9) {
+      cylinder->edge_x1 = local_7c[3];
+      cylinder->edge_z1 = local_64[0];
+      cylinder->edge_x2 = local_7c[4];
+      cylinder->edge_z2 = local_64[1];
+      iVar10 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(cylinder);
+      if (iVar10 != 0) {
 LAB_0046cee8:
-        param_2[2] = 0;
-        *param_2 = param_2[0x13];
-        param_2[3] = ((float)param_2[7] * (float)param_2[0x13] + (float)param_2[5]) -
-                     (float)param_2[0x16];
-        param_2[1] = ((float)param_2[6] * (float)param_2[0x13] + (float)param_2[4]) -
-                     (float)param_2[0x15];
+        (cylinder->push_normal).y = 0.0;
+        fVar1 = cylinder->dir_x;
+        fVar2 = cylinder->param_t;
+        cylinder->closest_t = cylinder->param_t;
+        fVar3 = cylinder->center_x;
+        fVar4 = cylinder->intersect_x;
+        (cylinder->push_normal).z =
+             (cylinder->dir_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
+        (cylinder->push_normal).x = (fVar1 * fVar2 + fVar3) - fVar4;
         return;
       }
     }
   }
-  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(param_2,pfVar10,pfVar11);
-  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00(param_2,pfVar10,local_40);
+  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00
+            (cylinder,&pCVar12->vertex1,&vertex2->vertex1);
+  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0046cb00
+            (cylinder,&pCVar12->vertex1,&local_40->vertex1);
   return;
 }

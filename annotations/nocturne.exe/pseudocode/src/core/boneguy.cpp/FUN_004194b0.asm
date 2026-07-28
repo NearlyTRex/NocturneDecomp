@@ -157,7 +157,7 @@ section .text
     MOV dword ptr [EBP + 0x1a],ECX      ; 004195d6
     MOV dword ptr [EBP + 0x1e],ESI      ; 004195d9
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 004195dc
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     MOV EDX,EAX                         ; 004195e1
     LEA EAX,[EBP + 0x6e]                ; 004195e3
     ADD ESP,0xc                         ; 004195e6
@@ -197,7 +197,7 @@ section .text
     LEA ESI,[EBP + -0x6a]               ; 00419643
     MOV EDI,EBX                         ; 00419646
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 00419648
-        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4_FUN_0055a8b0()
+        ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     FLD float ptr [EBP + 0x6e]          ; 0041964d
     FLD float ptr [EBP + 0x72]          ; 00419650
     FLD float ptr [EBP + 0x76]          ; 00419653

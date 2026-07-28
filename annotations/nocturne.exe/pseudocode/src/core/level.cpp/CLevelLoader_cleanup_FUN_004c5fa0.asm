@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(undefined4 *param_1)
+; void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(CLevelLoader *this_ptr)
 ;
+; Parameters:
+; CLevelLoader *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049ddaf

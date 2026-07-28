@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_door_cpp_CDoor_onLocked_FUN_00456650(int param_1)
+; uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00456650(CDoor *this_ptr)
 ;
+; Parameters:
+; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 00456506
-;   core_hero.cpp_FUN_004b5270 at 004b52d1
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270 at 004b52d1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01af4e98
@@ -24,7 +26,7 @@ section .text
     MOV EDX,dword ptr [0x01af4e98]      ; 00456655 | DAT_01af4e98
     PUSH EDX                            ; 0045665b
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 0045665c
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 00456661
     TEST EAX,EAX                        ; 00456664
     JZ 0x0045666a                       ; 00456666

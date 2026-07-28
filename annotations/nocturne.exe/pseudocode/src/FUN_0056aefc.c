@@ -15,7 +15,7 @@ int FUN_0056aefc(uint param_1)
   uint *puVar2;
   int iVar3;
   
-  (*(code *)PTR_FUN_005c1ad0)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();
   iVar3 = 0;
   for (puVar2 = _DAT_02de4e20; puVar2 != (uint *)0x0; puVar2 = (uint *)*puVar2) {
     iVar1 = puVar2[1];
@@ -24,6 +24,6 @@ int FUN_0056aefc(uint param_1)
       FUN_00568890(iVar1);
     }
   }
-  (*(code *)PTR_FUN_005c1ad4)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
   return iVar3;
 }

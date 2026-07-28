@@ -69,7 +69,7 @@ section .text
     MOV EAX,ESP                         ; 004066fa
     PUSH EAX                            ; 004066fc
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 004066fd
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     MOV EAX,dword ptr [EBX + 0x18]      ; 00406702
     ADD ESP,0x4                         ; 00406705
     TEST EAX,EAX                        ; 00406708

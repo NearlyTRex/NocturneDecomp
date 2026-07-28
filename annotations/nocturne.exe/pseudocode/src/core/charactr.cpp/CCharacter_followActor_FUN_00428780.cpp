@@ -2,17 +2,19 @@
 // Address: 00428780
 // Address Range: [[00428780, 00428aa7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,int param_2,float param_3,float param_4,int *param_5)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,int param_2,float param_3,float param_4,int *param_5)
+void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 
 {
-  float fVar1;
-  float fVar2;
-  uint uVar3;
-  int iVar4;
+  uint uVar1;
+  CPathMap *path_map;
+  int iVar2;
+  CVector3f *direction;
+  float fVar3;
+  float fVar4;
   float local_50;
   float local_4c;
   float local_48;
@@ -20,95 +22,99 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(int param_1,i
   byte local_38 [12];
   float local_2c;
   float local_20;
-  uint local_1c;
+  float local_1c;
   float local_18;
   
-  if (param_2 == 0) {
+  if (actor == (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (PTR_DAT_005ad350,"%s tried to follow NULL actor!\n",param_1);
-    *param_5 = 3;
+              (PTR_DAT_005ad350,"%s tried to follow NULL actor!\n",this_ptr);
+    *out_state = 3;
     return;
   }
-  local_50 = *(float *)(param_2 + 0x20) - *(float *)(param_1 + 0x20);
-  local_4c = *(float *)(param_2 + 0x24) - *(float *)(param_1 + 0x24);
-  local_48 = *(float *)(param_2 + 0x28) - *(float *)(param_1 + 0x28);
-  if (0.0 <= param_3) {
+  local_50 = (actor->location).position.x - (this_ptr->base).location.position.x;
+  local_4c = (actor->location).position.y - (this_ptr->base).location.position.y;
+  local_48 = (actor->location).position.z - (this_ptr->base).location.position.z;
+  if (0.0 <= min_dist) {
     if ((((float)20 < ABS(local_4c)) || ((float)40 < ABS(local_50))) ||
        ((float)40 < ABS(local_48))) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (PTR_DAT_005ad350,"%s confused while following %s\n",param_1,param_2);
-      *param_5 = 3;
+                (PTR_DAT_005ad350,"%s confused while following %s\n",this_ptr,actor);
+      *out_state = 3;
       return;
     }
     local_2c = SQRT(local_48 * local_48 + local_50 * local_50);
     local_4c = 0.0;
-    if (param_4 < 0.0) {
-      param_4 = 1e+30;
+    if (max_dist < 0.0) {
+      max_dist = 1e+30;
     }
-    local_20 = param_3 * (float)0.10000000000000001;
-    iVar4 = *param_5;
-    if (iVar4 == 0) {
-      param_3 = param_3 + local_20;
+    local_20 = min_dist * (float)0.10000000000000001;
+    iVar2 = *out_state;
+    if (iVar2 == 0) {
+      min_dist = min_dist + local_20;
     }
-    else if (iVar4 == 1) {
-      param_4 = param_4 + local_20;
-      param_3 = param_3 - local_20;
+    else if (iVar2 == 1) {
+      max_dist = max_dist + local_20;
+      min_dist = min_dist - local_20;
     }
-    else if (iVar4 == 2) {
-      param_4 = param_4 - local_20;
+    else if (iVar2 == 2) {
+      max_dist = max_dist - local_20;
     }
-    if (param_3 < (float)0.01) {
-      param_3 = 0.01;
+    if (min_dist < (float)0.01) {
+      min_dist = 0.01;
     }
-    if (param_3 <= local_2c) {
-      uVar3 = (**(code **)(*(int *)(param_2 + 0x14c) + 0xbc))(param_2,&DAT_02dd1184,0,0);
-      iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(param_1,param_2 + 0x20,uVar3);
-      if (iVar4 < 0) {
+    if (min_dist <= local_2c) {
+      fVar4 = 0.0;
+      fVar3 = 0.0;
+      direction = (CVector3f *)&DAT_02dd1184;
+      path_map = (*((actor->vtable)._ub)->getPathMap)(actor);
+      iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                        (this_ptr,&(actor->location).position,path_map,direction,fVar3,fVar4);
+      if (iVar2 < 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (PTR_DAT_005ad350,"%s confused after pathmap call while following %s\n",param_1,param_2);
-        *param_5 = 3;
+                  (PTR_DAT_005ad350,"%s confused after pathmap call while following %s\n",this_ptr,actor);
+        *out_state = 3;
         return;
       }
-      if (local_2c <= param_4) {
-        *param_5 = 1;
+      if (local_2c <= max_dist) {
+        *out_state = 1;
         return;
       }
-      *param_5 = 2;
+      *out_state = 2;
       return;
     }
-    *param_5 = 0;
+    *out_state = 0;
     return;
   }
   local_4c = 0.0;
-  uVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220(param_1,local_44,&local_50)
-  ;
-  iVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_38,uVar3);
-  *(uint *)(param_1 + 0x2410) = *(uint *)(iVar4 + 4);
-  if (*param_5 == 0) {
-    if ((float)0.17453292519444399 < ABS(*(float *)(param_1 + 0x2410))) goto LAB_00428901;
-    if (*param_5 != 1) goto LAB_0042899e;
+  uVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
+                    (this_ptr,local_44,&local_50);
+  iVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_38,uVar1);
+  this_ptr->turn_angle_accumulator = *(float *)(iVar2 + 4);
+  if (*out_state == 0) {
+    if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_00428901;
+    if (*out_state != 1) goto LAB_0042899e;
   }
   else {
-    if (ABS(*(float *)(param_1 + 0x2410)) < (float)0.034906585038888903) {
-      *param_5 = 0;
+    if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {
+      *out_state = 0;
 LAB_0042899e:
-      *(uint *)(param_1 + 0x2410) = 0;
+      this_ptr->turn_angle_accumulator = 0.0;
       goto LAB_0042895c;
     }
 LAB_00428901:
-    *param_5 = 1;
+    *out_state = 1;
   }
-  local_1c = *(uint *)(param_1 + 0x2410);
-  local_18 = *(float *)(param_1 + 0x2430);
-  fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_1c);
-  fVar2 = -local_18;
-  if ((fVar2 <= fVar1) && (fVar2 = fVar1, local_18 < fVar1)) {
-    fVar2 = local_18;
+  local_1c = this_ptr->turn_angle_accumulator;
+  local_18 = this_ptr->turn_speed;
+  fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00(local_1c);
+  fVar3 = -local_18;
+  if ((fVar3 <= fVar4) && (fVar3 = fVar4, local_18 < fVar4)) {
+    fVar3 = local_18;
   }
-  *(float *)(param_1 + 0x2410) = fVar2;
+  this_ptr->turn_angle_accumulator = fVar3;
 LAB_0042895c:
-  *(uint *)(param_1 + 0x23ac) = 0;
-  *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
-  *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
+  (this_ptr->model).accumulated_root_motion.z = 0.0;
+  (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
+  (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   return;
 }

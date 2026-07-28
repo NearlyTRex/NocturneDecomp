@@ -6,14 +6,14 @@
 ;
 ; XREF[2]:
 ;   crt_stdio.c_fprintf_FUN_005644f0 at 00564508
-;   crt_unknown.c_FUN_00564c30 at 00564c47
+;   crt_unknown.c_printf_FUN_00564c30 at 00564c47
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1ac0 = 005671e4
-;   void* PTR_FUN_005c1ac4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_005671e4
+;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   FUN_00568890
 ;   FUN_00568ed0
 ;   FUN_00569040
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0056ae14
     MOV EDX,dword ptr [EBX + 0x10]      ; 0056ae18
     PUSH EDX                            ; 0056ae1b
-    CALL dword ptr [0x005c1ac0]         ; 0056ae1c | PTR_FUN_005c1ac0
+    CALL dword ptr [0x005c1ac0]         ; 0056ae1c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     MOV EAX,dword ptr [EBX + 0x8]       ; 0056ae22
     MOV ECX,dword ptr [EAX + 0xc]       ; 0056ae25
     ADD ESP,0x4                         ; 0056ae28
@@ -42,7 +42,7 @@ section .text
         ;   XREF to: 0056ae48 (CONDITIONAL_JUMP)  ; LAB_0056ae48
     MOV EDI,dword ptr [EBX + 0x10]      ; 0056ae34
     PUSH EDI                            ; 0056ae37
-    CALL dword ptr [0x005c1ac4]         ; 0056ae38 | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 0056ae38 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 0056ae3e
     XOR EAX,EAX                         ; 0056ae41
     POP EBP                             ; 0056ae43
@@ -115,7 +115,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x10]      ; 0056aed7
     PUSH EBP                            ; 0056aeda
     MOV dword ptr [EBX + 0xc],EDI       ; 0056aedb
-    CALL dword ptr [0x005c1ac4]         ; 0056aede | PTR_FUN_005c1ac4
+    CALL dword ptr [0x005c1ac4]         ; 0056aede | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4
     ADD ESP,0x4                         ; 0056aee4
     MOV EAX,ESI                         ; 0056aee7
     POP EBP                             ; 0056aee9

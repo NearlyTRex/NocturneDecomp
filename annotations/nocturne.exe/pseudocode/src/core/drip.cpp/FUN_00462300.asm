@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_FUN_00462300(int param_1,float param_2)
+; void core_drip_cpp_FUN_00462300(CDemonActor *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
@@ -90,7 +90,7 @@ section .text
     PUSH 0x1fba938                      ; 00462391 | DAT_01fba938
     FSTP float ptr [ESP + 0x80]         ; 00462396
     CALL core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930 ; 0046239d
-        ;   XREF to: 00467930 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930()
+        ;   XREF to: 00467930 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930(CDemonRaytrace * this_ptr, CVector3f * output_point, CVector3f * ray_start, CVector3f * ray_end)
     ADD ESP,0x10                        ; 004623a2
     MOV EAX,dword ptr [ESP + 0x64]      ; 004623a5
     MOV dword ptr [EBX + 0x2e4],0x1     ; 004623a9
@@ -136,7 +136,7 @@ section .text
     MOV EAX,ESP                         ; 00462437
     PUSH EAX                            ; 00462439
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0046243a
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 0046243f
     MOV EDX,ESP                         ; 00462442
     MOV EAX,dword ptr [EBX + 0x308]     ; 00462444
@@ -228,7 +228,7 @@ section .text
     PUSH EDX                            ; 00462575
     FSTP float ptr [ESP + 0x70]         ; 00462576
     CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 ; 0046257a
-        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0()
+        ;   XREF to: 0048afe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 0046257f
     PUSH 0x3fc90fdb                     ; 00462582
     PUSH 0x3f490fdb                     ; 00462587
@@ -271,7 +271,7 @@ section .text
     FSTP float ptr [ESP + 0x7c]         ; 0046261c
     FSTP float ptr [ESP + 0x84]         ; 00462620
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00462627
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0046262c
     PUSH EAX                            ; 0046262f
     LEA EAX,[ESP + 0x7c]                ; 00462630
@@ -281,7 +281,7 @@ section .text
     PUSH ECX                            ; 0046263c
     INC EDI                             ; 0046263d
     CALL core_fire.cpp_CFireEffect_createRock_FUN_0048b320 ; 0046263e
-        ;   XREF to: 0048b320 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createRock_FUN_0048b320()
+        ;   XREF to: 0048b320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 00462643
     CMP EDI,0xa                         ; 00462646
     JL 0x004624d0                       ; 00462649

@@ -2,13 +2,13 @@
 // Address: 0049f710
 // Address Range: [[0049f710, 0049f8be]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(int param_1,int param_2)
+// Signature: void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_ptr,SPlayerInput *player_control)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(int param_1,int param_2)
+void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_ptr,SPlayerInput *player_control)
 
 {
   int iVar1;
@@ -18,17 +18,17 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(int param_1,i
   float local_40;
   float local_3c;
   
-  core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(param_1,param_2);
-  if (*(int *)(param_1 + 0x27c) == 0) {
+  core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(this_ptr,player_control);
+  if (this_ptr->screen_clear_condition == 0) {
     iVar1 = DAT_005b761c / 2;
     iVar2 = DAT_005b7620 / 2;
     iVar3 = _DAT_01bd1d8c - iVar1;
     iVar4 = _DAT_01bd1d90 - iVar2;
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(iVar1,iVar2);
     if (*(int *)(0x01E57284 + 0x15aabc) == _DAT_01c7841c) {
-      local_3c = (float)*(int *)(param_1 + 0x9c) * (float)1.52587890625e-05 * (float)0.75 *
-                 ((float)iVar3 / (float)iVar1);
-      local_40 = (float)*(int *)(param_1 + 0xa0) * (float)1.52587890625e-05 *
+      local_3c = (float)this_ptr->x_mouse_sensitivity * (float)1.52587890625e-05 *
+                 (float)0.75 * ((float)iVar3 / (float)iVar1);
+      local_40 = (float)this_ptr->y_mouse_sensitivity * (float)1.52587890625e-05 *
                  ((float)iVar4 / (float)iVar2);
       if (local_3c < (float)-1) {
         local_3c = -1.0;
@@ -42,19 +42,19 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(int param_1,i
       if (1.0 < local_40) {
         local_40 = 1.0;
       }
-      if (*(int *)(param_1 + 0x94) != 0) {
+      if (this_ptr->invert_mouse_y_axis != 0) {
         local_40 = -local_40;
       }
-      if ((&DAT_01c02598)[*(int *)(param_1 + 0x34)] == '\0') {
-        if (ABS(*(float *)(param_2 + 0x24)) < ABS(local_3c)) {
-          *(float *)(param_2 + 0x24) = local_3c;
+      if ((&DAT_01c02598)[this_ptr->key_strafe] == '\0') {
+        if (ABS(player_control->turn_speed) < ABS(local_3c)) {
+          player_control->turn_speed = local_3c;
         }
       }
-      else if (ABS(*(float *)(param_2 + 0x20)) < ABS(local_3c)) {
-        *(float *)(param_2 + 0x20) = local_3c;
+      else if (ABS(player_control->strafe_speed) < ABS(local_3c)) {
+        player_control->strafe_speed = local_3c;
       }
-      if (ABS(*(float *)(param_2 + 0x28)) < ABS(local_40)) {
-        *(float *)(param_2 + 0x28) = local_40;
+      if (ABS(player_control->look_up_down_speed) < ABS(local_40)) {
+        player_control->look_up_down_speed = local_40;
         return;
       }
     }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
+; undefined4 core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
@@ -38,7 +38,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
-;   core_marquee.cpp_FUN_004cc440
+;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
@@ -68,19 +68,19 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004cc5f7 | DAT_005ae704
     PUSH ECX                            ; 004cc5fd | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004cc5fe
-        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000()
+        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004cc603
     PUSH 0xffff                         ; 004cc606
     MOV ESI,dword ptr [0x005ae704]      ; 004cc60b | DAT_005ae704
     PUSH ESI                            ; 004cc611 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004cc612
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004cc617
     PUSH 0x5badbc                       ; 004cc61a | DAT_005badbc
     MOV EDI,dword ptr [0x005ae704]      ; 004cc61f | DAT_005ae704
     PUSH EDI                            ; 004cc625 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004cc626
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EDX,dword ptr [0x005baf90]      ; 004cc62b | DAT_005baf90
     ADD ESP,0x8                         ; 004cc631
     MOV EBP,dword ptr [EDX + 0x4]       ; 004cc634 | DAT_01cc9454
@@ -107,7 +107,7 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 004cc67d
     PUSH EAX                            ; 004cc681
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004cc682
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004cc687
     LEA EAX,[ESP + 0x50]                ; 004cc68a
     PUSH EAX                            ; 004cc68e
@@ -115,7 +115,7 @@ section .text
     PUSH EAX                            ; 004cc693
     PUSH EBX                            ; 004cc694
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cc695
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV ESI,EAX                         ; 004cc69a
     LEA EAX,[ESP + 0x5c]                ; 004cc69c
     ADD ESP,0xc                         ; 004cc6a0
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 004cc6bf
     PUSH EBX                            ; 004cc6c0
     INC EDI                             ; 004cc6c1
-    CALL core_marquee.cpp_FUN_004cc440  ; 004cc6c2
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440 ; 004cc6c2
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004cc6c7
     CMP EDI,EBP                         ; 004cc6ca
     JL 0x004cc65a                       ; 004cc6cc
@@ -144,7 +144,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 004cc6d0 | DAT_005ae704
     PUSH EDX                            ; 004cc6d6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004cc6d7
-        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000()
+        ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     MOV EAX,0x1                         ; 004cc6dc
     ADD ESP,0x8                         ; 004cc6e1
     POP ESI                             ; 004cc6e4
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 004cc79f (CONDITIONAL_JUMP)  ; LAB_004cc79f
     FLD float ptr [EBX + 0x174]         ; 004cc6fe
     CALL crt_math.c_round_FUN_00563a30  ; 004cc704
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8c]        ; 004cc709
     MOV EDI,dword ptr [ESP + 0x8c]      ; 004cc710
     XOR ESI,ESI                         ; 004cc717
@@ -180,7 +180,7 @@ section .text
     PUSH dword ptr [ESP + 0x80]         ; 004cc745
     PUSH EDI                            ; 004cc74c
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004cc74d
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004cc752
     LEA EAX,[ESP + 0x38]                ; 004cc755
     PUSH EAX                            ; 004cc759
@@ -188,7 +188,7 @@ section .text
     PUSH EAX                            ; 004cc75e
     PUSH EBX                            ; 004cc75f
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cc760
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,EAX                         ; 004cc765
     LEA EAX,[ESP + 0x44]                ; 004cc767
     ADD ESP,0xc                         ; 004cc76b
@@ -206,8 +206,8 @@ section .text
     PUSH EAX                            ; 004cc78a
     PUSH EBX                            ; 004cc78b
     INC ESI                             ; 004cc78c
-    CALL core_marquee.cpp_FUN_004cc440  ; 004cc78d
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440 ; 004cc78d
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004cc792
     CMP ESI,EBP                         ; 004cc795
     JGE 0x004cc6ce                      ; 004cc797
@@ -220,7 +220,7 @@ section .text
         ;   XREF to: 004cc6ce (CONDITIONAL_JUMP)  ; LAB_004cc6ce
     FLD float ptr [EBX + 0x174]         ; 004cc7a7
     CALL crt_math.c_round_FUN_00563a30  ; 004cc7ad
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EDX,dword ptr [EAX]             ; 004cc7b2
     XOR EDI,EDI                         ; 004cc7b4
     FISTP dword ptr [ESP + 0x80]        ; 004cc7b6
@@ -259,7 +259,7 @@ section .text
     PUSH dword ptr [ESP + 0x84]         ; 004cc81a
     PUSH EBP                            ; 004cc821
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004cc822
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004cc827
     LEA EAX,[ESP + 0x14]                ; 004cc82a
     PUSH EAX                            ; 004cc82e
@@ -267,7 +267,7 @@ section .text
     PUSH EAX                            ; 004cc833
     PUSH EBX                            ; 004cc834
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004cc835
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,EAX                         ; 004cc83a
     LEA EAX,[ESP + 0x20]                ; 004cc83c
     ADD ESP,0xc                         ; 004cc840
@@ -284,8 +284,8 @@ section .text
         ;   Label: LAB_004cc85b
     PUSH EAX                            ; 004cc85f
     PUSH EBX                            ; 004cc860
-    CALL core_marquee.cpp_FUN_004cc440  ; 004cc861
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440 ; 004cc861
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004cc866
     JMP 0x004cc7e8                      ; 004cc869
         ;   XREF to: 004cc7e8 (UNCONDITIONAL_JUMP)  ; LAB_004cc7e8

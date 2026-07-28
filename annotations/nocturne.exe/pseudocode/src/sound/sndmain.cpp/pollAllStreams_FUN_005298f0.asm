@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int param_1)
+; void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode)
 ;
+; Parameters:
+; int              Stack[0x4]:4   paused_mode
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
@@ -34,7 +36,7 @@ section .text
     SUB ESP,0x10                        ; 005298f5
     AND ESP,0xfffffff8                  ; 005298f8
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 005298fb
-        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_lockSound_FUN_00528800()
+        ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
     FLD float ptr [0x005a2174]          ; 00529900 | FLOAT_005a2174
     MOV EDX,dword ptr [EBP + 0x10]      ; 00529906
     FST double ptr [ESP]                ; 00529909
@@ -63,7 +65,7 @@ section .text
     JNZ 0x00529935                      ; 0052994e
         ;   XREF to: 00529935 (CONDITIONAL_JUMP)  ; LAB_00529935
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00529950
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV ESP,EBP                         ; 00529955
     POP EBP                             ; 00529957
     POP ESI                             ; 00529958

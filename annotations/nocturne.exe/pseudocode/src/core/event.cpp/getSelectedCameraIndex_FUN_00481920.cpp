@@ -2,12 +2,12 @@
 // Address: 00481920
 // Address Range: [[00481920, 0048192a]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(int param_1)
+// Signature: int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(CDemonSet *set_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(int param_1)
+int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(CDemonSet *set_ptr)
 
 {
-  return *(uint *)(param_1 + 0x15aabc);
+  return (int)set_ptr->renderable_actors[0x773];
 }

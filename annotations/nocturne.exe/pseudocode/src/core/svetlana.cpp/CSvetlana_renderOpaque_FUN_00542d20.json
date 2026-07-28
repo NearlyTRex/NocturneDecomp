@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,19 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 224,
+    "complexity_score": 304,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 22,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 185
+    "total_lines": 190
   },
   "cross_references": [],
   "function": {
@@ -147,7 +148,7 @@
     ],
     "convention": "unknown",
     "name": "core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20",
-    "signature": "int core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(int param_1)"
+    "signature": "int core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CCharacter *param_1)"
   },
   "function_calls": [
     {
@@ -297,63 +298,47 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(int param_1)",
+      "text": "int core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CCharacter *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1;",
+      "text": "pCVar6 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar4 != param_1 + 0x78);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2290 + *(int *)(param_1 + 0x950b8) * 4) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2290 + *(int *)(param_1 + 0x950b8) * 4) = 1;",
+      "text": "iVar5 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 28,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "uVar3 = DAT_005ae704;",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2290 + *(int *)(param_1 + 0x950bc) * 4) = 1;",
+      "text": "pCVar6 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (pCVar7 != (CCharacter *)(param_1->base).create_event);",
       "type": "unnamed_param"
     },
     {
@@ -361,12 +346,44 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2290 + *(int *)(param_1 + 0x950bc) * 4) = 1;",
+      "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].texture_flip] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].texture_flip] = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 37,
+      "match": "DAT_005ae704",
+      "severity": "mild",
+      "text": "this_ptr = DAT_005ae704;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].do_visibility_check] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->model).part_data.visibility_flags[param_1[0xc].flames[0x1a].do_visibility_check] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,48000);",
@@ -374,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440(param_1);",
@@ -382,18 +399,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_cloth_cpp_CCloth_render_FUN_00437db0(param_1 + 0x1fa44);",
+      "text": "pCVar6 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -401,8 +410,56 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_CCloth_render_FUN_00437db0(param_1 + 0x5a574);",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&param_1->base);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCloth *)(param_1[2].flames[0x1d].on_event + 0xc),(CDeformableModelInstance *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CCloth *)(param_1[7].flames[0x1c].base.create_event + 0x54),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar6` is advanced into scratch `pCVar7`, then rebound via a later `pCVar6 = pCVar7;`. Functionally identical to the single-line self-update; replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 32,
+      "match": "pCVar7 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar6 = pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 53,
+      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCharacter *)((pCVar6->base).actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

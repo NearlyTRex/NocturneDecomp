@@ -2,13 +2,15 @@
 // Address: 00490af0
 // Address Range: [[00490af0, 00490b1e]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Signature: int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 
 {
-  engine_font_cpp_CBitFont_drawText_FUN_00490980(param_1,param_6,param_2,param_3,param_4,param_5);
-  return;
+  int iVar1;
+  
+  iVar1 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,text,x,y,color_mode,color_value);
+  return iVar1;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(int param_1,undefined4 *param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(CBodyPart *this_ptr,CVector3f *position)
 ;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0xc]:4  local_c
@@ -63,7 +66,7 @@ section .text
     PUSH EAX                            ; 00417b9f
     PUSH EBX                            ; 00417ba0
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00417ba1
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[ESI + 0x2c]                ; 00417ba6
     FLD float ptr [EAX]                 ; 00417ba9
     ADD ESP,0xc                         ; 00417bab

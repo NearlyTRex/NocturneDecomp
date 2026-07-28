@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0(int *param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_FUN_0044f9b0 at 00450118
@@ -74,7 +77,7 @@ section .text
     PUSH EBX                            ; 00460532
     PUSH EBP                            ; 00460533
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 00460534
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 00460539
     POP EBP                             ; 0046053c
         ;   Label: LAB_0046053c
@@ -86,7 +89,7 @@ section .text
         ;   Label: LAB_00460541
     PUSH EAX                            ; 00460544
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00460545
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046054a
     TEST EAX,EAX                        ; 0046054d
     JZ 0x0046053c                       ; 0046054f

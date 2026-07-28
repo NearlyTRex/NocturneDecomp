@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(undefined4 *param_1,undefined4 *param_2,float param_3)
+; void core_xform_cpp_lerpMatrix3x4_FUN_0055cc30(CMatrix3x4f *param_1,CMatrix3x4f *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xd8]:8  local_d8
@@ -121,7 +121,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 0055cd07
     PUSH ESI                            ; 0055cd0b
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70 ; 0055cd0c
-        ;   XREF to: 0055cd70 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70()
+        ;   XREF to: 0055cd70 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 0055cd11
     FLD1                                ; 0055cd14
     MOV ESI,dword ptr [EBP + 0x10]      ; 0055cd16

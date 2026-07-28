@@ -2,26 +2,26 @@
 // Address: 0050e510
 // Address Range: [[0050e510, 0050e54f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(int *param_1,int param_2,undefined4 param_3)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(CDemonSet *this_ptr,int group_id,float value)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(int *param_1,int param_2,uint param_3)
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(CDemonSet *this_ptr,int group_id,float value)
 
 {
-  int iVar1;
-  int *piVar2;
+  int index;
+  CDemonSet *pCVar1;
   
-  iVar1 = 0;
-  piVar2 = param_1;
-  if (0 < *param_1) {
+  index = 0;
+  pCVar1 = this_ptr;
+  if (0 < this_ptr->camera_count) {
     do {
-      if (param_2 == piVar2[0x53]) {
-        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(param_1,iVar1,param_3);
+      if ((float)group_id == pCVar1->cameras[0].ambient_value) {
+        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(this_ptr,index,value);
       }
-      iVar1 = iVar1 + 1;
-      piVar2 = piVar2 + 0x68;
-    } while (iVar1 < *param_1);
+      index = index + 1;
+      pCVar1 = (CDemonSet *)&pCVar1->cameras[0].vdir_zone;
+    } while (index < this_ptr->camera_count);
   }
   return;
 }

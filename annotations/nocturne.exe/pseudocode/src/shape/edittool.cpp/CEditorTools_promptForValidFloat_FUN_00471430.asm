@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(undefined4 param_1,undefined4 param_2,float *param_3,int param_4,float param_5,float param_6,byte param_7)
+; int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   prompt_text
+; float *          Stack[0xc]:4   result_ptr
+; int              Stack[0x10]:4   enable_range_check
+; float            Stack[0x14]:4   min_value
+; float            Stack[0x18]:4   max_value
+; int              Stack[0x1c]:4   show_current_value
 ; Local Variables:
 ; undefined8       Stack[-0x50]:8  local_50
 ; undefined8       Stack[-0x48]:8  local_48
@@ -59,7 +67,7 @@ section .text
     PUSH ESI                            ; 00471467
     PUSH EBX                            ; 00471468
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 00471469
-        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600()
+        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047146e
     TEST EAX,EAX                        ; 00471471
     JNZ 0x0047149b                      ; 00471473

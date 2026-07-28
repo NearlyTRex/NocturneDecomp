@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1)
+; CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_00506bc0(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_staticInit_FUN_00506b40 at 00506b45
@@ -39,28 +41,28 @@ section .text
     ADD EBX,0x4                         ; 00506bd1
     PUSH EBX                            ; 00506bd4
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506bd5
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00506bda
     PUSH 0x5a1990                       ; 00506bdd | g_C3DSLightTypeInfo_005a1990
     PUSH 0xc8                           ; 00506be2
     ADD EAX,0x19644                     ; 00506be7
     PUSH EAX                            ; 00506bec
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506bed
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00506bf2
     PUSH 0x5a19b0                       ; 00506bf5 | g_SRoomTypeInfo_005a19b0
     PUSH 0x14                           ; 00506bfa
     ADD EAX,0x141490                    ; 00506bfc
     PUSH EAX                            ; 00506c01
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506c02
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00506c07
     PUSH 0x5a19d0                       ; 00506c0a | g_SVDBoxTypeInfo_005a19d0
     PUSH 0xfa                           ; 00506c0f
     ADD EAX,0x554                       ; 00506c14
     PUSH EAX                            ; 00506c19
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506c1a
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffea4fd4]          ; 00506c1f
     MOV dword ptr [EBX],0x0             ; 00506c25
     MOV dword ptr [EBX + 0x19644],0x0   ; 00506c2b
@@ -107,7 +109,7 @@ section .text
         ;   Label: LAB_00506d35
     PUSH EBX                            ; 00506d36
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00506d37
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     MOV dword ptr [EBX + 0x15f2f8],0x0  ; 00506d3c
     MOV dword ptr [EBX + 0x15a8c4],0x0  ; 00506d46
     MOV dword ptr [EBX + 0x15f294],0x2  ; 00506d50

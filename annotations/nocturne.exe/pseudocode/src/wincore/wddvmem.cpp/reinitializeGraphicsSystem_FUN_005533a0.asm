@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 005533b6
     PUSH EBX                            ; 005533b7
     CALL engine_special.cpp_restoreVideoMode_FUN_005325f0 ; 005533b8
-        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreVideoMode_FUN_005325f0()
+        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreVideoMode_FUN_005325f0()
     MOV EBX,dword ptr [0x02ddf55c]      ; 005533bd | DAT_02ddf55c
     TEST EBX,EBX                        ; 005533c3
     JZ 0x005533d5                       ; 005533c5
@@ -111,7 +111,7 @@ section .text
     MOV EAX,[0x005b761c]                ; 0055345b | DAT_005b761c
     PUSH EAX                            ; 00553460
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553461
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00553466
     POP EBX                             ; 00553469
     POP ESI                             ; 0055346a

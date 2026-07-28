@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_script_cpp_FUN_004fe4d0(int param_1)
+; CStrList * core_script_cpp_FUN_004fe4d0(int param_1)
 ;
 ;
 ; Called Functions:
@@ -23,7 +23,7 @@ section .text
     ADD EBX,0x30                        ; 004fe4e0
     PUSH EBX                            ; 004fe4e3
     CALL shape_edittool.cpp_CStrList_dtor_FUN_00473b80 ; 004fe4e4
-        ;   XREF to: 00473b80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_dtor_FUN_00473b80()
+        ;   XREF to: 00473b80 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_00473b80(CStrList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004fe4e9
     SUB EAX,0x30                        ; 004fe4ec
     POP EBX                             ; 004fe4ef

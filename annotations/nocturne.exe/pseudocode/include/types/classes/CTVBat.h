@@ -10,30 +10,30 @@ struct CDemonActor;
 #include "types/classes/CVector3f.h"
 
 // Structure: CTVBat
-// Ghidra size: 0xc0f4 (49396 bytes)
+// Ghidra size: 0xbf5c (48988 bytes)
 #pragma pack(push, 1)
 typedef struct CTVBat {
     CEnemy base; // 0x0
-    float anim_frame; // 0xbebc
-    CKeyFramedModelInstance model; // 0xbec0
-    float speed; // 0xc03c
-    float anim_rate; // 0xc040
-    CVector3f home_pos; // 0xc044
-    float max_distance; // 0xc050
-    float max_height; // 0xc054
-    float rot_speed; // 0xc058
-    float move_speed; // 0xc05c
-    float height_offset; // 0xc060
-    int follow_orders; // 0xc064
-    float attack_timer; // 0xc068
-    CVector3f velocity; // 0xc06c
-    int state; // 0xc078
-    char periodic_sound[100]; // 0xc07c
-    float periodic_sound_timer_min; // 0xc0e0
-    float periodic_sound_timer_max; // 0xc0e4
-    uint periodic_sound_handle; // 0xc0e8
-    float periodic_sound_timer; // 0xc0ec
-    struct CDemonActor* boss_actor; // 0xc0f0
+    float anim_frame; // 0xbd24
+    CKeyFramedModelInstance model; // 0xbd28
+    float speed; // 0xbea4
+    float anim_rate; // 0xbea8
+    CVector3f home_pos; // 0xbeac
+    float max_distance; // 0xbeb8
+    float max_height; // 0xbebc
+    float rot_speed; // 0xbec0
+    float move_speed; // 0xbec4
+    float height_offset; // 0xbec8
+    int follow_orders; // 0xbecc
+    float attack_timer; // 0xbed0
+    CVector3f velocity; // 0xbed4
+    int state; // 0xbee0
+    char periodic_sound[100]; // 0xbee4
+    float periodic_sound_timer_min; // 0xbf48
+    float periodic_sound_timer_max; // 0xbf4c
+    uint periodic_sound_handle; // 0xbf50
+    float periodic_sound_timer; // 0xbf54
+    struct CDemonActor* boss_actor; // 0xbf58
 } CTVBat;
 #pragma pack(pop)
 

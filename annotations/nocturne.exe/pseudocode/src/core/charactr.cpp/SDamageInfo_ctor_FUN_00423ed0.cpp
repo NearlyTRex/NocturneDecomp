@@ -2,26 +2,26 @@
 // Address: 00423ed0
 // Address Range: [[00423ed0, 00423f35]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(undefined4 *param_1)
+// Signature: SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(uint *param_1)
+SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo *this_ptr)
 
 {
-  param_1[10] = 0;
-  param_1[0xb] = 0;
-  *param_1 = 0xffffffff;
-  param_1[2] = 0;
-  param_1[5] = 0;
-  param_1[4] = param_1[5];
-  param_1[3] = param_1[4];
-  param_1[6] = 0x41a00000;
-  param_1[9] = 0;
-  param_1[8] = param_1[9];
-  param_1[7] = param_1[8];
-  param_1[0xc] = 100;
-  param_1[0xd] = 0;
-  param_1[0xe] = 0;
-  return;
+  this_ptr->ammo_type = AMMO_TYPE_GENERIC;
+  this_ptr->dismember_prob = 0.0;
+  this_ptr->hit_part_index = -1;
+  this_ptr->gore_multiplier = 0.0;
+  (this_ptr->impact_point).z = 0.0;
+  (this_ptr->impact_point).y = (this_ptr->impact_point).z;
+  (this_ptr->impact_point).x = (this_ptr->impact_point).y;
+  this_ptr->impact_force = 20.0;
+  (this_ptr->impact_direction).z = 0.0;
+  (this_ptr->impact_direction).y = (this_ptr->impact_direction).z;
+  (this_ptr->impact_direction).x = (this_ptr->impact_direction).y;
+  this_ptr->damage_type = DAMAGE_TYPE_IMMUNE;
+  this_ptr->attacker = (CDemonActor *)0x0;
+  this_ptr->wielder = (CDemonActor *)0x0;
+  return this_ptr;
 }

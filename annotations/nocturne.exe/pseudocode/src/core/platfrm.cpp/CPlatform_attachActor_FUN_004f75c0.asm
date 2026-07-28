@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(int param_1,int param_2)
+; void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this_ptr,CDemonActor *actor)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
 ; undefined        Stack[-0xa0]:1  local_a0
 ; undefined        Stack[-0x70]:1  local_70
@@ -94,7 +97,7 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 004f7643
     PUSH EAX                            ; 004f7647
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 004f7648
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004f764d
     LEA EAX,[ESP + 0x60]                ; 004f7650
     PUSH EAX                            ; 004f7654

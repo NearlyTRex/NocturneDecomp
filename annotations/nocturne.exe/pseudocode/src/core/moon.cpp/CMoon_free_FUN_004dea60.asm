@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(int *param_1)
+; void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(CMoon *this_ptr)
 ;
+; Parameters:
+; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004d23d0 at 004d2780
@@ -35,7 +37,7 @@ section .text
     PUSH EBX                            ; 004dea74
         ;   Label: LAB_004dea74
     CALL core_course.cpp_CCourse_free_FUN_0043b7c0 ; 004dea75
-        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_free_FUN_0043b7c0()
+        ;   XREF to: 0043b7c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_0043b7c0(CCourse * this_ptr)
     ADD EBX,0xc                         ; 004dea7a
     ADD ESP,0x4                         ; 004dea7d
     CMP EBX,ESI                         ; 004dea80
@@ -58,13 +60,13 @@ section .text
         ;   Label: LAB_004deaa1
     MOV EBX,0x1ccdc64                   ; 004deaa6
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360 ; 004deaab
-        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360()
+        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004deab0
     LEA ESI,[EBX + 0x258]               ; 004deab3
     PUSH EBX                            ; 004deab9
         ;   Label: LAB_004deab9
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360 ; 004deaba
-        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360()
+        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 004deabf
     ADD ESP,0x4                         ; 004deac2
     CMP EBX,ESI                         ; 004deac5

@@ -2,24 +2,25 @@
 // Address: 004b4140
 // Address Range: [[004b4140, 004b418d]]
 // Convention: unknown
-// Signature: undefined4 core_haystack_cpp_FUN_004b4140(undefined4 param_1,byte param_2)
+// Signature: CHero * core_haystack_cpp_FUN_004b4140(CHero *param_1,byte param_2)
 
 #include "nocturne.h"
 
-uint core_haystack_cpp_FUN_004b4140(uint param_1,byte param_2)
+CHero * core_haystack_cpp_FUN_004b4140(CHero *param_1,byte param_2)
 
 {
-  uint uVar1;
+  CHero *pCVar1;
+  void *ptr;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&g_CHaystackTypeInfo_0059e9d0);
-    shape_memdbg_cpp_free_FUN_00564486(uVar1);
+    ptr = __vec_delete(param_1,&g_CHaystackTypeInfo_0059e9d0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr);
     return param_1;
   }
-  uVar1 = core_hero_cpp_FUN_004b4800(param_1,1);
+  pCVar1 = core_hero_cpp_CHero_dtor_FUN_004b4800(param_1,1);
   if ((param_2 & 2) == 0) {
-    return uVar1;
+    return pCVar1;
   }
-  FUN_00564494(uVar1);
-  return uVar1;
+  FUN_00564494(pCVar1);
+  return pCVar1;
 }

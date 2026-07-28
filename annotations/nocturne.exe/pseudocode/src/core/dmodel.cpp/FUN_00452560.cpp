@@ -2,11 +2,11 @@
 // Address: 00452560
 // Address Range: [[00452560, 00452587]]
 // Convention: unknown
-// Signature: void core_dmodel_cpp_FUN_00452560(undefined4 param_1,int param_2)
+// Signature: void core_dmodel_cpp_FUN_00452560(_FILE *param_1,int param_2)
 
 #include "nocturne.h"
 
-void core_dmodel_cpp_FUN_00452560(uint param_1,int param_2)
+void core_dmodel_cpp_FUN_00452560(_FILE *param_1,int param_2)
 
 {
   int iVar1;

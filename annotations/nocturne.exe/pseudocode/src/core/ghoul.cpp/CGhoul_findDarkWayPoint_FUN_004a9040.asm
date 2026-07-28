@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,float param_2)
+; void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(CGhoul *this_ptr,float delta_time)
 ;
+; Parameters:
+; CGhoul *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -94,7 +97,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004a90ca | DAT_01fa3ff4
     PUSH ECX                            ; 004a90d0
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004a90d1
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004a90d6
     MOV EDI,EAX                         ; 004a90d9
     TEST EAX,EAX                        ; 004a90db
@@ -115,7 +118,7 @@ section .text
     MOV EBX,dword ptr [0x005b9654]      ; 004a90f8 | PTR_s_darkPoint_00584ead_005b9654
     PUSH EBX                            ; 004a90fe | = "darkPoint*"
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004775b0 ; 004a90ff
-        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_wildcardStringMatch_FUN_004775b0()
+        ;   XREF to: 004775b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004775b0(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 004a9104
     TEST EAX,EAX                        ; 004a9107
     JZ 0x004a90df                       ; 004a9109
@@ -165,7 +168,7 @@ section .text
     PUSH EDX                            ; 004a918a
     PUSH EBX                            ; 004a918b
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 004a918c
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 004a9191
     TEST EAX,EAX                        ; 004a9194
     JLE 0x004a90df                      ; 004a9196
@@ -184,7 +187,7 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x150bf8] ; 004a91b7
     PUSH EDX                            ; 004a91be
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004a91bf
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004a91c4
     TEST EAX,EAX                        ; 004a91c7
     JZ 0x004a91a7                       ; 004a91c9
@@ -201,7 +204,7 @@ section .text
         ;   Label: LAB_004a91dc
     PUSH EAX                            ; 004a91df
     CALL core_path.cpp_getPathMap_FUN_004f1e00 ; 004a91e0
-        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getPathMap_FUN_004f1e00()
+        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_004f1e00(CLocation * location)
     ADD ESP,0x4                         ; 004a91e5
     MOV EBX,EAX                         ; 004a91e8
     JMP 0x004a914a                      ; 004a91ea

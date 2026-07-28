@@ -2,13 +2,13 @@
 // Address: 004c6a70
 // Address Range: [[004c6a70, 004c6cb0]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int param_2,int param_3)
+// Signature: int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int world_x,int world_y,int world_z)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int param_2,int param_3)
+int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int world_x,int world_y,int world_z)
 
 {
   longlong lVar1;
@@ -23,12 +23,12 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int
   int local_14;
   
   bVar6 = 0;
-  iVar3 = ((uint)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x10 |
-          (int)((ulonglong)((longlong)param_1 * (longlong)_DAT_01c039dc) >> 0x20) << 0x10) +
-          ((uint)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x10 |
-          (int)((ulonglong)((longlong)param_2 * (longlong)_DAT_01c039e0) >> 0x20) << 0x10) +
-          ((uint)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x10 |
-          (int)((ulonglong)((longlong)param_3 * (longlong)_DAT_01c039e4) >> 0x20) << 0x10);
+  iVar3 = ((uint)((longlong)world_x * (longlong)_DAT_01c039dc) >> 0x10 |
+          (int)((ulonglong)((longlong)world_x * (longlong)_DAT_01c039dc) >> 0x20) << 0x10) +
+          ((uint)((longlong)world_y * (longlong)_DAT_01c039e0) >> 0x10 |
+          (int)((ulonglong)((longlong)world_y * (longlong)_DAT_01c039e0) >> 0x20) << 0x10) +
+          ((uint)((longlong)world_z * (longlong)_DAT_01c039e4) >> 0x10 |
+          (int)((ulonglong)((longlong)world_z * (longlong)_DAT_01c039e4) >> 0x20) << 0x10);
   iVar4 = -iVar3;
   if (iVar4 < 0) {
     iVar4 = 0;
@@ -49,14 +49,14 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int
             (int)((ulonglong)((longlong)DAT_005bacd8 * (longlong)(int)uVar5) >> 0x20) << 0x10;
     goto LAB_004c6c38;
   }
-  iVar4 = ((uint)((longlong)param_1 * (longlong)iVar3) >> 0x10 |
-          (int)((ulonglong)((longlong)param_1 * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
+  iVar4 = ((uint)((longlong)world_x * (longlong)iVar3) >> 0x10 |
+          (int)((ulonglong)((longlong)world_x * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
           _DAT_01c039dc;
-  local_18 = ((uint)((longlong)param_2 * (longlong)iVar3) >> 0x10 |
-             (int)((ulonglong)((longlong)param_2 * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
+  local_18 = ((uint)((longlong)world_y * (longlong)iVar3) >> 0x10 |
+             (int)((ulonglong)((longlong)world_y * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
              _DAT_01c039e0;
-  local_14 = ((uint)((longlong)param_3 * (longlong)iVar3) >> 0x10 |
-             (int)((ulonglong)((longlong)param_3 * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
+  local_14 = ((uint)((longlong)world_z * (longlong)iVar3) >> 0x10 |
+             (int)((ulonglong)((longlong)world_z * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
              _DAT_01c039e4;
   if (((_DAT_01cc3670 != _DAT_01c039b8) || (_DAT_01cc3674 != _DAT_01c039bc)) ||
      (_DAT_01cc3678 != _DAT_01c039c0)) {

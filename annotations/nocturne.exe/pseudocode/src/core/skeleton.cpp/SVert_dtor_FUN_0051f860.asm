@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_SVert_dtor_FUN_0051f860(int param_1)
+; float * core_skeleton_cpp_SVert_dtor_FUN_0051f860(int param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     ADD EAX,0x10                        ; 0051f866
     PUSH EAX                            ; 0051f869
     CALL core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0 ; 0051f86a
-        ;   XREF to: 004389e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0()
+        ;   XREF to: 004389e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0(CVector3f * objs, uint flags)
     ADD ESP,0x8                         ; 0051f86f
     SUB EAX,0x10                        ; 0051f872
     RET                                 ; 0051f875

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(CDemonSet *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined        Stack[-0x118]:1  local_118
 ; undefined4       Stack[-0x18]:4  local_18
@@ -35,7 +38,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00513cf7
     PUSH EAX                            ; 00513cfb
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00513cfc
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00513d01
     LEA EAX,[ESP + 0x100]               ; 00513d04
     PUSH EAX                            ; 00513d0b
@@ -68,7 +71,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00513d50
     PUSH EAX                            ; 00513d54
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 00513d55
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00513d5a
     INC EBX                             ; 00513d5d
     CMP EBX,dword ptr [ESP + 0x104]     ; 00513d5e

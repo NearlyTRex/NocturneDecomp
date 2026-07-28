@@ -40,8 +40,8 @@
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490
-;   shape_edittool.cpp_FUN_00472de0
 ;
 ; *****************************************************************************
 
@@ -64,7 +64,7 @@ section .text
     LEA EAX,[EDI + 0x78]                ; 00437ad2
     PUSH EAX                            ; 00437ad5
     CALL core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 ; 00437ad6
-        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0()
+        ;   XREF to: 0044dbd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00437adb
     LEA EAX,[EDI + 0xa0]                ; 00437ade
     PUSH EAX                            ; 00437ae4
@@ -75,7 +75,7 @@ section .text
     MOV EBX,0x270                       ; 00437af1
     XOR ESI,ESI                         ; 00437af6
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00437af8
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00437afd
     MOV ECX,0xc                         ; 00437b00
     MOV dword ptr [ESP + 0x48],EBX      ; 00437b05
@@ -120,7 +120,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0x50]      ; 00437b8b
     PUSH EAX                            ; 00437b8f
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00437b90
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00437b95
     MOV EAX,dword ptr [EDI + 0x44]      ; 00437b98
     MOV dword ptr [ESP + 0x30],EAX      ; 00437b9b
@@ -145,7 +145,7 @@ section .text
     ADD EAX,ECX                         ; 00437be1
     PUSH EAX                            ; 00437be3
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00437be4
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00437be9
     TEST ESI,ESI                        ; 00437bec
     JG 0x00437c46                       ; 00437bee
@@ -177,7 +177,7 @@ section .text
         ;   Label: LAB_00437c31
     PUSH EAX                            ; 00437c36 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00437c37
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 00437c3c
     MOV ESP,EBP                         ; 00437c3f
     POP EBP                             ; 00437c41
@@ -192,7 +192,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 00437c4c | DAT_005ae704
     PUSH EAX                            ; 00437c51 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 00437c52
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0()
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
     ADD ESP,0xc                         ; 00437c57
     MOV EDX,dword ptr [ESP + 0x50]      ; 00437c5a
     PUSH EDX                            ; 00437c5e
@@ -200,7 +200,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00437c60 | DAT_005ae704
     PUSH ECX                            ; 00437c66 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 00437c67
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0()
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
     ADD ESP,0xc                         ; 00437c6c
     MOV EBX,dword ptr [ESP + 0x44]      ; 00437c6f
     PUSH EBX                            ; 00437c73
@@ -209,7 +209,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00437c79 | DAT_005ae704
     PUSH EDX                            ; 00437c7f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 00437c80
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0()
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
     ADD ESP,0xc                         ; 00437c85
     JMP 0x00437bf0                      ; 00437c88
         ;   XREF to: 00437bf0 (UNCONDITIONAL_JUMP)  ; LAB_00437bf0
@@ -217,7 +217,7 @@ section .text
         ;   Label: LAB_00437c8d
     PUSH ESI                            ; 00437c93
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490 ; 00437c94
-        ;   XREF to: 00472490 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490()
+        ;   XREF to: 00472490 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00437c99
     FLD float ptr [EDI + 0x14]          ; 00437c9c
     PUSH EAX                            ; 00437c9f
@@ -226,8 +226,8 @@ section .text
     MOV EDI,dword ptr [0x005b6d50]      ; 00437ca6 | DAT_005b6d50
     FSTP float ptr [ESP]                ; 00437cac
     PUSH EDI                            ; 00437caf
-    CALL shape_edittool.cpp_FUN_00472de0 ; 00437cb0
-        ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00472de0()
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 ; 00437cb0
+        ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00437cb5
     JMP 0x00437c31                      ; 00437cb8
         ;   XREF to: 00437c31 (UNCONDITIONAL_JUMP)  ; LAB_00437c31

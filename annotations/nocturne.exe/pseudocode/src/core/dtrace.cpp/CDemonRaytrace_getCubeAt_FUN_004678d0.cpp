@@ -2,20 +2,20 @@
 // Address: 004678d0
 // Address Range: [[004678d0, 0046792e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(int param_1,int param_2,int param_3,int param_4)
+// Signature: CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
 
 #include "nocturne.h"
 
-int __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(int param_1,int param_2,int param_3,int param_4)
+CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)
 
 {
   int iVar1;
+  int iVar2;
   
-  if ((((-1 < param_2) && (-1 < param_3)) && (-1 < param_4)) &&
-     (((param_2 < *(int *)(param_1 + 0x40) && (param_3 < *(int *)(param_1 + 0x44))) &&
-      (iVar1 = *(int *)(param_1 + 0x48), param_4 < iVar1)))) {
-    return *(int *)(param_1 + 0x50) +
-           (param_3 * iVar1 + param_4 + param_2 * *(int *)(param_1 + 0x44) * iVar1) * 0x34;
+  if ((((-1 < grid_x) && (-1 < grid_y)) && (-1 < grid_z)) &&
+     (((grid_x < (this_ptr->grid_coord).x && (iVar1 = (this_ptr->grid_coord).y, grid_y < iVar1)) &&
+      (iVar2 = (this_ptr->grid_coord).z, grid_z < iVar2)))) {
+    return this_ptr->cube_data + grid_y * iVar2 + grid_z + grid_x * iVar1 * iVar2;
   }
-  return 0;
+  return (CDemonCube *)0x0;
 }

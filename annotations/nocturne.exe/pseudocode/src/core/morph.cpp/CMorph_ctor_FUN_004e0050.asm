@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_ctor_FUN_004e0050(undefined4 param_1)
+; CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_004e0050(CMorph *this_ptr)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00415370 at 00415394
@@ -28,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004e0057
     PUSH EDX                            ; 004e005b
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004e005c
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004e0061
     MOV dword ptr [EAX + 0xc28],0x1     ; 004e0064
     RET                                 ; 004e006e

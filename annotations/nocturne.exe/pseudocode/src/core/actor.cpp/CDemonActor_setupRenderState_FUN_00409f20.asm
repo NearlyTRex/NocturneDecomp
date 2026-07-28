@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(int param_1)
+; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *actor)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; XREF[66]:
 ;   core_ammo.cpp_FUN_0040ec30 at 0040ec3a
@@ -36,7 +38,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00409f28 | DAT_005ae704
     PUSH EDX                            ; 00409f2e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00409f2f
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00409f34
     MOV EAX,dword ptr [ESP + 0x4]       ; 00409f37
     PUSH 0x0                            ; 00409f3b
@@ -45,7 +47,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00409f41 | DAT_005ae704
     PUSH ECX                            ; 00409f47 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00409f48
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0()
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00409f4d
     RET                                 ; 00409f50
 

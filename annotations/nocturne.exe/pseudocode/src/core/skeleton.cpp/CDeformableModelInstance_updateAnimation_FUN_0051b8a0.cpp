@@ -2,20 +2,23 @@
 // Address: 0051b8a0
 // Address Range: [[0051b8a0, 0051b8e2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance *this_ptr)
 
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
-            (param_1,*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),0xffffffff);
-  if (*(float *)(param_1 + 0x14) <= (float)0.001) {
+            (this_ptr,(this_ptr->motion_controller).current_motion_index,
+             (this_ptr->motion_controller).current_frame_number,-1);
+  if ((this_ptr->motion_controller).tween_progress <= (float)0.001) {
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (param_1,*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x1c),
-             *(uint *)(param_1 + 0x14),0xffffffff,core_skeleton_cpp_FUN_0051b650);
+            (this_ptr,(this_ptr->motion_controller).tween_target_motion,
+             (this_ptr->motion_controller).tween_target_frame,
+             (this_ptr->motion_controller).tween_progress,0xffffffff,core_skeleton_cpp_FUN_0051b650)
+  ;
   return;
 }

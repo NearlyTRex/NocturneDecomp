@@ -2,13 +2,13 @@
 // Address: 004931a0
 // Address Range: [[004931a0, 004931ae]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(int param_1,undefined4 param_2)
+// Signature: void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(CBitFont *this_ptr,int value)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(int param_1,uint param_2)
+void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(CBitFont *this_ptr,int value)
 
 {
-  *(uint *)(param_1 + 0x3184) = param_2;
+  this_ptr->rendering_ready = value;
   return;
 }

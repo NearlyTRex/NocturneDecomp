@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,25 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 1150,
+    "complexity_score": 590,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 205,
-    "suspect_count": 90,
+    "pseudocode_lines": 225,
+    "suspect_count": 33,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "unaffected_reg",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 663
+    "total_lines": 683
   },
   "cross_references": [
     {
@@ -160,7 +158,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0",
-    "signature": "void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(undefined4 *param_1,char *param_2)"
+    "signature": "int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)"
   },
   "function_calls": [
     {
@@ -352,11 +350,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.028328611898017,
@@ -394,10 +392,10 @@
     "pcode_op_count": 1775
   },
   "stack_frame": {
-    "frame_size": 280,
+    "frame_size": 288,
     "local_size": 280,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -420,6 +418,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "cache",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureCache *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -477,40 +489,16 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(uint *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(uint *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 11,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "int unaff_EBP;",
+      "text": "SIZE_T unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_14 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"art\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 27,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x20;",
@@ -518,7 +506,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 33,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x40;",
@@ -526,7 +514,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 38,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x80;",
@@ -534,583 +522,159 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 42,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x100;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(local_114,\"CTextureCache::load - Bad texture length : %s,%d\",param_2,local_14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar4 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 84,
       "match": "DAT_01c00648",
       "severity": "mild",
-      "text": "puVar7 = (uint *)&DAT_01c00648;",
+      "text": "puVar10 = (uint *)&DAT_01c00648;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar9 = param_1 + param_1[0x34c02] * 0xc0 + 0x4c02;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar9 = param_1 + param_1[0x34c02] * 0xc0 + 0x4c02;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(uint *)((int)puVar7",
+      "line": 93,
+      "match": "(uint *)((int)puVar10",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(uint *)((int)puVar9",
+      "line": 94,
+      "match": "(uchar **)((int)ppuVar13",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
+      "text": "ppuVar13 = (uchar **)((int)ppuVar13 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1 + param_1[0x34c02] * 0xc0 + 0x4c02,0x100,3,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1 + param_1[0x34c02] * 0xc0 + 0x4c02,0x100,3,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar8 = (char *)(param_1 + param_1[0x34c02] * 0x10 + 0xc02);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar8 = (char *)(param_1 + param_1[0x34c02] * 0x10 + 0xc02);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar4 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar4 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 110,
+      "line": 116,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 110,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x402] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 111,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x402] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x402]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x402]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x402] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x402] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x402] == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x402] == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 152,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "memset(param_1[param_1[0x34c02] + 0x402],0,unaff_EBP * unaff_EBP);",
+      "text": "if (unaff_EBP != cache->texture_dimensions[iVar6]) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 152,
+      "line": 162,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "memset(param_1[param_1[0x34c02] + 0x402],0,unaff_EBP * unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "memset(param_1[param_1[0x34c02] + 0x402],0,unaff_EBP * unaff_EBP);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 152,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "memset(param_1[param_1[0x34c02] + 0x402],0,unaff_EBP * unaff_EBP);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 156,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x402],unaff_EBP,unaff_EBP,iVar2);",
+      "text": "unaff_EBP * unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 156,
+      "line": 162,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x402],unaff_EBP,unaff_EBP,iVar2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x402],unaff_EBP,unaff_EBP,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x402],unaff_EBP,unaff_EBP,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 164,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 183,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 183,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 184,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 185,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 185,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 189,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 189,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 189,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (unaff_EBP != param_1[param_1[0x34c02] + 2]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 190,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 190,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[param_1[0x34c02] + 0x802] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 191,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 191,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005638d0(param_1[param_1[0x34c02] + 0x802]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 194,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 0x802] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 196,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x802],unaff_EBP,unaff_EBP,iVar2);",
+      "text": "unaff_EBP * unaff_EBP);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 196,
+      "line": 166,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x802],unaff_EBP,unaff_EBP,iVar2);",
+      "text": "_fread(cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 196,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x802],unaff_EBP,unaff_EBP,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 196,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[param_1[0x34c02] + 0x802],unaff_EBP,unaff_EBP,iVar2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 199,
+      "line": 167,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "param_1[param_1[0x34c02] + 2] = unaff_EBP;",
+      "text": "unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 2] = unaff_EBP;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[param_1[0x34c02] + 2] = unaff_EBP;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 200,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1[0x34c02];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 201,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x34c02] = iVar2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 202,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((int)param_1[1] <= iVar2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 203,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 204,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x34c02] = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 89,
-      "match": "(int)puVar7",
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "text": "if (unaff_EBP != cache->texture_dimensions[iVar6]) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 209,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_fread(cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 210,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP,p_Var3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 213,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "cache->texture_dimensions[*(int *)(cache[10].texture_names[0x1fe] + 8)] = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 221,
+      "match": "(char *)((int)(pacVar12 + 0x1fe) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar12 + 0x1fe) + 8) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 222,
+      "match": "(char *)((int)(pacVar12 + 0x1fe) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar12 + 0x1fe) + 9) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 223,
+      "match": "(char *)((int)(pacVar12 + 0x1fe) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar12 + 0x1fe) + 10) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 224,
+      "match": "(char *)((int)(pacVar12 + 0x1fe) +",
+      "severity": "moderate",
+      "text": "*(char *)((int)(pacVar12 + 0x1fe) + 0xb) = '\\0';",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
-      "match": "(int)puVar9",
+      "description": "Pointer value `ppuVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)ppuVar13",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
+      "text": "ppuVar13 = (uchar **)((int)ppuVar13 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 51,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1118,7 +682,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 99,
+      "line": 104,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1126,7 +690,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 136,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1134,47 +698,47 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 159,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 82,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 87,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 62,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 139,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
       "line": 170,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 86,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 91,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 66,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 147,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 181,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1187,17 +751,6 @@
       "severity": "moderate",
       "text": "// 00545301: MOVSD.REP ES:EDI,ESI  ; DAT_01c00648 | DAT_01c0064c",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

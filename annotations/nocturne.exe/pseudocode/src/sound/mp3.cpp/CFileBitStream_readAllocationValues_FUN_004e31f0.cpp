@@ -2,74 +2,73 @@
 // Address: 004e31f0
 // Address Range: [[004e31f0, 004e331f]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(undefined4 param_1,int param_2,int param_3)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame )
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(uint param_1,int param_2,int param_3)
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame )
 
 {
   int iVar1;
   uint uVar2;
   uint *puVar3;
-  uint *puVar4;
-  int iVar5;
+  int *piVar4;
+  uint *puVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
-  int local_18;
+  SMpegAllocationEntry *pSVar8;
+  int iVar9;
+  SMpegAllocationEntry *local_18;
   int local_14;
   
-  iVar8 = *(int *)(param_3 + 0x18);
-  iVar1 = *(int *)(param_3 + 0x10);
-  iVar5 = *(int *)(param_3 + 0x14);
-  iVar7 = *(int *)(param_3 + 8);
-  if (0 < iVar5) {
+  iVar9 = frame->sblimit;
+  iVar1 = frame->channel_count;
+  iVar6 = frame->js_bound;
+  pSVar8 = frame->allocation_entries;
+  if (0 < iVar6) {
     local_14 = 0;
-    local_18 = iVar7;
+    local_18 = pSVar8;
+    do {
+      iVar7 = 0;
+      if (0 < iVar1) {
+        puVar3 = (uint *)((int)output_allocation->bit_allocations + local_14);
+        do {
+          uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(this_ptr,local_18->bit_count);
+          iVar7 = iVar7 + 1;
+          *puVar3 = uVar2 & 0xff;
+          puVar3 = puVar3 + 0x20;
+        } while (iVar7 < iVar1);
+      }
+      local_14 = local_14 + 4;
+      local_18 = local_18 + 0x10;
+    } while (local_14 < iVar6 * 4);
+  }
+  if (iVar6 < iVar9) {
+    pSVar8 = pSVar8 + iVar6 * 0x10;
+    piVar4 = output_allocation->bit_allocations + iVar6;
+    do {
+      uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(this_ptr,pSVar8->bit_count);
+      pSVar8 = pSVar8 + 0x10;
+      piVar4[0x20] = uVar2 & 0xff;
+      iVar6 = iVar6 + 1;
+      *piVar4 = uVar2 & 0xff;
+      piVar4 = piVar4 + 1;
+    } while (iVar6 < iVar9);
+  }
+  if (iVar9 < 0x20) {
+    iVar9 = iVar9 * 4;
     do {
       iVar6 = 0;
       if (0 < iVar1) {
-        puVar3 = (uint *)(local_14 + param_2);
+        puVar5 = (uint *)((int)output_allocation->bit_allocations + iVar9);
         do {
-          uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0
-                            (param_1,*(uint *)(local_18 + 4));
           iVar6 = iVar6 + 1;
-          *puVar3 = uVar2 & 0xff;
-          puVar3 = puVar3 + 0x20;
+          *puVar5 = 0;
+          puVar5 = puVar5 + 0x20;
         } while (iVar6 < iVar1);
       }
-      local_14 = local_14 + 4;
-      local_18 = local_18 + 0x100;
-    } while (local_14 < iVar5 * 4);
-  }
-  if (iVar5 < iVar8) {
-    iVar7 = iVar5 * 0x100 + iVar7;
-    puVar3 = (uint *)(iVar5 * 4 + param_2);
-    do {
-      uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_1,*(uint *)(iVar7 + 4))
-      ;
-      iVar7 = iVar7 + 0x100;
-      puVar3[0x20] = uVar2 & 0xff;
-      iVar5 = iVar5 + 1;
-      *puVar3 = uVar2 & 0xff;
-      puVar3 = puVar3 + 1;
-    } while (iVar5 < iVar8);
-  }
-  if (iVar8 < 0x20) {
-    iVar8 = iVar8 * 4;
-    do {
-      iVar5 = 0;
-      if (0 < iVar1) {
-        puVar4 = (uint *)(param_2 + iVar8);
-        do {
-          iVar5 = iVar5 + 1;
-          *puVar4 = 0;
-          puVar4 = puVar4 + 0x20;
-        } while (iVar5 < iVar1);
-      }
-      iVar8 = iVar8 + 4;
-    } while (iVar8 < 0x80);
+      iVar9 = iVar9 + 4;
+    } while (iVar9 < 0x80);
   }
   return;
 }

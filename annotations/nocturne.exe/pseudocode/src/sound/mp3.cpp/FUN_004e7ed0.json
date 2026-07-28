@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 536,
+    "complexity_score": 526,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 136,
-    "suspect_count": 37,
+    "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -157,7 +157,7 @@
     ],
     "convention": "unknown",
     "name": "sound_mp3.cpp_FUN_004e7ed0",
-    "signature": "void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)"
+    "signature": "void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -498,27 +498,20 @@
   "static_analysis": {
     "analyzed_file": "FUN_004e7ed0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
-          "check_id": "AssignmentAddressToInteger",
-          "column": 9,
-          "line": 54,
-          "message": "Assigning a pointer to an integer is not portable.",
-          "severity": "portability"
-        },
-        {
           "check_id": "uninitvar",
-          "column": 58,
-          "line": 140,
-          "message": "Uninitialized variable: local_6c",
+          "column": 3,
+          "line": 142,
+          "message": "Uninitialized variable: unaff_retaddr",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 12,
-          "line": 142,
-          "message": "Uninitialized variable: unaff_retaddr",
+          "column": 33,
+          "line": 143,
+          "message": "Uninitialized variable: iStack_40",
           "severity": "error"
         }
       ],
@@ -532,7 +525,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)",
+      "text": "void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +533,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)",
+      "text": "void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -548,7 +541,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)",
+      "text": "void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -564,7 +557,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar6 = (int *)(param_1 + 0x5320);",
+      "text": "pCVar8 = &param_1->file_bitstream;",
       "type": "unnamed_param"
     },
     {
@@ -580,31 +573,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x5324) != 0) {",
+      "text": "pcVar3 = (param_1->file_bitstream).buffer;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005638d0(*(int *)(param_1 + 0x5324));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5324) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*piVar6 = param_2;",
+      "text": "(param_1->file_bitstream).buffer = (char *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -612,15 +589,15 @@
       "line": 43,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = _ftell(param_2);",
+      "text": "pCVar8->file_handle = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5340) = uVar1;",
+      "text": "lVar2 = _ftell(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -628,7 +605,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x5344) = local_24;",
+      "text": "(param_1->file_bitstream).stream_start_position = lVar2;",
       "type": "unnamed_param"
     },
     {
@@ -636,20 +613,28 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5328) = local_1c;",
+      "text": "(param_1->file_bitstream).stream_length = local_24;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x5324) = iVar2;",
+      "text": "(param_1->file_bitstream).buffer_size = local_1c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->file_bitstream).buffer = pcVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"Out of memory.  File: %s\",&DAT_01cd8b28);",
@@ -657,18 +642,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fseek(*piVar6,*(uint *)(param_1 + 0x5340),0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5330) = 0;",
+      "text": "_fseek(pCVar8->file_handle,(param_1->file_bitstream).stream_start_position,0);",
       "type": "unnamed_param"
     },
     {
@@ -676,7 +653,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5334) = 0;",
+      "text": "(param_1->file_bitstream).current_byte_index = 0;",
       "type": "unnamed_param"
     },
     {
@@ -684,7 +661,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x532c) = 0;",
+      "text": "(param_1->file_bitstream).bits_available = 0;",
       "type": "unnamed_param"
     },
     {
@@ -692,15 +669,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5348) = *(uint *)(param_1 + 0x5344);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5348) = *(uint *)(param_1 + 0x5344);",
+      "text": "(param_1->file_bitstream).total_bits_read = 0;",
       "type": "unnamed_param"
     },
     {
@@ -708,7 +677,15 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x5338) = 0;",
+      "text": "(param_1->file_bitstream).bytes_remaining = (param_1->file_bitstream).stream_length;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->file_bitstream).bytes_remaining = (param_1->file_bitstream).stream_length;",
       "type": "unnamed_param"
     },
     {
@@ -716,7 +693,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1 + 0x5320;",
+      "text": "(param_1->file_bitstream).end_of_stream_flag = 0;",
       "type": "unnamed_param"
     },
     {
@@ -724,7 +701,7 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x533c) = 0;",
+      "text": "pCVar8 = &param_1->file_bitstream;",
       "type": "unnamed_param"
     },
     {
@@ -732,44 +709,52 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)(param_1 + 0x532c) & 7;",
+      "text": "(param_1->file_bitstream).error_flag = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (((uVar5 & 0x1fff) != 0xfff && (*(int *)(param_1 + 0x533c) == 0))) {",
+      "text": "uVar7 = (param_1->file_bitstream).total_bits_read & 7;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(param_1 + 0x5320);",
+      "text": "while (((uVar7 & 0x1fff) != 0xfff && ((param_1->file_bitstream).error_flag == 0))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(&param_1->file_bitstream,header_out);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 83,
       "match": "DAT_005bbc88",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_005bbc88 + local_28 * 4 + iVar2 * 0xb4 + local_2c * 0x3c) / local_38;",
+      "text": "iVar5 = *(int *)(&DAT_005bbc88 + local_28 * 4 + iVar6 * 0xb4 + local_2c * 0x3c) / local_38;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_005bbc48",
       "severity": "mild",
-      "text": "((float10)*(double *)(&DAT_005bbc48 + local_48[4] * 8 + iVar2 * 0x20)",
+      "text": "(*(double *)(&DAT_005bbc48 + local_48->sampling_rate_index * 8 + iVar6 * 0x20)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "core_main_c_FUN_004c8440(\"MPEG Layer 2 - pick_table - can't load tables!  File: %s\",&DAT_01cd8b28);",
@@ -777,10 +762,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 126,
       "match": "DAT_01cd8b28",
       "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\",iVar2,iVar4,&DAT_01cd8b28);",
+      "text": "core_main_c_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\",iVar6,iVar5,&DAT_01cd8b28);",
       "type": "undefined_data"
     },
     {
@@ -788,23 +773,23 @@
       "line": 133,
       "match": "DAT_005bbc48",
       "severity": "mild",
-      "text": "(&DAT_005bbc48 + local_6c * 8 + (int)ppiVar9 * 0x20) *",
+      "text": "(&DAT_005bbc48 + local_78.bitrate_index * 8 + (int)header_out * 0x20) *",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `ppiVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `header_out` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 133,
-      "match": "(int)ppiVar9",
+      "match": "(int)header_out",
       "severity": "moderate",
-      "text": "(&DAT_005bbc48 + local_6c * 8 + (int)ppiVar9 * 0x20) *",
+      "text": "(&DAT_005bbc48 + local_78.bitrate_index * 8 + (int)header_out * 0x20) *",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x4e81c7 assigned to bare local `uVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x4e81c7 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 130,
       "match": "0x4e81c7",
       "severity": "moderate",
-      "text": "uVar1 = 0x4e81c7;",
+      "text": "iVar6 = 0x4e81c7;",
       "type": "raw_address_constant"
     },
     {
@@ -812,7 +797,7 @@
       "line": 132,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
-      "text": "((float10)*(double *)",
+      "text": "(*(double *)",
       "type": "pointer_cast"
     },
     {
@@ -827,19 +812,19 @@
       "type": "param_count_too_few"
     },
     {
-      "description": "Uninitialized variable: local_6c",
-      "line": 140,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(&DAT_005bbc48 + local_6c * 8 + (int)ppiVar9 * 0x20) *",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: unaff_retaddr",
       "line": 142,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*(int *)(unaff_retaddr + 0x100) = (int)ROUND(fVar7);",
+      "text": "unaff_retaddr->sample_rate = (int)ROUND(dVar9);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: iStack_40",
+      "line": 143,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "unaff_retaddr->num_channels = iStack_40;",
       "type": "static_uninitvar"
     }
   ]

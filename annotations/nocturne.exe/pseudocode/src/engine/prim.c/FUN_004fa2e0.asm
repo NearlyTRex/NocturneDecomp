@@ -75,7 +75,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fa327 | DAT_005c5014
     PUSH EAX                            ; 004fa32c
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004fa32d
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 004fa332
     TEST EAX,EAX                        ; 004fa335
     JZ 0x004fa3c1                       ; 004fa337
@@ -126,7 +126,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fa3ac
     PUSH EAX                            ; 004fa3b0
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 004fa3b1
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 004fa3b6
     ADD ESP,0x54                        ; 004fa3b9
         ;   Label: LAB_004fa3b9
@@ -162,7 +162,7 @@ section .text
     ADD EAX,0x5c5014                    ; 004fa40b | DAT_005c5014
     PUSH EAX                            ; 004fa410
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10 ; 004fa411
-        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10()
+        ;   XREF to: 004f9a10 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 004fa416
     TEST EAX,EAX                        ; 004fa419
     JNZ 0x004fa34d                      ; 004fa41b
@@ -228,7 +228,7 @@ section .text
     MOV EAX,[0x01e52eec]                ; 004fa4b9 | DAT_01e52eec
     PUSH EAX                            ; 004fa4be
     CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa4bf
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_004f9830(int y_value, SSoftwareEdge * edge_ptr)
     ADD ESP,0x8                         ; 004fa4c4
     MOV dword ptr [ESP + 0x50],EAX      ; 004fa4c7
     TEST EAX,EAX                        ; 004fa4cb
@@ -238,7 +238,7 @@ section .text
     MOV EDX,dword ptr [0x01e52eec]      ; 004fa4d4 | DAT_01e52eec
     PUSH EDX                            ; 004fa4da
     CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa4db
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_004f9830(int y_value, SSoftwareEdge * edge_ptr)
     ADD ESP,0x8                         ; 004fa4e0
     MOV EBP,EAX                         ; 004fa4e3
     TEST EAX,EAX                        ; 004fa4e5
@@ -266,7 +266,7 @@ section .text
     PUSH EAX                            ; 004fa523
     MOV dword ptr [EBP],0xffffffff      ; 004fa524
     CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa52b
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_004f9830(int y_value, SSoftwareEdge * edge_ptr)
     ADD ESP,0x8                         ; 004fa530
     MOV EBP,EAX                         ; 004fa533
     TEST EAX,EAX                        ; 004fa535
@@ -277,7 +277,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4c]      ; 004fa541
     MOV EDI,EBP                         ; 004fa545
     CALL engine_special.cpp_renderScanline_FUN_00530710 ; 004fa547
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_00530710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0x50]      ; 004fa54c
     MOV EDX,dword ptr [ESP + 0x50]      ; 004fa550
     MOV EAX,dword ptr [EAX + 0xc]       ; 004fa554
@@ -519,7 +519,7 @@ section .text
     PUSH EAX                            ; 004fa7d1
     MOV dword ptr [EDX],0xffffffff      ; 004fa7d2
     CALL engine_prim.c_findEdgeInBuffer_FUN_004f9830 ; 004fa7d8
-        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_findEdgeInBuffer_FUN_004f9830()
+        ;   XREF to: 004f9830 (UNCONDITIONAL_CALL)  ; SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_004f9830(int y_value, SSoftwareEdge * edge_ptr)
     ADD ESP,0x8                         ; 004fa7dd
     MOV dword ptr [ESP + 0x50],EAX      ; 004fa7e0
     TEST EAX,EAX                        ; 004fa7e4

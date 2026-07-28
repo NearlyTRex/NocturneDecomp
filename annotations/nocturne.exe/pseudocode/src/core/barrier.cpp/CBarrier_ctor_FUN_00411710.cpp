@@ -1,12 +1,12 @@
 // Name: core_barrier.cpp_CBarrier_ctor_FUN_00411710
 // Address: 00411710
 // Address Range: [[00411710, 0041175a]]
-// Convention: unknown
-// Signature: void core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
 
 #include "nocturne.h"
 
-void core_barrier_cpp_CBarrier_ctor_FUN_00411710(uint param_1)
+void __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(uint param_1)
 
 {
   int iVar1;

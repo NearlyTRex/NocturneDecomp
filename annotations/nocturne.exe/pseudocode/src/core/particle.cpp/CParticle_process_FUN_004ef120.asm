@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
+; void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_ptr)
 ;
+; Parameters:
+; CParticle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined4       Stack[-0xa8]:4  local_a8
@@ -125,7 +127,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004ef1f9
     MOVSD ES:EDI,ESI                    ; 004ef1fa
     CALL core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0 ; 004ef1fb
-        ;   XREF to: 0046b7f0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0()
+        ;   XREF to: 0046b7f0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
     ADD ESP,0x8                         ; 004ef200
     MOV dword ptr [EBX + 0x20],EAX      ; 004ef203
     TEST EAX,EAX                        ; 004ef206

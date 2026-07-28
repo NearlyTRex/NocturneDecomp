@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,24 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 531,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
-    "suspect_count": 46,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 12,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "unaffected_reg"
     ],
-    "total_lines": 182
+    "total_lines": 184
   },
   "cross_references": [
     {
       "addr": "0045bfb0",
       "from_addr": "0045c037",
-      "name": "cockpit_drawsurf.cpp_FUN_0045bfb0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
   },
   "function_calls": [
     {
@@ -169,7 +168,7 @@
       {
         "call_addr": "0045c037",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_0045bfb0",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0",
         "estimated_params": 5,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -178,11 +177,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.887755102040816,
@@ -216,384 +215,215 @@
     "pcode_op_count": 479
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDrawSurface_drawLineBresenham_FUN_0045c0f0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 51,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 25,
+          "line": 53,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 67,
+          "message": "Uninitialized variable: unaff_EDI",
+          "severity": "warning"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 27,
+          "line": 63,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 + unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "} while (unaff_EBP <= iVar3);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_2 = param_2 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar1 = iVar1 - unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3 = param_3 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_5 = param_5 - *(int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_4 = param_4 - *(int *)(param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar2 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 < param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_5 < param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar1 = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_5 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_2 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_5 = param_5 - iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = iVar2 - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 < iVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = param_5 * 2 - iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(param_1,param_2,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(param_1,param_2,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iStack_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iStack_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = iVar3 + param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = iVar2 * 2 - param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (-1 < param_5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(param_1,param_2,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(param_1,param_2,iVar1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar3 = iVar3 - param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iStack_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + iStack_20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 60,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "} while (iStack_18 <= param_5);",
-      "type": "unnamed_param"
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Unaffected register variable",
+      "line": 60,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (unaff_EDI <= unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (unaff_EDI <= unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 53,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar4 = iVar4 + unaff_ESI;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 67,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 63,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "iVar1 = iVar1 - unaff_ESI;",
+      "type": "static_legacy_uninitvar"
     }
   ]
 }

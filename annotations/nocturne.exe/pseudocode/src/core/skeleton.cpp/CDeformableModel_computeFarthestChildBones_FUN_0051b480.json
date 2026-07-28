@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 84,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 121
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -152,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480(int param_1)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480(CDeformableModel *this_ptr)"
   },
   "function_calls": [
     {
@@ -177,11 +177,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.373134328358209,
@@ -221,10 +221,10 @@
     "pcode_op_count": 360
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -254,20 +254,41 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
       }
     ]
   },
   "static_analysis": {
     "analyzed_file": "CDeformableModel_computeFarthestChildBones_FUN_0051b480.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
-          "check_id": "identicalInnerCondition",
-          "column": 13,
-          "line": 31,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
+          "check_id": "invalidPointerCast",
+          "column": 29,
+          "line": 39,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 29,
+          "line": 40,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 29,
+          "line": 41,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
         }
       ],
       "error": null
@@ -276,44 +297,44 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0051b480(int param_1)",
-      "type": "unnamed_param"
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar6->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 40,
+      "match": "pCVar6 = (T *)((pCVar6->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CSkeleton *)((pCVar6->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(param_1);",
-      "type": "unnamed_param"
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 44,
+      "match": "local_1c = (T *)local_1c->ARRAY",
+      "severity": "moderate",
+      "text": "local_1c = (CDeformableModel *)local_1c->lod_info;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = param_1;",
-      "type": "unnamed_param"
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 39,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(fVar1 = SQRT(*(float *)(pcVar5 + 8) * *(float *)(pcVar5 + 8) +",
+      "type": "static_invalid_pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(param_1 + 0x1750);",
-      "type": "unnamed_param"
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 40,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)pcVar5 * *(float *)pcVar5 +",
+      "type": "static_invalid_pointer_cast"
     },
     {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 31,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(iVar2 + 0x28558)) {",
-      "type": "static_identical_inner_condition"
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 41,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar5 + 4) * *(float *)(pcVar5 + 4)), local_18 < fVar1)) {",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

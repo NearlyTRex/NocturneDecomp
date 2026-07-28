@@ -2,12 +2,12 @@
 // Address: 00461090
 // Address Range: [[00461090, 00461097]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(int param_1)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(int param_1)
+int __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer *this_ptr)
 
 {
-  return *(uint *)(param_1 + 4);
+  return this_ptr->face_count;
 }

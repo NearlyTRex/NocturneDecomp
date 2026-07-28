@@ -80,7 +80,7 @@ section .text
     MOV [0x01cc4800],EAX                ; 0040bdfc | PTR_01cc4800
     MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040be07
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040be0c
     MOV EDI,0x763e10                    ; 0040be0f | DAT_00763e10
     MOV ECX,0x31                        ; 0040be14
@@ -136,7 +136,7 @@ section .text
     MOV [0x01cc4800],EAX                ; 0040be95 | PTR_01cc4800
     MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bea0
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bea5
     MOV ESI,EBX                         ; 0040bea8
     MOV ECX,0x31                        ; 0040beaa
@@ -188,7 +188,7 @@ section .text
     MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | PTR_01cc4800
     MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | INT_01cc4804
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bf2c
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bf31
     TEST EBX,EBX                        ; 0040bf34
     JZ 0x0040bf54                       ; 0040bf36

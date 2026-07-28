@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
+; CCharacter * core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 004b5d67
     PUSH EBX                            ; 004b5d68
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d69
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b5d6e
     TEST EAX,EAX                        ; 004b5d71
     JNZ 0x004b5e65                      ; 004b5d73
@@ -79,7 +79,7 @@ section .text
     PUSH EDX                            ; 004b5d7f
     PUSH EBX                            ; 004b5d80
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d81
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b5d86
     TEST EAX,EAX                        ; 004b5d89
     JZ 0x004b5d9a                       ; 004b5d8b
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004b5dce
     PUSH EAX                            ; 004b5dd2
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004b5dd3
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004b5dd8
     MOV EDX,ESP                         ; 004b5ddb
     PUSH EDX                            ; 004b5ddd

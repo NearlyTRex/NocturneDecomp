@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 150,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 10,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 81
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -146,7 +145,7 @@
     ],
     "convention": "unknown",
     "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0",
-    "signature": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(int param_1,undefined4 param_2)"
+    "signature": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CWeapon *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -249,7 +248,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(int param_1,uint param_2)",
+      "text": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CWeapon *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -257,12 +256,12 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(int param_1,uint param_2)",
+      "text": "void core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CWeapon *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560(param_1,param_2);",
@@ -270,34 +269,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_2",
       "severity": "mild",
       "text": "core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -305,15 +280,23 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x2cc) == 2) {",
+      "text": "target = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(param_1);",
+      "text": "target = (*((param_1->base).vtable._ub)->getCarrier)(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->weapon_state == 2) {",
       "type": "unnamed_param"
     },
     {
@@ -321,23 +304,23 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(*(uint *)(param_1 + 0x570),iVar1);",
+      "text": "core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x570) != 0) {",
+      "text": "core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(*(CBaron **)param_1[1].base.actor_name,target);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_baron_cpp_CBaron_detachFromOwner_FUN_00410bb0(*(int *)(param_1 + 0x570),iVar1);",
+      "text": "this_ptr = *(CBaron **)param_1[1].base.actor_name;",
       "type": "unnamed_param"
     }
   ],

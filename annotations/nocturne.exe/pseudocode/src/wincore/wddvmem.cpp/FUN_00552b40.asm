@@ -51,7 +51,7 @@ section .text
     IMUL EAX,ECX                        ; 00552b63
     PUSH EAX                            ; 00552b66
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552b67
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552b6c
     MOV [0x005c5010],EAX                ; 00552b6f | DAT_005c5010
     TEST EAX,EAX                        ; 00552b74
@@ -64,7 +64,7 @@ section .text
     ADD EAX,0x40                        ; 00552b8b
     PUSH EAX                            ; 00552b8e
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552b8f
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552b94
     MOV [0x02ddf560],EAX                ; 00552b97 | DAT_02ddf560
     TEST EAX,EAX                        ; 00552b9c
@@ -139,7 +139,7 @@ section .text
         ;   Label: LAB_00552c4e
     PUSH EBX                            ; 00552c54
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 00552c55
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
     MOV EAX,0x1                         ; 00552c5a
     ADD ESP,0x4                         ; 00552c5f
     POP EBP                             ; 00552c62

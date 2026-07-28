@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(int param_1)
+; void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(CConsole *this_ptr)
 ;
+; Parameters:
+; CConsole *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -45,7 +47,7 @@ section .text
     ADD EDX,ESI                         ; 0043ae81
     PUSH EDX                            ; 0043ae83
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0043ae84
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0043ae89
     ADD ESP,0x4                         ; 0043ae8c
     POP EBP                             ; 0043ae8f

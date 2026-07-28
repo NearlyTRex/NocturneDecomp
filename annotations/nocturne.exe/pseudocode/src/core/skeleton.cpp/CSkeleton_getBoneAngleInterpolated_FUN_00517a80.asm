@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5 ,undefined4 *param_6)
+; CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation,CQuaternion4f *result_out)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
+; int              Stack[0xc]:4   frame_index_1
+; int              Stack[0x10]:4   frame_index_2
+; float            Stack[0x14]:4   interpolation
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined        Stack[-0x30]:1  local_30
@@ -53,7 +59,7 @@ section .text
     PUSH ESI                            ; 00517ab4
     LEA EDI,[ESP + 0x14]                ; 00517ab5
     CALL core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60 ; 00517ab9
-        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60()
+        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60(CSkeleton * this_ptr, int bone_index, int frame_index)
     MOV ESI,EAX                         ; 00517abe
     ADD ESP,0xc                         ; 00517ac0
         ;   Label: LAB_00517ac0
@@ -84,7 +90,7 @@ section .text
     PUSH EDI                            ; 00517ae3
     PUSH ESI                            ; 00517ae4
     CALL core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60 ; 00517ae5
-        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60()
+        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60(CSkeleton * this_ptr, int bone_index, int frame_index)
     ADD ESP,0xc                         ; 00517aea
     PUSH EAX                            ; 00517aed
     MOV EDX,dword ptr [EBP + 0x18]      ; 00517aee
@@ -92,7 +98,7 @@ section .text
     PUSH EDI                            ; 00517af2
     PUSH ESI                            ; 00517af3
     CALL core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60 ; 00517af4
-        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60()
+        ;   XREF to: 00517a60 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00517a60(CSkeleton * this_ptr, int bone_index, int frame_index)
     ADD ESP,0xc                         ; 00517af9
     PUSH EAX                            ; 00517afc
     LEA ESI,[ESP + 0x24]                ; 00517afd

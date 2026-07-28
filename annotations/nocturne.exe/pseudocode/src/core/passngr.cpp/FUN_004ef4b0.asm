@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004ef4c2
         ;   Label: LAB_004ef4c2
     CALL core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0 ; 004ef4c3
-        ;   XREF to: 004ef4e0 (UNCONDITIONAL_CALL)  ; undefined core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0()
+        ;   XREF to: 004ef4e0 (UNCONDITIONAL_CALL)  ; CPassenger * core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger * this_ptr)
     ADD ESP,0x4                         ; 004ef4c8
     RET                                 ; 004ef4cb
 

@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 490,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 46,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 32,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 100
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -153,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(CDrawSurface *this_ptr,int x,int y,int width,int height)"
   },
   "function_calls": [
     {
@@ -189,11 +188,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.577464788732394,
@@ -218,384 +217,465 @@
     "pcode_op_count": 325
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 10,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 32,
+          "line": 25,
+          "message": "Uninitialized variable: in_stack_0000001c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 33,
+          "line": 27,
+          "message": "Uninitialized variable: in_stack_00000024",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 53,
+          "line": 27,
+          "message": "Uninitialized variable: in_stack_0000002c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 23,
+          "line": 31,
+          "message": "Uninitialized variable: in_stack_00000038",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 43,
+          "line": 31,
+          "message": "Uninitialized variable: in_stack_00000044",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 61,
+          "line": 31,
+          "message": "Uninitialized variable: in_stack_0000003c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 81,
+          "line": 31,
+          "message": "Uninitialized variable: in_stack_00000040",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 43,
+          "line": 33,
+          "message": "Uninitialized variable: in_stack_00000050",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 61,
+          "line": 35,
+          "message": "Uninitialized variable: in_stack_00000054",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 81,
+          "line": 35,
+          "message": "Uninitialized variable: in_stack_00000058",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00(uint param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 + param_5);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000024",
+      "severity": "moderate",
+      "text": "int in_stack_00000024;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 + param_5);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "int in_stack_0000002c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 + param_5);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "int in_stack_00000038;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 + param_5);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "int in_stack_0000003c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 - param_5);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000040",
+      "severity": "moderate",
+      "text": "int in_stack_00000040;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 - param_5);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "int in_stack_00000044;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 - param_5);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000050",
+      "severity": "moderate",
+      "text": "int in_stack_00000050;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 - param_5);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000054",
+      "severity": "moderate",
+      "text": "int in_stack_00000054;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_4,param_3 - param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 + param_4);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000058",
+      "severity": "moderate",
+      "text": "int in_stack_00000058;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,y + height);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 - param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 - param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 - param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 + param_5,param_3 - param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000024",
+      "severity": "moderate",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000024",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,param_2 - param_5,param_3 - param_4);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
     },
     {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000040",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000050",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000040",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000054",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000058",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000050",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000054",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000058",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000001c",
+      "line": 25,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,height - in_stack_0000001c,y + height);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000024",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000002c",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000038",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000044",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000003c",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000040",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000050",
+      "line": 33,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000054",
+      "line": 35,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000058",
+      "line": 35,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
+      "type": "static_uninitvar"
     }
   ]
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(undefined4 param_1)
+; CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(CPendulum *this_ptr)
 ;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_pendulum.cpp_FUN_004f2c00 at 004f2c13
@@ -40,7 +42,7 @@ section .text
     ADD EAX,0x150                       ; 004f2c40
     PUSH EAX                            ; 004f2c45
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 004f2c46
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f2c4b
     LEA EBX,[EAX + 0xfffffeb0]          ; 004f2c4e
     PUSH 0x58cff2                       ; 004f2c54 | = "pend.kfm"
@@ -48,7 +50,7 @@ section .text
     PUSH EAX                            ; 004f2c5f
     MOV dword ptr [EBX + 0x14c],0x5a1244 ; 004f2c60 | PTR_core_pendulum.cpp_CPendulum_setup_FUN_004f2d40_005a1244
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004f2c6a
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f2c6f
     MOV ESI,0x58cffb                    ; 004f2c72 | = "true"
     LEA EDI,[EBX + 0x2cc]               ; 004f2c77

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[6]:
 ;   core_boxactor.cpp_FUN_0041f3d0 at 0041f5e1

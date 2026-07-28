@@ -64,7 +64,7 @@ void core_hostage_cpp_FUN_004b8700(int param_1,int param_2)
   iVar2 = param_1 + param_2 * 0x44;
   if ((*(int *)(param_1 + 0x1f920) == 1) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                        (*(uint *)(iVar2 + 0x24ac),"CShotgun"), iVar1 != 0)) {
+                        (*(CDemonActor **)(iVar2 + 0x24ac),"CShotgun"), iVar1 != 0)) {
     local_84 = 0x3e89ba5e;
     local_80 = 0xbc449ba6;
     local_54 = 0xbe92f1aa;

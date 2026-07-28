@@ -2,13 +2,13 @@
 // Address: 004a37e0
 // Address Range: [[004a3695, 004a37db] [004a37e0, 004a381b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(void)
+// Signature: void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(CGame *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(void)
+void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(CGame *this_ptr)
 
 {
   _DAT_01c78b04 = 1;

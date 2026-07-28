@@ -2,45 +2,52 @@
 // Address: 00554030
 // Address Range: [[00554030, 0055416a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(int param_1,float param_2)
+// Signature: void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(int param_1,float param_2)
+void __cdecl core_weapon_cpp_CWeapon_process_FUN_00554030(CWeapon *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  UOrientationVector *pUVar1;
+  CVector3f *pCVar2;
+  float fVar3;
+  float unaff_EBX;
+  int unaff_ESI;
   
-  if ((0.0 < *(float *)(param_1 + 0x2f8)) &&
-     (fVar1 = *(float *)(param_1 + 0x2f8) - param_2, *(float *)(param_1 + 0x2f8) = fVar1,
-     fVar1 < 0.0)) {
-    *(uint *)(param_1 + 0x2f8) = 0;
+  if ((0.0 < this_ptr->fire_cooldown_timer) &&
+     (fVar3 = this_ptr->fire_cooldown_timer - delta_time, this_ptr->fire_cooldown_timer = fVar3,
+     fVar3 < 0.0)) {
+    this_ptr->fire_cooldown_timer = 0.0;
   }
-  if (((*(int *)(param_1 + 0x2fc) == 0) && (*(int *)(param_1 + 0x2cc) == 0)) &&
-     (0.0 < *(float *)(param_1 + 0x568))) {
-    fVar1 = *(float *)(param_1 + 0x568) - param_2;
-    *(float *)(param_1 + 0x568) = fVar1;
-    if (fVar1 < 0.0) {
-      *(uint *)(param_1 + 0x568) = 0;
+  if (((this_ptr->carried_by_actor == (CDemonActor *)0x0) && (this_ptr->weapon_state == 0)) &&
+     (0.0 < this_ptr->sim_timer)) {
+    fVar3 = this_ptr->sim_timer - delta_time;
+    this_ptr->sim_timer = fVar3;
+    if (fVar3 < 0.0) {
+      this_ptr->sim_timer = 0.0;
     }
-    core_box_cpp_CBox_process_FUN_0041acb0((uint *)(param_1 + 0x300),param_2);
-    *(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x300);
-    *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x304);
-    *(uint *)(param_1 + 0x28) = *(uint *)(param_1 + 0x308);
-    if ((uint *)(param_1 + 0x30) != (uint *)(param_1 + 0x30c)) {
-      *(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x30c);
-      *(uint *)(param_1 + 0x34) = *(uint *)(param_1 + 0x310);
-      *(uint *)(param_1 + 0x38) = *(uint *)(param_1 + 0x314);
+    core_box_cpp_CBox_process_FUN_0041acb0(&this_ptr->physics_box,delta_time);
+    (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+    (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
+    (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
+    pUVar1 = &(this_ptr->base).orient;
+    pCVar2 = &(this_ptr->physics_box).orientation;
+    if ((CVector3f *)pUVar1 != pCVar2) {
+      (pUVar1->vec).x = pCVar2->x;
+      (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
+      (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
     }
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(param_1);
-  if (((*(int *)(param_1 + 0x2fc) == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
-      (*(int *)(0x01C775EC + 0x244) != 0)) && (*(int *)(param_1 + 0x2e8) != 0)) {
-    (**(code **)(*(int *)(param_1 + 0x14c) + 0xec))(param_1);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
+  if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
+      (*(int *)(0x01C775EC + 0x244) != 0)) && (this_ptr->can_attach_light != 0)) {
+    (*(((this_ptr->base).vtable._uc)->_uc).applyDamage)((CCharacter *)this_ptr,unaff_ESI,unaff_EBX);
     if (0.0 < _DAT_01c775e8) {
-      core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,&DAT_01c74640);
+      core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(0x01E57284,(CDemonLight *)&DAT_01c74640)
+      ;
       return;
     }
   }

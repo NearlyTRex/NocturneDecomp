@@ -2,31 +2,34 @@
 // Address: 0044e660
 // Address Range: [[0044e660, 0044e71c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(int param_1,int *param_2)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(CDemonLight *this_ptr,CRect *source_rect)
 
 #include "nocturne.h"
 
-void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(int param_1,int *param_2)
+void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_0044e660(CDemonLight *this_ptr,CRect *source_rect)
 
 {
   int iVar1;
   int iVar2;
   
-  if (*(int *)(param_1 + 0x2f9c) == 0) {
+  if (this_ptr->master_zbuffer == (void *)0x0) {
     PTR_01cc4800 = "..\\core\\dlight.cpp";
     INT_01cc4804 = 0x147;
     core_main_c_FUN_004c8440("CDemonLight::blitZBuffer - No master Z buffer");
   }
-  if ((((*(int *)(param_1 + 0x11d4) < param_2[1]) && (*(int *)(param_1 + 0x11d8) < param_2[3])) &&
-      (*param_2 < *(int *)(param_1 + 0x11dc))) &&
-     ((iVar2 = param_2[2], iVar2 < *(int *)(param_1 + 0x11e0) && (iVar2 <= param_2[3])))) {
+  if (((((this_ptr->base).viewport_rect.x_min < source_rect->x_max) &&
+       ((this_ptr->base).viewport_rect.x_max < source_rect->y_max)) &&
+      (source_rect->x_min < (this_ptr->base).viewport_rect.y_min)) &&
+     ((iVar2 = source_rect->y_min, iVar2 < (this_ptr->base).viewport_rect.y_max &&
+      (iVar2 <= source_rect->y_max)))) {
     do {
-      iVar1 = (*(int *)(param_1 + 0x1cc0) * iVar2 + *param_2) * 2;
+      iVar1 = this_ptr->shadow_map_width * iVar2 + source_rect->x_min;
       iVar2 = iVar2 + 1;
       core_dstrender_cpp_memcpyMMX_FUN_00465341
-                (*(int *)(param_1 + 0x2f94) + iVar1,*(int *)(param_1 + 0x2f9c) + iVar1,
-                 (param_2[1] - *param_2) * 2 + 2);
-    } while (iVar2 <= param_2[3]);
+                (this_ptr->shadow_depth_buffer + iVar1,
+                 (void *)((int)this_ptr->master_zbuffer + iVar1 * 2),
+                 (source_rect->x_max - source_rect->x_min) * 2 + 2);
+    } while (iVar2 <= source_rect->y_max);
   }
   return;
 }

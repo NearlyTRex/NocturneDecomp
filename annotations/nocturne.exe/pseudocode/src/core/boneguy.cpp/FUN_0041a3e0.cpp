@@ -2,18 +2,18 @@
 // Address: 0041a3e0
 // Address Range: [[0041a3e0, 0041a3fe]]
 // Convention: unknown
-// Signature: undefined4 core_boneguy_cpp_FUN_0041a3e0(int param_1,undefined4 param_2)
+// Signature: ECollisionType core_boneguy_cpp_FUN_0041a3e0(CCharacter *param_1,SCollisionInfo *param_2)
 
 #include "nocturne.h"
 
-uint core_boneguy_cpp_FUN_0041a3e0(int param_1,uint param_2)
+ECollisionType core_boneguy_cpp_FUN_0041a3e0(CCharacter *param_1,SCollisionInfo *param_2)
 
 {
-  uint uVar1;
+  ECollisionType EVar1;
   
-  if (*(int *)(param_1 + 0xc344) != 0) {
-    return 0;
+  if (param_1[1].model.rest_pose_data[0x15] != 0.0) {
+    return COLLISION_TYPE_NONE;
   }
-  uVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);
-  return uVar1;
+  EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(param_1,param_2);
+  return EVar1;
 }

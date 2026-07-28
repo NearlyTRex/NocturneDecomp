@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(int param_1)
+; void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0xbc]:1  local_bc
 ; undefined        Stack[-0x8c]:1  local_8c
@@ -82,7 +84,7 @@ section .text
     PUSH EAX                            ; 004f7794
     MOV EDI,dword ptr [ESI + 0x14c]     ; 004f7795
     CALL core_xform.cpp_matrixToEulerAngles_FUN_0055b180 ; 004f779b
-        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_0055b180()
+        ;   XREF to: 0055b180 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 004f77a0
     PUSH EAX                            ; 004f77a3
     LEA EAX,[ESP + 0x94]                ; 004f77a4
@@ -90,7 +92,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f77ac
     PUSH EAX                            ; 004f77b0
     CALL core_xform.cpp_getTranslation_FUN_0055bc00 ; 004f77b1
-        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_getTranslation_FUN_0055bc00()
+        ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 004f77b6
     PUSH EAX                            ; 004f77b9
     PUSH ESI                            ; 004f77ba

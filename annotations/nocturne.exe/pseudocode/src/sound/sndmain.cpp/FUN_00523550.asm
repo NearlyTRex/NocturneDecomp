@@ -36,7 +36,7 @@ section .text
     PUSH EDX                            ; 0052356e
         ;   Label: LAB_0052356e
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0052356f
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00523574
     RET                                 ; 00523577
     PUSH ECX                            ; 00523578

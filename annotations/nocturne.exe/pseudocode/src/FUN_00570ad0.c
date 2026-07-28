@@ -2,18 +2,18 @@
 // Address: 00570ad0
 // Address Range: [[00570ad0, 00570bc1]]
 // Convention: unknown
-// Signature: undefined4 FUN_00570ad0(undefined4 param_1,uint *param_2,uint param_3)
+// Signature: undefined4 FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
 
 #include "nocturne.h"
 
-uint FUN_00570ad0(uint param_1,uint *param_2,uint param_3)
+uint FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
 
 {
   int iVar1;
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  byte auStack_50 [72];
+  _stat _Stack_50;
   
   uVar2 = *param_2;
   if ((uVar2 & 3) == 3) {
@@ -45,7 +45,7 @@ uint FUN_00570ad0(uint param_1,uint *param_2,uint param_3)
     uVar4 = uVar4 | 0x200;
   }
   if ((((uVar2 & 0x40) != 0) && ((uVar4 | 0x20) != 0)) &&
-     (iVar1 = FUN_0056c864(param_1,auStack_50), iVar1 != -1)) {
+     (iVar1 = getFileStat(param_1,&_Stack_50), iVar1 != -1)) {
     return 0xffffffff;
   }
   uVar2 = param_3 & 0x7000;
@@ -67,6 +67,6 @@ uint FUN_00570ad0(uint param_1,uint *param_2,uint param_3)
     }
   }
   param_3 = param_3 & 0xffff8fff;
-  uVar3 = FUN_0056b934(param_1,uVar4,uVar3,param_3);
+  uVar3 = CreateFileVariadic(param_1,uVar4,uVar3,param_3);
   return uVar3;
 }

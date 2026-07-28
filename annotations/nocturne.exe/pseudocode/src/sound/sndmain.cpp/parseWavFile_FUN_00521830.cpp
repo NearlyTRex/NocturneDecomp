@@ -2,17 +2,18 @@
 // Address: 00521830
 // Address Range: [[00521830, 00521be0]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)
+// Signature: int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample)
 
 #include "nocturne.h"
 
-uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)
+int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample)
 
 {
   short sVar1;
   int iVar2;
-  int iVar3;
+  SIZE_T SVar3;
   int iVar4;
+  int iVar5;
   char local_88;
   char local_87;
   char local_86;
@@ -26,23 +27,23 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
   char local_15;
   uint local_14;
   
-  iVar2 = _fseek(param_1,*param_2,0);
+  iVar2 = _fseek(file_handle,*file_offset_ptr,0);
   if (iVar2 == 0) {
-    iVar2 = _fread(&local_18,8,1,param_1);
-    if (iVar2 == 1) {
+    SVar3 = _fread(&local_18,8,1,file_handle);
+    if (SVar3 == 1) {
       if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {
-        iVar4 = local_14 + 8;
-        iVar2 = _fread(&local_88,4,1,param_1);
-        if (iVar2 == 1) {
+        iVar2 = local_14 + 8;
+        SVar3 = _fread(&local_88,4,1,file_handle);
+        if (SVar3 == 1) {
           if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))
           {
-            iVar2 = 0xc;
+            iVar5 = 0xc;
             do {
-              iVar3 = _fseek(param_1,*param_2 + iVar2,0);
-              if (iVar3 != 0) goto LAB_00521857;
-              iVar3 = _fread(&local_18,8,1,param_1);
-              if (iVar3 != 1) goto LAB_00521857;
-              iVar2 = iVar2 + local_14 + 8;
+              iVar4 = _fseek(file_handle,*file_offset_ptr + iVar5,0);
+              if (iVar4 != 0) goto LAB_00521857;
+              SVar3 = _fread(&local_18,8,1,file_handle);
+              if (SVar3 != 1) goto LAB_00521857;
+              iVar5 = iVar5 + local_14 + 8;
               if (((local_18 == 'd') && (local_17 == 'a')) &&
                  ((local_16 == 't' && (local_15 == 'a')))) {
                 sound_sndmain_cpp_FUN_00529980
@@ -55,8 +56,8 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
                             ("WAV file is invalid: %s\n","File contains invalid \"fmt\" chunk");
                   goto LAB_00521857;
                 }
-                iVar3 = _fread(&local_24,10,1,param_1);
-                if (iVar3 != 1) goto LAB_00521857;
+                SVar3 = _fread(&local_24,10,1,file_handle);
+                if (SVar3 != 1) goto LAB_00521857;
                 if ((short)local_24 != 1) {
                   _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff);
                   sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
@@ -69,11 +70,11 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
                 }
                 sVar1 = local_24._2_2_ * (short)local_20;
                 if (sVar1 == (short)local_1c) {
-                  *(uint *)(param_3 + 0x104) = 8;
+                  (sfx_sample->sample_info).bit_depth = 8;
                   goto LAB_00521a3e;
                 }
                 if ((short)(sVar1 * 2) == (short)local_1c) {
-                  *(uint *)(param_3 + 0x104) = 0x10;
+                  (sfx_sample->sample_info).bit_depth = 0x10;
                   goto LAB_00521a3e;
                 }
                 _sprintf(&local_88,"Invalid bytes/sec value: %u (%04Xh)",local_1c & 0xffff,
@@ -81,7 +82,7 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
                 sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
                 goto LAB_00521857;
               }
-            } while (iVar2 <= iVar4);
+            } while (iVar5 <= iVar2);
             sound_sndmain_cpp_FUN_00529980
                       ("WAV file is invalid: %s\n","Required \"fmt\" chunk not found");
           }
@@ -99,30 +100,30 @@ uint __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_
   }
   goto LAB_00521857;
   while( true ) {
-    iVar3 = _fread(&local_18,8,1,param_1);
-    if (iVar3 != 1) goto LAB_00521857;
+    SVar3 = _fread(&local_18,8,1,file_handle);
+    if (SVar3 != 1) goto LAB_00521857;
     if (((local_18 == 'd') && (local_17 == 'a')) && ((local_16 == 't' && (local_15 == 'a')))) {
-      *param_2 = *param_2 + iVar2 + 8;
-      *(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;
-      iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;
-      *(int *)(param_3 + 0x110) =
+      *file_offset_ptr = *file_offset_ptr + iVar5 + 8;
+      (sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;
+      iVar2 = (sfx_sample->sample_info).bit_depth >> 0x1f;
+      (sfx_sample->sample_info).sample_count =
            (int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /
                 (ulonglong)
-                (uint)((int)((*(int *)(param_3 + 0x104) + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3
-                      ));
-      *(uint *)(param_3 + 0x10c) = local_20 & 0xffff;
+                (uint)((int)(((sfx_sample->sample_info).bit_depth + iVar2 * -8) -
+                            (uint)(iVar2 << 2 < 0)) >> 3));
+      (sfx_sample->sample_info).sample_rate = local_20 & 0xffff;
       return 1;
     }
-    iVar2 = iVar2 + 8 + local_14;
-    if (iVar4 < iVar2) break;
+    iVar5 = iVar5 + 8 + local_14;
+    if (iVar2 < iVar5) break;
 LAB_00521a3e:
-    iVar3 = _fseek(param_1,*param_2 + iVar2,0);
-    if (iVar3 != 0) goto LAB_00521857;
+    iVar4 = _fseek(file_handle,*file_offset_ptr + iVar5,0);
+    if (iVar4 != 0) goto LAB_00521857;
   }
   sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n","No \"data\" chunk found");
 LAB_00521857:
-  if (param_1 != 0) {
-    _fclose(param_1);
+  if (file_handle != (_FILE *)0x0) {
+    _fclose(file_handle);
   }
   return 0;
 }

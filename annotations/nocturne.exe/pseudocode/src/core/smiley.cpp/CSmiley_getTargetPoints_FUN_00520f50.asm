@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_smiley_cpp_CSmiley_getTargetPoints_FUN_00520f50(int param_1,undefined4 *param_2)
+; undefined4 core_smiley_cpp_CSmiley_getTargetPoints_FUN_00520f50(int param_1,CVector3f *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
@@ -50,7 +50,7 @@ section .text
     PUSH EAX                            ; 00520f83
     MOV EBX,0x1                         ; 00520f84
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00520f89
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00520f8e
     CMP ESI,EAX                         ; 00520f91
     JZ 0x00520fa5                       ; 00520f93
@@ -69,7 +69,7 @@ section .text
     LEA EAX,[EDI + 0x150]               ; 00520fb1
     PUSH EAX                            ; 00520fb7
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00520fb8
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 00520fbd
     LEA EAX,[EBX*0x4 + 0x0]             ; 00520fbf
     SUB EAX,EBX                         ; 00520fc6
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 00520ff5
     INC EBX                             ; 00520ff6
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00520ff7
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 00520ffc
     LEA EAX,[EBX*0x4 + 0x0]             ; 00520ffe
     SUB EAX,EBX                         ; 00521005
@@ -119,7 +119,7 @@ section .text
     PUSH EAX                            ; 00521035
     INC EBX                             ; 00521036
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00521037
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 0052103c
     LEA EAX,[EBX*0x4 + 0x0]             ; 0052103e
     SUB EAX,EBX                         ; 00521045
@@ -144,7 +144,7 @@ section .text
     PUSH EDI                            ; 00521075
     INC EBX                             ; 00521076
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380 ; 00521077
-        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380()
+        ;   XREF to: 0051d380 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 0052107c
     LEA EAX,[EBX*0x4 + 0x0]             ; 0052107e
     SUB EAX,EBX                         ; 00521085

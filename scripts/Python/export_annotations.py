@@ -109,6 +109,8 @@ def export_selected_categories(currentProgram, folder, categories, export_catego
             if category == "pseudocode":
                 export_categories[category](currentProgram, folder, strict=strict,
                                            deep_analysis=deep_analysis)
+            elif category == "type_info":
+                export_categories[category](currentProgram, folder, strict=strict)
             else:
                 export_categories[category](currentProgram, folder)
         else:

@@ -2,28 +2,29 @@
 // Address: 004a04e0
 // Address Range: [[004a04e0, 004a0546]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(int param_1,int param_2,float param_3,int param_4)
+// Signature: void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(int param_1,int param_2,float param_3,int param_4)
+void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index)
 
 {
-  int iVar1;
-  int iVar2;
+  int bone_index_00;
+  CSkeleton *pCVar1;
   
-  iVar1 = param_4 * 4 + param_1;
-  *(float *)(iVar1 + 0x514) = *(float *)(iVar1 + 0x514) * param_3;
-  iVar2 = 0;
-  iVar1 = param_2;
-  if (0 < *(int *)(param_2 + 0x28558)) {
+  model_instance->rest_pose_data[bone_index] =
+       model_instance->rest_pose_data[bone_index] * scale_factor;
+  bone_index_00 = 0;
+  pCVar1 = skeleton;
+  if (0 < skeleton->bone_count) {
     do {
-      if (param_4 == *(int *)(iVar1 + 0x2857c)) {
-        core_game_cpp_scaleBoneRecursive_FUN_004a04e0(param_1,param_2,param_3,iVar2);
+      if (bone_index == pCVar1->bone_list[0].parent_index) {
+        core_game_cpp_scaleBoneRecursive_FUN_004a04e0
+                  (model_instance,skeleton,scale_factor,bone_index_00);
       }
-      iVar2 = iVar2 + 1;
-      iVar1 = iVar1 + 0x24;
-    } while (iVar2 < *(int *)(param_2 + 0x28558));
+      bone_index_00 = bone_index_00 + 1;
+      pCVar1 = (CSkeleton *)((pCVar1->motion_list).state_names[1] + 2);
+    } while (bone_index_00 < skeleton->bone_count);
   }
   return;
 }

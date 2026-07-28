@@ -2,11 +2,11 @@
 // Address: 004bd910
 // Address Range: [[004bd910, 004bd994]]
 // Convention: unknown
-// Signature: void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
 
 #include "nocturne.h"
 
-void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,uint param_2,uint param_3,uint param_4)
+void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,char *param_2,char *param_3,int param_4)
 
 {
   if (*param_1 == '\0') {

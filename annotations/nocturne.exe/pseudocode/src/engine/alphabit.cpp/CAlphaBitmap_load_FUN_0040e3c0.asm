@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,undefined4 param_2,int param_3,int param_4)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap *this_ptr,char *filename,int width,int height)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14
@@ -15,8 +20,8 @@
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004befe6
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5730
 ;   core_main.c_FUN_004c85f0 at 004c8c3d
-;   core_main.c_FUN_004c8eb0 at 004c8f09
 ;   core_main.c_FUN_004c90e0 at 004c9158
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f09
 ;   core_menu.cpp_FUN_004d23d0 at 004d240a
 ;   ... and 3 more
 ;
@@ -61,7 +66,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x118]     ; 0040e3ca
     PUSH EBX                            ; 0040e3d1
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360 ; 0040e3d2
-        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360()
+        ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0040e3d7
     MOV EAX,dword ptr [ESP + 0x120]     ; 0040e3da
     MOV dword ptr [EBX + 0xc],EAX       ; 0040e3e1
@@ -72,7 +77,7 @@ section .text
     IMUL EAX,EDX                        ; 0040e3fc
     PUSH EAX                            ; 0040e3ff
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0040e400
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0040e405
     MOV dword ptr [EBX],EAX             ; 0040e408
     TEST EAX,EAX                        ; 0040e40a
@@ -83,7 +88,7 @@ section .text
     IMUL EAX,dword ptr [ESP + 0x124]    ; 0040e419
     PUSH EAX                            ; 0040e421
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0040e422
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0040e427
     MOV dword ptr [EBX + 0x4],EAX       ; 0040e42a
     TEST EAX,EAX                        ; 0040e42d
@@ -100,7 +105,7 @@ section .text
     PUSH 0x400                          ; 0040e454
         ;   Label: LAB_0040e454
     CALL crt_memory.c_malloc_FUN_005635b0 ; 0040e459
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 0040e45e
     MOV dword ptr [EBX + 0x8],EAX       ; 0040e461
     TEST EAX,EAX                        ; 0040e464
@@ -128,7 +133,7 @@ section .text
     PUSH EAX                            ; 0040e4ae
     PUSH 0x578151                       ; 0040e4af | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e4b4
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0040e4b9
     MOV dword ptr [ESP + 0x100],EAX     ; 0040e4bc
     TEST EAX,EAX                        ; 0040e4c3
@@ -154,11 +159,11 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0040e505
     PUSH EAX                            ; 0040e507
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0040e508
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0040e50d
     PUSH ESI                            ; 0040e510
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0040e511
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040e516
     MOV ECX,dword ptr [ESP + 0x11c]     ; 0040e519
     PUSH ECX                            ; 0040e520
@@ -173,7 +178,7 @@ section .text
     PUSH EAX                            ; 0040e53c
     PUSH 0x578199                       ; 0040e53d | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e542
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0040e547
     MOV dword ptr [ESP + 0x100],EAX     ; 0040e54a
     TEST EAX,EAX                        ; 0040e551
@@ -185,19 +190,19 @@ section .text
         ;   Label: LAB_0040e55b
     PUSH EBP                            ; 0040e562
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040e563
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040e568
     MOV EBP,EAX                         ; 0040e56b
     MOV EAX,dword ptr [ESP + 0x100]     ; 0040e56d
     PUSH EAX                            ; 0040e574
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040e575
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040e57a
     MOV EDX,dword ptr [ESP + 0x100]     ; 0040e57d
     PUSH EDX                            ; 0040e584
     MOV EDI,EAX                         ; 0040e585
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040e587
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     MOV ECX,dword ptr [0x005b7624]      ; 0040e58c | DAT_005b7624
     ADD ESP,0x4                         ; 0040e592
     CMP ECX,0x20                        ; 0040e595
@@ -222,7 +227,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x100]     ; 0040e5ce
     PUSH ESI                            ; 0040e5d5
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0040e5d6
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040e5db
     MOV EDI,dword ptr [ESP + 0x11c]     ; 0040e5de
     PUSH EDI                            ; 0040e5e5
@@ -237,7 +242,7 @@ section .text
     PUSH EAX                            ; 0040e601
     PUSH 0x5781e1                       ; 0040e602 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040e607
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EDI,EAX                         ; 0040e60c
     ADD ESP,0xc                         ; 0040e60e
     TEST EAX,EAX                        ; 0040e611
@@ -309,11 +314,11 @@ section .text
     MOV ECX,dword ptr [EBX + 0x4]       ; 0040e6ce
     PUSH ECX                            ; 0040e6d1
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0040e6d2
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0040e6d7
     PUSH EDI                            ; 0040e6da
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0040e6db
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040e6e0
     ADD ESP,0x104                       ; 0040e6e3
     POP EBP                             ; 0040e6e9

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(int param_1)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(CKeyFramedModel *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x40]:8  local_40
 ; undefined8       Stack[-0x38]:8  local_38
@@ -56,7 +58,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x108]     ; 0045365e
     PUSH EAX                            ; 00453664
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00453665
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0045366a
     XOR EDX,EDX                         ; 0045366d
     MOV ECX,dword ptr [EDI + 0x110]     ; 0045366f
@@ -73,7 +75,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x10c]     ; 0045368e
     PUSH EAX                            ; 00453694
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920 ; 00453695
-        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920()
+        ;   XREF to: 004c3920 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 0045369a
     MOV ECX,dword ptr [EBX + 0x4]       ; 0045369d
     XOR EDX,EDX                         ; 004536a0
@@ -180,13 +182,13 @@ section .text
     FMULP ST3                           ; 004537a2
     FXCH                                ; 004537a4
     CALL crt_math.c_round_FUN_00563a30  ; 004537a6
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004537ab
     CALL crt_math.c_round_FUN_00563a30  ; 004537ad
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 004537b2
     CALL crt_math.c_round_FUN_00563a30  ; 004537b4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004537b9
     FISTP dword ptr [EDX]               ; 004537bb
     FXCH                                ; 004537bd

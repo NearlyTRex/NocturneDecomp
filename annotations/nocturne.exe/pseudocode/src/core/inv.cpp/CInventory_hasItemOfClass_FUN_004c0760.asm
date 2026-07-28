@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004c0760(int param_1,undefined4 param_2)
+; int __cdecl core_inv_cpp_CInventory_hasItemOfClass_FUN_004c0760(CInventory *this_ptr,char *class_name)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047ebca
@@ -32,7 +35,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 004c0778
     PUSH EAX                            ; 004c077b
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c077c
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c0781
     TEST EAX,EAX                        ; 004c0784
     JNZ 0x004c079a                      ; 004c0786

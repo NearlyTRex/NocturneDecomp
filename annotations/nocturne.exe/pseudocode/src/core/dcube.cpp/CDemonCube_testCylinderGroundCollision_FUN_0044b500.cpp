@@ -2,66 +2,68 @@
 // Address: 0044b500
 // Address Range: [[0044b500, 0044b63d]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float *param_5,uint *param_6)
+// Signature: int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(int param_1,uint param_2,uint param_3,uint param_4,float *param_5,uint *param_6)
+int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 
 {
   float fVar1;
   float fVar2;
-  uint *puVar3;
-  int iVar4;
-  int iVar5;
+  CVector3f *pCVar3;
+  CDemonCubeTriangle *pCVar4;
+  uint uVar5;
   int iVar6;
   int iVar7;
-  float local_1c [3];
+  int iVar8;
+  CVector3f local_1c;
   
-  iVar6 = -1;
-  iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x28)) {
-    iVar7 = 0;
+  iVar7 = -1;
+  iVar6 = 0;
+  if (0 < this_ptr->triangle_count) {
+    iVar8 = 0;
     do {
-      iVar4 = core_dcube_cpp_triangleCylinderCollision_FUN_00449d30
-                        (*(int *)(param_1 + 0x2c) + iVar7,param_2,param_3,param_4);
-      if (iVar4 != 0) {
-        iVar6 = iVar5;
+      uVar5 = core_dcube_cpp_triangleCylinderCollision_FUN_00449d30
+                        ((CDemonCubeTriangle *)
+                         ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar8),
+                         cylinder_position,cylinder_radius,&output_height->x);
+      if (uVar5 != 0) {
+        iVar7 = iVar6;
       }
-      iVar5 = iVar5 + 1;
-      iVar7 = iVar7 + 0x20;
-    } while (iVar5 < *(int *)(param_1 + 0x28));
+      iVar6 = iVar6 + 1;
+      iVar8 = iVar8 + 0x20;
+    } while (iVar6 < this_ptr->triangle_count);
   }
-  if (-1 < iVar6) {
-    puVar3 = *(uint **)(iVar6 * 0x20 + *(int *)(param_1 + 0x2c));
-    if (puVar3 != (uint *)&DAT_014b89e8) {
-      _DAT_014b89e8 = *puVar3;
-      _DAT_014b89f0 = puVar3[2];
-      _DAT_014b89ec = puVar3[1];
+  if (-1 < iVar7) {
+    pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[0];
+    if (pCVar3 != (CVector3f *)&DAT_014b89e8) {
+      _DAT_014b89e8 = pCVar3->x;
+      _DAT_014b89f0 = pCVar3->z;
+      _DAT_014b89ec = pCVar3->y;
     }
-    puVar3 = *(uint **)(*(int *)(param_1 + 0x2c) + 4 + iVar6 * 0x20);
-    if (puVar3 != (uint *)&DAT_014b89f4) {
-      _DAT_014b89f4 = *puVar3;
-      _DAT_014b89fc = puVar3[2];
-      _DAT_014b89f8 = puVar3[1];
+    pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[1];
+    if (pCVar3 != (CVector3f *)&DAT_014b89f4) {
+      _DAT_014b89f4 = pCVar3->x;
+      _DAT_014b89fc = pCVar3->z;
+      _DAT_014b89f8 = pCVar3->y;
     }
-    puVar3 = *(uint **)(iVar6 * 0x20 + 8 + *(int *)(param_1 + 0x2c));
-    if (puVar3 != (uint *)&DAT_014b8a00) {
-      _DAT_014b8a00 = *puVar3;
-      _DAT_014b8a08 = puVar3[2];
-      _DAT_014b8a04 = puVar3[1];
+    pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[2];
+    if (pCVar3 != (CVector3f *)&DAT_014b8a00) {
+      _DAT_014b8a00 = pCVar3->x;
+      _DAT_014b8a08 = pCVar3->z;
+      _DAT_014b8a04 = pCVar3->y;
     }
-    *param_6 = (uint)*(byte *)(*(int *)(param_1 + 0x30) + iVar6);
-    iVar5 = *(int *)(param_1 + 0x2c);
-    iVar6 = iVar6 * 0x20;
-    fVar1 = *(float *)(iVar5 + 0x10 + iVar6);
-    fVar2 = *(float *)(iVar5 + 0x14 + iVar6);
-    if (local_1c != param_5) {
-      *param_5 = -*(float *)(iVar5 + 0xc + iVar6);
-      param_5[1] = -fVar1;
-      param_5[2] = -fVar2;
+    *output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar7);
+    pCVar4 = this_ptr->triangle_buffer;
+    fVar1 = pCVar4[iVar7].triangle.normal.y;
+    fVar2 = pCVar4[iVar7].triangle.normal.z;
+    if (&local_1c != output_normal) {
+      output_normal->x = -pCVar4[iVar7].triangle.normal.x;
+      output_normal->y = -fVar1;
+      output_normal->z = -fVar2;
     }
     return 1;
   }

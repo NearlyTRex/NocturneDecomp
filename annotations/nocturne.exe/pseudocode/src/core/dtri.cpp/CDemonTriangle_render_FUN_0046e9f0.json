@@ -1,0 +1,551 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 106,
+    "complexity_score": 267,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 21,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 148
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046e9f0",
+    "address_range": [
+      [
+        "0046e9f0",
+        "0046eb3b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0",
+    "signature": "void core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(float *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "0045eee0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0"
+    },
+    {
+      "addr": "0053075c",
+      "is_variadic": false,
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057e4ae",
+      "name": "DAT_0057e4ae",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057e4b6",
+      "name": "DOUBLE_0057e4b6",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "0057e4be",
+      "name": "DOUBLE_0057e4be",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "0059c8e0",
+      "name": "DAT_0059c8e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ae700",
+      "name": "DAT_005ae700",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.752577319587629,
+    "instruction_count": 97,
+    "opcode_distribution": {
+      "CALL": 8,
+      "COPY": 292,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_MULT": 14,
+      "INT_ADD": 44,
+      "INT_AND": 18,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "ROUND": 13,
+      "STORE": 36,
+      "TRUNC": 13
+    },
+    "pcode_op_count": 558
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonTriangle_render_FUN_0046e9f0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 42,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 43,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 46,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 3,
+          "line": 49,
+          "message": "Return value of function round() is not used.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(float *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(*param_1 * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_30.y = (int)ROUND(param_1[1] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(param_1[2] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18.x = (int)ROUND(param_1[3] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18.y = (int)ROUND(param_1[4] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18.z = (int)ROUND(param_1[5] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24.x = (int)ROUND(param_1[6] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24.y = (int)ROUND(param_1[7] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24.z = (int)ROUND(param_1[8] * _DAT_0059c8e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "round((double)param_1[9] * _DAT_0057e4ae);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "round((double)param_1[10] * dVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "round(dVar1 * (double)param_1[0xb]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((double)(param_1[0xc] * (float)65536 * (float)256));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x46ea35 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
+      "match": "0x46ea35",
+      "severity": "moderate",
+      "text": "uStack_84 = 0x46ea35;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x46ea77 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 25,
+      "match": "0x46ea77",
+      "severity": "moderate",
+      "text": "uStack_84 = 0x46ea77;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x46eab9 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 31,
+      "match": "0x46eab9",
+      "severity": "moderate",
+      "text": "uStack_84 = 0x46eab9;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x46eaef assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 38,
+      "match": "0x46eaef",
+      "severity": "moderate",
+      "text": "uStack_84 = 0x46eaef;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x46eb29 assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 40,
+      "match": "0x46eb29",
+      "severity": "moderate",
+      "text": "uVar2 = 0x46eb29;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1b4d738 assigned to bare local `piVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `piVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 41,
+      "match": "0x1b4d738",
+      "severity": "moderate",
+      "text": "piVar3 = 0x01B4D738;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

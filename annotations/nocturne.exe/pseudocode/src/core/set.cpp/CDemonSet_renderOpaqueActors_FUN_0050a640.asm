@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(int param_1)
+; void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -107,7 +109,7 @@ section .text
     PUSH EAX                            ; 0050a6f9
     PUSH EDI                            ; 0050a6fa
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 0050a6fb
-        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0()
+        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 0050a700
     MOV ESI,dword ptr [EBX + 0x110]     ; 0050a703
     PUSH ESI                            ; 0050a709
@@ -117,13 +119,13 @@ section .text
     PUSH EDX                            ; 0050a717
     PUSH EDI                            ; 0050a718
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 0050a719
-        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340()
+        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0050a71e
     PUSH 0xffff                         ; 0050a721
     MOV ECX,dword ptr [0x005ae704]      ; 0050a726 | DAT_005ae704
     PUSH ECX                            ; 0050a72c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0050a72d
-        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010()
+        ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050a732
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0050a735
     PUSH EBX                            ; 0050a73b
@@ -138,7 +140,7 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 0050a753 | DAT_005ae704
     PUSH ESI                            ; 0050a759 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a75a
-        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050()
+        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050a75f
     MOV EAX,dword ptr [EDI + 0x15a8cc]  ; 0050a762
     XOR ESI,ESI                         ; 0050a768
@@ -165,7 +167,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 0050a794 | DAT_005ae704
     PUSH EDX                            ; 0050a79a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a79b
-        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050()
+        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050a7a0
     PUSH EDI                            ; 0050a7a3
     INC ESI                             ; 0050a7a4
@@ -182,7 +184,7 @@ section .text
     PUSH 0x10000                        ; 0050a7c1
     PUSH EDI                            ; 0050a7c6
     CALL core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340 ; 0050a7c7
-        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340()
+        ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0050a7cc
     JMP 0x0050a67d                      ; 0050a7cf
         ;   XREF to: 0050a67d (UNCONDITIONAL_JUMP)  ; LAB_0050a67d

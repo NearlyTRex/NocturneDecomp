@@ -25,7 +25,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 00462148
     PUSH EAX                            ; 0046214e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0046214f
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     LEA EAX,[EBX + 0x20]                ; 00462154
     LEA EDX,[EBX + 0x2f0]               ; 00462157
     MOV dword ptr [EBX + 0x2e4],0x0     ; 0046215d
@@ -47,11 +47,11 @@ section .text
     PUSH 0x1b7b330                      ; 0046219b
     FSTP float ptr [EBX + 0x2d4]        ; 004621a0
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004621a6
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004621ab
     PUSH 0x1b7b330                      ; 004621ae
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004621b3
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004621b8
     MOV dword ptr [EBX + 0x330],0x0     ; 004621bb
     ADD ESP,0x4                         ; 004621c5

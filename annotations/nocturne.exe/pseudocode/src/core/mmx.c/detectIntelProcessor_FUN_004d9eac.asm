@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
+; void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
 ;
 ;
 ; XREF[2]:

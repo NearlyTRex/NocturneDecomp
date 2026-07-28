@@ -2,235 +2,279 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdint.h"
+#include "system/stdio.h"
+#include "system/winsock.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CFileBitStream.h"
+#include "types/classes/CFont.h"
+#include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CMP3Decoder.h"
+#include "types/classes/CMorph.h"
+#include "types/classes/CMorphModel.h"
+#include "types/classes/CMotionController.h"
+#include "types/classes/CMotionList.h"
+#include "types/classes/CMouse.h"
+#include "types/classes/CNPC.h"
+#include "types/classes/CNetGame.h"
+#include "types/classes/CParticle.h"
+#include "types/classes/CPassenger.h"
+#include "types/classes/CPathMap.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SDamageInfo.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLTextureLod.h"
+#include "types/structs/SMotion.h"
+#include "types/structs/SMotionTransition.h"
+#include "types/structs/SMpegFrame.h"
+#include "types/structs/SMpegFrameHeader.h"
+#include "types/structs/SMpegLayer3GranuleInfo.h"
+#include "types/structs/SMpegLayer3SideInfo.h"
+#include "types/structs/SMpegScalefactorBandData.h"
+#include "types/structs/SMpegStereoSubbandSamples.h"
+#include "types/structs/SMpegSubbandAllocation.h"
+#include "types/structs/SMpegSubbandQuantizedSamples.h"
+#include "types/structs/SMpegSubbandSCFSI.h"
+#include "types/structs/SMpegSubbandSamples.h"
+#include "types/structs/SMpegSubbandScalefactors.h"
+#include "types/structs/SNetPacketHeader.h"
+#include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayerInput.h"
+#include "types/structs/SSimFrame.h"
+#include "types/unions/UNetPacket.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4E0000
 // =============================================================================
 
-void __cdecl core_morph_cpp_CMorph_ctor_FUN_004e0050(undefined4 param_1);
-void __cdecl core_morph_cpp_CMorph_dtor_FUN_004e0070(undefined4 param_1);
-void __cdecl core_morph_cpp_CMorph_free_FUN_004e0090(int param_1);
-void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
-void core_morph_cpp_FUN_004e0110(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
-void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(int param_1,int param_2,undefined4 param_3);
-void __cdecl core_morph_cpp_CMorph_setupModelFromKeyframed_FUN_004e01b0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
-void core_morph_cpp_FUN_004e01f0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
-void core_morph_cpp_FUN_004e0240(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
-void core_morph_cpp_FUN_004e0290(void);
-void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_004e0050(CMorph *this_ptr);
+CMorph * __cdecl core_morph_cpp_CMorph_dtor_FUN_004e0070(CMorph *this_ptr,uint flags);
+void __cdecl core_morph_cpp_CMorph_free_FUN_004e0090(CMorph *this_ptr);
+void core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8);
+void core_morph_cpp_CMorph_setupModelFromQuadPolygons_FUN_004e0110(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8);
+void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
+void __cdecl core_morph_cpp_CMorph_setupModelFromKeyframed_FUN_004e01b0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
+void core_morph_cpp_CMorph_addTriPartToModel_FUN_004e01f0(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8);
+void core_morph_cpp_CMorph_addQuadPartToModel_FUN_004e0240(int param_1,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureLod *param_7,int *param_8);
+void core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_004e0290(void);
+void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 void core_morph_cpp_FUN_004e0300(void);
-void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
-void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(int param_1);
-void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(int param_1,float param_2);
-int core_morph_cpp_FUN_004e0890(void);
-void core_morph_cpp_FUN_004e08a0(undefined4 param_1);
-void __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(undefined4 param_1);
-void core_motion_cpp_FUN_004e08e0(undefined4 param_1);
-void __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(undefined4 *param_1);
-void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,undefined4 param_2);
-void core_motion_cpp_FUN_004e0d20(int *param_1,undefined4 param_2);
-int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(int param_1,undefined4 param_2,int param_3);
-int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(int *param_1,undefined4 param_2,int param_3);
-undefined4 * __cdecl core_motion_cpp_CMotionController_ctor_FUN_004e1120(undefined4 *param_1);
-int __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(int param_1,uint param_2);
-int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,float *param_2);
-undefined4 __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(int param_1);
-void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(int param_1);
-int __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(int *param_1);
-void __cdecl core_motion_cpp_CMotionController_reset_FUN_004e1680(int param_1);
-void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(undefined4 *param_1,int param_2,int param_3);
-void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(int param_1,int param_2);
-undefined4 core_motion_cpp_FUN_004e1830(void);
-void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004e1860(undefined4 *param_1,undefined4 param_2);
-undefined4 __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(undefined4 *param_1);
-int __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(int *param_1);
+void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
+void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index);
+void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr);
+void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(CMorph *this_ptr,float morph_t);
+int core_morph_cpp_addInts_FUN_004e0890(void);
+void core_morph_cpp_FUN_004e08a0(void *param_1);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel *objs,uint flags);
+void core_motion_cpp_FUN_004e08e0(_FILE *param_1);
+CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr);
+void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr,_FILE *file_handle);
+void core_motion_cpp_CMotionList_save_FUN_004e0d20(int *param_1,undefined4 param_2);
+int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
+int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList *this_ptr,char *state_name,int error_on_not_found);
+CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_004e1120(CMotionController *this_ptr);
+CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(CMotionController *this_ptr,uint flags);
+int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(CMotionController *this_ptr,float *delta_time);
+int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004e1500(CMotionController *this_ptr);
+void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_004e1600(CMotionController *this_ptr);
+SMotion * __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController *this_ptr);
+void __cdecl core_motion_cpp_CMotionController_reset_FUN_004e1680(CMotionController *this_ptr);
+void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController *this_ptr,int desired_state_index,int force_immediate);
+void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController *this_ptr,char *state_name,int force_immediate);
+void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_004e1770(CMotionController *this_ptr,SMotionTransition *transition);
+undefined4 core_motion_cpp_CMotionController_findPatchToFrame_FUN_004e1830(void);
+void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004e1860(CMotionController *this_ptr,CMotionList *motion_list);
+CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController *this_ptr);
+char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_004e18a0(CMotionController *this_ptr);
 float core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(int *param_1,int param_2);
-void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(int param_1,undefined4 param_2,float param_3);
-void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_004e19f0(int param_1);
-undefined4 __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(int *param_1,int *param_2,float *param_3,float param_4,undefined4 param_5);
-undefined4 __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1bd0(int *param_1,int param_2,float param_3,float *param_4,undefined4 *param_5);
-void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(int *param_1,int param_2,float param_3,float *param_4);
-float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(int *param_1);
+void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960(CMotionController *this_ptr,char *motion_name,float frame_number);
+void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(CMotionController *this_ptr,int target_motion_index,float target_frame_number);
+void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_004e19f0(CMotionController *this_ptr);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004e1a20(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004e1bd0(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_004e1d80(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
+float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60(CMotionController *this_ptr);
 float core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50(int *param_1,int param_2,float param_3);
-int __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(int *param_1,float param_2,float param_3,int *param_4,int *param_5,float *param_6);
-void core_motion_cpp_FUN_004e2120(void);
-void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(int param_1,undefined4 param_2);
-void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(int *param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(int param_1,int param_2);
+void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
+void core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_004e2120(void);
+void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(CMotionController *this_ptr,_FILE *file_handle);
+void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
+void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionController *this_ptr,CDemonActor *actor);
 int sound_mp3_cpp_FUN_004e2480(int *param_1);
 undefined4 sound_mp3_cpp_FUN_004e25c0(int param_1,int param_2);
 void sound_mp3_cpp_FUN_004e2630(int *param_1);
-void sound_mp3_cpp_FUN_004e27f0(undefined4 *param_1);
-void sound_mp3_cpp_FUN_004e2850(undefined4 *param_1);
-void sound_mp3_cpp_FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4);
+void sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(undefined4 *param_1);
+void sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(undefined4 *param_1);
+void sound_mp3_cpp_FUN_004e28a0(undefined4 *param_1,_FILE *param_2,ulong param_3,undefined4 param_4);
 void sound_mp3_cpp_FUN_004e2980(void);
-uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(undefined4 *param_1);
-uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(undefined4 *param_1,int param_2);
-undefined4 sound_mp3_cpp_FUN_004e2c40(void);
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(CFileBitStream *this_ptr);
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *bitstream,int num_bits);
+undefined4 sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40(void);
 undefined4 sound_mp3_cpp_FUN_004e2c50(void);
-bool sound_mp3_cpp_FUN_004e2c60(int param_1,uint param_2,undefined4 param_3);
-undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(int param_1);
-uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint param_2);
-void __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(undefined4 param_1);
-void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004e2de0(int param_1,undefined4 param_2,int param_3);
-void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(int param_1,int param_2);
-void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(int param_1,int param_2);
-undefined4 sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(undefined4 param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6);
-void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(undefined4 param_1,int *param_2);
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(undefined4 param_1,int param_2,int param_3);
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_004e3320(undefined4 param_1,int param_2,int param_3);
-void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004e33d0(undefined4 param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_004e36d0(undefined4 param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0(undefined4 param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_004e3a60(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_004e3e70(int param_1,int param_2,int param_3,int param_4);
-void sound_mp3_cpp_FUN_004e3f20(int param_1,int param_2,int param_3);
-void sound_mp3_cpp_FUN_004e3f80(float *param_1);
-int __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(undefined4 param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4);
-void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-void sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int *param_6);
+bool sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004e2c60(CFileBitStream *param_1,uint param_2,int param_3);
+uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(CMP3Decoder *this_ptr);
+uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder *this_ptr,uint num_bits);
+uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_004e2dd0(CMP3Decoder *this_ptr);
+void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_004e2de0(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte);
+void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_004e2e40(CMP3Decoder *this_ptr,int num_bits);
+void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004e2ea0(CMP3Decoder *this_ptr,int num_bytes);
+undefined4 sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6);
+void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004e3130(CFileBitStream *this_ptr,SMpegFrameHeader **header_out);
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004e31f0(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame );
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_004e3320(CFileBitStream *this_ptr,uint *output_array,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004e33d0(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_004e36d0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_004e3a60(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004e3d30(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_004e3e70(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index);
+void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_004e3f20(int param_1,int param_2,int param_3);
+void sound_mp3_cpp_initializeSynthesisDctTable_FUN_004e3f80(float *param_1);
+void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output);
+void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule_index,SMpegFrame *frame);
+void sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70(CMP3Decoder *param_1,undefined4 param_2,int param_3,int param_4,int param_5,int *param_6);
 void sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004e5000(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6);
-int sound_mp3_cpp_FUN_004e5200(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7);
-void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6);
-void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(undefined4 *param_1,undefined4 *param_2,int param_3,int *param_4);
-void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0(int param_1,double param_2,int param_3,int param_4);
-void sound_mp3_cpp_FUN_004e6160(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5);
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *param_1,float *param_2,int param_3);
-void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *param_1,int param_2,int param_3);
-void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_004e7720(int param_1,undefined4 param_2,float *param_3,int param_4,int param_5,int param_6);
+void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200(CMP3Decoder *this_ptr,SMpegSubbandQuantizedSamples *quantized_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,int frame_bit_offset,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_004e60c0(int intensity_position,double ratio,int sample_index,float *ratio_buffer);
+void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_004e6160(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
+void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *input_samples,float *output_samples,int mpeg_block_type);
+void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_004e7720(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
 int sound_mp3_cpp_calculateMainDataSize_FUN_004e77d0(int *param_1,undefined4 param_2,undefined4 param_3,int param_4);
 int sound_mp3_cpp_FUN_004e78b0(void);
 void sound_mp3_cpp_FUN_004e7b00(void);
-undefined1 * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(undefined1 *param_1);
-undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_004e7dd0(undefined4 param_1);
+CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder *this_ptr);
+CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_004e7dd0(CMP3Decoder *this_ptr,uint flags);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2);
-void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3);
-void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(undefined1 *param_1);
-int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0(char *param_1,undefined4 *param_2,int param_3);
-undefined4 __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(int param_1,int param_2);
-int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,undefined2 *param_2);
+void sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *param_1,_FILE *param_2,int param_3);
+void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(CMP3Decoder *this_ptr);
+int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested);
+int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_004e8410(CMP3Decoder *this_ptr,int sample_offset);
+int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this_ptr,short *pcm_output);
 void __cdecl core_netgame_cpp_staticInit_FUN_004e94a0(void);
-void core_netgame_cpp_FUN_004e94f0(void);
-void core_netgame_cpp_FUN_004e9520(void);
-float core_netgame_cpp_FUN_004e9570(void);
+void core_netgame_cpp_resetGameTime_FUN_004e94f0(void);
+void core_netgame_cpp_updateGameTime_FUN_004e9520(void);
+float core_netgame_cpp_computeTimeDelta_FUN_004e9570(void);
 float core_netgame_cpp_getElapsedSeconds_FUN_004e95d0(int param_1);
 void core_netgame_cpp_FUN_004e9630(void);
 void core_netgame_cpp_removeChatOut_FUN_004e9640(int param_1);
-int core_netgame_cpp_FUN_004e96e0(void);
+int core_netgame_cpp_findSimFrame_FUN_004e96e0(void);
 int * core_netgame_cpp_allocSimFrame_FUN_004e9730(int param_1);
-void core_netgame_cpp_FUN_004e97e0(int param_1);
-undefined4 * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1);
-int core_netgame_cpp_CNetGame_dtor_FUN_004e98f0(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_init_FUN_004e9910(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(int param_1);
-undefined4 core_netgame_cpp_FUN_004e99f0(undefined4 *param_1);
-undefined4 __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(undefined4 *param_1,undefined4 param_2);
-undefined4 __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int param_2);
-undefined4 __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int param_2);
-void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_004ea830(int *param_1,int *param_2,int param_3);
-void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(int param_1,int param_2,undefined4 param_3);
-void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(int param_1,undefined4 param_2,int *param_3);
-int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_004eb3f0(int param_1,int *param_2);
-int core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5);
-undefined4 __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(int *param_1);
-void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(int param_1,int param_2,float param_3);
-void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(int param_1,undefined4 param_2,int param_3);
-void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(int param_1);
-void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(undefined4 param_1,undefined4 *param_2,undefined4 param_3,char *param_4,char *param_5);
-undefined4 __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *param_1,undefined4 *param_2);
-void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(int param_1,int param_2);
-void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *param_1);
-void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(int *param_1,int param_2);
-void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(int *param_1);
-void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(int *param_1);
-void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(int *param_1);
-void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(int param_1,int *param_2);
-int * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(int *param_1);
-void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(int *param_1);
-bool core_netgame_cpp_FUN_004edc30(void);
-undefined4 core_netgame_cpp_FUN_004edc50(void);
-void core_netgame_cpp_FUN_004edc80(void);
-void core_netgame_cpp_FUN_004edca0(undefined4 *param_1);
-void core_netgame_cpp_FUN_004edcb0(void);
-void core_netgame_cpp_FUN_004edcc0(void);
-void core_netgame_cpp_FUN_004edcd0(void);
-void core_netgame_cpp_FUN_004edce0(void);
-void core_netgame_cpp_FUN_004edcf0(void);
-void core_netgame_cpp_FUN_004edd00(void);
-void core_netgame_cpp_FUN_004edd10(void);
-void core_netgame_cpp_FUN_004edd20(void);
-void core_netgame_cpp_FUN_004edd30(undefined4 *param_1,undefined4 *param_2);
+void core_netgame_cpp_purgeOldSimFrames_FUN_004e97e0(int param_1);
+CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_004e9860(CNetGame *this_ptr);
+_SOCKET * core_netgame_cpp_CNetGame_dtor_FUN_004e98f0(int param_1);
+void __cdecl core_netgame_cpp_CNetGame_init_FUN_004e9910(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(CNetGame *this_ptr);
+undefined4 core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0(CNetGame *param_1);
+int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetGame *this_ptr,uint32_t *server_ip);
+int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame *this_ptr,int perform_handshake);
+int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_ptr,int sync_stage);
+void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_004ea830(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
+void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet);
+void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet);
+int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_004eb3f0(CNetGame *this_ptr,SNetworkAddr *addr);
+int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode);
+int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(CNetGame *this_ptr,int player_index,float max_ping);
+void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(CNetGame *this_ptr,char *message,int target_player);
+void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_004ec180(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *this_ptr,SNetworkAddr *sender_addr,int message_id,char *sender_name,char *message);
+int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame *this_ptr,UNetPacket *packet);
+void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(CNetGame *this_ptr,int player_index);
+void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(CNetGame *this_ptr,int player_index);
+void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame *this_ptr);
+void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(CNetGame *param_1);
+void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(CNetGame *this_ptr,SSimFrame *sim_frame);
+SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_004edab0(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload);
+void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_004edaf0(CNetGame *this_ptr);
+bool core_netgame_cpp_matchPacketSize_FUN_004edc30(void);
+undefined4 core_netgame_cpp_matchPacketHeader_FUN_004edc50(void);
+void core_netgame_cpp_initNetPacket_FUN_004edc80(void);
+void core_netgame_cpp_CNetGame_setModeSyncing_FUN_004edca0(undefined4 *param_1);
+void core_netgame_cpp_CNetGame_setModePlaying_FUN_004edcb0(void);
+void core_netgame_cpp_CNetGame_setMode5_FUN_004edcc0(void);
+void core_netgame_cpp_CNetGame_setMode6_FUN_004edcd0(void);
+void core_netgame_cpp_CNetGame_setMode7_FUN_004edce0(void);
+void core_netgame_cpp_CNetGame_setMode9_FUN_004edcf0(void);
+void core_netgame_cpp_CNetGame_setMode10_FUN_004edd00(void);
+void core_netgame_cpp_CNetGame_setMode12_FUN_004edd10(void);
+void core_netgame_cpp_CNetGame_setMode13_FUN_004edd20(void);
+void core_netgame_cpp_CNetGame_swapPlayerData_FUN_004edd30(undefined4 *param_1,undefined4 *param_2);
 undefined4 core_netgame_cpp_SPlayer_ctor_FUN_004ede30(undefined4 param_1);
 undefined4 core_netgame_cpp_FUN_004ede40(undefined4 param_1);
 undefined4 core_netgame_cpp_FUN_004ede50(undefined4 param_1);
-undefined4 core_netgame_cpp_FUN_004ede60(undefined4 param_1);
-void core_netgame_cpp_FUN_004ede70(undefined4 *param_1,undefined4 *param_2);
-void core_netgame_cpp_FUN_004edf30(void);
-void core_netgame_cpp_FUN_004edf80(void);
-undefined4 * __cdecl core_netgame_cpp_assignInt1_FUN_004edfa0(undefined4 *param_1,undefined4 *param_2);
+undefined4 core_netgame_cpp_SNetPlayer_ctor_FUN_004ede60(undefined4 param_1);
+void core_netgame_cpp_SNetPlayer_copy_FUN_004ede70(undefined4 *param_1,undefined4 *param_2);
+void core_netgame_cpp_copyPlayerInput_FUN_004edf30(void);
+void core_netgame_cpp_copyNetAddr_FUN_004edf80(void);
+int * __cdecl core_netgame_cpp_assignInt1_FUN_004edfa0(int *dest,int *src);
 undefined4 * core_netgame_cpp_FUN_004edfb0(undefined4 *param_1,undefined4 *param_2);
-int support_newmsg_cpp_FUN_004edfc0(undefined4 param_1);
-undefined4 __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(undefined4 param_1,int param_2,int param_3);
-undefined4 __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(undefined4 param_1);
-byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1);
+int support_newmsg_cpp_FUN_004edfc0(char *param_1);
+char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound);
+char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(char *key);
+char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg);
 void __cdecl engine_ncursfx_cpp_staticInit_FUN_004ee4e0(void);
-int engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(undefined4 param_1);
+CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *ptr);
 void engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(int param_1);
-undefined4 __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(int param_1);
+void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr);
 void engine_ncursfx_cpp_FUN_004ee680(void);
-undefined4 engine_ncursfx_cpp_FUN_004ee690(void);
-undefined4 engine_ncursfx_cpp_FUN_004ee6c0(void);
-void engine_ncursfx_cpp_FUN_004ee720(void);
-void engine_ncursfx_cpp_FUN_004ee740(void);
-void __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(undefined4 param_1);
-void __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(undefined4 param_1);
+undefined4 engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(void);
+undefined4 engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(void);
+void engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(void);
+void engine_ncursfx_cpp_CMouse_render_FUN_004ee740(void);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(CAlphaBitmap *objs,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
 void core_npc_cpp_FUN_004ee920(void);
 CDemonActorType * core_npc_cpp_FUN_004ee940(void);
-int core_npc_cpp_FUN_004ee950(undefined4 param_1);
-void core_npc_cpp_FUN_004ee9e0(int param_1);
-void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2);
+int * core_npc_cpp_FUN_004ee950(CCharacter *param_1);
+void __cdecl core_npc_cpp_CNPC_setup_FUN_004ee9e0(CNPC *this_ptr);
+void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(CNPC *this_ptr,float delta_time);
 void core_npc_cpp_FUN_004eece0(int param_1,int param_2);
-void core_npc_cpp_FUN_004eed10(int param_1);
-undefined4 __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(undefined4 param_1,char *param_2);
-void core_npc_cpp_FUN_004eeea0(int param_1,int param_2);
+void core_npc_cpp_FUN_004eed10(CCharacter *param_1);
+int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_004eedc0(CNPC *this_ptr,char *motion_name);
+void core_npc_cpp_FUN_004eeea0(CCharacter *param_1,SDamageInfo *param_2);
 bool core_npc_cpp_FUN_004eef80(int param_1);
 int core_npc_cpp_FUN_004eefa0(int param_1);
-void __cdecl engine_palette_cpp_CFont_ctor_FUN_004eefb0(undefined4 *param_1);
-void __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(undefined4 *param_1);
-void __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_004eefb0(CFont *this_ptr);
+CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(CFont *this_ptr,uint flags);
+int __cdecl engine_palette_cpp_CFont_drawText_FUN_004eefd0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
 undefined4 engine_palette_cpp_CFont_getLineSpacing_FUN_004ef000(void);
-void __cdecl core_particle_cpp_CParticle_ctor_FUN_004ef010(int param_1);
-void __cdecl core_particle_cpp_CParticle_dtor_FUN_004ef030(int param_1);
-void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
-void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1);
+CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_004ef010(CParticle *this_ptr);
+CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_004ef030(CParticle *this_ptr,uint flags);
+void __cdecl core_particle_cpp_CParticle_setup_FUN_004ef040(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
+void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_ptr);
 void core_particle_cpp_CParticle_render_FUN_004ef440(void);
 undefined4 core_particle_cpp_CParticle_onCollision_FUN_004ef470(void);
 void __cdecl core_passngr_cpp_staticInit_FUN_004ef480(void);
 void core_passngr_cpp_FUN_004ef4b0(void);
 CDemonActorType * core_passngr_cpp_FUN_004ef4d0(void);
-int core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(undefined4 param_1);
-int core_passngr_cpp_FUN_004ef5c0(int param_1,byte param_2);
-void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(int param_1);
-void core_passngr_cpp_CPassenger_process_FUN_004ef890(int param_1,float param_2);
-int core_passngr_cpp_FUN_004efa60(int param_1);
+CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *this_ptr);
+CDemonActor * core_passngr_cpp_FUN_004ef5c0(CDemonActor *param_1,byte param_2);
+void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CNPC *param_1);
+void core_passngr_cpp_CPassenger_process_FUN_004ef890(CCharacter *param_1,float param_2);
+int core_passngr_cpp_FUN_004efa60(CCharacter *param_1);
 void core_passngr_cpp_CPassenger_archive_FUN_004efb30(int param_1);
 void core_path_cpp_FUN_004efc10(void);
-int core_path_cpp_FUN_004efc30(void);
-void core_path_cpp_FUN_004efc50(void);
-void core_path_cpp_FUN_004efcd0(void);
-int __cdecl core_path_cpp_CPathMap_ctor_FUN_004efd50(int param_1);
-int __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(int param_1);
+int core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void);
+void core_path_cpp_queuePush_FUN_004efc50(void);
+void core_path_cpp_queuePop_FUN_004efcd0(void);
+CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_004efd50(CPathMap *this_ptr);
+CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(CPathMap *this_ptr,uint flags);
 float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5);
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * core_actor_cpp_FUN_00409d30(int param_1)
+; UOrientationVector * core_actor_cpp_FUN_00409d30(int param_1)
 ;
 ;
 ; XREF[48]:
@@ -45,7 +45,7 @@ section .text
     ADD EBX,0x128                       ; 00409d37
     PUSH EBX                            ; 00409d3d
     CALL core_actor.cpp_initTransformCache_FUN_00409cf0 ; 00409d3e
-        ;   XREF to: 00409cf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_initTransformCache_FUN_00409cf0()
+        ;   XREF to: 00409cf0 (UNCONDITIONAL_CALL)  ; CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00409cf0(CDemonActorTransformState * transform_cache)
     LEA EBX,[EAX + 0xfffffed8]          ; 00409d43
     MOV dword ptr [EBX + 0x14c],0x5992d4 ; 00409d49 | PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005992d4
     MOV byte ptr [EBX],0x0              ; 00409d53
@@ -68,7 +68,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00409d9f
     MOV dword ptr [EAX],EDX             ; 00409da2
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00409da4
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00409da9
     LEA EDI,[EBX + 0x78]                ; 00409dac
     MOV dword ptr [EBX + 0x74],0x3f800000 ; 00409daf

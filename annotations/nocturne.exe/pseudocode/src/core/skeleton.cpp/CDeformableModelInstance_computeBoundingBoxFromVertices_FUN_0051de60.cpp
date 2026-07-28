@@ -2,25 +2,28 @@
 // Address: 0051de60
 // Address Range: [[0051de60, 0051e017]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(int param_1)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(CDeformableModelInstance *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(int param_1)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60(CDeformableModelInstance *this_ptr)
 
 {
-  float *pfVar1;
+  CBoundingBox3D *pCVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
-  int iVar5;
-  int iVar6;
-  float *pfVar7;
-  int *piVar8;
-  int *piVar9;
-  byte bVar10;
+  int iVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  CDeformableModel *pCVar8;
+  int iVar9;
+  CVector3f *pCVar10;
+  int *piVar11;
+  int *piVar12;
+  byte bVar13;
   int aiStackY_1028 [1012];
   int local_4c;
   int local_48;
@@ -32,26 +35,26 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
   int local_30;
   int local_2c;
   
-  bVar10 = 0;
+  bVar13 = 0;
   local_2c = 0x7fffffff;
   local_30 = 0x7fffffff;
   local_34 = 0x7fffffff;
   local_44 = -0x7fffffff;
   local_48 = -0x7fffffff;
   local_4c = -0x7fffffff;
-  iVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1);
-  iVar5 = *(int *)(iVar5 + 0x2c);
-  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0(param_1,0,0);
-  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(param_1,0);
-  if (0 < iVar5) {
-    iVar6 = 0;
+  pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
+  iVar4 = pCVar8->vertex_count[0];
+  core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0051b8f0(this_ptr,0,0.0);
+  core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(this_ptr,0);
+  if (0 < iVar4) {
+    iVar9 = 0;
     do {
-      piVar8 = (int *)(*(int *)(param_1 + 0x2234) + iVar6);
-      piVar9 = piVar8 + (uint)bVar10 * -2 + 1;
-      local_40 = *piVar8;
-      *(int *)((int)&stack0xffffffc4 + (uint)bVar10 * -8) = *piVar9;
-      *(int *)((int)&stack0xffffffc8 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-           piVar9[(uint)bVar10 * -2 + 1];
+      piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
+      piVar12 = piVar11 + (uint)bVar13 * -2 + 1;
+      local_40 = *piVar11;
+      *(int *)((int)&stack0xffffffc4 + (uint)bVar13 * -8) = *piVar12;
+      *(int *)((int)&stack0xffffffc8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
+           piVar12[(uint)bVar13 * -2 + 1];
       if (local_40 < local_34) {
         local_34 = local_40;
       }
@@ -70,25 +73,29 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
       if (local_44 < local_38) {
         local_44 = local_38;
       }
-      iVar6 = iVar6 + 0xc;
-    } while (iVar6 < iVar5 * 0xc);
+      iVar9 = iVar9 + 0xc;
+    } while (iVar9 < iVar4 * 0xc);
   }
-  pfVar1 = (float *)(param_1 + 0x2238);
-  *pfVar1 = (float)local_34 * _DAT_005a1eb0;
-  *(float *)(param_1 + 0x223c) = (float)local_30 * _DAT_005a1eb0;
-  *(float *)(param_1 + 0x2240) = (float)local_2c * _DAT_005a1eb0;
-  pfVar7 = (float *)(param_1 + 0x2244);
-  *pfVar7 = (float)local_4c * _DAT_005a1eb0;
-  *(float *)(param_1 + 0x2248) = (float)local_48 * _DAT_005a1eb0;
-  *(float *)(param_1 + 0x224c) = (float)local_44 * _DAT_005a1eb0;
-  fVar2 = (*pfVar7 - *pfVar1) * 0.05f;
-  fVar3 = (*(float *)(param_1 + 0x2248) - *(float *)(param_1 + 0x223c)) * 0.05f;
-  fVar4 = (*(float *)(param_1 + 0x224c) - *(float *)(param_1 + 0x2240)) * 0.05f;
-  *pfVar1 = *pfVar1 - fVar2;
-  *(float *)(param_1 + 0x223c) = *(float *)(param_1 + 0x223c) - fVar3;
-  *(float *)(param_1 + 0x2240) = *(float *)(param_1 + 0x2240) - fVar4;
-  *pfVar7 = *pfVar7 + fVar2;
-  *(float *)(param_1 + 0x2248) = *(float *)(param_1 + 0x2248) + fVar3;
-  *(float *)(param_1 + 0x224c) = *(float *)(param_1 + 0x224c) + fVar4;
+  pCVar1 = &this_ptr->bounding_box;
+  (pCVar1->min).x = (float)local_34 * _DAT_005a1eb0;
+  (this_ptr->bounding_box).min.y = (float)local_30 * _DAT_005a1eb0;
+  (this_ptr->bounding_box).min.z = (float)local_2c * _DAT_005a1eb0;
+  pCVar10 = &(this_ptr->bounding_box).max;
+  pCVar10->x = (float)local_4c * _DAT_005a1eb0;
+  (this_ptr->bounding_box).max.y = (float)local_48 * _DAT_005a1eb0;
+  (this_ptr->bounding_box).max.z = (float)local_44 * _DAT_005a1eb0;
+  fVar5 = (pCVar10->x - (pCVar1->min).x) * 0.05f;
+  fVar6 = ((this_ptr->bounding_box).max.y - (this_ptr->bounding_box).min.y) * 0.05f;
+  fVar7 = ((this_ptr->bounding_box).max.z - (this_ptr->bounding_box).min.z) * 0.05f;
+  fVar2 = (this_ptr->bounding_box).min.y;
+  (pCVar1->min).x = (pCVar1->min).x - fVar5;
+  fVar3 = (this_ptr->bounding_box).min.z;
+  (this_ptr->bounding_box).min.y = fVar2 - fVar6;
+  (this_ptr->bounding_box).min.z = fVar3 - fVar7;
+  fVar2 = (this_ptr->bounding_box).max.y;
+  pCVar10->x = pCVar10->x + fVar5;
+  fVar3 = (this_ptr->bounding_box).max.z;
+  (this_ptr->bounding_box).max.y = fVar2 + fVar6;
+  (this_ptr->bounding_box).max.z = fVar3 + fVar7;
   return;
 }

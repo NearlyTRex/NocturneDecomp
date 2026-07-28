@@ -16,8 +16,9 @@ void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
   float fVar3;
   float fVar4;
   float fVar5;
-  float10 fVar6;
-  float10 fVar7;
+  float fVar6;
+  double dVar7;
+  double dVar8;
   uint local_20;
   uint local_1c;
   
@@ -35,12 +36,13 @@ void core_glass_cpp_CGlass_onLaserHit_FUN_004add80(int param_1,int param_2)
     fVar3 = *(float *)(param_2 + 0x2c);
     fVar4 = *(float *)(param_1 + 0x150);
     fVar5 = (float)0.5;
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,param_1 + 0x36c);
-    fVar6 = (float10)DAT_005b762c;
-    fVar7 = (float10)round((float10)(fVar3 / fVar4 + fVar5) * fVar6);
-    fVar6 = (float10)round((float10)(1.0 - fVar1 / fVar2) * fVar6);
-    local_20 = (int)ROUND(fVar7);
-    local_1c = (int)ROUND(fVar6);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+              (DAT_005ae704,(SMRGLTextureBasic *)(param_1 + 0x36c));
+    fVar6 = (float)DAT_005b762c;
+    dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
+    dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
+    local_20 = (int)ROUND(dVar7);
+    local_1c = (int)ROUND(dVar8);
     if (local_20 < 0) {
       local_20 = 0;
     }

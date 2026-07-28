@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0056f170(LPCSTR param_1,byte param_2)
+; int FUN_0056f170(LPCSTR param_1,byte param_2)
 ;
 ;
 ; XREF[1]:
@@ -11,7 +11,7 @@
 ;   void* PTR_GetFileAttributesA_0057550c = 00175d2a
 ;
 ; Called Functions:
-;   FUN_0056c6d0
+;   crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0
 ;   GetFileAttributesA
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     JZ 0x0056f19b                       ; 0056f18e
         ;   XREF to: 0056f19b (CONDITIONAL_JUMP)  ; LAB_0056f19b
     PUSH 0x5                            ; 0056f190
-    CALL FUN_0056c6d0                   ; 0056f192
-        ;   XREF to: 0056c6d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056c6d0()
+    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0 ; 0056f192
+        ;   XREF to: 0056c6d0 (UNCONDITIONAL_CALL)  ; int crt_errno.c_convertWindowsErrorToErrno_FUN_0056c6d0(DWORD windows_error)
     ADD ESP,0x4                         ; 0056f197
     RET                                 ; 0056f19a
     XOR EAX,EAX                         ; 0056f19b

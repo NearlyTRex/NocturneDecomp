@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0044b810(int param_1)
+; void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0044b810(CActorDestination *this_ptr)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_filmreel.cpp_CFilmProjector_setup_FUN_00481fd0 at 00481fd6
@@ -23,7 +25,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0044b811
     PUSH EBX                            ; 0044b815
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0044b816
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     MOV EAX,[0x005baf90]                ; 0044b81b | DAT_005baf90
     MOV dword ptr [EBX + 0xf8],0x0      ; 0044b820
     MOV EAX,dword ptr [EAX + 0x4]       ; 0044b82a | DAT_01cc9454

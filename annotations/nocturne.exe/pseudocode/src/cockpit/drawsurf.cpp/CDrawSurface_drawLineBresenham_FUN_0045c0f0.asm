@@ -1,11 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x1
+; int              Stack[0xc]:4   y1
+; int              Stack[0x10]:4   x2
+; int              Stack[0x14]:4   y2
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0045bfb0 at 0045c037
+;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 at 0045c037
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0
@@ -68,7 +74,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0045c157
     PUSH EDX                            ; 0045c15b
     CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0 ; 0045c15c
-        ;   XREF to: 0045bab0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0()
+        ;   XREF to: 0045bab0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0045c161
     TEST EDI,EDI                        ; 0045c164
     JLE 0x0045c16b                      ; 0045c166
@@ -114,7 +120,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0045c1ad
     PUSH EAX                            ; 0045c1b1
     CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0 ; 0045c1b2
-        ;   XREF to: 0045bab0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0()
+        ;   XREF to: 0045bab0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0045c1b7
     TEST EDI,EDI                        ; 0045c1ba
     JLE 0x0045c1c9                      ; 0045c1bc

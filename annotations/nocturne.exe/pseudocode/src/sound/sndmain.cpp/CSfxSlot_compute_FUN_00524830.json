@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,22 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 841,
+    "complexity_score": 1018,
     "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
-    "suspect_count": 67,
+    "pseudocode_lines": 143,
+    "suspect_count": 83,
     "suspect_types": [
       "bitcast_double_pair",
       "param_count_too_few",
+      "shadow_pointer_walk",
+      "sub84_truncation",
+      "suspect_float",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 605
+    "total_lines": 607
   },
   "cross_references": [
     {
@@ -230,7 +233,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830",
-    "signature": "undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)"
+    "signature": "undefined4 sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)"
   },
   "function_calls": [
     {
@@ -797,7 +800,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)",
+      "text": "uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
@@ -805,63 +808,31 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)",
+      "text": "uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x74) == 0) {",
+      "text": "if (param_1->playback_state == 0) {",
       "type": "unnamed_param"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 33,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"SFXDBG: sample = %s\\n\",*(int *)(param_1 + 0x74));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x70) != 0) && (0.0 <= *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x70) != 0) && (0.0 <= *(double *)(param_1 + 0x60))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((0.0 < param_2) && (0.0 <= *(float *)(param_1 + 0x10c))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((0.0 < param_2) && (0.0 <= *(float *)(param_1 + 0x10c))) {",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -869,15 +840,23 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x10c) <= param_2) {",
+      "text": "if ((param_1->hardware_buffer_handle != 0) && (0.0 <= (param_1->options).trigger_time)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->hardware_buffer_handle != 0) && (0.0 <= (param_1->options).trigger_time)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x10c) <= param_2) {",
+      "text": "if ((0.0 < param_2) && (0.0 <= param_1->fade_target_volume)) {",
       "type": "unnamed_param"
     },
     {
@@ -885,7 +864,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(uint *)(param_1 + 0x110) & 0x7fffffff) != 0) goto LAB_00524b03;",
+      "text": "if ((0.0 < param_2) && (0.0 <= param_1->fade_target_volume)) {",
       "type": "unnamed_param"
     },
     {
@@ -893,47 +872,39 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x44) = *(uint *)(param_1 + 0x108);",
+      "text": "if (param_1->fade_target_volume <= param_2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x44) = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x10c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x10c) = *(float *)(param_1 + 0x10c) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x10c) = *(float *)(param_1 + 0x10c) - param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x10c) = *(float *)(param_1 + 0x10c) - param_2;",
+      "text": "if (param_1->fade_target_volume <= param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (ABS(param_1->fade_time_remaining) != 0.0) goto LAB_00524b03;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->options).current_volume = param_1->max_distance;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->options).current_volume = param_1->max_distance;",
       "type": "unnamed_param"
     },
     {
@@ -941,15 +912,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x44) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 / fVar1) * (*(float *)(param_1 + 0x108) - *(float *)(param_1 + 0x44)) +",
+      "text": "fVar1 = (param_1->options).current_volume;",
       "type": "unnamed_param"
     },
     {
@@ -957,15 +920,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_2 / fVar1) * (*(float *)(param_1 + 0x108) - *(float *)(param_1 + 0x44)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2 / fVar1) * (*(float *)(param_1 + 0x108) - *(float *)(param_1 + 0x44)) +",
+      "text": "fVar2 = param_1->fade_target_volume;",
       "type": "unnamed_param"
     },
     {
@@ -973,23 +928,87 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x44);",
+      "text": "fVar3 = (param_1->options).current_volume;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(double *)(param_1 + 0x4c) == _DAT_005a2148) {",
+      "text": "param_1->fade_target_volume = param_1->fade_target_volume - param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "param_1->fade_target_volume = param_1->fade_target_volume - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_1->fade_target_volume = param_1->fade_target_volume - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->options).current_volume =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 / fVar2) * (param_1->max_distance - fVar1) + fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2 / fVar2) * (param_1->max_distance - fVar1) + fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->options).delay_remaining == _DAT_005a2148) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 54,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -997,23 +1016,23 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 59,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"  delayRemaining = %7.2fs\\n\",*(uint *)(param_1 + 0x4c),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x50));",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -1021,31 +1040,39 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x78) = *(uint *)(param_1 + 0x48);",
+      "text": "*(uint *)&(param_1->options).delay_remaining);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x78) = *(uint *)(param_1 + 0x48);",
+      "text": "param_1->sample = (CSfxSample *)(param_1->options).base_frequency;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "param_1->sample = (CSfxSample *)(param_1->options).base_frequency;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 65,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"  freq = %5.2f\\n\",(double)*(float *)(param_1 + 0x78));",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -1053,15 +1080,7 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0x5c) & 1) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar5 = *(double *)(param_1 + 4) - _DAT_02dc78e0;",
+      "text": "(PTR_DAT_005ad350,\"  freq = %5.2f\\n\",(double)(float)param_1->sample);",
       "type": "unnamed_param"
     },
     {
@@ -1069,7 +1088,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar3 = *(double *)(param_1 + 0xc) - _DAT_02dc78e8;",
+      "text": "if (((param_1->options).flags & 1) == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -1077,7 +1096,15 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar4 = *(double *)(param_1 + 0x14) - _DAT_02dc78f0;",
+      "text": "dVar7 = (param_1->options).position.x - _DAT_02dc78e0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dVar5 = (param_1->options).position.y - _DAT_02dc78e8;",
       "type": "unnamed_param"
     },
     {
@@ -1085,52 +1112,84 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "dVar6 = (param_1->options).position.z - _DAT_02dc78f0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 74,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 75,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dVar8 = _DAT_02dc78f8 - (param_1->options).velocity.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar6 = _DAT_02dc78f8 - *(double *)(param_1 + 0x24);",
+      "text": "dVar9 = _DAT_02dc7900 - (param_1->options).velocity.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "dVar7 = _DAT_02dc7900 - *(double *)(param_1 + 0x2c);",
+      "text": "dVar10 = _DAT_02dc7908 - (param_1->options).velocity.z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 89,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "dVar8 = _DAT_02dc7908 - *(double *)(param_1 + 0x34);",
-      "type": "unnamed_param"
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 90,
+      "line": 93,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
+      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
       "type": "bitcast_double_pair"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 94,
+      "line": 97,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158)) < local_60) {",
@@ -1138,34 +1197,26 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 95,
+      "line": 98,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
+      "description": "Likely misinterpreted integer as float",
+      "line": 100,
+      "match": "1.4013e-45",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
-      "type": "unnamed_param"
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x78) = *(float *)(param_1 + 0x78) * (float)local_60;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x78) = *(float *)(param_1 + 0x78) * (float)local_60;",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -1173,7 +1224,31 @@
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "else if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "param_1->sample = (CSfxSample *)((float)param_1->sample * (float)local_60);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->sample = (CSfxSample *)((float)param_1->sample * (float)local_60);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 106,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "else if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "else if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
@@ -1181,79 +1256,103 @@
       "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 111,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"  vol = %5.2f\\n\",(double)*(float *)(param_1 + 0x44));",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x114) == 1) && (iVar9 = 0, iVar11 = param_1, 0 < DAT_005bea68)) {",
+      "text": "(PTR_DAT_005ad350,\"  vol = %5.2f\\n\",(double)(param_1->options).current_volume);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x114) == 1) && (iVar9 = 0, iVar11 = param_1, 0 < DAT_005bea68)) {",
+      "text": "sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 116,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if ((param_1->stop_after_fade == 1.4013e-45) &&",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->stop_after_fade == 1.4013e-45) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar11 = 0, pCVar13 = param_1, 0 < DAT_005bea68)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 117,
       "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x114) == 1) && (iVar9 = 0, iVar11 = param_1, 0 < DAT_005bea68)) {",
+      "text": "(iVar11 = 0, pCVar13 = param_1, 0 < DAT_005bea68)) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "(double)((float)(1 << ((char)*(uint *)(*(int *)(param_1 + 0x74) + 0x104) -",
+      "text": "(double)((float)(1 << ((char)*(uint *)(param_1->playback_state + 0x104) -",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005bea68",
-      "severity": "mild",
-      "text": "} while (iVar10 < DAT_005bea68);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 125,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x78) < (float)(1.0 / _FLOAT_005a2160)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 126,
-      "match": "param_1",
+      "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x78) = (float)(1.0 / _FLOAT_005a2160);",
-      "type": "unnamed_param"
+      "text": "} while (iVar12 < DAT_005bea68);",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float)_FLOAT_005a2160 < *(float *)(param_1 + 0x78)) {",
+      "text": "if ((float)param_1->sample < (float)(1.0 / _FLOAT_005a2160)) {",
       "type": "unnamed_param"
     },
     {
@@ -1261,7 +1360,7 @@
       "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x78) = (float)_FLOAT_005a2160;",
+      "text": "param_1->sample = (CSfxSample *)(float)(1.0 / _FLOAT_005a2160);",
       "type": "unnamed_param"
     },
     {
@@ -1269,28 +1368,52 @@
       "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x114) == 1) {",
+      "text": "if ((float)_FLOAT_005a2160 < (float)param_1->sample) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"  effFreq = %5.2f\\n\",(double)*(float *)(param_1 + 0x78));",
+      "text": "param_1->sample = (CSfxSample *)(float)_FLOAT_005a2160;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 134,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 134,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->stop_after_fade == 1.4013e-45) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 136,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((local_18 != 0) && (_DAT_02dc8318 != (int *)0x0)) && (*(int *)(param_1 + 0x6c) != 0)) {",
+      "text": "(PTR_DAT_005ad350,\"  effFreq = %5.2f\\n\",(double)(float)param_1->sample);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 138,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((local_18 != 0) && (_DAT_02dc8318 != (int *)0x0)) && ((param_1->options).dead != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 136,
+      "line": 139,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,param_1,local_18);",
@@ -1298,7 +1421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,param_1,local_18);",
@@ -1306,11 +1429,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "(PTR_DAT_005ad350,\"Killing %s in compute()\\n\",*(uint *)(param_1 + 0x74));",
+      "text": "sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 125,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
     },
     {
       "call_site_count": 13,

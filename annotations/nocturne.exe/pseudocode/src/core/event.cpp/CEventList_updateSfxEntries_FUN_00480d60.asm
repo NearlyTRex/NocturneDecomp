@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(int param_1)
+; void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(CEventList *this_ptr)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x148]:1  local_148
 ; undefined1       Stack[-0x147]:1  local_147
@@ -96,14 +98,14 @@ section .text
         ;   Label: LAB_00480e2d
     PUSH EAX                            ; 00480e2f
     CALL sound_sndmain.cpp_CSfxSample_init_FUN_00525b70 ; 00480e30
-        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_init_FUN_00525b70()
+        ;   XREF to: 00525b70 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_00525b70(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00480e35
     MOV EAX,ESP                         ; 00480e38
     PUSH EAX                            ; 00480e3a
     MOV EDX,dword ptr [EBX]             ; 00480e3b
     PUSH EDX                            ; 00480e3d
     CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 ; 00480e3e
-        ;   XREF to: 00526cd0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0()
+        ;   XREF to: 00526cd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0(uint sfx_handle, CSfxSample * output_buffer)
     ADD ESP,0x8                         ; 00480e43
     TEST EAX,EAX                        ; 00480e46
     JZ 0x00480de0                       ; 00480e48
@@ -142,7 +144,7 @@ section .text
     PUSH EDI                            ; 00480e97
     PUSH EBX                            ; 00480e98
     CALL crt_string.c_memmove_FUN_00566170 ; 00480e99
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00480e9e
     JMP 0x00480e10                      ; 00480ea1
         ;   XREF to: 00480e10 (UNCONDITIONAL_JUMP)  ; LAB_00480e10

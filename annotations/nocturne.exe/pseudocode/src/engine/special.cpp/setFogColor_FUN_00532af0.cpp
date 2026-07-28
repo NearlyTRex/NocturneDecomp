@@ -2,23 +2,23 @@
 // Address: 00532af0
 // Address Range: [[00532af0, 00532b29]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_special_cpp_setFogColor_FUN_00532af0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: int __cdecl engine_special_cpp_setFogColor_FUN_00532af0(int red,int green,int blue)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl engine_special_cpp_setFogColor_FUN_00532af0(uint param_1,uint param_2,uint param_3)
+int __cdecl engine_special_cpp_setFogColor_FUN_00532af0(int red,int green,int blue)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  _DAT_02dc9e10 = param_2;
-  _DAT_02dc9e14 = param_3;
-  _DAT_02dc9e0c = param_1;
+  _DAT_02dc9e10 = green;
+  _DAT_02dc9e14 = blue;
+  _DAT_02dc9e0c = red;
   if (_DAT_01c02594 == 0) {
     return 0;
   }
-  uVar1 = (*_DAT_02dc9dcc)(param_1,param_2,param_3);
-  return uVar1;
+  iVar1 = (*_DAT_02dc9dcc)(red,green,blue);
+  return iVar1;
 }

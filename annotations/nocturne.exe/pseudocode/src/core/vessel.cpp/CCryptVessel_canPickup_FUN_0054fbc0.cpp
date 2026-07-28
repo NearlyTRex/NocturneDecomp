@@ -2,11 +2,11 @@
 // Address: 0054fbc0
 // Address Range: [[0054fbc0, 0054fbf7]]
 // Convention: unknown
-// Signature: undefined4 core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,undefined4 param_2)
+// Signature: undefined4 core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,uint param_2)
+uint core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(int param_1,CDemonActor *param_2)
 
 {
   int iVar1;

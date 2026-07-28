@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(int *param_1)
+; void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(CFilterCache *this_ptr)
 ;
+; Parameters:
+; CFilterCache *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_FUN_0044bcb0 at 0044bcb6
@@ -49,7 +51,7 @@ section .text
         ;   Label: LAB_0044bcff
     PUSH EAX                            ; 0044bd01
     CALL core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00 ; 0044bd02
-        ;   XREF to: 0044bf00 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00()
+        ;   XREF to: 0044bf00 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00(CDemonFilter * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044bd07
     PUSH EAX                            ; 0044bd0a
     CALL crt_unknown.c_FUN_00564494     ; 0044bd0b

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(int param_1,int *param_2)
+; void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(CNetGame *this_ptr,SSimFrame *sim_frame)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SSimFrame *      Stack[0x8]:4   sim_frame
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720 at 004ed7c0
@@ -41,7 +44,7 @@ section .text
     PUSH dword ptr [EAX + 0x8]          ; 004ed9ac
     PUSH ESI                            ; 004ed9af
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 004ed9b0
-        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_slamDT_FUN_004a5f00()
+        ;   XREF to: 004a5f00 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_slamDT_FUN_004a5f00(CGame * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ed9b5
     MOV EDI,dword ptr [EBP + 0x1c]      ; 004ed9b8
     XOR EDX,EDX                         ; 004ed9bb

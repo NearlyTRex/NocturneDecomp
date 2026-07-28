@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_charactr_cpp_CCharacter_spawnFlies_FUN_0042a120(CDemonActor *param_1,int param_2,float param_3)
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040b090
+;   core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 0042a132
     PUSH ECX                            ; 0042a136
     PUSH EAX                            ; 0042a137
-    CALL core_actor.cpp_FUN_0040b090    ; 0042a138
-        ;   XREF to: 0040b090 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040b090()
+    CALL core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090 ; 0042a138
+        ;   XREF to: 0040b090 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_spawnFlies_FUN_0040b090(CDemonActor * this_ptr, int fly_count, float spawn_radius)
     ADD ESP,0xc                         ; 0042a13d
     RET                                 ; 0042a140
 

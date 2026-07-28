@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(undefined4 param_1,undefined4 param_2,float *param_3)
+; void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(CIniFile *this_ptr,char *key,float *output)
 ;
+; Parameters:
+; CIniFile *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   key
+; float *          Stack[0xc]:4   output
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70
 ; undefined        Stack[-0x68]:1  local_68

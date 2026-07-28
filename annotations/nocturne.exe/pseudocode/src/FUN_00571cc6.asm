@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056fd26 at 0056fd5b
+;   crt_string.c_mbstrncpy_core_FUN_0056fd26 at 0056fd5b
 ;
 ; Called Functions:
-;   FUN_0056b327
+;   crt_stdio.c_reportStreamError_FUN_0056b327
 ;   FUN_0056ce57
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     PUSH 0x4                            ; 00571d2e
     ADD EAX,EBX                         ; 00571d30
     PUSH EAX                            ; 00571d32
-    CALL FUN_0056b327                   ; 00571d33
-        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b327()
+    CALL crt_stdio.c_reportStreamError_FUN_0056b327 ; 00571d33
+        ;   XREF to: 0056b327 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_0056b327(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00571d38
     MOV dword ptr [EBX + 0x4],0x0       ; 00571d3b
     MOV EAX,ESI                         ; 00571d42

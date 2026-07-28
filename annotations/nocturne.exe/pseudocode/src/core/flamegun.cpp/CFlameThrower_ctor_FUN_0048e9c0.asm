@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(undefined4 param_1)
+; CWeapon * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(CWeapon *param_1)
 ;
 ;
 ; XREF[1]:
@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0048e9c1
     PUSH EDX                            ; 0048e9c5
     CALL core_weapon.cpp_CWeapon_ctor_FUN_00553d90 ; 0048e9c6
-        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_ctor_FUN_00553d90()
+        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_00553d90(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 0048e9cb
     PUSH 0x58169c                       ; 0048e9ce | = "flamegun.kfm"
     MOV EBX,EAX                         ; 0048e9d3
@@ -33,7 +33,7 @@ section .text
     PUSH EAX                            ; 0048e9da
     MOV dword ptr [EAX + -0x4],0x59d7b4 ; 0048e9db | PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d7b4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0048e9e2
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x574],0x0     ; 0048e9e7
     MOV dword ptr [EBX + 0x570],0x0     ; 0048e9f1
     MOV dword ptr [EBX + 0x2d0],0x0     ; 0048e9fb

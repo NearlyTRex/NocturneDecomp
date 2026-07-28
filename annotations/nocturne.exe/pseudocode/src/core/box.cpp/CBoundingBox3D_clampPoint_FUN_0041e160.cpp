@@ -2,34 +2,34 @@
 // Address: 0041e160
 // Address Range: [[0041e160, 0041e1f1]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(float *param_1,float *param_2,float *param_3)
+// Signature: CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
 
 #include "nocturne.h"
 
-float * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(float *param_1,float *param_2,float *param_3)
+CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_0041e160(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point)
 
 {
-  *param_2 = *param_3;
-  param_2[1] = param_3[1];
-  param_2[2] = param_3[2];
-  if (*param_2 < *param_1) {
-    *param_2 = *param_1;
+  out_point->x = in_point->x;
+  out_point->y = in_point->y;
+  out_point->z = in_point->z;
+  if (out_point->x < (this_ptr->min).x) {
+    out_point->x = (this_ptr->min).x;
   }
-  if (param_1[3] < *param_2) {
-    *param_2 = param_1[3];
+  if ((this_ptr->max).x < out_point->x) {
+    out_point->x = (this_ptr->max).x;
   }
-  if (param_2[1] < param_1[1]) {
-    param_2[1] = param_1[1];
+  if (out_point->y < (this_ptr->min).y) {
+    out_point->y = (this_ptr->min).y;
   }
-  if (param_1[4] < param_2[1]) {
-    param_2[1] = param_1[4];
+  if ((this_ptr->max).y < out_point->y) {
+    out_point->y = (this_ptr->max).y;
   }
-  if (param_2[2] < param_1[2]) {
-    param_2[2] = param_1[2];
+  if (out_point->z < (this_ptr->min).z) {
+    out_point->z = (this_ptr->min).z;
   }
-  if (param_2[2] <= param_1[5]) {
-    return param_2;
+  if (out_point->z <= (this_ptr->max).z) {
+    return out_point;
   }
-  param_2[2] = param_1[5];
-  return param_2;
+  out_point->z = (this_ptr->max).z;
+  return out_point;
 }

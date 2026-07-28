@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_FUN_00474c90(undefined4 param_1)
+; CEdScrollBar * shape_edittool_cpp_FUN_00474c90(CStrList *param_1)
 ;
 ;
 ; XREF[14]:
@@ -13,7 +13,7 @@
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c33
 ;   core_script.cpp_staticInit_FUN_004fde80 at 004fde85
 ;   core_sound.cpp_FUN_0052ed40 at 0052ed4c
-;   engine_pod.cpp_FUN_004f8240 at 004f8423
+;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8423
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 00470569
 ;   ... and 4 more
 ;
@@ -32,12 +32,12 @@ section .text
         ;   Label: shape_edittool.cpp_FUN_00474c90
     PUSH EAX                            ; 00474c94
     CALL shape_edittool.cpp_CStrList_ctor_FUN_00473b60 ; 00474c95
-        ;   XREF to: 00473b60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_ctor_FUN_00473b60()
+        ;   XREF to: 00473b60 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_00473b60(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00474c9a
     ADD EAX,0x138                       ; 00474c9d
     PUSH EAX                            ; 00474ca2
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450 ; 00474ca3
-        ;   XREF to: 00476450 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450()
+        ;   XREF to: 00476450 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_00476450(CEdScrollBar * this_ptr)
     MOV dword ptr [EAX + 0xfffffed4],0x59ca94 ; 00474ca8 | PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94
     MOV dword ptr [EAX + 0xfffffed8],0x0 ; 00474cb2
     MOV byte ptr [EAX + 0xfffffedc],0x0 ; 00474cbc

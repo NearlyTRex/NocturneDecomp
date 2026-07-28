@@ -27,7 +27,7 @@ section .text
     PUSH EAX                            ; 0040eb52
         ;   Label: LAB_0040eb52
     CALL core_ammo.cpp_CAmmo_ctor_FUN_0040eb70 ; 0040eb53
-        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_ctor_FUN_0040eb70()
+        ;   XREF to: 0040eb70 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040eb70(CAmmo * this_ptr)
     ADD ESP,0x4                         ; 0040eb58
     RET                                 ; 0040eb5b
 

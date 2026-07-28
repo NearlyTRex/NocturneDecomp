@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f4676
-;   cockpit_pkbmpset.cpp_FUN_004f54c0 at 004f568d
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0 at 004f568d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d130
@@ -54,7 +54,7 @@ section .text
     SHL EAX,0x2                         ; 004f47f7
     PUSH EAX                            ; 004f47fa
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 004f47fb
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 004f4800
     MOV dword ptr [EBP + 0x20],EAX      ; 004f4803
     TEST EAX,EAX                        ; 004f4806
@@ -124,7 +124,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f48cf
     PUSH EAX                            ; 004f48d2
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004f48d3
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004f48d8
     MOV dword ptr [EBP + 0x14],EAX      ; 004f48db
     TEST EAX,EAX                        ; 004f48de

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_FUN_00476490(undefined4 param_1)
+; CEdScrollBar * shape_edittool_cpp_FUN_00476490(CEdScrollBar *param_1)
 ;
 ;
 ; XREF[1]:
@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00476491
     PUSH EBX                            ; 00476495
     CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0 ; 00476496
-        ;   XREF to: 004764b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0()
+        ;   XREF to: 004764b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0047649b
     MOV EAX,EBX                         ; 0047649e
     POP EBX                             ; 004764a0

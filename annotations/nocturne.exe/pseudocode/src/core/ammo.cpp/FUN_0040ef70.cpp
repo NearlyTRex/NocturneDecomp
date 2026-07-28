@@ -2,11 +2,11 @@
 // Address: 0040ef70
 // Address Range: [[0040ef70, 0040ef8b]]
 // Convention: unknown
-// Signature: undefined4 core_ammo_cpp_FUN_0040ef70(undefined4 param_1,undefined4 param_2)
+// Signature: undefined4 core_ammo_cpp_FUN_0040ef70(undefined4 param_1,CDemonActor *param_2)
 
 #include "nocturne.h"
 
-uint core_ammo_cpp_FUN_0040ef70(uint param_1,uint param_2)
+uint core_ammo_cpp_FUN_0040ef70(uint param_1,CDemonActor *param_2)
 
 {
   int iVar1;

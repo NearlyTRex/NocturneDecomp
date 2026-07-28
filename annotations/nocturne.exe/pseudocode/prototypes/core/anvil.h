@@ -17,15 +17,15 @@ CDemonActorType * FUN_0040f550(void);
 
 // Original: core_anvil.cpp_FUN_0040f560
 // Address: 0040f560
-int FUN_0040f560(undefined4 param_1);
+int * FUN_0040f560(undefined4 param_1);
 
 // Original: core_anvil.cpp_FUN_0040f5f0
 // Address: 0040f5f0
-void FUN_0040f5f0(int param_1);
+void FUN_0040f5f0(CDemonActor *param_1);
 
 // Original: core_anvil.cpp_FUN_0040f610
 // Address: 0040f610
-void FUN_0040f610(int param_1,float param_2);
+void FUN_0040f610(CDemonActor *param_1,float param_2);
 
 // Original: core_anvil.cpp_FUN_0040f740
 // Address: 0040f740
@@ -33,7 +33,7 @@ int FUN_0040f740(int param_1);
 
 // Original: core_anvil.cpp_FUN_0040f7d0
 // Address: 0040f7d0
-void FUN_0040f7d0(int param_1);
+void FUN_0040f7d0(CDemonActor *param_1);
 
 // Original: core_anvil.cpp_FUN_0040f850
 // Address: 0040f850
@@ -45,4 +45,4 @@ undefined4 * FUN_0040f860(int param_1,undefined4 *param_2);
 
 // Original: core_anvil.cpp_FUN_0040f8b0
 // Address: 0040f8b0
-undefined4 FUN_0040f8b0(undefined4 param_1,byte param_2);
+CDemonActor * FUN_0040f8b0(CDemonActor *param_1,byte param_2);

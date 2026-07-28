@@ -2,15 +2,15 @@
 // Address: 00554600
 // Address Range: [[00554600, 00554623]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(int param_1)
+// Signature: int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(int param_1)
+int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr)
 
 {
-  if (0 < *(int *)(param_1 + 0x560)) {
-    *(int *)(param_1 + 0x560) = *(int *)(param_1 + 0x560) + -1;
+  if (0 < this_ptr->ammo_count) {
+    this_ptr->ammo_count = this_ptr->ammo_count + -1;
     return 1;
   }
   return 0;

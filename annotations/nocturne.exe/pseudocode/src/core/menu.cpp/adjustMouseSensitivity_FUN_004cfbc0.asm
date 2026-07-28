@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *param_1,undefined4 param_2)
+; void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_value_ptr,char *window_title)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   sensitivity_value_ptr
+; char *           Stack[0x8]:4   window_title
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
@@ -64,7 +67,7 @@ section .text
     MOV ECX,dword ptr [0x005b6d50]      ; 004cfbf1 | DAT_005b6d50
     PUSH ECX                            ; 004cfbf7
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 004cfbf8
-        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
+        ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 004cfbfd
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cfc00
     MOV EBX,dword ptr [EAX]             ; 004cfc03
@@ -81,7 +84,7 @@ section .text
     MOV EBX,0x3c000                     ; 004cfc26
     MOV ESI,dword ptr [ESI]             ; 004cfc2b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004cfc2d
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | DAT_01bd1d90
     MOV EAX,[0x005b761c]                ; 004cfc38 | DAT_005b761c
     PUSH ECX                            ; 004cfc3d
@@ -160,7 +163,7 @@ section .text
     INC EDI                             ; 004cfd08
     PUSH EDI                            ; 004cfd09
     CALL engine_2d.c_fillRectWithBorder_FUN_00403ef0 ; 004cfd0a
-        ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectWithBorder_FUN_00403ef0()
+        ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403ef0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 004cfd0f
     LEA EDX,[ESI + 0xffffc000]          ; 004cfd12
     MOV EAX,EBX                         ; 004cfd18
@@ -177,7 +180,7 @@ section .text
     PUSH ECX                            ; 004cfd33
     PUSH EDI                            ; 004cfd34
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004cfd35
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004cfd3a
     MOV dword ptr [ESP + 0xc],ESI       ; 004cfd3d
     FILD dword ptr [ESP + 0xc]          ; 004cfd41
@@ -194,7 +197,7 @@ section .text
     PUSH EDI                            ; 004cfd71
     ADD EBX,EDX                         ; 004cfd72
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004cfd74
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV EDX,EBX                         ; 004cfd79
     SUB EDX,EAX                         ; 004cfd7b
     MOV EAX,EDX                         ; 004cfd7d
@@ -213,7 +216,7 @@ section .text
         ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30()
     ADD ESP,0x24                        ; 004cfda3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cfda6
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x1                            ; 004cfdab
     MOV EAX,[0x005bac64]                ; 004cfdad | INT_005bac64
     PUSH EAX                            ; 004cfdb2 | DAT_01cc30e4

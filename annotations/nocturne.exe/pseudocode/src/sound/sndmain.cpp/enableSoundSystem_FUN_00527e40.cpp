@@ -2,44 +2,44 @@
 // Address: 00527e40
 // Address Range: [[00527e40, 00528074]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
+// Signature: int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
+int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
 
 {
   uint *puVar1;
-  int iVar2;
-  uint uVar3;
+  uint uVar2;
+  int iVar3;
   int iVar4;
   
-  iVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_00528480();
-  if (iVar2 == 0) {
+  uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_00528480();
+  if (uVar2 == 0) {
     return 0;
   }
-  iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
-  if (iVar2 != 0) {
-    uVar3 = sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
-    return uVar3;
+  iVar3 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
+  if (iVar3 != 0) {
+    iVar3 = sound_sndmain_cpp_resetSoundDevice_FUN_00528080();
+    return iVar3;
   }
-  iVar2 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
-  if (iVar2 != 0) {
+  iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
+  if (iVar3 != 0) {
     return 1;
   }
   sound_sndmain_cpp_lockSound_FUN_00528800();
-  iVar2 = sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(DAT_005bea64,DAT_005bea68,DAT_005bea6c);
-  if (iVar2 != 0) {
-    if ((0 < _DAT_02dc8334) && (iVar2 = 0, 0 < DAT_005bea68)) {
+  iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(DAT_005bea64,DAT_005bea68,DAT_005bea6c);
+  if (iVar3 != 0) {
+    if ((0 < _DAT_02dc8334) && (iVar3 = 0, 0 < DAT_005bea68)) {
       iVar4 = 0;
       do {
         puVar1 = (uint *)(iVar4 + 0x2dc8360);
         iVar4 = iVar4 + 4;
-        iVar2 = iVar2 + 1;
-        memset(*puVar1,0,_DAT_02dc8330 * _DAT_02dc8334 * 4);
-      } while (iVar2 < DAT_005bea68);
+        iVar3 = iVar3 + 1;
+        memset((void *)*puVar1,0,_DAT_02dc8330 * _DAT_02dc8334 * 4);
+      } while (iVar3 < DAT_005bea68);
     }
     _DAT_02dc8328 = 0;
     _DAT_02dc832c = 0;
@@ -57,8 +57,8 @@ uint __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
     (**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,DAT_005bea80,DAT_005bea84);
     (**(code **)(*_DAT_02dc8318 + 0x28))(_DAT_02dc8318,_DAT_02dc8498,_DAT_02dc849c,_DAT_02dc84a0);
     _DAT_02dc84c0 = wincore_winrun_cpp_getTime_FUN_00558a30();
-    iVar2 = (**(code **)(*_DAT_02dc8318 + 4))(_DAT_02dc8318);
-    if (iVar2 != 0) {
+    iVar3 = (**(code **)(*_DAT_02dc8318 + 4))(_DAT_02dc8318);
+    if (iVar3 != 0) {
       _DAT_02dc831c = 1;
       sound_sndmain_cpp_unlockSound_FUN_00528890();
       return 1;

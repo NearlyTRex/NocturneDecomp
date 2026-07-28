@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 282,
+    "complexity_score": 318,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
-    "suspect_count": 18,
+    "pseudocode_lines": 78,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 228
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -149,7 +150,7 @@
     ],
     "convention": "unknown",
     "name": "engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50",
-    "signature": "int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50(int param_1)"
+    "signature": "int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50(SMRGLHeaderPrimitive *param_1)"
   },
   "function_calls": [
     {
@@ -300,15 +301,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(param_1 + 0x18);",
+      "text": "int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50(SMRGLHeaderPrimitive *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -316,12 +309,20 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);",
+      "text": "pSVar4 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x20) {",
@@ -329,7 +330,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "else if (DAT_005b7624 == 0x20) {",
@@ -337,7 +338,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);",
@@ -345,7 +346,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005b763c",
       "severity": "mild",
       "text": "if (DAT_005b763c < 0xff) {",
@@ -353,23 +354,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < *(int *)(param_1 + 4) * 3; iVar1 = iVar1 + 3) {",
+      "text": "for (iVar2 = 0; iVar2 < (param_1->base).count * 3; iVar2 = iVar2 + 3) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_006b029c",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_006b029c + iVar5) = *piVar4;",
+      "text": "*(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (DAT_005b762c < 0x41) {",
@@ -377,59 +378,83 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_005c502c",
       "severity": "mild",
-      "text": "(&DAT_005c502c)[*piVar4 * 0xc] = iVar2;",
+      "text": "(&DAT_005c502c)[(pSVar4->base).type * 0xc] = iVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_005c5030",
       "severity": "mild",
-      "text": "*(int *)(&DAT_005c5030 + iVar2 * 0x30) = iVar3;",
+      "text": "*(int *)(&DAT_005c5030 + pSVar1->type * 0x30) = iVar5;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_006b029c",
       "severity": "mild",
-      "text": "engine_clipper_c_FUN_00432cd0(iVar6,&DAT_006b029c);",
+      "text": "engine_clipper_c_FUN_00432cd0(iVar7,&DAT_006b029c);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "text": "return (int)&param_1[1].base + (param_1->base).count * 0xc;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "text": "return (int)&param_1[1].base + (param_1->base).count * 0xc;",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&DAT_006b029c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "(int)&DAT_006b029c",
       "severity": "moderate",
-      "text": "*(int *)((int)&DAT_006b029c + iVar5) = *piVar4;",
+      "text": "*(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1[1].base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&param_1[1].base",
+      "severity": "moderate",
+      "text": "return (int)&param_1[1].base + (param_1->base).count * 0xc;",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&DAT_006b029c + iVar5) = *piVar4;",
+      "text": "*(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 81,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "return (int)&param_1[1].base + (param_1->base).count * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 76,
+      "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

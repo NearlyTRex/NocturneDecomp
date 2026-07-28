@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(uint *param_1)
+; int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description)
 ;
+; Parameters:
+; EInputCodeType * Stack[0x4]:4   key_code_ptr
+; char *           Stack[0x8]:4   description
 ;
 ; XREF[1]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3fa8

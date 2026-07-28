@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(void)
+; void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509952
@@ -96,7 +98,7 @@ section .text
     PUSH 0x1c58dfc                      ; 0048a6ad
     MOV EBX,0x1c58dfc                   ; 0048a6b2
     CALL core_fire.cpp_CFireball_setupRenderState_FUN_004842a0 ; 0048a6b7
-        ;   XREF to: 004842a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireball_setupRenderState_FUN_004842a0()
+        ;   XREF to: 004842a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireball_setupRenderState_FUN_004842a0(CFireball * this_ptr)
     ADD ESP,0x4                         ; 0048a6bc
     LEA ESI,[EBX + 0x2700]              ; 0048a6bf
     FLD float ptr [EBX + 0x18]          ; 0048a6c5 | DAT_01c58e14 | DAT_01c58eb0
@@ -130,7 +132,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0048a701 | DAT_005ae704
     PUSH EAX                            ; 0048a706 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048a707
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048a70c
     TEST EAX,EAX                        ; 0048a70f
     JNZ 0x0048a94c                      ; 0048a711
@@ -143,7 +145,7 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 0048a71c | DAT_005be368
     PUSH EDX                            ; 0048a722 | DAT_01e57284
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 0048a723
-        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0()
+        ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 0048a728
     PUSH 0x1c20148                      ; 0048a72b
     XOR ESI,ESI                         ; 0048a730
@@ -163,7 +165,7 @@ section .text
     ADD EAX,EBX                         ; 0048a754
     PUSH EAX                            ; 0048a756
     CALL core_fire.cpp_CBulletHole_render_FUN_00482f50 ; 0048a757
-        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletHole_render_FUN_00482f50()
+        ;   XREF to: 00482f50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_00482f50(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 0048a75c
     MOV EDI,dword ptr [0x01c20140]      ; 0048a75f | DAT_01c20140
         ;   Label: LAB_0048a75f
@@ -176,7 +178,7 @@ section .text
         ;   Label: LAB_0048a76d
     MOV EBX,0x1c0a140                   ; 0048a772
     CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680 ; 0048a777
-        ;   XREF to: 00482680 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680()
+        ;   XREF to: 00482680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0048a77c
     LEA ESI,[EBX + 0x16000]             ; 0048a77f
     MOV EAX,dword ptr [EBX]             ; 0048a785 | DAT_01c0a140 | DAT_01c0a16c
@@ -186,7 +188,7 @@ section .text
         ;   XREF to: 0048a794 (CONDITIONAL_JUMP)  ; LAB_0048a794
     PUSH EBX                            ; 0048a78b | DAT_01c0a140 | DAT_01c0a16c
     CALL core_fire.cpp_CSmokeParticle_render_FUN_00482950 ; 0048a78c
-        ;   XREF to: 00482950 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSmokeParticle_render_FUN_00482950()
+        ;   XREF to: 00482950 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 0048a791
     ADD EBX,0x2c                        ; 0048a794
         ;   Label: LAB_0048a794
@@ -202,7 +204,7 @@ section .text
         ;   XREF to: 0048a7b5 (CONDITIONAL_JUMP)  ; LAB_0048a7b5
     PUSH EBX                            ; 0048a7ac | DAT_01c4e958 | DAT_01c4e9b4
     CALL core_fire.cpp_CMuzzleFlash_render_FUN_00484f00 ; 0048a7ad
-        ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CMuzzleFlash_render_FUN_00484f00()
+        ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash * this_ptr)
     ADD ESP,0x4                         ; 0048a7b2
     ADD EBX,0x5c                        ; 0048a7b5
         ;   Label: LAB_0048a7b5
@@ -218,7 +220,7 @@ section .text
     PUSH ESI                            ; 0048a7cd
         ;   Label: LAB_0048a7cd
     CALL core_fire.cpp_CLaserBeam_render_FUN_00485a90 ; 0048a7ce
-        ;   XREF to: 00485a90 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLaserBeam_render_FUN_00485a90()
+        ;   XREF to: 00485a90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam * this_ptr)
     INC EBX                             ; 0048a7d3
     MOV ECX,dword ptr [0x01c5c700]      ; 0048a7d4 | DAT_01c5c700
     ADD ESP,0x4                         ; 0048a7da
@@ -232,7 +234,7 @@ section .text
         ;   Label: LAB_0048a7f0
     MOV EBX,0x1c49d54                   ; 0048a7f5
     CALL core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 ; 0048a7fa
-        ;   XREF to: 004837a0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSpark_setupRenderState_FUN_004837a0()
+        ;   XREF to: 004837a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSpark_setupRenderState_FUN_004837a0(CSpark * this_ptr)
     ADD ESP,0x4                         ; 0048a7ff
     LEA ESI,[EBX + 0x4c00]              ; 0048a802
     FLD float ptr [EBX + 0x18]          ; 0048a808 | DAT_01c49d6c | DAT_01c49db8
@@ -280,7 +282,7 @@ section .text
         ;   XREF to: 0048a86b (CONDITIONAL_JUMP)  ; LAB_0048a86b
     PUSH EBX                            ; 0048a862
     CALL core_fire.cpp_CBulletTrail_render_FUN_004856c0 ; 0048a863
-        ;   XREF to: 004856c0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CBulletTrail_render_FUN_004856c0()
+        ;   XREF to: 004856c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail * this_ptr)
     ADD ESP,0x4                         ; 0048a868
     ADD EBX,0x24                        ; 0048a86b
         ;   Label: LAB_0048a86b
@@ -292,7 +294,7 @@ section .text
     PUSH EBX                            ; 0048a87d | DAT_01c5d724
         ;   Label: LAB_0048a87d
     CALL core_fire.cpp_CExplosion_render_FUN_00486fe0 ; 0048a87e
-        ;   XREF to: 00486fe0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CExplosion_render_FUN_00486fe0()
+        ;   XREF to: 00486fe0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_render_FUN_00486fe0(CExplosion * this_ptr)
     ADD EBX,0x1c                        ; 0048a883
     ADD ESP,0x4                         ; 0048a886
     CMP EBX,ESI                         ; 0048a889
@@ -303,7 +305,7 @@ section .text
     PUSH EBX                            ; 0048a898
         ;   Label: LAB_0048a898
     CALL core_fire.cpp_CToss_render_FUN_00487630 ; 0048a899
-        ;   XREF to: 00487630 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CToss_render_FUN_00487630()
+        ;   XREF to: 00487630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_render_FUN_00487630(CToss * this_ptr)
     ADD EBX,0x3e4                       ; 0048a89e
     ADD ESP,0x4                         ; 0048a8a4
     CMP EBX,ESI                         ; 0048a8a7
@@ -314,7 +316,7 @@ section .text
     PUSH EBX                            ; 0048a8b6 | DAT_01c62ebc | DAT_01c62ee0
         ;   Label: LAB_0048a8b6
     CALL core_fire.cpp_CGunFlame_render_FUN_00488580 ; 0048a8b7
-        ;   XREF to: 00488580 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CGunFlame_render_FUN_00488580()
+        ;   XREF to: 00488580 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_render_FUN_00488580(CGunFlame * this_ptr)
     ADD EBX,0x24                        ; 0048a8bc
     ADD ESP,0x4                         ; 0048a8bf
     CMP EBX,ESI                         ; 0048a8c2
@@ -325,7 +327,7 @@ section .text
     PUSH EBX                            ; 0048a8d1
         ;   Label: LAB_0048a8d1
     CALL core_fire.cpp_CLightningBolt_render_FUN_00488bf0 ; 0048a8d2
-        ;   XREF to: 00488bf0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CLightningBolt_render_FUN_00488bf0()
+        ;   XREF to: 00488bf0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_render_FUN_00488bf0(CLightningBolt * this_ptr)
     ADD EBX,0x2c                        ; 0048a8d7
     ADD ESP,0x4                         ; 0048a8da
     CMP EBX,ESI                         ; 0048a8dd
@@ -336,7 +338,7 @@ section .text
     PUSH EBX                            ; 0048a8ec
         ;   Label: LAB_0048a8ec
     CALL core_fire.cpp_CTrail_render_FUN_00489360 ; 0048a8ed
-        ;   XREF to: 00489360 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CTrail_render_FUN_00489360()
+        ;   XREF to: 00489360 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_render_FUN_00489360(CTrail * this_ptr)
     ADD EBX,0x24                        ; 0048a8f2
     ADD ESP,0x4                         ; 0048a8f5
     CMP EBX,ESI                         ; 0048a8f8
@@ -392,7 +394,7 @@ section .text
     ADD EAX,EBX                         ; 0048a958
     PUSH EAX                            ; 0048a95a
     CALL core_fire.cpp_CStake_render_FUN_004835d0 ; 0048a95b
-        ;   XREF to: 004835d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CStake_render_FUN_004835d0()
+        ;   XREF to: 004835d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004835d0(CStake * this_ptr)
     ADD ESP,0x4                         ; 0048a960
     JMP 0x0048a674                      ; 0048a963
         ;   XREF to: 0048a674 (UNCONDITIONAL_JUMP)  ; LAB_0048a674

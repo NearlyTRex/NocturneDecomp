@@ -10,13 +10,7 @@ void engine_texture_cpp_FUN_00545700(int param_1)
 
 {
   int iVar1;
-  uint local_cc;
-  uint local_c8;
-  uint local_c4;
-  uint local_bc;
-  uint local_b8;
-  uint local_b4;
-  uint local_b0;
+  SRenderVertex local_cc;
   uint local_9c;
   uint local_98;
   uint local_94;
@@ -44,9 +38,9 @@ void engine_texture_cpp_FUN_00545700(int param_1)
     do {
       engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(param_1,iVar1);
       iVar1 = iVar1 + 1;
-      local_cc = 1000;
-      local_c8 = 1000;
-      local_c4 = 2000;
+      local_cc.projected_vertex.transformed_x = 1000;
+      local_cc.projected_vertex.transformed_y = 1000;
+      local_cc.projected_vertex.transformed_z = 2000;
       local_94 = 2000;
       local_64 = 2000;
       local_34 = 2000;
@@ -54,8 +48,8 @@ void engine_texture_cpp_FUN_00545700(int param_1)
       local_5c = 0x5fffa;
       local_58 = 0x5fffa;
       local_28 = 0x5fffa;
-      local_b4 = 0;
-      local_b0 = 0;
+      local_cc.u = 0;
+      local_cc.v = 0;
       local_84 = 0;
       local_80 = 0;
       local_54 = 0;
@@ -68,8 +62,8 @@ void engine_texture_cpp_FUN_00545700(int param_1)
       local_68 = 0xfffffc18;
       local_38 = 0xfffffc18;
       local_3c = 1000;
-      local_bc = 0x4fffb;
-      local_b8 = 0x4fffb;
+      local_cc.projected_vertex.screen_x = 0x4fffb;
+      local_cc.projected_vertex.screen_y = 0x4fffb;
       local_88 = 0x4fffb;
       local_2c = 0x4fffb;
       engine_special_cpp_drawPolygon_FUN_00532620(&local_cc,4,1);

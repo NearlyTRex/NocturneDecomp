@@ -21,7 +21,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004c6d7d
     PUSH EBX                            ; 004c6d7f
     CALL engine_light.cpp_calculatePhongLighting_FUN_004c6a70 ; 004c6d80
-        ;   XREF to: 004c6a70 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculatePhongLighting_FUN_004c6a70()
+        ;   XREF to: 004c6a70 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculatePhongLighting_FUN_004c6a70(int world_x, int world_y, int world_z)
     ADD ESP,0xc                         ; 004c6d85
     POP EBX                             ; 004c6d88
     RET                                 ; 004c6d89

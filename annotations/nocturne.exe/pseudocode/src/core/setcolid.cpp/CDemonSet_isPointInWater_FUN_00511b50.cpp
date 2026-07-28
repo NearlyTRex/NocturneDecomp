@@ -2,53 +2,47 @@
 // Address: 00511b50
 // Address Range: [[00511b50, 00511c58]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1,int param_2)
+// Signature: int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *this_ptr,CVector3f *point)
 
 #include "nocturne.h"
 
-uint __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1,int param_2)
+int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *this_ptr,CVector3f *point)
 
 {
+  CDemonActor *this_ptr_00;
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float local_1c;
-  float fStack_18;
-  float fStack_14;
+  CDemonSet *pCVar2;
+  CBoundingBox3D CStack_34;
+  CVector3f local_1c;
   
   if (((*(uint *)(0x02DD1210 + 4) & 0x7fffffff) == 0) ||
-     (*(float *)(0x02DD1210 + 4) <= *(float *)(param_2 + 4))) {
-    iVar3 = 0;
-    iVar4 = param_1;
-    if (0 < *(int *)(param_1 + 0x14cd6c)) {
+     (*(float *)(0x02DD1210 + 4) <= point->y)) {
+    iVar1 = 0;
+    pCVar2 = this_ptr;
+    if (0 < *(int *)this_ptr->lights[199].filter_names[0x14]) {
       do {
-        iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar4 + 0x14cd70),
-                           g_CWaterActorActorType_02ddd598.name_hash);
-        if (iVar1 != 0) {
-          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar1,&local_1c,param_2);
-          (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,&fStack_34);
-          fStack_30 = fStack_30 + -10.0f;
-          if ((((fStack_34 <= local_1c) && (fStack_30 <= fStack_18)) && (fStack_2c <= fStack_14)) &&
-             (((local_1c <= fStack_28 && (fStack_18 <= fStack_24)) && (fStack_14 <= fStack_20)))) {
+        this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040d890
+                                (*(CDemonActor **)(pCVar2->lights[199].filter_names[0x14] + 4),
+                                 g_CWaterActorActorType_02ddd598.name_hash);
+        if (this_ptr_00 != (CDemonActor *)0x0) {
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(this_ptr_00,&local_1c,point);
+          (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_34);
+          CStack_34.min.y = CStack_34.min.y + -10.0f;
+          if ((((CStack_34.min.x <= local_1c.x) && (CStack_34.min.y <= local_1c.y)) &&
+              (CStack_34.min.z <= local_1c.z)) &&
+             (((local_1c.x <= CStack_34.max.x && (local_1c.y <= CStack_34.max.y)) &&
+              (local_1c.z <= CStack_34.max.z)))) {
             return 1;
           }
         }
-        iVar3 = iVar3 + 1;
-        iVar4 = iVar4 + 4;
-      } while (iVar3 < *(int *)(param_1 + 0x14cd6c));
+        iVar1 = iVar1 + 1;
+        pCVar2 = (CDemonSet *)pCVar2->cameras;
+      } while (iVar1 < *(int *)this_ptr->lights[199].filter_names[0x14]);
     }
-    uVar2 = 0;
+    iVar1 = 0;
   }
   else {
-    uVar2 = 1;
+    iVar1 = 1;
   }
-  return uVar2;
+  return iVar1;
 }

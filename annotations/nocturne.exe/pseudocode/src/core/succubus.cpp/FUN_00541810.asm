@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_FUN_00541810(undefined4 param_1,int param_2)
+; void core_succubus_cpp_FUN_00541810(CEnemy *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     PUSH EDX                            ; 00541819
     MOV dword ptr [EAX + 0x4],0x0       ; 0054181a
     CALL core_enemy.cpp_CEnemy_processDamage_FUN_00479f70 ; 00541821
-        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_processDamage_FUN_00479f70()
+        ;   XREF to: 00479f70 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00479f70(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00541826
     RET                                 ; 00541829
 

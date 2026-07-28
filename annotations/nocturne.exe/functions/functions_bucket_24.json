@@ -29,10 +29,67 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_freopen_FUN_00565724",
-    "ret":"undefined1",
+    "ret":"_FILE*",
     "vars":{
+      "params":[
+        {
+          "name":"filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"mode",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"stream",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -46,12 +103,38 @@
       }
     ],
     "conv":"__fpustack_safe",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_math.c_acos_FUN_00565ca4",
-    "ret":"undefined1",
+    "ret":"double",
     "vars":{
+      "params":[
+        {
+          "name":"x",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },
@@ -64,12 +147,54 @@
         "start":"0056b1a4"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056b1a4",
-    "ret":"undefined1",
+    "name":"crt_heap.c_TryResizeInPlace_FUN_0056b1a4",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"new_size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulong"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -100,13 +225,9 @@
         "start":"0056ef24"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_0056ef24",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"crt_exception.c_RemoveExceptionHandler_FUN_0056ef24",
+    "ret":"void"
   }
 ]

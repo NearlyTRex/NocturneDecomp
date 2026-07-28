@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(int param_1)
+; void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor *this_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
@@ -57,7 +59,7 @@ section .text
     PUSH EBX                            ; 0040a04e
     FSTP float ptr [EBX + -0x8]         ; 0040a04f
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0040a052
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0040a057
     ADD ESP,0x4                         ; 0040a05a
     POP EBX                             ; 0040a05d

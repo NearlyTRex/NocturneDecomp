@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(int param_1,int param_2,undefined4 param_3)
+; void __cdecl core_netgame_cpp_CNetGame_send_FUN_004eb350(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
+; SNetPacketHeader * Stack[0xc]:4   packet
 ;
 ; XREF[8]:
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9c3c
@@ -53,7 +57,7 @@ section .text
     PUSH EAX                            ; 004eb37f
     PUSH ESI                            ; 004eb380
     CALL core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0 ; 004eb381
-        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0()
+        ;   XREF to: 004eb3c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 004eb386
     POP EBP                             ; 004eb389
     POP ESI                             ; 004eb38a

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0044b782
         ;   Label: LAB_0044b782
     CALL core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0 ; 0044b783
-        ;   XREF to: 0044b7a0 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0()
+        ;   XREF to: 0044b7a0 (UNCONDITIONAL_CALL)  ; CActorDestination * core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0(CActorDestination * this_ptr)
     ADD ESP,0x4                         ; 0044b788
     RET                                 ; 0044b78b
 

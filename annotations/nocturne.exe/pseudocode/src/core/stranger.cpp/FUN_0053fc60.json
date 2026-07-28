@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 581,
+    "complexity_score": 559,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
-    "suspect_count": 46,
+    "pseudocode_lines": 119,
+    "suspect_count": 43,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 431
+    "total_lines": 439
   },
   "cross_references": [
     {
@@ -153,7 +153,7 @@
     ],
     "convention": "unknown",
     "name": "core_stranger.cpp_FUN_0053fc60",
-    "signature": "void core_stranger_cpp_FUN_0053fc60(int param_1)"
+    "signature": "void core_stranger_cpp_FUN_0053fc60(CStranger *param_1)"
   },
   "function_calls": [
     {
@@ -172,6 +172,16 @@
       "name": "core_hero.cpp_CHero_tryInteract_FUN_004b4e90"
     },
     {
+      "addr": "004b5270",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270"
+    },
+    {
+      "addr": "004b52f0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryPullLever_FUN_004b52f0"
+    },
+    {
       "addr": "004b54c0",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0"
@@ -185,16 +195,6 @@
       "addr": "004b5110",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004b5110"
-    },
-    {
-      "addr": "004b5270",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004b5270"
-    },
-    {
-      "addr": "004b52f0",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004b52f0"
     },
     {
       "addr": "004e18d0",
@@ -373,31 +373,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_stranger_cpp_FUN_0053fc60(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1 + 0xbca0) != 0) && (*(int *)(param_1 + 0x1faa0) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((*(int *)(param_1 + 0xbca0) != 0) && (*(int *)(param_1 + 0x1faa0) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar1 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(param_1), iVar1 == 0)) &&",
+      "text": "void core_stranger_cpp_FUN_0053fc60(CStranger *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +381,15 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x1fa3c) == 0)) {",
+      "text": "if (((((param_1->base).player_input.action_state.fire != 0) && (param_1->action_pending == 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((((param_1->base).player_input.action_state.fire != 0) && (param_1->action_pending == 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -413,23 +397,31 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1 + 0x150;",
+      "text": "(iVar3 = core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(param_1), iVar3 == 0)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = core_hero_cpp_FUN_004b5110(param_1);",
+      "text": "(param_1->guns_drawn == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1fa04) != 0) {",
+      "text": "pCVar1 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar6 = core_hero_cpp_FUN_004b5110(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -437,15 +429,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01BCD074,\"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s\",*(int *)(param_1 + 0x1fa04));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1fa04) != 0) {",
+      "text": "pCVar2 = (param_1->base).door_to_open;",
       "type": "unnamed_param"
     },
     {
@@ -453,63 +437,55 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x01BCD074,\"eDoorMoveNone returned by checkDoorOpen, but doorToOpen = %s\",*(int *)(param_1 + 0x1fa04));",
+      "text": "pCVar2 = (param_1->base).door_to_open;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x1c,1);",
+      "text": "(&(param_1->base).base.model.motion_controller,0x1c,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
+      "text": "param_1->action_pending = 5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "param_1->action_pending = 5;",
       "type": "unnamed_param"
     },
     {
@@ -517,23 +493,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1faa0) = 5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_FUN_004b5270(param_1);",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -541,7 +501,15 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "param_1->action_pending = 5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -549,15 +517,15 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_stranger_cpp_FUN_0053c800(param_1);",
+      "text": "core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -565,7 +533,7 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(param_1,\"!CBodyPart\");",
+      "text": "iVar3 = core_stranger_cpp_FUN_0053c800(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -573,7 +541,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -581,7 +549,7 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(param_1);",
+      "text": "iVar3 = core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(param_1,\"!CBodyPart\");",
       "type": "unnamed_param"
     },
     {
@@ -589,15 +557,15 @@
       "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(param_1);",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "iVar3 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -605,7 +573,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(param_1);",
+      "text": "iVar3 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -613,7 +581,7 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,6,1);",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -621,39 +589,23 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x24f0) == 0) &&",
+      "text": "iVar3 = core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,0), (float)0.98999999999999999 < fVar2)) {",
+      "text": "pCVar1 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_FUN_004b52f0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x1f,1);",
+      "text": "if (((param_1->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) &&",
       "type": "unnamed_param"
     },
     {
@@ -661,31 +613,31 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(param_1);",
+      "text": "(param_1,0), (float)0.98999999999999999 < fVar4)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "iVar3 = core_hero_cpp_CHero_tryPullLever_FUN_004b52f0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(param_1);",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "iVar3 = core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -693,23 +645,23 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(param_1);",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "iVar3 = core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,\"CBodyPart\");",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {
@@ -717,15 +669,39 @@
       "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "iVar3 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004b5750(&param_1->base);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xbca0) = 0;",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,\"CBodyPart\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 117,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).player_input.action_state.fire = 0;",
       "type": "unnamed_param"
     },
     {

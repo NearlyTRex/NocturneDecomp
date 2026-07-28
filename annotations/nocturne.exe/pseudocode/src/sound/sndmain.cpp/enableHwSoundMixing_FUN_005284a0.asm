@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005284a0(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005284a0(int enable)
 ;
+; Parameters:
+; int              Stack[0x4]:4   enable
 ;
 ; XREF[2]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2198
@@ -24,7 +26,7 @@
 section .text
 
     CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00528480 ; 005284a0
-        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
+        ;   XREF to: 00528480 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00528480()
         ;   Label: sound_sndmain.cpp_enableHwSoundMixing_FUN_005284a0
     TEST EAX,EAX                        ; 005284a5
     JNZ 0x005284b3                      ; 005284a7

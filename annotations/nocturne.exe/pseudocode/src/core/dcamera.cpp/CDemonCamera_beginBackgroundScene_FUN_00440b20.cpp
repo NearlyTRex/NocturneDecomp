@@ -2,13 +2,13 @@
 // Address: 00440b20
 // Address Range: [[00440b20, 00440c4a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int param_1)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int param_1)
+void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDemonCamera *this_ptr)
 
 {
   uint uVar1;
@@ -18,7 +18,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int
   byte bVar5;
   
   bVar5 = 0;
-  if (*(int *)(param_1 + 0x11e4) == 0) {
+  if (this_ptr->scene_open_flag == 0) {
     PTR_01cc4800 = "..\\core\\dcamera.cpp";
     INT_01cc4804 = 0x43b;
     core_main_c_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
@@ -48,13 +48,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int
     _DAT_01c0063c = 0;
     _DAT_01c00624 = 0x10;
     iVar2 = 0;
-    if (0 < *(int *)(param_1 + 0x140)) {
+    if (0 < (int)this_ptr->max_distance) {
       do {
-        *(int *)(&DAT_01bd2fa0 + (*(int *)(param_1 + 0x148) + iVar2) * 4) =
-             *(int *)(param_1 + 0x158) + *(int *)(param_1 + 0x13c) * iVar2 * 4 +
-             *(int *)(param_1 + 0x144) * -4;
+        *(int *)(&DAT_01bd2fa0 + (this_ptr->framebuffer_height + iVar2) * 4) =
+             (int)this_ptr->framebuffer_aligned +
+             this_ptr->framebuffer_width * -4 + *(int *)(this_ptr->camera_name + 0xfc) * iVar2 * 4;
         iVar2 = iVar2 + 1;
-      } while (iVar2 < *(int *)(param_1 + 0x140));
+      } while (iVar2 < (int)this_ptr->max_distance);
       return;
     }
   }

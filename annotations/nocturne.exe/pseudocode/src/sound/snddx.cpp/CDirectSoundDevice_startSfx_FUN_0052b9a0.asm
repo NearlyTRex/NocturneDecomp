@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 0052ba9b
         ;   Label: LAB_0052ba9b
     CALL sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90 ; 0052ba9c
-        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90()
+        ;   XREF to: 00529a90 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code)
     ADD ESP,0x4                         ; 0052baa1
     PUSH EAX                            ; 0052baa4
     PUSH 0x5947ad                       ; 0052baa5 | = "Play hardware sfx secondary buffer"

@@ -2,35 +2,35 @@
 // Address: 004f4ac0
 // Address Range: [[004f4ac0, 004f4b2e]]
 // Convention: unknown
-// Signature: void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(char *param_1,undefined4 param_2)
+// Signature: void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(CPackedBitmap *param_1,int param_2)
 
 #include "nocturne.h"
 
-void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(char *param_1,uint param_2)
+void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(CPackedBitmap *param_1,int param_2)
 
 {
   int iVar1;
-  char *pcVar2;
-  char *pcVar3;
+  CPackedBitmap *pCVar2;
+  CPackedBitmap *str1;
   
-  pcVar3 = param_1;
+  pCVar2 = param_1;
   do {
-    pcVar2 = pcVar3;
-    if (*pcVar3 == '.') goto LAB_004f4ae2;
-    if (*pcVar3 == '\0') break;
-    pcVar2 = pcVar3 + 1;
-    if (*pcVar2 == '.') goto LAB_004f4ae2;
-    pcVar3 = pcVar3 + 2;
-  } while (*pcVar2 != '\0');
-  pcVar2 = (char *)0x0;
+    str1 = pCVar2;
+    if (pCVar2->filename[0] == '.') goto LAB_004f4ae2;
+    if (pCVar2->filename[0] == '\0') break;
+    str1 = (CPackedBitmap *)(pCVar2->filename + 1);
+    if (str1->filename[0] == '.') goto LAB_004f4ae2;
+    pCVar2 = (CPackedBitmap *)(pCVar2->filename + 2);
+  } while (str1->filename[0] != '\0');
+  str1 = (CPackedBitmap *)0x0;
 LAB_004f4ae2:
-  if (pcVar2 != (char *)0x0) {
-    iVar1 = _stricmp(pcVar2,".raw");
+  if (str1 != (CPackedBitmap *)0x0) {
+    iVar1 = _stricmp(str1->filename,".raw");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0(param_1,param_2);
       return;
     }
-    iVar1 = _stricmp(pcVar2,".pbm");
+    iVar1 = _stricmp(str1->filename,".pbm");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0(param_1,param_2);
       return;

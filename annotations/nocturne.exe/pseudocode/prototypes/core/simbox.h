@@ -17,19 +17,19 @@ CDemonActorType * FUN_00516b90(void);
 
 // Original: core_simbox.cpp_CSimBox_ctor_FUN_00516ba0
 // Address: 00516ba0
-int CSimBox::ctor(undefined4 param_1);
+CSimBox * __cdecl CSimBox::ctor(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_setup_FUN_00516c60
 // Address: 00516c60
-void CSimBox::setup(int param_1);
+void CSimBox::setup(CDemonActor *param_1);
 
 // Original: core_simbox.cpp_CSimBox_process_FUN_00516d80
 // Address: 00516d80
-void CSimBox::process(int param_1,undefined4 param_2);
+void CSimBox::process(int param_1,float param_2);
 
 // Original: core_simbox.cpp_FUN_00516f50
 // Address: 00516f50
-int FUN_00516f50(int param_1);
+int FUN_00516f50(CDemonActor *param_1);
 
 // Original: core_simbox.cpp_FUN_00516fc0
 // Address: 00516fc0
@@ -37,12 +37,12 @@ undefined4 * FUN_00516fc0(int param_1,undefined4 *param_2);
 
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00517010
 // Address: 00517010
-void CSimBox::archive(int param_1);
+void CSimBox::archive(CDemonActor *param_1);
 
 // Original: core_simbox.cpp_FUN_005170c0
 // Address: 005170c0
 undefined4 FUN_005170c0(void);
 
-// Original: core_simbox.cpp_FUN_005170d0
+// Original: core_simbox.cpp_CSimBox_dtor_FUN_005170d0
 // Address: 005170d0
-int FUN_005170d0(int param_1,byte param_2);
+CDemonActor * CSimBox::dtor(CDemonActor *param_1,byte param_2);

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(int param_1,int param_2,int param_3)
+; void core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(CDeformableModelInstance *param_1,CBodyPart *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00427f0c
-;   core_skeleton.cpp_FUN_0051e860 at 0051e895
+;   core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_0051e860 at 0051e895
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_0051e8e1
     PUSH EBX                            ; 0051e8e2
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051e8e3
-        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020()
+        ;   XREF to: 0051e020 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(CDeformableModelInstance * this_ptr)
     MOV EDX,EAX                         ; 0051e8e8
     ADD ESP,0x4                         ; 0051e8ea
     MOV ESI,EAX                         ; 0051e8ed
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 0051e921
     PUSH EBX                            ; 0051e922
     CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 ; 0051e923
-        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50()
+        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 0051e928
     MOV ECX,dword ptr [EBX + EDI*0x4 + 0x21b8] ; 0051e92b
         ;   Label: LAB_0051e92b
@@ -84,7 +84,7 @@ section .text
     PUSH EDX                            ; 0051e946
     PUSH ESI                            ; 0051e947
     CALL core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0 ; 0051e948
-        ;   XREF to: 00519ec0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0()
+        ;   XREF to: 00519ec0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformableModel * this_ptr, int lod_index, CBodyPart * body_part_ptr, int part_index, ...)
     ADD ESP,0x18                        ; 0051e94d
     POP ESI                             ; 0051e950
     MOV dword ptr [EBX + EDI*0x4 + 0x2140],0x0 ; 0051e951

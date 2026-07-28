@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(undefined4 param_1,float *param_2,int param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   rotation
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -63,10 +67,10 @@ section .text
     PUSH EDX                            ; 00460adb
     FXCH                                ; 00460adc
     CALL crt_math.c_round_FUN_00563a30  ; 00460ade
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00460ae3
     CALL crt_math.c_round_FUN_00563a30  ; 00460ae5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00460aea
     FISTP dword ptr [ESP + 0x10]        ; 00460aec
     FXCH                                ; 00460af0
@@ -75,13 +79,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00460afa
     PUSH EDX                            ; 00460afe
     CALL crt_math.c_round_FUN_00563a30  ; 00460aff
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH ECX                            ; 00460b04
     FISTP dword ptr [ESP + 0x14]        ; 00460b05
     MOV EBX,dword ptr [ESP + 0x14]      ; 00460b09
     PUSH EBX                            ; 00460b0d
     CALL engine_matrix.c_matrixPushAndTransform_FUN_004cd380 ; 00460b0e
-        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_matrixPushAndTransform_FUN_004cd380()
+        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_004cd380(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 00460b13
     ADD ESP,0xc                         ; 00460b16
     POP EBP                             ; 00460b19
@@ -114,13 +118,13 @@ section .text
     FMULP                               ; 00460b58
     FXCH ST4                            ; 00460b5a
     CALL crt_math.c_round_FUN_00563a30  ; 00460b5c
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 00460b61
     CALL crt_math.c_round_FUN_00563a30  ; 00460b63
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST5                            ; 00460b68
     CALL crt_math.c_round_FUN_00563a30  ; 00460b6a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 00460b6f
     FISTP dword ptr [ESP + 0x8]         ; 00460b71
     FXCH ST4                            ; 00460b75
@@ -132,10 +136,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 00460b89
     FXCH ST2                            ; 00460b8d
     CALL crt_math.c_round_FUN_00563a30  ; 00460b8f
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00460b94
     CALL crt_math.c_round_FUN_00563a30  ; 00460b96
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH ECX                            ; 00460b9b
     FXCH ST2                            ; 00460b9c
     FISTP dword ptr [ESP + 0x10]        ; 00460b9e
@@ -147,13 +151,13 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 00460bae
     PUSH EDI                            ; 00460bb2
     CALL crt_math.c_round_FUN_00563a30  ; 00460bb3
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH EBP                            ; 00460bb8
     FISTP dword ptr [ESP + 0x24]        ; 00460bb9
     MOV EAX,dword ptr [ESP + 0x24]      ; 00460bbd
     PUSH EAX                            ; 00460bc1
     CALL engine_matrix.c_matrixPushAndTransform_FUN_004cd380 ; 00460bc2
-        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_matrixPushAndTransform_FUN_004cd380()
+        ;   XREF to: 004cd380 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_004cd380(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 00460bc7
     POP ESI                             ; 00460bca
     POP EDI                             ; 00460bcb

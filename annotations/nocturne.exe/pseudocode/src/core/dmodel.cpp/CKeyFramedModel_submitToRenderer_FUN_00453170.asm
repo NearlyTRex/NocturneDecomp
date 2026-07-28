@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(int param_1,int *param_2,undefined4 param_3)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; CKeyFramedModelInstance * Stack[0x8]:4   instance
+; int              Stack[0xc]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
@@ -57,7 +61,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 004531a3 | DAT_005ae704
     PUSH EDI                            ; 004531a9 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 004531aa
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004531af
         ;   Label: LAB_004531af
     PUSH EBX                            ; 004531b2
@@ -67,7 +71,7 @@ section .text
     MOV EDI,0xffffffff                  ; 004531ba
     XOR EBP,EBP                         ; 004531bf
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004531c1
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004531c6
     MOV EBX,dword ptr [ESI + 0x244]     ; 004531c9
     MOV dword ptr [ESP + 0x10],EAX      ; 004531cf
@@ -112,13 +116,13 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 00453248 | DAT_005ae704
     PUSH ESI                            ; 0045324e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 0045324f
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00453254
     PUSH 0x1                            ; 00453257
     MOV EDI,dword ptr [0x005ae704]      ; 00453259 | DAT_005ae704
     PUSH EDI                            ; 0045325f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 00453260
-        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050()
+        ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 00453265
     POP EBX                             ; 00453268
     ADD ESP,0x28                        ; 00453269
@@ -132,13 +136,13 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 00453272 | DAT_005ae704
     PUSH EBP                            ; 00453278 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 00453279
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 0045327e
     PUSH 0x0                            ; 00453281
     MOV EAX,[0x005ae704]                ; 00453283 | DAT_005ae704
     PUSH EAX                            ; 00453288 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0 ; 00453289
-        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0()
+        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(CDemonRenderer * this_ptr, int enabled)
     JMP 0x004531af                      ; 0045328e
         ;   XREF to: 004531af (UNCONDITIONAL_JUMP)  ; LAB_004531af
     LEA EDX,[ESI + 0x338]               ; 00453293
@@ -184,7 +188,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004532ff | DAT_005ae704
     PUSH EBX                            ; 00453305 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00453306
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0045330b
     MOV EAX,dword ptr [ESP + 0x44]      ; 0045330e
         ;   Label: LAB_0045330e
@@ -260,7 +264,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 004533be | DAT_005ae704
     PUSH EAX                            ; 004533c3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004533c4
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,dword ptr [ESI + 0x118]     ; 004533c9
     ADD ESP,0x8                         ; 004533cf
     MOV EDI,dword ptr [EAX + EBP*0x1]   ; 004533d2

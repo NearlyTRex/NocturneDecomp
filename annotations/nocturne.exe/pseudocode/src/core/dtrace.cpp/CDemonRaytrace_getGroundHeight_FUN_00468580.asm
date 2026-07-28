@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(int param_1,float *param_2,undefined4 *param_3,float *param_4)
+; float core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,float *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
@@ -109,7 +109,7 @@ section .text
     FLD float ptr [ESP + 0x18]          ; 0046861f
     FXCH ST5                            ; 00468623
     CALL crt_math.c_round_FUN_00563a30  ; 00468625
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x40]        ; 0046862a
     FLD float ptr [ESP + 0x14]          ; 0046862e
     FXCH ST5                            ; 00468632
@@ -118,16 +118,16 @@ section .text
     FSUB float ptr [ESP + 0x8]          ; 0046863a
     FXCH ST2                            ; 0046863e
     CALL crt_math.c_round_FUN_00563a30  ; 00468640
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x3c]        ; 00468645
     FSTP float ptr [ESP + 0x28]         ; 00468649
     FSTP float ptr [ESP + 0x2c]         ; 0046864d
     FXCH                                ; 00468651
     CALL crt_math.c_round_FUN_00563a30  ; 00468653
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00468658
     CALL crt_math.c_round_FUN_00563a30  ; 0046865a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 0046865f
     FISTP dword ptr [ESP + 0x34]        ; 00468661
     FISTP dword ptr [ESP + 0x44]        ; 00468665
@@ -146,7 +146,7 @@ section .text
     PUSH EDX                            ; 0046868b
     PUSH EBX                            ; 0046868c
     CALL core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0 ; 0046868d
-        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0()
+        ;   XREF to: 004678d0 (UNCONDITIONAL_CALL)  ; CDemonCube * core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z)
     ADD ESP,0x10                        ; 00468692
     TEST EAX,EAX                        ; 00468695
     JZ 0x00468700                       ; 00468697

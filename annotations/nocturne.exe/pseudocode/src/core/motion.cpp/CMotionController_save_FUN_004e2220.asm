@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(int *param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; char *           Stack[0xc]:4   indent_prefix
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cb00 at 0040cbbc
+;   core_actor.cpp_archiveMotionState_FUN_0040cb00 at 0040cbbc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b40a
@@ -52,7 +56,7 @@ section .text
     FSTP double ptr [ESP]               ; 004e225b
     PUSH EBX                            ; 004e225e
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004e225f
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e2264
     PUSH EAX                            ; 004e2267
     MOV EDX,dword ptr [EBP + 0x18]      ; 004e2268

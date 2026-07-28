@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(undefined4 param_1)
+; CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(CTrigger *this_ptr)
 ;
+; Parameters:
+; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_trigger.cpp_FUN_00547880 at 00547893

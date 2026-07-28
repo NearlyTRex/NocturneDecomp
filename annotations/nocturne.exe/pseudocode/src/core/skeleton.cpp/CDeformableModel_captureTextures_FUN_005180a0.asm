@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(int param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -60,7 +62,7 @@ section .text
     PUSH EAX                            ; 005180ee | DAT_01b4d738
     INC EBX                             ; 005180ef
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 005180f0
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x48                        ; 005180f5
     MOV EDX,dword ptr [EDI + 0xbc]      ; 005180f8
     ADD ESP,0x8                         ; 005180fe

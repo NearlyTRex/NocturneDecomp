@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(undefined4 param_1,undefined4 param_2)
+; int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(double latency_seconds)
 ;
+; Parameters:
+; double           Stack[0x4]:8   latency_seconds
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_CDirectSoundDevice_start_FUN_00529f60 at 00529fee
@@ -31,7 +33,7 @@ section .text
     MOV EBP,ESP                         ; 005286d2
     AND ESP,0xfffffff8                  ; 005286d4
     CALL sound_sndmain.cpp_killSoundThread_FUN_00528780 ; 005286d7
-        ;   XREF to: 00528780 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSoundThread_FUN_00528780()
+        ;   XREF to: 00528780 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSoundThread_FUN_00528780()
     TEST EAX,EAX                        ; 005286dc
     JZ 0x00528734                       ; 005286de
         ;   XREF to: 00528734 (CONDITIONAL_JUMP)  ; LAB_00528734
@@ -56,7 +58,7 @@ section .text
     MOV dword ptr [0x02dc84b0],EBX      ; 0052871c | DAT_02dc84b0
     MOV dword ptr [0x02dc84b4],EBX      ; 00528722 | DAT_02dc84b4
     CALL wincore_winrun.cpp_createThread_FUN_00559c50 ; 00528728
-        ;   XREF to: 00559c50 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_createThread_FUN_00559c50()
+        ;   XREF to: 00559c50 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createThread_FUN_00559c50(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)
     ADD ESP,0x8                         ; 0052872d
     TEST EAX,EAX                        ; 00528730
     JNZ 0x00528739                      ; 00528732
@@ -70,7 +72,7 @@ section .text
         ;   Label: LAB_00528739
     PUSH EAX                            ; 0052873b
     CALL wincore_winrun.cpp_setThreadPriority_FUN_00559c80 ; 0052873c
-        ;   XREF to: 00559c80 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_setThreadPriority_FUN_00559c80()
+        ;   XREF to: 00559c80 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_setThreadPriority_FUN_00559c80(HANDLE hThread, int priority_level)
     ADD ESP,0x8                         ; 00528741
     TEST EAX,EAX                        ; 00528744
     JZ 0x00528734                       ; 00528746
@@ -83,7 +85,7 @@ section .text
     PUSH 0x47ae147b                     ; 00528756
     INC EBX                             ; 0052875b
     CALL wincore_winrun.cpp_sleep_FUN_00559cc0 ; 0052875c
-        ;   XREF to: 00559cc0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_sleep_FUN_00559cc0()
+        ;   XREF to: 00559cc0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_00559cc0(double seconds)
     ADD ESP,0x8                         ; 00528761
     CMP EBX,0x64                        ; 00528764
     JGE 0x00528772                      ; 00528767

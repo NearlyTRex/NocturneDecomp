@@ -2,13 +2,13 @@
 // Address: 0053075c
 // Address Range: [[0053075c, 00530a24]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(uint *param_1,int *param_2)
+// Signature: void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex *output,CVector3i *input)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(uint *param_1,int *param_2)
+void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
         test dword ptr [DAT_01c03948],0xffffffff

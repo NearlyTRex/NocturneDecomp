@@ -31,7 +31,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0040a435
     PUSH EAX                            ; 0040a439
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 0040a43a
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 0040a43f
     XOR EDX,EDX                         ; 0040a442
     MOV dword ptr [ESP + 0xc],EDX       ; 0040a444

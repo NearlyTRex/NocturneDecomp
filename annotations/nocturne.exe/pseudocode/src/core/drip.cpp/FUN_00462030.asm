@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00462042
         ;   Label: LAB_00462042
     CALL core_drip.cpp_CDrip_ctor_FUN_00462060 ; 00462043
-        ;   XREF to: 00462060 (UNCONDITIONAL_CALL)  ; undefined core_drip.cpp_CDrip_ctor_FUN_00462060()
+        ;   XREF to: 00462060 (UNCONDITIONAL_CALL)  ; CDrip * core_drip.cpp_CDrip_ctor_FUN_00462060(CDrip * this_ptr)
     ADD ESP,0x4                         ; 00462048
     RET                                 ; 0046204b
 

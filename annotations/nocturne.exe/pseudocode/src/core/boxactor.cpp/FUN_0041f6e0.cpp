@@ -9,11 +9,12 @@
 void core_boxactor_cpp_FUN_0041f6e0(int param_1)
 
 {
+  CKeyFramedModelInstance *this_ptr;
   uint uVar1;
   float fVar2;
   int iVar3;
-  byte *puVar4;
-  byte auStack_d0 [40];
+  CDemonFilter *this_ptr_00;
+  char acStack_d0 [40];
   float local_a8;
   float fStack_a4;
   float fStack_a0;
@@ -42,11 +43,11 @@ void core_boxactor_cpp_FUN_0041f6e0(int param_1)
   uVar1 = *(uint *)(param_1 + 0x664);
   if (uVar1 != 0) {
     local_18 = param_1 + 0x668;
-    iVar3 = param_1 + 0x150;
+    this_ptr = (CKeyFramedModelInstance *)(param_1 + 0x150);
     if (uVar1 < 2) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-                (iVar3,"flashlit.kfm");
-      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
+                (this_ptr,"flashlit.kfm");
+      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(this_ptr);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_90);
       fVar2 = 0.5f;
       *(float *)(param_1 + 0x3614) = (local_90 + fStack_84) * 0.5f;
@@ -63,8 +64,8 @@ void core_boxactor_cpp_FUN_0041f6e0(int param_1)
     }
     if (uVar1 == 2) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-                (iVar3,"lantern.kfm");
-      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(iVar3);
+                (this_ptr,"lantern.kfm");
+      core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(this_ptr);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_a8);
       fStack_4c = 0.5f;
       fStack_48 = local_a8 + fStack_9c;
@@ -92,17 +93,18 @@ void core_boxactor_cpp_FUN_0041f6e0(int param_1)
       iVar3 = DAT_007647fc;
       *(uint *)(param_1 + 0x30c) = 3;
       if (iVar3 == 0) {
-        puVar4 = &DAT_0076483c;
+        this_ptr_00 = (CDemonFilter *)&DAT_0076483c;
         iVar3 = 0;
         do {
-          _sprintf(auStack_d0,"lantern%d.raw",iVar3);
+          _sprintf(acStack_d0,"lantern%d.raw",iVar3);
           iVar3 = iVar3 + 1;
-          core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(puVar4,auStack_d0);
-          puVar4 = puVar4 + 0x4c;
+          core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(this_ptr_00,acStack_d0);
+          this_ptr_00 = this_ptr_00 + 1;
         } while (iVar3 < 8);
         DAT_007647fc = 1;
       }
-      core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0(param_1 + 0x668,&DAT_0076483c,0,0,0);
+      core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
+                ((CDemonLight *)(param_1 + 0x668),(CDemonFilter *)&DAT_0076483c,0,0,0);
       return;
     }
   }

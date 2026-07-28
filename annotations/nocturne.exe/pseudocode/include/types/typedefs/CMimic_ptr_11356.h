@@ -19,7 +19,7 @@ struct CMimic_ptr_11356 {
     template<typename T> CMimic_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CMimic_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CMimic* operator->() const { return (CMimic*)_raw; }
-    CMimic* adj() const { return (CMimic*)((char*)_raw - offsetof(CMimic, base.base.collision_test_points)); }
+    CMimic* adj() const { return (CMimic*)((char*)_raw - offsetof(CMimic, base.base.collision_test_points[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

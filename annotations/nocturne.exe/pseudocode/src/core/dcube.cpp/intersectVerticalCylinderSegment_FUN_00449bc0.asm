@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00449bc0(float *param_1,float *param_2,float param_3,float *param_4)
+; uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00449bc0(CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   segment_start
+; CVector3f *      Stack[0x8]:4   segment_end
+; float            Stack[0xc]:4   radius
+; float *          Stack[0x10]:4   out_height
 ; Local Variables:
 ; undefined8       Stack[-0x60]:8  local_60
 ; undefined8       Stack[-0x58]:8  local_58

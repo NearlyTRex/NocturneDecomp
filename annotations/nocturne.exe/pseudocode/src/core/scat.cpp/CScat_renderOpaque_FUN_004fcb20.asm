@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(int param_1)
+; undefined4 core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fcb24
     PUSH EBX                            ; 004fcb28
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 004fcb29
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004fcb2e
     TEST EAX,EAX                        ; 004fcb31
     JZ 0x004fcb46                       ; 004fcb33

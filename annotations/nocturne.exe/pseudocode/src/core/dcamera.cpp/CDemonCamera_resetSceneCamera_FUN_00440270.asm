@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(void)
+; void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(CDemonCamera *this_ptr)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 at 00440ad0

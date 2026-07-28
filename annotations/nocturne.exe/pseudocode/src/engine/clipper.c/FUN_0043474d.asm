@@ -30,7 +30,7 @@ section .text
     PUSH EDX                            ; 0043472b | DAT_0076817c
     PUSH EBP                            ; 0043472c
     CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 ; 0043472d
-        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0()
+        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b40]      ; 00434732 | DAT_00767b40
     INC ESI                             ; 00434738
     ADD ESP,0xc                         ; 00434739
@@ -58,7 +58,7 @@ section .text
     PUSH EBP                            ; 00434781
     PUSH EDX                            ; 00434782
     CALL engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0 ; 00434783
-        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0()
+        ;   XREF to: 004337a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x00767b40]      ; 00434788 | DAT_00767b40
     INC EDI                             ; 0043478e
     ADD ESP,0xc                         ; 0043478f
@@ -72,7 +72,7 @@ section .text
     PUSH EDX                            ; 004347aa | DAT_00767b4c
     PUSH EBP                            ; 004347ab
     CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0 ; 004347ac
-        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0()
+        ;   XREF to: 004338d0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x00767b44]      ; 004347b1 | DAT_00767b44
     INC ESI                             ; 004347b7
     ADD ESP,0xc                         ; 004347b8

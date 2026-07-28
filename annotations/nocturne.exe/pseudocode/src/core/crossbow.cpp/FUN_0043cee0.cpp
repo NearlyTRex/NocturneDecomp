@@ -9,12 +9,12 @@
 void core_crossbow_cpp_FUN_0043cee0(void)
 
 {
-  int iVar1;
+  CCrossbow *this_ptr;
   
-  iVar1 = FUN_0056497c(0x810);
-  if (iVar1 == 0) {
+  this_ptr = (CCrossbow *)FUN_0056497c(0x810);
+  if (this_ptr == (CCrossbow *)0x0) {
     return;
   }
-  core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(iVar1);
+  core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(this_ptr);
   return;
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(int param_1,int param_2)
+; void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004c0950(CInventory *this_ptr,int direction)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   direction
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f179
@@ -29,7 +32,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004c0954
     PUSH ESI                            ; 004c0958
     CALL core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70 ; 004c0959
-        ;   XREF to: 004c1d70 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70()
+        ;   XREF to: 004c1d70 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70(CInventory * this_ptr)
     MOV EDX,dword ptr [ESI + 0x334]     ; 004c095e
     ADD ESP,0x4                         ; 004c0964
     TEST EDX,EDX                        ; 004c0967
@@ -46,7 +49,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0xc]       ; 004c097b
     PUSH EBP                            ; 004c097e
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c097f
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c0984
     TEST EAX,EAX                        ; 004c0987
     JZ 0x004c099b                       ; 004c0989
@@ -69,7 +72,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc]       ; 004c09a0
     PUSH EAX                            ; 004c09a3
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c09a4
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c09a9
     TEST EAX,EAX                        ; 004c09ac
     JNZ 0x004c098b                      ; 004c09ae
@@ -110,7 +113,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0xc]       ; 004c09f3
     PUSH EAX                            ; 004c09f6
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c09f7
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c09fc
     TEST EAX,EAX                        ; 004c09ff
     JZ 0x004c0a22                       ; 004c0a01
@@ -145,7 +148,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0xc]       ; 004c0a27
     PUSH EDX                            ; 004c0a2a
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c0a2b
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c0a30
     TEST EAX,EAX                        ; 004c0a33
     JNZ 0x004c0a03                      ; 004c0a35

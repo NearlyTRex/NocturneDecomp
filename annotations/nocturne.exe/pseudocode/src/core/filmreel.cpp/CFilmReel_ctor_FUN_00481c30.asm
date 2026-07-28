@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(undefined4 param_1)
+; CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(CFilmReel *this_ptr)
 ;
+; Parameters:
+; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_filmreel.cpp_FUN_00481c00 at 00481c13
@@ -36,7 +38,7 @@ section .text
     ADD EAX,0x150                       ; 00481c40
     PUSH EAX                            ; 00481c45
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 00481c46
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00481c4b
     LEA EBX,[EAX + 0xfffffeb0]          ; 00481c4e
     PUSH 0x580f8c                       ; 00481c54 | = "filmreel.kfm"
@@ -44,7 +46,7 @@ section .text
     PUSH EAX                            ; 00481c5f
     MOV dword ptr [EBX + 0x14c],0x59cf84 ; 00481c60 | PTR_core_filmreel.cpp_CFilmReel_setup_FUN_00481ca0_0059cf84
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00481c6a
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00481c6f
     MOV ESI,0x580f99                    ; 00481c72 | = "movie3"
     LEA EDI,[EBX + 0x2d0]               ; 00481c77

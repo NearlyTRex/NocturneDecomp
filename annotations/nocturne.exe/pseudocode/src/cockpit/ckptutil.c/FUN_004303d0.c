@@ -12,11 +12,12 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   uint uVar1;
   byte *puVar2;
   uint *puVar3;
-  int iVar4;
-  byte *puVar5;
-  uint *puVar6;
-  uint uVar7;
-  uint *puVar8;
+  ulong size;
+  byte *puVar4;
+  uint *puVar5;
+  uint uVar6;
+  uint *puVar7;
+  int iVar8;
   uint *puVar9;
   byte bVar10;
   byte auStack_78 [80];
@@ -29,34 +30,34 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   
   bVar10 = 0;
   uStack_18 = param_2 * param_4;
-  iVar4 = param_2 * param_3 * param_4;
-  puStack_24 = (uint *)malloc(iVar4);
+  size = param_2 * param_3 * param_4;
+  puStack_24 = (uint *)malloc(size);
   if (puStack_24 == (uint *)0x0) {
-    _sprintf(auStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.",iVar4);
+    _sprintf(auStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.",size);
     INT_01cc4804 = 0x802;
     PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004c8440(auStack_78);
   }
   if (param_4 == 1) {
-    uVar7 = 0;
+    uVar6 = 0;
     if (param_3 != 0) {
       uStack_28 = uStack_18;
-      iVar4 = 0;
+      iVar8 = 0;
       do {
-        puVar2 = (byte *)((int)param_1 + iVar4);
-        puVar5 = (byte *)((int)puStack_24 + (param_3 - uVar7) + -1);
+        puVar2 = (byte *)((int)param_1 + iVar8);
+        puVar4 = (byte *)((int)puStack_24 + (param_3 - uVar6) + -1);
         uVar1 = 0;
         if (uStack_18 != 0) {
           do {
-            *puVar5 = *puVar2;
+            *puVar4 = *puVar2;
             uVar1 = uVar1 + 1;
-            puVar5 = puVar5 + param_3;
+            puVar4 = puVar4 + param_3;
             puVar2 = puVar2 + 1;
           } while (uVar1 < uStack_18);
         }
-        uVar7 = uVar7 + 1;
-        iVar4 = iVar4 + uStack_18;
-      } while (uVar7 < param_3);
+        uVar6 = uVar6 + 1;
+        iVar8 = iVar8 + uStack_18;
+      } while (uVar6 < param_3);
     }
   }
   else {
@@ -64,26 +65,26 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
     if (param_3 != 0) {
       iStack_1c = param_3 * param_4;
       do {
-        puVar6 = (uint *)((int)puStack_24 + ((param_3 - uStack_20) + -1) * param_4);
+        puVar5 = (uint *)((int)puStack_24 + ((param_3 - uStack_20) + -1) * param_4);
         puVar3 = (uint *)(uStack_20 * uStack_18 + (int)param_1);
         uStack_14 = 0;
         if (uStack_18 != 0) {
           do {
-            puVar8 = puVar3;
-            puVar9 = puVar6;
-            for (uVar7 = param_4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *puVar9 = *puVar8;
-              puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+            puVar7 = puVar3;
+            puVar9 = puVar5;
+            for (uVar6 = param_4 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+              *puVar9 = *puVar7;
+              puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
               puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
             }
-            for (uVar7 = param_4 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *(byte *)puVar9 = *(byte *)puVar8;
-              puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
+            for (uVar6 = param_4 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+              *(byte *)puVar9 = *(byte *)puVar7;
+              puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
               puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
             }
             puVar3 = (uint *)((int)puVar3 + param_4);
             uStack_14 = uStack_14 + 1;
-            puVar6 = (uint *)((int)puVar6 + iStack_1c);
+            puVar5 = (uint *)((int)puVar5 + iStack_1c);
           } while (uStack_14 < uStack_18);
         }
         uStack_20 = uStack_20 + 1;
@@ -92,7 +93,7 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   }
   param_4 = param_2 * param_3 * param_4;
   puVar3 = puStack_24;
-  for (uVar7 = param_4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+  for (uVar6 = param_4 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
     *param_1 = *puVar3;
     puVar3 = puVar3 + (uint)bVar10 * -2 + 1;
     param_1 = param_1 + (uint)bVar10 * -2 + 1;

@@ -2,11 +2,11 @@
 // Address: 004f9960
 // Address Range: [[004f9960, 004f99c6]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(int param_1,int param_2)
+// Signature: void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(SRenderVertex *vertices,int vertex_count)
 
 #include "nocturne.h"
 
-void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(int param_1,int param_2)
+void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(SRenderVertex *vertices,int vertex_count)
 
 {
   longlong lVar1;
@@ -14,22 +14,23 @@ void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_004f9960(int param_1
   int iVar3;
   
   iVar3 = 0;
-  if (0 < param_2) {
+  if (0 < vertex_count) {
     do {
-      if (*(int *)(param_1 + 8) < 0x101) {
+      iVar2 = (vertices->projected_vertex).transformed_z;
+      if (iVar2 < 0x101) {
         iVar2 = 0x7fffffff;
       }
       else {
-        iVar2 = (int)(0x7fffffff / (longlong)(*(int *)(param_1 + 8) >> 4));
+        iVar2 = (int)(0x7fffffff / (longlong)(iVar2 >> 4));
       }
-      lVar1 = (longlong)iVar2 * (longlong)(*(int *)(param_1 + 0x18) >> 8);
-      *(uint *)(param_1 + 0x18) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      lVar1 = (longlong)iVar2 * (longlong)(*(int *)(param_1 + 0x1c) >> 8);
-      *(uint *)(param_1 + 0x1c) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+      lVar1 = (longlong)iVar2 * (longlong)(vertices->u >> 8);
+      vertices->u = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+      lVar1 = (longlong)iVar2 * (longlong)(vertices->v >> 8);
+      vertices->v = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       iVar3 = iVar3 + 1;
-      *(int *)(param_1 + 8) = iVar2;
-      param_1 = param_1 + 0x30;
-    } while (iVar3 < param_2);
+      (vertices->projected_vertex).transformed_z = iVar2;
+      vertices = vertices + 1;
+    } while (iVar3 < vertex_count);
   }
   return;
 }

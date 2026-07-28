@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(int *param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[13]:
-;   core_dglobe.cpp_FUN_0044d060 at 0044d1d2
+;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060 at 0044d1d2
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f94e
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450c4d
 ;   core_dlight.cpp_FUN_00450c90 at 004512bd
@@ -13,8 +16,8 @@
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 00484759
 ;   core_fire.cpp_CGunFlame_render_FUN_00488580 at 00488a9a
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00486207
+;   core_fire.cpp_CPopcorn_render_FUN_00489990 at 00489cc0
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 0048a06d
-;   core_fire.cpp_CSpark_render_FUN_004838c0 at 004839f3
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -84,7 +87,7 @@ section .text
     PUSH EBX                            ; 004600f2
     PUSH EBP                            ; 004600f3
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 004600f4
-        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80()
+        ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 004600f9
     POP EBP                             ; 004600fc
         ;   Label: LAB_004600fc
@@ -96,7 +99,7 @@ section .text
         ;   Label: LAB_00460101
     PUSH EAX                            ; 00460104
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 00460105
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046010a
     TEST EAX,EAX                        ; 0046010d
     JZ 0x004600fc                       ; 0046010f

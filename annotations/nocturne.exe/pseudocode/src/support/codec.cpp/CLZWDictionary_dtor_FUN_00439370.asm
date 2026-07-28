@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(undefined4 param_1)
+; CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(CLZWDictionary *this_ptr,uint flags)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_FUN_00446810 at 00446db6
@@ -23,7 +26,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00439371
     PUSH EBX                            ; 00439375
     CALL support_codec.cpp_CLZWDictionary_free_FUN_00439390 ; 00439376
-        ;   XREF to: 00439390 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_free_FUN_00439390()
+        ;   XREF to: 00439390 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_free_FUN_00439390(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 0043937b
     MOV EAX,EBX                         ; 0043937e
     POP EBX                             ; 00439380

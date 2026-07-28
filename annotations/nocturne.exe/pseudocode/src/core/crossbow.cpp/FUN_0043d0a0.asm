@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_crossbow_cpp_FUN_0043d0a0(int param_1)
+; int core_crossbow_cpp_FUN_0043d0a0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
@@ -24,7 +24,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 0043d0a5
     PUSH EBX                            ; 0043d0a9
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0043d0aa
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20()
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
     ADD ESP,0x4                         ; 0043d0af
     PUSH 0x0                            ; 0043d0b2
     LEA EAX,[ESP + 0x4]                 ; 0043d0b4
@@ -35,7 +35,7 @@ section .text
     ADD ESP,0x8                         ; 0043d0c3
     PUSH EAX                            ; 0043d0c6
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 ; 0043d0c7
-        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0()
+        ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 0043d0cc
     MOV ESI,EAX                         ; 0043d0cf
     TEST EAX,EAX                        ; 0043d0d1
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 0043d0e6 (CONDITIONAL_JUMP)  ; LAB_0043d0e6
     PUSH EBX                            ; 0043d0d5
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0043d0d6
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043d0db
     MOV EAX,ESI                         ; 0043d0de
     ADD ESP,0x1c                        ; 0043d0e0
@@ -63,11 +63,11 @@ section .text
     FSTP float ptr [ESP]                ; 0043d102
     PUSH EAX                            ; 0043d105
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0043d106
-        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0()
+        ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0043d10b
     PUSH EBX                            ; 0043d10e
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 0043d10f
-        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60()
+        ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043d114
     MOV EAX,ESI                         ; 0043d117
     ADD ESP,0x1c                        ; 0043d119

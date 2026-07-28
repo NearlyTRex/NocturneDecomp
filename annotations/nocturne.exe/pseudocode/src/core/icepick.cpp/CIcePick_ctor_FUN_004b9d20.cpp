@@ -1,12 +1,12 @@
 // Name: core_icepick.cpp_CIcePick_ctor_FUN_004b9d20
 // Address: 004b9d20
 // Address Range: [[004b9d20, 004b9da1]]
-// Convention: unknown
-// Signature: int core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
 
 #include "nocturne.h"
 
-int core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(uint param_1)
+int __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(uint param_1)
 
 {
   int iVar1;

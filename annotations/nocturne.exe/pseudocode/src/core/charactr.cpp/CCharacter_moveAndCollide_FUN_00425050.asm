@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_1,uint *param_2)
+; void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter *this_ptr,CVector3f *velocity)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   velocity
 ; Local Variables:
 ; undefined4       Stack[-0xec]:4  local_ec
 ; undefined4       Stack[-0xe8]:4  local_e8
@@ -82,7 +85,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
-;   core_setcolid.cpp_FUN_00510a40
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
 ;   crt_string.c__strnicmp_FUN_00564bc0
 ;   xxx_unk.c_FUN_004940d0
 ;
@@ -195,7 +198,7 @@ section .text
     PUSH ECX                            ; 0042518e | DAT_01e57284
     MOV dword ptr [ESP + 0x44],EAX      ; 0042518f
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00425193
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00425198
     XOR EDI,EDI                         ; 0042519b
     MOV EAX,dword ptr [EBP + 0x18]      ; 0042519d
@@ -269,8 +272,8 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004252c5 | DAT_005be368
     PUSH dword ptr [EBX + 0x20]         ; 004252cb
     PUSH EDX                            ; 004252ce | DAT_01e57284
-    CALL core_setcolid.cpp_FUN_00510a40 ; 004252cf
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00510a40()
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 004252cf
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40()
     MOV dword ptr [ESP + 0xec],EAX      ; 004252d4
     FLD float ptr [ESP + 0xec]          ; 004252db
     ADD ESP,0x20                        ; 004252e2
@@ -408,7 +411,7 @@ section .text
     PUSH EAX                            ; 004254da | DAT_01e57284
     FSTP float ptr [EBX + 0x2424]       ; 004254db
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004254e1
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004254e6
     MOV ESP,EBP                         ; 004254e9
     POP EBP                             ; 004254eb
@@ -451,7 +454,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00425561
     MOV dword ptr [EAX],EDX             ; 00425564
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 00425566
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042556b
     JMP 0x00425082                      ; 0042556e
         ;   XREF to: 00425082 (UNCONDITIONAL_JUMP)  ; LAB_00425082
@@ -459,7 +462,7 @@ section .text
         ;   Label: LAB_00425573
     PUSH EDX                            ; 00425579 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0042557a
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     MOV dword ptr [EBX + 0x2428],ESI    ; 0042557f
     ADD ESP,0x4                         ; 00425585
     MOV EAX,dword ptr [EBX + 0x2428]    ; 00425588
@@ -476,7 +479,7 @@ section .text
         ;   Label: LAB_004255a7
     MOV ESI,0x5ad1f0                    ; 004255a8 | = "noCollision"
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004255ad
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004255b2
     MOV EDI,EAX                         ; 004255b5
     MOV EDX,EAX                         ; 004255b7
@@ -503,7 +506,7 @@ section .text
     PUSH EAX                            ; 004255e6
     PUSH ESI                            ; 004255e7
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004255e8
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004255ed
     TEST EAX,EAX                        ; 004255f0
     JZ 0x00425606                       ; 004255f2

@@ -2,24 +2,21 @@
 // Address: 00453990
 // Address Range: [[00453990, 00453e0a]]
 // Convention: unknown
-// Signature: float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5)
+// Signature: float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int param_2,uint param_3,uint param_4,float *param_5)
+float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *param_1,int param_2,uint param_3,uint param_4,float *param_5)
 
 {
-  int *piVar1;
+  CVector3i *pCVar1;
   float *pfVar2;
-  int iVar3;
+  char *pcVar3;
   int iVar4;
   int iVar5;
-  byte local_d0 [36];
-  float local_ac;
-  float local_a8;
-  float local_a4;
+  CDemonTriangle local_d0;
   float local_98;
   float local_94;
   float local_90;
@@ -28,19 +25,13 @@ float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int 
   float local_84;
   byte local_80 [12];
   byte local_74 [12];
-  float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
+  CVector3f local_68;
+  CVector3f local_5c;
   byte local_50 [12];
-  float local_44;
-  float local_40;
-  float local_3c;
-  int local_38;
+  CVector3f local_44;
+  CVector3i *local_38;
   float local_34;
-  int local_30;
+  char *local_30;
   int local_2c;
   int local_28;
   int local_24;
@@ -48,56 +39,58 @@ float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int 
   int local_1c;
   float local_18;
   
-  if (*(int *)(param_1 + 0x100) <= param_2) {
-    param_2 = *(int *)(param_1 + 0x100) + -1;
+  if (param_1->frame_count <= param_2) {
+    param_2 = param_1->frame_count + -1;
   }
   if (param_2 < 0) {
     param_2 = 0;
   }
   local_18 = (float)core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
-                              (param_2 * 0x18 + *(int *)(param_1 + 0x350),param_3,param_4,0);
+                              (param_2 * 0x18 + param_1->texture_list[7].textures[2].base.count,
+                               param_3,param_4,0);
   if ((local_18 < 0.0) || (1.0 < local_18)) {
     local_34 = 2.0;
   }
   else {
     local_20 = 2.0;
-    if (*(int *)(param_1 + 0x358) == 0) {
+    if (*(int *)(param_1->texture_list[7].textures[2].texture_name + 4) == 0) {
       local_38 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(param_1,param_2);
       local_2c = 0;
-      if (0 < *(int *)(param_1 + 0x110)) {
+      if (0 < param_1->poly_count) {
         local_28 = 0;
         do {
-          local_24 = local_28 + *(int *)(param_1 + 0x114);
-          piVar1 = (int *)(*(int *)(local_24 + 0x18) * 0xc + local_38);
-          local_68 = (float)*piVar1 * _DAT_0059c064;
-          local_64 = (float)piVar1[1] * _DAT_0059c064;
-          local_60 = (float)piVar1[2] * _DAT_0059c064;
-          piVar1 = (int *)(*(int *)(local_24 + 0x24) * 0xc + local_38);
-          local_5c = (float)*piVar1 * _DAT_0059c064;
-          local_58 = (float)piVar1[1] * _DAT_0059c064;
-          local_54 = (float)piVar1[2] * _DAT_0059c064;
+          local_24 = (int)&(((SMRGLPrimitiveQuad *)(param_1->poly_vert_list->vertices + -2))->base).
+                           base.type + local_28;
+          pCVar1 = local_38 + *(int *)(local_24 + 0x18);
+          local_68.x = (float)pCVar1->x * _DAT_0059c064;
+          local_68.y = (float)pCVar1->y * _DAT_0059c064;
+          local_68.z = (float)pCVar1->z * _DAT_0059c064;
+          pCVar1 = local_38 + *(int *)(local_24 + 0x24);
+          local_5c.x = (float)pCVar1->x * _DAT_0059c064;
+          local_5c.y = (float)pCVar1->y * _DAT_0059c064;
+          local_5c.z = (float)pCVar1->z * _DAT_0059c064;
           iVar4 = 2;
           if (2 < *(int *)(local_24 + 4)) {
             local_1c = local_24 + 0x18;
             do {
-              piVar1 = (int *)(*(int *)(local_1c + 0x18) * 0xc + local_38);
-              local_44 = (float)*piVar1 * _DAT_0059c064;
-              local_40 = (float)piVar1[1] * _DAT_0059c064;
-              local_3c = (float)piVar1[2] * _DAT_0059c064;
+              pCVar1 = local_38 + *(int *)(local_1c + 0x18);
+              local_44.x = (float)pCVar1->x * _DAT_0059c064;
+              local_44.y = (float)pCVar1->y * _DAT_0059c064;
+              local_44.z = (float)pCVar1->z * _DAT_0059c064;
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                        (local_d0,&local_68,&local_5c,&local_44);
+                        (&local_d0,&local_68,&local_5c,&local_44);
               if (&local_5c != &local_44) {
-                local_5c = local_44;
-                local_58 = local_40;
-                local_54 = local_3c;
+                local_5c.x = local_44.x;
+                local_5c.y = local_44.y;
+                local_5c.z = local_44.z;
               }
               local_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                                          (local_d0,param_3,param_4);
+                                          (&local_d0,param_3,param_4);
               if (((local_18 <= local_20) && (0.0 <= local_18)) &&
                  ((local_18 <= 1.0 && (local_20 = local_18, param_5 != (float *)0x0)))) {
-                local_98 = -local_ac;
-                local_94 = -local_a8;
-                local_90 = -local_a4;
+                local_98 = -local_d0.normal.x;
+                local_94 = -local_d0.normal.y;
+                local_90 = -local_d0.normal.z;
                 if (param_5 != &local_98) {
                   *param_5 = local_98;
                   param_5[1] = local_94;
@@ -110,17 +103,18 @@ float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int 
           }
           local_28 = local_28 + 0x48;
           local_2c = local_2c + 1;
-        } while (local_2c < *(int *)(param_1 + 0x110));
+        } while (local_2c < param_1->poly_count);
       }
     }
     else {
-      iVar3 = param_1 + 0x370;
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(iVar3,local_80,param_3);
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(iVar3,local_50,param_4);
-      iVar4 = *(int *)(param_1 + 0x358) + param_2 * *(int *)(param_1 + 0x354) * 0x38;
+      pcVar3 = param_1->texture_list[8].textures[0].texture_name + 4;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(pcVar3,local_80,param_3);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(pcVar3,local_50,param_4);
+      iVar4 = *(int *)(param_1->texture_list[7].textures[2].texture_name + 4) +
+              param_2 * *(int *)param_1->texture_list[7].textures[2].texture_name * 0x38;
       iVar5 = 0;
-      local_30 = iVar3;
-      if (0 < *(int *)(param_1 + 0x354)) {
+      local_30 = pcVar3;
+      if (0 < *(int *)param_1->texture_list[7].textures[2].texture_name) {
         do {
           local_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
                                       (iVar4,local_80,local_50);
@@ -139,7 +133,7 @@ float core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(int param_1,int 
           }
           iVar5 = iVar5 + 1;
           iVar4 = iVar4 + 0x38;
-        } while (iVar5 < *(int *)(param_1 + 0x354));
+        } while (iVar5 < *(int *)param_1->texture_list[7].textures[2].texture_name);
       }
     }
     local_34 = local_20;

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00402570(byte *param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6)
+; void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00402570(char *text,int x_start,int y_start,int x_max,int y_max,int color)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x_start
+; int              Stack[0xc]:4   y_start
+; int              Stack[0x10]:4   x_max
+; int              Stack[0x14]:4   y_max
+; int              Stack[0x18]:4   color
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -61,7 +68,7 @@ section .text
     SUB EBX,0x20                        ; 004025b6
     IMUL EBX,EBX,0x91                   ; 004025b9
     CALL engine_2d.c_drawCharacterMaskedColor_FUN_00402040 ; 004025bf
-        ;   XREF to: 00402040 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawCharacterMaskedColor_FUN_00402040()
+        ;   XREF to: 00402040 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMaskedColor_FUN_00402040(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 004025c4
     MOV BL,byte ptr [EBX + 0x5a4b80]    ; 004025c7 | DAT_005a4b80
     AND EBX,0xff                        ; 004025cd

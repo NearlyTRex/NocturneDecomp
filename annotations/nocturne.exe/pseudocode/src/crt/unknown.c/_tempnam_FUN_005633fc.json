@@ -1,0 +1,211 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 198,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 11,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "nonstandard_int",
+      "undefined_type",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "00568690",
+      "from_addr": "005686ae",
+      "name": "FUN_00568690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005634b0",
+      "from_addr": "0056355e",
+      "name": "crt_unknown.c_fclose_FUN_005634b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005633fc",
+    "address_range": [
+      [
+        "005633fc",
+        "005634ac"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_unknown.c__tempnam_FUN_005633fc",
+    "signature": "void __watcallStack crt_unknown_c__tempnam_FUN_005633fc(char *buffer,int file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005687bc",
+      "is_variadic": false,
+      "name": "crt_io.c_getTempDirectory_FUN_005687bc"
+    },
+    {
+      "addr": "00568680",
+      "is_variadic": false,
+      "name": "crt_process.c_getpid_FUN_00568680"
+    },
+    {
+      "addr": "005633ec",
+      "is_variadic": false,
+      "name": "crt_unknown.c_hexDigitToChar_FUN_005633ec"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.736111111111111,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "CALL": 5,
+      "CBRANCH": 5,
+      "COPY": 59,
+      "INT_ADD": 29,
+      "INT_AND": 80,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 46,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 23,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 27,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 15,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 413
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "uint3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 7,
+      "match": "uint3",
+      "severity": "mild",
+      "text": "uint3 extraout_var;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 8,
+      "match": "undefined3 extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "uVar5 = (uint)(extraout_var >> 8) | CONCAT31(extraout_var,uVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "uVar5 = (uint)(extraout_var >> 8) | CONCAT31(extraout_var,uVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)CONCAT31(extraout_var_00,uVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 18,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "uVar5 = (uint)(extraout_var >> 8) | CONCAT31(extraout_var,uVar1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 20,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)CONCAT31(extraout_var_00,uVar1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 33,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

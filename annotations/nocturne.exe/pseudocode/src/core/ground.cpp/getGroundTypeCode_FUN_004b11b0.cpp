@@ -2,39 +2,39 @@
 // Address: 004b11b0
 // Address Range: [[004b11b0, 004b1214]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(undefined4 param_1)
+// Signature: char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(EGroundType type)
 
 #include "nocturne.h"
 
-char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(uint param_1)
+char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004b11b0(EGroundType type)
 
 {
-  switch(param_1) {
-  case 1:
+  switch(type) {
+  case GROUND_TYPE_NONE:
     return "no";
-  case 2:
+  case GROUND_TYPE_CONCRETE:
     return "ct";
-  case 3:
+  case GROUND_TYPE_DIRT:
     return "dt";
-  case 4:
+  case GROUND_TYPE_GRASS:
     return "dt";
-  case 5:
+  case GROUND_TYPE_METAL:
     return "mt";
-  case 6:
+  case GROUND_TYPE_WATER:
     return "wt";
-  case 7:
+  case GROUND_TYPE_WOOD:
     return "wd";
-  case 8:
+  case GROUND_TYPE_MARBLE:
     return "mb";
-  case 9:
+  case GROUND_TYPE_MUD:
     return "md";
-  case 10:
+  case GROUND_TYPE_CARPET:
     return "cp";
-  case 0xb:
+  case GROUND_TYPE_BLOOD:
     return "bd";
-  case 0xc:
+  case GROUND_TYPE_GLASS:
     return "gl";
-  case 0xd:
+  case GROUND_TYPE_GRAVEL:
     return "gr";
   default:
     return "df";

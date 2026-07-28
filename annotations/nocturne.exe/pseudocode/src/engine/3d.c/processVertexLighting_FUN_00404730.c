@@ -1,27 +1,27 @@
 // Name: engine_3d.c_processVertexLighting_FUN_00404730
 // Address: 00404730
 // Address Range: [[00404730, 0040478c]]
-// Convention: unknown
-// Signature: int engine_3d_c_processVertexLighting_FUN_00404730(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00404730(SMRGLHeaderExtended *mrgl)
 
 #include "nocturne.h"
 
-int engine_3d_c_processVertexLighting_FUN_00404730(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00404730(SMRGLHeaderExtended *mrgl)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  SMRGLHeaderExtended *pSVar3;
   
   iVar2 = 0;
-  iVar3 = param_1;
-  if (0 < *(int *)(param_1 + 8)) {
+  pSVar3 = mrgl;
+  if (0 < mrgl->child_count) {
     do {
-      iVar3 = iVar3 + 0xc;
-      iVar1 = *(int *)(param_1 + 4) + iVar2;
+      pSVar3 = pSVar3 + 1;
+      iVar1 = (mrgl->base).count + iVar2;
       iVar2 = iVar2 + 1;
-      engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(iVar1 + DAT_006b0264,iVar3);
-    } while (iVar2 < *(int *)(param_1 + 8));
+      engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(iVar1 + DAT_006b0264,pSVar3);
+    } while (iVar2 < mrgl->child_count);
   }
-  return param_1 + 0xc + *(int *)(param_1 + 8) * 0xc;
+  return mrgl + mrgl->child_count + 1;
 }

@@ -1,0 +1,341 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 209,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 211,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 99,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 101,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 176,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 183,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 218,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 258,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 267,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 471,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 478,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 160,
+        "line": 200,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 40,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
+    "total_lines": 86
+  },
+  "cross_references": [
+    {
+      "addr": "004f53f0",
+      "from_addr": "004f5422",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_004f53f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f54c0",
+      "from_addr": "004f5596",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5920",
+      "from_addr": "004f5954",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f5350",
+    "address_range": [
+      [
+        "004f5350",
+        "004f53ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_004f5350",
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(CPackedBitmapSet *this_ptr,int bitmap_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f5320",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_FUN_004f5320"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
+      "addr": "00566234",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_new_FUN_00566234"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00564c18",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_malloc_FUN_00564c18"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058d45d",
+      "name": "s_Unable_to_allocate_u_byt_0058d45d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d4aa",
+      "name": "s_cockpit_pkbmpset_cpp_0058d4aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005a1340",
+      "name": "g_CPackedBitmapTypeInfo_005a1340",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "PTR_01cc4800",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "INT_01cc4804",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004f5954",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5422",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_004f53f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5596",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.823529411764706,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 7,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 40,
+      "INT_ADD": 22,
+      "INT_AND": 37,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 14,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 246
+  },
+  "stack_frame": {
+    "frame_size": 220,
+    "local_size": 212,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom array-new allocation hardcodes 0x24 == sizeof(CPackedBitmap) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CPackedBitmap) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 17,
+      "match": "(CPackedBitmap *) array-new alloc stride 0x24",
+      "severity": "moderate",
+      "text": "array_memory = shape_memdbg_cpp_malloc_FUN_00564c18(bitmap_count * 0x24 + 4)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

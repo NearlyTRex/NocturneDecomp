@@ -6,8 +6,8 @@
 ;
 ; XREF[5]:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b198
+;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 at 0046a28f
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70 at 0046af8a
-;   core_dtrace.cpp_FUN_00469ce0 at 0046a28f
 ;   core_flies.cpp_FUN_0048f490 at 0048f76b
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518c67
 ;

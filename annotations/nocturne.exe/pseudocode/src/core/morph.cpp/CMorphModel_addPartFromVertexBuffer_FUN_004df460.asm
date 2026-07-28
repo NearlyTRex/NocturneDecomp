@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460(int *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7)
+; void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_count
+; CVector3i *      Stack[0xc]:4   skinned_vertices
+; int              Stack[0x10]:4   tri_count
+; SInputFace *     Stack[0x14]:4   tri_data
+; STextureSet *    Stack[0x18]:4   texture_sets
+; int *            Stack[0x1c]:4   index_data
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0 at 004df5ff
@@ -69,7 +77,7 @@ section .text
     PUSH EAX                            ; 004df4cc
     MOV dword ptr [EBX + 0x5c],EBP      ; 004df4cd
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004df4d0
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV dword ptr [EBX + 0x58],EAX      ; 004df4d5
     MOV EAX,dword ptr [EBX + 0x5c]      ; 004df4d8
     SHL EAX,0x2                         ; 004df4db
@@ -81,7 +89,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x60]      ; 004df4e9
     PUSH EDX                            ; 004df4ec
     CALL crt_memory.c_realloc_FUN_00564a70 ; 004df4ed
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004df4f2
     MOV ECX,dword ptr [EBX]             ; 004df4f5
     MOV dword ptr [EBX + 0x60],EAX      ; 004df4f7
@@ -114,7 +122,7 @@ section .text
     PUSH EAX                            ; 004df539
     PUSH EBX                            ; 004df53a
     CALL core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660 ; 004df53b
-        ;   XREF to: 004df660 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660()
+        ;   XREF to: 004df660 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(CMorphModel * this_ptr, int part_index, CVector3i * vertex_buffer, int start_offset, ...)
     ADD ESP,0x14                        ; 004df540
     MOV EDI,dword ptr [ESP + 0x24]      ; 004df543
         ;   Label: LAB_004df543
@@ -157,7 +165,7 @@ section .text
     PUSH EAX                            ; 004df595
     PUSH EBX                            ; 004df596
     CALL core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0 ; 004df597
-        ;   XREF to: 004df9e0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0()
+        ;   XREF to: 004df9e0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(CMorphModel * this_ptr, int part_index, SInputFace * face_data, STextureSet * texture_sets, ...)
     ADD ESP,0x1c                        ; 004df59c
     POP EBP                             ; 004df59f
     POP EDI                             ; 004df5a0

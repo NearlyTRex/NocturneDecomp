@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int *param_6)
+; void sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70(CMP3Decoder *param_1,undefined4 param_2,int param_3,int param_4,int param_5,int *param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -329,7 +329,7 @@ section .text
         ;   Label: LAB_004e4fdd
     PUSH EDI                            ; 004e4fde
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 ; 004e4fdf
-        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0()
+        ;   XREF to: 004e2cf0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder * this_ptr, uint num_bits)
     MOVSX EDX,BX                        ; 004e4fe4
     ADD ESP,0x8                         ; 004e4fe7
     MOV dword ptr [EDI + EDX*0x4 + 0x7358],EAX ; 004e4fea

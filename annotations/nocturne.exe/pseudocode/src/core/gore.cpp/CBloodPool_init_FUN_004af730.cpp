@@ -2,28 +2,30 @@
 // Address: 004af730
 // Address Range: [[004af730, 004af7bb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(int param_1,undefined4 *param_2,undefined4 param_3)
+// Signature: void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(CBloodPool *this_ptr,CVector3f *position,int blood_type)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(int param_1,uint *param_2,uint param_3)
+void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(CBloodPool *this_ptr,CVector3f *position,int blood_type)
 
 {
   uint uVar1;
-  uint uVar2;
+  int iVar2;
+  float fVar3;
   
-  uVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
-  uVar2 = 0x01E57284;
-  *(uint *)(param_1 + 0x14) = uVar1;
-  *(uint *)(param_1 + 4) = *param_2;
-  uVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(uVar2,param_2,0);
-  *(uint *)(param_1 + 8) = uVar2;
-  *(uint *)(param_1 + 0xc) = param_2[2];
-  *(uint *)(param_1 + 0x18) = 0;
-  *(float *)(param_1 + 8) = *(float *)(param_1 + 8) + 0.1f;
-  *(int *)(param_1 + 0x1c) = (int)ROUND(*(float *)(param_1 + 4) * 256.0f);
-  *(int *)(param_1 + 0x20) = (int)ROUND(*(float *)(param_1 + 8) * 256.0f);
-  *(int *)(param_1 + 0x24) = (int)ROUND(*(float *)(param_1 + 0xc) * 256.0f);
-  *(uint *)(param_1 + 0x10) = param_3;
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
+  uVar1 = 0x01E57284;
+  this_ptr->texture_variant = iVar2;
+  (this_ptr->position).x = position->x;
+  fVar3 = (float)core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(uVar1,position,0);
+  (this_ptr->position).y = fVar3;
+  fVar3 = (this_ptr->position).y;
+  (this_ptr->position).z = position->z;
+  this_ptr->age = 0.0;
+  (this_ptr->position).y = fVar3 + 0.1f;
+  (this_ptr->position_fixed).x = (int)ROUND((this_ptr->position).x * 256.0f);
+  (this_ptr->position_fixed).y = (int)ROUND((this_ptr->position).y * 256.0f);
+  (this_ptr->position_fixed).z = (int)ROUND((this_ptr->position).z * 256.0f);
+  this_ptr->blood_type = blood_type;
   return;
 }

@@ -2,44 +2,45 @@
 // Address: 00446fe0
 // Address Range: [[00446fe0, 004470ea]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(int param_1,int param_2,uint param_3)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
 
 #include "nocturne.h"
 
-int __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(int param_1,int param_2,uint param_3)
+void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCamera *this_ptr,int plane_index,uint blend_alpha)
 
 {
+  uint *source2_buffer;
+  uint *source1_buffer;
   int iVar1;
+  uint *output_buffer;
   int iVar2;
-  byte *puVar3;
-  int iVar4;
   
-  iVar2 = param_2 + 1;
-  if (0xf < iVar2) {
-    iVar2 = 0;
+  iVar1 = plane_index + 1;
+  if (0xf < iVar1) {
+    iVar1 = 0;
   }
-  if ((int)param_3 < 0x10000) {
-    if ((int)param_3 < 0) {
-      param_3 = 0;
+  if ((int)blend_alpha < 0x10000) {
+    if ((int)blend_alpha < 0) {
+      blend_alpha = 0;
     }
   }
   else {
-    param_3 = 0xffff;
+    blend_alpha = 0xffff;
   }
-  iVar4 = 0;
-  if (0 < *(int *)(param_1 + 0x154)) {
-    iVar1 = param_2 * 0x12c00 + 0x12e1778;
-    puVar3 = &DAT_012ceb78;
-    iVar2 = iVar2 * 0x12c00 + 0x12e1778;
+  iVar2 = 0;
+  if (0 < this_ptr->display_height) {
+    source1_buffer = (uint *)(plane_index * 0x12c00 + 0x12e1778);
+    output_buffer = (uint *)&DAT_012ceb78;
+    source2_buffer = (uint *)(iVar1 * 0x12c00 + 0x12e1778);
     do {
       core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50
-                (puVar3,iVar1,iVar2,param_3 | param_3 << 0x10,
-                 0xffff - param_3 | (0xffff - param_3) * 0x10000,*(uint *)(param_1 + 0x150));
-      iVar4 = iVar4 + 1;
-      iVar2 = iVar2 + 0x140;
-      iVar1 = iVar1 + 0x140;
-      puVar3 = puVar3 + 0x140;
-    } while (iVar4 < *(int *)(param_1 + 0x154));
+                (output_buffer,source1_buffer,source2_buffer,blend_alpha | blend_alpha << 0x10,
+                 0xffff - blend_alpha | (0xffff - blend_alpha) * 0x10000,this_ptr->display_width);
+      iVar2 = iVar2 + 1;
+      source2_buffer = source2_buffer + 0x50;
+      source1_buffer = source1_buffer + 0x50;
+      output_buffer = output_buffer + 0x50;
+    } while (iVar2 < this_ptr->display_height);
   }
-  return param_1;
+  return;
 }

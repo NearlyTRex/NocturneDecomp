@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,25 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 429,
+    "complexity_score": 451,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
-    "suspect_count": 21,
+    "pseudocode_lines": 171,
+    "suspect_count": 24,
     "suspect_types": [
       "dropped_loop_counter",
-      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
-      "self_copy_guard",
       "stack_alignment_array",
       "suspect_float",
-      "unnamed_param",
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 462
+    "total_lines": 459
   },
   "cross_references": [
     {
@@ -161,7 +160,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730",
-    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(int param_1)"
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)"
   },
   "function_calls": [
     {
@@ -215,11 +214,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.815261044176707,
@@ -262,10 +261,10 @@
     "pcode_op_count": 1697
   },
   "stack_frame": {
-    "frame_size": 196,
+    "frame_size": 208,
     "local_size": 196,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -533,6 +532,27 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "out_bbox_min",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "out_bbox_max",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
@@ -556,96 +576,47 @@
   "static_analysis": {
     "analyzed_file": "CBodyPart_optimizeBoundingBoxRotation_FUN_00417730.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 13,
+      "diagnostic_count": 6,
       "diagnostics": [
         {
           "check_id": "objectIndex",
-          "column": 47,
-          "line": 169,
-          "message": "The address of local variable 'local_98' might be accessed at non-zero index.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "objectIndex",
-          "column": 23,
-          "line": 171,
-          "message": "The address of local variable 'local_98' might be accessed at non-zero index.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "objectIndex",
-          "column": 18,
-          "line": 174,
-          "message": "The address of local variable 'local_98' might be accessed at non-zero index.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "objectIndex",
-          "column": 18,
-          "line": 175,
-          "message": "The address of local variable 'local_98' might be accessed at non-zero index.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "objectIndex",
-          "column": 23,
-          "line": 176,
-          "message": "The address of local variable 'local_98' might be accessed at non-zero index.",
+          "column": 24,
+          "line": 168,
+          "message": "The address of local variable 'fStack_7c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 21,
-          "line": 141,
+          "column": 32,
+          "line": 138,
           "message": "Uninitialized variable: local_84",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
-          "column": 13,
-          "line": 144,
-          "message": "Uninitialized variable: local_9c",
-          "severity": "warning"
+          "column": 27,
+          "line": 176,
+          "message": "Uninitialized variable: local_74",
+          "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 18,
-          "line": 150,
-          "message": "Uninitialized variable: local_98",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 156,
-          "message": "Uninitialized variable: iStack_94",
-          "severity": "warning"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 14,
-          "line": 85,
-          "message": "Uninitialized variable: (float10)local_a4[1]",
+          "column": 27,
+          "line": 177,
+          "message": "Uninitialized variable: local_70",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 13,
-          "line": 163,
-          "message": "Uninitialized variable: local_9c",
+          "line": 153,
+          "message": "Uninitialized variable: (int)afStack_94[0]",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
-          "column": 36,
-          "line": 164,
-          "message": "Uninitialized variable: local_98",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 24,
-          "line": 163,
+          "column": 41,
+          "line": 160,
           "message": "Uninitialized variable: local_84",
           "severity": "error"
         }
@@ -656,8 +627,16 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
       "match": "WARNING: Removing unreachable block",
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00417a74) */",
@@ -665,31 +644,15 @@
     },
     {
       "description": "Unreachable code block removed",
-      "line": 3,
+      "line": 4,
       "match": "WARNING: Removing unreachable block",
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00417a87) */",
       "type": "warning_unreachable"
     },
     {
-      "description": "Type propagation did not converge",
-      "line": 4,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 26,
+      "line": 29,
       "match": "afStackY_1090",
       "severity": "moderate",
       "text": "float afStackY_1090 [1001];",
@@ -697,7 +660,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 87,
+      "line": 84,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_78 = -1.4013e-45;",
@@ -705,39 +668,55 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 89,
+      "line": 85,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "fStack_7c = -1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 86,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fStack_80 = -1.4013e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x16c);",
-      "type": "unnamed_param"
+      "description": "Pointer value `&this_ptr->vertices->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&this_ptr->vertices->x",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)&this_ptr->vertices->x + local_40);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(*(int *)(param_1 + 0x170) + local_40);",
-      "type": "unnamed_param"
+      "description": "Pointer value `&local_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 159,
+      "match": "(int)&local_b8",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x14) = afStack_94[(uint)bVar13 * -2 + 5];",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar7 < *(int *)(param_1 + 0x16c));",
-      "type": "unnamed_param"
+      "description": "Pointer value `&local_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 160,
+      "match": "(int)&local_b8",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 0x18) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_b8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
+      "match": "(int)&local_b8",
+      "severity": "moderate",
+      "text": "afStack_94[(uint)bVar13 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x20);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x4177b7 assigned to bare local `uStack_cc`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_cc` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 74,
+      "line": 67,
       "match": "0x4177b7",
       "severity": "moderate",
       "text": "uStack_cc = 0x4177b7;",
@@ -745,7 +724,7 @@
     },
     {
       "description": "Raw hex address 0x417864 assigned to bare local `uStack_cc`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_cc` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 92,
+      "line": 89,
       "match": "0x417864",
       "severity": "moderate",
       "text": "uStack_cc = 0x417864;",
@@ -753,7 +732,7 @@
     },
     {
       "description": "Raw hex address 0x41786b assigned to bare local `uStack_d0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_d0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 94,
+      "line": 91,
       "match": "0x41786b",
       "severity": "moderate",
       "text": "uStack_d0 = 0x41786b;",
@@ -761,7 +740,7 @@
     },
     {
       "description": "Raw hex address 0x417872 assigned to bare local `uStack_d4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_d4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 96,
+      "line": 93,
       "match": "0x417872",
       "severity": "moderate",
       "text": "uStack_d4 = 0x417872;",
@@ -769,7 +748,7 @@
     },
     {
       "description": "Raw hex address 0x417879 assigned to bare local `uStack_d8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_d8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 98,
+      "line": 95,
       "match": "0x417879",
       "severity": "moderate",
       "text": "uStack_d8 = 0x417879;",
@@ -777,7 +756,7 @@
     },
     {
       "description": "Raw hex address 0x417880 assigned to bare local `uStack_dc`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_dc` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 100,
+      "line": 97,
       "match": "0x417880",
       "severity": "moderate",
       "text": "uStack_dc = 0x417880;",
@@ -785,7 +764,7 @@
     },
     {
       "description": "Raw hex address 0x417887 assigned to bare local `uStack_e0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_e0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 102,
+      "line": 99,
       "match": "0x417887",
       "severity": "moderate",
       "text": "uStack_e0 = 0x417887;",
@@ -793,7 +772,7 @@
     },
     {
       "description": "Raw hex address 0x417890 assigned to bare local `local_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 176,
+      "line": 173,
       "match": "0x417890",
       "severity": "moderate",
       "text": "local_c0 = 0x417890;",
@@ -801,133 +780,90 @@
     },
     {
       "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
-      "line": 177,
+      "line": 174,
       "match": "} while( true );",
       "severity": "moderate",
       "text": "} while( true );",
       "type": "dropped_loop_counter"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_b4 != &local_78)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 170,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 112,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (&local_b4 != &local_78) {",
-      "type": "self_copy_guard"
+      "text": "piVar9 = (int *)((int)&this_ptr->vertices->x + local_40);",
+      "type": "pointer_cast"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "The address of local variable 'local_98' might be accessed at non-zero index.",
-      "line": 169,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 159,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_a4[(uint)bVar8 * -2] = (&local_98)[(uint)bVar8 * -2 + 6];",
-      "type": "static_object_index"
+      "text": "*(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x14) = afStack_94[(uint)bVar13 * -2 + 5];",
+      "type": "pointer_cast"
     },
     {
-      "description": "The address of local variable 'local_98' might be accessed at non-zero index.",
-      "line": 171,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(&local_98)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];",
-      "type": "static_object_index"
+      "text": "*(float *)((int)&local_b8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 0x18) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "The address of local variable 'local_98' might be accessed at non-zero index.",
-      "line": 174,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
-      "severity": "moderate",
-      "text": "(&local_98)[(uint)bVar8 * -2 + 3] = (&local_98)[(uint)bVar8 * -2];",
-      "type": "static_object_index"
-    },
-    {
-      "description": "The address of local variable 'local_98' might be accessed at non-zero index.",
-      "line": 175,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
-      "severity": "moderate",
-      "text": "(&local_98)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =",
-      "type": "static_object_index"
-    },
-    {
-      "description": "The address of local variable 'local_98' might be accessed at non-zero index.",
-      "line": 176,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
-      "severity": "moderate",
-      "text": "(&local_98)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];",
-      "type": "static_object_index"
-    },
-    {
-      "description": "Uninitialized variable: local_84",
-      "line": 141,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (iVar5 < local_84) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_9c",
-      "line": 144,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_9c < iVar5) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_98",
-      "line": 150,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((int)local_98 < (int)fVar6) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_94",
-      "line": 156,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (iStack_94 < iVar3) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: (float10)local_a4[1]",
-      "line": 85,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "fVar10 = (float10)local_a4[1];",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_9c",
-      "line": 163,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iVar3 = local_9c - local_84;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_98",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 164,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_94[(uint)bVar13 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "The address of local variable 'fStack_7c' might be accessed at non-zero index.",
+      "line": 168,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "(&fStack_7c)[(uint)bVar13 * -2 + (uint)bVar13 * -2];",
+      "type": "static_object_index"
+    },
+    {
+      "description": "Uninitialized variable: local_84",
+      "line": 138,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((int)fVar10 < (int)local_84) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_74",
+      "line": 176,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_b8.m[0].z = local_74;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_70",
+      "line": 177,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_b8.m[1].x = local_70;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: (int)afStack_94[0]",
+      "line": 153,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "if (local_9c - local_84 < (int)local_98 - (int)fStack_80) {",
+      "text": "if ((int)afStack_94[0] < (int)fVar7) {",
       "type": "static_legacy_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_84",
-      "line": 163,
+      "line": 160,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
-      "text": "iVar3 = local_9c - local_84;",
+      "text": "iVar8 = (int)local_b8.m[2].y - (int)local_84;",
       "type": "static_legacy_uninitvar"
     }
   ]

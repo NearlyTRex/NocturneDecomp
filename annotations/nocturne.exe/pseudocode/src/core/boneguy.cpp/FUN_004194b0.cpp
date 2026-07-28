@@ -10,47 +10,36 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
 
 {
   int iVar1;
-  float *pfVar2;
+  CVector3f *pCVar2;
   int iVar3;
-  uint *unaff_ESI;
-  uint *puVar4;
-  uint *puVar5;
+  float *unaff_ESI;
+  float *pfVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
   byte local_120 [48];
-  uint local_f0 [3];
-  float local_e4;
-  float local_d4;
-  float local_c4;
-  uint local_c0 [12];
+  CMatrix3x4f local_f0;
+  float local_c0 [12];
   float local_90;
   float local_8c;
   float local_88;
   float local_84;
   float local_80;
   float local_7c;
-  byte local_78 [12];
-  uint local_6c;
-  uint local_68;
-  uint local_64;
+  CVector3f local_78;
+  CVector3f local_6c;
   uint local_60;
   uint local_5c;
   uint local_58;
   float local_54;
   float local_50;
   float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
+  CVector3f local_48;
   float local_3c;
   float local_38;
   float local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
-  byte local_24 [12];
-  float local_18;
-  float local_14;
-  float local_10;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   bVar6 = 0;
   iVar1 = param_2 * 0x44 + param_1;
@@ -67,43 +56,43 @@ void core_boneguy_cpp_FUN_004194b0(int param_1,int param_2)
   local_50 = local_8c + local_80;
   local_4c = local_88 + local_7c;
   core_actor_cpp_CVector_ctor_FUN_0040e160(&local_30);
-  local_30 = local_54 * 5.2220990168285998e-315._0_4_;
-  local_2c = local_50 * 5.2220990168285998e-315._0_4_;
-  local_28 = local_88 + (float)0.40000000000000002;
+  local_30.x = local_54 * 5.2220990168285998e-315._0_4_;
+  local_30.y = local_50 * 5.2220990168285998e-315._0_4_;
+  local_30.z = local_88 + (float)0.40000000000000002;
   if (&local_48 != &local_30) {
-    local_48 = local_30;
-    local_44 = local_2c;
-    local_40 = local_28;
+    local_48.x = local_30.x;
+    local_48.y = local_30.y;
+    local_48.z = local_30.z;
   }
-  local_64 = 0xbda7ef9e;
-  local_6c = 0x3d03126f;
-  local_68 = 0x3e560419;
-  pfVar2 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                              (local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);
-  if (&local_18 != pfVar2) {
-    local_18 = *pfVar2;
-    local_14 = pfVar2[1];
-    local_10 = pfVar2[2];
+  local_6c.z = -0.082;
+  local_6c.x = 0.032;
+  local_6c.y = 0.209;
+  pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
+                     (&local_78,&local_6c,(CMatrix3x4f *)(param_1 + 0xfd0 + iVar1 * 0x30));
+  if (&local_18 != pCVar2) {
+    local_18.x = pCVar2->x;
+    local_18.y = pCVar2->y;
+    local_18.z = pCVar2->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);
-  puVar4 = local_c0;
-  puVar5 = local_f0;
+  pfVar4 = local_c0;
+  pCVar5 = &local_f0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    pCVar5->m[0].w = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
   }
-  pfVar2 = (float *)core_xform_cpp_transformVector3x4_FUN_0055a8b0(local_24,&local_48,local_f0);
-  local_3c = local_18 - *pfVar2;
-  local_38 = local_14 - pfVar2[1];
-  local_34 = local_10 - pfVar2[2];
-  local_e4 = local_e4 + (local_18 - *pfVar2);
-  local_d4 = local_d4 + (local_14 - pfVar2[1]);
-  local_c4 = local_c4 + (local_10 - pfVar2[2]);
-  puVar4 = local_f0;
+  pCVar2 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_24,&local_48,&local_f0);
+  local_3c = local_18.x - pCVar2->x;
+  local_38 = local_18.y - pCVar2->y;
+  local_34 = local_18.z - pCVar2->z;
+  local_f0.m[0].z = local_f0.m[0].z + local_3c;
+  local_f0.m[1].z = local_f0.m[1].z + local_38;
+  local_f0.m[2].z = local_f0.m[2].z + local_34;
+  pCVar5 = &local_f0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *unaff_ESI = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    *unaff_ESI = pCVar5->m[0].w;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
     unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;
   }
   return;

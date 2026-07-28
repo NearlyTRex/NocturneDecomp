@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(int param_1,undefined4 param_2)
+; void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(CCharacter *this_ptr,char *sound_name)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[9]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412ffe

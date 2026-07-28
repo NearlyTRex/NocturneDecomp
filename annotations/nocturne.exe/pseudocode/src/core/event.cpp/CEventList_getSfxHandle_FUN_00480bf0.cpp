@@ -2,11 +2,11 @@
 // Address: 00480bf0
 // Address Range: [[00480bf0, 00480c26]]
 // Convention: unknown
-// Signature: undefined4 core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(int param_1,undefined4 param_2)
+// Signature: uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList *param_1,char *param_2)
 
 #include "nocturne.h"
 
-uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(int param_1,uint param_2)
+uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(CEventList *param_1,char *param_2)
 
 {
   int iVar1;
@@ -14,7 +14,7 @@ uint core_event_cpp_CEventList_getSfxHandle_FUN_00480bf0(int param_1,uint param_
   core_event_cpp_CEventList_updateSfxEntries_FUN_00480d60(param_1);
   iVar1 = core_event_cpp_CEventList_findSfxEntry_FUN_00480d10(param_1,param_2);
   if (-1 < iVar1) {
-    return *(uint *)(param_1 + 0x3acc + iVar1 * 0x120);
+    return (param_1->sfx_handles).entries[iVar1].sfx_handle;
   }
   return 0;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * shape_spotview_cpp_CSpotView_ctor_FUN_00534200(undefined4 *param_1)
+; CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00534200(CSpotView *this_ptr)
 ;
+; Parameters:
+; CSpotView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   shape_spotview.cpp_staticInit_FUN_005341f0 at 005341f5
@@ -44,7 +46,7 @@ section .text
     FSTP float ptr [EBX + 0xc]          ; 00534248
     MOV dword ptr [EBX + 0x14],0x0      ; 0053424b
     CALL shape_spotview.cpp_CSpotView_reset_FUN_00534260 ; 00534252
-        ;   XREF to: 00534260 (UNCONDITIONAL_CALL)  ; undefined shape_spotview.cpp_CSpotView_reset_FUN_00534260()
+        ;   XREF to: 00534260 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_00534260(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 00534257
     MOV EAX,EBX                         ; 0053425a
     POP EBX                             ; 0053425c

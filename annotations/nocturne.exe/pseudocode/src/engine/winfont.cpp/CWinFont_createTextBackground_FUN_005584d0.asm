@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(int param_1,int param_2,int param_3)
+; int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFont *this_ptr,int width,int height)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -107,7 +111,7 @@ section .text
     PUSH EBX                            ; 00558547
         ;   Label: LAB_00558547
     CALL engine_winfont.cpp_CWinFont_reset_FUN_005586a0 ; 00558548
-        ;   XREF to: 005586a0 (UNCONDITIONAL_CALL)  ; undefined engine_winfont.cpp_CWinFont_reset_FUN_005586a0()
+        ;   XREF to: 005586a0 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_005586a0(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 0055854d
     PUSH 0x0                            ; 00558550
     CALL dword ptr CS:[0x57539c]        ; 00558552 | PTR_CreateCompatibleDC_0057539c
@@ -118,7 +122,7 @@ section .text
     PUSH EAX                            ; 00558564
     MOV EBP,0x28                        ; 00558565
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0055856a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDX,0x1                         ; 0055856f
     ADD ESP,0xc                         ; 00558574
     MOV ECX,ESI                         ; 00558577

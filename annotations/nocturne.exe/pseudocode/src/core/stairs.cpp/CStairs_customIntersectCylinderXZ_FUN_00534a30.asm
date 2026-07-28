@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30(int param_1,undefined4 param_2)
+; void core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_00534a30(int param_1,SIntersectXZCylinder *param_2)
 ;
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 00534a56
     INC EBX                             ; 00534a57
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0 ; 00534a58
-        ;   XREF to: 0046cba0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0()
+        ;   XREF to: 0046cba0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_0046cba0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00534a5d
     ADD ESI,0x38                        ; 00534a60
     JMP 0x00534a44                      ; 00534a63

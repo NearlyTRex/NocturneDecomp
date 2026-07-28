@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(float *param_1,float *param_2,undefined4 *param_3,int param_4)
+; int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 ;
+; Parameters:
+; CPathMap *       Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   dest_position
+; CVector3f *      Stack[0xc]:4   out_euler_angles
+; int              Stack[0x10]:4   direction_hint
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118
 ; undefined4       Stack[-0x114]:4  local_114
@@ -327,11 +332,11 @@ section .text
         ;   Label: LAB_004f0eea
     MOV EAX,dword ptr [ESP + 0x120]     ; 004f0eed
     CALL crt_math.c_round_FUN_00563a30  ; 004f0ef4
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x104]       ; 004f0ef9
     FLD float ptr [EAX]                 ; 004f0f00
     CALL crt_math.c_round_FUN_00563a30  ; 004f0f02
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EAX,dword ptr [ESP + 0x104]     ; 004f0f07
     FISTP dword ptr [ESP + 0x104]       ; 004f0f0e
     SUB EAX,dword ptr [ESP + 0x104]     ; 004f0f15
@@ -341,11 +346,11 @@ section .text
     FLD float ptr [EBP + 0x8]           ; 004f0f21
     MOV EAX,dword ptr [ESP + 0x120]     ; 004f0f24
     CALL crt_math.c_round_FUN_00563a30  ; 004f0f2b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x104]       ; 004f0f30
     FLD float ptr [EAX + 0x8]           ; 004f0f37
     CALL crt_math.c_round_FUN_00563a30  ; 004f0f3a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EAX,dword ptr [ESP + 0x104]     ; 004f0f3f
     FISTP dword ptr [ESP + 0x104]       ; 004f0f46
     SUB EAX,dword ptr [ESP + 0x104]     ; 004f0f4d
@@ -360,7 +365,7 @@ section .text
     PUSH EAX                            ; 004f0f69
     PUSH EBP                            ; 004f0f6a
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f0f6b
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f0f70
     MOV EDX,dword ptr [EBP + 0x10]      ; 004f0f73
     PUSH EDX                            ; 004f0f76
@@ -371,7 +376,7 @@ section .text
     PUSH EBP                            ; 004f0f85
     MOV EBX,EAX                         ; 004f0f86
     CALL core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 ; 004f0f88
-        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0()
+        ;   XREF to: 004f04a0 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)
     ADD ESP,0x10                        ; 004f0f8d
     PUSH EAX                            ; 004f0f90
     MOV EDI,dword ptr [0x01e31628]      ; 004f0f91 | DAT_01e31628
@@ -385,7 +390,7 @@ section .text
     PUSH ECX                            ; 004f0fac
     PUSH EBP                            ; 004f0fad
     CALL core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540 ; 004f0fae
-        ;   XREF to: 004f0540 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540()
+        ;   XREF to: 004f0540 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540(CPathMap * this_ptr, int start_x, int start_z, int start_height, ...)
     ADD ESP,0x1c                        ; 004f0fb3
     TEST EAX,EAX                        ; 004f0fb6
     JZ 0x004f113c                       ; 004f0fb8
@@ -506,7 +511,7 @@ section .text
     PUSH EAX                            ; 004f1156
     PUSH EBP                            ; 004f1157
     CALL core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790 ; 004f1158
-        ;   XREF to: 004f0790 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790()
+        ;   XREF to: 004f0790 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790(CPathMap * this_ptr, int start_x, int start_z, int end_x, ...)
     ADD ESP,0x14                        ; 004f115d
     TEST EAX,EAX                        ; 004f1160
     JZ 0x004f123d                       ; 004f1162
@@ -591,7 +596,7 @@ section .text
     PUSH EDX                            ; 004f1240
     PUSH EBP                            ; 004f1241
     CALL core_path.cpp_CPathMap_searchGrid_FUN_004f20a0 ; 004f1242
-        ;   XREF to: 004f20a0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_searchGrid_FUN_004f20a0()
+        ;   XREF to: 004f20a0 (UNCONDITIONAL_CALL)  ; uint core_path.cpp_CPathMap_searchGrid_FUN_004f20a0(CPathMap * this_ptr, int start_height)
     ADD ESP,0x8                         ; 004f1247
     TEST EAX,EAX                        ; 004f124a
     JNZ 0x004f1281                      ; 004f124c

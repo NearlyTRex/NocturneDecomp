@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0(undefined4 param_1,int param_2,int param_3,int param_4)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
+; SMpegSubbandScalefactors * Stack[0x8]:4   sample_array
+; SMpegSubbandAllocation * Stack[0xc]:4   allocation_array
+; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -212,7 +217,7 @@ section .text
     PUSH EBP                            ; 004e39bb
     ADD EBX,0x80                        ; 004e39bc
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e39c2
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0()
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 004e39c7
     MOV dword ptr [EBX + -0x80],EAX     ; 004e39ca
     CMP EBX,EDI                         ; 004e39cd
@@ -226,7 +231,7 @@ section .text
     PUSH EAX                            ; 004e39db
     PUSH EBP                            ; 004e39dc
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e39dd
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0()
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 004e39e2
     MOV EBX,dword ptr [ESP + 0x20]      ; 004e39e5
     MOV EDI,dword ptr [ESP + 0x38]      ; 004e39e9

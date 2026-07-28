@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0041e2e2
         ;   Label: LAB_0041e2e2
     CALL core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300 ; 0041e2e3
-        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300()
+        ;   XREF to: 0041e300 (UNCONDITIONAL_CALL)  ; CBoxActor * core_boxactor.cpp_CBoxActor_ctor_FUN_0041e300(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041e2e8
     RET                                 ; 0041e2eb
 

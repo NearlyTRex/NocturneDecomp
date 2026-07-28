@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7 ,undefined4 param_8)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   dest_x
+; int              Stack[0xc]:4   dest_y
+; int              Stack[0x10]:4   left_x
+; int              Stack[0x14]:4   top_y
+; int              Stack[0x18]:4   right_x
+; int              Stack[0x1c]:4   bottom_y
+; int              Stack[0x20]:4   global_alpha
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -85,7 +94,7 @@ section .text
     ADD EAX,EBX                         ; 0040e94b
     PUSH EAX                            ; 0040e94d
     CALL engine_special.cpp_renderAlphaRow32_FUN_0053055c ; 0040e94e
-        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow32_FUN_0053055c()
+        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow32_FUN_0053055c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 0040e953
     MOV EBX,dword ptr [EBP + 0xc]       ; 0040e956
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040e959
@@ -127,7 +136,7 @@ section .text
     ADD EAX,EBX                         ; 0040e9a8
     PUSH EAX                            ; 0040e9aa
     CALL engine_special.cpp_renderAlphaRow16_FUN_005305f7 ; 0040e9ab
-        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow16_FUN_005305f7()
+        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow16_FUN_005305f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 0040e9b0
     MOV EBX,dword ptr [EBP + 0xc]       ; 0040e9b3
     MOV EDX,dword ptr [ESP + 0x18]      ; 0040e9b6

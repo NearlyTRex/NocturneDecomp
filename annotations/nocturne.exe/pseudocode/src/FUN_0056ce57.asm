@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0056ce57(int *param_1,int param_2)
+; int FUN_0056ce57(_FILE *param_1,int param_2)
 ;
 ;
 ; XREF[3]:
-;   FUN_00571c60 at 00571c69
 ;   FUN_00571cc6 at 00571cd4
 ;   crt_fstream.cpp_istream_seekg_FUN_00565f14 at 00565f1c
+;   crt_stdio.c_fgetc_buffered_FUN_00571c60 at 00571c69
 ;
 ; Called Functions:
-;   FUN_0056b227
+;   crt_stdio.c_stream_setup_FUN_0056b227
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0056ce90
     PUSH EBX                            ; 0056ce94
     PUSH EAX                            ; 0056ce95
-    CALL FUN_0056b227                   ; 0056ce96
-        ;   XREF to: 0056b227 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b227()
+    CALL crt_stdio.c_stream_setup_FUN_0056b227 ; 0056ce96
+        ;   XREF to: 0056b227 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_setup_FUN_0056b227(_FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 0056ce9b
     POP EBX                             ; 0056ce9e
     RET                                 ; 0056ce9f

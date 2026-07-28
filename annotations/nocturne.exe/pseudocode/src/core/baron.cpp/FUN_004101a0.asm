@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 004101b2
         ;   Label: LAB_004101b2
     CALL core_baron.cpp_CBaron_ctor_FUN_004101d0 ; 004101b3
-        ;   XREF to: 004101d0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_CBaron_ctor_FUN_004101d0()
+        ;   XREF to: 004101d0 (UNCONDITIONAL_CALL)  ; CBaron * core_baron.cpp_CBaron_ctor_FUN_004101d0(CBaron * this_ptr)
     ADD ESP,0x4                         ; 004101b8
     RET                                 ; 004101bb
 

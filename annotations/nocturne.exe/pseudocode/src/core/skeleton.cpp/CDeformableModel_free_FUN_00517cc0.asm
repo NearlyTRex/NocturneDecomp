@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(int *param_1)
+; void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(CDeformableModel *this_ptr)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 at 0051801f
@@ -39,30 +41,30 @@ section .text
     MOV ECX,dword ptr [EBX + 0x40]      ; 00517cdb
     PUSH ECX                            ; 00517cde
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00517cdf
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00517ce4
     PUSH EAX                            ; 00517ce7
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517ce8
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00517ced
     MOV EBP,dword ptr [EBX + 0x7c]      ; 00517cf0
     PUSH EBP                            ; 00517cf3
     MOV dword ptr [EBX + 0x40],0x0      ; 00517cf4
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517cfb
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00517d00
     MOV EAX,dword ptr [EBX + 0x90]      ; 00517d03
     PUSH EAX                            ; 00517d09
     MOV dword ptr [EBX + 0x7c],0x0      ; 00517d0a
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517d11
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00517d16
     MOV EDX,dword ptr [EBX + 0xa4]      ; 00517d19
     ADD EBX,0x4                         ; 00517d1f
     PUSH EDX                            ; 00517d22
     MOV dword ptr [EBX + 0x8c],0x0      ; 00517d23
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00517d2d
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     MOV dword ptr [EBX + 0xa0],0x0      ; 00517d32
     MOV dword ptr [EBX + 0x28],0x0      ; 00517d3c
     MOV dword ptr [EBX + 0x50],0x0      ; 00517d43
@@ -82,7 +84,7 @@ section .text
     PUSH EAX                            ; 00517d77
     MOV dword ptr [EDI + 0xbc],0x0      ; 00517d78
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00517d82
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV dword ptr [EDI + 0xc00],0x0     ; 00517d87
     ADD ESP,0xc                         ; 00517d91
     MOV dword ptr [EDI],0x0             ; 00517d94

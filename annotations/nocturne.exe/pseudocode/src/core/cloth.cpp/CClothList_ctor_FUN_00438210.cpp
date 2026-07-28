@@ -2,15 +2,15 @@
 // Address: 00438210
 // Address Range: [[00438210, 00438244]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(undefined4 *param_1)
+// Signature: CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(CClothList *this_ptr)
 
 #include "nocturne.h"
 
-uint * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(uint *param_1)
+CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00438210(CClothList *this_ptr)
 
 {
-  *param_1 = 0;
-  memset(param_1 + 1,0,400);
-  memset(param_1 + 0x65,0,0x28);
-  return param_1;
+  this_ptr->count = 0;
+  memset(this_ptr->filenames,0,400);
+  memset(this_ptr->cloths,0,0x28);
+  return this_ptr;
 }

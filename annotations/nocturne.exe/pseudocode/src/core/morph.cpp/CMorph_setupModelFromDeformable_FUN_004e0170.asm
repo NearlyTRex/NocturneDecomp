@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(int param_1,int param_2,undefined4 param_3)
+; void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CMorph *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   model_index
+; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ;
 ; XREF[7]:
 ;   core_biggs.cpp_FUN_00415430 at 00415468
@@ -33,13 +37,13 @@ section .text
     ADD EBX,EAX                         ; 004e018a
     PUSH EBX                            ; 004e018c
     CALL core_morph.cpp_CMorphModel_free_FUN_004df290 ; 004e018d
-        ;   XREF to: 004df290 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_free_FUN_004df290()
+        ;   XREF to: 004df290 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_free_FUN_004df290(CMorphModel * this_ptr)
     ADD ESP,0x4                         ; 004e0192
     MOV EDX,dword ptr [ESP + 0x10]      ; 004e0195
     PUSH EDX                            ; 004e0199
     PUSH EBX                            ; 004e019a
     CALL core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0 ; 004e019b
-        ;   XREF to: 004df5b0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0()
+        ;   XREF to: 004df5b0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0(CMorphModel * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 004e01a0
     POP EBX                             ; 004e01a3
     RET                                 ; 004e01a4

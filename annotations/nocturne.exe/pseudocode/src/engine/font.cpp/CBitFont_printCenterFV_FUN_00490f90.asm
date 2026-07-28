@@ -1,11 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_CBitFont_printCenterFV_FUN_00490f90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_00490f90(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   y
+; int              Stack[0xc]:4   color_mode
+; int              Stack[0x10]:4   color_value
+; char *           Stack[0x14]:4   format_string
+; va_list_t        Stack[0x18]:4   args
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_00490f50 at 00490f7c
+;   engine_font.cpp_CBitFont_printCenterF_FUN_00490f50 at 00490f7c
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
@@ -28,7 +35,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00490faa
     PUSH EAX                            ; 00490fae
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 00490faf
-        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_00563a08()
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00490fb4
     MOV EAX,ESP                         ; 00490fb7
     PUSH EAX                            ; 00490fb9
@@ -41,7 +48,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1024]    ; 00490fd2
     PUSH EBP                            ; 00490fd9
     CALL engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0 ; 00490fda
-        ;   XREF to: 00490ef0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0()
+        ;   XREF to: 00490ef0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0(CBitFont * this_ptr, int y, int color_mode, int color_value, ...)
     ADD ESP,0x14                        ; 00490fdf
     ADD ESP,0x1000                      ; 00490fe2
     POP EBP                             ; 00490fe8

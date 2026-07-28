@@ -137,7 +137,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
              (double)local_bc,(double)local_b8,(double)local_78,(double)local_74,(double)local_70);
   _DAT_02dc9468 = 0.0;
   if (*(int *)(0x01C775EC + 0x240) == 0) {
-    iVar3 = _strnicmp();
+    iVar3 = _strnicmp
+                      ((char *)(0x01E57284 + 0x14cd08),"castle",6);
     if (iVar3 == 0) {
       local_1c = 1;
       do {

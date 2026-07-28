@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(int param_1,int param_2,int param_3)
+; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
+; int              Stack[0xc]:4   apply_filter_flag
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_process_FUN_0050d040 at 0050d0df
@@ -102,7 +106,7 @@ section .text
     PUSH EDI                            ; 0051551f
     PUSH ESI                            ; 00515520
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 00515521
-        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0()
+        ;   XREF to: 004501c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 00515526
     FLD float ptr [EBX + 0x11e0]        ; 00515529
         ;   Label: LAB_00515529

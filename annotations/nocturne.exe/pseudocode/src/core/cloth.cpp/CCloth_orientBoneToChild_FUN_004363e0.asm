@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,int param_2,int param_3)
+; void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
+; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ; Local Variables:
 ; undefined        Stack[-0x94]:1  local_94
 ; undefined        Stack[-0x64]:1  local_64
@@ -47,7 +51,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 004363ef
     PUSH EDX                            ; 004363f5
     CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 ; 004363f6
-        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0()
+        ;   XREF to: 0051e0a0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(CDeformableModelInstance * this_ptr)
     MOV ECX,dword ptr [EBP + 0x8e]      ; 004363fb
     MOV EDI,EAX                         ; 00436401
     MOV dword ptr [EBP + 0x6a],EAX      ; 00436403
@@ -61,7 +65,7 @@ section .text
     PUSH EDI                            ; 00436420
     MOV ESI,0xffffffff                  ; 00436421
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0 ; 00436426
-        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0()
+        ;   XREF to: 005179d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     MOV dword ptr [EBX + 0x44],0x0      ; 0043642b
     MOV dword ptr [EBP + 0x6e],ESI      ; 00436432
     MOV dword ptr [EBX + 0x40],EAX      ; 00436435
@@ -124,7 +128,7 @@ section .text
     LEA ESI,[EBX + 0x48]                ; 004364d6
     PUSH ESI                            ; 004364d9
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 004364da
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004364df
     LEA EAX,[EBX + 0x28]                ; 004364e2
     PUSH EAX                            ; 004364e5
@@ -133,7 +137,7 @@ section .text
     LEA EAX,[EBP + -0xe]                ; 004364ea
     PUSH EAX                            ; 004364ed
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 004364ee
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004364f3
     LEA EAX,[EBP + -0xe]                ; 004364f6
     PUSH EAX                            ; 004364f9

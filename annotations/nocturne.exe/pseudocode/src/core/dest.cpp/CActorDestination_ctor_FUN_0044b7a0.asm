@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(undefined4 param_1)
+; CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(CActorDestination *this_ptr)
 ;
+; Parameters:
+; CActorDestination * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dest.cpp_FUN_0044b770 at 0044b783

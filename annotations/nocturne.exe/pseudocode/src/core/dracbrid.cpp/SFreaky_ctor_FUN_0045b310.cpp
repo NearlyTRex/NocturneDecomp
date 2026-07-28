@@ -9,8 +9,9 @@
 int core_dracbrid_cpp_SFreaky_ctor_FUN_0045b310(int param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1 + 0x20,4,&g_CVectorTypeInfo_005993b0);
-  return iVar1 + -0x20;
+  pvVar1 = __arrinit
+                     ((void *)(param_1 + 0x20),4,&g_CVectorTypeInfo_005993b0);
+  return (int)pvVar1 + -0x20;
 }

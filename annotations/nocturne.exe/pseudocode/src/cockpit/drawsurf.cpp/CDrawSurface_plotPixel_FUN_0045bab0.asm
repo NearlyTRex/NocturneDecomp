@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(int param_1,int param_2,int param_3)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurface *this_ptr,int x,int y)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[5]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 at 0045ce58
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c36e
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 at 0045c15c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 at 0045bf1f
-;   cockpit_drawsurf.cpp_FUN_0045cde0 at 0045ce58
-;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e635
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e635
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d914

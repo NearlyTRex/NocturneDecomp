@@ -2,13 +2,13 @@
 // Address: 004720c0
 // Address Range: [[004720c0, 004721dc]]
 // Convention: unknown
-// Signature: void shape_edittool_cpp_FUN_004720c0(undefined4 param_1)
+// Signature: void shape_edittool_cpp_FUN_004720c0(CEditorTools *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void shape_edittool_cpp_FUN_004720c0(uint param_1)
+void shape_edittool_cpp_FUN_004720c0(CEditorTools *param_1)
 
 {
   int iVar1;

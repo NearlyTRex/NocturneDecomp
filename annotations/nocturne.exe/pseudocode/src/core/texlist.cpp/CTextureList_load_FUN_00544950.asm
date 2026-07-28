@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(int *param_1,char *param_2)
+; void __cdecl core_texlist_cpp_CTextureList_load_FUN_00544950(CTextureList *this_ptr,char *filename)
 ;
+; Parameters:
+; CTextureList *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x12c]:1  local_12c
 ; undefined1       Stack[-0x12b]:1  local_12b
@@ -120,7 +123,7 @@ section .text
     PUSH EAX                            ; 005449d2
     PUSH 0x596639                       ; 005449d3 | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 005449d8
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005449dd
     MOV dword ptr [ESP + 0x100],EAX     ; 005449e0
     TEST EAX,EAX                        ; 005449e7
@@ -194,7 +197,7 @@ section .text
     INC ESI                             ; 00544aa2
     PUSH ESI                            ; 00544aa3
     CALL crt_stdlib.c_atoi_FUN_00566f30 ; 00544aa4
-        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c_atoi_FUN_00566f30()
+        ;   XREF to: 00566f30 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_00566f30(char * string_ptr)
     ADD ESP,0x4                         ; 00544aa9
     MOV ECX,dword ptr [ESP + 0x114]     ; 00544aac
     MOV dword ptr [ECX + 0x5dc4],EAX    ; 00544ab3
@@ -240,7 +243,7 @@ section .text
     PUSH EAX                            ; 00544b16
     INC EBX                             ; 00544b17
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 00544b18
-        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_toupper_FUN_00565e20()
+        ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 00544b1d
     MOV byte ptr [EDI + EBX*0x1 + 0xb],AL ; 00544b20
     JMP 0x00544af3                      ; 00544b24
@@ -296,7 +299,7 @@ section .text
         ;   Label: LAB_00544be0
     PUSH ESI                            ; 00544be7
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00544be8
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00544bed
     ADD ESP,0x11c                       ; 00544bf0
     POP EBP                             ; 00544bf6

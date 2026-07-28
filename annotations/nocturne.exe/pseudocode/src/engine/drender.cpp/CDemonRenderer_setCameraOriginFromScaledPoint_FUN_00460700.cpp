@@ -2,29 +2,23 @@
 // Address: 00460700
 // Address Range: [[00460700, 00460756]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(undefined4 param_1,float *param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer *this_ptr,CVector3f *point_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(uint param_1,float *param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer *this_ptr,CVector3f *point_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  uint uVar6;
-  int iVar7;
+  double dVar1;
+  double dVar2;
+  int z;
   
-  fVar3 = (float10)256;
-  fVar1 = param_2[1];
-  fVar2 = *param_2;
-  fVar4 = (float10)round((float10)param_2[2] * fVar3);
-  fVar5 = (float10)round((float10)fVar1 * fVar3);
-  iVar7 = (int)ROUND(fVar4);
-  uVar6 = 0x460740;
-  fVar3 = (float10)round((float10)fVar2 * fVar3);
-  engine_matrix_c_setCameraOrigin_FUN_004ce710((int)ROUND(fVar3),(int)ROUND(fVar5),uVar6,iVar7);
+  dVar1 = (double)point_ptr->y * 256;
+  dVar2 = (double)point_ptr->x * 256;
+  round((double)point_ptr->z * 256);
+  dVar1 = round(dVar1);
+  z = 0x460740;
+  dVar2 = round(dVar2);
+  engine_matrix_c_setCameraOrigin_FUN_004ce710((int)ROUND(dVar2),(int)ROUND(dVar1),z);
   return;
 }

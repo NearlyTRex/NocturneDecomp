@@ -12,17 +12,17 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_SetEvent_00575598 = 00175fd2
-;   void* PTR_FUN_005c1abc = 005671dc
-;   void* PTR_FUN_005c1afc = 00567208
+;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00567208_005c1afc = 00567208
 ;   undefined4 DAT_005c20cc
 ;   undefined4 DAT_02de4e30
 ;
 ; Called Functions:
+;   crt_exception.c_installExceptionHandler_FUN_0056eed8
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_005671dc
-;   FUN_00567208
+;   crt_sync.c_CriticalSectionStub_FUN_00567208
+;   crt_thread.c_GetTLS_FUN_005671dc
 ;   FUN_0056e608
-;   FUN_0056eed8
 ;   FUN_00572e88
 ;   SetEvent
 ;
@@ -58,7 +58,7 @@ section .text
     PUSH EDX                            ; 00573e68
     PUSH EBX                            ; 00573e69
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00573e6a
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00573e6f
     MOV EAX,[0x005c20cc]                ; 00573e72 | DAT_005c20cc
     PUSH EBX                            ; 00573e77
@@ -69,7 +69,7 @@ section .text
     TEST EAX,EAX                        ; 00573e86
     JZ 0x00573ec1                       ; 00573e88
         ;   XREF to: 00573ec1 (CONDITIONAL_JUMP)  ; LAB_00573ec1
-    CALL dword ptr [0x005c1abc]         ; 00573e8a | PTR_FUN_005c1abc
+    CALL dword ptr [0x005c1abc]         ; 00573e8a | PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc
         ;   Label: LAB_00573e8a
     ADD EAX,0xde                        ; 00573e90
     MOV dword ptr [ESI + 0x10],EAX      ; 00573e95
@@ -78,10 +78,10 @@ section .text
     CALL dword ptr CS:[0x575598]        ; 00573e9c | PTR_SetEvent_00575598
     LEA EAX,[EBP + -0xc]                ; 00573ea3
     PUSH EAX                            ; 00573ea6
-    CALL FUN_0056eed8                   ; 00573ea7
-        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056eed8()
+    CALL crt_exception.c_installExceptionHandler_FUN_0056eed8 ; 00573ea7
+        ;   XREF to: 0056eed8 (UNCONDITIONAL_CALL)  ; undefined crt_exception.c_installExceptionHandler_FUN_0056eed8()
     ADD ESP,0x4                         ; 00573eac
-    CALL dword ptr [0x005c1afc]         ; 00573eaf | PTR_FUN_005c1afc
+    CALL dword ptr [0x005c1afc]         ; 00573eaf | PTR_crt_sync.c_CriticalSectionStub_FUN_00567208_005c1afc
     PUSH EDI                            ; 00573eb5
     CALL dword ptr [EBP + -0x4]         ; 00573eb6
     ADD ESP,0x4                         ; 00573eb9

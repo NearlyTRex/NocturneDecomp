@@ -2,15 +2,17 @@
 // Address: 0041dc20
 // Address Range: [[0041dc20, 0041dc6a]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(float *param_1,float *param_2)
+// Signature: int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 
 #include "nocturne.h"
 
-uint __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(float *param_1,float *param_2)
+int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(CBoundingBox3D *this_ptr,CBoundingBox3D *other)
 
 {
-  if ((((*param_1 <= param_2[3]) && (*param_2 <= param_1[3])) && (param_1[1] <= param_2[4])) &&
-     (((param_2[1] <= param_1[4] && (param_1[2] <= param_2[5])) && (param_2[2] <= param_1[5])))) {
+  if (((((this_ptr->min).x <= (other->max).x) && ((other->min).x <= (this_ptr->max).x)) &&
+      ((this_ptr->min).y <= (other->max).y)) &&
+     ((((other->min).y <= (this_ptr->max).y && ((this_ptr->min).z <= (other->max).z)) &&
+      ((other->min).z <= (this_ptr->max).z)))) {
     return 1;
   }
   return 0;

@@ -2,45 +2,49 @@
 // Address: 00453f00
 // Address Range: [[00453f00, 00453fea]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,float *param_6)
+// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 
 #include "nocturne.h"
 
-uint __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(int param_1,int param_2,uint param_3,uint param_4,uint param_5,float *param_6)
+int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
-  int iVar4;
+  int iVar3;
+  CDemonTriangle *triangle;
   
-  if (*(int *)(param_1 + 0x100) <= param_2) {
-    param_2 = *(int *)(param_1 + 0x100) + -1;
+  if (this_ptr->frame_count <= frame_index) {
+    frame_index = this_ptr->frame_count + -1;
   }
-  if (param_2 < 0) {
-    param_2 = 0;
+  if (frame_index < 0) {
+    frame_index = 0;
   }
-  if (*(int *)(param_1 + 0x358) == 0) {
+  if (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) == 0) {
     PTR_01cc4800 = "..\\core\\dmodel.cpp";
     INT_01cc4804 = 0x43e;
-    core_main_c_FUN_004c8440("Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!",param_1);
+    core_main_c_FUN_004c8440("Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!",this_ptr);
   }
-  if (((*(float *)(param_1 + 0x364) != *param_6) || (*(float *)(param_1 + 0x368) != param_6[1])) ||
-     (*(float *)(param_1 + 0x36c) != param_6[2])) {
-    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(param_1,param_6);
+  if ((((float)this_ptr->texture_list[8].textures[0].base.type != transform_vector->x) ||
+      ((float)this_ptr->texture_list[8].textures[0].base.count != transform_vector->y)) ||
+     (*(float *)this_ptr->texture_list[8].textures[0].texture_name != transform_vector->z)) {
+    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(this_ptr,transform_vector);
   }
-  uVar3 = 0;
-  iVar4 = *(int *)(param_1 + 0x358) + *(int *)(param_1 + 0x354) * param_2 * 0x38;
+  iVar3 = 0;
+  triangle = (CDemonTriangle *)
+             (*(int *)(this_ptr->texture_list[7].textures[2].texture_name + 4) +
+             *(int *)this_ptr->texture_list[7].textures[2].texture_name * frame_index * 0x38);
   iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x354)) {
+  if (0 < *(int *)this_ptr->texture_list[7].textures[2].texture_name) {
     do {
-      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110(iVar4,param_3,param_4,param_5);
+      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0046d110
+                        (triangle,position,search_radius,out_height);
       if (iVar1 != 0) {
-        uVar3 = 1;
+        iVar3 = 1;
       }
       iVar2 = iVar2 + 1;
-      iVar4 = iVar4 + 0x38;
-    } while (iVar2 < *(int *)(param_1 + 0x354));
+      triangle = triangle + 1;
+    } while (iVar2 < *(int *)this_ptr->texture_list[7].textures[2].texture_name);
   }
-  return uVar3;
+  return iVar3;
 }

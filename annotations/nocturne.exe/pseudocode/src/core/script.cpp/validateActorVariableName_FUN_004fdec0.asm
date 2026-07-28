@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *param_1)
+; int __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *variable_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   variable_name
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500e5c

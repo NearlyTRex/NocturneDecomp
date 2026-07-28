@@ -2,30 +2,26 @@
 // Address: 00460a00
 // Address Range: [[00460a00, 00460a42]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(undefined4 param_1,float *param_2)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(uint param_1,float *param_2)
+void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  uint uVar3;
-  uint uStack_18;
-  uint uStack_14;
-  int iStack_10;
+  double dVar1;
+  double dVar2;
+  CQuaternion4f CStack_18;
   
-  fVar1 = (float10)256;
-  uStack_14 = 0x460a16;
-  fVar2 = (float10)round((float10)*param_2 * fVar1);
-  iStack_10 = (int)ROUND(fVar2);
-  uStack_18 = 0x460a24;
-  fVar2 = (float10)round((float10)param_2[1] * fVar1);
-  iStack_10 = (int)ROUND(fVar2);
-  uVar3 = 0x460a32;
-  fVar1 = (float10)round(fVar1 * (float10)param_2[2]);
-  iStack_10 = (int)ROUND(fVar1);
-  engine_3d_c_processCameraRelativePoint_FUN_004044d0(&uStack_18,uVar3);
+  dVar2 = 256;
+  CStack_18.x = 6.432103e-39;
+  dVar1 = round((double)world_position->x * 256);
+  CStack_18.y = (float)(int)ROUND(dVar1);
+  CStack_18.w = 6.432123e-39;
+  dVar1 = round((double)world_position->y * dVar2);
+  CStack_18.y = (float)(int)ROUND(dVar1);
+  dVar2 = round(dVar2 * (double)world_position->z);
+  CStack_18.y = (float)(int)ROUND(dVar2);
+  engine_3d_c_processCameraRelativePoint_FUN_004044d0(&CStack_18);
   return;
 }

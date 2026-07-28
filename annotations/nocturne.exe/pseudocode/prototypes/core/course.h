@@ -17,28 +17,28 @@ void FUN_0043b5b0(void);
 
 // Original: core_course.cpp_CCourse_ctor_FUN_0043b5d0
 // Address: 0043b5d0
-void __cdecl CCourse::ctor(undefined4 *param_1);
+CCourse * __cdecl CCourse::ctor(CCourse *this_ptr);
 
 // Original: core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
 // Address: 0043b5f0
-undefined4 __cdecl CDemonTriangle::arrdtor(undefined4 param_1);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_0043b610
 // Address: 0043b610
-void __cdecl CCourse::allocMemory(int *param_1,int param_2);
+void __cdecl CCourse::allocMemory(CCourse *this_ptr,int count);
 
 // Original: core_course.cpp_CCourse_load_FUN_0043b690
 // Address: 0043b690
-void __cdecl CCourse::load(int *param_1,undefined4 param_2);
+void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 
 // Original: core_course.cpp_CCourse_free_FUN_0043b7c0
 // Address: 0043b7c0
-void __cdecl CCourse::free(undefined4 *param_1);
+void __cdecl CCourse::free(CCourse *this_ptr);
 
 // Original: core_course.cpp_CCourse_evaluate_FUN_0043b800
 // Address: 0043b800
-void __cdecl CCourse::evaluate(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
 // Original: core_course.cpp_CCourse_interpolate_FUN_0043b890
 // Address: 0043b890
-void __cdecl CCourse::interpolate(int *param_1,float param_2,float *param_3,undefined4 *param_4);
+void __cdecl CCourse::interpolate(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);

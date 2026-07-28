@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0043d942
         ;   Label: LAB_0043d942
     CALL core_curtain.cpp_CCurtain_ctor_FUN_0043d960 ; 0043d943
-        ;   XREF to: 0043d960 (UNCONDITIONAL_CALL)  ; undefined core_curtain.cpp_CCurtain_ctor_FUN_0043d960()
+        ;   XREF to: 0043d960 (UNCONDITIONAL_CALL)  ; CCurtain * core_curtain.cpp_CCurtain_ctor_FUN_0043d960(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 0043d948
     RET                                 ; 0043d94b
 

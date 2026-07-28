@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(int param_1)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(CKeyFramedModel *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0 at 0045297a
@@ -75,7 +77,7 @@ section .text
     ADD EAX,0x4                         ; 0045408c
     PUSH EAX                            ; 0045408f
     CALL shape_memdbg.cpp_malloc_FUN_00564c18 ; 00454090
-        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_malloc_FUN_00564c18()
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_malloc_FUN_00564c18(SIZE_T size)
     ADD ESP,0x4                         ; 00454095
     TEST EAX,EAX                        ; 00454098
     JZ 0x004540a2                       ; 0045409a
@@ -99,7 +101,7 @@ section .text
         ;   Label: LAB_004540cf
     PUSH EBX                            ; 004540d4
     CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100 ; 004540d5
-        ;   XREF to: 00454100 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100()
+        ;   XREF to: 00454100 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 004540da
     POP ESI                             ; 004540dd
     POP EBP                             ; 004540de
@@ -111,7 +113,7 @@ section .text
         ;   Label: LAB_004540e2
     PUSH EAX                            ; 004540e5
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 004540e6
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 004540eb
     JMP 0x00454005                      ; 004540ee
         ;   XREF to: 00454005 (UNCONDITIONAL_JUMP)  ; LAB_00454005

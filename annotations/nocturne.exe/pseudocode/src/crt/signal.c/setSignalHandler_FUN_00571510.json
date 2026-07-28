@@ -1,0 +1,159 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 65,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "00571718",
+      "from_addr": "00571782",
+      "name": "FUN_00571718",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057189c",
+      "from_addr": "005718ae",
+      "name": "FUN_0057189c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005717d8",
+      "from_addr": "00571827",
+      "name": "crt_signal.c_processSignal_FUN_005717d8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005716d8",
+      "from_addr": "005716f8",
+      "name": "crt_signal.c_raiseFPE_FUN_005716d8",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00571510",
+    "address_range": [
+      [
+        "00571510",
+        "00571560"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_signal.c_setSignalHandler_FUN_00571510",
+    "signature": "SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_setSignalHandler_FUN_00571510(int signal_number,SIGNAL_HANDLER_TYPE new_handler_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "005671dc",
+      "is_variadic": false,
+      "name": "crt_thread.c_GetTLS_FUN_005671dc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1abc",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc",
+      "type": "void*",
+      "value": "005671dc"
+    },
+    {
+      "addr": "005c20d8",
+      "name": "DAT_005c20d8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8076923076923075,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 2,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 17,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 11,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "signal_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_handler_type",
+        "offset": 8,
+        "size": 4,
+        "type": "SIGNAL_HANDLER_TYPE"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005c20d8",
+      "severity": "mild",
+      "text": "SVar1 = *(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005c20d8",
+      "severity": "mild",
+      "text": "*(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8) = new_handler_type;",
+      "type": "undefined_data"
+    }
+  ]
+}

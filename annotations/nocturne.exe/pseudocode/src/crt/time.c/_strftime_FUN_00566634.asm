@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_time_c__strftime_FUN_00566634(int param_1,uint param_2,char *param_3,undefined4 *param_4)
+; uint __cdecl crt_time_c__strftime_FUN_00566634(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest_buffer
+; uint             Stack[0x8]:4   buffer_size
+; char *           Stack[0xc]:4   format_string
+; _tm *            Stack[0x10]:4   time_ptr
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0
 ; undefined1       Stack[-0x9f]:1  local_9f
@@ -31,9 +36,9 @@
 ;   void* PTR_DAT_005c1f0c = 005c1e08
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00566600
-;   FUN_0056d608
-;   FUN_0056dc68
+;   crt_stdio.c_IntegerToString_FUN_0056dc68
+;   crt_time.c_tzset_FUN_0056d608
+;   crt_unknown.c_formatTwoDigits_FUN_00566600
 ;
 ; *****************************************************************************
 
@@ -251,8 +256,8 @@ section .text
     PUSH EDI                            ; 00566825
     LEA EAX,[ESP + 0x4]                 ; 00566826
     PUSH EAX                            ; 0056682a
-    CALL crt_unknown.c_FUN_00566600     ; 0056682b
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 0056682b
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 00566830
     JMP 0x00566a20                      ; 00566833
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -266,8 +271,8 @@ section .text
     PUSH ECX                            ; 0056684c
     LEA EAX,[ESP + 0x4]                 ; 0056684d
     PUSH EAX                            ; 00566851
-    CALL crt_unknown.c_FUN_00566600     ; 00566852
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 00566852
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 00566857
     JMP 0x00566a20                      ; 0056685a
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -286,8 +291,8 @@ section .text
         ;   Label: LAB_00566873
     LEA EAX,[ESP + 0x4]                 ; 00566874
     PUSH EAX                            ; 00566878
-    CALL crt_unknown.c_FUN_00566600     ; 00566879
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 00566879
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 0056687e
     JMP 0x00566a20                      ; 00566881
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -298,8 +303,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0056688d
     ADD EAX,0x65                        ; 00566890
     PUSH EAX                            ; 00566893
-    CALL FUN_0056dc68                   ; 00566894
-        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc68()
+    CALL crt_stdio.c_IntegerToString_FUN_0056dc68 ; 00566894
+        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_0056dc68(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 00566899
     DEC byte ptr [ESP]                  ; 0056689c
     JMP 0x00566a20                      ; 0056689f
@@ -310,8 +315,8 @@ section .text
     PUSH EAX                            ; 005668a8
     LEA EAX,[ESP + 0x4]                 ; 005668a9
     PUSH EAX                            ; 005668ad
-    CALL crt_unknown.c_FUN_00566600     ; 005668ae
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 005668ae
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 005668b3
     JMP 0x00566a20                      ; 005668b6
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -320,8 +325,8 @@ section .text
     PUSH EDX                            ; 005668be
     LEA EAX,[ESP + 0x4]                 ; 005668bf
     PUSH EAX                            ; 005668c3
-    CALL crt_unknown.c_FUN_00566600     ; 005668c4
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 005668c4
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 005668c9
     JMP 0x00566a20                      ; 005668cc
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -350,8 +355,8 @@ section .text
     PUSH EAX                            ; 00566908
     LEA EAX,[ESP + 0x4]                 ; 00566909
     PUSH EAX                            ; 0056690d
-    CALL crt_unknown.c_FUN_00566600     ; 0056690e
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 0056690e
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 00566913
     JMP 0x00566a20                      ; 00566916
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -371,8 +376,8 @@ section .text
     PUSH EAX                            ; 0056693c
     LEA EAX,[ESP + 0x4]                 ; 0056693d
     PUSH EAX                            ; 00566941
-    CALL crt_unknown.c_FUN_00566600     ; 00566942
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 00566942
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 00566947
     JMP 0x00566a20                      ; 0056694a
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -406,8 +411,8 @@ section .text
     PUSH EAX                            ; 00566995
     LEA EAX,[ESP + 0x4]                 ; 00566996
     PUSH EAX                            ; 0056699a
-    CALL crt_unknown.c_FUN_00566600     ; 0056699b
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 0056699b
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 005669a0
     JMP 0x00566a20                      ; 005669a3
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -430,8 +435,8 @@ section .text
     PUSH EDX                            ; 005669d9
     LEA EAX,[ESP + 0x4]                 ; 005669da
     PUSH EAX                            ; 005669de
-    CALL crt_unknown.c_FUN_00566600     ; 005669df
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
+    CALL crt_unknown.c_formatTwoDigits_FUN_00566600 ; 005669df
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_formatTwoDigits_FUN_00566600(char * buffer, int value)
     ADD ESP,0x8                         ; 005669e4
     JMP 0x00566a20                      ; 005669e7
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -442,13 +447,13 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 005669f0
     ADD EAX,0x76c                       ; 005669f3
     PUSH EAX                            ; 005669f8
-    CALL FUN_0056dc68                   ; 005669f9
-        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; undefined FUN_0056dc68()
+    CALL crt_stdio.c_IntegerToString_FUN_0056dc68 ; 005669f9
+        ;   XREF to: 0056dc68 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_0056dc68(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 005669fe
     JMP 0x00566a20                      ; 00566a01
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
-    CALL FUN_0056d608                   ; 00566a03
-        ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d608()
+    CALL crt_time.c_tzset_FUN_0056d608  ; 00566a03
+        ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; void crt_time.c_tzset_FUN_0056d608()
         ;   Label: LAB_00566a03
     MOV ESI,dword ptr [EBX + 0x20]      ; 00566a08
     MOV ESI,dword ptr [ESI*0x4 + 0x5c1f0c] ; 00566a0b | PTR_DAT_005c1f0c

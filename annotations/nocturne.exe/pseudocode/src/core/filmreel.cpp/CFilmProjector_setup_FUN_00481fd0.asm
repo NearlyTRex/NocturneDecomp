@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(int param_1)
+; void core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CActorDestination *param_1)
 ;
 ;
 ; Called Functions:
@@ -17,12 +17,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481fd1
     PUSH EBX                            ; 00481fd5
     CALL core_dest.cpp_CActorDestination_setup_FUN_0044b810 ; 00481fd6
-        ;   XREF to: 0044b810 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_setup_FUN_0044b810()
+        ;   XREF to: 0044b810 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_CActorDestination_setup_FUN_0044b810(CActorDestination * this_ptr)
     ADD ESP,0x4                         ; 00481fdb
     LEA EAX,[EBX + 0x1ec]               ; 00481fde
     PUSH EAX                            ; 00481fe4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 00481fe5
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     MOV dword ptr [EBX + 0xf8],0x1      ; 00481fea
     MOV dword ptr [EBX + 0x3d0],0x0     ; 00481ff4
     ADD ESP,0x4                         ; 00481ffe

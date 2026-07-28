@@ -9,6 +9,6 @@
 void shape_edittool_cpp_FUN_00473ff0(uint *param_1,uint *param_2)
 
 {
-  _stricmp(*param_1,*param_2);
+  _stricmp((char *)*param_1,(char *)*param_2);
   return;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(int param_1)
+; int __cdecl core_weapon_cpp_CWeapon_fire_FUN_00554600(CWeapon *this_ptr)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_crossbow.cpp_FUN_0043d1c0 at 0043d1fd

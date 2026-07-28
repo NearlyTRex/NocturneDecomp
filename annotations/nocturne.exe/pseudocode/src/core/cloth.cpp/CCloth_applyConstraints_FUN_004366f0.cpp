@@ -2,20 +2,19 @@
 // Address: 004366f0
 // Address Range: [[004366f0, 00436e43]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,float *param_2)
+// Signature: void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_ptr,SClothVertex *vertex)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,float *param_2)
+void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(CCloth *this_ptr,SClothVertex *vertex)
 
 {
-  float fVar1;
-  float fVar2;
+  CVector3f *pCVar1;
+  int *piVar2;
   float *pfVar3;
-  float *pfVar4;
-  int iVar5;
-  float *pfVar6;
-  float *pfVar7;
+  int iVar4;
+  float *pfVar5;
+  SClothVertex *pSVar6;
   float local_130;
   float local_12c;
   float local_128;
@@ -71,9 +70,9 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
   float local_48;
   float local_44;
   byte *local_40;
-  int local_3c;
-  int local_38;
-  float *local_34;
+  int *local_3c;
+  float *local_38;
+  SClothVertex *local_34;
   float *local_30;
   float local_2c;
   float local_28;
@@ -81,25 +80,25 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
   int local_20;
   float local_1c;
   float local_18;
-  float *local_14;
+  CVector3f *local_14;
   
-  if (param_2[1] < *(float *)(param_1 + 0x3ab04)) {
-    param_2[10] = 0.0;
-    param_2[1] = *(float *)(param_1 + 0x3ab04);
-    param_2[0x2f] = 1.4013e-45;
+  if ((vertex->position).y < this_ptr->vertices[0x300].secondary_velocity.z) {
+    (vertex->secondary_velocity).y = 0.0;
+    (vertex->position).y = this_ptr->vertices[0x300].secondary_velocity.z;
+    vertex->floor_collision = 1;
   }
-  iVar5 = 0;
-  if (0 < (int)param_2[0xc]) {
-    local_34 = (float *)(param_1 + 0x37b24);
-    pfVar4 = param_2 + 9;
-    pfVar6 = (float *)(param_1 + 0x3ab00);
-    local_3c = param_1 + 0x398;
-    pfVar7 = param_2;
+  iVar4 = 0;
+  if (0 < vertex->connected_count) {
+    local_34 = this_ptr->vertices + 0x2d5;
+    pCVar1 = &vertex->secondary_velocity;
+    pfVar5 = &this_ptr->vertices[0x300].secondary_velocity.y;
+    local_3c = &(this_ptr->model).texture_list[8].textures[2].base.count;
+    pSVar6 = vertex;
     do {
-      pfVar3 = (float *)(local_3c + (int)pfVar7[0xd] * 0x11c);
-      local_130 = *param_2 - *pfVar3;
-      local_12c = param_2[1] - pfVar3[1];
-      local_128 = param_2[2] - pfVar3[2];
+      piVar2 = local_3c + pSVar6->connected_indices[0] * 0x47;
+      local_130 = (vertex->position).x - (float)*piVar2;
+      local_12c = (vertex->position).y - (float)piVar2[1];
+      local_128 = (vertex->position).z - (float)piVar2[2];
       if (&local_7c != &local_130) {
         local_7c = local_130;
         local_78 = local_12c;
@@ -107,7 +106,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
       local_24 = (float)(((int)local_5c >> 1) + (int)CVector3f_01c70708.y);
-      local_1c = pfVar7[0x1e];
+      local_1c = pSVar6->rest_lengths[0];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
         local_e8 = local_7c * local_2c;
@@ -117,15 +116,15 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
         local_dc = local_e8 * local_d4;
         local_d8 = local_e4 * local_d4;
         local_d4 = local_e0 * local_d4;
-        *param_2 = *param_2 - local_dc;
-        param_2[1] = param_2[1] - local_d8;
-        param_2[2] = param_2[2] - local_d4;
-        local_100 = local_dc * *pfVar6;
-        local_fc = local_d8 * *pfVar6;
-        local_f8 = local_d4 * *pfVar6;
-        *pfVar4 = *pfVar4 - local_100;
-        param_2[10] = param_2[10] - local_fc;
-        param_2[0xb] = param_2[0xb] - local_f8;
+        (vertex->position).x = (vertex->position).x - local_dc;
+        (vertex->position).y = (vertex->position).y - local_d8;
+        (vertex->position).z = (vertex->position).z - local_d4;
+        local_100 = local_dc * *pfVar5;
+        local_fc = local_d8 * *pfVar5;
+        local_f8 = local_d4 * *pfVar5;
+        pCVar1->x = pCVar1->x - local_100;
+        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y - local_fc;
+        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z - local_f8;
       }
       if (local_24 < local_1c) {
         local_28 = local_1c - local_24;
@@ -136,87 +135,92 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
         local_94 = local_118 * local_8c;
         local_90 = local_114 * local_8c;
         local_8c = local_110 * local_8c;
-        local_f4 = local_94 * *local_34;
-        local_f0 = local_90 * *local_34;
-        local_ec = local_8c * *local_34;
-        *param_2 = *param_2 + local_f4;
-        param_2[1] = param_2[1] + local_f0;
-        param_2[2] = param_2[2] + local_ec;
-        local_c4 = local_f4 * *pfVar6;
-        local_c0 = local_f0 * *pfVar6;
-        local_bc = local_ec * *pfVar6;
-        *pfVar4 = *pfVar4 + local_c4;
-        param_2[10] = param_2[10] + local_c0;
-        param_2[0xb] = param_2[0xb] + local_bc;
+        local_f4 = local_94 * (local_34->position).x;
+        local_f0 = local_90 * (local_34->position).x;
+        local_ec = local_8c * (local_34->position).x;
+        (vertex->position).x = (vertex->position).x + local_f4;
+        (vertex->position).y = (vertex->position).y + local_f0;
+        (vertex->position).z = (vertex->position).z + local_ec;
+        local_c4 = local_f4 * *pfVar5;
+        local_c0 = local_f0 * *pfVar5;
+        local_bc = local_ec * *pfVar5;
+        pCVar1->x = pCVar1->x + local_c4;
+        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_c0;
+        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_bc;
       }
-      iVar5 = iVar5 + 1;
-      pfVar7 = pfVar7 + 1;
+      iVar4 = iVar4 + 1;
+      pSVar6 = (SClothVertex *)&(pSVar6->position).y;
       local_40 = (byte *)&local_130;
       local_18 = local_24;
-    } while (iVar5 < (int)param_2[0xc]);
+    } while (iVar4 < vertex->connected_count);
   }
   local_20 = 0;
-  if (0 < *(int *)(param_1 + 0x37b4c)) {
-    local_30 = (float *)(param_1 + 0x3ab00);
-    local_38 = param_1 + 0x37b50;
-    local_14 = (float *)(param_1 + 0x37bf0);
+  if (0 < (int)this_ptr->vertices[0x2d5].secondary_velocity.y) {
+    local_30 = &this_ptr->vertices[0x300].secondary_velocity.y;
+    local_38 = &this_ptr->vertices[0x2d5].secondary_velocity.z;
+    local_14 = &this_ptr->vertices[0x2d5].prev_position;
     do {
-      local_70 = *param_2 - *local_14;
-      iVar5 = local_20 * 0xac + local_38;
-      local_6c = param_2[1] - local_14[1];
-      local_68 = param_2[2] - local_14[2];
+      iVar4 = local_20;
+      pfVar5 = local_38;
+      local_70 = (vertex->position).x - local_14->x;
+      local_6c = (vertex->position).y - local_14->y;
+      local_68 = (vertex->position).z - local_14->z;
       if (&local_b8 != &local_70) {
         local_b8 = local_70;
         local_b4 = local_6c;
         local_b0 = local_68;
       }
-      local_a4 = local_b0 * *(float *)(iVar5 + 0x98) +
-                 local_b8 * *(float *)(iVar5 + 0x80) + local_b4 * *(float *)(iVar5 + 0x8c);
-      if ((0.0 <= local_a4) && (local_a4 <= *(float *)(iVar5 + 0x44))) {
-        local_ac = local_b0 * *(float *)(iVar5 + 0x90) +
-                   local_b8 * *(float *)(iVar5 + 0x78) + local_b4 * *(float *)(iVar5 + 0x84);
-        local_a8 = local_b0 * *(float *)(iVar5 + 0x94) +
-                   local_b8 * *(float *)(iVar5 + 0x7c) + local_b4 * *(float *)(iVar5 + 0x88);
-        fVar1 = local_ac * *(float *)(iVar5 + 0x38);
-        fVar2 = local_a8 * *(float *)(iVar5 + 0x3c);
-        local_58 = fVar2 * fVar2 + fVar1 * fVar1;
+      local_a4 = local_b0 * local_38[local_20 * 0x2b + 0x26] +
+                 local_b8 * local_38[local_20 * 0x2b + 0x20] +
+                 local_b4 * local_38[local_20 * 0x2b + 0x23];
+      if ((0.0 <= local_a4) && (local_a4 <= local_38[local_20 * 0x2b + 0x11])) {
+        local_ac = local_b0 * local_38[local_20 * 0x2b + 0x24] +
+                   local_b8 * local_38[local_20 * 0x2b + 0x1e] +
+                   local_b4 * local_38[local_20 * 0x2b + 0x21];
+        local_a8 = local_b0 * local_38[local_20 * 0x2b + 0x25] +
+                   local_b8 * local_38[local_20 * 0x2b + 0x1f] +
+                   local_b4 * local_38[local_20 * 0x2b + 0x22];
+        local_58 = local_a8 * local_38[local_20 * 0x2b + 0xf] *
+                   local_a8 * local_38[local_20 * 0x2b + 0xf] +
+                   local_ac * local_38[local_20 * 0x2b + 0xe] *
+                   local_ac * local_38[local_20 * 0x2b + 0xe];
         local_54 = (float)(((int)local_58 >> 1) + (int)CVector3f_01c70708.y);
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
           local_44 = (float)((int)CVector3f_01c70708.z - ((int)local_48 >> 1));
-          local_88 = *(float *)(iVar5 + 0x14) * (float)1.05 * local_ac * local_44;
-          local_84 = (float)1.05 * *(float *)(iVar5 + 0x18) * local_a8 * local_44;
+          local_88 = local_38[local_20 * 0x2b + 5] * (float)1.05 * local_ac * local_44;
+          local_84 = (float)1.05 * local_38[local_20 * 0x2b + 6] * local_a8 * local_44;
           local_80 = local_a4;
-          pfVar4 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                                      (iVar5 + 0x78,local_10c,&local_88);
-          local_a0 = *(float *)(iVar5 + 0xa0) + *pfVar4;
-          local_9c = *(float *)(iVar5 + 0xa4) + pfVar4[1];
-          local_98 = *(float *)(iVar5 + 0xa8) + pfVar4[2];
+          pfVar3 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                                      (local_38 + local_20 * 0x2b + 0x1e,local_10c,&local_88);
+          local_a0 = pfVar5[iVar4 * 0x2b + 0x28] + *pfVar3;
+          local_9c = pfVar5[iVar4 * 0x2b + 0x29] + pfVar3[1];
+          local_98 = pfVar5[iVar4 * 0x2b + 0x2a] + pfVar3[2];
           if (&local_88 != &local_a0) {
             local_88 = local_a0;
             local_84 = local_9c;
             local_80 = local_98;
           }
-          local_d0 = local_88 - *param_2;
-          local_cc = local_84 - param_2[1];
-          local_c8 = local_80 - param_2[2];
-          if (param_2 != &local_88) {
-            *param_2 = local_88;
-            param_2[1] = local_84;
-            param_2[2] = local_80;
+          local_d0 = local_88 - (vertex->position).x;
+          local_cc = local_84 - (vertex->position).y;
+          local_c8 = local_80 - (vertex->position).z;
+          if (vertex != (SClothVertex *)&local_88) {
+            (vertex->position).x = local_88;
+            (vertex->position).y = local_84;
+            (vertex->position).z = local_80;
           }
           local_124 = local_d0 * *local_30;
           local_120 = local_cc * *local_30;
           local_11c = local_c8 * *local_30;
-          param_2[9] = param_2[9] + local_124;
-          param_2[10] = param_2[10] + local_120;
-          param_2[0xb] = param_2[0xb] + local_11c;
-          param_2[0x2e] = 1.4013e-45;
+          (vertex->secondary_velocity).x = (vertex->secondary_velocity).x + local_124;
+          (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_120;
+          (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_11c;
+          vertex->body_collision = 1;
         }
       }
-      local_14 = local_14 + 0x2b;
+      local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);
       local_20 = local_20 + 1;
-    } while (local_20 < *(int *)(param_1 + 0x37b4c));
+    } while (local_20 < (int)this_ptr->vertices[0x2d5].secondary_velocity.y);
   }
   return;
 }

@@ -5,27 +5,27 @@
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90
 // Address: 004f3e90
-undefined4 CPackedBitmap::ctor(undefined4 param_1);
+CPackedBitmap * __cdecl CPackedBitmap::ctor(CPackedBitmap *this_ptr);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_004f3eb0
 // Address: 004f3eb0
-undefined4 CPackedBitmap::init(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+CPackedBitmap * CPackedBitmap::init(CPackedBitmap *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00
 // Address: 004f3f00
-undefined4 CPackedBitmap::dtor(undefined4 param_1);
+CPackedBitmap * __cdecl CPackedBitmap::dtor(CPackedBitmap *this_ptr,uint flags);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20
 // Address: 004f3f20
-void __cdecl CPackedBitmap::reset(int param_1);
+void __cdecl CPackedBitmap::reset(CPackedBitmap *this_ptr);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f3f50
 // Address: 004f3f50
-void FUN_004f3f50(int param_1);
+void FUN_004f3f50(CPackedBitmap *param_1);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f3f80
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80
 // Address: 004f3f80
-void FUN_004f3f80(int param_1);
+void CPackedBitmap::freePackedData(int param_1);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0
 // Address: 004f3fa0
@@ -33,43 +33,43 @@ int CPackedBitmap::getTotalMemoryUsage(int param_1);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0
 // Address: 004f3fc0
-void __cdecl CPackedBitmap::setFilename(int param_1,undefined4 param_2);
+void __cdecl CPackedBitmap::setFilename(CPackedBitmap *this_ptr,char *filename);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f3fe0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_004f3fe0
 // Address: 004f3fe0
-uint FUN_004f3fe0(int param_1,int param_2,int param_3);
+uint CPackedBitmap::getPixelValue(int param_1,int param_2,int param_3);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f4050
 // Address: 004f4050
 void FUN_004f4050(int param_1,int param_2,int param_3);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f4170
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
 // Address: 004f4170
-void FUN_004f4170(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7);
+void __cdecl CPackedBitmap::renderClippedRegion(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f4310
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_004f4310
 // Address: 004f4310
-void FUN_004f4310(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
+void __cdecl CPackedBitmap::renderWithGlobalClipping(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f4410
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_004f4410
 // Address: 004f4410
-void FUN_004f4410(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
+void __cdecl CPackedBitmap::renderIfIntersectsRect(CPackedBitmap *this_ptr,int dest_x,int dest_y,int rect_left,int rect_top,int rect_right,int rect_bottom);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f44d0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_004f44d0
 // Address: 004f44d0
-void FUN_004f44d0(int param_1,int param_2,int param_3,int param_4);
+void __cdecl CPackedBitmap::copyNoClip(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f45e0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_004f45e0
 // Address: 004f45e0
-void FUN_004f45e0(void);
+void CPackedBitmap::copyToBufferAtPosition(void);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630
 // Address: 004f4630
-void __cdecl CPackedBitmap::reloadFromBitmapFile(undefined4 param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,int param_6);
+void __cdecl CPackedBitmap::reloadFromBitmapFile(CPackedBitmap *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6,undefined4 param_7,int param_8);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0
 // Address: 004f46b0
-void __cdecl CPackedBitmap::loadAndCompressBitmap(int param_1,int param_2);
+void __cdecl CPackedBitmap::loadAndCompressBitmap(CPackedBitmap *this_ptr,int apply_palette_flag);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700
 // Address: 004f4700
@@ -85,39 +85,39 @@ void FUN_004f49d8(void);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00
 // Address: 004f4a00
-undefined4 __cdecl CPackedBitmap::applyACTPalette(undefined4 param_1,undefined4 param_2);
+void __cdecl CPackedBitmap::applyACTPalette(CPackedBitmap *this_ptr,char *act_filename);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50
 // Address: 004f4a50
-void __cdecl CPackedBitmap::applyPaletteToPackedData(int param_1,int param_2);
+void __cdecl CPackedBitmap::applyPaletteToPackedData(CPackedBitmap *this_ptr,uchar *palette_buffer);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_004f4ab0
 // Address: 004f4ab0
-void __cdecl CPackedBitmap::applyPalette(undefined4 param_1);
+void __cdecl CPackedBitmap::applyPalette(CPackedBitmap *this_ptr);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0
 // Address: 004f4ac0
-void CPackedBitmap::loadByFileExtension(char *param_1,undefined4 param_2);
+void CPackedBitmap::loadByFileExtension(CPackedBitmap *param_1,int param_2);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f4b30
 // Address: 004f4b30
-void FUN_004f4b30(undefined4 param_1,undefined4 param_2);
+void FUN_004f4b30(CPackedBitmap *param_1,char *param_2);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0
 // Address: 004f4bb0
-void __cdecl CPackedBitmap::writePBMFile(int param_1,int param_2);
+void __cdecl CPackedBitmap::writePBMFile(CPackedBitmap *this_ptr,_FILE *file_handle);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
 // Address: 004f4c80
-void __cdecl CPackedBitmap::readPBMFile(int param_1,undefined4 param_2,int param_3);
+void __cdecl CPackedBitmap::readPBMFile(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
 // Address: 004f4e40
-void __cdecl CPackedBitmap::openPBMFile(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CPackedBitmap::openPBMFile(CPackedBitmap *param_1,char *param_2);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0
 // Address: 004f4ef0
-void __cdecl CPackedBitmap::loadPBMFile(undefined4 param_1,undefined4 param_2);
+void __cdecl CPackedBitmap::loadPBMFile(CPackedBitmap *this_ptr,int apply_palette_flag);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f4f10
 // Address: 004f4f10
@@ -125,11 +125,11 @@ void FUN_004f4f10(void);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f4f90
 // Address: 004f4f90
-int FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5);
+CPackedBitmap * FUN_004f4f90(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f5110
 // Address: 004f5110
-int FUN_004f5110(int *param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
+CPackedBitmap * FUN_004f5110(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
 
 // Original: cockpit_pkbitmap.cpp_FUN_004f5290
 // Address: 004f5290

@@ -2,13 +2,13 @@
 // Address: 00401f30
 // Address Range: [[00401f30, 0040203c]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int param_1,int param_2,int param_3)
+// Signature: int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int char_code,int x_pos,int y_pos)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int param_1,int param_2,int param_3)
+int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int char_code,int x_pos,int y_pos)
 
 {
   char *pcVar1;
@@ -18,21 +18,22 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int param_1,int param_2
   byte *puVar5;
   ushort uVar6;
   uint uVar7;
+  int iVar8;
   
-  iVar3 = (param_1 + -0x20) * 0x91;
+  iVar3 = (char_code + -0x20) * 0x91;
   uVar7 = (uint)(byte)(&DAT_005a4b80)[iVar3];
-  if ((((param_2 < _DAT_01c00c58) || (param_3 < _DAT_01c00c5c)) ||
-      ((int)((_DAT_01c00c60 + 1) - uVar7) < param_2)) || (_DAT_01c00c64 + -10 < param_3)) {
+  if ((((x_pos < _DAT_01c00c58) || (y_pos < _DAT_01c00c5c)) ||
+      ((int)((_DAT_01c00c60 + 1) - uVar7) < x_pos)) || (_DAT_01c00c64 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
-    param_3 = param_3 * 4;
+    iVar8 = y_pos * 4;
     pcVar1 = &DAT_005a4b81 + iVar3;
-    iVar3 = param_3 + 0x2c;
+    iVar3 = iVar8 + 0x2c;
     if (DAT_005b7624 == 8) {
       do {
         iVar2 = 0;
-        puVar5 = (byte *)(*(int *)(&DAT_01bd2fa0 + param_3) + param_2);
+        puVar5 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
             if (*pcVar1 == '\0') {
@@ -46,13 +47,13 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int param_1,int param_2
             puVar5 = puVar5 + 1;
           } while (iVar2 < (int)uVar7);
         }
-        param_3 = param_3 + 4;
+        iVar8 = iVar8 + 4;
         *puVar5 = 0;
-      } while (param_3 != iVar3);
+      } while (iVar8 != iVar3);
     }
     else {
       do {
-        puVar4 = (ushort *)(*(int *)(&DAT_01bd2fa0 + param_3) + param_2 * 2);
+        puVar4 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar8) + x_pos * 2);
         iVar2 = 0;
         if (uVar7 != 0) {
           do {
@@ -66,9 +67,9 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401f30(int param_1,int param_2
             puVar4 = puVar4 + 1;
           } while (iVar2 < (int)uVar7);
         }
-        param_3 = param_3 + 4;
+        iVar8 = iVar8 + 4;
         *puVar4 = _DAT_01bff720;
-      } while (param_3 != iVar3);
+      } while (iVar8 != iVar3);
     }
     iVar3 = uVar7 + 1;
   }

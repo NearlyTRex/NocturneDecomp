@@ -2,28 +2,28 @@
 // Address: 004b1820
 // Address Range: [[004b1820, 004b1909]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(int *param_1,uint param_2,uint param_3)
+// Signature: void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(CGround *this_ptr,int column,int row)
 
 #include "nocturne.h"
 
-void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(int *param_1,uint param_2,uint param_3)
+void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(CGround *this_ptr,int column,int row)
 
 {
   int iVar1;
   int iVar2;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004b1800
-                    (param_1,(param_3 - param_1[0xc]) + param_1[5],
-                     (param_2 - param_1[0xb]) + param_1[4]);
-  local_1c = param_1[7] * param_2 * 0x100;
-  local_14 = param_1[7] * param_3 * 0x100;
-  local_18 = param_1[8] *
-             (int)*(short *)(param_1[9] +
-                            ((param_3 & param_1[3]) * *param_1 + (param_2 & param_1[2])) * 4);
-  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c5014 + iVar1 * 0xc,&local_1c);
+                    (this_ptr,(row - this_ptr->camera_y) + this_ptr->grid_height,
+                     (column - this_ptr->camera_x) + this_ptr->grid_width);
+  local_1c.x = this_ptr->vertical_scale * column * 0x100;
+  local_1c.z = this_ptr->vertical_scale * row * 0x100;
+  local_1c.y = this_ptr->height_scale *
+               (int)this_ptr->terrain_data
+                    [(row & this_ptr->height_minus_1) * this_ptr->width +
+                     (column & this_ptr->width_minus_1)].height;
+  engine_special_cpp_transformPoint_FUN_00530a25
+            ((SProjectedVertex *)(&DAT_005c5014 + iVar1 * 0xc),&local_1c);
   (&DAT_005c5034)[iVar1 * 0xc] = 0x3fff;
   (&DAT_005c5038)[iVar1 * 0xc] = 0x3fff;
   (&DAT_005c503c)[iVar1 * 0xc] = 0x3fff;
@@ -31,7 +31,8 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(int *p
     (&DAT_005c5040)[iVar1 * 0xc] = 0;
   }
   else {
-    iVar2 = (int)((&DAT_005c501c)[iVar1 * 0xc] << 8) / (param_1[4] * param_1[7]);
+    iVar2 = (int)((&DAT_005c501c)[iVar1 * 0xc] << 8) /
+            (this_ptr->grid_width * this_ptr->vertical_scale);
     (&DAT_005c5040)[iVar1 * 0xc] = iVar2;
     if (0xffff < iVar2) {
       (&DAT_005c5040)[iVar1 * 0xc] = 0xffff;

@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 150,
+    "complexity_score": 45,
     "cross_reference_count": 76,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 51
   },
@@ -192,6 +191,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ada20",
+      "from_addr": "004ada62",
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004ada20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004abb50",
       "from_addr": "004abb7a",
       "name": "core_glass.cpp_FUN_004abb50",
@@ -201,12 +206,6 @@
       "addr": "004accf0",
       "from_addr": "004acd22",
       "name": "core_glass.cpp_FUN_004accf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ada20",
-      "from_addr": "004ada62",
-      "name": "core_glass.cpp_FUN_004ada20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -306,15 +305,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fd450",
-      "from_addr": "004fd7ca",
-      "name": "core_scat.cpp_CScat_updateAiming_FUN_004fd450",
+      "addr": "004fda20",
+      "from_addr": "004fda53",
+      "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fda20",
-      "from_addr": "004fda53",
-      "name": "core_scat.cpp_FUN_004fda20",
+      "addr": "004fd450",
+      "from_addr": "004fd7ca",
+      "name": "core_scat.cpp_CScat_updateAiming_FUN_004fd450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -452,7 +451,7 @@
     {
       "addr": "005661c2",
       "from_addr": "005661e3",
-      "name": "crt_unknown.c_FUN_005661c2",
+      "name": "crt_unknown.c___arrinit_dispatch_FUN_005661c2",
       "type": "COMPUTED_CALL"
     },
     {
@@ -464,7 +463,7 @@
     {
       "addr": "00473190",
       "from_addr": "004731b4",
-      "name": "shape_edittool.cpp_FUN_00473190",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -484,7 +483,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c___arrinit_FUN_005644a7",
-    "signature": "int __cdecl crt_memory_c___arrinit_FUN_005644a7(int param_1,uint param_2,int param_3)"
+    "signature": "void * __cdecl crt_memory_c___arrinit_FUN_005644a7(void *array_start,int element_count,WatcomTypeInfo *type_info)"
   },
   "function_calls": [],
   "globals": [],
@@ -527,7 +526,7 @@
       {
         "call_addr": "004ada62",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004ada20",
+        "caller": "core_glass.cpp_CGlass_shatter_FUN_004ada20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -582,7 +581,7 @@
       {
         "call_addr": "005661e3",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005661c2",
+        "caller": "crt_unknown.c___arrinit_dispatch_FUN_005661c2",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -603,10 +602,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.387096774193548,
@@ -636,10 +635,10 @@
     "pcode_op_count": 136
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 44,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -662,108 +661,46 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "array_start",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "element_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl __arrinit(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl __arrinit(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int __cdecl __arrinit(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(void *)((int)param0",
       "severity": "moderate",
-      "text": "code *pcVar1;",
-      "type": "unresolved_funcptr"
+      "text": "param0 = (void *)((int)param0 + iVar2);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
+      "description": "Pointer value `param0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)param0",
       "severity": "moderate",
-      "text": "pcVar1 = *(code **)(param_3 + 4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar1 = *(code **)(param_3 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_3 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "for (uVar4 = 0; uVar4 < param_2; uVar4 = uVar4 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(*pcVar1)(iVar3,uVar4,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "text": "param0 = (void *)((int)param0 + iVar2);",
+      "type": "pointer_truncation"
     }
   ]
 }

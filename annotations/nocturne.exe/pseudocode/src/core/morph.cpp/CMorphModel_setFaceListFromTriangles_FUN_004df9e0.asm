@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(int *param_1,int param_2,ushort *param_3,int param_4,int *param_5,int param_6,int param_7)
+; void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   part_index
+; SInputFace *     Stack[0xc]:4   face_data
+; STextureSet *    Stack[0x10]:4   texture_sets
+; int *            Stack[0x14]:4   index_data
+; int              Stack[0x18]:4   start_face
+; int              Stack[0x1c]:4   face_count
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -102,7 +110,7 @@ section .text
     PUSH EAX                            ; 004dfaa7
     PUSH EBX                            ; 004dfaa8
     CALL core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0 ; 004dfaa9
-        ;   XREF to: 004dfba0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0()
+        ;   XREF to: 004dfba0 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(CMorphModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004dfaae
     MOV EDI,dword ptr [ESP + 0x14]      ; 004dfab1
     MOV dword ptr [ESP],EAX             ; 004dfab5

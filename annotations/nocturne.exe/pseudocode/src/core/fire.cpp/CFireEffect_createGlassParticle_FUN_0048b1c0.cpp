@@ -2,13 +2,13 @@
 // Address: 0048b1c0
 // Address Range: [[0048b1c0, 0048b21d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 
 {
   int iVar1;
@@ -19,6 +19,7 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(uint par
     _DAT_01c4f088 = 0;
   }
   core_fire_cpp_CGlassParticle_init_FUN_004850d0
-            (iVar1 + 0x1c4f08c,param_2,param_3,param_4,param_5,param_6);
+            ((CGlassParticle *)(iVar1 + 0x1c4f08c),triangle_vertices,uv_u_per_vertex,uv_v_per_vertex
+             ,texture,lifetime);
   return;
 }

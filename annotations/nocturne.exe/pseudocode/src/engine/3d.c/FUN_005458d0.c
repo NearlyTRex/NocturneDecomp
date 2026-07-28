@@ -11,16 +11,16 @@
 void engine_3d_c_FUN_005458d0(void)
 
 {
-  int iVar1;
+  CTextureCache *pCVar1;
   
   engine_texture_cpp_FUN_00544e50(_DAT_02dd0f84);
-  iVar1 = _DAT_02dd0f84;
-  if (_DAT_02dd0f84 == 0) {
-    _DAT_02dd0f84 = 0;
+  pCVar1 = _DAT_02dd0f84;
+  if (_DAT_02dd0f84 == (CTextureCache *)0x0) {
+    _DAT_02dd0f84 = (CTextureCache *)0x0;
     return;
   }
-  engine_texture_cpp_FUN_00544e60(_DAT_02dd0f84);
-  FUN_00564494(iVar1);
-  _DAT_02dd0f84 = 0;
+  engine_texture_cpp_CTextureCache_freeTextures_FUN_00544e60(_DAT_02dd0f84);
+  FUN_00564494(pCVar1);
+  _DAT_02dd0f84 = (CTextureCache *)0x0;
   return;
 }

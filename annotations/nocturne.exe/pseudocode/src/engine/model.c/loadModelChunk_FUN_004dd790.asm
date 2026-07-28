@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl engine_model_c_loadModelChunk_FUN_004dd790(undefined4 param_1,int param_2)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_004dd790(char *filename,int model_size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; int              Stack[0x8]:4   model_size
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ;
@@ -47,7 +50,7 @@ section .text
     PUSH EBP                            ; 004dd7a4
     PUSH 0x58a664                       ; 004dd7a5 | = "models"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004dd7aa
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dd7af
     MOV EDI,EAX                         ; 004dd7b2
     TEST EAX,EAX                        ; 004dd7b4
@@ -57,7 +60,7 @@ section .text
         ;   Label: LAB_004dd7bc
     PUSH EAX                            ; 004dd7bf
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004dd7c0
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004dd7c5
     MOV EBX,EAX                         ; 004dd7c8
     TEST EAX,EAX                        ; 004dd7ca
@@ -85,7 +88,7 @@ section .text
     PUSH 0x1                            ; 004dd803
     PUSH EBX                            ; 004dd805
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004dd806
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004dd80b
     CMP EAX,ESI                         ; 004dd80e
     JZ 0x004dd835                       ; 004dd810
@@ -101,7 +104,7 @@ section .text
     PUSH EDI                            ; 004dd835
         ;   Label: LAB_004dd835
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004dd836
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV AH,byte ptr [EBX]               ; 004dd83b
     ADD ESP,0x4                         ; 004dd83d
     CMP AH,0x14                         ; 004dd840

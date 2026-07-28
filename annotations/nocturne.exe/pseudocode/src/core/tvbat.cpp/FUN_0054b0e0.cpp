@@ -9,12 +9,12 @@
 void core_tvbat_cpp_FUN_0054b0e0(void)
 
 {
-  int iVar1;
+  CTVBat *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbf5c);
-  if (iVar1 == 0) {
+  this_ptr = (CTVBat *)FUN_0056497c(0xbf5c);
+  if (this_ptr == (CTVBat *)0x0) {
     return;
   }
-  core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(iVar1);
+  core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(this_ptr);
   return;
 }

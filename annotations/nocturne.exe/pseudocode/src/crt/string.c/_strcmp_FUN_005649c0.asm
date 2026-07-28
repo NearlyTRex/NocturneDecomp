@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ulonglong __cdecl crt_string_c__strcmp_FUN_005649c0(uint *param_1,uint *param_2)
+; int __cdecl crt_string_c__strcmp_FUN_005649c0(char *str1,char *str2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str1
+; char *           Stack[0x8]:4   str2
 ;
 ; XREF[31]:
-;   FUN_0056c750 at 0056c83c
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 at 0040ed9f
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_004386b0 at 004386d0
 ;   core_curtain.cpp_CCurtain_process_FUN_0043ebf0 at 0043ec60
@@ -14,7 +16,8 @@
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 at 0044be79
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bd39
 ;   core_door.cpp_CDoor_setup_FUN_004551f0 at 0045521a
-;   core_dpart.cpp_FUN_004571f0 at 004572fd
+;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0 at 004572fd
+;   core_emitter.cpp_FUN_00478790 at 004787b4
 ;   ... and 21 more
 ;
 ; *****************************************************************************

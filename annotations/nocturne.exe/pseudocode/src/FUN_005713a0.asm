@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005713a0(int param_1)
+; void FUN_005713a0(ThreadData *param_1)
 ;
 ;
 ; XREF[1]:
@@ -11,7 +11,7 @@
 ;   void* PTR_GetCurrentThreadId_00575500 = 00175ce8
 ;
 ; Called Functions:
-;   FUN_0056e9d0
+;   crt_memory.c___GetStackLimits_FUN_0056e9d0
 ;   GetCurrentThreadId
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH 0x0                            ; 005713a9
     PUSH EBX                            ; 005713ab
     MOV dword ptr [EBX + 0xc],0x1       ; 005713ac
-    CALL FUN_0056e9d0                   ; 005713b3
-        ;   XREF to: 0056e9d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e9d0()
+    CALL crt_memory.c___GetStackLimits_FUN_0056e9d0 ; 005713b3
+        ;   XREF to: 0056e9d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c___GetStackLimits_FUN_0056e9d0(ThreadData * pStackBound, uint * pHeapBound)
     ADD ESP,0x8                         ; 005713b8
     CALL dword ptr CS:[0x575500]        ; 005713bb | PTR_GetCurrentThreadId_00575500
     MOV dword ptr [EBX + 0xda],EAX      ; 005713c2

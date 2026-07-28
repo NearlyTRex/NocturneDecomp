@@ -2,12 +2,12 @@
 // Address: 00544940
 // Address Range: [[00544940, 00544944]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_texlist_cpp_CTextureList_dtor_FUN_00544940(undefined4 param_1)
+// Signature: CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_00544940(CTextureList *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-uint __cdecl core_texlist_cpp_CTextureList_dtor_FUN_00544940(uint param_1)
+CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_00544940(CTextureList *this_ptr,uint flags)
 
 {
-  return param_1;
+  return this_ptr;
 }

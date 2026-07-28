@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbitmap_cpp_FUN_004f4b30(undefined4 param_1,undefined4 param_2)
+; void cockpit_pkbitmap_cpp_FUN_004f4b30(CPackedBitmap *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x78]      ; 004f4b3a
     PUSH EDX                            ; 004f4b3e
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f4b3f
-        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_0056568c()
+        ;   XREF to: 0056568c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_0056568c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004f4b44
     MOV EBX,EAX                         ; 004f4b47
     TEST EAX,EAX                        ; 004f4b49
@@ -41,11 +41,11 @@ section .text
     MOV EBP,dword ptr [ESP + 0x74]      ; 004f4b4e
     PUSH EBP                            ; 004f4b52
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 ; 004f4b53
-        ;   XREF to: 004f4bb0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0()
+        ;   XREF to: 004f4bb0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPackedBitmap * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004f4b58
     PUSH EBX                            ; 004f4b5b
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004f4b5c
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004f4b61
     ADD ESP,0x64                        ; 004f4b64
     POP EBP                             ; 004f4b67

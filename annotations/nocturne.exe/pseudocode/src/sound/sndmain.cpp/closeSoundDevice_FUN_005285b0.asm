@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005285b0(void)
+; int __cdecl sound_sndmain_cpp_closeSoundDevice_FUN_005285b0(void)
 ;
 ;
 ; XREF[2]:
@@ -24,7 +24,7 @@ section .text
         ;   Label: sound_sndmain.cpp_closeSoundDevice_FUN_005285b0
     PUSH ESI                            ; 005285b1
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_00528080 ; 005285b2
-        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
+        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
     TEST EAX,EAX                        ; 005285b7
     JZ 0x005285e8                       ; 005285b9
         ;   XREF to: 005285e8 (CONDITIONAL_JUMP)  ; LAB_005285e8
@@ -33,7 +33,7 @@ section .text
     PUSH EBX                            ; 005285c6
         ;   Label: LAB_005285c6
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 005285c7
-        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60()
+        ;   XREF to: 00523a60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample * this_ptr)
     ADD EBX,0x168                       ; 005285cc
     ADD ESP,0x4                         ; 005285d2
     CMP EBX,ESI                         ; 005285d5

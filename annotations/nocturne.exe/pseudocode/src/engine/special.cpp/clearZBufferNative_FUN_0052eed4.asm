@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)
+; void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)
 ;
 ;
 ; XREF[5]:

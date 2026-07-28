@@ -1,0 +1,139 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "005707db",
+      "from_addr": "0057083d",
+      "name": "crt_math.c_handle_math_error_FUN_005707db",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005706aa",
+    "address_range": [
+      [
+        "005706aa",
+        "005706dc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "crt_math.c_set_math_errno_FUN_005706aa",
+    "signature": "double __cdecl crt_math_c_set_math_errno_FUN_005706aa(int errorFlags,double *valuePtr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005706dd",
+      "is_variadic": false,
+      "name": "crt_math.c_process_math_error_FUN_005706dd"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057083d",
+        "call_type": "direct",
+        "caller": "crt_math.c_handle_math_error_FUN_005707db",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4285714285714284,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 18,
+      "INT_ADD": 13,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 72
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "errorFlags",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "valuePtr",
+        "offset": 8,
+        "size": 4,
+        "type": "double *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(int param_1)
+; void __cdecl core_vampboss_cpp_CVampireBoss_transformToBat_FUN_0054e1a0(CVampireBoss *this_ptr)
 ;
+; Parameters:
+; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d281

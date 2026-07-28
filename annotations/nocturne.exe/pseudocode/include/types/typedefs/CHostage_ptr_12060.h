@@ -19,7 +19,7 @@ struct CHostage_ptr_12060 {
     template<typename T> CHostage_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CHostage_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CHostage* operator->() const { return (CHostage*)_raw; }
-    CHostage* adj() const { return (CHostage*)((char*)_raw - offsetof(CHostage, base.base.fires)); }
+    CHostage* adj() const { return (CHostage*)((char*)_raw - offsetof(CHostage, base.base.fires[0].offset)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

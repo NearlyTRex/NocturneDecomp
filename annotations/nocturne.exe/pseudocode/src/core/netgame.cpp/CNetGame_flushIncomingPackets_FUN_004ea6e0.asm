@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(int param_1)
+; void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9de4
@@ -26,7 +28,7 @@ section .text
     ADD ESI,0x170                       ; 004ea6e6
     PUSH ESI                            ; 004ea6ec
     CALL support_trisock.cpp_isSocketValid_FUN_00548f60 ; 004ea6ed
-        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_isSocketValid_FUN_00548f60()
+        ;   XREF to: 00548f60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_00548f60(_SOCKET * socket_handle)
     ADD ESP,0x4                         ; 004ea6f2
     TEST EAX,EAX                        ; 004ea6f5
     JZ 0x004ea73a                       ; 004ea6f7
@@ -38,7 +40,7 @@ section .text
     MOV dword ptr [0x005c1664],EDX      ; 004ea703 | DAT_005c1664
     XOR EBP,EBP                         ; 004ea709
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004ea70b
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_004ea70b
     MOV EBX,EBP                         ; 004ea710
     PUSH EBP                            ; 004ea712
@@ -47,7 +49,7 @@ section .text
     PUSH 0x1d16408                      ; 004ea718
     PUSH ESI                            ; 004ea71d
     CALL support_trisock.cpp_receiveSocketData_FUN_00549010 ; 004ea71e
-        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_receiveSocketData_FUN_00549010()
+        ;   XREF to: 00549010 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_00549010(_SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 004ea723
     TEST EAX,EAX                        ; 004ea726
     JLE 0x004ea732                      ; 004ea728

@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 0041f2f2
         ;   Label: LAB_0041f2f2
     CALL core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 ; 0041f2f3
-        ;   XREF to: 0041f310 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CLightActor_ctor_FUN_0041f310()
+        ;   XREF to: 0041f310 (UNCONDITIONAL_CALL)  ; CLightActor * core_boxactor.cpp_CLightActor_ctor_FUN_0041f310(CLightActor * this_ptr)
     ADD ESP,0x4                         ; 0041f2f8
     RET                                 ; 0041f2fb
 

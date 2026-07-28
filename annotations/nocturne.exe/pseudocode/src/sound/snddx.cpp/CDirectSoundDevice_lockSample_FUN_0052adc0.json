@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 266,
+    "complexity_score": 248,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 21,
+    "pseudocode_lines": 33,
+    "suspect_count": 20,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 111
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -148,7 +147,7 @@
     ],
     "convention": "unknown",
     "name": "sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0",
-    "signature": "undefined4 sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(undefined4 param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)"
   },
   "function_calls": [
     {
@@ -246,7 +245,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -254,7 +253,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -262,7 +261,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -270,7 +269,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -278,12 +277,12 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "uint sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,int param_5)",
+      "text": "int sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(uint param_1,int param_2,int param_3,int param_4,CSfxSample *param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((0 < param_2) && (param_2 < 0x19)) && (*(int *)(&DAT_02dc9244 + param_2 * 4) != 0)) {",
@@ -291,7 +290,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((0 < param_2) && (param_2 < 0x19)) && (*(int *)(&DAT_02dc9244 + param_2 * 4) != 0)) {",
@@ -299,7 +298,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((0 < param_2) && (param_2 < 0x19)) && (*(int *)(&DAT_02dc9244 + param_2 * 4) != 0)) {",
@@ -307,7 +306,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "if (((0 < param_2) && (param_2 < 0x19)) && (*(int *)(&DAT_02dc9244 + param_2 * 4) != 0)) {",
@@ -318,7 +317,31 @@
       "line": 17,
       "match": "param_5",
       "severity": "mild",
-      "text": "iStack_19c = param_5;",
+      "text": "iStack_1b4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "piStack_1a0 = &param_5->streaming_slot_index;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "piStack_1a4 = &param_5->stream_read_position;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "piStack_1a8 = &param_5->buffer_id;",
       "type": "unnamed_param"
     },
     {
@@ -326,36 +349,12 @@
       "line": 21,
       "match": "param_5",
       "severity": "mild",
-      "text": "iStack_1a0 = param_5 + 0x15c;",
+      "text": "piStack_1ac = &param_5->streaming_buffer_size;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iStack_1a4 = param_5 + 0x164;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iStack_1a8 = param_5 + 0x158;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iStack_1ac = param_5 + 0x160;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
       "match": "param_4",
       "severity": "mild",
       "text": "iStack_1b0 = param_4 * iStack_1b4;",
@@ -363,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "iStack_1b4 = iStack_1b4 * param_3;",
@@ -371,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "piStack_1b8 = *(int **)(&DAT_02dc9244 + param_2 * 4);",
@@ -379,7 +378,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 24,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "piStack_1b8 = *(int **)(&DAT_02dc9244 + param_2 * 4);",
@@ -387,27 +386,19 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*piStack_1b8 + 0x2c))();",
+      "text": "error_code = (**(code **)(*piStack_1b8 + 0x2c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 27,
       "match": "param_5",
       "severity": "mild",
-      "text": "return *(uint *)(param_5 + 0x160);",
+      "text": "return param_5->streaming_buffer_size;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x52adfa assigned to bare local `iStack_1a0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_1a0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
-      "match": "0x52adfa",
-      "severity": "moderate",
-      "text": "iStack_1a0 = 0x52adfa;",
-      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

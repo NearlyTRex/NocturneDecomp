@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_setFogColorFromPalette_FUN_00532a80(int param_1)
+; int __cdecl engine_special_cpp_setFogColorFromPalette_FUN_00532a80(int palette_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   palette_index
 ;
 ; XREF[1]:
 ;   engine_2d.c_FUN_00403070 at 004030da

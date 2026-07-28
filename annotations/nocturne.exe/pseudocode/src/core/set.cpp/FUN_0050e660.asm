@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0050e660(undefined4 param_1,undefined4 param_2,float param_3,float param_4,float param_5)
+; void core_set_cpp_FUN_0050e660(undefined4 param_1,float param_2,float param_3,float param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
@@ -32,7 +32,7 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 0050e66c
     PUSH 0x1fb8508                      ; 0050e670
     CALL core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80 ; 0050e675
-        ;   XREF to: 00447e80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80()
+        ;   XREF to: 00447e80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, ...)
     ADD ESP,0x14                        ; 0050e67a
     FLD float ptr [ESP + 0xc]           ; 0050e67d
     FADD float ptr [ESP + 0x10]         ; 0050e681

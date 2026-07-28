@@ -2,40 +2,37 @@
 // Address: 004798e0
 // Address Range: [[004798e0, 00479987]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+// Signature: int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-uint __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,uint *param_2,uint param_3,int param_4)
+int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
 
 {
-  int iVar1;
-  uint uVar2;
-  float10 fVar3;
-  uint uVar4;
-  uint uVar5;
-  ulonglong uStack_28;
-  uint uStack_20;
-  uint uStack_1c;
+  CCharacter *this_ptr_00;
+  float fVar1;
+  double dVar2;
+  int blood_type;
+  byte auStack_28 [8];
+  float fStack_20;
+  float fStack_1c;
   int iStack_18;
   
-  iVar1 = *(int *)(param_1 + 0xbca4);
-  if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x14c) + 0xf8))(iVar1,param_2,param_3,param_4);
-    uStack_28 = (double)*(float *)(param_4 + 4);
-    if (0.0 < uStack_28) {
-      uStack_20 = *param_2;
-      uVar5 = 0;
-      uVar2 = param_2[1];
-      uVar4 = 0x479951;
-      fVar3 = (float10)round
-                                 ((float10)*(float *)(param_4 + 4) * (float10)1.2 *
-                                  (float10)0.25);
-      iStack_18 = (int)ROUND(fVar3);
-      uStack_1c = param_2[2];
-      uStack_20 = uVar2;
+  this_ptr_00 = this_ptr->victim;
+  if (this_ptr_00 != (CCharacter *)0x0) {
+    (*(((this_ptr_00->base).vtable._uc)->_uc).isGrabbable)(this_ptr_00,(CDemonActor *)point);
+    auStack_28 = (byte  [8])(double)damage_info->damage_amount;
+    if (0.0 < (double)auStack_28) {
+      fStack_20 = point->x;
+      fVar1 = point->y;
+      blood_type = 0x479951;
+      dVar2 = round((double)auStack_28 * 1.2 * 0.25);
+      iStack_18 = (int)ROUND(dVar2);
+      fStack_1c = point->z;
+      fStack_20 = fVar1;
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (INT_005b96c4,(int)&uStack_28 + 4,0,iStack_18,uVar4,uVar5);
+                ((CGore *)INT_005b96c4,(CVector3f *)(auStack_28 + 4),(CVector3f *)0x0,iStack_18,
+                 blood_type);
       return 1;
     }
   }

@@ -19,7 +19,7 @@ struct CSmiley_ptr_11536 {
     template<typename T> CSmiley_ptr_11536(T* p) : _raw((void*)p) {}
     template<typename T> CSmiley_ptr_11536& operator=(T* p) { _raw = (void*)p; return *this; }
     CSmiley* operator->() const { return (CSmiley*)_raw; }
-    CSmiley* adj() const { return (CSmiley*)((char*)_raw - offsetof(CSmiley, base.base.collision_test_normals)); }
+    CSmiley* adj() const { return (CSmiley*)((char*)_raw - offsetof(CSmiley, base.base.collision_test_normals[0].z)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

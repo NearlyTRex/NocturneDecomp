@@ -2,13 +2,13 @@
 // Address: 004eefc0
 // Address Range: [[004eefc0, 004eefca]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(undefined4 *param_1)
+// Signature: CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(CFont *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-void __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(uint *param_1)
+CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_004eefc0(CFont *this_ptr,uint flags)
 
 {
-  *param_1 = &PTR_engine_palette_cpp_CFont_dtor_FUN_004eefc0_005a0ff0;
-  return;
+  this_ptr->vtable = (CFont_vtable *)&PTR_engine_palette_cpp_CFont_dtor_FUN_004eefc0_005a0ff0;
+  return this_ptr;
 }

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(undefined4 *param_1)
+; uint __cdecl support_trisock_cpp_getIPAddress_FUN_00548d20(SNetworkAddr *net_addr)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   net_addr
 ;
 ; XREF[1]:
 ;   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0 at 00548de6

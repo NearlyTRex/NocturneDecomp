@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(undefined4 param_1)
+; int __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(uint sfx_handle)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[49]:
 ;   core_batcreat.cpp_FUN_00413040 at 00413056
@@ -40,10 +42,10 @@ section .text
     PUSH EAX                            ; 00527244
         ;   Label: LAB_00527244
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00527245
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570()
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
     ADD ESP,0x4                         ; 0052724a
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052724d
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     MOV EAX,0x1                         ; 00527252
     RET                                 ; 00527257
 

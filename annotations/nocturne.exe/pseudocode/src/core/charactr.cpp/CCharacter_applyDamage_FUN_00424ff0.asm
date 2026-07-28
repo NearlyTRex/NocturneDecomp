@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_charactr_cpp_CCharacter_applyDamage_FUN_00424ff0(int param_1,EDamageType param_2,float param_3)
 ;
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_00425011
     PUSH EAX                            ; 00425013
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00425014
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00425019
     MOV EAX,dword ptr [ESP + 0x48]      ; 0042501c
     MOV dword ptr [ESP + 0x30],EAX      ; 00425020

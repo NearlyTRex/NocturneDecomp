@@ -2,30 +2,30 @@
 // Address: 004e5d80
 // Address Range: [[004e5d80, 004e60bd]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(undefined4 *param_1,undefined4 *param_2,int param_3,int *param_4)
+// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(uint *param_1,uint *param_2,int param_3,int *param_4)
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 {
   int *piVar1;
-  uint uVar2;
-  uint *puVar3;
-  uint *puVar4;
+  float *pfVar2;
+  float (*pafVar3) [18];
+  float (*pafVar4) [18];
   int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
-  uint *puVar9;
+  float *pfVar9;
   int iVar10;
   int iVar11;
   int iVar12;
   int iVar13;
   int iVar14;
-  uint *local_5c;
-  uint *local_58;
-  uint *local_54;
+  float (*local_5c) [18];
+  float *local_58;
+  float *local_54;
   int local_50;
   int local_4c;
   int local_38;
@@ -35,37 +35,37 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(uint *param_1,u
   int local_28;
   int local_24;
   
-  local_4c = ((int *)*param_4)[4] + *(int *)*param_4 * 3;
+  local_4c = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
   iVar8 = 0;
-  puVar9 = param_2;
+  pafVar4 = (float (*) [18])output_samples;
   do {
-    puVar9 = puVar9 + 0x12;
-    puVar4 = param_2 + iVar8 * 0x12;
+    pafVar4 = pafVar4 + 1;
+    pafVar3 = output_samples->samples + iVar8;
     do {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    } while (puVar4 != puVar9);
+      (*pafVar3)[0] = 0.0;
+      pafVar3 = (float (*) [18])(*pafVar3 + 1);
+    } while (pafVar3 != pafVar4);
     iVar8 = iVar8 + 1;
   } while (iVar8 < 0x20);
-  if ((*(int *)(param_3 + 0x10) == 0) || (*(int *)(param_3 + 0x14) != 2)) {
-    local_58 = param_2;
+  if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
+    local_58 = (float *)output_samples;
     iVar8 = 0;
-    puVar9 = param_1;
+    pafVar4 = (float (*) [18])input_samples;
     do {
-      puVar9 = puVar9 + 0x12;
-      puVar3 = param_1 + iVar8 * 0x12;
-      puVar4 = local_58;
+      pafVar4 = pafVar4 + 1;
+      pafVar3 = input_samples->samples + iVar8;
+      pfVar9 = local_58;
       do {
-        uVar2 = *puVar3;
-        puVar3 = puVar3 + 1;
-        *puVar4 = uVar2;
-        puVar4 = puVar4 + 1;
-      } while (puVar3 != puVar9);
+        pfVar2 = *pafVar3;
+        pafVar3 = (float (*) [18])(*pafVar3 + 1);
+        *pfVar9 = *pfVar2;
+        pfVar9 = pfVar9 + 1;
+      } while (pafVar3 != pafVar4);
       iVar8 = iVar8 + 1;
       local_58 = local_58 + 0x12;
     } while (iVar8 < 0x20);
   }
-  else if (*(int *)(param_3 + 0x18) == 0) {
+  else if (granule->mixed_block_flag == 0) {
     local_4c = local_4c * 0x94;
     iVar8 = 0;
     local_38 = *(int *)(&DAT_005bc158 + local_4c);
@@ -85,7 +85,7 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(uint *param_1,u
             iVar13 = iVar5 % 0x12;
             iVar10 = iVar10 + 1;
             iVar5 = iVar5 + 3;
-            param_2[iVar7 * 0x12 + iVar13] = param_1[iVar11 * 0x12 + iVar12];
+            output_samples->samples[iVar7][iVar13] = input_samples->samples[iVar11][iVar12];
           } while (iVar10 < iVar6);
         }
         local_24 = local_24 + 1;
@@ -98,19 +98,19 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(uint *param_1,u
     } while (local_4c != iVar14);
   }
   else {
-    local_54 = param_2;
+    local_54 = (float *)output_samples;
     iVar8 = 0;
-    local_5c = param_1;
+    local_5c = (float (*) [18])input_samples;
     do {
-      local_5c = local_5c + 0x12;
-      puVar4 = param_1 + iVar8 * 0x12;
-      puVar9 = local_54;
+      local_5c = local_5c + 1;
+      pafVar4 = input_samples->samples + iVar8;
+      pfVar9 = local_54;
       do {
-        uVar2 = *puVar4;
-        puVar4 = puVar4 + 1;
-        *puVar9 = uVar2;
-        puVar9 = puVar9 + 1;
-      } while (puVar4 != local_5c);
+        pfVar2 = *pafVar4;
+        pafVar4 = (float (*) [18])(*pafVar4 + 1);
+        *pfVar9 = *pfVar2;
+        pfVar9 = pfVar9 + 1;
+      } while (pafVar4 != local_5c);
       iVar8 = iVar8 + 1;
       local_54 = local_54 + 0x12;
     } while (iVar8 < 2);
@@ -130,7 +130,8 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_004e5d80(uint *param_1,u
             iVar6 = iVar5 / 0x12;
             iVar11 = iVar5 % 0x12;
             iVar5 = iVar5 + 1;
-            param_2[(iVar14 / 0x12) * 0x12 + iVar14 % 0x12] = param_1[iVar6 * 0x12 + iVar11];
+            output_samples->samples[iVar14 / 0x12][iVar14 % 0x12] =
+                 input_samples->samples[iVar6][iVar11];
             iVar14 = iVar14 + 3;
           } while (iVar5 < iVar10);
         }

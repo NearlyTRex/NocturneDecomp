@@ -2,30 +2,33 @@
 // Address: 005175f0
 // Address Range: [[005175f0, 005179c3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)
+// Signature: void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)
+void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
+  CQuaternion4f *pCVar3;
+  float *pfVar4;
+  int *piVar5;
+  float *pfVar6;
+  int iVar7;
   int local_24;
-  uint local_20;
-  uint local_1c;
+  int local_20;
+  int local_1c;
   int local_18;
-  int local_14;
+  float *local_14;
   
-  core_skeleton_cpp_FUN_005174e0(param_1);
+  core_skeleton_cpp_FUN_005174e0(this_ptr);
   local_24 = -1;
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(param_2,"%d\n",&local_24);
+  _fscanf(file_handle,"%d\n",&local_24);
   if (local_24 < 1) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0x10d;
@@ -42,101 +45,101 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
     core_main_c_FUN_004c8440("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,0x00000003);
   }
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(param_2,"%d,%d\n",&local_20,&local_1c);
-  core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(param_1,local_20,local_1c);
+  _fscanf(file_handle,"%d,%d\n",&local_20,&local_1c);
+  core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(this_ptr,local_20,local_1c);
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)(param_1 + 0x28558)) {
-    iVar3 = param_1 + 0x2857c;
+  if (0 < this_ptr->bone_count) {
+    piVar5 = &this_ptr->bone_list[0].parent_index;
     do {
-      _fscanf(param_2,"\"%[^\"]\",%d\n",iVar1 * 0x24 + param_1 + 0x2855c,iVar3);
+      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1,piVar5);
       iVar1 = iVar1 + 1;
-      iVar3 = iVar3 + 0x24;
-    } while (iVar1 < *(int *)(param_1 + 0x28558));
+      piVar5 = piVar5 + 9;
+    } while (iVar1 < this_ptr->bone_count);
   }
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   local_18 = 0;
-  iVar1 = *(int *)(param_1 + 0x29370);
-  if (0 < *(int *)(param_1 + 0x2936c)) {
+  pCVar3 = this_ptr->bone_angle_frames;
+  if (0 < this_ptr->frame_count) {
     do {
-      iVar3 = 0;
-      if (0 < *(int *)(param_1 + 0x28558)) {
-        local_14 = iVar1 + 4;
-        iVar4 = iVar1 + 8;
-        iVar2 = iVar1 + 0xc;
+      iVar1 = 0;
+      if (0 < this_ptr->bone_count) {
+        local_14 = &pCVar3->x;
+        pfVar6 = &pCVar3->y;
+        pfVar4 = &pCVar3->z;
         do {
-          iVar3 = iVar3 + 1;
-          _fscanf(param_2,"%f,%f,%f,%f\n",iVar1,local_14,iVar4,iVar2);
-          iVar4 = iVar4 + 0x10;
-          iVar1 = iVar1 + 0x10;
-          local_14 = local_14 + 0x10;
-          iVar2 = iVar2 + 0x10;
-        } while (iVar3 < *(int *)(param_1 + 0x28558));
+          iVar1 = iVar1 + 1;
+          _fscanf(file_handle,"%f,%f,%f,%f\n",pCVar3,local_14,pfVar6,pfVar4);
+          pfVar6 = pfVar6 + 4;
+          pCVar3 = pCVar3 + 1;
+          local_14 = local_14 + 4;
+          pfVar4 = pfVar4 + 4;
+        } while (iVar1 < this_ptr->bone_count);
       }
       local_18 = local_18 + 1;
-    } while (local_18 < *(int *)(param_1 + 0x2936c));
+    } while (local_18 < this_ptr->frame_count);
   }
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)(param_1 + 0x2936c)) {
-    iVar3 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar7 = 0;
     do {
-      iVar4 = *(int *)(param_1 + 0x29374) + iVar3;
-      _fscanf(param_2,"%f,%f,%f\n",iVar4,iVar4 + 4,iVar4 + 8);
+      iVar2 = (int)&this_ptr->frame_positions_1->x + iVar7;
+      _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-      iVar3 = iVar3 + 0xc;
-    } while (iVar1 < *(int *)(param_1 + 0x2936c));
+      iVar7 = iVar7 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
   do {
-    iVar1 = _fgetc(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)(param_1 + 0x2936c)) {
-    iVar3 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar7 = 0;
     do {
-      iVar4 = *(int *)(param_1 + 0x29378) + iVar3;
-      _fscanf(param_2,"%f,%f,%f\n",iVar4,iVar4 + 4,iVar4 + 8);
+      iVar2 = (int)&this_ptr->frame_positions_2->x + iVar7;
+      _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-      iVar3 = iVar3 + 0xc;
-    } while (iVar1 < *(int *)(param_1 + 0x2936c));
+      iVar7 = iVar7 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
-  if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0x144;
     core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");
   }
-  core_motion_cpp_CMotionList_load_FUN_004e0920(param_1,param_2);
+  core_motion_cpp_CMotionList_load_FUN_004e0920(&this_ptr->motion_list,file_handle);
   if (2 < local_24) {
     do {
-      iVar1 = _fgetc(param_2);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
-    if (0 < *(int *)(param_1 + 0x28558)) {
+    if (0 < this_ptr->bone_count) {
 LAB_0051793e:
       do {
-        iVar3 = _fgetc(param_2);
-        if (-1 < iVar3) {
-          if (iVar3 != 10) goto LAB_0051793e;
+        iVar7 = _fgetc(file_handle);
+        if (-1 < iVar7) {
+          if (iVar7 != 10) goto LAB_0051793e;
         }
         iVar1 = iVar1 + 1;
-      } while (iVar1 < *(int *)(param_1 + 0x28558));
+      } while (iVar1 < this_ptr->bone_count);
     }
   }
-  if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     PTR_01cc4800 = "..\\core\\skeleton.cpp";
     INT_01cc4804 = 0x15f;
     core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");

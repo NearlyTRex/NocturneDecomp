@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   euler_angles
+; CVector3f *      Stack[0x10]:4   velocity
+; CKeyFramedModel * Stack[0x14]:4   model_ptr
 ;
 ; XREF[4]:
 ;   core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0 at 004780b0

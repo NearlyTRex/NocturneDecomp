@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 0042430c
@@ -34,7 +36,7 @@ section .text
     PUSH EAX                            ; 004296e0
     PUSH EDX                            ; 004296e1
     CALL core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 ; 004296e2
-        ;   XREF to: 0051ef40 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40()
+        ;   XREF to: 0051ef40 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40(CDeformableModelInstance * this_ptr, CBoundingBox3D * output_bbox)
     LEA EDX,[EBX + 0x25f0]              ; 004296e7
     ADD ESP,0x8                         ; 004296ed
     MOV ECX,EDX                         ; 004296f0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_zombie_cpp_CZombie_ctor_FUN_0055eac0(undefined4 param_1)
+; CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_0055eac0(CZombie *this_ptr)
 ;
+; Parameters:
+; CZombie *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -41,7 +43,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 0055eac7
     PUSH EBP                            ; 0055eacb
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0055eacc
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0055ead1
     PUSH 0x5983e6                       ; 0055ead4 | = "zombie1.dfm"
     MOV EBX,EAX                         ; 0055ead9
@@ -90,7 +92,7 @@ section .text
     PUSH 0x0                            ; 0055eb80
     FSTP float ptr [EBX + 0xbd24]       ; 0055eb82
     CALL core_actor.cpp_getRandomInt_FUN_0040de00 ; 0055eb88
-        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getRandomInt_FUN_0040de00()
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040de00(int min_value, int max_value)
     MOV dword ptr [EBX + 0xbd2c],0x0    ; 0055eb8d
     MOV dword ptr [EBX + 0xbd40],0x0    ; 0055eb97
     ADD ESP,0x8                         ; 0055eba1
@@ -102,7 +104,7 @@ section .text
     PUSH EAX                            ; 0055ebc3
     MOV dword ptr [EBX + 0xbdfc],0x0    ; 0055ebc4
     CALL crt_string.c__stricmp_FUN_00564520 ; 0055ebce
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055ebd3
     TEST EAX,EAX                        ; 0055ebd6
     SETZ AL                             ; 0055ebd8

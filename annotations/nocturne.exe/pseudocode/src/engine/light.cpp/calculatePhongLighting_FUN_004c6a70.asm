@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int param_2,int param_3)
+; int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int world_x,int world_y,int world_z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   world_x
+; int              Stack[0x8]:4   world_y
+; int              Stack[0xc]:4   world_z
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined4       Stack[-0x18]:4  local_18

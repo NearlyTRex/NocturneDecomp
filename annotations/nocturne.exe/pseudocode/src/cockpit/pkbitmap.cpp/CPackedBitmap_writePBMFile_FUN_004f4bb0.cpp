@@ -2,11 +2,11 @@
 // Address: 004f4bb0
 // Address Range: [[004f4bb0, 004f4c7c]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(int param_1,int param_2)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPackedBitmap *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(int param_1,int param_2)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPackedBitmap *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -27,17 +27,16 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(int pa
     puVar2 = (uint *)((int)puVar2 + 1);
     piVar3 = (uint *)((int)piVar3 + 1);
   }
-  aiStack_2c[1] = *(uint *)(param_1 + 0x18);
-  aiStack_2c[2] = *(uint *)(param_1 + 0x1c);
+  aiStack_2c[1] = this_ptr->width;
+  aiStack_2c[2] = this_ptr->height;
   aiStack_2c[3] = 0;
   aiStack_2c[4] = 0;
-  aiStack_2c[5] = *(int *)(param_1 + 0x18) + -1;
-  iStack_14 = *(int *)(param_1 + 0x1c) + -1;
-  _fwrite(aiStack_2c,0x1c,1,param_2);
-  _fwrite(*(uint *)(param_1 + 0x20),4,*(int *)(param_1 + 0x1c) + 1,param_2);
-  _fwrite(*(uint *)(param_1 + 0x14),
-             *(uint *)(*(int *)(param_1 + 0x20) + *(int *)(param_1 + 0x1c) * 4),1,param_2);
-  if ((*(byte *)(param_2 + 0xc) & 0x20) == 0) {
+  aiStack_2c[5] = this_ptr->width + -1;
+  iStack_14 = this_ptr->height + -1;
+  _fwrite(aiStack_2c,0x1c,1,file_handle);
+  _fwrite(this_ptr->row_offsets,4,this_ptr->height + 1,file_handle);
+  _fwrite(this_ptr->packed_data,this_ptr->row_offsets[this_ptr->height],1,file_handle);
+  if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
   PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";

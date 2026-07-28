@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void)
+; void __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
@@ -47,10 +47,10 @@ section .text
     ADD EDX,0x4                         ; 004cca0b
     FXCH                                ; 004cca0e
     CALL crt_math.c_round_FUN_00563a30  ; 004cca10
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x8]         ; 004cca15
     CALL crt_math.c_round_FUN_00563a30  ; 004cca19
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cca1e
     FISTP dword ptr [ESP + 0x8]         ; 004cca22
     MOV dword ptr [EDX + 0x1cc490c],EAX ; 004cca26

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,int param_2,undefined4 param_3)
+; undefined4 core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(int param_1,CDemonActor *param_2,CVector3f *param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x44]:1  local_44
@@ -62,7 +62,7 @@ section .text
     PUSH EAX                            ; 00428197
     PUSH EBX                            ; 00428198
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00428199
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EBP + -0x14]         ; 0042819e
     FLD float ptr [EBP + -0x18]         ; 004281a1
     FSUB float ptr [EAX]                ; 004281a4

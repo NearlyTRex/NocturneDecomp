@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_executeLeverPull_FUN_004b5490(int param_1)
+; int __cdecl core_hero_cpp_CHero_executeLeverPull_FUN_004b5490(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_colonel.cpp_FUN_00439f50 at 0043a365
@@ -32,7 +34,7 @@ section .text
     PUSH EDX                            ; 004b54a3
         ;   Label: LAB_004b54a3
     CALL core_lever.cpp_CLever_activate_FUN_004c6500 ; 004b54a4
-        ;   XREF to: 004c6500 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_CLever_activate_FUN_004c6500()
+        ;   XREF to: 004c6500 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_activate_FUN_004c6500(CLever * this_ptr)
     MOV EAX,0x1                         ; 004b54a9
     ADD ESP,0x4                         ; 004b54ae
     MOV dword ptr [EBX + 0x1fa10],0x0   ; 004b54b1

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(int param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5)
+; int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max)
 ;
+; Parameters:
+; CDemonGlobe *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   reference_position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
+; CVector3f *      Stack[0x10]:4   aabb_min
+; CVector3f *      Stack[0x14]:4   aabb_max
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

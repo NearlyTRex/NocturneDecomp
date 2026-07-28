@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   target
+; float            Stack[0xc]:4   min_distance
+; float            Stack[0x10]:4   max_distance
 ;
 ; XREF[1]:
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_00557020 at 0055704d
@@ -60,11 +65,11 @@ section .text
     PUSH 0x57a0fa                       ; 00428b26 | = "STAND"
     PUSH ESI                            ; 00428b2b
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 00428b2c
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00428b31
     PUSH EAX                            ; 00428b34
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0 ; 00428b35
-        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0()
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00428b3a
     TEST EAX,EAX                        ; 00428b3d
     JL 0x00428ae4                       ; 00428b3f
@@ -73,7 +78,7 @@ section .text
     PUSH 0x57a100                       ; 00428b43 | = "STAND"
     PUSH ESI                            ; 00428b48
     CALL core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 ; 00428b49
-        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740()
+        ;   XREF to: 004e1740 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740(CMotionController * this_ptr, char * state_name, int force_immediate)
     ADD ESP,0xc                         ; 00428b4e
     JMP 0x00428ae4                      ; 00428b51
         ;   XREF to: 00428ae4 (UNCONDITIONAL_JUMP)  ; LAB_00428ae4

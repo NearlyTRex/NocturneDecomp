@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *param_1)
+; void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004ea923
@@ -41,7 +43,7 @@ section .text
     INC EDI                             ; 004ece93
     MOV dword ptr [0x01cea404],EDI      ; 004ece94 | DAT_01cea404
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ece9a
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004ece9f
     MOV ECX,0x12                        ; 004ecea1
     SAR EDX,0x1f                        ; 004ecea6

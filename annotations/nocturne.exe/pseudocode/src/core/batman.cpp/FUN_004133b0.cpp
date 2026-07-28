@@ -9,12 +9,12 @@
 void core_batman_cpp_FUN_004133b0(void)
 
 {
-  int iVar1;
+  CBatman *this_ptr;
   
-  iVar1 = FUN_0056497c(0xbde0);
-  if (iVar1 == 0) {
+  this_ptr = (CBatman *)FUN_0056497c(0xbde0);
+  if (this_ptr == (CBatman *)0x0) {
     return;
   }
-  core_batman_cpp_CBatman_ctor_FUN_004133e0(iVar1);
+  core_batman_cpp_CBatman_ctor_FUN_004133e0(this_ptr);
   return;
 }

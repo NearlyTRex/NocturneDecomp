@@ -114,7 +114,7 @@ section .text
     MOV [0x02de54a0],EAX                ; 00571015 | DAT_02de54a0
     MOV dword ptr [0x02de54a4],EDI      ; 0057101a | DAT_02de54a4
     CALL crt_memory.c_memset_FUN_00563cc0 ; 00571020
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV EDI,dword ptr [0x02de54a4]      ; 00571025 | DAT_02de54a4
     ADD ESP,0xc                         ; 0057102b
     JMP 0x00571039                      ; 0057102e

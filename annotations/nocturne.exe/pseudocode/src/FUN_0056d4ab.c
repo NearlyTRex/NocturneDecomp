@@ -11,7 +11,7 @@ void FUN_0056d4ab(uint param_1)
 {
   int iVar1;
   
-  iVar1 = (*(code *)PTR_FUN_005c1abc)();
+  iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
   FUN_0056d488(param_1,iVar1 + 0x14);
   return;
 }

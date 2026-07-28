@@ -45,7 +45,7 @@ section .text
     PUSH EAX                            ; 0044bd37
     PUSH ESI                            ; 0044bd38
     CALL crt_string.c__strcmp_FUN_005649c0 ; 0044bd39
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044bd3e
     TEST EAX,EAX                        ; 0044bd41
     JZ 0x0044be27                       ; 0044bd43
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0044bdac (CONDITIONAL_JUMP)  ; LAB_0044bdac
     PUSH EAX                            ; 0044bda3
     CALL core_dfilter.cpp_CDemonFilter_ctor_FUN_0044beb0 ; 0044bda4
-        ;   XREF to: 0044beb0 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_ctor_FUN_0044beb0()
+        ;   XREF to: 0044beb0 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_ctor_FUN_0044beb0(CDemonFilter * this_ptr)
     ADD ESP,0x4                         ; 0044bda9
     MOV ESI,EAX                         ; 0044bdac
         ;   Label: LAB_0044bdac
@@ -120,7 +120,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0xa04]     ; 0044bdea
     PUSH EDX                            ; 0044bdf0
     CALL core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 ; 0044bdf1
-        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90()
+        ;   XREF to: 0044bf90 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90(CDemonFilter * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0044bdf6
     CMP dword ptr [ESP + 0x1c],0x0      ; 0044bdf9
     JZ 0x0044be16                       ; 0044bdfe
@@ -130,7 +130,7 @@ section .text
     PUSH 0x3faa9fbe                     ; 0044be08
     PUSH EDI                            ; 0044be0d
     CALL core_dfilter.cpp_CDemonFilter_init_FUN_0044c190 ; 0044be0e
-        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_init_FUN_0044c190()
+        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_init_FUN_0044c190(CDemonFilter * this_ptr, float init_value, int flags)
     ADD ESP,0xc                         ; 0044be13
     SHL EBX,0x2                         ; 0044be16
         ;   Label: LAB_0044be16

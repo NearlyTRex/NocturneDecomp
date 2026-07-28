@@ -2,13 +2,13 @@
 // Address: 004dec50
 // Address Range: [[004dec50, 004df03f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
+// Signature: void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
+void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 {
 __asm {
         mov EBP,ESP

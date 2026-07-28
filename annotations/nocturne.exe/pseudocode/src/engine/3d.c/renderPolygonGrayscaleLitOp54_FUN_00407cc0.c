@@ -13,7 +13,7 @@ int engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_00407cc0(int param_1)
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
   if (iVar1 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
@@ -33,8 +33,7 @@ int engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_00407cc0(int param_1)
     _DAT_01c039a4 = 0;
     _DAT_01c00c74 =
          engine_light_cpp_calculateLighting_FUN_004c6cc0
-                   (*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
-                    *(uint *)(param_1 + 0x10));
+                   (*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));
     _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
     engine_clipper_c_FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
   }

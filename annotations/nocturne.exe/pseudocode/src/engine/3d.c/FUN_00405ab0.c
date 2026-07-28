@@ -12,7 +12,7 @@ void engine_3d_c_FUN_00405ab0(int param_1,uint param_2,uint param_3)
   int iVar1;
   
   if (DAT_006b0268 < 500) {
-    iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+    iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
     if (iVar1 != 0) {
       iVar1 = DAT_006b0268 * 0x20;
       *(int *)(&DAT_006b02dc + iVar1) = param_1;

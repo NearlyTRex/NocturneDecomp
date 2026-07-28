@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int param_1,int param_2,int param_3)
+; int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int normal_x,int normal_y,int normal_z)
 ;
+; Parameters:
+; int              Stack[0x4]:4   normal_x
+; int              Stack[0x8]:4   normal_y
+; int              Stack[0xc]:4   normal_z
 ;
 ; XREF[8]:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00404710 at 00404721

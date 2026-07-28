@@ -2,20 +2,20 @@
 // Address: 00532d80
 // Address Range: [[00532d80, 00532d92]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
+// Signature: int __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
+int __cdecl engine_special_cpp_unlockHoldBuffer_FUN_00532d80(void)
 
 {
-  uint uVar1;
+  int iVar1;
   
   if (_DAT_02dc9e00 == (code *)0x0) {
     return 0;
   }
-  uVar1 = (*_DAT_02dc9e00)();
-  return uVar1;
+  iVar1 = (*_DAT_02dc9e00)();
+  return iVar1;
 }

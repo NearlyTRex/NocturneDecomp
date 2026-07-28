@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0(int *param_1,uint param_2,uint param_3)
+; int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0(CGround *this_ptr,int world_x,int world_z)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   world_x
+; int              Stack[0xc]:4   world_z
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

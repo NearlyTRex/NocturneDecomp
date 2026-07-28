@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2)
+; undefined4 core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00421f00(int param_1,float param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -45,10 +45,10 @@ section .text
     FST float ptr [ESP + 0x28]          ; 00421f33
     FLD float ptr [ESP + 0x24]          ; 00421f37
     CALL crt_math.c_round_FUN_00563a30  ; 00421f3b
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00421f40
     CALL crt_math.c_round_FUN_00563a30  ; 00421f42
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00421f47
     FISTP dword ptr [ESP + 0xc]         ; 00421f49
     MOV EDX,dword ptr [ESP + 0xc]       ; 00421f4d

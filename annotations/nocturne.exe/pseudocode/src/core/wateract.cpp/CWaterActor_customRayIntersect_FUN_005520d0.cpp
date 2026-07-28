@@ -13,10 +13,7 @@ float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,
   int iVar2;
   int iVar3;
   float fStack_8c;
-  byte auStack_88 [36];
-  float fStack_64;
-  float fStack_60;
-  float fStack_5c;
+  CDemonTriangle CStack_88;
   byte local_50 [24];
   float fStack_38;
   float fStack_34;
@@ -42,14 +39,15 @@ float core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005520d0(int param_1,
       param_1 = param_1 + 0x294;
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
-                  (auStack_88,*(int *)(iVar2 + 0x18) * 0x20 + param_1,
-                   *(int *)(iVar2 + 0x24) * 0x20 + param_1,*(int *)(iVar2 + 0x30) * 0x20 + param_1);
+                  (&CStack_88,(CVector3f *)(*(int *)(iVar2 + 0x18) * 0x20 + param_1),
+                   (CVector3f *)(*(int *)(iVar2 + 0x24) * 0x20 + param_1),
+                   (CVector3f *)(*(int *)(iVar2 + 0x30) * 0x20 + param_1));
         fStack_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0046c620
-                                     (auStack_88,param_2,param_3);
+                                     (&CStack_88,param_2,param_3);
         if (((fStack_18 < fStack_8c) && (0.0 <= fStack_18)) && (fStack_18 <= 1.0)) {
-          fStack_38 = -fStack_64;
-          fStack_34 = -fStack_60;
-          fStack_30 = -fStack_5c;
+          fStack_38 = -CStack_88.normal.x;
+          fStack_34 = -CStack_88.normal.y;
+          fStack_30 = -CStack_88.normal.z;
           fStack_8c = fStack_18;
           if (&fStack_2c != &fStack_38) {
             fStack_2c = fStack_38;

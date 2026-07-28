@@ -17,27 +17,27 @@ int __cdecl getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_00558ae0
 // Address: 00558ae0
-undefined4 __cdecl clearKeypresses(void);
+void __cdecl clearKeypresses(void);
 
 // Original: wincore_winrun.cpp_getNextKeypress_FUN_00558b00
 // Address: 00558b00
-undefined1 __cdecl getNextKeypress(void);
+int __cdecl getNextKeypress(void);
 
 // Original: wincore_winrun.cpp_wasKeyPressed_FUN_00558b70
 // Address: 00558b70
-bool __cdecl wasKeyPressed(void);
+int __cdecl wasKeyPressed(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_00558ba0
 // Address: 00558ba0
-void __cdecl enqueueInput(undefined4 param_1);
+void __cdecl enqueueInput(int input_value);
 
 // Original: wincore_winrun.cpp_FUN_00558be0
 // Address: 00558be0
 void FUN_00558be0(void);
 
-// Original: wincore_winrun.cpp_FUN_00558c00
+// Original: wincore_winrun.cpp_plotClippedPixel_FUN_00558c00
 // Address: 00558c00
-void FUN_00558c00(void);
+void plotClippedPixel(void);
 
 // Original: wincore_winrun.cpp_FUN_00558c40
 // Address: 00558c40
@@ -69,47 +69,47 @@ void FUN_00559500(undefined4 param_1);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_00559560
 // Address: 00559560
-char * __cdecl getKeyName(uint param_1);
+char * __cdecl getKeyName(EInputCodeType keycode);
 
 // Original: wincore_winrun.cpp_createMutex_FUN_00559bc0
 // Address: 00559bc0
-void __cdecl createMutex(void);
+HANDLE __cdecl createMutex(void);
 
 // Original: wincore_winrun.cpp_waitForMutex_FUN_00559bd0
 // Address: 00559bd0
-bool __cdecl waitForMutex(HANDLE param_1);
+int __cdecl waitForMutex(HANDLE mutex_handle);
 
 // Original: wincore_winrun.cpp_waitForMutexTimeout_FUN_00559bf0
 // Address: 00559bf0
-bool __cdecl waitForMutexTimeout(HANDLE param_1,double param_2);
+int __cdecl waitForMutexTimeout(HANDLE mutex_handle,double timeout_seconds);
 
 // Original: wincore_winrun.cpp_releaseMutex_FUN_00559c30
 // Address: 00559c30
-void __cdecl releaseMutex(HANDLE param_1);
+void __cdecl releaseMutex(HANDLE mutex_handle);
 
 // Original: wincore_winrun.cpp_createThread_FUN_00559c50
 // Address: 00559c50
-void __cdecl createThread(LPTHREAD_START_ROUTINE param_1,LPVOID param_2);
+HANDLE __cdecl createThread(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
 
 // Original: wincore_winrun.cpp_setThreadPriority_FUN_00559c80
 // Address: 00559c80
-void __cdecl setThreadPriority(HANDLE param_1,uint param_2);
+int __cdecl setThreadPriority(HANDLE hThread,int priority_level);
 
 // Original: wincore_winrun.cpp_sleep_FUN_00559cc0
 // Address: 00559cc0
-void __cdecl sleep(double param_1);
+void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_FUN_00559d20
+// Original: wincore_winrun.cpp_getRegistryStringValue_FUN_00559d20
 // Address: 00559d20
-void FUN_00559d20(void);
+void getRegistryStringValue(void);
 
 // Original: wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0
 // Address: 00559da0
-void __cdecl setRegistryStringValue(LPCSTR param_1,LPCSTR param_2,BYTE *param_3);
+void __cdecl setRegistryStringValue(char *key_path,char *value_name,char *value_data);
 
 // Original: wincore_winrun.cpp_initJoystick_FUN_00559e20
 // Address: 00559e20
-MMRESULT __cdecl initJoystick(void);
+void __cdecl initJoystick(void);
 
 // Original: wincore_winrun.cpp_FUN_00559e90
 // Address: 00559e90

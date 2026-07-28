@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005638d0(undefined4 param_1)
+; void crt_unknown_c_FUN_005638d0(void *param_1)
 ;
 ;
 ; XREF[65]:
@@ -18,7 +18,7 @@
 ;   ... and 55 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638e0
+;   crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005638d0
         ;   Label: crt_unknown.c_FUN_005638d0
     PUSH EDX                            ; 005638d4
-    CALL crt_unknown.c_FUN_005638e0     ; 005638d5
-        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638e0()
+    CALL crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0 ; 005638d5
+        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0(void * ptr)
     ADD ESP,0x4                         ; 005638da
     RET                                 ; 005638dd
 

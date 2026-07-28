@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonBlendedLitOp63_FUN_00408270(int param_1)
+; int * engine_3d_c_renderPolygonBlendedLitOp63_FUN_00408270(SMRGLHeaderPrimitive *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00408279
     PUSH EAX                            ; 0040827c
     CALL engine_3d.c_isVisiblePlane_FUN_00404610 ; 0040827d
-        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00404610()
+        ;   XREF to: 00404610 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00404610(SClipPlane * plane)
     ADD ESP,0x4                         ; 00408282
     TEST EAX,EAX                        ; 00408285
     JZ 0x004082e9                       ; 00408287
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 004082c1
     MOV dword ptr [0x01c039a4],EDX      ; 004082c2 | DAT_01c039a4
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 004082c8
-        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_00404710()
+        ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     MOV ECX,dword ptr [0x01c00c78]      ; 004082cd | DAT_01c00c78
     ADD ESP,0x4                         ; 004082d3
     TEST ECX,ECX                        ; 004082d6
@@ -98,7 +98,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x4]       ; 00408331
     PUSH ESI                            ; 00408334
     CALL engine_clipper.c_clipPolygonToViewport_FUN_004349a0 ; 00408335
-        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_clipPolygonToViewport_FUN_004349a0()
+        ;   XREF to: 004349a0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_004349a0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0040833a
     MOV ESI,dword ptr [EBX + 0x4]       ; 0040833d
     LEA EAX,[EBX + 0x18]                ; 00408340

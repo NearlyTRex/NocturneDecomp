@@ -2,21 +2,21 @@
 // Address: 004f8810
 // Address Range: [[004f8810, 004f883b]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(undefined4 *param_1)
+// Signature: CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(CPod *this_ptr)
 
 #include "nocturne.h"
 
-uint * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(uint *param_1)
+CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(CPod *this_ptr)
 
 {
-  uint *puVar1;
+  CPod *pCVar1;
   
-  *param_1 = 0;
-  param_1[0x65] = &PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
-  puVar1 = param_1;
+  this_ptr->pod_file_count = 0;
+  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_004f8840_005a1484;
+  pCVar1 = this_ptr;
   do {
-    puVar1 = puVar1 + 1;
-    *puVar1 = 0;
-  } while (puVar1 != param_1 + 100);
-  return param_1;
+    pCVar1 = (CPod *)pCVar1->pod_files;
+    *(CPodFile **)pCVar1 = (CPodFile *)0x0;
+  } while (pCVar1 != (CPod *)(this_ptr->pod_files + 99));
+  return this_ptr;
 }

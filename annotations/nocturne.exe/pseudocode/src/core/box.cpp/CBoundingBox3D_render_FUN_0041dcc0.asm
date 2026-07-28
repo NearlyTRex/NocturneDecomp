@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(float *param_1)
+; void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *this_ptr)
 ;
+; Parameters:
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined4       Stack[-0xac]:4  local_ac
@@ -71,7 +73,7 @@ section .text
     MOV EBX,EDI                         ; 0041dce1
     ADD EDI,0xc                         ; 0041dce3
     CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70 ; 0041dce6
-        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70()
+        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0041dceb
     LEA EAX,[ESP + 0xa0]                ; 0041dcee
     INC ESI                             ; 0041dcf5
@@ -101,13 +103,13 @@ section .text
     PUSH EBX                            ; 0041dd40 | DAT_01b4d738
     MOV dword ptr [ESP + 0x78],ECX      ; 0041dd41
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0 ; 0041dd45
-        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0()
+        ;   XREF to: 00460fa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0041dd4a
     PUSH 0x0                            ; 0041dd4d
     MOV ESI,dword ptr [0x005ae704]      ; 0041dd4f | DAT_005ae704
     PUSH ESI                            ; 0041dd55 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 0041dd56
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 0041dd5b
     LEA EBX,[ESP + 0x94]                ; 0041dd5e
     MOV EAX,EBP                         ; 0041dd65
@@ -134,7 +136,7 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0041ddb5 | DAT_005ae704
     PUSH EDI                            ; 0041ddbb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ddbc
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041ddc1
     TEST EAX,EAX                        ; 0041ddc4
     JNZ 0x0041debb                      ; 0041ddc6
@@ -219,7 +221,7 @@ section .text
     MOV dword ptr [ESP + 0x9c],EDX      ; 0041df2b
     XOR ESI,ESI                         ; 0041df32
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041df34
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV EDX,0x7                         ; 0041df39
     ADD ESP,0xc                         ; 0041df3e
     MOV ECX,0x5                         ; 0041df41
@@ -239,7 +241,7 @@ section .text
     MOV dword ptr [ESP + 0x98],EDX      ; 0041df87
     MOV dword ptr [ESP + 0x9c],ECX      ; 0041df8e
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041df95
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV ECX,0x1                         ; 0041df9a
     ADD ESP,0xc                         ; 0041df9f
     MOV EBX,0x5                         ; 0041dfa2
@@ -263,7 +265,7 @@ section .text
     MOV dword ptr [ESP + 0x9c],ESI      ; 0041dffd
     MOV ESI,0x7                         ; 0041e004
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041e009
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV EAX,0x1                         ; 0041e00e
     MOV ECX,0x2                         ; 0041e013
     ADD ESP,0xc                         ; 0041e018
@@ -286,7 +288,7 @@ section .text
     MOV EDI,0x2                         ; 0041e06c
     XOR ESI,ESI                         ; 0041e071
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041e073
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV ECX,0xffffffff                  ; 0041e078
     MOV EBP,0x3                         ; 0041e07d
     ADD ESP,0xc                         ; 0041e082
@@ -311,7 +313,7 @@ section .text
     MOV EDI,0x4                         ; 0041e0da
     MOV dword ptr [ESP + 0x8c],EBX      ; 0041e0df
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041e0e6
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0041e0eb
     MOV EBP,0x5                         ; 0041e0ee
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0041e0f3
@@ -335,7 +337,7 @@ section .text
     PUSH ECX                            ; 0041e144 | DAT_01b4d738
     MOV dword ptr [ESP + 0x90],EDX      ; 0041e145
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 0041e14c
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0041e151
     ADD ESP,0xac                        ; 0041e154
     POP EBP                             ; 0041e15a

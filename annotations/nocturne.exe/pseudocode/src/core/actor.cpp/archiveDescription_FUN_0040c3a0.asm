@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveDescription_FUN_0040c3a0(undefined4 param_1,int param_2)
+; void __cdecl core_actor_cpp_archiveDescription_FUN_0040c3a0(char *property_description,char *property_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   property_description
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[9]:
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cfd7
@@ -45,7 +48,7 @@ section .text
         ;   Label: LAB_0040c3b5
     PUSH EAX                            ; 0040c3ba
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c3bb
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 0040c3c0
     MOV EBX,EAX                         ; 0040c3c3
     TEST EAX,EAX                        ; 0040c3c5
@@ -68,7 +71,7 @@ section .text
         ;   Label: LAB_0040c3de
     PUSH EDI                            ; 0040c3df
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c3e0
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c3e5
     JMP 0x0040c3c9                      ; 0040c3e8
         ;   XREF to: 0040c3c9 (UNCONDITIONAL_JUMP)  ; LAB_0040c3c9
@@ -115,7 +118,7 @@ section .text
         ;   Label: LAB_0040c440
     PUSH EDI                            ; 0040c441
     CALL core_actor.cpp_handleActorPropertyParseError_FUN_0040c320 ; 0040c442
-        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_handleActorPropertyParseError_FUN_0040c320()
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_handleActorPropertyParseError_FUN_0040c320(char * property_description, char * property_type)
     ADD ESP,0x8                         ; 0040c447
     POP EBP                             ; 0040c44a
     POP EDI                             ; 0040c44b

@@ -9,16 +9,16 @@ undefined4 modelStructNotSupported1(void);
 
 // Original: engine_boss.c_modelStructNotSupported2_FUN_0041a540
 // Address: 0041a540
-undefined4 __cdecl modelStructNotSupported2(void);
+SMRGLHeaderExtended * __cdecl modelStructNotSupported2(char *filename);
 
-// Original: engine_boss.c_FUN_0041a570
+// Original: engine_boss.c_modelStructNotSupported3_FUN_0041a570
 // Address: 0041a570
-void FUN_0041a570(void);
+void __cdecl modelStructNotSupported3(SMRGLHeaderExtended *mrgl_data);
 
-// Original: engine_boss.c_FUN_0041a5a0
+// Original: engine_boss.c_modelStructNotSupported4_FUN_0041a5a0
 // Address: 0041a5a0
-void FUN_0041a5a0(void);
+void modelStructNotSupported4(void);
 
-// Original: engine_boss.c_FUN_0041a5e0
+// Original: engine_boss.c_modelStructNotSupported5_FUN_0041a5e0
 // Address: 0041a5e0
-void FUN_0041a5e0(void);
+void __cdecl modelStructNotSupported5(SMRGLHeaderExtended *mrgl_data);

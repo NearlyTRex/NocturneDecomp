@@ -1,46 +1,45 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0045bd50
 // Address: 0045bd50
 // Address Range: [[0045bd50, 0045be38]]
-// Convention: unknown
-// Signature: void cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(int param_1,int param_2,int param_3,int param_4)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(CDrawSurface *this_ptr,int center_x,int center_y,int radius)
 
 #include "nocturne.h"
 
-void cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(int param_1,int param_2,int param_3,int param_4)
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_0045bd50(CDrawSurface *this_ptr,int center_x,int center_y,int radius)
 
 {
   int iVar1;
   int iVar2;
+  int width;
   int iVar3;
-  int iVar4;
+  CDrawSurface *in_stack_00000018;
+  int in_stack_0000001c;
+  int in_stack_00000020;
   
-  if (0 < param_4) {
-    param_2 = param_2 + *(int *)(param_1 + 8);
-    param_3 = param_3 + *(int *)(param_1 + 0xc);
-    if (((*(int *)(param_1 + 0x10) <= param_2 + param_4) ||
-        (*(int *)(param_1 + 0x14) <= param_3 + param_4)) &&
-       ((param_2 - param_4 <= *(int *)(param_1 + 0x18) ||
-        (param_3 - param_4 <= *(int *)(param_1 + 0x1c))))) {
-      param_2 = param_2 - *(int *)(param_1 + 8);
-      param_3 = param_3 - *(int *)(param_1 + 0xc);
-      iVar3 = 0;
-      iVar4 = 1 - param_4;
+  if (0 < radius) {
+    iVar2 = center_x + this_ptr->x;
+    iVar1 = center_y + this_ptr->y;
+    if (((this_ptr->clip_left <= iVar2 + radius) || (this_ptr->clip_top <= iVar1 + radius)) &&
+       ((iVar2 - radius <= this_ptr->clip_right || (iVar1 - radius <= this_ptr->clip_bottom)))) {
+      width = 0;
+      iVar3 = 1 - radius;
       cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00
-                (param_1,param_2,param_3,0,param_4);
-      if (0 < param_4) {
-        iVar2 = 1;
+                (this_ptr,iVar2 - this_ptr->x,iVar1 - this_ptr->y,0,radius);
+      if (0 < radius) {
+        iVar1 = 1;
         do {
-          iVar3 = iVar3 + 1;
-          iVar2 = iVar2 + 2;
-          iVar1 = iVar2;
-          if (-1 < iVar4) {
-            param_4 = param_4 + -1;
-            iVar1 = (iVar3 - param_4) * 2 + 1;
+          width = width + 1;
+          iVar1 = iVar1 + 2;
+          iVar2 = iVar1;
+          if (-1 < iVar3) {
+            radius = radius + -1;
+            iVar2 = (width - radius) * 2 + 1;
           }
-          iVar4 = iVar4 + iVar1;
+          iVar3 = iVar3 + iVar2;
           cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00
-                    (param_1,param_2,param_3,iVar3,param_4);
-        } while (iVar3 < param_4);
+                    (in_stack_00000018,in_stack_0000001c,in_stack_00000020,width,radius);
+        } while (width < radius);
       }
     }
   }

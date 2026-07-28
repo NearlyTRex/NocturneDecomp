@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(int param_1)
+; void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0(CDemonLight *this_ptr)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fb3
@@ -34,7 +36,7 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x1cc4]   ; 0044e3d5
     PUSH EAX                            ; 0044e3dc
     CALL core_dlight.cpp_getRestoreMemory_FUN_0044e340 ; 0044e3dd
-        ;   XREF to: 0044e340 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_getRestoreMemory_FUN_0044e340()
+        ;   XREF to: 0044e340 (UNCONDITIONAL_CALL)  ; void * core_dlight.cpp_getRestoreMemory_FUN_0044e340(int pixel_count)
     MOV dword ptr [EBX + 0x2f9c],EAX    ; 0044e3e2
     MOV EBP,dword ptr [EBX + 0x1cc4]    ; 0044e3e8
     MOV EAX,dword ptr [EBX + 0x1cc0]    ; 0044e3ee

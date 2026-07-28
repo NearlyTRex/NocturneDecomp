@@ -17,19 +17,19 @@ CDemonActorType * FUN_004a8c90(void);
 
 // Original: core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0
 // Address: 004a8ca0
-int CGhoul::ctor(undefined4 param_1);
+CGhoul * __cdecl CGhoul::ctor(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_setup_FUN_004a8dd0
 // Address: 004a8dd0
-void CGhoul::setup(int param_1);
+void CGhoul::setup(CEnemy *param_1);
 
 // Original: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040
 // Address: 004a9040
-void __cdecl CGhoul::findDarkWayPoint(int param_1,float param_2);
+void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr,float delta_time);
 
 // Original: core_ghoul.cpp_FUN_004a9270
 // Address: 004a9270
-void FUN_004a9270(int param_1,float param_2);
+void FUN_004a9270(UOrientationVector *param_1,float param_2);
 
 // Original: core_ghoul.cpp_CGhoul_renderBackground_FUN_004aae00
 // Address: 004aae00
@@ -37,28 +37,28 @@ void CGhoul::renderBackground(int param_1,undefined4 param_2);
 
 // Original: core_ghoul.cpp_CGhoul_archive_FUN_004aae30
 // Address: 004aae30
-void CGhoul::archive(int param_1);
+void CGhoul::archive(CEnemy *param_1);
 
 // Original: core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004aaf40
 // Address: 004aaf40
-undefined4 CGhoul::canBeAttracted(int param_1,undefined4 *param_2);
+undefined4 CGhoul::canBeAttracted(CDemonActor *param_1,CVector3f *param_2);
 
 // Original: core_ghoul.cpp_FUN_004ab110
 // Address: 004ab110
-undefined4 FUN_004ab110(int param_1,undefined4 param_2);
+CVector3f * FUN_004ab110(int param_1,CVector3f *param_2);
 
 // Original: core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190
 // Address: 004ab190
-void __cdecl CGhoul::processDismemberment(int param_1,int *param_2);
+void __cdecl CGhoul::processDismemberment(CGhoul *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_ghoul.cpp_FUN_004ab450
 // Address: 004ab450
-void FUN_004ab450(int param_1,int param_2);
+void FUN_004ab450(CGhoul *param_1,SDamageInfo *param_2);
 
 // Original: core_ghoul.cpp_FUN_004ab830
 // Address: 004ab830
-int FUN_004ab830(int param_1,float *param_2);
+int FUN_004ab830(int param_1,CVector3f *param_2);
 
-// Original: core_ghoul.cpp_FUN_004aba30
+// Original: core_ghoul.cpp_CGhoul_dtor_FUN_004aba30
 // Address: 004aba30
-int FUN_004aba30(int param_1,byte param_2);
+CDemonActor * CGhoul::dtor(CDemonActor *param_1,byte param_2);

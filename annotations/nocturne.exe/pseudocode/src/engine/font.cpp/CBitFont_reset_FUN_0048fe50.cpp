@@ -2,50 +2,50 @@
 // Address: 0048fe50
 // Address Range: [[0048fe50, 0048ff36]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(undefined4 *param_1)
+// Signature: void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(CBitFont *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(uint *param_1)
+void __cdecl engine_font_cpp_CBitFont_reset_FUN_0048fe50(CBitFont *this_ptr)
 
 {
-  uint *puVar1;
-  uint *puVar2;
-  uint *puVar3;
+  char (*pacVar1) [80];
+  CBitFont *pCVar2;
+  CBitFont *pCVar3;
   
-  *param_1 = 0;
-  puVar2 = param_1;
-  puVar3 = param_1;
+  this_ptr->bitmap_count = 0;
+  pCVar2 = this_ptr;
+  pCVar3 = this_ptr;
   do {
-    puVar1 = puVar2 + 1;
-    *(byte *)(puVar3 + 1) = 0;
-    puVar2[0x51] = 0;
-    puVar3 = puVar3 + 0x14;
-    puVar2[0x55] = 0;
-    puVar2 = puVar1;
-  } while (puVar1 != param_1 + 4);
-  puVar2 = param_1;
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar3->bitmap_files[0][0] = '\0';
+    pCVar2->bitmap_data[0] = (void *)0x0;
+    pCVar3 = (CBitFont *)(pCVar3->bitmap_files[0] + 0x4c);
+    pCVar2->bitmap_widths[0] = 0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->bitmap_files[0] + 0xc));
+  pCVar2 = this_ptr;
   do {
-    puVar3 = puVar2 + 1;
-    puVar2[0x85a] = 0;
-    puVar2[0x95a] = 0;
-    puVar2[0xa5a] = 0;
-    puVar2[0xb5a] = 0;
-    puVar2[0x75a] = 0;
-    puVar2 = puVar3;
-  } while (puVar3 != param_1 + 0x100);
-  param_1[0xc5b] = 0;
-  param_1[0xc5c] = 0;
-  param_1[0xc5d] = 1;
-  param_1[0xc5e] = 2;
-  param_1[0x97a] = 8;
-  param_1[0xc5f] = 2;
-  param_1[0xc60] = 1;
-  param_1[0xc61] = 0;
-  param_1[0x759] = 0;
-  param_1[0xc63] = 0;
-  param_1[0xc64] = 0;
-  param_1[0xc65] = 0;
-  param_1[0xc5a] = 0;
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar2->char_bitmap_index[0] = 0;
+    pCVar2->char_widths[0] = 0;
+    pCVar2->char_heights[0] = 0;
+    pCVar2->char_y_offsets[0] = 0;
+    pCVar2->char_positions[0] = (uchar *)0x0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->palette_data + 0x29c));
+  this_ptr->max_char_height = 0;
+  this_ptr->current_line_height = 0;
+  this_ptr->char_spacing = 1;
+  this_ptr->line_spacing = 2;
+  this_ptr->char_widths[0x20] = 8;
+  this_ptr->shadow_offset_x = 2;
+  this_ptr->shadow_offset_y = 1;
+  this_ptr->rendering_ready = 0;
+  this_ptr->is_initialized = 0;
+  this_ptr->use_3d_rendering = 0;
+  this_ptr->win_font_enabled = 0;
+  this_ptr->win_font_helper = (CWinFont *)0x0;
+  this_ptr->max_char_width = 0;
   return;
 }

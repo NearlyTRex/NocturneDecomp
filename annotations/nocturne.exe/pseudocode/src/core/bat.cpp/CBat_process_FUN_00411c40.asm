@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_CBat_process_FUN_00411c40(int param_1,float param_2)
+; void core_bat_cpp_CBat_process_FUN_00411c40(CBat *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 00411c78
     FSTP float ptr [EBX + 0x2fc]        ; 00411c79
     CALL core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20 ; 00411c7f
-        ;   XREF to: 00411f20 (UNCONDITIONAL_CALL)  ; undefined core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20()
+        ;   XREF to: 00411f20 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20(CBat * this_ptr)
     ADD ESP,0x4                         ; 00411c84
     FLD float ptr [ESI]                 ; 00411c87
     FSUB float ptr [ESP + 0x10]         ; 00411c89
@@ -106,7 +106,7 @@ section .text
     PUSH EAX                            ; 00411d21
     FSTP float ptr [EBX + 0x17c]        ; 00411d22
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 00411d28
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00411d2d
     MOV ESI,dword ptr [EAX + 0x100]     ; 00411d30
     MOV dword ptr [ESP + 0x24],ESI      ; 00411d36
@@ -157,7 +157,7 @@ section .text
         ;   Label: LAB_00411da4
     PUSH ESI                            ; 00411daa
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 00411dab
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 00411db0
     TEST EAX,EAX                        ; 00411db3
     JNZ 0x00411dfe                      ; 00411db5
@@ -174,7 +174,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 00411dd2
     FSTP double ptr [ESP]               ; 00411dd5
     CALL sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880 ; 00411dd8
-        ;   XREF to: 00527880 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880()
+        ;   XREF to: 00527880 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880(double pos_x, double pos_y, double pos_z, double radius)
     ADD ESP,0x20                        ; 00411ddd
     TEST EAX,EAX                        ; 00411de0
     JZ 0x00411dfe                       ; 00411de2

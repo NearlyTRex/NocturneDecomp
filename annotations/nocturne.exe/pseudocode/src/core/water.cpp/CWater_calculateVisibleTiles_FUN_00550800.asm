@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int param_1)
+; void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *this_ptr)
 ;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xbc]:8  local_bc
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -119,13 +121,13 @@ section .text
     PUSH EAX                            ; 00550865
     PUSH 0x1fba938                      ; 00550866 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 0055086b
-        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0()
+        ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00550870
     LEA EAX,[ESP + 0x28]                ; 00550873
     PUSH EAX                            ; 00550877
     PUSH 0x1fba938                      ; 00550878 | DAT_01fba938
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 0055087d
-        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0()
+        ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00550882
     FLD float ptr [ESP + 0x70]          ; 00550885
     FADD float ptr [ESP + 0x28]         ; 00550889
@@ -189,7 +191,7 @@ section .text
     FLD1                                ; 00550963
     FADDP                               ; 00550965
     CALL crt_math.c_round_FUN_00563a30  ; 00550967
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x9c]        ; 0055096c
     MOV EAX,dword ptr [ESP + 0x9c]      ; 00550973
     XOR ESI,ESI                         ; 0055097a
@@ -234,7 +236,7 @@ section .text
     PUSH ECX                            ; 00550a13
     FSTP float ptr [ESP + 0x74]         ; 00550a14
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00550a18
-        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00()
+        ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00550a1d
     LEA EBX,[ESP + 0x40]                ; 00550a20
     LEA EAX,[ESP + 0x64]                ; 00550a24
@@ -268,7 +270,7 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00550a8d | DAT_01b4d738
     PUSH EAX                            ; 00550a8f
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550a90
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00550a95
     MOV EAX,dword ptr [EDI + 0x8]       ; 00550a98
     LEA EBX,[ESP + 0x34]                ; 00550a9b
@@ -290,7 +292,7 @@ section .text
     ADD EAX,0x30                        ; 00550ad6
     PUSH EAX                            ; 00550ad9
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550ada
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00550adf
     MOV EAX,dword ptr [EDI + 0x8]       ; 00550ae2
     LEA EBX,[ESP + 0x7c]                ; 00550ae5
@@ -312,7 +314,7 @@ section .text
     ADD EAX,0x60                        ; 00550b20
     PUSH EAX                            ; 00550b23
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b24
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     LEA EBX,[ESP + 0x54]                ; 00550b29
     LEA EAX,[ESP + 0x6c]                ; 00550b2d
     ADD ESP,0x8                         ; 00550b31
@@ -334,7 +336,7 @@ section .text
     ADD EAX,0x90                        ; 00550b69
     PUSH EAX                            ; 00550b6e
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b6f
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005c5024]                ; 00550b74 | DAT_005c5024
     MOV EBX,dword ptr [0x005c5054]      ; 00550b79 | DAT_005c5054
     MOV EDX,dword ptr [0x005c5084]      ; 00550b7f | DAT_005c5084
@@ -405,7 +407,7 @@ section .text
     PUSH EDX                            ; 00550c49 | DAT_01b4d738
     MOV dword ptr [ESP + 0x28],ECX      ; 00550c4a
     CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 ; 00550c4e
-        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190()
+        ;   XREF to: 0045f190 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00550c53
     TEST EAX,EAX                        ; 00550c56
     JZ 0x00550ca4                       ; 00550c58

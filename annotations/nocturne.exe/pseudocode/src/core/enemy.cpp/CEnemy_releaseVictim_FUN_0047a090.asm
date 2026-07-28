@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(int param_1)
+; void core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDI       ; 0047a0fe
     MOV dword ptr [ESP + 0x10],EDI      ; 0047a102
     CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 ; 0047a106
-        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050()
+        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0047a10b
     POP EDI                             ; 0047a10e
     MOV dword ptr [EBX + 0xbca4],0x0    ; 0047a10f

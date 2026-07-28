@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(int param_1,undefined4 *param_2)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   transform_vector
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -68,7 +71,7 @@ section .text
     ADD EBX,0x370                       ; 00454139
     PUSH EBX                            ; 0045413f
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00454140
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00454145
     XOR EDX,EDX                         ; 00454148
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0045414a
@@ -223,7 +226,7 @@ section .text
     PUSH EAX                            ; 0045431d
     PUSH EBP                            ; 0045431e
     CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 ; 0045431f
-        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0()
+        ;   XREF to: 0046c5b0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     LEA EAX,[ESP + 0x28]                ; 00454324
     LEA EDX,[ESP + 0x34]                ; 00454328
     ADD ESP,0x10                        ; 0045432c

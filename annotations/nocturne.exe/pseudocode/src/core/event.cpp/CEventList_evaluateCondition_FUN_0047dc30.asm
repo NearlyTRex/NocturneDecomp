@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(undefined4 param_1,char *param_2)
+; int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList *this_ptr,char *condition_expression)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   condition_expression
 ;
 ; XREF[49]:
 ;   core_anvil.cpp_FUN_0040f610 at 0040f626
@@ -52,7 +55,7 @@ section .text
         ;   Label: LAB_0047dc42
     PUSH EBX                            ; 0047dc47
     CALL crt_string.c__stricmp_FUN_00564520 ; 0047dc48
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047dc4d
     TEST EAX,EAX                        ; 0047dc50
     JZ 0x0047dc40                       ; 0047dc52
@@ -63,7 +66,7 @@ section .text
     PUSH ECX                            ; 0047dc5b
     MOV dword ptr [0x01c08b5c],EDX      ; 0047dc5c | DAT_01c08b5c
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10 ; 0047dc62
-        ;   XREF to: 0047dd10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10()
+        ;   XREF to: 0047dd10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0047dc67
     TEST EAX,EAX                        ; 0047dc6a
     JGE 0x0047dc40                      ; 0047dc6c

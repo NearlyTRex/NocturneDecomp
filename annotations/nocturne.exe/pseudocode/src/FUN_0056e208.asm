@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0056b960 at 0056b9fb
 ;   FUN_0056e1a0 at 0056e1b4
+;   crt_stdio.c_CreateFileImpl_FUN_0056b960 at 0056b9fb
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateEventA_00575494 = 00175af6

@@ -2,56 +2,53 @@
 // Address: 00423680
 // Address Range: [[00423680, 00423781]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(int param_1)
+// Signature: void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs *this_ptr)
 
 #include "nocturne.h"
 
-uint * __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(int param_1)
+void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs *this_ptr)
 
 {
-  uint *puVar1;
+  CVector3f *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
-  uint *puVar7;
+  CVector3f *pCVar7;
   int iVar8;
-  int iVar9;
   
-  puVar7 = (uint *)(param_1 + 0x19834);
-  puVar1 = (uint *)(param_1 + 0xbd34);
-  if (puVar7 != puVar1) {
-    *puVar7 = *puVar1;
-    *(uint *)(param_1 + 0x19838) = *(uint *)(param_1 + 0xbd38);
-    *(uint *)(param_1 + 0x1983c) = *(uint *)(param_1 + 0xbd3c);
+  pCVar7 = &this_ptr->bugs[0].position;
+  if (&this_ptr->bounds != (CBoundingBox3D *)pCVar7) {
+    (this_ptr->bounds).min.x = pCVar7->x;
+    (this_ptr->bounds).min.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).min.z = this_ptr->bugs[0].position.z;
   }
-  if ((uint *)(param_1 + 0x19840) != puVar1) {
-    *(uint *)(param_1 + 0x19840) = *puVar1;
-    *(uint *)(param_1 + 0x19844) = *(uint *)(param_1 + 0xbd38);
-    puVar7 = *(uint **)(param_1 + 0xbd3c);
-    *(uint **)(param_1 + 0x19848) = puVar7;
+  pCVar1 = &(this_ptr->bounds).max;
+  if (pCVar1 != pCVar7) {
+    pCVar1->x = pCVar7->x;
+    (this_ptr->bounds).max.y = this_ptr->bugs[0].position.y;
+    (this_ptr->bounds).max.z = this_ptr->bugs[0].position.z;
   }
-  iVar9 = 1;
-  if (1 < *(int *)(param_1 + 0xbd28)) {
-    iVar8 = param_1 + 0xbd74;
+  iVar8 = 1;
+  if (1 < this_ptr->count) {
+    pCVar7 = &this_ptr->bugs[1].position;
     do {
-      iVar9 = iVar9 + 1;
-      puVar7 = (uint *)
-               core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(param_1 + 0x19834,iVar8);
-      iVar8 = iVar8 + 0x40;
-    } while (iVar9 < *(int *)(param_1 + 0xbd28));
+      iVar8 = iVar8 + 1;
+      core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(&this_ptr->bounds,pCVar7);
+      pCVar7 = (CVector3f *)&pCVar7[5].y;
+    } while (iVar8 < this_ptr->count);
   }
-  fVar2 = *(float *)(param_1 + 0x19834) + -0.3333333f;
-  fVar3 = *(float *)(param_1 + 0x1983c) + -0.3333333f;
-  fVar4 = *(float *)(param_1 + 0x19840) + 0.3333333f;
-  fVar5 = *(float *)(param_1 + 0x19844) + 0.3333333f;
-  fVar6 = *(float *)(param_1 + 0x19848) + 0.3333333f;
-  *(float *)(param_1 + 0x19838) = *(float *)(param_1 + 0x19838) + -0.3333333f;
-  *(float *)(param_1 + 0x1983c) = fVar3;
-  *(float *)(param_1 + 0x19840) = fVar4;
-  *(float *)(param_1 + 0x19844) = fVar5;
-  *(float *)(param_1 + 0x19848) = fVar6;
-  *(float *)(param_1 + 0x19834) = fVar2;
-  return puVar7;
+  fVar2 = (this_ptr->bounds).min.x + -0.3333333f;
+  fVar3 = (this_ptr->bounds).min.z + -0.3333333f;
+  fVar4 = (this_ptr->bounds).max.x + 0.3333333f;
+  fVar5 = (this_ptr->bounds).max.y + 0.3333333f;
+  fVar6 = (this_ptr->bounds).max.z + 0.3333333f;
+  (this_ptr->bounds).min.y = (this_ptr->bounds).min.y + -0.3333333f;
+  (this_ptr->bounds).min.z = fVar3;
+  (this_ptr->bounds).max.x = fVar4;
+  (this_ptr->bounds).max.y = fVar5;
+  (this_ptr->bounds).max.z = fVar6;
+  (this_ptr->bounds).min.x = fVar2;
+  return;
 }

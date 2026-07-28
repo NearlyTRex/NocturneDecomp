@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(int param_1,int param_2)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -40,7 +43,7 @@ section .text
     PUSH EBX                            ; 004cb5af
     PUSH EBP                            ; 004cb5b0
     CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0 ; 004cb5b1
-        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0()
+        ;   XREF to: 004cb8f0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004cb5b6
     MOV EDX,EAX                         ; 004cb5b9
     MOV dword ptr [ESP],EAX             ; 004cb5bb
@@ -155,17 +158,17 @@ section .text
     ADD ESP,0x8                         ; 004cb6eb
     ADD ESI,0x58                        ; 004cb6ee
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 004cb6f1
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
     PUSH ESI                            ; 004cb6f6
     CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0 ; 004cb6f7
-        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0()
+        ;   XREF to: 00525fc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 004cb6fc
     PUSH 0x588075                       ; 004cb6ff | = "manpuz-doorslide.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004cb704
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 004cb709
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 004cb70c
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     ADD ESP,0x4                         ; 004cb711
     POP EBP                             ; 004cb714
     POP EDI                             ; 004cb715

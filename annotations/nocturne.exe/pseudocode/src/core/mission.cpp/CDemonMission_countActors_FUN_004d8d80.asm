@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(int param_1)
+; int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(CDemonMission *this_ptr)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_mission.cpp_FUN_004d8720 at 004d8883

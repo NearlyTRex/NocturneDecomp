@@ -1,0 +1,166 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 12,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "00572d90",
+      "from_addr": "00572dbe",
+      "name": "FUN_00572d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573db0",
+      "from_addr": "00573dbd",
+      "name": "FUN_00573db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056626c",
+      "from_addr": "0056630d",
+      "name": "crt_file.c_makepath_FUN_0056626c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572a90",
+      "from_addr": "00572aa0",
+      "name": "crt_string.c_char_in_set_FUN_00572a90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056da30",
+    "address_range": [
+      [
+        "0056da30",
+        "0056da4d"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_wchar_to_bytes_FUN_0056da30",
+    "signature": "void __watcallStack crt_locale_c_wchar_to_bytes_FUN_0056da30(wchar_t character,char *output_buffer)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0056630d",
+        "call_type": "direct",
+        "caller": "crt_file.c_makepath_FUN_0056626c",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005663d7",
+        "call_type": "direct",
+        "caller": "crt_file.c_makepath_FUN_0056626c",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00572aa0",
+        "call_type": "direct",
+        "caller": "crt_string.c_char_in_set_FUN_00572a90",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00572dbe",
+        "call_type": "direct",
+        "caller": "FUN_00572d90",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573dbd",
+        "call_type": "direct",
+        "caller": "FUN_00573db0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.571428571428571,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 17,
+      "INT_EQUAL": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 2,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 78
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 2,
+        "type": "wchar_t"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

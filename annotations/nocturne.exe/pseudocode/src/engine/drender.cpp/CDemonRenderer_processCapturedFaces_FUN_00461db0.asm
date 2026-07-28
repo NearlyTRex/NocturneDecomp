@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(int param_1)
+; void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
 ;   core_baron.cpp_FUN_004110f0 at 0041126c
@@ -73,7 +75,7 @@ section .text
     PUSH 0x1                            ; 00461e23
     PUSH EBP                            ; 00461e25
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 00461e26
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00461e2b
     MOV EDI,0xffffffff                  ; 00461e2e
         ;   Label: LAB_00461e2e
@@ -95,7 +97,7 @@ section .text
     PUSH EAX                            ; 00461e57
     PUSH EBP                            ; 00461e58
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00461e59
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00461e5e
     MOV EAX,dword ptr [EBX + 0x1b748b4] ; 00461e61
         ;   Label: LAB_00461e61
@@ -117,7 +119,7 @@ section .text
         ;   Label: LAB_00461e85
     PUSH EBP                            ; 00461e87
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 00461e88
-        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0()
+        ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 00461e8d
     POP EBX                             ; 00461e90
     POP ESI                             ; 00461e91

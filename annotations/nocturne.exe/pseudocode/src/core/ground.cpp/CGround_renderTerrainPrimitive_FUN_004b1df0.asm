@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(undefined4 param_1,undefined4 param_2)
+; void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround *this_ptr,SMRGLHeaderPrimitive *primitive)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+; SMRGLHeaderPrimitive * Stack[0x8]:4   primitive
 ;
 ; XREF[1]:
 ;   core_ground.cpp_CGround_renderTerrainQuad_FUN_004b1e10 at 004b1f4c
@@ -25,7 +28,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004b1dfa | DAT_005ae704
     PUSH ECX                            ; 004b1e00 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 004b1e01
-        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0()
+        ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004b1e06
     RET                                 ; 004b1e09
 

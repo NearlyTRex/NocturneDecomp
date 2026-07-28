@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 213,
+    "complexity_score": 63,
     "cross_reference_count": 14,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 17,
+    "suspect_count": 3,
     "suspect_types": [
-      "concat_reconstruction",
-      "param_count_too_few",
-      "unnamed_param"
+      "concat_reconstruction"
     ],
     "total_lines": 89
   },
@@ -112,7 +110,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_string.c__strnicmp_FUN_00564bc0",
-    "signature": "int __cdecl crt_string_c__strnicmp_FUN_00564bc0(byte *param_1,undefined1 *param_2,int param_3)"
+    "signature": "int __cdecl crt_string_c__strnicmp_FUN_00564bc0(char *str1,char *str2,int count)"
   },
   "function_calls": [],
   "globals": [],
@@ -231,10 +229,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.955555555555556,
@@ -263,124 +261,42 @@
     "pcode_op_count": 223
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl _strnicmp(byte *param_1,byte *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl _strnicmp(byte *param_1,byte *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int __cdecl _strnicmp(byte *param_1,byte *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar2 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar1 = (uint)CONCAT11(*param_2,bVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar1 = (uint)CONCAT11(*param_2,bVar2 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + -1;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 13,
       "match": "CONCAT11",
       "severity": "moderate",
-      "text": "uVar1 = (uint)CONCAT11(*param_2,bVar2);",
+      "text": "uVar1 = (uint)CONCAT11(*str2,bVar2);",
       "type": "concat_reconstruction"
     },
     {
@@ -388,7 +304,7 @@
       "line": 15,
       "match": "CONCAT11",
       "severity": "moderate",
-      "text": "uVar1 = (uint)CONCAT11(*param_2,bVar2 + 0x20);",
+      "text": "uVar1 = (uint)CONCAT11(*str2,bVar2 + 0x20);",
       "type": "concat_reconstruction"
     },
     {
@@ -398,17 +314,6 @@
       "severity": "moderate",
       "text": "uVar1 = (uint)CONCAT11(bVar2 + 0x20,(char)uVar1);",
       "type": "concat_reconstruction"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -82,10 +82,51 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_strstream.cpp_istrstream_dtor_FUN_00564fd8",
-    "ret":"undefined1",
+    "ret":"_istrstream*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -98,13 +139,27 @@
         "start":"00567458"
       }
     ],
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"FUN_00567458",
-    "ret":"undefined1",
+    "name":"crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"pParam",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        }
+      ]
     }
   },
   {
@@ -134,12 +189,38 @@
         "start":"00568d58"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_00568d58",
-    "ret":"undefined1",
+    "name":"crt_heap.c_AllocateNewHeapBlock_FUN_00568d58",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -335,7 +416,7 @@
       }
     ],
     "importable":true,
-    "name":"FUN_0056d658",
+    "name":"crt_time.c_parse_timezone_spec_FUN_0056d658",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -421,7 +502,7 @@
       }
     ],
     "importable":true,
-    "name":"FUN_0056eed8",
+    "name":"crt_exception.c_installExceptionHandler_FUN_0056eed8",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -438,12 +519,38 @@
         "start":"005716d8"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"FUN_005716d8",
-    "ret":"undefined1",
+    "name":"crt_signal.c_raiseFPE_FUN_005716d8",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"fpe_code",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -456,12 +563,38 @@
         "start":"005717d8"
       }
     ],
+    "conv":"__watcallStack",
     "importable":true,
-    "name":"FUN_005717d8",
-    "ret":"undefined1",
+    "name":"crt_signal.c_processSignal_FUN_005717d8",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"signal_number",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

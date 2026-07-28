@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(int param_1,char *param_2)
+; int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(CMorphModel *this_ptr,char *filename)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
+;   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800 at 004df8b7
 ;   core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0 at 004dfaa9
-;   core_morph.cpp_FUN_004df800 at 004df8b7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058acd8
@@ -40,7 +43,7 @@ section .text
         ;   Label: LAB_004dfbb8
     PUSH EDI                            ; 004dfbb9
     CALL crt_string.c__stricmp_FUN_00564520 ; 004dfbba
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004dfbbf
     TEST EAX,EAX                        ; 004dfbc2
     JZ 0x004dfc5c                       ; 004dfbc4
@@ -74,7 +77,7 @@ section .text
     ADD EAX,EDI                         ; 004dfc13
     PUSH EAX                            ; 004dfc15
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004dfc16
-        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_memset_FUN_00563cc0()
+        ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     MOV ESI,dword ptr [EBX + 0x64]      ; 004dfc1b
     LEA EAX,[ESI*0x8 + 0x0]             ; 004dfc1e
     ADD EAX,ESI                         ; 004dfc25

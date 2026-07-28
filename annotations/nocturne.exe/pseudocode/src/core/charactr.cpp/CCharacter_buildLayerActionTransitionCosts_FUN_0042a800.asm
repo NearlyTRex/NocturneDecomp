@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(int param_1)
+; void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -53,7 +55,7 @@ section .text
     ADD EAX,0x150                       ; 0042a844
     PUSH EAX                            ; 0042a849
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_004e1890 ; 0042a84a
-        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getMotionList_FUN_004e1890()
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004e1890(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042a84f
     MOV EDI,EAX                         ; 0042a852
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0042a854
@@ -74,7 +76,7 @@ section .text
     PUSH EDI                            ; 0042a885
     ADD EBX,ECX                         ; 0042a886
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010 ; 0042a888
-        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010()
+        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV dword ptr [EBX + 0x2c],EAX      ; 0042a88d
     IMUL EAX,EAX,0x54c                  ; 0042a890
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x9cc] ; 0042a896

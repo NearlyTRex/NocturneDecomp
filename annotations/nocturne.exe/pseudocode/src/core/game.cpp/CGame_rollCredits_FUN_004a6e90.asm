@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(undefined4 param_1)
+; void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x1134]:4  local_1134
 ; undefined        Stack[-0x134]:1  local_134
@@ -67,7 +69,7 @@ section .text
     MOV dword ptr [ESP + 0x1118],EDX    ; 004a6e9f
     MOV dword ptr [ESP + 0x1120],ECX    ; 004a6ea6
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004a6ead
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     XOR EAX,EAX                         ; 004a6eb2
     ADD EAX,0x4                         ; 004a6eb4
         ;   Label: LAB_004a6eb4
@@ -79,7 +81,7 @@ section .text
     LEA EAX,[ESP + 0x1100]              ; 004a6ec4
     PUSH EAX                            ; 004a6ecb
     CALL engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040e320 ; 004a6ecc
-        ;   XREF to: 0040e320 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040e320()
+        ;   XREF to: 0040e320 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004a6ed1
     PUSH 0x1e0                          ; 004a6ed4
     PUSH 0x280                          ; 004a6ed9
@@ -87,13 +89,13 @@ section .text
     LEA EAX,[ESP + 0x110c]              ; 004a6ee3
     PUSH EAX                            ; 004a6eea
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004a6eeb
-        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
+        ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004a6ef0
     PUSH 0x584678                       ; 004a6ef3 | = "rt"
     PUSH 0x58467b                       ; 004a6ef8 | = "credits.txt"
     PUSH 0x584687                       ; 004a6efd | = "data"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004a6f02
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004a6f07
     MOV EBP,EAX                         ; 004a6f0a
     TEST EAX,EAX                        ; 004a6f0c
@@ -115,13 +117,13 @@ section .text
     LEA EAX,[ESP + 0x1010]              ; 004a6f34
     PUSH EAX                            ; 004a6f3b
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004a6f3c
-        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_00564b20()
+        ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004a6f41
     PUSH 0x58468c                       ; 004a6f44 | = "end\n"
     LEA EAX,[ESP + 0x100c]              ; 004a6f49
     PUSH EAX                            ; 004a6f50
     CALL crt_string.c__strcmp_FUN_005649c0 ; 004a6f51
-        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strcmp_FUN_005649c0()
+        ;   XREF to: 005649c0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005649c0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a6f56
     TEST EAX,EAX                        ; 004a6f59
     JNZ 0x004a716f                      ; 004a6f5b
@@ -129,30 +131,30 @@ section .text
     PUSH EBP                            ; 004a6f61
         ;   Label: LAB_004a6f61
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004a6f62
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004a6f67
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_00528080 ; 004a6f6a
-        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
+        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 ; 004a6f6f
-        ;   XREF to: 00527e40 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_enableSoundSystem_FUN_00527e40()
+        ;   XREF to: 00527e40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_00527e40()
     XOR ECX,ECX                         ; 004a6f74
     PUSH 0x1                            ; 004a6f76
     MOV dword ptr [ESP + 0x1128],ECX    ; 004a6f78
     CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_00527490 ; 004a6f7f
-        ;   XREF to: 00527490 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxChannelEnabled_FUN_00527490()
+        ;   XREF to: 00527490 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxChannelEnabled_FUN_00527490(int channel_index)
     ADD ESP,0x4                         ; 004a6f84
     TEST EAX,EAX                        ; 004a6f87
     JNZ 0x004a71f4                      ; 004a6f89
         ;   XREF to: 004a71f4 (CONDITIONAL_JUMP)  ; LAB_004a71f4
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004a6f8f
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
         ;   Label: LAB_004a6f8f
     PUSH 0x58                           ; 004a6f94
     MOV EDI,dword ptr [0x014b9900]      ; 004a6f96 | DAT_014b9900
     PUSH EDI                            ; 004a6f9c
     MOV dword ptr [EDI + 0x3190],0x0    ; 004a6f9d
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004a6fa7
-        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0()
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV EBX,EAX                         ; 004a6fac
     ADD ESP,0x8                         ; 004a6fae
     MOV EBP,EAX                         ; 004a6fb1
@@ -161,11 +163,11 @@ section .text
     PUSH EAX                            ; 004a6fbf
     MOV dword ptr [ESP + 0x1120],ESI    ; 004a6fc0
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004a6fc7
-        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_saveClockTime_FUN_0049a890()
+        ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
     ADD ESP,0x4                         ; 004a6fcc
     PUSH 0xffff                         ; 004a6fcf
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004a6fd4
-        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     MOV EAX,0x1df                       ; 004a6fd9
     ADD ESP,0x4                         ; 004a6fde
     SUB EAX,EBX                         ; 004a6fe1
@@ -174,7 +176,7 @@ section .text
         ;   Label: LAB_004a6fea
     MOV EDX,dword ptr [ESP + 0x111c]    ; 004a6ff1
     CALL crt_math.c_round_FUN_00563a30  ; 004a6ff8
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x1130]      ; 004a6ffd
     MOV EAX,dword ptr [ESP + 0x1130]    ; 004a7004
     CMP EAX,EDX                         ; 004a700b
@@ -182,14 +184,14 @@ section .text
         ;   XREF to: 004a7103 (CONDITIONAL_JUMP)  ; LAB_004a7103
     MOV dword ptr [ESP + 0x111c],EAX    ; 004a7013
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a701a
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 004a701f
     PUSH 0x0                            ; 004a7024
     PUSH 0x0                            ; 004a7026
     LEA EAX,[ESP + 0x1114]              ; 004a7028
     PUSH EAX                            ; 004a702f
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710 ; 004a7030
-        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710()
+        ;   XREF to: 0040e710 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004a7035
     MOV ECX,dword ptr [ESP + 0x1120]    ; 004a7038
     TEST ECX,ECX                        ; 004a703f
@@ -226,7 +228,7 @@ section .text
     PUSH 0x19e                          ; 004a708c
     PUSH EDI                            ; 004a7091
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0 ; 004a7092
-        ;   XREF to: 00490de0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0()
+        ;   XREF to: 00490de0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x1c                        ; 004a7097
     MOV EAX,dword ptr [ESP + 0x1130]    ; 004a709a
         ;   Label: LAB_004a709a
@@ -243,7 +245,7 @@ section .text
         ;   XREF to: 004a70cd (CONDITIONAL_JUMP)  ; LAB_004a70cd
     PUSH EDX                            ; 004a70bc
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 ; 004a70bd
-        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_isSfxPlaying_FUN_00526c50()
+        ;   XREF to: 00526c50 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00526c50(uint sfx_handle)
     ADD ESP,0x4                         ; 004a70c2
     TEST EAX,EAX                        ; 004a70c5
     JZ 0x004a722b                       ; 004a70c7
@@ -255,7 +257,7 @@ section .text
     PUSH 0x0                            ; 004a70d6
     PUSH 0x19e                          ; 004a70d8
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004a70dd
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004a70e2
     PUSH 0x0                            ; 004a70e5
     PUSH 0x1df                          ; 004a70e7
@@ -263,10 +265,10 @@ section .text
     PUSH 0x1b7                          ; 004a70f1
     PUSH 0x19e                          ; 004a70f6
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004a70fb
-        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_fillRectColor_FUN_00403e60()
+        ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004a7100
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004a7103
-        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_004a7103
     PUSH 0x1                            ; 004a7108
     MOV EAX,[0x005bac64]                ; 004a710a | INT_005bac64
@@ -280,7 +282,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1140]    ; 004a711f
     PUSH EDX                            ; 004a7126
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004a7127
-        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_updateDT_FUN_0049a8a0()
+        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004a712c
     MOV EAX,dword ptr [ESP + 0x1140]    ; 004a712f
     FLD float ptr [EAX + 0x264]         ; 004a7136
@@ -294,7 +296,7 @@ section .text
     LEA EAX,[ESP + 0x1104]              ; 004a7156
     PUSH EAX                            ; 004a715d
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340 ; 004a715e
-        ;   XREF to: 0040e340 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340()
+        ;   XREF to: 0040e340 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a7163
     ADD ESP,0x112c                      ; 004a7166
     POP EBP                             ; 004a716c
@@ -311,7 +313,7 @@ section .text
     ADD ECX,0xa                         ; 004a7180
     PUSH ECX                            ; 004a7183
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004a7184
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 004a7189
     MOV dword ptr [ESP + EBX*0x1 + 0x8],EAX ; 004a718c
     TEST EAX,EAX                        ; 004a7190
@@ -354,23 +356,23 @@ section .text
     JMP 0x004a7194                      ; 004a71f2
         ;   XREF to: 004a7194 (UNCONDITIONAL_JUMP)  ; LAB_004a7194
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 004a71f4
-        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
+        ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()
         ;   Label: LAB_004a71f4
     PUSH 0x1                            ; 004a71f9
     CALL sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0 ; 004a71fb
-        ;   XREF to: 005261b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0()
+        ;   XREF to: 005261b0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0(int channel_index)
     ADD ESP,0x4                         ; 004a7200
     PUSH 0x1                            ; 004a7203
     CALL sound_sndmain.cpp_setNextSfxFlags_FUN_00526240 ; 004a7205
-        ;   XREF to: 00526240 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxFlags_FUN_00526240()
+        ;   XREF to: 00526240 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlags_FUN_00526240(uint flags)
     ADD ESP,0x4                         ; 004a720a
     PUSH 0x5846c5                       ; 004a720d | = "faded-remix.mp3"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004a7212
-        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSfx_FUN_005265a0()
+        ;   XREF to: 005265a0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005265a0(char * filename)
     ADD ESP,0x4                         ; 004a7217
     MOV dword ptr [ESP + 0x1124],EAX    ; 004a721a
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005263c0 ; 004a7221
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     JMP 0x004a6f8f                      ; 004a7226
         ;   XREF to: 004a6f8f (UNCONDITIONAL_JUMP)  ; LAB_004a6f8f
     CMP dword ptr [0x01d16810],0x0      ; 004a722b | DAT_01d16810
@@ -379,11 +381,11 @@ section .text
         ;   XREF to: 004a723e (CONDITIONAL_JUMP)  ; LAB_004a723e
     MOV dword ptr [EDI + 0x3190],0x1    ; 004a7234
     CALL sound_sndmain.cpp_resetSoundDevice_FUN_00528080 ; 004a723e
-        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
+        ;   XREF to: 00528080 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_00528080()
         ;   Label: LAB_004a723e
     MOV EBX,dword ptr [ESP + 0x1120]    ; 004a7243
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004a724a
-        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
+        ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     TEST EBX,EBX                        ; 004a724f
     JLE 0x004a7280                      ; 004a7251
         ;   XREF to: 004a7280 (CONDITIONAL_JUMP)  ; LAB_004a7280
@@ -408,7 +410,7 @@ section .text
     LEA EAX,[ESP + 0x110c]              ; 004a7282
     PUSH EAX                            ; 004a7289
     CALL engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340 ; 004a728a
-        ;   XREF to: 0040e340 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340()
+        ;   XREF to: 0040e340 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a728f
     POP ESI                             ; 004a7292
     POP EDI                             ; 004a7293

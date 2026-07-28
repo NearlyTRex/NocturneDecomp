@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0(int *param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)
+; int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   input
+; int *            Stack[0xc]:4   input_length
+; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined        Stack[-0x90]:1  local_90
 ; undefined        Stack[-0x48]:1  local_48
@@ -32,7 +37,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004390cd
     PUSH EAX                            ; 004390d1
     CALL crt_strstream.cpp_istrstream_ctor_FUN_00564f32 ; 004390d2
-        ;   XREF to: 00564f32 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_istrstream_ctor_FUN_00564f32()
+        ;   XREF to: 00564f32 (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_ctor_FUN_00564f32(void * this_ptr, int ctor_flags, char * buffer, int size)
     ADD ESP,0x10                        ; 004390d7
     MOV ESI,dword ptr [ESP + 0xa0]      ; 004390da
     PUSH ESI                            ; 004390e1
@@ -50,7 +55,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00439103
     PUSH EAX                            ; 00439107
     CALL crt_strstream.cpp_istrstream_dtor_FUN_00564fd8 ; 00439108
-        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; undefined crt_strstream.cpp_istrstream_dtor_FUN_00564fd8()
+        ;   XREF to: 00564fd8 (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_dtor_FUN_00564fd8(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043910d
     MOV EAX,EBX                         ; 00439110
     ADD ESP,0x84                        ; 00439112

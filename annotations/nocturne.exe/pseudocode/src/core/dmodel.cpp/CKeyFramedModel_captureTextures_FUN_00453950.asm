@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(int param_1)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(CKeyFramedModel *this_ptr)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CCloth_load_FUN_00435240 at 00435319
@@ -37,7 +39,7 @@ section .text
     PUSH ECX                            ; 00453971 | DAT_01b4d738
     INC EBX                             ; 00453972
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00453973
-        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0()
+        ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x48                        ; 00453978
     MOV EBP,dword ptr [EDI + 0x120]     ; 0045397b
     ADD ESP,0x8                         ; 00453981

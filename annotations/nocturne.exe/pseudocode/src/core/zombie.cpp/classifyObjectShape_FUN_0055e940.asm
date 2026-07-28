@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_zombie_cpp_classifyObjectShape_FUN_0055e940(float *param_1)
+; int __cdecl core_zombie_cpp_classifyObjectShape_FUN_0055e940(CVector3f *dimensions)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dimensions
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28

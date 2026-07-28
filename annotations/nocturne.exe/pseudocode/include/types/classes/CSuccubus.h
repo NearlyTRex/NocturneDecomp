@@ -8,17 +8,17 @@
 #include "types/classes/CMorph.h"
 
 // Structure: CSuccubus
-// Ghidra size: 0xef68 (61288 bytes)
+// Ghidra size: 0xedd0 (60880 bytes)
 #pragma pack(push, 1)
 typedef struct CSuccubus {
     CEnemy base; // 0x0
-    CDeformableModelInstance hotdemon_model; // 0xbebc
-    CClothList hotdemon_cloth_list; // 0xe170
-    uint sfx_handle; // 0xe32c
-    float ambient_sfx_cooldown; // 0xe330
-    int morph_started; // 0xe334
-    float morph_timer; // 0xe338
-    CMorph morph; // 0xe33c
+    CDeformableModelInstance hotdemon_model; // 0xbd24
+    CClothList hotdemon_cloth_list; // 0xdfd8
+    uint sfx_handle; // 0xe194
+    float ambient_sfx_cooldown; // 0xe198
+    int morph_started; // 0xe19c
+    float morph_timer; // 0xe1a0
+    CMorph morph; // 0xe1a4
 } CSuccubus;
 #pragma pack(pop)
 

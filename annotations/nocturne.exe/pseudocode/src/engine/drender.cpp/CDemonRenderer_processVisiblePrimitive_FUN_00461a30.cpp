@@ -2,17 +2,15 @@
 // Address: 00461a30
 // Address Range: [[00461a30, 00461ace]]
 // Convention: unknown
-// Signature: void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(int param_1,int param_2,undefined4 param_3)
+// Signature: void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer *param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
-void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(int param_1,int param_2,uint param_3)
+void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(CDemonRenderer *param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  ushort local_18;
-  ushort local_16;
-  ushort local_14;
+  STrianglePackedIndices local_18;
   ushort local_12;
   ushort local_10;
   ushort local_e;
@@ -20,15 +18,15 @@ void engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30(int 
   ushort local_a;
   ushort local_8;
   
-  if (*(int *)(param_1 + 0xc) != 0) {
-    iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8);
+  if (param_1->plane_culling_enabled != 0) {
+    iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_2 + 8));
     if (iVar1 == 0) {
       return;
     }
   }
-  local_18 = *(ushort *)(param_2 + 0x18);
-  local_16 = *(ushort *)(param_2 + 0x24);
-  local_14 = *(ushort *)(param_2 + 0x30);
+  local_18.vertex_index_0 = *(ushort *)(param_2 + 0x18);
+  local_18.vertex_index_1 = *(ushort *)(param_2 + 0x24);
+  local_18.vertex_index_2 = *(ushort *)(param_2 + 0x30);
   local_12 = (ushort)((uint)*(uint *)(param_2 + 0x1c) >> 8);
   local_10 = (ushort)((uint)*(uint *)(param_2 + 0x28) >> 8);
   local_e = (ushort)((uint)*(uint *)(param_2 + 0x34) >> 8);

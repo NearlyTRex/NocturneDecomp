@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(undefined4 param_1)
+; CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(CSmiley *this_ptr)
 ;
+; Parameters:
+; CSmiley *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_smiley.cpp_FUN_0051fcc0 at 0051fcd3
@@ -26,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0051fcf1
     PUSH EDX                            ; 0051fcf5
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0051fcf6
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0051fcfb
     PUSH 0x591eed                       ; 0051fcfe | = "smiley.dfm"
     MOV EBX,EAX                         ; 0051fd03

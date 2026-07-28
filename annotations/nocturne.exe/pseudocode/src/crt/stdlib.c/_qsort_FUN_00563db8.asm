@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdlib_c__qsort_FUN_00563db8(undefined4 *param_1,uint param_2,uint param_3,code *param_4)
+; void __cdecl crt_stdlib_c__qsort_FUN_00563db8(undefined4 *param_1,uint param_2,uint param_3,QSORT_COMPARATOR param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -31,8 +31,8 @@
 ;   shape_edittool.cpp_CStrList_sort_FUN_00474010 at 00474069
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00563d20
-;   crt_unknown.c_FUN_00563d90
+;   crt_unknown.c_median_of_3_FUN_00563d20
+;   crt_unknown.c_memory_swap_FUN_00563d90
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
         ;   XREF to: 00563ecd (CONDITIONAL_JUMP)  ; LAB_00563ecd
     MOV ESI,dword ptr [ESP + 0x14c]     ; 00563ebd
     MOV ECX,EBP                         ; 00563ec4
-    CALL crt_unknown.c_FUN_00563d90     ; 00563ec6
-        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d90()
+    CALL crt_unknown.c_memory_swap_FUN_00563d90 ; 00563ec6
+        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_memory_swap_FUN_00563d90(void * ptr1, void * ptr2, SIZE_T bytes)
     JMP 0x00563ee3                      ; 00563ecb
         ;   XREF to: 00563ee3 (UNCONDITIONAL_JUMP)  ; LAB_00563ee3
     MOV EDX,dword ptr [ESP + 0x14c]     ; 00563ecd
@@ -210,8 +210,8 @@ section .text
     PUSH EAX                            ; 0056401c
     MOV EAX,dword ptr [ESP + 0x130]     ; 0056401d
     PUSH EAX                            ; 00564024
-    CALL crt_unknown.c_FUN_00563d20     ; 00564025
-        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d20()
+    CALL crt_unknown.c_median_of_3_FUN_00563d20 ; 00564025
+        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_median_of_3_FUN_00563d20(void * a, void * b, void * c, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 0056402a
     MOV EDX,dword ptr [ESP + 0x130]     ; 0056402d
     PUSH EDX                            ; 00564034
@@ -221,8 +221,8 @@ section .text
     PUSH EDI                            ; 00564040
     SUB EDI,ESI                         ; 00564041
     PUSH EDI                            ; 00564043
-    CALL crt_unknown.c_FUN_00563d20     ; 00564044
-        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d20()
+    CALL crt_unknown.c_median_of_3_FUN_00563d20 ; 00564044
+        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_median_of_3_FUN_00563d20(void * a, void * b, void * c, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00564049
     MOV ECX,dword ptr [ESP + 0x130]     ; 0056404c
     PUSH ECX                            ; 00564053
@@ -234,8 +234,8 @@ section .text
     PUSH EAX                            ; 00564062
     SUB EBX,ESI                         ; 00564063
     PUSH EBX                            ; 00564065
-    CALL crt_unknown.c_FUN_00563d20     ; 00564066
-        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d20()
+    CALL crt_unknown.c_median_of_3_FUN_00563d20 ; 00564066
+        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_median_of_3_FUN_00563d20(void * a, void * b, void * c, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 0056406b
     MOV EBX,EAX                         ; 0056406e
     MOV EAX,dword ptr [ESP + 0x130]     ; 00564070
@@ -245,8 +245,8 @@ section .text
     PUSH EDI                            ; 00564079
     MOV EDX,dword ptr [ESP + 0x11c]     ; 0056407a
     PUSH EDX                            ; 00564081
-    CALL crt_unknown.c_FUN_00563d20     ; 00564082
-        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d20()
+    CALL crt_unknown.c_median_of_3_FUN_00563d20 ; 00564082
+        ;   XREF to: 00563d20 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_median_of_3_FUN_00563d20(void * a, void * b, void * c, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00564087
     MOV EDI,EAX                         ; 0056408a
     MOV EBX,dword ptr [ESP + 0x134]     ; 0056408c
@@ -260,8 +260,8 @@ section .text
         ;   XREF to: 005640b2 (CONDITIONAL_JUMP)  ; LAB_005640b2
     MOV ECX,EBP                         ; 005640a7
     MOV ESI,EAX                         ; 005640a9
-    CALL crt_unknown.c_FUN_00563d90     ; 005640ab
-        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d90()
+    CALL crt_unknown.c_memory_swap_FUN_00563d90 ; 005640ab
+        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_memory_swap_FUN_00563d90(void * ptr1, void * ptr2, SIZE_T bytes)
     JMP 0x005640da                      ; 005640b0
         ;   XREF to: 005640da (UNCONDITIONAL_JUMP)  ; LAB_005640da
     MOV EBX,dword ptr [ESP + 0x124]     ; 005640b2
@@ -311,8 +311,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x144]     ; 00564157
     MOV ESI,dword ptr [ESP + 0x138]     ; 0056415e
     MOV ECX,EBP                         ; 00564165
-    CALL crt_unknown.c_FUN_00563d90     ; 00564167
-        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d90()
+    CALL crt_unknown.c_memory_swap_FUN_00563d90 ; 00564167
+        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_memory_swap_FUN_00563d90(void * ptr1, void * ptr2, SIZE_T bytes)
     JMP 0x00564192                      ; 0056416c
         ;   XREF to: 00564192 (UNCONDITIONAL_JUMP)  ; LAB_00564192
     MOV EAX,dword ptr [ESP + 0x144]     ; 0056416e
@@ -356,8 +356,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x13c]     ; 005641f5
     MOV ESI,dword ptr [ESP + 0x140]     ; 005641fc
     MOV ECX,EBP                         ; 00564203
-    CALL crt_unknown.c_FUN_00563d90     ; 00564205
-        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d90()
+    CALL crt_unknown.c_memory_swap_FUN_00563d90 ; 00564205
+        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_memory_swap_FUN_00563d90(void * ptr1, void * ptr2, SIZE_T bytes)
     JMP 0x00564230                      ; 0056420a
         ;   XREF to: 00564230 (UNCONDITIONAL_JUMP)  ; LAB_00564230
     MOV EAX,dword ptr [ESP + 0x13c]     ; 0056420c
@@ -390,8 +390,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x140]     ; 00564273
     MOV ESI,dword ptr [ESP + 0x144]     ; 0056427a
     MOV ECX,EBP                         ; 00564281
-    CALL crt_unknown.c_FUN_00563d90     ; 00564283
-        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00563d90()
+    CALL crt_unknown.c_memory_swap_FUN_00563d90 ; 00564283
+        ;   XREF to: 00563d90 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_memory_swap_FUN_00563d90(void * ptr1, void * ptr2, SIZE_T bytes)
     JMP 0x005642ae                      ; 00564288
         ;   XREF to: 005642ae (UNCONDITIONAL_JUMP)  ; LAB_005642ae
     MOV EDX,dword ptr [ESP + 0x140]     ; 0056428a

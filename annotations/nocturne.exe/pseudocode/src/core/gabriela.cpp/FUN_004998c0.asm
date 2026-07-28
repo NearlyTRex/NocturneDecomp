@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_FUN_004998c0(int param_1,float param_2,int param_3)
+; void core_gabriela_cpp_FUN_004998c0(CDemonActor *param_1,float param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x50]:1  local_50
@@ -76,7 +76,7 @@ section .text
     MOV EBP,dword ptr [0x005be368]      ; 00499932 | DAT_005be368
     PUSH EBP                            ; 00499938 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00499939
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     MOV EAX,dword ptr [EBX + 0x24ac]    ; 0049993e
     ADD ESP,0x8                         ; 00499944
     TEST EAX,EAX                        ; 00499947
@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0049994c | DAT_005be368
     PUSH ECX                            ; 00499952 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00499953
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00499958
     MOV ESI,dword ptr [EBX + 0x24f0]    ; 0049995b
         ;   Label: LAB_0049995b
@@ -97,13 +97,13 @@ section .text
     MOV EBP,dword ptr [0x005be368]      ; 00499966 | DAT_005be368
     PUSH EBP                            ; 0049996c | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0049996d
-        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_ignore_FUN_00511780()
+        ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00499972
     MOV EAX,[0x005be368]                ; 00499975 | DAT_005be368
         ;   Label: LAB_00499975
     PUSH EAX                            ; 0049997a | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0 ; 0049997b
-        ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0()
+        ;   XREF to: 005117e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005117e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00499980
     XOR EDX,EDX                         ; 00499983
     MOV dword ptr [ESP + 0x44],EDX      ; 00499985
@@ -184,7 +184,7 @@ section .text
     MOV EAX,[0x005be368]                ; 00499a6e | DAT_005be368
     PUSH EAX                            ; 00499a73 | DAT_01e57284
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 00499a74
-        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_CDemonSet_init_FUN_00511750()
+        ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00499a79
     ADD ESP,0x58                        ; 00499a7c
     POP EBP                             ; 00499a7f

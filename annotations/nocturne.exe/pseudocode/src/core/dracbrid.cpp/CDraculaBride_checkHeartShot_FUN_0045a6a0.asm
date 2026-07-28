@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(int param_1,int *param_2)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0045a6a0(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 ;
+; Parameters:
+; CDraculaBride *  Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; XREF[1]:
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a75e

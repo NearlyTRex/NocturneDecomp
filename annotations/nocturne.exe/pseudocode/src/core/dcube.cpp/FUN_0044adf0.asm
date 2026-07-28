@@ -29,7 +29,7 @@ section .text
     LEA EAX,[EDX + -0x4]                ; 0044ae01
     PUSH EAX                            ; 0044ae04
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0044ae05
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0044ae0a
     MOV dword ptr [EBX + 0x24],0x0      ; 0044ae0d
         ;   Label: LAB_0044ae0d
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 0044ae2b (CONDITIONAL_JUMP)  ; LAB_0044ae2b
     PUSH ECX                            ; 0044ae1b
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 0044ae1c
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 0044ae21
     MOV dword ptr [EBX + 0x2c],0x0      ; 0044ae24
     MOV EDI,dword ptr [EBX + 0x30]      ; 0044ae2b

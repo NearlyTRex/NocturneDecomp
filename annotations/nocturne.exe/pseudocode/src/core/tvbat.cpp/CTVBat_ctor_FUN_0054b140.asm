@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(undefined4 param_1)
+; CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_0054b140(CTVBat *this_ptr)
 ;
+; Parameters:
+; CTVBat *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -32,12 +34,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0054b144
     PUSH EBX                            ; 0054b148
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0054b149
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0054b14e
     ADD EAX,0xbd28                      ; 0054b151
     PUSH EAX                            ; 0054b156
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0054b157
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0xffff42d8]          ; 0054b15c
     ADD ESP,0x4                         ; 0054b162
     MOV dword ptr [EBX + 0x14c],0x5a38f4 ; 0054b165 | PTR_core_tvbat.cpp_CTVBat_setup_FUN_0054b2a0_005a38f4
@@ -55,7 +57,7 @@ section .text
     PUSH EAX                            ; 0054b1a8
     FSTP float ptr [EBX + 0xbea4]       ; 0054b1a9
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054b1af
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0054b1b4
     PUSH 0x3f8ccccd                     ; 0054b1b7
     MOV dword ptr [EBX + 0xbebc],0x40a00000 ; 0054b1bc

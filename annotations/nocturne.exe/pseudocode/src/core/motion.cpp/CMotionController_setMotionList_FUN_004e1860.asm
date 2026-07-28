@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004e1860(undefined4 *param_1,undefined4 param_2)
+; void __cdecl core_motion_cpp_CMotionController_setMotionList_FUN_004e1860(CMotionController *this_ptr,CMotionList *motion_list)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; CMotionList *    Stack[0x8]:4   motion_list
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00 at 0051dd28
@@ -31,7 +34,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 004e1879
     PUSH EDX                            ; 004e187b
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010 ; 004e187c
-        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010()
+        ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV byte ptr [EBX + 0x30],0x0       ; 004e1881
     ADD ESP,0xc                         ; 004e1885
     MOV dword ptr [EBX + 0x4],EAX       ; 004e1888

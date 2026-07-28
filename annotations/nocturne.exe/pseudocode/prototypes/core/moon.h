@@ -9,31 +9,31 @@ void __cdecl staticInit(void);
 
 // Original: core_moon.cpp_CMoon_ctor_FUN_004de800
 // Address: 004de800
-void CMoon::ctor(int param_1);
+CMoon * __cdecl CMoon::ctor(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_dtor_FUN_004de830
 // Address: 004de830
-int CMoon::dtor(int param_1);
+float * CMoon::dtor(CMoon *param_1);
 
 // Original: core_moon.cpp_CMoon_init_FUN_004de860
 // Address: 004de860
-void __cdecl CMoon::init(int *param_1);
+void __cdecl CMoon::init(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_free_FUN_004dea60
 // Address: 004dea60
-void __cdecl CMoon::free(int *param_1);
+void __cdecl CMoon::free(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_update_FUN_004deae0
 // Address: 004deae0
-void __cdecl CMoon::update(int param_1,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float delta_time);
 
 // Original: core_moon.cpp_CMoon_render_FUN_004dec50
 // Address: 004dec50
-void __cdecl CMoon::render(int param_1);
+void __cdecl CMoon::render(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040
 // Address: 004df040
-void __cdecl CMoon::renderJoystickCalibration(int param_1);
+void __cdecl CMoon::renderJoystickCalibration(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170
 // Address: 004df170
@@ -53,8 +53,8 @@ void FUN_004df1b0(void);
 
 // Original: core_moon.cpp_FUN_004df1d0
 // Address: 004df1d0
-void FUN_004df1d0(undefined4 param_1);
+void FUN_004df1d0(void *param_1);
 
 // Original: core_moon.cpp_FUN_004df1f0
 // Address: 004df1f0
-void FUN_004df1f0(undefined4 param_1);
+void FUN_004df1f0(void *param_1);

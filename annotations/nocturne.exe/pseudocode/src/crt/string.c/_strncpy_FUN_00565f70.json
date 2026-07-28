@@ -2,26 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 185,
+    "complexity_score": 15,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 16,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 52
   },
   "cross_references": [
-    {
-      "addr": "0056c864",
-      "from_addr": "0056cb4b",
-      "name": "FUN_0056c864",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00572b70",
       "from_addr": "00572bbe",
@@ -37,13 +28,19 @@
     {
       "addr": "004f5c40",
       "from_addr": "004f5c4f",
-      "name": "cockpit_pkbmpset.cpp_FUN_004f5c40",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_004f5c40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ebfd0",
       "from_addr": "004ec0cf",
       "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c864",
+      "from_addr": "0056cb4b",
+      "name": "crt_io.c_getFileStat_FUN_0056c864",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -75,7 +72,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_string.c__strncpy_FUN_00565f70",
-    "signature": "char * __cdecl crt_string_c__strncpy_FUN_00565f70(char *param_1,char *param_2,int param_3)"
+    "signature": "char * __cdecl crt_string_c__strncpy_FUN_00565f70(char *dest,char *src,SIZE_T count)"
   },
   "function_calls": [],
   "globals": [],
@@ -107,7 +104,7 @@
       {
         "call_addr": "0056cb4b",
         "call_type": "direct",
-        "caller": "FUN_0056c864",
+        "caller": "crt_io.c_getFileStat_FUN_0056c864",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +181,7 @@
       {
         "call_addr": "004f5c4f",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_004f5c40",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_004f5c40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,10 +191,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.444444444444445,
@@ -224,144 +221,34 @@
     "pcode_op_count": 120
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "char * __cdecl _strncpy(char *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "char * __cdecl _strncpy(char *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "char * __cdecl _strncpy(char *param_1,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar1 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; (param_3 != 0 && (*param_2 != '\\0')); param_2 = param_2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "for (; (param_3 != 0 && (*param_2 != '\\0')); param_2 = param_2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "for (; (param_3 != 0 && (*param_2 != '\\0')); param_2 = param_2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "for (; (param_3 != 0 && (*param_2 != '\\0')); param_2 = param_2 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*pcVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; param_3 != 0; param_3 = param_3 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; param_3 != 0; param_3 = param_3 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; param_3 != 0; param_3 = param_3 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 10,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

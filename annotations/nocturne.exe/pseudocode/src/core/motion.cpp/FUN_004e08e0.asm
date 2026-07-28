@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_motion_cpp_FUN_004e08e0(undefined4 param_1)
+; void core_motion_cpp_FUN_004e08e0(_FILE *param_1)
 ;
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 004e08e5
         ;   Label: LAB_004e08e5
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 004e08e6
-        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_00564570()
+        ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
     ADD ESP,0x4                         ; 004e08eb
     TEST EAX,EAX                        ; 004e08ee
     JL 0x004e08f7                       ; 004e08f0

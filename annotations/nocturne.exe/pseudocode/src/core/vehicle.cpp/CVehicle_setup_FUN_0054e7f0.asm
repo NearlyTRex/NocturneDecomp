@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0(int param_1)
+; void core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -37,13 +37,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x38]      ; 0054e7f7
     PUSH EBX                            ; 0054e7fb
     CALL core_actor.cpp_CDemonActor_setup_FUN_00409fc0 ; 0054e7fc
-        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
+        ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00409fc0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054e801
     LEA EAX,[EBX + 0x150]               ; 0054e804
     PUSH EAX                            ; 0054e80a
     XOR EDI,EDI                         ; 0054e80b
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054e80d
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EBX + 0x930]     ; 0054e812
     ADD ESP,0x4                         ; 0054e818
     TEST EDX,EDX                        ; 0054e81b
@@ -53,7 +53,7 @@ section .text
     PUSH ESI                            ; 0054e825
         ;   Label: LAB_0054e825
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 0054e826
-        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510()
+        ;   XREF to: 00454510 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510(CKeyFramedModelInstance * this_ptr)
     INC EDI                             ; 0054e82b
     ADD ESP,0x4                         ; 0054e82c
     MOV ECX,dword ptr [EBX + 0x930]     ; 0054e82f
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_0054e840
     PUSH EAX                            ; 0054e846
     CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530 ; 0054e847
-        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530()
+        ;   XREF to: 00454530 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x350]     ; 0054e84c
     ADD ESP,0x4                         ; 0054e852
     MOV EAX,dword ptr [EDX]             ; 0054e855
@@ -235,7 +235,7 @@ section .text
     PUSH EAX                            ; 0054ea9c
     MOV dword ptr [EBX + 0x1010],0x0    ; 0054ea9d
     CALL core_course.cpp_CCourse_load_FUN_0043b690 ; 0054eaa7
-        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_load_FUN_0043b690()
+        ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_0043b690(CCourse * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x1064],0x1    ; 0054eaac
     MOV dword ptr [EBX + 0x104c],0x0    ; 0054eab6
     MOV dword ptr [EBX + 0x1050],0x0    ; 0054eac0

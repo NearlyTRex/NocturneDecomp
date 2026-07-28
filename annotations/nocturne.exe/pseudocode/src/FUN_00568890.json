@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -151,27 +151,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056b35c",
-      "from_addr": "0056b3a5",
-      "name": "FUN_0056b35c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056dd60",
       "from_addr": "0056dd71",
-      "name": "FUN_0056dd60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573660",
-      "from_addr": "005736e7",
-      "name": "FUN_00573660",
+      "name": "crt_stdio.c_fflush_FUN_0056dd60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00566cc0",
       "from_addr": "00566d81",
       "name": "crt_stdio.c_fputc_FUN_00566cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573660",
+      "from_addr": "005736e7",
+      "name": "crt_stdio.c_fputs_FUN_00573660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -187,9 +181,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056b35c",
+      "from_addr": "0056b3a5",
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_0056b35c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005634b0",
       "from_addr": "005634dc",
-      "name": "crt_unknown.c_FUN_005634b0",
+      "name": "crt_unknown.c_fclose_FUN_005634b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -207,41 +207,41 @@
   },
   "function_calls": [
     {
-      "addr": "005671e4",
+      "addr": "00568e80",
       "is_variadic": false,
-      "name": "FUN_005671e4"
+      "name": "crt_errno.c_setErrno_FUN_00568e80"
+    },
+    {
+      "addr": "0056f1c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_flushFileBuffers_FUN_0056f1c0"
     },
     {
       "addr": "005689c0",
       "is_variadic": false,
-      "name": "FUN_005689c0"
+      "name": "crt_stdio.c_lseek_FUN_005689c0"
     },
     {
-      "addr": "00568e80",
+      "addr": "005671e4",
       "is_variadic": false,
-      "name": "FUN_00568e80"
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
     },
     {
       "addr": "00569fb0",
       "is_variadic": false,
       "name": "FUN_00569fb0"
-    },
-    {
-      "addr": "0056f1c0",
-      "is_variadic": false,
-      "name": "FUN_0056f1c0"
     }
   ],
   "globals": [
     {
       "addr": "005c1ac0",
-      "name": "PTR_FUN_005c1ac0",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0",
       "type": "void*",
       "value": "005671e4"
     },
     {
       "addr": "005c1ac4",
-      "name": "PTR_FUN_005c1ac4",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4",
       "type": "void*",
       "value": "005671e4"
     }
@@ -252,7 +252,7 @@
       {
         "call_addr": "005634dc",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005634b0",
+        "caller": "crt_unknown.c_fclose_FUN_005634b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,7 +359,7 @@
       {
         "call_addr": "0056b3a5",
         "call_type": "direct",
-        "caller": "FUN_0056b35c",
+        "caller": "crt_stdio.c_prepare_stream_for_write_FUN_0056b35c",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -370,7 +370,7 @@
       {
         "call_addr": "0056b3b8",
         "call_type": "direct",
-        "caller": "FUN_0056b35c",
+        "caller": "crt_stdio.c_prepare_stream_for_write_FUN_0056b35c",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -437,7 +437,7 @@
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ac0)(param_1[4]);",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1[4]);",
       "type": "unresolved_funcptr"
     },
     {
@@ -445,7 +445,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_FUN_005c1ac0)(param_1[4]);",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1[4]);",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +517,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = FUN_005689c0(param_1[4],-param_1[1],1);",
+      "text": "iVar3 = lseek(param_1[4],-param_1[1],1);",
       "type": "unnamed_param"
     },
     {
@@ -525,7 +525,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = FUN_005689c0(param_1[4],-param_1[1],1);",
+      "text": "iVar3 = lseek(param_1[4],-param_1[1],1);",
       "type": "unnamed_param"
     },
     {
@@ -677,7 +677,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = FUN_0056f1c0(param_1[4]), iVar3 == -1)) {",
+      "text": "(iVar3 = flushFileBuffers(param_1[4]), iVar3 == -1)) {",
       "type": "unnamed_param"
     },
     {
@@ -685,7 +685,7 @@
       "line": 54,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1ac4)(param_1[4]);",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1[4]);",
       "type": "unresolved_funcptr"
     },
     {
@@ -693,7 +693,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_FUN_005c1ac4)(param_1[4]);",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1[4]);",
       "type": "unnamed_param"
     },
     {

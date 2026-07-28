@@ -2,35 +2,31 @@
 // Address: 004f1c90
 // Address Range: [[004f1c90, 004f1dfa]]
 // Convention: __cdecl
-// Signature: int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(undefined4 *param_1)
+// Signature: CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *location)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
-int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(uint *param_1)
+CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *location)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  CPathMap *this_ptr;
   int iVar5;
   byte bVar6;
   int aiStackY_101c [1015];
   int local_34;
-  uint local_28;
-  uint local_24;
-  uint local_20;
+  CVector3f local_28;
   int local_1c;
-  int local_18;
-  int local_14;
+  int local_18 [2];
   
   bVar6 = 0;
   if ((DAT_01e312f0 & 1) == 0) {
     DAT_01e312f0 = DAT_01e312f0 | 1;
-    __arrinit(0x1d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
-    FUN_00564bb0(&DAT_005be0a8);
+    __arrinit((void *)0x1d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
+    _atexit((WatcomStaticDestructorNode *)&DAT_005be0a8);
   }
   if (DAT_005be0b8 < 0) {
     iVar2 = 0;
@@ -42,18 +38,17 @@ int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(uint *param_1)
     } while (iVar1 < 0xc);
   }
   iVar4 = 0;
-  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,location);
   iVar2 = 0;
   local_1c = local_34;
-  (&stack0xffffffe8)[(uint)bVar6 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffd0 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);
+  local_18[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       *(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
   iVar3 = 0;
   iVar1 = 0;
   do {
-    if (((local_1c == *(int *)(iVar3 + 0x1d5a150)) && (local_18 == *(int *)(iVar3 + 0x1d5a154))) &&
-       (iVar5 = iVar2, local_14 == *(int *)(iVar3 + 0x1d5a158))) break;
+    if (((local_1c == *(int *)(iVar3 + 0x1d5a150)) && (local_18[0] == *(int *)(iVar3 + 0x1d5a154)))
+       && (iVar5 = iVar2, local_18[1] == *(int *)(iVar3 + 0x1d5a158))) break;
     iVar5 = iVar1;
     if ((&DAT_005be0b8)[iVar1] < *(int *)((int)&DAT_005be0b8 + iVar4)) {
       iVar5 = iVar2;
@@ -71,10 +66,10 @@ int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(uint *param_1)
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
   (&DAT_005be0b8)[iVar5] = 0;
-  local_28 = *param_1;
-  local_24 = param_1[1];
-  local_20 = param_1[2];
-  iVar1 = iVar5 * 0x138dc + 0x1d468a0;
-  core_path_cpp_FUN_004f0360(iVar1,&stack0xffffffd8,1);
-  return iVar1;
+  local_28.x = (location->position).x;
+  local_28.y = (location->position).y;
+  local_28.z = (location->position).z;
+  this_ptr = (CPathMap *)(iVar5 * 0x138dc + 0x1d468a0);
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360(this_ptr,&local_28,1);
+  return this_ptr;
 }

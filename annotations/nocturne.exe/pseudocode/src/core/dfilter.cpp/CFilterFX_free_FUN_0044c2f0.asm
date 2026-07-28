@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(int param_1)
+; void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFx *this_ptr)
 ;
+; Parameters:
+; CFilterFx *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterFX_dtor_FUN_0044c2d0 at 0044c2d6

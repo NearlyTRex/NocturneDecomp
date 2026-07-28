@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_0045cb90(undefined4 param_1,int param_2,int param_3,uint param_4,uint param_5)
+; void cockpit_drawsurf_cpp_FUN_0045cb90(CDrawSurface *param_1,int param_2,int param_3,uint param_4,uint param_5)
 ;
 ;
 ; Called Functions:
@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 0045cbeb
     PUSH EBP                            ; 0045cbef
     CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10 ; 0045cbf0
-        ;   XREF to: 0045cb10 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10()
+        ;   XREF to: 0045cb10 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0045cbf5
     POP EBP                             ; 0045cbf8
     POP ESI                             ; 0045cbf9

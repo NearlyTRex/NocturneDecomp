@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,int param_2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; XREF[71]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160cb
@@ -13,7 +16,7 @@
 ;   core_curtain.cpp_FUN_0043dad0 at 0043daf6
 ;   core_curtain.cpp_FUN_0043f330 at 0043f3c5
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 004438d8
-;   core_dcamera.cpp_FUN_00443180 at 004431f1
+;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180 at 004431f1
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f8e5
 ;   ... and 61 more
 ;
@@ -38,7 +41,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00461eb2
     PUSH ESI                            ; 00461eb6
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 00461eb7
-        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_ensureTextureLoaded_FUN_00545920()
+        ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00461ebc
     MOV EAX,dword ptr [ESP + 0xc]       ; 00461ebf
     CMP dword ptr [EAX + 0x1c],0x0      ; 00461ec3

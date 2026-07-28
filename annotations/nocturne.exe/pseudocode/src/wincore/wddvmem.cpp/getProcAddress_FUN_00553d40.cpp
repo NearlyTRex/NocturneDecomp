@@ -2,13 +2,15 @@
 // Address: 00553d40
 // Address Range: [[00553d40, 00553d51]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE param_1,LPCSTR param_2)
+// Signature: FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE hModule,LPCSTR lpProcName)
 
 #include "nocturne.h"
 
-void __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE param_1,LPCSTR param_2)
+FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_00553d40(HMODULE hModule,LPCSTR lpProcName)
 
 {
-  GetProcAddress(param_1,param_2);
-  return;
+  FARPROC pFVar1;
+  
+  pFVar1 = GetProcAddress(hModule,lpProcName);
+  return pFVar1;
 }

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(int param_1,char *param_2,char *param_3)
+; void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   var_name
+; CDemonActor *    Stack[0xc]:4   actor
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -49,7 +53,7 @@ section .text
     MOV dword ptr [0x01cc4800],EDX      ; 00480978 | PTR_01cc4800
     MOV dword ptr [0x01cc4804],ECX      ; 0048097e | INT_01cc4804
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 00480984
-        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
+        ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00480989
     PUSH EAX                            ; 0048098c
     PUSH EDI                            ; 0048098d
@@ -61,7 +65,7 @@ section .text
         ;   Label: LAB_0048099b
     PUSH EBX                            ; 0048099c
     CALL core_event.cpp_CEventList_findActorVariable_FUN_00480ba0 ; 0048099d
-        ;   XREF to: 00480ba0 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_findActorVariable_FUN_00480ba0()
+        ;   XREF to: 00480ba0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findActorVariable_FUN_00480ba0(CEventList * this_ptr, char * name)
     MOV ESI,EAX                         ; 004809a2
     ADD ESP,0x8                         ; 004809a4
     TEST EAX,EAX                        ; 004809a7
@@ -220,7 +224,7 @@ section .text
     PUSH EDX                            ; 00480af3
     MOV EDI,EAX                         ; 00480af4
     CALL crt_string.c_memmove_FUN_00566170 ; 00480af6
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 00480afb
     SUB EAX,ESI                         ; 00480b01
     ADD EAX,EAX                         ; 00480b03
@@ -235,7 +239,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00480b16
     PUSH EAX                            ; 00480b1a
     CALL crt_string.c_memmove_FUN_00566170 ; 00480b1b
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00480b20
     ADD ESP,0x8                         ; 00480b23
     POP EBP                             ; 00480b26

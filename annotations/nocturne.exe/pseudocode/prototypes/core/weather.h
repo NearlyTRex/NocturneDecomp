@@ -9,27 +9,27 @@ void __cdecl staticInit(void);
 
 // Original: core_weather.cpp_CWeather_ctor_FUN_00554960
 // Address: 00554960
-undefined4 CWeather::ctor(undefined4 param_1);
+CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_update_FUN_00554980
 // Address: 00554980
-void __cdecl CWeather::update(int *param_1);
+void __cdecl CWeather::update(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40
 // Address: 00554d40
-void __cdecl CWeather::createLightningStrike(int param_1,undefined4 param_2,int param_3);
+void __cdecl CWeather::createLightningStrike(CWeather *this_ptr,float flash_timer,int play_sound);
 
 // Original: core_weather.cpp_CWeather_createThunder_FUN_00554fd0
 // Address: 00554fd0
-void __cdecl CWeather::createThunder(int param_1);
+void __cdecl CWeather::createThunder(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_renderParticles_FUN_00555020
 // Address: 00555020
-void __cdecl CWeather::renderParticles(int *param_1);
+void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_setWeatherType_FUN_00555750
 // Address: 00555750
-void __cdecl CWeather::setWeatherType(int *param_1,int param_2);
+void __cdecl CWeather::setWeatherType(CWeather *this_ptr,EWeatherType type);
 
 // Original: core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0
 // Address: 005557d0

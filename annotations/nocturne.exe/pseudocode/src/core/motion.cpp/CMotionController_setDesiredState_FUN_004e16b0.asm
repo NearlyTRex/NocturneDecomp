@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(undefined4 *param_1,int param_2,int param_3)
+; void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController *this_ptr,int desired_state_index,int force_immediate)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   desired_state_index
+; int              Stack[0xc]:4   force_immediate
 ;
 ; XREF[98]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410b6b
@@ -87,14 +91,14 @@ section .text
     PUSH EBX                            ; 004e1721
         ;   Label: LAB_004e1721
     CALL core_motion.cpp_CMotionController_reverseTransition_FUN_004e1600 ; 004e1722
-        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_reverseTransition_FUN_004e1600()
+        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_reverseTransition_FUN_004e1600(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e1727
     JMP 0x004e16d5                      ; 004e172a
         ;   XREF to: 004e16d5 (UNCONDITIONAL_JUMP)  ; LAB_004e16d5
     PUSH EBX                            ; 004e172c
         ;   Label: LAB_004e172c
     CALL core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500 ; 004e172d
-        ;   XREF to: 004e1500 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500()
+        ;   XREF to: 004e1500 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004e1732
     POP ESI                             ; 004e1735
     POP EBX                             ; 004e1736

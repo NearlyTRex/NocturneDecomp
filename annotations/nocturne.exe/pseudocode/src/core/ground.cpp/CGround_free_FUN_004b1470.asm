@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_free_FUN_004b1470(int param_1)
+; void __cdecl core_ground_cpp_CGround_free_FUN_004b1470(CGround *this_ptr)
 ;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b13d6
@@ -49,7 +51,7 @@ section .text
         ;   Label: LAB_004b14ac
     PUSH EAX                            ; 004b14ae
     CALL core_texlist.cpp_CTextureList_dtor_FUN_00544940 ; 004b14af
-        ;   XREF to: 00544940 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_CTextureList_dtor_FUN_00544940()
+        ;   XREF to: 00544940 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_00544940(CTextureList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004b14b4
     PUSH EAX                            ; 004b14b7
     CALL crt_unknown.c_FUN_00564494     ; 004b14b8

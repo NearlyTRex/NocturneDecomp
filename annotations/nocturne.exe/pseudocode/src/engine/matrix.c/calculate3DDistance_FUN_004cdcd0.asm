@@ -38,7 +38,7 @@ section .text
     FADDP                               ; 004cdd16
     FSQRT                               ; 004cdd18
     CALL crt_math.c_round_FUN_00563a30  ; 004cdd1a
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 004cdd1f
     MOV EAX,dword ptr [ESP]             ; 004cdd22
     ADD ESP,0x14                        ; 004cdd25

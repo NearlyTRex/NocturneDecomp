@@ -9,12 +9,12 @@
 void core_bugs_cpp_FUN_00421010(void)
 
 {
-  int iVar1;
+  CBugs *this_ptr;
   
-  iVar1 = FUN_0056497c(0x19860);
-  if (iVar1 == 0) {
+  this_ptr = (CBugs *)FUN_0056497c(0x19860);
+  if (this_ptr == (CBugs *)0x0) {
     return;
   }
-  core_bugs_cpp_CBugs_ctor_FUN_00421040(iVar1);
+  core_bugs_cpp_CBugs_ctor_FUN_00421040(this_ptr);
   return;
 }

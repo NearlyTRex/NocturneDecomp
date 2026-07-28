@@ -40,7 +40,7 @@ section .text
     IMUL EAX,ECX                        ; 00552a41
     PUSH EAX                            ; 00552a44
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552a45
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552a4a
     MOV [0x005c5010],EAX                ; 00552a4d | DAT_005c5010
     TEST EAX,EAX                        ; 00552a52
@@ -63,7 +63,7 @@ section .text
     ADD EAX,0x40                        ; 00552a8a
     PUSH EAX                            ; 00552a8d
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552a8e
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552a93
     MOV [0x02ddf560],EAX                ; 00552a96 | DAT_02ddf560
     TEST EAX,EAX                        ; 00552a9b

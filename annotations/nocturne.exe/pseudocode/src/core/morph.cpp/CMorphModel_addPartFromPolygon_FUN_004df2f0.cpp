@@ -2,53 +2,58 @@
 // Address: 004df2f0
 // Address Range: [[004df2f0, 004df45e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,uint param_7,uint param_8)
+void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
 
 {
-  int *piVar1;
+  SMRGLHeaderBasic *pSVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
+  SMorphPoint *pSVar3;
+  SMRGLPrimitiveTriangle *pSVar4;
+  int iVar5;
+  SMRGLHeaderPrimitive *pSVar6;
   
-  if (4 < *param_1) {
+  if (4 < this_ptr->part_count) {
     PTR_01cc4800 = "..\\core\\morph.cpp";
     INT_01cc4804 = 0x77;
     core_main_c_FUN_004c8440("CMorphModel::addPart - too many parts!");
   }
-  iVar3 = 0;
-  iVar4 = param_5;
-  for (iVar2 = param_4; 0 < iVar2; iVar2 = iVar2 + -1) {
-    piVar1 = (int *)(iVar4 + 4);
-    iVar4 = iVar4 + param_6;
-    iVar3 = iVar3 + *piVar1 + -2;
+  iVar5 = 0;
+  pSVar6 = poly_data;
+  for (iVar2 = poly_count; 0 < iVar2; iVar2 = iVar2 + -1) {
+    pSVar1 = &pSVar6->base;
+    pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);
+    iVar5 = iVar5 + pSVar1->count + -2;
   }
-  param_1[*param_1 * 4 + 3] = param_1[0x15];
-  param_1[*param_1 * 4 + 1] = param_2;
-  param_1[*param_1 * 4 + 4] = param_1[0x17];
-  param_1[*param_1 * 4 + 2] = iVar3;
-  param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];
-  param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];
-  iVar3 = realloc(param_1[0x16],param_1[0x15] << 4);
-  param_1[0x16] = iVar3;
-  iVar3 = realloc(param_1[0x18],param_1[0x17] * 0x3c);
-  param_1[0x18] = iVar3;
-  *param_1 = *param_1 + 1;
-  if ((param_1[0x16] == 0) || (param_1[0x18] == 0)) {
+  this_ptr->parts[this_ptr->part_count].start_vertex = this_ptr->num_points;
+  this_ptr->parts[this_ptr->part_count].vertex_count = vertex_count;
+  this_ptr->parts[this_ptr->part_count].start_face = this_ptr->num_faces;
+  this_ptr->parts[this_ptr->part_count].face_count = iVar5;
+  this_ptr->num_points = this_ptr->num_points + this_ptr->parts[this_ptr->part_count].vertex_count;
+  this_ptr->num_faces = this_ptr->num_faces + this_ptr->parts[this_ptr->part_count].face_count;
+  pSVar3 = (SMorphPoint *)realloc(this_ptr->points,this_ptr->num_points << 4);
+  this_ptr->points = pSVar3;
+  pSVar4 = (SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->num_faces * 0x3c);
+  this_ptr->faces = pSVar4;
+  this_ptr->part_count = this_ptr->part_count + 1;
+  if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)
+     ) {
     PTR_01cc4800 = "..\\core\\morph.cpp";
     INT_01cc4804 = 0x90;
     core_main_c_FUN_004c8440("CMorphModel::setup - out of memory!");
   }
-  if (param_3 != 0) {
+  if (vertex_data != (CVector3i *)0x0) {
     core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660
-              (param_1,*param_1 + -1,param_3,0,param_2);
+              (this_ptr,this_ptr->part_count + -1,vertex_data,0,vertex_count);
   }
-  if (param_5 == 0) {
+  if (poly_data == (SMRGLHeaderPrimitive *)0x0) {
     return;
   }
-  core_morph_cpp_FUN_004df800(param_1,*param_1 + -1,param_5,param_6,param_7,param_8,0,param_4);
+  core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800
+            (this_ptr,this_ptr->part_count + -1,poly_data,poly_stride,texture_list,
+             texture_index_list,0,poly_count);
   return;
 }

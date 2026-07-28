@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1)
+; CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_004e9860(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_staticInit_FUN_004e94a0 at 004e94a5
@@ -31,12 +33,12 @@ section .text
     ADD EDX,0x20                        ; 004e986d
     PUSH EDX                            ; 004e9870
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004e9871
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004e9876
     ADD EAX,0x150                       ; 004e9879
     PUSH EAX                            ; 004e987e
     CALL support_trisock.cpp_invalidateSocket_FUN_00548ed0 ; 004e987f
-        ;   XREF to: 00548ed0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_invalidateSocket_FUN_00548ed0()
+        ;   XREF to: 00548ed0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_invalidateSocket_FUN_00548ed0(_SOCKET * socket_handle)
     LEA EDX,[EAX + 0xfffffe90]          ; 004e9884
     MOV dword ptr [EDX],0x0             ; 004e988a
     MOV dword ptr [EDX + 0x4],0x0       ; 004e9890

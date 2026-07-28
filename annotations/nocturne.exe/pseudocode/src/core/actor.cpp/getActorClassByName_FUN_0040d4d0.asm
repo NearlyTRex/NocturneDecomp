@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_getActorClassByName_FUN_0040d4d0(char *param_1)
+; CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040d4d0(char *className)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   className
 ;
 ; XREF[2]:
 ;   core_actor.cpp_createActorByName_FUN_0040d540 at 0040d548
@@ -62,7 +64,7 @@ section .text
         ;   XREF to: 0040d4d8 (CONDITIONAL_JUMP)  ; LAB_0040d4d8
     PUSH EAX                            ; 0040d51a
     CALL crt_ctype.c_tolower_FUN_00564860 ; 0040d51b
-        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; undefined crt_ctype.c_tolower_FUN_00564860()
+        ;   XREF to: 00564860 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_00564860(int character)
     MOV EDX,EBX                         ; 0040d520
     SHL EDX,0x7                         ; 0040d522
     SHR EBX,0x19                        ; 0040d525

@@ -11,25 +11,13 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
 {
   int iVar1;
   int iVar2;
-  float local_1e4;
-  float local_1e0;
-  float local_1dc;
-  float local_1d8;
-  float local_1d4;
-  float local_1d0;
-  float local_1cc;
-  float local_1c8;
-  float local_1c4;
+  STriangleVertices local_1e4;
   float local_1c0;
   float local_1bc;
   float local_1b8;
-  int local_1b4;
-  int local_1b0;
-  int local_1ac;
+  CVector3i local_1b4;
   int local_1a8;
-  int local_1a4;
-  int local_1a0;
-  int local_19c;
+  CVector3i local_1a4;
   int local_198;
   float local_194;
   float local_190;
@@ -131,12 +119,12 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
   
   __arrinit(&local_1e4,4,&g_CVectorTypeInfo_005993b0);
   local_14 = (uint)(param_5 < 4);
-  if (((param_5 < 3) || (iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000), iVar1 == 0))
-     && (local_14 != 0)) {
-    if (&local_1e4 != param_2) {
-      local_1e4 = *param_2;
-      local_1e0 = param_2[1];
-      local_1dc = param_2[2];
+  if (((param_5 < 3) || (iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0.5), iVar1 == 0)) &&
+     (local_14 != 0)) {
+    if (&local_1e4 != (STriangleVertices *)param_2) {
+      local_1e4.vertices[0].x = *param_2;
+      local_1e4.vertices[0].y = param_2[1];
+      local_1e4.vertices[0].z = param_2[2];
     }
     local_80 = *param_2 + param_2[3];
     local_170 = local_80 / 2.0f;
@@ -144,10 +132,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_78 = param_2[2] + param_2[5];
     local_16c = local_7c * 0.5f;
     local_168 = local_78 * 0.5f;
-    if (&local_1d8 != &local_170) {
-      local_1d8 = local_170;
-      local_1d4 = local_16c;
-      local_1d0 = local_168;
+    if (local_1e4.vertices + 1 != (CVector3f *)&local_170) {
+      local_1e4.vertices[1].x = local_170;
+      local_1e4.vertices[1].y = local_16c;
+      local_1e4.vertices[1].z = local_168;
     }
     local_128 = *param_2 + param_2[3];
     local_124 = param_2[1] + param_2[4];
@@ -161,10 +149,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_e4 = local_108 + param_2[0xb];
     local_94 = local_e8 * 0.25f;
     local_90 = local_e4 * 0.25f;
-    if (&local_1cc != &local_98) {
-      local_1cc = local_98;
-      local_1c8 = local_94;
-      local_1c4 = local_90;
+    if (local_1e4.vertices + 2 != (CVector3f *)&local_98) {
+      local_1e4.vertices[2].x = local_98;
+      local_1e4.vertices[2].y = local_94;
+      local_1e4.vertices[2].z = local_90;
     }
     local_50 = *param_2 + param_2[9];
     local_5c = local_50 / 2.0f;
@@ -177,17 +165,17 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
       local_1bc = local_58;
       local_1b8 = local_54;
     }
-    local_1b4 = *param_3;
-    local_1b0 = (local_1b4 + param_3[1]) / 2;
+    local_1b4.x = *param_3;
+    local_1b4.y = (local_1b4.x + param_3[1]) / 2;
     iVar1 = param_3[3] + *param_3 + param_3[1] + param_3[2];
     iVar2 = iVar1 >> 0x1f;
-    local_1ac = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1b4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     local_1a8 = (*param_3 + param_3[3]) / 2;
-    local_1a4 = *param_4;
-    local_1a0 = (local_1a4 + param_4[1]) / 2;
+    local_1a4.x = *param_4;
+    local_1a4.y = (local_1a4.x + param_4[1]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
-    local_19c = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1a4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     local_198 = (*param_4 + param_4[3]) / 2;
     core_glass_cpp_FUN_004accf0(param_1,&local_1e4,&local_1b4,&local_1a4,param_5 + 1);
     local_44 = *param_2 + param_2[3];
@@ -196,15 +184,15 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_3c = param_2[2] + param_2[5];
     local_148 = local_40 * 0.5f;
     local_144 = local_3c * 0.5f;
-    if (&local_1e4 != &local_14c) {
-      local_1e4 = local_14c;
-      local_1e0 = local_148;
-      local_1dc = local_144;
+    if (&local_1e4 != (STriangleVertices *)&local_14c) {
+      local_1e4.vertices[0].x = local_14c;
+      local_1e4.vertices[0].y = local_148;
+      local_1e4.vertices[0].z = local_144;
     }
-    if (&local_1d8 != param_2 + 3) {
-      local_1d8 = param_2[3];
-      local_1d4 = param_2[4];
-      local_1d0 = param_2[5];
+    if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 3)) {
+      local_1e4.vertices[1].x = param_2[3];
+      local_1e4.vertices[1].y = param_2[4];
+      local_1e4.vertices[1].z = param_2[5];
     }
     local_20 = param_2[3] + param_2[6];
     local_104 = local_20 / 2.0f;
@@ -212,10 +200,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_18 = param_2[5] + param_2[8];
     local_100 = local_1c * 0.5f;
     local_fc = local_18 * 0.5f;
-    if (&local_1cc != &local_104) {
-      local_1cc = local_104;
-      local_1c8 = local_100;
-      local_1c4 = local_fc;
+    if (local_1e4.vertices + 2 != (CVector3f *)&local_104) {
+      local_1e4.vertices[2].x = local_104;
+      local_1e4.vertices[2].y = local_100;
+      local_1e4.vertices[2].z = local_fc;
     }
     local_c8 = *param_2 + param_2[3];
     local_c4 = param_2[1] + param_2[4];
@@ -234,15 +222,15 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
       local_1bc = local_178;
       local_1b8 = local_174;
     }
-    local_1b4 = (*param_3 + param_3[1]) / 2;
-    local_1b0 = param_3[1];
-    local_1ac = (local_1b0 + param_3[2]) / 2;
+    local_1b4.x = (*param_3 + param_3[1]) / 2;
+    local_1b4.y = param_3[1];
+    local_1b4.z = (local_1b4.y + param_3[2]) / 2;
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
     local_1a8 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a4 = (*param_4 + param_4[1]) / 2;
-    local_1a0 = param_4[1];
-    local_19c = (local_1a0 + param_4[2]) / 2;
+    local_1a4.x = (*param_4 + param_4[1]) / 2;
+    local_1a4.y = param_4[1];
+    local_1a4.z = (local_1a4.y + param_4[2]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
     local_198 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
@@ -259,10 +247,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_30 = local_9c + param_2[0xb];
     local_f4 = local_34 * 0.25f;
     local_f0 = local_30 * 0.25f;
-    if (&local_1e4 != &local_f8) {
-      local_1e4 = local_f8;
-      local_1e0 = local_f4;
-      local_1dc = local_f0;
+    if (&local_1e4 != (STriangleVertices *)&local_f8) {
+      local_1e4.vertices[0].x = local_f8;
+      local_1e4.vertices[0].y = local_f4;
+      local_1e4.vertices[0].z = local_f0;
     }
     local_164 = param_2[3] + param_2[6];
     local_74 = local_164 / 2.0f;
@@ -270,15 +258,15 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_15c = param_2[5] + param_2[8];
     local_70 = local_160 * 0.5f;
     local_6c = local_15c * 0.5f;
-    if (&local_1d8 != &local_74) {
-      local_1d8 = local_74;
-      local_1d4 = local_70;
-      local_1d0 = local_6c;
+    if (local_1e4.vertices + 1 != (CVector3f *)&local_74) {
+      local_1e4.vertices[1].x = local_74;
+      local_1e4.vertices[1].y = local_70;
+      local_1e4.vertices[1].z = local_6c;
     }
-    if (&local_1cc != param_2 + 6) {
-      local_1cc = param_2[6];
-      local_1c8 = param_2[7];
-      local_1c4 = param_2[8];
+    if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 6)) {
+      local_1e4.vertices[2].x = param_2[6];
+      local_1e4.vertices[2].y = param_2[7];
+      local_1e4.vertices[2].z = param_2[8];
     }
     local_158 = param_2[6] + param_2[9];
     local_194 = local_158 / 2.0f;
@@ -293,16 +281,16 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     }
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
-    local_1b4 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1b0 = (param_3[1] + param_3[2]) / 2;
-    local_1ac = param_3[2];
-    local_1a8 = (local_1ac + param_3[3]) / 2;
+    local_1b4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1b4.y = (param_3[1] + param_3[2]) / 2;
+    local_1b4.z = param_3[2];
+    local_1a8 = (local_1b4.z + param_3[3]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
-    local_1a4 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1a0 = (param_4[1] + param_4[2]) / 2;
-    local_19c = param_4[2];
-    local_198 = (local_19c + param_4[3]) / 2;
+    local_1a4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1a4.y = (param_4[1] + param_4[2]) / 2;
+    local_1a4.z = param_4[2];
+    local_198 = (local_1a4.z + param_4[3]) / 2;
     core_glass_cpp_FUN_004accf0(param_1,&local_1e4,&local_1b4,&local_1a4,param_5 + 1);
     local_11c = *param_2 + param_2[9];
     local_134 = local_11c / 2.0f;
@@ -310,10 +298,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_114 = param_2[2] + param_2[0xb];
     local_130 = local_118 * 0.5f;
     local_12c = local_114 * 0.5f;
-    if (&local_1e4 != &local_134) {
-      local_1e4 = local_134;
-      local_1e0 = local_130;
-      local_1dc = local_12c;
+    if (&local_1e4 != (STriangleVertices *)&local_134) {
+      local_1e4.vertices[0].x = local_134;
+      local_1e4.vertices[0].y = local_130;
+      local_1e4.vertices[0].z = local_12c;
     }
     local_68 = *param_2 + param_2[3];
     local_64 = param_2[1] + param_2[4];
@@ -327,10 +315,10 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_b4 = local_cc + param_2[0xb];
     local_88 = local_b8 * 0.25f;
     local_84 = local_b4 * 0.25f;
-    if (&local_1d8 != &local_8c) {
-      local_1d8 = local_8c;
-      local_1d4 = local_88;
-      local_1d0 = local_84;
+    if (local_1e4.vertices + 1 != (CVector3f *)&local_8c) {
+      local_1e4.vertices[1].x = local_8c;
+      local_1e4.vertices[1].y = local_88;
+      local_1e4.vertices[1].z = local_84;
     }
     local_b0 = param_2[6] + param_2[9];
     local_140 = local_b0 / 2.0f;
@@ -338,71 +326,71 @@ void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *pa
     local_a8 = param_2[8] + param_2[0xb];
     local_13c = local_ac * 0.5f;
     local_138 = local_a8 * 0.5f;
-    if (&local_1cc != &local_140) {
-      local_1cc = local_140;
-      local_1c8 = local_13c;
-      local_1c4 = local_138;
+    if (local_1e4.vertices + 2 != (CVector3f *)&local_140) {
+      local_1e4.vertices[2].x = local_140;
+      local_1e4.vertices[2].y = local_13c;
+      local_1e4.vertices[2].z = local_138;
     }
     if (&local_1c0 != param_2 + 9) {
       local_1c0 = param_2[9];
       local_1bc = param_2[10];
       local_1b8 = param_2[0xb];
     }
-    local_1b4 = (*param_3 + param_3[3]) / 2;
+    local_1b4.x = (*param_3 + param_3[3]) / 2;
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
-    local_1b0 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_1ac = (param_3[2] + param_3[3]) / 2;
+    local_1b4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1b4.z = (param_3[2] + param_3[3]) / 2;
     local_1a8 = param_3[3];
-    local_1a4 = (*param_4 + param_4[3]) / 2;
+    local_1a4.x = (*param_4 + param_4[3]) / 2;
     iVar1 = param_4[2] + *param_4 + param_4[1] + param_4[3];
     iVar2 = iVar1 >> 0x1f;
-    local_1a0 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_19c = (param_4[2] + param_4[3]) / 2;
+    local_1a4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_1a4.z = (param_4[2] + param_4[3]) / 2;
     local_198 = param_4[3];
     core_glass_cpp_FUN_004accf0(param_1,&local_1e4,&local_1b4,&local_1a4,param_5 + 1);
     return;
   }
-  if (&local_1e4 != param_2) {
-    local_1e4 = *param_2;
-    local_1e0 = param_2[1];
-    local_1dc = param_2[2];
+  if (&local_1e4 != (STriangleVertices *)param_2) {
+    local_1e4.vertices[0].x = *param_2;
+    local_1e4.vertices[0].y = param_2[1];
+    local_1e4.vertices[0].z = param_2[2];
   }
-  if (&local_1d8 != param_2 + 3) {
-    local_1d8 = param_2[3];
-    local_1d4 = param_2[4];
-    local_1d0 = param_2[5];
+  if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 3)) {
+    local_1e4.vertices[1].x = param_2[3];
+    local_1e4.vertices[1].y = param_2[4];
+    local_1e4.vertices[1].z = param_2[5];
   }
-  if (&local_1cc != param_2 + 6) {
-    local_1cc = param_2[6];
-    local_1c8 = param_2[7];
-    local_1c4 = param_2[8];
+  if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 6)) {
+    local_1e4.vertices[2].x = param_2[6];
+    local_1e4.vertices[2].y = param_2[7];
+    local_1e4.vertices[2].z = param_2[8];
   }
-  local_1b4 = *param_3;
-  local_1b0 = param_3[1];
-  local_1ac = param_3[2];
-  local_1a4 = *param_4;
-  local_1a0 = param_4[1];
-  local_19c = param_4[2];
+  local_1b4.x = *param_3;
+  local_1b4.y = param_3[1];
+  local_1b4.z = param_3[2];
+  local_1a4.x = *param_4;
+  local_1a4.y = param_4[1];
+  local_1a4.z = param_4[2];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
-             *(uint *)(param_1 + 0x174));
-  if (&local_1d8 != param_2 + 6) {
-    local_1d8 = param_2[6];
-    local_1d4 = param_2[7];
-    local_1d0 = param_2[8];
+            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,(SMRGLTextureBasic *)(param_1 + 0x15c),
+             *(int *)(param_1 + 0x174));
+  if (local_1e4.vertices + 1 != (CVector3f *)(param_2 + 6)) {
+    local_1e4.vertices[1].x = param_2[6];
+    local_1e4.vertices[1].y = param_2[7];
+    local_1e4.vertices[1].z = param_2[8];
   }
-  if (&local_1cc != param_2 + 9) {
-    local_1cc = param_2[9];
-    local_1c8 = param_2[10];
-    local_1c4 = param_2[0xb];
+  if (local_1e4.vertices + 2 != (CVector3f *)(param_2 + 9)) {
+    local_1e4.vertices[2].x = param_2[9];
+    local_1e4.vertices[2].y = param_2[10];
+    local_1e4.vertices[2].z = param_2[0xb];
   }
-  local_1b0 = param_3[2];
-  local_1ac = param_3[3];
-  local_1a0 = param_4[2];
-  local_19c = param_4[3];
+  local_1b4.y = param_3[2];
+  local_1b4.z = param_3[3];
+  local_1a4.y = param_4[2];
+  local_1a4.z = param_4[3];
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0
-            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,param_1 + 0x15c,
-             *(uint *)(param_1 + 0x174));
+            (0x01C08D04,&local_1e4,&local_1b4,&local_1a4,(SMRGLTextureBasic *)(param_1 + 0x15c),
+             *(int *)(param_1 + 0x174));
   return;
 }

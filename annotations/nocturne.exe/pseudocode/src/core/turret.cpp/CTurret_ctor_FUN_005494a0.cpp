@@ -1,43 +1,53 @@
 // Name: core_turret.cpp_CTurret_ctor_FUN_005494a0
 // Address: 005494a0
 // Address Range: [[005494a0, 005495e7]]
-// Convention: unknown
-// Signature: int core_turret_cpp_CTurret_ctor_FUN_005494a0(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005494a0(CTurret *this_ptr)
 
 #include "nocturne.h"
 
-int core_turret_cpp_CTurret_ctor_FUN_005494a0(uint param_1)
+CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005494a0(CTurret *this_ptr)
 
 {
   char cVar1;
-  int iVar2;
-  uint *puVar3;
+  CWeapon *pCVar2;
+  CKeyFramedModelInstance *this_ptr_00;
+  CVector3f *pCVar3;
   char *pcVar4;
   char *pcVar5;
-  byte local_24 [12];
-  uint local_18;
-  uint local_14;
-  uint local_10;
+  CVector3f local_24;
+  CVector3f local_18;
   
-  iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
-  iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x57c);
-  *(byte ***)(iVar2 + -0x430) = &PTR_core_turret_cpp_FUN_005495f0_005a37b4;
+  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
+                          ((CKeyFramedModelInstance *)(pCVar2[1].base.actor_name + 0xc));
+  this_ptr_00[-3].part_visibility_flags[0x11] = (int)&PTR_core_turret_cpp_FUN_005495f0_005a37b4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2 + -0x42c,"gturret_head.kfm");
+            ((CKeyFramedModelInstance *)(this_ptr_00[-3].part_visibility_flags + 0x12),
+             "gturret_head.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-            (iVar2,"gturret_tripod.kfm");
-  *(uint *)(iVar2 + 0x17c) = 0;
-  *(byte *)(iVar2 + 0x180) = 0;
-  *(uint *)(iVar2 + 0x1e4) = 0x40400000;
-  *(uint *)(iVar2 + 0x1e8) = 0x40c00000;
-  *(uint *)(iVar2 + 0x1ec) = 0x40400000;
-  *(uint *)(iVar2 + 0x1f0) = 0x3e4ccccd;
-  *(uint *)(iVar2 + 500) = 0x41f00000;
+            (this_ptr_00,"gturret_tripod.kfm");
+  this_ptr_00[1].part_visibility_flags[0] = 0;
+  *(byte *)(this_ptr_00[1].part_visibility_flags + 1) = 0;
+  this_ptr_00[1].part_visibility_flags[0x1a] = 0x40400000;
+  this_ptr_00[1].part_visibility_flags[0x1b] = 0x40c00000;
+  this_ptr_00[1].part_visibility_flags[0x1c] = 0x40400000;
+  this_ptr_00[1].part_visibility_flags[0x1d] = 0x3e4ccccd;
+  this_ptr_00[1].model_name[0] = '\0';
+  this_ptr_00[1].model_name[1] = '\0';
+  this_ptr_00[1].model_name[2] = -0x10;
+  this_ptr_00[1].model_name[3] = 'A';
   pcVar4 = "CCharacter";
-  *(uint *)(iVar2 + 0x1f8) = 0;
-  *(uint *)(iVar2 + -0x284) = 0;
-  pcVar5 = (char *)(iVar2 + 0x200);
-  *(uint *)(iVar2 + 0x1fc) = 0;
+  this_ptr_00[1].model_name[4] = '\0';
+  this_ptr_00[1].model_name[5] = '\0';
+  this_ptr_00[1].model_name[6] = '\0';
+  this_ptr_00[1].model_name[7] = '\0';
+  this_ptr_00[-2].part_visibility_flags[0x1d] = 0;
+  pcVar5 = this_ptr_00[1].model_name + 0xc;
+  this_ptr_00[1].model_name[8] = '\0';
+  this_ptr_00[1].model_name[9] = '\0';
+  this_ptr_00[1].model_name[10] = '\0';
+  this_ptr_00[1].model_name[0xb] = '\0';
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -47,19 +57,28 @@ int core_turret_cpp_CTurret_ctor_FUN_005494a0(uint param_1)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  local_18 = 0;
-  local_14 = 0;
-  local_10 = 0x3f800000;
-  puVar3 = (uint *)
-           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                     (iVar2 + -0x57c,local_24,&local_18);
-  if ((uint *)(iVar2 + 0x2c8) != puVar3) {
-    *(uint *)(iVar2 + 0x2c8) = *puVar3;
-    *(uint *)(iVar2 + 0x2cc) = puVar3[1];
-    *(uint *)(iVar2 + 0x2d0) = puVar3[2];
+  local_18.x = 0.0;
+  local_18.y = 0.0;
+  local_18.z = 1.0;
+  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                     ((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1d),&local_24,
+                      &local_18);
+  if ((CVector3f *)(this_ptr_00[1].model_name + 0xd4) != pCVar3) {
+    ((CVector3f *)(this_ptr_00[1].model_name + 0xd4))->x = pCVar3->x;
+    *(float *)(this_ptr_00[1].model_name + 0xd8) = pCVar3->y;
+    *(float *)(this_ptr_00[1].model_name + 0xdc) = pCVar3->z;
   }
-  *(uint *)(iVar2 + 0x2d8) = 0;
-  *(uint *)(iVar2 + 0x2e8) = 0;
-  *(uint *)(iVar2 + 0x2d4) = 0;
-  return iVar2 + -0x57c;
+  this_ptr_00[1].model_name[0xe4] = '\0';
+  this_ptr_00[1].model_name[0xe5] = '\0';
+  this_ptr_00[1].model_name[0xe6] = '\0';
+  this_ptr_00[1].model_name[0xe7] = '\0';
+  this_ptr_00[1].model_name[0xf4] = '\0';
+  this_ptr_00[1].model_name[0xf5] = '\0';
+  this_ptr_00[1].model_name[0xf6] = '\0';
+  this_ptr_00[1].model_name[0xf7] = '\0';
+  this_ptr_00[1].model_name[0xe0] = '\0';
+  this_ptr_00[1].model_name[0xe1] = '\0';
+  this_ptr_00[1].model_name[0xe2] = '\0';
+  this_ptr_00[1].model_name[0xe3] = '\0';
+  return (CTurret *)(this_ptr_00[-4].part_visibility_flags + 0x1d);
 }

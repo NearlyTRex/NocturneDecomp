@@ -2,21 +2,21 @@
 // Address: 004ece70
 // Address Range: [[004ece70, 004ecf4b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *param_1)
+// Signature: void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *param_1)
+void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame *this_ptr)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  CNetGame *pCVar4;
   
-  if (*param_1 != 1) {
+  if (this_ptr->connection_type != CONNECTION_HOST) {
     PTR_01cc4800 = "..\\core\\netgame.cpp";
     INT_01cc4804 = 0x88c;
     core_main_c_FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
@@ -32,19 +32,19 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *par
     iVar2 = 0x20000;
   }
   iVar3 = 0;
-  piVar4 = param_1;
+  pCVar4 = this_ptr;
   _DAT_01cea3f4 = iVar1;
-  if (0 < param_1[7]) {
+  if (0 < this_ptr->player_count) {
     do {
-      if (iVar3 == param_1[0x45]) {
-        piVar4[0x15] = _DAT_01cea404;
+      if (iVar3 == this_ptr->local_player_index) {
+        pCVar4->players[0].player_id = _DAT_01cea404;
       }
       else {
-        piVar4[0x16] = _DAT_01cea3f8 + iVar2 + -0x1e0000;
+        pCVar4->players[0].last_update_time = (_DAT_01cea3f8 + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      piVar4 = piVar4 + 0x1e;
-    } while (iVar3 < param_1[7]);
+      pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;
+    } while (iVar3 < this_ptr->player_count);
   }
   _DAT_01cea3f8 = _DAT_01cea3f8 + iVar2;
   return;

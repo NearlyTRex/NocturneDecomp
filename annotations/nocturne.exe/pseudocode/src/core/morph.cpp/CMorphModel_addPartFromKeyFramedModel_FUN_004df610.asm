@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610(undefined4 param_1,int param_2,undefined4 param_3)
+; void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)
 ;
+; Parameters:
+; CMorphModel *    Stack[0x4]:4   this_ptr
+; CKeyFramedModel * Stack[0x8]:4   model_ptr
+; int              Stack[0xc]:4   frame_index
 ;
 ; XREF[2]:
 ;   core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0 at 004e02e7
@@ -34,7 +38,7 @@ section .text
     PUSH EDX                            ; 004df638
     PUSH EBX                            ; 004df639
     CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080 ; 004df63a
-        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080()
+        ;   XREF to: 00453080 (UNCONDITIONAL_CALL)  ; CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel * this_ptr, int frame_index)
     ADD ESP,0x8                         ; 004df63f
     PUSH EAX                            ; 004df642
     MOV EAX,dword ptr [EBX + 0x104]     ; 004df643
@@ -42,7 +46,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0xc]       ; 004df64a
     PUSH ECX                            ; 004df64d
     CALL core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 ; 004df64e
-        ;   XREF to: 004df2f0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0()
+        ;   XREF to: 004df2f0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(CMorphModel * this_ptr, int vertex_count, CVector3i * vertex_data, int poly_count, ...)
     ADD ESP,0x20                        ; 004df653
     POP EBP                             ; 004df656
     POP EBX                             ; 004df657

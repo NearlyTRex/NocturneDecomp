@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)
 ;
+; Parameters:
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
+; CKeyFramedModelInstance * Stack[0xc]:4   instance
+; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[8]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 at 004544f9
@@ -41,7 +46,7 @@ section .text
     PUSH ESI                            ; 0045305d
     PUSH EBX                            ; 0045305e
     CALL core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 ; 0045305f
-        ;   XREF to: 004530c0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0()
+        ;   XREF to: 004530c0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance)
     ADD ESP,0xc                         ; 00453064
     MOV EDI,dword ptr [ESP + 0x20]      ; 00453067
     PUSH EDI                            ; 0045306b
@@ -49,7 +54,7 @@ section .text
     PUSH EBP                            ; 00453070
     PUSH EBX                            ; 00453071
     CALL core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 ; 00453072
-        ;   XREF to: 00453170 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170()
+        ;   XREF to: 00453170 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0xc                         ; 00453077
     POP ESI                             ; 0045307a
     POP EDI                             ; 0045307b

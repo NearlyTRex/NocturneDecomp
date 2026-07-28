@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(int param_1,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemonCamera *this_ptr,int restore_zbuffer)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   restore_zbuffer
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508bcc
@@ -114,7 +117,7 @@ section .text
         ;   XREF to: 00440c67 (CONDITIONAL_JUMP)  ; LAB_00440c67
     PUSH 0x0                            ; 00440d2d
     CALL engine_special.cpp_masterZBuffer_FUN_00532c70 ; 00440d2f
-        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_masterZBuffer_FUN_00532c70()
+        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00532c70(int z_buffer_mode)
     ADD ESP,0x4                         ; 00440d34
     POP EBP                             ; 00440d37
     POP EDI                             ; 00440d38

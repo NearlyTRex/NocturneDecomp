@@ -2,19 +2,20 @@
 // Address: 0052ef37
 // Address Range: [[0052ef37, 0052efc1]]
 // Convention: unknown
-// Signature: undefined4 engine_special_cpp_clearScreenRegion_FUN_0052ef37(undefined4 param_1)
+// Signature: undefined4 engine_special_cpp_clearScreenRegion_FUN_0052ef37(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint engine_special_cpp_clearScreenRegion_FUN_0052ef37(uint param_1)
+uint engine_special_cpp_clearScreenRegion_FUN_0052ef37(int param_1)
 
 {
   uint in_EAX;
   int iVar1;
   int iVar2;
   uint uVar3;
+  uint unaff_EDI;
   byte *puVar4;
   uint *puVar5;
   ushort *puVar6;
@@ -49,6 +50,6 @@ uint engine_special_cpp_clearScreenRegion_FUN_0052ef37(uint param_1)
     } while (uVar3 <= _DAT_01c00c64);
     return in_EAX;
   }
-  engine_special_cpp_drawFullScreenQuad_FUN_005329c0();
-  return param_1;
+  engine_special_cpp_drawFullScreenQuad_FUN_005329c0(param_1);
+  return unaff_EDI;
 }

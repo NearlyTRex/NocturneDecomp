@@ -2,13 +2,13 @@
 // Address: 00445fe0
 // Address Range: [[00445fe0, 0044658f]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int param_1,float *param_2,uint param_3,float *param_4,float *param_5)
+int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
   uint *puVar1;
@@ -16,51 +16,37 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int
   float fVar3;
   float fVar4;
   float fVar5;
-  uint uVar6;
-  int iVar7;
-  uint uVar8;
+  int iVar6;
+  float fVar7;
+  int iVar8;
   uint uVar9;
-  float10 fVar10;
-  float10 fVar11;
-  float10 fVar12;
-  uint uVar13;
-  uint uVar14;
-  int iStack_13c;
-  int iStack_138;
-  int *piStack_134;
+  double dVar10;
+  double dVar11;
+  double dVar12;
+  CVector3f *position_00;
+  CVector3f *rotation;
+  CVector3i CStack_13c;
   float local_130;
   float local_12c;
   float local_128;
   float local_124;
   float local_120;
   float local_11c;
-  int local_118;
-  int local_114;
-  int local_110;
+  CVector3i local_118;
   float local_10c;
   float local_108;
   float local_104;
-  int local_100;
-  int local_fc;
-  int local_f8;
-  int local_f4;
-  int local_f0;
-  int local_ec;
+  CVector3i local_100;
+  CVector3i local_f4;
   float local_e8;
   float local_e4;
   float local_e0;
-  int local_dc;
-  int local_d8;
-  int local_d4;
+  CVector3i local_dc;
   float local_d0;
   float local_cc;
   float local_c8;
-  int local_c4;
-  int local_c0;
-  int local_bc;
-  int local_b8;
-  int local_b4;
-  int local_b0;
+  CVector3i local_c4;
+  CVector3i local_b8;
   float local_ac;
   float local_a8;
   float local_a4;
@@ -70,9 +56,7 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int
   float local_94;
   float local_90;
   float local_8c;
-  int local_88;
-  int local_84;
-  int local_80;
+  CVector3i local_88;
   float local_7c;
   float local_78;
   float local_74;
@@ -98,131 +82,140 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(int
   float local_24;
   float local_20;
   
-  piStack_134 = DAT_005ae704;
-  iStack_138 = 0x446012;
+  CStack_13c.z = (int)DAT_005ae704;
+  CStack_13c.y = 0x446012;
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0();
-  fVar10 = (float10)256;
-  fVar2 = *(float *)(param_1 + 0x10c);
-  fVar3 = *(float *)(param_1 + 0x108);
-  fVar4 = param_2[1];
-  fVar5 = param_2[2];
-  _DAT_01c039e8 = *(uint *)(param_1 + 0x178);
-  _DAT_01c039ec = *(uint *)(param_1 + 0x17c);
-  piStack_134 = (int *)0x0;
-  _DAT_01c039f0 = *(uint *)(param_1 + 0x180);
-  _DAT_01c039f4 = *(uint *)(param_1 + 0x184);
-  iStack_138 = param_3;
-  uVar9 = *(uint *)(param_1 + 0x188);
-  iStack_13c = 0x446087;
-  fVar11 = (float10)round
-                              (((float10)*(float *)(param_1 + 0x104) - (float10)*param_2) * fVar10);
-  uVar6 = *(uint *)(param_1 + 0x18c);
-  uVar14 = 0x446099;
-  _DAT_01c039f8 = uVar9;
-  fVar12 = (float10)round(((float10)fVar3 - (float10)fVar4) * fVar10);
-  uVar9 = *(uint *)(param_1 + 400);
-  uVar13 = 0x4460ab;
-  _DAT_01c039fc = uVar6;
-  fVar10 = (float10)round(((float10)fVar2 - (float10)fVar5) * fVar10);
-  _DAT_01c03a04 = *(uint *)(param_1 + 0x194);
-  _DAT_01c039b8 = (int)ROUND(fVar11);
-  _DAT_01c03a08 = *(uint *)(param_1 + 0x198);
-  _DAT_01c039bc = (int)ROUND(fVar12);
-  _DAT_01c039c0 = (int)ROUND(fVar10);
-  _DAT_01c03a00 = uVar9;
-  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,uVar13,uVar14);
-  local_124 = *param_5;
-  local_120 = param_4[1];
-  local_11c = param_5[2];
-  local_f4 = (int)ROUND(local_124 * 256.0f);
-  local_f0 = (int)ROUND(local_120 * 256.0f);
-  local_ec = (int)ROUND(local_11c * 256.0f);
+  fVar7 = (float)256;
+  fVar2 = *(float *)(this_ptr->camera_name + 0xcc);
+  fVar3 = *(float *)(this_ptr->camera_name + 200);
+  fVar4 = position->y;
+  fVar5 = position->z;
+  _DAT_01c039e8 = (this_ptr->source_matrix).m[0].x;
+  _DAT_01c039ec = (this_ptr->source_matrix).m[0].y;
+  CStack_13c.z = 0;
+  _DAT_01c039f0 = (this_ptr->source_matrix).m[0].z;
+  _DAT_01c039f4 = (this_ptr->source_matrix).m[1].x;
+  CStack_13c.y = (int)orientation;
+  iVar8 = (this_ptr->source_matrix).m[1].y;
+  CStack_13c.x = 0x446087;
+  dVar10 = round
+                     ((double)((*(float *)(this_ptr->camera_name + 0xc4) - position->x) * fVar7));
+  iVar6 = (this_ptr->source_matrix).m[1].z;
+  rotation = (CVector3f *)0x446099;
+  _DAT_01c039f8 = iVar8;
+  dVar11 = round((double)((fVar3 - fVar4) * fVar7));
+  iVar8 = (this_ptr->source_matrix).m[2].x;
+  position_00 = (CVector3f *)0x4460ab;
+  _DAT_01c039fc = iVar6;
+  dVar12 = round((double)((fVar2 - fVar5) * fVar7));
+  _DAT_01c03a04 = (this_ptr->source_matrix).m[2].y;
+  _DAT_01c039b8 = (int)ROUND(dVar10);
+  _DAT_01c03a08 = (this_ptr->source_matrix).m[2].z;
+  _DAT_01c039bc = (int)ROUND(dVar11);
+  _DAT_01c039c0 = (int)ROUND(dVar12);
+  _DAT_01c03a00 = iVar8;
+  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+            (DAT_005ae704,position_00,rotation);
+  local_124 = bbox_max->x;
+  local_120 = bbox_min->y;
+  local_11c = bbox_max->z;
+  local_f4.x = (int)ROUND(local_124 * 256.0f);
+  local_f4.y = (int)ROUND(local_120 * 256.0f);
+  local_f4.z = (int)ROUND(local_11c * 256.0f);
   local_78 = local_124;
   local_74 = local_120;
   local_60 = local_11c;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea480,&local_f4);
-  local_e8 = *param_4;
-  local_e4 = param_4[1];
-  local_e0 = param_5[2];
-  local_dc = (int)ROUND(local_e8 * 256.0f);
-  local_d8 = (int)ROUND(local_e4 * 256.0f);
-  local_d4 = (int)ROUND(local_e0 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);
+  local_e8 = bbox_min->x;
+  local_e4 = bbox_min->y;
+  local_e0 = bbox_max->z;
+  local_dc.x = (int)ROUND(local_e8 * 256.0f);
+  local_dc.y = (int)ROUND(local_e4 * 256.0f);
+  local_dc.z = (int)ROUND(local_e0 * 256.0f);
   local_7c = local_e8;
   local_70 = local_e4;
   local_6c = local_e0;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4b0,&local_dc);
-  local_94 = *param_4;
-  local_90 = param_4[1];
-  local_8c = param_4[2];
-  local_100 = (int)ROUND(local_94 * 256.0f);
-  local_fc = (int)ROUND(local_90 * 256.0f);
-  local_f8 = (int)ROUND(local_8c * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e19].projected_vertex,&local_dc);
+  local_94 = bbox_min->x;
+  local_90 = bbox_min->y;
+  local_8c = bbox_min->z;
+  local_100.x = (int)ROUND(local_94 * 256.0f);
+  local_100.y = (int)ROUND(local_90 * 256.0f);
+  local_100.z = (int)ROUND(local_8c * 256.0f);
   local_68 = local_94;
   local_58 = local_90;
   local_34 = local_8c;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4e0,&local_100);
-  local_130 = *param_5;
-  local_12c = param_4[1];
-  local_128 = param_4[2];
-  local_118 = (int)ROUND(local_130 * 256.0f);
-  local_114 = (int)ROUND(local_12c * 256.0f);
-  local_110 = (int)ROUND(local_128 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);
+  local_130 = bbox_max->x;
+  local_12c = bbox_min->y;
+  local_128 = bbox_min->z;
+  local_118.x = (int)ROUND(local_130 * 256.0f);
+  local_118.y = (int)ROUND(local_12c * 256.0f);
+  local_118.z = (int)ROUND(local_128 * 256.0f);
   local_64 = local_12c;
   local_24 = local_130;
   local_20 = local_128;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea510,&local_118);
-  local_ac = *param_5;
-  local_a8 = param_5[1];
-  local_a4 = param_5[2];
-  iStack_13c = (int)ROUND(local_ac * 256.0f);
-  iStack_138 = (int)ROUND(local_a8 * 256.0f);
-  piStack_134 = (int *)(int)ROUND(local_a4 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);
+  local_ac = bbox_max->x;
+  local_a8 = bbox_max->y;
+  local_a4 = bbox_max->z;
+  CStack_13c.x = (int)ROUND(local_ac * 256.0f);
+  CStack_13c.y = (int)ROUND(local_a8 * 256.0f);
+  CStack_13c.z = (int)ROUND(local_a4 * 256.0f);
   local_5c = local_a4;
   local_48 = local_ac;
   local_44 = local_a8;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea540,&iStack_13c);
-  local_a0 = *param_4;
-  local_9c = param_5[1];
-  local_98 = param_5[2];
-  local_b8 = (int)ROUND(local_a0 * 256.0f);
-  local_b4 = (int)ROUND(local_9c * 256.0f);
-  local_b0 = (int)ROUND(local_98 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c);
+  local_a0 = bbox_min->x;
+  local_9c = bbox_max->y;
+  local_98 = bbox_max->z;
+  local_b8.x = (int)ROUND(local_a0 * 256.0f);
+  local_b8.y = (int)ROUND(local_9c * 256.0f);
+  local_b8.z = (int)ROUND(local_98 * 256.0f);
   local_54 = local_a0;
   local_50 = local_9c;
   local_4c = local_98;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea570,&local_b8);
-  local_10c = *param_4;
-  local_108 = param_5[1];
-  local_104 = param_4[2];
-  local_88 = (int)ROUND(local_10c * 256.0f);
-  local_84 = (int)ROUND(local_108 * 256.0f);
-  local_80 = (int)ROUND(local_104 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_b8);
+  local_10c = bbox_min->x;
+  local_108 = bbox_max->y;
+  local_104 = bbox_min->z;
+  local_88.x = (int)ROUND(local_10c * 256.0f);
+  local_88.y = (int)ROUND(local_108 * 256.0f);
+  local_88.z = (int)ROUND(local_104 * 256.0f);
   local_30 = local_10c;
   local_2c = local_108;
   local_28 = local_104;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5a0,&local_88);
-  local_d0 = *param_5;
-  local_cc = param_5[1];
-  local_c8 = param_4[2];
-  local_c4 = (int)ROUND(local_d0 * 256.0f);
-  local_c0 = (int)ROUND(local_cc * 256.0f);
-  local_bc = (int)ROUND(local_c8 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_88);
+  local_d0 = bbox_max->x;
+  local_cc = bbox_max->y;
+  local_c8 = bbox_min->z;
+  local_c4.x = (int)ROUND(local_d0 * 256.0f);
+  local_c4.y = (int)ROUND(local_cc * 256.0f);
+  local_c4.z = (int)ROUND(local_c8 * 256.0f);
   local_40 = local_d0;
   local_3c = local_cc;
   local_38 = local_c8;
-  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5d0,&local_c4);
-  uVar8 = 0xffffffff;
-  iVar7 = 0xea480;
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
+            (&DAT_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_c4);
+  uVar9 = 0xffffffff;
+  iVar8 = 0xea480;
   do {
-    puVar1 = (uint *)(*DAT_005ae704 + 0x10 + iVar7);
-    iVar7 = iVar7 + 0x30;
-    uVar8 = uVar8 & *puVar1;
-  } while (iVar7 != 960000);
-  uVar9 = 1;
-  if (((uVar8 & 0x80000000) != 0) && ((char)uVar8 != '\0')) {
-    uVar9 = 0;
+    puVar1 = (uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x + iVar8);
+    iVar8 = iVar8 + 0x30;
+    uVar9 = uVar9 & *puVar1;
+  } while (iVar8 != 960000);
+  iVar8 = 1;
+  if (((uVar9 & 0x80000000) != 0) && ((char)uVar9 != '\0')) {
+    iVar8 = 0;
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
-  return uVar9;
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  return iVar8;
 }

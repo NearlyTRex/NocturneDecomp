@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(int param_1,undefined4 param_2)
+; int __cdecl core_event_cpp_CEventList_findTimer_FUN_004808b0(CEventList *this_ptr,char *name)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_resolveVariable_FUN_0047dba0 at 0047dc14
@@ -32,7 +35,7 @@ section .text
         ;   Label: LAB_004808ce
     PUSH ESI                            ; 004808cf
     CALL crt_string.c__stricmp_FUN_00564520 ; 004808d0
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004808d5
     TEST EAX,EAX                        ; 004808d8
     JZ 0x004808f4                       ; 004808da

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_FUN_00533750(int param_1)
+; void core_spike_cpp_FUN_00533750(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xec]:1  local_ec
@@ -82,7 +82,7 @@ section .text
     FSTP float ptr [ESP + 0xfc]         ; 005337e9
     FSTP float ptr [ESP + 0x100]        ; 005337f0
     CALL core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0 ; 005337f7
-        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0()
+        ;   XREF to: 0041dbc0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 005337fc
     PUSH 0x5993b0                       ; 005337ff | g_CVectorTypeInfo_005993b0
     PUSH 0x8                            ; 00533804
@@ -91,7 +91,7 @@ section .text
     XOR EDI,EDI                         ; 0053380b
     LEA EBX,[ESP + 0x18]                ; 0053380d
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00533811
-        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
+        ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00533816
     PUSH EDI                            ; 00533819
         ;   Label: LAB_00533819
@@ -100,14 +100,14 @@ section .text
     LEA EAX,[ESP + 0xf4]                ; 00533822
     PUSH EAX                            ; 00533829
     CALL core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70 ; 0053382a
-        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70()
+        ;   XREF to: 0041cc70 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0053382f
     PUSH EAX                            ; 00533832
     LEA EAX,[ESP + 0x168]               ; 00533833
     PUSH EAX                            ; 0053383a
     PUSH ESI                            ; 0053383b
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0053383c
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00533841
     CMP EBX,EAX                         ; 00533844
     JZ 0x00533858                       ; 00533846
@@ -124,7 +124,7 @@ section .text
     PUSH EAX                            ; 00533860
     INC EDI                             ; 00533861
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00 ; 00533862
-        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00()
+        ;   XREF to: 0041cc00 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD EBX,0xc                         ; 00533867
     ADD ESP,0x8                         ; 0053386a
     CMP EDI,0x8                         ; 0053386d
@@ -232,7 +232,7 @@ section .text
         ;   Label: LAB_005339fe
     PUSH EAX                            ; 00533a05
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990 ; 00533a06
-        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990()
+        ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 00533a0b
     LEA EDX,[ESP + 0xa8]                ; 00533a0e
     XOR EAX,EAX                         ; 00533a15
@@ -253,7 +253,7 @@ section .text
     PUSH ESI                            ; 00533a42
     MOV dword ptr [ESP + 0xc8],EDX      ; 00533a43
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00533a4a
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00533a4f
     FLD float ptr [ESP + 0x170]         ; 00533a52
     FCOMP float ptr [ESP + 0xec]        ; 00533a59
@@ -299,7 +299,7 @@ section .text
     PUSH ESI                            ; 00533ae8
     MOV dword ptr [ESP + 0x184],ECX     ; 00533ae9
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00533af0
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00533af5
     LEA EAX,[ESP + 0x104]               ; 00533af8
     PUSH EAX                            ; 00533aff
@@ -366,12 +366,12 @@ section .text
     PUSH EBX                            ; 00533bee
     FSTP float ptr [ESP + 0x13c]        ; 00533bef
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00533bf6
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00533bfb
     LEA EAX,[ESP + 0x6c]                ; 00533bfe
     PUSH EAX                            ; 00533c02
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 00533c03
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00533c08
     MOV EAX,dword ptr [ESI + 0x550]     ; 00533c0b
     MOV dword ptr [ESP + 0x70],EAX      ; 00533c11

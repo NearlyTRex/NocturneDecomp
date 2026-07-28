@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(int param_1,int param_2)
+; int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont *this_ptr,int char_code)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   char_code
 ;
 ; XREF[37]:
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6985
@@ -12,9 +15,9 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b50d
 ;   core_inv.cpp_FUN_004c2470 at 004c2608
 ;   core_main.c_FUN_004c85f0 at 004c8c0e
-;   core_main.c_FUN_004c8eb0 at 004c8ec3
 ;   core_main.c_FUN_004c90e0 at 004c9112
-;   core_menu.cpp_FUN_004cf810 at 004cf84a
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8ec3
+;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfd74
 ;   ... and 27 more
 ;
 ; *****************************************************************************

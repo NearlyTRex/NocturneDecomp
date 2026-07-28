@@ -19,7 +19,7 @@
 section .text
 
     CALL shape_edittool.cpp_calculateGridWidth_FUN_00476df0 ; 00476e10
-        ;   XREF to: 00476df0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateGridWidth_FUN_00476df0()
+        ;   XREF to: 00476df0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateGridWidth_FUN_00476df0()
         ;   Label: shape_edittool.cpp_calculateGridHeight_FUN_00476e10
     MOV EDX,dword ptr [0x005b7620]      ; 00476e15 | DAT_005b7620
     IMUL EDX,EAX                        ; 00476e1b

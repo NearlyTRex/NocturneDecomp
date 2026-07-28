@@ -49,6 +49,7 @@
 #include "types/funcdefs/CCodec_processFiles.h"
 #include "types/funcdefs/CCodec_processFromBuffer.h"
 #include "types/funcdefs/CCodec_processToBuffer.h"
+#include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
 #include "types/funcdefs/CDemonActor_addFilesToExtract.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
@@ -263,5 +264,7 @@
 #include "types/funcdefs/CWeapon_onFired.h"
 #include "types/funcdefs/CWeapon_setWeaponState.h"
 #include "types/funcdefs/CWeapon_updateLighting.h"
+#include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/funcdefs/MessageHandlerFunc.h"
+#include "types/funcdefs/OptimizedMemcpyFunc.h"
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
+; void __cdecl core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
 ;
 ;
 ; XREF[1]:

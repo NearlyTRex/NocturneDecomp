@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(int param_1)
+; void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
 ;
+; Parameters:
+; CMimic *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
@@ -42,7 +44,7 @@ section .text
     PUSH ESI                            ; 004d578b
     MOV dword ptr [EBX + 0x4691c],0x2   ; 004d578c
     CALL core_cloth.cpp_CCloth_setup_FUN_004359e0 ; 004d5796
-        ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_setup_FUN_004359e0()
+        ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_004359e0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004d579b
     MOV EDX,dword ptr [0x01c71420]      ; 004d579e | g_CGabriellaActorType_01c713e8.name_hash
     MOV EAX,[0x01cae0e8]                ; 004d57a4 | DAT_01cae0e8
@@ -50,7 +52,7 @@ section .text
     MOV ECX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d57aa
     PUSH ECX                            ; 004d57b1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004d57b2
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,EAX                         ; 004d57b7
     ADD ESP,0x8                         ; 004d57b9
     TEST EAX,EAX                        ; 004d57bc
@@ -65,19 +67,19 @@ section .text
     FSTP float ptr [ESP]                ; 004d57da
     PUSH EAX                            ; 004d57dd
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004d57de
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004d57e3
     PUSH EAX                            ; 004d57e6
     LEA ESI,[EBX + 0x150]               ; 004d57e7
     PUSH ESI                            ; 004d57ed
     CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960 ; 004d57ee
-        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960()
+        ;   XREF to: 004e1960 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960(CMotionController * this_ptr, char * motion_name, float frame_number)
     ADD ESP,0xc                         ; 004d57f3
     PUSH 0x1                            ; 004d57f6
     PUSH 0x1                            ; 004d57f8
     PUSH ESI                            ; 004d57fa
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004d57fb
-        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004d5800
     PUSH EBX                            ; 004d5803
     PUSH 0x589487                       ; 004d5804 | = "%s attacking hero\n"

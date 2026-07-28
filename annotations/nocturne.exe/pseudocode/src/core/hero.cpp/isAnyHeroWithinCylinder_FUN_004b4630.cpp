@@ -2,13 +2,13 @@
 // Address: 004b4630
 // Address Range: [[004b4630, 004b46c9]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(float *param_1,float param_2,float param_3)
+// Signature: int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(CVector3f *point,float horizontal_radius,float vertical_tolerance)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(float *param_1,float param_2,float param_3)
+int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(CVector3f *point,float horizontal_radius,float vertical_tolerance)
 
 {
   int iVar1;
@@ -21,10 +21,10 @@ uint __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(float *param_1,f
     do {
       iVar1 = *(int *)(iVar4 + 0x1cae0d8);
       if (iVar1 != 0) {
-        fVar2 = *(float *)(iVar1 + 0x20) - *param_1;
-        fVar3 = *(float *)(iVar1 + 0x28) - param_1[2];
-        if (ABS(*(float *)(iVar1 + 0x24) - param_1[1]) <= param_3) {
-          if (fVar2 * fVar2 + fVar3 * fVar3 < param_2 * param_2) {
+        fVar2 = *(float *)(iVar1 + 0x20) - point->x;
+        fVar3 = *(float *)(iVar1 + 0x28) - point->z;
+        if (ABS(*(float *)(iVar1 + 0x24) - point->y) <= vertical_tolerance) {
+          if (fVar2 * fVar2 + fVar3 * fVar3 < horizontal_radius * horizontal_radius) {
             return 1;
           }
         }

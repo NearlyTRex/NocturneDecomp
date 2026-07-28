@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(int param_1)
+; int core_hostage_cpp_CHostage_renderOpaque_FUN_004b6cf0(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004b6cfe | DAT_005ae704
     PUSH ECX                            ; 004b6d04 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004b6d05
-        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090()
+        ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004b6d0a
     TEST EAX,EAX                        ; 004b6d0d
     JZ 0x004b6d35                       ; 004b6d0f
@@ -37,7 +37,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 004b6d1a
     PUSH EAX                            ; 004b6d20
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004b6d21
-        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660()
+        ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 004b6d26
     ADD ESP,0x4                         ; 004b6d29
     CMP EAX,0xa                         ; 004b6d2c
@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 004b6d35
         ;   Label: LAB_004b6d35
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 ; 004b6d36
-        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440()
+        ;   XREF to: 00426440 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004b6d3b
     POP EBX                             ; 004b6d3e
     RET                                 ; 004b6d3f

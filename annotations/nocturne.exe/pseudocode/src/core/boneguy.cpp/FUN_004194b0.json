@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,15 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 325,
+    "complexity_score": 369,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 19,
+    "pseudocode_lines": 89,
+    "suspect_count": 24,
     "suspect_types": [
-      "self_copy_guard",
+      "pointer_cast",
+      "pointer_truncation",
       "unaffected_reg",
       "undefined_data",
       "unknown_field",
@@ -138,7 +139,7 @@
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 278
+    "total_lines": 267
   },
   "cross_references": [],
   "function": {
@@ -505,82 +506,47 @@
   "static_analysis": {
     "analyzed_file": "FUN_004194b0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 11,
+      "diagnostic_count": 6,
       "diagnostics": [
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 66,
+          "line": 55,
           "message": "Uninitialized variable: local_84",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 67,
+          "line": 56,
           "message": "Uninitialized variable: local_8c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 67,
+          "line": 56,
           "message": "Uninitialized variable: local_80",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 68,
+          "line": 57,
           "message": "Uninitialized variable: local_88",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 68,
+          "line": 57,
           "message": "Uninitialized variable: local_7c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 14,
-          "line": 98,
-          "message": "Uninitialized variable: local_14",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 99,
-          "message": "Uninitialized variable: local_10",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 100,
-          "message": "Uninitialized variable: local_e4",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 101,
-          "message": "Uninitialized variable: local_d4",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 102,
-          "message": "Uninitialized variable: local_c4",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
           "column": 6,
-          "line": 105,
+          "line": 94,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -611,12 +577,12 @@
       "line": 8,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = param_2 * 0x44 + param_1;",
@@ -624,7 +590,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_2 * 0x44 + param_1;",
@@ -632,7 +598,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 45,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(local_120,&DAT_02dd1184,&local_60);",
@@ -640,7 +606,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_90);",
@@ -648,47 +614,63 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 52,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_30 = local_54 * 5.2220990168285998e-315._0_4_;",
+      "text": "local_30.x = local_54 * 5.2220990168285998e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 53,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_2c = local_50 * 5.2220990168285998e-315._0_4_;",
+      "text": "local_30.y = local_50 * 5.2220990168285998e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_78,&local_6c,param_1 + 0xfd0 + iVar1 * 0x30);",
+      "text": "(&local_78,&local_6c,(CMatrix3x4f *)(param_1 + 0xfd0 + iVar1 * 0x30));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_120,param_1 + 0xfd0 + iVar1 * 0x30);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 98,
-      "match": "unaff_ESI",
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
-      "text": "*unaff_ESI = *puVar4;",
-      "type": "unaffected_reg"
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 87,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = pCVar5->m[0].w;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -696,15 +678,31 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 89,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 73,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -712,19 +710,27 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 97,
+      "line": 86,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&local_48 != &local_30)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 56,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_48.x = local_30.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 66,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&local_48 != &local_30) {",
-      "type": "self_copy_guard"
+      "text": "local_18.x = pCVar2->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 00419640, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -744,7 +750,7 @@
     },
     {
       "description": "Uninitialized variable: local_84",
-      "line": 66,
+      "line": 55,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_54 = local_90 + local_84;",
@@ -752,7 +758,7 @@
     },
     {
       "description": "Uninitialized variable: local_8c",
-      "line": 67,
+      "line": 56,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_50 = local_8c + local_80;",
@@ -760,7 +766,7 @@
     },
     {
       "description": "Uninitialized variable: local_80",
-      "line": 67,
+      "line": 56,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_50 = local_8c + local_80;",
@@ -768,7 +774,7 @@
     },
     {
       "description": "Uninitialized variable: local_88",
-      "line": 68,
+      "line": 57,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_4c = local_88 + local_7c;",
@@ -776,58 +782,18 @@
     },
     {
       "description": "Uninitialized variable: local_7c",
-      "line": 68,
+      "line": 57,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_4c = local_88 + local_7c;",
       "type": "static_uninitvar"
     },
     {
-      "description": "Uninitialized variable: local_14",
-      "line": 98,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_38 = local_14 - pfVar2[1];",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_10",
-      "line": 99,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_34 = local_10 - pfVar2[2];",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_e4",
-      "line": 100,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_e4 = local_e4 + (local_18 - *pfVar2);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_d4",
-      "line": 101,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_d4 = local_d4 + (local_14 - pfVar2[1]);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_c4",
-      "line": 102,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_c4 = local_c4 + (local_10 - pfVar2[2]);",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 105,
+      "line": 94,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*unaff_ESI = *puVar4;",
+      "text": "*unaff_ESI = pCVar5->m[0].w;",
       "type": "static_uninitvar"
     }
   ],

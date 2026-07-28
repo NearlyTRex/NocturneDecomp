@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,float param_2)
+; void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(CBugs *this_ptr,float delta_time)
 ;
+; Parameters:
+; CBugs *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x184]:4  local_184
 ; undefined4       Stack[-0x154]:4  local_154
@@ -100,7 +103,7 @@ section .text
     PUSH ESI                            ; 004223f1
     MOV dword ptr [EBX + 0x1985c],0x3e4ccccd ; 004223f2
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004223fc
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 00422401
     ADD ESP,0x8                         ; 00422403
     TEST EAX,EAX                        ; 00422406
@@ -109,7 +112,7 @@ section .text
     MOV EAX,ESP                         ; 0042240a
     PUSH EAX                            ; 0042240c
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0042240d
-        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0()
+        ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00422412
     MOV dword ptr [ESP + 0x170],EDI     ; 00422415
     MOV EAX,ESP                         ; 0042241c
@@ -141,7 +144,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 0042246b
     PUSH EAX                            ; 0042246f
     CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80 ; 00422470
-        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80()
+        ;   XREF to: 0055ae80 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 00422475
     LEA EAX,[ESP + 0x3c]                ; 00422478
     PUSH EAX                            ; 0042247c
@@ -163,7 +166,7 @@ section .text
     PUSH EDI                            ; 004224b9
     PUSH EAX                            ; 004224ba
     CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 ; 004224bb
-        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50()
+        ;   XREF to: 0051da50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 004224c0
     MOV ECX,dword ptr [EBX + 0xbd28]    ; 004224c3
         ;   Label: LAB_004224c3
@@ -188,7 +191,7 @@ section .text
     PUSH EBX                            ; 004224f0
         ;   Label: LAB_004224f0
     CALL core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680 ; 004224f1
-        ;   XREF to: 00423680 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680()
+        ;   XREF to: 00423680 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680(CBugs * this_ptr)
     LEA EAX,[EBX + 0x19834]             ; 004224f6
     LEA ESI,[EBX + 0x19840]             ; 004224fc
     FLD float ptr [EAX]                 ; 00422502
@@ -229,7 +232,7 @@ section .text
     PUSH EBX                            ; 0042258f
     FSTP float ptr [ESP + 0x164]        ; 00422590
     CALL core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50 ; 00422597
-        ;   XREF to: 00423a50 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50()
+        ;   XREF to: 00423a50 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50(CBugs * this_ptr, CVector3f * new_position)
     ADD ESP,0x8                         ; 0042259c
     MOV ESP,EBP                         ; 0042259f
     POP EBP                             ; 004225a1
@@ -279,7 +282,7 @@ section .text
     ADD EAX,0x20                        ; 00422619
     PUSH EAX                            ; 0042261c
     CALL core_path.cpp_getPathMap_FUN_004f1e00 ; 0042261d
-        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_getPathMap_FUN_004f1e00()
+        ;   XREF to: 004f1e00 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_004f1e00(CLocation * location)
     ADD ESP,0x4                         ; 00422622
     MOV EDX,EAX                         ; 00422625
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00422627
@@ -291,7 +294,7 @@ section .text
     PUSH ESI                            ; 00422636
     PUSH EDX                            ; 00422637
     CALL core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600 ; 00422638
-        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600()
+        ;   XREF to: 004f1600 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 0042263d
     TEST EAX,EAX                        ; 00422640
     JZ 0x00422745                       ; 00422642
@@ -301,7 +304,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 00422650
     PUSH EAX                            ; 00422657
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00422658
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [0x0059aeb4]          ; 0042265d | FLOAT_0059aeb4
     ADD ESP,0x8                         ; 00422663
     XOR EAX,EAX                         ; 00422666
@@ -334,7 +337,7 @@ section .text
     PUSH EAX                            ; 004226e4
     PUSH EBX                            ; 004226e5
     CALL core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 ; 004226e6
-        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050()
+        ;   XREF to: 00425050 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 004226eb
     MOV EAX,dword ptr [ESI]             ; 004226ee
     MOV dword ptr [ESP + 0x118],EAX     ; 004226f0
@@ -354,7 +357,7 @@ section .text
     PUSH EAX                            ; 0042273b
     PUSH EBX                            ; 0042273c
     CALL core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50 ; 0042273d
-        ;   XREF to: 00423a50 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50()
+        ;   XREF to: 00423a50 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50(CBugs * this_ptr, CVector3f * new_position)
     ADD ESP,0x8                         ; 00422742
     PUSH EBX                            ; 00422745
         ;   Label: LAB_00422745

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(int param_1)
+; void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(CDemonSet *this_ptr)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x118]:1  local_118
 ; undefined4       Stack[-0x18]:4  local_18
@@ -89,7 +91,7 @@ section .text
     PUSH EBX                            ; 0050d0dd
     PUSH ESI                            ; 0050d0de
     CALL core_setutil.cpp_C3DSLight_process_FUN_00515420 ; 0050d0df
-        ;   XREF to: 00515420 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_process_FUN_00515420()
+        ;   XREF to: 00515420 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_process_FUN_00515420(C3DSLight * this_ptr, CDemonLight * light, int apply_filter_flag)
     ADD ESP,0xc                         ; 0050d0e4
     LEA EAX,[ESI + 0x4]                 ; 0050d0e7
     PUSH EAX                            ; 0050d0ea
@@ -104,7 +106,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 0050d100 | DAT_005b7650
     PUSH ECX                            ; 0050d106
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0050d107
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0050d10c
     TEST EAX,EAX                        ; 0050d10f
     JZ 0x0050d11d                       ; 0050d111
@@ -124,7 +126,7 @@ section .text
     MOV EAX,[0x005b7650]                ; 0050d136 | DAT_005b7650
     PUSH EAX                            ; 0050d13b
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0050d13c
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 0050d141
     TEST EAX,EAX                        ; 0050d144
     JZ 0x0050d152                       ; 0050d146
@@ -136,7 +138,7 @@ section .text
     ADD ESI,0x4                         ; 0050d159
     PUSH ESI                            ; 0050d15c
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 0050d15d
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0050d162
     TEST EAX,EAX                        ; 0050d165
     JNZ 0x0050d184                      ; 0050d167

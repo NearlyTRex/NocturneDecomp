@@ -17,15 +17,15 @@ CDemonActorType * FUN_0054e590(void);
 
 // Original: core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0
 // Address: 0054e5a0
-int CVehicle::ctor(undefined4 param_1);
+CVehicle * __cdecl CVehicle::ctor(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0
 // Address: 0054e7f0
-void CVehicle::setup(int param_1);
+void CVehicle::setup(CDemonActor *param_1);
 
 // Original: core_vehicle.cpp_CVehicle_process_FUN_0054eae0
 // Address: 0054eae0
-uint CVehicle::process(int param_1,float param_2);
+uint CVehicle::process(CVehicle *param_1,float param_2);
 
 // Original: core_vehicle.cpp_FUN_0054f320
 // Address: 0054f320
@@ -33,7 +33,7 @@ undefined4 * FUN_0054f320(int param_1,undefined4 *param_2);
 
 // Original: core_vehicle.cpp_CVehicle_archive_FUN_0054f370
 // Address: 0054f370
-void CVehicle::archive(int param_1);
+void CVehicle::archive(CDemonActor *param_1);
 
 // Original: core_vehicle.cpp_FUN_0054f500
 // Address: 0054f500
@@ -41,7 +41,7 @@ undefined4 FUN_0054f500(void);
 
 // Original: core_vehicle.cpp_FUN_0054f510
 // Address: 0054f510
-int FUN_0054f510(int param_1);
+int FUN_0054f510(CDemonActor *param_1);
 
 // Original: core_vehicle.cpp_FUN_0054f780
 // Address: 0054f780
@@ -53,15 +53,15 @@ void FUN_0054f790(void);
 
 // Original: core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0
 // Address: 0054f7a0
-undefined4 __cdecl CVehicle::playTrackedSound(int param_1,undefined4 param_2);
+uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
 // Original: core_vehicle.cpp_FUN_0054f7f0
 // Address: 0054f7f0
-int FUN_0054f7f0(int param_1,byte param_2);
+CDemonActor * FUN_0054f7f0(CDemonActor *param_1,byte param_2);
 
 // Original: core_vehicle.cpp_CTire_ctor_FUN_0054f870
 // Address: 0054f870
-int CTire::ctor(int param_1);
+char * CTire::ctor(int param_1);
 
 // Original: core_vehicle.cpp_CTire_dtor_FUN_0054f890
 // Address: 0054f890
@@ -69,4 +69,4 @@ undefined4 CTire::dtor(undefined4 param_1);
 
 // Original: core_vehicle.cpp_FUN_0054f8a0
 // Address: 0054f8a0
-void FUN_0054f8a0(undefined4 param_1);
+void FUN_0054f8a0(void *param_1);

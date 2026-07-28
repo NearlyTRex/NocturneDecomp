@@ -62,7 +62,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00411567 | DAT_01fa3ff4
     PUSH EDX                            ; 0041156e
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0041156f
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00411574
     MOV dword ptr [EDI + 0x570],EAX     ; 00411577
     TEST EAX,EAX                        ; 0041157d
@@ -75,14 +75,14 @@ section .text
     PUSH 0x578729                       ; 00411587 | = "CBaron"
         ;   Label: LAB_00411587
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 0041158c
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040d540()
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040d540(char * class_name)
     ADD ESP,0x4                         ; 00411591
     PUSH EAX                            ; 00411594
     MOV EBP,dword ptr [0x005baf90]      ; 00411595 | DAT_005baf90
     PUSH EBP                            ; 0041159b | DAT_01cc9450
     MOV dword ptr [EDI + 0x570],EAX     ; 0041159c
     CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720 ; 004115a2
-        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720()
+        ;   XREF to: 004d9720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004115a7
     MOV EAX,dword ptr [EDI + 0x570]     ; 004115aa
     PUSH EAX                            ; 004115b0
@@ -95,7 +95,7 @@ section .text
     PUSH EDX                            ; 004115c9 | DAT_01cc9450
     LEA ESI,[EDI + 0x30]                ; 004115ca
     CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 ; 004115cd
-        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60()
+        ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004115d2
     ADD EDI,0x20                        ; 004115d5
     PUSH ESI                            ; 004115d8

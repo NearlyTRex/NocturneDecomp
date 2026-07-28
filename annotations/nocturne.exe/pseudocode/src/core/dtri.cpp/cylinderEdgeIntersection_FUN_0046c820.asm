@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(float *param_1)
+; int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   cylinder
 ; Local Variables:
 ; undefined8       Stack[-0x60]:8  local_60
 ; undefined8       Stack[-0x58]:8  local_58

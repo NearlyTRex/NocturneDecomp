@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(int *param_1,undefined4 param_2,int param_3)
+; int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_004394f0(CLZWDictionary *this_ptr,int code,int parent_index)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   code
+; int              Stack[0xc]:4   parent_index
 ;
 ; XREF[3]:
 ;   support_codec.cpp_CLZWCompress_process_FUN_004398c0 at 00439962
@@ -72,7 +76,7 @@ section .text
     PUSH EAX                            ; 0043956f
         ;   Label: LAB_0043956f
     CALL support_codec.cpp_CLZWDictionary_initTable_FUN_00439450 ; 00439570
-        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_CLZWDictionary_initTable_FUN_00439450()
+        ;   XREF to: 00439450 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_initTable_FUN_00439450(CLZWDictionary * this_ptr)
     MOV EDX,0x1                         ; 00439575
     ADD ESP,0x4                         ; 0043957a
     MOV EAX,EDX                         ; 0043957d

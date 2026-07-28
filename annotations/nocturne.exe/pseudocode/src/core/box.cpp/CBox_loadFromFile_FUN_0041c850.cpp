@@ -2,47 +2,43 @@
 // Address: 0041c850
 // Address Range: [[0041c850, 0041c9db]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(CBox *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(int param_1,uint param_2)
+void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(CBox *this_ptr,_FILE *file_handle)
 
 {
-  uint *puVar1;
-  byte local_144 [256];
-  byte local_44 [4];
-  byte local_40 [4];
-  byte local_3c [4];
+  float *pfVar1;
+  char local_144 [256];
+  CVector3f local_44;
   byte local_38 [12];
-  byte local_2c [4];
-  byte local_28 [4];
-  byte local_24 [4];
-  byte local_20 [4];
-  byte local_1c [4];
-  byte local_18 [4];
-  uint local_14;
+  CVector3f local_2c;
+  CVector3f local_20;
+  float local_14;
   byte local_10 [4];
   
-  _fgets(local_144,0xff,param_2);
-  _fscanf(param_2," %d\n",local_10);
-  _fgets(local_144,0xff,param_2);
-  _fscanf(param_2," %f,%f,%f\n",local_20,local_1c,local_18);
-  _fscanf(param_2," %f,%f,%f\n",local_2c,local_24,local_28);
-  _fscanf(param_2," %f,%f,%f\n",local_44,local_40,local_3c);
-  _fscanf(param_2," %f\n",&local_14);
-  core_box_cpp_CBox_setupCorners_FUN_0041a6e0(param_1,local_20,local_2c,local_44,local_14);
-  _fscanf(param_2," %f,%f,%f\n",param_1 + 0x4c,param_1 + 0x50,param_1 + 0x54);
-  _fscanf(param_2," %f,%f,%f\n",param_1 + 0x70,param_1 + 0x74,param_1 + 0x78);
-  _fscanf(param_2," %d\n",param_1 + 0x254);
-  puVar1 = (uint *)
-           core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
-                     (param_1 + 0x18,local_38,param_1 + 0x4c);
-  if ((uint *)(param_1 + 0x40) == puVar1) {
+  _fgets(local_144,0xff,file_handle);
+  _fscanf(file_handle," %d\n",local_10);
+  _fgets(local_144,0xff,file_handle);
+  _fscanf(file_handle," %f,%f,%f\n",&local_20,&local_20.y,&local_20.z);
+  _fscanf(file_handle," %f,%f,%f\n",&local_2c,&local_2c.z,&local_2c.y);
+  _fscanf(file_handle," %f,%f,%f\n",&local_44,&local_44.y,&local_44.z);
+  _fscanf(file_handle," %f\n",&local_14);
+  core_box_cpp_CBox_setupCorners_FUN_0041a6e0(this_ptr,&local_20,&local_2c,&local_44,local_14);
+  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->linear_velocity_local,
+             &(this_ptr->linear_velocity_local).y,&(this_ptr->linear_velocity_local).z);
+  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->angular_velocity,
+             &(this_ptr->angular_velocity).y,&(this_ptr->angular_velocity).z);
+  _fscanf(file_handle," %d\n",&this_ptr->is_valid);
+  pfVar1 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
+                              (&this_ptr->rotation_matrix,local_38,&this_ptr->linear_velocity_local)
+  ;
+  if (&this_ptr->linear_velocity == (CVector3f *)pfVar1) {
     return;
   }
-  *(uint *)(param_1 + 0x40) = *puVar1;
-  *(uint *)(param_1 + 0x44) = puVar1[1];
-  *(uint *)(param_1 + 0x48) = puVar1[2];
+  (this_ptr->linear_velocity).x = *pfVar1;
+  (this_ptr->linear_velocity).y = pfVar1[1];
+  (this_ptr->linear_velocity).z = pfVar1[2];
   return;
 }

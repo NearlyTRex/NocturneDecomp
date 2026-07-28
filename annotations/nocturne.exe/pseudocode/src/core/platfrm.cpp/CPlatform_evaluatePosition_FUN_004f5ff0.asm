@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(int param_1)
+; void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_004f5ff0(CPlatform *this_ptr)
 ;
+; Parameters:
+; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined        Stack[-0x68]:1  local_68
@@ -127,7 +129,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f60ec
     MOVSD ES:EDI,ESI                    ; 004f60ed
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0 ; 004f60ee
-        ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0()
+        ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0(CVector3f * out_euler, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 004f60f3
     CMP EBX,EAX                         ; 004f60f6
     JNZ 0x004f6137                      ; 004f60f8
@@ -155,7 +157,7 @@ section .text
     FSTP float ptr [ESP]                ; 004f6129
     PUSH EAX                            ; 004f612c
     CALL core_course.cpp_CCourse_evaluate_FUN_0043b800 ; 004f612d
-        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_evaluate_FUN_0043b800()
+        ;   XREF to: 0043b800 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_0043b800(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004f6132
     JMP 0x004f60fa                      ; 004f6135
         ;   XREF to: 004f60fa (UNCONDITIONAL_JUMP)  ; LAB_004f60fa

@@ -2,85 +2,81 @@
 // Address: 005487b0
 // Address Range: [[005487b0, 00548a41]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,int param_2)
+// Signature: int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,int param_2)
+int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_ptr,CDemonActor *actor)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float *pfVar4;
-  int iVar5;
-  byte auStack_94 [4];
-  float fStack_90;
-  float fStack_84;
-  byte local_7c [24];
-  byte auStack_64 [24];
-  float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
+  CBoundingBox3D *pCVar4;
+  CVector3f *pCVar5;
+  CDemonActor *pCVar6;
+  CBoundingBox3D CStack_94;
+  CBoundingBox3D local_7c;
+  CBoundingBox3D CStack_64;
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  byte auStack_28 [28];
+  CVector3f aCStack_28 [2];
   
-  if (param_2 != 0) {
-    pfVar4 = (float *)(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_7c);
-    fStack_34 = *pfVar4 + pfVar4[3];
-    fStack_30 = pfVar4[1] + pfVar4[4];
-    fStack_4c = fStack_34 * 0.5f;
-    fStack_48 = fStack_30 * 0.5f;
-    fStack_2c = pfVar4[2] + pfVar4[5];
-    fStack_44 = fStack_2c * 0.5f;
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&fStack_40,&fStack_4c);
-    if (*(int *)(param_1 + 0x210) != 0) {
-      iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (param_2,g_CCharacterActorType_00765a60.name_hash);
-      if ((iVar5 != 0) && (*(int *)(iVar5 + 0x2408) == 0)) {
+  if (actor != (CDemonActor *)0x0) {
+    pCVar4 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&local_7c);
+    fStack_34 = (pCVar4->min).x + (pCVar4->max).x;
+    fStack_30 = (pCVar4->min).y + (pCVar4->max).y;
+    CStack_4c.x = fStack_34 * 0.5f;
+    CStack_4c.y = fStack_30 * 0.5f;
+    fStack_2c = (pCVar4->min).z + (pCVar4->max).z;
+    CStack_4c.z = fStack_2c * 0.5f;
+    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(actor,&CStack_40,&CStack_4c);
+    if (this_ptr->pressure_plate != 0) {
+      pCVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
+                         (actor,g_CCharacterActorType_00765a60.name_hash);
+      if ((pCVar6 != (CDemonActor *)0x0) && (*(int *)(pCVar6[0x1b].create_event + 0x20) == 0)) {
         return 0;
       }
-      fStack_3c = *(float *)(param_2 + 0x24);
+      CStack_40.y = (actor->location).position.y;
     }
-    fVar1 = fStack_40 - *(float *)(param_1 + 0x20);
-    fVar3 = fStack_3c - *(float *)(param_1 + 0x24);
-    fVar2 = fStack_38 - *(float *)(param_1 + 0x28);
+    fVar1 = CStack_40.x - (this_ptr->base).location.position.x;
+    fVar3 = CStack_40.y - (this_ptr->base).location.position.y;
+    fVar2 = CStack_40.z - (this_ptr->base).location.position.z;
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
-        *(float *)(param_1 + 0x150) * *(float *)(param_1 + 0x150)) {
-      pfVar4 = (float *)core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                                  (param_1,auStack_28,&fStack_40);
-      if (&fStack_40 != pfVar4) {
-        fStack_40 = *pfVar4;
-        fStack_3c = pfVar4[1];
-        fStack_38 = pfVar4[2];
+        this_ptr->test_radius * this_ptr->test_radius) {
+      pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                         (&this_ptr->base,aCStack_28,&CStack_40);
+      if (&CStack_40 != pCVar5) {
+        CStack_40.x = pCVar5->x;
+        CStack_40.y = pCVar5->y;
+        CStack_40.z = pCVar5->z;
       }
-      if (*(int *)(param_1 + 0x168) == 0) {
-        pfVar4 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_64);
-        if (((((*pfVar4 <= fStack_40) && (pfVar4[1] <= fStack_3c)) && (pfVar4[2] <= fStack_38)) &&
-            ((fStack_40 <= pfVar4[3] && (fStack_3c <= pfVar4[4])))) && (fStack_38 <= pfVar4[5])) {
+      if (this_ptr->shape == 0) {
+        pCVar4 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_64);
+        if ((((((pCVar4->min).x <= CStack_40.x) && ((pCVar4->min).y <= CStack_40.y)) &&
+             ((pCVar4->min).z <= CStack_40.z)) &&
+            ((CStack_40.x <= (pCVar4->max).x && (CStack_40.y <= (pCVar4->max).y)))) &&
+           (CStack_40.z <= (pCVar4->max).z)) {
           return 1;
         }
       }
       else {
-        if (*(int *)(param_1 + 0x168) != 1) {
+        if (this_ptr->shape != 1) {
           PTR_01cc4800 = "..\\core\\trigger.cpp";
           INT_01cc4804 = 0x37d;
-          core_main_c_FUN_004c8440
-                    ("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x168),param_1);
+          core_main_c_FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s",this_ptr->shape,this_ptr);
           INT_01cc4804 = 899;
           PTR_01cc4800 = "..\\core\\trigger.cpp";
           core_main_c_FUN_004c8440("Hell froze...");
           return 0;
         }
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_94);
-        if ((fStack_90 <= fStack_3c) && (fStack_3c <= fStack_84)) {
-          if (fStack_40 * fStack_40 + fStack_38 * fStack_38 <=
-              *(float *)(param_1 + 0x158) * *(float *)(param_1 + 0x160) * (float)0.25) {
+        (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_94);
+        if ((CStack_94.min.y <= CStack_40.y) && (CStack_40.y <= CStack_94.max.y)) {
+          if (CStack_40.x * CStack_40.x + CStack_40.z * CStack_40.z <=
+              (this_ptr->trigger_size).x * (this_ptr->trigger_size).z * (float)0.25) {
             return 1;
           }
           return 0;

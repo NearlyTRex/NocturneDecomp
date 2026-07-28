@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 314,
+    "complexity_score": 334,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 26,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
+      "unaffected_reg",
       "undefined_data",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
     "total_lines": 128
   },
@@ -161,7 +161,7 @@
     ],
     "convention": "unknown",
     "name": "core_actor.cpp_CDemonActor_save_FUN_0040c040",
-    "signature": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(char *param_1,int param_2)"
+    "signature": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -350,13 +350,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonActor_save_FUN_0040c040.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 40,
+          "message": "Uninitialized variable: unaff_EDI",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(char *param_1,int param_2)",
+      "text": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -364,71 +381,79 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(char *param_1,int param_2)",
+      "text": "void core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(param_1);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 == '\\0') {",
+      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
+      "text": "if (param_1->actor_name[0] == '\\0') {",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005acc90",
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
-      "type": "undefined_data"
+      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
-      "match": "DAT_00763e8c",
+      "match": "DAT_005acc90",
       "severity": "mild",
-      "text": "uVar3 = DAT_00763e8c;",
+      "text": "_fprintf(param_2,\"%s{ %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 19,
-      "match": "DAT_00763e88",
+      "match": "DAT_00763e8c",
       "severity": "mild",
-      "text": "uVar2 = DAT_00763e88;",
+      "text": "pCVar1 = DAT_00763e8c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 20,
-      "match": "DAT_00763e84",
+      "match": "DAT_00763e88",
       "severity": "mild",
-      "text": "uVar1 = DAT_00763e84;",
+      "text": "deleted_actor = DAT_00763e88;",
       "type": "undefined_data"
     },
     {
@@ -468,23 +493,15 @@
       "line": 23,
       "match": "DAT_00763e88",
       "severity": "mild",
-      "text": "DAT_00763e88 = 2;",
+      "text": "DAT_00763e88 = (CDemonActor *)0x2;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xcc))(param_1);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xcc))(param_1);",
+      "text": "(*((param_1->vtable)._ub)->onActorDeleted)(param_1,deleted_actor);",
       "type": "unnamed_param"
     },
     {
@@ -492,7 +509,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x14c) + 0xcc))(param_1);",
+      "text": "(*((param_1->vtable)._ub)->onActorDeleted)(param_1,deleted_actor);",
       "type": "unnamed_param"
     },
     {
@@ -500,7 +517,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
+      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -508,7 +525,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
+      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -516,7 +533,7 @@
       "line": 27,
       "match": "DAT_005acc90",
       "severity": "mild",
-      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,uVar4,param_1);",
+      "text": "_fprintf(param_2,\"%s} %s \\\"%s\\\"\\n\",&DAT_005acc90,pcVar2,param_1);",
       "type": "undefined_data"
     },
     {
@@ -528,11 +545,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "DAT_00763e84 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_00763e84",
       "severity": "mild",
-      "text": "DAT_00763e84 = uVar1;",
+      "text": "DAT_00763e84 = unaff_EDI;",
       "type": "undefined_data"
     },
     {
@@ -540,15 +565,23 @@
       "line": 34,
       "match": "DAT_00763e8c",
       "severity": "mild",
-      "text": "DAT_00763e8c = (char *)uVar3;",
+      "text": "DAT_00763e8c = pCVar1;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "DAT_00763e88 = (CDemonActor *)unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_00763e88",
       "severity": "mild",
-      "text": "DAT_00763e88 = uVar2;",
+      "text": "DAT_00763e88 = (CDemonActor *)unaff_EBP;",
       "type": "undefined_data"
     },
     {
@@ -561,6 +594,14 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 40,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "DAT_00763e84 = unaff_EDI;",
+      "type": "static_uninitvar"
     }
   ]
 }

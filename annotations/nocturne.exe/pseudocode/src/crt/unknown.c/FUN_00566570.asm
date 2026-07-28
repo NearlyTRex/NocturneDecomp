@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_00566570(LPCSTR param_1)
+; int crt_unknown_c_FUN_00566570(LPCSTR param_1)
 ;
 ;
 ; XREF[2]:
-;   FUN_0056c864 at 0056c93f
+;   crt_io.c_getFileStat_FUN_0056c864 at 0056c93f
 ;   shape_edittool.cpp_FUN_00470730 at 00470abf
 ;
 ; Referenced Globals:

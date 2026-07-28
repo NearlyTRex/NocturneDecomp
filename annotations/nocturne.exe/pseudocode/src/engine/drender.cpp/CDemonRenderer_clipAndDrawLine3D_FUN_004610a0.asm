@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(int *param_1,int param_2,int param_3)
+; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   vertex_index1
+; int              Stack[0xc]:4   vertex_index2
 ;
 ; XREF[3]:
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 at 004217fd
@@ -283,18 +287,18 @@ section .text
     PUSH 0x4e1e                         ; 0046132b
     MOVSD.REP ES:EDI,ESI                ; 00461330
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 00461332
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
     ADD ESP,0x4                         ; 00461337
     PUSH 0x4e1f                         ; 0046133a
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300 ; 0046133f
-        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300()
+        ;   XREF to: 004cd300 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_004cd300(int cache_index)
     ADD ESP,0x4                         ; 00461344
     MOV EAX,dword ptr [EBP]             ; 00461347
     PUSH 0x2                            ; 0046134a
     ADD EAX,0xea5a0                     ; 0046134c
     PUSH EAX                            ; 00461351
     CALL engine_prim.c_replaceWWithDepth_FUN_004f99d0 ; 00461352
-        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_004f99d0()
+        ;   XREF to: 004f99d0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_004f99d0(SRenderVertex * vertices, int vertex_count)
     MOV EBX,dword ptr [EBP]             ; 00461357
     LEA EAX,[EBX + 0xea5d0]             ; 0046135a
     ADD ESP,0x8                         ; 00461360
@@ -316,7 +320,7 @@ section .text
     SAR EAX,0x10                        ; 00461389
     PUSH EAX                            ; 0046138c
     CALL engine_2d.c_drawLine3D_FUN_00401710 ; 0046138d
-        ;   XREF to: 00401710 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawLine3D_FUN_00401710()
+        ;   XREF to: 00401710 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine3D_FUN_00401710(int x1, int y1, uint z1, int x2, ...)
     ADD ESP,0x18                        ; 00461392
     ADD ESP,0x90                        ; 00461395
     POP EBP                             ; 0046139b

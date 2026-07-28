@@ -1,14 +1,14 @@
 // Name: core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0
 // Address: 0044bca0
 // Address Range: [[0044bca0, 0044bcaa]]
-// Convention: unknown
-// Signature: void core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(CFilterCache *this_ptr)
 
 #include "nocturne.h"
 
-void core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(uint *param_1)
+CFilterCache * __cdecl core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(CFilterCache *this_ptr)
 
 {
-  *param_1 = 0;
-  return;
+  this_ptr->filter_count = 0;
+  return this_ptr;
 }

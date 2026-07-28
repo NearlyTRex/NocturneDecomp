@@ -31,10 +31,10 @@ section .text
     FMULP ST3                           ; 00460caa
     FXCH                                ; 00460cac
     CALL crt_math.c_round_FUN_00563a30  ; 00460cae
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00460cb3
     CALL crt_math.c_round_FUN_00563a30  ; 00460cb5
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 00460cba
     FISTP dword ptr [ESP]               ; 00460cbc
     FISTP dword ptr [ESP + 0x4]         ; 00460cbf
@@ -42,13 +42,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00460cc6
     PUSH EDX                            ; 00460cca
     CALL crt_math.c_round_FUN_00563a30  ; 00460ccb
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     PUSH ECX                            ; 00460cd0
     FISTP dword ptr [ESP + 0xc]         ; 00460cd1
     MOV EBX,dword ptr [ESP + 0xc]       ; 00460cd5
     PUSH EBX                            ; 00460cd9
     CALL engine_light.cpp_setDirectionalLightVector_FUN_004c6a10 ; 00460cda
-        ;   XREF to: 004c6a10 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_setDirectionalLightVector_FUN_004c6a10()
+        ;   XREF to: 004c6a10 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x, int dir_y, int dir_z)
     ADD ESP,0xc                         ; 00460cdf
     ADD ESP,0x8                         ; 00460ce2
     POP EBX                             ; 00460ce5

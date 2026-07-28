@@ -4,116 +4,116 @@
       {
         "category": "other",
         "column": 1,
-        "line": 188,
+        "line": 209,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 189,
+        "line": 211,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 190,
-        "message": "unknown type name 'code'"
+        "column": 90,
+        "line": 137,
+        "message": "unknown type name 'LPWIN32_FIND_DATAA'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
+        "line": 99,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 79,
+        "column": 65,
+        "line": 101,
         "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 101,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 154,
+        "line": 176,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 161,
+        "column": 61,
+        "line": 183,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
-        "column": 1,
-        "line": 166,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 34,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 96,
-        "line": 58,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 93,
-        "line": 60,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 15,
-        "line": 125,
-        "message": "expected unqualified-id"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 188,
+        "column": 60,
+        "line": 218,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 228,
+        "line": 258,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 237,
+        "column": 66,
+        "line": 267,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 442,
+        "line": 471,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
-        "column": 25,
-        "line": 449,
+        "column": 58,
+        "line": 478,
         "message": "unknown type name 'PEXCEPTION_RECORD'"
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 167,
+        "column": 160,
+        "line": 200,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
-        "column": 164,
-        "line": 169,
-        "message": "unknown type name 'code'"
+        "column": 37,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 45,
+        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 161,
+        "message": "unknown type name 'SYSTEMTIME'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 161,
+        "message": "unknown type name 'LPFILETIME'; did you mean 'PFILETIME'?"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 164,
+        "message": "unknown type name 'LPOVERLAPPED'"
       }
     ],
     "success": false,
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 445,
+    "complexity_score": 224,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 29,
+    "pseudocode_lines": 129,
+    "suspect_count": 8,
     "suspect_types": [
       "bitcast_double_pair",
-      "param_count_too_few",
       "raw_address_constant",
-      "sub84_truncation",
-      "unnamed_param"
+      "sub84_truncation"
     ],
-    "total_lines": 496
+    "total_lines": 495
   },
   "cross_references": [
     {
@@ -202,10 +200,10 @@
         "0044dfa6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0",
-    "signature": "float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,float *param_2)"
+    "signature": "CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f *this_ptr,CVector3f *euler_angles)"
   },
   "function_calls": [
     {
@@ -270,13 +268,10 @@
         "call_addr": "004607c6",
         "call_type": "direct",
         "caller": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -284,14 +279,10 @@
         "call_addr": "0041b26f",
         "call_type": "direct",
         "caller": "core_box.cpp_CBox_processPhysics_FUN_0041ad10",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -299,14 +290,10 @@
         "call_addr": "00508dc7",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-        "estimated_params": 5,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -314,12 +301,10 @@
         "call_addr": "0044f0e5",
         "call_type": "direct",
         "caller": "core_dlight.cpp_FUN_0044f0b0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -327,12 +312,10 @@
         "call_addr": "00451599",
         "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -340,12 +323,10 @@
         "call_addr": "00423314",
         "call_type": "direct",
         "caller": "core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -353,15 +334,10 @@
         "call_addr": "00484e8c",
         "call_type": "direct",
         "caller": "core_fire.cpp_CMuzzleFlash_init_FUN_00484e10",
-        "estimated_params": 6,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -369,13 +345,10 @@
         "call_addr": "00437ad6",
         "call_type": "direct",
         "caller": "core_cloth.cpp_FUN_00437ab0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -383,21 +356,19 @@
         "call_addr": "00450cd4",
         "call_type": "direct",
         "caller": "core_dlight.cpp_FUN_00450c90",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.228956228956228,
@@ -440,10 +411,10 @@
     "pcode_op_count": 2444
   },
   "stack_frame": {
-    "frame_size": 148,
+    "frame_size": 156,
     "local_size": 148,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -564,6 +535,20 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -592,28 +577,28 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 13,
-          "line": 81,
+          "line": 79,
           "message": "Return value of function acos() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "ignoredReturnValue",
           "column": 9,
-          "line": 95,
+          "line": 93,
           "message": "Return value of function asin() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "ignoredReturnValue",
           "column": 9,
-          "line": 116,
+          "line": 115,
           "message": "Return value of function acos() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "ignoredReturnValue",
           "column": 5,
-          "line": 130,
+          "line": 129,
           "message": "Return value of function asin() is not used.",
           "severity": "warning"
         }
@@ -624,88 +609,32 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float * core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = -param_1[5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = -1.5707964;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = (float)fVar6;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 31,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uStack_94 = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = param_1[2] * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[8] * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 37,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_84 = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "text": "uStack_94 = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 40,
+      "line": 36,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uStack_5c = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "text": "uStack_84 = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 39,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_5c = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 47,
+      "line": 46,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_84,local_68)) < 0.0) {",
@@ -713,127 +642,23 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 55,
+      "line": 54,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_5c,local_80)) < 0.0) {",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = local_20;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 66,
+      "line": 65,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar3 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,uStack_98));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = param_1[3] * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = param_1[4] * fVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = fStack_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = 1.5707964;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[2] = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar1 = (double)-param_1[6];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "dVar2 = (double)*param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "acos((float10)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 123,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "asin((float10)-param_1[6]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = fStack_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Raw hex address 0x44df4f assigned to bare local `uStack_98`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_98` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 43,
+      "line": 42,
       "match": "0x44df4f",
       "severity": "moderate",
       "text": "uStack_98 = 0x44df4f;",
@@ -841,22 +666,11 @@
     },
     {
       "description": "Raw hex address 0x44dd7f assigned to bare local `uStack_98`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_98` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
+      "line": 51,
       "match": "0x44dd7f",
       "severity": "moderate",
       "text": "uStack_98 = 0x44dd7f;",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

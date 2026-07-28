@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(int param_1,undefined4 *param_2)
+; void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(int device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; int              Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[4]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1c59
@@ -30,7 +33,7 @@ section .text
     PUSH EDI                            ; 005282c2
     MOV EBX,dword ptr [ESP + 0x10]      ; 005282c3
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 005282c7
-        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
+        ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
     TEST EBX,EBX                        ; 005282cc
     JL 0x005282f8                       ; 005282ce
         ;   XREF to: 005282f8 (CONDITIONAL_JUMP)  ; LAB_005282f8

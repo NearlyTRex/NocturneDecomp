@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(int *param_1,undefined4 param_2,int param_3)
+; int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList *this_ptr,char *state_name,int error_on_not_found)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   state_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[11]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0 at 0042a02e
@@ -48,7 +52,7 @@ section .text
         ;   Label: LAB_004e10b7
     PUSH ESI                            ; 004e10b8
     CALL crt_string.c__stricmp_FUN_00564520 ; 004e10b9
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e10be
     TEST EAX,EAX                        ; 004e10c1
     JZ 0x004e10e0                       ; 004e10c3

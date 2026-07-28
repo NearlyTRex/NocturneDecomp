@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(int param_1)
+; int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004b4e90(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x64]:1  local_64
 ;
@@ -81,7 +83,7 @@ section .text
     PUSH ESI                            ; 004b4f1e
     FSTP float ptr [ESP + 0x54]         ; 004b4f1f
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004b4f23
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004b4f28
     XOR ESI,ESI                         ; 004b4f2b
     MOV dword ptr [ESP + 0x4c],EDI      ; 004b4f2d

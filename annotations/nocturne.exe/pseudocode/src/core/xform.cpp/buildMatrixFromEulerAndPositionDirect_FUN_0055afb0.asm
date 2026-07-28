@@ -19,7 +19,7 @@
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 0042906e
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429311
 ;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482da7
-;   core_gabriela.cpp_FUN_004980d0 at 00498109
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 00498109
 ;   core_gabriela.cpp_FUN_00499ca0 at 00499daf
 ;   ... and 25 more
 ;

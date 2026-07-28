@@ -2,85 +2,84 @@
 // Address: 00427eb0
 // Address Range: [[00427eb0, 00428099]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(int param_1,int param_2,int param_3,undefined4 param_4)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(int param_1,int param_2,int param_3,uint param_4)
+void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
-  uint uVar1;
-  int *piVar2;
+  CVector3f *position;
+  SDamageDecal *pSVar1;
+  SFire *pSVar2;
   int iVar3;
-  int iVar4;
-  uint *puVar5;
-  uint *puVar6;
+  CCharacter *pCVar4;
+  float *pfVar5;
+  CMatrix3x4f *pCVar6;
   byte bVar7;
-  uint local_9c [3];
-  uint local_90;
-  uint local_80;
-  uint local_70;
-  uint local_6c [12];
-  byte local_3c [12];
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  byte local_24 [12];
-  int local_18;
+  CMatrix3x4f local_9c;
+  float local_6c [12];
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CMatrix3x4f *local_18;
   int local_14;
   
   bVar7 = 0;
-  if ((*(char *)(param_1 + 0x23b0) != '\0') && (*(int *)(param_3 * 4 + param_1 + 0x2290) != 0)) {
+  if (((this_ptr->model).model_name[0] != '\0') &&
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0
-              (param_1 + 0x150,param_2,param_3);
+              (&this_ptr->model,body_part,part_index);
     local_14 = 0;
-    if (0 < *(int *)(param_1 + 0x2dec)) {
-      local_18 = param_1 + 0xfd0;
-      piVar2 = (int *)(param_1 + 0x2df0);
+    if (0 < this_ptr->damage_decal_count) {
+      local_18 = (this_ptr->model).bone_transform.bone_world_matrices;
+      pSVar1 = this_ptr->damage_decals;
       do {
-        if (param_3 == *piVar2) {
-          core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(piVar2 + 2,piVar2[1] * 0x30 + local_18);
-          puVar5 = local_6c;
-          puVar6 = local_9c;
-          for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar6 = *puVar5;
-            puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-            puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        if (part_index == pSVar1->part_index) {
+          core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
+                    (&pSVar1->transform,local_18 + pSVar1->bone_index);
+          pfVar5 = local_6c;
+          pCVar6 = &local_9c;
+          for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+            pCVar6->m[0].w = *pfVar5;
+            pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+            pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
           }
-          uVar1 = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(local_9c,local_3c);
-          local_30 = local_90;
-          local_2c = local_80;
-          local_28 = local_70;
+          position = core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_9c,&local_3c);
+          local_30.x = local_9c.m[0].z;
+          local_30.y = local_9c.m[1].z;
+          local_30.z = local_9c.m[2].z;
           core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417ac0
-                    (param_2,&DAT_0076595c,&local_30,uVar1);
+                    (body_part,&DAT_0076595c,&local_30,position);
         }
-        piVar2 = piVar2 + 0xe;
+        pSVar1 = pSVar1 + 1;
         local_14 = local_14 + 1;
-      } while (local_14 < *(int *)(param_1 + 0x2dec));
-    }
-    iVar4 = 0;
-    if (0 < *(int *)(param_1 + 0x2f08)) {
-      piVar2 = (int *)(param_1 + 0x2f14);
-      do {
-        if ((param_3 == *piVar2) && (-1 < piVar2[1])) {
-          core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                    (local_24,piVar2 + 2,piVar2[1] * 0x30 + param_1 + 0xfd0);
-          core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(param_2,local_24);
-        }
-        iVar4 = iVar4 + 1;
-        piVar2 = piVar2 + 6;
-      } while (iVar4 < *(int *)(param_1 + 0x2f08));
+      } while (local_14 < this_ptr->damage_decal_count);
     }
     iVar3 = 0;
-    iVar4 = param_1;
+    if (0 < this_ptr->fire_count) {
+      pSVar2 = this_ptr->fires;
+      do {
+        if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
+          core_xform_cpp_transformVector3x4_FUN_0055a8b0
+                    (&local_24,&pSVar2->offset,
+                     (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index);
+          core_bodypart_cpp_CBodyPart_addFire_FUN_00417b40(body_part,&local_24);
+        }
+        iVar3 = iVar3 + 1;
+        pSVar2 = pSVar2 + 1;
+      } while (iVar3 < this_ptr->fire_count);
+    }
+    iVar3 = 0;
+    pCVar4 = this_ptr;
     do {
-      if (param_3 == *(int *)(iVar4 + 0x24a8)) {
-        (**(code **)(*(int *)(param_1 + 0x14c) + 0x120))(param_1,iVar3,0);
+      if (part_index == pCVar4->carry_hands[0].secondary_bone_index) {
+        (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
       }
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x44;
+      pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
     } while (iVar3 < 2);
-    *(uint *)(param_2 + 0x150) = param_4;
+    body_part->render_in_background = render_in_background;
     return;
   }
   return;

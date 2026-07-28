@@ -9,11 +9,12 @@
 uint core_stranger_cpp_FUN_005383e0(int param_1)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(param_1 + 0x24ac),g_CLightActorActorType_00764a9c.name_hash);
-  if ((iVar1 != 0) && ((*(int *)(iVar1 + 0x664) == 2 || (*(int *)(iVar1 + 0x664) == 3)))) {
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                     (*(CDemonActor **)(param_1 + 0x24ac),g_CLightActorActorType_00764a9c.name_hash)
+  ;
+  if ((pCVar1 != (CDemonActor *)0x0) && ((pCVar1[4].dead2 == 2 || (pCVar1[4].dead2 == 3)))) {
     return 0xbf860a92;
   }
   return 0xbfc80fc6;

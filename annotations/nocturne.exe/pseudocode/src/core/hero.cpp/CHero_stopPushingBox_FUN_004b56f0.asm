@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(int param_1)
+; void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(CHero *this_ptr)
 ;
+; Parameters:
+; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_FUN_00495a20 at 00496bf5
@@ -36,7 +38,7 @@ section .text
     PUSH ECX                            ; 004b570a
     PUSH EDX                            ; 004b570b
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b570c
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDI,dword ptr [EAX + 0x318]     ; 004b5711
     ADD ESP,0x8                         ; 004b5717
     CMP EBX,EDI                         ; 004b571a
@@ -46,7 +48,7 @@ section .text
     PUSH EBP                            ; 004b5724
     MOV dword ptr [EAX + 0x318],0x0     ; 004b5725
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 004b572f
-        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
+        ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00527230(uint sfx_handle)
     ADD ESP,0x4                         ; 004b5734
     MOV dword ptr [EBX + 0x1fa0c],0x0   ; 004b5737
         ;   Label: LAB_004b5737

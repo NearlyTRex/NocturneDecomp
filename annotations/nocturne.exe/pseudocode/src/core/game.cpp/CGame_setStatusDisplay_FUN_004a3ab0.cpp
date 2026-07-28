@@ -2,48 +2,47 @@
 // Address: 004a3ab0
 // Address Range: [[004a3ab0, 004a3b8c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(int param_1,char *param_2,undefined4 param_3,float param_4)
+// Signature: void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(int param_1,char *param_2,uint param_3,float param_4)
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration)
 
 {
   char cVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  char *pcVar5;
+  char (*pacVar4) [256];
   
-  if (((0.0 < param_4) && (param_2 != (char *)0x0)) && (*param_2 != '\0')) {
+  if (((0.0 < duration) && (name != (char *)0x0)) && (*name != '\0')) {
     iVar3 = 0;
-    iVar4 = param_1 + 0x38c;
-    if (0 < *(int *)(param_1 + 0x388)) {
+    pacVar4 = this_ptr->status_bar_names;
+    if (0 < this_ptr->status_display_count) {
       do {
-        iVar2 = _stricmp(iVar4,param_2);
+        iVar2 = _stricmp(*pacVar4,name);
         if (iVar2 == 0) {
-          *(uint *)(param_1 + 0x88c + iVar3 * 4) = param_3;
-          *(float *)(param_1 + 0x8a0 + iVar3 * 4) = param_4;
+          this_ptr->status_bar_values[iVar3] = (float)value;
+          this_ptr->status_bar_timers[iVar3] = duration;
           return;
         }
         iVar3 = iVar3 + 1;
-        iVar4 = iVar4 + 0x100;
-      } while (iVar3 < *(int *)(param_1 + 0x388));
+        pacVar4 = pacVar4 + 1;
+      } while (iVar3 < this_ptr->status_display_count);
     }
-    if (*(int *)(param_1 + 0x388) < 5) {
-      pcVar5 = (char *)(*(int *)(param_1 + 0x388) * 0x100 + param_1 + 0x38c);
+    if (this_ptr->status_display_count < 5) {
+      pacVar4 = this_ptr->status_bar_names + this_ptr->status_display_count;
       do {
-        cVar1 = *param_2;
-        *pcVar5 = cVar1;
+        cVar1 = *name;
+        (*pacVar4)[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = param_2[1];
-        param_2 = param_2 + 2;
-        pcVar5[1] = cVar1;
-        pcVar5 = pcVar5 + 2;
+        cVar1 = name[1];
+        name = name + 2;
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [256])(*pacVar4 + 2);
       } while (cVar1 != '\0');
-      *(uint *)(param_1 + 0x88c + *(int *)(param_1 + 0x388) * 4) = param_3;
-      *(float *)(param_1 + 0x8a0 + *(int *)(param_1 + 0x388) * 4) = param_4;
-      *(int *)(param_1 + 0x388) = *(int *)(param_1 + 0x388) + 1;
+      this_ptr->status_bar_values[this_ptr->status_display_count] = (float)value;
+      this_ptr->status_bar_timers[this_ptr->status_display_count] = duration;
+      this_ptr->status_display_count = this_ptr->status_display_count + 1;
       return;
     }
   }

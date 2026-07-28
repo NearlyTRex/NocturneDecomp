@@ -55,7 +55,7 @@ section .text
     CALL dword ptr [EDX + 0x40]         ; 00526f49
     ADD ESP,0xc                         ; 00526f4c
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526f4f
-        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_unlockSound_FUN_00528890()
+        ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_00526f4f
     MOV EAX,0x1                         ; 00526f54
     POP ESI                             ; 00526f59

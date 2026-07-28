@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(int param_1,int *param_2,int param_3)
+; int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; int *            Stack[0x8]:4   file_offset_ptr
+; CSfxSample *     Stack[0xc]:4   sfx_sample
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
 ; undefined1       Stack[-0x87]:1  local_87
@@ -18,9 +22,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_00522480 at 00522648
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522c6f
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b03
+;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 00522648
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526b72
 ;
 ; Referenced Globals:
@@ -59,7 +63,7 @@ section .text
     PUSH EDX                            ; 00521849
     PUSH ESI                            ; 0052184a
     CALL crt_stdio.c_fseek_FUN_0056582c ; 0052184b
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00521850
     TEST EAX,EAX                        ; 00521853
     JZ 0x0052186e                       ; 00521855
@@ -70,7 +74,7 @@ section .text
         ;   XREF to: 00521864 (CONDITIONAL_JUMP)  ; LAB_00521864
     PUSH ESI                            ; 0052185b
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0052185c
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521861
     XOR EAX,EAX                         ; 00521864
         ;   Label: LAB_00521864
@@ -87,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x7c]                ; 00521873
     PUSH EAX                            ; 00521877
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00521878
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0052187d
     CMP EAX,0x1                         ; 00521880
     JNZ 0x00521857                      ; 00521883
@@ -123,7 +127,7 @@ section .text
     PUSH EAX                            ; 005218c7
     ADD EBP,0x8                         ; 005218c8
     CALL crt_stdio.c_fread_FUN_005636d0 ; 005218cb
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005218d0
     CMP EAX,0x1                         ; 005218d3
     JNZ 0x00521857                      ; 005218d6
@@ -158,7 +162,7 @@ section .text
     PUSH EAX                            ; 0052191a
     PUSH ESI                            ; 0052191b
     CALL crt_stdio.c_fseek_FUN_0056582c ; 0052191c
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00521921
     TEST EAX,EAX                        ; 00521924
     JNZ 0x00521857                      ; 00521926
@@ -169,7 +173,7 @@ section .text
     LEA EAX,[ESP + 0x7c]                ; 00521931
     PUSH EAX                            ; 00521935
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00521936
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0052193b
     CMP EAX,0x1                         ; 0052193e
     JNZ 0x00521857                      ; 00521941
@@ -238,7 +242,7 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 005219de
     PUSH EAX                            ; 005219e2
     CALL crt_stdio.c_fread_FUN_005636d0 ; 005219e3
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005219e8
     CMP EAX,0x1                         ; 005219eb
     JNZ 0x00521857                      ; 005219ee
@@ -269,7 +273,7 @@ section .text
     PUSH EAX                            ; 00521a44
     PUSH ESI                            ; 00521a45
     CALL crt_stdio.c_fseek_FUN_0056582c ; 00521a46
-        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_0056582c()
+        ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00521a4b
     TEST EAX,EAX                        ; 00521a4e
     JNZ 0x00521857                      ; 00521a50
@@ -280,7 +284,7 @@ section .text
     LEA EAX,[ESP + 0x7c]                ; 00521a5b
     PUSH EAX                            ; 00521a5f
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00521a60
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00521a65
     CMP EAX,0x1                         ; 00521a68
     JNZ 0x00521857                      ; 00521a6b

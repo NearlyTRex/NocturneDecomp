@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 65,
+    "complexity_score": 6,
     "cross_reference_count": 25,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 5,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 16
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
   },
   "cross_references": [
     {
@@ -38,12 +35,6 @@
       "addr": "005711a8",
       "from_addr": "005711df",
       "name": "FUN_005711a8",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573afc",
-      "from_addr": "00573c32",
-      "name": "FUN_00573afc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,6 +104,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00573afc",
+      "from_addr": "00573c32",
+      "name": "crt_env.c_updateEnvironTable_FUN_00573afc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f7ae0",
       "from_addr": "004f7fb4",
       "name": "engine_pod.cpp_FUN_004f7ae0",
@@ -145,7 +142,7 @@
     {
       "addr": "00474230",
       "from_addr": "0047428e",
-      "name": "shape_edittool.cpp_FUN_00474230",
+      "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_00474230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -177,13 +174,13 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c_realloc_FUN_00564a70",
-    "signature": "void __cdecl crt_memory_c_realloc_FUN_00564a70(undefined4 param_1,undefined4 param_2)"
+    "signature": "void * __cdecl crt_memory_c_realloc_FUN_00564a70(void *ptr,ulong new_size)"
   },
   "function_calls": [
     {
       "addr": "00564a88",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00564a88"
+      "name": "crt_unknown.c_realloc__FUN_00564a88"
     }
   ],
   "globals": [],
@@ -302,10 +299,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7777777777777777,
@@ -328,56 +325,27 @@
     "pcode_op_count": 34
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "new_size",
+        "offset": 8,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl realloc(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl realloc(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00564a88(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_00564a88(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 32,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_00402760(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void engine_2d_c_FUN_00402760(int param_1,int param_2,char *param_3)
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_0049cc10 at 0049d403
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d403
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00402600
@@ -23,7 +23,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040276b
     PUSH EBX                            ; 0040276f
     CALL engine_2d.c_drawText_FUN_00402600 ; 00402770
-        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
+        ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402775
     POP EBX                             ; 00402778
     RET                                 ; 00402779

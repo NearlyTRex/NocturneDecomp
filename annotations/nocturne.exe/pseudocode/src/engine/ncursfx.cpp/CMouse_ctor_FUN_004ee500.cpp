@@ -1,20 +1,22 @@
 // Name: engine_ncursfx.cpp_CMouse_ctor_FUN_004ee500
 // Address: 004ee500
 // Address Range: [[004ee500, 004ee557]]
-// Convention: unknown
-// Signature: int engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(undefined4 param_1)
+// Convention: __cdecl
+// Signature: CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *ptr)
 
 #include "nocturne.h"
 
-int engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(uint param_1)
+CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1,8,&g_CAlphaBitmapTypeInfo_0059df00);
-  iVar1 = __arrinit(iVar1 + 0xa0,7,&g_CAlphaBitmapTypeInfo_0059df00);
-  iVar1 = __arrinit(iVar1 + 0x8c,0xf,&g_CAlphaBitmapTypeInfo_0059df00);
-  *(uint *)(iVar1 + 300) = 0;
-  *(uint *)(iVar1 + 0x130) = 0;
-  return iVar1 + -300;
+  pvVar1 = __arrinit(ptr,8,&g_CAlphaBitmapTypeInfo_0059df00);
+  pvVar1 = __arrinit
+                     ((void *)((int)pvVar1 + 0xa0),7,&g_CAlphaBitmapTypeInfo_0059df00);
+  pvVar1 = __arrinit
+                     ((void *)((int)pvVar1 + 0x8c),0xf,&g_CAlphaBitmapTypeInfo_0059df00);
+  *(uint *)((int)pvVar1 + 300) = 0;
+  *(uint *)((int)pvVar1 + 0x130) = 0;
+  return (CMouse *)((int)pvVar1 + -300);
 }

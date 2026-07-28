@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(int param_1,undefined4 param_2)
+; void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -42,7 +42,7 @@ section .text
     MOV EBX,dword ptr [0x005b7650]      ; 004f3a3c | DAT_005b7650
     PUSH EBX                            ; 004f3a42
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f3a43
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004f3a48
     TEST EAX,EAX                        ; 004f3a4b
     JZ 0x004f3a6f                       ; 004f3a4d
@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_004f3a6f
     PUSH ESI                            ; 004f3a73
     CALL core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430 ; 004f3a74
-        ;   XREF to: 004f3430 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430()
+        ;   XREF to: 004f3430 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430(CPendulum * this_ptr, float delta_time)
     FLD float ptr [ESI + 0x428]         ; 004f3a79
     FMUL double ptr [0x0058d080]        ; 004f3a7f | DOUBLE_0058d080
     FMUL float ptr [ESI + 0x42c]        ; 004f3a85
@@ -108,7 +108,7 @@ section .text
     MOV ECX,dword ptr [0x005b7650]      ; 004f3afb | DAT_005b7650
     PUSH ECX                            ; 004f3b01
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004f3b02
-        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30()
+        ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004f3b07
     TEST EAX,EAX                        ; 004f3b0a
     JZ 0x004f3b26                       ; 004f3b0c
@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 004f3b30
     PUSH EBX                            ; 004f3b31
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004f3b32
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f3b37
     TEST EAX,EAX                        ; 004f3b3a
     JZ 0x004f3ae5                       ; 004f3b3c
@@ -141,7 +141,7 @@ section .text
     PUSH EBX                            ; 004f3b41
     PUSH ESI                            ; 004f3b42
     CALL core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60 ; 004f3b43
-        ;   XREF to: 004f2e60 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60()
+        ;   XREF to: 004f2e60 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum * this_ptr, CDemonActor * actor, CDemonActor * left_hand_actor, CDemonActor * right_hand_actor)
     ADD ESP,0x10                        ; 004f3b48
     JMP 0x004f3aee                      ; 004f3b4b
         ;   XREF to: 004f3aee (UNCONDITIONAL_JUMP)  ; LAB_004f3aee
@@ -150,7 +150,7 @@ section .text
     PUSH ECX                            ; 004f3b53
     PUSH EBX                            ; 004f3b54
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004f3b55
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f3b5a
     TEST EAX,EAX                        ; 004f3b5d
     JZ 0x004f3aee                       ; 004f3b5f
@@ -160,7 +160,7 @@ section .text
     PUSH EBX                            ; 004f3b64
     PUSH ESI                            ; 004f3b65
     CALL core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60 ; 004f3b66
-        ;   XREF to: 004f2e60 (UNCONDITIONAL_CALL)  ; undefined core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60()
+        ;   XREF to: 004f2e60 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(CPendulum * this_ptr, CDemonActor * actor, CDemonActor * left_hand_actor, CDemonActor * right_hand_actor)
     ADD ESP,0x10                        ; 004f3b6b
     INC EBP                             ; 004f3b6e
     ADD EDI,0x4                         ; 004f3b6f

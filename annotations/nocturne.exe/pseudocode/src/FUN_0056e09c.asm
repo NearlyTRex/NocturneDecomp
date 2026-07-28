@@ -8,8 +8,8 @@
 ;   FUN_00572b70 at 00572c7d
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1af0 = 005671e4
-;   void* PTR_FUN_005c1af4 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0 = 005671e4
+;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4 = 005671e4
 ;   undefined4 DAT_005c1f54
 ;   undefined4 DAT_005c1f58
 ;
@@ -30,7 +30,7 @@ section .text
     TEST EDI,EDI                        ; 0056e0aa
     JL 0x0056e166                       ; 0056e0ac
         ;   XREF to: 0056e166 (CONDITIONAL_JUMP)  ; LAB_0056e166
-    CALL dword ptr [0x005c1af0]         ; 0056e0b2 | PTR_FUN_005c1af0
+    CALL dword ptr [0x005c1af0]         ; 0056e0b2 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0
     CMP EDI,0x1                         ; 0056e0b8
     JC 0x0056e0c6                       ; 0056e0bb
         ;   XREF to: 0056e0c6 (CONDITIONAL_JUMP)  ; LAB_0056e0c6
@@ -79,7 +79,7 @@ section .text
     PUSH EAX                            ; 0056e10e
     PUSH ESI                            ; 0056e10f
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e110
-        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_realloc_FUN_00564a70()
+        ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     MOV EDX,dword ptr [0x005c1f58]      ; 0056e115 | DAT_005c1f58
     ADD ESP,0x8                         ; 0056e11b
     MOV ESI,EAX                         ; 0056e11e
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [0x005c1f54],ESI      ; 0056e14c | DAT_005c1f54
     MOV dword ptr [0x005c1f58],EDI      ; 0056e152 | DAT_005c1f58
     MOV dword ptr [EAX],EDX             ; 0056e158
-    CALL dword ptr [0x005c1af4]         ; 0056e15a | PTR_FUN_005c1af4
+    CALL dword ptr [0x005c1af4]         ; 0056e15a | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4
         ;   Label: LAB_0056e15a
     MOV ESI,dword ptr [0x005c1f54]      ; 0056e160 | DAT_005c1f54
     MOV ESI,dword ptr [0x005c1f54]      ; 0056e166 | DAT_005c1f54

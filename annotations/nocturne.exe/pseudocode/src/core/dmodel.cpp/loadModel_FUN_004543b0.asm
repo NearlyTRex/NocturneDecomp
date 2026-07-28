@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(undefined4 param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 at 00454518
@@ -46,7 +48,7 @@ section .text
         ;   Label: LAB_004543ca
     PUSH EBX                            ; 004543cb
     CALL crt_string.c__stricmp_FUN_00564520 ; 004543cc
-        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()
+        ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004543d1
     TEST EAX,EAX                        ; 004543d4
     JZ 0x0045444b                       ; 004543d6
@@ -80,11 +82,11 @@ section .text
     PUSH EBX                            ; 00454433
     MOV dword ptr [0x01abb658],ECX      ; 00454434 | DAT_01abb658
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 0045443a
-        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650()
+        ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0045443f
     PUSH EBX                            ; 00454442
     CALL core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950 ; 00454443
-        ;   XREF to: 00453950 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950()
+        ;   XREF to: 00453950 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00454448
     MOV EAX,EBX                         ; 0045444b
         ;   Label: LAB_0045444b

@@ -1,11 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440(undefined4 param_1,int *param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7,int param_8,int param_9)
+; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   x1
+; int *            Stack[0xc]:4   y1
+; int *            Stack[0x10]:4   x2
+; int *            Stack[0x14]:4   y2
+; int              Stack[0x18]:4   clip_left
+; int              Stack[0x1c]:4   clip_top
+; int              Stack[0x20]:4   clip_right
+; int              Stack[0x24]:4   clip_bottom
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0045bfb0 at 0045c011
+;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 at 0045c011
 ;   cockpit_drawsurf.cpp_FUN_0045c050 at 0045c0b1
 ;
 ; Referenced Globals:

@@ -2,11 +2,11 @@
 // Address: 0048f9b0
 // Address Range: [[0048f9b0, 0048fbde]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param_1,float *param_2,float *param_3)
+// Signature: CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point)
 
 #include "nocturne.h"
 
-float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param_1,float *param_2,float *param_3)
+CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point)
 
 {
   float fVar1;
@@ -15,50 +15,50 @@ float * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_0048f9b0(int param
   float fVar4;
   float fVar5;
   float fVar6;
-  float local_44 [6];
-  float local_2c [5];
+  CVector3f local_44 [2];
+  CVector3f local_2c;
   float local_18;
   
   local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x3f800000);
-  param_2[1] = local_18;
-  param_2[1] = param_2[1] * param_2[1] * *(float *)(param_1 + 0x154);
+  out_point->y = local_18;
+  out_point->y = out_point->y * out_point->y * (this_ptr->box_size).y;
+  fVar6 = (this_ptr->box_size).x;
   local_18 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                              (*(float *)(param_1 + 0x150) * (float)-0.5,
-                               *(float *)(param_1 + 0x150) * (float)0.5);
-  *param_2 = local_18;
+                              (fVar6 * (float)-0.5,fVar6 * (float)0.5);
+  out_point->x = local_18;
+  fVar6 = (this_ptr->box_size).z;
   fVar6 = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0
-                           (*(float *)(param_1 + 0x158) * (float)-0.5,
-                            *(float *)(param_1 + 0x158) * (float)0.5);
-  param_2[2] = fVar6;
-  if (param_3 != (float *)0x0) {
-    fVar6 = *param_2 - *param_3;
-    fVar4 = param_2[1] - param_3[1];
-    fVar5 = param_2[2] - param_3[2];
+                           (fVar6 * (float)-0.5,fVar6 * (float)0.5);
+  out_point->z = fVar6;
+  if (reference_point != (CVector3f *)0x0) {
+    fVar6 = out_point->x - reference_point->x;
+    fVar4 = out_point->y - reference_point->y;
+    fVar5 = out_point->z - reference_point->z;
     fVar3 = SQRT(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
     if ((float)4 < fVar3) {
       fVar4 = fVar4 * 4.0f;
       fVar5 = fVar5 * 4.0f;
       fVar3 = 1.0 / fVar3;
-      fVar1 = param_3[1];
-      fVar2 = param_3[2];
-      if (param_2 != local_2c) {
-        *param_2 = *param_3 + fVar6 * 4.0f * fVar3;
-        param_2[1] = fVar1 + fVar4 * fVar3;
-        param_2[2] = fVar2 + fVar5 * fVar3;
-        return param_2;
+      fVar1 = reference_point->y;
+      fVar2 = reference_point->z;
+      if (out_point != &local_2c) {
+        out_point->x = reference_point->x + fVar6 * 4.0f * fVar3;
+        out_point->y = fVar1 + fVar4 * fVar3;
+        out_point->z = fVar2 + fVar5 * fVar3;
+        return out_point;
       }
     }
     else if ((fVar3 < 1.0) && (0.0 < fVar3)) {
       fVar3 = 1.0 / fVar3;
-      fVar1 = param_3[1];
-      fVar2 = param_3[2];
-      if (param_2 != local_44) {
-        *param_2 = *param_3 + fVar6 * fVar3;
-        param_2[1] = fVar1 + fVar4 * fVar3;
-        param_2[2] = fVar2 + fVar5 * fVar3;
-        return param_2;
+      fVar1 = reference_point->y;
+      fVar2 = reference_point->z;
+      if (out_point != local_44) {
+        out_point->x = reference_point->x + fVar6 * fVar3;
+        out_point->y = fVar1 + fVar4 * fVar3;
+        out_point->z = fVar2 + fVar5 * fVar3;
+        return out_point;
       }
     }
   }
-  return param_2;
+  return out_point;
 }

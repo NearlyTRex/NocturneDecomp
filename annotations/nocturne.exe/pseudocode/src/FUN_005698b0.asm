@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005698b0(undefined2 *param_1,undefined4 param_2,int param_3,code *param_4)
+; void FUN_005698b0(ushort *param_1,undefined4 param_2,int param_3,code *param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x18]:1  local_18
@@ -10,7 +10,7 @@
 ;   FUN_00569040 at 00569352
 ;
 ; Called Functions:
-;   FUN_0056f3a0
+;   crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005698d3
     PUSH EAX                            ; 005698d7
     ADD EBP,0x2                         ; 005698d8
-    CALL FUN_0056f3a0                   ; 005698db
-        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f3a0()
+    CALL crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0 ; 005698db
+        ;   XREF to: 0056f3a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_WideCharToSingleByte_FUN_0056f3a0(wchar_t wide_char, char * output_buffer)
     ADD ESP,0x8                         ; 005698e0
     MOV ESI,EAX                         ; 005698e3
     CMP EAX,-0x1                        ; 005698e5

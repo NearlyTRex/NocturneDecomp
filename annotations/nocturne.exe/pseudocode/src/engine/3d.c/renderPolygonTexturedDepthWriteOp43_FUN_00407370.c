@@ -13,7 +13,7 @@ int engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00407370(int param_1)
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)(param_1 + 8));
   if (iVar1 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {

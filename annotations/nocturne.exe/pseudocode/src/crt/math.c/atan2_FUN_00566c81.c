@@ -2,18 +2,20 @@
 // Address: 00566c81
 // Address Range: [[00566c81, 00566c95]]
 // Convention: __fpureg
-// Signature: void __fpureg crt_math_c_atan2_FUN_00566c81(unkbyte10 param_1,unkbyte10 param_2)
+// Signature: float10 __fpureg crt_math_c_atan2_FUN_00566c81(float10 y,float10 x)
 
 #include "nocturne.h"
 
-void __fpureg atan2(unkbyte10 param_1,unkbyte10 param_2)
+float10 __fpureg atan2(float10 y,float10 x)
 
 {
+  float10 fVar1;
+  
   if ((DAT_005c1d98 & 1) == 0) {
-    fpatan(param_1,param_2);
+    fVar1 = (float10)fpatan(y,x);
   }
   else {
-    FUN_0056dc98();
+    fVar1 = atan2(x,y);
   }
-  return;
+  return fVar1;
 }

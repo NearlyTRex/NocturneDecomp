@@ -10,13 +10,13 @@
 ;
 ; XREF[37]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a08bf
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049ccc4
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a64bd
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890 at 0049a890
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0 at 0049a8a7
-;   core_game.cpp_FUN_0049cc10 at 0049ccc4
-;   core_main.c_FUN_004c8e10 at 004c8e18
-;   core_main.c_FUN_004c8eb0 at 004c8ecf
 ;   core_main.c_FUN_004c90e0 at 004c911e
+;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8ecf
+;   core_main.c_waitWithSkip_FUN_004c8e10 at 004c8e18
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f19
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_004ece70 at 004ece9a
 ;   ... and 27 more
@@ -86,7 +86,7 @@ section .text
     MOV ESI,dword ptr [0x02de07f0]      ; 00558abb | DAT_02de07f0
     FSTP ST1                            ; 00558ac1
     CALL crt_math.c_round_FUN_00563a30  ; 00558ac3
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x28]        ; 00558ac8
     MOV EAX,dword ptr [ESP + 0x28]      ; 00558acc
     ADD ESI,EAX                         ; 00558ad0

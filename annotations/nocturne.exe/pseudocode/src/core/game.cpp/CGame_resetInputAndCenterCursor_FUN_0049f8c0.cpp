@@ -2,19 +2,23 @@
 // Address: 0049f8c0
 // Address Range: [[0049f8c0, 0049f92e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(void)
+// Signature: void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(void)
+void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *this_ptr)
 
 {
-  uint uVar1;
+  SPlayerInput *dest;
+  int value;
+  ulong count;
   
-  uVar1 = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(0x01CEA280,0,0x2c);
-  memset(uVar1);
+  count = 0x2c;
+  value = 0;
+  dest = core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(0x01CEA280);
+  memset(dest,value,count);
   memset(&DAT_01c781c0,0,600);
   _DAT_01c78418 = 0;
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60(DAT_005b761c / 2,DAT_005b7620 / 2);

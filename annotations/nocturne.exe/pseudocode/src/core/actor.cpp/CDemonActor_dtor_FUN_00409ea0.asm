@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(int param_1,uint param_2)
+; CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *this_ptr,uint flags)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; XREF[92]:
-;   core_ammo.cpp_FUN_0040ef90 at 0040ef9f
+;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040ef9f
 ;   core_ammobox.cpp_FUN_0040f4b0 at 0040f4bf
 ;   core_anvil.cpp_FUN_0040f8b0 at 0040f8bf
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd6a
@@ -51,11 +54,11 @@ section .text
         ;   Label: LAB_00409ed1
     PUSH EBX                            ; 00409ed6
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00409ed7
-        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_0056445f()
+        ;   XREF to: 0056445f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_0056445f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00409edc
     PUSH EAX                            ; 00409edf
     CALL shape_memdbg.cpp_free_FUN_00564486 ; 00409ee0
-        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
+        ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_free_FUN_00564486(void * ptr)
     ADD ESP,0x4                         ; 00409ee5
     MOV EAX,EBX                         ; 00409ee8
     POP EBX                             ; 00409eea

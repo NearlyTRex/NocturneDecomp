@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0056b960 at 0056b96b
+;   crt_stdio.c_CreateFileImpl_FUN_0056b960 at 0056b96b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1f54

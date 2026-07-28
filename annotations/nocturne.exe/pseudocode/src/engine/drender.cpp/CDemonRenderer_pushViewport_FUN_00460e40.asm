@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40(CDemonRenderer *this_ptr,int x,int y,int width,int height)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 00440404
@@ -31,7 +37,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00460e51
     PUSH ESI                            ; 00460e55
     CALL engine_matrix.c_pushViewport_FUN_004ce7c0 ; 00460e56
-        ;   XREF to: 004ce7c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_pushViewport_FUN_004ce7c0()
+        ;   XREF to: 004ce7c0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_004ce7c0(int x, int y, int width, int height)
     ADD ESP,0x10                        ; 00460e5b
     POP ESI                             ; 00460e5e
     POP EBX                             ; 00460e5f

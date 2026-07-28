@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(undefined4 param_1,int param_2)
+; void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEditorTools *this_ptr,int use_clipping)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   use_clipping
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -10,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_0049cc10 at 0049d5a3
+;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5a3
 ;   shape_edittool.cpp_FUN_004759d0 at 00475d8f
 ;
 ; Referenced Globals:
@@ -50,7 +53,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 004724eb
     PUSH EDX                            ; 004724ef
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490 ; 004724f0
-        ;   XREF to: 00472490 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490()
+        ;   XREF to: 00472490 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(CEditorTools * this_ptr)
     MOV [0x01c00c70],EAX                ; 004724f5 | DAT_01c00c70
     MOV EAX,[0x01bcd9c0]                ; 004724fa | DAT_01bcd9c0
     ADD ESP,0x4                         ; 004724ff
@@ -146,7 +149,7 @@ section .text
         ;   Label: LAB_004725f1
     PUSH EDX                            ; 004725f2
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004725f3
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 004725f8
     JMP 0x00472532                      ; 004725fb
         ;   XREF to: 00472532 (UNCONDITIONAL_JUMP)  ; LAB_00472532
@@ -200,7 +203,7 @@ section .text
         ;   Label: LAB_0047266e
     PUSH EDX                            ; 0047266f
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472670
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472675
     INC EDI                             ; 00472678
         ;   Label: LAB_00472678
@@ -229,7 +232,7 @@ section .text
         ;   Label: LAB_004726ae
     PUSH EDX                            ; 004726af
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004726b0
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 004726b5
     JMP 0x00472623                      ; 004726b8
         ;   XREF to: 00472623 (UNCONDITIONAL_JUMP)  ; LAB_00472623
@@ -256,7 +259,7 @@ section .text
         ;   Label: LAB_004726fd
     PUSH ESI                            ; 004726fe
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004726ff
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472704
     JMP 0x0047258b                      ; 00472707
         ;   XREF to: 0047258b (UNCONDITIONAL_JUMP)  ; LAB_0047258b
@@ -283,7 +286,7 @@ section .text
         ;   Label: LAB_0047274c
     PUSH EAX                            ; 0047274d
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 0047274e
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472753
     INC EDI                             ; 00472756
     JMP 0x00472552                      ; 00472757
@@ -401,7 +404,7 @@ section .text
         ;   Label: LAB_00472878
     PUSH EDX                            ; 00472879
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 0047287a
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 0047287f
     JMP 0x0047277b                      ; 00472882
         ;   XREF to: 0047277b (UNCONDITIONAL_JUMP)  ; LAB_0047277b
@@ -428,7 +431,7 @@ section .text
         ;   Label: LAB_004728c7
     PUSH EBP                            ; 004728c8
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004728c9
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 004728ce
     JMP 0x004727bd                      ; 004728d1
         ;   XREF to: 004727bd (UNCONDITIONAL_JUMP)  ; LAB_004727bd
@@ -455,7 +458,7 @@ section .text
         ;   Label: LAB_00472916
     PUSH EDX                            ; 00472917
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472918
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 0047291d
     JMP 0x004727e4                      ; 00472920
         ;   XREF to: 004727e4 (UNCONDITIONAL_JUMP)  ; LAB_004727e4
@@ -482,7 +485,7 @@ section .text
         ;   Label: LAB_00472965
     PUSH EDX                            ; 00472966
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472967
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 0047296c
     JMP 0x0047280b                      ; 0047296f
         ;   XREF to: 0047280b (UNCONDITIONAL_JUMP)  ; LAB_0047280b
@@ -509,7 +512,7 @@ section .text
         ;   Label: LAB_004729b4
     PUSH EDX                            ; 004729b5
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 004729b6
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 004729bb
     INC ESI                             ; 004729be
     JMP 0x00472780                      ; 004729bf
@@ -639,7 +642,7 @@ section .text
         ;   Label: LAB_00472aee
     PUSH EAX                            ; 00472aef
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472af0
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472af5
     JMP 0x00472a05                      ; 00472af8
         ;   XREF to: 00472a05 (UNCONDITIONAL_JUMP)  ; LAB_00472a05
@@ -667,7 +670,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00472b3e
     PUSH EAX                            ; 00472b42
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472b43
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472b48
     JMP 0x00472a46                      ; 00472b4b
         ;   XREF to: 00472a46 (UNCONDITIONAL_JUMP)  ; LAB_00472a46
@@ -695,7 +698,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00472b91
     PUSH EAX                            ; 00472b95
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472b96
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472b9b
     JMP 0x00472a67                      ; 00472b9e
         ;   XREF to: 00472a67 (UNCONDITIONAL_JUMP)  ; LAB_00472a67
@@ -723,7 +726,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00472be4
     PUSH EAX                            ; 00472be8
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472be9
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472bee
     JMP 0x00472a87                      ; 00472bf1
         ;   XREF to: 00472a87 (UNCONDITIONAL_JUMP)  ; LAB_00472a87
@@ -751,7 +754,7 @@ section .text
     PUSH EAX                            ; 00472c3a
     PUSH EDX                            ; 00472c3b
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00472c3c
-        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_plotPixel_FUN_00401530()
+        ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00472c41
     INC EBP                             ; 00472c44
     JMP 0x00472a0f                      ; 00472c45

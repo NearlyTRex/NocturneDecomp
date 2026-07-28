@@ -17,31 +17,31 @@ CDemonActorType * FUN_004f5d80(void);
 
 // Original: core_platfrm.cpp_FUN_004f5d90
 // Address: 004f5d90
-int FUN_004f5d90(undefined4 param_1);
+CCourseFrame ** FUN_004f5d90(undefined4 param_1);
 
 // Original: core_platfrm.cpp_FUN_004f5f60
 // Address: 004f5f60
-void FUN_004f5f60(int param_1);
+void FUN_004f5f60(CPlatform *param_1);
 
 // Original: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0
 // Address: 004f5ff0
-void __cdecl CPlatform::evaluatePosition(int param_1);
+void __cdecl CPlatform::evaluatePosition(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_FUN_004f6170
 // Address: 004f6170
-void FUN_004f6170(int param_1,float param_2);
+void FUN_004f6170(CPlatform *param_1,float param_2);
 
 // Original: core_platfrm.cpp_CPlatform_startMovement_FUN_004f6bd0
 // Address: 004f6bd0
-void __cdecl CPlatform::startMovement(int param_1,float param_2,undefined4 param_3);
+void __cdecl CPlatform::startMovement(CPlatform *this_ptr,float goal_param,float movement_rate);
 
 // Original: core_platfrm.cpp_FUN_004f6c60
 // Address: 004f6c60
-int FUN_004f6c60(int param_1);
+int FUN_004f6c60(CDemonActor *param_1);
 
 // Original: core_platfrm.cpp_FUN_004f6d90
 // Address: 004f6d90
-void FUN_004f6d90(int param_1,int param_2);
+void FUN_004f6d90(CDemonActor *param_1,int param_2);
 
 // Original: core_platfrm.cpp_FUN_004f6f50
 // Address: 004f6f50
@@ -49,11 +49,11 @@ undefined4 * FUN_004f6f50(int param_1,undefined4 *param_2);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0
 // Address: 004f6fa0
-void __cdecl CPlatform::archive(int param_1);
+void __cdecl CPlatform::archive(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_FUN_004f7360
 // Address: 004f7360
-undefined4 FUN_004f7360(int param_1,int param_2);
+undefined4 FUN_004f7360(CDemonActor *param_1,int param_2);
 
 // Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560
 // Address: 004f7560
@@ -73,7 +73,7 @@ undefined4 FUN_004f75b0(int param_1);
 
 // Original: core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0
 // Address: 004f75c0
-void __cdecl CPlatform::attachActor(int param_1,int param_2);
+void __cdecl CPlatform::attachActor(CPlatform *this_ptr,CDemonActor *actor);
 
 // Original: core_platfrm.cpp_FUN_004f76c0
 // Address: 004f76c0
@@ -81,4 +81,4 @@ void FUN_004f76c0(void);
 
 // Original: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_004f7700
 // Address: 004f7700
-void __cdecl CPlatform::updateAttachedActors(int param_1);
+void __cdecl CPlatform::updateAttachedActors(CPlatform *this_ptr);

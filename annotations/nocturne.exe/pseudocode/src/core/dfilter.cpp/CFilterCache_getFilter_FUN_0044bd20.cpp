@@ -11,7 +11,8 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
 {
   char cVar1;
   int iVar2;
-  int iVar3;
+  CDemonFilter *this_ptr;
+  CDemonFilter *pCVar3;
   int iVar4;
   char *pcVar5;
   int *piVar6;
@@ -20,7 +21,7 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
   if (0 < *param_1) {
     piVar6 = param_1 + 1;
     do {
-      iVar2 = _strcmp(piVar6,param_2);
+      iVar2 = _strcmp((char *)piVar6,param_2);
       if (iVar2 == 0) {
         return param_1[iVar4 + 0x281];
       }
@@ -45,20 +46,20 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
     *(char *)((int)piVar6 + 1) = cVar1;
     piVar6 = (int *)((int)piVar6 + 2);
   } while (cVar1 != '\0');
-  iVar3 = FUN_0056497c(0x4c);
-  iVar2 = 0;
-  if (iVar3 != 0) {
-    iVar2 = core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(iVar3);
+  this_ptr = (CDemonFilter *)FUN_0056497c(0x4c);
+  pCVar3 = (CDemonFilter *)0x0;
+  if (this_ptr != (CDemonFilter *)0x0) {
+    pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_0044beb0(this_ptr);
   }
-  param_1[iVar4 + 0x281] = iVar2;
-  if (iVar2 == 0) {
+  param_1[iVar4 + 0x281] = (int)pCVar3;
+  if (pCVar3 == (CDemonFilter *)0x0) {
     PTR_01cc4800 = "..\\core\\dfilter.cpp";
     INT_01cc4804 = 0x59;
     core_main_c_FUN_004c8440("CFilterCache::getFilter - Out of memory");
   }
-  core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(param_1[iVar4 + 0x281],param_2);
+  core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90((CDemonFilter *)param_1[iVar4 + 0x281],param_2);
   if (param_3 != 0) {
-    core_dfilter_cpp_CDemonFilter_init_FUN_0044c190(param_1[iVar4 + 0x281],0x3faa9fbe,1);
+    core_dfilter_cpp_CDemonFilter_init_FUN_0044c190((CDemonFilter *)param_1[iVar4 + 0x281],1.333,1);
   }
   return param_1[iVar4 + 0x281];
 }

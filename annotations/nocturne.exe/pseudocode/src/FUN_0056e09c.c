@@ -16,7 +16,7 @@ void FUN_0056e09c(HANDLE param_1,uint param_2)
   if ((int)param_2 < 0) {
     return;
   }
-  (*(code *)PTR_FUN_005c1af0)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af0)();
   if (param_2 == 0) {
     nStdHandle = 0xfffffff6;
   }
@@ -31,20 +31,20 @@ void FUN_0056e09c(HANDLE param_1,uint param_2)
 LAB_0056e0ea:
   iVar1 = param_2 * 4;
   if ((int)param_2 < DAT_005c1f58) {
-    *(HANDLE *)(iVar1 + DAT_005c1f54) = param_1;
+    *(HANDLE *)(iVar1 + (int)DAT_005c1f54) = param_1;
   }
   else {
     DAT_005c1f54 = realloc(DAT_005c1f54,iVar1 + 4);
     if (DAT_005c1f58 < (int)param_2) {
       iVar2 = DAT_005c1f58 * 4;
       do {
-        *(uint *)(DAT_005c1f54 + iVar2) = 0;
+        *(uint *)((int)DAT_005c1f54 + iVar2) = 0;
         iVar2 = iVar2 + 4;
       } while (iVar2 < iVar1);
     }
     DAT_005c1f58 = param_2 + 1;
-    *(HANDLE *)(param_2 * 4 + DAT_005c1f54) = param_1;
+    *(HANDLE *)(param_2 * 4 + (int)DAT_005c1f54) = param_1;
   }
-  (*(code *)PTR_FUN_005c1af4)();
+  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1af4)();
   return;
 }

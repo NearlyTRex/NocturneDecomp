@@ -54,7 +54,7 @@ section .text
     MOV EBP,dword ptr [EAX + 0x1c5dc04] ; 0048c2fb
     PUSH EBP                            ; 0048c301
     CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0 ; 0048c302
-        ;   XREF to: 00526ea0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0()
+        ;   XREF to: 00526ea0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0(uint sfx_handle, CVector3f * position_source_ptr)
     ADD ESP,0x8                         ; 0048c307
     POP EBP                             ; 0048c30a
     POP EDI                             ; 0048c30b

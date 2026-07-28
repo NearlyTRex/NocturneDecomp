@@ -1,0 +1,217 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 111,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 4,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 181
+  },
+  "cross_references": [
+    {
+      "addr": "00565724",
+      "from_addr": "00565798",
+      "name": "crt_stdio.c_freopen_FUN_00565724",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565630",
+      "from_addr": "00565676",
+      "name": "crt_unknown.c_fopenWithFlags_FUN_00565630",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056551c",
+    "address_range": [
+      [
+        "0056551c",
+        "0056562d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_OpenFileAndInitialize_FUN_0056551c",
+    "signature": "_FILE * __cdecl crt_unknown_c_OpenFileAndInitialize_FUN_0056551c(char *filename,char mode_char,int parsed_mode_flags,int stage1_result,int additional_flags,_FILE *file_struct)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564860",
+      "is_variadic": false,
+      "name": "crt_ctype.c_tolower_FUN_00564860"
+    },
+    {
+      "addr": "00568620",
+      "is_variadic": false,
+      "name": "crt_stdio.c___freefp_FUN_00568620"
+    },
+    {
+      "addr": "0056b934",
+      "is_variadic": false,
+      "name": "crt_stdio.c_CreateFileVariadic_FUN_0056b934"
+    },
+    {
+      "addr": "0056bbb0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0"
+    },
+    {
+      "addr": "0056582c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_0056582c"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00565676",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_fopenWithFlags_FUN_00565630",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00565798",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_freopen_FUN_00565724",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.56701030927835,
+    "instruction_count": 97,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 4,
+      "CALL": 5,
+      "CBRANCH": 7,
+      "COPY": 98,
+      "INT_ADD": 44,
+      "INT_AND": 60,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 52,
+      "INT_LESS": 2,
+      "INT_OR": 7,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 26,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "LOAD": 33,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 32
+    },
+    "pcode_op_count": 443
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode_char",
+        "offset": 8,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": true,
+        "name": "parsed_mode_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "stage1_result",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "additional_flags",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file_struct",
+        "offset": 24,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&file_struct->_link->__get_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&file_struct->_link->__get_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 35,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar2 = CONCAT11(1,bVar1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 38,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar2 = CONCAT11(2,bVar1);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680(int param_1,undefined4 param_2,char *param_3)
+; void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680(CDemonMission *this_ptr,char *out_buf,char *base_name)
 ;
+; Parameters:
+; CDemonMission *  Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   out_buf
+; char *           Stack[0xc]:4   base_name
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -49,7 +53,7 @@ section .text
     PUSH EBP                            ; 004d96ad
     PUSH EBX                            ; 004d96ae
     CALL crt_string.c__strnicmp_FUN_00564bc0 ; 004d96af
-        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__strnicmp_FUN_00564bc0()
+        ;   XREF to: 00564bc0 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_00564bc0(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004d96b4
     TEST EAX,EAX                        ; 004d96b7
     JZ 0x004d96f8                       ; 004d96b9
@@ -75,7 +79,7 @@ section .text
     PUSH EBX                            ; 004d96e2
     PUSH EDI                            ; 004d96e3
     CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0 ; 004d96e4
-        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0()
+        ;   XREF to: 004d90a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004d96e9
     TEST EAX,EAX                        ; 004d96ec
     JNZ 0x004d96cd                      ; 004d96ee

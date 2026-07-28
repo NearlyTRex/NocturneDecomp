@@ -1,8 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_set3DListenerOrient_FUN_00527690(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18)
+; void __cdecl sound_sndmain_cpp_set3DListenerOrient_FUN_00527690(double front_x,double front_y,double front_z,double up_x,double up_y,double up_z,double right_x,double right_y,double right_z)
 ;
+; Parameters:
+; double           Stack[0x4]:8   front_x
+; double           Stack[0xc]:8   front_y
+; double           Stack[0x14]:8   front_z
+; double           Stack[0x1c]:8   up_x
+; double           Stack[0x24]:8   up_y
+; double           Stack[0x2c]:8   up_z
+; double           Stack[0x34]:8   right_x
+; double           Stack[0x3c]:8   right_y
+; double           Stack[0x44]:8   right_z
 ;
 ; XREF[3]:
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e937

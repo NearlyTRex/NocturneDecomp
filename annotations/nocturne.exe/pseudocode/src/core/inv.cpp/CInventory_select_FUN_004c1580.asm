@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,undefined4 param_2)
+; int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CInventory *     Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
 ; undefined1       Stack[-0x113]:1  local_113
@@ -58,7 +61,7 @@ section .text
     PUSH 0x587360                       ; 004c1598 | = "CAmmo"
     PUSH EBX                            ; 004c159d
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c159e
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c15a3
     TEST EAX,EAX                        ; 004c15a6
     JZ 0x004c1600                       ; 004c15a8
@@ -67,7 +70,7 @@ section .text
     PUSH EDX                            ; 004c15b0
     PUSH EBX                            ; 004c15b1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c15b2
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c15b7
     MOV EBX,EAX                         ; 004c15ba
     TEST EAX,EAX                        ; 004c15bc
@@ -86,7 +89,7 @@ section .text
     PUSH EDI                            ; 004c15e9
     PUSH EBP                            ; 004c15ea
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 ; 004c15eb
-        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90()
+        ;   XREF to: 004c1b90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004c15f0
     XOR EAX,EAX                         ; 004c15f3
         ;   Label: LAB_004c15f3
@@ -100,7 +103,7 @@ section .text
         ;   Label: LAB_004c1600
     PUSH EBX                            ; 004c1605
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c1606
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c160b
     TEST EAX,EAX                        ; 004c160e
     JNZ 0x004c1696                      ; 004c1610
@@ -108,7 +111,7 @@ section .text
     PUSH 0x58739c                       ; 004c1616 | = "CHealthItem"
     PUSH EBX                            ; 004c161b
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c161c
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c1621
     TEST EAX,EAX                        ; 004c1624
     JZ 0x004c1796                       ; 004c1626
@@ -117,7 +120,7 @@ section .text
     PUSH EAX                            ; 004c1631
     PUSH EBX                            ; 004c1632
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1633
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c1638
     MOV dword ptr [ESP + 0x100],EAX     ; 004c163b
     TEST EAX,EAX                        ; 004c1642
@@ -153,7 +156,7 @@ section .text
     PUSH EBX                            ; 004c169a
     PUSH EBP                            ; 004c169b
     CALL core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 ; 004c169c
-        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_selectWeapon_FUN_004c0850()
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004c0850(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004c16a1
     XOR EAX,EAX                         ; 004c16a4
     ADD ESP,0x104                       ; 004c16a6
@@ -165,7 +168,7 @@ section .text
     PUSH 0x5873d6                       ; 004c16b1 | = "You have used : "
         ;   Label: LAB_004c16b1
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c16b6
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c16bb
     MOV EDI,ESP                         ; 004c16be
     MOV ESI,EAX                         ; 004c16c0
@@ -187,7 +190,7 @@ section .text
         ;   Label: LAB_004c16db
     PUSH EBX                            ; 004c16dc
     CALL core_inv.cpp_getItemDisplayName_FUN_004beca0 ; 004c16dd
-        ;   XREF to: 004beca0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDisplayName_FUN_004beca0()
+        ;   XREF to: 004beca0 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDisplayName_FUN_004beca0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004c16e2
     MOV EDI,ESP                         ; 004c16e5
     MOV ESI,EAX                         ; 004c16e7
@@ -214,7 +217,7 @@ section .text
         ;   Label: LAB_004c170a
     PUSH 0x5873e7                       ; 004c170b | = "."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c1710
-        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c1715
     MOV EDI,ESP                         ; 004c1718
     MOV ESI,EAX                         ; 004c171a
@@ -245,7 +248,7 @@ section .text
     MOV ESI,dword ptr [0x005b9354]      ; 004c1746 | DAT_005b9354
     PUSH ESI                            ; 004c174c | DAT_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c174d
-        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_displayMessage_FUN_0049aa30()
+        ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     MOV EAX,[0x01cae0e8]                ; 004c1752 | DAT_01cae0e8
     ADD ESP,0xc                         ; 004c1757
     MOV EDI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c175a
@@ -253,7 +256,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x104]     ; 004c1762
     PUSH EAX                            ; 004c1769
     CALL core_health.cpp_CHealthItem_useItem_FUN_004b43f0 ; 004c176a
-        ;   XREF to: 004b43f0 (UNCONDITIONAL_CALL)  ; undefined core_health.cpp_CHealthItem_useItem_FUN_004b43f0()
+        ;   XREF to: 004b43f0 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_useItem_FUN_004b43f0(CHealthItem * this_ptr, CCharacter * user)
     ADD ESP,0x8                         ; 004c176f
     TEST EAX,EAX                        ; 004c1772
     JG 0x004c15f3                       ; 004c1774
@@ -262,7 +265,7 @@ section .text
     PUSH EBX                            ; 004c177c
     PUSH EBP                            ; 004c177d
     CALL core_inv.cpp_CInventory_removeItem_FUN_004c07b0 ; 004c177e
-        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_removeItem_FUN_004c07b0()
+        ;   XREF to: 004c07b0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004c07b0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EAX,0x1                         ; 004c1783
     ADD ESP,0xc                         ; 004c1788
     ADD ESP,0x104                       ; 004c178b
@@ -275,7 +278,7 @@ section .text
         ;   Label: LAB_004c1796
     PUSH EBX                            ; 004c179b
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c179c
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c17a1
     TEST EAX,EAX                        ; 004c17a4
     JZ 0x004c17e3                       ; 004c17a6
@@ -284,7 +287,7 @@ section .text
     PUSH ESI                            ; 004c17ae
     PUSH EBX                            ; 004c17af
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c17b0
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c17b5
     MOV EDI,dword ptr [EAX + 0x2cc]     ; 004c17b8
     MOV EBX,EAX                         ; 004c17be
@@ -304,7 +307,7 @@ section .text
         ;   Label: LAB_004c17e3
     PUSH EBX                            ; 004c17e8
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c17e9
-        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()
+        ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040d7e0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004c17ee
     TEST EAX,EAX                        ; 004c17f1
     JZ 0x004c15f3                       ; 004c17f3
@@ -313,14 +316,14 @@ section .text
     PUSH EDX                            ; 004c17ff
     PUSH EBX                            ; 004c1800
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1801
-        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
+        ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c1806
     ADD EAX,0x5f8                       ; 004c1809
     PUSH EAX                            ; 004c180e
     MOV ECX,dword ptr [0x005b7650]      ; 004c180f | DAT_005b7650
     PUSH ECX                            ; 004c1815
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c1816
-        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_CEventList_executeCommands_FUN_0047ab70()
+        ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004c181b
     XOR EAX,EAX                         ; 004c181e
     ADD ESP,0x104                       ; 004c1820

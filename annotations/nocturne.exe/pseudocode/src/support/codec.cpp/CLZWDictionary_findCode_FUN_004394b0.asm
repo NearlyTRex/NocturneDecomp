@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(int param_1,int param_2,int param_3)
+; int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_004394b0(CLZWDictionary *this_ptr,int search_code,int start_index)
 ;
+; Parameters:
+; CLZWDictionary * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   search_code
+; int              Stack[0xc]:4   start_index
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWCompress_process_FUN_004398c0 at 004398f6

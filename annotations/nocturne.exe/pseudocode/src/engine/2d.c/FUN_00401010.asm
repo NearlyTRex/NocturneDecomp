@@ -69,7 +69,7 @@ section .text
     PUSH EAX                            ; 0040104d
     PUSH ECX                            ; 0040104e
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 0040104f
-        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00()
+        ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00401054
     PUSH 0x57703f                       ; 00401057 | = "vga.act"
     CALL engine_2d.c_FUN_00401bd0       ; 0040105c
@@ -88,12 +88,12 @@ section .text
         ;   XREF to: 00401990 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401990()
     ADD ESP,0x4                         ; 00401088
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 ; 0040108b
-        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
+        ;   XREF to: 005537e0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0()
     PUSH 0x57705f                       ; 00401090 | = "rb"
     PUSH 0x577062                       ; 00401095 | = "font.ndx"
     PUSH 0x57706b                       ; 0040109a | = "startup"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0040109f
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004010a4
     MOV ESI,EAX                         ; 004010a7
     TEST EAX,EAX                        ; 004010a9
@@ -117,17 +117,17 @@ section .text
         ;   XREF to: 004010c7 (CONDITIONAL_JUMP)  ; LAB_004010c7
     PUSH ESI                            ; 004010dd
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004010de
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 004010e3
     PUSH 0x57709e                       ; 004010e6 | = "font.bin"
     PUSH 0x5770a7                       ; 004010eb | = "startup"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 004010f0
-        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
+        ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004010f5
     PUSH EAX                            ; 004010f8
     MOV ESI,EAX                         ; 004010f9
     CALL crt_memory.c_malloc_FUN_005635b0 ; 004010fb
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00401100
     MOV EBP,EAX                         ; 00401103
     MOV [0x006afa38],EAX                ; 00401105 | DAT_006afa38
@@ -147,7 +147,7 @@ section .text
     PUSH 0x5770de                       ; 00401136 | = "font.bin"
     PUSH 0x5770e7                       ; 0040113b | = "startup"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 00401140
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00401145
     MOV EBX,EAX                         ; 00401148
     TEST EAX,EAX                        ; 0040114a
@@ -160,11 +160,11 @@ section .text
     MOV EBP,dword ptr [0x006afa38]      ; 00401156 | DAT_006afa38
     PUSH EBP                            ; 0040115c
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0040115d
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00401162
     PUSH EBX                            ; 00401165
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00401166
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     MOV EAX,0x80                        ; 0040116b
     MOV EBP,dword ptr [0x006afa38]      ; 00401170 | DAT_006afa38
     ADD ESP,0x4                         ; 00401176
@@ -200,7 +200,7 @@ section .text
     PUSH 0x577119                       ; 004011d7 | = "default.act"
     PUSH 0x577125                       ; 004011dc | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004011e1
-        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
+        ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004011e6
     ADD ESP,0xc                         ; 004011e8
     TEST EAX,EAX                        ; 004011eb
@@ -250,11 +250,11 @@ section .text
     PUSH 0x300                          ; 00401276
     PUSH 0x1c00948                      ; 0040127b
     CALL crt_stdio.c_fread_FUN_005636d0 ; 00401280
-        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005636d0()
+        ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00401285
     PUSH EBX                            ; 00401288
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00401289
-        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0040128e
     MOV EBP,dword ptr [0x006afa38]      ; 00401291 | DAT_006afa38
     POP EBP                             ; 00401297

@@ -2,123 +2,115 @@
 // Address: 004cc5d0
 // Address Range: [[004cc5d0, 004cc86d]]
 // Convention: unknown
-// Signature: undefined4 core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
+// Signature: undefined4 core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *param_1)
 
 #include "nocturne.h"
 
-uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
+uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *param_1)
 
 {
-  int *piVar1;
-  uint *puVar2;
+  CCourse *this_ptr;
+  CVector3f *pCVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  float10 fVar5;
-  uint uVar6;
-  byte local_94 [8];
-  uint uStack_8c;
-  uint local_88;
-  uint local_84;
-  byte local_80 [12];
-  byte auStack_74 [12];
-  uint uStack_68;
-  uint local_64;
-  uint local_60;
-  byte local_5c [16];
-  uint local_4c;
-  uint local_48;
-  uint local_44 [4];
-  byte local_34 [12];
+  double dVar4;
+  byte local_94 [12];
+  float local_88;
+  float local_84;
+  CVector3f local_80;
+  CVector3f CStack_74;
+  CVector3f CStack_68;
+  CVector3f local_5c;
+  byte local_4c [24];
+  CVector3f local_34;
   float local_28;
   float local_24;
   int local_20;
-  int *local_18;
+  CCourse *local_18;
   int local_14;
   int local_10;
   int local_c;
   
-  if (*(int *)(param_1 + 0x194) != 0) {
+  if (param_1->is_visible != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005badbc);
-    piVar1 = (int *)(param_1 + 0x19c);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+              (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);
+    this_ptr = &param_1->course;
     if (*(int *)(0x01CC9450 + 4) == 0) {
-      if (*(int *)(param_1 + 0x198) == 1) {
-        uVar6 = 0x4cc709;
-        fVar5 = (float10)round((float10)*(float *)(param_1 + 0x174));
-        iVar3 = (int)ROUND(fVar5);
-        iVar4 = 0;
-        local_14 = iVar3;
-        if (0 < iVar3) {
+      if (param_1->type == 1) {
+        dVar4 = round((double)param_1->param);
+        iVar2 = (int)ROUND(dVar4);
+        iVar3 = 0;
+        local_14 = iVar2;
+        if (0 < iVar2) {
           do {
-            local_28 = (float)iVar4;
-            local_10 = iVar4;
-            core_course_cpp_CCourse_evaluate_FUN_0043b800(piVar1,local_28,&uStack_68,local_80,uVar6)
-            ;
-            puVar2 = (uint *)
-                     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                               (param_1,auStack_74,&uStack_68);
-            if (&uStack_68 != puVar2) {
-              uStack_68 = *puVar2;
-              local_64 = puVar2[1];
-              local_60 = puVar2[2];
+            local_28 = (float)iVar3;
+            local_10 = iVar3;
+            core_course_cpp_CCourse_evaluate_FUN_0043b800(this_ptr,local_28,&CStack_68,&local_80);
+            pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                               (&param_1->base,&CStack_74,&CStack_68);
+            if (&CStack_68 != pCVar1) {
+              CStack_68.x = pCVar1->x;
+              CStack_68.y = pCVar1->y;
+              CStack_68.z = pCVar1->z;
             }
-            iVar4 = iVar4 + 1;
-            core_marquee_cpp_FUN_004cc440(param_1,&uStack_68);
-          } while (iVar4 < iVar3);
+            iVar3 = iVar3 + 1;
+            core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440(param_1,&CStack_68);
+          } while (iVar3 < iVar2);
         }
       }
-      else if (*(int *)(param_1 + 0x198) == 0) {
-        uVar6 = 0x4cc7b2;
-        fVar5 = (float10)round((float10)*(float *)(param_1 + 0x174));
-        local_18 = (int *)*piVar1;
-        iVar4 = 0;
-        iVar3 = (int)ROUND(fVar5);
-        local_20 = iVar3;
+      else if (param_1->type == 0) {
+        dVar4 = round((double)param_1->param);
+        local_18 = (CCourse *)this_ptr->len;
+        iVar3 = 0;
+        iVar2 = (int)ROUND(dVar4);
+        local_20 = iVar2;
         if (0 < (int)local_18) {
           do {
-            if (iVar3 % *(int *)(param_1 + 0x178) != 0) {
-              local_24 = (float)iVar4;
-              local_10 = iVar4;
+            if (iVar2 % param_1->phase != 0) {
+              local_24 = (float)iVar3;
+              local_10 = iVar3;
               core_course_cpp_CCourse_evaluate_FUN_0043b800
-                        (piVar1,local_24,&uStack_8c,local_5c,uVar6);
-              puVar2 = (uint *)
-                       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                                 (param_1,local_44,&uStack_8c);
-              if (&uStack_8c != puVar2) {
-                uStack_8c = *puVar2;
-                local_88 = puVar2[1];
-                local_84 = puVar2[2];
+                        (this_ptr,local_24,(CVector3f *)(local_94 + 8),&local_5c);
+              pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                                 (&param_1->base,(CVector3f *)(local_4c + 8),
+                                  (CVector3f *)(local_94 + 8));
+              if ((CVector3f *)(local_94 + 8) != pCVar1) {
+                local_94._8_4_ = pCVar1->x;
+                local_88 = pCVar1->y;
+                local_84 = pCVar1->z;
               }
-              core_marquee_cpp_FUN_004cc440(param_1,&uStack_8c);
+              core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440
+                        (param_1,(CVector3f *)(local_94 + 8));
             }
-            iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 1;
-          } while (iVar4 < (int)local_18);
+            iVar2 = iVar2 + 1;
+          } while (iVar3 < (int)local_18);
         }
       }
     }
     else {
-      iVar3 = *piVar1;
-      iVar4 = 0;
-      if (0 < iVar3) {
+      iVar2 = this_ptr->len;
+      iVar3 = 0;
+      if (0 < iVar2) {
         do {
-          local_18 = piVar1;
-          local_28 = (float)iVar4;
-          local_c = iVar4;
-          core_course_cpp_CCourse_evaluate_FUN_0043b800(local_18,local_28,&local_4c,local_94);
-          puVar2 = (uint *)
-                   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-                             (param_1,local_34,&local_4c);
-          if (&local_4c != puVar2) {
-            local_4c = *puVar2;
-            local_48 = puVar2[1];
-            local_44[0] = puVar2[2];
+          local_18 = this_ptr;
+          local_28 = (float)iVar3;
+          local_c = iVar3;
+          core_course_cpp_CCourse_evaluate_FUN_0043b800
+                    (local_18,local_28,(CVector3f *)local_4c,(CVector3f *)local_94);
+          pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+                             (&param_1->base,&local_34,(CVector3f *)local_4c);
+          if ((CVector3f *)local_4c != pCVar1) {
+            local_4c._0_4_ = pCVar1->x;
+            local_4c._4_4_ = pCVar1->y;
+            local_4c._8_4_ = pCVar1->z;
           }
-          iVar4 = iVar4 + 1;
-          core_marquee_cpp_FUN_004cc440(param_1,&local_4c);
-          piVar1 = local_18;
-        } while (iVar4 < iVar3);
+          iVar3 = iVar3 + 1;
+          core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440(param_1,(CVector3f *)local_4c);
+          this_ptr = local_18;
+        } while (iVar3 < iVar2);
       }
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);

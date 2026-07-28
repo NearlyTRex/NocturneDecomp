@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; undefined4 core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *param_1,CVector3f *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -23,7 +23,7 @@ section .text
     PUSH EAX                            ; 00428271
     PUSH EBX                            ; 00428272
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 ; 00428273
-        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290()
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00428278
     MOV EDX,ESP                         ; 0042827b
     PUSH dword ptr [ESP + 0x1c]         ; 0042827d

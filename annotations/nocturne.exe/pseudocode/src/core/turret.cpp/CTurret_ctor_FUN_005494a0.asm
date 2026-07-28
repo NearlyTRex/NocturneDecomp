@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_turret_cpp_CTurret_ctor_FUN_005494a0(undefined4 param_1)
+; CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005494a0(CTurret *this_ptr)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined4       Stack[-0x18]:4  local_18
@@ -39,12 +41,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 005494a6
     PUSH EBX                            ; 005494aa
     CALL core_weapon.cpp_CWeapon_ctor_FUN_00553d90 ; 005494ab
-        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_CWeapon_ctor_FUN_00553d90()
+        ;   XREF to: 00553d90 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_00553d90(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005494b0
     ADD EAX,0x57c                       ; 005494b3
     PUSH EAX                            ; 005494b8
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 005494b9
-        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005494be
     LEA EBX,[EAX + 0xfffffa84]          ; 005494c1
     PUSH 0x596ce5                       ; 005494c7 | = "gturret_head.kfm"
@@ -52,13 +54,13 @@ section .text
     PUSH EAX                            ; 005494d2
     MOV dword ptr [EBX + 0x14c],0x5a37b4 ; 005494d3 | PTR_core_turret.cpp_FUN_005495f0_005a37b4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 005494dd
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005494e2
     PUSH 0x596cf6                       ; 005494e5 | = "gturret_tripod.kfm"
     LEA EAX,[EBX + 0x57c]               ; 005494ea
     PUSH EAX                            ; 005494f0
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 005494f1
-        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x6f8],0x0     ; 005494f6
     MOV byte ptr [EBX + 0x6fc],0x0      ; 00549500
     MOV dword ptr [EBX + 0x760],0x40400000 ; 00549507
@@ -99,7 +101,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EDX      ; 00549595
     MOV dword ptr [ESP + 0x20],ESI      ; 00549599
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0054959d
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x844]               ; 005495a2
     ADD ESP,0xc                         ; 005495a8
     CMP EDX,EAX                         ; 005495ab

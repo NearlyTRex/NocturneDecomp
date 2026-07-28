@@ -2,95 +2,96 @@
 // Address: 00552680
 // Address Range: [[00552680, 00552821]]
 // Convention: __cdecl
-// Signature: int __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(undefined4 param_1,int param_2)
+// Signature: CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint *this_ptr,CWayPoint *start_waypoint)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(uint param_1,int param_2)
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint *this_ptr,CWayPoint *start_waypoint)
 
 {
   int *piVar1;
-  float fVar2;
-  int iVar3;
+  CWayPoint *pCVar2;
+  float fVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
-  int iVar7;
+  SIZE_T n;
+  SIZE_T SVar6;
+  CWayPoint *pCVar7;
   int iVar8;
-  int iVar9;
-  int iVar10;
+  CWayPoint *pCVar9;
   float local_18;
   int local_c;
   
-  if (param_2 != 0) {
-    iVar3 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(param_1,param_2 + 0x20,0);
-    if (iVar3 != 0) {
-      return param_2;
+  if (start_waypoint != (CWayPoint *)0x0) {
+    iVar4 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0
+                      (this_ptr,&(start_waypoint->base).base.location,0);
+    if (iVar4 != 0) {
+      return start_waypoint;
     }
-    if (0 < *(int *)(param_2 + 0x368)) {
-      iVar3 = 0;
+    if (0 < start_waypoint->num_adjacent_waypoints) {
+      iVar4 = 0;
       for (iVar8 = 0; iVar8 < *(int *)(0x01E57284 + 0x154a7c); iVar8 = iVar8 + 1) {
-        piVar1 = (int *)(0x01E57284 + 0x154a80 + iVar3);
-        iVar3 = iVar3 + 4;
+        piVar1 = (int *)(0x01E57284 + 0x154a80 + iVar4);
+        iVar4 = iVar4 + 4;
         *(uint *)(*piVar1 + 0x54c) = 0x7149f2ca;
       }
-      iVar3 = 1;
-      _DAT_02ddd5d4 = param_2;
-      *(uint *)(param_2 + 0x54c) = 0;
+      iVar4 = 1;
+      _DAT_02ddd5d4 = start_waypoint;
+      start_waypoint->pathfind_cost = 0.0;
       do {
-        iVar10 = _DAT_02ddd5d4;
-        iVar3 = iVar3 + -1;
-        iVar8 = iVar3 * 4;
-        memmove(&DAT_02ddd5d4,0x2ddd5d8,iVar8);
+        pCVar7 = _DAT_02ddd5d4;
+        iVar4 = iVar4 + -1;
+        n = iVar4 * 4;
+        memmove(&DAT_02ddd5d4,(void *)0x2ddd5d8,n);
         local_c = 0;
-        iVar9 = iVar10;
-        if (0 < *(int *)(iVar10 + 0x368)) {
+        pCVar9 = pCVar7;
+        if (0 < pCVar7->num_adjacent_waypoints) {
           do {
-            fVar2 = *(float *)(iVar10 + 0x54c) + *(float *)(iVar9 + 0x370);
-            iVar5 = *(int *)(iVar9 + 0x36c);
-            iVar7 = iVar8;
-            if (fVar2 < *(float *)(iVar5 + 0x54c)) {
-              iVar6 = 0;
-              *(float *)(iVar5 + 0x54c) = fVar2;
-              if (0 < iVar3) {
-                iVar4 = 0;
+            fVar3 = pCVar7->pathfind_cost + pCVar9->adjacency[0].distance;
+            pCVar2 = pCVar9->adjacency[0].waypoint;
+            SVar6 = n;
+            if (fVar3 < pCVar2->pathfind_cost) {
+              iVar8 = 0;
+              pCVar2->pathfind_cost = fVar3;
+              if (0 < iVar4) {
+                iVar5 = 0;
                 do {
-                  if (iVar5 == *(int *)(&DAT_02ddd5d4 + iVar4)) break;
-                  iVar4 = iVar4 + 4;
-                  iVar6 = iVar6 + 1;
-                } while (iVar4 < iVar3 * 4);
+                  if (pCVar2 == *(CWayPoint **)(&DAT_02ddd5d4 + iVar5)) break;
+                  iVar5 = iVar5 + 4;
+                  iVar8 = iVar8 + 1;
+                } while (iVar5 < iVar4 * 4);
               }
-              if (iVar6 == iVar3) {
-                iVar7 = iVar8 + 4;
-                iVar3 = iVar3 + 1;
-                *(int *)(&DAT_02ddd5d4 + iVar8) = iVar5;
+              if (iVar8 == iVar4) {
+                SVar6 = n + 4;
+                iVar4 = iVar4 + 1;
+                *(CWayPoint **)(&DAT_02ddd5d4 + n) = pCVar2;
               }
             }
             local_c = local_c + 1;
-            iVar8 = iVar7;
-            iVar9 = iVar9 + 8;
-          } while (local_c < *(int *)(iVar10 + 0x368));
+            n = SVar6;
+            pCVar9 = (CWayPoint *)((pCVar9->base).base.actor_name + 8);
+          } while (local_c < pCVar7->num_adjacent_waypoints);
         }
-        if (iVar3 < 1) {
-          iVar3 = 0;
+        if (iVar4 < 1) {
+          pCVar7 = (CWayPoint *)0x0;
           local_18 = 1e+29;
-          iVar8 = 0;
-          for (iVar10 = 0; iVar10 < *(int *)(0x01E57284 + 0x154a7c); iVar10 = iVar10 + 1) {
-            iVar9 = *(int *)(iVar8 + 0x154a80 + 0x01E57284);
-            if ((*(float *)(iVar9 + 0x54c) < local_18) &&
-               (iVar5 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(param_1,iVar9 + 0x20,0)
-               , iVar5 != 0)) {
-              local_18 = *(float *)(iVar9 + 0x54c);
-              iVar3 = iVar9;
+          iVar4 = 0;
+          for (iVar8 = 0; iVar8 < *(int *)(0x01E57284 + 0x154a7c); iVar8 = iVar8 + 1) {
+            pCVar9 = *(CWayPoint **)(iVar4 + 0x154a80 + 0x01E57284);
+            if ((pCVar9->pathfind_cost < local_18) &&
+               (iVar5 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0
+                                  (this_ptr,&(pCVar9->base).base.location,0), iVar5 != 0)) {
+              local_18 = pCVar9->pathfind_cost;
+              pCVar7 = pCVar9;
             }
-            iVar8 = iVar8 + 4;
+            iVar4 = iVar4 + 4;
           }
-          return iVar3;
+          return pCVar7;
         }
       } while( true );
     }
   }
-  return 0;
+  return (CWayPoint *)0x0;
 }

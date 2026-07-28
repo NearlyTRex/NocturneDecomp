@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00568ed0(undefined4 *param_1)
+; void FUN_00568ed0(_FILE *param_1)
 ;
 ;
 ; XREF[7]:
 ;   FUN_0056ae10 at 0056ae69
-;   FUN_00573660 at 00573687
 ;   crt_stdio.c_fputc_FUN_00566cc0 at 00566d3c
+;   crt_stdio.c_fputs_FUN_00573660 at 00573687
 ;   crt_stdio.c_fread_FUN_005636d0 at 00563740
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563ac5
 ;   crt_stdio.c_ungetc_FUN_00564740 at 005647d6
-;   crt_unknown.c_FUN_00564670 at 00564682
+;   crt_unknown.c_FillInputBuffer_FUN_00564670 at 00564682
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_0056bbb0
+;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ESI                            ; 00568ed1
     MOV EBX,dword ptr [ESP + 0xc]       ; 00568ed2
     PUSH EBX                            ; 00568ed6
-    CALL FUN_0056bbb0                   ; 00568ed7
-        ;   XREF to: 0056bbb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056bbb0()
+    CALL crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0 ; 00568ed7
+        ;   XREF to: 0056bbb0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0(_FILE * file)
     MOV EDX,dword ptr [EBX + 0x14]      ; 00568edc
     ADD ESP,0x4                         ; 00568edf
     TEST EDX,EDX                        ; 00568ee2
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00568f0c
     PUSH ECX                            ; 00568f0f
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00568f10
-        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_malloc_FUN_005635b0()
+        ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     MOV EDX,dword ptr [EBX + 0x8]       ; 00568f15
     MOV dword ptr [EDX + 0x8],EAX       ; 00568f18
     MOV EAX,dword ptr [EBX + 0x8]       ; 00568f1b

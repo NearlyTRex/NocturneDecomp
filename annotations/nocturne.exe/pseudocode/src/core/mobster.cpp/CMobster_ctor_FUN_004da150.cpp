@@ -2,60 +2,60 @@
 // Address: 004da150
 // Address Range: [[004da150, 004da287]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(undefined4 param_1)
+// Signature: CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(CMobster *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(uint param_1)
+CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(CMobster *this_ptr)
 
 {
   char cVar1;
   float fVar2;
   float fVar3;
-  byte uVar4;
+  CMobster *pCVar4;
   int iVar5;
-  uint uVar6;
+  char *pcVar6;
   char *pcVar7;
-  char *pcVar8;
   
-  iVar5 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  *(byte ***)(iVar5 + 0x14c) = &PTR_core_mobster_cpp_CMobster_setup_FUN_004da290_005a0934;
+  pCVar4 = (CMobster *)core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
+  (pCVar4->base).base.base.vtable._ub =
+       (CDemonActor_vtable *)&PTR_core_mobster_cpp_CMobster_setup_FUN_004da290_005a0934;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
-            (iVar5 + 0x150,"mobster1.dfm");
+            (&(pCVar4->base).base.model,"mobster1.dfm");
   fVar2 = 50.0f;
-  *(uint *)(iVar5 + 0x2dd4) = 0x3f19999a;
+  (pCVar4->base).base.collision_cylinder_height = 0.6;
   fVar3 = 100.0f;
-  *(uint *)(iVar5 + 0x2dd8) = 0x3f666666;
-  *(float *)(iVar5 + 0x2ddc) = fVar2;
-  *(float *)(iVar5 + 0x2de0) = fVar3;
-  uVar6 = core_actor_cpp_getRandomInt_FUN_0040de00(0,0xff);
-  *(uint *)(iVar5 + 0xbd28) = 0;
-  *(uint *)(iVar5 + 0xbd2c) = 0;
-  *(uint *)(iVar5 + 0xbd30) = 0;
-  *(uint *)(iVar5 + 0xbdf4) = 0;
-  *(uint *)(iVar5 + 0xbdf8) = 0;
-  *(uint *)(iVar5 + 0xbd18) = 0x42200000;
-  *(uint *)(iVar5 + 0xbd24) = uVar6;
-  uVar4 = core_actor_cpp_getRandomInt_FUN_0040de00(0x62,0x65);
-  *(uint *)(iVar5 + 0xbd3c) = 0;
-  *(uint *)(iVar5 + 0xbd34) = 0;
-  *(uint *)(iVar5 + 0xbd40) = 0;
-  *(uint *)(iVar5 + 0xbd44) = 0;
-  *(uint *)(iVar5 + 0xbd48) = 0;
-  pcVar7 = "none";
-  *(uint *)(iVar5 + 0xbd4c) = 0;
-  *(uint *)(iVar5 + 0xbd50) = 0;
-  pcVar8 = (char *)(iVar5 + 0xbd54);
-  *(byte *)(iVar5 + 0xbd38) = uVar4;
+  (pCVar4->base).base.collision_cylinder_radius = 0.9;
+  (pCVar4->base).base.ai_detection_range_min = fVar2;
+  (pCVar4->base).base.ai_detection_range_max = fVar3;
+  iVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(0,0xff);
+  pCVar4->idle_timer = 0.0;
+  pCVar4->weapon_approach_timer = 0.0;
+  pCVar4->target_weapon = (CDemonActor *)0x0;
+  pCVar4->firing_blend = 0.0;
+  pCVar4->firing_cooldown = 0.0;
+  (pCVar4->base).victim_height = 40.0;
+  pCVar4->ai_idle_counter = iVar5;
+  iVar5 = core_actor_cpp_getRandomInt_FUN_0040de00(0x62,0x65);
+  pCVar4->taunt_timer = 0.0;
+  pCVar4->weapon_search_count = 0;
+  pCVar4->post_mode = 0;
+  pCVar4->our_post = (CDemonActor *)0x0;
+  pCVar4->vehicle = (CDemonActor *)0x0;
+  pcVar6 = "none";
+  pCVar4->side_of_car = 0;
+  pCVar4->hold_pos_flag = 0;
+  pcVar7 = pCVar4->hold_pos_condition;
+  (pCVar4->sound_variant).bytes[0] = (uchar)iVar5;
   do {
-    cVar1 = *pcVar7;
-    *pcVar8 = cVar1;
+    cVar1 = *pcVar6;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar5 + 0xbd20) = 0;
-  return iVar5;
+  (pCVar4->base).allow_pathfind_to_new_targets = 0;
+  return pCVar4;
 }

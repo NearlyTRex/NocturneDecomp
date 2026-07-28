@@ -9,8 +9,9 @@
 int core_manpuz_cpp_SGem_ctor_FUN_004cbed0(int param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1 + 0x3c,2,&g_CDemonTriangleTypeInfo_0059c080);
-  return iVar1 + -0x3c;
+  pvVar1 = __arrinit
+                     ((void *)(param_1 + 0x3c),2,&g_CDemonTriangleTypeInfo_0059c080);
+  return (int)pvVar1 + -0x3c;
 }

@@ -53,9 +53,9 @@ section .text
     XOR EDI,EDI                         ; 00532be3
     MOV EBP,EAX                         ; 00532be5
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 00532be7
-        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
+        ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00532bec
-        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_lockFrame_FUN_005322e0()
+        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
     MOV EAX,[0x005b7620]                ; 00532bf1 | DAT_005b7620
     MOV dword ptr [ESP + 0xc],EDI       ; 00532bf6
     TEST EAX,EAX                        ; 00532bfa
@@ -90,7 +90,7 @@ section .text
         ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
         ;   Label: LAB_00532c40
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 00532c45
-        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
+        ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
     POP EBX                             ; 00532c4a
     POP ESI                             ; 00532c4b
     XOR EDI,EDI                         ; 00532c4c

@@ -13,12 +13,11 @@ void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *
 {
   float fVar1;
   float fVar2;
-  float fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
-  float10 fVar8;
+  double dVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   
   DAT_005ad450 = *param_2;
   DAT_005ad454 = param_2[1];
@@ -27,20 +26,20 @@ void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *
             (*(uint *)(&DAT_00b0e1fc + *param_2 * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + param_2[1] * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);
-  fVar4 = (float10)65536;
-  fVar1 = (float)param_2[5];
-  fVar2 = (float)param_2[6];
-  fVar8 = (float10)256;
-  fVar3 = (float)param_2[7];
-  fVar5 = (float10)round();
-  fVar6 = (float10)round();
-  fVar7 = (float10)round((float10)fVar1 * fVar4);
-  fVar8 = (float10)round((float10)fVar2 * fVar8);
-  fVar4 = (float10)round((float10)fVar3 * fVar4);
-  _DAT_0140e790 = (int)ROUND(fVar5);
-  _DAT_0140e794 = (int)ROUND(fVar6);
-  _DAT_0140e798 = (int)ROUND(fVar7);
-  _DAT_0140e79c = (int)ROUND(fVar8);
-  _DAT_0140e7a0 = (int)ROUND(fVar4);
+  dVar4 = (double)(float)param_2[4] * 65536;
+  dVar5 = (double)(float)param_2[5] * 65536;
+  fVar1 = (float)param_2[6];
+  fVar2 = (float)256;
+  dVar7 = (double)(float)param_2[7] * 65536;
+  dVar3 = round((double)(float)param_2[3] * 65536);
+  dVar4 = round(dVar4);
+  dVar5 = round(dVar5);
+  dVar6 = round((double)(fVar1 * fVar2));
+  dVar7 = round(dVar7);
+  _DAT_0140e790 = (int)ROUND(dVar3);
+  _DAT_0140e794 = (int)ROUND(dVar4);
+  _DAT_0140e798 = (int)ROUND(dVar5);
+  _DAT_0140e79c = (int)ROUND(dVar6);
+  _DAT_0140e7a0 = (int)ROUND(dVar7);
   return;
 }

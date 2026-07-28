@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 ;
+; Parameters:
+; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   drag_factor
+; CVector3f *      Stack[0x10]:4   wind_influence
+; int              Stack[0x14]:4   alpha_value
 ;
 ; XREF[12]:
 ;   core_baron.cpp_FUN_00410490 at 004107d0
@@ -57,7 +63,7 @@ section .text
     PUSH EBP                            ; 0048b02a
     PUSH EAX                            ; 0048b02b
     CALL core_fire.cpp_CSmokeParticle_init_FUN_00482780 ; 0048b02c
-        ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CSmokeParticle_init_FUN_00482780()
+        ;   XREF to: 00482780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_00482780(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 0048b031
     POP EBP                             ; 0048b034
     POP EDI                             ; 0048b035

@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0046f150(int param_1,undefined1 param_2,int param_3)
+; void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0046f150(CInputString *this_ptr,char character,int advance_cursor)
 ;
+; Parameters:
+; CInputString *   Stack[0x4]:4   this_ptr
+; char             Stack[0x8]:1   character
+; int              Stack[0xc]:4   advance_cursor
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004712e4
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330 at 0046f373
 ;   shape_edittool.cpp_FUN_0046f7e0 at 0046f9c9
-;   shape_edittool.cpp_FUN_00470eb0 at 004712e4
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170
@@ -46,7 +50,7 @@ section .text
     ADD EAX,EBX                         ; 0046f193
     PUSH EAX                            ; 0046f195
     CALL crt_string.c_memmove_FUN_00566170 ; 0046f196
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0046f19b
     MOV EAX,dword ptr [EBX + 0x134]     ; 0046f19e
     MOV DL,byte ptr [ESP + 0x14]        ; 0046f1a4

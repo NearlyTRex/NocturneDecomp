@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(undefined4 param_1,int param_2,undefined4 param_3)
+; void engine_2d_c_drawTextCenteredAtColor_FUN_00402c20(char *param_1,int param_2,int param_3)
 ;
 ;
 ; XREF[3]:
@@ -24,7 +24,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00402c26
     PUSH ECX                            ; 00402c2a
     CALL engine_2d.c_getStringWidth_FUN_00401ed0 ; 00402c2b
-        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_getStringWidth_FUN_00401ed0()
+        ;   XREF to: 00401ed0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_00401ed0(char * text)
     LEA EDX,[EAX + -0x1]                ; 00402c30
     MOV EAX,EDX                         ; 00402c33
     SAR EDX,0x1f                        ; 00402c35
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00402c46
     PUSH EBX                            ; 00402c4a
     CALL engine_2d.c_drawTextColor_FUN_00402a60 ; 00402c4b
-        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawTextColor_FUN_00402a60()
+        ;   XREF to: 00402a60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402a60(char * text, int x, int y)
     ADD ESP,0xc                         ; 00402c50
     POP EBX                             ; 00402c53
     RET                                 ; 00402c54

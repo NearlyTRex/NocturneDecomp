@@ -2,83 +2,90 @@
 // Address: 0041ec60
 // Address Range: [[0041ec60, 0041ef2f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(int param_1)
+// Signature: void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(int param_1)
+void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041ec60(CBoxActor *this_ptr)
 
 {
-  byte local_10c [256];
+  char local_10c [256];
   int local_c;
   
-  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
-  core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x388,"weightInPounds");
-  core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x304,"fps");
-  core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x2f8,"rpm");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2cc,"loopWavName");
-  core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2e0,"collisionWavName");
+  core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->weight_in_pounds,"weightInPounds");
+  core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->fps,"fps");
+  core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->rpm,"rpm");
+  core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->loop_wav_name,"loopWavName");
+  core_actor_cpp_archiveString_FUN_0040c6d0
+            (this_ptr->collision_wav_name,"collisionWavName");
   if (g_INT_005ad09c < 7) {
     core_actor_cpp_archiveInteger_FUN_0040c900(&local_c,"canBeCarried");
     if (local_c == 0) {
-      *(uint *)(param_1 + 0x30c) = 0;
+      this_ptr->pickup_type = 0;
     }
     else {
-      *(uint *)(param_1 + 0x30c) = 3;
+      this_ptr->pickup_type = 3;
     }
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x30c,"pickupType");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->pickup_type,"pickupType");
   }
-  core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x310,"carriedByActor");
+  core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->carrier_actor,"carriedByActor");
   if (1 < g_INT_005ad09c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x314,"canBePushed");
-    core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x318,"pushedByActor");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->can_be_pushed,"canBePushed");
+    core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->pushed_by_actor,"pushedByActor");
   }
   if (2 < g_INT_005ad09c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x5e8,"groundType");
+    core_actor_cpp_archiveInteger_FUN_0040c900((int *)&this_ptr->ground_type,"groundType");
   }
   if (g_INT_005ad09c < 4) {
-    *(uint *)(param_1 + 0x5e0) = 0xffffffff;
+    (this_ptr->physics_box).is_valid = -1;
   }
   else {
-    core_actor_cpp_FUN_0040ce80(param_1 + 0x38c,"simBox");
+    core_actor_cpp_archiveBox_FUN_0040ce80(&this_ptr->physics_box,"simBox");
   }
   if (g_INT_005ad09c < 5) {
-    *(uint *)(param_1 + 0x5ec) = 1;
+    this_ptr->plot_in_shadow_flag = 1;
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x5ec,"plotInShadowFlag");
+    core_actor_cpp_archiveInteger_FUN_0040c900
+              (&this_ptr->plot_in_shadow_flag,"plotInShadowFlag");
   }
   if (g_INT_005ad09c < 6) {
-    *(uint *)(param_1 + 0x5f0) = 1;
+    this_ptr->collision_flag = 1;
   }
   else {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x5f0,"collisionFlag");
+    core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->collision_flag,"collisionFlag");
   }
   if (7 < g_INT_005ad09c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xfc,"isTransparent");
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x5f4,"dontUseNormals");
+    core_actor_cpp_archiveInteger_FUN_0040c900
+              (&(this_ptr->base).is_transparent,"isTransparent");
+    core_actor_cpp_archiveInteger_FUN_0040c900
+              (&this_ptr->dont_use_normals,"dontUseNormals");
   }
   if (g_INT_005ad09c == 9) {
     core_actor_cpp_archiveString_FUN_0040c6d0(local_10c,"descriptiveName");
   }
   if (10 < g_INT_005ad09c) {
-    core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x31c,"constrainExtentsActor");
+    core_actor_cpp_archiveActor_FUN_0040c980
+              (&this_ptr->constrain_extents_actor,"constrainExtentsActor");
   }
   if (0xb < g_INT_005ad09c) {
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x5f8,"useEvent");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->use_event,"useEvent");
   }
   if (0xc < g_INT_005ad09c) {
-    core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x65c,"allowedMeleeAttackTypes");
+    core_actor_cpp_archiveInteger_FUN_0040c900
+              (&this_ptr->allowed_melee_attack_types,"allowedMeleeAttackTypes");
   }
   if (0xd < g_INT_005ad09c) {
-    core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x324,"pushSound");
+    core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->push_sound,"pushSound");
   }
   if (g_INT_005ad09c < 0xf) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x660,"blockVirtualDirectorFlag");
+  core_actor_cpp_archiveInteger_FUN_0040c900
+            (&this_ptr->block_virtual_director_flag,"blockVirtualDirectorFlag");
   return;
 }

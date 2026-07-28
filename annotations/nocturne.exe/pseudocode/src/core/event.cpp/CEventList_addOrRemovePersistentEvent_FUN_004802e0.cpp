@@ -2,11 +2,11 @@
 // Address: 004802e0
 // Address Range: [[004802e0, 00480403]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(int param_1,char *param_2,int param_3)
+// Signature: void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(CEventList *this_ptr,char *name,int add_flag)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(int param_1,char *param_2,int param_3)
+void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(CEventList *this_ptr,char *name,int add_flag)
 
 {
   char cVar1;
@@ -14,52 +14,54 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(i
   uint uVar3;
   int iVar4;
   char *pcVar5;
-  byte bVar6;
+  char (*pacVar6) [32];
+  byte bVar7;
   
-  bVar6 = 0;
-  if ((param_2 != (char *)0x0) && (*param_2 != '\0')) {
-    iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_00480810(param_1,param_2);
-    if (param_3 == 0) {
+  bVar7 = 0;
+  if ((name != (char *)0x0) && (*name != '\0')) {
+    iVar2 = core_event_cpp_CEventList_findPersistentEvent_FUN_00480810(this_ptr,name);
+    if (add_flag == 0) {
       if (-1 < iVar2) {
-        iVar4 = *(int *)(param_1 + 0x258c) + -1;
-        *(int *)(param_1 + 0x258c) = iVar4;
+        iVar4 = (this_ptr->persistent_events).count + -1;
+        (this_ptr->persistent_events).count = iVar4;
         memmove
-                  (iVar2 * 0x20 + param_1 + 0x2590,iVar2 * 0x20 + 0x20 + param_1 + 0x2590,
-                   (iVar4 - iVar2) * 0x20);
+                  ((this_ptr->persistent_events).names + iVar2,
+                   (&this_ptr->game_flags)[1].names + iVar2 + 1,(iVar4 - iVar2) * 0x20);
         return;
       }
     }
     else if (iVar2 < 0) {
-      if (99 < *(int *)(param_1 + 0x258c)) {
+      if (99 < (this_ptr->persistent_events).count) {
         PTR_01cc4800 = "..\\core\\event.cpp";
         INT_01cc4804 = 0x9f5;
         core_main_c_FUN_004c8440("Too many persistent events!");
       }
       uVar3 = 0xffffffff;
-      pcVar5 = param_2;
+      pcVar5 = name;
       do {
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
         cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+        pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
         PTR_01cc4800 = "..\\core\\event.cpp";
         INT_01cc4804 = 0x9fb;
-        core_main_c_FUN_004c8440("Event name %s too long!",param_2);
+        core_main_c_FUN_004c8440("Event name %s too long!",name);
       }
-      pcVar5 = (char *)(*(int *)(param_1 + 0x258c) * 0x20 + param_1 + 0x2590);
+      pacVar6 = (this_ptr->persistent_events).names + (this_ptr->persistent_events).count;
       do {
-        cVar1 = *param_2;
-        *pcVar5 = cVar1;
+        cVar1 = *name;
+        (*pacVar6)[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = param_2[1];
-        param_2 = param_2 + 2;
-        pcVar5[1] = cVar1;
-        pcVar5 = pcVar5 + 2;
+        cVar1 = name[1];
+        name = name + 2;
+        (*pacVar6)[1] = cVar1;
+        pacVar6 = (char (*) [32])(*pacVar6 + 2);
       } while (cVar1 != '\0');
-      strupr(param_1 + 0x2590 + *(int *)(param_1 + 0x258c) * 0x20);
-      *(int *)(param_1 + 0x258c) = *(int *)(param_1 + 0x258c) + 1;
+      strupr
+                ((this_ptr->persistent_events).names[(this_ptr->persistent_events).count]);
+      (this_ptr->persistent_events).count = (this_ptr->persistent_events).count + 1;
       return;
     }
   }

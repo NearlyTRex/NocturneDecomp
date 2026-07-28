@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_bride_cpp_FUN_0041fbb0(undefined4 param_1)
+; CEnemy * core_bride_cpp_FUN_0041fbb0(CEnemy *param_1)
 ;
 ;
 ; XREF[1]:
@@ -26,7 +26,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0041fbb1
     PUSH EDX                            ; 0041fbb5
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 0041fbb6
-        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0041fbbb
     PUSH 0x5799f4                       ; 0041fbbe | = "bride.dfm"
     MOV EBX,EAX                         ; 0041fbc3

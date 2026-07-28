@@ -2,56 +2,52 @@
 // Address: 00508750
 // Address Range: [[00508750, 00508889]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(int param_1,undefined4 param_2)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet *this_ptr,int layer_flag)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(int param_1,uint param_2)
+void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSet *this_ptr,int layer_flag)
 
 {
   int iVar1;
-  uint *puVar2;
+  CVector3f *pCVar2;
   int iVar3;
-  int iVar4;
+  CDemonSet *pCVar4;
   byte auStack_40 [24];
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
-  uint uStack_14;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   
   if (*(int *)(0x01CC9450 + 4) != 0) {
-    param_2 = 0;
+    layer_flag = 0;
   }
   iVar3 = 0;
-  iVar4 = param_1;
-  if (0 < *(int *)(param_1 + 0x15f2fc)) {
+  pCVar4 = this_ptr;
+  if (0 < (int)this_ptr->vdir_boxes[0xec].rotation_matrix.m[2].z) {
     do {
-      iVar1 = *(int *)(iVar4 + 0x15f300);
-      puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_40);
-      if (&uStack_28 != puVar2) {
-        uStack_28 = *puVar2;
-        uStack_24 = puVar2[1];
-        uStack_20 = puVar2[2];
+      iVar1 = pCVar4->vdir_boxes[0xec].dead;
+      pCVar2 = (CVector3f *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_40);
+      if (&CStack_28 != pCVar2) {
+        CStack_28.x = pCVar2->x;
+        CStack_28.y = pCVar2->y;
+        CStack_28.z = pCVar2->z;
       }
-      if (&uStack_1c != puVar2 + 3) {
-        uStack_1c = puVar2[3];
-        uStack_18 = puVar2[4];
-        uStack_14 = puVar2[5];
+      if (&CStack_1c != pCVar2 + 1) {
+        CStack_1c.x = pCVar2[1].x;
+        CStack_1c.y = pCVar2[1].y;
+        CStack_1c.z = pCVar2[1].z;
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-                (param_1,iVar1 + 0x20,iVar1 + 0x30,&uStack_28,&uStack_1c,iVar1 + 0x3c);
+                (this_ptr,(CVector3f *)(iVar1 + 0x20),(UOrientationVector *)(iVar1 + 0x30),
+                 &CStack_28,&CStack_1c,(CMatrix3x3f *)(iVar1 + 0x3c));
       core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
-                (param_1,*(uint *)(iVar1 + 0x108),*(uint *)(iVar1 + 0x10c),
-                 *(uint *)(iVar1 + 0x110));
+                (this_ptr,*(int *)(iVar1 + 0x108),*(int *)(iVar1 + 0x10c),*(int *)(iVar1 + 0x110));
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-      (**(code **)(*(int *)(iVar1 + 0x14c) + 0x10))(iVar1,param_2);
-      core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(param_1,0x10000,0x10000,0x10000);
+      (**(code **)(*(int *)(iVar1 + 0x14c) + 0x10))(iVar1,layer_flag);
+      core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(this_ptr,0x10000,0x10000,0x10000);
       iVar3 = iVar3 + 1;
       engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
-      iVar4 = iVar4 + 4;
-    } while (iVar3 < *(int *)(param_1 + 0x15f2fc));
+      pCVar4 = (CDemonSet *)pCVar4->cameras;
+    } while (iVar3 < (int)this_ptr->vdir_boxes[0xec].rotation_matrix.m[2].z);
   }
   return;
 }

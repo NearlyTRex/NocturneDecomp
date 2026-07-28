@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0056c56c(int param_1,uint param_2)
+; double FUN_0056c56c(int param_1,uint param_2)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; Called Functions:
-;   FUN_005707db
+;   crt_math.c_handle_math_error_FUN_005707db
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x3                            ; 0056c582
     PUSH dword ptr [ESP + 0xc]          ; 0056c584
     PUSH dword ptr [ESP + 0xc]          ; 0056c588
-    CALL FUN_005707db                   ; 0056c58c
-        ;   XREF to: 005707db (UNCONDITIONAL_CALL)  ; undefined FUN_005707db()
+    CALL crt_math.c_handle_math_error_FUN_005707db ; 0056c58c
+        ;   XREF to: 005707db (UNCONDITIONAL_CALL)  ; double crt_math.c_handle_math_error_FUN_005707db()
     ADD ESP,0xc                         ; 0056c591
     JMP 0x0056c5a5                      ; 0056c594
         ;   XREF to: 0056c5a5 (UNCONDITIONAL_JUMP)  ; LAB_0056c5a5

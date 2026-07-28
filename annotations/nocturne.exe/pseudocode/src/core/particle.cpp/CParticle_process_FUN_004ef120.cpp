@@ -2,107 +2,105 @@
 // Address: 004ef120
 // Address Range: [[004ef120, 004ef43f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
+// Signature: void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(float *param_1)
+void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_ptr)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   float fVar2;
   float fVar3;
   int iVar4;
   byte bVar5;
-  uint auStackY_105c [998];
-  byte *puVar6;
-  uint *puVar7;
-  uint local_74;
-  float local_68;
-  float local_64;
-  float local_60;
-  float afStack_5c [3];
-  float local_50;
-  float local_4c;
-  float local_48;
-  float afStack_44 [3];
-  uint local_38;
-  float afStack_34 [4];
-  float fStack_24;
+  float afStackY_105c [998];
+  CDemonRaytrace *this_ptr_00;
+  CVector3i *voxel_coords;
+  CVector3i local_74;
+  CParticle local_68;
+  float afStack_30 [4];
   float local_20;
   float local_1c;
   float local_14;
   
   bVar5 = 0;
-  if (0.0 < param_1[6]) {
-    if (param_1 + 9 != param_1) {
-      param_1[9] = *param_1;
-      param_1[10] = param_1[1];
-      param_1[0xb] = param_1[2];
+  if (0.0 < this_ptr->lifetime_remaining) {
+    if ((CParticle *)&this_ptr->previous_position != this_ptr) {
+      (this_ptr->previous_position).x = (this_ptr->position).x;
+      (this_ptr->previous_position).y = (this_ptr->position).y;
+      (this_ptr->previous_position).z = (this_ptr->position).z;
     }
-    param_1[0xc] = param_1[8];
+    this_ptr->was_in_solid = this_ptr->is_in_solid;
     local_20 = *(float *)(0x01C775EC + 0x264);
-    param_1[4] = param_1[7] * local_20 + param_1[4];
-    *param_1 = *param_1 + param_1[3] * local_20;
-    param_1[1] = param_1[1] + param_1[4] * local_20;
-    param_1[2] = param_1[2] + param_1[5] * local_20;
+    (this_ptr->velocity).y = this_ptr->gravity_acceleration * local_20 + (this_ptr->velocity).y;
+    fVar2 = (this_ptr->velocity).y;
+    fVar3 = (this_ptr->velocity).z;
+    (this_ptr->position).x = (this_ptr->position).x + (this_ptr->velocity).x * local_20;
+    (this_ptr->position).y = (this_ptr->position).y + fVar2 * local_20;
+    (this_ptr->position).z = (this_ptr->position).z + fVar3 * local_20;
     local_1c = local_20;
-    core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,param_1);
-    puVar7 = &stack0xffffff8c;
-    puVar6 = &DAT_01fba938;
-    local_74 = local_38;
-    *(float *)((int)&stack0xffffff90 + (uint)bVar5 * 0xfffffffe * 4) =
-         afStack_34[(uint)bVar5 * 0xfffffffe];
-    *(float *)(&stack0xffffff94 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-         afStack_34[(uint)bVar5 * 0xfffffffe + (uint)bVar5 * 0xfffffffe + 1];
-    fVar3 = (float)core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(puVar6,puVar7);
-    param_1[8] = fVar3;
-    if ((fVar3 != 0.0) || (param_1[0xc] != 0.0)) {
-      pfVar1 = param_1 + 9;
+    core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(&DAT_01fba938,this_ptr);
+    voxel_coords = &local_74;
+    this_ptr_00 = (CDemonRaytrace *)&DAT_01fba938;
+    local_74.x = local_68.was_in_solid;
+    *(uint *)((int)&local_74 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 0x34);
+    *(float *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+    iVar4 = core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(this_ptr_00,voxel_coords);
+    this_ptr->is_in_solid = iVar4;
+    if ((iVar4 != 0) || (this_ptr->was_in_solid != 0)) {
+      pCVar1 = &this_ptr->previous_position;
       local_14 = (float)core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                                  (&DAT_01fba938,pfVar1,param_1,afStack_34 + 2,0);
+                                  (&DAT_01fba938,pCVar1,this_ptr,afStack_30 + 1,0);
       if ((0.0 <= local_14) && (local_14 < 1.0)) {
-        local_50 = *param_1 - *pfVar1;
-        local_4c = param_1[1] - param_1[10];
-        local_48 = param_1[2] - param_1[0xb];
-        local_68 = *pfVar1 + local_50 * local_14 * 0.8f;
-        local_64 = param_1[10] + local_4c * local_14 * 0.8f;
-        local_60 = param_1[0xb] + local_48 * local_14 * 0.8f;
-        if (param_1 != &local_68) {
-          *param_1 = local_68;
-          param_1[1] = local_64;
-          param_1[2] = local_60;
+        local_68.lifetime_remaining = (this_ptr->position).x - pCVar1->x;
+        local_68.gravity_acceleration = (this_ptr->position).y - (this_ptr->previous_position).y;
+        local_68.is_in_solid = (int)((this_ptr->position).z - (this_ptr->previous_position).z);
+        local_68.position.x = pCVar1->x + local_68.lifetime_remaining * local_14 * 0.8f;
+        local_68.position.y =
+             (this_ptr->previous_position).y +
+             local_68.gravity_acceleration * local_14 * 0.8f;
+        local_68.position.z =
+             (this_ptr->previous_position).z +
+             (float)local_68.is_in_solid * local_14 * 0.8f;
+        if (this_ptr != &local_68) {
+          (this_ptr->position).x = local_68.position.x;
+          (this_ptr->position).y = local_68.position.y;
+          (this_ptr->position).z = local_68.position.z;
         }
-        iVar4 = (**(code **)((int)param_1[0xd] + 0xc))(param_1,afStack_34 + 2);
+        iVar4 = (*this_ptr->vtable->onCollision)(this_ptr,(CVector3f *)(afStack_30 + 1));
         if (iVar4 == 0) {
-          pfVar1 = param_1 + 3;
-          fVar3 = (fStack_24 * param_1[5] + afStack_34[2] * *pfVar1 + afStack_34[3] * param_1[4]) *
+          pCVar1 = &this_ptr->velocity;
+          fVar2 = (afStack_30[3] * (this_ptr->velocity).z +
+                  afStack_30[1] * pCVar1->x + afStack_30[2] * (this_ptr->velocity).y) *
                   2.0f;
-          if (pfVar1 != afStack_5c) {
-            *pfVar1 = afStack_34[2] * fVar3 - *pfVar1;
-            param_1[4] = afStack_34[3] * fVar3 - param_1[4];
-            param_1[5] = fStack_24 * fVar3 - param_1[5];
+          if (pCVar1 != &local_68.velocity) {
+            pCVar1->x = afStack_30[1] * fVar2 - pCVar1->x;
+            (this_ptr->velocity).y = afStack_30[2] * fVar2 - (this_ptr->velocity).y;
+            (this_ptr->velocity).z = afStack_30[3] * fVar2 - (this_ptr->velocity).z;
           }
-          pfVar1 = param_1 + 3;
-          fVar3 = param_1[4] * -0.7f;
-          fVar2 = -0.7f * param_1[5];
-          if (pfVar1 != afStack_44) {
-            *pfVar1 = *pfVar1 * -0.7f;
-            param_1[4] = fVar3;
-            param_1[5] = fVar2;
+          pCVar1 = &this_ptr->velocity;
+          fVar2 = (this_ptr->velocity).y * -0.7f;
+          fVar3 = -0.7f * (this_ptr->velocity).z;
+          if (pCVar1 != &local_68.previous_position) {
+            pCVar1->x = pCVar1->x * -0.7f;
+            (this_ptr->velocity).y = fVar2;
+            (this_ptr->velocity).z = fVar3;
           }
         }
         else {
-          param_1[6] = 0.0;
+          this_ptr->lifetime_remaining = 0.0;
         }
       }
     }
-    fVar3 = param_1[6];
-    param_1[6] = fVar3 - local_1c;
-    if (fVar3 - local_1c < 0.0) {
-      param_1[6] = 0.0;
+    local_1c = this_ptr->lifetime_remaining - local_1c;
+    this_ptr->lifetime_remaining = local_1c;
+    if (local_1c < 0.0) {
+      this_ptr->lifetime_remaining = 0.0;
       return;
     }
   }

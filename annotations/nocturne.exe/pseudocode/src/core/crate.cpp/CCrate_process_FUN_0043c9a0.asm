@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_CCrate_process_FUN_0043c9a0(int param_1)
+; void core_crate_cpp_CCrate_process_FUN_0043c9a0(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -153,7 +153,7 @@ section .text
     FSTP float ptr [EBX + 0x24]         ; 0043cb2e
     PUSH EBX                            ; 0043cb31
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0043cb32
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043cb37
     POP ESI                             ; 0043cb3a
     POP EDI                             ; 0043cb3b
@@ -199,7 +199,7 @@ section .text
     MOV dword ptr [EBX + 0x24],EAX      ; 0043cbab
     PUSH EBX                            ; 0043cbae
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 0043cbaf
-        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000()
+        ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0043cbb4
     POP ESI                             ; 0043cbb7
     POP EDI                             ; 0043cbb8

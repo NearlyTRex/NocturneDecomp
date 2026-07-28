@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(int param_1)
+; void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(CLightGun *this_ptr)
 ;
+; Parameters:
+; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_lightgun.cpp_FUN_004c71a0 at 004c73df
@@ -46,7 +48,7 @@ section .text
     PUSH EAX                            ; 004c7011
     PUSH EBX                            ; 004c7012
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004c7013
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     MOV EDX,0x1                         ; 004c7018
     LEA EAX,[ESP + 0x18]                ; 004c701d
     ADD ESP,0xc                         ; 004c7021
@@ -69,7 +71,7 @@ section .text
     MOV ESI,0x1                         ; 004c705d
     MOV EBX,0x42000000                  ; 004c7062
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004c7067
-        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
+        ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c706c
     FLD float ptr [0x0059fd64]          ; 004c706f | FLOAT_0059fd64
     PUSH 0x3f800000                     ; 004c7075
@@ -78,7 +80,7 @@ section .text
     FSTP float ptr [0x01c74778]         ; 004c7085 | DAT_01c74778
     MOV dword ptr [0x01c76310],ESI      ; 004c708b | DAT_01c76310
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080 ; 004c7091
-        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080()
+        ;   XREF to: 00452080 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight * this_ptr, float intensity)
     ADD ESP,0x8                         ; 004c7096
     ADD ESP,0x18                        ; 004c7099
     POP ESI                             ; 004c709c

@@ -2,25 +2,29 @@
 // Address: 004832b0
 // Address Range: [[004832b0, 00483310]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CStake_init_FUN_004832b0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+// Signature: void __cdecl core_fire_cpp_CStake_init_FUN_004832b0(CStake *this_ptr,CVector3f *position,CVector3f *orientation)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CStake_init_FUN_004832b0(uint *param_1,uint *param_2,uint *param_3)
+void __cdecl core_fire_cpp_CStake_init_FUN_004832b0(CStake *this_ptr,CVector3f *position,CVector3f *orientation)
 
 {
-  if (param_1 + 1 != param_2) {
-    param_1[1] = *param_2;
-    param_1[2] = param_2[1];
-    param_1[3] = param_2[2];
+  CVector3f *pCVar1;
+  
+  if (&this_ptr->physics_box != (CBox *)position) {
+    (this_ptr->physics_box).position.x = position->x;
+    (this_ptr->physics_box).position.y = position->y;
+    (this_ptr->physics_box).position.z = position->z;
   }
-  if (param_1 + 4 != param_3) {
-    param_1[4] = *param_3;
-    param_1[5] = param_3[1];
-    param_1[6] = param_3[2];
+  pCVar1 = &(this_ptr->physics_box).orientation;
+  if (pCVar1 != orientation) {
+    pCVar1->x = orientation->x;
+    (this_ptr->physics_box).orientation.y = orientation->y;
+    (this_ptr->physics_box).orientation.z = orientation->z;
   }
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(param_1 + 7,param_1 + 4);
-  *param_1 = 0;
-  param_1[0x96] = 0;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
+            (&(this_ptr->physics_box).rotation_matrix,&(this_ptr->physics_box).orientation);
+  this_ptr->active = 0;
+  (this_ptr->physics_box).is_valid = 0;
   return;
 }

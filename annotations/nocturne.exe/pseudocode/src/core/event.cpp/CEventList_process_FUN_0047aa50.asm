@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(undefined4 *param_1)
+; void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(CEventList *this_ptr)
 ;
+; Parameters:
+; CEventList *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -107,7 +109,7 @@ section .text
     PUSH ECX                            ; 0047ab2c
     PUSH EDI                            ; 0047ab2d
     CALL crt_string.c_memmove_FUN_00566170 ; 0047ab2e
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0047ab33
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047ab36
     MOV EAX,dword ptr [EAX + 0x3210]    ; 0047ab39
@@ -123,7 +125,7 @@ section .text
     LEA EAX,[EDX + ECX*0x1]             ; 0047ab57
     PUSH EAX                            ; 0047ab5a
     CALL crt_string.c_memmove_FUN_00566170 ; 0047ab5b
-        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_memmove_FUN_00566170()
+        ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0047ab60
     JMP 0x0047aafe                      ; 0047ab63
         ;   XREF to: 0047aafe (UNCONDITIONAL_JUMP)  ; LAB_0047aafe

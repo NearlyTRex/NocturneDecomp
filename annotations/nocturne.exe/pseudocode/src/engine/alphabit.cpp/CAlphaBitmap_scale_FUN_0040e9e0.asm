@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(int *param_1,int param_2,int param_3)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
 ;
+; Parameters:
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   scaleFactorX
+; int              Stack[0xc]:4   scaleFactorY
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

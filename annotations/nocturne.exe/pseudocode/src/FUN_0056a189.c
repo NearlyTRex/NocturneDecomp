@@ -11,7 +11,7 @@ void FUN_0056a189(uint param_1,ulonglong *param_2)
 {
   ulonglong uVar1;
   
-  uVar1 = FUN_0056f852(param_1,0);
+  uVar1 = strtod_main(param_1,0);
   *param_2 = uVar1;
   return;
 }

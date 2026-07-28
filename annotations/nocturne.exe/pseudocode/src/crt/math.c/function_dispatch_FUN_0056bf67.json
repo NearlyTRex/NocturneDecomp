@@ -1,0 +1,123 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 78,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
+    "suspect_types": [
+      "fpu_register_input",
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
+    ],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "00570d50",
+      "from_addr": "00570de6",
+      "name": "FUN_00570d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ad6",
+      "from_addr": "00565bb9",
+      "name": "crt_math.c_pow_FUN_00565ad6",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056bf67",
+    "address_range": [
+      [
+        "0056bf67",
+        "0056bf70"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_math.c_function_dispatch_FUN_0056bf67",
+    "signature": "float10 __watcallRegister crt_math_c_function_dispatch_FUN_0056bf67(int function_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005c3f84",
+      "name": "PTR_FUN_005c3f84",
+      "type": "undefined1*",
+      "value": "0056bf71"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.5,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "BRANCHIND": 1,
+      "INT_ADD": 1,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1
+    },
+    "pcode_op_count": 13
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 7,
+      "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
+      "text": "/* WARNING: Could not recover jumptable at 0x0056bf6a. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 8,
+      "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)(&PTR_FUN_005c3f84)[function_index])();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 10,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "return in_ST0;",
+      "type": "fpu_register_input"
+    }
+  ]
+}

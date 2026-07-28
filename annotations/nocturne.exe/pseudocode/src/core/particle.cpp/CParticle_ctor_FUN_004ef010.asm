@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_particle_cpp_CParticle_ctor_FUN_004ef010(int param_1)
+; CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_004ef010(CParticle *this_ptr)
 ;
+; Parameters:
+; CParticle *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
 ;   core_fire.cpp_CGlassParticle_ctor_FUN_0048cb00 at 0048cb05

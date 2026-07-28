@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_releaseMutex_FUN_00559c30(HANDLE param_1)
+; void __cdecl wincore_winrun_cpp_releaseMutex_FUN_00559c30(HANDLE mutex_handle)
 ;
+; Parameters:
+; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_processAudio_FUN_005288f0 at 0052895b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_flamegun_cpp_FUN_0048ea60(int param_1)
+; undefined4 core_flamegun_cpp_FUN_0048ea60(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -47,7 +47,7 @@ section .text
     PUSH EAX                            ; 0048ea95
     PUSH EBX                            ; 0048ea96
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0048ea97
-        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0048ea9c
     PUSH 0x1                            ; 0048ea9f
     PUSH 0x3                            ; 0048eaa1

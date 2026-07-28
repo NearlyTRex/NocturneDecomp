@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(undefined4 param_1,undefined4 param_2,float *param_3,byte param_4)
+; undefined4 shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *param_1,char *param_2,float *param_3,byte param_4)
 ;
 ;
 ; Referenced Globals:
@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 00471557
     PUSH EBX                            ; 00471558
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 00471559
-        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600()
+        ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047155e
     TEST EAX,EAX                        ; 00471561
     JNZ 0x0047159a                      ; 00471563

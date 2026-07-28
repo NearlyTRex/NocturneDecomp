@@ -2,17 +2,17 @@
 // Address: 0050e4c0
 // Address Range: [[0050e4c0, 0050e500]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(int param_1,int param_2,undefined4 param_3)
+// Signature: void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet *this_ptr,int index,float value)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(int param_1,int param_2,uint param_3)
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet *this_ptr,int index,float value)
 
 {
-  *(uint *)(param_2 * 0x1a0 + param_1 + 0x148) = param_3;
-  if (param_2 != *(int *)(param_1 + 0x15aabc)) {
+  *(float *)((int)&this_ptr->cameras[0].rotation_matrix + index * 0x1a0 + 0x2c) = value;
+  if ((CDemonActor *)index != this_ptr->renderable_actors[0x773]) {
     return;
   }
-  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(0x1fb8508,param_3);
+  core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740((CDemonCamera *)0x1fb8508,value);
   return;
 }

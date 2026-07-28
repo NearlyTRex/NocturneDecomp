@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_model_c_byteswapMRGLData_FUN_004dcc90(undefined4 *param_1,int param_2)
+; void engine_model_c_byteswapMRGLData_FUN_004dcc90(SMRGLHeaderExtended *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -31,7 +31,7 @@ section .text
     PUSH EBX                            ; 004dcc9f
         ;   Label: LAB_004dcc9f
     CALL engine_model.c_getMRGLSize_FUN_004dd520 ; 004dcca0
-        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_getMRGLSize_FUN_004dd520()
+        ;   XREF to: 004dd520 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 004dcca5
     MOV ESI,EAX                         ; 004dcca8
     MOV EDX,EAX                         ; 004dccaa

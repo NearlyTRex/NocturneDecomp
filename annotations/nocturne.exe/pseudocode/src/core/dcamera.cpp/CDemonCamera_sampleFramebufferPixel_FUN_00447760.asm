@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(int param_1,int param_2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(CDemonCamera *this_ptr,SRenderVertex *vertex)
 ;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; SRenderVertex *  Stack[0x8]:4   vertex
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50 at 0048314c

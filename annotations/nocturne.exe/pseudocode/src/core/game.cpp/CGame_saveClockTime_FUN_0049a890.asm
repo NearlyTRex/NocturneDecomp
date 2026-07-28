@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_saveClockTime_FUN_0049a890(int param_1)
+; void __cdecl core_game_cpp_CGame_saveClockTime_FUN_0049a890(CGame *this_ptr)
 ;
+; Parameters:
+; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a58
@@ -24,7 +26,7 @@
 section .text
 
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 0049a890
-        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
+        ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
         ;   Label: core_game.cpp_CGame_saveClockTime_FUN_0049a890
     MOV EDX,dword ptr [ESP + 0x4]       ; 0049a895
     MOV dword ptr [EDX + 0x25c],EAX     ; 0049a899

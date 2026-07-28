@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_sleep_FUN_00559cc0(double param_1)
+; void __cdecl wincore_winrun_cpp_sleep_FUN_00559cc0(double seconds)
 ;
+; Parameters:
+; double           Stack[0x4]:8   seconds
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_00528670 at 005286af
+;   sound_sndmain.cpp_audioThreadProc_FUN_00528670 at 005286af
 ;   sound_sndmain.cpp_killSoundThread_FUN_00528780 at 005287a9
 ;   sound_sndmain.cpp_startSoundThread_FUN_005286d0 at 0052875c
 ;
@@ -49,7 +51,7 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 00559cf8
     ADD ESP,0x8                         ; 00559cfc
     CALL crt_math.c_round_FUN_00563a30  ; 00559cff
-        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
+        ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP qword ptr [ESP]               ; 00559d04
     MOV EAX,dword ptr [ESP]             ; 00559d07
     PUSH EAX                            ; 00559d0a

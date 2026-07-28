@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(undefined4 param_1,LPCSTR param_2,int param_3,undefined4 param_4,undefined4 param_5)
+; CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 ;
+; Parameters:
+; CWinFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   font_name
+; int              Stack[0xc]:4   font_height
+; int              Stack[0x10]:4   y_offset1
+; int              Stack[0x14]:4   y_offset2
 ;
 ; XREF[1]:
 ;   core_dfont.cpp_FUN_0044c560 at 0044ca6a
@@ -24,7 +30,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00557f51
     PUSH EDX                            ; 00557f55
     CALL engine_palette.cpp_CFont_ctor_FUN_004eefb0 ; 00557f56
-        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_CFont_ctor_FUN_004eefb0()
+        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)  ; CFont * engine_palette.cpp_CFont_ctor_FUN_004eefb0(CFont * this_ptr)
     ADD ESP,0x4                         ; 00557f5b
     MOV ECX,dword ptr [ESP + 0xc]       ; 00557f5e
     PUSH ECX                            ; 00557f62
