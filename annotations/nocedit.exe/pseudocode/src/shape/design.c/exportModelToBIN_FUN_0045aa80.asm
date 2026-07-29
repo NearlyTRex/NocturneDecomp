@@ -71,11 +71,11 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -163,8 +163,8 @@ section .text
         ;   Label: LAB_0045ab3e
     JNZ 0x0045ab6f                      ; 0045ab42
         ;   XREF to: 0045ab6f (CONDITIONAL_JUMP)  ; LAB_0045ab6f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045ab44
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045ab44
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0045ab49
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     PUSH 0x0                            ; 0045ab4e

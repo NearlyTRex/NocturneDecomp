@@ -52,7 +52,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
       local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *
                               256.0f);
       iVar1 = iVar1 + 0xc;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar2),&local_30);

@@ -49,7 +49,7 @@
 ;   core_path.cpp_getPathMap_FUN_00548500
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -152,8 +152,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 005ec06f | g_CDemonRendererInstance
     PUSH EAX                            ; 005ec071
     XOR EDI,EDI                         ; 005ec072
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 005ec074
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 005ec074
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EBP,dword ptr [ESI + 0x370]     ; 005ec079
     ADD ESP,0x8                         ; 005ec07f
     TEST EBP,EBP                        ; 005ec082
@@ -313,8 +313,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 005ec23c | g_CDemonRendererInstance
     ADD EAX,0x30                        ; 005ec23e
     PUSH EAX                            ; 005ec241
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 005ec242
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 005ec242
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005ec247
     PUSH 0x1                            ; 005ec24a
     PUSH 0x0                            ; 005ec24c

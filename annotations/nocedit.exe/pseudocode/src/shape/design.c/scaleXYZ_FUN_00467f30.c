@@ -21,7 +21,7 @@ void __cdecl shape_design_c_scaleXYZ_FUN_00467f30(void)
   char cVar1;
   
   bVar4 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter X,Y,Z scales : ");
   iVar2 = -1;
   pcVar3 = local_70;

@@ -78,8 +78,8 @@ section .text
     LEA EDI,[ESP + 0x30c]               ; 00443056
     MOV ESI,0x66e940                    ; 0044305d | g_CourseLastPthPath
     MOVSD.REP ES:EDI,ESI                ; 00443062 | g_CourseLastPthPath | g_CourseLastPthPath+4
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443064
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00443064
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00443064
     PUSH 0x0                            ; 00443069
     PUSH 0x0                            ; 0044306b

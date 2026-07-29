@@ -105,8 +105,8 @@ section .text
     JZ 0x00580af7                       ; 005807d4
         ;   XREF to: 00580af7 (CONDITIONAL_JUMP)  ; LAB_00580af7
     MOV ESI,dword ptr [ESP + 0x5c4]     ; 005807da
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005807e1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005807e1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_005807e1
     PUSH 0x0                            ; 005807e6
     PUSH 0x0                            ; 005807e8
@@ -460,8 +460,8 @@ section .text
     POP ESI                             ; 00580c39
     POP EBX                             ; 00580c3a
     RET                                 ; 00580c3b
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00580c3c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00580c3c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00580c3c
     MOV EAX,0x6487f3                    ; 00580c41 | = "Enter fog velocity x,y,z : "
     PUSH EAX                            ; 00580c46 | = "Enter fog velocity x,y,z : "
@@ -498,8 +498,8 @@ section .text
     ADD ESP,0x14                        ; 00580c91
     JMP 0x00580c22                      ; 00580c94
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00580c96
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00580c96
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00580c96
     PUSH 0x648818                       ; 00580c9b | = "Enter in fog taper : "
     PUSH 0x0                            ; 00580ca0
@@ -531,8 +531,8 @@ section .text
     ADD ESP,0x4                         ; 00580cf4
     JMP 0x00580c22                      ; 00580cf7
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00580cfc
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00580cfc
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00580cfc
     PUSH 0x64882e                       ; 00580d01 | = "Enter in fog density : "
     PUSH 0x0                            ; 00580d06
@@ -564,8 +564,8 @@ section .text
     ADD ESP,0x4                         ; 00580d5a
     JMP 0x00580c22                      ; 00580d5d
         ;   XREF to: 00580c22 (UNCONDITIONAL_JUMP)  ; LAB_00580c22
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00580d62
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00580d62
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00580d62
     PUSH 0x648846                       ; 00580d67 | = "Enter in temperature : "
     PUSH 0x0                            ; 00580d6c
@@ -957,8 +957,8 @@ section .text
         ;   XREF to: 00580c22 (CONDITIONAL_JUMP)  ; LAB_00580c22
     JBE 0x00580b87                      ; 00581198
         ;   XREF to: 00580b87 (CONDITIONAL_JUMP)  ; LAB_00580b87
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0058119e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0058119e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,0x6487d1                    ; 005811a3 | = "Enter fog color r,g,b : "
     PUSH EAX                            ; 005811a8 | = "Enter fog color r,g,b : "
     PUSH 0x0                            ; 005811a9

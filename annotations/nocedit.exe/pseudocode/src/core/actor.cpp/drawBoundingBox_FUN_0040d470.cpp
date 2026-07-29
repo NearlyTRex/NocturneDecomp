@@ -117,12 +117,12 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_1c.x = (int)ROUND(pCVar8->x * 256.0f);
     local_1c.y = (int)ROUND(pCVar8->y * 256.0f);
     local_1c.z = (int)ROUND(pCVar8->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_1c);
     local_124.x = (int)ROUND((fVar4 + fVar1) * 256.0f);
     local_124.y = (int)ROUND((fVar5 + fVar2) * 256.0f);
     local_124.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_124);
     pSVar12 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar26 = pSVar12[1].projected_vertex.transformed_x;
@@ -200,12 +200,12 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_28.x = (int)ROUND(pCVar8->x * 256.0f);
     local_28.y = (int)ROUND(pCVar8->y * 256.0f);
     local_28.z = (int)ROUND(pCVar8->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_28);
     local_b8.x = (int)ROUND((fVar4 + fVar1) * 256.0f);
     local_b8.y = (int)ROUND((fVar5 + fVar2) * 256.0f);
     local_b8.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_b8);
     pSVar12 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar26 = pSVar12[1].projected_vertex.transformed_x;
@@ -283,12 +283,12 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_94.x = (int)ROUND(pCVar8->x * 256.0f);
     local_94.y = (int)ROUND(pCVar8->y * 256.0f);
     local_94.z = (int)ROUND(pCVar8->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_94);
     local_118.x = (int)ROUND((fVar4 + fVar1) * 256.0f);
     local_118.y = (int)ROUND((fVar5 + fVar2) * 256.0f);
     local_118.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_118);
     pSVar12 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar26 = pSVar12[1].projected_vertex.transformed_x;

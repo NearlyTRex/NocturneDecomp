@@ -179,7 +179,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     local_90 = g_CGamePtr->delta_time_float;
     g_RenderedTriangleCount = 0;
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth,g_WindowHeight,0xf8);
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_35c);
     iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if (iVar7 == 0) {
@@ -448,16 +448,16 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_154 = CVector3i_006819fc;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_154);
       local_154.z = 0xf00;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_154);
       local_154.x = -0xf00;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_154);
       local_3a4.base.base.count = 4;
       local_3a4.vertices[1].texture_u = 0xfe << 16;
@@ -951,7 +951,7 @@ LAB_0059722b:
     }
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar7 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("P",7,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Pause/Unpause",0x69,0xb);
       engine_2d_c_drawText_FUN_00401fd0("G",7,0x16);

@@ -19,8 +19,8 @@
 ;   float g_WorldToScreenScale2 = 256
 ;
 ; Called Functions:
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004a2660
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EBX                            ; 004a28d2
     LEA EBX,[ESP + 0x4]                 ; 004a28d3
     PUSH EBX                            ; 004a28d7
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004a28d8
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004a28d8
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004a28dd
     TEST byte ptr [ESP + 0x13],0x80     ; 004a28e0
     JZ 0x004a28ec                       ; 004a28e5

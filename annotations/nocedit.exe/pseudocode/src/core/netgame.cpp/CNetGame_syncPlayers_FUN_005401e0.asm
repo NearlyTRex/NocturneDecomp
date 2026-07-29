@@ -47,8 +47,8 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     MOV dword ptr [ESP + 0x174],EAX     ; 0054027c
     LEA EAX,[ESI + 0x20]                ; 00540283
     MOV dword ptr [ESP + 0x178],EAX     ; 00540286
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0054028d
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0054028d
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0054028d
     MOV EBX,dword ptr [EBP + 0x18]      ; 00540292
     PUSH EBX                            ; 00540295
@@ -321,8 +321,8 @@ section .text
     CMP EDX,dword ptr [0x02f7c8c0]      ; 005404af | g_RemoteSyncStage
     JLE 0x0054053f                      ; 005404b5
         ;   XREF to: 0054053f (CONDITIONAL_JUMP)  ; LAB_0054053f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005404bb
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005404bb
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,dword ptr [EBP + 0x18]      ; 005404c0
     PUSH ECX                            ; 005404c3
     PUSH 0x63d5f8                       ; 005404c4 | = "Waiting on sync code %d from server..."

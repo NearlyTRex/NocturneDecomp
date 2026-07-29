@@ -318,7 +318,7 @@ LAB_00553f00:
             }
           }
           local_68[0] = (SRenderVertex *)0x553f19;
-          wincore_windll_cpp_renderScanline_FUN_005b5710(left,local_14,iVar7);
+          engine_special_cpp_renderScanline_FUN_005b5710(left,local_14,iVar7);
           *(int *)(iVar7 + 8) = *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0xc);
           *(int *)(iVar7 + 0x18) = *(int *)(iVar7 + 0x18) + *(int *)(iVar7 + 0x1c);
           *(int *)(iVar7 + 0x20) = *(int *)(iVar7 + 0x20) + *(int *)(iVar7 + 0x24);
@@ -355,7 +355,7 @@ LAB_00553f00:
         iVar3 = iVar6;
       } while (iVar6 < vertex_count);
     }
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_68,vertex_count,g_RenderStateFlags.dword);
+    engine_special_cpp_drawPolygon2_FUN_005b7610(local_68,vertex_count,g_RenderStateFlags.dword);
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
   }
   return;

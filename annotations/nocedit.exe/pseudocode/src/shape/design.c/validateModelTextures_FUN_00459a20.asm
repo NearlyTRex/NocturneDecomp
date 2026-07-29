@@ -47,8 +47,8 @@
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_00459a3a
     JMP 0x00459dd0                      ; 00459a41
         ;   XREF to: 00459dd0 (UNCONDITIONAL_JUMP)  ; LAB_00459dd0
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00459a46
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00459a46
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00459a46
     PUSH 0x0                            ; 00459a4b
     PUSH 0x0                            ; 00459a4d
@@ -357,8 +357,8 @@ section .text
     CMP dword ptr [EBP + -0x4],0x1      ; 00459cce
     JNZ 0x00459ceb                      ; 00459cd2
         ;   XREF to: 00459ceb (CONDITIONAL_JUMP)  ; LAB_00459ceb
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00459cd4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00459cd4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00459cd9
     PUSH 0x0                            ; 00459cdb
     MOV EAX,0x61ace4                    ; 00459cdd | = "WARNING: The following textures were ..."

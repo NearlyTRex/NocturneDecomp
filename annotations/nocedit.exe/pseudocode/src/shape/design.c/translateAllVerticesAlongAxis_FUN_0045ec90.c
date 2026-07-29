@@ -25,7 +25,7 @@ void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
   char cVar1;
   
   bVar5 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_48,10,0,0,"Enter distance or location in feet : ");
   iVar3 = -1;
   pcVar6 = local_48;

@@ -35,7 +35,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
     local_28.x = (int)ROUND(local_34.x * 256.0f);
     local_28.y = (int)ROUND(local_34.y * 256.0f);
     local_28.z = (int)ROUND(local_34.z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar6),&local_28);

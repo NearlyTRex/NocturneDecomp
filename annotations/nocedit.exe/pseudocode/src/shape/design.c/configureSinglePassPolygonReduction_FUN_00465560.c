@@ -36,7 +36,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
     local_74[0] = 0;
   }
   else {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_74,0x14,0,0,"Enter tolerance angle [8.5] : ");
   }
@@ -62,7 +62,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
     }
   }
   if (-1 < ui_mode) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Scanning polygons...",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   }

@@ -21,10 +21,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
      (g_CullingMode != 0)) {
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlags.dword = render_flags;
       g_VertexPreprocessMode = 6;
@@ -75,7 +75,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
           } while (local_14 < primitive_count);
         }
         if (0 < polygon_count) {
-          wincore_windll_cpp_drawPolyList_FUN_005b7640
+          engine_special_cpp_drawPolyList_FUN_005b7640
                     (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)g_VisibleFacePointers,
                      polygon_count,g_RenderStateFlags.dword);
           return;

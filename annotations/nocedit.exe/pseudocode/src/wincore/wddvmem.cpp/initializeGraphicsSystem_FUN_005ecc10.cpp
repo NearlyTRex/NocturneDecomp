@@ -50,6 +50,6 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(int width,
   if (HVar1 == 0) {
     (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
-  wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(g_MainWindowHandle);
+  engine_special_cpp_loadExternalRenderer_FUN_005b6750(g_MainWindowHandle);
   return 1;
 }

@@ -36,8 +36,8 @@
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
-;   wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
-;   wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+;   engine_special.cpp_renderAlphaRow16_FUN_005b55f7
+;   engine_special.cpp_renderAlphaRow32_FUN_005b555c
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
     ADD EDX,EBX                         ; 00410a13
     PUSH EDX                            ; 00410a15
     PUSH ECX                            ; 00410a16
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410a17
-        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
+    CALL engine_special.cpp_renderAlphaRow32_FUN_005b555c ; 00410a17
+        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410a1c
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410a1f
         ;   Label: LAB_00410a1f
@@ -199,8 +199,8 @@ section .text
     ADD EDX,EBX                         ; 00410ab7
     PUSH EDX                            ; 00410ab9
     PUSH ECX                            ; 00410aba
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410abb
-        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
+    CALL engine_special.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410abb
+        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410ac0
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410ac3
         ;   Label: LAB_00410ac3

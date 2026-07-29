@@ -47,7 +47,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   local_4c.x = (int)ROUND(local_58 * 256.0f);
   local_4c.y = (int)ROUND(local_54 * 256.0f);
   local_4c.z = (int)ROUND(local_50 * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_4c);
   local_64 = eye_position->x + -0.2f;
   local_60 = eye_position->y + 0.2f;
@@ -62,7 +62,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   local_7c.x = (int)ROUND(local_58 * 256.0f);
   local_7c.y = (int)ROUND(local_54 * 256.0f);
   local_7c.z = (int)ROUND(local_50 * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_7c);
   pfVar2 = &(this_ptr->base).base.size_scale;
   local_94 = (eye_position->x + -0.2f) * *pfVar2;
@@ -74,7 +74,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   local_34.x = (int)ROUND(local_58 * 256.0f);
   local_34.y = (int)ROUND(local_54 * 256.0f);
   local_34.z = (int)ROUND(local_50 * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
   pfVar2 = &(this_ptr->base).base.size_scale;
   local_88 = (eye_position->x + 0.2f) * *pfVar2;
@@ -86,7 +86,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   local_c4.x = (int)ROUND(local_58 * 256.0f);
   local_c4.y = (int)ROUND(local_54 * 256.0f);
   local_c4.z = (int)ROUND(local_50 * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c4);
   this_ptr_00 = g_CDemonRendererPtr2;
   g_CDemonRendererPtr2->vertex_buffer_ptr->r = 0xffff;

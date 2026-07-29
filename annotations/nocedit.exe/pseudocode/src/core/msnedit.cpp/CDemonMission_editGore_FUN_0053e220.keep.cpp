@@ -54,7 +54,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   this_ptr->current_camera_index = 0;
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(g_CDemonSetPtr,this_ptr->current_camera_index);
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -94,7 +94,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,&actor_00->base,0)
     ;
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     pCVar2 = g_CDemonSetPtr;
     if (this_ptr->full_light_in_editor == 0) {
       g_CDemonCameraInstance.corona_blend_factor = iVar2;

@@ -15,7 +15,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CE
   local_10.x = (int)ROUND(world_point->x * 256.0f);
   local_10.y = (int)ROUND(world_point->y * 256.0f);
   local_10.z = (int)ROUND(world_point->z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(local_40,&local_10);
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c(local_40,&local_10);
   if ((local_40[0].screen_x & 0x80000000U) != 0) {
     return;
   }

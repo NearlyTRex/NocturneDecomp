@@ -976,7 +976,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     (pCVar6->light_direction).y = -0x4844;
     (pCVar6->light_direction).z = 0x4844;
     pCVar6->ambient_base_quick = 32000;
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     iVar9 = g_WindowWidth / 2 + -0x28;
     if (this_ptr->frame_count < 1) {
       engine_2d_c_drawText_FUN_00401fd0("(No model)",iVar9,g_WindowHeight / 2);

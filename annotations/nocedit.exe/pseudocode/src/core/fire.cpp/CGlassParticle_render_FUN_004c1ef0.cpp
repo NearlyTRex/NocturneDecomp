@@ -22,17 +22,17 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   local_28.x = (int)ROUND((this_ptr->triangle_delta).vertices[0].x * 256.0f);
   local_28.y = (int)ROUND((this_ptr->triangle_delta).vertices[0].y * 256.0f);
   local_28.z = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_28);
   local_1c.x = (int)ROUND((this_ptr->triangle_delta).vertices[1].x * 256.0f);
   local_1c.y = (int)ROUND((this_ptr->triangle_delta).vertices[1].y * 256.0f);
   local_1c.z = (int)ROUND((this_ptr->triangle_delta).vertices[1].z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_1c);
   local_34.x = (int)ROUND((this_ptr->triangle_delta).vertices[2].x * 256.0f);
   local_34.y = (int)ROUND((this_ptr->triangle_delta).vertices[2].y * 256.0f);
   local_34.z = (int)ROUND((this_ptr->triangle_delta).vertices[2].z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&this_ptr->texture);

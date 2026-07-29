@@ -1,0 +1,220 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    engine_special.cpp_renderScanlineSwapped_FUN_005b5716
+# Entry:       005b5716
+# Signature:   void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_005b5716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@005b5716 [ESP:-4](-4)  # PUSH EBP
+COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@005b5717 [ESP:-4]  # MOV EBP, ESP
+COPY (register,0x14,4) /* EBP */ = (register,0x10,4) /* ESP */
+
+@005b5719 [ESP:-8](-4)  # PUSH ESI
+COPY (unique,0x41500,4) = (register,0x18,4) /* ESI */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@005b571a [ESP:-12](-4)  # PUSH EDI
+COPY (unique,0x41500,4) = (register,0x1c,4) /* EDI */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@005b571b [ESP:-12]  # NOP
+# (no p-code)
+
+@005b571c [ESP:-12]  # NOP
+# (no p-code)
+
+@005b571d [ESP:-12]  # NOP
+# (no p-code)
+
+@005b571e [ESP:-12]  # NOP
+# (no p-code)
+
+@005b571f [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5720 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5721 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5722 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5723 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5724 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5725 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5726 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5727 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5728 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5729 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572a [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572b [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572c [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572d [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572e [ESP:-12]  # NOP
+# (no p-code)
+
+@005b572f [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5730 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5731 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5732 [ESP:-12]  # MOV EBX, dword ptr [EBP + 0x8]
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x17200,4)
+
+@005b5735 [ESP:-12]  # MOV ESI, dword ptr [EBP + 0xc]
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xc,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x18,4) /* ESI */ = (unique,0x17200,4)
+
+@005b5738 [ESP:-12]  # MOV EDI, dword ptr [EBP + 0x10]
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x10,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x1c,4) /* EDI */ = (unique,0x17200,4)
+
+@005b573b [ESP:-12](-4)  # CALL dword ptr [0x02d0257c]
+COPY (unique,0x63500,4) = (ram,0x2d0257c,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5b5741,4)
+CALLIND (unique,0x63500,4)
+
+@005b5741 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5742 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5743 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5744 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5745 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5746 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5747 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5748 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5749 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574a [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574b [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574c [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574d [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574e [ESP:-12]  # NOP
+# (no p-code)
+
+@005b574f [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5750 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5751 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5752 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5753 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5754 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5755 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5756 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5757 [ESP:-12]  # NOP
+# (no p-code)
+
+@005b5758 [ESP:-8](+4)  # POP EDI
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0x1c,4) /* EDI */ = (unique,0x87300,4)
+
+@005b5759 [ESP:-4](+4)  # POP ESI
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0x18,4) /* ESI */ = (unique,0x87300,4)
+
+@005b575a [ESP:+0](+4)  # LEAVE
+COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
+LOAD (register,0x14,4) /* EBP */ = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+
+@005b575b [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 58 instructions, 37 P-code ops
+# ============================================================================

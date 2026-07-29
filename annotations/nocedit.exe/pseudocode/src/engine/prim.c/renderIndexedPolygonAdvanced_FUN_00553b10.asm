@@ -42,8 +42,8 @@
 ;   engine_prim.c_normalizeTextureCoords_FUN_00552020
 ;   engine_prim.c_prepareDepthBuffer_FUN_00551fb0
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     PUSH EDX                            ; 00553bca
     LEA EAX,[ESP + 0x8]                 ; 00553bcb
     PUSH EAX                            ; 00553bcf
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 00553bd0
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 00553bd0
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00553bd5
     MOV EAX,dword ptr [ESP + 0x70]      ; 00553bd8
     MOV ECX,dword ptr [0x030e56b8]      ; 00553bdc | g_RenderedTriangleCount
@@ -449,8 +449,8 @@ section .text
         ;   Label: LAB_00553f0a
     MOV EBX,dword ptr [ESP + 0x50]      ; 00553f0e
     MOV EDI,EBP                         ; 00553f12
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00553f14
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 00553f14
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [ESP + 0x54]      ; 00553f19
     MOV EDX,dword ptr [ESP + 0x54]      ; 00553f1d
     MOV EAX,dword ptr [EAX + 0xc]       ; 00553f21

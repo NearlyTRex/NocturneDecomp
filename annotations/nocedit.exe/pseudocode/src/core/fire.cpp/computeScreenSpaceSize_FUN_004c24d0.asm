@@ -26,7 +26,7 @@
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH EAX                            ; 004c2516
     MOV EAX,dword ptr [EDX]             ; 004c2517 | g_CDemonRendererInstance
     PUSH EAX                            ; 004c2519
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004c251a
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004c251a
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 004c251f | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 004c2524 | g_CDemonRendererInstance
     FILD dword ptr [EAX + 0x8]          ; 004c2526

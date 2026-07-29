@@ -58,7 +58,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
       iVar3 = _stricmp(str1,"s3d");
       if (iVar3 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",911);
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("Can't decide how to process file based on extension!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
@@ -76,7 +76,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     return;
   }
   _sprintf(local_d8,"Can't open %s",local_3d8);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_d8,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);

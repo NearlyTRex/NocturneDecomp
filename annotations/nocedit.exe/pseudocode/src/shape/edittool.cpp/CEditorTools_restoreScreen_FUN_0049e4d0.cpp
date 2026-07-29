@@ -29,7 +29,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
         iVar4 = iVar1;
       } while (iVar1 < g_WindowHeight * 4);
     }
-    wincore_windll_cpp_lockFrame_FUN_005b7210();
+    engine_special_cpp_lockFrame_FUN_005b7210();
     iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
     uVar2 = (int)((g_WindowWidth * g_BitsPerPixel + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
     iVar4 = 0;
@@ -52,7 +52,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
         iVar1 = iVar1 + 4;
       } while (iVar4 < g_WindowHeight);
     }
-    wincore_windll_cpp_unlockFrame_FUN_005b7250(1);
+    engine_special_cpp_unlockFrame_FUN_005b7250(1);
   }
   return;
 }

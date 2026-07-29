@@ -35,7 +35,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   g_CDemonLightInstance.volumetric_enabled = 0;
   g_CDemonRaytraceInstance.rendering_mode = 1;
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demon(R) Set Editor(TM)",0,0);
     engine_2d_c_drawText_FUN_00401fd0("1.  Load set",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2.  Save set",0,0x21);

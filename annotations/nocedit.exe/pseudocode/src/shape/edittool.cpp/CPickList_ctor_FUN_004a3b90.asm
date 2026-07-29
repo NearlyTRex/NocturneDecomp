@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_OK_006239eb
 ;   TerminatedCString s_Cancel_006239ee
-;   CStrList_vtable g_CPickListVTable
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0

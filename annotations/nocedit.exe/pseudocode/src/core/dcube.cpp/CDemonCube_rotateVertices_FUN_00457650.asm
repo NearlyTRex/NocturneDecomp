@@ -50,7 +50,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[EBP + -0x38]               ; 004576e7
     PUSH EAX                            ; 004576ea
     PUSH EDI                            ; 004576eb
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004576ec
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004576ec
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV DH,byte ptr [EDI + 0x13]        ; 004576f1
     ADD ESP,0x8                         ; 004576f4
     TEST DH,0x80                        ; 004576f7

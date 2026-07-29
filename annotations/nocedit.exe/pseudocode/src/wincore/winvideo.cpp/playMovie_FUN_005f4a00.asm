@@ -39,6 +39,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   GetClientRect
 ;   mciGetErrorStringA
 ;   mciSendStringA
@@ -50,7 +51,6 @@
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   Sleep
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005f4a6c
     LEA ESI,[ESP + 0x190]               ; 005f4a6f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005f4a76
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005f4a76
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005f4a7b
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EDI,dword ptr [0x03f99504]      ; 005f4a80 | g_MoviePlaying
@@ -391,8 +391,8 @@ section .text
     CALL wincore_winvideo.cpp_closeMovie_FUN_005f46b0 ; 005f4d99
         ;   XREF to: 005f46b0 (UNCONDITIONAL_CALL)  ; void wincore_winvideo.cpp_closeMovie_FUN_005f46b0(HWND window_handle)
     ADD ESP,0x4                         ; 005f4d9e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005f4da1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005f4da1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005f4da6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005f4dab

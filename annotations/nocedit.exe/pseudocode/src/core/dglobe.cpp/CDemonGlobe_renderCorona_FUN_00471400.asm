@@ -44,7 +44,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -135,8 +135,8 @@ section .text
     ADD EAX,EDI                         ; 004714fc
     PUSH EAX                            ; 004714fe
     ADD ESI,0xc                         ; 004714ff
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00471502
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00471502
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD EDI,0x30                        ; 00471507
     ADD ESP,0x8                         ; 0047150a
     CMP ESI,0x2e8                       ; 0047150d

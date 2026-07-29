@@ -69,7 +69,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
     iVar8 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&iStack_c,0xfa,0)
     ;
     if (iStack_8 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar8) {
@@ -129,7 +129,7 @@ LAB_005131d5:
         (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L), iVar8 != 0)))) {
 #if NOCTURNE_AUTHENTIC_D3D_OPTIONS
       if (g_UseDirect3D != 0) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
         engine_2d_c_drawText_FUN_00401fd0("Press any key to continue...",0,0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

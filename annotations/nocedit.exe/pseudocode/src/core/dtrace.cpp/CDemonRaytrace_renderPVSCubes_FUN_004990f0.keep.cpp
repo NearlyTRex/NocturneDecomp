@@ -18,7 +18,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0(CDemonRa
               (g_CDemonRendererPtr1,&g_PVSCubePositions[iVar1]);
     core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650
               (g_PVSCubePointers[iVar1],0);
-    wincore_windll_cpp_sync_FUN_005b7bc0();
+    engine_special_cpp_sync_FUN_005b7bc0();
   }
   return;
 }

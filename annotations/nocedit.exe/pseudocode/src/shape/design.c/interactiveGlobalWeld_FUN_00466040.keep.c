@@ -17,7 +17,7 @@ void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
   int local_1c;
   int local_18;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter weld point : ");
   if (local_70[0] != '\0') {
     uVar1 = atoi(local_70);

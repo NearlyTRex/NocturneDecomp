@@ -79,7 +79,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   byte bVar22;
   
   bVar22 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   local_78 = core_setedit_cpp_promptYesNo_FUN_00578c90(0,"Import geometry",1);
   if ((((local_78 < 0) ||
        (iVar1 = core_setedit_cpp_promptYesNo_FUN_00578c90(0xb,"Import omni lights",1),

@@ -30,8 +30,8 @@
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_2d.c_resetGraphicsSystem_FUN_00402a70
+;   engine_special.cpp_selectCard_FUN_005b7d90
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
-;   wincore_windll.cpp_selectCard_FUN_005b7d90
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     RET                                 ; 004dae97
     PUSH EDX                            ; 004dae98
         ;   Label: LAB_004dae98
-    CALL wincore_windll.cpp_selectCard_FUN_005b7d90 ; 004dae99
-        ;   XREF to: 005b7d90 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectCard_FUN_005b7d90(int card_index)
+    CALL engine_special.cpp_selectCard_FUN_005b7d90 ; 004dae99
+        ;   XREF to: 005b7d90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_005b7d90(int card_index)
     ADD ESP,0x4                         ; 004dae9e
     JMP 0x004dadf6                      ; 004daea1
         ;   XREF to: 004dadf6 (UNCONDITIONAL_JUMP)  ; LAB_004dadf6

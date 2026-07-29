@@ -49,7 +49,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_64.z = (int)ROUND((fVar3 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_64);
       fVar4 = (float)(grid_x + 1);
       local_7c.x = (int)ROUND((fVar4 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -58,7 +58,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_7c.z = (int)ROUND((fVar3 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_7c);
       fVar5 = (float)(grid_z + 1);
       local_40.x = (int)ROUND((fVar4 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -67,7 +67,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_40.z = (int)ROUND((fVar5 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_40);
       local_58.x = (int)ROUND((fVar1 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
@@ -75,7 +75,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_58.z = (int)ROUND((fVar5 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[3].projected_vertex,&local_58);
       fVar2 = (float)(grid_y + 1);
       local_a0.x = (int)ROUND((fVar1 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -84,7 +84,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_a0.z = (int)ROUND((fVar3 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[4].projected_vertex,&local_a0);
       local_94.x = (int)ROUND((fVar4 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
@@ -92,7 +92,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_94.z = (int)ROUND((fVar3 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[5].projected_vertex,&local_94);
       local_70.x = (int)ROUND((fVar4 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
@@ -100,7 +100,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_70.z = (int)ROUND((fVar5 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[6].projected_vertex,&local_70);
       local_88.x = (int)ROUND((fVar1 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
@@ -108,7 +108,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                               256.0f);
       local_88.z = (int)ROUND((fVar5 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[7].projected_vertex,&local_88);
       uVar1 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
               g_RenderVertexBuffer[1].projected_vertex.screen_x &

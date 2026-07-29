@@ -196,7 +196,7 @@ LAB_00483cc8:
             }
           }
           local_74[0] = (SRenderVertex *)0x483ceb;
-          wincore_windll_cpp_renderScanline_FUN_005b5710
+          engine_special_cpp_renderScanline_FUN_005b5710
                     (local_18,local_14,scanline_y);
           if (g_RenderAbortFlag != 0) {
             return;
@@ -220,7 +220,7 @@ LAB_00483cc8:
         iVar7 = iVar7 + 1;
       } while (iVar7 < vertex_count);
     }
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_74,vertex_count,g_RenderStateFlags.dword);
+    engine_special_cpp_drawPolygon2_FUN_005b7610(local_74,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

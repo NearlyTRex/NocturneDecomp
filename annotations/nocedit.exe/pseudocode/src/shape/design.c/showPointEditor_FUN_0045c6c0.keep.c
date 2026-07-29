@@ -18,10 +18,10 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
   g_ZoomLevel = 0x10000;
   wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0();
   g_PointEditorMode = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     shape_design_c_setupViewMatrix_FUN_0045ba60();
     wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     if (g_KeyboardState[0x17] != '\0') {

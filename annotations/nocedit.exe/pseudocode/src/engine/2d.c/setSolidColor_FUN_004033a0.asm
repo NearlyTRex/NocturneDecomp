@@ -20,7 +20,7 @@
 ;   int g_SolidBlueComponent
 ;
 ; Called Functions:
-;   wincore_windll.cpp_setFogColor_FUN_005b7b80
+;   engine_special.cpp_setFogColor_FUN_005b7b80
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_00403415
     PUSH EBX                            ; 00403416
     PUSH EAX                            ; 00403417
-    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 00403418
-        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
+    CALL engine_special.cpp_setFogColor_FUN_005b7b80 ; 00403418
+        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
     ADD ESP,0xc                         ; 0040341d
     POP ESI                             ; 00403420
     POP EBX                             ; 00403421

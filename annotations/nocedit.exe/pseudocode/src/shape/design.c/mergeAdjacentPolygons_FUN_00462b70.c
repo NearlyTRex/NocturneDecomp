@@ -46,7 +46,7 @@ void __cdecl shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_inde
         local_3c[local_3c[3]] = g_ModelPolygonData[polygon1_index].vertex_indices[local_3c[4]];
         local_3c[3] = local_3c[3] + 1;
         if (2 < (int)local_3c[3]) {
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("ERROR: Polygons share more than 2 vertices!",0,0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -214,7 +214,7 @@ LAB_00462e72:
         g_PolygonCount = g_PolygonCount + -1;
       }
       else {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("ERROR: More than 3 vertices to delete!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         engine_2d_c_clearInputAndWait_FUN_00403260();

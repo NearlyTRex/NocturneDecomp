@@ -24,7 +24,7 @@ void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_pt
   
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&g_CDeformableModelInstanceInstance);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   iVar6 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4cc);
   if (0 < pCVar2->bone_count) {

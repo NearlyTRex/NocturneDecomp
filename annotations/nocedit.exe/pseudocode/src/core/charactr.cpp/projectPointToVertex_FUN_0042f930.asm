@@ -14,7 +14,7 @@
 ;   float FLOAT_0065b810 = 256
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 0042f973
     ADD EAX,EDX                         ; 0042f975
     PUSH EAX                            ; 0042f977
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0042f978
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0042f978
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0042f97d
     ADD ESP,0xc                         ; 0042f980
     POP EBX                             ; 0042f983

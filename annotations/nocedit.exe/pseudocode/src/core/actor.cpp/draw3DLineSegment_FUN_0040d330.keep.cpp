@@ -29,13 +29,13 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_poin
   local_54.x = (int)ROUND(start_point->x * 256.0f);
   local_54.y = (int)ROUND(start_point->y * 256.0f);
   local_54.z = (int)ROUND(start_point->z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_54);
 
   local_30.x = (int)ROUND((fVar4 + fVar1) * 256.0f);
   local_30.y = (int)ROUND((fVar5 + fVar2) * 256.0f);
   local_30.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_30);
 
   pSVar10 = g_CDemonRendererPtr1->vertex_buffer_ptr;

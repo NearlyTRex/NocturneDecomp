@@ -69,7 +69,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_60.x = (int)ROUND(256.0f * 0.0);
         local_60.y = (int)ROUND(local_6c.y * 256.0f);
         local_60.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
                   (g_CDemonSetPtr,&local_6c,&local_30,0);
@@ -83,7 +83,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_54.x = (int)ROUND(local_6c.x * 256.0f);
         local_54.y = (int)ROUND(local_6c.y * 256.0f);
         local_54.z = (int)ROUND(local_6c.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
                   (g_CDemonSetPtr,&local_6c,&local_30,1);
@@ -98,7 +98,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_48.x = (int)ROUND(local_6c.x * 256.0f);
         local_48.y = (int)ROUND(local_6c.y * 256.0f);
         local_48.z = (int)ROUND(local_6c.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_48);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
                   (g_CDemonSetPtr,&local_6c,&local_30,2);
@@ -112,7 +112,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_3c.x = (int)ROUND(256.0f * 0.0);
         local_3c.y = (int)ROUND(local_6c.y * 256.0f);
         local_3c.z = (int)ROUND(local_6c.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
                   (g_CDemonSetPtr,&local_6c,&local_30,3);

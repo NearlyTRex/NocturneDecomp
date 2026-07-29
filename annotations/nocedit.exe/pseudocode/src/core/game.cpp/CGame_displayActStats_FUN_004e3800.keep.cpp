@@ -34,7 +34,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_48);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_48,"stats",0x280,0x1e0);
   pcVar9 = local_548;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_48,0,0,0xffff);
   this_ptr->total_game_time = this_ptr->total_play_time + this_ptr->total_game_time;
   iVar8 = (int)ROUND(ROUND(this_ptr->total_play_time * (float)0.00027777777777777799));

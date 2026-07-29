@@ -49,9 +49,9 @@
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_plotPixel_FUN_00401140
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -150,8 +150,8 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00448017
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x30                        ; 0044801c
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0044801f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0044801f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00448024
     PUSH 0x0                            ; 00448026
     LEA EAX,[EBP + -0x76]               ; 00448028

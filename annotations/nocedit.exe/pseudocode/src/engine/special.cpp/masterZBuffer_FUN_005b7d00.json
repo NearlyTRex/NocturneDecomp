@@ -1,0 +1,103 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "0044cdf0",
+      "from_addr": "0044cf0f",
+      "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044cb80",
+      "from_addr": "0044cc55",
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b7d00",
+    "address_range": [
+      [
+        "005b7d00",
+        "005b7d1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_masterZBuffer_FUN_005b7d00",
+    "signature": "int __cdecl engine_special_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b90c",
+      "name": "g_APIDLL_masterZBuffer",
+      "type": "APIDLL_masterZBuffer*",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.111111111111111,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 46
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "z_buffer_mode",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

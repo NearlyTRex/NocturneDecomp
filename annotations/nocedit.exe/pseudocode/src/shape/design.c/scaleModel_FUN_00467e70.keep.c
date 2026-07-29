@@ -16,7 +16,7 @@ void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
   float fVar2;
 
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_68,0x14,0,0,"Enter in scale multiplier : ")
   ;
   if (local_68[0] != '\0') {

@@ -22,7 +22,7 @@ int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_004a4340(CPickLis
     }
     this_ptr->confirmed_flag = 0;
   }
-  iVar1 = (*((this_ptr->base).vtable)->handleInput)(&this_ptr->base);
+  iVar1 = (*(((this_ptr->base).vtable._up)->_up).handleInput)(this_ptr);
   if (iVar1 < 0) {
     return -1;
   }

@@ -7,8 +7,8 @@
 ; LPCSTR           Stack[0x4]:4   lpLibFileName
 ;
 ; XREF[2]:
-;   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ecf
-;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 at 005b678e
+;   engine_special.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ecf
+;   engine_special.cpp_loadExternalRenderer_FUN_005b6750 at 005b678e
 ;
 ; Referenced Globals:
 ;   LOAD_LIBRARY_A_FUNC* g_LoadLibraryAFunc = 0021205c

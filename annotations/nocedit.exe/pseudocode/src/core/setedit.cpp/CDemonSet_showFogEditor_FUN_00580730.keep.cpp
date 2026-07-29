@@ -33,7 +33,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
         pSVar9 = &this_ptr->cameras[this_ptr->selected_camera_index].fog;
       }
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Demented(R) Fog Editor",0,0);
       if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
         _sprintf(local_240,"1.  Fog settings for camera %s",
@@ -115,7 +115,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
             this_ptr->cameras[iVar5].fog = this_ptr->scene_fog;
           }
           else {
-            wincore_windll_cpp_clearScreen_FUN_005b3e70();
+            engine_special_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_getInputWithPrompt_FUN_004032c0
                       (local_140,0x1e,0,0,"Enter fog color r,g,b : ");
             if (local_140[0] != '\0') {
@@ -126,7 +126,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         }
       }
       else if (uVar8 < 0x34) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter fog velocity x,y,z : ");
         if (local_140[0] != '\0') {
@@ -135,7 +135,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         }
       }
       else if (uVar8 < 0x35) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter in fog taper : ");
         if (local_140[0] != '\0') {
@@ -144,7 +144,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         }
       }
       else if (uVar8 < 0x36) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter in fog density : ");
         if (local_140[0] != '\0') {
@@ -206,7 +206,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       }
     }
     else if (uVar8 < 0x55) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 (local_140,0x14,0,0,"Enter in temperature : ");
       if (local_140[0] != '\0') {

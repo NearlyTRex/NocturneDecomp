@@ -278,8 +278,8 @@ section .text
     CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0043ca73
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0043ca78
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0043ca7b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0043ca7b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,[0x00679398]                ; 0043ca80 | g_WindowHeight
     PUSH 0xf8                           ; 0043ca85
     DEC EAX                             ; 0043ca8a
@@ -292,8 +292,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0043ca97
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0043ca9c
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0043ca9f
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0043ca9f
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x838e40                       ; 0043caa4 | UNION_UVector3_00838e40
     MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043caaf | g_CDemonRendererInstance
@@ -415,8 +415,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0043cbc7 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 0043cbc9
     PUSH EAX                            ; 0043cbce
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043cbcf
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0043cbcf
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0043cbd4
     PUSH 0x4e1f                         ; 0043cbd7
     CALL core_cloth.cpp_drawVertexMarker_FUN_0043c6e0 ; 0043cbdc

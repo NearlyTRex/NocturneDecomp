@@ -56,14 +56,14 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr)
         CStack_48.y = (int)ROUND(fStack_5c * 256.0f);
         CStack_48.z = (int)ROUND(fStack_58 * 256.0f);
         iStack_14 = iVar1;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_48);
         fStack_5c = this_ptr->max_height;
         CStack_30.x = (int)ROUND(fStack_60 * 256.0f);
         CStack_30.y = (int)ROUND(fStack_5c * 256.0f);
         CStack_30.z = (int)ROUND(fStack_58 * 256.0f);
         iVar1 = iVar1 + 0xc;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_30);
         fVar2 = (float10)iVar1 * (float10)0.005555556f * (float10)3.1415926535000001;
         fStack_1c = (float)fVar2;
@@ -76,13 +76,13 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr)
         CStack_54.y = (int)ROUND(fStack_5c * 256.0f);
         CStack_54.z = (int)ROUND(fStack_58 * 256.0f);
         iStack_14 = iVar1;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_54);
         fStack_5c = this_ptr->max_height;
         CStack_3c.x = (int)ROUND(fStack_60 * 256.0f);
         CStack_3c.y = (int)ROUND(fStack_5c * 256.0f);
         CStack_3c.z = (int)ROUND(fStack_58 * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_3c);
         engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,0,1);
         engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,2,3);

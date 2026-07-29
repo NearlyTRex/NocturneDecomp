@@ -31,7 +31,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     PUSH EBP                            ; 00469693
     MOV EBP,ESP                         ; 00469694
     SUB ESP,0x8c                        ; 00469696
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046969c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046969c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61cf96                    ; 004696a1 | = "Enter # of vertices to use : "
     PUSH ECX                            ; 004696a6 | = "Enter # of vertices to use : "
     PUSH 0x0                            ; 004696a7

@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -200,8 +200,8 @@ section .text
     FSTP float ptr [EAX + 0x1626410]    ; 00466c31 | g_LoadedVertices[0].vertex.y
     JMP 0x00466c07                      ; 00466c37
         ;   XREF to: 00466c07 (UNCONDITIONAL_JUMP)  ; LAB_00466c07
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00466c39
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00466c39
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00466c39
     PUSH 0x0                            ; 00466c3e
     PUSH 0x0                            ; 00466c40

@@ -15,7 +15,7 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void)
   
   if (g_RenderFaceCount != 0) {
     if (g_UseExternalRenderer != 0) {
-      wincore_windll_cpp_drawPolyList_FUN_005b7640
+      engine_special_cpp_drawPolyList_FUN_005b7640
                 (g_RenderVertexBuffer,(SMRGLPrimitiveTriangle **)g_RenderFaceArray,g_RenderFaceCount
                  ,0xcd);
       g_RenderFaceCount = 0;

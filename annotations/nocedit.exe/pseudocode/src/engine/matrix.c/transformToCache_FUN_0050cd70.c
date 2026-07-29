@@ -9,7 +9,7 @@
 void __cdecl engine_matrix_c_transformToCache_FUN_0050cd70(int cacheIndex,CVector3i *inputPoint)
 
 {
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_RenderVertexBuffer[cacheIndex].projected_vertex,inputPoint);
   return;
 }

@@ -54,7 +54,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
   pCVar5 = this_ptr->lights + light_index;
   pacVar1 = pCVar5->filter_names;
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     _sprintf(local_154,"Current light : %s");
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0);
     _sprintf(local_154,"A.  On time : %f",(double)pCVar5->on_time);

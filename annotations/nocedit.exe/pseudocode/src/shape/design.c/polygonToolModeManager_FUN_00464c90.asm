@@ -36,6 +36,8 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawTextColor_FUN_00402430
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_unlockFrame_FUN_005b7250
 ;   shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
 ;   shape_design.c_detectMouseButtonClick_FUN_00464870
 ;   shape_design.c_duplicateSharedVertices_FUN_00465d50
@@ -46,8 +48,6 @@
 ;   shape_design.c_weldNearbyVertices_FUN_00465c50
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
-;   wincore_windll.cpp_lockFrame_FUN_005b7210
-;   wincore_windll.cpp_unlockFrame_FUN_005b7250
 ;
 ; *****************************************************************************
 
@@ -234,8 +234,8 @@ section .text
     JZ 0x00464e8b                       ; 00464e7a
         ;   XREF to: 00464e8b (CONDITIONAL_JUMP)  ; LAB_00464e8b
     PUSH 0x0                            ; 00464e7c
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00464e7e
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 00464e7e
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00464e83
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 00464e86
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()
@@ -314,8 +314,8 @@ section .text
         ;   XREF to: 00464f58 (CONDITIONAL_JUMP)  ; LAB_00464f58
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580 ; 00464f4e
         ;   XREF to: 005ed580 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580()
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 00464f53
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 00464f53
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     MOV ESI,0x61c3e3                    ; 00464f58 | = "Mouse polygon selection on"
         ;   Label: LAB_00464f58
     LEA EDI,[EBP + 0xffffff58]          ; 00464f5d

@@ -34,19 +34,19 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int
                                 (double)grid_y *
                                 (double)(g_CDemonRaytraceInstance.adjusted_size.y * 256.0f))
                          );
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_30);
   local_30.x = (int)ROUND(ROUND((float)local_30.x + fVar1));
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_30);
   local_30.z = (int)ROUND(ROUND((float)local_30.z + fVar2));
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_30);
   local_30.x = (int)ROUND(ROUND((float)local_30.x - fVar1));
   iVar2 = red << 8;
   iVar3 = green << 8;
   iVar4 = blue << 8;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
   this_ptr = g_CDemonRendererPtr2;
   g_CDemonRendererPtr2->vertex_buffer_ptr->r = iVar2;

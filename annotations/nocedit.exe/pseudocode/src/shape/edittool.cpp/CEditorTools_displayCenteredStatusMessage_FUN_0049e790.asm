@@ -41,8 +41,8 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e7e0
     MOV dword ptr [ESP],EDI             ; 0049e7e3
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0049e7e6
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0049e7e6
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 0049e7eb
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049e7f0
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)

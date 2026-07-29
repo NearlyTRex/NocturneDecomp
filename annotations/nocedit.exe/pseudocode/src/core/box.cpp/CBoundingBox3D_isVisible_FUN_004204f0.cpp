@@ -47,7 +47,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
     local_44.x = (int)ROUND(local_14 * 256.0f);
     local_44.y = (int)ROUND(local_10 * 256.0f);
     local_44.z = (int)ROUND(local_c * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(local_74,&local_44);
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c(local_74,&local_44);
     local_20.x = local_20.x + local_14;
     local_20.y = local_20.y + local_10;
     local_20.z = local_20.z + local_c;

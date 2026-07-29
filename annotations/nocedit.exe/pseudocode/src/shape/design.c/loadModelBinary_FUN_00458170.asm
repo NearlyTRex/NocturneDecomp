@@ -74,11 +74,11 @@
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_getMRGLBounds_FUN_00528140
 ;   engine_model.c_loadModelFile_FUN_00527ec0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     CMP dword ptr [EBP + -0x28],0x0     ; 0045819e
     JNZ 0x004581f0                      ; 004581a2
         ;   XREF to: 004581f0 (CONDITIONAL_JUMP)  ; LAB_004581f0
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004581a4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004581a4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004581a9
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004581ae
@@ -539,8 +539,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00458686
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0045868b
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045868e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045868e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00458693
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EAX,dword ptr [EBP + -0x8]      ; 00458698
@@ -699,8 +699,8 @@ section .text
     ADD ESP,0xc                         ; 00458875
     CALL shape_design.c_calculateVertexNormals_FUN_0045be40 ; 00458878
         ;   XREF to: 0045be40 (UNCONDITIONAL_CALL)  ; void shape_design.c_calculateVertexNormals_FUN_0045be40()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045887d
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045887d
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458882
     PUSH EAX                            ; 00458885
     CALL engine_model.c_loadModelFile_FUN_00527ec0 ; 00458886

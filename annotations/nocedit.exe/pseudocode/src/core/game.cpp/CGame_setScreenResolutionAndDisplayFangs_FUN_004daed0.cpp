@@ -18,7 +18,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
   if (g_CDemonMissionPtr->is_in_editor == 0) {
     g_EditorFont = g_ThemeFont;
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_18,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_18,0,0,0x8000);

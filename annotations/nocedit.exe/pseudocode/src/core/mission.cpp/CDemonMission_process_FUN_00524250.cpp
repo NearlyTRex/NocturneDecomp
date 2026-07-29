@@ -38,7 +38,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
     (pCVar1->base).base.location.position.z = (this_ptr->pending_teleport).position.z;
     (pCVar1->base).base.location.area_id = (this_ptr->pending_teleport).area_id;
     if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Changing sets...",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Insert wipe here...",0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

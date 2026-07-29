@@ -981,8 +981,8 @@ section .text
     JZ 0x004dbad1                       ; 004dbab3
         ;   XREF to: 004dbad1 (CONDITIONAL_JUMP)  ; LAB_004dbad1
     PUSH EDI                            ; 004dbab5
-    CALL wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30 ; 004dbab6
-        ;   XREF to: 005b7c30 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
+    CALL engine_special.cpp_presentToExternalRenderer_FUN_005b7c30 ; 004dbab6
+        ;   XREF to: 005b7c30 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
     ADD ESP,0x4                         ; 004dbabb
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 004dbabe
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()

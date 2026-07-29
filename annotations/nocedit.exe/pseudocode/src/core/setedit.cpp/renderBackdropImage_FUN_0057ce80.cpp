@@ -75,8 +75,8 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
             (g_CDemonRendererPtr2,projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
             (g_CDemonRendererPtr2,&local_50);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   _sprintf(local_f0,"%s.raw",name);
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_f0,"wb");

@@ -124,7 +124,7 @@ LAB_00599106:
 LAB_00599119:
   strcpy(g_MeshLodIdentifier,"z:\\meshlod");
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Nocturne(R) Skeleton system editor menu",0,0);
     engine_2d_c_drawText_FUN_00401fd0("3.  View a deformable model in action!",0,0x2c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

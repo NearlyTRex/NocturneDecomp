@@ -109,7 +109,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",3187);
     }
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   coverage_map = (char *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",3201);
@@ -306,7 +306,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
         fullscreen = (uint)(fullscreen == 0);
         core_dcamera_cpp_CDemonCamera_init_FUN_0044c190
                   (&g_CDemonCameraInstance,fullscreen == 0 ? 0x1e0 : 0xf0);
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
       }
     }
   } while( true );

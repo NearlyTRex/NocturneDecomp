@@ -15,8 +15,8 @@
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:
-;   wincore_windll.cpp_lockFrame_FUN_005b7210
-;   wincore_windll.cpp_unlockFrame_FUN_005b7250
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_unlockFrame_FUN_005b7250
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     JL 0x0049e4f9                       ; 0049e508
         ;   XREF to: 0049e4f9 (CONDITIONAL_JUMP)  ; LAB_0049e4f9
     LEA EAX,[EAX]                       ; 0049e50a
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 0049e510
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 0049e510
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
         ;   Label: LAB_0049e510
     MOV EDX,dword ptr [0x00679394]      ; 0049e515 | g_WindowWidth
     MOV EBX,dword ptr [0x0067939c]      ; 0049e51b | g_BitsPerPixel
@@ -84,8 +84,8 @@ section .text
     POP EDI                             ; 0049e56c
     PUSH 0x1                            ; 0049e56d
         ;   Label: LAB_0049e56d
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 0049e56f
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 0049e56f
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 0049e574
     POP EBX                             ; 0049e577
     POP ESI                             ; 0049e578

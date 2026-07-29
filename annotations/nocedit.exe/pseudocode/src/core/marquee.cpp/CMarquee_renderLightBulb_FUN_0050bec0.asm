@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
-;   wincore_windll.cpp_transformPoint_FUN_005b5a25
+;   engine_special.cpp_transformPoint_FUN_005b5a25
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 0050bef9
     PUSH EAX                            ; 0050befd
     PUSH ESI                            ; 0050befe
-    CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 0050beff
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 0050beff
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 0050bf04 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV ESI,dword ptr [EAX]             ; 0050bf09 | g_CDemonRendererInstance
     JMP 0x03fc2f9c                      ; 0050bf0b

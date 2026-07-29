@@ -20,11 +20,11 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   wincore_windll.cpp_beginScene_FUN_005b7280
-;   wincore_windll.cpp_lockFrame_FUN_005b7210
-;   wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0
-;   wincore_windll.cpp_unlockFrame_FUN_005b7250
-;   wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10
+;   engine_special.cpp_beginScene_FUN_005b7280
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_lockHoldBuffer_FUN_005b7df0
+;   engine_special.cpp_unlockFrame_FUN_005b7250
+;   engine_special.cpp_unlockHoldBuffer_FUN_005b7e10
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     CMP dword ptr [0x00679398],0x1e0    ; 004511c2 | g_WindowHeight
     JG 0x00451201                       ; 004511cc
         ;   XREF to: 00451201 (CONDITIONAL_JUMP)  ; LAB_00451201
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004511ce
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 004511ce
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     MOV ESI,dword ptr [ESP + 0xc]       ; 004511d3
         ;   Label: LAB_004511d3
     PUSH ESI                            ; 004511d7
@@ -48,8 +48,8 @@ section .text
     CMP EDI,0x1e0                       ; 004511e6
     JLE 0x00451231                      ; 004511ec
         ;   XREF to: 00451231 (CONDITIONAL_JUMP)  ; LAB_00451231
-    CALL wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10 ; 004511ee
-        ;   XREF to: 005b7e10 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10()
+    CALL engine_special.cpp_unlockHoldBuffer_FUN_005b7e10 ; 004511ee
+        ;   XREF to: 005b7e10 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockHoldBuffer_FUN_005b7e10()
     CMP dword ptr [0x03f6b878],0x0      ; 004511f3 | g_UseDirect3D
     JNZ 0x00451247                      ; 004511fa
         ;   XREF to: 00451247 (CONDITIONAL_JUMP)  ; LAB_00451247
@@ -57,8 +57,8 @@ section .text
     POP ESI                             ; 004511fd
     MOV EAX,EAX                         ; 004511fe
     RET                                 ; 00451200
-    CALL wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0 ; 00451201
-        ;   XREF to: 005b7df0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0()
+    CALL engine_special.cpp_lockHoldBuffer_FUN_005b7df0 ; 00451201
+        ;   XREF to: 005b7df0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockHoldBuffer_FUN_005b7df0()
         ;   Label: LAB_00451201
     TEST EAX,EAX                        ; 00451206
     JNZ 0x004511d3                      ; 00451208
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 004511d3 (UNCONDITIONAL_JUMP)  ; LAB_004511d3
     PUSH 0x0                            ; 00451231
         ;   Label: LAB_00451231
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00451233
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 00451233
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00451238
     CMP dword ptr [0x03f6b878],0x0      ; 0045123b | g_UseDirect3D
     JNZ 0x00451247                      ; 00451242
@@ -86,8 +86,8 @@ section .text
     POP EDI                             ; 00451244
     POP ESI                             ; 00451245
     RET                                 ; 00451246
-    CALL wincore_windll.cpp_beginScene_FUN_005b7280 ; 00451247
-        ;   XREF to: 005b7280 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_beginScene_FUN_005b7280()
+    CALL engine_special.cpp_beginScene_FUN_005b7280 ; 00451247
+        ;   XREF to: 005b7280 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_beginScene_FUN_005b7280()
         ;   Label: LAB_00451247
     POP EDI                             ; 0045124c
     POP ESI                             ; 0045124d

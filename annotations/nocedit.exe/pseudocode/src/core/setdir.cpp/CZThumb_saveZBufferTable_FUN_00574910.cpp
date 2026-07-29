@@ -62,7 +62,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
   core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(this_ptr);
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
             (g_CDemonRendererPtr2,&g_VDTempVector);
-  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+  engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00574ef0(this_ptr);
   iVar1 = this_ptr->height;

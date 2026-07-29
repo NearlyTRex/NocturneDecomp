@@ -1,0 +1,20 @@
+// Name: engine_special.cpp_unlockFrameX_FUN_005b7f40
+// Address: 005b7f40
+// Address Range: [[005b7f40, 005b7f65]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_special_cpp_unlockFrameX_FUN_005b7f40(void)
+
+#include "nocturne.h"
+
+int __cdecl engine_special_cpp_unlockFrameX_FUN_005b7f40(void)
+
+{
+  int iVar1;
+  
+  if ((g_APIDLL_unlockFrameX != (APIDLL_unlockFrameX *)0x0) &&
+     (iVar1 = (*g_APIDLL_unlockFrameX)(), iVar1 != 0)) {
+    g_BitsPerPixel = g_SavedBitsPerPixel;
+    return 1;
+  }
+  return 0;
+}

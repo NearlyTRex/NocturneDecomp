@@ -19,7 +19,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
   int local_14;
   
   local_14 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   this_ptr->model_count = g_PartsCount;
   for (local_1c = 0; (int)local_1c < this_ptr->model_count; local_1c = local_1c + 1) {
     pCVar1 = (CDSEModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
@@ -36,7 +36,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_14 = local_14 + 0xb;
     if (g_WindowHeight + -0xb < local_14) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       local_14 = 0;
     }
   }
@@ -55,7 +55,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_14 = local_14 + 0xb;
     if (g_WindowHeight + -0xb < local_14) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       local_14 = 0;
     }
     shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(this_ptr->models[local_1c]);
@@ -76,7 +76,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         local_14 = local_14 + 0xb;
         if (g_WindowHeight + -0xb < local_14) {
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
           local_14 = 0;
         }
         shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(this_ptr->models[local_1c]);

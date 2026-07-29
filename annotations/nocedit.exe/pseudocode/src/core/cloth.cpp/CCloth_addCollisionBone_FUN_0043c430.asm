@@ -29,12 +29,12 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0x4                         ; 0043c44d
     MOV EBP,EAX                         ; 0043c450
     MOV ESI,EAX                         ; 0043c452
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0043c454
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0043c454
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,ESP                         ; 0043c459
     PUSH EAX                            ; 0043c45b
     XOR EDI,EDI                         ; 0043c45c

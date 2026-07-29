@@ -18,8 +18,8 @@
 ;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 00554882
     MOV ESI,dword ptr [ESP + 0x10]      ; 00554883
     XOR EDI,EDI                         ; 00554887
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00554889
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00554889
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00554889
     PUSH EDI                            ; 0055488e
     PUSH EDI                            ; 0055488f

@@ -30,7 +30,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
       local_30.x = (int)ROUND((float)g_CoronaVertexPositions[iVar1].x * fVar1 * 256.0f);
       local_30.y = (int)ROUND((float)g_CoronaVertexPositions[iVar1].y * fVar1 * 256.0f);
       local_30.z = (int)ROUND((float)g_CoronaVertexPositions[iVar1].z * fVar1 * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[iVar1].projected_vertex,&local_30);
     }
     for (iVar1 = 0; iVar1 < 84; iVar1 = iVar1 + 1) {

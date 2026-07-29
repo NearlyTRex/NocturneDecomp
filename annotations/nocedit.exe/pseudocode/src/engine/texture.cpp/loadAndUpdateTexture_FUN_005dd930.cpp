@@ -10,6 +10,6 @@ void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBa
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);
-  wincore_windll_cpp_updateTexture_FUN_005b7380(texture,palette);
+  engine_special_cpp_updateTexture_FUN_005b7380(texture,palette);
   return;
 }

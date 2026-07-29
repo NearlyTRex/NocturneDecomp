@@ -23,7 +23,7 @@
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 ;   core_xform.cpp_getTranslation_FUN_005f6110
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0059b873 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 0059b875
     PUSH EAX                            ; 0059b87a
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0059b87b
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0059b87b
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 0059b880 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0059b885 | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 0059b887

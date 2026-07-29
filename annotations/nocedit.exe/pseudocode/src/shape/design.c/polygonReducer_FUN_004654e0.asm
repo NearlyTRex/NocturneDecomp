@@ -16,9 +16,9 @@
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_configureFullPassPolygonReduction_FUN_00465810
 ;   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EBP                            ; 004654e3
     MOV EBP,ESP                         ; 004654e4
     SUB ESP,0x54                        ; 004654e6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004654ec
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004654ec
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,0x61c4d9                    ; 004654f1 | = "Enter 1 for full pass or 2 for single..."
     PUSH EAX                            ; 004654f6 | = "Enter 1 for full pass or 2 for single..."
     PUSH 0x0                            ; 004654f7

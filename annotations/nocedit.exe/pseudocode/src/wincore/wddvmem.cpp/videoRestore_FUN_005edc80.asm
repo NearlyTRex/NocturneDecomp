@@ -28,9 +28,9 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ddraw.c_DirectDrawCreate
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005b7460
 ;   SetFocus
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
-;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH ECX                            ; 005edcaa
     MOV EBX,dword ptr [0x00679394]      ; 005edcab | g_WindowWidth
     PUSH EBX                            ; 005edcb1
-    CALL wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460 ; 005edcb2
-        ;   XREF to: 005b7460 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460(int width, int height, int bits_per_pixel)
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_005b7460 ; 005edcb2
+        ;   XREF to: 005b7460 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005b7460(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005edcb7
     TEST EAX,EAX                        ; 005edcba
     JNZ 0x005edd61                      ; 005edcbc

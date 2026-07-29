@@ -41,10 +41,10 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     MOV byte ptr [ESP],AH               ; 0043de0a
     LEA EAX,[EBP + 0x3ce88]             ; 0043de0d
     MOV dword ptr [ESP + 0x264],EAX     ; 0043de13
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0043de1a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0043de1a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0043de1a
     PUSH 0x0                            ; 0043de1f
     PUSH 0x0                            ; 0043de21

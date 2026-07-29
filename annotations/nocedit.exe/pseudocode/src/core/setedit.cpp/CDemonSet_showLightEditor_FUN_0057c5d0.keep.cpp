@@ -37,7 +37,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
   core_game_cpp_CGame_setGameRes_FUN_004dade0(g_CGamePtr);
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     local_24 = -1;
     if (0x1df < g_WindowHeight) {
       iVar5 = 0x120;

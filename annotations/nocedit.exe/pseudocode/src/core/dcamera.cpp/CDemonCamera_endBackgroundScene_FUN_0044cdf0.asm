@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_dstrender.cpp_memcpyMMX_FUN_00492001
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
-;   wincore_windll.cpp_masterZBuffer_FUN_005b7d00
+;   engine_special.cpp_masterZBuffer_FUN_005b7d00
 ;
 ; *****************************************************************************
 
@@ -130,8 +130,8 @@ section .text
     JZ 0x0044ce07                       ; 0044cf07
         ;   XREF to: 0044ce07 (CONDITIONAL_JUMP)  ; LAB_0044ce07
     PUSH 0x0                            ; 0044cf0d
-    CALL wincore_windll.cpp_masterZBuffer_FUN_005b7d00 ; 0044cf0f
-        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+    CALL engine_special.cpp_masterZBuffer_FUN_005b7d00 ; 0044cf0f
+        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
     ADD ESP,0x4                         ; 0044cf14
     POP EBP                             ; 0044cf17
     POP EDI                             ; 0044cf18

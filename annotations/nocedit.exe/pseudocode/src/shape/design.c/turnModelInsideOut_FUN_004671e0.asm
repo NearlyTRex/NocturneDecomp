@@ -18,10 +18,10 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_swapDWords_FUN_00462130
 ;   shape_design.c_swapFloats_FUN_00462160
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -132,8 +132,8 @@ section .text
     JMP 0x004671f5                      ; 00467322
         ;   XREF to: 004671f5 (UNCONDITIONAL_JUMP)  ; LAB_004671f5
         ;   Label: LAB_00467322
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00467327
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00467327
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00467327
     PUSH 0x0                            ; 0046732c
     PUSH 0x0                            ; 0046732e

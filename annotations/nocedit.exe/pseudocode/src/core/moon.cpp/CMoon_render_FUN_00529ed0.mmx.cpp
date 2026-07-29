@@ -15,8 +15,8 @@ __asm {
         sub ESP,0x4c
         mov ESI,dword ptr [EBP + 0x14]
         call sound_sndmain_cpp_processAudio_FUN_005abe20
-        call wincore_windll_cpp_clearScreen_FUN_005b3e70
-        call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
+        call engine_special_cpp_clearScreen_FUN_005b3e70
+        call engine_special_cpp_clearZBufferNative_FUN_005b3ed4
         push 0x3f87558
         mov EDX,dword ptr [g_CDemonRendererPtr2]
         push EDX

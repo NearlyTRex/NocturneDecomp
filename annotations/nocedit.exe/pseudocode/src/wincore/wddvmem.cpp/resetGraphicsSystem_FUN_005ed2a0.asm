@@ -28,10 +28,10 @@
 ; Called Functions:
 ;   crt_ddraw.c_DirectDrawCreate
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005b7460
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
-;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     CMP dword ptr [0x0067939c],0x10     ; 005ed2bd | g_BitsPerPixel
     JL 0x005ed411                       ; 005ed2c4
         ;   XREF to: 005ed411 (CONDITIONAL_JUMP)  ; LAB_005ed411
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005ed2ca
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005ed2ca
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_005ed2ca
     MOV EBP,dword ptr [0x03f9592c]      ; 005ed2cf | g_DirectDrawUnknown
     TEST EBP,EBP                        ; 005ed2d5
@@ -106,8 +106,8 @@ section .text
     PUSH EDX                            ; 005ed348
     MOV ECX,dword ptr [0x00679394]      ; 005ed349 | g_WindowWidth
     PUSH ECX                            ; 005ed34f
-    CALL wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460 ; 005ed350
-        ;   XREF to: 005b7460 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460(int width, int height, int bits_per_pixel)
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_005b7460 ; 005ed350
+        ;   XREF to: 005b7460 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005b7460(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005ed355
     TEST EAX,EAX                        ; 005ed358
     JNZ 0x005ed40c                      ; 005ed35a
@@ -193,8 +193,8 @@ section .text
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 ; 005ed421
         ;   XREF to: 005ecef0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005ed426
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005ed429
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005ed429
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 005ed42e
     PUSH 0x0                            ; 005ed430
     PUSH 0x6577da                       ; 005ed432 | = "You have hit a kludge in the program."

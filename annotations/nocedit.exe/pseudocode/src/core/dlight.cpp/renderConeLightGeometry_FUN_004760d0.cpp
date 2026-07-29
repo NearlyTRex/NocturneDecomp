@@ -84,22 +84,22 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
       local_84.x = (int)ROUND(fVar10 * (float)(fVar5 * fVar7) * 256.0f);
       local_84.y = (int)ROUND(fVar10 * (float)(fVar12 * fVar7) * 256.0f);
       local_84.z = (int)ROUND(fVar10 * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_84);
       local_78.x = (int)ROUND(fVar10 * (float)(fVar6 * fVar7) * 256.0f);
       local_78.y = (int)ROUND(fVar10 * (float)(fVar13 * fVar7) * 256.0f);
       local_78.z = (int)ROUND(fVar10 * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_78);
       local_6c.x = (int)ROUND(fVar8 * (float)(fVar6 * fVar7) * 256.0f);
       local_6c.y = (int)ROUND(fVar8 * (float)(fVar13 * fVar7) * 256.0f);
       local_6c.z = (int)ROUND(fVar8 * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_6c);
       local_60[0].x = (int)ROUND(fVar8 * (float)(fVar5 * fVar7) * 256.0f);
       local_60[0].y = (int)ROUND(fVar8 * (float)(fVar12 * fVar7) * 256.0f);
       local_60[0].z = (int)ROUND(fVar8 * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,local_60);
       this_ptr = g_CDemonRendererPtr2;
       g_CDemonRendererPtr2->vertex_buffer_ptr->a = iVar4;

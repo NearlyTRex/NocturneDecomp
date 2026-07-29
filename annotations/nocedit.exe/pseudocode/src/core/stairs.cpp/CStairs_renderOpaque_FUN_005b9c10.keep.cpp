@@ -51,17 +51,17 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_pt.x = (int)ROUND(fVar3 * 256.0f);
           local_pt.y = (int)ROUND(fVar1 * 256.0f);
           local_pt.z = (int)ROUND(fVar2 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar12 * 4].projected_vertex,&local_pt);
           local_pt.z = (int)ROUND((fVar2 + this_ptr->run) * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar12 * 4 + 1].projected_vertex,&local_pt);
           local_pt.x = (int)ROUND((fVar3 + this_ptr->width) * 256.0f);
           local_pt.z = (int)ROUND(fVar2 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar12 * 4 + 2].projected_vertex,&local_pt);
           local_pt.z = (int)ROUND((fVar2 + this_ptr->run) * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar12 * 4 + 3].projected_vertex,&local_pt);
           iVar12 = iVar12 + 1;
         } while (iVar12 <= this_ptr->stair_count);
@@ -136,19 +136,19 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
         local_tri_pt.x = (int)ROUND(tri->vertex1.x * 256.0f);
         local_tri_pt.y = (int)ROUND(tri->vertex1.y * 256.0f);
         local_tri_pt.z = (int)ROUND(tri->vertex1.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[0].projected_vertex,&local_tri_pt);
 
         local_tri_pt.x = (int)ROUND(tri->vertex2.x * 256.0f);
         local_tri_pt.y = (int)ROUND(tri->vertex2.y * 256.0f);
         local_tri_pt.z = (int)ROUND(tri->vertex2.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_tri_pt);
 
         local_tri_pt.x = (int)ROUND(tri->vertex3.x * 256.0f);
         local_tri_pt.y = (int)ROUND(tri->vertex3.y * 256.0f);
         local_tri_pt.z = (int)ROUND(tri->vertex3.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_tri_pt);
 
         for (i = 0; i < 3; i++) {

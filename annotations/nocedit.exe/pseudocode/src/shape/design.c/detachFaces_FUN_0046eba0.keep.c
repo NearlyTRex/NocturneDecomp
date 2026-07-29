@@ -26,7 +26,7 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
         g_LoadedVertices[iVar4] = g_LoadedVertices[local_1c];
       }
       g_VertexCount = g_VertexCount - iVar3;
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Faces detached.",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       return;
@@ -39,7 +39,7 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
       g_ModelPolygonData[local_20].vertex_indices[local_1c] = g_VertexCount - iVar3;
       g_VertexCount = g_VertexCount + 1;
       if (20000 < g_VertexCount) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("Ran out of verticies!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         engine_2d_c_clearInputAndWait_FUN_00403260();

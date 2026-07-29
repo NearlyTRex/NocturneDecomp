@@ -45,22 +45,22 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   g_RenderVertexBuffer[2].u = g_RenderVertexBuffer[1].u;
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_40);
   local_70.x = (int)ROUND(256.0f * 0.17);
   local_70.y = (int)ROUND(256.0f * -0.17);
   local_70.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_70);
   local_1c.x = (int)ROUND(256.0f * 0.17);
   local_1c.y = (int)ROUND(256.0f * 0.17);
   local_1c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1c);
   local_28.x = (int)ROUND(256.0f * -0.17);
   local_28.y = (int)ROUND(256.0f * 0.17);
   local_28.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     g_RenderVertexBuffer[0].g = 0xffff;

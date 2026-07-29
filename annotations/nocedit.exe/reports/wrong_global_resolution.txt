@@ -11,7 +11,7 @@ suspicious, since the reference list uses exact address resolution.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions checked: 6908
+  Functions checked: 6909
   Functions with suspicious globals: 75
   Total suspicious global references: 124
 
@@ -389,6 +389,14 @@ engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470  [.keep]  (1 suspici
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_special.cpp_loadExternalRenderer_FUN_005b6750  [.keep]  (1 suspicious globals)
+  File: engine/special.cpp
+
+  g_UseExternalRenderer
+    Used at lines: 390
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep]  (1 suspicious globals)
   File: shape/design.c
 
@@ -474,14 +482,6 @@ wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.keep]  (1 suspicious global
 
   g_TextureCacheInstance
     Used at lines: 18, 21, 22
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-wincore_windll.cpp_loadExternalRenderer_FUN_005b6750  [.keep]  (1 suspicious globals)
-  File: wincore/windll.cpp
-
-  g_UseExternalRenderer
-    Used at lines: 390
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

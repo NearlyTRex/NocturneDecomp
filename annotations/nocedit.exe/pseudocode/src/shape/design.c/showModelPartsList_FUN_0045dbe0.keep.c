@@ -17,7 +17,7 @@ void __cdecl shape_design_c_showModelPartsList_FUN_0045dbe0(void)
   
   engine_2d_c_clearInputAndWait_FUN_00403260();
   for (local_20 = 0; local_20 < g_PartsCount; local_20 = local_20 + g_WindowHeight / 0xb) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     local_1c = 0;
     for (local_18 = local_20; local_18 < g_WindowHeight / 0xb + local_20; local_18 = local_18 + 1) {
       if (local_18 < g_PartsCount) {

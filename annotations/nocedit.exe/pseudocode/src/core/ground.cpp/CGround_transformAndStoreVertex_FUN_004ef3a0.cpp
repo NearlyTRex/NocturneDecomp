@@ -23,7 +23,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGroun
                (int)this_ptr->terrain_data
                     [(row & this_ptr->height_minus_1) * this_ptr->width +
                      (column & this_ptr->width_minus_1)].height;
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[iVar1].projected_vertex,&local_1c);
   g_RenderVertexBuffer[iVar1].r = 0x3fff;
   g_RenderVertexBuffer[iVar1].g = 0x3fff;

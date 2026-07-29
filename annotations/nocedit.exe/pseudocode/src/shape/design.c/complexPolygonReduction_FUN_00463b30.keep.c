@@ -50,7 +50,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   }
   if (((int)g_ModelPolygonData[selected_polygon_index].vertex_indices_count < 3) ||
      (4 < (int)g_ModelPolygonData[selected_polygon_index].vertex_indices_count)) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("The wheel polygon reducer only handles polys with 3 or 4 sides.",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -121,7 +121,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
         break;
       }
       if ((local_1c < -1) || ((int)(uVar2 - 1) < local_1c)) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("Invalid polygon selected in wheel polygon reducer!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -131,7 +131,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
       }
     }
     if ((int)local_3c < 2) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Invalid polygon selected in wheel polygon reducer!",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -281,7 +281,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           shape_design_c_removeUnusedVertices_FUN_00463830();
         }
         else {
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("All polys on selected plane must form a convex polygon.",0,0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -290,7 +290,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
         }
       }
       else {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("Max points exceeded in wheel polygon reducer!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -299,7 +299,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
       }
     }
     else {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Invalid polygon selected in wheel polygon reducer!",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();

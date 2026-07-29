@@ -14,7 +14,7 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
   
   engine_2d_c_clearInputAndWait_FUN_00403260();
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Facet/Part Editor Keys",0,0);
     engine_2d_c_drawText_FUN_00401fd0("Move forward",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("Up arrow",0x78,0x16);
@@ -44,7 +44,7 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     if ((uVar1 & 0xff) == 0x1b) break;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Facet/Part Editor Keys",0,0);
     engine_2d_c_drawText_FUN_00401fd0("Load model",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("Ctrl + L",0x78,0x16);
@@ -89,7 +89,7 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     if ((uVar2 & 0xff) == 0x1b) break;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Facet/Part Editor Keys",0,0);
     engine_2d_c_drawText_FUN_00401fd0("Select polygon",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0(".   (Ctrl + . to reverse)",0x78,0x16);

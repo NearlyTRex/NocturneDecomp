@@ -7,7 +7,7 @@
 ; HMODULE          Stack[0x4]:4   hLibModule
 ;
 ; XREF[1]:
-;   wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 at 005b5e9b
+;   engine_special.cpp_shutdownExternalRenderer_FUN_005b5d20 at 005b5e9b
 ;
 ; Referenced Globals:
 ;   FREE_LIBRARY_FUNC* g_FreeLibraryFunc = 00211dd4

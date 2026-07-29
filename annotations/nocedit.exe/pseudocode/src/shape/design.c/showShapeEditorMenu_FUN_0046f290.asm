@@ -39,12 +39,12 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402930
 ;   engine_2d.c_loadPaletteFile_FUN_004015a0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401800
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_bisectMesh_FUN_0046ed50
 ;   shape_design.c_centerObject_FUN_00466610
 ;   shape_design.c_combineTextureMaps_FUN_00469ee0
 ;   shape_design.c_createCenterVertex_FUN_00469690
 ;   shape_design.c_createKeyframeModel_FUN_00468320
-;   shape_design.c_crushModel_FUN_00469bd0
 ;   ... and 29 more
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
     MOV dword ptr [0x016263f4],0xff     ; 0046f37f | g_EditorColorIndices[5]
     MOV dword ptr [0x016263f8],0x7      ; 0046f389 | g_EditorColorIndices[6]
     MOV dword ptr [0x016263fc],0x7      ; 0046f393 | g_EditorColorIndices[7]
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046f39d
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046f39d
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046f3a2
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0046f3a7
@@ -117,8 +117,8 @@ section .text
     MOV dword ptr [0x02dd3094],0xffff4b03 ; 0046f3ac | g_LightDirectionX2
     MOV dword ptr [0x02dd3098],0xffff4b03 ; 0046f3b6 | g_LightDirectionY2
     MOV dword ptr [0x02dd309c],0x0      ; 0046f3c0 | g_LightDirectionZ2
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046f3ca
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046f3ca
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046f3ca
     MOV EAX,0x61e10e                    ; 0046f3cf | = "12:03:47"
     PUSH EAX                            ; 0046f3d4 | = "12:03:47"

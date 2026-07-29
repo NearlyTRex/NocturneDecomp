@@ -22,11 +22,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *t
     this_ptr->scene_open_flag = 0;
   }
   if (g_UseDirect3D != 0) {
-    wincore_windll_cpp_endScene_FUN_005b72a0();
+    engine_special_cpp_endScene_FUN_005b72a0();
   }
   if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {
     if (g_UseExternalRenderer != 0) {
-      wincore_windll_cpp_masterZBuffer_FUN_005b7d00(0);
+      engine_special_cpp_masterZBuffer_FUN_005b7d00(0);
     }
     iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {

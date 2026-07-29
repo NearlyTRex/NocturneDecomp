@@ -29,8 +29,8 @@
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     SUB ESP,0x6c                        ; 00466c76
     MOV dword ptr [EBP + -0x8],0x497423fe ; 00466c7c
     MOV dword ptr [EBP + -0x4],0xc97423fe ; 00466c83
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00466c8a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00466c8a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61c7c5                    ; 00466c8f | = "Enter Z distance in feet (,min,max fo..."
     PUSH ECX                            ; 00466c94 | = "Enter Z distance in feet (,min,max fo..."
     PUSH 0x16                           ; 00466c95

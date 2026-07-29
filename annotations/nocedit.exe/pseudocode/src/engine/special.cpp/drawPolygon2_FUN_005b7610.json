@@ -1,0 +1,234 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 9,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "00437ca0",
+      "from_addr": "00437dde",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004366e0",
+      "from_addr": "00436880",
+      "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438420",
+      "from_addr": "00438564",
+      "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004839f0",
+      "from_addr": "00483a6d",
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483370",
+      "from_addr": "004833f1",
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00483370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553b10",
+      "from_addr": "00553bd0",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552a40",
+      "from_addr": "00552b16",
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b7610",
+    "address_range": [
+      [
+        "005b7610",
+        "005b7638"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_drawPolygon2_FUN_005b7610",
+    "signature": "int __cdecl engine_special_cpp_drawPolygon2_FUN_005b7610(SRenderVertex **vertex_array,int vertex_count,int render_flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8cc",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "00436880",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00438564",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewport_FUN_00438420",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00483a6d",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00553bd0",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004833f1",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_renderTriangleTextured_FUN_00483370",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00552b16",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00437dde",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.235294117647059,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 72
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex_array",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

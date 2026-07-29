@@ -36,8 +36,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   CDemonSet *pCVar2;
   
   sound_sndmain_cpp_processAudio_FUN_005abe20();
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr2,&g_ZeroVector.f);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,112.0);

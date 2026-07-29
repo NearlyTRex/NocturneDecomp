@@ -17,7 +17,7 @@ void __cdecl shape_design_c_scaleXYZ_FUN_00467f30(void)
   float local_18;
   float local_14;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter X,Y,Z scales : ");
   if ((local_70[0] != '\0') &&
      (iVar1 = sscanf

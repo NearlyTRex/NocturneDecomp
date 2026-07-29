@@ -20,7 +20,7 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
   char cVar1;
   
   bVar4 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter weld points a,b (weld a -> b) : ")
   ;
   iVar2 = -1;

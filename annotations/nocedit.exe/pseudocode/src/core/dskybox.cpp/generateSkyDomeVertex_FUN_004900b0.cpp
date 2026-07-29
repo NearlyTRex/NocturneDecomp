@@ -44,7 +44,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture
   local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar7));
   local_44.x = (int)ROUND(ROUND(fVar4 * fVar6 * (float10)(double)fVar5 * fVar7));
   local_44.z = (int)ROUND(ROUND(fVar1 * fVar6 * (float10)(double)fVar5 * fVar7));
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_index].projected_vertex,&local_44);
   iVar1 = (sky_texture->base).type;
   g_RenderVertexBuffer[vertex_index].r = iVar1;

@@ -20,6 +20,7 @@
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CKeys_vtable.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CMobster_full_vtable.h"
 #include "types/classes/CMotionController_vtable.h"
 #include "types/classes/CObj_vtable.h"
 #include "types/classes/COptimize_vtable.h"
@@ -27,6 +28,7 @@
 #include "types/classes/CPod_vtable.h"
 #include "types/classes/CPoly_vtable.h"
 #include "types/classes/CQuaternion4f.h"
+#include "types/classes/CSmiley_full_vtable.h"
 #include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CVector3i.h"
@@ -94,9 +96,7 @@ extern CDemonPod_vtable g_CDemonPodVTable;
 extern CEnemy_full_vtable g_CImpVTable;
 extern CEnemy_full_vtable g_CLarvaVTable;
 extern CEnemy_full_vtable g_CMimicVTable;
-extern CEnemy_full_vtable g_CMobsterVTable;
 extern CEnemy_full_vtable g_CSentinelVTable;
-extern CEnemy_full_vtable g_CSmileyVTable;
 extern CEnemy_full_vtable g_CSuccubusVTable;
 extern CEnemy_full_vtable g_CTentacleVTable;
 extern CEnemy_full_vtable g_CTVBatVTable;
@@ -130,6 +130,9 @@ extern CKeys_vtable g_CKeysVTable;
 // CMatrix3x4f
 extern CMatrix3x4f CMatrix3x4f_00665968;
 
+// CMobster_full_vtable
+extern CMobster_full_vtable g_CMobsterVTable;
+
 // CMotionController_vtable
 extern CMotionController_vtable g_CMotionControllerVTable;
 extern CMotionController_vtable g_CDeformableModelInstanceVTable;
@@ -151,6 +154,9 @@ extern CPoly_vtable g_CPolyVTable;
 
 // CQuaternion4f
 extern CQuaternion4f CQuaternion4f_00665998;
+
+// CSmiley_full_vtable
+extern CSmiley_full_vtable g_CSmileyVTable;
 
 // CSoundDeviceBasic_vtable
 extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;

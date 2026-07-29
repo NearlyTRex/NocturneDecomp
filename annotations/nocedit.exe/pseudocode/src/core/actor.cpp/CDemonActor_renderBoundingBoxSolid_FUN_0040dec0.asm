@@ -38,7 +38,7 @@
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0040df6b | g_CDemonRendererInstance
     ADD EAX,ESI                         ; 0040df6d
     PUSH EAX                            ; 0040df6f
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040df70
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0040df70
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 0040df75 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     ADD ESP,0x8                         ; 0040df7a
     MOV EDX,dword ptr [EAX]             ; 0040df7d | g_CDemonRendererInstance

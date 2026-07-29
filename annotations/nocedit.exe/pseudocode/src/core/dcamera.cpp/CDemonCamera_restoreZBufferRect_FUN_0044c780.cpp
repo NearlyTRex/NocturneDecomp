@@ -19,7 +19,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemo
       (rect_ptr->x_min < (this_ptr->viewport_rect).y_min)) &&
      (rect_ptr->y_min < (this_ptr->viewport_rect).y_max)) {
     if (g_UseExternalRenderer != 0) {
-      wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
+      engine_special_cpp_restoreZBuffer_FUN_005b7d20(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
       return;
     }
     iVar4 = rect_ptr->y_min;

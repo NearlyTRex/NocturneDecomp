@@ -56,7 +56,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(pCVar9,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
     for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("To be continued...");
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                 (pCVar9,0,g_WindowWidth + -1,(g_WindowHeight - iVar3) / 2,0xf8,0,pcVar4);
@@ -71,7 +71,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_4c,"stats",0x280,0x1e0);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_4c,0,0,0xffff);
   iVar8 = (int)ROUND(ROUND(this_ptr->total_game_time * (float)0.00027777777777777799));
   fVar2 = this_ptr->total_game_time - (float)iVar8 * (float)3600;

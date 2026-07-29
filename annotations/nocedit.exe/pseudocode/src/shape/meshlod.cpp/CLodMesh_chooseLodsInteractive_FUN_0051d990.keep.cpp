@@ -78,7 +78,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   iVar7 = -1;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     if (iVar7 == 0) {
       local_d0.distance = local_3d8[0];
     }

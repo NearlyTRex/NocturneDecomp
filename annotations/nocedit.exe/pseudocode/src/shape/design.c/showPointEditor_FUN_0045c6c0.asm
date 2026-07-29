@@ -32,6 +32,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_doNothing1_FUN_0045c4f0
 ;   shape_design.c_doNothing2_FUN_0045c510
 ;   shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0
@@ -42,7 +43,6 @@
 ;   shape_design.c_selectVertexToMove_FUN_0045c530
 ;   shape_design.c_setupViewMatrix_FUN_0045ba60
 ;   shape_design.c_showHelpFile_FUN_00457f00
-;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -60,12 +60,12 @@ section .text
     CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 0045c6d6
         ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
     MOV dword ptr [0x01e528b0],0x0      ; 0045c6db | g_PointEditorMode
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045c6e5
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045c6e5
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045c6ea
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045c6ef
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045c6ef
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0045c6ef
     CALL shape_design.c_setupViewMatrix_FUN_0045ba60 ; 0045c6f4
         ;   XREF to: 0045ba60 (UNCONDITIONAL_CALL)  ; void shape_design.c_setupViewMatrix_FUN_0045ba60()

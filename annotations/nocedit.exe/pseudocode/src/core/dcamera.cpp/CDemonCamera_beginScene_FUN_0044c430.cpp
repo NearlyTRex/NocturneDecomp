@@ -107,13 +107,13 @@ switchD_0044c448_caseD_3:
             (g_CDemonRendererPtr2,&(this_ptr->base).rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (g_UseDirect3D != 0) {
-      wincore_windll_cpp_beginScene_FUN_005b7280();
+      engine_special_cpp_beginScene_FUN_005b7280();
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     if (g_UseExternalRenderer != 0) {
-      wincore_windll_cpp_clear_FUN_005b7a30();
-      wincore_windll_cpp_clearZBuffer_FUN_005b7be0();
+      engine_special_cpp_clear_FUN_005b7a30();
+      engine_special_cpp_clearZBuffer_FUN_005b7be0();
     }
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(this_ptr);

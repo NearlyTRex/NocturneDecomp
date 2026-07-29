@@ -288,7 +288,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           this_ptr->frame_counter = this_ptr->frame_counter + 1;
         }
         else {
-          wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(1);
+          engine_special_cpp_presentToExternalRenderer_FUN_005b7c30(1);
           wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
           this_ptr->frame_counter = this_ptr->frame_counter + 1;
         }

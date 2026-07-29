@@ -36,7 +36,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
 
   memcpy(local_1f0,g_CourseLastPthPath,0x104);
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demon Course system menu",0,0);
     engine_2d_c_drawText_FUN_00401fd0("1. Load course from .PTH file",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2. Save course to .PTH file",0,0x21);

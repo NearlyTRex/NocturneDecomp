@@ -100,8 +100,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 ; 005085fa
         ;   XREF to: 004105d0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 005085ff
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00508602
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00508602
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 00508607
     PUSH 0x0                            ; 0050860c
     PUSH 0x0                            ; 0050860e

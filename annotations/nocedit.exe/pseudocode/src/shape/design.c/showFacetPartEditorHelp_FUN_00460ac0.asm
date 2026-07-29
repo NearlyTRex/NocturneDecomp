@@ -28,8 +28,8 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     SUB ESP,0xc                         ; 00460ac6
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00460acc
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00460ad1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00460ad1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00460ad1
     MOV dword ptr [EBP + -0x8],0x78     ; 00460ad6
     MOV dword ptr [EBP + -0xc],0x0      ; 00460add
@@ -316,8 +316,8 @@ section .text
         ;   XREF to: 00460d98 (CONDITIONAL_JUMP)  ; LAB_00460d98
     JMP 0x0046154e                      ; 00460d93
         ;   XREF to: 0046154e (UNCONDITIONAL_JUMP)  ; LAB_0046154e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00460d98
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00460d98
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00460d98
     MOV dword ptr [EBP + -0xc],0x0      ; 00460d9d
     IMUL EAX,dword ptr [EBP + -0xc],0xb ; 00460da4
@@ -740,8 +740,8 @@ section .text
         ;   XREF to: 004611ea (CONDITIONAL_JUMP)  ; LAB_004611ea
     JMP 0x0046154e                      ; 004611e5
         ;   XREF to: 0046154e (UNCONDITIONAL_JUMP)  ; LAB_0046154e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004611ea
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004611ea
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_004611ea
     MOV dword ptr [EBP + -0xc],0x0      ; 004611ef
     IMUL EAX,dword ptr [EBP + -0xc],0xb ; 004611f6

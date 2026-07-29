@@ -162,7 +162,7 @@ LAB_0057d6df:
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",3187);
     }
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pvStack_1c = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",3201);
@@ -414,7 +414,7 @@ LAB_0057db4e:
             iVar21 = 0xf0;
           }
           core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,iVar21);
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
         }
       }
     }

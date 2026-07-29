@@ -18,7 +18,7 @@ void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90(void)
               (g_SoftwareFrameBuffer,"..\\wincore\\wddvmem.cpp",263);
     g_SoftwareZBuffer = (void *)0x0;
   }
-  wincore_windll_cpp_kill_FUN_005b71e0();
+  engine_special_cpp_kill_FUN_005b71e0();
   if (g_DirectDrawUnknown != (IUnknown *)0x0) {
     (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
     g_DirectDrawUnknown = (IUnknown *)0x0;

@@ -20,22 +20,22 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
   local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
   local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_34);
   local_40.x = (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);
   local_40.y = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
   local_40.z = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_40);
   local_1c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);
   local_1c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
   local_1c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1c);
   local_28.x = (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);
   local_28.y = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
   local_28.z = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_28);
   iVar2 = 0;
   do {

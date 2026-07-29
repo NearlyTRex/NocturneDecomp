@@ -33,22 +33,22 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004ecce0(CBloodPool *this_ptr,i
   local_20.x = (int)ROUND(256.0f * -1.333);
   local_20.y = (int)ROUND(256.0f * 0.0);
   local_20.z = (int)ROUND(256.0f * -1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_20);
   local_44.x = (int)ROUND(256.0f * 1.333);
   local_44.y = (int)ROUND(256.0f * 0.0);
   local_44.z = (int)ROUND(256.0f * -1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_44);
   local_2c.x = (int)ROUND(256.0f * 1.333);
   local_2c.y = (int)ROUND(256.0f * 0.0);
   local_2c.z = (int)ROUND(256.0f * 1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_2c);
   local_50.x = (int)ROUND(256.0f * -1.333);
   local_50.y = (int)ROUND(256.0f * 0.0);
   local_50.z = (int)ROUND(256.0f * 1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_50);
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {

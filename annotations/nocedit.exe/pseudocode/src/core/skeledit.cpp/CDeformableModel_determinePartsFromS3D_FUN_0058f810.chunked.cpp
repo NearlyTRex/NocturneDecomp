@@ -1713,7 +1713,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         if (0 < this_ptr->tri_count[0]) {
           CDeformableModel_determinePartsFromS3D_else_0_check_0_4(ctx);
         }
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                   (g_CEditorToolsPtr,"Matching faces");
         _fprintf(local_180,"Matching faces in %s\n");

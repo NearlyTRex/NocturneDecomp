@@ -174,8 +174,8 @@ section .text
     TEST EAX,EAX                        ; 004b6f27
     JZ 0x004b7263                       ; 004b6f29
         ;   XREF to: 004b7263 (CONDITIONAL_JUMP)  ; LAB_004b7263
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004b6f2f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004b6f2f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,dword ptr [ESP + 0xe88]     ; 004b6f34
     MOV ESI,0x1                         ; 004b6f3b
     XOR EBP,EBP                         ; 004b6f40
@@ -576,8 +576,8 @@ section .text
     XOR EBP,EBP                         ; 004b73db
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004b73dd
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004b73e2
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004b73e2
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ESI,dword ptr [ESP + 0xe68]     ; 004b73e7
         ;   Label: LAB_004b73e7
     MOV EDI,dword ptr [ESP + 0xe6c]     ; 004b73ee

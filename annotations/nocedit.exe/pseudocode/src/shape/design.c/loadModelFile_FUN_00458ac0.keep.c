@@ -25,7 +25,7 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   uint local_20;
   int local_1c;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Loading model...",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   strcpy((char *)local_74,filename);

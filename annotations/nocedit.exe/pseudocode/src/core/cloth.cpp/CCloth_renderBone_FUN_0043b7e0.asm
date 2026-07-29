@@ -40,9 +40,9 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -120,8 +120,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0043b8b9 | g_CDemonRendererInstance
     ADD EAX,dword ptr [ESP + 0x50]      ; 0043b8bb
     PUSH EAX                            ; 0043b8bf
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043b8c0
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0043b8c0
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0043b8c5
     MOV EAX,dword ptr [EDI + 0x44]      ; 0043b8c8
     MOV dword ptr [ESP + 0x30],EAX      ; 0043b8cb
@@ -145,8 +145,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0043b90f | g_CDemonRendererInstance
     ADD EAX,ECX                         ; 0043b911
     PUSH EAX                            ; 0043b913
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043b914
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0043b914
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0043b919
     TEST ESI,ESI                        ; 0043b91c
     JG 0x0043b976                       ; 0043b91e

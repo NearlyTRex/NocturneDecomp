@@ -32,7 +32,7 @@ void __cdecl core_setutil_cpp_generateSphereVertex_FUN_00587a40(int longitude_in
   local_38[0].x = (int)ROUND((float)(fVar3 * fVar4 * fVar6) * 256.0f);
   local_38[0].y = (int)ROUND((float)(fVar7 * fVar4) * 256.0f);
   local_38[0].z = (int)ROUND((float)(fVar1 * fVar4 * fVar6) * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].projected_vertex,local_38
             );
   pCVar1 = g_CDemonRendererPtr2;

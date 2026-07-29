@@ -63,7 +63,7 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
-    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
+    engine_special_cpp_drawPolygon_FUN_005b75e0(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
     ;
     return;
   }
@@ -207,7 +207,7 @@ LAB_005fd24c:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,scanline_y);
+        engine_special_cpp_renderScanline_FUN_005b5710(local_18,local_14,scanline_y);
         if (g_RenderAbortFlag != 0) {
           return;
         }

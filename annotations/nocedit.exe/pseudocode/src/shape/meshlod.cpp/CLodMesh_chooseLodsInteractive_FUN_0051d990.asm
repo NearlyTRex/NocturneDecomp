@@ -74,10 +74,10 @@
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+;   engine_special.cpp_clearZBufferNative_FUN_005b3ed4
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
-;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -233,8 +233,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0051dba2
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0051dba7
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0051dbaa
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0051dbaa
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     TEST ESI,ESI                        ; 0051dbaf
     JNZ 0x0051dbc1                      ; 0051dbb1
         ;   XREF to: 0051dbc1 (CONDITIONAL_JUMP)  ; LAB_0051dbc1

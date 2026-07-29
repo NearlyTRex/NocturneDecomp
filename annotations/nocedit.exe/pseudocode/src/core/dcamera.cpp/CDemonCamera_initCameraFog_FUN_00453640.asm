@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   wincore_windll.cpp_setFogColor_FUN_005b7b80
+;   engine_special.cpp_setFogColor_FUN_005b7b80
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045367d | g_LightmapTexturePalette
     AND EAX,0xff                        ; 00453684
     PUSH EAX                            ; 00453689
-    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 0045368a
-        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
+    CALL engine_special.cpp_setFogColor_FUN_005b7b80 ; 0045368a
+        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
     FLD double ptr [0x0061a442]         ; 0045368f | g_CameraFogFixedPointScale16
     FLD float ptr [EBX + 0xc]           ; 00453695
     FMUL ST1                            ; 00453698

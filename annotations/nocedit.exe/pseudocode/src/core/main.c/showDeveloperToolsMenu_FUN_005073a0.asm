@@ -97,8 +97,8 @@ section .text
     CMP dword ptr [ESP + 0x514],0x0     ; 00507400
     JZ 0x0050753b                       ; 00507408
         ;   XREF to: 0050753b (CONDITIONAL_JUMP)  ; LAB_0050753b
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0050740e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0050740e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0050740e
     PUSH 0x0                            ; 00507413
     PUSH 0x0                            ; 00507415
@@ -255,8 +255,8 @@ section .text
         ;   XREF to: 004a64e0 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0(CEdButton * this_ptr)
     ADD ESP,0x4                         ; 005075d3
     XOR EDI,EDI                         ; 005075d6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005075d8
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005075d8
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_005075d8
     LEA EAX,[ESP + 0x4c8]               ; 005075dd
     PUSH EAX                            ; 005075e4

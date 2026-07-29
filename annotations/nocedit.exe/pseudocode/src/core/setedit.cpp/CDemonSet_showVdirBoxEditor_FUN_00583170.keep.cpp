@@ -91,7 +91,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
             (g_CEditorToolsPtr,"Preparing set.");
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   this_ptr->actor_count = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_slew_cpp_CSlew_init_FUN_005a2060(&slew);
   local_c8 = 0.0;
@@ -115,9 +115,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       local_3c = local_40 + iVar12;
     }
     wincore_winrun_cpp_doNothing1_FUN_005f2f80();
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     pSVar11 = local_3c;
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     if (pSVar11 != (SVDBox *)0x0) {
       slew.orientation.vec.y = local_c4;
       pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
@@ -232,25 +232,25 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         local_e0.x = (int)ROUND(256.0f * -1.0);
         local_e0.y = (int)ROUND(256.0f * -1.0);
         local_e0.z = (int)ROUND(256.0f * 2.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_e0);
         local_164 = -local_164;
         local_104.x = (int)ROUND(local_164 * 256.0f);
         local_104.y = (int)ROUND(local_160 * 256.0f);
         local_104.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_104);
         local_160 = -local_160;
         local_1b8.x = (int)ROUND(local_164 * 256.0f);
         local_1b8.y = (int)ROUND(local_160 * 256.0f);
         local_1b8.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1b8);
         local_164 = -local_164;
         local_b0.x = (int)ROUND(local_164 * 256.0f);
         local_b0.y = (int)ROUND(local_160 * 256.0f);
         local_b0.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_b0);
         local_164 = -0.3;
         local_160 = -0.3;
@@ -258,25 +258,25 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         local_1a0.x = (int)ROUND(256.0f * -0.3);
         local_1a0.y = (int)ROUND(256.0f * -0.3);
         local_1a0.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[4].projected_vertex,&local_1a0);
         local_164 = -local_164;
         local_170.x = (int)ROUND(local_164 * 256.0f);
         local_170.y = (int)ROUND(local_160 * 256.0f);
         local_170.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[5].projected_vertex,&local_170);
         local_160 = -local_160;
         local_14c.x = (int)ROUND(local_164 * 256.0f);
         local_14c.y = (int)ROUND(local_160 * 256.0f);
         local_14c.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[6].projected_vertex,&local_14c);
         local_164 = -local_164;
         local_a4.x = (int)ROUND(local_164 * 256.0f);
         local_a4.y = (int)ROUND(local_160 * 256.0f);
         local_a4.z = (int)ROUND(local_15c * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[7].projected_vertex,&local_a4);
         if (bVar2) {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
@@ -540,7 +540,7 @@ LAB_00583c6f:
     }
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar12 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("F1",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Show this help screen",g_WindowWidth / 10,0);
       engine_2d_c_drawText_FUN_00401fd0("TAB",0,0xb);

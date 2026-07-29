@@ -22,7 +22,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
   bool bVar5;
   
   if (g_UseExternalRenderer != 0) {
-    wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
+    engine_special_cpp_restoreZBuffer_FUN_005b7d20(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
     return;
   }
   if (0x100 < this_ptr->rect_array_count) {

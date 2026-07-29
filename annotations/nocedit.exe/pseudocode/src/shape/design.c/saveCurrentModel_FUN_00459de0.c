@@ -22,7 +22,7 @@ void __cdecl shape_design_c_saveCurrentModel_FUN_00459de0(void)
   char cVar1;
   
   bVar7 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_60,0x28,0,0,"Model name to save : ");
   pcVar5 = local_60;
   do {

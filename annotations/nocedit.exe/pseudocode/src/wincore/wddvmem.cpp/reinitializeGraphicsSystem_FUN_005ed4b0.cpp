@@ -15,7 +15,7 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
   if (g_UseDirect3D == 0) {
     return;
   }
-  wincore_windll_cpp_restoreVideoMode_FUN_005b75b0();
+  engine_special_cpp_restoreVideoMode_FUN_005b75b0();
   if (g_DirectDrawUnknown != (IUnknown *)0x0) {
     (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
     g_DirectDrawUnknown = (IUnknown *)0x0;

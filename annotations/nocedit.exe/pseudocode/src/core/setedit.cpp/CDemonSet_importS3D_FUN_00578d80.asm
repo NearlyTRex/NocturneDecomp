@@ -103,8 +103,8 @@ section .text
     PUSH EDI                            ; 00578d82
     PUSH EBP                            ; 00578d83
     SUB ESP,0x2468                      ; 00578d84
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00578d8a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00578d8a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x1                            ; 00578d8f
     PUSH 0x646bd8                       ; 00578d91 | = "Import geometry"
     PUSH 0x0                            ; 00578d96

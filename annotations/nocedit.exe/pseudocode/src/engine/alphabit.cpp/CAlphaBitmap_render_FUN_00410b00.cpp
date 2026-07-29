@@ -29,7 +29,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
   if (g_BitsPerPixel == 0x20) {
     if (0 < iVar1) {
       do {
-        wincore_windll_cpp_renderAlphaRow32_FUN_005b555c
+        engine_special_cpp_renderAlphaRow32_FUN_005b555c
                   ((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_x * 4),srcIndices,
                    srcAlpha,global_alpha,pixelCount);
         srcIndices = srcIndices + this_ptr->width;
@@ -41,7 +41,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
   else if (0 < iVar1) {
     local_14 = local_18;
     do {
-      wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
+      engine_special_cpp_renderAlphaRow16_FUN_005b55f7
                 ((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,
                  srcAlpha,global_alpha,pixelCount);
       srcIndices = srcIndices + this_ptr->width;

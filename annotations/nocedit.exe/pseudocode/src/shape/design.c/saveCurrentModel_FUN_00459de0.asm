@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_exportModelToMDL_FUN_00459e80
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EBP                            ; 00459de3
     MOV EBP,ESP                         ; 00459de4
     SUB ESP,0x50                        ; 00459de6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00459dec
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00459dec
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EDX,0x61ad80                    ; 00459df1 | = "Model name to save : "
     PUSH EDX                            ; 00459df6 | = "Model name to save : "
     PUSH 0x0                            ; 00459df7

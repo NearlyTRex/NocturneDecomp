@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 11,
+    "cross_reference_count": 12,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 32
+  },
+  "cross_references": [
+    {
+      "addr": "004511c0",
+      "from_addr": "004511ce",
+      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da100",
+      "from_addr": "004da42c",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2910",
+      "from_addr": "004e2ade",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a940",
+      "from_addr": "0057aae0",
+      "name": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b7c30",
+      "from_addr": "005b7c87",
+      "name": "engine_special.cpp_presentToExternalRenderer_FUN_005b7c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b7460",
+      "from_addr": "005b7502",
+      "name": "engine_special.cpp_setResolutionAndColorTable_FUN_005b7460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004648e0",
+      "from_addr": "00464c00",
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464c90",
+      "from_addr": "00464f53",
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045f1d0",
+      "from_addr": "0045f54d",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e410",
+      "from_addr": "0049e450",
+      "name": "shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e4d0",
+      "from_addr": "0049e510",
+      "name": "shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0dd0",
+      "from_addr": "004a0e10",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b7210",
+    "address_range": [
+      [
+        "005b7210",
+        "005b7247"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_lockFrame_FUN_005b7210",
+    "signature": "int __cdecl engine_special_cpp_lockFrame_FUN_005b7210(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8ac",
+      "name": "g_APIDLL_lockFrame",
+      "type": "APIDLL_lockFrame*",
+      "value": null
+    },
+    {
+      "addr": "03f6b990",
+      "name": "g_ExternalBitsPerPixel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b998",
+      "name": "g_SavedBitsPerPixel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b99c",
+      "name": "g_ExternalFrameLocked",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 2,
+      "INT_AND": 7,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 48
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

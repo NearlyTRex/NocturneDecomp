@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_drawVertexMarker_FUN_0043c6e0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EBX                            ; 0043c856
     ADD EDX,0xea5d0                     ; 0043c857
     PUSH EDX                            ; 0043c85d
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043c85e
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0043c85e
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0043c863
     PUSH 0x4e1f                         ; 0043c866
     CALL core_cloth.cpp_drawVertexMarker_FUN_0043c6e0 ; 0043c86b

@@ -59,11 +59,11 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
       midpoint.z = scaled_current.z + scaled_adjacent.z;
 
       core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&current_copy, &current_fixed);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&pCVar1->vertex_buffer_ptr->projected_vertex, &current_fixed);
       pCVar1 = g_CDemonRendererPtr1;
       core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&midpoint, &midpoint_fixed);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&pCVar1->vertex_buffer_ptr[1].projected_vertex, &midpoint_fixed);
 
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70

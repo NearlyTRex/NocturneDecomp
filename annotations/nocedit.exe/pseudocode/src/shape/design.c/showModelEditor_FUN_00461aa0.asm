@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH EBP                            ; 00461aa3
     MOV EBP,ESP                         ; 00461aa4
     SUB ESP,0x0                         ; 00461aa6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00461aac
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00461aac
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00461ab1
     PUSH 0x0                            ; 00461ab3
     MOV EAX,0x61bf7d                    ; 00461ab5 | = "The Model Editor is not available.  H..."

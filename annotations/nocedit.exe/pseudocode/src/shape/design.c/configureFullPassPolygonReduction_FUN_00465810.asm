@@ -23,8 +23,8 @@
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_optimizePolygonMesh_FUN_004658e0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     CMP dword ptr [EBP + 0x14],0x0      ; 0046582b
     JLE 0x00465850                      ; 0046582f
         ;   XREF to: 00465850 (CONDITIONAL_JUMP)  ; LAB_00465850
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00465831
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00465831
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,0x61c5b6                    ; 00465836 | = "Enter tolerance angle [8.5] : "
     PUSH EAX                            ; 0046583b | = "Enter tolerance angle [8.5] : "
     PUSH 0x0                            ; 0046583c

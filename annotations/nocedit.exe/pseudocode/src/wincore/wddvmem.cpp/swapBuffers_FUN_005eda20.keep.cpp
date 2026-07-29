@@ -20,7 +20,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 #endif
 
     if (g_UseExternalRenderer != 0) {
-        wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(0);
+        engine_special_cpp_presentToExternalRenderer_FUN_005b7c30(0);
         g_RenderingInProgress = 0;
         wincore_winrun_cpp_processWindowMessages_FUN_005f35e0();
         return;

@@ -425,7 +425,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int v
       }
     }
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610
+    engine_special_cpp_drawPolygon2_FUN_005b7610
               (g_ClipperCullingPointers,vertex_count,g_RenderStateFlags.dword);
     return 1;
   }

@@ -28,7 +28,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   local_48.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_48.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_48.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_48);
+  engine_special_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_48);
   iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
                     (g_CDemonRendererPtr2,vertex_ptr_00);
   if (iVar1 == 0) {
@@ -43,22 +43,22 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   local_18.x = (int)ROUND(256.0f * -0.125);
   local_18.y = (int)ROUND(256.0f * -0.125);
   local_18.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_18);
   local_3c.x = (int)ROUND(256.0f * 0.125);
   local_3c.y = (int)ROUND(256.0f * -0.125);
   local_3c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_3c);
   local_6c.x = (int)ROUND(256.0f * 0.125);
   local_6c.y = (int)ROUND(256.0f * 0.125);
   local_6c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_6c);
   local_54.x = (int)ROUND(256.0f * -0.125);
   local_54.y = (int)ROUND(256.0f * 0.125);
   local_54.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectPopcornTexture);

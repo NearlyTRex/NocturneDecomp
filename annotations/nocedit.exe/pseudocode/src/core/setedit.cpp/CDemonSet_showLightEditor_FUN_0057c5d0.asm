@@ -90,8 +90,8 @@ section .text
     ADD ESP,0x4                         ; 0057c605
     LEA EAX,[EBX + 0x14d0f0]            ; 0057c608
     MOV dword ptr [ESP + 0xfac],EAX     ; 0057c60e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057c615
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057c615
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0057c615
     MOV ESI,0xffffffff                  ; 0057c61a
     MOV EDI,dword ptr [0x00679398]      ; 0057c61f | g_WindowHeight

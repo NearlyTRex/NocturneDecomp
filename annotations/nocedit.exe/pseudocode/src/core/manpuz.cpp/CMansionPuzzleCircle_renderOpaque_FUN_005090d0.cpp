@@ -22,7 +22,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMans
     CStack_14.x = (int)ROUND(g_ZeroVector.f.x * 256.0f);
     CStack_14.y = (int)ROUND(g_ZeroVector.f.y * 256.0f);
     CStack_14.z = (int)ROUND(g_ZeroVector.f.z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1000].projected_vertex,&CStack_14);
     iVar2 = 0;
     do {

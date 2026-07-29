@@ -212,25 +212,25 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_180.x = (int)ROUND(fVar5 * 256.0f);
       local_180.y = (int)ROUND(fVar5 * 256.0f);
       local_180.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_180);
       local_e4 = -fVar5;
       local_c0.x = (int)ROUND(local_e4 * 256.0f);
       local_c0.y = (int)ROUND(fVar5 * 256.0f);
       local_c0.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_c0);
       local_e0 = -fVar5;
       local_1bc.x = (int)ROUND(local_e4 * 256.0f);
       local_1bc.y = (int)ROUND(local_e0 * 256.0f);
       local_1bc.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1bc);
       local_e4 = -local_e4;
       local_174.x = (int)ROUND(local_e4 * 256.0f);
       local_174.y = (int)ROUND(local_e0 * 256.0f);
       local_174.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_174);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,&g_FireEffectHeadliteTexture);
@@ -327,12 +327,12 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_a8.x = (int)ROUND((float)(fVar12 * (float10)fVar5) * 256.0f);
       local_a8.y = (int)ROUND((float)(fVar11 * (float10)fVar5) * 256.0f);
       local_a8.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&pCVar4->vertex_buffer_ptr->projected_vertex,&local_a8);
       local_108.x = (int)ROUND((float)fVar12 * fVar6 * 256.0f);
       local_108.y = (int)ROUND((float)fVar11 * fVar6 * 256.0f);
       local_108.z = (int)ROUND((depth + (float)-0.10000000000000001) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_108);
       pCVar4 = g_CDemonRendererPtr2;
       if (local_20 != 0) {
@@ -425,22 +425,22 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_198.x = (int)ROUND(256.0f * 0.2);
     local_198.y = (int)ROUND(256.0f * 0.2);
     local_198.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_198);
     local_d8.x = (int)ROUND(256.0f * -0.2);
     local_d8.y = (int)ROUND(256.0f * 0.2);
     local_d8.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_d8);
     local_1ec.x = (int)ROUND(256.0f * -0.2);
     local_1ec.y = (int)ROUND(256.0f * -0.2);
     local_1ec.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1ec);
     local_1c8.x = (int)ROUND(256.0f * 0.2);
     local_1c8.y = (int)ROUND(256.0f * -0.2);
     local_1c8.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_1c8);
     pCVar4 = g_CDemonRendererPtr2;
     local_290.base.base.count = 4;

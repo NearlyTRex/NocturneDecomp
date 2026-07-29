@@ -32,9 +32,9 @@
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_removeUnusedVertices_FUN_00463830
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -48,8 +48,8 @@ section .text
     PUSH EBP                            ; 00465e93
     MOV EBP,ESP                         ; 00465e94
     SUB ESP,0x60                        ; 00465e96
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00465e9c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00465e9c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61c694                    ; 00465ea1 | = "Enter weld points a,b (weld a -> b) : "
     PUSH ECX                            ; 00465ea6 | = "Enter weld points a,b (weld a -> b) : "
     PUSH 0x0                            ; 00465ea7

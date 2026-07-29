@@ -221,6 +221,14 @@
       "type":"struct"
     },
     {
+      "name":"CBoneGuy_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CBoneGuy_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CCameraView_dtor",
       "type":"function_definition"
     },
@@ -717,15 +725,15 @@
       "type":"function_definition"
     },
     {
-      "name":"CEnemy_reset",
-      "type":"function_definition"
-    },
-    {
       "name":"CEnemy_updateVictim",
       "type":"function_definition"
     },
     {
       "name":"CEnemy_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CBoneGuy_full_vtable",
       "type":"struct"
     },
     {
@@ -898,6 +906,18 @@
     },
     {
       "name":"CMP3Decoder",
+      "type":"struct"
+    },
+    {
+      "name":"CMobster_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CMobster_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CMobster_full_vtable",
       "type":"struct"
     },
     {
@@ -1265,6 +1285,14 @@
       "type":"struct"
     },
     {
+      "name":"CPickList_handleInput",
+      "type":"function_definition"
+    },
+    {
+      "name":"CPickList_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CPodAuditRecord",
       "type":"struct"
     },
@@ -1489,6 +1517,18 @@
       "type":"struct"
     },
     {
+      "name":"CSmiley_reset",
+      "type":"function_definition"
+    },
+    {
+      "name":"CSmiley_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CSmiley_full_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CSound",
       "type":"struct"
     },
@@ -1605,43 +1645,11 @@
       "type":"function_definition"
     },
     {
-      "name":"CStrList",
-      "type":"struct"
-    },
-    {
-      "name":"CPickList",
-      "type":"struct"
-    },
-    {
-      "name":"CPickList_ptr_420",
-      "type":"typedef"
-    },
-    {
-      "name":"CPickList_ptr_476",
-      "type":"typedef"
-    },
-    {
-      "name":"CPickList_ptr_704",
-      "type":"typedef"
-    },
-    {
-      "name":"CScript",
-      "type":"struct"
-    },
-    {
-      "name":"CScript_ptr_56",
-      "type":"typedef"
-    },
-    {
       "name":"CStrList_clear",
       "type":"function_definition"
     },
     {
       "name":"CStrList_dtor",
-      "type":"function_definition"
-    },
-    {
-      "name":"CStrList_handleInput",
       "type":"function_definition"
     },
     {
@@ -1662,6 +1670,10 @@
     },
     {
       "name":"CStrList_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CPickList_full_vtable",
       "type":"struct"
     },
     {
@@ -5087,6 +5099,38 @@
     {
       "name":"UPDATE_WINDOW_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"UStrListVTable",
+      "type":"union"
+    },
+    {
+      "name":"CStrList",
+      "type":"struct"
+    },
+    {
+      "name":"CPickList",
+      "type":"struct"
+    },
+    {
+      "name":"CPickList_ptr_420",
+      "type":"typedef"
+    },
+    {
+      "name":"CPickList_ptr_476",
+      "type":"typedef"
+    },
+    {
+      "name":"CPickList_ptr_704",
+      "type":"typedef"
+    },
+    {
+      "name":"CScript",
+      "type":"struct"
+    },
+    {
+      "name":"CScript_ptr_56",
+      "type":"typedef"
     },
     {
       "name":"UTreeNodeData",
@@ -11546,6 +11590,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CBoneGuy_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CBoneGuy*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCameraView_dtor",
       "parameters":[
         {
@@ -13543,20 +13601,6 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CEnemy_reset",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CEnemy*"
-        }
-      ],
-      "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
       "name":"CEnemy_updateVictim",
       "parameters":[
         {
@@ -13868,6 +13912,20 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CMobster_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CMobster*"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {
@@ -15324,6 +15382,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CPickList_handleInput",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CPickList*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CPod_dismount",
       "parameters":[
         {
@@ -16640,6 +16712,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CSmiley_reset",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CSmiley*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CSound_releaseBuffer",
       "parameters":[
         {
@@ -17186,20 +17272,6 @@
         }
       ],
       "return_type":"void",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CStrList_handleInput",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CStrList*"
-        }
-      ],
-      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -27999,6 +28071,60 @@
       "desc":"",
       "fields":[
         {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":12,
+          "name":"_ue",
+          "offset":340,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_ug",
+          "offset":352,
+          "type":"CBoneGuy_vtable"
+        }
+      ],
+      "importable":true,
+      "len":356,
+      "name":"CBoneGuy_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CBoneGuy_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CBoneGuy_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"bone_count",
           "offset":0,
@@ -34850,14 +34976,14 @@
           "type":"CCharacter_vtable"
         },
         {
-          "len":16,
+          "len":12,
           "name":"_ue",
           "offset":340,
           "type":"CEnemy_vtable"
         }
       ],
       "importable":true,
-      "len":356,
+      "len":352,
       "name":"CEnemy_full_vtable",
       "pack":false,
       "type":"struct"
@@ -34884,16 +35010,10 @@
           "name":"randomize",
           "offset":8,
           "type":"CEnemy_randomize*"
-        },
-        {
-          "len":4,
-          "name":"reset",
-          "offset":12,
-          "type":"CEnemy_reset*"
         }
       ],
       "importable":true,
-      "len":16,
+      "len":12,
       "name":"CEnemy_vtable",
       "pack":false,
       "type":"struct"
@@ -40866,6 +40986,60 @@
       "desc":"",
       "fields":[
         {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":12,
+          "name":"_ue",
+          "offset":340,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_um",
+          "offset":352,
+          "type":"CMobster_vtable"
+        }
+      ],
+      "importable":true,
+      "len":356,
+      "name":"CMobster_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CMobster_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CMobster_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":130004,
           "name":"base",
           "offset":0,
@@ -42857,6 +43031,48 @@
       "importable":true,
       "len":936,
       "name":"CPickList",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"_us",
+          "offset":0,
+          "type":"CStrList_vtable"
+        },
+        {
+          "len":4,
+          "name":"_up",
+          "offset":24,
+          "type":"CPickList_vtable"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"CPickList_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"handleInput",
+          "offset":0,
+          "type":"CPickList_handleInput*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CPickList_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -44978,6 +45194,60 @@
       "desc":"",
       "fields":[
         {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":12,
+          "name":"_ue",
+          "offset":340,
+          "type":"CEnemy_vtable"
+        },
+        {
+          "len":4,
+          "name":"_us",
+          "offset":352,
+          "type":"CSmiley_vtable"
+        }
+      ],
+      "importable":true,
+      "len":356,
+      "name":"CSmiley_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"reset",
+          "offset":0,
+          "type":"CSmiley_reset*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CSmiley_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"active",
           "offset":0,
@@ -45875,7 +46145,7 @@
           "len":4,
           "name":"vtable",
           "offset":12,
-          "type":"CStrList_vtable*"
+          "type":"UStrListVTable"
         }
       ],
       "importable":true,
@@ -45924,16 +46194,10 @@
           "name":"clear",
           "offset":20,
           "type":"CStrList_clear*"
-        },
-        {
-          "len":4,
-          "name":"handleInput",
-          "offset":24,
-          "type":"CStrList_handleInput*"
         }
       ],
       "importable":true,
-      "len":28,
+      "len":24,
       "name":"CStrList_vtable",
       "pack":false,
       "type":"struct"
@@ -69452,6 +69716,30 @@
       "importable":true,
       "len":12,
       "name":"UOrientationVector",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_us",
+          "offset":0,
+          "type":"CStrList_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_up",
+          "offset":0,
+          "type":"CPickList_full_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UStrListVTable",
       "pack":false,
       "type":"union"
     },

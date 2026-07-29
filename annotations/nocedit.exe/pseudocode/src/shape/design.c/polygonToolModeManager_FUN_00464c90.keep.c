@@ -71,7 +71,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         iVar3 = shape_design_c_detectMouseButtonClick_FUN_00464870(1);
         if (iVar3 != 0) {
           if (g_PolygonToolMode != 0) {
-            wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+            engine_special_cpp_unlockFrame_FUN_005b7250(0);
             wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
           }
           switch(g_PolygonToolMode) {
@@ -92,7 +92,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
           }
           if (g_PolygonToolMode != 0) {
             wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
-            wincore_windll_cpp_lockFrame_FUN_005b7210();
+            engine_special_cpp_lockFrame_FUN_005b7210();
           }
         }
         strcpy(local_b8,"Mouse polygon selection on");

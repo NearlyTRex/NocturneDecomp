@@ -37,8 +37,8 @@
 ;   engine_prim.c_normalizeTextureCoords_FUN_00552020
 ;   engine_prim.c_prepareDepthBuffer_FUN_00551fb0
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
-;   wincore_windll.cpp_drawPolygon_FUN_005b75e0
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon_FUN_005b75e0
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -327,8 +327,8 @@ section .text
     PUSH EBP                            ; 00553742
     MOV EAX,dword ptr [ESP + 0x30]      ; 00553743
     PUSH EAX                            ; 00553747
-    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 00553748
-        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon_FUN_005b75e0 ; 00553748
+        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EDX,dword ptr [0x030e56b8]      ; 0055374d | g_RenderedTriangleCount
     LEA EAX,[EBP + -0x2]                ; 00553753
     ADD EDX,EAX                         ; 00553756
@@ -623,8 +623,8 @@ section .text
         ;   Label: LAB_00553a15
     MOV EBX,dword ptr [ESP + 0xc]       ; 00553a19
     MOV ESI,EBP                         ; 00553a1d
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00553a1f
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 00553a1f
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 00553a24 | g_SoftwareEdgeTable[0].base.x_gradient
     MOV EDI,dword ptr [EBP + 0x8]       ; 00553a27 | g_SoftwareEdgeTable[0].base.x_current
     MOV EDX,dword ptr [EBP + 0x18]      ; 00553a2a | g_SoftwareEdgeTable[0].base.u_current

@@ -18,7 +18,7 @@
 ;   undefined4 s_e_006396d7+3
 ;   float FLOAT_00661780 = 50
 ;   float FLOAT_00661784 = 100
-;   CEnemy_full_vtable g_CMobsterVTable
+;   CMobster_full_vtable g_CMobsterVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70

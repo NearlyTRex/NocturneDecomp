@@ -253,8 +253,8 @@ section .text
     TEST EBX,EBX                        ; 0051313e
     JZ 0x00513147                       ; 00513140
         ;   XREF to: 00513147 (CONDITIONAL_JUMP)  ; LAB_00513147
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00513142
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00513142
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00513147
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
         ;   Label: LAB_00513147
@@ -380,8 +380,8 @@ section .text
         ;   Label: LAB_00513272
     JZ 0x005132b1                       ; 00513279
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0051327b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0051327b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00513280
     PUSH 0x0                            ; 00513282
     PUSH 0x636dfe                       ; 00513284 | = "3D acceleration has been turned off!"

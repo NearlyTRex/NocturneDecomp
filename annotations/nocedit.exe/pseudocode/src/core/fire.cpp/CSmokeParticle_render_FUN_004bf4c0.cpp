@@ -35,7 +35,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
   local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
   local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_64);
+  engine_special_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_64);
   iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
                     (g_CDemonRendererPtr2,vertex_ptr_00);
   if (iVar2 != 0) {
@@ -57,22 +57,22 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_28.x = (int)ROUND(fVar3 * 256.0f);
     local_28.y = (int)ROUND(fVar3 * 256.0f);
     local_28.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_28);
     local_70.x = (int)ROUND(fVar2 * 256.0f);
     local_70.y = (int)ROUND(fVar3 * 256.0f);
     local_70.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_70);
     local_34.x = (int)ROUND(fVar2 * 256.0f);
     local_34.y = (int)ROUND(fVar2 * 256.0f);
     local_34.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
     local_4c.x = (int)ROUND(fVar3 * 256.0f);
     local_4c.y = (int)ROUND(fVar2 * 256.0f);
     local_4c.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_4c);
     g_RenderVertexBuffer[0].u = 0x80000;
     g_RenderVertexBuffer[0].v = 0xf80000;

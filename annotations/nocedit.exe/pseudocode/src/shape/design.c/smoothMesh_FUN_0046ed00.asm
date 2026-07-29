@@ -13,10 +13,10 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_dsemodel.cpp_CDSEModel_doNothing_FUN_00490020
 ;   shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     CALL shape_dsemodel.cpp_CDSEModel_doNothing_FUN_00490020 ; 0046ed22
         ;   XREF to: 00490020 (UNCONDITIONAL_CALL)  ; void shape_dsemodel.cpp_CDSEModel_doNothing_FUN_00490020(CDSEModel * this_ptr)
     ADD ESP,0x4                         ; 0046ed27
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046ed2a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046ed2a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046ed2f
     PUSH 0x0                            ; 0046ed31
     MOV EAX,0x61e0a3                    ; 0046ed33 | = "Mesh smoothed."

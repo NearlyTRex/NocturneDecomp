@@ -1,0 +1,19 @@
+// Name: engine_special.cpp_add3dLine_FUN_005b79e0
+// Address: 005b79e0
+// Address Range: [[005b79e0, 005b7a08]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_special_cpp_add3dLine_FUN_005b79e0(void *start_point,void *end_point,int line_style)
+
+#include "nocturne.h"
+
+int __cdecl engine_special_cpp_add3dLine_FUN_005b79e0(void *start_point,void *end_point,int line_style)
+
+{
+  int iVar1;
+  
+  if (g_UseExternalRenderer == 0) {
+    return 0;
+  }
+  iVar1 = (*g_APIDLL_add3dLine)(start_point,end_point,line_style);
+  return iVar1;
+}

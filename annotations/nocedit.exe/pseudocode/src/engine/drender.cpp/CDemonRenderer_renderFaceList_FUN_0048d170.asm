@@ -36,7 +36,7 @@
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00483370
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-;   wincore_windll.cpp_drawPolyList2_FUN_005b7780
+;   engine_special.cpp_drawPolyList2_FUN_005b7780
 ;
 ; *****************************************************************************
 
@@ -301,8 +301,8 @@ section .text
     PUSH 0x6703f4                       ; 0048d3ed | g_VisibleFacePointers
     MOV ECX,dword ptr [ESI]             ; 0048d3f2
     PUSH ECX                            ; 0048d3f4
-    CALL wincore_windll.cpp_drawPolyList2_FUN_005b7780 ; 0048d3f5
-        ;   XREF to: 005b7780 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList2_FUN_005b7780(SRenderVertex * vertex_buffer, ushort * * polygons, int polygon_count, int render_flags)
+    CALL engine_special.cpp_drawPolyList2_FUN_005b7780 ; 0048d3f5
+        ;   XREF to: 005b7780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_005b7780(SRenderVertex * vertex_buffer, ushort * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0048d3fa
     ADD ESP,0x14                        ; 0048d3fd
     POP EBP                             ; 0048d400

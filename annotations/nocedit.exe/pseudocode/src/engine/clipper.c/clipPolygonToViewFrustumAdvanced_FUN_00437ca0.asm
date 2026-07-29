@@ -38,7 +38,7 @@
 ;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
 ;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
 ;
 ; *****************************************************************************
 
@@ -185,8 +185,8 @@ section .text
     ADD EBX,EAX                         ; 00437dd1
     PUSH 0x825428                       ; 00437dd3 | g_ClipperCullingPointers
     MOV dword ptr [0x030e56b8],EBX      ; 00437dd8 | g_RenderedTriangleCount
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 00437dde
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 00437dde
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     MOV EAX,0x1                         ; 00437de3
     ADD ESP,0xc                         ; 00437de8
     ADD ESP,0x1c                        ; 00437deb

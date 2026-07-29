@@ -32,10 +32,10 @@
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     CMP dword ptr [EBP + -0x8],0x0      ; 00463869
     JNZ 0x00463895                      ; 0046386d
         ;   XREF to: 00463895 (CONDITIONAL_JUMP)  ; LAB_00463895
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046386f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046386f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00463874
     PUSH 0x0                            ; 00463876
     MOV EAX,0x61c060                    ; 00463878 | = "ERROR: Can't allocate memory to remov..."

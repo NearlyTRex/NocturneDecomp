@@ -469,7 +469,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
     core_menu_cpp_showCalibrationTest_FUN_00510ba0();
   }
   wincore_winvideo_cpp_playMovie_FUN_005f4a00("video","opening.avi");
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading...");
   pcVar6 = loading_text;
   do {

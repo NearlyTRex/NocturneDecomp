@@ -105,11 +105,11 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_114.y = CStack_d8.y + CStack_24.y;
     CStack_114.z = CStack_d8.z + CStack_24.z;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_48,&CStack_3c);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr->projected_vertex,&CStack_3c);
     pCVar1 = g_CDemonRendererPtr1;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_114,&CStack_54);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr[1].projected_vertex,&CStack_54);
     pSVar7 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar22 = pSVar7[1].projected_vertex.transformed_x;
@@ -197,11 +197,11 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_78.y = CStack_a8.y + CStack_6c.y;
     CStack_78.z = CStack_a8.z + CStack_6c.z;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_60,&CStack_108);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr->projected_vertex,&CStack_108);
     pCVar1 = g_CDemonRendererPtr1;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_78,&CStack_f0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr[1].projected_vertex,&CStack_f0);
     pSVar7 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar22 = pSVar7[1].projected_vertex.transformed_x;
@@ -289,11 +289,11 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_9c.y = CStack_12c.y + CStack_fc.y;
     CStack_9c.z = CStack_12c.z + CStack_fc.z;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_30,&CStack_cc);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr->projected_vertex,&CStack_cc);
     pCVar1 = g_CDemonRendererPtr1;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_9c,(CVector3i *)&stack0xffffffe8);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffe8);
     pSVar7 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     iVar22 = pSVar7[1].projected_vertex.transformed_x;

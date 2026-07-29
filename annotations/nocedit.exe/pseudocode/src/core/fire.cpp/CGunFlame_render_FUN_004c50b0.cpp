@@ -94,24 +94,24 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   local_48[0].x = (int)ROUND(fVar7 * 256.0f);
   local_48[0].y = (int)ROUND(fVar14 * 256.0f);
   local_48[0].z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,local_48);
   fVar15 = local_d0 * (float)128 * (float)0.00390625;
   local_54.x = (int)ROUND(fVar15 * 256.0f);
   local_54.y = (int)ROUND(fVar14 * 256.0f);
   local_54.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
   fVar14 = -fVar2 * (float)128 * (float)0.00390625;
   local_60.x = (int)ROUND(fVar15 * 256.0f);
   local_60.y = (int)ROUND(fVar14 * 256.0f);
   local_60.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_60);
   local_6c.x = (int)ROUND(fVar7 * 256.0f);
   local_6c.y = (int)ROUND(fVar14 * 256.0f);
   local_6c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_6c);
   this_ptr_00 = g_CDemonRendererPtr2;
   fVar7 = (2.0f - fVar1) * fVar1;

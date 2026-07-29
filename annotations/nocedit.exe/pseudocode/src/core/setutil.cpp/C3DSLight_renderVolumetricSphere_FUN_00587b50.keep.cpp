@@ -51,7 +51,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       local_50.x = (int)ROUND((float)(fVar5 * fVar6 * fVar8) * 256.0f);
       local_50.y = (int)ROUND((float)(fVar2 * fVar6) * 256.0f);
       local_50.z = (int)ROUND((float)(fVar1 * fVar6 * fVar8) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&vtx->projected_vertex,&local_50);
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c(&vtx->projected_vertex,&local_50);
       this_ptr_00 = g_CDemonRendererPtr2;
       vtx->u = 0x80 << 16;
       vtx->v = 0x80 << 16;

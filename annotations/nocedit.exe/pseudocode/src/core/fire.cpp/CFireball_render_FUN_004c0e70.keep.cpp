@@ -68,22 +68,22 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     local_quad.x = (int)ROUND(fVar2 * 256.0f);
     local_quad.y = (int)ROUND(fVar2 * 256.0f);
     local_quad.z = 0;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_quad);
     local_quad.x = (int)ROUND(local_1c * 256.0f);
     local_quad.y = (int)ROUND(fVar2 * 256.0f);
     local_quad.z = 0;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_quad);
     local_quad.x = (int)ROUND(local_1c * 256.0f);
     local_quad.y = (int)ROUND(local_1c * 256.0f);
     local_quad.z = 0;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_quad);
     local_quad.x = (int)ROUND(fVar2 * 256.0f);
     local_quad.y = (int)ROUND(local_1c * 256.0f);
     local_quad.z = 0;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_quad);
     if (this_ptr->lighting_active == 1) {
       texture = &g_FireEffectRedSparkTexture;
@@ -140,22 +140,22 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         local_quad.x = (int)ROUND(fVar4 * 256.0f);
         local_quad.y = (int)ROUND(fVar4 * 256.0f);
         local_quad.z = 0;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_quad);
         local_quad.x = (int)ROUND(fVar5 * 256.0f);
         local_quad.y = (int)ROUND(fVar4 * 256.0f);
         local_quad.z = 0;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_quad);
         local_quad.x = (int)ROUND(fVar5 * 256.0f);
         local_quad.y = (int)ROUND(fVar5 * 256.0f);
         local_quad.z = 0;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_quad);
         local_quad.x = (int)ROUND(fVar4 * 256.0f);
         local_quad.y = (int)ROUND(fVar5 * 256.0f);
         local_quad.z = 0;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_quad);
         (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
                   (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);

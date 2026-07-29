@@ -26,9 +26,9 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EBP                            ; 0045ee73
     MOV EBP,ESP                         ; 0045ee74
     SUB ESP,0x4c                        ; 0045ee76
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045ee7c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045ee7c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0045ee81
     PUSH 0x0                            ; 0045ee83
     MOV EAX,0x61b6be                    ; 0045ee85 | = "Realign object"

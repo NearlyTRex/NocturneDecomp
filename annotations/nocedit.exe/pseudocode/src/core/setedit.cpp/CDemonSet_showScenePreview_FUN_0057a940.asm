@@ -237,8 +237,8 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80 ; 0057aad8
         ;   XREF to: 0044cb80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 0057aadd
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 0057aae0
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 0057aae0
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     MOV EBX,dword ptr [0x00681ab8]      ; 0057aae5 | g_CSlewInstance | g_CSlewPtr
     FLD float ptr [EBP + -0x2c]         ; 0057aaeb
     NOP                                 ; 0057aaee
@@ -412,8 +412,8 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0057ac92
     PUSH 0x0                            ; 0057ac95
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 0057ac97
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 0057ac97
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 0057ac9c
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 0057ac9f
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()

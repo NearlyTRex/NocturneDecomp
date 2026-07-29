@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EDI                            ; 004038a3
         ;   Label: LAB_004038a3
     PUSH ESI                            ; 004038a4
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004038a5
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004038a5
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x02d051f4]                ; 004038aa | g_PerspectiveReciprocal
     MOV dword ptr [ESI + 0x2c],EAX      ; 004038af | g_RenderVertexBuffer[0].a
     MOV AH,byte ptr [ESI + 0x13]        ; 004038b2 | g_RenderVertexBuffer[0].projected_vertex.screen_x+3

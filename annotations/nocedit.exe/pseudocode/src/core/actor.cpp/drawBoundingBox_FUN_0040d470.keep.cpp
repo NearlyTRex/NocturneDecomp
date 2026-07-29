@@ -44,13 +44,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
       current_fixed.x = (int)ROUND(pCVar8->x * 256.0f);
       current_fixed.y = (int)ROUND(pCVar8->y * 256.0f);
       current_fixed.z = (int)ROUND(pCVar8->z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex, &current_fixed);
 
       midpoint_fixed.x = (int)ROUND((fVar4 + fVar1) * 256.0f);
       midpoint_fixed.y = (int)ROUND((fVar5 + fVar2) * 256.0f);
       midpoint_fixed.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex, &midpoint_fixed);
 
       pSVar12 = g_CDemonRendererPtr1->vertex_buffer_ptr;

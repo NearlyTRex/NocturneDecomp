@@ -9,11 +9,11 @@
 ;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     CALL engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580 ; 005dd9a7
         ;   XREF to: 005dd580 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 005dd9ac
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005dd9af
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005dd9af
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 005dd9b4
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005dd9b9

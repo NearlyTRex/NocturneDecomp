@@ -38,8 +38,8 @@
 ;   engine_prim.c_normalizeTextureCoords_FUN_00552020
 ;   engine_prim.c_prepareDepthBuffer_FUN_00551fb0
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
-;   wincore_windll.cpp_drawPolygon_FUN_005b75e0
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon_FUN_005b75e0
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -247,8 +247,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 005526f3
     PUSH EDX                            ; 005526f7
     MOV dword ptr [0x030e56b8],EDI      ; 005526f8 | g_RenderedTriangleCount
-    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 005526fe
-        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon_FUN_005b75e0 ; 005526fe
+        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00552703
     ADD ESP,0x14                        ; 00552706
     POP EBP                             ; 00552709
@@ -488,8 +488,8 @@ section .text
         ;   Label: LAB_00552961
     MOV EBX,dword ptr [ESP + 0xc]       ; 00552965
     MOV ESI,EBP                         ; 00552969
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 0055296b
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 0055296b
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 00552970
     ADD dword ptr [EBP + 0x8],EAX       ; 00552973
     MOV ECX,dword ptr [EBP + 0x18]      ; 00552976

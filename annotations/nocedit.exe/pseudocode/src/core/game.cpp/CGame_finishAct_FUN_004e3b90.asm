@@ -55,7 +55,7 @@
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_wrapText_FUN_004d0010
-;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -102,8 +102,8 @@ section .text
     SAHF                                ; 004e3bf1
     JNC 0x004e3c54                      ; 004e3bf2
         ;   XREF to: 004e3c54 (CONDITIONAL_JUMP)  ; LAB_004e3c54
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004e3bf4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004e3bf4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x62d555                       ; 004e3bf9 | = "To be continued..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 004e3bfe
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
@@ -175,8 +175,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 ; 004e3cbc
         ;   XREF to: 004105d0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004e3cc1
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004e3cc4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004e3cc4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 004e3cc9
     PUSH 0x0                            ; 004e3cce
     PUSH 0x0                            ; 004e3cd0

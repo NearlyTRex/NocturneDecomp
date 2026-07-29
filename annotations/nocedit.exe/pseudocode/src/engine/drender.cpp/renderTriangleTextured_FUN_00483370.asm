@@ -41,8 +41,8 @@
 ;
 ; Called Functions:
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     PUSH EBX                            ; 004833eb
     LEA EAX,[ESP + 0x8]                 ; 004833ec
     PUSH EAX                            ; 004833f0
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 004833f1
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 004833f1
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 004833f6
     MOV EBP,dword ptr [0x02c6cb70]      ; 004833f9 | g_RenderTriangleEdgeCount
         ;   Label: LAB_004833f9
@@ -292,8 +292,8 @@ section .text
         ;   Label: LAB_00483618
     MOV ESI,dword ptr [ESP + 0x54]      ; 0048361c
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00483620
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00483624
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 00483624
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 00483629 | g_RenderAbortFlag
     JNZ 0x004833f9                      ; 00483630
         ;   XREF to: 004833f9 (CONDITIONAL_JUMP)  ; LAB_004833f9

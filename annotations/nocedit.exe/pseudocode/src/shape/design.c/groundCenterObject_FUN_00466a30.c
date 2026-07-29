@@ -61,7 +61,7 @@ void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
   for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {
     g_LoadedVertices[local_14].vertex.y = g_LoadedVertices[local_14].vertex.y - fVar8;
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Object grounded.  Hit a key...",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

@@ -31,7 +31,7 @@ void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_toleran
   iVar4 = g_PolygonCount;
   bVar7 = 0;
   if (-1 < display_progress) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Scanning polygons...",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   }

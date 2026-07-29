@@ -155,8 +155,8 @@ section .text
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 0053e310
         ;   XREF to: 00523e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053e315
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053e318
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0053e318
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0053e31d
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EDI,dword ptr [0x0067a3d0]      ; 0053e322 | g_CFireEffectPtr
@@ -278,8 +278,8 @@ section .text
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 0053e496
         ;   XREF to: 00523e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053e49b
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053e49e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0053e49e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053e4a3
     MOV ECX,dword ptr [EAX + 0x38]      ; 0053e4a6
     TEST ECX,ECX                        ; 0053e4a9

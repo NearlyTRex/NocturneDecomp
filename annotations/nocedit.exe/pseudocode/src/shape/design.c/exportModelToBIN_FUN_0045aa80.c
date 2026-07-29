@@ -65,7 +65,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
     local_1c = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wb");
   }
   if (local_1c == (_FILE *)0x0) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_2d_c_drawText_FUN_00401fd0("Unable to write binary file!",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

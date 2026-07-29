@@ -59,9 +59,9 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
+;   engine_special.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearZBufferNative_FUN_005b3ed4
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f460
-;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -201,10 +201,10 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0057d05b
         ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0057d060
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057d063
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0057d068
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057d063
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0057d068
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x0                            ; 0057d06d
     MOV EBX,dword ptr [0x006810c8]      ; 0057d06f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 0057d075

@@ -365,8 +365,8 @@ section .text
     MOV ECX,0x1                         ; 0056ccd9
     ADD ESP,0x8                         ; 0056ccde
     MOV dword ptr [0x03277d14],ECX      ; 0056cce1 | g_CDemonRaytraceInstance
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0056cce7
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0056cce7
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x0                            ; 0056ccec
     MOV EBX,dword ptr [0x006810c8]      ; 0056ccee | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 0056ccf4
@@ -400,8 +400,8 @@ section .text
     MOV EAX,EDX                         ; 0056cd44
     JMP 0x0056cc57                      ; 0056cd46
         ;   XREF to: 0056cc57 (UNCONDITIONAL_JUMP)  ; LAB_0056cc57
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0056cd4b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0056cd4b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0056cd4b
     MOV ESP,EBP                         ; 0056cd50
     POP EBP                             ; 0056cd52

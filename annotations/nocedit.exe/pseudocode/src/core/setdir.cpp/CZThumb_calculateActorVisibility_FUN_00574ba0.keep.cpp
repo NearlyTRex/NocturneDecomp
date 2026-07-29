@@ -39,7 +39,7 @@ float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZTh
             (g_CDemonRendererPtr2,&local_34,(CVector3f *)0x0);
   iVar7 = 0;
   do {
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar7 / 0x30].projected_vertex,
                bounding_box_vertices);
     bounding_box_vertices = bounding_box_vertices + 1;

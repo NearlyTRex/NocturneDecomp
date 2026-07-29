@@ -15,7 +15,7 @@ void __cdecl shape_design_c_displayPalette_FUN_00461560(int color)
   int local_2c;
   int local_14;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   local_14 = 0;
   for (local_2c = 0; local_2c < 0x100; local_2c = local_2c + 1) {
     iVar3 = (local_2c % 0x10) * 0xe;

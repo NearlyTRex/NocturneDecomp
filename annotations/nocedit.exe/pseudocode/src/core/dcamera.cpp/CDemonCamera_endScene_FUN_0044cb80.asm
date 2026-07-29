@@ -37,8 +37,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_watcom.c__memcpy_FUN_004b1a78
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
-;   wincore_windll.cpp_endScene_FUN_005b72a0
-;   wincore_windll.cpp_masterZBuffer_FUN_005b7d00
+;   engine_special.cpp_endScene_FUN_005b72a0
+;   engine_special.cpp_masterZBuffer_FUN_005b7d00
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_0044cb9e
     JZ 0x0044cbac                       ; 0044cba5
         ;   XREF to: 0044cbac (CONDITIONAL_JUMP)  ; LAB_0044cbac
-    CALL wincore_windll.cpp_endScene_FUN_005b72a0 ; 0044cba7
-        ;   XREF to: 005b72a0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_endScene_FUN_005b72a0()
+    CALL engine_special.cpp_endScene_FUN_005b72a0 ; 0044cba7
+        ;   XREF to: 005b72a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_endScene_FUN_005b72a0()
     MOV EBP,dword ptr [EBX + 0x168]     ; 0044cbac
         ;   Label: LAB_0044cbac
     TEST EBP,EBP                        ; 0044cbb2
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 0044cb9e (UNCONDITIONAL_JUMP)  ; LAB_0044cb9e
     PUSH EBP                            ; 0044cc54
         ;   Label: LAB_0044cc54
-    CALL wincore_windll.cpp_masterZBuffer_FUN_005b7d00 ; 0044cc55
-        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+    CALL engine_special.cpp_masterZBuffer_FUN_005b7d00 ; 0044cc55
+        ;   XREF to: 005b7d00 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
     ADD ESP,0x4                         ; 0044cc5a
     JMP 0x0044cbca                      ; 0044cc5d
         ;   XREF to: 0044cbca (UNCONDITIONAL_JUMP)  ; LAB_0044cbca

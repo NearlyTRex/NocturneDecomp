@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EBP                            ; 00467f33
     MOV EBP,ESP                         ; 00467f34
     SUB ESP,0x60                        ; 00467f36
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00467f3c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00467f3c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61cbba                    ; 00467f41 | = "Enter X,Y,Z scales : "
     PUSH ECX                            ; 00467f46 | = "Enter X,Y,Z scales : "
     PUSH 0x0                            ; 00467f47

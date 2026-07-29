@@ -34,7 +34,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
         } while (iVar3 < this_ptr->framebuffer_height);
       }
       if (g_UseExternalRenderer != 0) {
-        wincore_windll_cpp_masterZBuffer_FUN_005b7d00(0);
+        engine_special_cpp_masterZBuffer_FUN_005b7d00(0);
         return;
       }
     }

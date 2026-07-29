@@ -22,7 +22,7 @@ void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
   int local_14;
   
   bVar4 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_9c,10,0,0,"Enter # of vertices to use : ");
   iVar2 = strlen(local_9c);
   if (((iVar2 != 0) && (iVar3 = atoi(local_9c), 0 < iVar3)) &&

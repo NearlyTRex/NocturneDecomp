@@ -43,12 +43,12 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
-;   shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -1237,8 +1237,8 @@ section .text
     POP EDI                             ; 005146be
         ;   Label: LAB_005146be
     INC dword ptr [0x02f29270]          ; 005146bf | g_CustomKeyCount
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005146c5
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005146c5
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005146ca
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     LEA EAX,[ESP + 0x8]                 ; 005146cf

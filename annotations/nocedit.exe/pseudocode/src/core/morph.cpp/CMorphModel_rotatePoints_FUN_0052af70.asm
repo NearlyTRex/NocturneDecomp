@@ -37,7 +37,7 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -125,8 +125,8 @@ section .text
     PUSH ESI                            ; 0052b068 | g_MorphVertexBuffer | g_MorphVertexBuffer[1].x
     ADD EAX,EDI                         ; 0052b069
     PUSH EAX                            ; 0052b06b
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052b06c
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0052b06c
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 0052b071 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052b076 | g_CDemonRendererInstance
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x10] ; 0052b078

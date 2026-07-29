@@ -47,7 +47,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap 
             if (g_WindowWidth < x + iVar1) {
               iVar1 = g_WindowWidth - x;
             }
-            wincore_windll_cpp_renderAlphaRow32_FUN_005b555c
+            engine_special_cpp_renderAlphaRow32_FUN_005b555c
                       (destPixels,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,iVar1)
             ;
           }
@@ -77,7 +77,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap 
             if (g_WindowWidth < x + pixelCount) {
               pixelCount = g_WindowWidth - x;
             }
-            wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
+            engine_special_cpp_renderAlphaRow16_FUN_005b55f7
                       (destPixels_00,(uchar *)(local_14 + iVar3),(uchar *)(pcVar3 + iVar3),alpha,
                        pixelCount);
           }

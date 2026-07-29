@@ -32,7 +32,7 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           CStack_30.x = 0;
           CStack_30.y = (int)ROUND(fStack_y * 256.0f);
           CStack_30.z = (int)ROUND(0.0f * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex, &CStack_30);
           pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(pSVar6[0], pSVar6[2]);
@@ -42,12 +42,12 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         CStack_30.x = (int)ROUND(-(this_ptr->ladder_size).x * (float)0.5 * 256.0f);
         CStack_30.y = (int)ROUND(fStack_y * 256.0f);
         CStack_30.z = (int)ROUND(0.0f * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex, &CStack_30);
         CStack_30.x = (int)ROUND((this_ptr->ladder_size).x * (float)0.5 * 256.0f);
         CStack_30.y = (int)ROUND(fStack_y * 256.0f);
         CStack_30.z = (int)ROUND(0.0f * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex, &CStack_30);
         pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         engine_3d_c_clipAndDrawLine2D_FUN_00407d70(pSVar6[0], pSVar6[1]);

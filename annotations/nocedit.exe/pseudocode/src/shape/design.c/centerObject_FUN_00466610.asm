@@ -38,8 +38,8 @@
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -153,8 +153,8 @@ section .text
     JMP 0x00466679                      ; 0046673f
         ;   XREF to: 00466679 (UNCONDITIONAL_JUMP)  ; LAB_00466679
         ;   Label: LAB_0046673f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00466744
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00466744
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00466744
     MOV EAX,0x61c725                    ; 00466749 | = "Press <Enter> or enter min,max points : "
     PUSH EAX                            ; 0046674e | = "Press <Enter> or enter min,max points : "

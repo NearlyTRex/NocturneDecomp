@@ -24,7 +24,7 @@ void __cdecl engine_texture_cpp_CTextureCache_renderAllTextures_FUN_005dd580(CTe
       local_cc.v = 0;
       local_cc.projected_vertex.screen_x = 0x4fffb;
       local_cc.projected_vertex.screen_y = 0x4fffb;
-      wincore_windll_cpp_drawPolygon_FUN_005b75e0(&local_cc,4,1);
+      engine_special_cpp_drawPolygon_FUN_005b75e0(&local_cc,4,1);
     } while (texture_index < this_ptr->current_texture_count);
   }
   return;

@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_loadModelFile_FUN_00458ac0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 00458a13
     MOV EBP,ESP                         ; 00458a14
     SUB ESP,0x54                        ; 00458a16
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00458a1c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00458a1c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EDX,0x61a9b6                    ; 00458a21 | = "Model name to load : "
     PUSH EDX                            ; 00458a26 | = "Model name to load : "
     PUSH 0x0                            ; 00458a27

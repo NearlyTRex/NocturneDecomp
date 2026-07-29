@@ -14,7 +14,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProcedu
   
   do {
     while( true ) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Procedural texture menu",0,0);
       engine_2d_c_drawText_FUN_00401fd0("1. Water",0,0x16);
       engine_2d_c_drawText_FUN_00401fd0("Well, what's it gonna be?",0,0x2c);

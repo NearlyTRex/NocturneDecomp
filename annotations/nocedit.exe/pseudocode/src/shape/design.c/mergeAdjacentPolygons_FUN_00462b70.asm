@@ -39,10 +39,10 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;   shape_design.c_calculateVertexAngle_FUN_00462050
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     CMP dword ptr [EBP + -0x20],0x2     ; 00462c1f
     JLE 0x00462c55                      ; 00462c23
         ;   XREF to: 00462c55 (CONDITIONAL_JUMP)  ; LAB_00462c55
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00462c25
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00462c25
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00462c2a
     PUSH 0x0                            ; 00462c2c
     MOV EAX,0x61bfee                    ; 00462c2e | = "ERROR: Polygons share more than 2 ver..."
@@ -660,8 +660,8 @@ section .text
         ;   Label: LAB_004632ff
     JLE 0x00463335                      ; 00463303
         ;   XREF to: 00463335 (CONDITIONAL_JUMP)  ; LAB_00463335
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463305
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463305
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046330a
     PUSH 0x0                            ; 0046330c
     MOV EAX,0x61c01a                    ; 0046330e | = "ERROR: More than 3 vertices to delete!"

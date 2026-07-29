@@ -126,7 +126,7 @@ LAB_005e0160:
   CStack_50.x = (int)ROUND(256.0f * 0.0);
   CStack_50.y = (int)ROUND(fVar4 * 256.0f);
   CStack_50.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_50);
   pCVar3 = g_CDemonRendererPtr2;
   pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -134,7 +134,7 @@ LAB_005e0160:
   CStack_74.x = (int)ROUND(256.0f * 0.0);
   CStack_74.y = (int)ROUND(CStack_8c.max.y * 256.0f);
   CStack_74.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar3->vertex_buffer_ptr[1].projected_vertex,&CStack_74);
   iStack_d8 = 0;
   if (-1 < iStack_d0) {
@@ -151,7 +151,7 @@ LAB_005e0160:
       CStack_5c.x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);
       CStack_5c.y = (int)ROUND(CStack_8c.min.y * 256.0f);
       CStack_5c.z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&pCVar3->vertex_buffer_ptr[iVar2 + 2].projected_vertex,&CStack_5c);
       pCVar3 = g_CDemonRendererPtr2;
       pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -159,7 +159,7 @@ LAB_005e0160:
       aCStack_44[0].x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);
       aCStack_44[0].y = (int)ROUND(CStack_8c.max.y * 256.0f);
       aCStack_44[0].z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&pCVar3->vertex_buffer_ptr[iVar2 + 3].projected_vertex,aCStack_44);
       iStack_d8 = iStack_d8 + 1;
     } while (iStack_d8 <= iStack_d0);

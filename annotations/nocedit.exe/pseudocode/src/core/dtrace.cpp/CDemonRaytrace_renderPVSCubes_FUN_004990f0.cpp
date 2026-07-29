@@ -25,7 +25,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0(CDemonRa
                 (*(CDemonCube **)((int)g_PVSCubePointers + iVar2),0);
       iVar2 = iVar2 + 4;
       iVar1 = iVar1 + 1;
-      wincore_windll_cpp_sync_FUN_005b7bc0();
+      engine_special_cpp_sync_FUN_005b7bc0();
       world_position = world_position + 1;
     } while (iVar1 < g_PVSDrawnCubeCount);
   }

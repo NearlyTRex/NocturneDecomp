@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 0040d3e8
     MOV EAX,dword ptr [EDX]             ; 0040d3e9 | g_CDemonRendererInstance
     PUSH EAX                            ; 0040d3eb
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d3ec
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d3ec
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     LEA EBX,[ESP + 0x2c]                ; 0040d3f1
     ADD ESP,0x8                         ; 0040d3f5
     LEA EAX,[ESP + 0x18]                ; 0040d3f8
@@ -117,8 +117,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0040d429 | g_CDemonRendererInstance
     ADD EAX,0x30                        ; 0040d42b
     PUSH EAX                            ; 0040d42e
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d42f
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d42f
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0040d434
     MOV EAX,[0x006703e8]                ; 0040d437 | g_CDemonRendererPtr1
     JMP 0x00604780                      ; 0040d43c

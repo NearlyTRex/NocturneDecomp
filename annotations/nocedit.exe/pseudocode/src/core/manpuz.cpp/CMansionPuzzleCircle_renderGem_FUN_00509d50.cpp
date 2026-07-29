@@ -59,22 +59,22 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     local_54.x = (int)ROUND(256.0f * -1.4);
     local_54.y = (int)ROUND(256.0f * 0.2);
     local_54.z = (int)ROUND(256.0f * -1.4);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_54);
     local_60.x = (int)ROUND(256.0f * 1.4);
     local_60.y = (int)ROUND(256.0f * 0.2);
     local_60.z = (int)ROUND(256.0f * -1.4);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_60);
     local_3c.x = (int)ROUND(256.0f * 1.4);
     local_3c.y = (int)ROUND(256.0f * 0.2);
     local_3c.z = (int)ROUND(256.0f * 1.4);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
     local_30.x = (int)ROUND(256.0f * -1.4);
     local_30.y = (int)ROUND(256.0f * 0.2);
     local_30.z = (int)ROUND(256.0f * 1.4);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
     this_ptr_00 = g_CDemonRendererPtr2;
     SStack_a8.base.base.count = 4;

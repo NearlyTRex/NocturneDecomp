@@ -58,8 +58,8 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-;   sound_sndmain.cpp_processAudio_FUN_005abe20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearZBufferNative_FUN_005b3ed4
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -76,10 +76,10 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00529ed9
     CALL sound_sndmain.cpp_processAudio_FUN_005abe20 ; 00529edc
         ;   XREF to: 005abe20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_processAudio_FUN_005abe20()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00529ee1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00529ee6
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00529ee1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 00529ee6
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x3f87558                      ; 00529eeb | g_ZeroVector
     MOV EDX,dword ptr [0x006703ec]      ; 00529ef0 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00529ef6 | g_CDemonRendererInstance

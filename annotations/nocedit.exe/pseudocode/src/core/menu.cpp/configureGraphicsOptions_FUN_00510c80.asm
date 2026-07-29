@@ -40,13 +40,13 @@
 ;   core_moon.cpp_CMoon_update_FUN_00529d60
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
+;   engine_special.cpp_buildCardList_FUN_005b7db0
+;   engine_special.cpp_getVideoMemory_FUN_005b7d60
+;   engine_special.cpp_kill_FUN_005b71e0
+;   engine_special.cpp_loadExternalRenderer_FUN_005b6750
+;   engine_special.cpp_selectCard_FUN_005b7d90
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_buildCardList_FUN_005b7db0
-;   wincore_windll.cpp_getVideoMemory_FUN_005b7d60
-;   wincore_windll.cpp_kill_FUN_005b71e0
-;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
-;   wincore_windll.cpp_selectCard_FUN_005b7d90
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     PUSH 0x2f2763c                      ; 00510cc7 | g_GraphicsCardNames
     PUSH 0x2f275fc                      ; 00510ccc | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00510cd1 | g_GraphicsCardCount
-    CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00510cd6
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
+    CALL engine_special.cpp_buildCardList_FUN_005b7db0 ; 00510cd6
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     MOV EAX,[0x02f275f4]                ; 00510cdb | g_CurrentGraphicsBoard
     MOV EBX,dword ptr [0x02f275f8]      ; 00510ce0 | g_GraphicsCardCount
     ADD ESP,0x14                        ; 00510ce6
@@ -100,8 +100,8 @@ section .text
     PUSH EAX                            ; 00510d15
     MOV dword ptr [ESP + 0x134],EDI     ; 00510d16
     MOV dword ptr [ESP + 0x138],EDI     ; 00510d1d
-    CALL wincore_windll.cpp_getVideoMemory_FUN_005b7d60 ; 00510d24
-        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
+    CALL engine_special.cpp_getVideoMemory_FUN_005b7d60 ; 00510d24
+        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 00510d29
     MOV EBP,0x684010                    ; 00510d2c | g_RendererDllPath
     XOR EBX,EBX                         ; 00510d31
@@ -168,11 +168,11 @@ section .text
         ;   XREF to: 00510dea (CONDITIONAL_JUMP)  ; LAB_00510dea
     POP EDI                             ; 00510e02
         ;   Label: LAB_00510e02
-    CALL wincore_windll.cpp_kill_FUN_005b71e0 ; 00510e03
-        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_kill_FUN_005b71e0()
+    CALL engine_special.cpp_kill_FUN_005b71e0 ; 00510e03
+        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005b71e0()
     PUSH EBX                            ; 00510e08
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00510e09
-        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_005b6750 ; 00510e09
+        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
     MOV ESI,dword ptr [0x03f6b878]      ; 00510e0e | g_UseDirect3D
     ADD ESP,0x4                         ; 00510e14
     CMP EBX,ESI                         ; 00510e17
@@ -184,8 +184,8 @@ section .text
     PUSH 0x2f2763c                      ; 00510e29 | g_GraphicsCardNames
     PUSH 0x2f275fc                      ; 00510e2e | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00510e33 | g_GraphicsCardCount
-    CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00510e38
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
+    CALL engine_special.cpp_buildCardList_FUN_005b7db0 ; 00510e38
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     ADD ESP,0x14                        ; 00510e3d
     LEA EAX,[ESP + 0x12c]               ; 00510e40
     PUSH EAX                            ; 00510e47
@@ -193,8 +193,8 @@ section .text
     PUSH EAX                            ; 00510e4f
     LEA EAX,[ESP + 0x12c]               ; 00510e50
     PUSH EAX                            ; 00510e57
-    CALL wincore_windll.cpp_getVideoMemory_FUN_005b7d60 ; 00510e58
-        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
+    CALL engine_special.cpp_getVideoMemory_FUN_005b7d60 ; 00510e58
+        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 00510e5d
     MOV EAX,[0x02f275f4]                ; 00510e60 | g_CurrentGraphicsBoard
         ;   Label: LAB_00510e60
@@ -543,11 +543,11 @@ section .text
         ;   XREF to: 00511226 (CONDITIONAL_JUMP)  ; LAB_00511226
     POP EDI                             ; 0051123e
         ;   Label: LAB_0051123e
-    CALL wincore_windll.cpp_kill_FUN_005b71e0 ; 0051123f
-        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_kill_FUN_005b71e0()
+    CALL engine_special.cpp_kill_FUN_005b71e0 ; 0051123f
+        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005b71e0()
     PUSH EBX                            ; 00511244
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00511245
-        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_005b6750 ; 00511245
+        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
     MOV ECX,dword ptr [0x03f6b878]      ; 0051124a | g_UseDirect3D
     ADD ESP,0x4                         ; 00511250
     CMP EBX,ECX                         ; 00511253
@@ -1005,12 +1005,12 @@ section .text
         ;   XREF to: 005116c6 (CONDITIONAL_JUMP)  ; LAB_005116c6
     POP EDI                             ; 005116de
         ;   Label: LAB_005116de
-    CALL wincore_windll.cpp_kill_FUN_005b71e0 ; 005116df
-        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_kill_FUN_005b71e0()
+    CALL engine_special.cpp_kill_FUN_005b71e0 ; 005116df
+        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005b71e0()
         ;   Label: LAB_005116df
     PUSH EBX                            ; 005116e4
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 005116e5
-        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_005b6750 ; 005116e5
+        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
     MOV ECX,dword ptr [0x03f6b878]      ; 005116ea | g_UseDirect3D
     ADD ESP,0x4                         ; 005116f0
     CMP EBX,ECX                         ; 005116f3
@@ -1061,8 +1061,8 @@ section .text
     PUSH 0x2f2763c                      ; 0051175a | g_GraphicsCardNames
     PUSH 0x2f275fc                      ; 0051175f | g_GraphicsCardDriverNames
     PUSH 0x2f275f8                      ; 00511764 | g_GraphicsCardCount
-    CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00511769
-        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
+    CALL engine_special.cpp_buildCardList_FUN_005b7db0 ; 00511769
+        ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_buildCardList_FUN_005b7db0(int * out_card_count, char * * out_driver_names, char * * out_card_names, int * out_vendor_ids, ...)
     ADD ESP,0x14                        ; 0051176e
     LEA EAX,[ESP + 0x12c]               ; 00511771
     PUSH EAX                            ; 00511778
@@ -1070,8 +1070,8 @@ section .text
     PUSH EAX                            ; 00511780
     LEA EAX,[ESP + 0x12c]               ; 00511781
     PUSH EAX                            ; 00511788
-    CALL wincore_windll.cpp_getVideoMemory_FUN_005b7d60 ; 00511789
-        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
+    CALL engine_special.cpp_getVideoMemory_FUN_005b7d60 ; 00511789
+        ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 0051178e
     JMP 0x005111d3                      ; 00511791
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
@@ -1094,8 +1094,8 @@ section .text
     MOV EAX,[0x02f275f4]                ; 005117c2 | g_CurrentGraphicsBoard
         ;   Label: LAB_005117c2
     PUSH EAX                            ; 005117c7
-    CALL wincore_windll.cpp_selectCard_FUN_005b7d90 ; 005117c8
-        ;   XREF to: 005b7d90 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectCard_FUN_005b7d90(int card_index)
+    CALL engine_special.cpp_selectCard_FUN_005b7d90 ; 005117c8
+        ;   XREF to: 005b7d90 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_005b7d90(int card_index)
     ADD ESP,0x4                         ; 005117cd
     JMP 0x005111d3                      ; 005117d0
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default

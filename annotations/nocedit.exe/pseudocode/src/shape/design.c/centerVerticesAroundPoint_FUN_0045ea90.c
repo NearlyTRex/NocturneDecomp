@@ -28,7 +28,7 @@ void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
   char cVar1;
   
   bVar5 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_54,10,0,0,"Bias around what point? (or -1 for user-defined) : ");
   iVar3 = -1;
   pcVar6 = local_54;

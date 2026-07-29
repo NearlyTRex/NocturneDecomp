@@ -111,8 +111,8 @@ section .text
     CMP dword ptr [EAX],0x0             ; 00541420
     JZ 0x005416bd                       ; 00541423
         ;   XREF to: 005416bd (CONDITIONAL_JUMP)  ; LAB_005416bd
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00541429
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00541429
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EBX,dword ptr [ESP + 0x10c]     ; 0054142e
     PUSH EBX                            ; 00541435
     PUSH 0x63d9ad                       ; 00541436 | = "Mission: %s"

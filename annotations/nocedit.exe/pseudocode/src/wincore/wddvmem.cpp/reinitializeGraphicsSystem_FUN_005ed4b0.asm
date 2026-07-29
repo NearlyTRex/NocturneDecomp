@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   crt_ddraw.c_DirectDrawCreate
+;   engine_special.cpp_restoreVideoMode_FUN_005b75b0
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
-;   wincore_windll.cpp_restoreVideoMode_FUN_005b75b0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_005ed4c5
     PUSH ESI                            ; 005ed4c6
     PUSH EBX                            ; 005ed4c7
-    CALL wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 ; 005ed4c8
-        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0()
+    CALL engine_special.cpp_restoreVideoMode_FUN_005b75b0 ; 005ed4c8
+        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreVideoMode_FUN_005b75b0()
     MOV EBX,dword ptr [0x03f9592c]      ; 005ed4cd | g_DirectDrawUnknown
     TEST EBX,EBX                        ; 005ed4d3
     JZ 0x005ed4e5                       ; 005ed4d5

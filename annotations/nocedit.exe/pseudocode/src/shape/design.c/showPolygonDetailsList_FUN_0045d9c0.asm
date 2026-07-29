@@ -34,8 +34,8 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     CMP EAX,dword ptr [0x016e990c]      ; 0045d9f5 | g_PolygonCount
     JGE 0x0045dbd1                      ; 0045d9fb
         ;   XREF to: 0045dbd1 (CONDITIONAL_JUMP)  ; LAB_0045dbd1
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045da01
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045da01
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV dword ptr [EBP + -0x10],0x0     ; 0045da06
     MOV EAX,dword ptr [EBP + -0xc]      ; 0045da0d
     MOV dword ptr [EBP + -0x8],EAX      ; 0045da10

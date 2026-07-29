@@ -77,7 +77,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       local_40 = 1;
     }
     if ((this_ptr->screen_clear_enabled != 0) || (this_ptr->screen_clear_condition != 0)) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
     }
     if (this_ptr->goggles_active == 0) {
       core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,1);
@@ -125,7 +125,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                 (g_CConsolePtr,"screen paint : %3.2f ms\n",(double)dVar4);
     }
     if (this_ptr->skip_frame_render == 0) {
-      wincore_windll_cpp_lockFrame_FUN_005b7210();
+      engine_special_cpp_lockFrame_FUN_005b7210();
       if (this_ptr->goggles_active != 0) {
         core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(g_CDemonSetPtr);
       }
@@ -281,12 +281,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x2c);
         engine_2d_c_drawText_FUN_00401fd0(this_ptr->debug_info_string,0,g_WindowHeight + -0x21);
         if (g_UseDirect3D != 0) {
-          iVar14 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x400);
-          iVar5 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x200);
-          iVar10 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x100);
-          iVar11 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
-          iVar12 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
-          iVar13 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
+          iVar14 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x400);
+          iVar5 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x200);
+          iVar10 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x100);
+          iVar11 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x80);
+          iVar12 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x40);
+          iVar13 = engine_special_cpp_getTextureInfo_FUN_005b7e70(0x20);
           _sprintf
                     (local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar13,iVar12,iVar11,iVar10,iVar5,
                      iVar14);
@@ -339,7 +339,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (this_ptr->is_paused != 0) {
         shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
       }
-      wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+      engine_special_cpp_unlockFrame_FUN_005b7250(0);
     }
     if (local_40 != 0) {
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();

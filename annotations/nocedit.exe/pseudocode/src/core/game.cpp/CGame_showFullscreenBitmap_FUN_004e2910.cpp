@@ -120,9 +120,9 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       iVar4 = iVar4 + 3;
     } while (iVar8 != 0x200);
     wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
-    wincore_windll_cpp_lockFrame_FUN_005b7210();
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+    engine_special_cpp_lockFrame_FUN_005b7210();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_unlockFrame_FUN_005b7250(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250

@@ -19,7 +19,7 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
   char local_74 [80];
   int local_24;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_74,8,0,0,"Enter in common nonmoving vertex # : ");
   if (local_74[0] != '\0') {
     reference_vertex_id = atoi(local_74);

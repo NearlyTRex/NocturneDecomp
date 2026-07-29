@@ -1894,8 +1894,7 @@ CEnemy_full_vtable g_CImpVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CLarvaVTable = {
@@ -1991,8 +1990,7 @@ CEnemy_full_vtable g_CLarvaVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CMimicVTable = {
@@ -2088,105 +2086,7 @@ CEnemy_full_vtable g_CMimicVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
-    }
-};
-CEnemy_full_vtable g_CMobsterVTable = {
-    ._ub = {
-        .setup = (CDemonActor_setup *)core_mobster_cpp_CMobster_setup_FUN_00525340,
-        .process = (CDemonActor_process *)core_mobster_cpp_CMobster_process_FUN_00525840,
-        .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0,
-        .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0,
-        .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0,
-        .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042b8a0,
-        .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830,
-        .processFootstepAtOffset = (CDemonActor_processFootstepAt *)core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,
-        .handleFootstep = (CDemonActor_handleFootstep *)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10,
-        .playSound = (CDemonActor_playSound *)core_actor_cpp_CDemonActor_playSound_FUN_00408f60,
-        .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80,
-        .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0,
-        .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0,
-        .getCollisionType = (CDemonActor_getCollisionType *)core_mobster_cpp_CMobster_getCollisionType_FUN_005279d0,
-        .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0,
-        .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90,
-        .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880,
-        .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0,
-        .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004098c0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0,
-        .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90,
-        .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50,
-        .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40,
-        .processActionButton = (CDemonActor_processActionButton *)core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60,
-        .setPositionAndOrientation = (CDemonActor_setPositionAndOrientation *)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0,
-        .onPickup = (CDemonActor_onPickup *)core_actor_cpp_CDemonActor_onPickup_FUN_0040a010,
-        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720,
-        .getAllowedMeleeAttackTypes = (CDemonActor_getAllowedMeleeAttackTypes *)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0,
-        .processMeleeHit = (CDemonActor_processMeleeHit *)core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210,
-        .fillAttackDamageInfo = (CDemonActor_fillAttackDamageInfo *)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0,
-        .playAttackHitEffects = (CDemonActor_playAttackHitEffects *)core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,
-        .canPickup = (CDemonActor_canPickup *)core_actor_cpp_CDemonActor_canPickup_FUN_00409000,
-        .pickup = (CDemonActor_pickup *)core_actor_cpp_CDemonActor_pickup_FUN_00409020,
-        .onDropped = (CDemonActor_onDropped *)core_actor_cpp_CDemonActor_onDropped_FUN_00409040,
-        .drop = (CDemonActor_drop *)core_charactr_cpp_CCharacter_drop_FUN_0042bf90,
-        .getCarrier = (CDemonActor_getCarrier *)core_actor_cpp_CDemonActor_getCarrier_FUN_00409060,
-        .getInteractionInfo = (CDemonActor_getInteractionInfo *)core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030,
-        .startInteraction = (CDemonActor_startInteraction *)core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090,
-        .updateInteraction = (CDemonActor_updateInteraction *)core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0,
-        .stopInteraction = (CDemonActor_stopInteraction *)core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0,
-        .spawnFlies = (CDemonActor_spawnFlies *)core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90,
-        .testCylinderCollision = (CDemonActor_testCylinderCollision *)core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0,
-        .testLineIntersection = (CDemonActor_testLineIntersection *)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150,
-        .getSurfaceProperties = (CDemonActor_onLaserHit *)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840,
-        .customRayIntersect = (CDemonActor_customRayIntersect *)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0,
-        .customIntersectCylinderXZ = (CDemonActor_customIntersectCylinderXZ *)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10,
-        .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50,
-        .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0,
-        .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0,
-        .getActorType = (CDemonActor_getActorType *)core_mobster_cpp_CMobster_getActorType_FUN_005251f0,
-        .onAreaDeleted = (CDemonActor_onAreaDeleted *)core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0,
-        .onActorDeleted = (CDemonActor_onActorDeleted *)core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0,
-        .processInEditor = (CDemonActor_processInEditor *)core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800,
-        .getPropertyList = (CDemonActor_getPropertyList *)core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70,
-        .initializeInEditor = (CDemonActor_initializeInEditor *)core_actor_cpp_CDemonActor_initializeInEditor_FUN_0040c730,
-        .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
-        .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40,
-        .dtor = (CDemonActor_dtor *)core_mobster_cpp_CMobster_dtor_FUN_00527c70,
-        .archive = (CDemonActor_archive *)core_mobster_cpp_CMobster_archive_FUN_00527230
-    },
-    ._uc = {
-        .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
-        .kill = (CCharacter_kill *)core_charactr_cpp_CCharacter_kill_FUN_00428e30,
-        .canWalk = (CCharacter_canWalk *)core_charactr_cpp_CCharacter_canWalk_FUN_0042ca60,
-        .isGrabbable = (CCharacter_isGrabbable *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .getGrabbed = (CCharacter_getGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .releaseFromGrab = (CCharacter_releaseFromGrab *)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40,
-        .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80,
-        .releaseVictim = (CCharacter_releaseVictim *)core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030,
-        .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0,
-        .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110,
-        .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180,
-        .processDamage = (CCharacter_processDamage *)core_mobster_cpp_CMobster_processDamage_FUN_00527740,
-        .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_0042c580,
-        .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010,
-        .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0,
-        .setDoorTarget = (CCharacter_setDoorTarget *)core_charactr_cpp_CCharacter_setDoorTarget_FUN_0042cd50,
-        .clearDoorTarget = (CCharacter_clearDoorTarget *)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_0042cd60,
-        .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_0042cd90,
-        .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0,
-        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20,
-        .setWalkTarget = (CCharacter_setWalkTarget *)core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920,
-        .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,
-        .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20,
-        .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30
-    },
-    ._ue = {
-        .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
-        .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_mobster_cpp_CMobster_randomize_FUN_00527c30,
-        .reset = (CEnemy_reset *)core_mobster_cpp_CMobster_reset_FUN_00527360
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CSentinelVTable = {
@@ -2282,105 +2182,7 @@ CEnemy_full_vtable g_CSentinelVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
-    }
-};
-CEnemy_full_vtable g_CSmileyVTable = {
-    ._ub = {
-        .setup = (CDemonActor_setup *)core_smiley_cpp_CSmiley_setup_FUN_005a24d0,
-        .process = (CDemonActor_process *)core_smiley_cpp_CSmiley_process_FUN_005a2800,
-        .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0,
-        .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0,
-        .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0,
-        .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042b8a0,
-        .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830,
-        .processFootstepAtOffset = (CDemonActor_processFootstepAt *)core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,
-        .handleFootstep = (CDemonActor_handleFootstep *)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10,
-        .playSound = (CDemonActor_playSound *)core_actor_cpp_CDemonActor_playSound_FUN_00408f60,
-        .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80,
-        .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0,
-        .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0,
-        .getCollisionType = (CDemonActor_getCollisionType *)core_smiley_cpp_CSmiley_getCollisionType_FUN_005a37f0,
-        .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0,
-        .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90,
-        .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880,
-        .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0,
-        .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004098c0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690,
-        .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90,
-        .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50,
-        .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40,
-        .processActionButton = (CDemonActor_processActionButton *)core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60,
-        .setPositionAndOrientation = (CDemonActor_setPositionAndOrientation *)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0,
-        .onPickup = (CDemonActor_onPickup *)core_actor_cpp_CDemonActor_onPickup_FUN_0040a010,
-        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720,
-        .getAllowedMeleeAttackTypes = (CDemonActor_getAllowedMeleeAttackTypes *)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0,
-        .processMeleeHit = (CDemonActor_processMeleeHit *)core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210,
-        .fillAttackDamageInfo = (CDemonActor_fillAttackDamageInfo *)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0,
-        .playAttackHitEffects = (CDemonActor_playAttackHitEffects *)core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,
-        .canPickup = (CDemonActor_canPickup *)core_actor_cpp_CDemonActor_canPickup_FUN_00409000,
-        .pickup = (CDemonActor_pickup *)core_actor_cpp_CDemonActor_pickup_FUN_00409020,
-        .onDropped = (CDemonActor_onDropped *)core_actor_cpp_CDemonActor_onDropped_FUN_00409040,
-        .drop = (CDemonActor_drop *)core_charactr_cpp_CCharacter_drop_FUN_0042bf90,
-        .getCarrier = (CDemonActor_getCarrier *)core_actor_cpp_CDemonActor_getCarrier_FUN_00409060,
-        .getInteractionInfo = (CDemonActor_getInteractionInfo *)core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030,
-        .startInteraction = (CDemonActor_startInteraction *)core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090,
-        .updateInteraction = (CDemonActor_updateInteraction *)core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0,
-        .stopInteraction = (CDemonActor_stopInteraction *)core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0,
-        .spawnFlies = (CDemonActor_spawnFlies *)core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90,
-        .testCylinderCollision = (CDemonActor_testCylinderCollision *)core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0,
-        .testLineIntersection = (CDemonActor_testLineIntersection *)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150,
-        .getSurfaceProperties = (CDemonActor_onLaserHit *)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840,
-        .customRayIntersect = (CDemonActor_customRayIntersect *)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0,
-        .customIntersectCylinderXZ = (CDemonActor_customIntersectCylinderXZ *)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10,
-        .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50,
-        .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0,
-        .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0,
-        .getActorType = (CDemonActor_getActorType *)core_smiley_cpp_CSmiley_getActorType_FUN_005a2420,
-        .onAreaDeleted = (CDemonActor_onAreaDeleted *)core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0,
-        .onActorDeleted = (CDemonActor_onActorDeleted *)core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0,
-        .processInEditor = (CDemonActor_processInEditor *)core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800,
-        .getPropertyList = (CDemonActor_getPropertyList *)core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810,
-        .initializeInEditor = (CDemonActor_initializeInEditor *)core_actor_cpp_CDemonActor_initializeInEditor_FUN_0040c730,
-        .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
-        .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850,
-        .dtor = (CDemonActor_dtor *)core_smiley_cpp_CSmiley_dtor_FUN_005a3880,
-        .archive = (CDemonActor_archive *)core_smiley_cpp_CSmiley_archive_FUN_005a3220
-    },
-    ._uc = {
-        .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
-        .kill = (CCharacter_kill *)core_charactr_cpp_CCharacter_kill_FUN_00428e30,
-        .canWalk = (CCharacter_canWalk *)core_charactr_cpp_CCharacter_canWalk_FUN_0042ca60,
-        .isGrabbable = (CCharacter_isGrabbable *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .getGrabbed = (CCharacter_getGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .releaseFromGrab = (CCharacter_releaseFromGrab *)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40,
-        .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80,
-        .releaseVictim = (CCharacter_releaseVictim *)core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030,
-        .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0,
-        .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110,
-        .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180,
-        .processDamage = (CCharacter_processDamage *)core_smiley_cpp_CSmiley_processDamage_FUN_005a3580,
-        .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_0042c580,
-        .attractActorToward = (CCharacter_attractActorToward *)core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160,
-        .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
-        .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0,
-        .setDoorTarget = (CCharacter_setDoorTarget *)core_charactr_cpp_CCharacter_setDoorTarget_FUN_0042cd50,
-        .clearDoorTarget = (CCharacter_clearDoorTarget *)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_0042cd60,
-        .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_0042cd90,
-        .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0,
-        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300,
-        .setWalkTarget = (CCharacter_setWalkTarget *)core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920,
-        .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,
-        .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20,
-        .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30
-    },
-    ._ue = {
-        .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
-        .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = (CEnemy_reset *)core_smiley_cpp_CSmiley_reset_FUN_005a3280
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CSuccubusVTable = {
@@ -2476,8 +2278,7 @@ CEnemy_full_vtable g_CSuccubusVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CTentacleVTable = {
@@ -2573,8 +2374,7 @@ CEnemy_full_vtable g_CTentacleVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CTVBatVTable = {
@@ -2670,8 +2470,7 @@ CEnemy_full_vtable g_CTVBatVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CVampireBossVTable = {
@@ -2767,8 +2566,7 @@ CEnemy_full_vtable g_CVampireBossVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
     }
 };
 CEnemy_full_vtable g_CWerewolfVTable = {
@@ -2864,8 +2662,7 @@ CEnemy_full_vtable g_CWerewolfVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_werewolf_cpp_CWerewolf_randomize_FUN_005f21e0,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_werewolf_cpp_CWerewolf_randomize_FUN_005f21e0
     }
 };
 CEnemy_full_vtable g_CZombieVTable = {
@@ -2961,8 +2758,7 @@ CEnemy_full_vtable g_CZombieVTable = {
     ._ue = {
         .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-        .randomize = (CEnemy_randomize *)core_zombie_cpp_CZombie_randomize_FUN_005fcb70,
-        .reset = nullptr
+        .randomize = (CEnemy_randomize *)core_zombie_cpp_CZombie_randomize_FUN_005fcb70
     }
 };
 
@@ -3505,6 +3301,105 @@ CMatrix3x4f CMatrix3x4f_00665968 = {
     }}
 };
 
+// CMobster_full_vtable
+CMobster_full_vtable g_CMobsterVTable = {
+    ._ub = {
+        .setup = (CDemonActor_setup *)core_mobster_cpp_CMobster_setup_FUN_00525340,
+        .process = (CDemonActor_process *)core_mobster_cpp_CMobster_process_FUN_00525840,
+        .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0,
+        .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0,
+        .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0,
+        .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042b8a0,
+        .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830,
+        .processFootstepAtOffset = (CDemonActor_processFootstepAt *)core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,
+        .handleFootstep = (CDemonActor_handleFootstep *)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10,
+        .playSound = (CDemonActor_playSound *)core_actor_cpp_CDemonActor_playSound_FUN_00408f60,
+        .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80,
+        .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0,
+        .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0,
+        .getCollisionType = (CDemonActor_getCollisionType *)core_mobster_cpp_CMobster_getCollisionType_FUN_005279d0,
+        .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0,
+        .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90,
+        .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880,
+        .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0,
+        .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004098c0,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0,
+        .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90,
+        .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50,
+        .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40,
+        .processActionButton = (CDemonActor_processActionButton *)core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60,
+        .setPositionAndOrientation = (CDemonActor_setPositionAndOrientation *)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0,
+        .onPickup = (CDemonActor_onPickup *)core_actor_cpp_CDemonActor_onPickup_FUN_0040a010,
+        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720,
+        .getAllowedMeleeAttackTypes = (CDemonActor_getAllowedMeleeAttackTypes *)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0,
+        .processMeleeHit = (CDemonActor_processMeleeHit *)core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210,
+        .fillAttackDamageInfo = (CDemonActor_fillAttackDamageInfo *)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0,
+        .playAttackHitEffects = (CDemonActor_playAttackHitEffects *)core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,
+        .canPickup = (CDemonActor_canPickup *)core_actor_cpp_CDemonActor_canPickup_FUN_00409000,
+        .pickup = (CDemonActor_pickup *)core_actor_cpp_CDemonActor_pickup_FUN_00409020,
+        .onDropped = (CDemonActor_onDropped *)core_actor_cpp_CDemonActor_onDropped_FUN_00409040,
+        .drop = (CDemonActor_drop *)core_charactr_cpp_CCharacter_drop_FUN_0042bf90,
+        .getCarrier = (CDemonActor_getCarrier *)core_actor_cpp_CDemonActor_getCarrier_FUN_00409060,
+        .getInteractionInfo = (CDemonActor_getInteractionInfo *)core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030,
+        .startInteraction = (CDemonActor_startInteraction *)core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090,
+        .updateInteraction = (CDemonActor_updateInteraction *)core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0,
+        .stopInteraction = (CDemonActor_stopInteraction *)core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0,
+        .spawnFlies = (CDemonActor_spawnFlies *)core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90,
+        .testCylinderCollision = (CDemonActor_testCylinderCollision *)core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0,
+        .testLineIntersection = (CDemonActor_testLineIntersection *)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150,
+        .getSurfaceProperties = (CDemonActor_onLaserHit *)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840,
+        .customRayIntersect = (CDemonActor_customRayIntersect *)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0,
+        .customIntersectCylinderXZ = (CDemonActor_customIntersectCylinderXZ *)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10,
+        .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50,
+        .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0,
+        .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0,
+        .getActorType = (CDemonActor_getActorType *)core_mobster_cpp_CMobster_getActorType_FUN_005251f0,
+        .onAreaDeleted = (CDemonActor_onAreaDeleted *)core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0,
+        .onActorDeleted = (CDemonActor_onActorDeleted *)core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0,
+        .processInEditor = (CDemonActor_processInEditor *)core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800,
+        .getPropertyList = (CDemonActor_getPropertyList *)core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70,
+        .initializeInEditor = (CDemonActor_initializeInEditor *)core_actor_cpp_CDemonActor_initializeInEditor_FUN_0040c730,
+        .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
+        .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40,
+        .dtor = (CDemonActor_dtor *)core_mobster_cpp_CMobster_dtor_FUN_00527c70,
+        .archive = (CDemonActor_archive *)core_mobster_cpp_CMobster_archive_FUN_00527230
+    },
+    ._uc = {
+        .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
+        .kill = (CCharacter_kill *)core_charactr_cpp_CCharacter_kill_FUN_00428e30,
+        .canWalk = (CCharacter_canWalk *)core_charactr_cpp_CCharacter_canWalk_FUN_0042ca60,
+        .isGrabbable = (CCharacter_isGrabbable *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .getGrabbed = (CCharacter_getGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .releaseFromGrab = (CCharacter_releaseFromGrab *)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40,
+        .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80,
+        .releaseVictim = (CCharacter_releaseVictim *)core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030,
+        .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0,
+        .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110,
+        .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180,
+        .processDamage = (CCharacter_processDamage *)core_mobster_cpp_CMobster_processDamage_FUN_00527740,
+        .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_0042c580,
+        .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010,
+        .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0,
+        .setDoorTarget = (CCharacter_setDoorTarget *)core_charactr_cpp_CCharacter_setDoorTarget_FUN_0042cd50,
+        .clearDoorTarget = (CCharacter_clearDoorTarget *)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_0042cd60,
+        .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_0042cd90,
+        .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0,
+        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20,
+        .setWalkTarget = (CCharacter_setWalkTarget *)core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920,
+        .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,
+        .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20,
+        .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30
+    },
+    ._ue = {
+        .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
+        .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
+        .randomize = (CEnemy_randomize *)core_mobster_cpp_CMobster_randomize_FUN_00527c30
+    },
+    ._um = {.reset = (CMobster_reset *)core_mobster_cpp_CMobster_reset_FUN_00527360}
+};
+
 // CMotionController_vtable
 CMotionController_vtable g_CMotionControllerVTable = {
     .dtor = (CMotionController_dtor *)core_motion_cpp_CMotionController_dtor_FUN_0052d5a0,
@@ -3658,6 +3553,105 @@ CQuaternion4f CQuaternion4f_00665998 = {
     .x = 0.0f,
     .y = 0.0f,
     .z = 0.0f
+};
+
+// CSmiley_full_vtable
+CSmiley_full_vtable g_CSmileyVTable = {
+    ._ub = {
+        .setup = (CDemonActor_setup *)core_smiley_cpp_CSmiley_setup_FUN_005a24d0,
+        .process = (CDemonActor_process *)core_smiley_cpp_CSmiley_process_FUN_005a2800,
+        .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0,
+        .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0,
+        .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a9fa0,
+        .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042b8a0,
+        .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830,
+        .processFootstepAtOffset = (CDemonActor_processFootstepAt *)core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,
+        .handleFootstep = (CDemonActor_handleFootstep *)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10,
+        .playSound = (CDemonActor_playSound *)core_actor_cpp_CDemonActor_playSound_FUN_00408f60,
+        .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80,
+        .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0,
+        .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0,
+        .getCollisionType = (CDemonActor_getCollisionType *)core_smiley_cpp_CSmiley_getCollisionType_FUN_005a37f0,
+        .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0,
+        .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90,
+        .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880,
+        .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0,
+        .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004098c0,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690,
+        .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90,
+        .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50,
+        .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40,
+        .processActionButton = (CDemonActor_processActionButton *)core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60,
+        .setPositionAndOrientation = (CDemonActor_setPositionAndOrientation *)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004285d0,
+        .onPickup = (CDemonActor_onPickup *)core_actor_cpp_CDemonActor_onPickup_FUN_0040a010,
+        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720,
+        .getAllowedMeleeAttackTypes = (CDemonActor_getAllowedMeleeAttackTypes *)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0,
+        .processMeleeHit = (CDemonActor_processMeleeHit *)core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210,
+        .fillAttackDamageInfo = (CDemonActor_fillAttackDamageInfo *)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0,
+        .playAttackHitEffects = (CDemonActor_playAttackHitEffects *)core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,
+        .canPickup = (CDemonActor_canPickup *)core_actor_cpp_CDemonActor_canPickup_FUN_00409000,
+        .pickup = (CDemonActor_pickup *)core_actor_cpp_CDemonActor_pickup_FUN_00409020,
+        .onDropped = (CDemonActor_onDropped *)core_actor_cpp_CDemonActor_onDropped_FUN_00409040,
+        .drop = (CDemonActor_drop *)core_charactr_cpp_CCharacter_drop_FUN_0042bf90,
+        .getCarrier = (CDemonActor_getCarrier *)core_actor_cpp_CDemonActor_getCarrier_FUN_00409060,
+        .getInteractionInfo = (CDemonActor_getInteractionInfo *)core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030,
+        .startInteraction = (CDemonActor_startInteraction *)core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090,
+        .updateInteraction = (CDemonActor_updateInteraction *)core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0,
+        .stopInteraction = (CDemonActor_stopInteraction *)core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0,
+        .spawnFlies = (CDemonActor_spawnFlies *)core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90,
+        .testCylinderCollision = (CDemonActor_testCylinderCollision *)core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0,
+        .testLineIntersection = (CDemonActor_testLineIntersection *)core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150,
+        .getSurfaceProperties = (CDemonActor_onLaserHit *)core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840,
+        .customRayIntersect = (CDemonActor_customRayIntersect *)core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0,
+        .customIntersectCylinderXZ = (CDemonActor_customIntersectCylinderXZ *)core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10,
+        .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50,
+        .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0,
+        .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0,
+        .getActorType = (CDemonActor_getActorType *)core_smiley_cpp_CSmiley_getActorType_FUN_005a2420,
+        .onAreaDeleted = (CDemonActor_onAreaDeleted *)core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0,
+        .onActorDeleted = (CDemonActor_onActorDeleted *)core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0,
+        .processInEditor = (CDemonActor_processInEditor *)core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800,
+        .getPropertyList = (CDemonActor_getPropertyList *)core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810,
+        .initializeInEditor = (CDemonActor_initializeInEditor *)core_actor_cpp_CDemonActor_initializeInEditor_FUN_0040c730,
+        .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
+        .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850,
+        .dtor = (CDemonActor_dtor *)core_smiley_cpp_CSmiley_dtor_FUN_005a3880,
+        .archive = (CDemonActor_archive *)core_smiley_cpp_CSmiley_archive_FUN_005a3220
+    },
+    ._uc = {
+        .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
+        .kill = (CCharacter_kill *)core_charactr_cpp_CCharacter_kill_FUN_00428e30,
+        .canWalk = (CCharacter_canWalk *)core_charactr_cpp_CCharacter_canWalk_FUN_0042ca60,
+        .isGrabbable = (CCharacter_isGrabbable *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .getGrabbed = (CCharacter_getGrabbed *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .releaseFromGrab = (CCharacter_releaseFromGrab *)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40,
+        .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80,
+        .releaseVictim = (CCharacter_releaseVictim *)core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030,
+        .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0,
+        .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110,
+        .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180,
+        .processDamage = (CCharacter_processDamage *)core_smiley_cpp_CSmiley_processDamage_FUN_005a3580,
+        .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_0042c580,
+        .attractActorToward = (CCharacter_attractActorToward *)core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160,
+        .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30,
+        .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0,
+        .setDoorTarget = (CCharacter_setDoorTarget *)core_charactr_cpp_CCharacter_setDoorTarget_FUN_0042cd50,
+        .clearDoorTarget = (CCharacter_clearDoorTarget *)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_0042cd60,
+        .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_0042cd90,
+        .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0,
+        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300,
+        .setWalkTarget = (CCharacter_setWalkTarget *)core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920,
+        .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,
+        .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_0042ca20,
+        .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30
+    },
+    ._ue = {
+        .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
+        .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
+        .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_004aa250
+    },
+    ._us = {.reset = (CSmiley_reset *)core_smiley_cpp_CSmiley_reset_FUN_005a3280}
 };
 
 // CSoundDeviceBasic_vtable

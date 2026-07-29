@@ -139,7 +139,7 @@ LAB_00479441:
       iVar8 = _fscanf(local_20,"%d,%d,%d,%d,%d,%d,%d\n",&local_50,&local_48,&local_34,&local_58,
                          &local_4c,&local_5c,&local_30);
     } while (iVar8 != 7);
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
@@ -161,7 +161,7 @@ LAB_00479441:
     }
     this_ptr->part_list[0].vertex_count = this_ptr->vertex_count;
     this_ptr->part_list[0].poly_count = this_ptr->poly_count;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing textures",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_c84);
@@ -272,7 +272,7 @@ LAB_004797c3:
                 (this_ptr->texture_list[iVar8].textures[0].texture_name,(char *)0x0,(char *)0x0,
                  local_3a0,"raw");
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing polygons",0,0);
     p_Var5 = local_20;
     iVar8 = 1;
@@ -311,7 +311,7 @@ LAB_004797c3:
              (int)ROUND(ROUND(dVar5 * (double)*(float *)(local_70 + iVar9 * 4 + -4)));
       }
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing vertices",0,0);
     p_Var5 = local_20;
     iVar8 = 1;

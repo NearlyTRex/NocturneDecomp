@@ -29,7 +29,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
     local_28.y = (int)ROUND(local_34.y * 256.0f);
     local_28.z = (int)ROUND(local_34.z * 256.0f);
     pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&pSVar1[corner_index].projected_vertex,&local_28);
     if (0 <= pSVar1[corner_index].projected_vertex.screen_x) {
       uVar4 = 0;

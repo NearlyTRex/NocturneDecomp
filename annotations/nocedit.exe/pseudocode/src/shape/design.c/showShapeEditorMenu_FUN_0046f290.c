@@ -37,14 +37,14 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   g_EditorColorIndices[5] = 0xff;
   g_EditorColorIndices[6] = 7;
   g_EditorColorIndices[7] = 7;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_LightDirectionX2 = -0xb4fd;
   g_LightDirectionY2 = -0xb4fd;
   g_LightDirectionZ2 = 0;
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     _sprintf(local_64,"Demented Shape Editor    Build date: %s %s","Jan 10 2000",
                "12:03:47");
     engine_2d_c_drawText_FUN_00401fd0(local_64,0,0);

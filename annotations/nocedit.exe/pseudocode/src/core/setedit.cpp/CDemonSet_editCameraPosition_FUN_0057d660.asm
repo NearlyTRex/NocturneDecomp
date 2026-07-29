@@ -322,8 +322,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0057d93e
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0057d943
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057d946
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057d946
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0057d946
     MOV ECX,dword ptr [0x0067b654]      ; 0057d94b | g_CGameInstance | g_CGamePtr
     PUSH ECX                            ; 0057d951 | g_CGameInstance
@@ -1109,8 +1109,8 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 ; 0057e330
         ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)
     ADD ESP,0x8                         ; 0057e335
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057e338
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057e338
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     XOR ECX,ECX                         ; 0057e33d
     MOV dword ptr [ESP + 0x1168],ECX    ; 0057e33f
     JMP 0x0057e21f                      ; 0057e346

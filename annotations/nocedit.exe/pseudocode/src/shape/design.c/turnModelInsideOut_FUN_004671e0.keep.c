@@ -28,7 +28,7 @@ void __cdecl shape_design_c_turnModelInsideOut_FUN_004671e0(void)
                  &g_ModelPolygonData[local_1c].uv_v[uVar1 - local_18 - 1]);
     }
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Model turned inside out.  Hit a key...",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

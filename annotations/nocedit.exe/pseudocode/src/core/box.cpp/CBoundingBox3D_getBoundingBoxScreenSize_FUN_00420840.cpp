@@ -21,7 +21,7 @@ float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(
                           256.0f);
   local_34.z = (int)ROUND(((this_ptr->min).z + (this_ptr->max).z) * 0.5f *
                           256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_34);
   iVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
   if (0 < iVar1) {

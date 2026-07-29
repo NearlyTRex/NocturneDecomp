@@ -272,8 +272,8 @@ section .text
     CMP EAX,0x7                         ; 004794c2
     JNZ 0x00479417                      ; 004794c5
         ;   XREF to: 00479417 (CONDITIONAL_JUMP)  ; LAB_00479417
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004794cb
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004794cb
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004794d0
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004794d5
@@ -365,8 +365,8 @@ section .text
     MOV dword ptr [EDX + 0x5588],EAX    ; 00479595
     MOV EAX,dword ptr [EDX + 0x110]     ; 0047959b
     MOV dword ptr [EDX + 0x558c],EAX    ; 004795a1
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004795a7
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004795a7
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004795ac
     PUSH 0x0                            ; 004795ae
     PUSH 0x61fd8b                       ; 004795b0 | = "Importing textures"
@@ -438,8 +438,8 @@ section .text
     CMP EBX,dword ptr [EAX + 0x120]     ; 00479660
     JL 0x004797ff                       ; 00479666
         ;   XREF to: 004797ff (CONDITIONAL_JUMP)  ; LAB_004797ff
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0047966c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0047966c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00479671
     PUSH 0x0                            ; 00479673
     PUSH 0x61fee4                       ; 00479675 | = "Importing polygons"
@@ -893,8 +893,8 @@ section .text
     MOV dword ptr [EBP + 0x46],EDX      ; 00479b06
     JMP 0x00479a6a                      ; 00479b09
         ;   XREF to: 00479a6a (UNCONDITIONAL_JUMP)  ; LAB_00479a6a
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00479b0e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00479b0e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00479b0e
     PUSH 0x0                            ; 00479b13
     PUSH 0x0                            ; 00479b15

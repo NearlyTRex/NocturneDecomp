@@ -135,9 +135,9 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     }
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&UNION_UVector3_00838e40.f);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -166,7 +166,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
           CStack_74.x = (int)ROUND((pSVar3->position).x * 256.0f);
           CStack_74.y = (int)ROUND((pSVar3->position).y * 256.0f);
           CStack_74.z = (int)ROUND((pSVar3->position).z * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&CStack_74);
           core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(19999);
           local_18 = local_18 + 1;

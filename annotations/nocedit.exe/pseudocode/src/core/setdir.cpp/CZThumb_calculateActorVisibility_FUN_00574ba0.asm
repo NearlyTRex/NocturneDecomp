@@ -38,7 +38,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     PUSH EDI                            ; 00574c1c
     ADD EAX,ESI                         ; 00574c1d
     PUSH EAX                            ; 00574c1f
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00574c20
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00574c20
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 00574c25 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 00574c2a | g_CDemonRendererInstance
     ADD EDI,0xc                         ; 00574c2c

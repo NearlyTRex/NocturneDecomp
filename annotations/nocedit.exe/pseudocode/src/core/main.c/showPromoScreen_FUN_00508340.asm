@@ -29,9 +29,9 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
@@ -76,8 +76,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 ; 00508399
         ;   XREF to: 004105d0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 0050839e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005083a1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005083a1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 005083a6
     PUSH 0x0                            ; 005083ab
     PUSH 0x0                            ; 005083ad

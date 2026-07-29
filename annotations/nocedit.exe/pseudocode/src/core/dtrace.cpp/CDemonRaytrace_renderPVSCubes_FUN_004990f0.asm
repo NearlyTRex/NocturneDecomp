@@ -21,7 +21,7 @@
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-;   wincore_windll.cpp_sync_FUN_005b7bc0
+;   engine_special.cpp_sync_FUN_005b7bc0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     ADD ESP,0x8                         ; 00499143
     ADD EDI,0x4                         ; 00499146
     INC ESI                             ; 00499149
-    CALL wincore_windll.cpp_sync_FUN_005b7bc0 ; 0049914a
-        ;   XREF to: 005b7bc0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_sync_FUN_005b7bc0()
+    CALL engine_special.cpp_sync_FUN_005b7bc0 ; 0049914a
+        ;   XREF to: 005b7bc0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_005b7bc0()
     MOV EDX,dword ptr [0x02ca03a4]      ; 0049914f | g_PVSDrawnCubeCount
     ADD EBX,0xc                         ; 00499155 | g_PVSCubePositions[1].x
     CMP ESI,EDX                         ; 00499158

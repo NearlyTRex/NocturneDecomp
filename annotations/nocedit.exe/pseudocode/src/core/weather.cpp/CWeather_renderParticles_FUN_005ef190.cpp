@@ -100,7 +100,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     local_50.x = (int)ROUND(world_position->x * 256.0f);
     local_50.y = (int)ROUND(world_position->y * 256.0f);
     local_50.z = (int)ROUND(world_position->z * 256.0f);
-    wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_50);
+    engine_special_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_50);
     iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
                       (g_CDemonRendererPtr2,vertex_ptr_00);
     if (iVar2 != 0) {
@@ -134,25 +134,25 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
       local_8c.x = (int)ROUND(local_14 * 256.0f);
       local_8c.y = (int)ROUND(fVar1 * 256.0f);
       local_8c.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_8c);
       local_38 = -local_14;
       local_68.x = (int)ROUND(local_38 * 256.0f);
       local_68.y = (int)ROUND(fVar1 * 256.0f);
       local_68.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_68);
       local_34 = -fVar1;
       local_5c.x = (int)ROUND(local_38 * 256.0f);
       local_5c.y = (int)ROUND(local_34 * 256.0f);
       local_5c.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_5c);
       local_38 = -local_38;
       local_98.x = (int)ROUND(local_38 * 256.0f);
       local_98.y = (int)ROUND(local_34 * 256.0f);
       local_98.z = (int)ROUND(256.0f * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_98);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                 (g_CDemonRendererPtr2,&local_f0.base);
@@ -188,22 +188,22 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
         local_74.x = (int)ROUND(256.0f * 0.2);
         local_74.y = (int)ROUND(256.0f * 0.0);
         local_74.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_74);
         local_a4.x = (int)ROUND(256.0f * -0.2);
         local_a4.y = (int)ROUND(256.0f * 0.0);
         local_a4.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_a4);
         local_c8.x = (int)ROUND(256.0f * -0.2);
         local_c8.y = (int)ROUND(256.0f * 0.4);
         local_c8.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_c8);
         local_44.x = (int)ROUND(256.0f * 0.2);
         local_44.y = (int)ROUND(256.0f * 0.4);
         local_44.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_44);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                   (g_CDemonRendererPtr2,&local_f0.base);

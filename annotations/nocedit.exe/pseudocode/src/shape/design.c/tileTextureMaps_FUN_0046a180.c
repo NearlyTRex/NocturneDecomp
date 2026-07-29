@@ -56,7 +56,7 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_
     }
     iVar3 = shape_design_c_validateModelTextures_FUN_00459a20("art",1);
     if (iVar3 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("WARNING: Only valid textures will appear in the crammed .RAW file.",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -98,7 +98,7 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_
     }
   }
   if (g_TextureProcessedCount == 0) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("ERROR: No valid textures found.  Hit a key...",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -147,7 +147,7 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_
         }
       }
       if (cram == (SCram *)0x0) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
         pcVar7 = g_CurrentModelFilename;
         pcVar9 = local_e4;
         do {

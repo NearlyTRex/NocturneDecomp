@@ -23,7 +23,7 @@ void __cdecl shape_design_c_sizeModelToZFeet_FUN_00466c70(void)
 
   local_18 = 999999.9;
   local_14 = -999999.9;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (local_7c,0x14,0,0x16,"Enter Z distance in feet (,min,max for user-defined min/max points) : ");
   if (local_7c[0] == '\0') {

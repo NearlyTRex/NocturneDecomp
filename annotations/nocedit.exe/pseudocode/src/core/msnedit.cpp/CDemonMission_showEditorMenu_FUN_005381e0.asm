@@ -95,8 +95,8 @@ section .text
     MOV dword ptr [EBP + 0x4],0x1       ; 0053824f
         ;   Label: LAB_0053824f
     MOV dword ptr [EBP + 0x3c],0x0      ; 00538256
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053825d
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0053825d
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00538262
     PUSH 0x0                            ; 00538264
     PUSH 0x63bd87                       ; 00538266 | = "Demented(R) Mission editor"
@@ -563,8 +563,8 @@ section .text
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 00538762
         ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 00538767
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053876a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0053876a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0053876f
     PUSH 0x0                            ; 00538771
     MOV EAX,0x63c138                    ; 00538773 | = "You must now go into set editor and s..."

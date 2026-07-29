@@ -43,10 +43,10 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
+;   engine_special.cpp_presentToExternalRenderer_FUN_005b7c30
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
 ;   wincore_wddvmem.cpp_videoRestore_FUN_005edc80
-;   wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
 ;   wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
 ;
 ; *****************************************************************************
@@ -148,8 +148,8 @@ section .text
     RET                                 ; 005edb05
     PUSH 0x0                            ; 005edb06
         ;   Label: LAB_005edb06
-    CALL wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30 ; 005edb08
-        ;   XREF to: 005b7c30 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
+    CALL engine_special.cpp_presentToExternalRenderer_FUN_005b7c30 ; 005edb08
+        ;   XREF to: 005b7c30 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)
     ADD ESP,0x4                         ; 005edb0d
     XOR ESI,ESI                         ; 005edb10
     MOV dword ptr [0x03f95934],ESI      ; 005edb12 | g_RenderingInProgress

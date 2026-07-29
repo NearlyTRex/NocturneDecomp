@@ -46,17 +46,17 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
     local_68.x = (int)ROUND(256.0f * -0.5);
     local_68.y = (int)ROUND(256.0f * -0.5);
     local_68.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_68);
     local_50.x = (int)ROUND(256.0f * 0.5);
     local_50.y = (int)ROUND(256.0f * -0.5);
     local_50.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_50);
     local_38.x = (int)ROUND(256.0f * 0.5);
     local_38.y = (int)ROUND(256.0f * 0.5);
     local_38.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_80.x = (int)ROUND(256.0f * -0.5);
     local_80.y = (int)ROUND(256.0f * 0.5);
@@ -76,24 +76,24 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
     local_20.x = (int)ROUND(256.0f * -0.5);
     local_20.y = (int)ROUND(256.0f * 0.0);
     local_20.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_20);
     local_8c.x = (int)ROUND(256.0f * 0.5);
     local_8c.y = (int)ROUND(256.0f * 0.0);
     local_8c.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_8c);
     local_5c.x = (int)ROUND(256.0f * 0.5);
     local_5c.y = (int)ROUND(256.0f * 0.0);
     local_5c.z = (int)ROUND(256.0f * 0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_5c);
     local_2c.x = (int)ROUND(256.0f * -0.5);
     local_2c.y = (int)ROUND(256.0f * 0.0);
     local_2c.z = (int)ROUND(256.0f * 0.5);
     input = &local_2c;
   }
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,input);
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {

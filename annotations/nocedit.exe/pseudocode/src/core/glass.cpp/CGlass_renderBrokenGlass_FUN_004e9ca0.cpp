@@ -45,7 +45,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
       CStack_10.x = (int)ROUND(pCVar5->x * 256.0f);
       CStack_10.y = (int)ROUND(pCVar5->y * 256.0f);
       CStack_10.z = (int)ROUND(pCVar5->z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar3),&CStack_10);

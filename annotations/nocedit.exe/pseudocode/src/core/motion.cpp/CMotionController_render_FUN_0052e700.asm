@@ -39,7 +39,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0052e78a | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 0052e78c
     PUSH EAX                            ; 0052e791
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052e792
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0052e792
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 0052e797 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052e79c | g_CDemonRendererInstance
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 0052e79e

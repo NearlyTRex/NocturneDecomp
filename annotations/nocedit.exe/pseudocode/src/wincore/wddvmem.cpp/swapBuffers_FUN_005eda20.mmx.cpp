@@ -84,7 +84,7 @@ __asm {
         ret
     LAB_005edb06:
         push 0x0
-        call wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30
+        call engine_special_cpp_presentToExternalRenderer_FUN_005b7c30
         add ESP,0x4
         xor ESI,ESI
         mov dword ptr [g_RenderingInProgress],ESI

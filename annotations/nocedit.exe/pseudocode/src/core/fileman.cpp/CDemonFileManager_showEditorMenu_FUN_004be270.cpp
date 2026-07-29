@@ -15,7 +15,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDem
   char local_110 [256];
   
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_2d_c_drawText_FUN_00401fd0("Demon File Manager",0,0);
     engine_2d_c_drawText_FUN_00401fd0("Advanced option list",0,0x16);

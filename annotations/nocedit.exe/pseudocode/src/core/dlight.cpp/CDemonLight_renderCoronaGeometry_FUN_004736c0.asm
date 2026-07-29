@@ -47,7 +47,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0047379c | g_CDemonRendererInstance
     ADD EAX,EDI                         ; 0047379e
     PUSH EAX                            ; 004737a0
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004737a1
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004737a1
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EDX,dword ptr [0x006703ec]      ; 004737a6 | g_CDemonRendererPtr2
     ADD EDI,0x30                        ; 004737ac
     MOV EAX,dword ptr [EDX]             ; 004737af | g_CDemonRendererInstance
@@ -154,8 +154,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004737f6 | g_CDemonRendererInstance
     ADD EAX,0x300                       ; 004737f8
     PUSH EAX                            ; 004737fd
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004737fe
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004737fe
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00473803
     MOV EAX,[0x006703ec]                ; 00473806 | g_CDemonRendererPtr2
     PUSH 0x1                            ; 0047380b

@@ -46,8 +46,8 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
 ;   engine_prim.c_prepareDepthBuffer_FUN_00551fb0
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     PUSH EDI                            ; 00483a67
     LEA EAX,[ESP + 0x8]                 ; 00483a68
     PUSH EAX                            ; 00483a6c
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 00483a6d
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 00483a6d
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00483a72
     MOV EBP,dword ptr [0x02c6cb70]      ; 00483a75 | g_RenderTriangleEdgeCount
         ;   Label: LAB_00483a75
@@ -323,8 +323,8 @@ section .text
         ;   Label: LAB_00483cda
     MOV ESI,dword ptr [ESP + 0x60]      ; 00483cde
     MOV EBX,dword ptr [ESP + 0x58]      ; 00483ce2
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00483ce6
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 00483ce6
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 00483ceb | g_RenderAbortFlag
     JNZ 0x00483a75                      ; 00483cf2
         ;   XREF to: 00483a75 (CONDITIONAL_JUMP)  ; LAB_00483a75

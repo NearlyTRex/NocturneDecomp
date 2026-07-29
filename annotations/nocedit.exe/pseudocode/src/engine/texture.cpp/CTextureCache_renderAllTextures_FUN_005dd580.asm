@@ -12,8 +12,8 @@
 ;   engine_texture.cpp_renderTextureAtlas_FUN_005dd990 at 005dd9a7
 ;
 ; Called Functions:
+;   engine_special.cpp_drawPolygon_FUN_005b75e0
 ;   engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-;   wincore_windll.cpp_drawPolygon_FUN_005b75e0
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     MOV dword ptr [ESP + 0x24],ECX      ; 005dd655
     MOV dword ptr [ESP + 0x54],ECX      ; 005dd659
     MOV dword ptr [ESP + 0xb0],ECX      ; 005dd65d
-    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 005dd664
-        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon_FUN_005b75e0 ; 005dd664
+        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EAX,dword ptr [ESI + 0x14008]   ; 005dd669
     ADD ESP,0xc                         ; 005dd66f
     CMP EBX,EAX                         ; 005dd672

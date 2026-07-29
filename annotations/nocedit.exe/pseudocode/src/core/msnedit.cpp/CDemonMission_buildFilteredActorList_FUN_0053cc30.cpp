@@ -24,6 +24,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(name_list,actor_ptr->actor_name);
     }
   }
-  (*name_list->vtable->sort)(name_list,sort_type,name_list->item_count + -1);
+  (*((name_list->vtable)._us)->sort)(name_list,sort_type,name_list->item_count + -1);
   return;
 }

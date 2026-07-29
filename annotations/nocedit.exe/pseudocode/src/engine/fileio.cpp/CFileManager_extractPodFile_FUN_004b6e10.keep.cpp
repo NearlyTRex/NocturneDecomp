@@ -71,7 +71,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&CStack_e84,0);
     return;
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   iVar3 = 0;
   local_14 = 1;
   if (this_ptr->batch_mode != 0) {
@@ -128,7 +128,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
         engine_2d_c_drawText_FUN_00401fd0("More...",0,g_WindowHeight + -0xc);
         iVar3 = 0;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
       }
       local_18 = local_18 + 1;
     } while (local_18 < CStack_e84.file_count);

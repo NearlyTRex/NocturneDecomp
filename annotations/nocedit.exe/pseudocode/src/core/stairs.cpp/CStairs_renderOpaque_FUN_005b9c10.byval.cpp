@@ -89,7 +89,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,EDI
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         lea EBX,[ESP + 0x78]
         add ESP,0x8
         mov EDX,dword ptr [g_CDemonRendererPtr2]
@@ -112,7 +112,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,EBP
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         lea EBX,[ESP + 0xa8]
         add ESP,0x8
         mov EDX,dword ptr [g_CDemonRendererPtr2]
@@ -139,7 +139,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,dword ptr [ESP + 0xd0]
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         lea EBX,[ESP + 0x90]
         add ESP,0x8
         mov EDX,dword ptr [g_CDemonRendererPtr2]
@@ -163,7 +163,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,ECX
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         inc ESI
         mov EAX,dword ptr [ESP + 0xcc]
@@ -427,7 +427,7 @@ __asm {
         push EAX
         mov EAX,dword ptr [EDX]
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         lea EBX,[ESP + 0x4c]
         mov EAX,dword ptr [ESP + 0xbc]
@@ -446,7 +446,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,0x30
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         lea EBX,[ESP + 0x94]
         mov EAX,dword ptr [ESP + 0xc0]
@@ -465,7 +465,7 @@ __asm {
         mov EAX,dword ptr [EDX]
         add EAX,0x60
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         xor EAX,EAX
         mov EBX,dword ptr [ESP + 0xe4]

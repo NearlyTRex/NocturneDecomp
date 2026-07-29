@@ -10,12 +10,12 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da1d5
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2ad9
 ;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057aa96
+;   engine_special.cpp_presentToExternalRenderer_FUN_005b7c30 at 005b7c82
 ;   engine_texture.cpp_renderTextureAtlas_FUN_005dd990 at 005dd99b
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464bfb
 ;   shape_design.c_polygonToolModeManager_FUN_00464c90 at 00464f4e
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f325
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 at 005eda6c
-;   wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30 at 005b7c82
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_0065789f

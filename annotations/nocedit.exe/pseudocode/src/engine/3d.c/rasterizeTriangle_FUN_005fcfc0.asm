@@ -37,8 +37,8 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
 ;   engine_prim.c_prepareDepthBuffer_FUN_00551fb0
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
-;   wincore_windll.cpp_drawPolygon_FUN_005b75e0
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon_FUN_005b75e0
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -316,8 +316,8 @@ section .text
     PUSH EAX                            ; 005fd2aa
     MOV EDX,dword ptr [ESP + 0x3c]      ; 005fd2ab
     PUSH EDX                            ; 005fd2af
-    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 005fd2b0
-        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon_FUN_005b75e0 ; 005fd2b0
+        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 005fd2b5
     MOV EBP,dword ptr [0x03f9ad5c]      ; 005fd2b8 | g_RasterizerEdgeCount
     ADD ESP,0x20                        ; 005fd2be
@@ -490,8 +490,8 @@ section .text
         ;   Label: LAB_005fd44e
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005fd452
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fd456
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 005fd45a
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 005fd45a
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 005fd45f | g_RenderAbortFlag
     JNZ 0x005fd25e                      ; 005fd466
         ;   XREF to: 005fd25e (CONDITIONAL_JUMP)  ; LAB_005fd25e

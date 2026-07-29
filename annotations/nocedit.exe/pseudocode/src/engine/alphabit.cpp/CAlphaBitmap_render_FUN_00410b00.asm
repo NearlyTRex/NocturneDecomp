@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
-;   wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
-;   wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+;   engine_special.cpp_renderAlphaRow16_FUN_005b55f7
+;   engine_special.cpp_renderAlphaRow32_FUN_005b555c
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH EDI                            ; 00410b8a
     ADD EAX,EBX                         ; 00410b8b
     PUSH EAX                            ; 00410b8d
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410b8e
-        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
+    CALL engine_special.cpp_renderAlphaRow32_FUN_005b555c ; 00410b8e
+        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410b93
     MOV EBX,dword ptr [EBP + 0xc]       ; 00410b96
     MOV EDX,dword ptr [ESP + 0x14]      ; 00410b99
@@ -130,8 +130,8 @@ section .text
     PUSH EDI                            ; 00410be7
     ADD EAX,EBX                         ; 00410be8
     PUSH EAX                            ; 00410bea
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410beb
-        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
+    CALL engine_special.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410beb
+        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410bf0
     MOV EBX,dword ptr [EBP + 0xc]       ; 00410bf3
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410bf6

@@ -23,7 +23,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
       local_1c.x = (int)ROUND(local_10.x * 256.0f);
       local_1c.y = (int)ROUND(local_10.y * 256.0f);
       local_1c.z = (int)ROUND(local_10.z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex,&local_1c);
       pCVar1 = g_CDemonRendererPtr2;
       g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].r = 0xffff;

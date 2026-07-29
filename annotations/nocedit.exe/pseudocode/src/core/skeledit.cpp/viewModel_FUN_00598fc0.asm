@@ -43,7 +43,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
-;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -235,8 +235,8 @@ section .text
     POP EDI                             ; 0059913c
         ;   Label: LAB_0059913c
     XOR EBP,EBP                         ; 0059913d
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0059913f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0059913f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0059913f
     PUSH EBP                            ; 00599144
     PUSH EBP                            ; 00599145

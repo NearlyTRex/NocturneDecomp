@@ -37,6 +37,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
 ;   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
 ;   shape_design.c_removeDegeneratePolygons_FUN_00465310
@@ -44,7 +45,6 @@
 ;   shape_design.c_removeUnusedVertices_FUN_00463830
 ;   shape_design.c_validatePolygonNormals_FUN_00461d80
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     CMP dword ptr [EBP + 0x1c],0x0      ; 004658f4
     JL 0x00465916                       ; 004658f8
         ;   XREF to: 00465916 (CONDITIONAL_JUMP)  ; LAB_00465916
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004658fa
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004658fa
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004658ff
     PUSH 0x0                            ; 00465901
     MOV EAX,0x61c5f9                    ; 00465903 | = "Scanning polygons..."

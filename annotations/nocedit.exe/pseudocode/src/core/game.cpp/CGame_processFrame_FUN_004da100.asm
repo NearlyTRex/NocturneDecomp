@@ -168,8 +168,8 @@ section .text
     CMP dword ptr [EAX + 0x278],0x0     ; 004da1e7
     JZ 0x004dab2f                       ; 004da1ee
         ;   XREF to: 004dab2f (CONDITIONAL_JUMP)  ; LAB_004dab2f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004da1f4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004da1f4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_004da1f4
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da1f9
         ;   Label: LAB_004da1f9
@@ -352,8 +352,8 @@ section .text
     CMP dword ptr [EAX + 0x208],0x0     ; 004da41f
     JNZ 0x004dab18                      ; 004da426
         ;   XREF to: 004dab18 (CONDITIONAL_JUMP)  ; LAB_004dab18
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004da42c
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 004da42c
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da431
     CMP dword ptr [EAX + 0x240],0x0     ; 004da437
     JZ 0x004da44f                       ; 004da43e
@@ -729,33 +729,33 @@ section .text
     JZ 0x004da921                       ; 004da8aa
         ;   XREF to: 004da921 (CONDITIONAL_JUMP)  ; LAB_004da921
     PUSH 0x400                          ; 004da8ac
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8b1
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8b1
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8b6
     PUSH EAX                            ; 004da8b9
     PUSH 0x200                          ; 004da8ba
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8bf
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8bf
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8c4
     PUSH EAX                            ; 004da8c7
     PUSH 0x100                          ; 004da8c8
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8cd
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8cd
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8d2
     PUSH EAX                            ; 004da8d5
     PUSH 0x80                           ; 004da8d6
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8db
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8db
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8e0
     PUSH EAX                            ; 004da8e3
     PUSH 0x40                           ; 004da8e4
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8e6
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8e6
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8eb
     PUSH EAX                            ; 004da8ee
     PUSH 0x20                           ; 004da8ef
-    CALL wincore_windll.cpp_getTextureInfo_FUN_005b7e70 ; 004da8f1
-        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+    CALL engine_special.cpp_getTextureInfo_FUN_005b7e70 ; 004da8f1
+        ;   XREF to: 005b7e70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_getTextureInfo_FUN_005b7e70(int texture_size)
     ADD ESP,0x4                         ; 004da8f6
     PUSH EAX                            ; 004da8f9
     PUSH 0x62b579                       ; 004da8fa | = "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d"
@@ -958,8 +958,8 @@ section .text
     ADD ESP,0x8                         ; 004dab0b
     PUSH 0x0                            ; 004dab0e
         ;   Label: LAB_004dab0e
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004dab10
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 004dab10
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004dab15
     CMP dword ptr [EBP + 0x4e],0x0      ; 004dab18
         ;   Label: LAB_004dab18

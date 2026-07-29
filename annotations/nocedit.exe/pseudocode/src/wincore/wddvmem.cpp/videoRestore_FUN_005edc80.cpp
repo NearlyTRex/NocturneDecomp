@@ -28,7 +28,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
     }
   }
   else {
-    iVar1 = wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460
+    iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005b7460
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
       g_UseDirect3D = iVar1;

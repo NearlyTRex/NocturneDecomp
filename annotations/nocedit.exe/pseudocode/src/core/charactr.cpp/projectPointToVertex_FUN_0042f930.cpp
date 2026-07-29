@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_projectPointToVertex_FUN_0042f930(SProjectedVerte
   local_10.x = (int)ROUND(world_position->x * 256.0f);
   local_10.y = (int)ROUND(world_position->y * 256.0f);
   local_10.z = (int)ROUND(world_position->z * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (*vertex_array + vertex_index * 2,&local_10);
   return;
 }

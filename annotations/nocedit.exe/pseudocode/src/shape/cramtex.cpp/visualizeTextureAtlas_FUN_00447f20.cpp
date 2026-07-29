@@ -67,7 +67,7 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
              (double)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize * g_CramTotalMaps),
              ((double)g_CramAtlasDimension * 100) /
              (double)g_CramCurrentAcceptableSize,g_CramCurrentAcceptableSize,g_CramAcceptableSize);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_100,0,0);
   if (is_complete == 0) {
     text = "Hit <Esc> when you've had enough...";

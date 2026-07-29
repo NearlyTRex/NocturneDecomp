@@ -32,7 +32,7 @@ void __cdecl core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_00425340(CBugs *this
                               256.0f);
       local_3c.z = (int)ROUND(((float)iVar3 * 0.5f + this_ptr->grid_origin_z) *
                               256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[local_28 + iVar3 * 0xc].projected_vertex,
                  &local_3c);
       iVar3 = iVar3 + 1;

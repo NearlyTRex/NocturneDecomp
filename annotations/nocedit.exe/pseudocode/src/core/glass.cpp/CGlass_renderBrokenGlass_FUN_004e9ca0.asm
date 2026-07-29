@@ -24,7 +24,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -111,8 +111,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004e9d7e | g_CDemonRendererInstance
     ADD EAX,ESI                         ; 004e9d80
     PUSH EAX                            ; 004e9d82
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004e9d83
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004e9d83
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 004e9d88 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX]             ; 004e9d8d | g_CDemonRendererInstance
     MOV dword ptr [EDX + ESI*0x1 + 0x20],0xffff ; 004e9d8f

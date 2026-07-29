@@ -19,8 +19,8 @@
 ;   void* g_SoftwareFrameBuffer
 ;
 ; Called Functions:
+;   engine_special.cpp_kill_FUN_005b71e0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
-;   wincore_windll.cpp_kill_FUN_005b71e0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
         ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 005ecdbd
     MOV dword ptr [0x0077262c],EBP      ; 005ecdc0 | g_SoftwareZBuffer
-    CALL wincore_windll.cpp_kill_FUN_005b71e0 ; 005ecdc6
-        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_kill_FUN_005b71e0()
+    CALL engine_special.cpp_kill_FUN_005b71e0 ; 005ecdc6
+        ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_005b71e0()
         ;   Label: LAB_005ecdc6
     MOV EAX,[0x03f9592c]                ; 005ecdcb | g_DirectDrawUnknown
     TEST EAX,EAX                        ; 005ecdd0

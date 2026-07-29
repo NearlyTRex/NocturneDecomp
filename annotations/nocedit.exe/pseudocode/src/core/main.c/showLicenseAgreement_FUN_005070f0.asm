@@ -35,6 +35,7 @@
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 ;   engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_calculateGridWidth_FUN_004a6490
 ;   shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_004a6550
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0
@@ -43,7 +44,6 @@
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 ;   shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0
-;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
         ;   XREF to: 004a64e0 (UNCONDITIONAL_CALL)  ; CEdButton * shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0(CEdButton * this_ptr)
     ADD ESP,0x4                         ; 005071e8
     XOR EBP,EBP                         ; 005071eb
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005071ed
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005071ed
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_005071ed
     LEA EAX,[ESP + 0x3c8]               ; 005071f2
     PUSH EAX                            ; 005071f9

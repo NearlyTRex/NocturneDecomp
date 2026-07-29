@@ -127,7 +127,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
     iVar8 = 0;
     wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0();
     do {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       iVar8 = iVar8 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     } while (iVar8 < 3);

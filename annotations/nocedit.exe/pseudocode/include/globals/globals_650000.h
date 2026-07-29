@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CBoneGuy_full_vtable.h"
 #include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CCodec_vtable.h"
@@ -13,12 +14,16 @@
 #include "types/classes/CFileManager_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CParticle_vtable.h"
+#include "types/classes/CPickList_full_vtable.h"
 #include "types/classes/CStrList_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x650000
 // =============================================================================
+
+// CBoneGuy_full_vtable
+extern CBoneGuy_full_vtable g_CBoneGuyVTable;
 
 // CCameraView_vtable
 extern CCameraView_vtable g_CCameraViewVTable;
@@ -80,7 +85,6 @@ extern CEnemy_full_vtable g_CBatCreatureVTable;
 extern CEnemy_full_vtable g_CBatmanVTable;
 extern CEnemy_full_vtable g_CBeastVTable;
 extern CEnemy_full_vtable g_CBiggsVTable;
-extern CEnemy_full_vtable g_CBoneGuyVTable;
 extern CEnemy_full_vtable g_CBrideVTable;
 extern CEnemy_full_vtable g_CBugsVTable;
 extern CEnemy_full_vtable g_CZombieCowVTable;
@@ -112,9 +116,11 @@ extern CParticle_vtable g_CFireballVTable;
 extern CParticle_vtable g_CSparkVTable;
 extern CParticle_vtable g_CBloodParticleVTable;
 
+// CPickList_full_vtable
+extern CPickList_full_vtable g_CPickListVTable;
+
 // CStrList_vtable
 extern CStrList_vtable g_CStrListVTable;
-extern CStrList_vtable g_CPickListVTable;
 
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CBaronWeaponVTable;

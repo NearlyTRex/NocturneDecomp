@@ -52,7 +52,7 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
 ;
 ; *****************************************************************************
 
@@ -203,8 +203,8 @@ section .text
     ADD EBX,EAX                         ; 00438557
     PUSH 0x825428                       ; 00438559 | g_ClipperCullingPointers
     MOV dword ptr [0x030e56b8],EBX      ; 0043855e | g_RenderedTriangleCount
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 00438564
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 00438564
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00438569
     ADD ESP,0x20                        ; 0043856c
     POP EBP                             ; 0043856f

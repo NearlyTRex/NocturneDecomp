@@ -66,7 +66,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0(CKe
   float local_1c;
   float local_18;
   
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Realign object",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   fVar6 = (float10)3.0517578125e-05;

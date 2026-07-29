@@ -48,7 +48,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
         ;
         local_3c.y = (int)ROUND(((float)UVar3.i + position->y) * 256.0f);
         local_3c.z = (int)ROUND(((float)iVar5 + position->z) * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_3c);
         pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
@@ -79,22 +79,22 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   local_84.x = (int)ROUND(256.0f * 0.0);
   local_84.y = (int)ROUND(256.0f * 0.0);
   local_84.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_84);
   local_60.x = (int)ROUND(256.0f * 3.0);
   local_60.y = (int)ROUND(256.0f * 0.0);
   local_60.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_60);
   local_78.x = (int)ROUND(256.0f * 0.0);
   local_78.y = (int)ROUND(256.0f * 3.0);
   local_78.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_78);
   local_6c.x = (int)ROUND(256.0f * 0.0);
   local_6c.y = (int)ROUND(256.0f * 0.0);
   local_6c.z = (int)ROUND(256.0f * 3.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[3].projected_vertex,&local_6c);
   local_30.base.count = -7;
   SStack_a0.base.vertex_count = 2;

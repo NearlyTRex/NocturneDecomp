@@ -20,7 +20,7 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(float depth,floa
   local_34.x = (int)ROUND(256.0f * 0.0);
   local_34.y = (int)ROUND(256.0f * 0.0);
   local_34.z = (int)ROUND(depth * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_34);
   fVar2 = (float)1.52587890625e-05;
   fVar1 = (((float)(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z *

@@ -25,7 +25,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDe
                               (float10)g_CameraOutputScale));
     g_LightmapTexturePalette[i] = uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
   }
-  wincore_windll_cpp_setFogColor_FUN_005b7b80
+  engine_special_cpp_setFogColor_FUN_005b7b80
             (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff,
              g_LightmapTexturePalette[g_FogColorIndexG] & 0xff,
              g_LightmapTexturePalette[g_FogColorIndexB] & 0xff);

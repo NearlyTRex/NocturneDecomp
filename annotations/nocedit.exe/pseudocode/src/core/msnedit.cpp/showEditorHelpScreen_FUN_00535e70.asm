@@ -35,6 +35,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_calculateGridWidth_FUN_004a6490
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 ;   shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0
@@ -43,7 +44,6 @@
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10
 ;   shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV dword ptr [ESP + 0xfc],EAX      ; 00535e9f
     NEG EDX                             ; 00535ea6
     MOV dword ptr [ESP + 0xfc],EDX      ; 00535ea8
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00535eaf
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00535eaf
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,dword ptr [ESP + 0xfc]      ; 00535eb4
     PUSH ECX                            ; 00535ebb
     MOV EBX,dword ptr [0x02d02558]      ; 00535ebc | g_ClipLeft

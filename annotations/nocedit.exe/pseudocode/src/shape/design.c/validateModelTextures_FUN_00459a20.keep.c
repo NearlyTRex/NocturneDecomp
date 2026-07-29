@@ -25,7 +25,7 @@ int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_pa
   int local_14;
   
   if ((mode == 0) || (mode == 1)) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Checking texture files...",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_14 = 0;
@@ -75,7 +75,7 @@ LAB_00459b94:
           }
           iVar1 = local_14 + 1;
           if (iVar1 == 1) {
-            wincore_windll_cpp_clearScreen_FUN_005b3e70();
+            engine_special_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_drawText_FUN_00401fd0("WARNING: The following textures were invalid:",0,0);
           }
           if (bVar7) {

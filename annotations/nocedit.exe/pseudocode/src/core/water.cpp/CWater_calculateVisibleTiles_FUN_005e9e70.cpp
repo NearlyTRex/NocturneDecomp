@@ -91,25 +91,25 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
         local_5c.x = (int)ROUND(256.0f * 0.0);
         local_5c.y = (int)ROUND(256.0f * 0.0);
         local_5c.z = (int)ROUND(256.0f * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_5c);
         local_50.x = this_ptr->tile_size;
         local_80.x = (int)ROUND(local_50.x * 256.0f);
         local_80.y = (int)ROUND(local_50.y * 256.0f);
         local_80.z = (int)ROUND(local_50.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_80);
         local_50.z = this_ptr->tile_size;
         local_38.x = (int)ROUND(local_50.x * 256.0f);
         local_38.y = (int)ROUND(local_50.y * 256.0f);
         local_38.z = (int)ROUND(local_50.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_38);
         local_50.x = 0.0;
         local_68.x = (int)ROUND(256.0f * 0.0);
         local_68.y = (int)ROUND(local_50.y * 256.0f);
         local_68.z = (int)ROUND(local_50.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_68);
         iVar3 = g_RenderPixelBudget;
         uVar3 = g_RenderVertexBuffer[0].projected_vertex.screen_x &

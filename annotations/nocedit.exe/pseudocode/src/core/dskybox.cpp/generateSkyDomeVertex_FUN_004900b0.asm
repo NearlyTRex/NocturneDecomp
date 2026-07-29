@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00490199 | g_CDemonRendererInstance
     ADD EAX,ESI                         ; 0049019b
     PUSH EAX                            ; 0049019d
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0049019e
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0049019e
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 004901a3
     MOV dword ptr [ESI + 0x688034],EAX  ; 004901a5 | g_RenderVertexBuffer[0].r
     MOV dword ptr [ESI + 0x688038],EAX  ; 004901ab | g_RenderVertexBuffer[0].g

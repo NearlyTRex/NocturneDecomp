@@ -34,7 +34,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-;   wincore_windll.cpp_transformPoint_FUN_005b5a25
+;   engine_special.cpp_transformPoint_FUN_005b5a25
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     PUSH EBX                            ; 004ed4af
     PUSH EDI                            ; 004ed4b0 | g_RenderVertexBuffer | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     ADD ESI,0xc                         ; 004ed4b1
-    CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004ed4b4
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004ed4b4
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004ed4b9
     ADD EDI,0x30                        ; 004ed4bc
     CMP ESI,EBP                         ; 004ed4bf

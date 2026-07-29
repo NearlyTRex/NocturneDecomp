@@ -98,8 +98,8 @@ __asm {
         mov EAX,dword ptr [EBP + -0x6]
         mov dword ptr [EBP + -0x2e],EAX
     LAB_00443cca:
-        call wincore_windll_cpp_clearScreen_FUN_005b3e70
-        call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
+        call engine_special_cpp_clearScreen_FUN_005b3e70
+        call engine_special_cpp_clearZBufferNative_FUN_005b3ed4
         lea EAX,[EBP + -0x36]
         push EAX
         mov EDI,dword ptr [g_CDemonRendererPtr2]
@@ -182,7 +182,7 @@ __asm {
         push EAX
         mov EAX,dword ptr [EDI]
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         lea EBX,[EBP + 0x16]
         add ESP,0x8
         lea EAX,[EBP + 0x22]
@@ -201,7 +201,7 @@ __asm {
         mov EAX,dword ptr [EDI]
         add EAX,0x30
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr2]
         jmp 0x0060dcf5

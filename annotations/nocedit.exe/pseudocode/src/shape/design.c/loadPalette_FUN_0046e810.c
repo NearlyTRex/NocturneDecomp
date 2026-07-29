@@ -28,7 +28,7 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
   char cVar1;
   
   bVar7 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("  1) Load model palette",0,0x16);
   engine_2d_c_drawText_FUN_00401fd0("  2) Load .ACT file palette",0,0x21);
   engine_2d_c_drawText_FUN_00401fd0("  3) Load default editor palette",0,0x2c);

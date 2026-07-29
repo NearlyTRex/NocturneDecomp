@@ -9,7 +9,7 @@
 void __cdecl core_setedit_cpp_showVdirBoxEditorHelp_FUN_00582f30(void)
 
 {
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("F1",0,0);
   engine_2d_c_drawText_FUN_00401fd0("Show this help screen",g_WindowWidth / 10,0);
   engine_2d_c_drawText_FUN_00401fd0("TAB",0,0xb);

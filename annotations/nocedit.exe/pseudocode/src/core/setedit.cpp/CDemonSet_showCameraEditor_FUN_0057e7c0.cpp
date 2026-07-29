@@ -112,7 +112,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   local_38 = pCVar9;
   local_34 = pCVar9;
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented Camera Editor",0,0);
     iVar15 = 0x16;
     iVar13 = 0;

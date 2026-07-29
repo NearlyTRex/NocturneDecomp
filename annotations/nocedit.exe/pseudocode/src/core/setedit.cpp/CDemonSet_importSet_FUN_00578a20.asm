@@ -44,11 +44,11 @@
 ;   engine_dosio.cpp_makePath_FUN_00481f50
 ;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -205,8 +205,8 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00578bb9
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00578bbe
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00578bc1
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00578bc1
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00578bc6
     PUSH 0x0                            ; 00578bc8
     LEA EAX,[ESP + 0x408]               ; 00578bca
@@ -249,8 +249,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00578c22
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00578c27
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00578c2a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00578c2a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00578c2f
     PUSH 0x0                            ; 00578c31
     PUSH 0x646b36                       ; 00578c33 | = "Can't decide how to process file base..."

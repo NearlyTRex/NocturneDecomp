@@ -77,7 +77,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     }
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-    wincore_windll_cpp_lockFrame_FUN_005b7210();
+    engine_special_cpp_lockFrame_FUN_005b7210();
     if (((((float)acStack_138._252_4_ != (g_CSlewPtr->position).x) ||
          (fVar2 != (g_CSlewPtr->position).y)) || (fVar3 != (g_CSlewPtr->position).z)) ||
        (((fVar4 != (g_CSlewPtr->orientation).vec.x || (fVar5 != (g_CSlewPtr->orientation).vec.y)) ||
@@ -114,7 +114,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0x2c);
     _sprintf(acStack_13c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0xb);
-    wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+    engine_special_cpp_unlockFrame_FUN_005b7250(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);

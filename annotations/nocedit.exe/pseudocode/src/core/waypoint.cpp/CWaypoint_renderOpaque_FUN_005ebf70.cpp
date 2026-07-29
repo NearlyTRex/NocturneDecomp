@@ -55,7 +55,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
     CStack_70.y = (int)ROUND(CStack_64.y * 256.0f);
     CStack_70.z = (int)ROUND(CStack_64.z * 256.0f);
     iVar7 = 0;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_70);
     pCVar4 = this_ptr;
     if (0 < this_ptr->num_adjacent_waypoints) {
@@ -83,7 +83,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
           CStack_7c.x = (int)ROUND(CStack_64.x * 256.0f);
           CStack_7c.y = (int)ROUND(CStack_64.y * 256.0f);
           CStack_7c.z = (int)ROUND(CStack_64.z * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_7c);
           engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
         }

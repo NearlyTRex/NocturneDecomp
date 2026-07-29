@@ -35,7 +35,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
   char cVar1;
   
   bVar6 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0,"Enter in X point : ");
   iVar4 = -1;
   pcVar9 = local_e8;

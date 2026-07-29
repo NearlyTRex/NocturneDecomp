@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401140
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00409966 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 00409968
     PUSH EAX                            ; 0040996d
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040996e
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0040996e
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EBX,dword ptr [0x006703e8]      ; 00409973 | g_CDemonRendererPtr1
     MOV EBX,dword ptr [EBX]             ; 00409979 | g_CDemonRendererInstance
     MOV AH,byte ptr [EBX + 0xea5e3]     ; 0040997b

@@ -39,7 +39,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00587c48 | g_CDemonRendererInstance
     ADD EAX,ESI                         ; 00587c4a
     PUSH EAX                            ; 00587c4c
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00587c4d
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00587c4d
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EDX,dword ptr [0x006703ec]      ; 00587c52 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EDX]             ; 00587c58 | g_CDemonRendererInstance
     MOV dword ptr [ESI + EAX*0x1 + 0x18],0x800000 ; 00587c5a | DAT_00800000

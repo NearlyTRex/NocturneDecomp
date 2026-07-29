@@ -31,8 +31,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ddraw.c_DirectDrawCreate
+;   engine_special.cpp_loadExternalRenderer_FUN_005b6750
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
-;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
 ;
 ; *****************************************************************************
 
@@ -145,8 +145,8 @@ section .text
     MOV EBX,dword ptr [0x03f98468]      ; 005ecd32 | g_MainWindowHandle
         ;   Label: LAB_005ecd32
     PUSH EBX                            ; 005ecd38
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 005ecd39
-        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_005b6750 ; 005ecd39
+        ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
     MOV EAX,0x1                         ; 005ecd3e
     ADD ESP,0x4                         ; 005ecd43
     POP EBP                             ; 005ecd46

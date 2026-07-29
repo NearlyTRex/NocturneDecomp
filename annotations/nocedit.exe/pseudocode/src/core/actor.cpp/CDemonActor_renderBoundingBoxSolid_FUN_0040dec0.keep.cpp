@@ -26,7 +26,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
     CStack_28.y = (int)ROUND(CStack_34.y * 256.0f);
     CStack_28.z = (int)ROUND(CStack_34.z * 256.0f);
     this_ptr_00 = g_CDemonRendererPtr2;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&this_ptr_00->vertex_buffer_ptr[corner_index].projected_vertex,&CStack_28);
     this_ptr_00->vertex_buffer_ptr[corner_index].r = red << 8;
     this_ptr_00->vertex_buffer_ptr[corner_index].g = green << 8;

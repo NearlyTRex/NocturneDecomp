@@ -46,7 +46,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
     iVar4 = iVar4 + 4;
     pacVar6 = pacVar6 + 1;
   } while (iVar4 != 0x24);
-  wincore_windll_cpp_buildCardList_FUN_005b7db0
+  engine_special_cpp_buildCardList_FUN_005b7db0
             (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
              g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
   if (g_GraphicsCardCount <= g_CurrentGraphicsBoard) {
@@ -55,7 +55,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   local_1c[0] = 0;
   local_1c[1] = 0;
   local_1c[2] = 0;
-  wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
+  engine_special_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
   do {
     pcVar9 = local_140;
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
@@ -82,15 +82,15 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
             pcVar10[1] = cVar2;
             pcVar10 = pcVar10 + 2;
           } while (cVar2 != '\0');
-          wincore_windll_cpp_kill_FUN_005b71e0();
-          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
+          engine_special_cpp_kill_FUN_005b71e0();
+          engine_special_cpp_loadExternalRenderer_FUN_005b6750(0);
           iVar7 = g_UseDirect3D;
           if (g_UseDirect3D != 0) {
 LAB_00510e1f:
-            wincore_windll_cpp_buildCardList_FUN_005b7db0
+            engine_special_cpp_buildCardList_FUN_005b7db0
                       (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
                        g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
-            wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
+            engine_special_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
             iVar7 = g_GraphicsCardCount;
           }
         }
@@ -110,8 +110,8 @@ LAB_00510e1f:
             pcVar11[1] = cVar2;
             pcVar11 = pcVar11 + 2;
           } while (cVar2 != '\0');
-          wincore_windll_cpp_kill_FUN_005b71e0();
-          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
+          engine_special_cpp_kill_FUN_005b71e0();
+          engine_special_cpp_loadExternalRenderer_FUN_005b6750(0);
           if (g_UseDirect3D != 0) goto LAB_00510e1f;
           g_GraphicsCardCount = g_UseDirect3D;
           iVar7 = g_GraphicsCardCount;
@@ -551,15 +551,15 @@ LAB_005116c3:
             goto LAB_005116c3;
           }
         }
-        wincore_windll_cpp_kill_FUN_005b71e0();
-        wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
+        engine_special_cpp_kill_FUN_005b71e0();
+        engine_special_cpp_loadExternalRenderer_FUN_005b6750(0);
         iVar6 = g_CurrentGraphicsBoard;
         iVar3 = g_UseDirect3D;
         if (g_UseDirect3D != 0) {
-          wincore_windll_cpp_buildCardList_FUN_005b7db0
+          engine_special_cpp_buildCardList_FUN_005b7db0
                     (&g_GraphicsCardCount,g_GraphicsCardDriverNames,g_GraphicsCardNames,
                      g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);
-          wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
+          engine_special_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
           iVar6 = g_CurrentGraphicsBoard;
           iVar3 = g_GraphicsCardCount;
         }
@@ -572,7 +572,7 @@ LAB_005116c3:
         if (g_GraphicsCardCount <= g_CurrentGraphicsBoard) {
           g_CurrentGraphicsBoard = 0;
         }
-        wincore_windll_cpp_selectCard_FUN_005b7d90(g_CurrentGraphicsBoard);
+        engine_special_cpp_selectCard_FUN_005b7d90(g_CurrentGraphicsBoard);
         iVar6 = g_CurrentGraphicsBoard;
         iVar3 = g_GraphicsCardCount;
       }

@@ -25,7 +25,7 @@ void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotati
   float fVar8;
   float fVar9;
   
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Realign object",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   uVar10 = rotation_x + 0x2000U & 0xc000;

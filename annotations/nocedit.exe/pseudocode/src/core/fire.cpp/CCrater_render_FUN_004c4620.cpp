@@ -25,22 +25,22 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   local_20.x = (int)ROUND(this_ptr->corner_positions[0].x * 256.0f);
   local_20.y = (int)ROUND(this_ptr->corner_positions[0].y * 256.0f);
   local_20.z = (int)ROUND(this_ptr->corner_positions[0].z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[0].projected_vertex,&local_20);
   local_2c.x = (int)ROUND(this_ptr->corner_positions[1].x * 256.0f);
   local_2c.y = (int)ROUND(this_ptr->corner_positions[1].y * 256.0f);
   local_2c.z = (int)ROUND(this_ptr->corner_positions[1].z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[1].projected_vertex,&local_2c);
   local_38.x = (int)ROUND(this_ptr->corner_positions[2].x * 256.0f);
   local_38.y = (int)ROUND(this_ptr->corner_positions[2].y * 256.0f);
   local_38.z = (int)ROUND(this_ptr->corner_positions[2].z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[2].projected_vertex,&local_38);
   local_14.x = (int)ROUND(this_ptr->corner_positions[3].x * 256.0f);
   local_14.y = (int)ROUND(this_ptr->corner_positions[3].y * 256.0f);
   local_14.z = (int)ROUND(this_ptr->corner_positions[3].z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[3].projected_vertex,&local_14);
   g_RenderVertexBuffer[0].r = 0xffff;
   g_RenderVertexBuffer[0].g = 0xffff;

@@ -7,7 +7,7 @@
 #include "types/classes/CEnemy_vtable.h"
 
 // Structure: CEnemy_full_vtable
-// Ghidra size: 0x164 (356 bytes)
+// Ghidra size: 0x160 (352 bytes)
 #pragma pack(push, 1)
 typedef struct CEnemy_full_vtable {
     CDemonActor_vtable _ub; // 0x0

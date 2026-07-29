@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -84,8 +84,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004253ea | g_CDemonRendererInstance
     ADD EAX,EBX                         ; 004253ec
     PUSH EAX                            ; 004253ee
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004253ef
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004253ef
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004253f4
     MOV EAX,dword ptr [ESP + 0x2c]      ; 004253f7
     ADD EDI,0x4                         ; 004253fb

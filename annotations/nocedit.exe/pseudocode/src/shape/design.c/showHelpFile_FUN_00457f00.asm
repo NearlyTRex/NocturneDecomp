@@ -25,9 +25,9 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     CMP dword ptr [EBP + -0x8],0x0      ; 00457f33
     JZ 0x00457fb9                       ; 00457f37
         ;   XREF to: 00457fb9 (CONDITIONAL_JUMP)  ; LAB_00457fb9
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00457f3d
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00457f3d
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,dword ptr [EBP + -0x8]      ; 00457f42
         ;   Label: LAB_00457f42
     PUSH EAX                            ; 00457f45
@@ -91,8 +91,8 @@ section .text
         ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00457f85
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00457f8a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00457f8a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV dword ptr [EBP + -0x4],0x0      ; 00457f8f
     JMP 0x00457f42                      ; 00457f96
         ;   XREF to: 00457f42 (UNCONDITIONAL_JUMP)  ; LAB_00457f42

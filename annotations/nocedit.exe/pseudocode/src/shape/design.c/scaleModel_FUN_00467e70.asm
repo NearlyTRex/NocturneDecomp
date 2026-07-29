@@ -21,7 +21,7 @@
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x60                        ; 00467e76
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00467e7c
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00467e81
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00467e81
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61cb9d                    ; 00467e86 | = "Enter in scale multiplier : "
     PUSH ECX                            ; 00467e8b | = "Enter in scale multiplier : "
     PUSH 0x0                            ; 00467e8c

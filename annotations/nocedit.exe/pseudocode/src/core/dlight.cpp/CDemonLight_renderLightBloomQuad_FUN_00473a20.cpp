@@ -89,22 +89,22 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_40.x = (int)ROUND(256.0f * 0.5);
     local_40.y = (int)ROUND(256.0f * 0.5);
     local_40.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_40);
     local_28.x = (int)ROUND(256.0f * -0.5);
     local_28.y = (int)ROUND(256.0f * 0.5);
     local_28.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_28);
     local_88.x = (int)ROUND(256.0f * -0.5);
     local_88.y = (int)ROUND(256.0f * -0.5);
     local_88.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_88);
     local_94.x = (int)ROUND(256.0f * 0.5);
     local_94.y = (int)ROUND(256.0f * -0.5);
     local_94.z = (int)ROUND(256.0f * -0.5);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_94);
     this_ptr_00 = g_CDemonRendererPtr2;
     g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;

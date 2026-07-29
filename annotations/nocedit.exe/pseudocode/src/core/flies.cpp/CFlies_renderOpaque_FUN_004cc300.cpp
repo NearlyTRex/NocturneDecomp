@@ -119,7 +119,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
         CStack_34.x = (int)ROUND(CStack_40.x * 256.0f);
         CStack_34.y = (int)ROUND(CStack_40.y * 256.0f);
         CStack_34.z = (int)ROUND(CStack_40.z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_34);
         this_ptr_01 = g_CDemonRendererPtr2;
         vertices_00 = g_CDemonRendererPtr2->vertex_buffer_ptr;

@@ -71,12 +71,12 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
           memcpy(g_BackupPolygons,g_ModelPolygonData,g_PolygonCount * sizeof(SShapeEditorPolygon));
           g_BackupVertexCount = g_VertexCount;
           g_BackupPolygonCount = g_PolygonCount;
-          wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+          engine_special_cpp_unlockFrame_FUN_005b7250(0);
           wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
           selected_polygon_index =
                shape_design_c_complexPolygonReduction_FUN_00463b30(selected_polygon_index);
           wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
-          wincore_windll_cpp_lockFrame_FUN_005b7210();
+          engine_special_cpp_lockFrame_FUN_005b7210();
         }
         if (g_KeyboardState[0x16] != '\0') {
           g_KeyboardState[0x16] = '\0';

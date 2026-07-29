@@ -42,6 +42,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
 ;   shape_design.c_cramTextureList_FUN_0046bb80
 ;   shape_design.c_cramTextures_FUN_0046a970
@@ -52,7 +53,6 @@
 ;   shape_design.c_getTextureName_FUN_0046e060
 ;   shape_design.c_initializeTextureManager_FUN_0046a880
 ;   shape_design.c_normalizeUVCoordinates_FUN_0046e340
-;   shape_design.c_promptForModelNameAndLoad_FUN_00458a10
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -120,8 +120,8 @@ section .text
     TEST EAX,EAX                        ; 0046a1f1
     JZ 0x0046a228                       ; 0046a1f3
         ;   XREF to: 0046a228 (CONDITIONAL_JUMP)  ; LAB_0046a228
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046a1f5
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046a1f5
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046a1fa
     PUSH 0x0                            ; 0046a1fc
     MOV EAX,0x61d19a                    ; 0046a1fe | = "WARNING: Only valid textures will app..."
@@ -296,8 +296,8 @@ section .text
         ;   Label: LAB_0046a465
     JNZ 0x0046a494                      ; 0046a46c
         ;   XREF to: 0046a494 (CONDITIONAL_JUMP)  ; LAB_0046a494
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046a46e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046a46e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046a473
     PUSH 0x0                            ; 0046a475
     MOV EAX,0x61d1ee                    ; 0046a477 | = "ERROR: No valid textures found.  Hit ..."
@@ -504,8 +504,8 @@ section .text
         ;   Label: LAB_0046a65a
     JMP 0x0046a845                      ; 0046a65b
         ;   XREF to: 0046a845 (UNCONDITIONAL_JUMP)  ; LAB_0046a845
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046a660
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046a660
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046a660
     MOV ESI,0x1eb1768                   ; 0046a665 | g_CurrentModelFilename
     LEA EDI,[EBP + 0xffffff2c]          ; 0046a66a

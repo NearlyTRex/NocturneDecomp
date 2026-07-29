@@ -689,8 +689,8 @@ section .text
     CALL wincore_winvideo.cpp_playMovie_FUN_005f4a00 ; 00508041
         ;   XREF to: 005f4a00 (UNCONDITIONAL_CALL)  ; int wincore_winvideo.cpp_playMovie_FUN_005f4a00(char * directory_path, char * movie_filename)
     ADD ESP,0x8                         ; 00508046
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00508049
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00508049
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x63556f                       ; 0050804e | = "Loading..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00508053
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)

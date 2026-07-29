@@ -18,7 +18,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
   core_inivar_cpp_readIniData_FUN_004fbd90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor options menu",0,0);
     if (this_ptr->mission_name[0] == '\0') {
       strcpy(local_114,"No mission loaded");

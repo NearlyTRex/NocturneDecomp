@@ -28,10 +28,10 @@
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_unlockFrame_FUN_005b7250
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0
 ;   shape_edittool.cpp_paintWindowBackground_FUN_0049e590
-;   wincore_windll.cpp_lockFrame_FUN_005b7210
-;   wincore_windll.cpp_unlockFrame_FUN_005b7250
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     JL 0x004a0dfe                       ; 004a0e0d
         ;   XREF to: 004a0dfe (CONDITIONAL_JUMP)  ; LAB_004a0dfe
     NOP                                 ; 004a0e0f
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004a0e10
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 004a0e10
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
         ;   Label: LAB_004a0e10
     MOV EDX,dword ptr [0x00679394]      ; 004a0e15 | g_WindowWidth
     MOV EBX,dword ptr [0x0067939c]      ; 004a0e1b | g_BitsPerPixel
@@ -101,8 +101,8 @@ section .text
     POP EDI                             ; 004a0e6c
     PUSH 0x1                            ; 004a0e6d
         ;   Label: LAB_004a0e6d
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004a0e6f
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 004a0e6f
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004a0e74
     POP EBX                             ; 004a0e77
     POP ESI                             ; 004a0e78

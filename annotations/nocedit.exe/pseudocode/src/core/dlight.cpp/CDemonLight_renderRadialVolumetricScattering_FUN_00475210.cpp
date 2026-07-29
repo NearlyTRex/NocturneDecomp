@@ -107,7 +107,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_b8.x = (int)ROUND(fVar14 * fVar10 * 256.0f);
           local_b8.y = (int)ROUND(fVar14 * fVar8 * 256.0f);
           local_b8.z = (int)ROUND(fVar14 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_b8);
           fVar14 = fVar11;
           if (fVar13 < fVar11) {
@@ -116,7 +116,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_ac.x = (int)ROUND(fVar14 * (float)(fVar6 * fVar7) * 256.0f);
           local_ac.y = (int)ROUND(fVar14 * (float)(fVar16 * fVar7) * 256.0f);
           local_ac.z = (int)ROUND(fVar14 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_ac);
           fVar14 = fVar11;
           if (fVar12 < fVar11) {
@@ -125,7 +125,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_7c[0].x = (int)ROUND(fVar14 * (float)(fVar6 * fVar7) * 256.0f);
           local_7c[0].y = (int)ROUND(fVar14 * (float)(fVar16 * fVar7) * 256.0f);
           local_7c[0].z = (int)ROUND(fVar14 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,local_7c);
           fVar14 = fVar11;
           if (fVar12 < fVar11) {
@@ -134,7 +134,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_88.x = (int)ROUND(fVar14 * fVar10 * 256.0f);
           local_88.y = (int)ROUND(fVar14 * fVar8 * 256.0f);
           local_88.z = (int)ROUND(fVar14 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_88);
           this_ptr_00 = g_CDemonRendererPtr2;
           g_CDemonRendererPtr2->vertex_buffer_ptr->a = iVar1;

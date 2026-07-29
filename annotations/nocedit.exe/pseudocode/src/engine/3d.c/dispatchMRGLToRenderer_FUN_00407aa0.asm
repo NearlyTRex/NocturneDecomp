@@ -33,8 +33,8 @@
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403840
 ;   engine_model.c_getMRGLSize_FUN_00528700
+;   engine_special.cpp_drawPolyList_FUN_005b7640
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
-;   wincore_windll.cpp_drawPolyList_FUN_005b7640
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH ECX                            ; 00407b1d
     PUSH 0x820074                       ; 00407b1e | g_RenderFaceArray
     PUSH 0x688014                       ; 00407b23 | g_RenderVertexBuffer
-    CALL wincore_windll.cpp_drawPolyList_FUN_005b7640 ; 00407b28
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+    CALL engine_special.cpp_drawPolyList_FUN_005b7640 ; 00407b28
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00407b2d
     XOR EDX,EDX                         ; 00407b30
         ;   Label: LAB_00407b30
@@ -141,8 +141,8 @@ section .text
     PUSH EBX                            ; 00407b86
     PUSH 0x820074                       ; 00407b87 | g_RenderFaceArray
     PUSH 0x688014                       ; 00407b8c | g_RenderVertexBuffer
-    CALL wincore_windll.cpp_drawPolyList_FUN_005b7640 ; 00407b91
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+    CALL engine_special.cpp_drawPolyList_FUN_005b7640 ; 00407b91
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00407b96
     XOR EDX,EDX                         ; 00407b99
         ;   Label: LAB_00407b99

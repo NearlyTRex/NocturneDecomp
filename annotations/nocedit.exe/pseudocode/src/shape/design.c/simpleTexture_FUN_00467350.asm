@@ -42,9 +42,9 @@
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH EBP                            ; 00467353
     MOV EBP,ESP                         ; 00467354
     SUB ESP,0x74                        ; 00467356
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046735c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046735c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61c963                    ; 00467361 | = "Enter texture name : "
     PUSH ECX                            ; 00467366 | = "Enter texture name : "
     PUSH 0x0                            ; 00467367
@@ -96,8 +96,8 @@ section .text
     CMP dword ptr [EBP + -0x8],0x0      ; 004673aa
     JNZ 0x004673db                      ; 004673ae
         ;   XREF to: 004673db (CONDITIONAL_JUMP)  ; LAB_004673db
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004673b0
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004673b0
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004673b5
     PUSH 0x0                            ; 004673b7
     MOV EAX,0x61c980                    ; 004673b9 | = "ERROR! Bad texture name!"
@@ -122,8 +122,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004673ea
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004673ef
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004673f2
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004673f2
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004673f7
     PUSH 0x0                            ; 004673f9
     MOV EAX,0x61c9ab                    ; 004673fb | = "Face map on Z axis (Y/N) ?"

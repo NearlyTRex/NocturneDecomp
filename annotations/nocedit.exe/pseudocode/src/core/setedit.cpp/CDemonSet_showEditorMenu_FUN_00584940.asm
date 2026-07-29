@@ -71,8 +71,8 @@ section .text
     MOV dword ptr [0x02d807ac],ECX      ; 00584968 | g_CDemonLightInstance.volumetric_enabled
     MOV dword ptr [ESP + 0x6fc],EAX     ; 0058496e
     MOV dword ptr [0x03277d14],EDX      ; 00584975 | g_CDemonRaytraceInstance
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0058497b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0058497b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0058497b
     PUSH 0x0                            ; 00584980
     PUSH 0x0                            ; 00584982

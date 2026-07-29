@@ -117,7 +117,7 @@ __asm {
         push EBX
         mov EBX,dword ptr [ESI]
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         lea EBX,[ESP + 0xf0]
         push EBX
@@ -131,7 +131,7 @@ __asm {
         mov EBX,dword ptr [ESI]
         add EBX,0x30
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EBX,dword ptr [g_CDemonRendererPtr1]
         jmp 0x006027e0
@@ -234,7 +234,7 @@ __asm {
         push EBX
         mov EBX,dword ptr [ESI]
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         lea EBX,[ESP + 0x54]
         push EBX
@@ -248,7 +248,7 @@ __asm {
         mov EBX,dword ptr [ESI]
         add EBX,0x30
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EBX,dword ptr [g_CDemonRendererPtr1]
         jmp LAB_00602891
@@ -350,7 +350,7 @@ __asm {
         push ESI
         mov EBX,dword ptr [EBX]
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         lea EBX,[ESP + 0x12c]
         push EBX
@@ -364,7 +364,7 @@ __asm {
         mov EBX,dword ptr [ESI]
         add EBX,0x30
         push EBX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EBX,dword ptr [g_CDemonRendererPtr1]
         jmp LAB_00602942

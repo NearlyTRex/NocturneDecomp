@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     CMP dword ptr [0x01626408],0x4e20   ; 0046ec4f | g_VertexCount
     JLE 0x0046ec83                      ; 0046ec59
         ;   XREF to: 0046ec83 (CONDITIONAL_JUMP)  ; LAB_0046ec83
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046ec5b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046ec5b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046ec60
     PUSH 0x0                            ; 0046ec62
     MOV EAX,0x61e07d                    ; 0046ec64 | = "Ran out of verticies!"
@@ -137,8 +137,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046ecc6
         ;   Label: LAB_0046ecc6
     SUB dword ptr [0x01626408],EAX      ; 0046ecc9 | g_VertexCount
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046eccf
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046eccf
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0046ecd4
     PUSH 0x0                            ; 0046ecd6
     MOV EAX,0x61e093                    ; 0046ecd8 | = "Faces detached."

@@ -185,8 +185,8 @@ section .text
     JZ 0x004e428f                       ; 004e4197
         ;   XREF to: 004e428f (CONDITIONAL_JUMP)  ; LAB_004e428f
     MOV dword ptr [ESP + 0x1120],EAX    ; 004e419d
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004e41a4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004e41a4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 004e41a9
     PUSH 0x0                            ; 004e41ae
     PUSH 0x0                            ; 004e41b0

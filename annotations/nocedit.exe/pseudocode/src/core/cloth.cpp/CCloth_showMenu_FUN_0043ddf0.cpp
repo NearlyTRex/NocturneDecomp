@@ -28,7 +28,7 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
   local_178[0] = '\0';
   local_278[0] = '\0';
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Cloth Editor",0,0);
     engine_2d_c_drawText_FUN_00401fd0("1.  Load cloth file",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2.  Save cloth file",0,0x21);

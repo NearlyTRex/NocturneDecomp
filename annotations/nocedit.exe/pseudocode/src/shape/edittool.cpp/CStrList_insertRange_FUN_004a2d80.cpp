@@ -20,7 +20,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004a2d80(CStrList *this
     return;
   }
   do {
-    pCVar1 = this_ptr->vtable;
+    pCVar1 = (this_ptr->vtable)._us;
     string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(source_list,index);
     index = index + 1;
     (*pCVar1->insert)(this_ptr,insertion_index,string_data);

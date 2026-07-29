@@ -35,8 +35,8 @@
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH EAX                            ; 0059b6c7
     ADD EDI,0x30                        ; 0059b6c8
     INC ESI                             ; 0059b6cb
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0059b6cc
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 0059b6cc
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EBP + 0x28558]   ; 0059b6d1
     ADD ESP,0x8                         ; 0059b6d7
     CMP ESI,EAX                         ; 0059b6da

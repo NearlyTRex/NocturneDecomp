@@ -26,7 +26,7 @@
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_2d.c_plotPixel_FUN_00401140
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00409c28 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 00409c2a
     PUSH EAX                            ; 00409c2f
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00409c30
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00409c30
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV ESI,dword ptr [0x006703e8]      ; 00409c35 | g_CDemonRendererPtr1
     MOV ESI,dword ptr [ESI]             ; 00409c3b | g_CDemonRendererInstance
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 00409c3d

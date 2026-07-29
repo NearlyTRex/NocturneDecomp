@@ -32,7 +32,7 @@
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EBP                            ; 00469c73
     MOV EBP,ESP                         ; 00469c74
     SUB ESP,0xe0                        ; 00469c76
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00469c7c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00469c7c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61d0ad                    ; 00469c81 | = "Enter in X point : "
     PUSH ECX                            ; 00469c86 | = "Enter in X point : "
     PUSH 0x0                            ; 00469c87

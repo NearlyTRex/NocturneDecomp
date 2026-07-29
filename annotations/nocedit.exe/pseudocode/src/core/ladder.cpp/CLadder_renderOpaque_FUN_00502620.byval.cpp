@@ -91,7 +91,7 @@ __asm {
         push EAX
         mov EAX,dword ptr [EDI]
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         lea EBX,[ESP + 0x2c]
         add ESP,0x8
         lea EAX,[ESP + 0x54]
@@ -110,7 +110,7 @@ __asm {
         mov EAX,dword ptr [EDI]
         add EAX,0x30
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr2]
         jmp LAB_00602e34
@@ -148,7 +148,7 @@ __asm {
         mov EAX,dword ptr [EDI]
         add EAX,0x60
         push EAX
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr2]
         jmp LAB_00602ee5

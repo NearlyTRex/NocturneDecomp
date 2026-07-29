@@ -31,7 +31,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   local_68.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_68.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_68.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_68);
+  engine_special_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_68);
   iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
                     (g_CDemonRendererPtr2,vertex_ptr_00);
   if (iVar1 == 0) {
@@ -46,22 +46,22 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   local_50.x = (int)ROUND(256.0f * -0.125);
   local_50.y = (int)ROUND(256.0f * -0.125);
   local_50.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_50);
   local_80.x = (int)ROUND(256.0f * 0.125);
   local_80.y = (int)ROUND(256.0f * -0.125);
   local_80.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_80);
   local_74.x = (int)ROUND(256.0f * 0.125);
   local_74.y = (int)ROUND(256.0f * 0.125);
   local_74.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_74);
   local_44.x = (int)ROUND(256.0f * -0.125);
   local_44.y = (int)ROUND(256.0f * 0.125);
   local_44.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectRainDropTexture);

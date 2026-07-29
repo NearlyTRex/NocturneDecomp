@@ -49,14 +49,14 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(CCloth *this_ptr,int 
     local_64.x = (int)ROUND(fVar3 * 256.0f);
     local_64.y = (int)ROUND(fVar4 * 256.0f);
     local_64.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_1c),&local_64);
     local_4c.x = (int)ROUND(fVar3 * 256.0f);
     local_4c.y = (int)ROUND(fVar4 * 256.0f);
     local_4c.z = (int)ROUND(this_ptr->collide_bones[bone_index].child_distance * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_20),&local_4c);

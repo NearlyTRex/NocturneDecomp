@@ -36,7 +36,7 @@ void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
       engine_2d_c_clearInputAndWait_FUN_00403260();
       return;
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     local_20 = 0;
     for (local_18 = local_1c; local_18 < g_WindowHeight / 0xb + local_1c; local_18 = local_18 + 1) {
       if ((((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||

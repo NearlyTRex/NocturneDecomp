@@ -50,13 +50,13 @@
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_removeDegenerateTriangles_FUN_00463a20
 ;   shape_design.c_removeUnusedVertices_FUN_00463830
 ;   shape_design.c_validatePolygonNormals_FUN_00461d80
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_00467881
     JLE 0x004678b3                      ; 00467885
         ;   XREF to: 004678b3 (CONDITIONAL_JUMP)  ; LAB_004678b3
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00467887
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00467887
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,0x61ca0d                    ; 0046788c | = "Enter tolerance [.1] : "
     PUSH EAX                            ; 00467891 | = "Enter tolerance [.1] : "
     PUSH 0x0                            ; 00467892
@@ -200,8 +200,8 @@ section .text
         ;   Label: LAB_004679a9
     JL 0x004679cb                       ; 004679ad
         ;   XREF to: 004679cb (CONDITIONAL_JUMP)  ; LAB_004679cb
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004679af
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004679af
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004679b4
     PUSH 0x0                            ; 004679b6
     MOV EAX,0x61ca5b                    ; 004679b8 | = "Scanning vertices..."
@@ -227,8 +227,8 @@ section .text
     CMP dword ptr [EBP + -0x8],0x0      ; 004679f2
     JNZ 0x00467a1e                      ; 004679f6
         ;   XREF to: 00467a1e (CONDITIONAL_JUMP)  ; LAB_00467a1e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004679f8
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004679f8
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004679fd
     PUSH 0x0                            ; 004679ff
     MOV EAX,0x61ca82                    ; 00467a01 | = "ERROR: Can't allocate memory for vert..."
@@ -301,8 +301,8 @@ section .text
     CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00467ab0
         ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00467ab5
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00467ab8
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00467ab8
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00467abd
     PUSH 0x0                            ; 00467abf
     MOV EAX,0x61cadd                    ; 00467ac1 | = "ERROR: Can't allocate memory for vert..."

@@ -208,7 +208,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
           }
         }
         local_64[0] = (SRenderVertex *)0x552cbb;
-        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,iVar7);
+        engine_special_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,iVar7);
         piVar1 = &(edge_ptr->base).x_current;
         *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
         (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
@@ -242,7 +242,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
       } while (iVar6 < vertex_count);
     }
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_64,vertex_count,g_RenderStateFlags.dword);
+    engine_special_cpp_drawPolygon2_FUN_005b7610(local_64,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

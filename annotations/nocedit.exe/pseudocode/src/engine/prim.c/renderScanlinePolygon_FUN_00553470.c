@@ -80,7 +80,7 @@ void __cdecl engine_prim_c_renderScanlinePolygon_FUN_00553470(SRenderVertex *ver
     }
   }
   if ((g_UseExternalRenderer != 0) && (g_TexturesDisabled == 0)) {
-    wincore_windll_cpp_drawPolygon_FUN_005b75e0(vertices,vertex_count,g_RenderStateFlags.dword);
+    engine_special_cpp_drawPolygon_FUN_005b75e0(vertices,vertex_count,g_RenderStateFlags.dword);
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
     return;
   }
@@ -268,7 +268,7 @@ LAB_005536b2:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,right,iVar7);
+        engine_special_cpp_renderScanline_FUN_005b5710(local_14,right,iVar7);
         (right->base).x_current = (right->base).x_current + (right->base).x_gradient;
         (right->base).u_current = (right->base).u_current + (right->base).u_gradient;
         (right->base).v_current = (right->base).v_current + (right->base).v_gradient;

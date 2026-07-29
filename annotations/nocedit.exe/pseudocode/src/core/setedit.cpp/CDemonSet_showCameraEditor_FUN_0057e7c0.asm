@@ -133,8 +133,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057e830
     ADD EAX,0x14d0f0                    ; 0057e833
     MOV dword ptr [ESP + 0x4714],EAX    ; 0057e838
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057e83f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057e83f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0057e83f
     PUSH 0x0                            ; 0057e844
     PUSH 0x0                            ; 0057e846

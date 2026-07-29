@@ -42,9 +42,9 @@
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     CALL crt_memory.c_memset_FUN_005fde40 ; 0046833a
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046833f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00468342
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00468342
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61cc90                    ; 00468347 | = "Enter in final model name : "
     PUSH ECX                            ; 0046834c | = "Enter in final model name : "
     PUSH 0x0                            ; 0046834d
@@ -139,8 +139,8 @@ section .text
     CMP EAX,dword ptr [EBP + 0xfffffdb4] ; 004683e4
     JGE 0x0046846e                      ; 004683ea
         ;   XREF to: 0046846e (CONDITIONAL_JUMP)  ; LAB_0046846e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004683f0
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004683f0
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,dword ptr [EBP + -0x8]      ; 004683f5
     INC ECX                             ; 004683f8
     PUSH ECX                            ; 004683f9
@@ -197,8 +197,8 @@ section .text
         ;   Label: LAB_00468468
     JMP 0x004683db                      ; 00468469
         ;   XREF to: 004683db (UNCONDITIONAL_JUMP)  ; LAB_004683db
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046846e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046846e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046846e
     MOV ECX,0x61ccea                    ; 00468473 | = "Enter in time per frame in decimal : "
     PUSH ECX                            ; 00468478 | = "Enter in time per frame in decimal : "
@@ -303,8 +303,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00468589
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0046858e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00468591
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00468591
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,0x61cd7a                    ; 00468596 | = "Use keyframe 0 to center (Y/N) ? "
     PUSH EAX                            ; 0046859b | = "Use keyframe 0 to center (Y/N) ? "
     PUSH 0x0                            ; 0046859c

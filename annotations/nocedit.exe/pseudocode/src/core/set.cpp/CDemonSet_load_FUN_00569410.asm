@@ -1220,8 +1220,8 @@ section .text
         ;   Label: LAB_0056a141
     JMP 0x00569c19                      ; 0056a14b
         ;   XREF to: 00569c19 (UNCONDITIONAL_JUMP)  ; LAB_00569c19
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0056a150
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0056a150
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0056a150
     PUSH 0x0                            ; 0056a155
     PUSH 0x0                            ; 0056a157

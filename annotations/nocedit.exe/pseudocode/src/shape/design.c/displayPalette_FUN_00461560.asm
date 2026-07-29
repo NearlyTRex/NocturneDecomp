@@ -30,8 +30,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   engine_2d.c_fillRectColor_FUN_00403170
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     SUB ESP,0x6c                        ; 00461566
     MOV dword ptr [EBP + -0xc],0xa      ; 0046156c
     MOV dword ptr [EBP + -0x8],0x8      ; 00461573
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046157a
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046157a
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV dword ptr [EBP + -0x1c],0x0     ; 0046157f
     MOV dword ptr [EBP + -0x4],0x0      ; 00461586
     JMP 0x00461595                      ; 0046158d

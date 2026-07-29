@@ -89,24 +89,24 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           CStack_dc.x = (int)ROUND(fVar5 * 256.0f);
           CStack_dc.y = (int)ROUND(256.0f * 0.0);
           CStack_dc.z = (int)ROUND(256.0f * 0.0);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_dc);
           fVar1 = (this_ptr->flame_size).y;
           CStack_d0.x = (int)ROUND(fVar5 * 256.0f);
           CStack_d0.y = (int)ROUND(fVar1 * 256.0f);
           CStack_d0.z = (int)ROUND(256.0f * 0.0);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_d0);
           fStack_7c = -fVar5;
           CStack_b8.x = (int)ROUND(fStack_7c * 256.0f);
           CStack_b8.y = (int)ROUND(fVar1 * 256.0f);
           CStack_b8.z = (int)ROUND(256.0f * 0.0);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_b8);
           CStack_34.x = (int)ROUND(fStack_7c * 256.0f);
           CStack_34.y = (int)ROUND(256.0f * 0.0);
           CStack_34.z = (int)ROUND(256.0f * 0.0);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
           (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
                     (g_CurrentSceneCamera,&(this_ptr->base).location.position,
@@ -194,25 +194,25 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       CStack_c4.x = (int)ROUND(fVar7 * 256.0f);
       CStack_c4.y = (int)ROUND(fVar7 * 256.0f);
       CStack_c4.z = 0;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_c4);
       fStack_48 = -fVar7;
       CStack_70.x = (int)ROUND(fStack_48 * 256.0f);
       CStack_70.y = (int)ROUND(fVar7 * 256.0f);
       CStack_70.z = 0;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
       fStack_44 = -fVar7;
       CStack_94.x = (int)ROUND(fStack_48 * 256.0f);
       CStack_94.y = (int)ROUND(fStack_44 * 256.0f);
       CStack_94.z = 0;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_94);
       fStack_48 = -fStack_48;
       CStack_40.x = (int)ROUND(fStack_48 * 256.0f);
       CStack_40.y = (int)ROUND(fStack_44 * 256.0f);
       CStack_40.z = 0;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_40);
       for (int i = 0; i < 4; i = i + 1) {
         point = &g_CDemonRendererPtr2->vertex_buffer_ptr[i].projected_vertex;

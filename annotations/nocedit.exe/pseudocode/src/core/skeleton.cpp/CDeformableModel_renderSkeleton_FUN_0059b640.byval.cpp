@@ -50,7 +50,7 @@ __asm {
         push EAX
         add EDI,0x30
         inc ESI
-        call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        call engine_special_cpp_transformAndProjectPoint_FUN_005b575c
         mov EAX,dword ptr [EBP + 0x28558]
         add ESP,0x8
         cmp ESI,EAX

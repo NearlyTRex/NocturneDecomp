@@ -25,7 +25,7 @@ void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
   uint local_14;
   
   bVar5 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_30 = -1.0;
   local_2c = -1.0;

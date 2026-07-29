@@ -57,13 +57,13 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
-;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     MOV dword ptr [ESP + 0x868],EAX     ; 0057bc64
     LEA EAX,[EDX + 0x4]                 ; 0057bc6b
     MOV dword ptr [ESP + 0x870],EAX     ; 0057bc6e
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057bc75
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057bc75
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0057bc75
     MOV ECX,dword ptr [ESP + 0x870]     ; 0057bc7a
     PUSH ECX                            ; 0057bc81

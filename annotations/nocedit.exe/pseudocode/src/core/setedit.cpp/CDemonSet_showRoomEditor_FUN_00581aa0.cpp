@@ -63,7 +63,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
             (g_CEditorToolsPtr,"Preparing set.");
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   this_ptr->actor_count = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_slew_cpp_CSlew_init_FUN_005a2060(&local_108);
   local_a0 = 0.0;
@@ -83,8 +83,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       local_18 = local_20 + local_1c;
     }
     wincore_winrun_cpp_doNothing1_FUN_005f2f80();
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     if (local_18 != (SRoom *)0x0) {
       if (&local_108.orientation != (UOrientationVector *)&local_a0) {
         local_108.orientation.vec.x = local_a0;
@@ -426,7 +426,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     }
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar5 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("F1",0,0);
       engine_2d_c_drawText_FUN_00401fd0("Show this help screen",g_WindowWidth / 10,0);
       engine_2d_c_drawText_FUN_00401fd0("S",0,0xb);

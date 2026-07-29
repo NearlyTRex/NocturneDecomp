@@ -66,7 +66,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDef
         local_4c.z = (int)ROUND(local_28.z * 256.0f);
         pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr + iVar4;
         iVar4 = iVar4 + 1;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pSVar2->projected_vertex,&local_4c);
         matrix_in = matrix_in + 1;
       } while (iVar4 < pCVar1->bone_count);

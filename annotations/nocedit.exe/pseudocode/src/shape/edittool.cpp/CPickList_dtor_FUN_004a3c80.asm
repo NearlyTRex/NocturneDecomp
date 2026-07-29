@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPickListTypeInfo
-;   CStrList_vtable g_CPickListVTable
+;   CPickList_full_vtable g_CPickListVTable
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005fe632

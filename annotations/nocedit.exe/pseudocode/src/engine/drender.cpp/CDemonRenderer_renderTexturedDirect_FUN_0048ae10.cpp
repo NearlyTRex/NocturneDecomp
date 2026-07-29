@@ -18,10 +18,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_RenderStateFlags = (_BIT_INTEGER32)render_flags;

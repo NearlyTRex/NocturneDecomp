@@ -19,17 +19,17 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
       if (INT_0066df80 == 0) {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {
-            pcVar3 = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+            pcVar3 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
           }
           else {
-            pcVar3 = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+            pcVar3 = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
           }
         }
         else if (g_BitsPerPixel == 0x20) {
-          pcVar3 = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+          pcVar3 = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }
         else {
-          pcVar3 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+          pcVar3 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
         g_RenderStateFlags.dword = RENDER_LIGHTING_COLOR;
         g_VertexPreprocessMode = PREPROCESS_NONE;
@@ -38,17 +38,17 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
       else {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {
-            pcVar3 = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+            pcVar3 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
           }
           else {
-            pcVar3 = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+            pcVar3 = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
           }
         }
         else if (g_BitsPerPixel == 0x20) {
-          pcVar3 = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+          pcVar3 = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
         }
         else {
-          pcVar3 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+          pcVar3 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
         g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
@@ -58,17 +58,17 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
     else {
       if (g_MMXSupported == 0) {
         if (g_BitsPerPixel == 0x20) {
-          pcVar2 = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
+          pcVar2 = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
         }
         else {
-          pcVar2 = wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
+          pcVar2 = engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;
         }
       }
       else if (g_BitsPerPixel == 0x20) {
-        pcVar2 = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        pcVar2 = engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        pcVar2 = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        pcVar2 = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = 0;

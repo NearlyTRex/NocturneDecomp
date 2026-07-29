@@ -52,6 +52,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_arePolygonsCoplanar_FUN_00461b70
 ;   shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
 ;   shape_design.c_comparePolygonIndices_FUN_00463800
@@ -60,7 +61,6 @@
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -109,8 +109,8 @@ section .text
     CMP dword ptr [EAX + 0x16e99b4],0x4 ; 00463bc0 | g_ModelPolygonData[0].vertex_indices_count
     JLE 0x00463bf9                      ; 00463bc7
         ;   XREF to: 00463bf9 (CONDITIONAL_JUMP)  ; LAB_00463bf9
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463bc9
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463bc9
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00463bc9
     PUSH 0x0                            ; 00463bce
     PUSH 0x0                            ; 00463bd0
@@ -398,8 +398,8 @@ section .text
     CMP EAX,dword ptr [EBP + -0xc]      ; 00463e8a
     JGE 0x00463ebf                      ; 00463e8d
         ;   XREF to: 00463ebf (CONDITIONAL_JUMP)  ; LAB_00463ebf
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463e8f
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463e8f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00463e8f
     PUSH 0x0                            ; 00463e94
     PUSH 0x0                            ; 00463e96
@@ -427,8 +427,8 @@ section .text
     CMP dword ptr [EBP + -0x38],0x2     ; 00463ec7
     JGE 0x00463efd                      ; 00463ecb
         ;   XREF to: 00463efd (CONDITIONAL_JUMP)  ; LAB_00463efd
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463ecd
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463ecd
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00463ed2
     PUSH 0x0                            ; 00463ed4
     MOV EAX,0x61c16d                    ; 00463ed6 | = "Invalid polygon selected in wheel pol..."
@@ -456,8 +456,8 @@ section .text
     JMP 0x00463f3b                      ; 00463f09
         ;   XREF to: 00463f3b (UNCONDITIONAL_JUMP)  ; LAB_00463f3b
         ;   Label: LAB_00463f09
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463f0b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463f0b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00463f0b
     PUSH 0x0                            ; 00463f10
     PUSH 0x0                            ; 00463f12
@@ -503,8 +503,8 @@ section .text
         ;   Label: LAB_00463f7c
     JLE 0x00463fb2                      ; 00463f80
         ;   XREF to: 00463fb2 (CONDITIONAL_JUMP)  ; LAB_00463fb2
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00463f82
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00463f82
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00463f87
     PUSH 0x0                            ; 00463f89
     MOV EAX,0x61c1d3                    ; 00463f8b | = "Max points exceeded in wheel polygon ..."
@@ -930,8 +930,8 @@ section .text
     SAHF                                ; 00464598
     JNC 0x004645cb                      ; 00464599
         ;   XREF to: 004645cb (CONDITIONAL_JUMP)  ; LAB_004645cb
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046459b
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046459b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004645a0
     PUSH 0x0                            ; 004645a2
     MOV EAX,0x61c20e                    ; 004645a4 | = "All polys on selected plane must form..."

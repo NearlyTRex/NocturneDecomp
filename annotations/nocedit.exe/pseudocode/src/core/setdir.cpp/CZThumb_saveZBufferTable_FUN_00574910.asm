@@ -44,8 +44,8 @@
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
+;   engine_special.cpp_clearZBufferNative_FUN_005b3ed4
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
-;   wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4
 ;
 ; *****************************************************************************
 
@@ -168,8 +168,8 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 ; 00574a4e
         ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
     ADD ESP,0x8                         ; 00574a53
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00574a56
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 00574a56
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x0                            ; 00574a5b
     MOV EBP,dword ptr [0x006810c8]      ; 00574a5d | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 00574a63

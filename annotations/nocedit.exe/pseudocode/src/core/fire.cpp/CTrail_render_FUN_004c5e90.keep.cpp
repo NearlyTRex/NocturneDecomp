@@ -47,25 +47,25 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   local_2c.x = (int)ROUND(fVar1 * 256.0f);
   local_2c.y = (int)ROUND(fVar1 * 256.0f);
   local_2c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_2c);
   local_44 = -fVar1;
   local_14.x = (int)ROUND(local_44 * 256.0f);
   local_14.y = (int)ROUND(fVar1 * 256.0f);
   local_14.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_14);
   local_40 = -fVar1;
   local_38.x = (int)ROUND(local_44 * 256.0f);
   local_38.y = (int)ROUND(local_40 * 256.0f);
   local_38.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_38);
   local_44 = -local_44;
   local_50.x = (int)ROUND(local_44 * 256.0f);
   local_50.y = (int)ROUND(local_40 * 256.0f);
   local_50.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_50);
   g_RenderVertexBuffer[0].u = 0x8 << 16;
   g_RenderVertexBuffer[0].v = 0xf8 << 16;

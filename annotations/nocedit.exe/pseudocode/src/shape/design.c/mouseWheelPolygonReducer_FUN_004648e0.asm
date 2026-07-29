@@ -33,6 +33,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawTextColor_FUN_00402430
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_unlockFrame_FUN_005b7250
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30
 ;   shape_design.c_detectMouseButtonClick_FUN_00464870
 ;   shape_design.c_findClosestPolygonToMouse_FUN_00466250
@@ -40,8 +42,6 @@
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
-;   wincore_windll.cpp_lockFrame_FUN_005b7210
-;   wincore_windll.cpp_unlockFrame_FUN_005b7250
 ;
 ; *****************************************************************************
 
@@ -296,8 +296,8 @@ section .text
     MOV EAX,[0x016e990c]                ; 00464bd3 | g_PolygonCount
     MOV [0x015c4854],EAX                ; 00464bd8 | g_BackupPolygonCount
     PUSH 0x0                            ; 00464bdd
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00464bdf
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 00464bdf
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00464be4
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 00464be7
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()
@@ -309,8 +309,8 @@ section .text
     MOV dword ptr [EBP + 0x14],EAX      ; 00464bf8
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580 ; 00464bfb
         ;   XREF to: 005ed580 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580()
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 00464c00
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 00464c00
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     CMP byte ptr [0x02d03eae],0x0       ; 00464c05 | CHAR_ARRAY_02d03eae
         ;   Label: LAB_00464c05
     JZ 0x00464c74                       ; 00464c0c

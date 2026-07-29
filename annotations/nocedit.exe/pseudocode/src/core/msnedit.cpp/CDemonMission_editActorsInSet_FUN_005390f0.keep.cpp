@@ -128,7 +128,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   iVar14 = g_WindowHeight;
   this_ptr->show_3d_viewport = -1;
   core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(this_ptr,(uint)(400 < iVar14));
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_50 = this_ptr->first_actor;
   if (0 < g_CDemonSetPtr->actor_count) {
@@ -286,7 +286,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       }
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
       if (this_ptr->show_3d_viewport != 0) {
-        wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        engine_special_cpp_clearScreen_FUN_005b3e70();
       }
       pCVar1 = g_CDemonSetPtr;
       if (INT_02f7c53c == 0) {
@@ -313,9 +313,9 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         pCVar1->disable_sky_rendering = 0;
         g_CDemonRaytraceInstance.rendering_mode = g_DynamicRenderMode;
         if (this_ptr->show_3d_viewport == 0) {
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
         }
-        wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+        engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
         core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,150.0,0);
         core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(g_CDemonSetPtr,0xffffffff);

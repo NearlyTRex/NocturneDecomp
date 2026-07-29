@@ -58,7 +58,7 @@ void __cdecl shape_design_c_centerObject_FUN_00466610(void)
       local_58 = dVar3;
     }
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   iVar1 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                     (local_b8,0x14,0,0,"Press <Enter> or enter min,max points : ");
   if (iVar1 == 0x1b) {

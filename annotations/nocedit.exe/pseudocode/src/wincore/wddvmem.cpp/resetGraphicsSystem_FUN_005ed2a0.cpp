@@ -16,7 +16,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
   if (g_UseDirect3D != 0) {
     if (g_BitsPerPixel < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(g_WindowWidth,g_WindowHeight,0x10);
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("You have hit a kludge in the program.",0,0);
       engine_2d_c_drawText_FUN_00401fd0("You are setting acceleration mode without setting",0,0x16);
       engine_2d_c_drawText_FUN_00401fd0("the appropriate bit depth first.",0,0x21);
@@ -25,7 +25,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     if (g_DirectDrawUnknown != (IUnknown *)0x0) {
       (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
       g_DirectDrawUnknown = (IUnknown *)0x0;
@@ -43,7 +43,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
       (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
       g_DirectDrawObject = (IDirectDraw *)0x0;
     }
-    iVar1 = wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460
+    iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005b7460
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
       g_UseExternalRenderer = iVar1;

@@ -59,22 +59,22 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         CStack_3c.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_3c.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_3c.z = (int)ROUND((pSVar5->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_3c);
         CStack_78.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_78.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_78.z = (int)ROUND((pSVar5->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_78);
         CStack_48.x = (int)ROUND((pSVar4->position).x * 256.0f);
         CStack_48.y = (int)ROUND((pSVar4->position).y * 256.0f);
         CStack_48.z = (int)ROUND((pSVar4->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_48);
         CStack_18.x = (int)ROUND((pSVar4->position).x * 256.0f);
         CStack_18.y = (int)ROUND((pSVar4->position).y * 256.0f);
         CStack_18.z = (int)ROUND((pSVar4->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_18);
         pCVar2 = g_CDemonRendererPtr2;
         piVar1 = &(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y;
@@ -112,22 +112,22 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         CStack_30.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_30.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_30.z = (int)ROUND((pSVar5->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_30);
         CStack_60.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_60.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_60.z = (int)ROUND((pSVar5->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_60);
         CStack_54.x = (int)ROUND((pSVar4->position).x * 256.0f);
         CStack_54.y = (int)ROUND((pSVar4->position).y * 256.0f);
         CStack_54.z = (int)ROUND((pSVar4->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_54);
         CStack_24.x = (int)ROUND((pSVar4->position).x * 256.0f);
         CStack_24.y = (int)ROUND((pSVar4->position).y * 256.0f);
         CStack_24.z = (int)ROUND((pSVar4->position).z * 256.0f);
-        wincore_windll_cpp_transformPoint_FUN_005b5a25
+        engine_special_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_24);
         pCVar3 = g_CDemonRendererPtr2;
         (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x =

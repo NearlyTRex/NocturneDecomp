@@ -21,7 +21,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00
   VA_START_T(local_14, format);
   _vsprintf(g_StatusMessageBuffer,format,local_14);
   VA_END_T(local_14);
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0
             (g_EditorFont,g_WindowWidth / 2,g_WindowHeight / 2,g_StatusTextColor,-1,

@@ -28,49 +28,49 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
     corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_max->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e18].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_min->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_max->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e19].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_min->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_min->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1a].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_min->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1b].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_max->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_max->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1c].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_min->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_max->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_max->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1d].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_min->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_max->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_min->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1e].projected_vertex,&corner_input);
 
     corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
     corner_input.y = (int)ROUND(bbox_max->y * 256.0f);
     corner_input.z = (int)ROUND(bbox_min->z * 256.0f);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&corner_input);
   }
   uVar4 = 0xffffffff;

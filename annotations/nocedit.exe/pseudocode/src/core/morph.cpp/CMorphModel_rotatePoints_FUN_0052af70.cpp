@@ -48,7 +48,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
                             ref_points[iVar5].position.x * fVar8) * 256.0f);
       input->y = (int)ROUND((fVar3 * blend_factor + fVar1 * fVar8) * 256.0f);
       input->z = (int)ROUND((blend_factor * fVar4 + fVar8 * fVar2) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar10),input);

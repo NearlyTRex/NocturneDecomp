@@ -1,0 +1,667 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 119,
+    "cross_reference_count": 57,
+    "function_call_count": 0,
+    "global_count": 22,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 119,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 291
+  },
+  "cross_references": [
+    {
+      "addr": "004070c0",
+      "from_addr": "0040724b",
+      "name": "engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404ae0",
+      "from_addr": "00404bea",
+      "name": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406430",
+      "from_addr": "00406667",
+      "name": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404840",
+      "from_addr": "004049e2",
+      "name": "engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406f20",
+      "from_addr": "00407018",
+      "name": "engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406de0",
+      "from_addr": "00406ed5",
+      "name": "engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406de0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405690",
+      "from_addr": "00405704",
+      "name": "engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690",
+      "type": "DATA"
+    },
+    {
+      "addr": "004057b0",
+      "from_addr": "00405824",
+      "name": "engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404e40",
+      "from_addr": "00404eaa",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e40",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405020",
+      "from_addr": "0040508a",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00405020",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405510",
+      "from_addr": "00405583",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405510",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404f80",
+      "from_addr": "00404fea",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized_FUN_00404f80",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406c80",
+      "from_addr": "00406d07",
+      "name": "engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406c80",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405960",
+      "from_addr": "004059ca",
+      "name": "engine_3d.c_renderPolygonDepthWritePass_FUN_00405960",
+      "type": "DATA"
+    },
+    {
+      "addr": "004067a0",
+      "from_addr": "0040682f",
+      "name": "engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067a0",
+      "type": "DATA"
+    },
+    {
+      "addr": "004052b0",
+      "from_addr": "00405317",
+      "name": "engine_3d.c_renderPolygonDestReadBlendOp33_FUN_004052b0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404d50",
+      "from_addr": "00404dba",
+      "name": "engine_3d.c_renderPolygonFogColorDepthOp27_FUN_00404d50",
+      "type": "DATA"
+    },
+    {
+      "addr": "00403ba0",
+      "from_addr": "00403c88",
+      "name": "engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405ce0",
+      "from_addr": "00405d4a",
+      "name": "engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405e20",
+      "from_addr": "00405e8a",
+      "name": "engine_3d.c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405e20",
+      "type": "DATA"
+    },
+    {
+      "addr": "004058d0",
+      "from_addr": "00405933",
+      "name": "engine_3d.c_renderPolygonFogTexturedPerspOp39_FUN_004058d0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405b50",
+      "from_addr": "00405c0d",
+      "name": "engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50",
+      "type": "DATA"
+    },
+    {
+      "addr": "00403d60",
+      "from_addr": "00403dca",
+      "name": "engine_3d.c_renderPolygonFogTexturedWrappedOp8_FUN_00403d60",
+      "type": "DATA"
+    },
+    {
+      "addr": "00407290",
+      "from_addr": "00407336",
+      "name": "engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290",
+      "type": "DATA"
+    },
+    {
+      "addr": "00407470",
+      "from_addr": "004075d0",
+      "name": "engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406b40",
+      "from_addr": "00406bb3",
+      "name": "engine_3d.c_renderPolygonFullEffectsLitOp57_FUN_00406b40",
+      "type": "DATA"
+    },
+    {
+      "addr": "004066d0",
+      "from_addr": "00406769",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066d0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00403ad0",
+      "from_addr": "00403b69",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404c60",
+      "from_addr": "00404cdc",
+      "name": "engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60",
+      "type": "DATA"
+    },
+    {
+      "addr": "004046c0",
+      "from_addr": "004047a4",
+      "name": "engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406860",
+      "from_addr": "0040695e",
+      "name": "engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404a40",
+      "from_addr": "00404ab3",
+      "name": "engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404220",
+      "from_addr": "00404329",
+      "name": "engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406a20",
+      "from_addr": "00406ace",
+      "name": "engine_3d.c_renderPolygonSolidLitOp62_FUN_00406a20",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406290",
+      "from_addr": "0040637c",
+      "name": "engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405aa0",
+      "from_addr": "00405b08",
+      "name": "engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00405aa0",
+      "type": "DATA"
+    },
+    {
+      "addr": "004060a0",
+      "from_addr": "00406120",
+      "name": "engine_3d.c_renderPolygonSolidTexturedLitOp48_FUN_004060a0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404120",
+      "from_addr": "00404194",
+      "name": "engine_3d.c_renderPolygonSolidTexturedOp15_FUN_00404120",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406150",
+      "from_addr": "004061c3",
+      "name": "engine_3d.c_renderPolygonTexturedDepthLitOp49_FUN_00406150",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405d80",
+      "from_addr": "00405dea",
+      "name": "engine_3d.c_renderPolygonTexturedDepthWriteOp43_FUN_00405d80",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406000",
+      "from_addr": "0040606a",
+      "name": "engine_3d.c_renderPolygonTexturedDepthWriteOp47_FUN_00406000",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405a00",
+      "from_addr": "00405a5a",
+      "name": "engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405a00",
+      "type": "DATA"
+    },
+    {
+      "addr": "00403cc0",
+      "from_addr": "00403d30",
+      "name": "engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404ee0",
+      "from_addr": "00404f4a",
+      "name": "engine_3d.c_renderPolygonTexturedNearPlane_FUN_00404ee0",
+      "type": "DATA"
+    },
+    {
+      "addr": "004044a0",
+      "from_addr": "0040450a",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedOp21_FUN_004044a0",
+      "type": "DATA"
+    },
+    {
+      "addr": "004061f0",
+      "from_addr": "0040625a",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_004061f0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405430",
+      "from_addr": "004054d7",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405430",
+      "type": "DATA"
+    },
+    {
+      "addr": "00403f20",
+      "from_addr": "00403fbc",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f20",
+      "type": "DATA"
+    },
+    {
+      "addr": "004055b0",
+      "from_addr": "00405657",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055b0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405ec0",
+      "from_addr": "00405f27",
+      "name": "engine_3d.c_renderPolygonTexturedOp45_FUN_00405ec0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405f60",
+      "from_addr": "00405fc7",
+      "name": "engine_3d.c_renderPolygonTexturedOp46_FUN_00405f60",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405170",
+      "from_addr": "00405209",
+      "name": "engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00405170",
+      "type": "DATA"
+    },
+    {
+      "addr": "00404020",
+      "from_addr": "004040b7",
+      "name": "engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00404020",
+      "type": "DATA"
+    },
+    {
+      "addr": "00405350",
+      "from_addr": "004053f4",
+      "name": "engine_3d.c_renderPolygonTexturedUVLit_FUN_00405350",
+      "type": "DATA"
+    },
+    {
+      "addr": "00406be0",
+      "from_addr": "00406c53",
+      "name": "engine_3d.c_renderPolygonVertexAlphaLitOp60_FUN_00406be0",
+      "type": "DATA"
+    },
+    {
+      "addr": "00407720",
+      "from_addr": "004077ff",
+      "name": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407720",
+      "type": "DATA"
+    },
+    {
+      "addr": "00407620",
+      "from_addr": "004076b6",
+      "name": "engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005b5322",
+    "address_range": [
+      [
+        "005b5322",
+        "005b555b"
+      ]
+    ],
+    "convention": "__edi_esi_ebx",
+    "name": "engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322",
+    "signature": "void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006821a4",
+      "name": "g_ScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006821e0",
+      "name": "g_StartTextureU",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006821e4",
+      "name": "g_StartTextureV",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006821ec",
+      "name": "g_StartDepthW",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682208",
+      "name": "g_CurrentScreenPtr",
+      "type": "int*",
+      "value": "00000000"
+    },
+    {
+      "addr": "0068220c",
+      "name": "g_CurrentZBufferPtr",
+      "type": "int*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00682610",
+      "name": "g_HardwareDeltaTextureU",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682614",
+      "name": "g_HardwareDeltaTextureV",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682618",
+      "name": "g_HardwareDeltaDepthZ",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006826e0",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00682700",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00682720",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00682740",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02d01d24",
+      "name": "g_Hardware16BitPalette",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "g_ReciprocalLookupTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e80",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "02d03e84",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.413793103448276,
+    "instruction_count": 145,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 70,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CBRANCH": 12,
+      "COPY": 116,
+      "INT_ADD": 48,
+      "INT_AND": 244,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 22,
+      "INT_LESS": 14,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 39,
+      "INT_OR": 73,
+      "INT_RIGHT": 13,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 11,
+      "INT_SDIV": 4,
+      "INT_SEXT": 26,
+      "INT_SLESS": 67,
+      "INT_SREM": 4,
+      "INT_SUB": 34,
+      "INT_XOR": 9,
+      "INT_ZEXT": 9,
+      "LOAD": 37,
+      "POPCOUNT": 45,
+      "RETURN": 2,
+      "STORE": 6,
+      "SUBPIECE": 24
+    },
+    "pcode_op_count": 1075
+  },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(int *)(uVar10 + (int)g_CurrentZBufferPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(int *)((int)g_CurrentZBufferPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ScreenBufferArray[scanline_y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)g_CurrentZBufferPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentScreenPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)g_CurrentScreenPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)g_CurrentZBufferPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 54,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 60,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 65,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 71,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

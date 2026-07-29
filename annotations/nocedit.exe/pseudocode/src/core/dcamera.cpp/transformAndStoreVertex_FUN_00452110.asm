@@ -20,7 +20,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     SHL EAX,0x4                         ; 0045216c
     ADD EAX,EDX                         ; 0045216f
     PUSH EAX                            ; 00452171
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00452172
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00452172
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00452177
     ADD ESP,0x18                        ; 0045217a
     POP EBX                             ; 0045217d

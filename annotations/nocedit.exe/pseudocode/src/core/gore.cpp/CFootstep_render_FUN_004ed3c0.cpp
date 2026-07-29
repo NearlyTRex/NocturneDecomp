@@ -43,7 +43,7 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004ed3c0(CFootstep *this_ptr,int
     local_1c.y = (int)ROUND(pCVar2->y * 256.0f);
     local_1c.z = (int)ROUND(pCVar2->z * 256.0f);
     pCVar2 = pCVar2 + 1;
-    wincore_windll_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,&local_1c);
+    engine_special_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,&local_1c);
     output = output + 1;
   } while (pCVar2 != (CVector3f *)&this_ptr->alpha);
   if (this_ptr->is_bloody == 0) {

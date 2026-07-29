@@ -20,7 +20,7 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   local_1c.x = (int)ROUND(position->x * 256.0f);
   local_1c.y = (int)ROUND(position->y * 256.0f);
   local_1c.z = (int)ROUND(position->z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25
+  engine_special_cpp_transformPoint_FUN_005b5a25
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_1c);
   this_ptr_00 = g_CDemonRendererPtr2;
   pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;

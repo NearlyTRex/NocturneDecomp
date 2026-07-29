@@ -50,12 +50,12 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_special.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_lockFrame_FUN_005b7210
+;   engine_special.cpp_unlockFrame_FUN_005b7250
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
-;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
-;   wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
-;   wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -203,13 +203,13 @@ section .text
         ;   XREF to: 004e2a21 (CONDITIONAL_JUMP)  ; LAB_004e2a21
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580 ; 004e2ad9
         ;   XREF to: 005ed580 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580()
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004e2ade
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004e2ae3
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 004e2ade
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004e2ae3
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 004e2ae8
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004e2aea
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 004e2aea
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004e2aef
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 004e2af2
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()

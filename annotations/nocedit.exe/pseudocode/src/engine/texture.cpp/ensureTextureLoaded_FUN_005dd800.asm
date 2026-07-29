@@ -27,11 +27,11 @@
 ;   CTextureCache* g_TextureCacheInstance
 ;
 ; Called Functions:
+;   engine_special.cpp_selectTexture_FUN_005b7340
+;   engine_special.cpp_updateTexture_FUN_005b7380
 ;   engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
 ;   engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-;   wincore_windll.cpp_selectTexture_FUN_005b7340
-;   wincore_windll.cpp_updateTexture_FUN_005b7380
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     MOV ESI,dword ptr [0x02d01920]      ; 005dd87f | g_CurrentPalette
     PUSH ESI                            ; 005dd885
     PUSH EBX                            ; 005dd886
-    CALL wincore_windll.cpp_selectTexture_FUN_005b7340 ; 005dd887
-        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_selectTexture_FUN_005b7340 ; 005dd887
+        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd88c
     LEA EAX,[EBX + 0x18]                ; 005dd88f
         ;   Label: LAB_005dd88f
@@ -112,8 +112,8 @@ section .text
         ;   Label: LAB_005dd897
     PUSH EAX                            ; 005dd89c
     PUSH EBX                            ; 005dd89d
-    CALL wincore_windll.cpp_updateTexture_FUN_005b7380 ; 005dd89e
-        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_updateTexture_FUN_005b7380 ; 005dd89e
+        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd8a3
     MOV EDX,dword ptr [0x03f87354]      ; 005dd8a6 | g_CurrentTextureIndex
     PUSH EDX                            ; 005dd8ac

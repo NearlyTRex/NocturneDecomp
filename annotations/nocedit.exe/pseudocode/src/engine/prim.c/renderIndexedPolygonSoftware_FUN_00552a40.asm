@@ -38,8 +38,8 @@
 ; Called Functions:
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
 ;   engine_prim.c_findEdgeInBuffer_FUN_00551f70
-;   wincore_windll.cpp_drawPolygon2_FUN_005b7610
-;   wincore_windll.cpp_renderScanline_FUN_005b5710
+;   engine_special.cpp_drawPolygon2_FUN_005b7610
+;   engine_special.cpp_renderScanline_FUN_005b5710
 ;
 ; *****************************************************************************
 
@@ -129,8 +129,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00552b0b
     PUSH EAX                            ; 00552b0f
     MOV dword ptr [0x030e56b8],EDI      ; 00552b10 | g_RenderedTriangleCount
-    CALL wincore_windll.cpp_drawPolygon2_FUN_005b7610 ; 00552b16
-        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
+    CALL engine_special.cpp_drawPolygon2_FUN_005b7610 ; 00552b16
+        ;   XREF to: 005b7610 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_005b7610(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00552b1b
     ADD ESP,0x54                        ; 00552b1e
         ;   Label: LAB_00552b1e
@@ -282,8 +282,8 @@ section .text
         ;   Label: LAB_00552cac
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00552cb0
     MOV ESI,EBP                         ; 00552cb4
-    CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00552cb6
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
+    CALL engine_special.cpp_renderScanline_FUN_005b5710 ; 00552cb6
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 00552cbb
     ADD dword ptr [EBP + 0x8],EAX       ; 00552cbe
     MOV EBX,dword ptr [EBP + 0x18]      ; 00552cc1

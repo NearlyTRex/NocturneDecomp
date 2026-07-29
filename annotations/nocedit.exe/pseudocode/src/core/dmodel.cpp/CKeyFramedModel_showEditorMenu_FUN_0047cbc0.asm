@@ -218,8 +218,8 @@ section .text
     MOV dword ptr [EAX + 0x15ae7c],0x4844 ; 0047cc94 | g_CDemonSetInstance.light_direction.z
     ADD ESP,0x14                        ; 0047cc9e
     MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 0047cca1 | g_CDemonSetInstance.ambient_base_quick
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0047ccab
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0047ccab
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV EAX,[0x00679394]                ; 0047ccb0 | g_WindowWidth
     MOV EDX,EAX                         ; 0047ccb5
     SAR EDX,0x1f                        ; 0047ccb7

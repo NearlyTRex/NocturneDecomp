@@ -78,18 +78,18 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_2d_c_resetGraphicsSystem_FUN_00402a70();
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_18 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     do {
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
       wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
-      wincore_windll_cpp_beginScene_FUN_005b7280();
+      engine_special_cpp_beginScene_FUN_005b7280();
       if (g_UseExternalRenderer == 0) {
-        wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+        engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
       }
       else {
-        wincore_windll_cpp_clearZBuffer_FUN_005b7be0();
+        engine_special_cpp_clearZBuffer_FUN_005b7be0();
       }
       iVar3 = g_ClipBottom;
       iVar2 = g_ClipRight;
@@ -105,7 +105,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         g_ClipTop = 0;
         g_ClipRight = g_WindowWidth + -1;
         g_ClipBottom = g_WindowHeight + -1;
-        wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50
+        engine_special_cpp_drawFullScreenQuad_FUN_005b7a50
                   (g_EditorBackgroundColors[g_CurrentModelIndex]);
         g_ClipLeft = iVar12;
         g_ClipTop = iVar13;
@@ -150,8 +150,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
              0x10;
       }
       shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0();
-      wincore_windll_cpp_endScene_FUN_005b72a0();
-      wincore_windll_cpp_lockFrame_FUN_005b7210();
+      engine_special_cpp_endScene_FUN_005b72a0();
+      engine_special_cpp_lockFrame_FUN_005b7210();
       shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920();
       shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0();
       shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(g_SelectedPolygonIndex);
@@ -486,7 +486,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       engine_matrix_c_pop_FUN_0050d720();
       wincore_winrun_cpp_doNothing1_FUN_005f2f80();
       wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
-      wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+      engine_special_cpp_unlockFrame_FUN_005b7250(0);
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       shape_design_c_handleEditorHotkeys_FUN_0045b990();

@@ -361,8 +361,8 @@ section .text
     ADD ESP,0x4                         ; 0046beb6
     JMP 0x0046bf08                      ; 0046beb9
         ;   XREF to: 0046bf08 (UNCONDITIONAL_JUMP)  ; LAB_0046bf08
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046bebb
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046bebb
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046bebb
     PUSH 0x0                            ; 0046bec0
     PUSH 0x0                            ; 0046bec2
@@ -541,8 +541,8 @@ section .text
     MOV dword ptr [EBP + -0x38],EAX     ; 0046c1c4
     JMP 0x0046c5b7                      ; 0046c1c7
         ;   XREF to: 0046c5b7 (UNCONDITIONAL_JUMP)  ; LAB_0046c5b7
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c1cc
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c1cc
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046c1cc
     MOV dword ptr [EBP + -0x4c],0x0     ; 0046c1d1
     MOV ECX,0x61d616                    ; 0046c1d8 | = "Enter number of maps [1] : "
@@ -628,8 +628,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046c29f
         ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c2a4
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c2a4
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     JMP 0x0046c1d8                      ; 0046c2a9
         ;   XREF to: 0046c1d8 (UNCONDITIONAL_JUMP)  ; LAB_0046c1d8
     MOV ECX,0x61d69e                    ; 0046c2ae | = "Enter padding size [5] : "
@@ -779,8 +779,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046c419
         ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c41e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c41e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     JMP 0x0046c34e                      ; 0046c423
         ;   XREF to: 0046c34e (UNCONDITIONAL_JUMP)  ; LAB_0046c34e
     PUSH dword ptr [0x01eb1760]         ; 0046c428 | g_TextureAtlasDimension
@@ -878,8 +878,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046c4fc
         ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c501
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c501
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     JMP 0x0046c428                      ; 0046c506
         ;   XREF to: 0046c428 (UNCONDITIONAL_JUMP)  ; LAB_0046c428
     MOV ECX,0x61d7a2                    ; 0046c50b | = "Enter acceptable coverage [99] : "
@@ -949,8 +949,8 @@ section .text
         ;   Label: LAB_0046c5b7
     JLE 0x0046c61d                      ; 0046c5bb
         ;   XREF to: 0046c61d (CONDITIONAL_JUMP)  ; LAB_0046c61d
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c5bd
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c5bd
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x9                            ; 0046c5c2
     MOV EAX,dword ptr [EBP + -0x48]     ; 0046c5c4
     PUSH EAX                            ; 0046c5c7
@@ -988,8 +988,8 @@ section .text
         ;   Label: LAB_0046c61d
     JGE 0x0046c66f                      ; 0046c621
         ;   XREF to: 0046c66f (CONDITIONAL_JUMP)  ; LAB_0046c66f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c623
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c623
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,dword ptr [EBP + -0x48]     ; 0046c628
     PUSH EAX                            ; 0046c62b
     MOV EAX,0x61d82f                    ; 0046c62c | = "Number of maps must be a positive num..."
@@ -1022,8 +1022,8 @@ section .text
     MOVSW ES:EDI,ESI                    ; 0046c679 | s_II_0066ef38
         ;   Label: LAB_0046c679
     MOVSB ES:EDI,ESI                    ; 0046c67b | s__0066ef3a
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c67c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c67c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     LEA EAX,[EBP + -0x7c]               ; 0046c681
     PUSH EAX                            ; 0046c684
     MOV EAX,0x61d862                    ; 0046c685 | = "%s in progress..."
@@ -1160,8 +1160,8 @@ section .text
     MOV dword ptr [EBP + -0x60],0x0     ; 0046c7dc
     MOV EAX,dword ptr [EBP + -0x60]     ; 0046c7e3
     MOV dword ptr [EBP + -0x4c],EAX     ; 0046c7e6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c7e9
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046c7e9
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046c7e9
     MOV EDX,dword ptr [EBP + -0x28]     ; 0046c7ee
     SUB EDX,dword ptr [EBP + -0x2c]     ; 0046c7f1
@@ -1365,8 +1365,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046ca1f
         ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046ca24
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046ca24
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046ca24
     MOV EDX,dword ptr [EBP + -0x28]     ; 0046ca29
     SUB EDX,dword ptr [EBP + -0x2c]     ; 0046ca2c
@@ -1691,8 +1691,8 @@ section .text
         ;   Label: LAB_0046cd73
     JMP 0x0046cede                      ; 0046cd74
         ;   XREF to: 0046cede (UNCONDITIONAL_JUMP)  ; LAB_0046cede
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046cd79
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046cd79
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046cd79
     MOV ESI,0x66eda8                    ; 0046cd7e | g_LoadedModelName
     LEA EDI,[EBP + 0xfffffdb8]          ; 0046cd83
@@ -2190,8 +2190,8 @@ section .text
     CALL crt_system.c_sleep_FUN_00600790 ; 0046d1e1
         ;   XREF to: 00600790 (UNCONDITIONAL_CALL)  ; void crt_system.c_sleep_FUN_00600790(DWORD milliseconds)
     ADD ESP,0x4                         ; 0046d1e6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046d1e9
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046d1e9
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0046d1e9
     MOV EAX,dword ptr [EBP + -0x48]     ; 0046d1ee
     PUSH EAX                            ; 0046d1f1

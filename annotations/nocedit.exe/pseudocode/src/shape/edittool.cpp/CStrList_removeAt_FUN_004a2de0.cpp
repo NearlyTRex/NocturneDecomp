@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(CStrList *this_ptr,int index)
 
 {
-  (*this_ptr->vtable->remove)(this_ptr,index,index);
+  (*((this_ptr->vtable)._us)->remove)(this_ptr,index,index);
   return;
 }

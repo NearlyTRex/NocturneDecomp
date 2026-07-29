@@ -13,8 +13,8 @@
 ;   SRGBColorPalette* g_CurrentPalette
 ;
 ; Called Functions:
+;   engine_special.cpp_updateTexture_FUN_005b7380
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
-;   wincore_windll.cpp_updateTexture_FUN_005b7380
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 005dd914
     MOV EBX,dword ptr [ESP + 0xc]       ; 005dd915
     PUSH EBX                            ; 005dd919
-    CALL wincore_windll.cpp_updateTexture_FUN_005b7380 ; 005dd91a
-        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_updateTexture_FUN_005b7380 ; 005dd91a
+        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd91f
     POP EBX                             ; 005dd922
     RET                                 ; 005dd923

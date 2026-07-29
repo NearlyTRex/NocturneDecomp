@@ -8,8 +8,8 @@
 ; LPCSTR           Stack[0x8]:4   lpProcName
 ;
 ; XREF[2]:
-;   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ef6
-;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 at 005b6ac0
+;   engine_special.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ef6
+;   engine_special.cpp_loadExternalRenderer_FUN_005b6750 at 005b6ac0
 ;
 ; Referenced Globals:
 ;   GET_PROC_ADDRESS_FUNC* g_GetProcAddressFunc = 00211f8e

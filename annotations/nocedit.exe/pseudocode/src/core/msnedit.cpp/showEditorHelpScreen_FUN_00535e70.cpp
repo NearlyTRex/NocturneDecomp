@@ -24,7 +24,7 @@ void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_48);
   while( true ) {
     local_14 = -local_48.scroll_position;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Master editor keys:",g_ClipLeft,local_14);
     local_14 = local_14 + 0x16;
     engine_2d_c_drawText_FUN_00401fd0("F1",g_ClipLeft,local_14);

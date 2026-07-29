@@ -40,9 +40,9 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402930
 ;   engine_2d.c_loadPaletteFile_FUN_004015a0
 ;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     PUSH EBP                            ; 0046e813
     MOV EBP,ESP                         ; 0046e814
     SUB ESP,0xa8                        ; 0046e816
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046e81c
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0046e81c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x16                           ; 0046e821
     PUSH 0x0                            ; 0046e823
     MOV EAX,0x61df26                    ; 0046e825 | = "  1) Load model palette"

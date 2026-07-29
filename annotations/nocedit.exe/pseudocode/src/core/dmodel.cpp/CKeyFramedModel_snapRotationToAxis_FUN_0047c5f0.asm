@@ -52,8 +52,8 @@
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_2d.c_drawText_FUN_00401fd0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     SUB ESP,0x74                        ; 0047c5f6
     AND ESP,0xfffffff8                  ; 0047c5f9
     MOV ESI,dword ptr [EBP + 0x18]      ; 0047c5fc
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0047c5ff
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0047c5ff
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0047c604
     PUSH 0x0                            ; 0047c606
     PUSH 0x620583                       ; 0047c608 | = "Realign object"

@@ -47,7 +47,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   if (local_license != 0) {
 LAB_0050740e:
     do {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Nocturne(R) Debug/editor Menu",0,0);
       engine_2d_c_drawText_FUN_00401fd0("1. Play a mission",0,0x16);
       engine_2d_c_drawText_FUN_00401fd0("2. Enter the Demented(R) Shape Editor(TM)",0,0x21);
@@ -174,7 +174,7 @@ LAB_0050740e:
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_228);
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_144);
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_60);
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_60);
     shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550

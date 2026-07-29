@@ -145,8 +145,8 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     CALL engine_2d.c_resetGraphicsSystem_FUN_00402a70 ; 0045f309
         ;   XREF to: 00402a70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402a70()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045f30e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0045f30e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045f313
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0045f318
@@ -157,17 +157,17 @@ section .text
         ;   Label: LAB_0045f320
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580 ; 0045f325
         ;   XREF to: 005ed580 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580()
-    CALL wincore_windll.cpp_beginScene_FUN_005b7280 ; 0045f32a
-        ;   XREF to: 005b7280 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_beginScene_FUN_005b7280()
+    CALL engine_special.cpp_beginScene_FUN_005b7280 ; 0045f32a
+        ;   XREF to: 005b7280 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_beginScene_FUN_005b7280()
     CMP dword ptr [0x02d03e94],0x0      ; 0045f32f | g_UseExternalRenderer
     JNZ 0x0045f33f                      ; 0045f336
         ;   XREF to: 0045f33f (CONDITIONAL_JUMP)  ; LAB_0045f33f
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0045f338
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0045f338
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     JMP 0x0045f344                      ; 0045f33d
         ;   XREF to: 0045f344 (UNCONDITIONAL_JUMP)  ; LAB_0045f344
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b7be0 ; 0045f33f
-        ;   XREF to: 005b7be0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_clearZBuffer_FUN_005b7be0()
+    CALL engine_special.cpp_clearZBuffer_FUN_005b7be0 ; 0045f33f
+        ;   XREF to: 005b7be0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_clearZBuffer_FUN_005b7be0()
         ;   Label: LAB_0045f33f
     CMP dword ptr [0x02d03e94],0x0      ; 0045f344 | g_UseExternalRenderer
         ;   Label: LAB_0045f344
@@ -209,8 +209,8 @@ section .text
     MOV EAX,[0x01626404]                ; 0045f3d0 | g_CurrentModelIndex
     SHL EAX,0x2                         ; 0045f3d5
     PUSH dword ptr [EAX + 0x16263c0]    ; 0045f3d8 | g_EditorBackgroundColors
-    CALL wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50 ; 0045f3de
-        ;   XREF to: 005b7a50 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50(int color)
+    CALL engine_special.cpp_drawFullScreenQuad_FUN_005b7a50 ; 0045f3de
+        ;   XREF to: 005b7a50 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawFullScreenQuad_FUN_005b7a50(int color)
     ADD ESP,0x4                         ; 0045f3e3
     MOV EAX,dword ptr [EBP + 0xffffff48] ; 0045f3e6
     MOV [0x02d02558],EAX                ; 0045f3ec | g_ClipLeft
@@ -310,10 +310,10 @@ section .text
     CALL shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0 ; 0045f543
         ;   XREF to: 0045d5d0 (UNCONDITIONAL_CALL)  ; void shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0()
         ;   Label: LAB_0045f543
-    CALL wincore_windll.cpp_endScene_FUN_005b72a0 ; 0045f548
-        ;   XREF to: 005b72a0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_endScene_FUN_005b72a0()
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 0045f54d
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL engine_special.cpp_endScene_FUN_005b72a0 ; 0045f548
+        ;   XREF to: 005b72a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_endScene_FUN_005b72a0()
+    CALL engine_special.cpp_lockFrame_FUN_005b7210 ; 0045f54d
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005b7210()
     CALL shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920 ; 0045f552
         ;   XREF to: 0045d920 (UNCONDITIONAL_CALL)  ; void shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920()
     CALL shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0 ; 0045f557
@@ -1686,8 +1686,8 @@ section .text
     CALL wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0 ; 0046072a
         ;   XREF to: 005f2fd0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0()
     PUSH 0x0                            ; 0046072f
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00460731
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_005b7250 ; 00460731
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00460736
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 00460739
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()

@@ -32,7 +32,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionContro
     local_2c.x = (int)ROUND(256.0f * 0.0);
     local_2c.y = (int)ROUND((pCVar3->max).y * 256.0f);
     local_2c.z = (int)ROUND(256.0f * 0.0);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
     pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
     if ((int)(pSVar2[19999].projected_vertex.screen_x & -0x80000000) == 0) {

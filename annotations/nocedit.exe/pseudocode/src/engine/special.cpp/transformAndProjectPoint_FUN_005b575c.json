@@ -1,0 +1,867 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 232,
+    "complexity_score": 110,
+    "cross_reference_count": 85,
+    "function_call_count": 0,
+    "global_count": 23,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 110,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 342
+  },
+  "cross_references": [
+    {
+      "addr": "0040dec0",
+      "from_addr": "0040df70",
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040d940",
+      "from_addr": "0040de61",
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00409b90",
+      "from_addr": "00409c30",
+      "name": "core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040d330",
+      "from_addr": "0040d3ec",
+      "name": "core_actor.cpp_draw3DLineSegment_FUN_0040d330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00409930",
+      "from_addr": "0040996e",
+      "name": "core_actor.cpp_draw3DPointMarker_FUN_00409930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040d470",
+      "from_addr": "0040d58f",
+      "name": "core_actor.cpp_drawBoundingBox_FUN_0040d470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420840",
+      "from_addr": "004208cf",
+      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420680",
+      "from_addr": "004206e3",
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004204f0",
+      "from_addr": "004205eb",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425340",
+      "from_addr": "004253ef",
+      "name": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00429b40",
+      "from_addr": "0042a048",
+      "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f930",
+      "from_addr": "0042f978",
+      "name": "core_charactr.cpp_projectPointToVertex_FUN_0042f930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043c880",
+      "from_addr": "0043cbcf",
+      "name": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043d590",
+      "from_addr": "0043d73a",
+      "name": "core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043b7e0",
+      "from_addr": "0043b8c0",
+      "name": "core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043c820",
+      "from_addr": "0043c85e",
+      "name": "core_cloth.cpp_drawVertexMarkerAtWorldPos_FUN_0043c820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443bc0",
+      "from_addr": "00443ddc",
+      "name": "core_course.cpp_CCourse_preview_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443760",
+      "from_addr": "004439e6",
+      "name": "core_course.cpp_renderCourseGizmo_FUN_00443760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452180",
+      "from_addr": "004522fd",
+      "name": "core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452110",
+      "from_addr": "00452172",
+      "name": "core_dcamera.cpp_transformAndStoreVertex_FUN_00452110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00457650",
+      "from_addr": "004576ec",
+      "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004715e0",
+      "from_addr": "00471679",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471400",
+      "from_addr": "00471502",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004736c0",
+      "from_addr": "004737a1",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004758d0",
+      "from_addr": "00475d7d",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473a20",
+      "from_addr": "00473ccb",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473f90",
+      "from_addr": "00474449",
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00475210",
+      "from_addr": "00475552",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00474ad0",
+      "from_addr": "00474f3d",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004760d0",
+      "from_addr": "004762e2",
+      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_004760d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004900b0",
+      "from_addr": "0049019e",
+      "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004901f0",
+      "from_addr": "004903ab",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00497500",
+      "from_addr": "004979e1",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496e70",
+      "from_addr": "00496f3a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049cbd0",
+      "from_addr": "0049cc10",
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfac0",
+      "from_addr": "004bfba8",
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c3b10",
+      "from_addr": "004c3c83",
+      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0e70",
+      "from_addr": "004c1073",
+      "name": "core_fire.cpp_CFireball_render_FUN_004c0e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c1ef0",
+      "from_addr": "004c1f57",
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c50b0",
+      "from_addr": "004c52a8",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c25c0",
+      "from_addr": "004c2a80",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5720",
+      "from_addr": "004c5927",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c64c0",
+      "from_addr": "004c65c5",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6830",
+      "from_addr": "004c6932",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bf4c0",
+      "from_addr": "004bf606",
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0420",
+      "from_addr": "004c097b",
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5e90",
+      "from_addr": "004c5fad",
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c24d0",
+      "from_addr": "004c251a",
+      "name": "core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ca110",
+      "from_addr": "004ca34c",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc300",
+      "from_addr": "004cc572",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9ca0",
+      "from_addr": "004e9d83",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebac0",
+      "from_addr": "004ebba4",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004ebac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ecce0",
+      "from_addr": "004ece60",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004ecce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec500",
+      "from_addr": "004ec62f",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004ec500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502620",
+      "from_addr": "00502742",
+      "name": "core_ladder.cpp_CLadder_renderOpaque_FUN_00502620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00504160",
+      "from_addr": "005043c3",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509d50",
+      "from_addr": "00509ef6",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005090d0",
+      "from_addr": "00509151",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052af70",
+      "from_addr": "0052b06c",
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052cc10",
+      "from_addr": "0052cc2f",
+      "name": "core_morph.cpp_transformAndProjectVertex_FUN_0052cc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052e700",
+      "from_addr": "0052e792",
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547fc0",
+      "from_addr": "005482c3",
+      "name": "core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547dd0",
+      "from_addr": "00547e7e",
+      "name": "core_path.cpp_renderGridQuad_FUN_00547dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e7c0",
+      "from_addr": "0056e805",
+      "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574ba0",
+      "from_addr": "00574c20",
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583170",
+      "from_addr": "0058372d",
+      "name": "core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00582930",
+      "from_addr": "00582985",
+      "name": "core_setedit.cpp_drawCameraFrustum_FUN_00582930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005817d0",
+      "from_addr": "005818a2",
+      "name": "core_setedit.cpp_renderColoredBox_FUN_005817d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00587b50",
+      "from_addr": "00587c4d",
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00587a40",
+      "from_addr": "00587b00",
+      "name": "core_setutil.cpp_generateSphereVertex_FUN_00587a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005968b0",
+      "from_addr": "005973fd",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b800",
+      "from_addr": "0059b87b",
+      "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b640",
+      "from_addr": "0059b6cc",
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b9c10",
+      "from_addr": "005b9e01",
+      "name": "core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e00d0",
+      "from_addr": "005e03ca",
+      "name": "core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e4d80",
+      "from_addr": "005e4fa5",
+      "name": "core_tvbat.cpp_CTVBat_renderOpaque_FUN_005e4d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e9e70",
+      "from_addr": "005ea100",
+      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ea320",
+      "from_addr": "005ea534",
+      "name": "core_water.cpp_CWater_render_FUN_005ea320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ebf70",
+      "from_addr": "005ec242",
+      "name": "core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ef190",
+      "from_addr": "005ef4b7",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ef190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005f1230",
+      "from_addr": "005f1461",
+      "name": "core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403840",
+      "from_addr": "004038a5",
+      "name": "engine_3d.c_transformAndBufferVertices_FUN_00403840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cd70",
+      "from_addr": "0050cd8c",
+      "name": "engine_matrix.c_transformToCache_FUN_0050cd70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a28a0",
+      "from_addr": "004a28d8",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e6b0",
+      "from_addr": "0051e721",
+      "name": "shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b575c",
+    "address_range": [
+      [
+        "005b575c",
+        "005b5a24"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_transformAndProjectPoint_FUN_005b575c",
+    "signature": "void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00682668",
+      "name": "g_TempX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "0068266c",
+      "name": "g_TempY",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682670",
+      "name": "g_TempZ",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682678",
+      "name": "g_TempTransformedX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "0068267c",
+      "name": "g_TempTransformedY",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682680",
+      "name": "g_TempTransformedZ",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_Projection.neg_half_height_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_Projection.center_x_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_Projection.center_y_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052b8",
+      "name": "g_RelativeX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052bc",
+      "name": "g_RelativeY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c0",
+      "name": "g_RelativeZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e8",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
+      "value": null
+    },
+    {
+      "addr": "02d052ec",
+      "name": "g_TransformMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f4",
+      "name": "g_TransformMatrix[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f8",
+      "name": "g_TransformMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05300",
+      "name": "g_TransformMatrix[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05304",
+      "name": "g_TransformMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004ece60",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CBloodPool_render_FUN_004ecce0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00574c20",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ea100",
+        "call_type": "direct",
+        "caller": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040de61",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004979e1",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
+        "estimated_params": 2,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051e721",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005b9e01",
+        "call_type": "direct",
+        "caller": "core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005f1461",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040dcc2",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00471502",
+        "call_type": "direct",
+        "caller": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4975609756097565,
+    "instruction_count": 205,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 34,
+      "BOOL_OR": 16,
+      "BOOL_XOR": 12,
+      "CBRANCH": 13,
+      "COPY": 145,
+      "INT_2COMP": 2,
+      "INT_ADD": 70,
+      "INT_AND": 213,
+      "INT_CARRY": 40,
+      "INT_EQUAL": 150,
+      "INT_LEFT": 12,
+      "INT_LESS": 16,
+      "INT_MULT": 22,
+      "INT_NOTEQUAL": 46,
+      "INT_OR": 52,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 40,
+      "INT_SDIV": 6,
+      "INT_SEXT": 72,
+      "INT_SLESS": 81,
+      "INT_SREM": 6,
+      "INT_SUB": 30,
+      "INT_XOR": 10,
+      "INT_ZEXT": 30,
+      "LOAD": 18,
+      "POPCOUNT": 69,
+      "RETURN": 4,
+      "STORE": 19,
+      "SUBPIECE": 72
+    },
+    "pcode_op_count": 1332
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 4,
+        "size": 4,
+        "type": "SProjectedVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": []
+}

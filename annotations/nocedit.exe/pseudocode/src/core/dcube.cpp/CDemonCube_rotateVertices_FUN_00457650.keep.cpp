@@ -46,7 +46,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
       local_48.x = (int)ROUND(pCVar4->x * 256.0f);
       local_48.y = (int)ROUND(pCVar4->y * 256.0f);
       local_48.z = (int)ROUND(pCVar4->z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,&local_48);
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,&local_48);
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_20 = local_20 + 1;
       }

@@ -111,7 +111,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   do {
     iVar5 = (int)ROUND(ROUND(local_18));
     if (iVar5 != local_1c) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_34,0,0,0xffff);
       if (0 < local_14) {
         iVar8 = 0;

@@ -29,7 +29,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended
           }
         }
         else {
-          wincore_windll_cpp_drawPolyList_FUN_005b7640
+          engine_special_cpp_drawPolyList_FUN_005b7640
                     (g_RenderVertexBuffer,(SMRGLPrimitiveTriangle **)g_RenderFaceArray,
                      g_RenderFaceCount,0xcd);
         }
@@ -70,7 +70,7 @@ LAB_00407c82:
             }
           }
           else {
-            wincore_windll_cpp_drawPolyList_FUN_005b7640
+            engine_special_cpp_drawPolyList_FUN_005b7640
                       (g_RenderVertexBuffer,(SMRGLPrimitiveTriangle **)g_RenderFaceArray,
                        g_RenderFaceCount,0xcd);
           }

@@ -21,7 +21,7 @@ void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_pt
   this_ptr->use_custom_viewport = use_custom_viewport;
   this_ptr->total_frames = total_frames;
   if (use_custom_viewport == 0) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     this_ptr->viewport_x = 0;
     this_ptr->viewport_y = 0;
     this_ptr->viewport_width = 0x280;

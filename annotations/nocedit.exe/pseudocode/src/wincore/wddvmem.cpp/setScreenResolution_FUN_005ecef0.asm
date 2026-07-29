@@ -41,11 +41,11 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401800
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -351,8 +351,8 @@ section .text
     XOR ESI,ESI                         ; 005ed24e
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0 ; 005ed250
         ;   XREF to: 005ed8f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0()
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005ed255
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 005ed255
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_005ed255
     INC ESI                             ; 005ed25a
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005ed25b

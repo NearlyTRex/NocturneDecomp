@@ -90,46 +90,46 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_10c.x = (int)bbox_max->z;
   local_e8.y = (int)ROUND(bbox_max->x * 256.0f);
   local_e8.z = (int)ROUND(bbox_min->y * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e18].projected_vertex,
              (CVector3i *)&local_e8.y);
   local_d0.x = (int)bbox_max->z;
   local_d0.y = (int)ROUND(bbox_min->x * 256.0f);
   local_d0.z = (int)ROUND(bbox_min->y * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e19].projected_vertex,
              (CVector3i *)&local_d0.y);
   local_7c.x = (int)bbox_min->z;
   local_f4.y = (int)ROUND(bbox_min->x * 256.0f);
   local_f4.z = (int)ROUND(bbox_min->y * 256.0f);
   local_e8.x = (int)ROUND((float)local_7c.x * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1a].projected_vertex,
              (CVector3i *)&local_f4.y);
   local_10c.y = (int)ROUND(bbox_max->x * 256.0f);
   local_10c.z = (int)ROUND(bbox_min->y * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1b].projected_vertex,
              (CVector3i *)&local_10c.y);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1c].projected_vertex,
              (CVector3i *)&stack0xfffffed4);
   local_ac.y = (int)ROUND(bbox_min->x * 256.0f);
   local_ac.z = (int)ROUND(bbox_max->y * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1d].projected_vertex,
              (CVector3i *)&local_ac.y);
   local_f4.x = (int)bbox_min->z;
   local_7c.y = (int)ROUND(bbox_min->x * 256.0f);
   local_7c.z = (int)ROUND(bbox_max->y * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1e].projected_vertex,
              (CVector3i *)&local_7c.y);
   local_b8.x = (int)bbox_min->z;
   local_b8.y = (int)ROUND(bbox_max->x * 256.0f);
   local_b8.z = (int)ROUND(bbox_max->y * 256.0f);
   local_ac.x = (int)ROUND((float)local_b8.x * 256.0f);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,
              (CVector3i *)&local_b8.y);
   uVar4 = 0xffffffff;

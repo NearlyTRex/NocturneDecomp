@@ -42,7 +42,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
     }
     mission_filename = this_ptr->mission_name;
     while (this_ptr->connection_type != CONNECTION_NONE) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       _sprintf(local_130,"Mission: %s",mission_filename);
       engine_2d_c_drawText_FUN_00401fd0(local_130,0,0xb);
       _sprintf(local_130,"MyGameSettigsId: %d",INT_02f7c8c4);

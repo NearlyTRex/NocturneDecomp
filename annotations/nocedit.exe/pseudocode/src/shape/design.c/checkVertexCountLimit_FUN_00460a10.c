@@ -15,7 +15,7 @@ int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void)
   
   bVar1 = 20000 < g_VertexCount;
   if (bVar1) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     _sprintf(local_68,"ERROR: Too many vertices! (npoints:%d > %d)",g_VertexCount,20000);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0);
     _sprintf(local_68,"vertexList[] in 2d.c only supports %d vertices",20000);

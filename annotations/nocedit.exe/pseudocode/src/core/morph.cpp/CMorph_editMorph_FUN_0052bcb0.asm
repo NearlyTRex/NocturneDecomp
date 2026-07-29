@@ -330,8 +330,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0052bfaf
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0052bfb4
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052bfb7
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052bfb7
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV EAX,[0x00679398]                ; 0052bfbc | g_WindowHeight
     MOV EDX,EAX                         ; 0052bfc1
     SAR EDX,0x1f                        ; 0052bfc3

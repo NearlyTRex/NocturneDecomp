@@ -21,7 +21,7 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
     local_6c[0] = 0;
   }
   else {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_6c,0x14,0,0,"Enter tolerance angle [8.5] : ");
   }

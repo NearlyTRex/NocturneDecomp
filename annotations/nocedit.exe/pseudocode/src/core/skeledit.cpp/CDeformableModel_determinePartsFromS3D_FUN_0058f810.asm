@@ -233,12 +233,12 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -1515,8 +1515,8 @@ section .text
     CMP EDI,ECX                         ; 00590936
     JL 0x0059077f                       ; 00590938
         ;   XREF to: 0059077f (CONDITIONAL_JUMP)  ; LAB_0059077f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0059093e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0059093e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0059093e
     PUSH 0x64ba9f                       ; 00590943 | = "Matching faces"
     MOV EBX,dword ptr [0x00678a60]      ; 00590948 | g_CEditorToolsPtr

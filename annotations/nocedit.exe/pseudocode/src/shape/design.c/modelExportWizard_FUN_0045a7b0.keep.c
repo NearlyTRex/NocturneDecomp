@@ -17,7 +17,7 @@ void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_typ
   char *pcVar4;
   char local_6c [80];
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_6c,0x28,0,0,"Binary filename to write : ")
   ;

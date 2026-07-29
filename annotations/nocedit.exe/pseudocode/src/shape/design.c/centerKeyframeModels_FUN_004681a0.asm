@@ -36,10 +36,10 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_loadModelFile_FUN_00527ec0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_applyVertexCentering_FUN_004680f0
 ;   shape_design.c_findVertexListInModel_FUN_00468000
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH EBP                            ; 004681a3
     MOV EBP,ESP                         ; 004681a4
     SUB ESP,0x6c                        ; 004681a6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004681ac
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004681ac
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61cc1f                    ; 004681b1 | = "Enter in common nonmoving vertex # : "
     PUSH ECX                            ; 004681b6 | = "Enter in common nonmoving vertex # : "
     PUSH 0x0                            ; 004681b7

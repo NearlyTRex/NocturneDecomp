@@ -61,8 +61,8 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       local_cc.position = local_80;
       local_cc.orientation.vec = local_98;
     }
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
               (g_CDemonRendererPtr2,&local_cc.orientation.vec);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
@@ -86,12 +86,12 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       local_5c.x = (int)ROUND(local_8c.x * 256.0f);
       local_5c.y = (int)ROUND(local_8c.y * 256.0f);
       local_5c.z = (int)ROUND(local_8c.z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_5c);
       local_74.x = (int)ROUND(local_68.x * 256.0f);
       local_74.y = (int)ROUND(local_68.y * 256.0f);
       local_74.z = (int)ROUND(local_68.z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_74);
       pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(pSVar9[0],pSVar9[1]);

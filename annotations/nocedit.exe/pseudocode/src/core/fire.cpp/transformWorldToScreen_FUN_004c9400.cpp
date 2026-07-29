@@ -14,6 +14,6 @@ void __cdecl core_fire_cpp_transformWorldToScreen_FUN_004c9400(CVector3i *input,
   local_10.x = (int)ROUND(world_position->x * 256.0f);
   local_10.y = (int)ROUND(world_position->y * 256.0f);
   local_10.z = (int)ROUND(world_position->z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25(output,&local_10);
+  engine_special_cpp_transformPoint_FUN_005b5a25(output,&local_10);
   return;
 }

@@ -25,7 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet *this
   output = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if (0 < vertex_count) {
     do {
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&output->projected_vertex,input_vertices);
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_14 = local_14 + 1;

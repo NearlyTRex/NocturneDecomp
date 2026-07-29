@@ -49,11 +49,11 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   shape_design.c_loadModelBinary_FUN_00458170
 ;   shape_design.c_loadS3DModelFile_FUN_004593a0
 ;   shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
-;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
     PUSH EBP                            ; 00458ac3
     MOV EBP,ESP                         ; 00458ac4
     SUB ESP,0x160                       ; 00458ac6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00458acc
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00458acc
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00458ad1
     PUSH 0x0                            ; 00458ad3
     MOV ESI,0x61a9d1                    ; 00458ad5 | = "Loading model..."

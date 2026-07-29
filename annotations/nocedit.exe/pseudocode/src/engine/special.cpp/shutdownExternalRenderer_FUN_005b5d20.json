@@ -1,0 +1,454 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 67,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 60,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 67,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 150
+  },
+  "cross_references": [
+    {
+      "addr": "005b5ec0",
+      "from_addr": "005b66f3",
+      "name": "engine_special.cpp_initializeExternalRenderer_FUN_005b5ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b71e0",
+      "from_addr": "005b71f5",
+      "name": "engine_special.cpp_kill_FUN_005b71e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b6750",
+      "from_addr": "005b6fa1",
+      "name": "engine_special.cpp_loadExternalRenderer_FUN_005b6750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b5d20",
+    "address_range": [
+      [
+        "005b5d20",
+        "005b5eb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_shutdownExternalRenderer_FUN_005b5d20",
+    "signature": "void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_005b5d20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ede00",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_freeLibrary_FUN_005ede00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b88c",
+      "name": "g_APIDLL_init",
+      "type": "APIDLL_init*",
+      "value": null
+    },
+    {
+      "addr": "03f6b890",
+      "name": "g_APIDLL_kill",
+      "type": "APIDLL_kill*",
+      "value": null
+    },
+    {
+      "addr": "03f6b894",
+      "name": "g_APIDLL_toggle",
+      "type": "APIDLL_toggle*",
+      "value": null
+    },
+    {
+      "addr": "03f6b898",
+      "name": "g_APIDLL_setVideoMode",
+      "type": "APIDLL_setVideoMode*",
+      "value": null
+    },
+    {
+      "addr": "03f6b89c",
+      "name": "g_APIDLL_setVideoMode2",
+      "type": "APIDLL_setVideoMode2*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8a0",
+      "name": "g_APIDLL_restoreVideoMode",
+      "type": "APIDLL_restoreVideoMode*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8a4",
+      "name": "g_APIDLL_beginScene",
+      "type": "APIDLL_beginScene*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8a8",
+      "name": "g_APIDLL_endScene",
+      "type": "APIDLL_endScene*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8ac",
+      "name": "g_APIDLL_lockFrame",
+      "type": "APIDLL_lockFrame*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8b0",
+      "name": "g_APIDLL_unlockFrame",
+      "type": "APIDLL_unlockFrame*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8b4",
+      "name": "g_APIDLL_selectTexture",
+      "type": "APIDLL_selectTexture*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8b8",
+      "name": "g_APIDLL_updateTexture",
+      "type": "APIDLL_updateTexture*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8c4",
+      "name": "g_APIDLL_setMipMapLevel",
+      "type": "APIDLL_setMipMapLevel*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8c8",
+      "name": "g_APIDLL_drawPolygon",
+      "type": "APIDLL_drawPolygon*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8cc",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8d0",
+      "name": "g_APIDLL_drawPolyList",
+      "type": "APIDLL_drawPolyList*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8d4",
+      "name": "g_APIDLL_drawPolyList2",
+      "type": "APIDLL_drawPolyList2*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8d8",
+      "name": "g_APIDLL_drawPolyList3",
+      "type": "APIDLL_drawPolyList3*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8dc",
+      "name": "g_APIDLL_addParticle",
+      "type": "APIDLL_addParticle*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8e0",
+      "name": "g_APIDLL_flushParticleList",
+      "type": "APIDLL_flushParticleList*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8e4",
+      "name": "g_APIDLL_add3dLine",
+      "type": "APIDLL_add3dLine*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8e8",
+      "name": "g_APIDLL_flushLineList",
+      "type": "APIDLL_flushLineList*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8ec",
+      "name": "g_APIDLL_clear",
+      "type": "APIDLL_clear*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f0",
+      "name": "g_APIDLL_setFogColor",
+      "type": "APIDLL_setFogColor*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f4",
+      "name": "g_APIDLL_sync",
+      "type": "APIDLL_sync*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f8",
+      "name": "g_APIDLL_clearZBuffer",
+      "type": "APIDLL_clearZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8fc",
+      "name": "g_APIDLL_clearZBox",
+      "type": "APIDLL_clearZBox*",
+      "value": null
+    },
+    {
+      "addr": "03f6b900",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "APIDLL_setColorTable16*",
+      "value": null
+    },
+    {
+      "addr": "03f6b904",
+      "name": "g_APIDLL_getDisplayContext",
+      "type": "APIDLL_getDisplayContext*",
+      "value": null
+    },
+    {
+      "addr": "03f6b908",
+      "name": "g_APIDLL_releaseDisplayContext",
+      "type": "APIDLL_releaseDisplayContext*",
+      "value": null
+    },
+    {
+      "addr": "03f6b90c",
+      "name": "g_APIDLL_masterZBuffer",
+      "type": "APIDLL_masterZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6b910",
+      "name": "g_APIDLL_restoreZBuffer",
+      "type": "APIDLL_restoreZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6b914",
+      "name": "g_APIDLL_getVideoMemory",
+      "type": "APIDLL_getVideoMemory*",
+      "value": null
+    },
+    {
+      "addr": "03f6b918",
+      "name": "g_APIDLL_selectCard",
+      "type": "APIDLL_selectCard*",
+      "value": null
+    },
+    {
+      "addr": "03f6b91c",
+      "name": "g_APIDLL_buildCardList",
+      "type": "APIDLL_buildCardList*",
+      "value": null
+    },
+    {
+      "addr": "03f6b920",
+      "name": "g_APIDLL_lockHoldBuffer",
+      "type": "APIDLL_lockHoldBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6b924",
+      "name": "g_APIDLL_unlockHoldBuffer",
+      "type": "APIDLL_unlockHoldBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6b928",
+      "name": "g_APIDLL_lockTexture",
+      "type": "APIDLL_lockTexture*",
+      "value": null
+    },
+    {
+      "addr": "03f6b92c",
+      "name": "g_APIDLL_unlockTexture",
+      "type": "APIDLL_unlockTexture*",
+      "value": null
+    },
+    {
+      "addr": "03f6b930",
+      "name": "g_APIDLL_getTextureInfo",
+      "type": "APIDLL_getTextureInfo*",
+      "value": null
+    },
+    {
+      "addr": "03f6b934",
+      "name": "g_APIDLL_setVideoModeX",
+      "type": "APIDLL_setVideoModeX*",
+      "value": null
+    },
+    {
+      "addr": "03f6b938",
+      "name": "g_APIDLL_restoreVideoModeX",
+      "type": "APIDLL_restoreVideoModeX*",
+      "value": null
+    },
+    {
+      "addr": "03f6b93c",
+      "name": "g_APIDLL_lockFrameX",
+      "type": "APIDLL_lockFrameX*",
+      "value": null
+    },
+    {
+      "addr": "03f6b940",
+      "name": "g_APIDLL_unlockFrameX",
+      "type": "APIDLL_unlockFrameX*",
+      "value": null
+    },
+    {
+      "addr": "03f6b944",
+      "name": "g_APIDLL_toggleX",
+      "type": "APIDLL_toggleX*",
+      "value": null
+    },
+    {
+      "addr": "03f6b948",
+      "name": "g_APIDLL_setViewport",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b94c",
+      "name": "g_APIDLL_setLightConstants",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b950",
+      "name": "g_APIDLL_setLightVector",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b954",
+      "name": "g_APIDLL_setAmbientLight",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b958",
+      "name": "g_APIDLL_setTransform",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b95c",
+      "name": "g_APIDLL_polyList",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b960",
+      "name": "g_APIDLL_getTextureHandle",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b964",
+      "name": "g_APIDLL_selectTextureByHandle",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b968",
+      "name": "g_APIDLL_enableCulling",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b96c",
+      "name": "g_APIDLL_enableClipping",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b970",
+      "name": "g_APIDLL_setTextureClamp",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b974",
+      "name": "g_APIDLL_setFog",
+      "type": "APIDLL_unknown*",
+      "value": null
+    },
+    {
+      "addr": "03f6b978",
+      "name": "g_LoadedExternalDLLRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b97c",
+      "name": "g_RendererDLLHandle",
+      "type": "HMODULE",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.8051948051948052,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 79,
+      "INT_ADD": 5,
+      "INT_AND": 11,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 3,
+      "LOAD": 4,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

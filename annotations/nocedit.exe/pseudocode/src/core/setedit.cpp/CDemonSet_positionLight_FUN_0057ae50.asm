@@ -174,8 +174,8 @@ section .text
         ;   Label: LAB_0057af67
     JL 0x0057af78                       ; 0057af71
         ;   XREF to: 0057af78 (CONDITIONAL_JUMP)  ; LAB_0057af78
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057af73
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 0057af73
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV EAX,[0x0067cf44]                ; 0057af78 | g_CKeysPtr
         ;   Label: LAB_0057af78
     PUSH EAX                            ; 0057af7d | g_CKeysInstance

@@ -23,7 +23,7 @@ int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
   char cVar1;
   
   bVar7 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_64,0x28,0,0,"Model name to load : ");
   pcVar5 = local_64;
   do {

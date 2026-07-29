@@ -50,7 +50,7 @@ int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *thi
   }
 LAB_0057af67:
   if (0x1df < g_WindowHeight) {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
   }
   (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);

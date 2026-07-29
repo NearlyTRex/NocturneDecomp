@@ -24,7 +24,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004544f0(CDemonCame
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
             (g_CDemonRendererPtr2,&g_BackgroundSavedCameraState);
   do {
-    wincore_windll_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,corners);
+    engine_special_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,corners);
     corners = corners + 1;
     output = output + 1;
   } while (corners != pCVar2);

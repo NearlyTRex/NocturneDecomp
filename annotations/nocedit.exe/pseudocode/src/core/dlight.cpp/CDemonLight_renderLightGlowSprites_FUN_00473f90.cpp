@@ -132,25 +132,25 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               local_d4.x = (int)ROUND(fVar9 * 256.0f);
               local_d4.y = (int)ROUND(fVar9 * 256.0f);
               local_d4.z = (int)ROUND(256.0f * 0.0);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_d4);
               local_98 = -fVar9;
               local_5c.x = (int)ROUND(local_98 * 256.0f);
               local_5c.y = (int)ROUND(fVar9 * 256.0f);
               local_5c.z = (int)ROUND(256.0f * 0.0);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_5c);
               local_94 = -fVar9;
               local_50.x = (int)ROUND(local_98 * 256.0f);
               local_50.y = (int)ROUND(local_94 * 256.0f);
               local_50.z = (int)ROUND(256.0f * 0.0);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_50);
               local_98 = -local_98;
               local_bc.x = (int)ROUND(local_98 * 256.0f);
               local_bc.y = (int)ROUND(local_94 * 256.0f);
               local_bc.z = (int)ROUND(256.0f * 0.0);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_bc);
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                         (g_CDemonRendererPtr2,texture);

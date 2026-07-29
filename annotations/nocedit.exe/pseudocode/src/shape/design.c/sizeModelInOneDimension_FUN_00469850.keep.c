@@ -58,7 +58,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
       local_30 = local_3c;
     }
   }
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Enter axis to size - X, Y, or Z : ",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();

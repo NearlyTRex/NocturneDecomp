@@ -5,14 +5,36 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6454 (100.0%)
-Failed: 0
+Successful: 6452 (100.0%)
+Failed: 2
+
+ERROR CATEGORIES
+--------------------------------------------------
+  other                              2
+  missing_member                     1
+
+====================================================================================================
+CATEGORY: other (2 errors)
+====================================================================================================
+
+  shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360
+    Line 68: member reference type 'UStrListVTable' is not a pointer; did you mean to use '.'...
+  shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
+    Line 24: no viable overloaded '='...
+
+====================================================================================================
+CATEGORY: missing_member (1 errors)
+====================================================================================================
+
+  shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360
+    Line 68: no member named 'insert' in 'UStrListVTable'...
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 0.00
+Average suspects in failed compilations: 0.00
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

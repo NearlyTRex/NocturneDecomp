@@ -38,7 +38,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -219,8 +219,8 @@ section .text
     RET                                 ; 0050407e
     PUSH EBX                            ; 0050407f
         ;   Label: LAB_0050407f
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00504080
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00504080
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV dword ptr [ESI + 0x114],0x0     ; 00504085
     MOV dword ptr [ESI + 0x118],0x0     ; 0050408f
     MOV dword ptr [ESI + 0x11c],0x280   ; 00504099

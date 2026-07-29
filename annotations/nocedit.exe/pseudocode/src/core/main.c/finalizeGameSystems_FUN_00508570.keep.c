@@ -31,7 +31,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     _sprintf(local_110,"load%d",(uVar2 & 3) + 1);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
               (&g_LoadingScreenBitmap1,local_110,0x280,0x1e0);
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_LoadingScreenBitmap1,0,0,0xffff);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_MediumFont,"In stores 10/26/99");

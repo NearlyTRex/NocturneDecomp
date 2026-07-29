@@ -29,7 +29,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd
         iVar4 = iVar1;
       } while (iVar1 < g_WindowHeight * 4);
     }
-    wincore_windll_cpp_lockFrame_FUN_005b7210();
+    engine_special_cpp_lockFrame_FUN_005b7210();
     uVar2 = g_WindowWidth * g_BitsPerPixel / 8;
     iVar4 = 0;
     if (0 < g_WindowHeight) {
@@ -42,7 +42,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd
         iVar1 = iVar1 + 4;
       } while (iVar4 < g_WindowHeight);
     }
-    wincore_windll_cpp_unlockFrame_FUN_005b7250(1);
+    engine_special_cpp_unlockFrame_FUN_005b7250(1);
   }
   shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(this_ptr);
   return;

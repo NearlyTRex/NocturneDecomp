@@ -26,7 +26,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -83,8 +83,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00509149 | g_CDemonRendererInstance
     ADD EAX,0xbb80                      ; 0050914b
     PUSH EAX                            ; 00509150
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00509151
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 00509151
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00509156
     XOR EBX,EBX                         ; 00509159
     PUSH EBX                            ; 0050915b

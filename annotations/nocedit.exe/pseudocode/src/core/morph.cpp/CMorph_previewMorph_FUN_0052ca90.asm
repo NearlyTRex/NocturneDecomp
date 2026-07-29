@@ -36,11 +36,11 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+;   engine_special.cpp_clearZBufferNative_FUN_005b3ed4
 ;   shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20
 ;   shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670
 ;   shape_spotview.cpp_CSpotView_reset_FUN_005b9620
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0052caff
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0052cb04
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052cb07
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052cb07
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV EDX,dword ptr [0x0068416c]      ; 0052cb0c | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH EDX                            ; 0052cb12 | g_CSpotViewInstance
     CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0052cb13

@@ -22,6 +22,6 @@ void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_
   if (g_UseExternalRenderer == 0) {
     return;
   }
-  wincore_windll_cpp_setFogColor_FUN_005b7b80(red_component,green_component,blue_component);
+  engine_special_cpp_setFogColor_FUN_005b7b80(red_component,green_component,blue_component);
   return;
 }

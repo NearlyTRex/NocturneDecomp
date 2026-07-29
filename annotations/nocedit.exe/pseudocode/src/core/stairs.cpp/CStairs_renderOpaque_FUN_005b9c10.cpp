@@ -127,7 +127,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_84.x = (int)ROUND(fVar3 * 256.0f);
           local_84.y = (int)ROUND(fVar1 * 256.0f);
           local_84.z = (int)ROUND(fVar2 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                             transformed_x + iVar16),&local_84);
@@ -135,7 +135,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_78.x = (int)ROUND(fVar3 * 256.0f);
           local_78.y = (int)ROUND(fVar1 * 256.0f);
           local_78.z = (int)ROUND(fVar2 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                             transformed_x + iVar11),&local_78);
@@ -144,7 +144,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_48.x = (int)ROUND(fVar3 * 256.0f);
           local_48.y = (int)ROUND(fVar1 * 256.0f);
           local_48.z = (int)ROUND(fVar2 * 256.0f);
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                             transformed_x + local_1c),&local_48);
@@ -158,7 +158,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
                     ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
                     + local_20);
           iVar39 = 0x5b9e6a;
-          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)pCVar40,(CVector3i *)input);
           iVar12 = iVar12 + 1;
           iVar16 = iVar16 + 0xc0;
@@ -688,17 +688,17 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
         local_6c.x = (int)ROUND(*(float *)pcVar6 * 256.0f);
         local_6c.y = (int)ROUND(*(float *)(pcVar6 + 4) * 256.0f);
         local_6c.z = (int)ROUND(*(float *)(pcVar6 + 8) * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_6c);
         local_9c.x = (int)ROUND(*local_2c * 256.0f);
         local_9c.y = (int)ROUND(local_2c[1] * 256.0f);
         local_9c.z = (int)ROUND(local_2c[2] * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_9c);
         auStack_60._12_4_ = (uint)ROUND((local_28->vec).x * 256.0f);
         local_50 = (int)ROUND((local_28->vec).y * 256.0f);
         local_4c = (int)ROUND((local_28->vec).z * 256.0f);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
                    (CVector3i *)(auStack_60 + 0xc));
         iVar4 = 0;

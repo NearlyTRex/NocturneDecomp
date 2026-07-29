@@ -369,7 +369,7 @@ LAB_0051390e:
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
     strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a7c);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Restore defaults");

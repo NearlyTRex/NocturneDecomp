@@ -35,7 +35,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   float fVar1;
   
   bVar7 = 0;
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_94,0x46,0,0,"Enter response file :");
   iVar4 = -1;
   pcVar3 = local_94;

@@ -26,7 +26,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800(CDeform
       local_2c.x = (int)ROUND(local_20.x * 256.0f);
       local_2c.y = (int)ROUND(local_20.y * 256.0f);
       local_2c.z = (int)ROUND(local_20.z * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+      engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
       pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       if ((int)(pSVar1[19999].projected_vertex.screen_x & -0x80000000) == 0) {

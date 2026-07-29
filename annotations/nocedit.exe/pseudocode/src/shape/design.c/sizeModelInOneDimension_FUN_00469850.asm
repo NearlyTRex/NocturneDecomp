@@ -42,8 +42,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 ;
 ; *****************************************************************************
@@ -139,8 +139,8 @@ section .text
     JMP 0x0046988f                      ; 00469931
         ;   XREF to: 0046988f (UNCONDITIONAL_JUMP)  ; LAB_0046988f
         ;   Label: LAB_00469931
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00469936
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00469936
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00469936
     PUSH 0x0                            ; 0046993b
     PUSH 0x0                            ; 0046993d

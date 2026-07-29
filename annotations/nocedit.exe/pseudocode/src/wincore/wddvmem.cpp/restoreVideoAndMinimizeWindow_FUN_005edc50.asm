@@ -14,8 +14,8 @@
 ;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
+;   engine_special.cpp_restoreVideoMode_FUN_005b75b0
 ;   ShowWindow
-;   wincore_windll.cpp_restoreVideoMode_FUN_005b75b0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   Label: LAB_005edc62
     PUSH EBX                            ; 005edc63
         ;   Label: LAB_005edc63
-    CALL wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 ; 005edc64
-        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0()
+    CALL engine_special.cpp_restoreVideoMode_FUN_005b75b0 ; 005edc64
+        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreVideoMode_FUN_005b75b0()
     PUSH 0x6                            ; 005edc69
     MOV EBX,dword ptr [0x03f98468]      ; 005edc6b | g_MainWindowHandle
     PUSH EBX                            ; 005edc71

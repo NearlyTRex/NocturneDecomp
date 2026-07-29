@@ -46,8 +46,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
+;   engine_special.cpp_transformAndProjectPoint_FUN_005b575c
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
 
@@ -239,8 +239,8 @@ section .text
     PUSH EAX                            ; 004cc56e
     MOV EAX,dword ptr [EDX]             ; 004cc56f | g_CDemonRendererInstance
     PUSH EAX                            ; 004cc571
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004cc572
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_005b575c ; 004cc572
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 004cc577 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EBX,dword ptr [EAX]             ; 004cc57c | g_CDemonRendererInstance
     MOV DL,byte ptr [EBX + 0x13]        ; 004cc57e

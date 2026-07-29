@@ -38,7 +38,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   do {
     this_ptr->is_in_editor = 1;
     this_ptr->skip_gore_load_flag = 0;
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor",0,0);
     if (this_ptr->mission_name[0] == '\0') {
       strcpy(local_21c,"No misison loaded");
@@ -164,7 +164,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                           (g_CEditorToolsPtr,"Precompute lights?");
         if (iVar3 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr,-1);
-          wincore_windll_cpp_clearScreen_FUN_005b3e70();
+          engine_special_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("You must now go into set editor and save!",0,0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

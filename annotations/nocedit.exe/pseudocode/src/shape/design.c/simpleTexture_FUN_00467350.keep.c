@@ -22,12 +22,12 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   int local_1c;
   uint uVar2;
 
-  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x28,0,0,"Enter texture name : ");
   if (local_70[0] != '\0') {
     file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("art",local_70,"rb");
     if (file_ptr == (_FILE *)0x0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("ERROR! Bad texture name!",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -35,7 +35,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
     }
     else {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\design.c",8189);
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Face map on Z axis (Y/N) ?",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();

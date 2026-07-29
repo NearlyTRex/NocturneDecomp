@@ -44,7 +44,7 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_12c);
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_210);
   do {
-    wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    engine_special_cpp_clearScreen_FUN_005b3e70();
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_48);
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_48);
     shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550

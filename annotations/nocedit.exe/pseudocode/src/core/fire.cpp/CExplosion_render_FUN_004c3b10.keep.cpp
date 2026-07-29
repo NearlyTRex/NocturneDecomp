@@ -50,23 +50,23 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   local_28.x = (int)ROUND((float)local_14 * 256.0f);
   local_28.y = (int)ROUND(fVar1 * 256.0f);
   local_28.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_28);
   local_4c.x = (int)ROUND((float)local_10 * 256.0f);
   local_4c.y = (int)ROUND(fVar1 * 256.0f);
   local_4c.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_4c);
   fVar1 = -this_ptr->scale * (float)113 * (float)0.00390625;
   local_40.x = (int)ROUND((float)local_10 * 256.0f);
   local_40.y = (int)ROUND(fVar1 * 256.0f);
   local_40.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_40);
   local_64.x = (int)ROUND((float)local_14 * 256.0f);
   local_64.y = (int)ROUND(fVar1 * 256.0f);
   local_64.z = (int)ROUND(256.0f * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+  engine_special_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_64);
   this_ptr_00 = g_CDemonRendererPtr2;
   g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x2 << 16;

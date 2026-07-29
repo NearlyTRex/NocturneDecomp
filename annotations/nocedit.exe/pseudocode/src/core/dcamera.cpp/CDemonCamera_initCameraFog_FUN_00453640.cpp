@@ -14,7 +14,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640(CDemonCame
   g_FogColorIndexR = (fog_config->color_index).r;
   g_FogColorIndexG = (fog_config->color_index).g;
   g_FogColorIndexB = (fog_config->color_index).b;
-  wincore_windll_cpp_setFogColor_FUN_005b7b80
+  engine_special_cpp_setFogColor_FUN_005b7b80
             (g_LightmapTexturePalette[(fog_config->color_index).r] & 0xff,
              g_LightmapTexturePalette[(fog_config->color_index).g] & 0xff,
              g_LightmapTexturePalette[g_FogColorIndexB] & 0xff);

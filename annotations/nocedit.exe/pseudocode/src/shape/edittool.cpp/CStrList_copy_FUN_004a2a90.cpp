@@ -9,7 +9,7 @@
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_004a2a90(CStrList *this_ptr,CStrList *other)
 
 {
-  this_ptr->vtable = &g_CStrListVTable;
+  (this_ptr->vtable)._us = &g_CStrListVTable;
   this_ptr->item_count = 0;
   this_ptr->data_array = (char **)0x0;
   shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(this_ptr,other);

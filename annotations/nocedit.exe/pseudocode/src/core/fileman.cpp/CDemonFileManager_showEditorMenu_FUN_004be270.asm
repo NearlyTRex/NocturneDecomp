@@ -60,8 +60,8 @@ section .text
     SUB ESP,0x100                       ; 004be274
     MOV ESI,dword ptr [ESP + 0x114]     ; 004be27a
     XOR EBP,EBP                         ; 004be281
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004be283
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 004be283
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_004be283
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004be288
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

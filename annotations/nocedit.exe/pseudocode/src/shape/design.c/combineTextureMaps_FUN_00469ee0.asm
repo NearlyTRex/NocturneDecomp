@@ -45,9 +45,9 @@
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EBP                            ; 00469ee3
     MOV EBP,ESP                         ; 00469ee4
     SUB ESP,0x12c                       ; 00469ee6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00469eec
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00469eec
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,0x61d106                    ; 00469ef1 | = "Enter response file :"
     PUSH ECX                            ; 00469ef6 | = "Enter response file :"
     PUSH 0x0                            ; 00469ef7

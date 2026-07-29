@@ -72,16 +72,16 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
                                       (float)this_ptr->height_cache[local_54[1]][local_58] *
                                       g_CDemonRaytraceInstance.adjusted_size.y * 256.0f +
                                       (float)256));
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_70);
         local_70.x = (int)ROUND(ROUND((float)local_70.x + fVar1));
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_70);
         local_70.z = (int)ROUND(ROUND((float)local_70.z + fVar2));
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_70);
         local_70.x = (int)ROUND(ROUND((float)local_70.x - fVar1));
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+        engine_special_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
         this_ptr_00 = g_CDemonRendererPtr2;
         g_CDemonRendererPtr2->vertex_buffer_ptr->r = iVar3;

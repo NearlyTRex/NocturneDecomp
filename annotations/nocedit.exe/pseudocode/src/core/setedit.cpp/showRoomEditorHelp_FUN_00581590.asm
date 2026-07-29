@@ -26,8 +26,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
+;   engine_special.cpp_clearScreen_FUN_005b3e70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH ESI                            ; 00581591
     PUSH EDI                            ; 00581592
     PUSH EBP                            ; 00581593
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00581594
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL engine_special.cpp_clearScreen_FUN_005b3e70 ; 00581594
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_005b3e70()
     MOV ECX,dword ptr [0x00679394]      ; 00581599 | g_WindowWidth
     IMUL EDX,ECX,0x0                    ; 0058159f
     MOV EAX,EDX                         ; 005815a2

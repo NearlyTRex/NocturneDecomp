@@ -87,7 +87,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
       iVar2 = g_CDemonLightInstance.shadow_map_height * -2;
     }
     if ((g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge <= 0.0) {
-      wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      engine_special_cpp_clearScreen_FUN_005b3e70();
       return;
     }
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
@@ -103,7 +103,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *th
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2,&local_20)
   ;
   g_CDemonRaytraceInstance.rendering_mode = 1;
-  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
+  engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   g_CDemonRaytraceInstance.rendering_mode = 0;
   g_UseExternalRenderer = iVar5;
